@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "product": "BROray-Light",
+  "protocols": ["VLESS"],
+  "webuiPages": ["home", "servers", "subscriptions"],
+  "features": {
+    "automaticServerSwitching": true,
+    "serverRatings": false,
+    "qualityHistory": false,
+    "keeneticControlOnHome": true,
+    "complexServerEditor": false,
+    "separateSystemPages": false,
+    "manualXrayMaintenanceUi": false,
+    "webuiBackupRestoreRemove": false,
+    "singleBrandTheme": true,
+    "singleUpdater": true,
+    "singlePrimaryApplicationService": true
+  },
+  "excluded": [
+    "VMess",
+    "Trojan",
+    "Hysteria2",
+    "Shadowsocks",
+    "TUIC",
+    "routes",
+    "BAT-import",
+    "DNS-over-TLS-management",
+    "separate-Keenetic-page",
+    "separate-Xray-page",
+    "separate-BROray-page"
+  ]
+}

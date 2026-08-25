@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "checkpointId": "BROray-Light-CHECKPOINT-00-REMOTE-R0002",
+  "date": "2026-08-25",
+  "status": "PASS_PENDING_POST_COMMIT_VERIFICATION",
+  "repository": {
+    "fullName": "BROadmin/BROray-Light",
+    "repositoryId": "1346219669",
+    "visibility": "public",
+    "defaultBranch": "main",
+    "permissions": ["admin", "maintain", "pull", "push", "triage"]
+  },
+  "bootstrapParentCommit": "df83b4bc53037120937de488c752d1692fe48007",
+  "upstreamStable": {
+    "release": "3.0.0-r14",
+    "technicalCandidate": "3.0.0-r14c68",
+    "applicationArchiveSha256": "314be910e180d5bbac4677a9483e17f18406c8a4339a849edb2c1c8d7de4e382"
+  },
+  "sourceImport": "BLOCKED_PENDING_EXACT_R14C68_RELEASE_SOURCE_BYTES",
+  "currentMainAsDonor": "FORBIDDEN",
+  "mutations": {
+    "existingBROrayRepository": "NONE",
+    "productionServer": "NONE",
+    "router": "NONE"
+  }
+}

@@ -1,0 +1,7 @@
+*.tmp
+*.log
+*.swp
+.DS_Store
+/dist/
+/build/
+/checkpoints/work/

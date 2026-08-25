@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "product": "BROray-Light",
+  "upstream": {
+    "repository": "BROadmin/BROray",
+    "publicRelease": "3.0.0",
+    "opkgRelease": "3.0.0-r14",
+    "technicalCandidate": "3.0.0-r14c68",
+    "publishedDate": "2026-08-25",
+    "sha256": {
+      "stableReleaseJson": "0740557b08c90fe07d51afd3d99d1c6947fdd082cca0c191369af03116995a4c",
+      "stableCopyPasteInstaller": "06a0f631269f175bc02469856733020a713f1eaed13ac047abd111519cf92967",
+      "candidateCarrier": "8ccb49508292b8d2b04c76ea06189b07471aeeb4ffba0255b3fbc4f69d882f39",
+      "applicationArchive": "314be910e180d5bbac4677a9483e17f18406c8a4339a849edb2c1c8d7de4e382",
+      "updaterPlatformArchive": "40b71cf3a5be9697d19989bac4baee6023692b7cced32ba8b888e4331ae5272f",
+      "xray_26_7_28": "4b8af237444801bf17b3dc10a1c5c24581fbe3d433eba3d78c6c3a0da1df56fc"
+    }
+  },
+  "policy": {
+    "allowCurrentMainAsStableDonor": false,
+    "requireExactReleaseSourceBytes": true
+  }
+}
