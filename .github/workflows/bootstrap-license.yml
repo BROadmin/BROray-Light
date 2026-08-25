@@ -1,0 +1,39 @@
+name: Bootstrap exact LICENSE
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/bootstrap-license.yml
+
+permissions:
+  contents: write
+
+jobs:
+  import-license:
+    if: github.event.head_commit.message == 'bootstrap: stage exact LICENSE importer'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - name: Fetch and verify exact GPLv3 bytes
+        shell: bash
+        run: |
+          set -euo pipefail
+          curl -fsSL 'https://raw.githubusercontent.com/BROadmin/BROray/main/LICENSE' -o LICENSE
+          test "$(wc -c < LICENSE | tr -d ' ')" = '35149'
+          echo '3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986  LICENSE' | sha256sum -c -
+          test "$(git hash-object LICENSE)" = 'f288702d2fa16d3cdf0035b15a9fcbc552cd88e7'
+      - name: Commit exact LICENSE and remove importer
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'BROadmin'
+          git config user.email '307129396+BROadmin@users.noreply.github.com'
+          rm -f .github/workflows/bootstrap-license.yml
+          rmdir .github/workflows 2>/dev/null || true
+          rmdir .github 2>/dev/null || true
+          git add -A LICENSE .github || git add -A
+          git commit -m 'bootstrap: add exact GPLv3 LICENSE'
+          git push origin HEAD:main
