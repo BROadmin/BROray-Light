@@ -1,0 +1,37 @@
+name: Fetch exact BROray updater-v5 donor
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/fetch-updater-v5.yml
+
+permissions:
+  contents: read
+
+jobs:
+  fetch-updater:
+    if: "${{ github.event.head_commit.message == 'bootstrap: fetch exact updater-v5 donor' }}"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Fetch and verify updater-v5 bundle
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p donor
+          curl -q --proto '=https' --proto-redir '=https' --tlsv1.2 -fsSL \
+            -H 'Cache-Control: no-cache, no-store' -H 'Accept-Encoding: identity' \
+            'https://api.brovibe.cloud/releases/stable/broray/3.0.0-r14/broray-compact-updater-platform-5.tar.gz' \
+            -o donor/broray-compact-updater-platform-5.tar.gz
+          echo '40b71cf3a5be9697d19989bac4baee6023692b7cced32ba8b888e4331ae5272f  donor/broray-compact-updater-platform-5.tar.gz' | sha256sum -c -
+          gzip -t donor/broray-compact-updater-platform-5.tar.gz
+          tar -tzf donor/broray-compact-updater-platform-5.tar.gz > donor/members.txt
+          sha256sum donor/broray-compact-updater-platform-5.tar.gz donor/members.txt > donor/SHA256SUMS
+      - name: Upload exact updater donor
+        uses: actions/upload-artifact@v4
+        with:
+          name: broray-updater-v5-exact-donor
+          path: donor/
+          if-no-files-found: error
+          retention-days: 7
