@@ -11,7 +11,7 @@ permissions:
 
 jobs:
   import-license:
-    if: github.event.head_commit.message == 'bootstrap: stage exact LICENSE importer'
+    if: "${{ github.event.head_commit.message == 'bootstrap: stage exact LICENSE importer v2' }}"
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -34,6 +34,6 @@ jobs:
           rm -f .github/workflows/bootstrap-license.yml
           rmdir .github/workflows 2>/dev/null || true
           rmdir .github 2>/dev/null || true
-          git add -A LICENSE .github || git add -A
+          git add -A
           git commit -m 'bootstrap: add exact GPLv3 LICENSE'
           git push origin HEAD:main
