@@ -11,7 +11,7 @@ permissions:
 
 jobs:
   fetch-donor:
-    if: "${{ github.event.head_commit.message == 'prep: fetch exact Stable r20c01 donor' }}"
+    if: "${{ github.event.head_commit.message == 'prep: fetch exact Stable r20c01 donor r2' }}"
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -65,8 +65,8 @@ jobs:
           echo 'eaf2eafb62d1b108fe576d1fda09ae7a5d15ad90f71272abc23f321d397611b0  donor/broray-updater-platform-r20.tar.gz' | sha256sum -c -
           curl -q --proto '=https' --proto-redir '=https' --tlsv1.2 -fsSL \
             -H 'Cache-Control: no-cache, no-store' -H 'Accept-Encoding: identity' \
-            "$(cat donor/clean-bootstrap.url)" -o donor/broray-clean-bootstrap-r20.tar.gz
-          echo 'fb4943e3d336d091b16e6cf436e2a7eefe7274422246c8038a7eea2e6c0d79a0  donor/broray-clean-bootstrap-r20.tar.gz' | sha256sum -c -
+            "$(cat donor/clean-bootstrap.url)" -o donor/broray-clean-bootstrap-r20.bin
+          echo 'fb4943e3d336d091b16e6cf436e2a7eefe7274422246c8038a7eea2e6c0d79a0  donor/broray-clean-bootstrap-r20.bin' | sha256sum -c -
           curl -q --proto '=https' --proto-redir '=https' --tlsv1.2 -fsSL \
             -H 'Cache-Control: no-cache, no-store' -H 'Accept-Encoding: identity' \
             'https://api.brovibe.cloud/releases/stable/broray/3.0.0-r20/INSTALL-ON-ROUTER.sh' \
@@ -74,17 +74,14 @@ jobs:
           echo '3c3faa352ef78821de791a3e932602b88efadf9b82fecde39c535a67bfbb14c0  donor/INSTALL-ON-ROUTER.sh' | sha256sum -c -
           gzip -t donor/broray-app-3.0.0-r20c01.tar.gz
           gzip -t donor/broray-updater-platform-r20.tar.gz
-          gzip -t donor/broray-clean-bootstrap-r20.tar.gz
+          file -b donor/broray-clean-bootstrap-r20.bin > donor/clean-bootstrap.filetype.txt
+          od -An -tx1 -N32 donor/broray-clean-bootstrap-r20.bin | tr -d ' \n' > donor/clean-bootstrap.magic-32.txt
+          printf '\n' >> donor/clean-bootstrap.magic-32.txt
           python3 - <<'PY'
           import json, tarfile, hashlib
           from pathlib import Path, PurePosixPath
-          files=[
-            ('application','donor/broray-app-3.0.0-r20c01.tar.gz'),
-            ('platform','donor/broray-updater-platform-r20.tar.gz'),
-            ('cleanBootstrap','donor/broray-clean-bootstrap-r20.tar.gz'),
-          ]
           receipt={
-            'schemaVersion':1,
+            'schemaVersion':2,
             'candidateId':'3.0.0-r20c01',
             'stableRelease':'3.0.0-r20',
             'releaseJsonSha256':'b87deb3cca0eb01b1632aa8ceb1bcb81de6972bee5b7925e694088cffa9a2ebd',
@@ -92,7 +89,9 @@ jobs:
             'objects':{},
             'status':'PASS'
           }
-          for name,path in files:
+          for name,path in [
+              ('application','donor/broray-app-3.0.0-r20c01.tar.gz'),
+              ('platform','donor/broray-updater-platform-r20.tar.gz')]:
               p=Path(path)
               with tarfile.open(p,'r:gz') as tf:
                   ms=tf.getmembers()
@@ -112,13 +111,21 @@ jobs:
                     'unsafePaths':0,
                   }
                   Path(f'donor/{name}-members.txt').write_text('\n'.join(m.name for m in ms)+'\n')
+          p=Path('donor/broray-clean-bootstrap-r20.bin')
+          receipt['objects']['cleanBootstrap']={
+            'sha256':hashlib.sha256(p.read_bytes()).hexdigest(),
+            'sizeBytes':p.stat().st_size,
+            'containerAssumption':'NONE',
+            'fileType':Path('donor/clean-bootstrap.filetype.txt').read_text().strip(),
+            'magic32Hex':Path('donor/clean-bootstrap.magic-32.txt').read_text().strip(),
+          }
           Path('donor/RECEIPT.json').write_text(json.dumps(receipt,indent=2,sort_keys=True)+'\n')
           PY
           sha256sum donor/* > donor/SHA256SUMS
       - name: Upload exact donor artifact
         uses: actions/upload-artifact@v4
         with:
-          name: broray-stable-r20c01-exact-donor
+          name: broray-stable-r20c01-exact-donor-r2
           path: donor/
           if-no-files-found: error
           retention-days: 7
