@@ -1,0 +1,202 @@
+{
+  "records": [
+    {
+      "component": "automatic failover",
+      "evidence": [
+        "selectionRule accepts best-quality/lowest-ping/preferred",
+        "candidate ranking reads quality.rating/ping/jitter",
+        "run_quality_refresh schedules sequential server checks with source scheduled",
+        "qualityRefresh state is persisted in server-auto-switch state"
+      ],
+      "finding": "Full r23 auto-switch is coupled to route-resume fencing, rating/ping/jitter selection, preferred/best-quality modes, and now the scheduled quality-refresh cycle/state.",
+      "id": "R23-CPL-001",
+      "lightAction": "REPLACE with deterministic ordered failover; retain threshold/cooldown, Xray config validation, post-activation connectivity check, rollback and serialization. DROP scheduled quality-refresh.",
+      "severity": "BLOCKING_ADAPTATION",
+      "sourcePaths": [
+        "app/bin/broray-server-auto-switch"
+      ]
+    },
+    {
+      "component": "connection monitor",
+      "evidence": [
+        "quality_score and quality labels are part of monitor state"
+      ],
+      "finding": "Monitor persists score/quality labels and measurement data.",
+      "id": "R23-CPL-002",
+      "lightAction": "REPLACE with health-only state: connected/available, active server, checkedAt, error.",
+      "severity": "BLOCKING_ADAPTATION",
+      "sourcePaths": [
+        "app/bin/broray-connection-monitor"
+      ]
+    },
+    {
+      "component": "server import",
+      "evidence": [
+        "VLESS/VMess/Trojan/Shadowsocks/Hysteria2 protocol branches remain in exact r23 donor"
+      ],
+      "finding": "Server import, validation and Xray generation remain multi-protocol.",
+      "id": "R23-CPL-003",
+      "lightAction": "ADAPT to VLESS-only and physically remove non-VLESS parsers/branches.",
+      "severity": "BLOCKING_ADAPTATION",
+      "sourcePaths": [
+        "app/lib/server-import.sh",
+        "app/lib/server.sh",
+        "app/lib/server-config-generator.sh"
+      ]
+    },
+    {
+      "component": "server service",
+      "evidence": [
+        "quality merge/persistence remains",
+        "scheduled source is accepted by r23 server checks"
+      ],
+      "finding": "Server summaries/checks still persist quality data and r23 adds scheduled as a check source.",
+      "id": "R23-CPL-004",
+      "lightAction": "ADAPT to last-check availability only; no rating/history/scheduled-quality persistence.",
+      "severity": "BLOCKING_ADAPTATION",
+      "sourcePaths": [
+        "app/lib/server-service.sh"
+      ]
+    },
+    {
+      "component": "scheduled quality refresh",
+      "evidence": [
+        "three new exact donor files",
+        "qualityRefreshEnabled/qualityRefreshIntervalMinutes schemaVersion 3 fields",
+        "run_quality_refresh loop calls server check with source scheduled"
+      ],
+      "finding": "r23 introduces an independent periodic quality subsystem with 30/60/180/360 minute scheduling, ping/jitter/HTTPS checks and separate status UI.",
+      "id": "R23-CPL-005",
+      "lightAction": "DROP completely. Automatic failover remains failure-driven and deterministic; manual availability checks remain on Servers.",
+      "severity": "DROP_FEATURE",
+      "sourcePaths": [
+        "app/web-new/api/servers/quality-refresh-save.cgi",
+        "app/web-new/api/servers/quality-refresh-status.cgi",
+        "app/web-new/assets/js/servers-quality-refresh.js",
+        "app/bin/broray-server-auto-switch"
+      ]
+    },
+    {
+      "component": "Home snapshot",
+      "evidence": [
+        "full snapshot refresh includes excluded feature families"
+      ],
+      "finding": "Full Home aggregates Xray, Keenetic, Servers, Subscriptions, DNS, Routes and BROray maintenance.",
+      "id": "R23-CPL-006",
+      "lightAction": "ADAPT to active server, failover, Keenetic, Xray update state, Light update state and counts; fold loop into primary service.",
+      "severity": "BLOCKING_ADAPTATION",
+      "sourcePaths": [
+        "app/bin/broray-home-snapshot",
+        "app/bin/broray-home-snapshotd"
+      ]
+    },
+    {
+      "component": "global operation lock",
+      "evidence": [
+        "servers/subscriptions/Keenetic/Xray source routes-api-operation.sh"
+      ],
+      "finding": "Cross-feature lock is still routes-named and includes route pending semantics.",
+      "id": "R23-CPL-007",
+      "lightAction": "Extract updater interlock/stale-owner safety into Light operation-lock.sh with zero route semantics.",
+      "severity": "BLOCKING_ADAPTATION",
+      "sourcePaths": [
+        "app/lib/routes-api-operation.sh",
+        "app/web-new/api/servers/common.sh",
+        "app/web-new/api/subscriptions/common.sh",
+        "app/web-new/api/keenetic/action-common.sh",
+        "app/lib/xray-web-operation.sh"
+      ]
+    },
+    {
+      "component": "updater-v5 platform",
+      "evidence": [
+        "platform SHA-256 eaf2eafb62d1b108fe576d1fda09ae7a5d15ad90f71272abc23f321d397611b0 unchanged",
+        "updater engine SHA-256 a3c094b3a5e82ac82be7ec8b53c90f4023351a94eb6ba945b99501c0876e2c4a"
+      ],
+      "finding": "Updater platform is byte-identical to r20 and remains mature but product-specific: /opt/broray roots, broray package identity and full-service health topology.",
+      "id": "R23-CPL-008",
+      "lightAction": "FORK updater-v5 control-plane semantics for BROray-Light; retain releaseId comparison, signature verification, app-slot atomic switch, health gate, rollback and locks.",
+      "severity": "BLOCKING_ADAPTATION",
+      "sourcePaths": [
+        "updater-platform/opt/libexec/broray-updater/broray-updater.sh"
+      ]
+    },
+    {
+      "component": "Keenetic/lighttpd ownership",
+      "evidence": [
+        "interface-owner.sh validates zero/one proxy connect via binding plus single up directive",
+        "r20 Lighttpd receipt/exact-hash restoration protections remain byte lineage"
+      ],
+      "finding": "r23 improves interface ownership validation by allowing at most one syntactically valid proxy connect via binding while preserving exact fail-closed ownership rules.",
+      "id": "R23-CPL-009",
+      "lightAction": "ADAPT owner names/paths but preserve the r23 binding validator, proxy ownership/write-policy/rollback and Lighttpd ownership/restore contracts; remove routes/DoT write profiles.",
+      "severity": "MUST_PRESERVE",
+      "sourcePaths": [
+        "app/lib/interface-owner.sh",
+        "app/lib/keenetic-write-policy.sh",
+        "app/lib/lighttpd-guard.sh"
+      ]
+    },
+    {
+      "component": "subscriptions",
+      "evidence": [
+        "per-node dispatch still recognises unsupported Light protocols"
+      ],
+      "finding": "Secure subscription fetch/staging/dedup remains useful but input is multi-protocol.",
+      "id": "R23-CPL-010",
+      "lightAction": "Retain secure fetch/stage/dedup; preclassify VLESS vs non-VLESS and report received/imported/skippedOtherProtocols/invalid.",
+      "severity": "ADAPTATION",
+      "sourcePaths": [
+        "app/lib/subscription-service.sh"
+      ]
+    },
+    {
+      "component": "service topology",
+      "evidence": [
+        "exact r23 inventory has same five init files"
+      ],
+      "finding": "Full r23 application still contains five init scripts; r23 adds quality scheduling inside auto-switch rather than a new init script.",
+      "id": "R23-CPL-011",
+      "lightAction": "Create S24broray-light as one primary application-control service; fold monitor/failover/snapshot/WebUI lifecycle; remove scheduler init. Updater stays separate control plane.",
+      "severity": "BLOCKING_ADAPTATION",
+      "sourcePaths": [
+        "init/S23broray-monitor",
+        "init/S24broray",
+        "init/S25broray-web",
+        "init/S27broray-auto-switch",
+        "init/S28broray-subscriptions"
+      ]
+    },
+    {
+      "component": "server order",
+      "evidence": [
+        "full donor candidate selection remains quality/ranking based"
+      ],
+      "finding": "Donor still derives candidates from server enumeration/ranking and has no user-owned deterministic Light order/exclusion contract.",
+      "id": "R23-CPL-012",
+      "lightAction": "Use separate Light failover-order state keyed by stable server IDs with ordered and excluded IDs.",
+      "severity": "ARCHITECTURE",
+      "sourcePaths": [
+        "app/lib/server-service.sh",
+        "app/bin/broray-server-auto-switch"
+      ]
+    },
+    {
+      "component": "co-install ownership",
+      "evidence": [
+        "full donor owns /opt/broray, managed proxy interface and WebUI listener"
+      ],
+      "finding": "Full BROray and Light would compete for managed Keenetic proxy, listener and runtime ownership if active together.",
+      "id": "R23-CPL-013",
+      "lightAction": "FAIL_CLOSED_BY_DEFAULT on simultaneous active full BROray; migration/side-by-side test tooling is separate from runtime co-ownership.",
+      "severity": "ARCHITECTURE",
+      "sourcePaths": [
+        "state-seed/config/lighttpd.conf",
+        "app/lib/interface-owner.sh",
+        "updater platform"
+      ]
+    }
+  ],
+  "schemaVersion": 1,
+  "sourceCandidate": "3.0.0-r23c02"
+}

@@ -1,0 +1,107 @@
+{
+  "added": [
+    {
+      "path": "app/web-new/api/servers/quality-refresh-save.cgi",
+      "treatment": "DROP"
+    },
+    {
+      "path": "app/web-new/api/servers/quality-refresh-status.cgi",
+      "treatment": "DROP"
+    },
+    {
+      "path": "app/web-new/assets/js/servers-quality-refresh.js",
+      "treatment": "DROP"
+    }
+  ],
+  "changed": [
+    {
+      "path": "SHA256SUMS",
+      "treatment": "REPLACE"
+    },
+    {
+      "path": "app/bin/broray-server-auto-switch",
+      "treatment": "REPLACE"
+    },
+    {
+      "path": "app/bin/broray-servers",
+      "treatment": "ADAPT"
+    },
+    {
+      "path": "app/lib/interface-owner.sh",
+      "treatment": "ADAPT"
+    },
+    {
+      "path": "app/lib/server-service.sh",
+      "treatment": "ADAPT"
+    },
+    {
+      "path": "app/share/release/manifest.json",
+      "treatment": "REPLACE"
+    },
+    {
+      "path": "app/web-new/api/servers/auto-switch-save.cgi",
+      "treatment": "ADAPT"
+    },
+    {
+      "path": "app/web-new/assets/css/allpage.css",
+      "treatment": "REPLACE"
+    },
+    {
+      "path": "app/web-new/assets/js/keenetic.js",
+      "treatment": "DROP"
+    },
+    {
+      "path": "app/web-new/assets/js/servers-auto-switch.js",
+      "treatment": "REPLACE"
+    },
+    {
+      "path": "app/web-new/assets/js/servers.js",
+      "treatment": "REPLACE"
+    },
+    {
+      "path": "app/web-new/broray.html",
+      "treatment": "DROP"
+    },
+    {
+      "path": "app/web-new/build.json",
+      "treatment": "REPLACE"
+    },
+    {
+      "path": "app/web-new/servers.html",
+      "treatment": "REPLACE"
+    },
+    {
+      "path": "release.json",
+      "treatment": "REPLACE"
+    },
+    {
+      "path": "state-seed/config/system/server-auto-switch.json",
+      "treatment": "REPLACE"
+    }
+  ],
+  "from": {
+    "applicationSha256": "ad231c899e0a93f90f65489b8b6588aa09ae94b43c1d838e13e4458079c862bd",
+    "candidateId": "3.0.0-r20c01",
+    "release": "3.0.0-r20"
+  },
+  "interpretation": {
+    "cleanBootstrap": "BYTE_IDENTICAL_TO_R20",
+    "keeneticInterfaceOwnershipFix": "ADAPT_MUST_PRESERVE",
+    "lightConceptChangeRequired": false,
+    "newQualityRefreshFiles": "DROP_ALL_3",
+    "updaterPlatform": "BYTE_IDENTICAL_TO_R20"
+  },
+  "removed": [],
+  "schemaVersion": 1,
+  "summary": {
+    "added": 3,
+    "byteIdenticalCommon": 268,
+    "changed": 16,
+    "removed": 0
+  },
+  "to": {
+    "applicationSha256": "69679f6d7339b856faf28f69cb1800254984e5400201fe97247011ab166c3f85",
+    "candidateId": "3.0.0-r23c02",
+    "release": "3.0.0-r23"
+  }
+}

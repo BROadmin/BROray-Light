@@ -1,0 +1,31 @@
+{
+  "candidateId": "3.0.0-r23c02",
+  "cleanBootstrapSha256": "fb4943e3d336d091b16e6cf436e2a7eefe7274422246c8038a7eea2e6c0d79a0",
+  "installerSha256": "12f9d9edace123c1137d6143210af7c1e7157109859efbc0e75c02fdc53cec21",
+  "objects": {
+    "application": {
+      "archiveMembers": 327,
+      "directories": 40,
+      "hardlinks": 0,
+      "regularFiles": 287,
+      "sha256": "69679f6d7339b856faf28f69cb1800254984e5400201fe97247011ab166c3f85",
+      "sizeBytes": 1954418,
+      "symlinks": 0,
+      "unsafePaths": 0
+    },
+    "platform": {
+      "archiveMembers": 14,
+      "directories": 6,
+      "hardlinks": 0,
+      "regularFiles": 8,
+      "sha256": "eaf2eafb62d1b108fe576d1fda09ae7a5d15ad90f71272abc23f321d397611b0",
+      "sizeBytes": 154547,
+      "symlinks": 0,
+      "unsafePaths": 0
+    }
+  },
+  "releaseJsonSha256": "2b376932d7e7d7a773e1454012a512d382014890f514e3181843fa24689e11f1",
+  "schemaVersion": 1,
+  "stableRelease": "3.0.0-r23",
+  "status": "PASS"
+}

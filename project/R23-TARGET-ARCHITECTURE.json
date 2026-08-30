@@ -1,0 +1,140 @@
+{
+  "failover": {
+    "bestQuality": false,
+    "lowestPingRanking": false,
+    "preferredServer": false,
+    "qualityHistory": false,
+    "ratings": false,
+    "safety": [
+      "failure threshold",
+      "cooldown/attempt guard",
+      "Xray config test before activation",
+      "post-activation connectivity check",
+      "rollback on failed activation",
+      "global operation serialization"
+    ],
+    "scheduledQualityRefresh": false,
+    "selection": "deterministic persisted order",
+    "stateModel": "separate ordered/excluded server-ID configuration; stable subscription IDs remain authoritative"
+  },
+  "installationPolicy": {
+    "activeCoInstallWithFullBROray": "FAIL_CLOSED_BY_DEFAULT",
+    "migration": "NOT_PART_OF_R0007_PREPARATION",
+    "reason": "Both editions would otherwise compete for managed Keenetic proxy, web listener and service/runtime ownership."
+  },
+  "keenetic": {
+    "homeActions": [
+      "status",
+      "configure",
+      "repair",
+      "refresh"
+    ],
+    "preserveContracts": [
+      "managed-interface ownership",
+      "r23 zero-or-one proxy connect via binding validator",
+      "exact expected-vs-actual comparison",
+      "write-policy gate",
+      "description synchronization",
+      "rollback",
+      "Lighttpd ownership/restore"
+    ],
+    "webuiDelete": false
+  },
+  "paths": {
+    "applicationRoot": "/opt/broray-light",
+    "globalOperationLock": "/opt/var/lock/broray-light/global-operation.lock",
+    "persistentOperationState": "/opt/var/lib/broray-light/operations",
+    "persistentUpdaterState": "/opt/var/lib/broray-light-updater",
+    "runtimeXray": "/opt/broray-light/runtime/xray"
+  },
+  "product": "BROray-Light",
+  "protocols": {
+    "skippedInSubscriptions": [
+      "VMess",
+      "Trojan",
+      "Shadowsocks",
+      "Hysteria2",
+      "TUIC",
+      "SOCKS",
+      "HTTP/HTTPS proxy URIs"
+    ],
+    "supported": [
+      "VLESS"
+    ]
+  },
+  "schemaVersion": 1,
+  "services": {
+    "primary": "S24broray-light",
+    "removedStandalone": [
+      "connection-monitor init",
+      "WebUI init",
+      "auto-switch init",
+      "subscription-scheduler init"
+    ],
+    "updater": "separate updater control plane derived from updater-v5"
+  },
+  "sourceBase": {
+    "candidateId": "3.0.0-r23c02",
+    "release": "3.0.0-r23"
+  },
+  "updater": {
+    "basis": "fork of broray-updater/5 control-plane semantics, not byte-exact platform reuse",
+    "change": [
+      "product/package identity",
+      "paths",
+      "required app files",
+      "service health topology",
+      "remove legacy BROray migration",
+      "remove routes-operation awareness"
+    ],
+    "duplicateUpdaterPlatformInsideAppSlot": false,
+    "retain": [
+      "releaseId comparison",
+      "signed stable index",
+      "app-slot atomic rename",
+      "health gate",
+      "automatic rollback",
+      "request/global locks"
+    ]
+  },
+  "webui": {
+    "homeBlocks": [
+      "activeServer",
+      "automaticFailover",
+      "keeneticManagedInterface",
+      "xrayVersionUpdate",
+      "brorayLightVersionUpdate"
+    ],
+    "pages": [
+      "home",
+      "servers",
+      "subscriptions"
+    ],
+    "scheduledQualityRefreshCard": false,
+    "separatePagesRemoved": [
+      "BROray",
+      "Keenetic",
+      "Xray",
+      "DNS-over-TLS",
+      "Routes overview",
+      "Routes custom",
+      "Routes catalog"
+    ],
+    "themeCount": 1
+  },
+  "xray": {
+    "manualMaintenanceUi": false,
+    "preserveContracts": [
+      "shared runtime outside app slot",
+      "config validation",
+      "safe binary update",
+      "rollback",
+      "post-update start/health check"
+    ],
+    "webuiActions": [
+      "status",
+      "check update",
+      "update"
+    ]
+  }
+}

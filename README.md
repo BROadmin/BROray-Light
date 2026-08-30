@@ -10,54 +10,28 @@ BROray-Light intentionally keeps only three WebUI pages:
 2. **Servers** — VLESS servers, check, activate, delete, ordering and inclusion in automatic failover.
 3. **Subscriptions** — add/update/delete subscriptions and import only VLESS servers.
 
-The product keeps automatic server switching, but does not keep ratings, latency history or quality-history graphs.
-
-## Explicitly excluded
-
-- protocols other than VLESS;
-- routes and BAT import;
-- DNS-over-TLS management;
-- separate Keenetic, Xray and BROray system pages;
-- complex server-parameter editor;
-- manual Xray start/stop/maintenance UI;
-- backup/restore/remove operations from WebUI;
-- multiple UI themes.
+Automatic server switching is retained, but ratings, quality history, best-quality/lowest-ping selection and the full BROray scheduled quality-refresh subsystem are excluded.
 
 ## Architecture direction
 
-BROray-Light is a separate product and repository. It reuses only verified mechanisms from BROray Stable and removes unrelated modules physically rather than merely hiding them in the UI.
+BROray-Light is a separate product and repository. It reuses only verified mechanisms from exact BROray Stable bytes and physically removes unrelated modules rather than merely hiding them.
 
-Target runtime namespace:
-
-```text
-/opt/broray-light/
-```
-
-Target primary application service:
-
-```text
-S24broray-light
-```
-
-Xray and lighttpd remain separate runtime processes where required by the platform; “one service” means one BROray-Light application-control service. The updater remains a separate control-plane component derived from updater-v5 semantics.
+Target namespace: `/opt/broray-light/`. Target primary application service: `S24broray-light`.
 
 ## Upstream baseline
 
-The current donor baseline is BROray Stable `3.0.0-r20`, technical candidate `3.0.0-r20c01`, published 2026-08-30.
+Current preparation baseline is BROray Stable `3.0.0-r23`, technical candidate `3.0.0-r23c02`, verified from exact release bytes on 2026-08-30. Current `BROadmin/BROray` `main` is not treated as the byte-exact donor.
 
-The exact Stable application, updater platform, clean bootstrap and installer were fetched from the signed/current Stable index and verified by recorded SHA-256 values. The current `BROadmin/BROray` `main` branch remains development/documentation context and is **not** treated as byte-exact Stable source.
+See `docs/UPSTREAM-STABLE-PIN.md` and `checkpoints/R0007/REPORT.md`.
 
-See `docs/UPSTREAM-STABLE-PIN.md` and `checkpoints/R0006/REPORT.md`.
-
-## Preparation status
+## Status
 
 ```text
-R20_PREPARATION_STATUS=PASS
-EXACT_STABLE_DONOR=PASS
-DONOR_FILES_CLASSIFIED=284/284
+REPOSITORY_BOOTSTRAP=PASS
+R23_PREPARATION=PASS
+EXACT_R23C02_DONOR=PASS
+FILE_CLASSIFICATION=287/287
 UNCLASSIFIED=0
-IMMEDIATE_DROP_LOGICAL_BYTES=3866549
-IMMEDIATE_DROP_PERCENT=75.32
-NEXT_STAGE=BUILD_LIGHT_SOURCE_TREE_FROM_R20_TREATMENT_MAP
+NEXT_STAGE=BUILD_LIGHT_SOURCE_TREE_FROM_R23_TREATMENT_MAP
 PRODUCTION_MUTATION=NONE
 ```

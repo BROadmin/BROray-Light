@@ -1,0 +1,14 @@
+{
+  "canonicalPayloadCommitted": false,
+  "expectedSha256": "cddced80ce6dd325c2496e38aa303e459e23df7dd9164ddef65bb3f07df1c2f0",
+  "failedPart": ".prep-r23-payload/part-01",
+  "failureClass": "TRANSPORT_PART_SHA256_MISMATCH",
+  "failureId": "BROray-Light-R23-REMOTE-PERSISTENCE-R0007-R1",
+  "firstErrorPolicy": "STOPPED_NO_RERUN",
+  "jobId": "99320432705",
+  "observedSha256": "3dc6cd83d41ceeac00af6a5f09e8656365a64f32e5fa3efe5313cddb522601ae",
+  "schemaVersion": 1,
+  "status": "FAIL_PRESERVED",
+  "workflowParentCommit": "ad454f37364f2d36ac75da96aa3e0c27fbd4530b",
+  "workflowRunId": "33335081546"
+}

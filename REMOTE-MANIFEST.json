@@ -1,110 +1,25 @@
 {
-  "files": [
-    {
-      "path": "README.md",
-      "sha256": "0deaee5a653195b9c840e85bd67d73ea45350c9b683dbe8d9eacc77a2029bf51",
-      "sizeBytes": 2324
-    },
-    {
-      "path": "checkpoints/R0006/CHECKPOINT-01-R20-PREPARATION.json",
-      "sha256": "cdc7a3c4d6574d2fa330580be81b3b6ef2b5f89f20ae6bee7cf3fe1784876c4c",
-      "sizeBytes": 2258
-    },
-    {
-      "path": "checkpoints/R0006/REPORT.md",
-      "sha256": "e6d88708ba8f877b6ecf91697d89d76ee590d1e9baf24d7568988bd816fa27c6",
-      "sizeBytes": 4555
-    },
-    {
-      "path": "checkpoints/R0006/process-failures/FAILURE-JSON-VALIDATION-PER-FILE-PYTHON-TIMEOUT.json",
-      "sha256": "238c660aa5eda51271d95edd1e1e4032ed9221034cb0aa1035a6911eee27fe16",
-      "sizeBytes": 414
-    },
-    {
-      "path": "checkpoints/R0006/process-failures/FAILURE-VALIDATION-MONOLITHIC-TIMEOUT.json",
-      "sha256": "6396a24ca0d75a4c86b1e6133ad44009811cd002428f0b47ff6cdef6dde5e132",
-      "sizeBytes": 431
-    },
-    {
-      "path": "docs/UPSTREAM-STABLE-PIN.md",
-      "sha256": "1c3a2a2492a8a766f1ee856d47023d4028e65c73c8954b02f89e70791342f300",
-      "sizeBytes": 1933
-    },
-    {
-      "path": "project/R20-COUPLING-REGISTER.json",
-      "sha256": "3a6b43de9e4b30356069964f1beb82e4de07715331432492e6c561edc1fb48c4",
-      "sizeBytes": 9061
-    },
-    {
-      "path": "project/R20-DONOR-FILE-TREATMENT.index.json",
-      "sha256": "96d277293042926b10e5efcd5eb3c2a97288d65ed9bacd3a0d5419ef657bdded",
-      "sizeBytes": 3316
-    },
-    {
-      "path": "project/R20-DONOR-FILE-TREATMENT.parts/part-01.json",
-      "sha256": "9465c16502708eb6ad820387093c389f1691b325443308f6f524d3aa38f08d34",
-      "sizeBytes": 9394
-    },
-    {
-      "path": "project/R20-DONOR-FILE-TREATMENT.parts/part-02.json",
-      "sha256": "dce673d15bfb9132beecae0d2fbb6d36c1209237d4e576680fc062beda7373b6",
-      "sizeBytes": 8788
-    },
-    {
-      "path": "project/R20-DONOR-FILE-TREATMENT.parts/part-03.json",
-      "sha256": "3d0d9e1265fbf32c4c891c22e11d8a09f4cd517b9d30eb5171ca2fddea233392",
-      "sizeBytes": 9873
-    },
-    {
-      "path": "project/R20-DONOR-FILE-TREATMENT.parts/part-04.json",
-      "sha256": "7d868de631f57ab4a0df4d9c39fe153fa480438d2cf89cbd9bd97cd87fe5ef66",
-      "sizeBytes": 9776
-    },
-    {
-      "path": "project/R20-DONOR-FILE-TREATMENT.parts/part-05.json",
-      "sha256": "503040fbc67e769028efa409c8add56fb3e1a090b730ba2ac514423e7c61bfb2",
-      "sizeBytes": 8882
-    },
-    {
-      "path": "project/R20-DONOR-FILE-TREATMENT.parts/part-06.json",
-      "sha256": "b81f48dfdb4a556e3f0dead285d8336cf08f6af1d8620fbe4b8b8b59a6cb9b22",
-      "sizeBytes": 9238
-    },
-    {
-      "path": "project/R20-DONOR-FILE-TREATMENT.parts/part-07.json",
-      "sha256": "c1614df0aaef65eb7c4578ee5687aaac01045ab11023f4e05ad0bc82d22a08a6",
-      "sizeBytes": 9659
-    },
-    {
-      "path": "project/R20-DONOR-FILE-TREATMENT.parts/part-08.json",
-      "sha256": "2f76debe2489bcd450f46ac8088009fc9ca21bdb3f2a0442b8cad915c5661075",
-      "sizeBytes": 9123
-    },
-    {
-      "path": "project/R20-DONOR-FILE-TREATMENT.parts/part-09.json",
-      "sha256": "e709171eb4f4c458b202a873d513463e631f093308767a032fe53340381e5ff2",
-      "sizeBytes": 7743
-    },
-    {
-      "path": "project/R20-DONOR-INVENTORY.json",
-      "sha256": "4bf0d9d8ef6e73467860185930ba1d4e5dd53ced8a3035626a09fc8b59fef827",
-      "sizeBytes": 3523
-    },
-    {
-      "path": "project/R20-TARGET-ARCHITECTURE.json",
-      "sha256": "a4c4ab93f9df662900fcfe2cac5cbfb7fdf5d41be09c66f66624270ba5aa5f53",
-      "sizeBytes": 3549
-    },
-    {
-      "path": "project/UPSTREAM-STABLE-PIN.json",
-      "sha256": "e93d18f79f2f60dd33fe44e13eaf79c0d27c31b606ed8eee82813af6acdd375b",
-      "sizeBytes": 1260
-    },
-    {
-      "path": "src/README.md",
-      "sha256": "11726e4b580aa16e5981c89485b0e6aa927242b0a94b61f91faf5a48f7e61432",
-      "sizeBytes": 636
-    }
-  ],
-  "schemaVersion": 1
+  "checkpointId": "BROray-Light-R23-REMOTE-R0007",
+  "files": {
+    "README.md": "5a2d4fc0a619fc2239d865d6525b5eb5003b9d168672e586f564095461cfaf8f",
+    "checkpoints/R0007/CHECKPOINT-02-R23-PREPARATION.json": "3ffcd8878c291b5c34f0bdf3633c73d5c5eeb0b884e5295cc161b04d9956ea47",
+    "checkpoints/R0007/CHECKPOINT-02-R23-PREPARATION.json.sha256": "0d3d364578a06ec0caf52d32dfe6e273176b5deee70093bfa91c81f37a77d9c9",
+    "checkpoints/R0007/EXACT-DONOR-RECEIPT.json": "cb050f7ca2bb82386a0acdd43833686dd24ac32feddb6c217217ec718118e537",
+    "checkpoints/R0007/REPORT.md": "3e237df0702e9b75b5307a57a8a82799f102a5205fbb177d0d3b2822b0c5db53",
+    "checkpoints/R0007/REPORT.md.sha256": "5b457a52b5bac77e4ed7f98d8607abc2d2009907e410bf15858c506f6be7b1fd",
+    "checkpoints/R0007/SHA256SUMS": "5cf51044c87b0dd580610662fb83c2d4f93366f8667b313be42883cfdbb9dba1",
+    "checkpoints/R0007/SHA256SUMS.sha256": "ff19754041fbb8e1134bf3259396fec0d4e5a03c601de2f27fd734447989b462",
+    "checkpoints/R0007/VALIDATION.json": "1ba9afb9922996809d66ac7e3828912b24b68249721b665b71a28ef8db50a7d3",
+    "checkpoints/R0007/VALIDATION.json.sha256": "462cda5fc8cfbce972beaeca5af3ac00579cd588f620464549210be74e639cde",
+    "docs/UPSTREAM-STABLE-PIN.md": "1dd36be5b701439c7f1d1b9ef5b637992c7e65228e0d30ef7df81754df6af4e5",
+    "project/R20-TO-R23-DELTA.json": "eb98d1ee2265c41cf1423fadf1eb874e419f89122893e526ee198a281f4ae497",
+    "project/R23-COUPLING-REGISTER.json": "3c5e2686006b62c47b7ad7338a5cabe15fdf8b3fa6074fc3f1aaa33a7b929038",
+    "project/R23-DONOR-FILE-TREATMENT.json": "e4a1e9fe496c3da9a88d958c0a9c9fb7cdc16847a80a05d87c321e93a101de09",
+    "project/R23-DONOR-INVENTORY.json": "b8b527665cc812e9262417b40062f6877101e67171e8981a93b39bb61ba742e6",
+    "project/R23-TARGET-ARCHITECTURE.json": "28dc53c58ecd30e4430cf2f1f5f3876b320d736d1c05056a76a98a66cad820ea",
+    "project/UPSTREAM-STABLE-PIN.json": "9e3cce5eefae1c37d7f4c4e9baadc6efdd98adcc712590e1fcb7d9725b02b697",
+    "src/README.md": "7304bf14944b3bd8c913930f88f6d91720e427fe0d14d7f6335e73a1a26bb4e1"
+  },
+  "schemaVersion": 1,
+  "sourcePreparationCheckpointSha256": "3ffcd8878c291b5c34f0bdf3633c73d5c5eeb0b884e5295cc161b04d9956ea47"
 }

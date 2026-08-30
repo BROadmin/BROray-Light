@@ -1,0 +1,1449 @@
+{
+  "records": [
+    {
+      "path": "SHA256SUMS",
+      "sha256": "e8e77ad4e8c0acd618b7df66151bb2bd80202ac1b0c2ac43b3d0eaa2a4253675",
+      "sizeBytes": 29140
+    },
+    {
+      "path": "SHA256SUMS.preparation-new",
+      "sha256": "7dd6f0959a25bf360046db9b8fbced1e3029b825b8a2a2932907b4aef9baf9df",
+      "sizeBytes": 27565
+    },
+    {
+      "path": "app/bin/broray",
+      "sha256": "83f23b340991e918f8942b42da6870e595ecdce0f0d3a1a298fe4f460ac21f7a",
+      "sizeBytes": 7582
+    },
+    {
+      "path": "app/bin/broray-connection-monitor",
+      "sha256": "0a8a39fe0e819f8bb7599387ccce986352d6446d2efcb5ef6312a4f9c9d86be3",
+      "sizeBytes": 7486
+    },
+    {
+      "path": "app/bin/broray-home-snapshot",
+      "sha256": "584e6184f52df71fa0ca0dc0a56359d898bf67c58a6bfdc347894176784f2481",
+      "sizeBytes": 4318
+    },
+    {
+      "path": "app/bin/broray-home-snapshotd",
+      "sha256": "4b1f5e3612f759286cbb860622969a161ac29cb37169265a1bc1edd1756baede",
+      "sizeBytes": 2389
+    },
+    {
+      "path": "app/bin/broray-log-maintenance",
+      "sha256": "c277c7084fb5e9eba1082a25320ecac36f0c2cdce7bd96b9d997556739e62716",
+      "sizeBytes": 2876
+    },
+    {
+      "path": "app/bin/broray-route-prepare",
+      "sha256": "aa807099758c0f493a4b2a97245df9ae072f0bc78f4a82a4de2e32d522130af7",
+      "sizeBytes": 1554
+    },
+    {
+      "path": "app/bin/broray-routes",
+      "sha256": "b1024c2a891a35a9990a771abf91d32b238f4239c5db2482addfc1cd44edbf16",
+      "sizeBytes": 7320
+    },
+    {
+      "path": "app/bin/broray-routes-check-source",
+      "sha256": "24d313b83046987b34d433ebd822f1b37b357020538ae99ae616bc98a76857cb",
+      "sizeBytes": 405
+    },
+    {
+      "path": "app/bin/broray-routes-dot",
+      "sha256": "303bf17dbce5c25f8677529648e0179d026d5edf9358ee9a0e558f1331be10ec",
+      "sizeBytes": 805
+    },
+    {
+      "path": "app/bin/broray-routes-user",
+      "sha256": "5a301d5ccaae121b3f30694a76f2a01ed5b8083425171c9648e6ea28c1a17be2",
+      "sizeBytes": 1276
+    },
+    {
+      "path": "app/bin/broray-runtime-prepare",
+      "sha256": "7ead2f944e8595d1ccfbfcbe0adfb185dc161ea7ec0551f09ab13399b12adde2",
+      "sizeBytes": 1813
+    },
+    {
+      "path": "app/bin/broray-server",
+      "sha256": "5f40763e22fe76aa97abb52074de0be393ea1b666e67af865060b02a68d694be",
+      "sizeBytes": 2233
+    },
+    {
+      "path": "app/bin/broray-server-auto-switch",
+      "sha256": "608ed3eef2f24602c556f5c7fc29e52834d9b79ff22592186e40cf6f5e1d546c",
+      "sizeBytes": 36734
+    },
+    {
+      "path": "app/bin/broray-server-probe",
+      "sha256": "5e32ec46ef929e3504b1ae5e28d565ca85d8e4a089d1456a8620349c3f48aa87",
+      "sizeBytes": 8923
+    },
+    {
+      "path": "app/bin/broray-servers",
+      "sha256": "f059a7881fcdfcfca227ee48c8ee3dde5ca6a65579f231987750ba2c7a2226f3",
+      "sizeBytes": 1036
+    },
+    {
+      "path": "app/bin/broray-subscription-scheduler",
+      "sha256": "73761b9420f61d103bab53f728ccaed57cfeb70d37b6a09e031170d6ef12ef2f",
+      "sizeBytes": 4411
+    },
+    {
+      "path": "app/bin/broray-subscriptions",
+      "sha256": "e845fcb6536f83c6bb35ba71ca6cf5592ed1e427080bcb4466b03961ff4700a6",
+      "sizeBytes": 2148
+    },
+    {
+      "path": "app/bin/broray-system",
+      "sha256": "90d90279e02e3fc0a93e6e88c28f1e63f85397daadb5580219e1dfc6c26f0c8f",
+      "sizeBytes": 1121
+    },
+    {
+      "path": "app/bin/broray-test",
+      "sha256": "044a197278d5a7664aebdde2083fdd649c92d9cd147eee6415d250304b5e8982",
+      "sizeBytes": 139
+    },
+    {
+      "path": "app/bin/broray-xray-start",
+      "sha256": "c701a8817f7591b7e3686e502cce3c6e76556d12ecd5753d61600ba804b371dd",
+      "sizeBytes": 3546
+    },
+    {
+      "path": "app/bin/xray",
+      "sha256": "fb4434356a4be4d70c9b1eb86f7bdac3e170011268b7695c3e7d904fe0070ebd",
+      "sizeBytes": 51
+    },
+    {
+      "path": "app/lib/broray-cleanup.sh",
+      "sha256": "569c6a9b350ff7672d3b5b705cf4f95cd45a6128df7749e7086f007ee082dea5",
+      "sizeBytes": 26602
+    },
+    {
+      "path": "app/lib/broray-page.sh",
+      "sha256": "7b7d92a97674a9e3a58a31fd93bd5ed51f0fe58779a7adbdf35e0294584f0232",
+      "sizeBytes": 188919
+    },
+    {
+      "path": "app/lib/component-lifecycle.sh",
+      "sha256": "a02031611820276630752974fe3e8ea23d86c6dc0f2b56582db92020863c0c51",
+      "sizeBytes": 3313
+    },
+    {
+      "path": "app/lib/home-snapshot.sh",
+      "sha256": "4921fb507cb4593a974655a1f667d777b74bbad0642f857957da21516c13b58e",
+      "sizeBytes": 4645
+    },
+    {
+      "path": "app/lib/interface-core.sh",
+      "sha256": "16db72421c0f2344ba168277ba8cd310969c0f98ac85f2b7db28459a3a72ee6f",
+      "sizeBytes": 15383
+    },
+    {
+      "path": "app/lib/interface-manage.sh",
+      "sha256": "23c5fe2e08d6453f93b55f227fd778ce68e0f1cab003debc1c9364a8bbef9e43",
+      "sizeBytes": 19243
+    },
+    {
+      "path": "app/lib/interface-owner.sh",
+      "sha256": "b9994550a797d24eb8dab519314976443467937fa0ba1c04e84b5ab26018fd78",
+      "sizeBytes": 59841
+    },
+    {
+      "path": "app/lib/interface-sync.sh",
+      "sha256": "8cc3376afcd49f65d7240cdfd46ee4a229e014696153189ff2eb18f21a9de838",
+      "sizeBytes": 5065
+    },
+    {
+      "path": "app/lib/interface.sh",
+      "sha256": "36dc48bd9a54439c53874b7a28ebd5983af8888cf515b11fe7a36f54e6835ddb",
+      "sizeBytes": 1657
+    },
+    {
+      "path": "app/lib/keenetic-config-compare.sh",
+      "sha256": "ff570c70bb3da2b53e0dda6aea62dffa707672b175d6a6ef7514d01d7e100330",
+      "sizeBytes": 7467
+    },
+    {
+      "path": "app/lib/keenetic-page.sh",
+      "sha256": "500adf6ae6ff79d5a9f0da7ee3044c580e67e34adbc006a548335d293d76400e",
+      "sizeBytes": 33930
+    },
+    {
+      "path": "app/lib/keenetic-write-policy.sh",
+      "sha256": "5bccaee24390ea9d9cc9467c141d68b03a4504ec27533edda086bfc2dc6445b9",
+      "sizeBytes": 5249
+    },
+    {
+      "path": "app/lib/keenetic.sh",
+      "sha256": "a8267748aa7f969dec3b576555e3888730b59591b165658fb1b615321653c144",
+      "sizeBytes": 2010
+    },
+    {
+      "path": "app/lib/lighttpd-guard.sh",
+      "sha256": "737e55589f027582b6abff9ca91836adf675676331d57644bbc59bf66f932605",
+      "sizeBytes": 25829
+    },
+    {
+      "path": "app/lib/network.sh",
+      "sha256": "6c155a6999231fddb4f5fbe0b837d3f3d5ced043409f299994d3f2490be6757d",
+      "sizeBytes": 7482
+    },
+    {
+      "path": "app/lib/operation-manager.sh",
+      "sha256": "e69029906f912c27c40dc28fdfa09103ea8c21387d0ebc8c3df27ad31c0f13b0",
+      "sizeBytes": 6213
+    },
+    {
+      "path": "app/lib/package-setup.sh",
+      "sha256": "2e2e0e817bee9f29f2aa4c1f6545499e6d8bf80f4037d37756f5050cbfbb8550",
+      "sizeBytes": 32374
+    },
+    {
+      "path": "app/lib/package-transaction.sh",
+      "sha256": "fd9f8a65717284abab231f13ad17df5e9a5d8258848ab581a6d768a14e154877",
+      "sizeBytes": 687613
+    },
+    {
+      "path": "app/lib/parser-hysteria2.sh",
+      "sha256": "bd9bae9dd7113ccc5c5629f2d303fc51171ee6561f8683e30ed6e463382d1745",
+      "sizeBytes": 5984
+    },
+    {
+      "path": "app/lib/parser-shadowsocks.sh",
+      "sha256": "a38fcd61db836c0af4a437edad276fe84a90e9df18cc86115d2fa0e3fd2af907",
+      "sizeBytes": 4706
+    },
+    {
+      "path": "app/lib/parser-trojan.sh",
+      "sha256": "38541f0886fc04e4014c0e2ff317474b0a98e7223b73047c320fc362b5a13685",
+      "sizeBytes": 4777
+    },
+    {
+      "path": "app/lib/parser-vless.sh",
+      "sha256": "6c3ef215b38ac94d0dd55abc9695d789d4bb4d844e0862d9e4286e17f5a75569",
+      "sizeBytes": 4001
+    },
+    {
+      "path": "app/lib/parser-vmess.sh",
+      "sha256": "230b35d86eb175e40fd6737c4d86befc31921cbfbb82e82e670386412c671dfc",
+      "sizeBytes": 7252
+    },
+    {
+      "path": "app/lib/release-manifest.sh",
+      "sha256": "f2e31dadb75f75ae70a3901d77f522d1c4579e0fb27ce8820aaeec82c16b36da",
+      "sizeBytes": 1105
+    },
+    {
+      "path": "app/lib/routes-api-operation.sh",
+      "sha256": "3cbb6920a7e3788431e1feaaf327fcdbe5945c2b0d7d9ef8f95a4c0e4e9b037b",
+      "sizeBytes": 12510
+    },
+    {
+      "path": "app/lib/routes-bundle-registry.sh",
+      "sha256": "4c9c78381cc935fe665e9c7279376e0b241881dfceaffdb2aff778cdf706df43",
+      "sizeBytes": 10624
+    },
+    {
+      "path": "app/lib/routes-dot.sh",
+      "sha256": "0357ac981addbb1b49bb6d19de4c64147fa78228ea88570421a71541ace4defd",
+      "sizeBytes": 93291
+    },
+    {
+      "path": "app/lib/routes-download.sh",
+      "sha256": "c6569f08363547c5172a95aa54e56250ac708a7f10a783c5c36362a29c3c9e1f",
+      "sizeBytes": 28810
+    },
+    {
+      "path": "app/lib/routes-export-build.sh",
+      "sha256": "604c9734defefba6c4aec9986d46d7857825824520caa6262f4650bb56510a79",
+      "sizeBytes": 20050
+    },
+    {
+      "path": "app/lib/routes-operation-preflight.sh",
+      "sha256": "c963b2b793479b299016c1032a5bc5fbcd9914a57bf4092be4e59565ce243413",
+      "sizeBytes": 25386
+    },
+    {
+      "path": "app/lib/routes-operation-progress.sh",
+      "sha256": "e55ceb99021c7b9c296b290927e4a4b2538d9cc9acc18c2051509bb5535117d7",
+      "sizeBytes": 18999
+    },
+    {
+      "path": "app/lib/routes-page-summary.sh",
+      "sha256": "da8841aef2309d459313e2864683ef77f5799d8dd7805714b73363ba82d22446",
+      "sizeBytes": 32945
+    },
+    {
+      "path": "app/lib/routes-router-config.sh",
+      "sha256": "d1543feca600a5658704adee6eab5841549a3f59a7ccb22f224cc31108ae8715",
+      "sizeBytes": 28103
+    },
+    {
+      "path": "app/lib/routes-router-delete.sh",
+      "sha256": "522f4f1b5d106e0d2985ce63741a69847283abbdfc3762e59d2269464cb0a45a",
+      "sizeBytes": 61501
+    },
+    {
+      "path": "app/lib/routes-router-export.sh",
+      "sha256": "ad49b28cf9ceb562c04b09f81a10cf4faa066e2e35da7e298d16f21b798f2efc",
+      "sizeBytes": 94465
+    },
+    {
+      "path": "app/lib/routes-router-preflight.sh",
+      "sha256": "183e4c7f3d2d70c9116d26ae023a28d4a74948babe9a4ccab30f35a97e04a5f9",
+      "sizeBytes": 33364
+    },
+    {
+      "path": "app/lib/routes-router-presence.sh",
+      "sha256": "1e08b66be3463dc9ba6f04175ea400f2b4c9b37c33b3bfdffc4612f5a68610b3",
+      "sizeBytes": 6063
+    },
+    {
+      "path": "app/lib/routes-router-sync.sh",
+      "sha256": "5ad4e141d6ed6205b29d80638a54d940d71a17c1c8eaf65f00086c1213b839bd",
+      "sizeBytes": 87587
+    },
+    {
+      "path": "app/lib/routes-runtime-repair.sh",
+      "sha256": "e19eb9d3416d7fe64dcf8925a9c44d6866e828e9cf6a696dbb87eee0ef8f3e34",
+      "sizeBytes": 16792
+    },
+    {
+      "path": "app/lib/routes-source-check.sh",
+      "sha256": "4da6cebf7dfd3e89739b82ec60017996de5ca8dd0967cce9a3f4ed6cfc3b4af5",
+      "sizeBytes": 42195
+    },
+    {
+      "path": "app/lib/routes-summary.sh",
+      "sha256": "0f8a137d14987a060f91fa2d9ff290a0ab1ee247cb8e119c275b4eb86e7fb34e",
+      "sizeBytes": 25165
+    },
+    {
+      "path": "app/lib/routes-user-import.sh",
+      "sha256": "2a1f700840dea0ee99c64c73437fd4e72321d82fb8010aa069503efd213dcae8",
+      "sizeBytes": 61281
+    },
+    {
+      "path": "app/lib/routes-web-action.sh",
+      "sha256": "9fc6fd596e96a288875be02618769454cd261e3d54860cec20339a20be707cb5",
+      "sizeBytes": 13755
+    },
+    {
+      "path": "app/lib/runtime-capabilities.sh",
+      "sha256": "6fd0abcbeeed67dd564a2f82d8489b5c7da6eb45f1b2c4eebccdf0f30eba6258",
+      "sizeBytes": 68059
+    },
+    {
+      "path": "app/lib/server-command.sh",
+      "sha256": "c567bd8d0bea2851e0b6fe28e4374c1712550a18a20d91dd51826b04606a7036",
+      "sizeBytes": 4005
+    },
+    {
+      "path": "app/lib/server-config-generator.sh",
+      "sha256": "922987797336fad164732a77a1ace87c95829e4babf57078582ba9859c1fe6b3",
+      "sizeBytes": 13534
+    },
+    {
+      "path": "app/lib/server-import.sh",
+      "sha256": "c98e7516f6333b8faa706780748ab567ceca4b1defd7fc5f5f4e86a6f65c5522",
+      "sizeBytes": 36967
+    },
+    {
+      "path": "app/lib/server-service.sh",
+      "sha256": "86590bcb1b09a0a3cb16c2b1b312f74ef103424cfbf321b2f8f5debe86ac53f1",
+      "sizeBytes": 36550
+    },
+    {
+      "path": "app/lib/server-subscription-service.sh",
+      "sha256": "4893e266d5cc63eb521644ced641c5fc1a26c6be52e70d42be4958f8845c789b",
+      "sizeBytes": 30388
+    },
+    {
+      "path": "app/lib/server-xray-manager.sh",
+      "sha256": "8d31e56ccbd39068fc6a2bc4de76b875eda05f2e0d0a2de12ec38c5716bd47f6",
+      "sizeBytes": 3778
+    },
+    {
+      "path": "app/lib/server.sh",
+      "sha256": "f67676d59b6a659128303ecaa558c3e94909a7c41f58b5488aaa12f3f991f7aa",
+      "sizeBytes": 8434
+    },
+    {
+      "path": "app/lib/status-contract.sh",
+      "sha256": "3de011b7394f6e28c6e021800b01f1cb095791d343b2a9ade751d0c6bea338d9",
+      "sizeBytes": 5596
+    },
+    {
+      "path": "app/lib/subscription-service.sh",
+      "sha256": "6beccda49a9219abf64d2cbabd8f05d9a5f25ab09be1e57893dd13292c3d2f84",
+      "sizeBytes": 75292
+    },
+    {
+      "path": "app/lib/subscription.sh",
+      "sha256": "ec31455ef3fc93b3870ab049a36f7213ac5231d8aa8d4576793334caf87ca8d5",
+      "sizeBytes": 9669
+    },
+    {
+      "path": "app/lib/universal-platform-handoff.sh",
+      "sha256": "abc30ddf7198ace9b0b758f3030145f6250f31992956c1dff33b7999b31536f7",
+      "sizeBytes": 30524
+    },
+    {
+      "path": "app/lib/util.sh",
+      "sha256": "e2a5ecb3eda9825446c1e552378383faf284585302e4a9082fa1045d6db942d9",
+      "sizeBytes": 1662
+    },
+    {
+      "path": "app/lib/web-auth-native.sh",
+      "sha256": "f77d3766dc685c6105e6009d42bc33e153f2da3a240cada5152fc14fcd59346d",
+      "sizeBytes": 9075
+    },
+    {
+      "path": "app/lib/web-auth.sh",
+      "sha256": "9ee2c1d0efe518dff4de71adf5741f4b5d583f65b48282514adff5c73f4d8cb1",
+      "sizeBytes": 8402
+    },
+    {
+      "path": "app/lib/web-publish.sh",
+      "sha256": "d27c30f73146d9d9b311d05589218aab87d222fee70c21169a468eafdc929ea0",
+      "sizeBytes": 33559
+    },
+    {
+      "path": "app/lib/web-request-body.sh",
+      "sha256": "465dda083771bd046fd00b0cf5ca4577edb57c6745105d1e62f3bc16af311682",
+      "sizeBytes": 991
+    },
+    {
+      "path": "app/lib/xray-command.sh",
+      "sha256": "125ce250f06d84e93c540fbd6f96d407f46b3295b71a3970a7f9db2f281864af",
+      "sizeBytes": 2964
+    },
+    {
+      "path": "app/lib/xray-control.sh",
+      "sha256": "60f6b9ae6369acc1efad95e05f0796c3c5c2648c2520466e85ddf251f7583518",
+      "sizeBytes": 6773
+    },
+    {
+      "path": "app/lib/xray-update.sh",
+      "sha256": "dce397c49a5ada8dfb31d9c736644f57e3efc28c9780b22a0c8384262550bd1e",
+      "sizeBytes": 34646
+    },
+    {
+      "path": "app/lib/xray-web-operation.sh",
+      "sha256": "f013017c569818b9edfb7f780c36187908fb474cc7c031b0aed9e27a65813204",
+      "sizeBytes": 9173
+    },
+    {
+      "path": "app/lib/xray.sh",
+      "sha256": "63747e68b7a5292b02eac6fb410185f2da44ba675e82dae3c48f31f193b5ec33",
+      "sizeBytes": 19614
+    },
+    {
+      "path": "app/share/licenses/xray/LICENSE",
+      "sha256": "1f256ecad192880510e84ad60474eab7589218784b9a50bc7ceee34c2b91f1d5",
+      "sizeBytes": 16725
+    },
+    {
+      "path": "app/share/licenses/xray/README.md",
+      "sha256": "0d098928cf19c756a8c956c0b5ca736b75f9eaff0765fd71c26a3dcb413a3dde",
+      "sizeBytes": 12666
+    },
+    {
+      "path": "app/share/release/KEENETIC-ENTWARE-CAPABILITIES.md",
+      "sha256": "c8ed6ebf5cf2debb74d42a73199638a6a8c5d8f9cdff9d19d4cfaf9803c9d02d",
+      "sizeBytes": 23545
+    },
+    {
+      "path": "app/share/release/RELEASE-REQUIREMENTS-R14C01.md",
+      "sha256": "950ef2c32d93c774e2b00c7923a615a2f4f97e59b928b5ed0dbb4e6f2ea34802",
+      "sizeBytes": 5337
+    },
+    {
+      "path": "app/share/release/RELEASE-REQUIREMENTS.md",
+      "sha256": "6e1ac95ae5f47c3e2d3160ff4c09d52fdb707baf43f6b9430eb6d9a8048a2dad",
+      "sizeBytes": 1232
+    },
+    {
+      "path": "app/share/release/SPACE-CALCULATION.md",
+      "sha256": "7c876383f750ec390384a54b1383744fb45e9c6709535a4c6acd5789bdec4e78",
+      "sizeBytes": 18279
+    },
+    {
+      "path": "app/share/release/UPDATER-ARCHITECTURE.md",
+      "sha256": "69f23077362159f7b56485422668ec22102d998d0546e73ed3cea5ae5c2a12e6",
+      "sizeBytes": 1702
+    },
+    {
+      "path": "app/share/release/contracts/capability-contract.json",
+      "sha256": "4fd24f5a1435c14d5da1ca63b42f05d618d4879218c89ad5bf6994a2c055d2ab",
+      "sizeBytes": 12148
+    },
+    {
+      "path": "app/share/release/contracts/dot-catalog-contract.json",
+      "sha256": "0aa4dfd381e155f71b04586d46441cd21c0118e16364bc95ea18426cc1898d65",
+      "sizeBytes": 6473
+    },
+    {
+      "path": "app/share/release/contracts/page-workflow-contract.json",
+      "sha256": "8b709cd926ce161e079ce44236277a3f2712470448f49a5b1304938189aea167",
+      "sizeBytes": 2031
+    },
+    {
+      "path": "app/share/release/contracts/physical-write-certification-contract.json",
+      "sha256": "37035d88c9dca40af1e43902f0333228dfaeee05817b4364f513f266c4a75ac7",
+      "sizeBytes": 1600
+    },
+    {
+      "path": "app/share/release/contracts/source-admission-contract.json",
+      "sha256": "4f6858667f489864c29a61fc53e516a135fb8bf74d4cff6aeee6a3bc5683fe74",
+      "sizeBytes": 3181
+    },
+    {
+      "path": "app/share/release/contracts/space-contract.json",
+      "sha256": "6234582b04f496c8060c2b61a850ab0cf7603b4874460073044852b1d5603d2e",
+      "sizeBytes": 4052
+    },
+    {
+      "path": "app/share/release/manifest.json",
+      "sha256": "bd6a3ddff152040f4323e1b9be7338f82ed4bbe396fc5caa7e5f3d5c865b19c1",
+      "sizeBytes": 1501
+    },
+    {
+      "path": "app/share/release/requirements-traceability.json",
+      "sha256": "33bc3ef53fc726a70b3572dbe0dce98b3ff5fe0cd4054b14f4104ae8cf4c572d",
+      "sizeBytes": 3424
+    },
+    {
+      "path": "app/share/routes/manifests/chatgpt.json",
+      "sha256": "b2c6cdaece47b33310f857c908dbfbe97c90bb2a6d8a8acda95e0fb80e16a322",
+      "sizeBytes": 573
+    },
+    {
+      "path": "app/share/routes/manifests/facebook.json",
+      "sha256": "9d3022805a2e8724db838639e2451c34cf46efcd11287d19236c2d44491d019c",
+      "sizeBytes": 561
+    },
+    {
+      "path": "app/share/routes/manifests/instagram.json",
+      "sha256": "f86d11d0ce85db3ac2e7890050a3ec2310906bad338c58672f50965477ec22c9",
+      "sizeBytes": 563
+    },
+    {
+      "path": "app/share/routes/manifests/meta.json",
+      "sha256": "630bff4bc17528ab9c60dbcf2701bc6dc4414c5af4356f3140e7d484d7154089",
+      "sizeBytes": 539
+    },
+    {
+      "path": "app/share/routes/manifests/speedtest.json",
+      "sha256": "08c3267dfa56792ac3414f1548fe83b35b43cc03ee172a9c0dbc8020b9cf56dd",
+      "sizeBytes": 559
+    },
+    {
+      "path": "app/share/routes/manifests/telegram.json",
+      "sha256": "42f57603fe702b42e1f947c11b8ace404eb28f0fc80ef7fe4c7bf997249a985a",
+      "sizeBytes": 743
+    },
+    {
+      "path": "app/share/routes/manifests/tiktok.json",
+      "sha256": "ca81ca8df39ab9cbfb32dbddae716d221757732765712cbddbc59ed53f4cfc20",
+      "sizeBytes": 553
+    },
+    {
+      "path": "app/share/routes/manifests/whatsapp.json",
+      "sha256": "c1888bcce3b98308261d5739ba8c5aee9dc1255ba268c6d79cbc0127ae2ad94a",
+      "sizeBytes": 561
+    },
+    {
+      "path": "app/share/routes/manifests/youtube.json",
+      "sha256": "ba4a92dbb4b8d34502253bfd7f6be830f25424e22f0ef8688d2f3ecbc3ecf901",
+      "sizeBytes": 562
+    },
+    {
+      "path": "app/share/routes/user-import-version",
+      "sha256": "2985be8b28d3ade858e8d8fb4bc22f565b1bf6020dff982dce141f7721b9999c",
+      "sizeBytes": 6
+    },
+    {
+      "path": "app/share/updater-platform/SHA256SUMS",
+      "sha256": "c190e22b50647840d8097ef3fad2949406b303c604229f727e506186f2c78843",
+      "sizeBytes": 738
+    },
+    {
+      "path": "app/share/updater-platform/opt/bin/broray-updaterctl",
+      "sha256": "4d98d0be946e9dc8669d8f7d762b09c8b2920522bb86625bb1d45af2ecfe09fb",
+      "sizeBytes": 92
+    },
+    {
+      "path": "app/share/updater-platform/opt/etc/init.d/S22broray-updater",
+      "sha256": "9eed286cfdb0eff76b8b8bf6e4a2d2882353f4c90055f1356ba602c646587e58",
+      "sizeBytes": 2251
+    },
+    {
+      "path": "app/share/updater-platform/opt/libexec/broray-updater/broray-compat.sh",
+      "sha256": "88fcf98aac6ca1f57cb96a6441c0cd7939fbd0f0e31f7196abaf82804c6f17c0",
+      "sizeBytes": 5312
+    },
+    {
+      "path": "app/share/updater-platform/opt/libexec/broray-updater/broray-migrate-legacy.sh",
+      "sha256": "c66f665eea3f194492b032238365a3daea77649c16751f455aaaed7b08f851ea",
+      "sizeBytes": 14380
+    },
+    {
+      "path": "app/share/updater-platform/opt/libexec/broray-updater/broray-updater.sh",
+      "sha256": "a3c094b3a5e82ac82be7ec8b53c90f4023351a94eb6ba945b99501c0876e2c4a",
+      "sizeBytes": 119348
+    },
+    {
+      "path": "app/share/updater-platform/opt/libexec/broray-updater/minisign",
+      "sha256": "cec9f88be8c975af76854a53b4d49c3d257feae38d916edb0d16fb55aacd3000",
+      "sizeBytes": 195288
+    },
+    {
+      "path": "app/share/updater-platform/opt/libexec/broray-updater/xray-wrapper",
+      "sha256": "fb4434356a4be4d70c9b1eb86f7bdac3e170011268b7695c3e7d904fe0070ebd",
+      "sizeBytes": 51
+    },
+    {
+      "path": "app/web-new/api/auth-common.sh",
+      "sha256": "c5059dc7b3e95c557923eac491fa8f350c5f0d13d98bb423652cf87806435f0d",
+      "sizeBytes": 2812
+    },
+    {
+      "path": "app/web-new/api/broray/cleanup-plan.cgi",
+      "sha256": "ec72ecc8abc3c057bfc58c1084c17ffa50de0a396b4cd46a783a2d388dd1618c",
+      "sizeBytes": 3022
+    },
+    {
+      "path": "app/web-new/api/broray/cleanup.cgi",
+      "sha256": "42508d17d1531ca99a87489828cf15e9986681cbd8b04ff2d72e2940529380e8",
+      "sizeBytes": 2907
+    },
+    {
+      "path": "app/web-new/api/broray/info.cgi",
+      "sha256": "5c59eca31b7681557038bffbb6445a21ff8d7fb0cc4bb7bce74a2188e48ad38b",
+      "sizeBytes": 4002
+    },
+    {
+      "path": "app/web-new/api/broray/reinstall.cgi",
+      "sha256": "9f0c8e2432204df6a9548e312609e9eebfec1c9d3dd50c4470684526b0c84ebb",
+      "sizeBytes": 359
+    },
+    {
+      "path": "app/web-new/api/broray/restore.cgi",
+      "sha256": "db25faf1a6f23aa233038e0e95e5d1329c2eaf83bbede80a217ed4de3b578496",
+      "sizeBytes": 473
+    },
+    {
+      "path": "app/web-new/api/broray/uninstall.cgi",
+      "sha256": "38c7e4041c16d7c38dfffd5dfd3708e94cf73e1636df4011774b948fefb44100",
+      "sizeBytes": 1434
+    },
+    {
+      "path": "app/web-new/api/broray/update-check.cgi",
+      "sha256": "074c3d88512e70aef9cef673e216c749c06b557e13c5961e445a49aedcf1d5e0",
+      "sizeBytes": 341
+    },
+    {
+      "path": "app/web-new/api/broray/update-start.cgi",
+      "sha256": "476ea37622791c64d4f20f6a2e57ce982aca529e30c0ad992a965e854e297517",
+      "sizeBytes": 356
+    },
+    {
+      "path": "app/web-new/api/broray/update-status.cgi",
+      "sha256": "85cb2b96cce5ebf6ff8011d648f33003127bf34caf5337c3ae6b25484b693746",
+      "sizeBytes": 211
+    },
+    {
+      "path": "app/web-new/api/broray/updater-api-common.sh",
+      "sha256": "87fbc4f3f63da43a6eeb944be56d3611ba82b9d240c32cd451f40c7ee31032a8",
+      "sizeBytes": 7535
+    },
+    {
+      "path": "app/web-new/api/home/summary.cgi",
+      "sha256": "18ff70a48ce8cbf537a2de014881f0ffc218f67124f060cdfb6db1fc9622d72b",
+      "sizeBytes": 8197
+    },
+    {
+      "path": "app/web-new/api/keenetic/action-common.sh",
+      "sha256": "1fa99162749e6af2ce5e19b08f7f648f7d4143314c3670182c999464f5256b84",
+      "sizeBytes": 2976
+    },
+    {
+      "path": "app/web-new/api/keenetic/check-upstream.cgi",
+      "sha256": "8b4489e97c060c69200136632d413b086cc67a1961f1c831216352e173be0bd3",
+      "sizeBytes": 106
+    },
+    {
+      "path": "app/web-new/api/keenetic/create.cgi",
+      "sha256": "24fc347d9714c82872a728fd23b46bc3f25d77a84aeb93012e613624de1e7a9e",
+      "sizeBytes": 98
+    },
+    {
+      "path": "app/web-new/api/keenetic/delete.cgi",
+      "sha256": "f392d81d6462fdd773c815789120af400617a74a2d742133f314c4cd4a870388",
+      "sizeBytes": 98
+    },
+    {
+      "path": "app/web-new/api/keenetic/repair.cgi",
+      "sha256": "91f4edb5e3fe57074e26ac292dc577c7b0a30a3dbf4c0afb6b19d0d882755aa1",
+      "sizeBytes": 98
+    },
+    {
+      "path": "app/web-new/api/keenetic/status.cgi",
+      "sha256": "e9b0c42502193f5f802a01d3f61946b075a4ac753cce2889aaffb4e0eee0422a",
+      "sizeBytes": 1425
+    },
+    {
+      "path": "app/web-new/api/keenetic/sync-description.cgi",
+      "sha256": "357de0627de80b2500cfada1db2b396f17bdf0917e4067a240d0bfebe0193c10",
+      "sizeBytes": 108
+    },
+    {
+      "path": "app/web-new/api/login.cgi",
+      "sha256": "3292bc09dddec70d13615350c920dc0ad1620041e9cf20627cf7c3d199fb5667",
+      "sizeBytes": 3138
+    },
+    {
+      "path": "app/web-new/api/logout.cgi",
+      "sha256": "4430062a7d404abed44eac076e2db924fe3cca8d8d5860a1b1da1c49a174838f",
+      "sizeBytes": 619
+    },
+    {
+      "path": "app/web-new/api/protected-test.cgi",
+      "sha256": "7e8fab4d96832817b8f17cb379d5241178716e2e731574bc0fddda1ae0b51032",
+      "sizeBytes": 427
+    },
+    {
+      "path": "app/web-new/api/routes/catalog-summary.cgi",
+      "sha256": "90ace9061a16637a2f02d860f1a37e888870f0085b4676bc514ae85ef3ec090a",
+      "sizeBytes": 1559
+    },
+    {
+      "path": "app/web-new/api/routes/check.cgi",
+      "sha256": "e6b2d15e209c91a5d4d816376f23cfe5c0b36c2741e4721450de13f041e4cad7",
+      "sizeBytes": 6809
+    },
+    {
+      "path": "app/web-new/api/routes/custom-commit.cgi",
+      "sha256": "ec0b0015070a5f79cbba445002f304f3e9fb817570bebf58c606a227859ac2c4",
+      "sizeBytes": 723
+    },
+    {
+      "path": "app/web-new/api/routes/custom-common.sh",
+      "sha256": "e395bb869a0f2e5b6a94a931266a4cd66031d164823c3d43ba4ef40ffba0db4b",
+      "sizeBytes": 5927
+    },
+    {
+      "path": "app/web-new/api/routes/custom-list.cgi",
+      "sha256": "418805bbfd8a3d9e811e03910bf60dbee21e8077ff45bd06de20a4f4ad025f9e",
+      "sizeBytes": 182
+    },
+    {
+      "path": "app/web-new/api/routes/custom-preview.cgi",
+      "sha256": "f861c8512f40a2498108f5d9e04775fef5208dee7e1bee211f8200547dcb9ae9",
+      "sizeBytes": 725
+    },
+    {
+      "path": "app/web-new/api/routes/custom-remove.cgi",
+      "sha256": "a020d0f32ab6a0aae3a34fe6a849c0a99fa59f604886e18dfe6e38202cbff2e0",
+      "sizeBytes": 2875
+    },
+    {
+      "path": "app/web-new/api/routes/custom-status.cgi",
+      "sha256": "3daec641b11c612d664b0be9e7576410fbe23e636b0b5890dad2dc1a34c46114",
+      "sizeBytes": 3477
+    },
+    {
+      "path": "app/web-new/api/routes/custom-summary.cgi",
+      "sha256": "0add7bf525a73ef11023d362e1b75ceea2030ff97ec8d88e006024bcbae29990",
+      "sizeBytes": 1589
+    },
+    {
+      "path": "app/web-new/api/routes/custom-validate.cgi",
+      "sha256": "735488148988cba6ac09f132f59033a183111f630c386d0cd16db501d24dd99b",
+      "sizeBytes": 276
+    },
+    {
+      "path": "app/web-new/api/routes/delete.cgi",
+      "sha256": "92f518e658fcf34cf8cd2523eaf3b2b7658b8188a38c8ebd5a0dedb3737e1815",
+      "sizeBytes": 78
+    },
+    {
+      "path": "app/web-new/api/routes/dot-apply.cgi",
+      "sha256": "dd17ccf6ff82b01403b3967311b6a981295e4e7f3510d03967bf419349f6f943",
+      "sizeBytes": 391
+    },
+    {
+      "path": "app/web-new/api/routes/dot-common.sh",
+      "sha256": "ea078b55a00ccd583d82691c1b9be3d104f7c562d8fbc99c7e6d07a0cf10393a",
+      "sizeBytes": 5699
+    },
+    {
+      "path": "app/web-new/api/routes/dot-delete.cgi",
+      "sha256": "3f939e9f26e8d10fe0ffe95a8d82d9f1020d6f076c3d24a7d794f635c1de27fd",
+      "sizeBytes": 254
+    },
+    {
+      "path": "app/web-new/api/routes/dot-status.cgi",
+      "sha256": "a4c585d73a45c4b5aec9d4440ad52a335cac84e76ee984a2d5538db885ddb9e0",
+      "sizeBytes": 456
+    },
+    {
+      "path": "app/web-new/api/routes/dot-test.cgi",
+      "sha256": "4311321ced06ef873e15fb2325e66433b830413058e12600fb29aaa4675de165",
+      "sizeBytes": 388
+    },
+    {
+      "path": "app/web-new/api/routes/download.cgi",
+      "sha256": "42b11c7843d4f998faa276f285d6ea530ad72506656433c2d04427e8a18428da",
+      "sizeBytes": 6749
+    },
+    {
+      "path": "app/web-new/api/routes/export.cgi",
+      "sha256": "0821591bae3b283c6724a339c837d6375d700fd4f613123b2828e04df3b93cb4",
+      "sizeBytes": 78
+    },
+    {
+      "path": "app/web-new/api/routes/operation-status.cgi",
+      "sha256": "9f8eee266cb25b23dcd1946b4db768a32f2a53f5e189181c2ad8db1b7e40f42a",
+      "sizeBytes": 1542
+    },
+    {
+      "path": "app/web-new/api/routes/overview.cgi",
+      "sha256": "0e5ee6b3ae5b1c5219a5a638ae8e8a0368f13f7d2fc3cdcefb4a51c5bd7dd9d3",
+      "sizeBytes": 1446
+    },
+    {
+      "path": "app/web-new/api/routes/plan.cgi",
+      "sha256": "928b5517fe3c30c500958eea31f62008eb34677b648dea58d2041e9e4a70c962",
+      "sizeBytes": 4617
+    },
+    {
+      "path": "app/web-new/api/routes/preflight.cgi",
+      "sha256": "13409d79cacdf2dfdca25cbd9bfca19804a8f6d8e2cbbcae4268efe44f903c05",
+      "sizeBytes": 5767
+    },
+    {
+      "path": "app/web-new/api/routes/progress.cgi",
+      "sha256": "47f8a9d051edf57a37696c65e76543a09d5d15b9689a79e358e2809d0b46d3eb",
+      "sizeBytes": 2940
+    },
+    {
+      "path": "app/web-new/api/routes/resume.cgi",
+      "sha256": "0c4119e34208a1d05d1de75551ca3fa137f3d945632a15983c2aa113ff9e2730",
+      "sizeBytes": 102
+    },
+    {
+      "path": "app/web-new/api/routes/status.cgi",
+      "sha256": "5a59b1ffc4c8d08395fc69e63c90fbafd798fcee990d781ad883e137f1ed2fe1",
+      "sizeBytes": 6588
+    },
+    {
+      "path": "app/web-new/api/routes/stop.cgi",
+      "sha256": "c703caecfc83b756013afe68e3a299a5987e90c073816ad115d8870ff9ecaaeb",
+      "sizeBytes": 2262
+    },
+    {
+      "path": "app/web-new/api/routes/summary.cgi",
+      "sha256": "548cf432d295aa5b6cb897e08f74876079cec691eaf0a47e33061bf549fafa07",
+      "sizeBytes": 4438
+    },
+    {
+      "path": "app/web-new/api/routes/verify.cgi",
+      "sha256": "674638db7dbd43bec644ea5c1913d1a892f4ae0811b21a4265aa5cd74e79f600",
+      "sizeBytes": 15866
+    },
+    {
+      "path": "app/web-new/api/servers/activate.cgi",
+      "sha256": "d01be4455b25b5ff70e5e19cbb4447d11686570c06adbf83b56ada5e0293825e",
+      "sizeBytes": 635
+    },
+    {
+      "path": "app/web-new/api/servers/auto-switch-save.cgi",
+      "sha256": "206e8baf91254f57367d19169d2136bcd1ef6c434bd8bb15658bf8b2a6075b64",
+      "sizeBytes": 6681
+    },
+    {
+      "path": "app/web-new/api/servers/auto-switch-status.cgi",
+      "sha256": "81d8532d5bfdd366cfe91c7e619763035d0aae24e74df1a336c69967ecfd19a8",
+      "sizeBytes": 2230
+    },
+    {
+      "path": "app/web-new/api/servers/check.cgi",
+      "sha256": "f546cdc708d7aed4fc22222296e865001ccbc4d23a5adbf981e2681e9a88d763",
+      "sizeBytes": 639
+    },
+    {
+      "path": "app/web-new/api/servers/common.sh",
+      "sha256": "e916c698ef1f1249733bec2f920f1bbc09884904dbc72ef36a44e6c37c203e35",
+      "sizeBytes": 4735
+    },
+    {
+      "path": "app/web-new/api/servers/deactivate.cgi",
+      "sha256": "e67f16079eea26126e94ebbceb463550b4b807b880097a662dcf532a28dd168b",
+      "sizeBytes": 200
+    },
+    {
+      "path": "app/web-new/api/servers/delete.cgi",
+      "sha256": "0921aff977314af26fb6988f4bd1bb101cb5db73a6dabe56d2e9e6d1e949d3bf",
+      "sizeBytes": 634
+    },
+    {
+      "path": "app/web-new/api/servers/details.cgi",
+      "sha256": "61aab1bea9fa64730424a0bcc445929e154c0648dda66d35e4b92618aa57177f",
+      "sizeBytes": 383
+    },
+    {
+      "path": "app/web-new/api/servers/import.cgi",
+      "sha256": "7f8aae25f917f713473bb7ac4b1d4b2473c63d36fea8d83523323a865dde6b1d",
+      "sizeBytes": 813
+    },
+    {
+      "path": "app/web-new/api/servers/quality-refresh-save.cgi",
+      "sha256": "ee878a6b5fb0670d7662a0488de3c01b999bacba81c1ec0700c7b00055e1ed8c",
+      "sizeBytes": 6248
+    },
+    {
+      "path": "app/web-new/api/servers/quality-refresh-status.cgi",
+      "sha256": "8bfdbcaa624f74727f197e3a3c0c8b2dbeb757477894805fe44edf5827ea4496",
+      "sizeBytes": 2188
+    },
+    {
+      "path": "app/web-new/api/servers/summary.cgi",
+      "sha256": "93c5ac175f2d95cea66ba4069b8f239da613f1a9663d1856696d1b65e191177f",
+      "sizeBytes": 445
+    },
+    {
+      "path": "app/web-new/api/session.cgi",
+      "sha256": "495b8e14019a45471a316f90a1d0c95344c51b60b9665c8cb120fb4d2d45eaf9",
+      "sizeBytes": 469
+    },
+    {
+      "path": "app/web-new/api/subscriptions/common.sh",
+      "sha256": "94a61a747bdb8c5f2bddd5f4bdc58ac3721c16783e5dbce926e17e9095430751",
+      "sizeBytes": 5705
+    },
+    {
+      "path": "app/web-new/api/subscriptions/create.cgi",
+      "sha256": "baf9ea3ac6bc7f4f9ef9dd7b20b70c1aaa5f2274a7c2934a23cdcc98d20d940d",
+      "sizeBytes": 552
+    },
+    {
+      "path": "app/web-new/api/subscriptions/delete.cgi",
+      "sha256": "66253283a7241d6a47dd4596bb12cb72ed5fa8a33236569d776371a4288f09c6",
+      "sizeBytes": 290
+    },
+    {
+      "path": "app/web-new/api/subscriptions/details.cgi",
+      "sha256": "6886562d71baae200bd68fea7e98effe79502801e2f2f5f997295744a01f8f05",
+      "sizeBytes": 249
+    },
+    {
+      "path": "app/web-new/api/subscriptions/list.cgi",
+      "sha256": "b62de3dc6324f5dcfa88378947308d21d008f343efffec3c2b0af5b043b90c44",
+      "sizeBytes": 176
+    },
+    {
+      "path": "app/web-new/api/subscriptions/refresh.cgi",
+      "sha256": "3fe89fc1ab803c1d7f11d8dfc1fa22773163054d0e102f3e479144a481f507e7",
+      "sizeBytes": 304
+    },
+    {
+      "path": "app/web-new/api/subscriptions/servers.cgi",
+      "sha256": "a6f259e6697642a4e88cdfc7000c4b4236b9bbd437c462ae264a3a60aa65d86b",
+      "sizeBytes": 253
+    },
+    {
+      "path": "app/web-new/api/subscriptions/summary.cgi",
+      "sha256": "f067a28910edce8d0abeb3cff22314b5fee6d24a757be9a180dd88580205d829",
+      "sizeBytes": 179
+    },
+    {
+      "path": "app/web-new/api/subscriptions/update.cgi",
+      "sha256": "9e643c58cd94b375d1a0852faf1b4cc52d40bd789aedd5554d00a0ba68878e3c",
+      "sizeBytes": 641
+    },
+    {
+      "path": "app/web-new/api/xray/check-config.cgi",
+      "sha256": "af862e06c298659e97ef3222d0d7fc15cfad1df3fe135c5949a634353ab3437c",
+      "sizeBytes": 1944
+    },
+    {
+      "path": "app/web-new/api/xray/diagnostics.cgi",
+      "sha256": "57aa48d16b033fa691b99328c86290645b0c3f7202898e5cea4a27d1fe64b08b",
+      "sizeBytes": 9887
+    },
+    {
+      "path": "app/web-new/api/xray/operation-status.cgi",
+      "sha256": "c009a6c4bf026ab04a3655dc7da6b7abb47392e80ec2f2197ac29ecf365f5e10",
+      "sizeBytes": 1692
+    },
+    {
+      "path": "app/web-new/api/xray/reinstall.cgi",
+      "sha256": "63b1723cff0a64606df0abc1aadda6d20bfd33498b6d3756927b88f3fd3bf04a",
+      "sizeBytes": 257
+    },
+    {
+      "path": "app/web-new/api/xray/restart.cgi",
+      "sha256": "4c60d5a608a3dd716be150958b599205c75bb14bf0acf10ec963af3a8d9eda7e",
+      "sizeBytes": 2474
+    },
+    {
+      "path": "app/web-new/api/xray/start.cgi",
+      "sha256": "d231e14bacdde8d5346022c4e954740eeaf444f814f1262f3c4d6359a8f2a870",
+      "sizeBytes": 2446
+    },
+    {
+      "path": "app/web-new/api/xray/status.cgi",
+      "sha256": "de26b2a4f12bd07c6b46c24cc0f649b5db0d6d272cbaa92fc44632718815edc9",
+      "sizeBytes": 837
+    },
+    {
+      "path": "app/web-new/api/xray/stop.cgi",
+      "sha256": "0e9cd9992c88fac1b270d0189db27fbebe49d2a8262c24b034a492b5e3fa2e92",
+      "sizeBytes": 2448
+    },
+    {
+      "path": "app/web-new/api/xray/update-check.cgi",
+      "sha256": "c6770c73151ab2e77d9d217310f15189d85068e370e8375a494b8080a54af77a",
+      "sizeBytes": 1333
+    },
+    {
+      "path": "app/web-new/api/xray/update.cgi",
+      "sha256": "5b88738aea22e14a73c2365b7b4d6d9c4ac500eb9e18ebef13e7dbec01142aba",
+      "sizeBytes": 254
+    },
+    {
+      "path": "app/web-new/assets/css/allpage.css",
+      "sha256": "b0a79e3f48dac5ef870c9c09ca0423eb5b390b72c2f5245cc6f7efd44d2d7e36",
+      "sizeBytes": 151541
+    },
+    {
+      "path": "app/web-new/assets/icons/broray-icons.svg",
+      "sha256": "aa5e9d780897d57c8b1987168f7b3f2d4295c01e191d093856baff9d864df883",
+      "sizeBytes": 10493
+    },
+    {
+      "path": "app/web-new/assets/images/branding/apple-touch-icon.png",
+      "sha256": "7fd4d2e8c3b91d91a48e64763a396c4f6aeedbb31c9faba35d2fdae0ebb80174",
+      "sizeBytes": 26749
+    },
+    {
+      "path": "app/web-new/assets/images/branding/broray-logo-128.png",
+      "sha256": "65397f039d9bb4ad8f16e3b64f0db32719505f7aa6efd27a249b44d4dc3596e2",
+      "sizeBytes": 16179
+    },
+    {
+      "path": "app/web-new/assets/images/branding/broray-logo-160.png",
+      "sha256": "0bb763128bab34d0de177c26bc6b1ac1162f31303d73c3b661af0c2689cd9e56",
+      "sizeBytes": 22410
+    },
+    {
+      "path": "app/web-new/assets/images/branding/broray-logo-256.png",
+      "sha256": "08ac5505e82eaf5c552b20f254bf1f2bd2f5fd5540077ec8f9dfad38194d6354",
+      "sizeBytes": 45661
+    },
+    {
+      "path": "app/web-new/assets/images/branding/broray-logo-512.png",
+      "sha256": "b01e955be62166b8cfdc56f34ef84433d621f6765a553c43def473be0eb15d4f",
+      "sizeBytes": 138402
+    },
+    {
+      "path": "app/web-new/assets/images/branding/broray-logo-64.png",
+      "sha256": "8337a9abeb2fb467ee182f46f65595b0a29e13d98a570fa6aeb9f6d47c9715c8",
+      "sizeBytes": 6031
+    },
+    {
+      "path": "app/web-new/assets/images/branding/broray-logo-source.png",
+      "sha256": "20d344442b733dc43fec5807fd487da76da07c46b3be2573665958fc7f882bba",
+      "sizeBytes": 693145
+    },
+    {
+      "path": "app/web-new/assets/images/branding/favicon-16.png",
+      "sha256": "95a7fd6e95431dc668251e6f8e0090f3e53e7d998652eb4e416d8a0fd9eacfe9",
+      "sizeBytes": 1046
+    },
+    {
+      "path": "app/web-new/assets/images/branding/favicon-32.png",
+      "sha256": "bf5ad3dcb51af6bd1efceae06fde8406ae7512f66065f6573e02f4041f3b7e2d",
+      "sizeBytes": 2394
+    },
+    {
+      "path": "app/web-new/assets/images/branding/favicon.ico",
+      "sha256": "87e1206bce1a40d55777d67c32e61c6a3ff33f739fd0731c6d0c91cc831a643b",
+      "sizeBytes": 13978
+    },
+    {
+      "path": "app/web-new/assets/images/branding/icon-192.png",
+      "sha256": "b4f1862eaf59132fbf12ff5f3308c4b7657a273337c429c87b4b6133e99b805c",
+      "sizeBytes": 28765
+    },
+    {
+      "path": "app/web-new/assets/images/branding/icon-512.png",
+      "sha256": "b01e955be62166b8cfdc56f34ef84433d621f6765a553c43def473be0eb15d4f",
+      "sizeBytes": 138402
+    },
+    {
+      "path": "app/web-new/assets/images/routes/chatgpt.svg",
+      "sha256": "cbee92f16282ad2ab1c8cdec6d3a4d6c31ef4fb108783493113d3bcad3c07cf5",
+      "sizeBytes": 512
+    },
+    {
+      "path": "app/web-new/assets/images/routes/facebook.svg",
+      "sha256": "88d26f4144932dfa6255551533d1b4227e6fc562055e79c467b571e8475a1142",
+      "sizeBytes": 304
+    },
+    {
+      "path": "app/web-new/assets/images/routes/instagram.svg",
+      "sha256": "1ef469d0e861d4c79f4428e77d9c914491de8f8abb8b51b49c90ffa84f70e330",
+      "sizeBytes": 678
+    },
+    {
+      "path": "app/web-new/assets/images/routes/meta.svg",
+      "sha256": "61a3454d84f81a5da50c93af6ecb35dbfa4c8877a6c98929fe2de15ec3627969",
+      "sizeBytes": 302
+    },
+    {
+      "path": "app/web-new/assets/images/routes/speedtest.svg",
+      "sha256": "10ef32d263afaee23aa0570a275261f3bf9004981c3645318fd731041ce5ed94",
+      "sizeBytes": 387
+    },
+    {
+      "path": "app/web-new/assets/images/routes/telegram.svg",
+      "sha256": "6f283ba4ff69ffe79fc55beff4c1ad695a8d7ad3c7400546995153452fda0fb1",
+      "sizeBytes": 356
+    },
+    {
+      "path": "app/web-new/assets/images/routes/tiktok.svg",
+      "sha256": "c0abbb3510f994898f8b67553b8f2e6a7b2ac6766dfbe39819cf339aa39d8461",
+      "sizeBytes": 685
+    },
+    {
+      "path": "app/web-new/assets/images/routes/whatsapp.svg",
+      "sha256": "ef02d55946e730a485fe20b9676c14c298074e46ad2910b4972a8a19ddc25d74",
+      "sizeBytes": 629
+    },
+    {
+      "path": "app/web-new/assets/images/routes/youtube.svg",
+      "sha256": "e95be59fefa3bb0f63579a110760f38566f3bdb82c43a0309598d5672ce0645e",
+      "sizeBytes": 216
+    },
+    {
+      "path": "app/web-new/assets/images/support/cloudtips-qr.svg",
+      "sha256": "29d54113230cef9a7f72bdd2eabdf969df523cca36cd07edcde316a0240c8bec",
+      "sizeBytes": 12790
+    },
+    {
+      "path": "app/web-new/assets/js/app-shell.js",
+      "sha256": "75ad2106c58f362336e93283b42b21b58b8ca7610682fc8281aa1ed4a544af4f",
+      "sizeBytes": 11556
+    },
+    {
+      "path": "app/web-new/assets/js/broray.js",
+      "sha256": "7309e5993dcb8b2d1e2a9838fd3047e4e38556f0b9b981cab0c94cdb97cb1725",
+      "sizeBytes": 37211
+    },
+    {
+      "path": "app/web-new/assets/js/common.js",
+      "sha256": "526ad0309b670caf869dbfbf0f266c43dbc9b000b02090da67a35b7c07167244",
+      "sizeBytes": 5791
+    },
+    {
+      "path": "app/web-new/assets/js/dialogs.js",
+      "sha256": "856f191cfe001607f449ba9400485e99750628d4af2fdaa6147b37349070620d",
+      "sizeBytes": 10894
+    },
+    {
+      "path": "app/web-new/assets/js/dns.js",
+      "sha256": "a886ebfef1a91a63dc9d00e5040bf749f57bf04649d676cc565a5786abbaff69",
+      "sizeBytes": 32021
+    },
+    {
+      "path": "app/web-new/assets/js/home.js",
+      "sha256": "e520bc7e290fc45f93c9ee091f4635f39a5fa8686631395fdfb8f6e85ce2a8b0",
+      "sizeBytes": 17251
+    },
+    {
+      "path": "app/web-new/assets/js/icons.js",
+      "sha256": "0a5c5bdd9887509c549b9fd89576e7bdfd2a3b1f975f4f67726a7c0f17be1902",
+      "sizeBytes": 17215
+    },
+    {
+      "path": "app/web-new/assets/js/keenetic.js",
+      "sha256": "406ac0002c15e650e197cad1bc43ad056f10e5a019239fa7d4aacb602b2568e5",
+      "sizeBytes": 23675
+    },
+    {
+      "path": "app/web-new/assets/js/login.js",
+      "sha256": "f164011baa9fc0a4bfac92b21faf7813b6a326b223f23b79601284ed1060084c",
+      "sizeBytes": 2779
+    },
+    {
+      "path": "app/web-new/assets/js/modules-redirect.js",
+      "sha256": "7e49c90bdee330c6980e7793a16be19ddcb30477df78473ae6ac467b26f07c8a",
+      "sizeBytes": 39
+    },
+    {
+      "path": "app/web-new/assets/js/operation-log.js",
+      "sha256": "9e7629a4cd12d21d2c0da8c172034d473270086bb1f56e2dbb0c2fbe9fe87b81",
+      "sizeBytes": 1449
+    },
+    {
+      "path": "app/web-new/assets/js/routes-catalog.js",
+      "sha256": "8cdd515e3ce46ca6a29ec8f60f7faaf05faefc2dac2863518b21ae7a47d9ee77",
+      "sizeBytes": 91275
+    },
+    {
+      "path": "app/web-new/assets/js/routes-custom-page.js",
+      "sha256": "d6b1f468386cf860307540a89f9fb169b9cf37826e19544b04aa88b9e9a0804e",
+      "sizeBytes": 53603
+    },
+    {
+      "path": "app/web-new/assets/js/routes-operation.js",
+      "sha256": "497f65b082789892c04518310414d14f2ae6782a3b6cd00367a8bcc20f53bcd2",
+      "sizeBytes": 13559
+    },
+    {
+      "path": "app/web-new/assets/js/routes-overview.js",
+      "sha256": "7e38cb29f5fcbeb6d008e176bb88e087ec9460bd66cb6d5b22caa62ac9753986",
+      "sizeBytes": 6384
+    },
+    {
+      "path": "app/web-new/assets/js/servers-auto-switch.js",
+      "sha256": "466527290cacf7cb47988ea4a7130adf427143faf286f43dbdb9e4d89947e7d5",
+      "sizeBytes": 16551
+    },
+    {
+      "path": "app/web-new/assets/js/servers-check-all.js",
+      "sha256": "717a6d1edaccea9adc6a22cf7932d5125f79e54469f3ecdacb9c93cd269a498a",
+      "sizeBytes": 12391
+    },
+    {
+      "path": "app/web-new/assets/js/servers-completion.js",
+      "sha256": "706d92971a8647932eab9bafda0286aaa0afc046bc7b8e65144c36b30305df63",
+      "sizeBytes": 18959
+    },
+    {
+      "path": "app/web-new/assets/js/servers-import-preflight.js",
+      "sha256": "58610111cbba0b13f9e6caaa50632ce353cc6734038dce6fa8283f9907a0c2c1",
+      "sizeBytes": 37913
+    },
+    {
+      "path": "app/web-new/assets/js/servers-quality-refresh.js",
+      "sha256": "8674349aa0d62f8a53301180ecffd8ffa47a806099a9783ddc3a43772cbb06cb",
+      "sizeBytes": 8420
+    },
+    {
+      "path": "app/web-new/assets/js/servers.js",
+      "sha256": "07e0ce7924cd52f9e2d2ce32c4f71ea768f15f2f6ae9bd328778f3bde1154a15",
+      "sizeBytes": 32925
+    },
+    {
+      "path": "app/web-new/assets/js/subscriptions.js",
+      "sha256": "94e2b48d844a6884c1c689d10315319fc22740e889a2460bd961078ce90e3c24",
+      "sizeBytes": 23307
+    },
+    {
+      "path": "app/web-new/assets/js/theme-init.js",
+      "sha256": "2e66c2759352df04ac968811f1bdf258ebf16d145c55fc2c2b5d3618274f63d7",
+      "sizeBytes": 448
+    },
+    {
+      "path": "app/web-new/assets/js/theme.js",
+      "sha256": "ef1da1fd3bc21c65adcc7c486e3c88c2ed2bfb48718210c20cfb856f37f952d6",
+      "sizeBytes": 7317
+    },
+    {
+      "path": "app/web-new/assets/js/xray.js",
+      "sha256": "56a5fbe88c176fe34282d8f7e27b0b4a0e8ec6b8a4679d162accf90b54ce319e",
+      "sizeBytes": 27914
+    },
+    {
+      "path": "app/web-new/broray.html",
+      "sha256": "24b8eeee008e1ba93818984cf181520edb0b2ce17255a91f7d0bbe4c29df194e",
+      "sizeBytes": 26039
+    },
+    {
+      "path": "app/web-new/build.json",
+      "sha256": "6b7e23e7df17b8082182dd17c90629b8494da6c20dd29fa781842ffb0b995af6",
+      "sizeBytes": 506
+    },
+    {
+      "path": "app/web-new/dns.html",
+      "sha256": "f075f8d1aa3c3afdbd78b3291b52e91846993626b1bdb0e02b87e82f89f54f1f",
+      "sizeBytes": 18961
+    },
+    {
+      "path": "app/web-new/home.html",
+      "sha256": "559342bef3a39142f0171c29ec179e41a66770fee9bf959fbabc6c01d0475db8",
+      "sizeBytes": 17082
+    },
+    {
+      "path": "app/web-new/index.html",
+      "sha256": "33a1005c69e3ea52e65adb7340e55bdb68ccab687daeb89430b39c4fa08b32ed",
+      "sizeBytes": 3497
+    },
+    {
+      "path": "app/web-new/keenetic.html",
+      "sha256": "4983cb37cc02aaf283e200d1a78c441e22c4e624c8dde1eb00ee3ccd9b698270",
+      "sizeBytes": 19780
+    },
+    {
+      "path": "app/web-new/manifest.json",
+      "sha256": "93496cc78f8293f0087b6a1508d3fd535aa16e486ce13510c0e145c8d1c05a21",
+      "sizeBytes": 599
+    },
+    {
+      "path": "app/web-new/modules.html",
+      "sha256": "5d64b121863337a829160643ef1340da35548f3b67055fcd17b7397a73de1c7e",
+      "sizeBytes": 322
+    },
+    {
+      "path": "app/web-new/routes-custom.html",
+      "sha256": "e51a2338dfb077acfbefbce99c6db5d6972fd3b7106adb9585e5148866dd47f2",
+      "sizeBytes": 16882
+    },
+    {
+      "path": "app/web-new/routes-import.html",
+      "sha256": "a68c413e73787115a87a6b1329d9fcf75e8a487820486fdf2f8f61ba10f6fb8d",
+      "sizeBytes": 15990
+    },
+    {
+      "path": "app/web-new/routes.html",
+      "sha256": "1efa6fdbde3c9ffd6857799551ffeb866545f2cc2de26b26bf5d9800c944c462",
+      "sizeBytes": 17476
+    },
+    {
+      "path": "app/web-new/servers.html",
+      "sha256": "be94d6e9145f50a01034e5fe6c83ca8956cc2013428b2d15b019282c8ef37f6f",
+      "sizeBytes": 21935
+    },
+    {
+      "path": "app/web-new/subscriptions.html",
+      "sha256": "510e4dda8b81ae91927e274b13f1329fb3c5ce36e0cfe2a0c40c2c08b9bdcf0a",
+      "sizeBytes": 15815
+    },
+    {
+      "path": "app/web-new/xray.html",
+      "sha256": "44f7b08113f854964c2170de2ebe34210e0d185f4ba2615cdaaed6150d03cdbc",
+      "sizeBytes": 18131
+    },
+    {
+      "path": "init/S23broray-monitor",
+      "sha256": "b8c0702de3ea6eace40bb857e7cddf2dcf8901456defa15572ebdddfcbd2715f",
+      "sizeBytes": 2196
+    },
+    {
+      "path": "init/S24broray",
+      "sha256": "392d6ba14d2cdae8da1eafaf8bd53b518b249f2cdf1183436760dfedec82163f",
+      "sizeBytes": 6303
+    },
+    {
+      "path": "init/S25broray-web",
+      "sha256": "0d40e4afaecad2ef7cf9b27b693f879fc5b1f1d672af83a05dab957153b352ca",
+      "sizeBytes": 9376
+    },
+    {
+      "path": "init/S27broray-auto-switch",
+      "sha256": "f1af32c96924f1970d1c6191357e49dbde7fdb38daa7636fd55427f16be589ed",
+      "sizeBytes": 2421
+    },
+    {
+      "path": "init/S28broray-subscriptions",
+      "sha256": "edc386b212dc987fb9f77b27989564c78ccf135324f340920d622dc7753cb789",
+      "sizeBytes": 6283
+    },
+    {
+      "path": "release.json",
+      "sha256": "7119d679d4aa370d5db66ec86718f98563a3ab35bbbd7a3f0cb0f47e721df2f9",
+      "sizeBytes": 591
+    },
+    {
+      "path": "state-seed/config/lighttpd.conf",
+      "sha256": "e129216287d76c02cca2c006663722bbc49176cb0b334f6a2d747c2f9080c518",
+      "sizeBytes": 688
+    },
+    {
+      "path": "state-seed/config/system/server-auto-switch.json",
+      "sha256": "b76b324045ed0901cb3545f41eeda867cd7d5abc3c90a8aa5d0fdebc943772aa",
+      "sizeBytes": 286
+    },
+    {
+      "path": "state-seed/config/system/settings.json",
+      "sha256": "8949d0b833c53e0c14d59a3f5596bc4bf3251d760955ffd19998ad23f9bc3b65",
+      "sizeBytes": 222
+    },
+    {
+      "path": "state-seed/config/version",
+      "sha256": "2985be8b28d3ade858e8d8fb4bc22f565b1bf6020dff982dce141f7721b9999c",
+      "sizeBytes": 6
+    },
+    {
+      "path": "state-seed/routes/bundles.json",
+      "sha256": "4b2f72d38775724c548ce71ac2784a829982d461b695794ddaba72e73e5cbe29",
+      "sizeBytes": 182
+    },
+    {
+      "path": "state-seed/routes/config.json",
+      "sha256": "55acbc31544881d509dacb504680f537817fed75f5e9c1946a3b3187e11c3a27",
+      "sizeBytes": 513
+    },
+    {
+      "path": "state-seed/routes/manifests/chatgpt.json",
+      "sha256": "b2c6cdaece47b33310f857c908dbfbe97c90bb2a6d8a8acda95e0fb80e16a322",
+      "sizeBytes": 573
+    },
+    {
+      "path": "state-seed/routes/manifests/facebook.json",
+      "sha256": "9d3022805a2e8724db838639e2451c34cf46efcd11287d19236c2d44491d019c",
+      "sizeBytes": 561
+    },
+    {
+      "path": "state-seed/routes/manifests/instagram.json",
+      "sha256": "f86d11d0ce85db3ac2e7890050a3ec2310906bad338c58672f50965477ec22c9",
+      "sizeBytes": 563
+    },
+    {
+      "path": "state-seed/routes/manifests/meta.json",
+      "sha256": "630bff4bc17528ab9c60dbcf2701bc6dc4414c5af4356f3140e7d484d7154089",
+      "sizeBytes": 539
+    },
+    {
+      "path": "state-seed/routes/manifests/speedtest.json",
+      "sha256": "08c3267dfa56792ac3414f1548fe83b35b43cc03ee172a9c0dbc8020b9cf56dd",
+      "sizeBytes": 559
+    },
+    {
+      "path": "state-seed/routes/manifests/telegram.json",
+      "sha256": "42f57603fe702b42e1f947c11b8ace404eb28f0fc80ef7fe4c7bf997249a985a",
+      "sizeBytes": 743
+    },
+    {
+      "path": "state-seed/routes/manifests/tiktok.json",
+      "sha256": "ca81ca8df39ab9cbfb32dbddae716d221757732765712cbddbc59ed53f4cfc20",
+      "sizeBytes": 553
+    },
+    {
+      "path": "state-seed/routes/manifests/whatsapp.json",
+      "sha256": "c1888bcce3b98308261d5739ba8c5aee9dc1255ba268c6d79cbc0127ae2ad94a",
+      "sizeBytes": 561
+    },
+    {
+      "path": "state-seed/routes/manifests/youtube.json",
+      "sha256": "ba4a92dbb4b8d34502253bfd7f6be830f25424e22f0ef8688d2f3ecbc3ecf901",
+      "sizeBytes": 562
+    }
+  ],
+  "schemaVersion": 1,
+  "source": {
+    "applicationSha256": "69679f6d7339b856faf28f69cb1800254984e5400201fe97247011ab166c3f85",
+    "candidateId": "3.0.0-r23c02",
+    "release": "3.0.0-r23"
+  },
+  "summary": {
+    "fileCount": 287,
+    "logicalBytes": 5167612
+  }
+}

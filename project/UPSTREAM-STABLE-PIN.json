@@ -1,31 +1,35 @@
 {
   "policy": {
-    "activeCoInstallWithFullBROray": "FAIL_CLOSED_BY_DEFAULT",
     "allowCurrentMainAsStableDonor": false,
-    "requireExactRuntimeDonorBytes": true
+    "requireExactReleaseBytes": true
   },
   "product": "BROray-Light",
-  "schemaVersion": 2,
+  "schemaVersion": 1,
   "upstream": {
-    "actionsArtifact": {
-      "artifactId": 9731219860,
-      "digest": "sha256:61c7618193926693014d8ef6b3717a114041bc89d9f17a3ae81184615a034571",
-      "runId": 33308452852
+    "architecture": "aarch64-3.10",
+    "exactDonor": {
+      "applicationFiles": 287,
+      "applicationLogicalBytes": 5167612,
+      "artifactDigest": "sha256:7d44da3e09e4207235d3daa0f25e822da651274a6020702f8c7d106a85da2fe2",
+      "artifactId": 9738580535,
+      "artifactSizeBytes": 2166041,
+      "unsafePaths": 0,
+      "workflowRunId": 33334405978
     },
-    "opkgPackageVersion": "3.0.0-r14",
-    "publishedDate": "2026-08-30",
-    "releaseId": "3.0.0-r20",
+    "immutable": true,
+    "packageVersion": "3.0.0-r14",
+    "releaseId": "3.0.0-r23",
     "repository": "BROadmin/BROray",
     "sha256": {
-      "applicationArchive": "ad231c899e0a93f90f65489b8b6588aa09ae94b43c1d838e13e4458079c862bd",
+      "applicationArchive": "69679f6d7339b856faf28f69cb1800254984e5400201fe97247011ab166c3f85",
       "cleanBootstrap": "fb4943e3d336d091b16e6cf436e2a7eefe7274422246c8038a7eea2e6c0d79a0",
-      "installer": "3c3faa352ef78821de791a3e932602b88efadf9b82fecde39c535a67bfbb14c0",
-      "stableReleaseJson": "b87deb3cca0eb01b1632aa8ceb1bcb81de6972bee5b7925e694088cffa9a2ebd",
+      "installer": "12f9d9edace123c1137d6143210af7c1e7157109859efbc0e75c02fdc53cec21",
+      "stableReleaseJson": "2b376932d7e7d7a773e1454012a512d382014890f514e3181843fa24689e11f1",
       "updaterEngine": "a3c094b3a5e82ac82be7ec8b53c90f4023351a94eb6ba945b99501c0876e2c4a",
       "updaterPlatformArchive": "eaf2eafb62d1b108fe576d1fda09ae7a5d15ad90f71272abc23f321d397611b0"
     },
-    "technicalCandidate": "3.0.0-r20c01",
-    "webUIBuild": "WebUI-3.0.0-r20c01"
+    "technicalCandidate": "3.0.0-r23c02",
+    "webUIBuild": "WebUI-3.0.0-r23c02"
   },
   "verifiedAt": "2026-08-30"
 }

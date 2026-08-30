@@ -1,0 +1,217 @@
+{
+  "checkpoint": "BROray-Light-R23-PREPARATION-R0007",
+  "checks": [
+    {
+      "detail": "2b376932d7e7d7a773e1454012a512d382014890f514e3181843fa24689e11f1",
+      "name": "sha256:release.json",
+      "status": "PASS"
+    },
+    {
+      "detail": "69679f6d7339b856faf28f69cb1800254984e5400201fe97247011ab166c3f85",
+      "name": "sha256:broray-app-3.0.0-r23c02.tar.gz",
+      "status": "PASS"
+    },
+    {
+      "detail": "eaf2eafb62d1b108fe576d1fda09ae7a5d15ad90f71272abc23f321d397611b0",
+      "name": "sha256:broray-updater-platform-r23.tar.gz",
+      "status": "PASS"
+    },
+    {
+      "detail": "fb4943e3d336d091b16e6cf436e2a7eefe7274422246c8038a7eea2e6c0d79a0",
+      "name": "sha256:broray-clean-bootstrap-r23",
+      "status": "PASS"
+    },
+    {
+      "detail": "12f9d9edace123c1137d6143210af7c1e7157109859efbc0e75c02fdc53cec21",
+      "name": "sha256:INSTALL-ON-ROUTER.sh",
+      "status": "PASS"
+    },
+    {
+      "detail": "7d44da3e09e4207235d3daa0f25e822da651274a6020702f8c7d106a85da2fe2",
+      "name": "artifactZipDigest",
+      "status": "PASS"
+    },
+    {
+      "detail": [],
+      "name": "appUnsafePaths",
+      "status": "PASS"
+    },
+    {
+      "detail": 287,
+      "name": "appRegularFiles",
+      "status": "PASS"
+    },
+    {
+      "detail": 40,
+      "name": "appDirectories",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "lines": 286,
+        "returncode": 0
+      },
+      "name": "internalSHA256SUMS",
+      "status": "PASS"
+    },
+    {
+      "detail": [
+        287,
+        287
+      ],
+      "name": "inventoryPathSet",
+      "status": "PASS"
+    },
+    {
+      "detail": null,
+      "name": "inventoryExact",
+      "status": "PASS"
+    },
+    {
+      "detail": [
+        287,
+        287
+      ],
+      "name": "treatmentPathSet",
+      "status": "PASS"
+    },
+    {
+      "detail": null,
+      "name": "treatmentExact",
+      "status": "PASS"
+    },
+    {
+      "detail": 287,
+      "name": "unclassifiedZero",
+      "status": "PASS"
+    },
+    {
+      "detail": "DROP",
+      "name": "qualityRefreshDrop:app/web-new/api/servers/quality-refresh-save.cgi",
+      "status": "PASS"
+    },
+    {
+      "detail": "DROP",
+      "name": "qualityRefreshDrop:app/web-new/api/servers/quality-refresh-status.cgi",
+      "status": "PASS"
+    },
+    {
+      "detail": "DROP",
+      "name": "qualityRefreshDrop:app/web-new/assets/js/servers-quality-refresh.js",
+      "status": "PASS"
+    },
+    {
+      "detail": "ADAPT",
+      "name": "interfaceOwnerAdapt",
+      "status": "PASS"
+    },
+    {
+      "detail": "REPLACE",
+      "name": "autoSwitchReplace",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "ADAPT": 65,
+        "DROP": 156,
+        "PORT": 11,
+        "REPLACE": 48,
+        "RETAIN": 7
+      },
+      "name": "treatmentCounts",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "ADAPT": 572709,
+        "DROP": 3883525,
+        "PORT": 39641,
+        "REPLACE": 602718,
+        "RETAIN": 69019
+      },
+      "name": "treatmentBytes",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "bad": [],
+        "files": 26
+      },
+      "name": "ashBinInit",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "bad": [],
+        "files": 64
+      },
+      "name": "ashLibraries",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "bad": [],
+        "files": 82
+      },
+      "name": "ashWebApi",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "bad": [],
+        "files": 25
+      },
+      "name": "javascriptSyntax",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "bad": [],
+        "files": 33
+      },
+      "name": "jsonSyntax",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "added": 3,
+        "byteIdenticalCommon": 268,
+        "changed": 16,
+        "removed": 0
+      },
+      "name": "deltaCounts",
+      "status": "PASS"
+    },
+    {
+      "detail": [
+        "VLESS"
+      ],
+      "name": "conceptVLESSOnly",
+      "status": "PASS"
+    },
+    {
+      "detail": false,
+      "name": "scheduledQualityRefreshDisabled",
+      "status": "PASS"
+    },
+    {
+      "detail": [
+        "home",
+        "servers",
+        "subscriptions"
+      ],
+      "name": "threePages",
+      "status": "PASS"
+    },
+    {
+      "detail": "S24broray-light",
+      "name": "singlePrimaryService",
+      "status": "PASS"
+    }
+  ],
+  "checksFail": 0,
+  "checksPass": 32,
+  "checksTotal": 32,
+  "schemaVersion": 1,
+  "status": "PASS"
+}
