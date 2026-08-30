@@ -39,22 +39,25 @@ Target primary application service:
 S24broray-light
 ```
 
-Xray and lighttpd remain separate runtime processes where required by the platform; “one service” means one BROray-Light application-control service.
+Xray and lighttpd remain separate runtime processes where required by the platform; “one service” means one BROray-Light application-control service. The updater remains a separate control-plane component derived from updater-v5 semantics.
 
 ## Upstream baseline
 
-The donor baseline is BROray Stable `3.0.0-r14`, technical candidate `3.0.0-r14c68`, published 2026-08-25.
+The current donor baseline is BROray Stable `3.0.0-r20`, technical candidate `3.0.0-r20c01`, published 2026-08-30.
 
-The current `BROadmin/BROray` `main` branch is **not** treated as byte-exact Stable source. Source import into this repository is blocked until the exact `r14c68` release-source bytes are obtained and their identity is verified.
+The exact Stable application, updater platform, clean bootstrap and installer were fetched from the signed/current Stable index and verified by recorded SHA-256 values. The current `BROadmin/BROray` `main` branch remains development/documentation context and is **not** treated as byte-exact Stable source.
 
-See `docs/UPSTREAM-STABLE-PIN.md`.
+See `docs/UPSTREAM-STABLE-PIN.md` and `checkpoints/R0006/REPORT.md`.
 
-## Status
+## Preparation status
 
 ```text
-REPOSITORY_BOOTSTRAP=PASS
-REMOTE_REPOSITORY=BROadmin/BROray-Light
-REMOTE_ACCESS=ADMIN_PUSH
-STABLE_SOURCE_IMPORT=BLOCKED_PENDING_EXACT_R14C68_SOURCE_BYTES
+R20_PREPARATION_STATUS=PASS
+EXACT_STABLE_DONOR=PASS
+DONOR_FILES_CLASSIFIED=284/284
+UNCLASSIFIED=0
+IMMEDIATE_DROP_LOGICAL_BYTES=3866549
+IMMEDIATE_DROP_PERCENT=75.32
+NEXT_STAGE=BUILD_LIGHT_SOURCE_TREE_FROM_R20_TREATMENT_MAP
 PRODUCTION_MUTATION=NONE
 ```

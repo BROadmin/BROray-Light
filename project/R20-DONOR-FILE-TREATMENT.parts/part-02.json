@@ -1,0 +1,240 @@
+{
+  "part": {
+    "number": 2,
+    "recordEnd": 64,
+    "recordStart": 33,
+    "records": 32
+  },
+  "records": [
+    {
+      "path": "app/lib/keenetic-config-compare.sh",
+      "reason": "Preserve ownership/fail-closed/rollback contract; rename owner/state and remove full-product assumptions.",
+      "sha256": "ff570c70bb3da2b53e0dda6aea62dffa707672b175d6a6ef7514d01d7e100330",
+      "sizeBytes": 7467,
+      "treatment": "ADAPT"
+    },
+    {
+      "path": "app/lib/keenetic-page.sh",
+      "reason": "Retain status/create/repair core for Home; remove standalone page/delete surface.",
+      "sha256": "500adf6ae6ff79d5a9f0da7ee3044c580e67e34adbc006a548335d293d76400e",
+      "sizeBytes": 33930,
+      "treatment": "ADAPT"
+    },
+    {
+      "path": "app/lib/keenetic-write-policy.sh",
+      "reason": "Keep proxy-interface policy; remove static-routes and DoT write profiles.",
+      "sha256": "5bccaee24390ea9d9cc9467c141d68b03a4504ec27533edda086bfc2dc6445b9",
+      "sizeBytes": 5249,
+      "treatment": "ADAPT"
+    },
+    {
+      "path": "app/lib/keenetic.sh",
+      "reason": "Legacy CLI title helper is replaced by interface owner/sync backend.",
+      "sha256": "a8267748aa7f969dec3b576555e3888730b59591b165658fb1b615321653c144",
+      "sizeBytes": 2010,
+      "treatment": "DROP"
+    },
+    {
+      "path": "app/lib/lighttpd-guard.sh",
+      "reason": "Preserve ownership/fail-closed/rollback contract; rename owner/state and remove full-product assumptions.",
+      "sha256": "737e55589f027582b6abff9ca91836adf675676331d57644bbc59bf66f932605",
+      "sizeBytes": 25829,
+      "treatment": "ADAPT"
+    },
+    {
+      "path": "app/lib/network.sh",
+      "reason": "Only referenced by full package-setup path; not needed in Light runtime.",
+      "sha256": "6c155a6999231fddb4f5fbe0b837d3f3d5ced043409f299994d3f2490be6757d",
+      "sizeBytes": 7482,
+      "treatment": "DROP"
+    },
+    {
+      "path": "app/lib/operation-manager.sh",
+      "reason": "Full maintenance operation manager is excluded; new compact global lock is created from validated lock semantics.",
+      "sha256": "e69029906f912c27c40dc28fdfa09103ea8c21387d0ebc8c3df27ad31c0f13b0",
+      "sizeBytes": 6213,
+      "treatment": "DROP"
+    },
+    {
+      "path": "app/lib/package-setup.sh",
+      "reason": "Full/legacy package compatibility layer is replaced by a Light-specific updater/installer contract.",
+      "sha256": "2e2e0e817bee9f29f2aa4c1f6545499e6d8bf80f4037d37756f5050cbfbb8550",
+      "sizeBytes": 32374,
+      "treatment": "DROP"
+    },
+    {
+      "path": "app/lib/package-transaction.sh",
+      "reason": "Full/legacy package compatibility layer is replaced by a Light-specific updater/installer contract.",
+      "sha256": "fd9f8a65717284abab231f13ad17df5e9a5d8258848ab581a6d768a14e154877",
+      "sizeBytes": 687613,
+      "treatment": "DROP"
+    },
+    {
+      "path": "app/lib/parser-hysteria2.sh",
+      "reason": "Only VLESS is supported.",
+      "sha256": "bd9bae9dd7113ccc5c5629f2d303fc51171ee6561f8683e30ed6e463382d1745",
+      "sizeBytes": 5984,
+      "treatment": "DROP"
+    },
+    {
+      "path": "app/lib/parser-shadowsocks.sh",
+      "reason": "Only VLESS is supported.",
+      "sha256": "a38fcd61db836c0af4a437edad276fe84a90e9df18cc86115d2fa0e3fd2af907",
+      "sizeBytes": 4706,
+      "treatment": "DROP"
+    },
+    {
+      "path": "app/lib/parser-trojan.sh",
+      "reason": "Only VLESS is supported.",
+      "sha256": "38541f0886fc04e4014c0e2ff317474b0a98e7223b73047c320fc362b5a13685",
+      "sizeBytes": 4777,
+      "treatment": "DROP"
+    },
+    {
+      "path": "app/lib/parser-vless.sh",
+      "reason": "Core generic logic retained with Light path/product namespace updates.",
+      "sha256": "6c3ef215b38ac94d0dd55abc9695d789d4bb4d844e0862d9e4286e17f5a75569",
+      "sizeBytes": 4001,
+      "treatment": "PORT"
+    },
+    {
+      "path": "app/lib/parser-vmess.sh",
+      "reason": "Only VLESS is supported.",
+      "sha256": "230b35d86eb175e40fd6737c4d86befc31921cbfbb82e82e670386412c671dfc",
+      "sizeBytes": 7252,
+      "treatment": "DROP"
+    },
+    {
+      "path": "app/lib/release-manifest.sh",
+      "reason": "Full/legacy package compatibility layer is replaced by a Light-specific updater/installer contract.",
+      "sha256": "f2e31dadb75f75ae70a3901d77f522d1c4579e0fb27ce8820aaeec82c16b36da",
+      "sizeBytes": 1105,
+      "treatment": "DROP"
+    },
+    {
+      "path": "app/lib/routes-api-operation.sh",
+      "reason": "Routes/DNS subsystem excluded.",
+      "sha256": "3cbb6920a7e3788431e1feaaf327fcdbe5945c2b0d7d9ef8f95a4c0e4e9b037b",
+      "sizeBytes": 12510,
+      "treatment": "DROP"
+    },
+    {
+      "path": "app/lib/routes-bundle-registry.sh",
+      "reason": "Routes/DNS subsystem excluded.",
+      "sha256": "4c9c78381cc935fe665e9c7279376e0b241881dfceaffdb2aff778cdf706df43",
+      "sizeBytes": 10624,
+      "treatment": "DROP"
+    },
+    {
+      "path": "app/lib/routes-dot.sh",
+      "reason": "Routes/DNS subsystem excluded.",
+      "sha256": "0357ac981addbb1b49bb6d19de4c64147fa78228ea88570421a71541ace4defd",
+      "sizeBytes": 93291,
+      "treatment": "DROP"
+    },
+    {
+      "path": "app/lib/routes-download.sh",
+      "reason": "Routes/DNS subsystem excluded.",
+      "sha256": "c6569f08363547c5172a95aa54e56250ac708a7f10a783c5c36362a29c3c9e1f",
+      "sizeBytes": 28810,
+      "treatment": "DROP"
+    },
+    {
+      "path": "app/lib/routes-export-build.sh",
+      "reason": "Routes/DNS subsystem excluded.",
+      "sha256": "604c9734defefba6c4aec9986d46d7857825824520caa6262f4650bb56510a79",
+      "sizeBytes": 20050,
+      "treatment": "DROP"
+    },
+    {
+      "path": "app/lib/routes-operation-preflight.sh",
+      "reason": "Routes/DNS subsystem excluded.",
+      "sha256": "c963b2b793479b299016c1032a5bc5fbcd9914a57bf4092be4e59565ce243413",
+      "sizeBytes": 25386,
+      "treatment": "DROP"
+    },
+    {
+      "path": "app/lib/routes-operation-progress.sh",
+      "reason": "Routes/DNS subsystem excluded.",
+      "sha256": "e55ceb99021c7b9c296b290927e4a4b2538d9cc9acc18c2051509bb5535117d7",
+      "sizeBytes": 18999,
+      "treatment": "DROP"
+    },
+    {
+      "path": "app/lib/routes-page-summary.sh",
+      "reason": "Routes/DNS subsystem excluded.",
+      "sha256": "da8841aef2309d459313e2864683ef77f5799d8dd7805714b73363ba82d22446",
+      "sizeBytes": 32945,
+      "treatment": "DROP"
+    },
+    {
+      "path": "app/lib/routes-router-config.sh",
+      "reason": "Routes/DNS subsystem excluded.",
+      "sha256": "d1543feca600a5658704adee6eab5841549a3f59a7ccb22f224cc31108ae8715",
+      "sizeBytes": 28103,
+      "treatment": "DROP"
+    },
+    {
+      "path": "app/lib/routes-router-delete.sh",
+      "reason": "Routes/DNS subsystem excluded.",
+      "sha256": "522f4f1b5d106e0d2985ce63741a69847283abbdfc3762e59d2269464cb0a45a",
+      "sizeBytes": 61501,
+      "treatment": "DROP"
+    },
+    {
+      "path": "app/lib/routes-router-export.sh",
+      "reason": "Routes/DNS subsystem excluded.",
+      "sha256": "ad49b28cf9ceb562c04b09f81a10cf4faa066e2e35da7e298d16f21b798f2efc",
+      "sizeBytes": 94465,
+      "treatment": "DROP"
+    },
+    {
+      "path": "app/lib/routes-router-preflight.sh",
+      "reason": "Routes/DNS subsystem excluded.",
+      "sha256": "183e4c7f3d2d70c9116d26ae023a28d4a74948babe9a4ccab30f35a97e04a5f9",
+      "sizeBytes": 33364,
+      "treatment": "DROP"
+    },
+    {
+      "path": "app/lib/routes-router-presence.sh",
+      "reason": "Routes/DNS subsystem excluded.",
+      "sha256": "1e08b66be3463dc9ba6f04175ea400f2b4c9b37c33b3bfdffc4612f5a68610b3",
+      "sizeBytes": 6063,
+      "treatment": "DROP"
+    },
+    {
+      "path": "app/lib/routes-router-sync.sh",
+      "reason": "Routes/DNS subsystem excluded.",
+      "sha256": "5ad4e141d6ed6205b29d80638a54d940d71a17c1c8eaf65f00086c1213b839bd",
+      "sizeBytes": 87587,
+      "treatment": "DROP"
+    },
+    {
+      "path": "app/lib/routes-runtime-repair.sh",
+      "reason": "Routes/DNS subsystem excluded.",
+      "sha256": "e19eb9d3416d7fe64dcf8925a9c44d6866e828e9cf6a696dbb87eee0ef8f3e34",
+      "sizeBytes": 16792,
+      "treatment": "DROP"
+    },
+    {
+      "path": "app/lib/routes-source-check.sh",
+      "reason": "Routes/DNS subsystem excluded.",
+      "sha256": "4da6cebf7dfd3e89739b82ec60017996de5ca8dd0967cce9a3f4ed6cfc3b4af5",
+      "sizeBytes": 42195,
+      "treatment": "DROP"
+    },
+    {
+      "path": "app/lib/routes-summary.sh",
+      "reason": "Routes/DNS subsystem excluded.",
+      "sha256": "0f8a137d14987a060f91fa2d9ff290a0ab1ee247cb8e119c275b4eb86e7fb34e",
+      "sizeBytes": 25165,
+      "treatment": "DROP"
+    }
+  ],
+  "schemaVersion": 1,
+  "source": {
+    "applicationSha256": "ad231c899e0a93f90f65489b8b6588aa09ae94b43c1d838e13e4458079c862bd",
+    "candidateId": "3.0.0-r20c01",
+    "release": "3.0.0-r20"
+  }
+}

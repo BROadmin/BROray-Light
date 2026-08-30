@@ -1,0 +1,55 @@
+{
+  "artifacts": {
+    "R20-COUPLING-REGISTER.json": "3a6b43de9e4b30356069964f1beb82e4de07715331432492e6c561edc1fb48c4",
+    "R20-DONOR-FILE-TREATMENT.json": "2dce7eb3a1b0d0cdd24557e4a848afeb89988c0c9d30f2c00093c1948721b93d",
+    "R20-DONOR-INVENTORY.json": "4bf0d9d8ef6e73467860185930ba1d4e5dd53ced8a3035626a09fc8b59fef827",
+    "R20-TARGET-ARCHITECTURE.json": "a4c4ab93f9df662900fcfe2cac5cbfb7fdf5d41be09c66f66624270ba5aa5f53",
+    "REPORT.md": "e6d88708ba8f877b6ecf91697d89d76ee590d1e9baf24d7568988bd816fa27c6",
+    "UPSTREAM-STABLE-PIN.json": "e93d18f79f2f60dd33fe44e13eaf79c0d27c31b606ed8eee82813af6acdd375b",
+    "UPSTREAM-STABLE-PIN.md": "1c3a2a2492a8a766f1ee856d47023d4028e65c73c8954b02f89e70791342f300"
+  },
+  "baseStable": {
+    "applicationSha256": "ad231c899e0a93f90f65489b8b6588aa09ae94b43c1d838e13e4458079c862bd",
+    "candidateId": "3.0.0-r20c01",
+    "releaseId": "3.0.0-r20"
+  },
+  "checkpointId": "BROray-Light-R20-PREPARATION-R0006",
+  "classification": {
+    "dropLogicalBytes": 3866549,
+    "dropPercent": 75.32,
+    "records": 284,
+    "unclassified": 0
+  },
+  "date": "2026-08-30",
+  "mutations": {
+    "BROadmin/BROray": "NONE",
+    "productionServer": "NONE",
+    "router": "NONE"
+  },
+  "nextAction": "BUILD_LIGHT_SOURCE_TREE_FROM_R20_TREATMENT_MAP",
+  "processFailuresPreserved": [
+    "process-failures/FAILURE-VALIDATION-MONOLITHIC-TIMEOUT.json",
+    "process-failures/FAILURE-JSON-VALIDATION-PER-FILE-PYTHON-TIMEOUT.json"
+  ],
+  "schemaVersion": 1,
+  "status": "PASS",
+  "validation": {
+    "applicationArchiveSafety": "PASS",
+    "applicationInternalSha256Sums": "PASS_283_ENTRIES",
+    "applicationSha256": "PASS",
+    "artifactDigest": "sha256:61c7618193926693014d8ef6b3717a114041bc89d9f17a3ae81184615a034571",
+    "artifactId": 9731219860,
+    "artifactSizeBytes": 2160070,
+    "artifactWorkflowRunId": 33308452852,
+    "ashBinInit": "PASS_26_OF_26",
+    "ashLibrariesExcludingDroppedLegacyPackageTransaction": "PASS_64_OF_64",
+    "ashWebApi": "PASS_80_OF_80",
+    "cleanBootstrapSha256": "PASS",
+    "installerSha256": "PASS",
+    "javascriptSyntax": "PASS_24_OF_24",
+    "jsonSyntax": "PASS_33_OF_33",
+    "releaseJsonSha256": "PASS",
+    "updaterPlatformArchiveSafety": "PASS",
+    "updaterPlatformSha256": "PASS"
+  }
+}

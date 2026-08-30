@@ -1,0 +1,240 @@
+{
+  "part": {
+    "number": 5,
+    "recordEnd": 160,
+    "recordStart": 129,
+    "records": 32
+  },
+  "records": [
+    {
+      "path": "app/web-new/api/broray/update-check.cgi",
+      "reason": "Replace full maintenance API with compact Light version/update-only API.",
+      "sha256": "074c3d88512e70aef9cef673e216c749c06b557e13c5961e445a49aedcf1d5e0",
+      "sizeBytes": 341,
+      "treatment": "REPLACE"
+    },
+    {
+      "path": "app/web-new/api/broray/update-start.cgi",
+      "reason": "Replace full maintenance API with compact Light version/update-only API.",
+      "sha256": "476ea37622791c64d4f20f6a2e57ce982aca529e30c0ad992a965e854e297517",
+      "sizeBytes": 356,
+      "treatment": "REPLACE"
+    },
+    {
+      "path": "app/web-new/api/broray/update-status.cgi",
+      "reason": "Replace full maintenance API with compact Light version/update-only API.",
+      "sha256": "85cb2b96cce5ebf6ff8011d648f33003127bf34caf5337c3ae6b25484b693746",
+      "sizeBytes": 211,
+      "treatment": "REPLACE"
+    },
+    {
+      "path": "app/web-new/api/broray/updater-api-common.sh",
+      "reason": "Replace full maintenance API with compact Light version/update-only API.",
+      "sha256": "87fbc4f3f63da43a6eeb944be56d3611ba82b9d240c32cd451f40c7ee31032a8",
+      "sizeBytes": 7535,
+      "treatment": "REPLACE"
+    },
+    {
+      "path": "app/web-new/api/home/summary.cgi",
+      "reason": "New Home summary aggregates only approved Light blocks.",
+      "sha256": "18ff70a48ce8cbf537a2de014881f0ffc218f67124f060cdfb6db1fc9622d72b",
+      "sizeBytes": 8197,
+      "treatment": "REPLACE"
+    },
+    {
+      "path": "app/web-new/api/keenetic/action-common.sh",
+      "reason": "Move status/create/repair behavior to Home and compact global lock.",
+      "sha256": "1fa99162749e6af2ce5e19b08f7f648f7d4143314c3670182c999464f5256b84",
+      "sizeBytes": 2976,
+      "treatment": "ADAPT"
+    },
+    {
+      "path": "app/web-new/api/keenetic/check-upstream.cgi",
+      "reason": "Move status/create/repair behavior to Home and compact global lock.",
+      "sha256": "8b4489e97c060c69200136632d413b086cc67a1961f1c831216352e173be0bd3",
+      "sizeBytes": 106,
+      "treatment": "ADAPT"
+    },
+    {
+      "path": "app/web-new/api/keenetic/create.cgi",
+      "reason": "Move status/create/repair behavior to Home and compact global lock.",
+      "sha256": "24fc347d9714c82872a728fd23b46bc3f25d77a84aeb93012e613624de1e7a9e",
+      "sizeBytes": 98,
+      "treatment": "ADAPT"
+    },
+    {
+      "path": "app/web-new/api/keenetic/delete.cgi",
+      "reason": "Keenetic managed interface deletion is not exposed in Light WebUI.",
+      "sha256": "f392d81d6462fdd773c815789120af400617a74a2d742133f314c4cd4a870388",
+      "sizeBytes": 98,
+      "treatment": "DROP"
+    },
+    {
+      "path": "app/web-new/api/keenetic/repair.cgi",
+      "reason": "Move status/create/repair behavior to Home and compact global lock.",
+      "sha256": "91f4edb5e3fe57074e26ac292dc577c7b0a30a3dbf4c0afb6b19d0d882755aa1",
+      "sizeBytes": 98,
+      "treatment": "ADAPT"
+    },
+    {
+      "path": "app/web-new/api/keenetic/status.cgi",
+      "reason": "Move status/create/repair behavior to Home and compact global lock.",
+      "sha256": "e9b0c42502193f5f802a01d3f61946b075a4ac753cce2889aaffb4e0eee0422a",
+      "sizeBytes": 1425,
+      "treatment": "ADAPT"
+    },
+    {
+      "path": "app/web-new/api/keenetic/sync-description.cgi",
+      "reason": "Move status/create/repair behavior to Home and compact global lock.",
+      "sha256": "357de0627de80b2500cfada1db2b396f17bdf0917e4067a240d0bfebe0193c10",
+      "sizeBytes": 108,
+      "treatment": "ADAPT"
+    },
+    {
+      "path": "app/web-new/api/login.cgi",
+      "reason": "Retain authentication/session contract with Light paths/branding.",
+      "sha256": "3292bc09dddec70d13615350c920dc0ad1620041e9cf20627cf7c3d199fb5667",
+      "sizeBytes": 3138,
+      "treatment": "PORT"
+    },
+    {
+      "path": "app/web-new/api/logout.cgi",
+      "reason": "Retain authentication/session contract with Light paths/branding.",
+      "sha256": "4430062a7d404abed44eac076e2db924fe3cca8d8d5860a1b1da1c49a174838f",
+      "sizeBytes": 619,
+      "treatment": "PORT"
+    },
+    {
+      "path": "app/web-new/api/protected-test.cgi",
+      "reason": "Development/protected test endpoint not required in Light.",
+      "sha256": "7e8fab4d96832817b8f17cb379d5241178716e2e731574bc0fddda1ae0b51032",
+      "sizeBytes": 427,
+      "treatment": "DROP"
+    },
+    {
+      "path": "app/web-new/api/routes/catalog-summary.cgi",
+      "reason": "Routes/DNS APIs excluded.",
+      "sha256": "90ace9061a16637a2f02d860f1a37e888870f0085b4676bc514ae85ef3ec090a",
+      "sizeBytes": 1559,
+      "treatment": "DROP"
+    },
+    {
+      "path": "app/web-new/api/routes/check.cgi",
+      "reason": "Routes/DNS APIs excluded.",
+      "sha256": "e6b2d15e209c91a5d4d816376f23cfe5c0b36c2741e4721450de13f041e4cad7",
+      "sizeBytes": 6809,
+      "treatment": "DROP"
+    },
+    {
+      "path": "app/web-new/api/routes/custom-commit.cgi",
+      "reason": "Routes/DNS APIs excluded.",
+      "sha256": "ec0b0015070a5f79cbba445002f304f3e9fb817570bebf58c606a227859ac2c4",
+      "sizeBytes": 723,
+      "treatment": "DROP"
+    },
+    {
+      "path": "app/web-new/api/routes/custom-common.sh",
+      "reason": "Routes/DNS APIs excluded.",
+      "sha256": "e395bb869a0f2e5b6a94a931266a4cd66031d164823c3d43ba4ef40ffba0db4b",
+      "sizeBytes": 5927,
+      "treatment": "DROP"
+    },
+    {
+      "path": "app/web-new/api/routes/custom-list.cgi",
+      "reason": "Routes/DNS APIs excluded.",
+      "sha256": "418805bbfd8a3d9e811e03910bf60dbee21e8077ff45bd06de20a4f4ad025f9e",
+      "sizeBytes": 182,
+      "treatment": "DROP"
+    },
+    {
+      "path": "app/web-new/api/routes/custom-preview.cgi",
+      "reason": "Routes/DNS APIs excluded.",
+      "sha256": "f861c8512f40a2498108f5d9e04775fef5208dee7e1bee211f8200547dcb9ae9",
+      "sizeBytes": 725,
+      "treatment": "DROP"
+    },
+    {
+      "path": "app/web-new/api/routes/custom-remove.cgi",
+      "reason": "Routes/DNS APIs excluded.",
+      "sha256": "a020d0f32ab6a0aae3a34fe6a849c0a99fa59f604886e18dfe6e38202cbff2e0",
+      "sizeBytes": 2875,
+      "treatment": "DROP"
+    },
+    {
+      "path": "app/web-new/api/routes/custom-status.cgi",
+      "reason": "Routes/DNS APIs excluded.",
+      "sha256": "3daec641b11c612d664b0be9e7576410fbe23e636b0b5890dad2dc1a34c46114",
+      "sizeBytes": 3477,
+      "treatment": "DROP"
+    },
+    {
+      "path": "app/web-new/api/routes/custom-summary.cgi",
+      "reason": "Routes/DNS APIs excluded.",
+      "sha256": "0add7bf525a73ef11023d362e1b75ceea2030ff97ec8d88e006024bcbae29990",
+      "sizeBytes": 1589,
+      "treatment": "DROP"
+    },
+    {
+      "path": "app/web-new/api/routes/custom-validate.cgi",
+      "reason": "Routes/DNS APIs excluded.",
+      "sha256": "735488148988cba6ac09f132f59033a183111f630c386d0cd16db501d24dd99b",
+      "sizeBytes": 276,
+      "treatment": "DROP"
+    },
+    {
+      "path": "app/web-new/api/routes/delete.cgi",
+      "reason": "Routes/DNS APIs excluded.",
+      "sha256": "92f518e658fcf34cf8cd2523eaf3b2b7658b8188a38c8ebd5a0dedb3737e1815",
+      "sizeBytes": 78,
+      "treatment": "DROP"
+    },
+    {
+      "path": "app/web-new/api/routes/dot-apply.cgi",
+      "reason": "Routes/DNS APIs excluded.",
+      "sha256": "dd17ccf6ff82b01403b3967311b6a981295e4e7f3510d03967bf419349f6f943",
+      "sizeBytes": 391,
+      "treatment": "DROP"
+    },
+    {
+      "path": "app/web-new/api/routes/dot-common.sh",
+      "reason": "Routes/DNS APIs excluded.",
+      "sha256": "ea078b55a00ccd583d82691c1b9be3d104f7c562d8fbc99c7e6d07a0cf10393a",
+      "sizeBytes": 5699,
+      "treatment": "DROP"
+    },
+    {
+      "path": "app/web-new/api/routes/dot-delete.cgi",
+      "reason": "Routes/DNS APIs excluded.",
+      "sha256": "3f939e9f26e8d10fe0ffe95a8d82d9f1020d6f076c3d24a7d794f635c1de27fd",
+      "sizeBytes": 254,
+      "treatment": "DROP"
+    },
+    {
+      "path": "app/web-new/api/routes/dot-status.cgi",
+      "reason": "Routes/DNS APIs excluded.",
+      "sha256": "a4c585d73a45c4b5aec9d4440ad52a335cac84e76ee984a2d5538db885ddb9e0",
+      "sizeBytes": 456,
+      "treatment": "DROP"
+    },
+    {
+      "path": "app/web-new/api/routes/dot-test.cgi",
+      "reason": "Routes/DNS APIs excluded.",
+      "sha256": "4311321ced06ef873e15fb2325e66433b830413058e12600fb29aaa4675de165",
+      "sizeBytes": 388,
+      "treatment": "DROP"
+    },
+    {
+      "path": "app/web-new/api/routes/download.cgi",
+      "reason": "Routes/DNS APIs excluded.",
+      "sha256": "42b11c7843d4f998faa276f285d6ea530ad72506656433c2d04427e8a18428da",
+      "sizeBytes": 6749,
+      "treatment": "DROP"
+    }
+  ],
+  "schemaVersion": 1,
+  "source": {
+    "applicationSha256": "ad231c899e0a93f90f65489b8b6588aa09ae94b43c1d838e13e4458079c862bd",
+    "candidateId": "3.0.0-r20c01",
+    "release": "3.0.0-r20"
+  }
+}

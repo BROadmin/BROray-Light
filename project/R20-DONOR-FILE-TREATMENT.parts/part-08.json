@@ -1,0 +1,240 @@
+{
+  "part": {
+    "number": 8,
+    "recordEnd": 256,
+    "recordStart": 225,
+    "records": 32
+  },
+  "records": [
+    {
+      "path": "app/web-new/assets/images/support/cloudtips-qr.svg",
+      "reason": "Routes/support assets are outside Light scope.",
+      "sha256": "29d54113230cef9a7f72bdd2eabdf969df523cca36cd07edcde316a0240c8bec",
+      "sizeBytes": 12790,
+      "treatment": "DROP"
+    },
+    {
+      "path": "app/web-new/assets/js/app-shell.js",
+      "reason": "Rebuild compact three-page UI; retain useful r20 interaction patterns only.",
+      "sha256": "75ad2106c58f362336e93283b42b21b58b8ca7610682fc8281aa1ed4a544af4f",
+      "sizeBytes": 11556,
+      "treatment": "REPLACE"
+    },
+    {
+      "path": "app/web-new/assets/js/broray.js",
+      "reason": "Feature/page/theme excluded from Light.",
+      "sha256": "7309e5993dcb8b2d1e2a9838fd3047e4e38556f0b9b981cab0c94cdb97cb1725",
+      "sizeBytes": 37211,
+      "treatment": "DROP"
+    },
+    {
+      "path": "app/web-new/assets/js/common.js",
+      "reason": "Retain shared UI utility behavior with Light branding/menu.",
+      "sha256": "526ad0309b670caf869dbfbf0f266c43dbc9b000b02090da67a35b7c07167244",
+      "sizeBytes": 5791,
+      "treatment": "ADAPT"
+    },
+    {
+      "path": "app/web-new/assets/js/dialogs.js",
+      "reason": "Retain shared UI utility behavior with Light branding/menu.",
+      "sha256": "856f191cfe001607f449ba9400485e99750628d4af2fdaa6147b37349070620d",
+      "sizeBytes": 10894,
+      "treatment": "ADAPT"
+    },
+    {
+      "path": "app/web-new/assets/js/dns.js",
+      "reason": "Feature/page/theme excluded from Light.",
+      "sha256": "a886ebfef1a91a63dc9d00e5040bf749f57bf04649d676cc565a5786abbaff69",
+      "sizeBytes": 32021,
+      "treatment": "DROP"
+    },
+    {
+      "path": "app/web-new/assets/js/home.js",
+      "reason": "Rebuild compact three-page UI; retain useful r20 interaction patterns only.",
+      "sha256": "e520bc7e290fc45f93c9ee091f4635f39a5fa8686631395fdfb8f6e85ce2a8b0",
+      "sizeBytes": 17251,
+      "treatment": "REPLACE"
+    },
+    {
+      "path": "app/web-new/assets/js/icons.js",
+      "reason": "Retain shared UI utility behavior with Light branding/menu.",
+      "sha256": "0a5c5bdd9887509c549b9fd89576e7bdfd2a3b1f975f4f67726a7c0f17be1902",
+      "sizeBytes": 17215,
+      "treatment": "ADAPT"
+    },
+    {
+      "path": "app/web-new/assets/js/keenetic.js",
+      "reason": "Feature/page/theme excluded from Light.",
+      "sha256": "fc2b601bfc97111e382c5bc610e52576b3194df7842ba46dfffa788e9f30bc77",
+      "sizeBytes": 23555,
+      "treatment": "DROP"
+    },
+    {
+      "path": "app/web-new/assets/js/login.js",
+      "reason": "Retain shared UI utility behavior with Light branding/menu.",
+      "sha256": "f164011baa9fc0a4bfac92b21faf7813b6a326b223f23b79601284ed1060084c",
+      "sizeBytes": 2779,
+      "treatment": "ADAPT"
+    },
+    {
+      "path": "app/web-new/assets/js/modules-redirect.js",
+      "reason": "Feature/page/theme excluded from Light.",
+      "sha256": "7e49c90bdee330c6980e7793a16be19ddcb30477df78473ae6ac467b26f07c8a",
+      "sizeBytes": 39,
+      "treatment": "DROP"
+    },
+    {
+      "path": "app/web-new/assets/js/operation-log.js",
+      "reason": "Feature/page/theme excluded from Light.",
+      "sha256": "9e7629a4cd12d21d2c0da8c172034d473270086bb1f56e2dbb0c2fbe9fe87b81",
+      "sizeBytes": 1449,
+      "treatment": "DROP"
+    },
+    {
+      "path": "app/web-new/assets/js/routes-catalog.js",
+      "reason": "Feature/page/theme excluded from Light.",
+      "sha256": "8cdd515e3ce46ca6a29ec8f60f7faaf05faefc2dac2863518b21ae7a47d9ee77",
+      "sizeBytes": 91275,
+      "treatment": "DROP"
+    },
+    {
+      "path": "app/web-new/assets/js/routes-custom-page.js",
+      "reason": "Feature/page/theme excluded from Light.",
+      "sha256": "d6b1f468386cf860307540a89f9fb169b9cf37826e19544b04aa88b9e9a0804e",
+      "sizeBytes": 53603,
+      "treatment": "DROP"
+    },
+    {
+      "path": "app/web-new/assets/js/routes-operation.js",
+      "reason": "Feature/page/theme excluded from Light.",
+      "sha256": "497f65b082789892c04518310414d14f2ae6782a3b6cd00367a8bcc20f53bcd2",
+      "sizeBytes": 13559,
+      "treatment": "DROP"
+    },
+    {
+      "path": "app/web-new/assets/js/routes-overview.js",
+      "reason": "Feature/page/theme excluded from Light.",
+      "sha256": "7e38cb29f5fcbeb6d008e176bb88e087ec9460bd66cb6d5b22caa62ac9753986",
+      "sizeBytes": 6384,
+      "treatment": "DROP"
+    },
+    {
+      "path": "app/web-new/assets/js/servers-auto-switch.js",
+      "reason": "Rebuild compact three-page UI; retain useful r20 interaction patterns only.",
+      "sha256": "30ee684134896f6f2f9c0139dca9a0b412c160888501dcff67c81593b34e34c1",
+      "sizeBytes": 16266,
+      "treatment": "REPLACE"
+    },
+    {
+      "path": "app/web-new/assets/js/servers-check-all.js",
+      "reason": "Rebuild compact three-page UI; retain useful r20 interaction patterns only.",
+      "sha256": "717a6d1edaccea9adc6a22cf7932d5125f79e54469f3ecdacb9c93cd269a498a",
+      "sizeBytes": 12391,
+      "treatment": "REPLACE"
+    },
+    {
+      "path": "app/web-new/assets/js/servers-completion.js",
+      "reason": "Rebuild compact three-page UI; retain useful r20 interaction patterns only.",
+      "sha256": "706d92971a8647932eab9bafda0286aaa0afc046bc7b8e65144c36b30305df63",
+      "sizeBytes": 18959,
+      "treatment": "REPLACE"
+    },
+    {
+      "path": "app/web-new/assets/js/servers-import-preflight.js",
+      "reason": "Rebuild compact three-page UI; retain useful r20 interaction patterns only.",
+      "sha256": "58610111cbba0b13f9e6caaa50632ce353cc6734038dce6fa8283f9907a0c2c1",
+      "sizeBytes": 37913,
+      "treatment": "REPLACE"
+    },
+    {
+      "path": "app/web-new/assets/js/servers.js",
+      "reason": "Rebuild compact three-page UI; retain useful r20 interaction patterns only.",
+      "sha256": "65e5a6852d08d5d4dad0543670d36cbb85a80678ce6cb86cfa650d1b227e3e97",
+      "sizeBytes": 32833,
+      "treatment": "REPLACE"
+    },
+    {
+      "path": "app/web-new/assets/js/subscriptions.js",
+      "reason": "Rebuild compact three-page UI; retain useful r20 interaction patterns only.",
+      "sha256": "94e2b48d844a6884c1c689d10315319fc22740e889a2460bd961078ce90e3c24",
+      "sizeBytes": 23307,
+      "treatment": "REPLACE"
+    },
+    {
+      "path": "app/web-new/assets/js/theme-init.js",
+      "reason": "Feature/page/theme excluded from Light.",
+      "sha256": "2e66c2759352df04ac968811f1bdf258ebf16d145c55fc2c2b5d3618274f63d7",
+      "sizeBytes": 448,
+      "treatment": "DROP"
+    },
+    {
+      "path": "app/web-new/assets/js/theme.js",
+      "reason": "Feature/page/theme excluded from Light.",
+      "sha256": "ef1da1fd3bc21c65adcc7c486e3c88c2ed2bfb48718210c20cfb856f37f952d6",
+      "sizeBytes": 7317,
+      "treatment": "DROP"
+    },
+    {
+      "path": "app/web-new/assets/js/xray.js",
+      "reason": "Feature/page/theme excluded from Light.",
+      "sha256": "56a5fbe88c176fe34282d8f7e27b0b4a0e8ec6b8a4679d162accf90b54ce319e",
+      "sizeBytes": 27914,
+      "treatment": "DROP"
+    },
+    {
+      "path": "app/web-new/broray.html",
+      "reason": "Only Home, Servers and Subscriptions pages remain.",
+      "sha256": "5850ddc1ef590bfdde3b487b6f6d62f634e4e688801154d90ed7b1d8ce6bf605",
+      "sizeBytes": 26039,
+      "treatment": "DROP"
+    },
+    {
+      "path": "app/web-new/build.json",
+      "reason": "Generate Light identity/three-page manifest.",
+      "sha256": "d2a51108751cef5a87e6876a2c527150d6200cabd54b6c00dd25522902bcc792",
+      "sizeBytes": 506,
+      "treatment": "REPLACE"
+    },
+    {
+      "path": "app/web-new/dns.html",
+      "reason": "Only Home, Servers and Subscriptions pages remain.",
+      "sha256": "f075f8d1aa3c3afdbd78b3291b52e91846993626b1bdb0e02b87e82f89f54f1f",
+      "sizeBytes": 18961,
+      "treatment": "DROP"
+    },
+    {
+      "path": "app/web-new/home.html",
+      "reason": "Rebuild from r20 visual/components reference to exact approved Light scope.",
+      "sha256": "559342bef3a39142f0171c29ec179e41a66770fee9bf959fbabc6c01d0475db8",
+      "sizeBytes": 17082,
+      "treatment": "REPLACE"
+    },
+    {
+      "path": "app/web-new/index.html",
+      "reason": "Retain login/bootstrap shell, rename product and navigation target.",
+      "sha256": "33a1005c69e3ea52e65adb7340e55bdb68ccab687daeb89430b39c4fa08b32ed",
+      "sizeBytes": 3497,
+      "treatment": "ADAPT"
+    },
+    {
+      "path": "app/web-new/keenetic.html",
+      "reason": "Only Home, Servers and Subscriptions pages remain.",
+      "sha256": "4983cb37cc02aaf283e200d1a78c441e22c4e624c8dde1eb00ee3ccd9b698270",
+      "sizeBytes": 19780,
+      "treatment": "DROP"
+    },
+    {
+      "path": "app/web-new/manifest.json",
+      "reason": "Generate Light identity/three-page manifest.",
+      "sha256": "93496cc78f8293f0087b6a1508d3fd535aa16e486ce13510c0e145c8d1c05a21",
+      "sizeBytes": 599,
+      "treatment": "REPLACE"
+    }
+  ],
+  "schemaVersion": 1,
+  "source": {
+    "applicationSha256": "ad231c899e0a93f90f65489b8b6588aa09ae94b43c1d838e13e4458079c862bd",
+    "candidateId": "3.0.0-r20c01",
+    "release": "3.0.0-r20"
+  }
+}

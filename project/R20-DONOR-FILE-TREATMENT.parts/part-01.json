@@ -1,0 +1,240 @@
+{
+  "part": {
+    "number": 1,
+    "recordEnd": 32,
+    "recordStart": 1,
+    "records": 32
+  },
+  "records": [
+    {
+      "path": "SHA256SUMS",
+      "reason": "Light release metadata/checksums must be regenerated.",
+      "sha256": "b9eddb84ad9793678cbe68f0d50e72208fc1602365e0fd1cb65351039e54b492",
+      "sizeBytes": 28793,
+      "treatment": "REPLACE"
+    },
+    {
+      "path": "SHA256SUMS.preparation-new",
+      "reason": "Light release metadata/checksums must be regenerated.",
+      "sha256": "7dd6f0959a25bf360046db9b8fbced1e3029b825b8a2a2932907b4aef9baf9df",
+      "sizeBytes": 27565,
+      "treatment": "REPLACE"
+    },
+    {
+      "path": "app/bin/broray",
+      "reason": "Retain required core role; rename paths/product and remove unsupported commands/features.",
+      "sha256": "83f23b340991e918f8942b42da6870e595ecdce0f0d3a1a298fe4f460ac21f7a",
+      "sizeBytes": 7582,
+      "treatment": "ADAPT"
+    },
+    {
+      "path": "app/bin/broray-connection-monitor",
+      "reason": "Replace quality scoring/history with health-only active connection state.",
+      "sha256": "0a8a39fe0e819f8bb7599387ccce986352d6446d2efcb5ef6312a4f9c9d86be3",
+      "sizeBytes": 7486,
+      "treatment": "REPLACE"
+    },
+    {
+      "path": "app/bin/broray-home-snapshot",
+      "reason": "Retain snapshot model but only Home/Servers/Subscriptions/Keenetic/Xray/Light data.",
+      "sha256": "584e6184f52df71fa0ca0dc0a56359d898bf67c58a6bfdc347894176784f2481",
+      "sizeBytes": 4318,
+      "treatment": "ADAPT"
+    },
+    {
+      "path": "app/bin/broray-home-snapshotd",
+      "reason": "Snapshot loop is folded into primary Light service.",
+      "sha256": "4b1f5e3612f759286cbb860622969a161ac29cb37169265a1bc1edd1756baede",
+      "sizeBytes": 2389,
+      "treatment": "DROP"
+    },
+    {
+      "path": "app/bin/broray-log-maintenance",
+      "reason": "Generic bounded log maintenance; rename product paths.",
+      "sha256": "c277c7084fb5e9eba1082a25320ecac36f0c2cdce7bd96b9d997556739e62716",
+      "sizeBytes": 2876,
+      "treatment": "PORT"
+    },
+    {
+      "path": "app/bin/broray-route-prepare",
+      "reason": "Routes/DNS module excluded.",
+      "sha256": "aa807099758c0f493a4b2a97245df9ae072f0bc78f4a82a4de2e32d522130af7",
+      "sizeBytes": 1554,
+      "treatment": "DROP"
+    },
+    {
+      "path": "app/bin/broray-routes",
+      "reason": "Routes/DNS module excluded.",
+      "sha256": "b1024c2a891a35a9990a771abf91d32b238f4239c5db2482addfc1cd44edbf16",
+      "sizeBytes": 7320,
+      "treatment": "DROP"
+    },
+    {
+      "path": "app/bin/broray-routes-check-source",
+      "reason": "Routes/DNS module excluded.",
+      "sha256": "24d313b83046987b34d433ebd822f1b37b357020538ae99ae616bc98a76857cb",
+      "sizeBytes": 405,
+      "treatment": "DROP"
+    },
+    {
+      "path": "app/bin/broray-routes-dot",
+      "reason": "Routes/DNS module excluded.",
+      "sha256": "303bf17dbce5c25f8677529648e0179d026d5edf9358ee9a0e558f1331be10ec",
+      "sizeBytes": 805,
+      "treatment": "DROP"
+    },
+    {
+      "path": "app/bin/broray-routes-user",
+      "reason": "Routes/DNS module excluded.",
+      "sha256": "5a301d5ccaae121b3f30694a76f2a01ed5b8083425171c9648e6ea28c1a17be2",
+      "sizeBytes": 1276,
+      "treatment": "DROP"
+    },
+    {
+      "path": "app/bin/broray-runtime-prepare",
+      "reason": "Full runtime repair includes routes/platform handoff; Light needs compact startup preparation.",
+      "sha256": "7ead2f944e8595d1ccfbfcbe0adfb185dc161ea7ec0551f09ab13399b12adde2",
+      "sizeBytes": 1813,
+      "treatment": "REPLACE"
+    },
+    {
+      "path": "app/bin/broray-server",
+      "reason": "Retain required core role; rename paths/product and remove unsupported commands/features.",
+      "sha256": "5f40763e22fe76aa97abb52074de0be393ea1b666e67af865060b02a68d694be",
+      "sizeBytes": 2233,
+      "treatment": "ADAPT"
+    },
+    {
+      "path": "app/bin/broray-server-auto-switch",
+      "reason": "Remove ratings, ping ranking, preferred/best-quality rules and route blockers; deterministic failover.",
+      "sha256": "e9b2626858cb12eb74c179fe442bfd4de3930cb4d5d33a522838ce349e346f5d",
+      "sizeBytes": 27345,
+      "treatment": "REPLACE"
+    },
+    {
+      "path": "app/bin/broray-server-probe",
+      "reason": "Retain required core role; rename paths/product and remove unsupported commands/features.",
+      "sha256": "5e32ec46ef929e3504b1ae5e28d565ca85d8e4a089d1456a8620349c3f48aa87",
+      "sizeBytes": 8923,
+      "treatment": "ADAPT"
+    },
+    {
+      "path": "app/bin/broray-servers",
+      "reason": "Retain required core role; rename paths/product and remove unsupported commands/features.",
+      "sha256": "0cdc10e621ae3cbd9f2855ceb1d2435cc4b05f29bec71ca828cab4e81ed12df1",
+      "sizeBytes": 1026,
+      "treatment": "ADAPT"
+    },
+    {
+      "path": "app/bin/broray-subscription-scheduler",
+      "reason": "No separate automatic subscription scheduler in Light.",
+      "sha256": "73761b9420f61d103bab53f728ccaed57cfeb70d37b6a09e031170d6ef12ef2f",
+      "sizeBytes": 4411,
+      "treatment": "DROP"
+    },
+    {
+      "path": "app/bin/broray-subscriptions",
+      "reason": "Retain required core role; rename paths/product and remove unsupported commands/features.",
+      "sha256": "e845fcb6536f83c6bb35ba71ca6cf5592ed1e427080bcb4466b03961ff4700a6",
+      "sizeBytes": 2148,
+      "treatment": "ADAPT"
+    },
+    {
+      "path": "app/bin/broray-system",
+      "reason": "Full BROray page backend is replaced by compact Light info/update backend.",
+      "sha256": "90d90279e02e3fc0a93e6e88c28f1e63f85397daadb5580219e1dfc6c26f0c8f",
+      "sizeBytes": 1121,
+      "treatment": "REPLACE"
+    },
+    {
+      "path": "app/bin/broray-test",
+      "reason": "Manual Xray maintenance CLI is excluded; validation remains internal.",
+      "sha256": "044a197278d5a7664aebdde2083fdd649c92d9cd147eee6415d250304b5e8982",
+      "sizeBytes": 139,
+      "treatment": "DROP"
+    },
+    {
+      "path": "app/bin/broray-xray-start",
+      "reason": "Retain required core role; rename paths/product and remove unsupported commands/features.",
+      "sha256": "c701a8817f7591b7e3686e502cce3c6e76556d12ecd5753d61600ba804b371dd",
+      "sizeBytes": 3546,
+      "treatment": "ADAPT"
+    },
+    {
+      "path": "app/bin/xray",
+      "reason": "Retain required core role; rename paths/product and remove unsupported commands/features.",
+      "sha256": "fb4434356a4be4d70c9b1eb86f7bdac3e170011268b7695c3e7d904fe0070ebd",
+      "sizeBytes": 51,
+      "treatment": "ADAPT"
+    },
+    {
+      "path": "app/lib/broray-cleanup.sh",
+      "reason": "Separate BROray maintenance/remove/restore page is excluded.",
+      "sha256": "569c6a9b350ff7672d3b5b705cf4f95cd45a6128df7749e7086f007ee082dea5",
+      "sizeBytes": 26602,
+      "treatment": "DROP"
+    },
+    {
+      "path": "app/lib/broray-page.sh",
+      "reason": "Separate BROray maintenance/remove/restore page is excluded.",
+      "sha256": "7b7d92a97674a9e3a58a31fd93bd5ed51f0fe58779a7adbdf35e0294584f0232",
+      "sizeBytes": 188919,
+      "treatment": "DROP"
+    },
+    {
+      "path": "app/lib/component-lifecycle.sh",
+      "reason": "Separate BROray maintenance/remove/restore page is excluded.",
+      "sha256": "a02031611820276630752974fe3e8ea23d86c6dc0f2b56582db92020863c0c51",
+      "sizeBytes": 3313,
+      "treatment": "DROP"
+    },
+    {
+      "path": "app/lib/home-snapshot.sh",
+      "reason": "Retain atomic snapshot/cache utilities for reduced Home module set.",
+      "sha256": "4921fb507cb4593a974655a1f667d777b74bbad0642f857957da21516c13b58e",
+      "sizeBytes": 4645,
+      "treatment": "ADAPT"
+    },
+    {
+      "path": "app/lib/interface-core.sh",
+      "reason": "Preserve ownership/fail-closed/rollback contract; rename owner/state and remove full-product assumptions.",
+      "sha256": "16db72421c0f2344ba168277ba8cd310969c0f98ac85f2b7db28459a3a72ee6f",
+      "sizeBytes": 15383,
+      "treatment": "ADAPT"
+    },
+    {
+      "path": "app/lib/interface-manage.sh",
+      "reason": "Preserve ownership/fail-closed/rollback contract; rename owner/state and remove full-product assumptions.",
+      "sha256": "23c5fe2e08d6453f93b55f227fd778ce68e0f1cab003debc1c9364a8bbef9e43",
+      "sizeBytes": 19243,
+      "treatment": "ADAPT"
+    },
+    {
+      "path": "app/lib/interface-owner.sh",
+      "reason": "Preserve ownership/fail-closed/rollback contract; rename owner/state and remove full-product assumptions.",
+      "sha256": "be7f23840447941c7b9d70c2979a9994e74e3d586740116dc15aa1473e96d693",
+      "sizeBytes": 58425,
+      "treatment": "ADAPT"
+    },
+    {
+      "path": "app/lib/interface-sync.sh",
+      "reason": "Preserve ownership/fail-closed/rollback contract; rename owner/state and remove full-product assumptions.",
+      "sha256": "8cc3376afcd49f65d7240cdfd46ee4a229e014696153189ff2eb18f21a9de838",
+      "sizeBytes": 5065,
+      "treatment": "ADAPT"
+    },
+    {
+      "path": "app/lib/interface.sh",
+      "reason": "Preserve ownership/fail-closed/rollback contract; rename owner/state and remove full-product assumptions.",
+      "sha256": "36dc48bd9a54439c53874b7a28ebd5983af8888cf515b11fe7a36f54e6835ddb",
+      "sizeBytes": 1657,
+      "treatment": "ADAPT"
+    }
+  ],
+  "schemaVersion": 1,
+  "source": {
+    "applicationSha256": "ad231c899e0a93f90f65489b8b6588aa09ae94b43c1d838e13e4458079c862bd",
+    "candidateId": "3.0.0-r20c01",
+    "release": "3.0.0-r20"
+  }
+}

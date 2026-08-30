@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-08-30",
+  "stage": "R20 donor static validation",
+  "status": "FAIL_PROCESS_TIMEOUT",
+  "operation": "combined ash/json/js validation in one tool invocation",
+  "effectOnDonorBytes": "NONE",
+  "effectOnGitHub": "NONE",
+  "effectOnRouter": "NONE",
+  "effectOnProductionServer": "NONE",
+  "recoveryPolicy": "split into short independent validation batches; do not repeat monolithic command"
+}

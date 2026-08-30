@@ -1,0 +1,240 @@
+{
+  "part": {
+    "number": 4,
+    "recordEnd": 128,
+    "recordStart": 97,
+    "records": 32
+  },
+  "records": [
+    {
+      "path": "app/share/release/contracts/dot-catalog-contract.json",
+      "reason": "Full BROray release requirements/contracts are replaced by Light-specific contracts.",
+      "sha256": "0aa4dfd381e155f71b04586d46441cd21c0118e16364bc95ea18426cc1898d65",
+      "sizeBytes": 6473,
+      "treatment": "REPLACE"
+    },
+    {
+      "path": "app/share/release/contracts/page-workflow-contract.json",
+      "reason": "Full BROray release requirements/contracts are replaced by Light-specific contracts.",
+      "sha256": "8b709cd926ce161e079ce44236277a3f2712470448f49a5b1304938189aea167",
+      "sizeBytes": 2031,
+      "treatment": "REPLACE"
+    },
+    {
+      "path": "app/share/release/contracts/physical-write-certification-contract.json",
+      "reason": "Full BROray release requirements/contracts are replaced by Light-specific contracts.",
+      "sha256": "37035d88c9dca40af1e43902f0333228dfaeee05817b4364f513f266c4a75ac7",
+      "sizeBytes": 1600,
+      "treatment": "REPLACE"
+    },
+    {
+      "path": "app/share/release/contracts/source-admission-contract.json",
+      "reason": "Full BROray release requirements/contracts are replaced by Light-specific contracts.",
+      "sha256": "4f6858667f489864c29a61fc53e516a135fb8bf74d4cff6aeee6a3bc5683fe74",
+      "sizeBytes": 3181,
+      "treatment": "REPLACE"
+    },
+    {
+      "path": "app/share/release/contracts/space-contract.json",
+      "reason": "Full BROray release requirements/contracts are replaced by Light-specific contracts.",
+      "sha256": "6234582b04f496c8060c2b61a850ab0cf7603b4874460073044852b1d5603d2e",
+      "sizeBytes": 4052,
+      "treatment": "REPLACE"
+    },
+    {
+      "path": "app/share/release/manifest.json",
+      "reason": "Full BROray release requirements/contracts are replaced by Light-specific contracts.",
+      "sha256": "bfd434bb1c7e2d28fb2e70c019652339622bab203245e2b3b5113c8f6438ce01",
+      "sizeBytes": 1501,
+      "treatment": "REPLACE"
+    },
+    {
+      "path": "app/share/release/requirements-traceability.json",
+      "reason": "Full BROray release requirements/contracts are replaced by Light-specific contracts.",
+      "sha256": "33bc3ef53fc726a70b3572dbe0dce98b3ff5fe0cd4054b14f4104ae8cf4c572d",
+      "sizeBytes": 3424,
+      "treatment": "REPLACE"
+    },
+    {
+      "path": "app/share/routes/manifests/chatgpt.json",
+      "reason": "Routes excluded.",
+      "sha256": "b2c6cdaece47b33310f857c908dbfbe97c90bb2a6d8a8acda95e0fb80e16a322",
+      "sizeBytes": 573,
+      "treatment": "DROP"
+    },
+    {
+      "path": "app/share/routes/manifests/facebook.json",
+      "reason": "Routes excluded.",
+      "sha256": "9d3022805a2e8724db838639e2451c34cf46efcd11287d19236c2d44491d019c",
+      "sizeBytes": 561,
+      "treatment": "DROP"
+    },
+    {
+      "path": "app/share/routes/manifests/instagram.json",
+      "reason": "Routes excluded.",
+      "sha256": "f86d11d0ce85db3ac2e7890050a3ec2310906bad338c58672f50965477ec22c9",
+      "sizeBytes": 563,
+      "treatment": "DROP"
+    },
+    {
+      "path": "app/share/routes/manifests/meta.json",
+      "reason": "Routes excluded.",
+      "sha256": "630bff4bc17528ab9c60dbcf2701bc6dc4414c5af4356f3140e7d484d7154089",
+      "sizeBytes": 539,
+      "treatment": "DROP"
+    },
+    {
+      "path": "app/share/routes/manifests/speedtest.json",
+      "reason": "Routes excluded.",
+      "sha256": "08c3267dfa56792ac3414f1548fe83b35b43cc03ee172a9c0dbc8020b9cf56dd",
+      "sizeBytes": 559,
+      "treatment": "DROP"
+    },
+    {
+      "path": "app/share/routes/manifests/telegram.json",
+      "reason": "Routes excluded.",
+      "sha256": "42f57603fe702b42e1f947c11b8ace404eb28f0fc80ef7fe4c7bf997249a985a",
+      "sizeBytes": 743,
+      "treatment": "DROP"
+    },
+    {
+      "path": "app/share/routes/manifests/tiktok.json",
+      "reason": "Routes excluded.",
+      "sha256": "ca81ca8df39ab9cbfb32dbddae716d221757732765712cbddbc59ed53f4cfc20",
+      "sizeBytes": 553,
+      "treatment": "DROP"
+    },
+    {
+      "path": "app/share/routes/manifests/whatsapp.json",
+      "reason": "Routes excluded.",
+      "sha256": "c1888bcce3b98308261d5739ba8c5aee9dc1255ba268c6d79cbc0127ae2ad94a",
+      "sizeBytes": 561,
+      "treatment": "DROP"
+    },
+    {
+      "path": "app/share/routes/manifests/youtube.json",
+      "reason": "Routes excluded.",
+      "sha256": "ba4a92dbb4b8d34502253bfd7f6be830f25424e22f0ef8688d2f3ecbc3ecf901",
+      "sizeBytes": 562,
+      "treatment": "DROP"
+    },
+    {
+      "path": "app/share/routes/user-import-version",
+      "reason": "Routes excluded.",
+      "sha256": "2985be8b28d3ade858e8d8fb4bc22f565b1bf6020dff982dce141f7721b9999c",
+      "sizeBytes": 6,
+      "treatment": "DROP"
+    },
+    {
+      "path": "app/share/updater-platform/SHA256SUMS",
+      "reason": "Do not duplicate updater platform inside Light app slot; updater is a separate release object.",
+      "sha256": "c190e22b50647840d8097ef3fad2949406b303c604229f727e506186f2c78843",
+      "sizeBytes": 738,
+      "treatment": "DROP"
+    },
+    {
+      "path": "app/share/updater-platform/opt/bin/broray-updaterctl",
+      "reason": "Do not duplicate updater platform inside Light app slot; updater is a separate release object.",
+      "sha256": "4d98d0be946e9dc8669d8f7d762b09c8b2920522bb86625bb1d45af2ecfe09fb",
+      "sizeBytes": 92,
+      "treatment": "DROP"
+    },
+    {
+      "path": "app/share/updater-platform/opt/etc/init.d/S22broray-updater",
+      "reason": "Do not duplicate updater platform inside Light app slot; updater is a separate release object.",
+      "sha256": "9eed286cfdb0eff76b8b8bf6e4a2d2882353f4c90055f1356ba602c646587e58",
+      "sizeBytes": 2251,
+      "treatment": "DROP"
+    },
+    {
+      "path": "app/share/updater-platform/opt/libexec/broray-updater/broray-compat.sh",
+      "reason": "Do not duplicate updater platform inside Light app slot; updater is a separate release object.",
+      "sha256": "88fcf98aac6ca1f57cb96a6441c0cd7939fbd0f0e31f7196abaf82804c6f17c0",
+      "sizeBytes": 5312,
+      "treatment": "DROP"
+    },
+    {
+      "path": "app/share/updater-platform/opt/libexec/broray-updater/broray-migrate-legacy.sh",
+      "reason": "Do not duplicate updater platform inside Light app slot; updater is a separate release object.",
+      "sha256": "c66f665eea3f194492b032238365a3daea77649c16751f455aaaed7b08f851ea",
+      "sizeBytes": 14380,
+      "treatment": "DROP"
+    },
+    {
+      "path": "app/share/updater-platform/opt/libexec/broray-updater/broray-updater.sh",
+      "reason": "Do not duplicate updater platform inside Light app slot; updater is a separate release object.",
+      "sha256": "a3c094b3a5e82ac82be7ec8b53c90f4023351a94eb6ba945b99501c0876e2c4a",
+      "sizeBytes": 119348,
+      "treatment": "DROP"
+    },
+    {
+      "path": "app/share/updater-platform/opt/libexec/broray-updater/minisign",
+      "reason": "Do not duplicate updater platform inside Light app slot; updater is a separate release object.",
+      "sha256": "cec9f88be8c975af76854a53b4d49c3d257feae38d916edb0d16fb55aacd3000",
+      "sizeBytes": 195288,
+      "treatment": "DROP"
+    },
+    {
+      "path": "app/share/updater-platform/opt/libexec/broray-updater/xray-wrapper",
+      "reason": "Do not duplicate updater platform inside Light app slot; updater is a separate release object.",
+      "sha256": "fb4434356a4be4d70c9b1eb86f7bdac3e170011268b7695c3e7d904fe0070ebd",
+      "sizeBytes": 51,
+      "treatment": "DROP"
+    },
+    {
+      "path": "app/web-new/api/auth-common.sh",
+      "reason": "Retain authentication/session contract with Light paths/branding.",
+      "sha256": "c5059dc7b3e95c557923eac491fa8f350c5f0d13d98bb423652cf87806435f0d",
+      "sizeBytes": 2812,
+      "treatment": "PORT"
+    },
+    {
+      "path": "app/web-new/api/broray/cleanup-plan.cgi",
+      "reason": "Replace full maintenance API with compact Light version/update-only API.",
+      "sha256": "ec72ecc8abc3c057bfc58c1084c17ffa50de0a396b4cd46a783a2d388dd1618c",
+      "sizeBytes": 3022,
+      "treatment": "REPLACE"
+    },
+    {
+      "path": "app/web-new/api/broray/cleanup.cgi",
+      "reason": "Replace full maintenance API with compact Light version/update-only API.",
+      "sha256": "42508d17d1531ca99a87489828cf15e9986681cbd8b04ff2d72e2940529380e8",
+      "sizeBytes": 2907,
+      "treatment": "REPLACE"
+    },
+    {
+      "path": "app/web-new/api/broray/info.cgi",
+      "reason": "Replace full maintenance API with compact Light version/update-only API.",
+      "sha256": "5c59eca31b7681557038bffbb6445a21ff8d7fb0cc4bb7bce74a2188e48ad38b",
+      "sizeBytes": 4002,
+      "treatment": "REPLACE"
+    },
+    {
+      "path": "app/web-new/api/broray/reinstall.cgi",
+      "reason": "Replace full maintenance API with compact Light version/update-only API.",
+      "sha256": "9f0c8e2432204df6a9548e312609e9eebfec1c9d3dd50c4470684526b0c84ebb",
+      "sizeBytes": 359,
+      "treatment": "REPLACE"
+    },
+    {
+      "path": "app/web-new/api/broray/restore.cgi",
+      "reason": "Replace full maintenance API with compact Light version/update-only API.",
+      "sha256": "db25faf1a6f23aa233038e0e95e5d1329c2eaf83bbede80a217ed4de3b578496",
+      "sizeBytes": 473,
+      "treatment": "REPLACE"
+    },
+    {
+      "path": "app/web-new/api/broray/uninstall.cgi",
+      "reason": "Replace full maintenance API with compact Light version/update-only API.",
+      "sha256": "38c7e4041c16d7c38dfffd5dfd3708e94cf73e1636df4011774b948fefb44100",
+      "sizeBytes": 1434,
+      "treatment": "REPLACE"
+    }
+  ],
+  "schemaVersion": 1,
+  "source": {
+    "applicationSha256": "ad231c899e0a93f90f65489b8b6588aa09ae94b43c1d838e13e4458079c862bd",
+    "candidateId": "3.0.0-r20c01",
+    "release": "3.0.0-r20"
+  }
+}

@@ -1,0 +1,124 @@
+{
+  "applicationTree": {
+    "areas": {
+      "app/bin": {
+        "bytes": 88767,
+        "files": 21
+      },
+      "app/lib": {
+        "bytes": 2321775,
+        "files": 65
+      },
+      "app/share": {
+        "bytes": 456576,
+        "files": 33
+      },
+      "app/web-new/api": {
+        "bytes": 173616,
+        "files": 80
+      },
+      "app/web-new/assets": {
+        "bytes": 1812848,
+        "files": 48
+      },
+      "app/web-new/pages+metadata": {
+        "bytes": 189345,
+        "files": 14
+      },
+      "init": {
+        "bytes": 26579,
+        "files": 5
+      },
+      "root": {
+        "bytes": 56949,
+        "files": 3
+      },
+      "state-seed": {
+        "bytes": 7038,
+        "files": 15
+      }
+    },
+    "directories": 41,
+    "layout": "broray-compact-app-slot/1",
+    "logicalBytes": 5133493,
+    "maxFileBytes": 693145,
+    "regularFiles": 284
+  },
+  "checkpoint": "BROray-Light-R20-PREPARATION-R0006",
+  "mutationBoundary": {
+    "BROadmin/BROray": "NONE",
+    "productionServer": "NONE",
+    "router": "NONE"
+  },
+  "schemaVersion": 1,
+  "source": {
+    "application": {
+      "archiveMembers": 324,
+      "directories": 40,
+      "hardlinks": 0,
+      "regularFiles": 284,
+      "sha256": "ad231c899e0a93f90f65489b8b6588aa09ae94b43c1d838e13e4458079c862bd",
+      "sizeBytes": 1948223,
+      "symlinks": 0,
+      "unsafePaths": 0
+    },
+    "cleanBootstrap": {
+      "containerAssumption": "NONE",
+      "fileType": "ASCII text",
+      "magic32Hex": "280a736574202d65750a756d61736b203037370a42423d27270a666f72206320",
+      "sha256": "fb4943e3d336d091b16e6cf436e2a7eefe7274422246c8038a7eea2e6c0d79a0",
+      "sizeBytes": 56406
+    },
+    "installer": {
+      "sha256": "3c3faa352ef78821de791a3e932602b88efadf9b82fecde39c535a67bfbb14c0",
+      "sizeBytes": 38808
+    },
+    "minimumUpdaterVersion": 5,
+    "opkgPackageVersion": "3.0.0-r14",
+    "publicRelease": "3.0.0-r20",
+    "publishedDate": "2026-08-30",
+    "repository": "BROadmin/BROray",
+    "sharedXray": {
+      "bundled": false,
+      "mode": "preserve-installed",
+      "path": "/opt/broray/runtime/xray"
+    },
+    "stableReleaseJson": {
+      "sha256": "b87deb3cca0eb01b1632aa8ceb1bcb81de6972bee5b7925e694088cffa9a2ebd",
+      "sizeBytes": 1934
+    },
+    "technicalCandidate": "3.0.0-r20c01",
+    "updaterEngine": "broray-updater/5",
+    "updaterEngineSha256": "a3c094b3a5e82ac82be7ec8b53c90f4023351a94eb6ba945b99501c0876e2c4a",
+    "updaterPlatform": {
+      "archiveMembers": 14,
+      "directories": 6,
+      "hardlinks": 0,
+      "regularFiles": 8,
+      "sha256": "eaf2eafb62d1b108fe576d1fda09ae7a5d15ad90f71272abc23f321d397611b0",
+      "sizeBytes": 154547,
+      "symlinks": 0,
+      "unsafePaths": 0
+    },
+    "webUIBuild": "WebUI-3.0.0-r20c01"
+  },
+  "validation": {
+    "applicationArchiveSafety": "PASS",
+    "applicationInternalSha256Sums": "PASS_283_ENTRIES",
+    "applicationSha256": "PASS",
+    "artifactDigest": "sha256:61c7618193926693014d8ef6b3717a114041bc89d9f17a3ae81184615a034571",
+    "artifactId": 9731219860,
+    "artifactSizeBytes": 2160070,
+    "artifactWorkflowRunId": 33308452852,
+    "ashBinInit": "PASS_26_OF_26",
+    "ashLibrariesExcludingDroppedLegacyPackageTransaction": "PASS_64_OF_64",
+    "ashWebApi": "PASS_80_OF_80",
+    "cleanBootstrapSha256": "PASS",
+    "installerSha256": "PASS",
+    "javascriptSyntax": "PASS_24_OF_24",
+    "jsonSyntax": "PASS_33_OF_33",
+    "releaseJsonSha256": "PASS",
+    "updaterPlatformArchiveSafety": "PASS",
+    "updaterPlatformSha256": "PASS"
+  }
+}

@@ -1,0 +1,240 @@
+{
+  "part": {
+    "number": 3,
+    "recordEnd": 96,
+    "recordStart": 65,
+    "records": 32
+  },
+  "records": [
+    {
+      "path": "app/lib/routes-user-import.sh",
+      "reason": "Routes/DNS subsystem excluded.",
+      "sha256": "2a1f700840dea0ee99c64c73437fd4e72321d82fb8010aa069503efd213dcae8",
+      "sizeBytes": 61281,
+      "treatment": "DROP"
+    },
+    {
+      "path": "app/lib/routes-web-action.sh",
+      "reason": "Routes/DNS subsystem excluded.",
+      "sha256": "9fc6fd596e96a288875be02618769454cd261e3d54860cec20339a20be707cb5",
+      "sizeBytes": 13755,
+      "treatment": "DROP"
+    },
+    {
+      "path": "app/lib/runtime-capabilities.sh",
+      "reason": "Full/legacy package compatibility layer is replaced by a Light-specific updater/installer contract.",
+      "sha256": "6fd0abcbeeed67dd564a2f82d8489b5c7da6eb45f1b2c4eebccdf0f30eba6258",
+      "sizeBytes": 68059,
+      "treatment": "DROP"
+    },
+    {
+      "path": "app/lib/server-command.sh",
+      "reason": "Retain server core while enforcing VLESS-only and removing quality/rating/full-protocol branches.",
+      "sha256": "c567bd8d0bea2851e0b6fe28e4374c1712550a18a20d91dd51826b04606a7036",
+      "sizeBytes": 4005,
+      "treatment": "ADAPT"
+    },
+    {
+      "path": "app/lib/server-config-generator.sh",
+      "reason": "Retain server core while enforcing VLESS-only and removing quality/rating/full-protocol branches.",
+      "sha256": "922987797336fad164732a77a1ace87c95829e4babf57078582ba9859c1fe6b3",
+      "sizeBytes": 13534,
+      "treatment": "ADAPT"
+    },
+    {
+      "path": "app/lib/server-import.sh",
+      "reason": "Retain server core while enforcing VLESS-only and removing quality/rating/full-protocol branches.",
+      "sha256": "c98e7516f6333b8faa706780748ab567ceca4b1defd7fc5f5f4e86a6f65c5522",
+      "sizeBytes": 36967,
+      "treatment": "ADAPT"
+    },
+    {
+      "path": "app/lib/server-service.sh",
+      "reason": "Retain server core while enforcing VLESS-only and removing quality/rating/full-protocol branches.",
+      "sha256": "f0f6720a189cb1ec6cd4d180122b0dd3dfa2be4f3a0787a05e5341a65d7284f7",
+      "sizeBytes": 36540,
+      "treatment": "ADAPT"
+    },
+    {
+      "path": "app/lib/server-subscription-service.sh",
+      "reason": "Retain server core while enforcing VLESS-only and removing quality/rating/full-protocol branches.",
+      "sha256": "4893e266d5cc63eb521644ced641c5fc1a26c6be52e70d42be4958f8845c789b",
+      "sizeBytes": 30388,
+      "treatment": "ADAPT"
+    },
+    {
+      "path": "app/lib/server-xray-manager.sh",
+      "reason": "Retain server core while enforcing VLESS-only and removing quality/rating/full-protocol branches.",
+      "sha256": "8d31e56ccbd39068fc6a2bc4de76b875eda05f2e0d0a2de12ec38c5716bd47f6",
+      "sizeBytes": 3778,
+      "treatment": "ADAPT"
+    },
+    {
+      "path": "app/lib/server.sh",
+      "reason": "Retain server core while enforcing VLESS-only and removing quality/rating/full-protocol branches.",
+      "sha256": "f67676d59b6a659128303ecaa558c3e94909a7c41f58b5488aaa12f3f991f7aa",
+      "sizeBytes": 8434,
+      "treatment": "ADAPT"
+    },
+    {
+      "path": "app/lib/status-contract.sh",
+      "reason": "Core generic logic retained with Light path/product namespace updates.",
+      "sha256": "3de011b7394f6e28c6e021800b01f1cb095791d343b2a9ade751d0c6bea338d9",
+      "sizeBytes": 5596,
+      "treatment": "PORT"
+    },
+    {
+      "path": "app/lib/subscription-service.sh",
+      "reason": "Retain secure fetch/staging/sync; count non-VLESS as skipped and expose only Light operations.",
+      "sha256": "6beccda49a9219abf64d2cbabd8f05d9a5f25ab09be1e57893dd13292c3d2f84",
+      "sizeBytes": 75292,
+      "treatment": "ADAPT"
+    },
+    {
+      "path": "app/lib/subscription.sh",
+      "reason": "Legacy subscription CLI path is superseded by subscription-service backend.",
+      "sha256": "ec31455ef3fc93b3870ab049a36f7213ac5231d8aa8d4576793334caf87ca8d5",
+      "sizeBytes": 9669,
+      "treatment": "DROP"
+    },
+    {
+      "path": "app/lib/universal-platform-handoff.sh",
+      "reason": "Full/legacy package compatibility layer is replaced by a Light-specific updater/installer contract.",
+      "sha256": "abc30ddf7198ace9b0b758f3030145f6250f31992956c1dff33b7999b31536f7",
+      "sizeBytes": 30524,
+      "treatment": "DROP"
+    },
+    {
+      "path": "app/lib/util.sh",
+      "reason": "Core generic logic retained with Light path/product namespace updates.",
+      "sha256": "e2a5ecb3eda9825446c1e552378383faf284585302e4a9082fa1045d6db942d9",
+      "sizeBytes": 1662,
+      "treatment": "PORT"
+    },
+    {
+      "path": "app/lib/web-auth-native.sh",
+      "reason": "Core generic logic retained with Light path/product namespace updates.",
+      "sha256": "f77d3766dc685c6105e6009d42bc33e153f2da3a240cada5152fc14fcd59346d",
+      "sizeBytes": 9075,
+      "treatment": "PORT"
+    },
+    {
+      "path": "app/lib/web-auth.sh",
+      "reason": "Core generic logic retained with Light path/product namespace updates.",
+      "sha256": "9ee2c1d0efe518dff4de71adf5741f4b5d583f65b48282514adff5c73f4d8cb1",
+      "sizeBytes": 8402,
+      "treatment": "PORT"
+    },
+    {
+      "path": "app/lib/web-publish.sh",
+      "reason": "KeenDNS/web-publish is outside approved Light scope; direct WebUI remains.",
+      "sha256": "d27c30f73146d9d9b311d05589218aab87d222fee70c21169a468eafdc929ea0",
+      "sizeBytes": 33559,
+      "treatment": "DROP"
+    },
+    {
+      "path": "app/lib/web-request-body.sh",
+      "reason": "Core generic logic retained with Light path/product namespace updates.",
+      "sha256": "465dda083771bd046fd00b0cf5ca4577edb57c6745105d1e62f3bc16af311682",
+      "sizeBytes": 991,
+      "treatment": "PORT"
+    },
+    {
+      "path": "app/lib/xray-command.sh",
+      "reason": "Manual Xray command surface is excluded.",
+      "sha256": "125ce250f06d84e93c540fbd6f96d407f46b3295b71a3970a7f9db2f281864af",
+      "sizeBytes": 2964,
+      "treatment": "DROP"
+    },
+    {
+      "path": "app/lib/xray-control.sh",
+      "reason": "Retain status/update/rollback internals; remove manual maintenance API and replace routes-named operation lock.",
+      "sha256": "60f6b9ae6369acc1efad95e05f0796c3c5c2648c2520466e85ddf251f7583518",
+      "sizeBytes": 6773,
+      "treatment": "ADAPT"
+    },
+    {
+      "path": "app/lib/xray-update.sh",
+      "reason": "Retain status/update/rollback internals; remove manual maintenance API and replace routes-named operation lock.",
+      "sha256": "dce397c49a5ada8dfb31d9c736644f57e3efc28c9780b22a0c8384262550bd1e",
+      "sizeBytes": 34646,
+      "treatment": "ADAPT"
+    },
+    {
+      "path": "app/lib/xray-web-operation.sh",
+      "reason": "Retain status/update/rollback internals; remove manual maintenance API and replace routes-named operation lock.",
+      "sha256": "f013017c569818b9edfb7f780c36187908fb474cc7c031b0aed9e27a65813204",
+      "sizeBytes": 9173,
+      "treatment": "ADAPT"
+    },
+    {
+      "path": "app/lib/xray.sh",
+      "reason": "Retain status/update/rollback internals; remove manual maintenance API and replace routes-named operation lock.",
+      "sha256": "63747e68b7a5292b02eac6fb410185f2da44ba675e82dae3c48f31f193b5ec33",
+      "sizeBytes": 19614,
+      "treatment": "ADAPT"
+    },
+    {
+      "path": "app/share/licenses/xray/LICENSE",
+      "reason": "Retain Xray licensing/attribution material.",
+      "sha256": "1f256ecad192880510e84ad60474eab7589218784b9a50bc7ceee34c2b91f1d5",
+      "sizeBytes": 16725,
+      "treatment": "RETAIN"
+    },
+    {
+      "path": "app/share/licenses/xray/README.md",
+      "reason": "Retain Xray licensing/attribution material.",
+      "sha256": "0d098928cf19c756a8c956c0b5ca736b75f9eaff0765fd71c26a3dcb413a3dde",
+      "sizeBytes": 12666,
+      "treatment": "RETAIN"
+    },
+    {
+      "path": "app/share/release/KEENETIC-ENTWARE-CAPABILITIES.md",
+      "reason": "Full BROray release requirements/contracts are replaced by Light-specific contracts.",
+      "sha256": "c8ed6ebf5cf2debb74d42a73199638a6a8c5d8f9cdff9d19d4cfaf9803c9d02d",
+      "sizeBytes": 23545,
+      "treatment": "REPLACE"
+    },
+    {
+      "path": "app/share/release/RELEASE-REQUIREMENTS-R14C01.md",
+      "reason": "Full BROray release requirements/contracts are replaced by Light-specific contracts.",
+      "sha256": "950ef2c32d93c774e2b00c7923a615a2f4f97e59b928b5ed0dbb4e6f2ea34802",
+      "sizeBytes": 5337,
+      "treatment": "REPLACE"
+    },
+    {
+      "path": "app/share/release/RELEASE-REQUIREMENTS.md",
+      "reason": "Full BROray release requirements/contracts are replaced by Light-specific contracts.",
+      "sha256": "6e1ac95ae5f47c3e2d3160ff4c09d52fdb707baf43f6b9430eb6d9a8048a2dad",
+      "sizeBytes": 1232,
+      "treatment": "REPLACE"
+    },
+    {
+      "path": "app/share/release/SPACE-CALCULATION.md",
+      "reason": "Full BROray release requirements/contracts are replaced by Light-specific contracts.",
+      "sha256": "7c876383f750ec390384a54b1383744fb45e9c6709535a4c6acd5789bdec4e78",
+      "sizeBytes": 18279,
+      "treatment": "REPLACE"
+    },
+    {
+      "path": "app/share/release/UPDATER-ARCHITECTURE.md",
+      "reason": "Full BROray release requirements/contracts are replaced by Light-specific contracts.",
+      "sha256": "69f23077362159f7b56485422668ec22102d998d0546e73ed3cea5ae5c2a12e6",
+      "sizeBytes": 1702,
+      "treatment": "REPLACE"
+    },
+    {
+      "path": "app/share/release/contracts/capability-contract.json",
+      "reason": "Full BROray release requirements/contracts are replaced by Light-specific contracts.",
+      "sha256": "4fd24f5a1435c14d5da1ca63b42f05d618d4879218c89ad5bf6994a2c055d2ab",
+      "sizeBytes": 12148,
+      "treatment": "REPLACE"
+    }
+  ],
+  "schemaVersion": 1,
+  "source": {
+    "applicationSha256": "ad231c899e0a93f90f65489b8b6588aa09ae94b43c1d838e13e4458079c862bd",
+    "candidateId": "3.0.0-r20c01",
+    "release": "3.0.0-r20"
+  }
+}

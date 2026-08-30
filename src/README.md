@@ -1,5 +1,13 @@
-# Source import gate
+# Source build gate
 
-The BROray-Light implementation source is intentionally not imported at repository bootstrap.
+BROray-Light source must be built from the exact verified BROray Stable donor set, not from an assumed-equivalent upstream development tree.
 
-Import is allowed only after exact BROray `3.0.0-r14c68` Stable release-source bytes are obtained and verified against their recorded identity. The current upstream `main` branch must not be substituted for that release-source package.
+Current verified donor:
+
+```text
+releaseId=3.0.0-r20
+candidateId=3.0.0-r20c01
+applicationSha256=ad231c899e0a93f90f65489b8b6588aa09ae94b43c1d838e13e4458079c862bd
+```
+
+Preparation R0006 classified all 284 exact application files into `RETAIN`, `PORT`, `ADAPT`, `REPLACE`, or `DROP`. The next allowed stage is to construct the Light source tree from that treatment map. Current upstream `BROadmin/BROray` `main` must not be substituted for the exact Stable application bytes.

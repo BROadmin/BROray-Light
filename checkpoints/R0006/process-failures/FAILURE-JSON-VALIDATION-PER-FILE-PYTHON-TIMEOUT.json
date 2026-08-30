@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-08-30",
+  "stage": "R20 donor JSON static validation",
+  "status": "FAIL_PROCESS_TIMEOUT",
+  "operation": "python3 -m json.tool launched once per JSON file",
+  "effectOnDonorBytes": "NONE",
+  "effectOnGitHub": "NONE",
+  "effectOnRouter": "NONE",
+  "effectOnProductionServer": "NONE",
+  "recoveryPolicy": "use jq in short batches; do not repeat per-file Python invocation"
+}

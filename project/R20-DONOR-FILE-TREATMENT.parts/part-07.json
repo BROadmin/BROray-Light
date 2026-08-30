@@ -1,0 +1,240 @@
+{
+  "part": {
+    "number": 7,
+    "recordEnd": 224,
+    "recordStart": 193,
+    "records": 32
+  },
+  "records": [
+    {
+      "path": "app/web-new/api/xray/diagnostics.cgi",
+      "reason": "Manual Xray maintenance/diagnostics surface excluded.",
+      "sha256": "57aa48d16b033fa691b99328c86290645b0c3f7202898e5cea4a27d1fe64b08b",
+      "sizeBytes": 9887,
+      "treatment": "DROP"
+    },
+    {
+      "path": "app/web-new/api/xray/operation-status.cgi",
+      "reason": "Keep status/update-only functionality for Home; replace paths/lock worker.",
+      "sha256": "c009a6c4bf026ab04a3655dc7da6b7abb47392e80ec2f2197ac29ecf365f5e10",
+      "sizeBytes": 1692,
+      "treatment": "ADAPT"
+    },
+    {
+      "path": "app/web-new/api/xray/reinstall.cgi",
+      "reason": "Manual Xray maintenance/diagnostics surface excluded.",
+      "sha256": "63b1723cff0a64606df0abc1aadda6d20bfd33498b6d3756927b88f3fd3bf04a",
+      "sizeBytes": 257,
+      "treatment": "DROP"
+    },
+    {
+      "path": "app/web-new/api/xray/restart.cgi",
+      "reason": "Manual Xray maintenance/diagnostics surface excluded.",
+      "sha256": "4c60d5a608a3dd716be150958b599205c75bb14bf0acf10ec963af3a8d9eda7e",
+      "sizeBytes": 2474,
+      "treatment": "DROP"
+    },
+    {
+      "path": "app/web-new/api/xray/start.cgi",
+      "reason": "Manual Xray maintenance/diagnostics surface excluded.",
+      "sha256": "d231e14bacdde8d5346022c4e954740eeaf444f814f1262f3c4d6359a8f2a870",
+      "sizeBytes": 2446,
+      "treatment": "DROP"
+    },
+    {
+      "path": "app/web-new/api/xray/status.cgi",
+      "reason": "Keep status/update-only functionality for Home; replace paths/lock worker.",
+      "sha256": "de26b2a4f12bd07c6b46c24cc0f649b5db0d6d272cbaa92fc44632718815edc9",
+      "sizeBytes": 837,
+      "treatment": "ADAPT"
+    },
+    {
+      "path": "app/web-new/api/xray/stop.cgi",
+      "reason": "Manual Xray maintenance/diagnostics surface excluded.",
+      "sha256": "0e9cd9992c88fac1b270d0189db27fbebe49d2a8262c24b034a492b5e3fa2e92",
+      "sizeBytes": 2448,
+      "treatment": "DROP"
+    },
+    {
+      "path": "app/web-new/api/xray/update-check.cgi",
+      "reason": "Keep status/update-only functionality for Home; replace paths/lock worker.",
+      "sha256": "c6770c73151ab2e77d9d217310f15189d85068e370e8375a494b8080a54af77a",
+      "sizeBytes": 1333,
+      "treatment": "ADAPT"
+    },
+    {
+      "path": "app/web-new/api/xray/update.cgi",
+      "reason": "Keep status/update-only functionality for Home; replace paths/lock worker.",
+      "sha256": "5b88738aea22e14a73c2365b7b4d6d9c4ac500eb9e18ebef13e7dbec01142aba",
+      "sizeBytes": 254,
+      "treatment": "ADAPT"
+    },
+    {
+      "path": "app/web-new/assets/css/allpage.css",
+      "reason": "Extract only Light components and one brand theme.",
+      "sha256": "2a200d46698ebc1b745b4679e0fc630675435813b530e3e4db45b0f71647e7e4",
+      "sizeBytes": 150404,
+      "treatment": "REPLACE"
+    },
+    {
+      "path": "app/web-new/assets/icons/broray-icons.svg",
+      "reason": "Keep only symbols used by three-page Light UI.",
+      "sha256": "aa5e9d780897d57c8b1987168f7b3f2d4295c01e191d093856baff9d864df883",
+      "sizeBytes": 10493,
+      "treatment": "ADAPT"
+    },
+    {
+      "path": "app/web-new/assets/images/branding/apple-touch-icon.png",
+      "reason": "Redundant/large branding source variant not required by compact WebUI.",
+      "sha256": "7fd4d2e8c3b91d91a48e64763a396c4f6aeedbb31c9faba35d2fdae0ebb80174",
+      "sizeBytes": 26749,
+      "treatment": "DROP"
+    },
+    {
+      "path": "app/web-new/assets/images/branding/broray-logo-128.png",
+      "reason": "Retain compact current brand asset; Light-specific branding can be generated later.",
+      "sha256": "65397f039d9bb4ad8f16e3b64f0db32719505f7aa6efd27a249b44d4dc3596e2",
+      "sizeBytes": 16179,
+      "treatment": "RETAIN"
+    },
+    {
+      "path": "app/web-new/assets/images/branding/broray-logo-160.png",
+      "reason": "Redundant/large branding source variant not required by compact WebUI.",
+      "sha256": "0bb763128bab34d0de177c26bc6b1ac1162f31303d73c3b661af0c2689cd9e56",
+      "sizeBytes": 22410,
+      "treatment": "DROP"
+    },
+    {
+      "path": "app/web-new/assets/images/branding/broray-logo-256.png",
+      "reason": "Redundant/large branding source variant not required by compact WebUI.",
+      "sha256": "08ac5505e82eaf5c552b20f254bf1f2bd2f5fd5540077ec8f9dfad38194d6354",
+      "sizeBytes": 45661,
+      "treatment": "DROP"
+    },
+    {
+      "path": "app/web-new/assets/images/branding/broray-logo-512.png",
+      "reason": "Redundant/large branding source variant not required by compact WebUI.",
+      "sha256": "b01e955be62166b8cfdc56f34ef84433d621f6765a553c43def473be0eb15d4f",
+      "sizeBytes": 138402,
+      "treatment": "DROP"
+    },
+    {
+      "path": "app/web-new/assets/images/branding/broray-logo-64.png",
+      "reason": "Retain compact current brand asset; Light-specific branding can be generated later.",
+      "sha256": "8337a9abeb2fb467ee182f46f65595b0a29e13d98a570fa6aeb9f6d47c9715c8",
+      "sizeBytes": 6031,
+      "treatment": "RETAIN"
+    },
+    {
+      "path": "app/web-new/assets/images/branding/broray-logo-source.png",
+      "reason": "Redundant/large branding source variant not required by compact WebUI.",
+      "sha256": "20d344442b733dc43fec5807fd487da76da07c46b3be2573665958fc7f882bba",
+      "sizeBytes": 693145,
+      "treatment": "DROP"
+    },
+    {
+      "path": "app/web-new/assets/images/branding/favicon-16.png",
+      "reason": "Retain compact current brand asset; Light-specific branding can be generated later.",
+      "sha256": "95a7fd6e95431dc668251e6f8e0090f3e53e7d998652eb4e416d8a0fd9eacfe9",
+      "sizeBytes": 1046,
+      "treatment": "RETAIN"
+    },
+    {
+      "path": "app/web-new/assets/images/branding/favicon-32.png",
+      "reason": "Retain compact current brand asset; Light-specific branding can be generated later.",
+      "sha256": "bf5ad3dcb51af6bd1efceae06fde8406ae7512f66065f6573e02f4041f3b7e2d",
+      "sizeBytes": 2394,
+      "treatment": "RETAIN"
+    },
+    {
+      "path": "app/web-new/assets/images/branding/favicon.ico",
+      "reason": "Retain compact current brand asset; Light-specific branding can be generated later.",
+      "sha256": "87e1206bce1a40d55777d67c32e61c6a3ff33f739fd0731c6d0c91cc831a643b",
+      "sizeBytes": 13978,
+      "treatment": "RETAIN"
+    },
+    {
+      "path": "app/web-new/assets/images/branding/icon-192.png",
+      "reason": "Redundant/large branding source variant not required by compact WebUI.",
+      "sha256": "b4f1862eaf59132fbf12ff5f3308c4b7657a273337c429c87b4b6133e99b805c",
+      "sizeBytes": 28765,
+      "treatment": "DROP"
+    },
+    {
+      "path": "app/web-new/assets/images/branding/icon-512.png",
+      "reason": "Redundant/large branding source variant not required by compact WebUI.",
+      "sha256": "b01e955be62166b8cfdc56f34ef84433d621f6765a553c43def473be0eb15d4f",
+      "sizeBytes": 138402,
+      "treatment": "DROP"
+    },
+    {
+      "path": "app/web-new/assets/images/routes/chatgpt.svg",
+      "reason": "Routes/support assets are outside Light scope.",
+      "sha256": "cbee92f16282ad2ab1c8cdec6d3a4d6c31ef4fb108783493113d3bcad3c07cf5",
+      "sizeBytes": 512,
+      "treatment": "DROP"
+    },
+    {
+      "path": "app/web-new/assets/images/routes/facebook.svg",
+      "reason": "Routes/support assets are outside Light scope.",
+      "sha256": "88d26f4144932dfa6255551533d1b4227e6fc562055e79c467b571e8475a1142",
+      "sizeBytes": 304,
+      "treatment": "DROP"
+    },
+    {
+      "path": "app/web-new/assets/images/routes/instagram.svg",
+      "reason": "Routes/support assets are outside Light scope.",
+      "sha256": "1ef469d0e861d4c79f4428e77d9c914491de8f8abb8b51b49c90ffa84f70e330",
+      "sizeBytes": 678,
+      "treatment": "DROP"
+    },
+    {
+      "path": "app/web-new/assets/images/routes/meta.svg",
+      "reason": "Routes/support assets are outside Light scope.",
+      "sha256": "61a3454d84f81a5da50c93af6ecb35dbfa4c8877a6c98929fe2de15ec3627969",
+      "sizeBytes": 302,
+      "treatment": "DROP"
+    },
+    {
+      "path": "app/web-new/assets/images/routes/speedtest.svg",
+      "reason": "Routes/support assets are outside Light scope.",
+      "sha256": "10ef32d263afaee23aa0570a275261f3bf9004981c3645318fd731041ce5ed94",
+      "sizeBytes": 387,
+      "treatment": "DROP"
+    },
+    {
+      "path": "app/web-new/assets/images/routes/telegram.svg",
+      "reason": "Routes/support assets are outside Light scope.",
+      "sha256": "6f283ba4ff69ffe79fc55beff4c1ad695a8d7ad3c7400546995153452fda0fb1",
+      "sizeBytes": 356,
+      "treatment": "DROP"
+    },
+    {
+      "path": "app/web-new/assets/images/routes/tiktok.svg",
+      "reason": "Routes/support assets are outside Light scope.",
+      "sha256": "c0abbb3510f994898f8b67553b8f2e6a7b2ac6766dfbe39819cf339aa39d8461",
+      "sizeBytes": 685,
+      "treatment": "DROP"
+    },
+    {
+      "path": "app/web-new/assets/images/routes/whatsapp.svg",
+      "reason": "Routes/support assets are outside Light scope.",
+      "sha256": "ef02d55946e730a485fe20b9676c14c298074e46ad2910b4972a8a19ddc25d74",
+      "sizeBytes": 629,
+      "treatment": "DROP"
+    },
+    {
+      "path": "app/web-new/assets/images/routes/youtube.svg",
+      "reason": "Routes/support assets are outside Light scope.",
+      "sha256": "e95be59fefa3bb0f63579a110760f38566f3bdb82c43a0309598d5672ce0645e",
+      "sizeBytes": 216,
+      "treatment": "DROP"
+    }
+  ],
+  "schemaVersion": 1,
+  "source": {
+    "applicationSha256": "ad231c899e0a93f90f65489b8b6588aa09ae94b43c1d838e13e4458079c862bd",
+    "candidateId": "3.0.0-r20c01",
+    "release": "3.0.0-r20"
+  }
+}

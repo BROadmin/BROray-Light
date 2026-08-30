@@ -1,0 +1,198 @@
+{
+  "records": [
+    {
+      "component": "automatic failover",
+      "evidence": [
+        "routes_resumable_pending at lines 21-37",
+        "rating_rank at lines 94+",
+        "selectionRule default best-quality around lines 187-198",
+        "quality.rating/ping/jitter candidate ranking around lines 503-613"
+      ],
+      "finding": "Full auto-switch is coupled to route-resume fencing and quality/rating selection (best-quality, lowest-ping, preferred).",
+      "id": "R20-CPL-001",
+      "lightAction": "REPLACE with deterministic ordered failover; retain failure threshold/cooldown and safe activation/rollback; use compact global operation lock.",
+      "severity": "BLOCKING_ADAPTATION",
+      "sourcePaths": [
+        "app/bin/broray-server-auto-switch"
+      ]
+    },
+    {
+      "component": "connection monitor",
+      "evidence": [
+        "quality_score fields near lines 29-30",
+        "calculate_quality function lines 56+",
+        "quality_label function lines 114+"
+      ],
+      "finding": "Current monitor persists score/quality labels and measurement data.",
+      "id": "R20-CPL-002",
+      "lightAction": "REPLACE with health-only state: connected/available, active server, checkedAt, error.",
+      "severity": "BLOCKING_ADAPTATION",
+      "sourcePaths": [
+        "app/bin/broray-connection-monitor"
+      ]
+    },
+    {
+      "component": "server import",
+      "evidence": [
+        "server-import protocol dispatch around lines 176-246 and 935-1025",
+        "server-config-generator outbound branches around lines 271-427",
+        "server.sh validation protocol branches around lines 242-259"
+      ],
+      "finding": "Server import, validation and Xray config generation contain VMess/Trojan/Shadowsocks/Hysteria2 branches in addition to VLESS.",
+      "id": "R20-CPL-003",
+      "lightAction": "ADAPT to VLESS-only; remove non-VLESS parsers and branches physically.",
+      "severity": "BLOCKING_ADAPTATION",
+      "sourcePaths": [
+        "app/lib/server-import.sh",
+        "app/lib/server.sh",
+        "app/lib/server-config-generator.sh"
+      ]
+    },
+    {
+      "component": "server service",
+      "evidence": [
+        "BRORAY_QUALITY_DIR line 15",
+        "broray_server_get_quality line 113+",
+        "summary quality merge lines 182-278",
+        "check persistence around lines 730-840"
+      ],
+      "finding": "Server summaries/checks persist quality files, ratings, freshness and quality counters.",
+      "id": "R20-CPL-004",
+      "lightAction": "REPLACE quality persistence with last-check availability only; no score/rating/history.",
+      "severity": "BLOCKING_ADAPTATION",
+      "sourcePaths": [
+        "app/lib/server-service.sh"
+      ]
+    },
+    {
+      "component": "Home snapshot",
+      "evidence": [
+        "dns/routes branches lines 42-50",
+        "refresh list xray keenetic servers subscriptions dns routes broray line 101"
+      ],
+      "finding": "Full Home snapshot aggregates Xray, Keenetic, Servers, Subscriptions, DNS, Routes and BROray maintenance.",
+      "id": "R20-CPL-005",
+      "lightAction": "ADAPT snapshot to active server, failover, Keenetic, Xray update state, Light update state and counts only; fold daemon loop into primary service.",
+      "severity": "BLOCKING_ADAPTATION",
+      "sourcePaths": [
+        "app/bin/broray-home-snapshot",
+        "app/bin/broray-home-snapshotd"
+      ]
+    },
+    {
+      "component": "global operation lock",
+      "evidence": [
+        "servers/subscriptions/Keenetic/Xray source routes-api-operation.sh",
+        "routes pending operation scan in routes-api-operation.sh"
+      ],
+      "finding": "The generic cross-feature lock is implemented inside a routes-named module and includes resumable-route semantics.",
+      "id": "R20-CPL-006",
+      "lightAction": "Extract validated updater interlock/stale-owner semantics into new Light operation-lock.sh; remove all route pending logic and routes naming.",
+      "severity": "BLOCKING_ADAPTATION",
+      "sourcePaths": [
+        "app/lib/routes-api-operation.sh",
+        "app/web-new/api/servers/common.sh",
+        "app/web-new/api/subscriptions/common.sh",
+        "app/web-new/api/keenetic/action-common.sh",
+        "app/lib/xray-web-operation.sh"
+      ]
+    },
+    {
+      "component": "updater-v5 platform",
+      "evidence": [
+        "APP_ROOT/STATE_ROOT around lines 33-52",
+        "sharedRuntime path checks around lines 518/1252",
+        "required app/bin/broray, broray-system, broray-page and S24/S25 around lines 1231-1239",
+        "service loops S23/S24/S25/S27/S28 around lines 1604/1930/1944"
+      ],
+      "finding": "Updater is mature but product-specific: hardcoded /opt/broray roots, broray OPKG identity, required full-app files and five-service health topology.",
+      "id": "R20-CPL-007",
+      "lightAction": "FORK updater-v5 control-plane contract for BROray-Light: independent roots/package identity, Light required files, one primary service + updater service, releaseId-based comparison retained.",
+      "severity": "BLOCKING_ADAPTATION",
+      "sourcePaths": [
+        "updater-platform/opt/libexec/broray-updater/broray-updater.sh"
+      ]
+    },
+    {
+      "component": "Keenetic/lighttpd ownership",
+      "evidence": [
+        "lighttpd receipt validation lines 305+",
+        "known legacy exact hashes lines 365+",
+        "restore/adopt/finalize flow lines 404+",
+        "Keenetic write policy profiles"
+      ],
+      "finding": "r20 contains fail-closed ownership receipts, exact config comparison and hash-bound Lighttpd restoration logic. These protections remain relevant even though destructive WebUI removal is excluded.",
+      "id": "R20-CPL-008",
+      "lightAction": "ADAPT owner names/paths; keep proxy-interface and Lighttpd ownership/restore contracts; remove static-routes and DoT write profiles.",
+      "severity": "MUST_PRESERVE",
+      "sourcePaths": [
+        "app/lib/interface-owner.sh",
+        "app/lib/keenetic-write-policy.sh",
+        "app/lib/lighttpd-guard.sh"
+      ]
+    },
+    {
+      "component": "subscriptions",
+      "evidence": [
+        "extract_nodes protocol recognition around lines 789-820",
+        "stage_nodes per-node dispatch/rejection around lines 873-1005"
+      ],
+      "finding": "Current subscription staging already tolerates rejected individual nodes when at least one valid node is accepted, but unsupported protocols are counted generically as rejected.",
+      "id": "R20-CPL-009",
+      "lightAction": "Retain secure download/staging/dedup; preclassify VLESS vs non-VLESS and report received/imported/skippedOtherProtocols/invalid separately.",
+      "severity": "ADAPTATION",
+      "sourcePaths": [
+        "app/lib/subscription-service.sh"
+      ]
+    },
+    {
+      "component": "service topology",
+      "evidence": [
+        "exact app inventory contains all five init files"
+      ],
+      "finding": "Full r20 app has five application init scripts: connection monitor, Xray/core, dedicated WebUI, auto-switch and subscription scheduler.",
+      "id": "R20-CPL-010",
+      "lightAction": "Create S24broray-light as single primary application-control service; fold monitor/failover/snapshot/WebUI lifecycle into its control; remove subscription scheduler. Updater remains its own control plane.",
+      "severity": "BLOCKING_ADAPTATION",
+      "sourcePaths": [
+        "init/S23broray-monitor",
+        "init/S24broray",
+        "init/S25broray-web",
+        "init/S27broray-auto-switch",
+        "init/S28broray-subscriptions"
+      ]
+    },
+    {
+      "component": "server order",
+      "evidence": [
+        "server summary loops over servers/*.json",
+        "auto-switch candidates derive from server summary"
+      ],
+      "finding": "Donor server enumeration is filename/glob based and has no user-owned failover order/exclusion contract.",
+      "id": "R20-CPL-011",
+      "lightAction": "Add separate Light failover-order state keyed by stable server IDs, with ordered IDs and excluded IDs; do not overload subscription-owned server records.",
+      "severity": "ARCHITECTURE",
+      "sourcePaths": [
+        "app/lib/server-service.sh",
+        "app/bin/broray-server-auto-switch"
+      ]
+    },
+    {
+      "component": "co-install ownership",
+      "evidence": [
+        "full paths and owner records in exact donor; WebUI listener is 127.0.0.1:8080"
+      ],
+      "finding": "Full BROray owns its own /opt/broray tree, shared Xray runtime, managed Keenetic proxy interface and WebUI listener. Running full and Light as active managers would create competing ownership.",
+      "id": "R20-CPL-012",
+      "lightAction": "Default preparation policy: fail closed on simultaneous active full-BROray installation. Migration/side-by-side test tooling is a separate future task, not runtime co-ownership.",
+      "severity": "ARCHITECTURE",
+      "sourcePaths": [
+        "state-seed/config/lighttpd.conf",
+        "app/lib/interface-owner.sh",
+        "updater platform"
+      ]
+    }
+  ],
+  "schemaVersion": 1,
+  "sourceCandidate": "3.0.0-r20c01"
+}

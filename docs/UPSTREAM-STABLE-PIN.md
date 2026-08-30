@@ -1,29 +1,35 @@
-# Upstream Stable pin
+# Upstream Stable pin — BROray-Light
 
-BROray-Light must be derived from the exact released BROray Stable bytes, not from an assumed-equivalent development tree.
+BROray-Light preparation is pinned to the exact current BROray Stable release bytes verified on 2026-08-30. Current upstream `main` remains documentation/development context only and is not accepted as a byte-exact donor.
 
 ## Stable identity
 
 | Field | Value |
 | --- | --- |
-| Public release | `3.0.0` |
-| OPKG release | `3.0.0-r14` |
-| Technical candidate | `3.0.0-r14c68` |
-| Stable publication date | `2026-08-25` |
-| Stable `release.json` SHA-256 | `0740557b08c90fe07d51afd3d99d1c6947fdd082cca0c191369af03116995a4c` |
-| Stable COPY-PASTE installer SHA-256 | `06a0f631269f175bc02469856733020a713f1eaed13ac047abd111519cf92967` |
-| Candidate carrier SHA-256 | `8ccb49508292b8d2b04c76ea06189b07471aeeb4ffba0255b3fbc4f69d882f39` |
-| Application archive SHA-256 | `314be910e180d5bbac4677a9483e17f18406c8a4339a849edb2c1c8d7de4e382` |
-| Updater platform archive SHA-256 | `40b71cf3a5be9697d19989bac4baee6023692b7cced32ba8b888e4331ae5272f` |
-| Xray 26.7.28 SHA-256 | `4b8af237444801bf17b3dc10a1c5c24581fbe3d433eba3d78c6c3a0da1df56fc` |
+| Stable releaseId | `3.0.0-r20` |
+| Technical candidate | `3.0.0-r20c01` |
+| OPKG package version carried by Stable | `3.0.0-r14` |
+| Stable publication date | `2026-08-30` |
+| WebUI build | `WebUI-3.0.0-r20c01` |
+| Stable `release.json` SHA-256 | `b87deb3cca0eb01b1632aa8ceb1bcb81de6972bee5b7925e694088cffa9a2ebd` |
+| Application archive SHA-256 | `ad231c899e0a93f90f65489b8b6588aa09ae94b43c1d838e13e4458079c862bd` |
+| Updater platform archive SHA-256 | `eaf2eafb62d1b108fe576d1fda09ae7a5d15ad90f71272abc23f321d397611b0` |
+| Clean bootstrap SHA-256 | `fb4943e3d336d091b16e6cf436e2a7eefe7274422246c8038a7eea2e6c0d79a0` |
+| `INSTALL-ON-ROUTER.sh` SHA-256 | `3c3faa352ef78821de791a3e932602b88efadf9b82fecde39c535a67bfbb14c0` |
+| Updater engine | `broray-updater/5` |
+| Updater engine SHA-256 | `a3c094b3a5e82ac82be7ec8b53c90f4023351a94eb6ba945b99501c0876e2c4a` |
 
-## Source-import rule
+## Exact donor retrieval
 
-`BROadmin/BROray` documentation states that the current `main` tree is not automatically a byte-exact copy of the published Stable archives. Therefore:
+GitHub Actions run `33308452852` downloaded the objects by matching the SHA-256 values from the pinned Stable index and independently rechecked every object. The resulting artifact `broray-stable-r20c01-exact-donor-r2` has GitHub artifact digest `sha256:61c7618193926693014d8ef6b3717a114041bc89d9f17a3ae81184615a034571`.
+
+The application archive contains 284 regular files and 40 directories, with 5,133,493 logical bytes and no unsafe archive paths.
 
 ```text
 CURRENT_MAIN_AS_DONOR=FORBIDDEN
-EXACT_R14C68_RELEASE_SOURCE_REQUIRED=YES
+EXACT_R20C01_RUNTIME_DONOR=VERIFIED
+UPDATER_PLATFORM_DONOR=VERIFIED
+CLEAN_BOOTSTRAP_DONOR=VERIFIED_AS_ASCII_TEXT
 ```
 
-No BROray application source is copied into this repository until the exact release-source overlay/archive corresponding to `r14c68` is available and verified.
+The clean bootstrap is intentionally treated as an opaque hashed executable text object. It is not a gzip/tar archive.

@@ -1,0 +1,212 @@
+{
+  "part": {
+    "number": 9,
+    "recordEnd": 284,
+    "recordStart": 257,
+    "records": 28
+  },
+  "records": [
+    {
+      "path": "app/web-new/modules.html",
+      "reason": "Only Home, Servers and Subscriptions pages remain.",
+      "sha256": "5d64b121863337a829160643ef1340da35548f3b67055fcd17b7397a73de1c7e",
+      "sizeBytes": 322,
+      "treatment": "DROP"
+    },
+    {
+      "path": "app/web-new/routes-custom.html",
+      "reason": "Only Home, Servers and Subscriptions pages remain.",
+      "sha256": "e51a2338dfb077acfbefbce99c6db5d6972fd3b7106adb9585e5148866dd47f2",
+      "sizeBytes": 16882,
+      "treatment": "DROP"
+    },
+    {
+      "path": "app/web-new/routes-import.html",
+      "reason": "Only Home, Servers and Subscriptions pages remain.",
+      "sha256": "a68c413e73787115a87a6b1329d9fcf75e8a487820486fdf2f8f61ba10f6fb8d",
+      "sizeBytes": 15990,
+      "treatment": "DROP"
+    },
+    {
+      "path": "app/web-new/routes.html",
+      "reason": "Only Home, Servers and Subscriptions pages remain.",
+      "sha256": "1efa6fdbde3c9ffd6857799551ffeb866545f2cc2de26b26bf5d9800c944c462",
+      "sizeBytes": 17476,
+      "treatment": "DROP"
+    },
+    {
+      "path": "app/web-new/servers.html",
+      "reason": "Rebuild from r20 visual/components reference to exact approved Light scope.",
+      "sha256": "f49672b442ab5393bbcd191b931bcf43de536d439366455fa54b9b1a3816976e",
+      "sizeBytes": 18265,
+      "treatment": "REPLACE"
+    },
+    {
+      "path": "app/web-new/subscriptions.html",
+      "reason": "Rebuild from r20 visual/components reference to exact approved Light scope.",
+      "sha256": "510e4dda8b81ae91927e274b13f1329fb3c5ce36e0cfe2a0c40c2c08b9bdcf0a",
+      "sizeBytes": 15815,
+      "treatment": "REPLACE"
+    },
+    {
+      "path": "app/web-new/xray.html",
+      "reason": "Only Home, Servers and Subscriptions pages remain.",
+      "sha256": "44f7b08113f854964c2170de2ebe34210e0d185f4ba2615cdaaed6150d03cdbc",
+      "sizeBytes": 18131,
+      "treatment": "DROP"
+    },
+    {
+      "path": "init/S23broray-monitor",
+      "reason": "Standalone full-BROray service is excluded or folded into primary Light service.",
+      "sha256": "b8c0702de3ea6eace40bb857e7cddf2dcf8901456defa15572ebdddfcbd2715f",
+      "sizeBytes": 2196,
+      "treatment": "DROP"
+    },
+    {
+      "path": "init/S24broray",
+      "reason": "Replace five-service topology with one primary BROray-Light service.",
+      "sha256": "392d6ba14d2cdae8da1eafaf8bd53b518b249f2cdf1183436760dfedec82163f",
+      "sizeBytes": 6303,
+      "treatment": "REPLACE"
+    },
+    {
+      "path": "init/S25broray-web",
+      "reason": "Standalone full-BROray service is excluded or folded into primary Light service.",
+      "sha256": "0d40e4afaecad2ef7cf9b27b693f879fc5b1f1d672af83a05dab957153b352ca",
+      "sizeBytes": 9376,
+      "treatment": "DROP"
+    },
+    {
+      "path": "init/S27broray-auto-switch",
+      "reason": "Standalone full-BROray service is excluded or folded into primary Light service.",
+      "sha256": "f1af32c96924f1970d1c6191357e49dbde7fdb38daa7636fd55427f16be589ed",
+      "sizeBytes": 2421,
+      "treatment": "DROP"
+    },
+    {
+      "path": "init/S28broray-subscriptions",
+      "reason": "Standalone full-BROray service is excluded or folded into primary Light service.",
+      "sha256": "edc386b212dc987fb9f77b27989564c78ccf135324f340920d622dc7753cb789",
+      "sizeBytes": 6283,
+      "treatment": "DROP"
+    },
+    {
+      "path": "release.json",
+      "reason": "Light release metadata/checksums must be regenerated.",
+      "sha256": "2a95620f7d562a7869aa94c5f7e43479757d05b75cac9ef20748bfbf2c3513e5",
+      "sizeBytes": 591,
+      "treatment": "REPLACE"
+    },
+    {
+      "path": "state-seed/config/lighttpd.conf",
+      "reason": "Keep dedicated WebUI concept; change product paths/ownership and service topology.",
+      "sha256": "e129216287d76c02cca2c006663722bbc49176cb0b334f6a2d747c2f9080c518",
+      "sizeBytes": 688,
+      "treatment": "ADAPT"
+    },
+    {
+      "path": "state-seed/config/system/server-auto-switch.json",
+      "reason": "Replace quality/rating selection schema with deterministic Light failover schema.",
+      "sha256": "cca947e8484f31f4b22c3d33c52d0808a962afd862e080c4b95c89b4af0cb290",
+      "sizeBytes": 213,
+      "treatment": "REPLACE"
+    },
+    {
+      "path": "state-seed/config/system/settings.json",
+      "reason": "Retain safety defaults; remove unused routing/full-product fields and rename paths.",
+      "sha256": "8949d0b833c53e0c14d59a3f5596bc4bf3251d760955ffd19998ad23f9bc3b65",
+      "sizeBytes": 222,
+      "treatment": "ADAPT"
+    },
+    {
+      "path": "state-seed/config/version",
+      "reason": "Light has independent version identity.",
+      "sha256": "2985be8b28d3ade858e8d8fb4bc22f565b1bf6020dff982dce141f7721b9999c",
+      "sizeBytes": 6,
+      "treatment": "REPLACE"
+    },
+    {
+      "path": "state-seed/routes/bundles.json",
+      "reason": "Routes are excluded.",
+      "sha256": "4b2f72d38775724c548ce71ac2784a829982d461b695794ddaba72e73e5cbe29",
+      "sizeBytes": 182,
+      "treatment": "DROP"
+    },
+    {
+      "path": "state-seed/routes/config.json",
+      "reason": "Routes are excluded.",
+      "sha256": "55acbc31544881d509dacb504680f537817fed75f5e9c1946a3b3187e11c3a27",
+      "sizeBytes": 513,
+      "treatment": "DROP"
+    },
+    {
+      "path": "state-seed/routes/manifests/chatgpt.json",
+      "reason": "Routes are excluded.",
+      "sha256": "b2c6cdaece47b33310f857c908dbfbe97c90bb2a6d8a8acda95e0fb80e16a322",
+      "sizeBytes": 573,
+      "treatment": "DROP"
+    },
+    {
+      "path": "state-seed/routes/manifests/facebook.json",
+      "reason": "Routes are excluded.",
+      "sha256": "9d3022805a2e8724db838639e2451c34cf46efcd11287d19236c2d44491d019c",
+      "sizeBytes": 561,
+      "treatment": "DROP"
+    },
+    {
+      "path": "state-seed/routes/manifests/instagram.json",
+      "reason": "Routes are excluded.",
+      "sha256": "f86d11d0ce85db3ac2e7890050a3ec2310906bad338c58672f50965477ec22c9",
+      "sizeBytes": 563,
+      "treatment": "DROP"
+    },
+    {
+      "path": "state-seed/routes/manifests/meta.json",
+      "reason": "Routes are excluded.",
+      "sha256": "630bff4bc17528ab9c60dbcf2701bc6dc4414c5af4356f3140e7d484d7154089",
+      "sizeBytes": 539,
+      "treatment": "DROP"
+    },
+    {
+      "path": "state-seed/routes/manifests/speedtest.json",
+      "reason": "Routes are excluded.",
+      "sha256": "08c3267dfa56792ac3414f1548fe83b35b43cc03ee172a9c0dbc8020b9cf56dd",
+      "sizeBytes": 559,
+      "treatment": "DROP"
+    },
+    {
+      "path": "state-seed/routes/manifests/telegram.json",
+      "reason": "Routes are excluded.",
+      "sha256": "42f57603fe702b42e1f947c11b8ace404eb28f0fc80ef7fe4c7bf997249a985a",
+      "sizeBytes": 743,
+      "treatment": "DROP"
+    },
+    {
+      "path": "state-seed/routes/manifests/tiktok.json",
+      "reason": "Routes are excluded.",
+      "sha256": "ca81ca8df39ab9cbfb32dbddae716d221757732765712cbddbc59ed53f4cfc20",
+      "sizeBytes": 553,
+      "treatment": "DROP"
+    },
+    {
+      "path": "state-seed/routes/manifests/whatsapp.json",
+      "reason": "Routes are excluded.",
+      "sha256": "c1888bcce3b98308261d5739ba8c5aee9dc1255ba268c6d79cbc0127ae2ad94a",
+      "sizeBytes": 561,
+      "treatment": "DROP"
+    },
+    {
+      "path": "state-seed/routes/manifests/youtube.json",
+      "reason": "Routes are excluded.",
+      "sha256": "ba4a92dbb4b8d34502253bfd7f6be830f25424e22f0ef8688d2f3ecbc3ecf901",
+      "sizeBytes": 562,
+      "treatment": "DROP"
+    }
+  ],
+  "schemaVersion": 1,
+  "source": {
+    "applicationSha256": "ad231c899e0a93f90f65489b8b6588aa09ae94b43c1d838e13e4458079c862bd",
+    "candidateId": "3.0.0-r20c01",
+    "release": "3.0.0-r20"
+  }
+}

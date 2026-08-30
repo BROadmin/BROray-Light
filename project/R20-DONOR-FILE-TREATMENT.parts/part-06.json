@@ -1,0 +1,240 @@
+{
+  "part": {
+    "number": 6,
+    "recordEnd": 192,
+    "recordStart": 161,
+    "records": 32
+  },
+  "records": [
+    {
+      "path": "app/web-new/api/routes/export.cgi",
+      "reason": "Routes/DNS APIs excluded.",
+      "sha256": "0821591bae3b283c6724a339c837d6375d700fd4f613123b2828e04df3b93cb4",
+      "sizeBytes": 78,
+      "treatment": "DROP"
+    },
+    {
+      "path": "app/web-new/api/routes/operation-status.cgi",
+      "reason": "Routes/DNS APIs excluded.",
+      "sha256": "9f8eee266cb25b23dcd1946b4db768a32f2a53f5e189181c2ad8db1b7e40f42a",
+      "sizeBytes": 1542,
+      "treatment": "DROP"
+    },
+    {
+      "path": "app/web-new/api/routes/overview.cgi",
+      "reason": "Routes/DNS APIs excluded.",
+      "sha256": "0e5ee6b3ae5b1c5219a5a638ae8e8a0368f13f7d2fc3cdcefb4a51c5bd7dd9d3",
+      "sizeBytes": 1446,
+      "treatment": "DROP"
+    },
+    {
+      "path": "app/web-new/api/routes/plan.cgi",
+      "reason": "Routes/DNS APIs excluded.",
+      "sha256": "928b5517fe3c30c500958eea31f62008eb34677b648dea58d2041e9e4a70c962",
+      "sizeBytes": 4617,
+      "treatment": "DROP"
+    },
+    {
+      "path": "app/web-new/api/routes/preflight.cgi",
+      "reason": "Routes/DNS APIs excluded.",
+      "sha256": "13409d79cacdf2dfdca25cbd9bfca19804a8f6d8e2cbbcae4268efe44f903c05",
+      "sizeBytes": 5767,
+      "treatment": "DROP"
+    },
+    {
+      "path": "app/web-new/api/routes/progress.cgi",
+      "reason": "Routes/DNS APIs excluded.",
+      "sha256": "47f8a9d051edf57a37696c65e76543a09d5d15b9689a79e358e2809d0b46d3eb",
+      "sizeBytes": 2940,
+      "treatment": "DROP"
+    },
+    {
+      "path": "app/web-new/api/routes/resume.cgi",
+      "reason": "Routes/DNS APIs excluded.",
+      "sha256": "0c4119e34208a1d05d1de75551ca3fa137f3d945632a15983c2aa113ff9e2730",
+      "sizeBytes": 102,
+      "treatment": "DROP"
+    },
+    {
+      "path": "app/web-new/api/routes/status.cgi",
+      "reason": "Routes/DNS APIs excluded.",
+      "sha256": "5a59b1ffc4c8d08395fc69e63c90fbafd798fcee990d781ad883e137f1ed2fe1",
+      "sizeBytes": 6588,
+      "treatment": "DROP"
+    },
+    {
+      "path": "app/web-new/api/routes/stop.cgi",
+      "reason": "Routes/DNS APIs excluded.",
+      "sha256": "c703caecfc83b756013afe68e3a299a5987e90c073816ad115d8870ff9ecaaeb",
+      "sizeBytes": 2262,
+      "treatment": "DROP"
+    },
+    {
+      "path": "app/web-new/api/routes/summary.cgi",
+      "reason": "Routes/DNS APIs excluded.",
+      "sha256": "548cf432d295aa5b6cb897e08f74876079cec691eaf0a47e33061bf549fafa07",
+      "sizeBytes": 4438,
+      "treatment": "DROP"
+    },
+    {
+      "path": "app/web-new/api/routes/verify.cgi",
+      "reason": "Routes/DNS APIs excluded.",
+      "sha256": "674638db7dbd43bec644ea5c1913d1a892f4ae0811b21a4265aa5cd74e79f600",
+      "sizeBytes": 15866,
+      "treatment": "DROP"
+    },
+    {
+      "path": "app/web-new/api/servers/activate.cgi",
+      "reason": "Retain Light server actions; VLESS-only and compact operation lock.",
+      "sha256": "d01be4455b25b5ff70e5e19cbb4447d11686570c06adbf83b56ada5e0293825e",
+      "sizeBytes": 635,
+      "treatment": "ADAPT"
+    },
+    {
+      "path": "app/web-new/api/servers/auto-switch-save.cgi",
+      "reason": "Retain Light server actions; VLESS-only and compact operation lock.",
+      "sha256": "3f0848b5e4f3ea1bcafb7e77548d3637984bd6dd3a7edaced77bc2afe2f8a0ac",
+      "sizeBytes": 5967,
+      "treatment": "ADAPT"
+    },
+    {
+      "path": "app/web-new/api/servers/auto-switch-status.cgi",
+      "reason": "Retain Light server actions; VLESS-only and compact operation lock.",
+      "sha256": "81d8532d5bfdd366cfe91c7e619763035d0aae24e74df1a336c69967ecfd19a8",
+      "sizeBytes": 2230,
+      "treatment": "ADAPT"
+    },
+    {
+      "path": "app/web-new/api/servers/check.cgi",
+      "reason": "Retain Light server actions; VLESS-only and compact operation lock.",
+      "sha256": "f546cdc708d7aed4fc22222296e865001ccbc4d23a5adbf981e2681e9a88d763",
+      "sizeBytes": 639,
+      "treatment": "ADAPT"
+    },
+    {
+      "path": "app/web-new/api/servers/common.sh",
+      "reason": "Retain Light server actions; VLESS-only and compact operation lock.",
+      "sha256": "e916c698ef1f1249733bec2f920f1bbc09884904dbc72ef36a44e6c37c203e35",
+      "sizeBytes": 4735,
+      "treatment": "ADAPT"
+    },
+    {
+      "path": "app/web-new/api/servers/deactivate.cgi",
+      "reason": "Disconnect/deactivate action is outside simplified server flow.",
+      "sha256": "e67f16079eea26126e94ebbceb463550b4b807b880097a662dcf532a28dd168b",
+      "sizeBytes": 200,
+      "treatment": "DROP"
+    },
+    {
+      "path": "app/web-new/api/servers/delete.cgi",
+      "reason": "Retain Light server actions; VLESS-only and compact operation lock.",
+      "sha256": "0921aff977314af26fb6988f4bd1bb101cb5db73a6dabe56d2e9e6d1e949d3bf",
+      "sizeBytes": 634,
+      "treatment": "ADAPT"
+    },
+    {
+      "path": "app/web-new/api/servers/details.cgi",
+      "reason": "Retain Light server actions; VLESS-only and compact operation lock.",
+      "sha256": "61aab1bea9fa64730424a0bcc445929e154c0648dda66d35e4b92618aa57177f",
+      "sizeBytes": 383,
+      "treatment": "ADAPT"
+    },
+    {
+      "path": "app/web-new/api/servers/import.cgi",
+      "reason": "Retain Light server actions; VLESS-only and compact operation lock.",
+      "sha256": "7f8aae25f917f713473bb7ac4b1d4b2473c63d36fea8d83523323a865dde6b1d",
+      "sizeBytes": 813,
+      "treatment": "ADAPT"
+    },
+    {
+      "path": "app/web-new/api/servers/summary.cgi",
+      "reason": "Retain Light server actions; VLESS-only and compact operation lock.",
+      "sha256": "93c5ac175f2d95cea66ba4069b8f239da613f1a9663d1856696d1b65e191177f",
+      "sizeBytes": 445,
+      "treatment": "ADAPT"
+    },
+    {
+      "path": "app/web-new/api/session.cgi",
+      "reason": "Retain authentication/session contract with Light paths/branding.",
+      "sha256": "495b8e14019a45471a316f90a1d0c95344c51b60b9665c8cb120fb4d2d45eaf9",
+      "sizeBytes": 469,
+      "treatment": "PORT"
+    },
+    {
+      "path": "app/web-new/api/subscriptions/common.sh",
+      "reason": "Retain create/refresh/list/details/servers/delete with VLESS-only result accounting.",
+      "sha256": "94a61a747bdb8c5f2bddd5f4bdc58ac3721c16783e5dbce926e17e9095430751",
+      "sizeBytes": 5705,
+      "treatment": "ADAPT"
+    },
+    {
+      "path": "app/web-new/api/subscriptions/create.cgi",
+      "reason": "Retain create/refresh/list/details/servers/delete with VLESS-only result accounting.",
+      "sha256": "baf9ea3ac6bc7f4f9ef9dd7b20b70c1aaa5f2274a7c2934a23cdcc98d20d940d",
+      "sizeBytes": 552,
+      "treatment": "ADAPT"
+    },
+    {
+      "path": "app/web-new/api/subscriptions/delete.cgi",
+      "reason": "Retain create/refresh/list/details/servers/delete with VLESS-only result accounting.",
+      "sha256": "66253283a7241d6a47dd4596bb12cb72ed5fa8a33236569d776371a4288f09c6",
+      "sizeBytes": 290,
+      "treatment": "ADAPT"
+    },
+    {
+      "path": "app/web-new/api/subscriptions/details.cgi",
+      "reason": "Retain create/refresh/list/details/servers/delete with VLESS-only result accounting.",
+      "sha256": "6886562d71baae200bd68fea7e98effe79502801e2f2f5f997295744a01f8f05",
+      "sizeBytes": 249,
+      "treatment": "ADAPT"
+    },
+    {
+      "path": "app/web-new/api/subscriptions/list.cgi",
+      "reason": "Retain create/refresh/list/details/servers/delete with VLESS-only result accounting.",
+      "sha256": "b62de3dc6324f5dcfa88378947308d21d008f343efffec3c2b0af5b043b90c44",
+      "sizeBytes": 176,
+      "treatment": "ADAPT"
+    },
+    {
+      "path": "app/web-new/api/subscriptions/refresh.cgi",
+      "reason": "Retain create/refresh/list/details/servers/delete with VLESS-only result accounting.",
+      "sha256": "3fe89fc1ab803c1d7f11d8dfc1fa22773163054d0e102f3e479144a481f507e7",
+      "sizeBytes": 304,
+      "treatment": "ADAPT"
+    },
+    {
+      "path": "app/web-new/api/subscriptions/servers.cgi",
+      "reason": "Retain create/refresh/list/details/servers/delete with VLESS-only result accounting.",
+      "sha256": "a6f259e6697642a4e88cdfc7000c4b4236b9bbd437c462ae264a3a60aa65d86b",
+      "sizeBytes": 253,
+      "treatment": "ADAPT"
+    },
+    {
+      "path": "app/web-new/api/subscriptions/summary.cgi",
+      "reason": "Retain create/refresh/list/details/servers/delete with VLESS-only result accounting.",
+      "sha256": "f067a28910edce8d0abeb3cff22314b5fee6d24a757be9a180dd88580205d829",
+      "sizeBytes": 179,
+      "treatment": "ADAPT"
+    },
+    {
+      "path": "app/web-new/api/subscriptions/update.cgi",
+      "reason": "Post-create subscription settings editor is excluded; refresh remains.",
+      "sha256": "9e643c58cd94b375d1a0852faf1b4cc52d40bd789aedd5554d00a0ba68878e3c",
+      "sizeBytes": 641,
+      "treatment": "DROP"
+    },
+    {
+      "path": "app/web-new/api/xray/check-config.cgi",
+      "reason": "Manual Xray maintenance/diagnostics surface excluded.",
+      "sha256": "af862e06c298659e97ef3222d0d7fc15cfad1df3fe135c5949a634353ab3437c",
+      "sizeBytes": 1944,
+      "treatment": "DROP"
+    }
+  ],
+  "schemaVersion": 1,
+  "source": {
+    "applicationSha256": "ad231c899e0a93f90f65489b8b6588aa09ae94b43c1d838e13e4458079c862bd",
+    "candidateId": "3.0.0-r20c01",
+    "release": "3.0.0-r20"
+  }
+}

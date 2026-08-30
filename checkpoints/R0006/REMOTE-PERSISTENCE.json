@@ -1,0 +1,15 @@
+{
+  "checkpointId": "BROray-Light-R20-REMOTE-PERSISTENCE-R0006",
+  "mutations": {
+    "BROadmin/BROray": "NONE",
+    "productionServer": "NONE",
+    "router": "NONE"
+  },
+  "nextStage": "BUILD_LIGHT_SOURCE_TREE_FROM_R20_TREATMENT_MAP",
+  "schemaVersion": 1,
+  "sourcePreparationCheckpointSha256": "cdc7a3c4d6574d2fa330580be81b3b6ef2b5f89f20ae6bee7cf3fe1784876c4c",
+  "status": "PASS",
+  "transportArchiveSha256": "ca3ebdc132b137b917409ddb5c5f8280ebafc9d7230f2720fef5b6ce1fa35101",
+  "workflowParentCommit": "3da1025f5d1abdd617fe12b0205e63e1a218c379",
+  "workflowRunId": "33309655774"
+}

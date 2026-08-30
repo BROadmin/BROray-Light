@@ -1,0 +1,100 @@
+{
+  "analysis": {
+    "compressedLightTarget": "NOT_ESTIMATED_UNTIL_FIRST_BUILD",
+    "knownDropLogicalBytes": 3866549,
+    "knownDropPercentOfApplicationLogicalBytes": 75.32,
+    "note": "DROP is immediate elimination only. ADAPT/REPLACE files are expected to shrink further; categories are not a built artifact.",
+    "remainingDonorLogicalBytesBeforeAdaptation": 1266944
+  },
+  "fullRegistrySha256": "2dce7eb3a1b0d0cdd24557e4a848afeb89988c0c9d30f2c00093c1948721b93d",
+  "parts": [
+    {
+      "file": "project/R20-DONOR-FILE-TREATMENT.parts/part-01.json",
+      "recordEnd": 32,
+      "recordStart": 1,
+      "records": 32,
+      "sha256": "9465c16502708eb6ad820387093c389f1691b325443308f6f524d3aa38f08d34"
+    },
+    {
+      "file": "project/R20-DONOR-FILE-TREATMENT.parts/part-02.json",
+      "recordEnd": 64,
+      "recordStart": 33,
+      "records": 32,
+      "sha256": "dce673d15bfb9132beecae0d2fbb6d36c1209237d4e576680fc062beda7373b6"
+    },
+    {
+      "file": "project/R20-DONOR-FILE-TREATMENT.parts/part-03.json",
+      "recordEnd": 96,
+      "recordStart": 65,
+      "records": 32,
+      "sha256": "3d0d9e1265fbf32c4c891c22e11d8a09f4cd517b9d30eb5171ca2fddea233392"
+    },
+    {
+      "file": "project/R20-DONOR-FILE-TREATMENT.parts/part-04.json",
+      "recordEnd": 128,
+      "recordStart": 97,
+      "records": 32,
+      "sha256": "7d868de631f57ab4a0df4d9c39fe153fa480438d2cf89cbd9bd97cd87fe5ef66"
+    },
+    {
+      "file": "project/R20-DONOR-FILE-TREATMENT.parts/part-05.json",
+      "recordEnd": 160,
+      "recordStart": 129,
+      "records": 32,
+      "sha256": "503040fbc67e769028efa409c8add56fb3e1a090b730ba2ac514423e7c61bfb2"
+    },
+    {
+      "file": "project/R20-DONOR-FILE-TREATMENT.parts/part-06.json",
+      "recordEnd": 192,
+      "recordStart": 161,
+      "records": 32,
+      "sha256": "b81f48dfdb4a556e3f0dead285d8336cf08f6af1d8620fbe4b8b8b59a6cb9b22"
+    },
+    {
+      "file": "project/R20-DONOR-FILE-TREATMENT.parts/part-07.json",
+      "recordEnd": 224,
+      "recordStart": 193,
+      "records": 32,
+      "sha256": "c1614df0aaef65eb7c4578ee5687aaac01045ab11023f4e05ad0bc82d22a08a6"
+    },
+    {
+      "file": "project/R20-DONOR-FILE-TREATMENT.parts/part-08.json",
+      "recordEnd": 256,
+      "recordStart": 225,
+      "records": 32,
+      "sha256": "2f76debe2489bcd450f46ac8088009fc9ca21bdb3f2a0442b8cad915c5661075"
+    },
+    {
+      "file": "project/R20-DONOR-FILE-TREATMENT.parts/part-09.json",
+      "recordEnd": 284,
+      "recordStart": 257,
+      "records": 28,
+      "sha256": "e709171eb4f4c458b202a873d513463e631f093308767a032fe53340381e5ff2"
+    }
+  ],
+  "reconstruction": "Concatenate records from parts in ascending part.number into records; restore top-level source, summary, analysis, schemaVersion from this index.",
+  "schemaVersion": 1,
+  "source": {
+    "applicationSha256": "ad231c899e0a93f90f65489b8b6588aa09ae94b43c1d838e13e4458079c862bd",
+    "candidateId": "3.0.0-r20c01",
+    "release": "3.0.0-r20"
+  },
+  "summary": {
+    "fileCount": 284,
+    "logicalBytes": 5133493,
+    "treatmentBytes": {
+      "ADAPT": 570559,
+      "DROP": 3866549,
+      "PORT": 39641,
+      "REPLACE": 587725,
+      "RETAIN": 69019
+    },
+    "treatmentFileCounts": {
+      "ADAPT": 65,
+      "DROP": 153,
+      "PORT": 11,
+      "REPLACE": 48,
+      "RETAIN": 7
+    }
+  }
+}
