@@ -1,0 +1,97 @@
+name: Persist BROray-Light r20 preparation R0006
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/persist-r20-preparation.yml
+
+permissions:
+  contents: write
+
+jobs:
+  persist:
+    if: "${{ github.event.head_commit.message == 'prep: persist r20 preparation R0006' }}"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - name: Verify payload and persist preparation checkpoint
+        shell: bash
+        run: |
+          set -euo pipefail
+          cat > /tmp/PART-SHA256SUMS <<'SUMS'
+          11e9b06b81e622e8302b6ff1c330b84b80cdf2e730b46e0ca96b7c7b61f89b98  .prep-r20-payload/part-00
+          722af620fa72cc4a158b8a9f03717caeade911da7e0fd1b160e1704d9619fe79  .prep-r20-payload/part-01
+          ab8881e24d90d481c0a8ed614e7ab531b807b9120e2029db7fbe7857332d6243  .prep-r20-payload/part-02
+          5d78f67b1b2e21d10fc6d48782d8293734eab441b97ca79f4b652fa66305aa1e  .prep-r20-payload/part-03
+          f9666b1ee284eefc6bd6cbe0d50cb5d0c070a25ce3346d35a14774c70fbb8d12  .prep-r20-payload/part-04
+          bec2f294236bbb246409221deda5e10bb5dba87e4c04d6e0c02612547ae2aee9  .prep-r20-payload/part-05
+          955f30a14046126b1a08c8f924328243d7bdd9ca242af0c49051d4eb184e6b8b  .prep-r20-payload/part-06
+          918474b6274cbaa34976227c3869e62d614b9a63296619da7df2f9531dc48e10  .prep-r20-payload/part-07
+          SUMS
+          sha256sum -c /tmp/PART-SHA256SUMS
+          cat .prep-r20-payload/part-* > /tmp/r20prep.b64
+          [ "$(wc -c </tmp/r20prep.b64)" -eq 41584 ]
+          base64 -d /tmp/r20prep.b64 > /tmp/r20prep.tar.gz
+          echo 'ca3ebdc132b137b917409ddb5c5f8280ebafc9d7230f2720fef5b6ce1fa35101  /tmp/r20prep.tar.gz' | sha256sum -c -
+          gzip -t /tmp/r20prep.tar.gz
+          python3 - <<'PY'
+          import tarfile
+          from pathlib import PurePosixPath
+          p='/tmp/r20prep.tar.gz'
+          with tarfile.open(p,'r:gz') as tf:
+              for m in tf.getmembers():
+                  q=PurePosixPath(m.name)
+                  if q.is_absolute() or '..' in q.parts:
+                      raise SystemExit(f'unsafe archive member: {m.name}')
+          PY
+          tar -xzf /tmp/r20prep.tar.gz -C .
+          python3 - <<'PY'
+          import hashlib, json
+          from pathlib import Path
+          manifest=json.loads(Path('REMOTE-MANIFEST.json').read_text())
+          for item in manifest['files']:
+              p=Path(item['path'])
+              if not p.is_file(): raise SystemExit(f'missing {p}')
+              if p.stat().st_size != item['sizeBytes']: raise SystemExit(f'size mismatch {p}')
+              h=hashlib.sha256(p.read_bytes()).hexdigest()
+              if h != item['sha256']: raise SystemExit(f'sha mismatch {p}')
+          for p in Path('.').rglob('*.json'):
+              if '.git' in p.parts: continue
+              json.loads(p.read_text())
+          print(f"REMOTE_MANIFEST_FILES={len(manifest['files'])}")
+          print('REMOTE_MANIFEST_VERIFY=PASS')
+          print('JSON_VERIFY=PASS')
+          PY
+          mkdir -p checkpoints/R0006
+          python3 - <<'PY'
+          import hashlib, json, os
+          from pathlib import Path
+          obj={
+            'schemaVersion':1,
+            'checkpointId':'BROray-Light-R20-REMOTE-PERSISTENCE-R0006',
+            'status':'PASS',
+            'sourcePreparationCheckpointSha256':'cdc7a3c4d6574d2fa330580be81b3b6ef2b5f89f20ae6bee7cf3fe1784876c4c',
+            'transportArchiveSha256':'ca3ebdc132b137b917409ddb5c5f8280ebafc9d7230f2720fef5b6ce1fa35101',
+            'workflowRunId':os.environ['GITHUB_RUN_ID'],
+            'workflowParentCommit':os.environ['GITHUB_SHA'],
+            'mutations':{'BROadmin/BROray':'NONE','productionServer':'NONE','router':'NONE'},
+            'nextStage':'BUILD_LIGHT_SOURCE_TREE_FROM_R20_TREATMENT_MAP'
+          }
+          p=Path('checkpoints/R0006/REMOTE-PERSISTENCE.json')
+          p.write_text(json.dumps(obj,indent=2,sort_keys=True)+'\n')
+          h=hashlib.sha256(p.read_bytes()).hexdigest()
+          Path(str(p)+'.sha256').write_text(f'{h}  {p}\n')
+          PY
+          rm -rf .prep-r20-payload
+          rm -f .github/workflows/fetch-stable-r20c01.yml
+          rm -f .github/workflows/persist-r20-preparation.yml
+          git config user.name 'BROadmin'
+          git config user.email '307129396+BROadmin@users.noreply.github.com'
+          git add -A
+          git diff --cached --check
+          git diff --cached --quiet && { echo 'ERROR: no persisted changes'; exit 1; } || true
+          git commit -m 'prep: pin Stable r20c01 and persist preparation R0006'
+          git push origin HEAD:main
