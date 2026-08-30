@@ -1,0 +1,114 @@
+name: Persist BROray-Light r23 preparation R0007
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/persist-r23-preparation.yml
+
+permissions:
+  contents: write
+
+jobs:
+  persist:
+    if: "${{ github.event.head_commit.message == 'prep: persist r23 preparation R0007' }}"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify payload and persist preparation checkpoint
+        shell: bash
+        run: |
+          set -euo pipefail
+          echo '9469137f639109d772ddaaac265cee28bbf8b672d4844f257410b93186de6987  .prep-r23-payload/part-00' | sha256sum -c -
+          echo 'cddced80ce6dd325c2496e38aa303e459e23df7dd9164ddef65bb3f07df1c2f0  .prep-r23-payload/part-01' | sha256sum -c -
+          echo 'ec1ba8007836ca68a1a897640855300ef6fefa337d8947b1b06ee31bbe1022ea  .prep-r23-payload/part-02' | sha256sum -c -
+          echo '1911834850490064cacde16208857da355622e702f44e6bb7dae888132165948  .prep-r23-payload/part-03' | sha256sum -c -
+          echo '32941cfcfdc68deb50b0cfb89a80977e2f8129b38c68e126f52500fa5d0d76a8  .prep-r23-payload/part-04' | sha256sum -c -
+          echo '8de493921477ae2984dee6e3b52b78232120d095982f7960417640ace39e3a0c  .prep-r23-payload/part-05' | sha256sum -c -
+          echo '0c2323b73f8b019aa12ac8de3eb9203460dc7bea3e0a4247edcb8139d6561c56  .prep-r23-payload/part-06' | sha256sum -c -
+          echo '00b407675f7b9cf31f3ce97e0125995a069af1a060695d6d102f58fb3dbf7c72  .prep-r23-payload/part-07' | sha256sum -c -
+
+          cat .prep-r23-payload/part-0{0,1,2,3,4,5,6,7} | base64 -d > /tmp/broray-light-r23-remote-r0007.tar.gz
+          echo '4c80f3c5bb0e5a044200a66cc229cd8f8f5f8f7ac07e33ddace54b4ab3576244  /tmp/broray-light-r23-remote-r0007.tar.gz' | sha256sum -c -
+          gzip -t /tmp/broray-light-r23-remote-r0007.tar.gz
+
+          python3 - <<'PY'
+          import tarfile
+          from pathlib import PurePosixPath
+          p='/tmp/broray-light-r23-remote-r0007.tar.gz'
+          with tarfile.open(p, 'r:gz') as tf:
+              bad=[]
+              for m in tf.getmembers():
+                  q=PurePosixPath(m.name)
+                  if q.is_absolute() or '..' in q.parts:
+                      bad.append(m.name)
+              if bad:
+                  raise SystemExit(f'unsafe payload paths: {bad[:10]}')
+          PY
+
+          rm -rf /tmp/broray-light-r23-payload
+          mkdir -p /tmp/broray-light-r23-payload
+          tar -xzf /tmp/broray-light-r23-remote-r0007.tar.gz -C /tmp/broray-light-r23-payload
+          ROOT=/tmp/broray-light-r23-payload/BROray-Light-R23-REMOTE-R0007
+          [ -d "$ROOT" ]
+
+          python3 - "$ROOT" <<'PY'
+          import hashlib, json, sys
+          from pathlib import Path
+          root=Path(sys.argv[1])
+          manifest=json.loads((root/'REMOTE-MANIFEST.json').read_text())
+          expected_checkpoint='3ffcd8878c291b5c34f0bdf3633c73d5c5eeb0b884e5295cc161b04d9956ea47'
+          if manifest.get('sourcePreparationCheckpointSha256') != expected_checkpoint:
+              raise SystemExit('source checkpoint identity mismatch')
+          for rel, expected in sorted(manifest['files'].items()):
+              p=root/rel
+              if not p.is_file():
+                  raise SystemExit(f'missing payload file: {rel}')
+              actual=hashlib.sha256(p.read_bytes()).hexdigest()
+              if actual != expected:
+                  raise SystemExit(f'payload sha mismatch: {rel} {actual} != {expected}')
+          for p in root.rglob('*.json'):
+              json.loads(p.read_text())
+          print(f'PAYLOAD_FILES_VERIFIED={len(manifest["files"])}')
+          PY
+
+          cp -a "$ROOT"/. .
+
+          python3 - <<'PY'
+          import hashlib, json, os
+          from pathlib import Path
+          p=Path('checkpoints/R0007/REMOTE-PERSISTENCE.json')
+          obj={
+            'schemaVersion':1,
+            'checkpointId':'BROray-Light-R23-REMOTE-PERSISTENCE-R0007',
+            'status':'PASS',
+            'sourcePreparationCheckpointSha256':'3ffcd8878c291b5c34f0bdf3633c73d5c5eeb0b884e5295cc161b04d9956ea47',
+            'transportArchiveSha256':'4c80f3c5bb0e5a044200a66cc229cd8f8f5f8f7ac07e33ddace54b4ab3576244',
+            'workflowRunId':os.environ['GITHUB_RUN_ID'],
+            'workflowParentCommit':os.environ['GITHUB_SHA'],
+            'mutations':{
+              'BROadmin/BROray':'NONE',
+              'productionServer':'NONE',
+              'router':'NONE'
+            },
+            'nextStage':'BUILD_LIGHT_SOURCE_TREE_FROM_R23_TREATMENT_MAP'
+          }
+          p.parent.mkdir(parents=True,exist_ok=True)
+          p.write_text(json.dumps(obj, indent=2, sort_keys=True)+'\n')
+          h=hashlib.sha256(p.read_bytes()).hexdigest()
+          p.with_name(p.name+'.sha256').write_text(f'{h}  {p.as_posix()}\n')
+          PY
+
+          rm -rf .prep-r23-payload
+          rm -f .github/workflows/fetch-stable-r23c02.yml
+          rm -f .github/workflows/persist-r23-preparation.yml
+
+          git config user.name 'BROadmin'
+          git config user.email '307129396+BROadmin@users.noreply.github.com'
+          git add -A
+          if git diff --cached --quiet; then
+            echo 'no persistence changes' >&2
+            exit 1
+          fi
+          git commit -m 'prep: pin Stable r23c02 and persist preparation R0007'
+          git push origin HEAD:main
