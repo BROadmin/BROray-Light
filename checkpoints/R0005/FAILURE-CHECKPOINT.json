@@ -1,0 +1,39 @@
+{
+  "checkpointId": "BROray-Light-R20-PREP-FAILURE-R0005",
+  "date": "2026-08-30",
+  "firstError": {
+    "class": "VALIDATOR_WRONG_CONTAINER_ASSUMPTION",
+    "message": "gzip: donor/broray-clean-bootstrap-r20.tar.gz: not in gzip format",
+    "operation": "gzip -t donor/broray-clean-bootstrap-r20.tar.gz"
+  },
+  "jobId": 99248860111,
+  "mutationBoundary": {
+    "BROadmin/BROray": "NONE",
+    "productionServer": "NONE",
+    "router": "NONE"
+  },
+  "nextAction": "NEW_VALIDATOR_REVISION_TREAT_CLEAN_BOOTSTRAP_AS_OPAQUE_HASHED_OBJECT",
+  "repository": "BROadmin/BROray-Light",
+  "schemaVersion": 1,
+  "stable": {
+    "applicationSha256": "ad231c899e0a93f90f65489b8b6588aa09ae94b43c1d838e13e4458079c862bd",
+    "candidateId": "3.0.0-r20c01",
+    "cleanBootstrapSha256": "fb4943e3d336d091b16e6cf436e2a7eefe7274422246c8038a7eea2e6c0d79a0",
+    "installerSha256": "3c3faa352ef78821de791a3e932602b88efadf9b82fecde39c535a67bfbb14c0",
+    "release": "3.0.0-r20",
+    "releaseJsonSha256": "b87deb3cca0eb01b1632aa8ceb1bcb81de6972bee5b7925e694088cffa9a2ebd",
+    "updaterPlatformSha256": "eaf2eafb62d1b108fe576d1fda09ae7a5d15ad90f71272abc23f321d397611b0"
+  },
+  "status": "FAIL_FIRST_ERROR_STOPPED",
+  "verifiedBeforeFailure": {
+    "applicationGzip": "PASS",
+    "applicationSha256": "PASS",
+    "cleanBootstrapSha256": "PASS",
+    "installerSha256": "PASS",
+    "releaseJsonSha256": "PASS",
+    "updaterPlatformGzip": "PASS",
+    "updaterPlatformSha256": "PASS"
+  },
+  "workflowCommit": "2e0228c3ebb717fd425d679ae216d5d53ac86ffe",
+  "workflowRunId": 33308374844
+}
