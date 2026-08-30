@@ -1,0 +1,121 @@
+name: Fetch exact BROray Stable r23c02 donor
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/fetch-stable-r23c02.yml
+
+permissions:
+  contents: read
+
+jobs:
+  fetch-donor:
+    if: "${{ github.event.head_commit.message == 'prep: fetch exact Stable r23c02 donor' }}"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Fetch and verify current Stable donor set
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p donor
+          curl -q --proto '=https' --proto-redir '=https' --tlsv1.2 -fsSL \
+            -H 'Cache-Control: no-cache, no-store' -H 'Accept-Encoding: identity' \
+            'https://api.brovibe.cloud/releases/stable/broray/release.json' \
+            -o donor/release.json
+          echo '2b376932d7e7d7a773e1454012a512d382014890f514e3181843fa24689e11f1  donor/release.json' | sha256sum -c -
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          obj=json.loads(Path('donor/release.json').read_text())
+          raw=Path('donor/release.json').read_text()
+          if '3.0.0-r23c02' not in raw:
+              raise SystemExit('candidate r23c02 not present in Stable index')
+          targets={
+            'application':'69679f6d7339b856faf28f69cb1800254984e5400201fe97247011ab166c3f85',
+            'platform':'eaf2eafb62d1b108fe576d1fda09ae7a5d15ad90f71272abc23f321d397611b0',
+            'clean-bootstrap':'fb4943e3d336d091b16e6cf436e2a7eefe7274422246c8038a7eea2e6c0d79a0',
+          }
+          found={k:[] for k in targets}
+          def walk(x):
+              if isinstance(x,dict):
+                  sha=x.get('sha256'); url=x.get('url')
+                  if isinstance(sha,str) and isinstance(url,str):
+                      for k,v in targets.items():
+                          if sha==v: found[k].append(url)
+                  for v in x.values(): walk(v)
+              elif isinstance(x,list):
+                  for v in x: walk(v)
+          walk(obj)
+          for k,urls in found.items():
+              unique=sorted(set(urls))
+              if len(unique) != 1:
+                  raise SystemExit(f'{k} exact URL resolution failed: {urls!r}')
+              Path(f'donor/{k}.url').write_text(unique[0]+'\n')
+          PY
+          curl -q --proto '=https' --proto-redir '=https' --tlsv1.2 -fsSL \
+            -H 'Cache-Control: no-cache, no-store' -H 'Accept-Encoding: identity' \
+            "$(cat donor/application.url)" -o donor/broray-app-3.0.0-r23c02.tar.gz
+          echo '69679f6d7339b856faf28f69cb1800254984e5400201fe97247011ab166c3f85  donor/broray-app-3.0.0-r23c02.tar.gz' | sha256sum -c -
+          curl -q --proto '=https' --proto-redir '=https' --tlsv1.2 -fsSL \
+            -H 'Cache-Control: no-cache, no-store' -H 'Accept-Encoding: identity' \
+            "$(cat donor/platform.url)" -o donor/broray-updater-platform-r23.tar.gz
+          echo 'eaf2eafb62d1b108fe576d1fda09ae7a5d15ad90f71272abc23f321d397611b0  donor/broray-updater-platform-r23.tar.gz' | sha256sum -c -
+          curl -q --proto '=https' --proto-redir '=https' --tlsv1.2 -fsSL \
+            -H 'Cache-Control: no-cache, no-store' -H 'Accept-Encoding: identity' \
+            "$(cat donor/clean-bootstrap.url)" -o donor/broray-clean-bootstrap-r23
+          echo 'fb4943e3d336d091b16e6cf436e2a7eefe7274422246c8038a7eea2e6c0d79a0  donor/broray-clean-bootstrap-r23' | sha256sum -c -
+          curl -q --proto '=https' --proto-redir '=https' --tlsv1.2 -fsSL \
+            -H 'Cache-Control: no-cache, no-store' -H 'Accept-Encoding: identity' \
+            'https://api.brovibe.cloud/releases/stable/broray/3.0.0-r23/INSTALL-ON-ROUTER.sh' \
+            -o donor/INSTALL-ON-ROUTER.sh
+          echo '12f9d9edace123c1137d6143210af7c1e7157109859efbc0e75c02fdc53cec21  donor/INSTALL-ON-ROUTER.sh' | sha256sum -c -
+          gzip -t donor/broray-app-3.0.0-r23c02.tar.gz
+          gzip -t donor/broray-updater-platform-r23.tar.gz
+          python3 - <<'PY'
+          import json, tarfile, hashlib
+          from pathlib import Path, PurePosixPath
+          files=[
+            ('application','donor/broray-app-3.0.0-r23c02.tar.gz'),
+            ('platform','donor/broray-updater-platform-r23.tar.gz'),
+          ]
+          receipt={
+            'schemaVersion':1,
+            'candidateId':'3.0.0-r23c02',
+            'stableRelease':'3.0.0-r23',
+            'releaseJsonSha256':'2b376932d7e7d7a773e1454012a512d382014890f514e3181843fa24689e11f1',
+            'installerSha256':'12f9d9edace123c1137d6143210af7c1e7157109859efbc0e75c02fdc53cec21',
+            'cleanBootstrapSha256':'fb4943e3d336d091b16e6cf436e2a7eefe7274422246c8038a7eea2e6c0d79a0',
+            'objects':{},
+            'status':'PASS'
+          }
+          for name,path in files:
+              p=Path(path)
+              with tarfile.open(p,'r:gz') as tf:
+                  ms=tf.getmembers(); bad=[]
+                  for m in ms:
+                      q=PurePosixPath(m.name)
+                      if q.is_absolute() or '..' in q.parts: bad.append(m.name)
+                  if bad: raise SystemExit(f'{name} unsafe members: {bad[:10]}')
+                  receipt['objects'][name]={
+                    'sha256':hashlib.sha256(p.read_bytes()).hexdigest(),
+                    'sizeBytes':p.stat().st_size,
+                    'archiveMembers':len(ms),
+                    'regularFiles':sum(m.isfile() for m in ms),
+                    'directories':sum(m.isdir() for m in ms),
+                    'symlinks':sum(m.issym() for m in ms),
+                    'hardlinks':sum(m.islnk() for m in ms),
+                    'unsafePaths':0,
+                  }
+                  Path(f'donor/{name}-members.txt').write_text('\n'.join(m.name for m in ms)+'\n')
+          Path('donor/RECEIPT.json').write_text(json.dumps(receipt,indent=2,sort_keys=True)+'\n')
+          PY
+          sha256sum donor/* > donor/SHA256SUMS
+      - name: Upload exact donor artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: broray-stable-r23c02-exact-donor
+          path: donor/
+          if-no-files-found: error
+          retention-days: 7
