@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009",
+  "revision": "r21-busybox-ash-static-profile",
+  "status": "FAILED_STOPPED",
+  "failureClass": "POSTINST_AMBIGUOUS_AND_OR_CHAIN",
+  "failedGate": "PACKAGE_INSTALLER_STATIC_SYNTAX",
+  "firstError": "ShellCheck SC2015 rejected the existing-Xray regular-file/executable assertion expressed as A && B && C || fail.",
+  "analysis": "Although isolated tests passed, an explicit conditional better preserves the intended fail-closed meaning if the executable predicate returns nonzero.",
+  "materialOutputState": "No files or build artifacts changed during the failed validation command.",
+  "retryPolicy": "NO_RETRY_OF_R21",
+  "nextRevision": "r22-explicit-existing-xray-condition",
+  "nextExactAction": "REPLACE_THE_AND_OR_CHAIN_WITH_AN_EXPLICIT_IF_THEN_FAIL_AND_REBUILD_IN_NEW_OUTPUT_ROOTS"
+}

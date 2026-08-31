@@ -1,0 +1,25 @@
+#!/opt/bin/ash
+
+set -eu
+ROOT_PREFIX="${BRORAY_LIGHT_ROOT_PREFIX:-}"
+APP_ROOT="$ROOT_PREFIX/opt/broray-light"
+
+[ ! -e "$ROOT_PREFIX/opt/broray" ] || {
+    echo 'ERROR: full BROray ownership is present; co-install is fail-closed.' >&2
+    exit 1
+}
+[ ! -e "$ROOT_PREFIX/opt/etc/init.d/S24broray" ] || {
+    echo 'ERROR: full BROray service ownership is present; co-install is fail-closed.' >&2
+    exit 1
+}
+[ ! -e "$ROOT_PREFIX/opt/var/lock/broray/global-operation.lock" ] || {
+    echo 'ERROR: full BROray operation ownership is ambiguous; co-install is fail-closed.' >&2
+    exit 1
+}
+
+if [ -e "$APP_ROOT/current" ] && [ ! -L "$APP_ROOT/current" ]; then
+    echo 'ERROR: BROray-Light current slot is not a managed symlink.' >&2
+    exit 1
+fi
+
+exit 0

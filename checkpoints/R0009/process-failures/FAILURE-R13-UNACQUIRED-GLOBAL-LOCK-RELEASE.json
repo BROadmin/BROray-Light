@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009",
+  "revision": "r13-explicit-contention-shell",
+  "status": "FAILED_STOPPED",
+  "at": "2026-08-31T18:08:19+03:00",
+  "failureClass": "FOREIGN_GLOBAL_LOCK_RELEASE_WITHOUT_ACQUISITION",
+  "firstError": "Updater reported GLOBAL_LOCKED but the pre-existing global lock was absent after its EXIT trap.",
+  "failedGate": "GLOBAL_LOCK_LIVE_CONTENTION",
+  "severity": "MATERIAL_SAFETY",
+  "cause": "The cleanup trap always called lock_release for the global lock, even when global lock acquisition failed.",
+  "passedBeforeFailure": [
+    "clean install", "installer rerun", "coownership fail-closed", "signed index",
+    "releaseId decisions", "isolated update", "persistence", "equal-version no-op",
+    "downgrade refusal", "forced health rollback", "failed hash verification",
+    "malicious archive rejection", "request lock contention and stale owner"
+  ],
+  "productArtifactsAffected": true,
+  "retryPolicy": "NO_RETRY_OF_R13",
+  "nextRevision": "r14-acquired-lock-flags",
+  "nextExactAction": "TRACK_SUCCESSFUL_REQUEST_AND_GLOBAL_LOCK_ACQUISITION_AND_CLEAN_UP_ONLY_OWNED_ACQUIRED_LOCKS"
+}

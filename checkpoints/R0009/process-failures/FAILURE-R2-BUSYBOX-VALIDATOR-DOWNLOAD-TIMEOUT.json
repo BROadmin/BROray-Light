@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009",
+  "revision": "r2-validation-tooling",
+  "status": "FAILED_STOPPED",
+  "at": "2026-08-31T17:26:00+03:00",
+  "failureClass": "VALIDATION_TOOL_DOWNLOAD_TIMEOUT",
+  "firstError": "Invoke-WebRequest for the official busybox-w32 executable did not complete within the bounded 30-second command and produced no file.",
+  "productArtifactsAffected": false,
+  "retryPolicy": "NO_RETRY_OF_R2",
+  "cause": "The PowerShell transport to frippery.org did not yield response bytes within the gate timeout.",
+  "nextRevision": "r3-validation-tooling",
+  "nextExactAction": "USE_BOUNDED_CURL_TRANSPORT_THEN_VERIFY_BUSYBOX_IDENTITY_AND_EXECUTION_BEFORE_PRODUCT_TESTS"
+}

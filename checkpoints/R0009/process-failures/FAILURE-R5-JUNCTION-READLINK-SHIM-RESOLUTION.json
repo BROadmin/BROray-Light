@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009",
+  "revision": "r5-isolated-root",
+  "status": "FAILED_STOPPED",
+  "at": "2026-08-31T17:34:00+03:00",
+  "failureClass": "ISOLATED_HARNESS_LINK_SHIM_DEFECT",
+  "firstError": "Second postinst run reported foreign symlink at the managed /opt/broray-light/bin junction.",
+  "failedGate": "SAME_PACKAGE_INSTALLER_RERUN",
+  "cause": "The Windows junction readlink shim called Path.resolve() on an existing link and searched for its sidecar at the target path instead of the link path.",
+  "productArtifactsAffected": false,
+  "retryPolicy": "NO_RETRY_OF_R5",
+  "nextRevision": "r6-isolated-root",
+  "nextExactAction": "CHANGE_LINK_SHIM_TO_NON_RESOLVING_ABSOLUTE_LINK_PATH_AND_RUN_A_FRESH_ISOLATED_ROOT"
+}

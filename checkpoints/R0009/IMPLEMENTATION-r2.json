@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009",
+  "revision": "r2-implementation",
+  "status": "IMPLEMENTED_PENDING_VALIDATION",
+  "at": "2026-08-31T17:23:32+03:00",
+  "semantics": [
+    "signed release index verification",
+    "releaseId comparison and same-version no-op",
+    "downgrade refusal",
+    "request/global locks with stale-owner handling",
+    "safe archive path and member-type validation",
+    "atomic current symlink switch",
+    "post-switch health gate and automatic rollback",
+    "previous-good slot preservation",
+    "full BROray co-ownership fail-closed"
+  ],
+  "identities": {
+    "updaterPublicKey": "0b7b379baf500b7001e86519f3d4ab19b3e270ba3f97436ff627f54b4af90db6",
+    "updaterControl": "11b8bc0fe3e463fc1c1b7922231e1873430b645c2c82674f4def610fd16403c3",
+    "updaterInit": "3be3c3291aa8118526ebea690576269a957174871067d1f5ca41dd1cf6565e57",
+    "updaterEngine": "deb6b9fc971d3035be9f39ee6f96134649042b241838af48eddf96cf76c6e23e",
+    "packageControl": "37ae56df3df393aef8d9d001d818f64d2879734dc2b97b5e2eedd3476a97d5ac",
+    "preinst": "7467d7e7f6bf2fdeb7d84c7d7385ef7e61eb4f96842f19575bbd5aad2a61d4d7",
+    "postinst": "844ec8743c55e6371f8e9f2e11fffd603cdd51fd97fcd761f36ce02d8696487c",
+    "prerm": "806d3982416c084c088df15f08dedab2737f4d8c0a6d47a42ead2606a8765efa",
+    "postrm": "2378daf9238098b24bb4c461606b525b2bc593d811e44baeb3f050282c3a6749",
+    "installerTemplate": "1c9e770e4022464d164b3174492355cd584fd3e5b900200f5adf6db92c0afd4f",
+    "builder": "bde7f61e5e4515d4bb6182792f9863cedebdf4c419244ce23eb9188da37e3130"
+  },
+  "sourceMutation": "NONE",
+  "firstError": null,
+  "nextExactAction": "RUN_R2_FOCUSED_STATIC_AND_FIRST_BUILD_VALIDATION"
+}

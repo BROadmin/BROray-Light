@@ -1,7 +1,8 @@
 {
   "schemaVersion": 1,
   "stage": "R0009",
-  "status": "READY_FOR_CODEX",
+  "status": "PASS",
+  "currentRevision": "r29-final-commit-ready",
   "workingBranch": "codex/r0009-updater-package",
   "authorizedTask": "BUILD_LIGHT_UPDATER_INSTALLER_AND_INSTALLABLE_CANDIDATE_FROM_R0008",
   "canonicalInput": {
@@ -20,16 +21,78 @@
     "R0008_REMOTE_PERSISTENCE_PASS",
     "CANONICAL_R0008_EXPORT_VERIFIED"
   ],
-  "openWork": [
-    "resolve exact Xray clean-install artifact and identity",
-    "fork updater-v5 semantics to BROray-Light identity and paths",
-    "build Light package and clean installer",
-    "perform independent Build A and Build B",
-    "prove reproducibility",
-    "run isolated-root clean install/update/equal-version/downgrade/rollback/persistence gates",
-    "persist R0009 checkpoint and SHA-256 receipts"
+  "completedGates": [
+    "CANONICAL_R0008_SOURCE_IDENTITY_VERIFICATION_PASS",
+    "PINNED_UPDATER_V5_IDENTITY_VERIFICATION_PASS",
+    "EXACT_XRAY_BOOTSTRAP_ARTIFACT_VERIFICATION_PASS",
+    "UPDATER_STATIC_SYNTAX_PASS",
+    "PACKAGE_INSTALLER_STATIC_SYNTAX_PASS",
+    "SAFE_ARCHIVE_PATH_VALIDATION_PASS",
+    "RELEASE_ID_DOWNGRADE_DECISION_PASS",
+    "GLOBAL_REQUEST_LOCK_PASS",
+    "ISOLATED_CLEAN_INSTALL_PASS",
+    "ISOLATED_UPDATE_PASS",
+    "EQUAL_VERSION_NO_OP_PASS",
+    "FORCED_HEALTH_ROLLBACK_PASS",
+    "PERSISTENCE_PASS",
+    "BUILD_A_B_BYTE_REPRODUCIBILITY_PASS",
+    "ARTIFACT_SHA256_MANIFEST_PASS",
+    "FORBIDDEN_MODULE_EXCLUSION_PASS"
   ],
-  "candidateReady": false,
+  "updaterControlIdentity": "S23broray-light-updater",
+  "inputCheckpoint": {
+    "path": "checkpoints/R0009/INPUT-VERIFICATION.json",
+    "sha256": "d70d9022863206f48ca68120b026af9318e6c798fe8c794c10ad23661e676bb8",
+    "status": "PASS"
+  },
+  "implementationCheckpoint": {
+    "path": "checkpoints/R0009/IMPLEMENTATION-r2.json",
+    "sha256": "41d3f1c7ff8574fabf84f09d60afa0e105a5b83c793387084f3e33a46da9c34a",
+    "status": "IMPLEMENTED_PENDING_VALIDATION"
+  },
+  "buildProbe": {
+    "path": "checkpoints/R0009/BUILD-PROBE-r2.json",
+    "sha256": "000f92e8d812a31bc287cc157ae9c6292c6a78a8be7c161cfc9296af0004c6b0",
+    "status": "PASS",
+    "packageSha256": "6152246e4c89499c1b3c2ea30b4c333be0a77c781c066db8a7dd8aa58ba7582d"
+  },
+  "isolatedValidation": {
+    "path": "checkpoints/R0009/ISOLATED-VALIDATION.json",
+    "sha256": "b34e419003f5c051c0c3d981d74ea337d42154424a8e360baa5dee731a22ca70",
+    "status": "PASS",
+    "passedGates": 17,
+    "failedGates": 0
+  },
+  "reproducibilityProbe": {
+    "path": "checkpoints/R0009/REPRODUCIBILITY.json",
+    "sha256": "0939624ea7e927dc931f8bed2d5e8bdcb8e00f8cea981ccbeafc388af218b5a5",
+    "status": "PASS",
+    "comparison": "BYTE_IDENTICAL",
+    "artifacts": 8,
+    "signedReleaseIndexVerified": true
+  },
+  "finalCheckpoint": {
+    "path": "checkpoints/R0009/CHECKPOINT.json",
+    "sha256": "c4fd8f9abd73f1385c0892be801528dc85e37aafb55ab806b5d49d4a9449366a",
+    "validationPath": "checkpoints/R0009/VALIDATION.json",
+    "validationSha256": "ed45192d94a80ee15bab81f6fb5e18980c6089413e139754fd90638e88dc0ce5",
+    "checkpointSumsSha256": "e94e6d103088ecdaac6b7788012d0f733654e705441cd5d85591176a5ac8fb98"
+  },
+  "finalArtifacts": {
+    "buildA": "dist/R0009/R22-Build-A",
+    "buildB": "dist/R0009/R22-Build-B",
+    "packageSha256": "bf997fe4d1721cbb382723d686a7b2783d5715b46f37ab1d05929e0e9c2275a7",
+    "appArchiveSha256": "7fa1e2c5198e687abbbcbae70b924173597b5c53799f6c5719548e4a2c7d9c3d",
+    "updaterArchiveSha256": "d804ce626e1f1c1926251d910eb268ebdc5f073fe74f0d1acfce1fb9e019925b",
+    "installerSha256": "8c3d6d26a590b237140e8904bb9e97ae986bf75ae1d4619a02d5b0dcbfb0b2b3",
+    "releaseIndexSha256": "7bb1cfbeddb11ec034b29071ba76c4dbf43360868f7ce1d20602fe75385cebbe",
+    "releaseSignatureSha256": "524063843946335e467ecb91669d7f9d465f2f2076ce3049e95019ec590df66b",
+    "candidateManifestSha256": "6d307b2fded835ae0b65b6daaf71128539f067bf8d4efc03705a9a07c94c67da",
+    "artifactSumsSha256": "29b4b7ae09a8db6ae35a4a9c730ce462e46a9cbb7c1a09cce74ecb5c5196c814"
+  },
+  "openWork": [],
+  "candidateReady": true,
+  "privateSigningKeyDestroyed": true,
   "hardwareTestingAuthorized": false,
   "productionMutationAuthorized": false,
   "codexEntryPoints": [
@@ -41,5 +104,27 @@
     "project/R0009-STATE.json",
     "project/WORKLOG.jsonl"
   ],
-  "nextExactAction": "VERIFY_CANONICAL_R0008_INPUT_AND_RESOLVE_PINNED_XRAY_RUNTIME_BEFORE_WRITING_UPDATER_OR_PACKAGE_CODE"
+  "activeBlocker": null,
+  "processFailures": [
+    "checkpoints/R0009/process-failures/FAILURE-R2-BUSYBOX-VALIDATOR-DOWNLOAD-TIMEOUT.json",
+    "checkpoints/R0009/process-failures/FAILURE-R3-BUSYBOX-OFFICIAL-HOST-CONNECT-TIMEOUT.json",
+    "checkpoints/R0009/process-failures/FAILURE-R4-ISOLATED-XRAY-EXECUTABLE-HOST-SEMANTICS.json",
+    "checkpoints/R0009/process-failures/FAILURE-R5-JUNCTION-READLINK-SHIM-RESOLUTION.json",
+    "checkpoints/R0009/process-failures/FAILURE-R6-SIGNED-INDEX-SHELL-INTEGRATION.json",
+    "checkpoints/R0009/process-failures/FAILURE-R7-VALID-ID-HYPHEN-CLASS.json",
+    "checkpoints/R0009/process-failures/FAILURE-R8-WINDOWS-JQ-CRLF-SEMANTICS.json",
+    "checkpoints/R0009/process-failures/FAILURE-R9-WINDOWS-TAR-CRLF-LISTING.json",
+    "checkpoints/R0009/process-failures/FAILURE-R10-HARNESS-TARGET-SLOT-PREEXISTS.json",
+    "checkpoints/R0009/process-failures/FAILURE-R11-JUNCTION-MV-NOT-POSIX-RENAME.json",
+    "checkpoints/R0009/process-failures/FAILURE-R12-CONTENTION-PROBE-ROUTER-SHEBANG.json",
+    "checkpoints/R0009/process-failures/FAILURE-R13-UNACQUIRED-GLOBAL-LOCK-RELEASE.json",
+    "checkpoints/R0009/process-failures/FAILURE-R14-POSTRM-COMMENT-FALSE-POSITIVE.json",
+    "checkpoints/R0009/process-failures/FAILURE-R18-CHECKPOINT-PATCH-CONTEXT-MISMATCH.json",
+    "checkpoints/R0009/process-failures/FAILURE-R20-SHELLCHECK-POSIX-PROFILE-MISMATCH.json",
+    "checkpoints/R0009/process-failures/FAILURE-R21-POSTINST-AMBIGUOUS-AND-OR.json",
+    "checkpoints/R0009/process-failures/FAILURE-R24-COMPOUND-TEMP-CLEANUP-POLICY-REJECTION.json",
+    "checkpoints/R0009/process-failures/FAILURE-R25-REMOVE-ITEM-POLICY-REJECTION.json",
+    "checkpoints/R0009/process-failures/FAILURE-R28-GIT-AUTHOR-IDENTITY-MISSING.json"
+  ],
+  "nextExactAction": "PHYSICAL_KEENETIC_INSTALL_UPDATE_ROLLBACK_VALIDATION_OF_R0009_INTERNAL_CANDIDATE"
 }

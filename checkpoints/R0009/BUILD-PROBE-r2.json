@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009",
+  "revision": "r2-implementation",
+  "status": "PASS",
+  "kind": "FOCUSED_FIRST_BUILD_PROBE",
+  "gates": {
+    "pythonSyntax": "PASS",
+    "jsonSyntax": "PASS",
+    "forbiddenModuleScan": "PASS",
+    "canonicalSourceVerificationInsideBuilder": "PASS",
+    "pinnedUpdaterInputVerificationInsideBuilder": "PASS",
+    "officialXrayInputVerificationInsideBuilder": "PASS",
+    "deterministicCarrierConstruction": "PASS"
+  },
+  "artifacts": [
+    {"path": "dist/R0009/r2-build-probe/broray-light-app-0.1.0-r0009c01.tar.gz", "sizeBytes": 142989, "sha256": "7fa1e2c5198e687abbbcbae70b924173597b5c53799f6c5719548e4a2c7d9c3d"},
+    {"path": "dist/R0009/r2-build-probe/broray-light-updater-platform-5-light1.tar.gz", "sizeBytes": 131241, "sha256": "30749f57615b02bcf50e2a59cc03c80c0aad2c8c47fb2ce831fa8011356ade36"},
+    {"path": "dist/R0009/r2-build-probe/broray-light_0.1.0-r0009c01_aarch64-3.10.ipk", "sizeBytes": 12818016, "sha256": "6152246e4c89499c1b3c2ea30b4c333be0a77c781c066db8a7dd8aa58ba7582d"},
+    {"path": "dist/R0009/r2-build-probe/broray-light-install-0.1.0-r0009c01.sh", "sizeBytes": 1853, "sha256": "fe136c11d7f188e88fbb0685231a81eee14db2039c1137a8b5f8416982d78da8"},
+    {"path": "dist/R0009/r2-build-probe/CANDIDATE-MANIFEST.json", "sizeBytes": 1895, "sha256": "5c14e1ed7181e6e6862a27ea91aea1968faecc0654b4ef0f78e485021e8490ed"},
+    {"path": "dist/R0009/r2-build-probe/SHA256SUMS", "sizeBytes": 523, "sha256": "d4448af298efff0d5c2d96bd039eaf9524c43bcbb7343ffacd3f39a1a07d9cb1"}
+  ],
+  "firstError": null,
+  "nextExactAction": "VALIDATE_R2_SHELL_PACKAGE_LAYOUT_AND_ISOLATED_ROOT_BEHAVIOR"
+}

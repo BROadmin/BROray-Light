@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009",
+  "revision": "r6-isolated-root",
+  "status": "FAILED_STOPPED",
+  "at": "2026-08-31T17:50:00+03:00",
+  "failureClass": "SIGNED_INDEX_SHELL_INTEGRATION_FAILURE",
+  "firstError": "Updater check returned 1 and state INDEX_VERIFY_FAILED.",
+  "failedGate": "SIGNED_RELEASE_INDEX_VERIFICATION",
+  "diagnostics": {
+    "fetchedIndexMatchesFeed": true,
+    "fetchedSignatureMatchesFeed": true,
+    "manualMinisignVerification": "PASS",
+    "manualFullJqSchemaPredicate": "PASS",
+    "suspectedScope": "shell function integration after fetch"
+  },
+  "productArtifactsAffected": true,
+  "retryPolicy": "NO_RETRY_OF_R6",
+  "nextRevision": "r7-signed-index-trace",
+  "nextExactAction": "RUN_INSTRUMENTED_SHELL_TRACE_ON_A_FRESH_ISOLATED_ROOT_AND_FIX_THE_FIRST_FAILING_PREDICATE"
+}

@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009",
+  "status": "PASS",
+  "candidateReady": true,
+  "candidateId": "0.1.0-r0009c01",
+  "releaseId": "0.1.0-r9",
+  "hardwareTestingPerformed": false,
+  "acceptanceGates": [
+    {"id":1,"name":"canonical R0008 source identity verification","status":"PASS","evidence":"121 files, 627326 logical bytes, src/SHA256SUMS e056585d6a517ddbbbaebf08b68f17eb2d9d7ccd68d86df5cdee9fd4665f2419; no diff from 684b27bdb53e545047419baa87c63dd86dffa469"},
+    {"id":2,"name":"exact Xray bootstrap artifact verification","status":"PASS","evidence":"Xray 26.7.28 linux arm64-v8a archive f5698bb218ada3b4022db26fafc39601c5f53b46b19eb76c9616325985807501; binary 4b8af237444801bf17b3dc10a1c5c24581fbe3d433eba3d78c6c3a0da1df56fc"},
+    {"id":3,"name":"updater static/syntax tests","status":"PASS","evidence":"ShellCheck 0.11.0 dash/BusyBox-ash-compatible profile and dash -n; Light updater engine, control and S23 init 3/3"},
+    {"id":4,"name":"package/installer static/syntax tests","status":"PASS","evidence":"ShellCheck and dash -n lifecycle/installer 5/5; Python compile 2/2; JSON parse 46/46 at validation time"},
+    {"id":5,"name":"safe archive/path validation","status":"PASS","evidence":"archive whitelist, member-type/path validation, malicious traversal archive rejection and hash mismatch rejection"},
+    {"id":6,"name":"updater releaseId/downgrade decision tests","status":"PASS","evidence":"signed index, newer update, equal-version no-op and downgrade refusal"},
+    {"id":7,"name":"global/request lock tests","status":"PASS","evidence":"live contention fail-closed, stale-owner recovery, and acquired-lock-only cleanup for both locks"},
+    {"id":8,"name":"isolated-root clean install test","status":"PASS","evidence":"IPK carrier extraction, lifecycle, first install and installer rerun in disposable root"},
+    {"id":9,"name":"isolated-root update test","status":"PASS","evidence":"signed release fetch, integrity validation, atomic app-slot switch and health success"},
+    {"id":10,"name":"isolated-root same-version reinstall/no-op contract","status":"PASS","evidence":"equal releaseId produces no app-slot mutation; installer rerun preserves runtime/state"},
+    {"id":11,"name":"forced health failure rollback test","status":"PASS","evidence":"failed activation restores previous current symlink and service state"},
+    {"id":12,"name":"persistence across app-slot update","status":"PASS","evidence":"servers, subscriptions, config and exact Xray runtime persisted"},
+    {"id":13,"name":"Build A/B byte reproducibility","status":"PASS","evidence":"8/8 artifacts byte-identical from independent clean output roots"},
+    {"id":14,"name":"artifact SHA-256 manifest verification","status":"PASS","evidence":"Final Build A SHA256SUMS 7/7 plus verified Minisign index signature"},
+    {"id":15,"name":"no forbidden full-BROray modules reintroduced","status":"PASS","evidence":"canonical R0008 source unchanged; filename scan PASS; VLESS-only slot manifest; foreign/full BROray co-ownership fail-closed"}
+  ],
+  "passed": 15,
+  "failed": 0,
+  "isolatedBehavior": {"passed":17,"failed":0,"receipt":"checkpoints/R0009/ISOLATED-VALIDATION.json"},
+  "reproducibility": {"comparison":"BYTE_IDENTICAL","artifacts":8,"receipt":"checkpoints/R0009/REPRODUCIBILITY.json"},
+  "processFailuresPreserved": 19,
+  "publication": "INTERNAL_NOT_PUBLISHED",
+  "nextStage": "PHYSICAL_KEENETIC_INSTALL_UPDATE_ROLLBACK_VALIDATION_OF_R0009_INTERNAL_CANDIDATE"
+}

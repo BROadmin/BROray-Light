@@ -1,0 +1,42 @@
+#!/opt/bin/ash
+
+set -eu
+PACKAGE_URL='@PACKAGE_URL@'
+PACKAGE_SIZE='@PACKAGE_SIZE@'
+PACKAGE_SHA256='@PACKAGE_SHA256@'
+PACKAGE_NAME='@PACKAGE_NAME@'
+TARGET="${BRORAY_LIGHT_INSTALL_TMP:-/tmp/$PACKAGE_NAME}"
+
+fail()
+{
+    echo "ERROR: $*" >&2
+    rm -f "$TARGET.part"
+    exit 1
+}
+
+[ "$(id -u)" = 0 ] || fail 'installer requires root'
+[ ! -e /opt/broray ] || fail 'full BROray ownership is present; co-install is fail-closed'
+[ ! -e /opt/etc/init.d/S24broray ] || fail 'full BROray service ownership is present'
+
+for command_name in cp curl sha256sum awk wc opkg mv chmod rm; do
+    command -v "$command_name" >/dev/null 2>&1 || fail "missing command: $command_name"
+done
+
+rm -f "$TARGET.part"
+if [ -n "${BRORAY_LIGHT_PACKAGE_FILE:-}" ]; then
+    cp "$BRORAY_LIGHT_PACKAGE_FILE" "$TARGET.part" || fail 'cannot stage local package'
+else
+    curl -q --proto '=https' --proto-redir '=https' --tlsv1.2 \
+        --connect-timeout 15 --max-time 900 --retry 3 -fsSL \
+        -H 'Cache-Control: no-cache, no-store' -H 'Accept-Encoding: identity' \
+        "$PACKAGE_URL" -o "$TARGET.part" || fail 'package download failed'
+fi
+
+[ "$(wc -c < "$TARGET.part" | tr -d ' ')" = "$PACKAGE_SIZE" ] || fail 'package size mismatch'
+[ "$(sha256sum "$TARGET.part" | awk 'NR==1{print $1}')" = "$PACKAGE_SHA256" ] || fail 'package SHA-256 mismatch'
+mv "$TARGET.part" "$TARGET" || fail 'cannot publish verified package locally'
+chmod 600 "$TARGET"
+opkg install "$TARGET" || fail 'opkg installation failed'
+[ -x /opt/broray-light/runtime/xray ] || fail 'clean install did not produce Xray runtime'
+[ -L /opt/broray-light/current ] || fail 'clean install did not activate app slot'
+echo 'BROray-Light internal R0009 candidate installed.'

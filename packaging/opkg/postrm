@@ -1,0 +1,6 @@
+#!/opt/bin/ash
+
+# Deliberately do not mutate Keenetic, Lighttpd, proxy-interface, user config,
+# servers, subscriptions, or Xray state.  Those objects require separate exact
+# ownership proof and are outside package-manager removal semantics.
+exit 0

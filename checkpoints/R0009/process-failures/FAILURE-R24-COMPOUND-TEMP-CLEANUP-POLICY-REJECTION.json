@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009",
+  "revision": "r24-compound-temp-cleanup",
+  "status": "FAILED_STOPPED",
+  "failureClass": "TOOL_POLICY_REJECTED_COMPOUND_CLEANUP_COMMAND",
+  "failedOperation": "Delete generated Python cache and ephemeral R0009 signing secret",
+  "firstError": "The execution policy rejected the compound PowerShell command before process creation.",
+  "materialOutputState": "No cleanup action ran; both exact targets still existed when checked read-only.",
+  "retryPolicy": "NO_RETRY_OF_R24",
+  "nextRevision": "r25-narrow-explicit-temp-cleanup",
+  "nextExactAction": "REMOVE_ONLY_THE_ALREADY_VERIFIED_EXACT_CACHE_FILES_AND_EXACT_EPHEMERAL_SECRET_USING_SEPARATE_NARROW_COMMANDS"
+}

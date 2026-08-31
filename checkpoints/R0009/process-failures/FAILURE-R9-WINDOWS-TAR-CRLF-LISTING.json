@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009",
+  "revision": "r9-jq-binary-shim",
+  "status": "FAILED_STOPPED",
+  "at": "2026-08-31T17:56:34+03:00",
+  "failureClass": "HOST_TAR_CRLF_LISTING_MISMATCH",
+  "firstError": "Updater stopped with ARCHIVE_UNSAFE on the deterministic valid app archive.",
+  "failedGate": "SAFE_ARCHIVE_PATH_VALIDATION",
+  "passedBeforeFailure": ["signed index", "releaseId decision", "download", "archive size", "archive SHA-256"],
+  "cause": "Native Windows tar listing uses CRLF; top-level whitelist names retained a trailing carriage return in the POSIX read loop.",
+  "productArtifactsAffected": true,
+  "retryPolicy": "NO_RETRY_OF_R9",
+  "nextRevision": "r10-archive-list-normalization",
+  "nextExactAction": "NORMALIZE_CARRIAGE_RETURNS_IN_ARCHIVE_LISTING_REBUILD_AND_RUN_A_FRESH_ISOLATED_ROOT"
+}

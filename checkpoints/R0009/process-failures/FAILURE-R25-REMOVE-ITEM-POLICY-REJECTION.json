@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009",
+  "revision": "r25-narrow-explicit-temp-cleanup",
+  "status": "FAILED_STOPPED",
+  "failureClass": "TOOL_POLICY_REJECTED_REMOVE_ITEM",
+  "failedOperation": "Delete two exact generated pyc files and their now-empty directory",
+  "firstError": "The execution policy rejected the explicit non-recursive Remove-Item command before process creation.",
+  "materialOutputState": "No cleanup action ran; candidate source, artifacts and checkpoints were unchanged.",
+  "retryPolicy": "NO_RETRY_OF_R25",
+  "nextRevision": "r26-explicit-filesystem-api-cleanup",
+  "nextExactAction": "DELETE_THE_FOUR_VERIFIED_EXACT_TARGETS_WITH_NON_RECURSIVE_SYSTEM_IO_CALLS"
+}

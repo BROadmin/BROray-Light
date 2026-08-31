@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009",
+  "revision": "r7-signed-index-trace",
+  "status": "FAILED_STOPPED",
+  "at": "2026-08-31T17:52:22+03:00",
+  "failureClass": "PORTABLE_SHELL_IDENTIFIER_CLASS_DEFECT",
+  "firstError": "valid_id rejected the valid releaseId 0.1.0-r9.",
+  "failedGate": "SIGNED_RELEASE_INDEX_VERIFICATION",
+  "traceFinding": "The case pattern using a negated character class with a trailing hyphen was not portable under dash and returned 1 for a valid identifier.",
+  "productArtifactsAffected": true,
+  "retryPolicy": "NO_RETRY_OF_R7",
+  "nextRevision": "r8-valid-id-portable",
+  "nextExactAction": "REPLACE_CASE_CHARACTER_CLASS_WITH_EXPLICIT_TR_WHITELIST_REBUILD_AND_USE_A_FRESH_ISOLATED_ROOT"
+}

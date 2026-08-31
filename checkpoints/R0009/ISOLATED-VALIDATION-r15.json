@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009",
+  "revision": "r15-removal-command-scan",
+  "status": "PASS",
+  "at": "2026-08-31T18:16:19+03:00",
+  "environment": {
+    "kind": "DISPOSABLE_WINDOWS_ISOLATED_ROOT",
+    "physicalRouter": false,
+    "productionServerMutation": false,
+    "BROadminBROrayMutation": false,
+    "shellRuntime": "bundled Git dash plus target-semantics junction and command shims",
+    "shellStatic": "ShellCheck 0.11.0 sh/POSIX gate plus dash -n",
+    "shellcheckAssetSha256": "8a4e35ab0b331c85d73567b12f2a444df187f483e5079ceffa6bda1faa2e740e",
+    "jqAssetSha256": "a6fc67fedaf9128a3309a1e2ebb8b986aeccf70122ee46d2cb4849e423f0c627"
+  },
+  "implementation": {
+    "updaterEngineSha256": "41bc48ee7f0d208b72ff9c95a599dd08419e2e611b6ed7f53dd49bb54601af34",
+    "postinstSha256": "9ab997cbfc6f68ed29b8cf9af93717c7a83ada45792c6f8aa37a9f25f8864bb4",
+    "builderSha256": "bde7f61e5e4515d4bb6182792f9863cedebdf4c419244ce23eb9188da37e3130",
+    "harnessSha256": "d2070ec411fe0b65e2a44bb9edcb559dff32736ed72b1e37cf231a49778bad71"
+  },
+  "testedArtifacts": {
+    "appArchiveSha256": "7fa1e2c5198e687abbbcbae70b924173597b5c53799f6c5719548e4a2c7d9c3d",
+    "packageSha256": "2a060ce761e241b24ae21a6101ea319046663793c28c57865504f7e3e49e9809"
+  },
+  "gates": {
+    "packageCarrierLayout": "PASS",
+    "isolatedCleanInstall": "PASS",
+    "installerRerun": "PASS",
+    "exactXrayRuntime": "PASS",
+    "coownershipFailClosed": "PASS",
+    "signedIndexVerification": "PASS",
+    "releaseIdDecision": "PASS",
+    "isolatedUpdate": "PASS",
+    "equalVersionNoOp": "PASS",
+    "downgradeRefusal": "PASS",
+    "forcedHealthRollback": "PASS",
+    "persistence": "PASS",
+    "failedHashVerification": "PASS",
+    "maliciousArchiveRejection": "PASS",
+    "requestLockContentionAndStaleOwner": "PASS",
+    "globalLockContentionAndStaleOwner": "PASS",
+    "foreignStateRemovalFailClosed": "PASS",
+    "newShellStaticAndSyntax": "PASS_8_OF_8",
+    "canonicalR0008SourceUnchanged": "PASS",
+    "forbiddenModuleFilenameScan": "PASS"
+  },
+  "firstError": null,
+  "nextExactAction": "RUN_INDEPENDENT_CLEAN_BUILD_A_AND_BUILD_B_AND_COMPARE_EVERY_ARTIFACT_BYTE_FOR_BYTE"
+}

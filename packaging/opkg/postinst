@@ -1,0 +1,102 @@
+#!/opt/bin/ash
+
+set -eu
+ROOT_PREFIX="${BRORAY_LIGHT_ROOT_PREFIX:-}"
+APP_ROOT="$ROOT_PREFIX/opt/broray-light"
+RELEASE_ID='@RELEASE_ID@'
+XRAY_VERSION='@XRAY_VERSION@'
+XRAY_SHA256='@XRAY_BINARY_SHA256@'
+XRAY_SOURCE="$ROOT_PREFIX/opt/libexec/broray-light-bootstrap/xray-$XRAY_VERSION"
+XRAY_RUNTIME="$APP_ROOT/runtime/xray"
+APP_INIT="$ROOT_PREFIX/opt/etc/init.d/S24broray-light"
+UPDATER_INIT="$ROOT_PREFIX/opt/etc/init.d/S23broray-light-updater"
+
+fail()
+{
+    echo "ERROR: $*" >&2
+    exit 1
+}
+
+xray_executable()
+{
+    if [ -n "${BRORAY_LIGHT_XRAY_EXECUTABLE_HOOK:-}" ]; then
+        "$BRORAY_LIGHT_XRAY_EXECUTABLE_HOOK" "$1"
+    else
+        [ -x "$1" ]
+    fi
+}
+
+ensure_link()
+{
+    link_path="$1"; target="$2"
+    if [ -L "$link_path" ]; then
+        [ "$(readlink "$link_path")" = "$target" ] || fail "foreign symlink at $link_path"
+    elif [ -e "$link_path" ]; then
+        fail "foreign object at $link_path"
+    else
+        ln -s "$target" "$link_path" || fail "cannot create $link_path"
+    fi
+}
+
+mkdir -p "$APP_ROOT/releases" "$APP_ROOT/config/system" "$APP_ROOT/servers" \
+    "$APP_ROOT/subscriptions" "$APP_ROOT/runtime" "$APP_ROOT/backup" "$APP_ROOT/run" \
+    "$APP_ROOT/logs" "$APP_ROOT/tmp" "$ROOT_PREFIX/opt/var/lib/broray-light/operations" \
+    "$ROOT_PREFIX/opt/var/lib/broray-light-updater" "$ROOT_PREFIX/opt/var/lock/broray-light" \
+    "$ROOT_PREFIX/opt/var/lock/broray-light-updater"
+
+chmod 700 "$APP_ROOT/config" "$APP_ROOT/servers" "$APP_ROOT/subscriptions" \
+    "$APP_ROOT/backup" "$APP_ROOT/tmp" 2>/dev/null || true
+
+if [ -e "$XRAY_RUNTIME" ]; then
+    if [ ! -f "$XRAY_RUNTIME" ] || [ -L "$XRAY_RUNTIME" ] || ! xray_executable "$XRAY_RUNTIME"; then
+        fail 'existing Xray runtime is not a verified regular executable'
+    fi
+    if [ -n "${BRORAY_LIGHT_XRAY_VERIFY_HOOK:-}" ]; then
+        "$BRORAY_LIGHT_XRAY_VERIFY_HOOK" "$XRAY_RUNTIME" || fail 'existing Xray verification hook failed'
+    else
+        "$XRAY_RUNTIME" version 2>/dev/null | sed -n '1s/^Xray [^ ]*.*/PASS/p' | grep -q '^PASS$' ||
+            fail 'existing Xray runtime cannot report a valid version'
+    fi
+else
+    [ -f "$XRAY_SOURCE" ] && [ ! -L "$XRAY_SOURCE" ] || fail 'verified Xray bootstrap payload is absent'
+    [ "$(sha256sum "$XRAY_SOURCE" | awk 'NR==1{print $1}')" = "$XRAY_SHA256" ] ||
+        fail 'Xray bootstrap payload SHA-256 mismatch'
+    cp "$XRAY_SOURCE" "$XRAY_RUNTIME.new" || fail 'cannot stage Xray runtime'
+    chmod 755 "$XRAY_RUNTIME.new" || fail 'cannot set Xray executable mode'
+    [ "$(sha256sum "$XRAY_RUNTIME.new" | awk 'NR==1{print $1}')" = "$XRAY_SHA256" ] ||
+        fail 'staged Xray runtime SHA-256 mismatch'
+    mv "$XRAY_RUNTIME.new" "$XRAY_RUNTIME" || fail 'cannot install Xray runtime'
+fi
+
+xray_executable "$XRAY_RUNTIME" || fail 'clean install did not produce an executable Xray runtime'
+rm -f "$XRAY_SOURCE"
+
+TARGET_SLOT="$APP_ROOT/releases/$RELEASE_ID"
+[ -d "$TARGET_SLOT/app" ] && [ -r "$TARGET_SLOT/release.json" ] || fail 'initial app slot is missing'
+if [ ! -e "$APP_ROOT/current" ]; then
+    ln -s "releases/$RELEASE_ID" "$APP_ROOT/current" || fail 'cannot activate initial app slot'
+fi
+
+ensure_link "$APP_ROOT/bin" 'current/app/bin'
+ensure_link "$APP_ROOT/lib" 'current/app/lib'
+ensure_link "$APP_ROOT/share" 'current/app/share'
+ensure_link "$APP_ROOT/web-new" 'current/app/web-new'
+
+for seed in system/settings.json system/server-auto-switch.json lighttpd.conf; do
+    destination="$APP_ROOT/config/$seed"
+    source="$APP_ROOT/current/app/share/defaults/${seed##*/}"
+    [ -s "$destination" ] || cp "$source" "$destination" || fail "cannot seed $seed"
+done
+[ -s "$APP_ROOT/config/version" ] || printf '%s\n' "$RELEASE_ID" > "$APP_ROOT/config/version"
+
+chmod 755 "$APP_INIT" "$UPDATER_INIT" \
+    "$ROOT_PREFIX/opt/bin/broray-light-updaterctl" \
+    "$ROOT_PREFIX/opt/libexec/broray-light-updater/broray-light-updater.sh" \
+    "$ROOT_PREFIX/opt/libexec/broray-light-updater/minisign"
+
+if [ "${BRORAY_LIGHT_SKIP_SERVICE_START:-0}" != 1 ]; then
+    "$UPDATER_INIT" start || fail 'Light updater control plane failed to start'
+    "$APP_INIT" restart || fail 'BROray-Light primary service failed to start'
+fi
+
+exit 0

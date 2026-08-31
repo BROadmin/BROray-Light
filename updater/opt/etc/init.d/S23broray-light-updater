@@ -1,0 +1,29 @@
+#!/opt/bin/ash
+
+ROOT_PREFIX="${BRORAY_LIGHT_ROOT_PREFIX:-}"
+STATE_ROOT="${BRORAY_LIGHT_UPDATER_STATE_ROOT:-$ROOT_PREFIX/opt/var/lib/broray-light-updater}"
+READY="$STATE_ROOT/ready"
+UPDATER="${BRORAY_LIGHT_UPDATER_BIN:-$ROOT_PREFIX/opt/libexec/broray-light-updater/broray-light-updater.sh}"
+
+start()
+{
+    mkdir -p "$STATE_ROOT" || return 1
+    "$UPDATER" recover >/dev/null 2>&1 || return 1
+    printf '%s\n' 'broray-light-updater/5-light1' > "$READY"
+}
+
+stop()
+{
+    rm -f "$READY"
+}
+
+status()
+{
+    [ -x "$UPDATER" ] && [ -s "$READY" ]
+}
+
+case "${1:-}" in
+    start|stop|status) "$1" ;;
+    restart) stop; start ;;
+    *) echo 'Usage: S23broray-light-updater {start|stop|restart|status}' >&2; exit 1 ;;
+esac

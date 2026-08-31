@@ -1,0 +1,2 @@
+#!/opt/bin/ash
+exec /opt/libexec/broray-light-updater/broray-light-updater.sh "$@"

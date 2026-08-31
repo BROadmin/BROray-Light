@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009",
+  "revision": "r16-build-a-b",
+  "status": "PASS",
+  "comparison": "BYTE_IDENTICAL",
+  "buildA": "dist/R0009/Build-A",
+  "buildB": "dist/R0009/Build-B",
+  "cleanIndependentOutputRoots": true,
+  "artifacts": [
+    {"name":"broray-light_0.1.0-r0009c01_aarch64-3.10.ipk","sizeBytes":12818158,"sha256":"2a060ce761e241b24ae21a6101ea319046663793c28c57865504f7e3e49e9809","byteEqual":true},
+    {"name":"broray-light-app-0.1.0-r0009c01.tar.gz","sizeBytes":142989,"sha256":"7fa1e2c5198e687abbbcbae70b924173597b5c53799f6c5719548e4a2c7d9c3d","byteEqual":true},
+    {"name":"broray-light-install-0.1.0-r0009c01.sh","sizeBytes":1856,"sha256":"4c37c725e271d8a6f97fce282d4bc942e05b1025a4e41f49128ce5dedcf60dbe","byteEqual":true},
+    {"name":"broray-light-updater-platform-5-light1.tar.gz","sizeBytes":131433,"sha256":"d804ce626e1f1c1926251d910eb268ebdc5f073fe74f0d1acfce1fb9e019925b","byteEqual":true},
+    {"name":"CANDIDATE-MANIFEST.json","sizeBytes":1895,"sha256":"37da4f335d2134ba22e4d7feade6b3edd2c77692982f2f58f4b998beacf7ea9f","byteEqual":true},
+    {"name":"SHA256SUMS","sizeBytes":523,"sha256":"35d7a630a37ccf2d8463a3b6b9522447de1534f994f7c6b0a4f486c1b3df8c56","byteEqual":true}
+  ],
+  "firstError": null,
+  "nextExactAction": "ADD_SIGNED_INTERNAL_RELEASE_INDEX_TO_BUILDER_AND_REPEAT_FINAL_BUILD_A_B_IN_NEW_CLEAN_ROOTS"
+}

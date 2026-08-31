@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009",
+  "revision": "r28-final-commit",
+  "status": "FAILED_STOPPED",
+  "failureClass": "GIT_AUTHOR_IDENTITY_MISSING",
+  "failedOperation": "Create final R0009 commit",
+  "firstError": "Git refused to create the commit because user.name and user.email were not configured.",
+  "materialOutputState": "No commit object was created; the complete verified snapshot remained staged and unchanged.",
+  "retryPolicy": "NO_RETRY_OF_R28",
+  "nextRevision": "r29-local-author-identity-and-commit",
+  "nextExactAction": "SET_REPOSITORY_LOCAL_AUTHOR_IDENTITY_FROM_EXISTING_HISTORY_RESEAL_RECEIPTS_AND_CREATE_THE_COMMIT"
+}

@@ -1,0 +1,6 @@
+#!/opt/bin/ash
+
+ROOT_PREFIX="${BRORAY_LIGHT_ROOT_PREFIX:-}"
+"$ROOT_PREFIX/opt/etc/init.d/S24broray-light" stop >/dev/null 2>&1 || true
+"$ROOT_PREFIX/opt/etc/init.d/S23broray-light-updater" stop >/dev/null 2>&1 || true
+exit 0

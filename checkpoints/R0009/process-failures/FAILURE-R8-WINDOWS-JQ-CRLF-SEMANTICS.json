@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009",
+  "revision": "r8-valid-id-portable",
+  "status": "FAILED_STOPPED",
+  "at": "2026-08-31T17:54:39+03:00",
+  "failureClass": "HOST_JQ_CRLF_SEMANTICS_MISMATCH",
+  "firstError": "The traced jq -r releaseId contained a trailing carriage return and valid_id correctly rejected it.",
+  "failedGate": "SIGNED_RELEASE_INDEX_VERIFICATION",
+  "cause": "Native Windows jq writes CRLF; POSIX command substitution strips LF but retains CR. Entware jq writes LF.",
+  "productArtifactsAffected": false,
+  "retryPolicy": "NO_RETRY_OF_R8",
+  "nextRevision": "r9-jq-binary-shim",
+  "nextExactAction": "WRAP_WINDOWS_JQ_WITH_BINARY_OUTPUT_MODE_AND_RUN_A_FRESH_ISOLATED_ROOT"
+}

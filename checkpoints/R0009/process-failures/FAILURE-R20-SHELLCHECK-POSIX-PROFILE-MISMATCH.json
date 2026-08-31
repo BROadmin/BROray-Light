@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009",
+  "revision": "r20-final-static-validation",
+  "status": "FAILED_STOPPED",
+  "failureClass": "SHELLCHECK_TARGET_PROFILE_MISMATCH",
+  "failedGate": "UPDATER_STATIC_SYNTAX",
+  "firstError": "ShellCheck --shell=sh rejected updater-v5-derived BusyBox ash local declarations (SC3043) before the remaining static gates ran.",
+  "analysis": "The target runtime is Keenetic BusyBox ash, which supports local. SC2086 sites intentionally split a normalized four-field version tuple; SC2254 case expansions consume IDs already restricted to alphanumerics, dot, underscore and hyphen; SC2034 is retained updater platform metadata.",
+  "materialOutputState": "No files or build artifacts changed during the failed validation command.",
+  "retryPolicy": "NO_RETRY_OF_R20",
+  "nextRevision": "r21-busybox-ash-static-profile",
+  "nextExactAction": "RUN_SHELLCHECK_WITH_DASH_ASH_COMPATIBILITY_AND_EXPLICIT_JUSTIFIED_EXCLUSIONS_PLUS_DASH_SYNTAX"
+}

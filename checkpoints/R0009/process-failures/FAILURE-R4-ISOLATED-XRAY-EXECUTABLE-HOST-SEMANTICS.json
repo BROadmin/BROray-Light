@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009",
+  "revision": "r4-isolated-root",
+  "status": "FAILED_STOPPED",
+  "at": "2026-08-31T17:32:00+03:00",
+  "failureClass": "HOST_EXECUTABLE_SEMANTICS_MISMATCH",
+  "firstError": "postinst returned ERROR: clean install did not produce an executable Xray runtime",
+  "failedGate": "ISOLATED_ROOT_CLEAN_INSTALL",
+  "observed": {
+    "packageExtraction": "PASS",
+    "xrayBootstrapCopy": "REACHED",
+    "host": "Windows/MSYS dash",
+    "runtimeBinary": "Linux ARM64 ELF",
+    "reason": "MSYS test -x evaluates host executability, not the archive mode intended for the target router"
+  },
+  "productArtifactsAffected": true,
+  "retryPolicy": "NO_RETRY_OF_R4",
+  "nextRevision": "r5-isolated-root",
+  "nextExactAction": "ADD_EXPLICIT_ISOLATED_EXECUTABLE_SEMANTICS_HOOK_WHILE_RETAINING_PRODUCTION_TEST_X_THEN_REBUILD"
+}

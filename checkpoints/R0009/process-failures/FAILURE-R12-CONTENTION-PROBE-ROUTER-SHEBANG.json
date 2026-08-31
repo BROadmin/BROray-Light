@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009",
+  "revision": "r12-junction-aware-mv-shim",
+  "status": "FAILED_STOPPED",
+  "at": "2026-08-31T18:05:00+03:00",
+  "failureClass": "ISOLATED_HARNESS_ROUTER_SHEBANG_INVOCATION",
+  "firstError": "Live request-lock contention probe returned 127 because nested dash invoked the updater directly and Windows could not resolve #!/opt/bin/ash.",
+  "failedGate": "REQUEST_LOCK_LIVE_CONTENTION",
+  "passedBeforeFailure": [
+    "clean install",
+    "installer rerun",
+    "coownership fail-closed",
+    "signed index",
+    "releaseId decision",
+    "isolated update",
+    "persistence",
+    "equal-version no-op",
+    "downgrade refusal",
+    "forced health rollback",
+    "failed hash verification",
+    "malicious archive rejection",
+    "stale request lock"
+  ],
+  "productArtifactsAffected": false,
+  "retryPolicy": "NO_RETRY_OF_R12",
+  "nextRevision": "r13-explicit-contention-shell",
+  "nextExactAction": "INVOKE_THE_UPDATER_THROUGH_THE_EXPLICIT_BUNDLED_DASH_IN_BOTH_LIVE_CONTENTION_PROBES"
+}

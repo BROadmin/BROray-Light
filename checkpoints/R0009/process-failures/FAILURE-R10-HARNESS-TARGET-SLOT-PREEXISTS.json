@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009",
+  "revision": "r10-archive-list-normalization",
+  "status": "FAILED_STOPPED",
+  "at": "2026-08-31T17:59:20+03:00",
+  "failureClass": "INVALID_OLDER_INSTALL_TEST_FIXTURE",
+  "firstError": "Updater correctly refused staging with TARGET_EXISTS.",
+  "failedGate": "ISOLATED_ROOT_UPDATE",
+  "passedBeforeFailure": ["signed index", "releaseId decision", "download", "archive size", "archive SHA-256", "safe archive validation"],
+  "cause": "The harness changed current to a cloned r8 slot but retained the inactive r9 slot originally installed by the clean candidate package.",
+  "productArtifactsAffected": false,
+  "retryPolicy": "NO_RETRY_OF_R10",
+  "nextRevision": "r11-older-install-fixture",
+  "nextExactAction": "REMOVE_THE_INACTIVE_TARGET_SLOT_FROM_THE_OLDER_INSTALL_FIXTURE_AND_RUN_A_FRESH_ISOLATED_ROOT"
+}

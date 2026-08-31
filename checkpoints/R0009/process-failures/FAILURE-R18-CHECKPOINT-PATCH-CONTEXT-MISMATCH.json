@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009",
+  "revision": "r18-final-isolated-validation-checkpoint-write",
+  "status": "FAILED_STOPPED",
+  "failureClass": "CHECKPOINT_PATCH_CONTEXT_MISMATCH",
+  "failedOperation": "Persist final isolated validation checkpoint and worklog entry",
+  "firstError": "apply_patch could not find the expected r17 worklog line because the expected context omitted the recorded builderSha256 field.",
+  "materialOutputState": "The isolated-root validation process itself completed PASS 17/17; no partial checkpoint patch was applied and no source or build artifact changed.",
+  "retryPolicy": "NO_RETRY_OF_R18_PATCH",
+  "nextRevision": "r19-persist-final-isolated-validation",
+  "nextExactAction": "ADD_THE_FAILURE_RECORD_THEN_PERSIST_THE_ALREADY_OBSERVED_TEST_RESULT_WITH_EXACT_CURRENT_CONTEXT"
+}

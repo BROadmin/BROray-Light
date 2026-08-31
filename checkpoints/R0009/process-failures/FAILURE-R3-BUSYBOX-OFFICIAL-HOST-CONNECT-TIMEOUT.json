@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009",
+  "revision": "r3-validation-tooling",
+  "status": "FAILED_STOPPED",
+  "at": "2026-08-31T17:27:00+03:00",
+  "failureClass": "OFFICIAL_VALIDATOR_HOST_CONNECT_TIMEOUT",
+  "firstError": "Bounded curl transport made two attempts to frippery.org; both failed with curl error 28 after the 10-second connect timeout.",
+  "productArtifactsAffected": false,
+  "retryPolicy": "NO_RETRY_OF_R3",
+  "cause": "The official busybox-w32 host is unreachable from the current execution environment.",
+  "nextRevision": "r4-validation-tooling",
+  "nextExactAction": "RESOLVE_AN_INDEPENDENT_AVAILABLE_ASH_EQUIVALENT_VALIDATOR_AND_VERIFY_ITS_IDENTITY_BEFORE_PRODUCT_TESTS"
+}

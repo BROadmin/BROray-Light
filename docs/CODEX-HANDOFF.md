@@ -1,4 +1,20 @@
-# BROray-Light — Codex hand-off after R0008
+# BROray-Light — Codex hand-off after R0009
+
+## Current canonical continuation point
+
+R0009 is **PASS** and produced internal installable candidate `0.1.0-r0009c01` from exact source commit `684b27bdb53e545047419baa87c63dd86dffa469`.
+
+- canonical checkpoint: `checkpoints/R0009/CHECKPOINT.json`;
+- validation: `checkpoints/R0009/VALIDATION.json` (15/15 PASS);
+- reproducibility: `checkpoints/R0009/REPRODUCIBILITY.json` (Build A/B 8/8 byte-identical);
+- isolated-root behavior: `checkpoints/R0009/ISOLATED-VALIDATION.json` (17/17 PASS);
+- candidate package SHA-256: `bf997fe4d1721cbb382723d686a7b2783d5715b46f37ab1d05929e0e9c2275a7`.
+
+The exact next stage is `PHYSICAL_KEENETIC_INSTALL_UPDATE_ROLLBACK_VALIDATION_OF_R0009_INTERNAL_CANDIDATE`. It requires separate authorization. Use only the hashes in the R0009 checkpoint, do not rebuild from full BROray, and do not publish Stable/release during that stage.
+
+No physical router testing was performed in R0009.
+
+## R0008 provenance
 
 ## Canonical continuation point
 
@@ -81,9 +97,9 @@ R0008 is a **source-tree checkpoint**, not an installable release. It has not ye
 
 Do not label R0008 a release candidate.
 
-## Next allowed stage
+## R0008 next-stage record (completed by R0009)
 
-`BUILD_LIGHT_UPDATER_INSTALLER_AND_INSTALLABLE_CANDIDATE_FROM_R0008`
+`BUILD_LIGHT_UPDATER_INSTALLER_AND_INSTALLABLE_CANDIDATE_FROM_R0008` — **PASS in R0009**
 
 The next stage should:
 

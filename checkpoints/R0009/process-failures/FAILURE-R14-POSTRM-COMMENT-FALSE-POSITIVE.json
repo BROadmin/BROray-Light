@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009",
+  "revision": "r14-acquired-lock-flags",
+  "status": "FAILED_STOPPED",
+  "at": "2026-08-31T18:12:00+03:00",
+  "failureClass": "REMOVAL_SCAN_COMMENT_FALSE_POSITIVE",
+  "firstError": "Removal safety scan matched the word interface in a comment that documents non-mutation.",
+  "failedGate": "FOREIGN_STATE_REMOVAL_FAIL_CLOSED",
+  "passedBeforeFailure": [
+    "all install/update/equal/downgrade/rollback/persistence gates",
+    "failed hash and malicious archive rejection",
+    "request lock contention and stale owner",
+    "global lock contention and stale owner",
+    "foreign global lock preservation"
+  ],
+  "productArtifactsAffected": false,
+  "retryPolicy": "NO_RETRY_OF_R14",
+  "nextRevision": "r15-removal-command-scan",
+  "nextExactAction": "SCAN_ONLY_NON_COMMENT_POSTRM_COMMAND_LINES_AND_RUN_A_FRESH_FULL_ISOLATED_ROOT"
+}
