@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "stage": "PHYSICAL_KEENETIC_INSTALL_UPDATE_ROLLBACK_VALIDATION_OF_R0009_INTERNAL_CANDIDATE",
+  "revision": "p26-signed-router-local-c03-r9-feed",
+  "status": "PASS",
+  "feed": {
+    "routerIndexUrl": "file:///tmp/r0009-light-feed-c03/release.json",
+    "releaseId": "0.1.0-r9",
+    "candidateId": "0.1.0-r0009c03",
+    "testModeRequired": true,
+    "indexSha256": "3096602089ff29197a003810ff1902925f7e6933ec8edc415f848e845780fc7d",
+    "signatureSha256": "388e5d40751009b77e09eb73df55cdd3a3a8cbf0c0b83f5e31914dfef4bd0974",
+    "appArchiveSha256": "17c01061effd69021e8790495e1881ddcc961f360b84a9cc6fa0d1118191a048",
+    "appArchiveSizeBytes": 142991,
+    "appFiles": 112,
+    "appLogicalBytes": 494679,
+    "sha256SumsSha256": "45c4d0d0a3e100595d9e0d8f3fff151b32a9cc408099d6b7b8eff408d585ed67"
+  },
+  "verification": {
+    "localMinisignReturnCode": 0,
+    "routerFileHashesMatch": true,
+    "routerMinisignReturnCode": 0,
+    "privateSigningKeyTransferredToRouter": false
+  },
+  "nextExactAction": "CHECKPOINT_AND_RECOVERABLY_RETIRE_THE_NONCURRENT_P17_R9_TARGET_THEN_RUN_ONE_SIGNED_C03_R8_TO_R9_UPDATE"
+}

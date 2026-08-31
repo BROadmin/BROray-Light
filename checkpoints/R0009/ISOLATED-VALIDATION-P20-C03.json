@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "stage": "BUILD_LIGHT_UPDATER_INSTALLER_AND_INSTALLABLE_CANDIDATE_FROM_R0008",
+  "revision": "r41-p20-c03-isolated-validation-captured-output",
+  "status": "PASS",
+  "candidateId": "0.1.0-r0009c03",
+  "exitCode": 0,
+  "passedGates": 18,
+  "failedGates": 0,
+  "gates": {
+    "coownershipFailClosed": "PASS",
+    "downgradeRefusal": "PASS",
+    "equalVersionNoOp": "PASS",
+    "exactXrayRuntime": "PASS",
+    "failedHashVerification": "PASS",
+    "forcedHealthRollback": "PASS",
+    "foreignStateRemovalFailClosed": "PASS",
+    "globalLockContentionAndStaleOwner": "PASS",
+    "installerRerun": "PASS",
+    "isolatedCleanInstall": "PASS",
+    "isolatedUpdate": "PASS",
+    "maliciousArchiveRejection": "PASS",
+    "packageCarrierLayout": "PASS",
+    "persistence": "PASS",
+    "primaryServicePidHandoff": "PASS",
+    "releaseIdDecision": "PASS",
+    "requestLockContentionAndStaleOwner": "PASS",
+    "signedIndexVerification": "PASS"
+  },
+  "artifacts": {
+    "appArchiveSha256": "17c01061effd69021e8790495e1881ddcc961f360b84a9cc6fa0d1118191a048",
+    "packageSha256": "cb2f9302486987cd2374cd7af4a585af16ad6dfbc5c814f15f15828ce985b6a2"
+  },
+  "capturedOutput": {
+    "stdoutPath": "checkpoints/R0009/validation-runs/P20/stdout.json",
+    "stdoutSha256": "51ca12aa6a37e619618b8a14ed63add9752600364a843bd3db24481abc9c43d7",
+    "stderrPath": "checkpoints/R0009/validation-runs/P20/stderr.txt",
+    "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderrBytes": 0,
+    "exitCodePath": "checkpoints/R0009/validation-runs/P20/exit-code.txt",
+    "exitCodeSha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+  },
+  "nextExactAction": "COMPARE_ALL_EIGHT_BUILD_A_AND_BUILD_B_ARTIFACTS_BY_SHA256_AND_DIRECT_BYTE_IDENTITY"
+}

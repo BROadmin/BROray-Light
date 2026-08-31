@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "stage": "PHYSICAL_KEENETIC_INSTALL_UPDATE_ROLLBACK_VALIDATION_OF_R0009_INTERNAL_CANDIDATE",
+  "revision": "p10-authorized-normal-uninstall",
+  "status": "FAILED_STOPPED_FIRST_ERROR",
+  "failureClass": "FULL_BRORAY_WEBUI_OPERATION_CONFLICT",
+  "failedOperation": "Product-authorized normal uninstall of full BROray through its authenticated WebUI",
+  "firstError": {
+    "code": "OPERATION_CONFLICT",
+    "message": "Another BROray WebUI operation was running or its lock was ambiguous.",
+    "uiMessageRu": "Другая операция WebUI BROray выполняется либо её блокировка неоднозначна."
+  },
+  "evidence": {
+    "requestAuthorizedByUser": true,
+    "authenticatedBROraySession": true,
+    "confirmationPhraseAccepted": true,
+    "compactGlobalLockPath": "/opt/var/lock/broray/global-operation.lock",
+    "lockObservedAfterResponse": false,
+    "diagnosis": "The protected compact global-operation lock existed at the server-side preflight check and had disappeared before the immediate SSH inspection; this is classified as a transient concurrent-operation fence, not permission to bypass lifecycle protection."
+  },
+  "safetyOutcome": {
+    "uninstallWorkerStarted": false,
+    "fullBROrayRemoved": false,
+    "fullBROrayProcessesStillRunning": true,
+    "lightInstalled": false,
+    "manualAuthorizationForged": false,
+    "nativeLifecycleProtectionBypassed": false
+  },
+  "retryPolicy": "NO_RETRY_OF_P10",
+  "nextRevision": "p11-quiescent-authorized-normal-uninstall",
+  "nextExactAction": "PROVE_THE_COMPACT_GLOBAL_OPERATION_LOCK_ABSENT_ACROSS_MULTIPLE_READ_ONLY_SAMPLES_THEN_SUBMIT_A_NEW_PRODUCT_AUTHORIZED_NORMAL_UNINSTALL_REQUEST"
+}

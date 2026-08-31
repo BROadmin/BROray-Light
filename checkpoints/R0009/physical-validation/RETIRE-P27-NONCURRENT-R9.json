@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "stage": "PHYSICAL_KEENETIC_INSTALL_UPDATE_ROLLBACK_VALIDATION_OF_R0009_INTERNAL_CANDIDATE",
+  "revision": "p27-retire-noncurrent-r9",
+  "status": "PASS",
+  "operation": "RECOVERABLE_RENAME",
+  "source": "/opt/broray-light/releases/0.1.0-r9",
+  "destination": "/opt/broray-light/backup/r0009-p17-p25-noncurrent-r9",
+  "sourceAbsentAfter": true,
+  "destinationPresentAfter": true,
+  "deleted": false,
+  "currentTargetAfter": "releases/0.1.0-r8",
+  "primaryServiceStatusReturnCode": 0,
+  "preservedIdentity": {
+    "appSha256SumsSha256": "e0c2ca75c12fa0062b06ea612db85e3e1aae0b334e326918a325d41281d2783b",
+    "slotManifestSha256": "8456205e49b5b8d8211225d051de6243f60c64a3a61fc681b70b69691c317a0c",
+    "releaseJsonSha256": "d45f8d027da2b24385917605167cb50c8fad4984eb7911e631ca3389eeb0b860"
+  },
+  "preflight": "checkpoints/R0009/physical-validation/PREFLIGHT-P27-RETIRE-NONCURRENT-R9.json",
+  "preflightSha256": "e88a4b3df45ca3d9752a4b2263bdd6da0c8d4cc55ad588cf88dcfaf9916fa3fe",
+  "nextExactAction": "RUN_ONE_SIGNED_C03_R8_TO_R9_UPDATE_AND_REQUIRE_COMPLETE_HEALTH_SINGLETONS_AND_PERSISTENCE_PASS"
+}

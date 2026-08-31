@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "stage": "PHYSICAL_KEENETIC_INSTALL_UPDATE_ROLLBACK_VALIDATION_OF_R0009_INTERNAL_CANDIDATE",
+  "revision": "p13-authorized-normal-uninstall",
+  "status": "PASS",
+  "operationId": "uninstall-20260831183518-4904",
+  "fullBROray": {
+    "package": "broray",
+    "previousVersion": "3.0.0-r14",
+    "opkgRegistered": false,
+    "rootPresent": false,
+    "updaterPresent": false,
+    "statePresent": false,
+    "globalLockRootPresent": false,
+    "processCount": 0,
+    "serviceEntriesPresent": 0
+  },
+  "keeneticOwnership": {
+    "managedInterface": "Proxy0",
+    "interfaceDeclarationLines": 0,
+    "routeLinesViaManagedInterface": 0,
+    "status": "ZERO"
+  },
+  "preservedUserData": {
+    "path": "/opt/broray-preserved/broray-user-data-20260831-183601-uninstall-20260831183518-4904.tar.gz",
+    "sizeBytes": 89316,
+    "sha256": "2c933186ba947658cca1b1450aace56d912343a42d4e4641b7d9f84c55b068d7",
+    "sidecarSha256": "9d3ec35fac0c8db775768717be625504ccd9d979cfc78666903a9f65b474fa51",
+    "latestPointerSha256": "fd1b0cda386da6ff7f09eb9a2b33820133527076ba12afe595900b8fe9e39aa9"
+  },
+  "safety": {
+    "productAuthorizedWebUIFlow": true,
+    "normalMode": true,
+    "fullDataDeletionMode": false,
+    "nativeLifecycleProtectionBypassed": false,
+    "lightInstalled": false
+  },
+  "nextExactAction": "VERIFY_THE_ROUTER_COPY_OF_C02_BY_SHA256_THEN_OPKG_INSTALL_AND_VALIDATE_THE_EXACT_LIGHT_CLEAN_INSTALL_CONTRACT"
+}

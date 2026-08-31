@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "stage": "PHYSICAL_KEENETIC_INSTALL_UPDATE_ROLLBACK_VALIDATION_OF_R0009_INTERNAL_CANDIDATE",
+  "revision": "r49-p28-c03-hardware-r8-to-r9-update",
+  "status": "FAILED_STOPPED_FIRST_ERROR",
+  "failureClass": "C03_HARDWARE_UPDATE_POST_SWITCH_HEALTH_FAILED",
+  "failedOperation": "One signed c03 application-slot update from physical previous-good fixture 0.1.0-r8 to release 0.1.0-r9",
+  "precondition": {
+    "installedPackage": "broray-light 0.1.0-r0009c03",
+    "installedReleaseId": "0.1.0-r8",
+    "availableReleaseId": "0.1.0-r9",
+    "relation": "newer",
+    "updateAvailable": true,
+    "signedIndexSha256": "3096602089ff29197a003810ff1902925f7e6933ec8edc415f848e845780fc7d",
+    "appArchiveSha256": "17c01061effd69021e8790495e1881ddcc961f360b84a9cc6fa0d1118191a048",
+    "targetAbsentBefore": true,
+    "primaryServiceStatusBefore": "PASS"
+  },
+  "firstError": {
+    "returnCode": 1,
+    "state": "error",
+    "stage": "rollback",
+    "errorCode": "POST_SWITCH_HEALTH_FAILED",
+    "message": "Post-switch health failed; previous-good slot restored."
+  },
+  "safetyOutcome": {
+    "transactionPhase": "rolled-back",
+    "previousRelease": "0.1.0-r8",
+    "targetRelease": "0.1.0-r9",
+    "previousGoodRestored": true
+  },
+  "retryPolicy": "NO_RETRY_OF_P28",
+  "nextRevision": "r50-p29-c03-post-rollback-read-only-diagnosis",
+  "nextExactAction": "Read-only inspect current target, primary service exact PID ownership, updater and primary logs, target slot identity, and the health-check path; determine the concrete failure cause before any candidate change."
+}

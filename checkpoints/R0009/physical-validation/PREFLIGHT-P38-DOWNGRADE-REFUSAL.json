@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "stage": "PHYSICAL_KEENETIC_INSTALL_UPDATE_ROLLBACK_VALIDATION_OF_R0009_INTERNAL_CANDIDATE",
+  "revision": "p38-downgrade-refusal-preflight",
+  "status": "PASS_READY_FOR_FIXTURE",
+  "currentTarget": "releases/0.1.0-r9",
+  "sourceSlot": {
+    "appSha256SumsSha256": "367cc79d4c4391608052316fe8f5afb007a71e4d6c0dfad5c2596dc15887c477",
+    "slotManifestSha256": "00078cf9060d07ecdc2e9b352e727ae67cd42afd3d2fbadd060c2f98ce8ec728",
+    "releaseJsonSha256": "4c5fcf2ff55180ef5d1d662f50653c2a97965b8c5d3397ac58747bb38e69772c"
+  },
+  "r10TargetAbsent": true,
+  "primaryServiceStatusReturnCode": 0,
+  "fixture": {
+    "releaseId": "0.1.0-r10",
+    "purpose": "Present a newer installed release to the signed r9 feed",
+    "restoreRequired": "0.1.0-r9"
+  },
+  "expected": {
+    "relation": "older",
+    "downgradeRefused": true,
+    "updateReturnCode": 20,
+    "currentMutation": false
+  },
+  "nextExactAction": "CREATE_AND_ACTIVATE_R10_FIXTURE_RUN_SIGNED_R9_CHECK_AND_UPDATE_REQUIRE_RC20_THEN_RESTORE_R9_AND_RECOVERABLY_RETIRE_R10"
+}

@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "stage": "BUILD_LIGHT_UPDATER_INSTALLER_AND_INSTALLABLE_CANDIDATE_FROM_R0008",
+  "revision": "r43-p22-c03-build-ab-byte-compare-array",
+  "status": "PASS",
+  "candidateId": "0.1.0-r0009c03",
+  "buildA": "dist/R0009/R0009c03-Build-A",
+  "buildB": "dist/R0009/R0009c03-Build-B",
+  "comparison": "BYTE_IDENTICAL",
+  "artifactCountBuildA": 8,
+  "artifactCountBuildB": 8,
+  "allSha256Equal": true,
+  "allByteIdentical": true,
+  "artifacts": [
+    {"path":"broray-light_0.1.0-r0009c03_aarch64-3.10.ipk","bytes":12787936,"sha256":"cb2f9302486987cd2374cd7af4a585af16ad6dfbc5c814f15f15828ce985b6a2"},
+    {"path":"broray-light-app-0.1.0-r0009c03.tar.gz","bytes":142991,"sha256":"17c01061effd69021e8790495e1881ddcc961f360b84a9cc6fa0d1118191a048"},
+    {"path":"broray-light-install-0.1.0-r0009c03.sh","bytes":1856,"sha256":"3df196a0ce884cefee85c1a17a83174ab01a9c3abeb8a3440464eead6dcf2b40"},
+    {"path":"broray-light-updater-platform-5-light1.tar.gz","bytes":131428,"sha256":"a946b22927fb2291869f18216d6c404a8ace6505e0ebe61e724135996f4e689f"},
+    {"path":"CANDIDATE-MANIFEST.json","bytes":2343,"sha256":"d0be3eed5b882165cabe93e785de064ba3a61e820186beabf9ac38cecc58f208"},
+    {"path":"release.json","bytes":577,"sha256":"404c06f53ca2b63289bd377ca2df31d56f46ad38239c90e5d29049153d246dd1"},
+    {"path":"release.json.minisig","bytes":277,"sha256":"16f39517e85ea6f5c327ce8fac4df4cb343597a7804d98bc56fcb7c28df1a900"},
+    {"path":"SHA256SUMS","bytes":689,"sha256":"f9563692bc788b1923b2d0c6b7f41be90b2edbd4665bbdd528d1682eb2323b9a"}
+  ],
+  "isolatedValidation": {
+    "path": "checkpoints/R0009/ISOLATED-VALIDATION-P20-C03.json",
+    "sha256": "aa28b2243e69f300d980da18c2d13e985b4c97d4d58cd405145408ff7197a524",
+    "status": "PASS"
+  },
+  "nextExactAction": "TRANSFER_THE_VERIFIED_C03_IPK_TO_THE_AUTHORIZED_ROUTER_VERIFY_SHA256_AND_UPGRADE_C02_TO_C03"
+}

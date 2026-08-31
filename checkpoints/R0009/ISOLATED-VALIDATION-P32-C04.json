@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "stage": "BUILD_LIGHT_UPDATER_INSTALLER_AND_INSTALLABLE_CANDIDATE_FROM_R0008",
+  "revision": "r53-p32-c04-isolated-validation-captured-output",
+  "status": "PASS",
+  "candidateId": "0.1.0-r0009c04",
+  "exitCode": 0,
+  "passedGates": 19,
+  "failedGates": 0,
+  "gates": {
+    "atomicSymlinkSwitchNoDereference": "PASS",
+    "coownershipFailClosed": "PASS",
+    "downgradeRefusal": "PASS",
+    "equalVersionNoOp": "PASS",
+    "exactXrayRuntime": "PASS",
+    "failedHashVerification": "PASS",
+    "forcedHealthRollback": "PASS",
+    "foreignStateRemovalFailClosed": "PASS",
+    "globalLockContentionAndStaleOwner": "PASS",
+    "installerRerun": "PASS",
+    "isolatedCleanInstall": "PASS",
+    "isolatedUpdate": "PASS",
+    "maliciousArchiveRejection": "PASS",
+    "packageCarrierLayout": "PASS",
+    "persistence": "PASS",
+    "primaryServicePidHandoff": "PASS",
+    "releaseIdDecision": "PASS",
+    "requestLockContentionAndStaleOwner": "PASS",
+    "signedIndexVerification": "PASS"
+  },
+  "artifacts": {
+    "appArchiveSha256": "c156a34ad7b1e2c6b5390114a6fd0d0fad5135c20fa4d23d1a24043c93f3f7de",
+    "packageSha256": "e679d560c21b233a9454ff4e6779237db8056ba906f11550e44a87d3f3d9423b"
+  },
+  "capturedOutput": {
+    "stdoutPath": "checkpoints/R0009/validation-runs/P32/stdout.json",
+    "stdoutSha256": "e5af426f8f618cbc1d7c7fcc3ba658b27c0b613eee4199e161ceb3d39aba9166",
+    "stderrPath": "checkpoints/R0009/validation-runs/P32/stderr.txt",
+    "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderrBytes": 0,
+    "exitCodePath": "checkpoints/R0009/validation-runs/P32/exit-code.txt",
+    "exitCodeSha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+  },
+  "reproducibility": {
+    "path": "checkpoints/R0009/REPRODUCIBILITY-P31-C04.json",
+    "sha256": "cef76dffcb77d7e0f3f441cb7d8303d50bb1659ba1bfee758838f49bf599e708",
+    "status": "PASS_BYTE_IDENTICAL"
+  },
+  "nextExactAction": "TRANSFER_THE_VERIFIED_C04_IPK_TO_THE_AUTHORIZED_ROUTER_VERIFY_SHA256_AND_UPGRADE_C03_TO_C04"
+}

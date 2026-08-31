@@ -1,24 +1,23 @@
 {
   "schemaVersion": 1,
   "stage": "R0009",
-  "revision": "r22-explicit-existing-xray-condition",
   "status": "PASS",
+  "candidateId": "0.1.0-r0009c04",
+  "buildA": "dist/R0009/R0009c04-Build-A",
+  "buildB": "dist/R0009/R0009c04-Build-B",
   "comparison": "BYTE_IDENTICAL",
-  "buildA": "dist/R0009/R22-Build-A",
-  "buildB": "dist/R0009/R22-Build-B",
-  "cleanIndependentOutputRoots": true,
-  "signedReleaseIndexVerified": true,
-  "builderSha256": "df07458c0885d558496165213cd1a984ad1c31bad074e61de7a157857585c592",
+  "artifactCount": 8,
+  "allSha256Equal": true,
+  "allByteIdentical": true,
   "artifacts": [
-    {"name":"broray-light_0.1.0-r0009c01_aarch64-3.10.ipk","sizeBytes":12818170,"sha256":"bf997fe4d1721cbb382723d686a7b2783d5715b46f37ab1d05929e0e9c2275a7","byteEqual":true},
-    {"name":"broray-light-app-0.1.0-r0009c01.tar.gz","sizeBytes":142989,"sha256":"7fa1e2c5198e687abbbcbae70b924173597b5c53799f6c5719548e4a2c7d9c3d","byteEqual":true},
-    {"name":"broray-light-install-0.1.0-r0009c01.sh","sizeBytes":1856,"sha256":"8c3d6d26a590b237140e8904bb9e97ae986bf75ae1d4619a02d5b0dcbfb0b2b3","byteEqual":true},
-    {"name":"broray-light-updater-platform-5-light1.tar.gz","sizeBytes":131433,"sha256":"d804ce626e1f1c1926251d910eb268ebdc5f073fe74f0d1acfce1fb9e019925b","byteEqual":true},
-    {"name":"release.json","sizeBytes":577,"sha256":"7bb1cfbeddb11ec034b29071ba76c4dbf43360868f7ce1d20602fe75385cebbe","byteEqual":true},
-    {"name":"release.json.minisig","sizeBytes":277,"sha256":"524063843946335e467ecb91669d7f9d465f2f2076ce3049e95019ec590df66b","byteEqual":true},
-    {"name":"CANDIDATE-MANIFEST.json","sizeBytes":2343,"sha256":"6d307b2fded835ae0b65b6daaf71128539f067bf8d4efc03705a9a07c94c67da","byteEqual":true},
-    {"name":"SHA256SUMS","sizeBytes":689,"sha256":"29b4b7ae09a8db6ae35a4a9c730ce462e46a9cbb7c1a09cce74ecb5c5196c814","byteEqual":true}
+    {"path":"broray-light_0.1.0-r0009c04_aarch64-3.10.ipk","bytes":12788250,"sha256":"e679d560c21b233a9454ff4e6779237db8056ba906f11550e44a87d3f3d9423b"},
+    {"path":"broray-light-app-0.1.0-r0009c04.tar.gz","bytes":142989,"sha256":"c156a34ad7b1e2c6b5390114a6fd0d0fad5135c20fa4d23d1a24043c93f3f7de"},
+    {"path":"broray-light-install-0.1.0-r0009c04.sh","bytes":1856,"sha256":"3ffb0e08f2ca212a698aa86fad35b224fab41efd2450db63f16ebb448f0d72cb"},
+    {"path":"broray-light-updater-platform-5-light1.tar.gz","bytes":131429,"sha256":"b33f9c8b900f417a882cdca3142094b19f86a1022a3aa443583eb121bc2e0b85"},
+    {"path":"CANDIDATE-MANIFEST.json","bytes":2343,"sha256":"909fc83e3c0b6c75c304594288fb7ef5f59b3b511300c0ccb813a40a635e8228"},
+    {"path":"release.json","bytes":577,"sha256":"3b50963888857e5833757cf1c64ce12f60085fb9be707c6e683624622ae9c575"},
+    {"path":"release.json.minisig","bytes":277,"sha256":"e3fdbbcbf6514905f5beb9449c5157f3f5dc2b85b1de808551d082cbfd80ec74"},
+    {"path":"SHA256SUMS","bytes":689,"sha256":"e3a96e80bd9c0cbd595df3881474eecb3afa527d98658f1d5f067cdbe6461105"}
   ],
-  "firstError": null,
-  "nextExactAction": "PERSIST_FINAL_R0009_VALIDATION_REPORT_AND_CHECKPOINT"
+  "sourceReceipt": "checkpoints/R0009/REPRODUCIBILITY-P31-C04.json"
 }

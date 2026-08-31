@@ -294,7 +294,7 @@ switch_current()
     release="$1"; temporary="$APP_ROOT/.current.$$.new"
     rm -f "$temporary"
     ln -s "releases/$release" "$temporary" || return 1
-    mv -f "$temporary" "$CURRENT_PATH"
+    mv -fT "$temporary" "$CURRENT_PATH"
 }
 
 transaction_write()

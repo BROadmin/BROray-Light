@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "stage": "PHYSICAL_KEENETIC_INSTALL_UPDATE_ROLLBACK_VALIDATION_OF_R0009_INTERNAL_CANDIDATE",
+  "revision": "p35-retire-c04-noncurrent-slot-and-p29-links",
+  "status": "PASS",
+  "operations": [
+    {
+      "type": "RECOVERABLE_RENAME",
+      "source": "/opt/broray-light/releases/0.1.0-r9",
+      "destination": "/opt/broray-light/backup/r0009-p28-p33-noncurrent-r9-c04",
+      "deleted": false,
+      "appSha256SumsSha256": "367cc79d4c4391608052316fe8f5afb007a71e4d6c0dfad5c2596dc15887c477",
+      "slotManifestSha256": "00078cf9060d07ecdc2e9b352e727ae67cd42afd3d2fbadd060c2f98ce8ec728",
+      "releaseJsonSha256": "4c5fcf2ff55180ef5d1d662f50653c2a97965b8c5d3397ac58747bb38e69772c"
+    },
+    {
+      "type": "RECOVERABLE_RENAME_SET",
+      "sourceRoot": "/opt/broray-light/releases/0.1.0-r8",
+      "destinationRoot": "/opt/broray-light/backup/p29-nested-switch-links",
+      "names": [".p29-current", ".current.1369.new", ".current.5274.new"],
+      "allSymlinksTarget": "releases/0.1.0-r8",
+      "deleted": false
+    }
+  ],
+  "currentTargetAfter": "releases/0.1.0-r8",
+  "targetR9AbsentAfter": true,
+  "primaryServiceStatusReturnCode": 0,
+  "nextExactAction": "RUN_A_NEW_SIGNED_C04_CHECK_AND_ONE_R8_TO_R9_UPDATE_REQUIRE_MV_FT_SWITCH_COMPLETE_HEALTH_SINGLETONS_AND_PERSISTENCE_PASS"
+}

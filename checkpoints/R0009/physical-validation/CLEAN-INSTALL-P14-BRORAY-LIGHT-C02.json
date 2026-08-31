@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "stage": "PHYSICAL_KEENETIC_INSTALL_UPDATE_ROLLBACK_VALIDATION_OF_R0009_INTERNAL_CANDIDATE",
+  "revision": "p14-light-c02-clean-install",
+  "status": "PASS",
+  "candidate": {
+    "candidateId": "0.1.0-r0009c02",
+    "releaseId": "0.1.0-r9",
+    "package": "broray-light",
+    "packageVersion": "0.1.0-r0009c02",
+    "architecture": "aarch64-3.10",
+    "packageSha256": "5778c8a4ca5b33796c888b9534b4f6a735de41b34e423ec21cd3237c692083e8",
+    "opkgInstallReturnCode": 0,
+    "opkgStatus": "install user installed"
+  },
+  "layout": {
+    "root": "/opt/broray-light",
+    "currentTarget": "releases/0.1.0-r9",
+    "persistentDirectories": [
+      "config",
+      "servers",
+      "subscriptions",
+      "runtime",
+      "backup",
+      "run",
+      "logs"
+    ],
+    "stateRoot": "/opt/var/lib/broray-light",
+    "updaterStateRoot": "/opt/var/lib/broray-light-updater",
+    "globalLockRoot": "/opt/var/lock/broray-light",
+    "updaterLockRoot": "/opt/var/lock/broray-light-updater"
+  },
+  "xray": {
+    "path": "/opt/broray-light/runtime/xray",
+    "version": "26.7.28",
+    "sizeBytes": 35389566,
+    "sha256": "4b8af237444801bf17b3dc10a1c5c24581fbe3d433eba3d78c6c3a0da1df56fc",
+    "mode": "0755",
+    "exactVerifiedRuntime": true,
+    "runningWithoutConfiguration": false
+  },
+  "services": {
+    "updater": "S23broray-light-updater",
+    "updaterStatusReturnCode": 0,
+    "primary": "S24broray-light",
+    "primaryStatusReturnCode": 0,
+    "lighttpdPidPresent": true,
+    "lightDaemonPidPresent": true,
+    "xrayProcessExpectedOnEmptyInstall": false
+  },
+  "webAndAuth": {
+    "listen": "127.0.0.1:8080",
+    "rootHttpStatus": 200,
+    "homeHttpStatus": 200,
+    "unauthenticatedSummaryApiHttpStatus": 401,
+    "nativeSessionProtection": "PASS"
+  },
+  "scope": {
+    "parserFiles": ["parser-vless.sh"],
+    "vlessOnly": true,
+    "routesSubsystemPresent": false,
+    "dnsOverTlsManagementPresent": false,
+    "qualityHistoryPresent": false,
+    "fullBROrayNamespacePresent": false
+  },
+  "nextExactAction": "CREATE_A_SIGNED_ROUTER_LOCAL_R9_TEST_FEED_FROM_THE_EXACT_C02_APP_ARCHIVE_THEN_RUN_EQUAL_UPDATE_DOWNGRADE_ROLLBACK_AND_PERSISTENCE_GATES"
+}

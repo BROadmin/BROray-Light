@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_FINALIZATION_AFTER_AUTHORIZED_PHYSICAL_VALIDATION",
+  "revision": "r71-p51-final-state-patch",
+  "status": "FAILED_STOPPED_FIRST_ERROR",
+  "failureClass": "FINAL_STATE_PATCH_CONTEXT_MISMATCH",
+  "failedOperation": "Register P50, update the final failure count, and transition state to the corrected record-validator revision",
+  "firstError": {
+    "tool": "apply_patch",
+    "message": "Failed to find expected activeBlocker context"
+  },
+  "partialPatchApplied": false,
+  "candidateArtifactsAffected": false,
+  "retryPolicy": "NO_RETRY_OF_P51_PATCH",
+  "nextRevision": "r72-p52-corrected-final-state-patch",
+  "nextExactAction": "Patch the actual currentRevision, activeBlocker, processFailures tail, VALIDATION count, sidecar, and WORKLOG contexts in smaller verified hunks, then run the PowerShell record validator."
+}

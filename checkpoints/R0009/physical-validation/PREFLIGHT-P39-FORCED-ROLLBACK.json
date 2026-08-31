@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "stage": "PHYSICAL_KEENETIC_INSTALL_UPDATE_ROLLBACK_VALIDATION_OF_R0009_INTERNAL_CANDIDATE",
+  "revision": "p39-forced-rollback-preflight",
+  "status": "PASS_READY_FOR_FORCED_HEALTH_FAILURE",
+  "currentTarget": "releases/0.1.0-r9",
+  "previousGoodFixture": "releases/0.1.0-r8",
+  "primaryServiceStatusReturnCode": 0,
+  "currentR9Identity": {
+    "appSha256SumsSha256": "367cc79d4c4391608052316fe8f5afb007a71e4d6c0dfad5c2596dc15887c477",
+    "slotManifestSha256": "00078cf9060d07ecdc2e9b352e727ae67cd42afd3d2fbadd060c2f98ce8ec728",
+    "releaseJsonSha256": "4c5fcf2ff55180ef5d1d662f50653c2a97965b8c5d3397ac58747bb38e69772c"
+  },
+  "preparation": {
+    "activate": "releases/0.1.0-r8",
+    "retireR9To": "/opt/broray-light/backup/r0009-p39-pre-rollback-r9",
+    "delete": false
+  },
+  "healthHook": {
+    "path": "/tmp/r0009-light-feed-c04/force-r9-health-failure.sh",
+    "sha256": "9cb03548d2c6b49a4e8dae8bf792a4f68263c0d5d559aabe5ed7cc5d105fd92b",
+    "failsOnlyReleaseId": "0.1.0-r9"
+  },
+  "expected": {
+    "updateReturnCode": 1,
+    "errorCode": "POST_SWITCH_HEALTH_FAILED",
+    "transactionPhase": "rolled-back",
+    "currentTargetAfter": "releases/0.1.0-r8",
+    "primaryServiceHealthyAfter": true
+  },
+  "nextExactAction": "ACTIVATE_R8_RETIRE_R9_RECOVERABLY_RUN_ONE_UPDATE_WITH_THE_FORCED_R9_HEALTH_HOOK_AND_VERIFY_AUTOMATIC_ROLLBACK"
+}

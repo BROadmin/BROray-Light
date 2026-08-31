@@ -1,0 +1,19 @@
+{
+  "candidate": {
+    "appSlot": {
+      "fileCount": 112,
+      "logicalBytes": 494679
+    },
+    "architecture": "aarch64-3.10",
+    "bundle": {
+      "sha256": "c156a34ad7b1e2c6b5390114a6fd0d0fad5135c20fa4d23d1a24043c93f3f7de",
+      "sizeBytes": 142989,
+      "url": "file:///tmp/r0009-light-feed-c04/broray-light-app-0.1.0-r0009c04.tar.gz"
+    },
+    "candidateId": "0.1.0-r0009c04",
+    "releaseId": "0.1.0-r9"
+  },
+  "channel": "internal-r0009",
+  "product": "BROray-Light",
+  "schemaVersion": 1
+}

@@ -2,25 +2,26 @@
 
 ## Current canonical continuation point
 
-R0009 is **PASS** and produced internal installable candidate `0.1.0-r0009c01` from exact source commit `684b27bdb53e545047419baa87c63dd86dffa469`.
+R0009 and its separately authorized physical Keenetic validation are **PASS**. The final internal installable candidate is `0.1.0-r0009c04`, built from exact source commit `684b27bdb53e545047419baa87c63dd86dffa469`.
 
 - canonical checkpoint: `checkpoints/R0009/CHECKPOINT.json`;
 - validation: `checkpoints/R0009/VALIDATION.json` (15/15 PASS);
-- reproducibility: `checkpoints/R0009/REPRODUCIBILITY.json` (Build A/B 8/8 byte-identical);
-- isolated-root behavior: `checkpoints/R0009/ISOLATED-VALIDATION.json` (17/17 PASS);
-- candidate package SHA-256: `bf997fe4d1721cbb382723d686a7b2783d5715b46f37ab1d05929e0e9c2275a7`.
+- reproducibility: `checkpoints/R0009/REPRODUCIBILITY-P31-C04.json` (Build A/B 8/8 byte-identical);
+- isolated-root behavior: `checkpoints/R0009/ISOLATED-VALIDATION-P32-C04.json` (19/19 PASS);
+- physical validation: `checkpoints/R0009/physical-validation/POST-BOOT-P43-C04-PERSISTENCE.json`;
+- candidate package SHA-256: `e679d560c21b233a9454ff4e6779237db8056ba906f11550e44a87d3f3d9423b`.
 
-The exact next stage is `PHYSICAL_KEENETIC_INSTALL_UPDATE_ROLLBACK_VALIDATION_OF_R0009_INTERNAL_CANDIDATE`. It requires separate authorization. Use only the hashes in the R0009 checkpoint, do not rebuild from full BROray, and do not publish Stable/release during that stage.
+No R0010 stage is defined in the repository. The exact next stage is therefore `DEFINE_AND_AUTHORIZE_R0010_BEFORE_ANY_STABLE_PUBLICATION`. Do not publish Stable/release or mutate a production server until that stage is explicitly specified and authorized.
 
-No physical router testing was performed in R0009.
+The final router state is package `broray-light 0.1.0-r0009c04`, `current -> releases/0.1.0-r9`, healthy updater and primary services, exact Xray `26.7.28`, and persistent config/servers/subscriptions identities preserved across update, rollback, final restore, and reboot. Full BROray ownership, `Proxy0`, and routes via `Proxy0` are zero in post-boot checks.
 
 ## Physical-validation continuation update
 
-Physical validation was subsequently authorized on Keenetic Peak KN-2710. Candidate `0.1.0-r0009c01` was rejected by the real Entware `opkg` because its outer IPK carrier was Debian `ar`; the failure is preserved in `checkpoints/R0009/physical-validation/FAILURE-P4-ROUTER-OPKG-MALFORMED-IPK.json`, and that candidate is superseded.
+Physical validation was subsequently authorized on Keenetic Peak KN-2710. Candidate `0.1.0-r0009c01` was rejected by the real Entware `opkg` because its outer IPK carrier was Debian `ar`; it is superseded.
 
-Corrected internal candidate `0.1.0-r0009c02` uses the target Entware `gzip(tar)` outer carrier. Its package SHA-256 is `5778c8a4ca5b33796c888b9534b4f6a735de41b34e423ec21cd3237c692083e8`. Build A/B are byte-identical, isolated behavior is 17/17 PASS, real router SHA verification is PASS, real `opkg` parsing is PASS, and the full-BROray co-install refusal is PASS fail-closed.
+Candidate c02 corrected the Entware carrier. Physical update then exposed two concrete device-only failures: c02 primary-service PID handoff and c03 BusyBox `mv -f` destination-symlink dereference. Candidate c04 contains both bounded corrections: package-owned singleton PID handoff and updater `mv -fT` atomic current-slot replacement. Canonical R0008 application source bytes remained unchanged.
 
-The router currently has active registered full BROray `3.0.0-r14`. Clean Light installation is blocked until the existing product performs its WebUI-authorized uninstall lifecycle. Do not forge the operation authorization, manually hide `/opt/broray`, or install Light while the `broray` package remains registered. Continue from `checkpoints/R0009/physical-validation/PREFLIGHT-P9-AUTHORIZED-FULL-BRORAY-HANDOFF-REQUIRED.json` after the user authenticates to the native WebUI.
+The product-authorized full-BROray uninstall completed before Light installation. Final physical gates passed for signed update, equal-version no-op, downgrade refusal, forced rollback, final restore, native reboot persistence, native unauthenticated API rejection, and zero full-BROray/Proxy0 ownership. Material failures remain preserved under `checkpoints/R0009/process-failures/` and must not be silently retried by future work.
 
 ## R0008 provenance
 

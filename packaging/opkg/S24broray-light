@@ -1,0 +1,181 @@
+#!/opt/bin/ash
+
+ROOT="${BRORAY_ROOT:-/opt/broray-light}"
+DAEMON="$ROOT/bin/broray-lightd"
+DP="$ROOT/run/broray-lightd.pid"
+WP="$ROOT/run/lighttpd.pid"
+WEB_MARKER="-f $ROOT/config/lighttpd.conf"
+
+pid_alive()
+{
+    p="${1:-}"
+    case "$p" in ''|*[!0-9]*) return 1 ;; esac
+    kill -0 "$p" 2>/dev/null
+}
+
+pid_owned()
+{
+    p="${1:-}"
+    marker="${2:-}"
+    pid_alive "$p" || return 1
+    [ -n "$marker" ] && [ -r "/proc/$p/cmdline" ] || return 1
+    command_line="$(tr '\000' ' ' < "/proc/$p/cmdline" 2>/dev/null || true)"
+    case "$command_line" in *"$marker"*) return 0 ;; *) return 1 ;; esac
+}
+
+owned_pids()
+{
+    marker="$1"
+    for process_dir in /proc/[0-9]*; do
+        [ -d "$process_dir" ] || continue
+        process_pid="${process_dir#/proc/}"
+        pid_owned "$process_pid" "$marker" && printf '%s\n' "$process_pid"
+    done
+}
+
+owned_count()
+{
+    count=0
+    for owned_pid in $(owned_pids "$1"); do count=$((count + 1)); done
+    printf '%s\n' "$count"
+}
+
+role_running()
+{
+    pid_file="$1"
+    marker="$2"
+    role_pid="$(cat "$pid_file" 2>/dev/null || true)"
+    pid_owned "$role_pid" "$marker"
+}
+
+prepare_role_start()
+{
+    pid_file="$1"
+    marker="$2"
+    role_pid="$(cat "$pid_file" 2>/dev/null || true)"
+    if [ -n "$role_pid" ]; then
+        pid_owned "$role_pid" "$marker" && return 0
+        pid_alive "$role_pid" && return 2
+        rm -f "$pid_file" || return 2
+    fi
+
+    set -- $(owned_pids "$marker")
+    case "$#" in
+        0) return 1 ;;
+        1) printf '%s\n' "$1" > "$pid_file" || return 2; return 0 ;;
+        *) return 3 ;;
+    esac
+}
+
+wait_owned_gone()
+{
+    marker="$1"
+    ticks=0
+    while [ "$ticks" -lt 10 ]; do
+        [ "$(owned_count "$marker")" -eq 0 ] && return 0
+        ticks=$((ticks + 1))
+        sleep 1
+    done
+    return 1
+}
+
+stop_role()
+{
+    pid_file="$1"
+    marker="$2"
+    role_pid="$(cat "$pid_file" 2>/dev/null || true)"
+    if [ -n "$role_pid" ] && pid_alive "$role_pid" && ! pid_owned "$role_pid" "$marker"; then
+        echo "Живой чужой процесс указан в $pid_file" >&2
+        return 1
+    fi
+
+    for owned_pid in $(owned_pids "$marker"); do
+        pid_owned "$owned_pid" "$marker" && kill "$owned_pid" 2>/dev/null || true
+    done
+    if ! wait_owned_gone "$marker"; then
+        for owned_pid in $(owned_pids "$marker"); do
+            pid_owned "$owned_pid" "$marker" && kill -9 "$owned_pid" 2>/dev/null || true
+        done
+        sleep 1
+        [ "$(owned_count "$marker")" -eq 0 ] || return 1
+    fi
+    rm -f "$pid_file"
+}
+
+start_web()
+{
+    prepare_role_start "$WP" "$WEB_MARKER"
+    prepare_rc=$?
+    case "$prepare_rc" in
+        0) [ "$(owned_count "$WEB_MARKER")" -eq 1 ] && return 0 ;;
+        1) ;;
+        *) echo "Состояние lighttpd неоднозначно" >&2; return 1 ;;
+    esac
+    LIGHTTPD="$(command -v lighttpd 2>/dev/null || true)"
+    [ -n "$LIGHTTPD" ] || { echo "lighttpd недоступен" >&2; return 1; }
+    "$LIGHTTPD" -f "$ROOT/config/lighttpd.conf" || return 1
+    i=0
+    while [ "$i" -lt 5 ]; do
+        role_running "$WP" "$WEB_MARKER" &&
+            [ "$(owned_count "$WEB_MARKER")" -eq 1 ] && return 0
+        i=$((i + 1)); sleep 1
+    done
+    echo "lighttpd не подтвердил запуск" >&2
+    return 1
+}
+
+start_daemon()
+{
+    prepare_role_start "$DP" "$DAEMON"
+    prepare_rc=$?
+    case "$prepare_rc" in
+        0) [ "$(owned_count "$DAEMON")" -eq 1 ] && return 0 ;;
+        1) ;;
+        *) echo "Состояние BROray-Light daemon неоднозначно" >&2; return 1 ;;
+    esac
+    "$DAEMON" >>"$ROOT/logs/broray-lightd.log" 2>&1 &
+    i=0
+    while [ "$i" -lt 5 ]; do
+        role_running "$DP" "$DAEMON" &&
+            [ "$(owned_count "$DAEMON")" -eq 1 ] && return 0
+        i=$((i + 1)); sleep 1
+    done
+    echo "BROray-Light daemon не подтвердил запуск" >&2
+    return 1
+}
+
+start()
+{
+    "$ROOT/bin/broray-runtime-prepare" || return 1
+    mkdir -p "$ROOT/logs" "$ROOT/run" || return 1
+    start_web || return 1
+    start_daemon || return 1
+}
+
+stop()
+{
+    stop_failed=false
+    stop_role "$DP" "$DAEMON" || stop_failed=true
+    stop_role "$WP" "$WEB_MARKER" || stop_failed=true
+    "$ROOT/bin/broray-xray-control" stop >/dev/null 2>&1 || true
+    [ "$stop_failed" = false ]
+}
+
+restart()
+{
+    stop || return 1
+    start
+}
+
+status()
+{
+    role_running "$DP" "$DAEMON" &&
+        role_running "$WP" "$WEB_MARKER" &&
+        [ "$(owned_count "$DAEMON")" -eq 1 ] &&
+        [ "$(owned_count "$WEB_MARKER")" -eq 1 ]
+}
+
+case "${1:-}" in
+    start|stop|restart|status) "$1" ;;
+    *) echo 'Usage: S24broray-light {start|stop|restart|status}' >&2; exit 1 ;;
+esac

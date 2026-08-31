@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "stage": "PHYSICAL_KEENETIC_INSTALL_UPDATE_ROLLBACK_VALIDATION_OF_R0009_INTERNAL_CANDIDATE",
+  "revision": "p18-primary-service-health-diagnosis",
+  "status": "ROOT_CAUSE_CONFIRMED",
+  "sourceFailure": "checkpoints/R0009/process-failures/FAILURE-R38-P17-HARDWARE-UPDATE-POST-SWITCH-HEALTH.json",
+  "rootCause": "S24broray-light stop sent TERM to the daemon, removed its PID file, and returned without waiting for the old shell process to run its cleanup trap. The following start launched a new daemon and wrote the same PID file; delayed cleanup by the old daemon then removed the new PID file. Immediate updater health status therefore failed and correctly triggered rollback.",
+  "evidence": {
+    "daemonPidFilePresent": false,
+    "ownedDaemonProcessCount": 2,
+    "ownedLighttpdProcessCount": 1,
+    "primaryServiceStatusReturnCode": 1,
+    "lighttpdPidFilePresent": true,
+    "updaterRollbackSucceeded": true,
+    "currentTargetAfterRollback": "releases/0.1.0-r8"
+  },
+  "correctionBoundary": {
+    "canonicalR0008ApplicationSlotMutation": false,
+    "fullBROrayMutation": false,
+    "r0009PackageOwnedInitScriptOnly": true,
+    "requiredSemantics": [
+      "exact process ownership verification",
+      "bounded TERM wait",
+      "bounded KILL escalation only for still-owned processes",
+      "stale and duplicate owned-daemon cleanup before start",
+      "fail closed on foreign live PID-file owner",
+      "status requires exact owned daemon and lighttpd PIDs"
+    ]
+  },
+  "nextCandidateId": "0.1.0-r0009c03",
+  "nextExactAction": "ADD_A_PACKAGE_OWNED_CORRECTED_S24_INIT_WITHOUT_TOUCHING_CANONICAL_R0008_SOURCE_BUILD_C03_IN_INDEPENDENT_A_B_ROOTS_RUN_FRESH_ISOLATED_VALIDATION_THEN_REPLACE_C02_ON_THE_ROUTER"
+}

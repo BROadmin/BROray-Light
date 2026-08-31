@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "stage": "PHYSICAL_KEENETIC_INSTALL_UPDATE_ROLLBACK_VALIDATION_OF_R0009_INTERNAL_CANDIDATE",
+  "revision": "r45-p24-c03-router-upgrade-postcheck",
+  "status": "FAILED_STOPPED_FIRST_ERROR",
+  "failureClass": "BUSYBOX_STAT_C_FLAG_UNSUPPORTED",
+  "observedAt": "2026-08-31T22:26:17+03:00",
+  "failedOperation": "Final size and mode observation during the c03 router package-upgrade postcheck",
+  "firstError": {
+    "command": "stat -c %s %a /opt/broray-light/runtime/xray",
+    "message": "stat: invalid option -- 'c'",
+    "scope": "Observation command only"
+  },
+  "confirmedBeforeError": {
+    "installedPackage": "broray-light 0.1.0-r0009c03",
+    "currentTarget": "releases/0.1.0-r8",
+    "primaryServiceStatusReturnCode": 0,
+    "ownedDaemonProcesses": 1,
+    "ownedLighttpdProcesses": 1,
+    "persistenceUnchanged": true,
+    "xraySha256": "4b8af237444801bf17b3dc10a1c5c24581fbe3d433eba3d78c6c3a0da1df56fc",
+    "xrayVersion": "26.7.28"
+  },
+  "productMutationFailure": false,
+  "retryPolicy": "NO_RETRY_OF_P24_COMMAND",
+  "nextRevision": "r46-p25-c03-router-upgrade-portable-postcheck",
+  "nextExactAction": "Use BusyBox-compatible wc -c and ls -ln observations, verify the package-owned PID files, and save the completed upgrade checkpoint."
+}

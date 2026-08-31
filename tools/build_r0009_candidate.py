@@ -28,8 +28,8 @@ XRAY_DIGEST_SHA256 = "7380220ffee3878f5841c5ac31e1bd2b4625d22cacc2d1248ea3dedaa2
 XRAY_BINARY_SIZE = 35389566
 XRAY_BINARY_SHA256 = "4b8af237444801bf17b3dc10a1c5c24581fbe3d433eba3d78c6c3a0da1df56fc"
 RELEASE_ID = "0.1.0-r9"
-CANDIDATE_ID = "0.1.0-r0009c02"
-PACKAGE_VERSION = "0.1.0-r0009c02"
+CANDIDATE_ID = "0.1.0-r0009c04"
+PACKAGE_VERSION = "0.1.0-r0009c04"
 ARCHITECTURE = "aarch64-3.10"
 MTIME = 0
 
@@ -261,8 +261,8 @@ def build_data_tar(
     slot_prefix = f"opt/broray-light/releases/{RELEASE_ID}"
     for name, payload, mode in slot_members:
         archive.add_bytes(f"{slot_prefix}/{name}", payload, mode)
-    init_payload = (repo / "src/init/S24broray-light").read_bytes()
-    archive.add_bytes("opt/etc/init.d/S24broray-light", init_payload, modes["init/S24broray-light"])
+    init_payload = (repo / "packaging/opkg/S24broray-light").read_bytes()
+    archive.add_bytes("opt/etc/init.d/S24broray-light", init_payload, 0o755)
     for name, payload, mode in updater:
         if name == "SHA256SUMS":
             continue

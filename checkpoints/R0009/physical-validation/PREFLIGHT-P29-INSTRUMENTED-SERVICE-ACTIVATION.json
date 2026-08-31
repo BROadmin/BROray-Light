@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "stage": "PHYSICAL_KEENETIC_INSTALL_UPDATE_ROLLBACK_VALIDATION_OF_R0009_INTERNAL_CANDIDATE",
+  "revision": "p29-instrumented-service-activation-preflight",
+  "status": "PASS_READY_FOR_CONTROLLED_DIAGNOSIS",
+  "purpose": "Differentiate service start failure from immediate status failure after switching the verified c03 r9 application slot.",
+  "notARepeatOf": "p28-c03-hardware-r8-to-r9-update",
+  "precondition": {
+    "currentTarget": "releases/0.1.0-r8",
+    "primaryServiceStatusReturnCode": 0,
+    "targetPath": "/opt/broray-light/releases/0.1.0-r9",
+    "targetCandidateId": "0.1.0-r0009c03",
+    "targetAppSha256SumsSha256": "e0c2ca75c12fa0062b06ea612db85e3e1aae0b334e326918a325d41281d2783b",
+    "targetBrorayExecutable": true,
+    "xrayExecutable": true
+  },
+  "diagnosticSequence": [
+    "stop r8 primary service",
+    "atomically switch current and config/version to r9",
+    "run the package-owned init start under ash -x",
+    "capture start return code and each slot-health subcondition",
+    "always stop and atomically restore r8 and its service"
+  ],
+  "routerTracePath": "/tmp/r0009-p29-s24-start.trace",
+  "rollbackRequired": true,
+  "retryPolicy": "NO_UPDATER_RETRY",
+  "nextExactAction": "RUN_THE_INSTRUMENTED_ACTIVATION_ONCE_CAPTURE_TRACE_AND_HEALTH_SUBCONDITIONS_THEN_RESTORE_R8"
+}

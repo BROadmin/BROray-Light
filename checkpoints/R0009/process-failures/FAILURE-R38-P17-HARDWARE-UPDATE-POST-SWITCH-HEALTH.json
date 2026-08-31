@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "stage": "PHYSICAL_KEENETIC_INSTALL_UPDATE_ROLLBACK_VALIDATION_OF_R0009_INTERNAL_CANDIDATE",
+  "revision": "p17-hardware-r8-to-r9-update",
+  "status": "FAILED_STOPPED_FIRST_ERROR",
+  "failureClass": "HARDWARE_UPDATE_POST_SWITCH_HEALTH_FAILED",
+  "failedOperation": "Signed application-slot update from physical previous-good fixture 0.1.0-r8 to candidate release 0.1.0-r9",
+  "firstError": {
+    "returnCode": 1,
+    "state": "error",
+    "stage": "rollback",
+    "errorCode": "POST_SWITCH_HEALTH_FAILED",
+    "message": "Post-switch health failed; previous-good slot restored."
+  },
+  "precondition": {
+    "signedIndexRelation": "newer",
+    "installedReleaseId": "0.1.0-r8",
+    "availableReleaseId": "0.1.0-r9",
+    "updateAvailable": true
+  },
+  "safetyOutcome": {
+    "rollbackPhase": "rolled-back",
+    "currentTarget": "releases/0.1.0-r8",
+    "versionFile": "0.1.0-r8",
+    "targetSlotPresent": true,
+    "requestLocksRemaining": 0,
+    "previousGoodRestored": true,
+    "packageRegistrationIntact": true
+  },
+  "initialHealthEvidence": {
+    "primaryServiceStatusReturnCode": 1,
+    "lighttpdProcessCount": 1,
+    "lightDaemonProcessCount": 2,
+    "suspectedClass": "PRIMARY_SERVICE_PID_OWNERSHIP_OR_DUPLICATE_DAEMON_STATE"
+  },
+  "retryPolicy": "NO_RETRY_OF_P17",
+  "nextRevision": "p18-primary-service-health-diagnosis",
+  "nextExactAction": "READ_ONLY_DIAGNOSE_S24_PID_FILES_PROCESS_OWNERSHIP_AND_START_STOP_SEMANTICS_THEN_FIX_THE_LIGHT_CANDIDATE_ONLY_IF_A_CONCRETE_VALIDATION_FAILURE_IS_CONFIRMED"
+}

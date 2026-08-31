@@ -5,3 +5,4 @@
 /dist/
 /build/
 /checkpoints/work/
+tools/__pycache__/

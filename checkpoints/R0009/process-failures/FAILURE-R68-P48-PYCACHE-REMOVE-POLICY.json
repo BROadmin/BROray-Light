@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_FINALIZATION_AFTER_AUTHORIZED_PHYSICAL_VALIDATION",
+  "revision": "r68-p48-generated-pycache-cleanup",
+  "status": "FAILED_STOPPED_FIRST_ERROR",
+  "failureClass": "PYCACHE_REMOVE_COMMAND_REJECTED_BY_POLICY",
+  "failedOperation": "Remove the exact generated tools/__pycache__ directory before commit",
+  "firstError": {
+    "tool": "exec_command",
+    "commandClass": "PowerShell Remove-Item verified repository subdirectory",
+    "message": "Rejected: blocked by policy"
+  },
+  "deletionExecuted": false,
+  "trackedFilesAffected": false,
+  "candidateArtifactsAffected": false,
+  "retryPolicy": "NO_RETRY_OF_P48_COMMAND",
+  "nextRevision": "r69-p49-ignore-generated-python-cache",
+  "nextExactAction": "Add the standard tools/__pycache__/ ignore rule with apply_patch, verify the generated files are excluded from git status, then recompute final record hashes."
+}

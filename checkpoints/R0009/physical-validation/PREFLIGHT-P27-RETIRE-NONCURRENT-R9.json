@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "stage": "PHYSICAL_KEENETIC_INSTALL_UPDATE_ROLLBACK_VALIDATION_OF_R0009_INTERNAL_CANDIDATE",
+  "revision": "p27-retire-noncurrent-r9-preflight",
+  "status": "PASS_READY_FOR_RECOVERABLE_RENAME",
+  "currentTarget": "releases/0.1.0-r8",
+  "target": {
+    "path": "/opt/broray-light/releases/0.1.0-r9",
+    "present": true,
+    "active": false,
+    "releaseId": "0.1.0-r9",
+    "candidateId": "0.1.0-r0009c03",
+    "sourceCommit": "684b27bdb53e545047419baa87c63dd86dffa469",
+    "appSha256SumsSha256": "e0c2ca75c12fa0062b06ea612db85e3e1aae0b334e326918a325d41281d2783b",
+    "slotManifestSha256": "8456205e49b5b8d8211225d051de6243f60c64a3a61fc681b70b69691c317a0c",
+    "releaseJsonSha256": "d45f8d027da2b24385917605167cb50c8fad4984eb7911e631ca3389eeb0b860"
+  },
+  "primaryServiceStatusReturnCode": 0,
+  "action": {
+    "type": "RECOVERABLE_RENAME",
+    "destination": "/opt/broray-light/backup/r0009-p17-p25-noncurrent-r9",
+    "delete": false
+  },
+  "nextExactAction": "RENAME_THE_VERIFIED_NONCURRENT_R9_TARGET_TO_THE_EXPLICIT_BACKUP_PATH_VERIFY_CURRENT_R8_AND_SERVICE_HEALTH_THEN_RUN_ONE_SIGNED_C03_UPDATE"
+}

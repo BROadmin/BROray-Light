@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "stage": "PHYSICAL_KEENETIC_INSTALL_UPDATE_ROLLBACK_VALIDATION_OF_R0009_INTERNAL_CANDIDATE",
+  "revision": "p12-route-divergence-diagnosis-and-supported-reconciliation",
+  "status": "PASS",
+  "sourceDiagnosis": "checkpoints/R0009/physical-validation/DIAGNOSIS-P12-KEENETIC-LAST-CHANGE-DIVERGENCE.json",
+  "reconciliation": {
+    "implementation": "Existing full BROray broray_routes_config_save_converged contract",
+    "attemptLimit": 12,
+    "returnCode": 0,
+    "convergedSha256": "b68a0dfdc9973fe23b5e4450930a2aa002ff9eb22554872ebb5473d1891c813e",
+    "saveStdoutBytes": 49,
+    "saveStderrBytes": 0,
+    "twoConsecutiveStablePairsRequired": true
+  },
+  "independentPostcondition": {
+    "runningBytes": 96080,
+    "startupBytes": 96080,
+    "runningSha256": "b68a0dfdc9973fe23b5e4450930a2aa002ff9eb22554872ebb5473d1891c813e",
+    "startupSha256": "b68a0dfdc9973fe23b5e4450930a2aa002ff9eb22554872ebb5473d1891c813e",
+    "byteIdentical": true,
+    "lastChange": "Mon, 31 Aug 2026 18:25:02 GMT"
+  },
+  "safety": {
+    "fullBROraySourceModified": false,
+    "routeSetModifiedByReconciliation": false,
+    "nativeLifecycleProtectionBypassed": false,
+    "lightInstalled": false
+  },
+  "nextExactAction": "SUBMIT_P13_AS_A_NEW_PRODUCT_AUTHORIZED_NORMAL_UNINSTALL_REQUEST_AND_VERIFY_TERMINAL_SUCCESS_AND_ZERO_FULL_BROray_OWNERSHIP"
+}

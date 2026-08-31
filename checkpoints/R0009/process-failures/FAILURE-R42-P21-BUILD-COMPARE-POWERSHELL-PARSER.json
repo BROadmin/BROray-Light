@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "stage": "BUILD_LIGHT_UPDATER_INSTALLER_AND_INSTALLABLE_CANDIDATE_FROM_R0008",
+  "revision": "r42-p21-c03-build-ab-byte-compare-command",
+  "status": "FAILED_STOPPED_FIRST_ERROR",
+  "failureClass": "BUILD_COMPARE_HARNESS_POWERSHELL_PARSER_ERROR",
+  "observedAt": "2026-08-31T22:18:09+03:00",
+  "failedOperation": "Direct byte identity comparison of the eight R0009c03 Build A and Build B artifacts",
+  "firstError": {
+    "type": "ParserError",
+    "message": "An empty pipe element is not allowed.",
+    "scope": "Comparison command parser before artifact enumeration"
+  },
+  "artifactMutation": false,
+  "artifactIdentityInterpreted": false,
+  "retryPolicy": "NO_RETRY_OF_P21_COMMAND",
+  "nextRevision": "r43-p22-c03-build-ab-byte-compare-array",
+  "nextExactAction": "Use an explicitly accumulated result array followed by formatting, then save the comparison as a checkpoint."
+}

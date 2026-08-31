@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "stage": "PHYSICAL_KEENETIC_INSTALL_UPDATE_ROLLBACK_VALIDATION_OF_R0009_INTERNAL_CANDIDATE",
+  "revision": "p29-instrumented-service-activation",
+  "status": "ROOT_CAUSE_CONFIRMED",
+  "rootCause": "BusyBox mv -f dereferences a destination symlink to a directory. switch_current moved the temporary symlink inside the active r8 directory instead of replacing /opt/broray-light/current, so current_release remained r8 and slot_health correctly rejected expected r9.",
+  "instrumentedActivation": {
+    "stopReturnCode": 0,
+    "temporaryLinkCreateReturnCode": 0,
+    "mvFReturnCode": 0,
+    "versionWriteReturnCode": 0,
+    "serviceStartReturnCode": 0,
+    "observedCurrentTargetAfterMvF": "releases/0.1.0-r8",
+    "observedCurrentReleaseAfterMvF": "0.1.0-r8",
+    "brorayExecutableReturnCode": 0,
+    "xrayExecutableReturnCode": 0,
+    "serviceStatusImmediateReturnCode": 0,
+    "serviceStatusAfterOneSecondReturnCode": 0,
+    "ownedDaemonProcesses": 1,
+    "ownedLighttpdProcesses": 1
+  },
+  "filesystemEvidence": {
+    "unexpectedNestedDiagnosticLink": "/opt/broray-light/releases/0.1.0-r8/.p29-current",
+    "unexpectedNestedUpdaterLinks": [
+      "/opt/broray-light/releases/0.1.0-r8/.current.1369.new",
+      "/opt/broray-light/releases/0.1.0-r8/.current.5274.new"
+    ],
+    "allNestedLinksTarget": "releases/0.1.0-r8"
+  },
+  "busyBoxCapability": {
+    "mvVersion": "BusyBox 1.37.0",
+    "supportsNoTargetDirectoryFlag": true,
+    "requiredCommand": "mv -fT temporary current"
+  },
+  "serviceRaceHypothesis": "DISPROVED_FOR_P28",
+  "safetyOutcome": {
+    "restoredCurrentTarget": "releases/0.1.0-r8",
+    "restoredVersionState": "0.1.0-r8",
+    "restoredPrimaryServiceStatusReturnCode": 0,
+    "restoredOwnedDaemonProcesses": 1,
+    "restoredOwnedLighttpdProcesses": 1
+  },
+  "correctionBoundary": {
+    "canonicalR0008ApplicationSlotMutation": false,
+    "r0009UpdaterSwitchPrimitiveOnly": true,
+    "nextCandidateId": "0.1.0-r0009c04"
+  },
+  "preflight": "checkpoints/R0009/physical-validation/PREFLIGHT-P29-INSTRUMENTED-SERVICE-ACTIVATION.json",
+  "preflightSha256": "3c80ada712ed5e7aeb5885eb7229e62ed67182b96c4a33ab9ab4f647617e62e7",
+  "nextExactAction": "Change only the R0009 updater switch_current primitive to mv -fT, update the Windows isolated mv shim to model combined flags, add a static non-dereference gate, and build independently reproducible c04 Build A and Build B before any router retry."
+}

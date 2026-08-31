@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_FINALIZATION_AFTER_AUTHORIZED_PHYSICAL_VALIDATION",
+  "revision": "r73-p52-powershell-record-validator",
+  "status": "FAILED_STOPPED_FIRST_ERROR",
+  "failureClass": "SIDECAR_PATH_RESOLUTION_ASSUMPTION",
+  "failedOperation": "Validate every checkpoint SHA-256 sidecar",
+  "firstError": {
+    "validatorAssumption": "Every sidecar target is a basename relative to the sidecar directory",
+    "actualLegacyContract": "Some R0002-R0008 sidecars store a repository-relative target path",
+    "falseMissingTargets": 10
+  },
+  "successfulChecks": {
+    "jsonFilesParsed": 174,
+    "worklogLinesParsed": 101,
+    "sidecarHashMismatchesObserved": 0
+  },
+  "repositoryMutation": false,
+  "retryPolicy": "NO_RETRY_OF_P52_VALIDATOR",
+  "nextRevision": "r74-p53-dual-format-sidecar-validator",
+  "nextExactAction": "Resolve sidecar targets from repository root when the recorded name contains a directory component, otherwise from the sidecar directory; then validate format, existence, and SHA-256 once."
+}

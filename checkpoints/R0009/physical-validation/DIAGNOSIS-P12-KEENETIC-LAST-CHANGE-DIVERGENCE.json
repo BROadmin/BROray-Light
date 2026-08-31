@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "stage": "PHYSICAL_KEENETIC_INSTALL_UPDATE_ROLLBACK_VALIDATION_OF_R0009_INTERNAL_CANDIDATE",
+  "revision": "p12-route-divergence-diagnosis-and-supported-reconciliation",
+  "status": "ROOT_CAUSE_CONFIRMED_PENDING_SUPPORTED_RECONCILIATION",
+  "sourceFailure": "checkpoints/R0009/process-failures/FAILURE-R31-P11-FULL-BRORAY-ROUTE-CONFIG-DIVERGENCE.json",
+  "routerConfigAudit": {
+    "runningBytes": 96080,
+    "startupBytes": 96080,
+    "runningSha256": "b68a0dfdc9973fe23b5e4450930a2aa002ff9eb22554872ebb5473d1891c813e",
+    "startupSha256": "954d3601e91d36391ff1d4f5a92843f40814d64cd899ade4632b632846cdcee6",
+    "lineCountEach": 2163,
+    "differentLineCount": 1,
+    "differentLineNumber": 2,
+    "differentLineClass": "Keenetic generated Last change metadata comment",
+    "runningLastChange": "Mon, 31 Aug 2026 18:25:02 GMT",
+    "startupLastChange": "Mon, 31 Aug 2026 18:20:56 GMT"
+  },
+  "routeAudit": {
+    "runningRouteLines": 1717,
+    "startupRouteLines": 1717,
+    "runningRouteLinesSha256": "c443cb15af2f139c4d108746a1c0e3b51ad08949028e3a9c88ab56008a8d01e7",
+    "startupRouteLinesSha256": "c443cb15af2f139c4d108746a1c0e3b51ad08949028e3a9c88ab56008a8d01e7",
+    "routeSetsByteIdentical": true
+  },
+  "rootCause": "The P11 rollback restored the route set but left Keenetic running configuration newer than startup configuration. Full BROray correctly refused to continue because its save-convergence contract requires complete byte identity, including the generated Last change comment.",
+  "safety": {
+    "sensitiveConfigLinesCaptured": false,
+    "routeMutationRequiredForReconciliation": false,
+    "fullBROraySourceModificationRequired": false,
+    "nativeAuthenticationBypassRequired": false
+  },
+  "nextExactAction": "INVOKE_THE_EXISTING_BROray_PROTECTED_CONFIGURATION_SAVE_CONVERGENCE_FUNCTION_AND_REQUIRE_TWO_CONSECUTIVE_BYTE_IDENTICAL_RUNNING_STARTUP_PAIRS_BEFORE_A_NEW_UNINSTALL_REVISION"
+}

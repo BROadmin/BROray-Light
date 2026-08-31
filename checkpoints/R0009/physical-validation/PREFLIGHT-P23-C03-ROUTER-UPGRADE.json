@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "stage": "PHYSICAL_KEENETIC_INSTALL_UPDATE_ROLLBACK_VALIDATION_OF_R0009_INTERNAL_CANDIDATE",
+  "revision": "p23-c03-router-upgrade-preflight",
+  "status": "PASS_READY_FOR_AUTHORIZED_UPGRADE",
+  "router": "192.168.1.1",
+  "authorization": "USER_EXPLICIT_FULL_PERMISSION",
+  "installedPackage": "broray-light 0.1.0-r0009c02",
+  "currentTarget": "releases/0.1.0-r8",
+  "primaryServiceStatusReturnCode": 1,
+  "knownP17FailureState": {
+    "ownedDaemonProcesses": 2,
+    "ownedLighttpdProcesses": 1,
+    "rootCause": "S24_STOP_START_DAEMON_PIDFILE_HANDOFF_RACE"
+  },
+  "persistenceMarkers": {
+    "configSha256": "ec87b9c2a4af1318f1cef581f33d8318e879365bb99f94b37bfa2c60de78b92d",
+    "serversSha256": "1a29419b7ceec7dae7fb831873448c09f959620bc6db6ebdb175a3fb5e299c54",
+    "subscriptionsSha256": "bfd012fa66f4cb19ae7baeb7451ebc75e78960db0ab2ee3c4251988bb9136afb"
+  },
+  "xray": {
+    "path": "/opt/broray-light/runtime/xray",
+    "sha256": "4b8af237444801bf17b3dc10a1c5c24581fbe3d433eba3d78c6c3a0da1df56fc"
+  },
+  "candidate": {
+    "candidateId": "0.1.0-r0009c03",
+    "packagePath": "dist/R0009/R0009c03-Build-A/broray-light_0.1.0-r0009c03_aarch64-3.10.ipk",
+    "packageSha256": "cb2f9302486987cd2374cd7af4a585af16ad6dfbc5c814f15f15828ce985b6a2",
+    "isolatedValidationStatus": "PASS_18_OF_18",
+    "buildReproducibilityStatus": "PASS_BYTE_IDENTICAL_8_OF_8"
+  },
+  "canonicalR0008SourceSha256SumsSha256": "e056585d6a517ddbbbaebf08b68f17eb2d9d7ccd68d86df5cdee9fd4665f2419",
+  "nextExactAction": "TRANSFER_C03_IPK_VERIFY_ROUTER_SHA256_THEN_RUN_OPKG_UPGRADE_ONCE"
+}

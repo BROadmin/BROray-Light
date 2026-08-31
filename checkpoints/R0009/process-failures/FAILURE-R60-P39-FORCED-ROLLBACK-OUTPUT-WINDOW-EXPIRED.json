@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "stage": "PHYSICAL_KEENETIC_INSTALL_UPDATE_ROLLBACK_VALIDATION_OF_R0009_INTERNAL_CANDIDATE",
+  "revision": "r60-p39-forced-rollback-command-observability",
+  "status": "FAILED_STOPPED_FIRST_ERROR",
+  "failureClass": "REMOTE_COMMAND_OUTPUT_WINDOW_EXPIRED",
+  "failedOperation": "Capture the complete stdout and shell exit code of the P39 forced-health rollback command",
+  "observed": {
+    "lastCapturedLine": "PRE_UPDATE_CURRENT=releases/0.1.0-r8",
+    "completeStdoutAvailable": false,
+    "shellExitCodeAvailable": false,
+    "updaterRetryPerformed": false
+  },
+  "durableRouterStateAvailable": true,
+  "interpretation": "The command-output channel is incomplete. The forced rollback outcome must be adjudicated in a separate read-only revision from updater state, transaction, current target, service health, target identity, persistence, and Xray identity.",
+  "retryPolicy": "NO_RETRY_OF_P39",
+  "nextRevision": "r61-p40-forced-rollback-durable-state-adjudication",
+  "nextExactAction": "Use the already captured durable router state to adjudicate the forced rollback once and save a separate PASS checkpoint if every expected invariant matches."
+}

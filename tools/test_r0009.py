@@ -16,7 +16,7 @@ import tempfile
 from pathlib import Path, PurePosixPath
 
 RELEASE_ID = "0.1.0-r9"
-CANDIDATE_ID = "0.1.0-r0009c02"
+CANDIDATE_ID = "0.1.0-r0009c04"
 XRAY_SHA256 = "4b8af237444801bf17b3dc10a1c5c24581fbe3d433eba3d78c6c3a0da1df56fc"
 
 
@@ -118,11 +118,11 @@ def prepare_tools(root: Path, dash: Path, jq: Path, minisign: Path, python: Path
         "elif op=='chmod':\n"
         " raise SystemExit(0)\n"
         "elif op=='mv':\n"
-        " values=[x for x in args if x!='-f']; source=pathlib.Path(values[-2]).absolute(); destination=pathlib.Path(values[-1]).absolute(); side=pathlib.Path(str(source)+'.__target')\n"
+        " flags=[x for x in args if x.startswith('-')]; values=[x for x in args if not x.startswith('-')]; source=pathlib.Path(values[-2]).absolute(); destination=pathlib.Path(values[-1]).absolute(); side=pathlib.Path(str(source)+'.__target')\n"
         " if side.exists():\n"
         "  if destination.exists(): subprocess.run(['cmd.exe','/d','/c','rmdir',str(destination)],check=True,stdout=subprocess.DEVNULL)\n"
         "  os.rename(source,destination); os.replace(side,pathlib.Path(str(destination)+'.__target'))\n"
-        " elif '-f' in args: os.replace(source,destination)\n"
+        " elif any('f' in flag[1:] for flag in flags): os.replace(source,destination)\n"
         " else: shutil.move(str(source),str(destination))\n"
         ,
         encoding="utf-8",
@@ -253,6 +253,26 @@ def main() -> int:
     extract_tar(members["data.tar.gz"], system_root)
     extract_tar(members["control.tar.gz"], control_root)
     gates["packageCarrierLayout"] = "PASS"
+
+    primary_init = (system_root / "opt/etc/init.d/S24broray-light").read_text(encoding="utf-8")
+    init_contract = (
+        "pid_owned()",
+        "owned_pids()",
+        "wait_owned_gone()",
+        "kill -9",
+        'owned_count "$DAEMON"',
+        'owned_count "$WEB_MARKER"',
+    )
+    if any(fragment not in primary_init for fragment in init_contract):
+        raise RuntimeError("package-owned primary init PID handoff contract is incomplete")
+    gates["primaryServicePidHandoff"] = "PASS"
+
+    updater_script = (system_root / "opt/libexec/broray-light-updater/broray-light-updater.sh").read_text(encoding="utf-8")
+    if 'mv -fT "$temporary" "$CURRENT_PATH"' not in updater_script:
+        raise RuntimeError("updater current-slot switch does not prohibit destination symlink dereference")
+    if 'mv -f "$temporary" "$CURRENT_PATH"' in updater_script:
+        raise RuntimeError("updater retains the BusyBox destination-symlink dereference primitive")
+    gates["atomicSymlinkSwitchNoDereference"] = "PASS"
 
     env, tools = prepare_tools(root, args.dash.resolve(), args.jq.resolve(), args.minisign.resolve(), args.python.resolve())
     env["BRORAY_LIGHT_ROOT_PREFIX"] = posix(system_root)

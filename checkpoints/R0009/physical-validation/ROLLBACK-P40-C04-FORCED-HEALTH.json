@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "stage": "PHYSICAL_KEENETIC_INSTALL_UPDATE_ROLLBACK_VALIDATION_OF_R0009_INTERNAL_CANDIDATE",
+  "revision": "p40-c04-forced-rollback-durable-state-adjudication",
+  "status": "PASS",
+  "operationRevision": "p39-forced-r9-health-failure",
+  "healthHook": {
+    "path": "/tmp/r0009-light-feed-c04/force-r9-health-failure.sh",
+    "sha256": "9cb03548d2c6b49a4e8dae8bf792a4f68263c0d5d559aabe5ed7cc5d105fd92b",
+    "failsOnlyReleaseId": "0.1.0-r9"
+  },
+  "durableUpdaterState": {
+    "state": "error",
+    "stage": "rollback",
+    "errorCode": "POST_SWITCH_HEALTH_FAILED",
+    "message": "Post-switch health failed; previous-good slot restored.",
+    "transactionPhase": "rolled-back",
+    "previousRelease": "0.1.0-r8",
+    "targetRelease": "0.1.0-r9",
+    "updaterProcessRemaining": false
+  },
+  "rollbackOutcome": {
+    "currentTarget": "releases/0.1.0-r8",
+    "versionState": "0.1.0-r8",
+    "primaryServiceStatusReturnCode": 0,
+    "ownedDaemonProcesses": 1,
+    "ownedLighttpdProcesses": 1,
+    "previousGoodRestored": true
+  },
+  "failedTargetPreserved": {
+    "path": "/opt/broray-light/releases/0.1.0-r9",
+    "appSha256SumsSha256": "367cc79d4c4391608052316fe8f5afb007a71e4d6c0dfad5c2596dc15887c477",
+    "slotManifestSha256": "00078cf9060d07ecdc2e9b352e727ae67cd42afd3d2fbadd060c2f98ce8ec728",
+    "releaseJsonSha256": "4c5fcf2ff55180ef5d1d662f50653c2a97965b8c5d3397ac58747bb38e69772c"
+  },
+  "persistenceMarkers": {
+    "configSha256": "ec87b9c2a4af1318f1cef581f33d8318e879365bb99f94b37bfa2c60de78b92d",
+    "serversSha256": "1a29419b7ceec7dae7fb831873448c09f959620bc6db6ebdb175a3fb5e299c54",
+    "subscriptionsSha256": "bfd012fa66f4cb19ae7baeb7451ebc75e78960db0ab2ee3c4251988bb9136afb",
+    "unchanged": true
+  },
+  "xraySha256": "4b8af237444801bf17b3dc10a1c5c24581fbe3d433eba3d78c6c3a0da1df56fc",
+  "processObservabilityFailure": "checkpoints/R0009/process-failures/FAILURE-R60-P39-FORCED-ROLLBACK-OUTPUT-WINDOW-EXPIRED.json",
+  "preflight": "checkpoints/R0009/physical-validation/PREFLIGHT-P39-FORCED-ROLLBACK.json",
+  "preflightSha256": "0576668a2a670fbd769a3c2ca92ca116908dc0bc240083677c4c0255ff22c4e2",
+  "nextExactAction": "RECOVERABLY_RETIRE_THE_FAILED_R9_TARGET_RUN_A_NORMAL_SIGNED_C04_R8_TO_R9_UPDATE_RESTORE_FINAL_R9_THEN_REBOOT_AND_VALIDATE_PERSISTENCE"
+}

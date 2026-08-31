@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "stage": "PHYSICAL_KEENETIC_INSTALL_UPDATE_ROLLBACK_VALIDATION_OF_R0009_INTERNAL_CANDIDATE",
+  "revision": "p15-signed-router-local-r9-feed",
+  "status": "PASS",
+  "feed": {
+    "routerIndexUrl": "file:///tmp/r0009-light-feed/release.json",
+    "releaseId": "0.1.0-r9",
+    "candidateId": "0.1.0-r0009c02",
+    "testModeRequired": true,
+    "indexSha256": "3ba7ef51be7d969280b80dcbcc26714e2e53bf56e659de6302638a7274efc230e",
+    "signatureSha256": "391e239090e6462564bdcd2decbb79ffae5162d7664736e15ab5ef745dbfebc9",
+    "appArchiveSha256": "627862cfd3cfcb6859d190545a348616db766c94919976dddf42f576fb81dc16",
+    "appArchiveSizeBytes": 142991,
+    "appFiles": 112,
+    "appLogicalBytes": 494679
+  },
+  "verification": {
+    "routerFileHashesMatch": true,
+    "routerMinisignReturnCode": 0,
+    "privateSigningKeyTransferredToRouter": false
+  },
+  "nextExactAction": "RUN_SIGNED_EQUAL_VERSION_CHECK_AND_UPDATE_REQUIRE_NO_OP_SUCCESS_AND_ZERO_CURRENT_SLOT_MUTATION"
+}

@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "stage": "BUILD_LIGHT_UPDATER_INSTALLER_AND_INSTALLABLE_CANDIDATE_FROM_R0008",
+  "revision": "r40-p19-c03-isolated-validation-observability",
+  "status": "FAILED_STOPPED_FIRST_ERROR",
+  "failureClass": "ISOLATED_HARNESS_OUTPUT_HANDLE_LOST",
+  "observedAt": "2026-08-31T22:14:11+03:00",
+  "failedOperation": "Fresh isolated validation of independently built 0.1.0-r0009c03 candidate",
+  "evidence": {
+    "pythonProcessId": 70932,
+    "processExited": true,
+    "stdoutAvailable": false,
+    "stderrAvailable": false,
+    "exitCodeAvailable": false,
+    "isolatedRoot": "C:/Users/Администратор/AppData/Local/Temp/broray-light-r0009-isolated-afe_gfe9",
+    "isolatedRootPresent": true
+  },
+  "interpretation": "The test outcome is unknown and is not accepted as PASS or FAIL. The validation process completed, but the orchestration layer did not retain its session handle or terminal output.",
+  "retryPolicy": "NO_HIDDEN_RETRY_OF_P19",
+  "nextRevision": "r41-p20-c03-isolated-validation-captured-output",
+  "nextExactAction": "Run a separately identified validation revision with stdout, stderr, and exit code captured in explicit files; preserve those files and their SHA-256 before interpreting the result."
+}

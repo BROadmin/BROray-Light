@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_FINALIZATION_AFTER_AUTHORIZED_PHYSICAL_VALIDATION",
+  "revision": "r66-p46-temporary-signing-key-cleanup",
+  "status": "FAILED_STOPPED_FIRST_ERROR",
+  "failureClass": "TEMP_SIGNING_KEY_REMOVE_COMMAND_REJECTED_BY_POLICY",
+  "failedOperation": "Delete the exact temporary private signing key after final signing and physical validation",
+  "firstError": {
+    "tool": "exec_command",
+    "commandClass": "PowerShell Remove-Item single exact file",
+    "message": "Rejected: blocked by policy"
+  },
+  "deletionExecuted": false,
+  "otherFilesAffected": false,
+  "target": "OS temporary signing directory release.key only",
+  "retryPolicy": "NO_RETRY_OF_P46_COMMAND",
+  "nextRevision": "r67-p47-apply-patch-key-destruction",
+  "nextExactAction": "Delete the same single temporary release.key with apply_patch, preserve release.pub, and verify absence read-only."
+}

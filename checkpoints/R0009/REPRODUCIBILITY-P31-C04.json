@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "stage": "BUILD_LIGHT_UPDATER_INSTALLER_AND_INSTALLABLE_CANDIDATE_FROM_R0008",
+  "revision": "r52-p31-c04-nondereferencing-switch-build",
+  "status": "PASS",
+  "candidateId": "0.1.0-r0009c04",
+  "correction": "switch_current uses BusyBox-compatible mv -fT so the current symlink is replaced rather than dereferenced",
+  "buildA": "dist/R0009/R0009c04-Build-A",
+  "buildB": "dist/R0009/R0009c04-Build-B",
+  "comparison": "BYTE_IDENTICAL",
+  "artifactCountBuildA": 8,
+  "artifactCountBuildB": 8,
+  "allSha256Equal": true,
+  "allByteIdentical": true,
+  "artifacts": [
+    {"path":"broray-light_0.1.0-r0009c04_aarch64-3.10.ipk","bytes":12788250,"sha256":"e679d560c21b233a9454ff4e6779237db8056ba906f11550e44a87d3f3d9423b"},
+    {"path":"broray-light-app-0.1.0-r0009c04.tar.gz","bytes":142989,"sha256":"c156a34ad7b1e2c6b5390114a6fd0d0fad5135c20fa4d23d1a24043c93f3f7de"},
+    {"path":"broray-light-install-0.1.0-r0009c04.sh","bytes":1856,"sha256":"3ffb0e08f2ca212a698aa86fad35b224fab41efd2450db63f16ebb448f0d72cb"},
+    {"path":"broray-light-updater-platform-5-light1.tar.gz","bytes":131429,"sha256":"b33f9c8b900f417a882cdca3142094b19f86a1022a3aa443583eb121bc2e0b85"},
+    {"path":"CANDIDATE-MANIFEST.json","bytes":2343,"sha256":"909fc83e3c0b6c75c304594288fb7ef5f59b3b511300c0ccb813a40a635e8228"},
+    {"path":"release.json","bytes":577,"sha256":"3b50963888857e5833757cf1c64ce12f60085fb9be707c6e683624622ae9c575"},
+    {"path":"release.json.minisig","bytes":277,"sha256":"e3fdbbcbf6514905f5beb9449c5157f3f5dc2b85b1de808551d082cbfd80ec74"},
+    {"path":"SHA256SUMS","bytes":689,"sha256":"e3a96e80bd9c0cbd595df3881474eecb3afa527d98658f1d5f067cdbe6461105"}
+  ],
+  "canonicalR0008SourceSha256SumsSha256": "e056585d6a517ddbbbaebf08b68f17eb2d9d7ccd68d86df5cdee9fd4665f2419",
+  "nextExactAction": "RUN_A_FRESH_C04_ISOLATED_VALIDATION_WITH_CAPTURED_STDOUT_STDERR_AND_EXIT_CODE"
+}

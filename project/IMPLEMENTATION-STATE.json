@@ -1,14 +1,14 @@
 {
   "baseCandidate": "3.0.0-r23c02",
   "baseStable": "3.0.0-r23",
-  "builderSha256": "ddc04c9ca84420ccd0acf374939a3882eac0a20841ca0bdbf019e783d009e8d2",
+  "builderSha256": "2339c55bd5d4cd40583cdea4f5d1eb3c7ff90ee20290979a8b552452ea30a72d",
   "canonicalCheckpoint": "R0009",
   "canonicalSourceCommit": "684b27bdb53e545047419baa87c63dd86dffa469",
   "codexEntryPoint": "docs/CODEX-HANDOFF.md",
-  "candidateId": "0.1.0-r0009c02",
-  "candidateReady": false,
-  "candidateCheckpointSha256": "c4fd8f9abd73f1385c0892be801528dc85e37aafb55ab806b5d49d4a9449366a",
-  "nextStage": "PHYSICAL_KEENETIC_INSTALL_UPDATE_ROLLBACK_VALIDATION_OF_R0009_INTERNAL_CANDIDATE",
+  "candidateId": "0.1.0-r0009c04",
+  "candidateReady": true,
+  "candidateCheckpointSha256": "117d1a97578c2dee9c2c2d6a48f709be1bf551a13f627d6feed081c0e2e8d638",
+  "nextStage": "DEFINE_AND_AUTHORIZE_R0010_BEFORE_ANY_STABLE_PUBLICATION",
   "product": "BROray-Light",
   "remotePersistence": {
     "receipt": "checkpoints/R0008/REMOTE-PERSISTENCE.json",
@@ -20,5 +20,5 @@
   "sourceCheckpointSha256": "6686586ed777a7b0c37336d08143d388fdc301536b32c96eb35e8b20e5393953",
   "sourceFiles": 121,
   "sourceSha256SumsSha256": "e056585d6a517ddbbbaebf08b68f17eb2d9d7ccd68d86df5cdee9fd4665f2419",
-  "status": "PHYSICAL_VALIDATION_BLOCKED_AUTHORIZED_FULL_BRORAY_HANDOFF_REQUIRED"
+  "status": "PASS_PHYSICAL_VALIDATION_COMPLETE"
 }

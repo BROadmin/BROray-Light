@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "stage": "BUILD_LIGHT_UPDATER_INSTALLER_AND_INSTALLABLE_CANDIDATE_FROM_R0008",
+  "revision": "r51-p30-c04-correction-search",
+  "status": "FAILED_STOPPED_FIRST_ERROR",
+  "failureClass": "SEARCH_REGEX_ESCAPE_ERROR",
+  "failedOperation": "Locate c03 identifiers and updater switch_current lines before the c04 correction",
+  "firstError": {
+    "tool": "rg",
+    "message": "regex parse error: unclosed group"
+  },
+  "sourceMutation": false,
+  "retryPolicy": "NO_RETRY_OF_P30_COMMAND",
+  "nextRevision": "r52-p31-c04-literal-search-and-correction",
+  "nextExactAction": "Use separate literal searches, then patch mv -fT, the combined-flag isolated shim, the static non-dereference gate, and the c04 candidate identifiers."
+}

@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "stage": "PHYSICAL_KEENETIC_INSTALL_UPDATE_ROLLBACK_VALIDATION_OF_R0009_INTERNAL_CANDIDATE",
+  "revision": "r63-p42-sbin-reboot-attempt",
+  "status": "FAILED_STOPPED_FIRST_ERROR",
+  "failureClass": "SBIN_REBOOT_RETURNED_SUCCESS_WITHOUT_BOOT_CYCLE",
+  "observedAt": "2026-08-31T23:26:08+03:00",
+  "failedOperation": "Reboot the authorized Keenetic router through /sbin/reboot before persistence validation",
+  "evidence": {
+    "commandReturnCode": 0,
+    "uptimeFirstObservedSeconds": 299.21,
+    "uptimeLaterObservedSeconds": 366.03,
+    "uptimeMonotonicIncrease": true,
+    "sshDownObserved": false,
+    "newBootObserved": false,
+    "installedStateMutationObserved": false
+  },
+  "retryPolicy": "NO_RETRY_OF_P42_SBIN_REBOOT",
+  "nextRevision": "r64-p43-native-keenetic-reboot",
+  "nextExactAction": "Read-only verify the native ndmc reboot command syntax, invoke it once, require an observed SSH-down or uptime reset, then run post-boot persistence validation."
+}

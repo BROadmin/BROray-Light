@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "stage": "PHYSICAL_KEENETIC_INSTALL_UPDATE_ROLLBACK_VALIDATION_OF_R0009_INTERNAL_CANDIDATE",
+  "revision": "p11-quiescent-authorized-normal-uninstall",
+  "status": "FAILED_STOPPED_FIRST_ERROR",
+  "failureClass": "FULL_BRORAY_UNINSTALL_KEENETIC_ROUTE_CONFIG_DIVERGENCE",
+  "failedOperation": "Product-authorized normal uninstall of full BROray",
+  "operationId": "uninstall-20260831181729-10922",
+  "firstError": "ОШИБКА: Конфигурация Keenetic не сошлась между running/startup-config.",
+  "failureStage": {
+    "stage": "routes",
+    "progress": 25,
+    "bundle": "telegram",
+    "workerPid": 14030,
+    "routeWorkerPid": 20898
+  },
+  "preservedUserData": {
+    "path": "/opt/broray-preserved/broray-user-data-20260831-181817-uninstall-20260831181729-10922.tar.gz",
+    "sizeBytes": 87466,
+    "sha256": "cacca4412c395bbbd82e8e696d170927b58e2b7216514d4c100a8ecac0cf810e"
+  },
+  "safetyOutcome": {
+    "fullBROrayPackage": "broray 3.0.0-r14",
+    "fullBROrayStillRegistered": true,
+    "fullBROrayRootStillPresent": true,
+    "fullBROrayPrimaryServiceStillRegistered": true,
+    "routeOperationLockStillPresent": true,
+    "lightInstalled": false,
+    "ownershipHandoffComplete": false
+  },
+  "retryPolicy": "NO_RETRY_OF_P11",
+  "nextRevision": "p12-route-divergence-diagnosis-and-supported-reconciliation",
+  "nextExactAction": "READ_ONLY_DIAGNOSE_THE_RUNNING_STARTUP_ROUTE_DIVERGENCE_AND_THE_STALLED_AUTHORIZED_WORKER_THEN_USE_ONLY_A_SUPPORTED_RECOVERABLE_RECONCILIATION_BEFORE_ANY_NEW_UNINSTALL_REVISION"
+}

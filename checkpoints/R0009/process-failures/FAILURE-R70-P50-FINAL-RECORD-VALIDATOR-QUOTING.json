@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_FINALIZATION_AFTER_AUTHORIZED_PHYSICAL_VALIDATION",
+  "revision": "r70-p50-final-record-validator",
+  "status": "FAILED_STOPPED_FIRST_ERROR",
+  "failureClass": "INLINE_PYTHON_VALIDATOR_QUOTING_ERROR",
+  "failedOperation": "Parse every repository JSON and WORKLOG JSONL line and verify every checkpoint .sha256 sidecar",
+  "firstError": {
+    "tool": "python -c",
+    "type": "SyntaxError",
+    "message": "parenthesis was never closed due to nested command quoting"
+  },
+  "validationDataRead": false,
+  "repositoryMutation": false,
+  "otherFinalValidationGroups": {
+    "shellAndPythonSyntax": "PASS",
+    "buildReproducibilityAndSignatures": "PASS",
+    "branchDiffSourceKeyAndCache": "PASS"
+  },
+  "retryPolicy": "NO_RETRY_OF_P50_COMMAND",
+  "nextRevision": "r71-p51-powershell-record-validator",
+  "nextExactAction": "Run the JSON, JSONL, and SHA-256 sidecar validation with native PowerShell objects and explicit loops, then recompute the final failure count and canonical hashes."
+}

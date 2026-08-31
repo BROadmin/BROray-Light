@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_FINALIZATION_AFTER_AUTHORIZED_PHYSICAL_VALIDATION",
+  "revision": "r64-p44-next-stage-search",
+  "status": "FAILED_STOPPED_FIRST_ERROR",
+  "failureClass": "WINDOWS_RG_PATH_GLOB_SYNTAX_ERROR",
+  "failedOperation": "Search repository records for an explicitly defined stage after physical validation",
+  "firstError": {
+    "tool": "rg",
+    "pathArgument": "README*",
+    "message": "Invalid file, directory, or volume label syntax"
+  },
+  "repositoryMutation": false,
+  "routerMutation": false,
+  "retryPolicy": "NO_RETRY_OF_P44_COMMAND",
+  "nextRevision": "r65-p45-explicit-next-stage-search-and-finalization",
+  "nextExactAction": "Use explicit repository paths without a shell-style wildcard, then finalize the post-boot checkpoint, acceptance record, handoff, report, and commit."
+}

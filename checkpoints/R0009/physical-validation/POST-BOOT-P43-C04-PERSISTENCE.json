@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "stage": "PHYSICAL_KEENETIC_INSTALL_UPDATE_ROLLBACK_VALIDATION_OF_R0009_INTERNAL_CANDIDATE",
+  "revision": "p43-native-keenetic-reboot-and-post-boot-validation",
+  "status": "PASS",
+  "reboot": {
+    "command": "ndmc -c system reboot",
+    "commandReturnCode": 0,
+    "nativeResponse": "Core::System::RebootManager: Activated system reboot.",
+    "uptimeBeforeSeconds": 366.03,
+    "firstUptimeAfterSeconds": 274.40,
+    "uptimeDecreaseObserved": true,
+    "bootCycleObserved": true,
+    "supersedesFailedCommand": "checkpoints/R0009/process-failures/FAILURE-R63-P42-SBIN-REBOOT-NO-BOOT-CYCLE.json"
+  },
+  "installed": {
+    "package": "broray-light 0.1.0-r0009c04",
+    "currentTarget": "releases/0.1.0-r9",
+    "versionState": "0.1.0-r9",
+    "appSha256SumsSha256": "367cc79d4c4391608052316fe8f5afb007a71e4d6c0dfad5c2596dc15887c477",
+    "slotManifestSha256": "00078cf9060d07ecdc2e9b352e727ae67cd42afd3d2fbadd060c2f98ce8ec728",
+    "releaseJsonSha256": "4c5fcf2ff55180ef5d1d662f50653c2a97965b8c5d3397ac58747bb38e69772c",
+    "versionFileSha256": "fdb2c65239ddf469419115ec03be53f8426dce629dfe82d3b5412f2e35a75873",
+    "updaterScriptSha256": "62b22893792d3a2c591afa109c675b686b8b3068bc21d186333803eae701d156",
+    "primaryInitSha256": "7b14469c4c93f82311a47c7224b369fe009ae7f826b59cdbb6cdfe55683f2bb6"
+  },
+  "services": {
+    "updaterStatusReturnCode": 0,
+    "primaryStatusReturnCode": 0,
+    "ownedDaemonProcesses": 1,
+    "ownedLighttpdProcesses": 1,
+    "transactionPresent": false
+  },
+  "webAndAuth": {
+    "rootHttpStatus": 200,
+    "homeHttpStatus": 200,
+    "unauthenticatedSummaryApiHttpStatus": 401,
+    "nativeSessionProtection": "PASS"
+  },
+  "persistenceMarkers": {
+    "configSha256": "ec87b9c2a4af1318f1cef581f33d8318e879365bb99f94b37bfa2c60de78b92d",
+    "serversSha256": "1a29419b7ceec7dae7fb831873448c09f959620bc6db6ebdb175a3fb5e299c54",
+    "subscriptionsSha256": "bfd012fa66f4cb19ae7baeb7451ebc75e78960db0ab2ee3c4251988bb9136afb",
+    "unchangedAcrossInstallUpdateRollbackAndReboot": true
+  },
+  "xray": {
+    "version": "26.7.28",
+    "bytes": 35389566,
+    "sha256": "4b8af237444801bf17b3dc10a1c5c24581fbe3d433eba3d78c6c3a0da1df56fc",
+    "unchangedAcrossInstallUpdateRollbackAndReboot": true
+  },
+  "coownershipAndRoutes": {
+    "fullBROrayPackageLines": 0,
+    "fullBROrayOwnedPaths": 0,
+    "runningConfigProxy0Lines": 0,
+    "startupConfigProxy0Lines": 0,
+    "routesViaProxy0": 0,
+    "status": "PASS_ZERO"
+  },
+  "physicalAcceptance": {
+    "cleanInstall": "PASS_P14_C02_THEN_CORRECTED_PACKAGE_UPGRADES",
+    "signedUpdate": "PASS_P36_C04",
+    "equalVersion": "PASS_P37_C04",
+    "downgradeRefusal": "PASS_P38_C04",
+    "forcedRollback": "PASS_P40_C04",
+    "persistenceAfterReboot": "PASS_P43_C04"
+  },
+  "nextExactAction": "FINALIZE_R0009_MACHINE_READABLE_ACCEPTANCE_CHECKPOINT_REPORT_HANDOFF_AND_COMMIT_WITH_CANDIDATE_READY_TRUE"
+}
