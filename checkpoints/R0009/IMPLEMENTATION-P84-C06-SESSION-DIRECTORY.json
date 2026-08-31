@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_AUTHORIZED_REMOTE_WEB_PUBLICATION_EXTENSION",
+  "revision": "p84-c06-session-directory-runtime-contract",
+  "at": "2026-09-01T01:37:20+03:00",
+  "status": "IMPLEMENTED_PENDING_BUILD_AND_VALIDATION",
+  "candidateId": "0.1.0-r0009c06",
+  "corrects": "checkpoints/R0009/physical-validation/DIAGNOSIS-P83-C05-SESSION-DIRECTORY-MISSING.json",
+  "changes": [
+    "postinst creates run/web-new/sessions before service startup",
+    "runtime preparation creates run/web-new/sessions on every service start",
+    "run/web-new and sessions receive mode 700",
+    "isolated clean-install gate requires the session directory",
+    "candidate and package identity advanced from c05 to c06"
+  ],
+  "sha256": {
+    "src/app/bin/broray-runtime-prepare": "1dd3359bedbd1de3dc4686f3967ad2f2641b353188de08fd7321508270997999",
+    "packaging/opkg/postinst": "b31fa3794bef64366a35e74315418de726744f2a36c472f13ee7a1ebe108b77c",
+    "tools/build_r0009_candidate.py": "b2ca79718cb226e367b917e992bfbc9fc65138f01ecb7a998d394d7761a847b0",
+    "tools/test_r0009.py": "10a06e346b809229e1034cf6d45c916f4075f9c53b937b4168e8e9c8cba22000",
+    "packaging/opkg/broray-light-web-publish-policy.sh": "e589f90cad047790670e3a242b6d38c2880d4ca555eac227c8dc93b97ea1d284"
+  },
+  "staticValidation": {
+    "pythonCompile": "PASS_2_OF_2",
+    "gitDashSyntax": "PASS_5_OF_5",
+    "busyboxAshSyntax": "PASS_5_OF_5",
+    "activeC05IdentityAbsent": true,
+    "c06PolicyIdentity": "PASS"
+  },
+  "routerMutation": false,
+  "nextExactAction": "BUILD_C06_A_AND_INDEPENDENT_C06_B_WITH_THE_SAME_PINNED_INPUTS_AND_SIGNING_IDENTITY"
+}

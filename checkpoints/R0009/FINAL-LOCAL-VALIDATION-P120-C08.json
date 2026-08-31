@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_AUTHORIZED_REMOTE_WEB_PUBLICATION_EXTENSION",
+  "revision": "p120-final-local-acceptance-validation",
+  "at": "2026-09-01T02:48:39+03:00",
+  "status": "PASS",
+  "candidateId": "0.1.0-r0009c08",
+  "canonicalSource": {
+    "commit": "684b27bdb53e545047419baa87c63dd86dffa469",
+    "files": 121,
+    "logicalBytes": 627326,
+    "sha256SumsSha256": "e056585d6a517ddbbbaebf08b68f17eb2d9d7ccd68d86df5cdee9fd4665f2419",
+    "gitDiff": "PASS_UNCHANGED"
+  },
+  "reproducibility": {
+    "buildA": "dist/R0009/R0009c08-Build-A",
+    "buildB": "dist/R0009/R0009c08-Build-B",
+    "artifacts": 8,
+    "byteIdentical": true,
+    "sha256SumsA": "PASS",
+    "sha256SumsB": "PASS",
+    "signatureA": "PASS",
+    "signatureB": "PASS",
+    "candidateManifest": "PASS"
+  },
+  "syntax": {
+    "dashFiles": 7,
+    "status": "PASS"
+  },
+  "machineReadable": {
+    "jsonFilesParsed": 168,
+    "worklogLinesParsed": 162,
+    "status": "PASS"
+  },
+  "processFailuresPreserved": 63,
+  "canonicalPublicKeySha256": "8ed24e39ac0934947bc85f4a81dccb5dd28b44e9eeee0a26fe3ab80f37cc0aa8",
+  "privateSigningKeyDestroyed": true,
+  "nextExactAction": "RESEAL_FINAL_CHECKPOINT_VALIDATION_REPORT_PROJECT_STATE_IMPLEMENTATION_STATE_HANDOFF_AND_ALL_SHA256_RECEIPTS"
+}

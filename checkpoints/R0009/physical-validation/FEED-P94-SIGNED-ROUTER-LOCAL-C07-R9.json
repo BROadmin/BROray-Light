@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_AUTHORIZED_REMOTE_WEB_PUBLICATION_EXTENSION",
+  "revision": "p94-signed-router-local-c07-r9-feed",
+  "at": "2026-09-01T01:51:00+03:00",
+  "status": "PASS",
+  "feed": {
+    "routerIndexUrl": "file:///tmp/r0009-light-feed-c07/release.json",
+    "releaseId": "0.1.0-r9",
+    "candidateId": "0.1.0-r0009c07",
+    "testModeRequired": true,
+    "indexSha256": "46c3bbf085fb3a2b9e154abccbeb310573ef0b57e3d3c08b2cad141405f53b4f",
+    "signatureSha256": "985bf6eeda5a76e038e50202c43bbb51715fb931c0d27555406738c8efe39bd2",
+    "appArchiveSha256": "9c5945763c24a158aac1a510140183e6fdd430839238751cb5b7721593e8ca45",
+    "appArchiveSizeBytes": 142064,
+    "appFiles": 112,
+    "appLogicalBytes": 494679
+  },
+  "verification": {
+    "localMinisignReturnCode": 0,
+    "routerFileHashesMatch": true,
+    "routerMinisignReturnCode": 0,
+    "privateSigningKeyTransferredToRouter": false
+  },
+  "nextExactAction": "PREPARE_AN_R8_TEST_SLOT_THEN_RUN_THE_SIGNED_C07_R8_TO_R9_UPDATE_WITH_WEB_PUBLICATION_HEALTH_REQUIRED"
+}

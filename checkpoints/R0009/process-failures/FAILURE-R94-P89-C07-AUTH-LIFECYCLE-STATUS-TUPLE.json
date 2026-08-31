@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_AUTHORIZED_REMOTE_WEB_PUBLICATION_EXTENSION",
+  "revision": "p89-c07-physical-external-auth-lifecycle-validation",
+  "at": "2026-09-01T01:45:42+03:00",
+  "event": "validation_failure",
+  "status": "FAILED_STOPPED_FIRST_ERROR",
+  "failureClass": "AUTH_LIFECYCLE_STATUS_TUPLE_MISMATCH",
+  "firstError": {
+    "phase": "session protected logout post-logout status tuple assertion",
+    "expected": "200,200,200,401",
+    "actual": "NOT_EMITTED_BY_FAIL_FAST_COMMAND"
+  },
+  "passedBeforeFailure": {
+    "externalRootHttpsStatus": 200,
+    "externalHomeHttpsStatus": 200,
+    "externalUnauthenticatedApiHttpsStatus": 401,
+    "loginHttpsStatus": 200,
+    "validSessionCookieIssued": true,
+    "sessionDirectoryPresentMode700": true
+  },
+  "credentialsPrinted": false,
+  "credentialsWrittenToDisk": false,
+  "sessionTokenPrinted": false,
+  "temporaryFilesCreated": false,
+  "repositoryMutationDuringProbe": false,
+  "routerMutationDuringProbe": "AUTH_SESSION_LIFECYCLE_REQUESTS_ONLY",
+  "retryPolicy": "NO_RETRY_OF_P89_OPAQUE_TUPLE_ASSERTION",
+  "nextRevision": "p90-c07-safe-auth-status-diagnosis",
+  "nextExactAction": "RUN_A_FRESH_MEMORY_ONLY_AUTH_CYCLE_THAT_EMITS_ONLY_THE_FIVE_HTTP_STATUS_CODES_AND_THEN_DIAGNOSE_THE_FIRST_DIVERGENT_ENDPOINT"
+}

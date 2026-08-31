@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_AUTHORIZED_REMOTE_WEB_PUBLICATION_EXTENSION",
+  "revision": "p65-wsl-dash-runtime-probe",
+  "at": "2026-09-01T00:58:06+03:00",
+  "event": "process_failure",
+  "status": "FAILED_STOPPED_FIRST_ERROR",
+  "failureClass": "WSL_LAUNCHER_HAS_NO_USABLE_DISTRIBUTION",
+  "firstError": {
+    "tool": "wsl.exe",
+    "returnCode": 1,
+    "message": "WSL usage was returned instead of executing sh; no usable distribution is installed"
+  },
+  "shellFilesInterpreted": 0,
+  "repositoryImplementationMutationDuringProbe": false,
+  "routerMutation": false,
+  "retryPolicy": "NO_RETRY_OF_P65_WSL_RUNTIME",
+  "nextRevision": "p66-codex-runtime-and-prior-validation-root-search",
+  "nextExactAction": "SEARCH_ONLY_CODEX_BUNDLED_RUNTIME_PATHS_AND_PRIOR_R0009_TEMP_ROOTS_FOR_THE_EXISTING_DASH_EXECUTABLE_THEN_RUN_STATIC_SYNTAX_WITH_AN_EXPLICIT_VERIFIED_PATH"
+}

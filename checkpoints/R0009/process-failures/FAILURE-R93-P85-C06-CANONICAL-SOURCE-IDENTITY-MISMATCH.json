@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_AUTHORIZED_REMOTE_WEB_PUBLICATION_EXTENSION",
+  "revision": "p85-c06-build-a",
+  "at": "2026-09-01T01:38:29+03:00",
+  "event": "build_failure",
+  "status": "FAILED_STOPPED_FIRST_ERROR",
+  "failureClass": "CANONICAL_R0008_SOURCE_IDENTITY_MISMATCH",
+  "firstError": {
+    "phase": "verify_source before artifact generation",
+    "expectedFiles": 121,
+    "actualFiles": 121,
+    "expectedLogicalBytes": 627326,
+    "actualLogicalBytes": 627408,
+    "message": "canonical source identity mismatch"
+  },
+  "rootCause": "C06_CORRECTION_INCORRECTLY_MODIFIED_CANONICAL_SRC_APP_RUNTIME_PREPARE",
+  "artifactsGenerated": 0,
+  "buildDirectoryPreserved": "dist/R0009/R0009c06-Build-A",
+  "routerMutation": false,
+  "retryPolicy": "NO_RETRY_OF_C06_SOURCE_REVISION",
+  "nextRevision": "p86-c07-package-lifecycle-only-session-directory-fix",
+  "nextExactAction": "RESTORE_THE_EXACT_CANONICAL_R0008_RUNTIME_PREPARE_MOVE_THE_SESSION_DIRECTORY_ENFORCEMENT_TO_PACKAGE_POSTINST_AND_S24_ONLY_ADVANCE_TO_C07_THEN_VERIFY_CANONICAL_SOURCE_IDENTITY_BEFORE_BUILD"
+}

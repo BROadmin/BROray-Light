@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_AUTHORIZED_REMOTE_WEB_PUBLICATION_EXTENSION",
+  "revision": "p83-c05-native-auth-and-session-create-diagnosis",
+  "at": "2026-09-01T01:35:49+03:00",
+  "status": "ROOT_CAUSE_CONFIRMED",
+  "failureCheckpoint": "checkpoints/R0009/process-failures/FAILURE-R92-P82-C05-EXTERNAL-LOGIN-HTTP500.json",
+  "observed": {
+    "nativeAuthSocket": "PRESENT_UNIX_SOCKET",
+    "nativeAuthMasterProcess": "PRESENT_ROOT",
+    "nativeAuthWorkerProcess": "PRESENT_NOBODY",
+    "lighttpdProcess": "PRESENT_ROOT",
+    "sessionDirectory": "/opt/broray-light/run/web-new/sessions",
+    "sessionDirectoryStatus": "ABSENT"
+  },
+  "sourceEvidence": {
+    "webAuthSha256": "c95404afafaf399230aeafb9c1fb345a4190f27d459e5d82857b87c47c92dc0a",
+    "runtimePrepareSha256": "0eea5750c71d5c263ccdb2bb77133199cc5b32cff118c88b5833d5db1be19472",
+    "primaryInitSha256": "47a0af6bf10fffadf3a245d14f0b426a2072d7bdb1ec0fda82076303c9aa1286",
+    "webAuthBehavior": "broray_session_create writes a temporary file under BRORAY_SESSION_DIR without creating the directory",
+    "runtimePrepareBehavior": "creates run but not run/web-new/sessions"
+  },
+  "rootCause": "PACKAGE_RUNTIME_PREPARATION_OMITS_THE_PRIVATE_SESSION_DIRECTORY",
+  "resultingFailure": "LOGIN_AUTHENTICATION_CAN_SUCCEED_BUT_SESSION_CREATE_FAILS_CLOSED_WITH_HTTP_500",
+  "architectureChangeRequired": false,
+  "correctiveRevision": "0.1.0-r0009c06",
+  "correction": "CREATE_RUN_WEB_NEW_SESSIONS_DURING_RUNTIME_PREPARATION_AND_ENFORCE_MODE_700",
+  "routerMutation": false,
+  "nextExactAction": "IMPLEMENT_THE_MINIMAL_C06_SESSION_DIRECTORY_RUNTIME_PREPARATION_FIX_ADD_AN_ISOLATED_GATE_THEN_REBUILD_A_AND_B"
+}

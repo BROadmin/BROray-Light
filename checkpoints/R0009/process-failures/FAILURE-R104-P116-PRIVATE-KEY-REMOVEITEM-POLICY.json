@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_AUTHORIZED_REMOTE_WEB_PUBLICATION_EXTENSION",
+  "revision": "p116-ephemeral-private-signing-key-exact-delete",
+  "at": "2026-09-01T02:43:41+03:00",
+  "event": "process_failure",
+  "status": "FAILED_STOPPED_FIRST_ERROR",
+  "failureClass": "LOCAL_SAFETY_POLICY_REJECTED_EXACT_REMOVE_ITEM",
+  "firstError": {
+    "phase": "exact ephemeral private signing key delete",
+    "message": "The exact nonrecursive Remove-Item command was rejected by local safety policy before process creation"
+  },
+  "targetPreviouslyValidated": true,
+  "keyModified": false,
+  "keyDeleted": false,
+  "repositoryMutationDuringFailedCommand": false,
+  "routerMutation": false,
+  "retryPolicy": "NO_RETRY_OF_P116_REMOVE_ITEM_REVISION",
+  "nextRevision": "p117-ephemeral-private-signing-key-apply-patch-delete",
+  "nextExactAction": "DELETE_ONLY_THE_EXACT_PREVALIDATED_RELEASE_KEY_WITH_APPLY_PATCH_THEN_VERIFY_ABSENCE"
+}

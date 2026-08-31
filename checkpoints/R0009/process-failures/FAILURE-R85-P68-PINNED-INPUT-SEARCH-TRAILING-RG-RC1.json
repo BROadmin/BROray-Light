@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_AUTHORIZED_REMOTE_WEB_PUBLICATION_EXTENSION",
+  "revision": "p68-c05-pinned-input-search",
+  "at": "2026-09-01T01:04:39+03:00",
+  "event": "process_failure",
+  "status": "FAILED_STOPPED_FIRST_ERROR",
+  "failureClass": "TRAILING_WORKSPACE_RG_NO_MATCH_EXIT_ONE",
+  "firstError": {
+    "tool": "rg",
+    "scope": "workspace root pinned binary search",
+    "returnCode": 1,
+    "message": "No pinned binary inputs are stored in the workspace root"
+  },
+  "successfulBeforeFailure": {
+    "pythonCompile": "PASS_2_OF_2",
+    "tempPinnedUpdaterFound": true,
+    "tempPinnedXrayAndDigestFound": true,
+    "tempMinisignFound": true
+  },
+  "repositoryImplementationMutationDuringCommand": false,
+  "routerMutation": false,
+  "retryPolicy": "NO_RETRY_OF_P68_MULTI_ROOT_SEARCH",
+  "nextRevision": "p69-c05-explicit-pinned-input-identity-verification",
+  "nextExactAction": "VERIFY_THE_ALREADY_RESOLVED_EXPLICIT_INPUT_PATHS_BY_PINNED_SIZE_AND_SHA256_GENERATE_A_NEW_EPHEMERAL_C05_SIGNING_IDENTITY_THEN_BUILD_A"
+}

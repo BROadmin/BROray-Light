@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_AUTHORIZED_REMOTE_WEB_PUBLICATION_EXTENSION",
+  "revision": "p107-c08-automatic-postboot-validation",
+  "at": "2026-09-01T02:30:08+03:00",
+  "event": "validation_failure",
+  "status": "FAILED_STOPPED_FIRST_ERROR",
+  "failureClass": "PRIMARY_STATUS_FALSE_WITH_LIVE_OWNED_PROCESSES",
+  "firstError": {
+    "uptimeBeforeSeconds": 1417,
+    "uptimeAfterSeconds": 306,
+    "bootCycleProvenByUptimeDecrease": true,
+    "automaticLighttpdProcessPresent": true,
+    "automaticDaemonProcessPresent": true,
+    "primaryStatusReturnCode": 1
+  },
+  "passedBeforeFailure": {
+    "package": "broray-light 0.1.0-r0009c08",
+    "updaterStatusReturnCode": 0,
+    "publicationStatus": "https://brolight.tvervip.keenetic.link/",
+    "proxyBlockExact": true,
+    "localHttpStatuses": "200,200,401",
+    "persistenceAndXrayHashesUnchanged": true,
+    "testSessionFiles": 0,
+    "fullBROrayOwnership": 0,
+    "routesViaProxy0": 0
+  },
+  "manualRestartAttempted": false,
+  "repositoryMutationDuringValidation": false,
+  "routerMutationDuringValidation": false,
+  "retryPolicy": "NO_RETRY_OR_RESTART_BEFORE_P108_PID_OWNERSHIP_DIAGNOSIS",
+  "nextRevision": "p108-c08-postboot-pid-status-diagnosis",
+  "nextExactAction": "READ_ONLY_COMPARE_PIDFILES_PROC_CMDLINES_AND_OWNED_COUNTS_TO_FIND_THE_EXACT_STATUS_PREDICATE_THAT_FAILED"
+}

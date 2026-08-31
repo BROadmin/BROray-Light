@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_AUTHORIZED_REMOTE_WEB_PUBLICATION_EXTENSION",
+  "revision": "p60-donor-lighttpd-member-assumption",
+  "at": "2026-09-01T00:39:16+03:00",
+  "event": "process_failure",
+  "status": "FAILED_STOPPED_FIRST_ERROR",
+  "failureClass": "DONOR_ARCHIVE_MEMBER_ASSUMPTION_INVALID",
+  "firstError": {
+    "tool": "tar -xOf",
+    "member": "app/share/defaults/lighttpd.conf",
+    "message": "Not found in archive"
+  },
+  "verifiedDonorArchiveSha256": "69679f6d7339b856faf28f69cb1800254984e5400201fe97247011ab166c3f85",
+  "repositoryImplementationMutation": false,
+  "routerMutation": false,
+  "retryPolicy": "NO_RETRY_OF_P60_UNLISTED_MEMBER",
+  "nextRevision": "p61-listed-donor-web-listener-discovery",
+  "nextExactAction": "LIST_DONOR_ARCHIVE_MEMBERS_MATCHING_LIGHTTPD_AND_RUNTIME_PREPARE_THEN_READ_ONLY_EXTRACT_ONLY_EXACT_LISTED_PATHS"
+}

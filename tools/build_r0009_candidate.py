@@ -28,8 +28,8 @@ XRAY_DIGEST_SHA256 = "7380220ffee3878f5841c5ac31e1bd2b4625d22cacc2d1248ea3dedaa2
 XRAY_BINARY_SIZE = 35389566
 XRAY_BINARY_SHA256 = "4b8af237444801bf17b3dc10a1c5c24581fbe3d433eba3d78c6c3a0da1df56fc"
 RELEASE_ID = "0.1.0-r9"
-CANDIDATE_ID = "0.1.0-r0009c04"
-PACKAGE_VERSION = "0.1.0-r0009c04"
+CANDIDATE_ID = "0.1.0-r0009c08"
+PACKAGE_VERSION = "0.1.0-r0009c08"
 ARCHITECTURE = "aarch64-3.10"
 MTIME = 0
 
@@ -263,6 +263,15 @@ def build_data_tar(
         archive.add_bytes(f"{slot_prefix}/{name}", payload, mode)
     init_payload = (repo / "packaging/opkg/S24broray-light").read_bytes()
     archive.add_bytes("opt/etc/init.d/S24broray-light", init_payload, 0o755)
+    lifecycle_files = {
+        "opt/bin/broray-light-web-publishctl": "broray-light-web-publishctl",
+        "opt/libexec/broray-light-web-publish/broray-light-web-publish.sh": "broray-light-web-publish.sh",
+        "opt/libexec/broray-light-web-publish/start-gate.sh": "broray-light-web-start-gate.sh",
+        "opt/libexec/broray-light-web-publish/network.sh": "broray-light-web-network.sh",
+        "opt/libexec/broray-light-web-publish/policy.sh": "broray-light-web-publish-policy.sh",
+    }
+    for target, source in lifecycle_files.items():
+        archive.add_bytes(target, (repo / "packaging/opkg" / source).read_bytes(), 0o755)
     for name, payload, mode in updater:
         if name == "SHA256SUMS":
             continue
@@ -435,6 +444,13 @@ def main() -> int:
         "source": source_identity,
         "slot": slot_manifest,
         "updater": {"engine": "broray-light-updater/5-light1", "service": "S23broray-light-updater"},
+        "webPublication": {
+            "contract": "broray-light-keendns-web-publish/1",
+            "proxyName": "brolight",
+            "upstreamPort": 8080,
+            "policySha256": "e3e0e68b10ef69fce1c504f2689d1ecbd3f8b6b78ee6e7ab03d8ea73d63607dc",
+            "ownership": "exact-receipt-fail-closed",
+        },
         "xray": {
             "version": XRAY_VERSION,
             "architecture": ARCHITECTURE,

@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_AUTHORIZED_REMOTE_WEB_PUBLICATION_EXTENSION",
+  "revision": "p92-c07-physical-install-evidence-hashes",
+  "at": "2026-09-01T01:47:57+03:00",
+  "event": "process_failure",
+  "status": "FAILED_STOPPED_FIRST_ERROR",
+  "failureClass": "ASSUMED_SLOT_SHA256SUMS_PATH_ABSENT",
+  "firstError": {
+    "command": "sha256sum /opt/broray-light/current/SHA256SUMS",
+    "message": "No such file or directory"
+  },
+  "successfulBeforeFailure": {
+    "externalAuthLifecycle": "PASS_200_200_200_200_401",
+    "serversTreeSha256": "0a7958d582098f48f05b5578943a50169b9d619855268aade60076a53d61ec44",
+    "subscriptionsTreeSha256": "d008f1ef1878a66b2ac1fe2f14b727320dfcee43deb6dc9f87bb27962dee9ce1",
+    "xraySha256": "4b8af237444801bf17b3dc10a1c5c24581fbe3d433eba3d78c6c3a0da1df56fc",
+    "releaseJsonSha256": "08f2698537aa898c52e34920b17fc24b49c2218b36d2b23e864839a24877dcae"
+  },
+  "repositoryMutationDuringCommand": false,
+  "routerMutationDuringCommand": false,
+  "retryPolicy": "NO_RETRY_OF_P92_ASSUMED_SLOT_MANIFEST_PATH",
+  "nextRevision": "p93-c07-exact-slot-layout-and-install-checkpoint",
+  "nextExactAction": "ENUMERATE_THE_EXACT_CURRENT_SLOT_TOP_LEVEL_LAYOUT_HASH_THE_RESOLVED_MANIFEST_FILES_AND_SEAL_THE_C07_INSTALL_WEB_AUTH_CHECKPOINT"
+}

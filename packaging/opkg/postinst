@@ -40,12 +40,14 @@ ensure_link()
 
 mkdir -p "$APP_ROOT/releases" "$APP_ROOT/config/system" "$APP_ROOT/servers" \
     "$APP_ROOT/subscriptions" "$APP_ROOT/runtime" "$APP_ROOT/backup" "$APP_ROOT/run" \
+    "$APP_ROOT/run/web-new/sessions" \
     "$APP_ROOT/logs" "$APP_ROOT/tmp" "$ROOT_PREFIX/opt/var/lib/broray-light/operations" \
     "$ROOT_PREFIX/opt/var/lib/broray-light-updater" "$ROOT_PREFIX/opt/var/lock/broray-light" \
     "$ROOT_PREFIX/opt/var/lock/broray-light-updater"
 
 chmod 700 "$APP_ROOT/config" "$APP_ROOT/servers" "$APP_ROOT/subscriptions" \
-    "$APP_ROOT/backup" "$APP_ROOT/tmp" 2>/dev/null || true
+    "$APP_ROOT/backup" "$APP_ROOT/run/web-new" "$APP_ROOT/run/web-new/sessions" \
+    "$APP_ROOT/tmp" 2>/dev/null || true
 
 if [ -e "$XRAY_RUNTIME" ]; then
     if [ ! -f "$XRAY_RUNTIME" ] || [ -L "$XRAY_RUNTIME" ] || ! xray_executable "$XRAY_RUNTIME"; then
@@ -91,8 +93,13 @@ done
 
 chmod 755 "$APP_INIT" "$UPDATER_INIT" \
     "$ROOT_PREFIX/opt/bin/broray-light-updaterctl" \
+    "$ROOT_PREFIX/opt/bin/broray-light-web-publishctl" \
     "$ROOT_PREFIX/opt/libexec/broray-light-updater/broray-light-updater.sh" \
-    "$ROOT_PREFIX/opt/libexec/broray-light-updater/minisign"
+    "$ROOT_PREFIX/opt/libexec/broray-light-updater/minisign" \
+    "$ROOT_PREFIX/opt/libexec/broray-light-web-publish/broray-light-web-publish.sh" \
+    "$ROOT_PREFIX/opt/libexec/broray-light-web-publish/start-gate.sh" \
+    "$ROOT_PREFIX/opt/libexec/broray-light-web-publish/network.sh" \
+    "$ROOT_PREFIX/opt/libexec/broray-light-web-publish/policy.sh"
 
 if [ "${BRORAY_LIGHT_SKIP_SERVICE_START:-0}" != 1 ]; then
     "$UPDATER_INIT" start || fail 'Light updater control plane failed to start'

@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_AUTHORIZED_REMOTE_WEB_PUBLICATION_EXTENSION",
+  "revision": "p73-c05-busybox-ash-isolated-harness",
+  "at": "2026-09-01T01:16:59+03:00",
+  "event": "validation_failure",
+  "status": "FAILED_STOPPED_FIRST_ERROR",
+  "failureClass": "WINDOWS_BUSYBOX_LN_SYMLINK_PERMISSION_DENIED",
+  "firstError": {
+    "phase": "isolated postinst",
+    "command": "verified ash.exe control/postinst",
+    "returnCode": 1,
+    "stderr": "ln: isolated/system/opt/broray-light/current: Permission denied; ERROR: cannot activate initial app slot"
+  },
+  "passedBeforeFailure": [
+    "BUILD_A_B_BYTE_IDENTICAL",
+    "BUSYBOX_ASH_EXECUTION",
+    "JQ_EXECUTION"
+  ],
+  "validationRootPreserved": true,
+  "buildAUnchanged": true,
+  "buildBUnchanged": true,
+  "repositoryImplementationMutationDuringRun": false,
+  "routerMutation": false,
+  "retryPolicy": "NO_RETRY_OF_P73_WINDOWS_BUSYBOX_ASH_HOST_SEMANTICS",
+  "nextRevision": "p74-c05-prior-posix-validation-runtime-discovery",
+  "nextExactAction": "DISCOVER_AND_VERIFY_THE_POSIX_COMPATIBLE_SHELL_RUNTIME_USED_BY_PRIOR_SUCCESSFUL_R0009_ISOLATED_RUNS_THEN_RUN_A_FRESH_HARNESS_REVISION"
+}

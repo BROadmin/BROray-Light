@@ -1,0 +1,4 @@
+#!/opt/bin/ash
+
+exec /opt/libexec/broray-light-web-publish/broray-light-web-publish.sh "$@"
+

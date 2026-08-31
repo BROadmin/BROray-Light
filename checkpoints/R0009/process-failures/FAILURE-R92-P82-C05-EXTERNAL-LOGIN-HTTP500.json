@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_AUTHORIZED_REMOTE_WEB_PUBLICATION_EXTENSION",
+  "revision": "p82-c05-memory-only-external-auth-session-probe",
+  "at": "2026-09-01T01:34:38+03:00",
+  "event": "validation_failure",
+  "status": "FAILED_STOPPED_FIRST_ERROR",
+  "failureClass": "EXTERNAL_NATIVE_AUTH_LOGIN_RETURNED_HTTP_500",
+  "firstError": {
+    "endpoint": "https://brolight.tvervip.keenetic.link/api/login.cgi",
+    "transport": "PASS",
+    "httpStatus": 500,
+    "sessionCookieIssued": false
+  },
+  "subsequentProtectedRequestsExecuted": false,
+  "credentials": {
+    "source": "USER_PROVIDED_FOR_THIS_VALIDATION",
+    "printed": false,
+    "writtenToDisk": false,
+    "retained": false
+  },
+  "temporaryFilesCreated": false,
+  "routerMutationDuringProbe": "LOGIN_CGI_REQUEST_ONLY_NO_SESSION_COOKIE",
+  "repositoryMutationDuringProbe": false,
+  "retryPolicy": "NO_RETRY_OF_P82_UNDIAGNOSED_LOGIN_REVISION",
+  "nextRevision": "p83-c05-native-auth-and-session-create-diagnosis",
+  "nextExactAction": "READ_ONLY_INSPECT_NATIVE_AUTH_BRIDGE_SESSION_DIRECTORY_PERMISSIONS_AND_SAFE_LOGIN_ERROR_CODE_THEN_IDENTIFY_THE_FIRST_ROOT_CAUSE_BEFORE_ANY_FIX_OR_NEW_LOGIN_REVISION"
+}

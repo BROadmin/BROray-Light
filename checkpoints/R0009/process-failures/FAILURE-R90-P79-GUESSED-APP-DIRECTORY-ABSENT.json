@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_AUTHORIZED_REMOTE_WEB_PUBLICATION_EXTENSION",
+  "revision": "p79-c05-canonical-http-route-discovery",
+  "at": "2026-09-01T01:29:54+03:00",
+  "event": "process_failure",
+  "status": "FAILED_STOPPED_FIRST_ERROR",
+  "failureClass": "GUESSED_TOP_LEVEL_APP_DIRECTORY_ABSENT",
+  "firstError": {
+    "tool": "rg",
+    "returnCode": 2,
+    "path": "app",
+    "message": "The system cannot find the specified file"
+  },
+  "repositoryImplementationMutationDuringCommand": false,
+  "routerMutationDuringCommand": false,
+  "routerRemains": "C05_INSTALLED_AND_BROLIGHT_PROXY_PUBLISHED",
+  "retryPolicy": "NO_RETRY_OF_P79_GUESSED_APP_DIRECTORY",
+  "nextRevision": "p80-c05-source-file-map-route-discovery",
+  "nextExactAction": "ENUMERATE_THE_ACTUAL_REPOSITORY_FILE_MAP_WITH_RG_FILES_THEN_INSPECT_ONLY_THE_RESOLVED_SERVER_AND_WEB_SOURCE_PATHS"
+}

@@ -16,7 +16,7 @@ import tempfile
 from pathlib import Path, PurePosixPath
 
 RELEASE_ID = "0.1.0-r9"
-CANDIDATE_ID = "0.1.0-r0009c04"
+CANDIDATE_ID = "0.1.0-r0009c08"
 XRAY_SHA256 = "4b8af237444801bf17b3dc10a1c5c24581fbe3d433eba3d78c6c3a0da1df56fc"
 
 
@@ -89,6 +89,46 @@ def run(command: list[str], *, env: dict[str, str], expected: int = 0, cwd: Path
 def write_shim(path: Path, body: str) -> None:
     path.write_text(body, encoding="utf-8", newline="\n")
     os.chmod(path, 0o755)
+
+
+def prepare_fake_ndmc(tools: Path, python: Path) -> Path:
+    implementation = tools / "fake_ndmc.py"
+    implementation.write_text(
+        "import os, pathlib, sys\n"
+        "state=pathlib.Path(os.environ['BRORAY_LIGHT_FAKE_NDMC_STATE']); state.mkdir(parents=True,exist_ok=True)\n"
+        "args=sys.argv[1:]; cmd=args[1] if len(args)==2 and args[0]=='-c' else ''\n"
+        "with (state/'commands.log').open('a',encoding='utf-8',newline='\\n') as stream: stream.write(cmd+'\\n')\n"
+        "fail=os.environ.get('BRORAY_LIGHT_FAKE_NDMC_FAIL_COMMAND','')\n"
+        "if fail and cmd==fail: raise SystemExit(1)\n"
+        "def remove(name):\n"
+        " p=state/name\n"
+        " if p.exists(): p.unlink()\n"
+        "if cmd=='show ndns':\n"
+        " print('             name: tvervip'); print('           domain: keenetic.link'); print('          updated: yes'); print('           access: cloud'); raise SystemExit(0)\n"
+        "if cmd=='show running-config':\n"
+        " if (state/'proxy').exists():\n"
+        "  print('ip http proxy brolight'); print('    upstream http '+(state/'host').read_text(encoding='utf-8').strip()+' 8080')\n"
+        "  if (state/'domain').exists(): print('    domain ndns')\n"
+        "  if (state/'ssl').exists(): print('    ssl redirect')\n"
+        "  if (state/'security').exists(): print('    security-level public')\n"
+        "  print('!')\n"
+        " raise SystemExit(0)\n"
+        "if cmd=='ip http proxy brolight': (state/'proxy').write_text('1\\n',encoding='utf-8'); raise SystemExit(0)\n"
+        "if cmd.startswith('ip http proxy brolight upstream http '):\n"
+        " parts=cmd.split(); (state/'host').write_text(parts[6]+'\\n',encoding='utf-8'); raise SystemExit(0)\n"
+        "if cmd=='ip http proxy brolight domain ndns': (state/'domain').write_text('1\\n',encoding='utf-8'); raise SystemExit(0)\n"
+        "if cmd=='ip http proxy brolight ssl redirect': (state/'ssl').write_text('1\\n',encoding='utf-8'); raise SystemExit(0)\n"
+        "if cmd=='ip http proxy brolight security-level public': (state/'security').write_text('1\\n',encoding='utf-8'); raise SystemExit(0)\n"
+        "if cmd=='no ip http proxy brolight':\n"
+        " [remove(name) for name in ('proxy','host','domain','ssl','security')]; raise SystemExit(0)\n"
+        "if cmd=='system configuration save': raise SystemExit(0)\n"
+        "raise SystemExit(126)\n",
+        encoding="utf-8",
+        newline="\n",
+    )
+    wrapper = tools / "ndmc"
+    write_shim(wrapper, f"#!/bin/sh\nexec '{posix(python)}' '{posix(implementation)}' \"$@\"\n")
+    return wrapper
 
 
 def prepare_tools(root: Path, dash: Path, jq: Path, minisign: Path, python: Path) -> tuple[dict[str, str], Path]:
@@ -254,6 +294,27 @@ def main() -> int:
     extract_tar(members["control.tar.gz"], control_root)
     gates["packageCarrierLayout"] = "PASS"
 
+    web_controller = system_root / "opt/libexec/broray-light-web-publish/broray-light-web-publish.sh"
+    web_network = system_root / "opt/libexec/broray-light-web-publish/network.sh"
+    web_policy = system_root / "opt/libexec/broray-light-web-publish/policy.sh"
+    web_start_gate = system_root / "opt/libexec/broray-light-web-publish/start-gate.sh"
+    web_ctl = system_root / "opt/bin/broray-light-web-publishctl"
+    if not all(path.is_file() for path in (web_controller, web_network, web_policy, web_start_gate, web_ctl)):
+        raise RuntimeError("package-owned KeenDNS WebUI publication payload is incomplete")
+    web_contract = web_controller.read_text(encoding="utf-8")
+    for fragment in (
+        "NAME='brolight'",
+        '"ip http proxy $NAME domain ndns"',
+        '"ip http proxy $NAME ssl redirect"',
+        '"ip http proxy $NAME security-level public"',
+        "OWNERSHIP_MISMATCH",
+        "transaction_fail",
+        "recovery_mark",
+    ):
+        if fragment not in web_contract:
+            raise RuntimeError(f"KeenDNS WebUI safety contract missing: {fragment}")
+    gates["webPublicationPackageLayout"] = "PASS"
+
     primary_init = (system_root / "opt/etc/init.d/S24broray-light").read_text(encoding="utf-8")
     init_contract = (
         "pid_owned()",
@@ -283,9 +344,55 @@ def main() -> int:
     env["BRORAY_LIGHT_XRAY_EXECUTABLE_HOOK"] = posix(verify_hook)
     dash = str(args.dash.resolve())
 
+    retry_state = root / "web-start-retry-count"
+    retry_root = root / "web-start-root"
+    (retry_root / "tmp").mkdir(parents=True)
+    retry_ctl = tools / "web-start-retry-ctl"
+    write_shim(
+        retry_ctl,
+        "#!/bin/sh\n"
+        "count=$(cat \"$BRORAY_LIGHT_WEB_START_TEST_STATE\" 2>/dev/null || echo 0)\n"
+        "count=$((count + 1)); printf '%s\\n' \"$count\" > \"$BRORAY_LIGHT_WEB_START_TEST_STATE\"\n"
+        "[ \"$count\" -ge 3 ] && exit 0\n"
+        "echo 'BRORAY_LIGHT_WEB_PUBLISH_ERROR:ensure-preflight:NDNS_UNAVAILABLE:test' >&2\n"
+        "exit 1\n",
+    )
+    retry_env = env.copy()
+    retry_env.update({
+        "BRORAY_ROOT": posix(retry_root),
+        "BRORAY_LIGHT_WEB_START_TEST_STATE": posix(retry_state),
+        "BRORAY_LIGHT_WEB_PUBLISH_RETRY_ATTEMPTS": "3",
+        "BRORAY_LIGHT_WEB_PUBLISH_RETRY_DELAY_SECONDS": "0",
+    })
+    run([dash, "-c", f". '{posix(web_start_gate)}'; broray_light_web_publication_start_gate '{posix(retry_ctl)}'"], env=retry_env)
+    if retry_state.read_text(encoding="utf-8").strip() != "3":
+        raise RuntimeError("transient WebUI publication boot retry did not converge on the bounded third attempt")
+    gates["webPublicationTransientBootRetry"] = "PASS"
+
+    permanent_state = root / "web-start-permanent-count"
+    permanent_ctl = tools / "web-start-permanent-ctl"
+    write_shim(
+        permanent_ctl,
+        "#!/bin/sh\n"
+        "count=$(cat \"$BRORAY_LIGHT_WEB_START_TEST_STATE\" 2>/dev/null || echo 0)\n"
+        "count=$((count + 1)); printf '%s\\n' \"$count\" > \"$BRORAY_LIGHT_WEB_START_TEST_STATE\"\n"
+        "echo 'BRORAY_LIGHT_WEB_PUBLISH_ERROR:ensure-preflight:OWNERSHIP_MISMATCH:test' >&2\n"
+        "exit 1\n",
+    )
+    permanent_env = retry_env.copy()
+    permanent_env["BRORAY_LIGHT_WEB_START_TEST_STATE"] = posix(permanent_state)
+    run([dash, "-c", f". '{posix(web_start_gate)}'; broray_light_web_publication_start_gate '{posix(permanent_ctl)}'"], env=permanent_env, expected=1)
+    if permanent_state.read_text(encoding="utf-8").strip() != "1":
+        raise RuntimeError("permanent WebUI ownership failure was retried instead of failing closed")
+    gates["webPublicationPermanentFailureNoRetry"] = "PASS"
+
     run([dash, posix(control_root / "preinst")], env=env)
     run([dash, posix(control_root / "postinst")], env=env)
     app_root = system_root / "opt/broray-light"
+    session_dir = app_root / "run/web-new/sessions"
+    if not session_dir.is_dir():
+        raise RuntimeError("clean install did not create the private WebUI session directory")
+    gates["webSessionDirectoryCleanInstall"] = "PASS"
     runtime = app_root / "runtime/xray"
     if sha256(runtime) != XRAY_SHA256 or not (app_root / "current").exists():
         raise RuntimeError("clean install contract failed")
@@ -296,6 +403,60 @@ def main() -> int:
         raise RuntimeError("rerun replaced verified Xray")
     gates["installerRerun"] = "PASS"
     gates["exactXrayRuntime"] = "PASS"
+
+    fake_ndmc = prepare_fake_ndmc(tools, args.python.resolve())
+    fake_state = root / "fake-ndmc-state"
+    fake_state.mkdir()
+    config_check = tools / "lighttpd-config-check"
+    write_shim(config_check, "#!/bin/sh\n[ -f \"$1\" ]\n")
+    web_env = env.copy()
+    web_env.update({
+        "BRORAY_LIGHT_WEB_TEST_MODE": "1",
+        "BRORAY_LIGHT_WEB_LAN_IP_OVERRIDE": "192.168.1.1",
+        "BRORAY_LIGHT_WEB_NDMC": posix(fake_ndmc),
+        "BRORAY_LIGHT_FAKE_NDMC_STATE": posix(fake_state),
+        "BRORAY_LIGHT_WEB_CONFIG_TEST_COMMAND": posix(config_check),
+        "BRORAY_LIGHT_WEB_VERIFY_DELAY_SECONDS": "0",
+    })
+    lighttpd_config = app_root / "config/lighttpd.conf"
+    owner = app_root / "config/web-publish.json"
+    baseline_config_sha = sha256(lighttpd_config)
+    web_env["BRORAY_LIGHT_FAKE_NDMC_FAIL_COMMAND"] = "ip http proxy brolight ssl redirect"
+    run([dash, posix(web_controller), "ensure"], env=web_env, expected=1)
+    if sha256(lighttpd_config) != baseline_config_sha or owner.exists() or (fake_state / "proxy").exists():
+        raise RuntimeError("failed WebUI publication did not roll back config, receipt and proxy state")
+    if (app_root / "config/web-publish-recovery-required.json").exists():
+        raise RuntimeError("successful publication rollback left a recovery marker")
+    gates["webPublicationForcedRollback"] = "PASS"
+
+    web_env.pop("BRORAY_LIGHT_FAKE_NDMC_FAIL_COMMAND")
+    published = run([dash, posix(web_controller), "ensure"], env=web_env).stdout.strip()
+    if published != "https://brolight.tvervip.keenetic.link/":
+        raise RuntimeError(f"unexpected isolated KeenDNS URL: {published}")
+    if 'server.bind = "192.168.1.1"' not in lighttpd_config.read_text(encoding="utf-8"):
+        raise RuntimeError("successful publication did not bind Light WebUI to the exact private LAN address")
+    receipt = json.loads(owner.read_text(encoding="utf-8"))
+    if receipt.get("owner") != "BROray-Light" or receipt.get("publicFqdn") != "brolight.tvervip.keenetic.link":
+        raise RuntimeError("WebUI publication receipt identity is invalid")
+    if run([dash, posix(web_controller), "status"], env=web_env).stdout.strip() != published:
+        raise RuntimeError("WebUI publication status does not reproduce the public URL")
+    gates["webPublicationCleanEnsure"] = "PASS"
+
+    publication_identity = (sha256(lighttpd_config), sha256(owner), (fake_state / "commands.log").stat().st_size)
+    rerun = run([dash, posix(web_controller), "ensure"], env=web_env).stdout.strip()
+    if rerun != published or sha256(lighttpd_config) != publication_identity[0] or sha256(owner) != publication_identity[1]:
+        raise RuntimeError("same-state WebUI publication ensure was not deterministic")
+    gates["webPublicationRerunNoOp"] = "PASS"
+
+    (fake_state / "host").write_text("192.168.1.2\n", encoding="utf-8", newline="\n")
+    before_foreign_config = sha256(lighttpd_config)
+    before_foreign_owner = sha256(owner)
+    run([dash, posix(web_controller), "ensure"], env=web_env, expected=1)
+    if sha256(lighttpd_config) != before_foreign_config or sha256(owner) != before_foreign_owner:
+        raise RuntimeError("foreign WebUI publication state was mutated")
+    (fake_state / "host").write_text("192.168.1.1\n", encoding="utf-8", newline="\n")
+    run([dash, posix(web_controller), "status"], env=web_env)
+    gates["webPublicationForeignOwnershipFailClosed"] = "PASS"
 
     conflict_root = root / "conflict-system"
     (conflict_root / "opt/broray").mkdir(parents=True)

@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_AUTHORIZED_REMOTE_WEB_PUBLICATION_EXTENSION",
+  "revision": "p115-ephemeral-private-signing-key-destruction",
+  "at": "2026-09-01T02:42:59+03:00",
+  "event": "process_failure",
+  "status": "FAILED_STOPPED_FIRST_ERROR",
+  "failureClass": "LOCAL_SAFETY_POLICY_REJECTED_COMPOUND_OVERWRITE_DELETE",
+  "firstError": {
+    "phase": "ephemeral private signing key destruction",
+    "message": "The compound PowerShell overwrite-and-delete command was rejected by local safety policy before process creation"
+  },
+  "validatedTarget": {
+    "path": "C:\\Users\\Администратор\\AppData\\Local\\Temp\\broray-light-r0009-c05-signing-52b8f0cf015c4f4d8ce98ae27918fc72\\release.key",
+    "bytes": 264,
+    "insideLocalTemp": true,
+    "exactFilename": "release.key"
+  },
+  "keyModified": false,
+  "keyDeleted": false,
+  "repositoryMutationDuringFailedCommand": false,
+  "routerMutation": false,
+  "retryPolicy": "NO_RETRY_OF_P115_COMPOUND_OVERWRITE_DELETE",
+  "nextRevision": "p116-ephemeral-private-signing-key-exact-delete",
+  "nextExactAction": "DELETE_ONLY_THE_PREVALIDATED_EXACT_RELEASE_KEY_WITH_REMOVE_ITEM_LITERALPATH_THEN_VERIFY_ABSENCE"
+}

@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_AUTHORIZED_REMOTE_WEB_PUBLICATION_EXTENSION",
+  "revision": "p64-c05-static-syntax-default-path",
+  "at": "2026-09-01T00:56:03+03:00",
+  "event": "process_failure",
+  "status": "FAILED_STOPPED_FIRST_ERROR",
+  "failureClass": "DASH_VALIDATOR_NOT_IN_CURRENT_PATH",
+  "firstError": {
+    "tool": "Get-Command",
+    "command": "dash.exe",
+    "message": "The term dash.exe is not recognized"
+  },
+  "shellFilesInterpreted": 0,
+  "repositoryImplementationMutationDuringGate": false,
+  "routerMutation": false,
+  "retryPolicy": "NO_RETRY_OF_P64_DEFAULT_PATH_LOOKUP",
+  "nextRevision": "p65-resolve-existing-r0009-dash-runtime-and-run-static-gate",
+  "nextExactAction": "LOCATE_THE_PREVIOUSLY_USED_DASH_RUNTIME_BY_READ_ONLY_FILESYSTEM_SEARCH_THEN_RUN_ONE_STATIC_GATE_WITH_THE_EXPLICIT_PATH"
+}

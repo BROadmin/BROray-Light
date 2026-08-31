@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_AUTHORIZED_REMOTE_WEB_PUBLICATION_EXTENSION",
+  "revision": "p61-native-keendns-contract-discovery",
+  "at": "2026-09-01T00:41:55+03:00",
+  "status": "PASS_READY_FOR_IMPLEMENTATION",
+  "pinnedDonor": {
+    "releaseIndexUrl": "https://api.brovibe.cloud/releases/stable/broray/release.json",
+    "releaseIndexSha256": "2b376932d7e7d7a773e1454012a512d382014890f514e3181843fa24689e11f1",
+    "applicationArchiveSha256": "69679f6d7339b856faf28f69cb1800254984e5400201fe97247011ab166c3f85",
+    "webPublishPath": "app/lib/web-publish.sh",
+    "webPublishBytes": 33559,
+    "webPublishSha256": "d27c30f73146d9d9b311d05589218aab87d222fee70c21169a468eafdc929ea0",
+    "writePolicySha256": "5bccaee24390ea9d9cc9467c141d68b03a4504ec27533edda086bfc2dc6445b9",
+    "safetySemantics": [
+      "closed ndmc command grammar",
+      "exact scoped running-config ownership",
+      "receipt-bound adoption refusal",
+      "save convergence",
+      "rollback and recovery marker"
+    ]
+  },
+  "routerPrecondition": {
+    "ndnsName": "tvervip",
+    "ndnsDomain": "keenetic.link",
+    "ndnsAccess": "cloud",
+    "ndnsUpdated": true,
+    "httpProxyObjectCount": 0,
+    "privateLanInterface": "Bridge0",
+    "privateLanAddress": "192.168.1.1",
+    "lighttpdConfigSha256": "816aed2ab8fe59092d31a1cb1f80fe714cc31f8fe6ece45e5dfde09888bcc661",
+    "lighttpdConfigMatchesCanonicalLoopbackSeed": true,
+    "routerMutationPerformed": false
+  },
+  "implementationBoundary": {
+    "canonicalR0008SourceMutation": false,
+    "packageOwnedLifecycleOnly": true,
+    "proxyName": "brolight",
+    "upstreamScheme": "http",
+    "upstreamPort": 8080,
+    "bindMigrationRequiresExactKnownSeedOrOwnedReceipt": true,
+    "nativeAuthenticationMustRemain": true,
+    "foreignOrAmbiguousOwnership": "FAIL_CLOSED"
+  },
+  "candidateReady": false,
+  "nextExactAction": "IMPLEMENT_C05_PACKAGE_OWNED_LIGHT_WEB_PUBLICATION_POLICY_CONTROLLER_INIT_AND_EXACT_BIND_MIGRATION_WITH_ISOLATED_TESTS"
+}

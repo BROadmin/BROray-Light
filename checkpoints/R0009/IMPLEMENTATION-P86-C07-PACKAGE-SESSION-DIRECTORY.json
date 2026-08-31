@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_AUTHORIZED_REMOTE_WEB_PUBLICATION_EXTENSION",
+  "revision": "p86-c07-package-lifecycle-only-session-directory-fix",
+  "at": "2026-09-01T01:39:47+03:00",
+  "status": "IMPLEMENTED_PENDING_BUILD_AND_VALIDATION",
+  "candidateId": "0.1.0-r0009c07",
+  "corrects": [
+    "checkpoints/R0009/physical-validation/DIAGNOSIS-P83-C05-SESSION-DIRECTORY-MISSING.json",
+    "checkpoints/R0009/process-failures/FAILURE-R93-P85-C06-CANONICAL-SOURCE-IDENTITY-MISMATCH.json"
+  ],
+  "canonicalSource": {
+    "commit": "684b27bdb53e545047419baa87c63dd86dffa469",
+    "files": 121,
+    "logicalBytes": 627326,
+    "status": "PASS_UNCHANGED"
+  },
+  "packageLifecycleContract": {
+    "postinstCreatesSessionDirectory": true,
+    "primaryStartCreatesSessionDirectory": true,
+    "privateMode": "0700",
+    "isolatedCleanInstallGateAdded": true
+  },
+  "sha256": {
+    "canonicalRuntimePrepare": "0eea5750c71d5c263ccdb2bb77133199cc5b32cff118c88b5833d5db1be19472",
+    "postinst": "b31fa3794bef64366a35e74315418de726744f2a36c472f13ee7a1ebe108b77c",
+    "primaryInit": "d876f6aad883daea385e11c463d6eee4d6e58722509d87f44c130153fbb5c6a0",
+    "builder": "83dfdb656b6150a2f49d25eed8bfbf218727d5f1561f629c3dc49b49a3e9e9ec",
+    "testHarness": "e15ded8aee0807c338e5b488e0c974e57ceafd192cf9ecbef501ebf1b7da1fad",
+    "webPolicy": "17fcf4dfcfab49f591a2ec643ff7dc42e8606d8d4d6b622de0742e90843d2df5"
+  },
+  "staticValidation": {
+    "canonicalSourceIdentity": "PASS",
+    "pythonCompile": "PASS_2_OF_2",
+    "gitDashSyntax": "PASS_3_OF_3",
+    "busyboxAshSyntax": "PASS_3_OF_3",
+    "c07PolicyIdentity": "PASS"
+  },
+  "routerMutation": false,
+  "nextExactAction": "BUILD_C07_A_AND_INDEPENDENT_C07_B_THEN_RUN_THE_FULL_ISOLATED_HARNESS"
+}

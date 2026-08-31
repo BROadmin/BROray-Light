@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_AUTHORIZED_REMOTE_WEB_PUBLICATION_EXTENSION",
+  "revision": "p97-c07-downgrade-refusal",
+  "at": "2026-09-01T01:55:39+03:00",
+  "status": "PASS_RC20",
+  "installedReleaseId": "0.1.0-r10",
+  "signedAvailableReleaseId": "0.1.0-r9",
+  "relation": "older",
+  "returnCode": 20,
+  "state": "error",
+  "stageResult": "decision",
+  "errorCode": "DOWNGRADE_REFUSED",
+  "currentBefore": "releases/0.1.0-r10",
+  "currentAfter": "releases/0.1.0-r10",
+  "currentMutated": false,
+  "primaryServiceStatus": "PASS",
+  "webPublicationStatus": "https://brolight.tvervip.keenetic.link/",
+  "nextExactAction": "RESTORE_THE_R10_FIXTURE_TO_BACKUP_PREPARE_R8_AND_FORCE_TARGET_R9_HEALTH_FAILURE_REQUIRE_AUTOMATIC_ROLLBACK_WITH_WEB_PUBLICATION_HEALTHY"
+}

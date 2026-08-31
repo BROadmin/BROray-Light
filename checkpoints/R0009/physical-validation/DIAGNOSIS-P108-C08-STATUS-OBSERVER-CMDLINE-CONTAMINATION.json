@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_AUTHORIZED_REMOTE_WEB_PUBLICATION_EXTENSION",
+  "revision": "p108-c08-postboot-status-observer-diagnosis",
+  "at": "2026-09-01T02:33:48+03:00",
+  "status": "ROOT_CAUSE_CONFIRMED_CANDIDATE_UNCHANGED",
+  "failureCheckpoint": "checkpoints/R0009/process-failures/FAILURE-R98-P107-C08-POSTBOOT-STATUS-FAILS-WITH-LIVE-PROCESSES.json",
+  "observations": {
+    "daemonPidFile": 1918,
+    "daemonCmdline": "/opt/bin/ash /opt/broray-light/bin/broray-lightd",
+    "lighttpdPidFile": 1414,
+    "lighttpdCmdline": "/opt/sbin/lighttpd -f /opt/broray-light/config/lighttpd.conf",
+    "daemonOwnedCount": 1,
+    "lighttpdOwnedCount": 1,
+    "publicationStatusReturnCode": 0,
+    "publicationUrl": "https://brolight.tvervip.keenetic.link/"
+  },
+  "controlledReproduction": {
+    "atomicPrimaryStatusReturnCode": 0,
+    "compoundParentContainingBothOwnershipMarkersReturnCode": 1,
+    "reproduced": true
+  },
+  "rootCause": "P107_COMPOUND_REMOTE_OBSERVER_COMMANDLINE_CONTAINED_BOTH_PROCESS_OWNERSHIP_MARKERS_AND_WAS_COUNTED_BY_OWNED_COUNT_PROC_SCAN",
+  "candidateDefect": false,
+  "candidateId": "0.1.0-r0009c08",
+  "candidateMutation": false,
+  "routerMutation": false,
+  "correctedValidationContract": "RUN_PRIMARY_STATUS_AS_AN_ATOMIC_SSH_COMMAND_WITHOUT_OWNERSHIP_MARKERS_IN_THE_REMOTE_PARENT_COMMANDLINE_THEN_RUN_OTHER_OBSERVATIONS_IN_SEPARATE_COMMANDS",
+  "nextExactAction": "RUN_P109_ATOMIC_POSTBOOT_PRIMARY_STATUS_THEN_COMPLETE_EXTERNAL_HTTPS_AUTH_PERSISTENCE_OWNERSHIP_AND_REBOOT_ACCEPTANCE_PROBES_AS_SEPARATE_COMMANDS"
+}

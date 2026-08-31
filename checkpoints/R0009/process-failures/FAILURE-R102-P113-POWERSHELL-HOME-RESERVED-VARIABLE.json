@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_AUTHORIZED_REMOTE_WEB_PUBLICATION_EXTENSION",
+  "revision": "p113-c08-final-postboot-validation",
+  "at": "2026-09-01T02:40:16+03:00",
+  "event": "process_failure",
+  "status": "FAILED_STOPPED_FIRST_ERROR",
+  "failureClass": "POWERSHELL_RESERVED_HOME_VARIABLE_COLLISION",
+  "firstError": {
+    "phase": "external unauthenticated HTTP probe",
+    "message": "PowerShell variable names are case-insensitive and rejected assignment to $home because $HOME is read-only"
+  },
+  "passedBeforeFailure": {
+    "atomicRemotePrimaryStatusReturnCode": 0,
+    "atomicRemoteUpdaterStatusReturnCode": 0,
+    "atomicRemotePublicationStatusReturnCode": 0,
+    "localHttpStatuses": "200,200,401",
+    "sessionFilesBeforeAuth": 0,
+    "sessionDirectoriesMode": "0700",
+    "recoveryMarkerAbsent": true,
+    "transactionMarkerAbsent": true,
+    "fullBROrayPackageAbsent": true,
+    "fullBROrayRootAbsent": true,
+    "routesViaProxy0": 0,
+    "brolightProxyBlockExact": true,
+    "externalRootRequestCompleted": true
+  },
+  "credentialsSent": false,
+  "sessionCreated": false,
+  "candidateMutation": false,
+  "routerMutation": false,
+  "retryPolicy": "NO_RETRY_OF_P113_RESERVED_VARIABLE_REVISION",
+  "nextRevision": "p114-c08-final-postboot-external-auth-validation",
+  "nextExactAction": "RUN_MEMORY_ONLY_EXTERNAL_AUTH_LIFECYCLE_WITH_NONRESERVED_VARIABLE_NAMES_THEN_VERIFY_ZERO_SESSION_FILES"
+}

@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_AUTHORIZED_REMOTE_WEB_PUBLICATION_EXTENSION",
+  "revision": "p76-c05-transfer-and-identity-verification",
+  "at": "2026-09-01T01:25:24+03:00",
+  "event": "process_failure",
+  "status": "FAILED_STOPPED_FIRST_ERROR",
+  "failureClass": "ROUTER_BUSYBOX_STAT_C_UNSUPPORTED",
+  "firstError": {
+    "command": "/opt/bin/stat -c %s transferred.ipk",
+    "returnCode": 1,
+    "message": "stat: invalid option -- c"
+  },
+  "successfulBeforeFailure": {
+    "candidateTransferred": true,
+    "routerSha256": "37433c9ae877896eed8797074b2afa6453fe7ca2219f2073f089ff9d764d0162",
+    "expectedSha256": "37433c9ae877896eed8797074b2afa6453fe7ca2219f2073f089ff9d764d0162",
+    "sha256Match": true
+  },
+  "packageInstallStarted": false,
+  "routerMutation": "TEMPORARY_CANDIDATE_COPY_ONLY",
+  "repositoryImplementationMutationDuringCommand": false,
+  "retryPolicy": "NO_RETRY_OF_P76_STAT_C_SIZE_PROBE",
+  "nextRevision": "p77-c05-wc-size-verification-and-opkg-install",
+  "nextExactAction": "VERIFY_THE_ALREADY_TRANSFERRED_EXACT_IPK_SIZE_WITH_WC_C_THEN_INSTALL_IT_WITH_OPKG"
+}

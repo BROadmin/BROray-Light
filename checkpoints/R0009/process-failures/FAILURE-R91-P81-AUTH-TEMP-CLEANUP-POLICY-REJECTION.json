@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_AUTHORIZED_REMOTE_WEB_PUBLICATION_EXTENSION",
+  "revision": "p81-c05-external-auth-session-probe-with-temp-cleanup",
+  "at": "2026-09-01T01:33:06+03:00",
+  "event": "process_failure",
+  "status": "FAILED_STOPPED_FIRST_ERROR",
+  "failureClass": "LOCAL_SAFETY_POLICY_REJECTED_RECURSIVE_TEMP_CLEANUP",
+  "firstError": {
+    "phase": "process creation",
+    "message": "command rejected by local safety policy because it contained recursive Remove-Item"
+  },
+  "successfulBeforeFailure": {
+    "canonicalHomePath": "/home.html",
+    "canonicalProtectedApiPath": "/api/home/summary.cgi",
+    "localRootHttpStatus": 200,
+    "localHomeHttpStatus": 200,
+    "localUnauthenticatedApiHttpStatus": 401,
+    "externalRootHttpsStatus": 200,
+    "externalHomeHttpsStatus": 200,
+    "externalUnauthenticatedApiHttpsStatus": 401
+  },
+  "authRequestExecuted": false,
+  "temporaryFilesCreated": false,
+  "credentialsWritten": false,
+  "repositoryMutationDuringCommand": false,
+  "routerMutationDuringCommand": false,
+  "retryPolicy": "NO_RETRY_OF_P81_FILE_BACKED_AUTH_PROBE",
+  "nextRevision": "p82-c05-memory-only-external-auth-session-probe",
+  "nextExactAction": "RUN_LOGIN_SESSION_PROTECTED_LOGOUT_AND_POST_LOGOUT_PROBES_FULLY_IN_MEMORY_WITH_NO_TEMPORARY_FILES_OR_DELETE_OPERATIONS"
+}

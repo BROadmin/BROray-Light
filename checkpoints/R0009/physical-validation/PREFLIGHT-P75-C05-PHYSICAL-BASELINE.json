@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_AUTHORIZED_REMOTE_WEB_PUBLICATION_EXTENSION",
+  "revision": "p75-c05-physical-read-only-preflight",
+  "at": "2026-09-01T01:23:42+03:00",
+  "status": "PASS",
+  "routerAddress": "192.168.1.1",
+  "authentication": "PASS_EXISTING_ROOT_KEY",
+  "installed": {
+    "package": "broray-light 0.1.0-r0009c04",
+    "currentTarget": "releases/0.1.0-r9",
+    "versionState": "0.1.0-r9",
+    "xraySha256": "4b8af237444801bf17b3dc10a1c5c24581fbe3d433eba3d78c6c3a0da1df56fc",
+    "lighttpdConfigSha256": "816aed2ab8fe59092d31a1cb1f80fe714cc31f8fe6ece45e5dfde09888bcc661",
+    "primaryInitSha256": "7b14469c4c93f82311a47c7224b369fe009ae7f826b59cdbb6cdfe55683f2bb6",
+    "updaterInitSha256": "3be3c3291aa8118526ebea690576269a957174871067d1f5ca41dd1cf6565e57"
+  },
+  "services": {
+    "primaryStatusReturnCode": 0,
+    "updaterStatusReturnCode": 0
+  },
+  "persistentBaseline": {
+    "configTreeSha256": "0e95ff6ff2ffddac8b828fff3904ae001120bc875530c9b275ba67902b37a36b",
+    "serversTreeSha256": "0a7958d582098f48f05b5578943a50169b9d619855268aade60076a53d61ec44",
+    "subscriptionsTreeSha256": "d008f1ef1878a66b2ac1fe2f14b727320dfcee43deb6dc9f87bb27962dee9ce1"
+  },
+  "ownership": {
+    "fullBROrayPackageLines": 0,
+    "fullBROrayOwnedPaths": 0,
+    "fullBROrayProcesses": 0,
+    "routesViaProxy0": 0,
+    "runningConfigProxy0Lines": 0,
+    "existingBrolightProxyLines": 0,
+    "webPublicationReceipt": "ABSENT",
+    "webPublicationRecoveryMarker": "ABSENT"
+  },
+  "keenDns": {
+    "name": "tvervip",
+    "domain": "keenetic.link",
+    "updated": true,
+    "access": "cloud",
+    "expectedPublicUrl": "https://brolight.tvervip.keenetic.link/"
+  },
+  "routerMutation": false,
+  "nextExactAction": "TRANSFER_THE_EXACT_BUILD_A_C05_IPK_VERIFY_SHA256_ON_ROUTER_THEN_INSTALL_WITH_OPKG"
+}

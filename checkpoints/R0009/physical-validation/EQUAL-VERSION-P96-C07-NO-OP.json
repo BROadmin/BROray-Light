@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_AUTHORIZED_REMOTE_WEB_PUBLICATION_EXTENSION",
+  "revision": "p96-c07-equal-version-no-op",
+  "at": "2026-09-01T01:54:16+03:00",
+  "status": "PASS_NO_OP_SUCCESS",
+  "relation": "equal",
+  "returnCode": 0,
+  "state": "success",
+  "stageResult": "no-op",
+  "mutation": {
+    "currentTargetChanged": false,
+    "releaseJsonChanged": false,
+    "xrayChanged": false,
+    "lighttpdConfigChanged": false,
+    "webPublicationReceiptChanged": false
+  },
+  "identity": {
+    "currentTarget": "releases/0.1.0-r9",
+    "releaseJsonSha256": "08f2698537aa898c52e34920b17fc24b49c2218b36d2b23e864839a24877dcae",
+    "xraySha256": "4b8af237444801bf17b3dc10a1c5c24581fbe3d433eba3d78c6c3a0da1df56fc",
+    "lighttpdConfigSha256": "9a410db407103473b1816b21142fd0f19629fe385a66ab88b1396efce5dc4779",
+    "receiptSha256": "defa5839be8d3cb4098c0ee7dca42aace6469902bef8502c7d19529020f651a3"
+  },
+  "primaryServiceStatus": "PASS",
+  "webPublicationStatus": "https://brolight.tvervip.keenetic.link/",
+  "nextExactAction": "PREPARE_AN_R10_TEST_SLOT_RUN_THE_SIGNED_C07_DOWNGRADE_REFUSAL_GATE_REQUIRE_RC20_AND_ZERO_MUTATION"
+}

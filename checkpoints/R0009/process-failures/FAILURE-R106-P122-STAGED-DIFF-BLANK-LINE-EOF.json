@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009",
+  "revision": "p122-final-commit-preflight",
+  "at": "2026-09-01T02:55:34+03:00",
+  "event": "validation_failure",
+  "status": "FAILED_STOPPED_FIRST_ERROR",
+  "failureClass": "STAGED_DIFF_CHECK_BLANK_LINE_AT_EOF",
+  "firstError": {
+    "command": "git diff --cached --check",
+    "paths": [
+      "packaging/opkg/broray-light-web-network.sh",
+      "packaging/opkg/broray-light-web-publishctl"
+    ],
+    "message": "new blank line at EOF"
+  },
+  "candidateId": "0.1.0-r0009c08",
+  "candidateArtifactsAlreadyBoundToExactSourceBytes": true,
+  "candidateMutation": false,
+  "routerMutation": false,
+  "commitCreated": false,
+  "retryPolicy": "NO_SILENT_WHITESPACE_EDIT_OR_RETRY_OF_P122",
+  "nextRevision": "p123-artifact-bound-whitespace-diagnosis",
+  "nextExactAction": "CONFIRM_ONLY_THE_TWO_EXACT_EOF_WARNINGS_REMAIN_VERIFY_DASH_AND_BUILD_A_B_IDENTITIES_THEN_ACCEPT_ARTIFACT_BOUND_WHITESPACE_WITHOUT_CHANGING_C08_BYTES"
+}

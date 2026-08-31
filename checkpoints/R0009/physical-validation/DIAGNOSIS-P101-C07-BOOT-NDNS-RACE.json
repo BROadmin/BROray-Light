@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_AUTHORIZED_REMOTE_WEB_PUBLICATION_EXTENSION",
+  "revision": "p101-c07-postboot-primary-autostart-diagnosis",
+  "at": "2026-09-01T02:14:00+03:00",
+  "status": "ROOT_CAUSE_CONFIRMED",
+  "failureCheckpoint": "checkpoints/R0009/process-failures/FAILURE-R97-P100-C07-POSTBOOT-PRIMARY-SERVICE-DOWN.json",
+  "bootEvidence": {
+    "opkgDisk": "storage:/",
+    "opkgInitrc": "/opt/etc/init.d/rc.unslung",
+    "initrcInvoked": true,
+    "s24Invoked": true,
+    "systemLogTime": "2026-09-01T01:27:26+03:00",
+    "firstS24Error": "BRORAY_LIGHT_WEB_PUBLISH_ERROR:ensure-preflight:NDNS_UNAVAILABLE:KeenDNS cloud identity is unavailable or ambiguous",
+    "networkDhcpStartedImmediatelyAfter": true
+  },
+  "rootCause": "PRIMARY_INIT_HAS_A_SINGLE_PUBLICATION_ATTEMPT_BEFORE_KEENDNS_IDENTITY_BECOMES_AVAILABLE_DURING_BOOT",
+  "safetyBehavior": "CORRECT_FAIL_CLOSED_BUT_NO_BOUNDED_TRANSIENT_RETRY",
+  "architectureChangeRequired": false,
+  "correctiveRevision": "0.1.0-r0009c08",
+  "correction": "BOUNDED_RETRY_ONLY_FOR_EXACT_NDNS_UNAVAILABLE_OR_LAN_IP_UNAVAILABLE_BOOT_PREFLIGHT_ERRORS_OTHER_FAILURES_REMAIN_IMMEDIATE_FAIL_CLOSED",
+  "manualPrimaryStartAttempted": false,
+  "routerMutation": false,
+  "nextExactAction": "MANUALLY_START_C07_ONCE_WITH_NOW_AVAILABLE_KEENDNS_TO_RESTORE_SERVICE_THEN_IMPLEMENT_AND_VALIDATE_C08_BOUNDED_TRANSIENT_BOOT_RETRY"
+}

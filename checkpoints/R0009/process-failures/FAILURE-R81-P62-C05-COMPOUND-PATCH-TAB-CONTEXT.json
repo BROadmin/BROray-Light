@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_AUTHORIZED_REMOTE_WEB_PUBLICATION_EXTENSION",
+  "revision": "p62-c05-compound-implementation-patch",
+  "at": "2026-09-01T00:53:20+03:00",
+  "event": "process_failure",
+  "status": "FAILED_STOPPED_FIRST_ERROR",
+  "failureClass": "APPLY_PATCH_LITERAL_TAB_CONTEXT_MISMATCH",
+  "firstError": {
+    "tool": "apply_patch",
+    "path": "packaging/opkg/broray-light-web-publish.sh",
+    "message": "Failed to find expected serialization-profile comparison lines because the file contains a literal tab"
+  },
+  "partialPatchApplied": false,
+  "routerMutation": false,
+  "retryPolicy": "NO_RETRY_OF_P62_COMPOUND_PATCH",
+  "nextRevision": "p63-c05-small-actual-context-patches",
+  "nextExactAction": "PATCH_THE_LITERAL_TAB_COMPARISON_AND_EACH_BUILD_LIFECYCLE_TEST_FILE_IN_SEPARATE_SMALL_ACTUAL_CONTEXT_HUNKS"
+}

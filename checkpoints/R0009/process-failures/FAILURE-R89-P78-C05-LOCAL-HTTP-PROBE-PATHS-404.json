@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_AUTHORIZED_REMOTE_WEB_PUBLICATION_EXTENSION",
+  "revision": "p78-c05-physical-install-local-web-validation",
+  "at": "2026-09-01T01:28:10+03:00",
+  "event": "validation_failure",
+  "status": "FAILED_STOPPED_FIRST_ERROR",
+  "failureClass": "ASSUMED_LOCAL_HTTP_PROBE_PATHS_RETURNED_404",
+  "firstError": {
+    "phase": "post-install local WebUI and authentication probe",
+    "rootHttpStatus": 200,
+    "assumedHomePath": "/home",
+    "assumedHomeHttpStatus": 404,
+    "assumedSummaryPath": "/api/summary",
+    "assumedSummaryHttpStatus": 404
+  },
+  "passedBeforeFailure": {
+    "installedPackage": "broray-light 0.1.0-r0009c05",
+    "primaryService": "PASS",
+    "updaterService": "PASS",
+    "publicUrl": "https://brolight.tvervip.keenetic.link/",
+    "lighttpdBind": "192.168.1.1:8080",
+    "proxyBlockExact": true,
+    "receiptOwner": "BROray-Light",
+    "receiptSha256": "defa5839be8d3cb4098c0ee7dca42aace6469902bef8502c7d19529020f651a3",
+    "recoveryMarkerAbsent": true,
+    "fullBROrayOwnership": 0,
+    "routesViaProxy0": 0
+  },
+  "routerMutation": "C05_INSTALLED_AND_BROLIGHT_PROXY_PUBLISHED",
+  "repositoryImplementationMutationDuringProbe": false,
+  "retryPolicy": "NO_RETRY_OF_P78_ASSUMED_HTTP_PATHS",
+  "nextRevision": "p79-c05-canonical-http-route-discovery",
+  "nextExactAction": "READ_ONLY_DISCOVER_THE_CANONICAL_HOME_AND_AUTH_PROTECTED_API_ROUTES_FROM_THE_INSTALLED_C05_SOURCE_AND_SERVER_ROUTING_THEN_RUN_A_FRESH_VALIDATION_REVISION"
+}

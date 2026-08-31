@@ -5,6 +5,11 @@ DAEMON="$ROOT/bin/broray-lightd"
 DP="$ROOT/run/broray-lightd.pid"
 WP="$ROOT/run/lighttpd.pid"
 WEB_MARKER="-f $ROOT/config/lighttpd.conf"
+WEB_PUBLISH_CTL="${BRORAY_LIGHT_WEB_PUBLISH_CTL:-/opt/bin/broray-light-web-publishctl}"
+WEB_START_GATE_LIBRARY="${BRORAY_LIGHT_WEB_START_GATE_LIBRARY:-/opt/libexec/broray-light-web-publish/start-gate.sh}"
+
+[ -f "$WEB_START_GATE_LIBRARY" ] && [ ! -L "$WEB_START_GATE_LIBRARY" ] || exit 1
+. "$WEB_START_GATE_LIBRARY"
 
 pid_alive()
 {
@@ -148,7 +153,14 @@ start()
 {
     "$ROOT/bin/broray-runtime-prepare" || return 1
     mkdir -p "$ROOT/logs" "$ROOT/run" || return 1
-    start_web || return 1
+    mkdir -p "$ROOT/run/web-new/sessions" || return 1
+    chmod 700 "$ROOT/run/web-new" "$ROOT/run/web-new/sessions" || return 1
+    if role_running "$WP" "$WEB_MARKER" && [ "$(owned_count "$WEB_MARKER")" -eq 1 ]; then
+        "$WEB_PUBLISH_CTL" status >/dev/null || return 1
+    else
+        broray_light_web_publication_start_gate "$WEB_PUBLISH_CTL" || return 1
+        start_web || return 1
+    fi
     start_daemon || return 1
 }
 
@@ -172,7 +184,8 @@ status()
     role_running "$DP" "$DAEMON" &&
         role_running "$WP" "$WEB_MARKER" &&
         [ "$(owned_count "$DAEMON")" -eq 1 ] &&
-        [ "$(owned_count "$WEB_MARKER")" -eq 1 ]
+        [ "$(owned_count "$WEB_MARKER")" -eq 1 ] &&
+        "$WEB_PUBLISH_CTL" status >/dev/null
 }
 
 case "${1:-}" in

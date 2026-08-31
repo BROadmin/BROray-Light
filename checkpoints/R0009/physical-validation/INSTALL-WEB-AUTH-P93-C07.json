@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_AUTHORIZED_REMOTE_WEB_PUBLICATION_EXTENSION",
+  "revision": "p93-c07-exact-slot-layout-and-install-checkpoint",
+  "at": "2026-09-01T01:49:00+03:00",
+  "status": "PASS",
+  "candidate": {
+    "package": "broray-light 0.1.0-r0009c07",
+    "packageSha256": "1e1efa78c3643b4b7d7c97554b101f7210ee58479c44af235549d48541539276",
+    "currentTarget": "releases/0.1.0-r9",
+    "appSha256SumsSha256": "31d95ac3147876fe890e8769403a8c1db17b496079b19bfa6633dda0c7569b75",
+    "slotManifestSha256": "773d1446ac7c2bdbc043fb2a7e3886274a8ad031e93eee96cd1dad2f02a13765",
+    "releaseJsonSha256": "08f2698537aa898c52e34920b17fc24b49c2218b36d2b23e864839a24877dcae"
+  },
+  "services": {
+    "primaryStatusReturnCode": 0,
+    "updaterStatusReturnCode": 0,
+    "primaryInitSha256": "d876f6aad883daea385e11c463d6eee4d6e58722509d87f44c130153fbb5c6a0",
+    "updaterInitSha256": "3be3c3291aa8118526ebea690576269a957174871067d1f5ca41dd1cf6565e57"
+  },
+  "webPublication": {
+    "publicUrl": "https://brolight.tvervip.keenetic.link/",
+    "proxyBlockExact": true,
+    "upstream": "http://192.168.1.1:8080",
+    "domain": "ndns",
+    "sslRedirect": true,
+    "securityLevel": "public",
+    "controllerSha256": "91d995ddd5d0c3e806c965003675ecd4f682020b397d974a62904c99a690f61d",
+    "policySha256": "17fcf4dfcfab49f591a2ec643ff7dc42e8606d8d4d6b622de0742e90843d2df5",
+    "lighttpdConfigSha256": "9a410db407103473b1816b21142fd0f19629fe385a66ab88b1396efce5dc4779",
+    "receiptSha256": "defa5839be8d3cb4098c0ee7dca42aace6469902bef8502c7d19529020f651a3",
+    "recoveryMarkerAbsent": true
+  },
+  "httpAndAuth": {
+    "localRoot": 200,
+    "localHome": 200,
+    "localUnauthenticatedProtectedApi": 401,
+    "externalRoot": 200,
+    "externalHome": 200,
+    "externalUnauthenticatedProtectedApi": 401,
+    "externalLogin": 200,
+    "externalSession": 200,
+    "externalProtectedApi": 200,
+    "externalLogout": 200,
+    "externalPostLogoutProtectedApi": 401,
+    "sessionDirectoryMode": "0700",
+    "credentialsPrintedOrWritten": false
+  },
+  "persistenceBaseline": {
+    "settingsSha256": "7cb59866bede03da82b04ccb59d7e9b439f72f4d38d382c0bc409bc38827ba4d",
+    "serverAutoSwitchSha256": "6743d9128b6206747ef724fbe72ba9646ef027ba948962805baeb6b053d661cf",
+    "markerSha256": "ec87b9c2a4af1318f1cef581f33d8318e879365bb99f94b37bfa2c60de78b92d",
+    "serversTreeSha256": "0a7958d582098f48f05b5578943a50169b9d619855268aade60076a53d61ec44",
+    "subscriptionsTreeSha256": "d008f1ef1878a66b2ac1fe2f14b727320dfcee43deb6dc9f87bb27962dee9ce1",
+    "xraySha256": "4b8af237444801bf17b3dc10a1c5c24581fbe3d433eba3d78c6c3a0da1df56fc"
+  },
+  "safety": {
+    "fullBROrayPackageLines": 0,
+    "fullBROrayOwnedPaths": 0,
+    "routesViaProxy0": 0,
+    "nativeAuthenticationProtection": "PASS",
+    "diagnosticTestSessionsPendingExpiryOrCleanup": 2
+  },
+  "nextExactAction": "RUN_C07_SIGNED_PHYSICAL_UPDATE_EQUAL_DOWNGRADE_ROLLBACK_AND_REBOOT_PERSISTENCE_GATES_WITH_WEB_PUBLICATION_HEALTH_INCLUDED"
+}

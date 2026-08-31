@@ -1,24 +1,45 @@
 {
-  "baseCandidate": "3.0.0-r23c02",
-  "baseStable": "3.0.0-r23",
-  "builderSha256": "2339c55bd5d4cd40583cdea4f5d1eb3c7ff90ee20290979a8b552452ea30a72d",
-  "canonicalCheckpoint": "R0009",
-  "canonicalSourceCommit": "684b27bdb53e545047419baa87c63dd86dffa469",
-  "codexEntryPoint": "docs/CODEX-HANDOFF.md",
-  "candidateId": "0.1.0-r0009c04",
-  "candidateReady": true,
-  "candidateCheckpointSha256": "117d1a97578c2dee9c2c2d6a48f709be1bf551a13f627d6feed081c0e2e8d638",
-  "nextStage": "DEFINE_AND_AUTHORIZE_R0010_BEFORE_ANY_STABLE_PUBLICATION",
-  "product": "BROray-Light",
-  "remotePersistence": {
-    "receipt": "checkpoints/R0008/REMOTE-PERSISTENCE.json",
-    "status": "PASS",
-    "workflowRunId": "33388397818"
-  },
   "schemaVersion": 1,
-  "sourceBytes": 627326,
-  "sourceCheckpointSha256": "6686586ed777a7b0c37336d08143d388fdc301536b32c96eb35e8b20e5393953",
+  "product": "BROray-Light",
+  "stage": "R0009",
+  "status": "PASS",
+  "candidateReady": true,
+  "candidateId": "0.1.0-r0009c08",
+  "releaseId": "0.1.0-r9",
+  "baseStable": "3.0.0-r23",
+  "baseCandidate": "3.0.0-r23c02",
+  "canonicalSourceCommit": "684b27bdb53e545047419baa87c63dd86dffa469",
   "sourceFiles": 121,
+  "sourceBytes": 627326,
   "sourceSha256SumsSha256": "e056585d6a517ddbbbaebf08b68f17eb2d9d7ccd68d86df5cdee9fd4665f2419",
-  "status": "PASS_PHYSICAL_VALIDATION_COMPLETE"
+  "sourceCheckpointSha256": "6686586ed777a7b0c37336d08143d388fdc301536b32c96eb35e8b20e5393953",
+  "builderSha256": "3be4e440540415764b587e4fa9814b63236b3854c6738653a81a2b4c8b5b0321",
+  "candidateCheckpoint": "checkpoints/R0009/CHECKPOINT.json",
+  "candidateCheckpointSha256": "6aa1056a8f41ec59773787b565dd5c97bec2ec6db5181f1c5648e9e680791086",
+  "validationReceipt": "checkpoints/R0009/VALIDATION.json",
+  "validationSha256": "3431e69863eafc0a565de82b7d5254fe49fb4b04d0b0cbf4a597c6d9061440ea",
+  "isolatedValidation": {
+    "passed": 27,
+    "failed": 0,
+    "receipt": "checkpoints/R0009/ISOLATED-VALIDATION-P105-C08.json"
+  },
+  "buildReproducibility": {
+    "buildA": "dist/R0009/R0009c08-Build-A",
+    "buildB": "dist/R0009/R0009c08-Build-B",
+    "artifacts": 8,
+    "comparison": "BYTE_IDENTICAL"
+  },
+  "physicalValidation": {
+    "authorized": true,
+    "status": "PASS",
+    "installedPackage": "broray-light 0.1.0-r0009c08",
+    "currentTarget": "releases/0.1.0-r9",
+    "publicUrl": "https://brolight.tvervip.keenetic.link/",
+    "postbootReceipt": "checkpoints/R0009/physical-validation/POSTBOOT-P114-C08-AUTOSTART-WEB-AUTH-PERSISTENCE.json"
+  },
+  "privateSigningKeyDestroyed": true,
+  "publicReleasePublished": false,
+  "productionServerMutationPerformed": false,
+  "codexEntryPoint": "docs/CODEX-HANDOFF.md",
+  "nextStage": "DEFINE_AND_AUTHORIZE_R0010_BEFORE_ANY_STABLE_PUBLICATION"
 }

@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_AUTHORIZED_REMOTE_WEB_PUBLICATION_EXTENSION",
+  "revision": "p56-donor-index-default-schannel-fetch",
+  "at": "2026-09-01T00:31:26+03:00",
+  "event": "process_failure",
+  "status": "FAILED_STOPPED_FIRST_ERROR",
+  "failureClass": "WINDOWS_SCHANNEL_REVOCATION_CHECK_UNAVAILABLE",
+  "firstError": {
+    "tool": "curl.exe",
+    "returnCode": 35,
+    "message": "schannel: next InitializeSecurityContext failed: CRYPT_E_NO_REVOCATION_CHECK (0x80092012)"
+  },
+  "requestedUrl": "https://api.brovibe.cloud/releases/stable/broray/release.json",
+  "responseAccepted": false,
+  "repositoryImplementationMutation": false,
+  "routerMutation": false,
+  "retryPolicy": "NO_RETRY_OF_P56_DEFAULT_SCHANNEL_PROFILE",
+  "nextRevision": "p57-explicit-bounded-no-revoke-fetch-with-pinned-sha256",
+  "nextExactAction": "FETCH_WITH_CURL_SSL_NO_REVOKE_BOUNDED_TIMEOUT_REQUIRE_THE_PINNED_RELEASE_JSON_SHA256_THEN_EXTRACT_ONLY_THE_VERIFIED_DONOR_WEB_PUBLISH_FILE"
+}

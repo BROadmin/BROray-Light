@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_AUTHORIZED_REMOTE_WEB_PUBLICATION_EXTENSION",
+  "revision": "p66-c05-busybox-ash-static-gate",
+  "at": "2026-09-01T01:00:04+03:00",
+  "event": "implementation_failure",
+  "status": "FAILED_STOPPED_FIRST_ERROR",
+  "failureClass": "BUSYBOX_ASH_MULTILINE_CASE_PATTERN_SYNTAX",
+  "firstError": {
+    "file": "packaging/opkg/broray-light-web-publish.sh",
+    "line": 72,
+    "message": "syntax error: unexpected word (expecting closing parenthesis)"
+  },
+  "validator": {
+    "identity": "BusyBox v1.38.0-FRP-6075-g169694ebd",
+    "sha256": "7bfee530965315665044e6e01db58125f2763c8a39c2e72ba1a6beb6923e0e1f"
+  },
+  "passedBeforeFailure": [
+    "broray-light-web-publish-policy.sh",
+    "broray-light-web-network.sh"
+  ],
+  "remainingFilesNotInterpreted": true,
+  "routerMutation": false,
+  "retryPolicy": "NO_RETRY_OF_P66_SOURCE_REVISION",
+  "nextRevision": "p67-c05-portable-single-line-case-pattern",
+  "nextExactAction": "REWRITE_ONLY_THE_WRITE_COMMAND_CASE_PATTERN_AS_ONE_PORTABLE_ASH_PATTERN_LINE_THEN_RUN_A_FRESH_STATIC_GATE"
+}

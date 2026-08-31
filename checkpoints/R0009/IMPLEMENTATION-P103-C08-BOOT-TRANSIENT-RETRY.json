@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_AUTHORIZED_REMOTE_WEB_PUBLICATION_EXTENSION",
+  "revision": "p103-c08-bounded-transient-boot-publication-retry",
+  "at": "2026-09-01T02:17:16+03:00",
+  "status": "IMPLEMENTED_PENDING_BUILD_AND_VALIDATION",
+  "candidateId": "0.1.0-r0009c08",
+  "corrects": "checkpoints/R0009/physical-validation/DIAGNOSIS-P101-C07-BOOT-NDNS-RACE.json",
+  "contract": {
+    "defaultAttempts": 30,
+    "defaultDelaySeconds": 2,
+    "maximumAttempts": 60,
+    "maximumDelaySeconds": 10,
+    "retryableExactErrors": [
+      "NDNS_UNAVAILABLE",
+      "LAN_IP_AMBIGUOUS"
+    ],
+    "allOtherFailures": "IMMEDIATE_FAIL_CLOSED",
+    "foreignOwnershipRetry": false,
+    "errorCapturePath": "PRIVATE_PACKAGE_TMP_AND_REMOVED_ON_EVERY_EXIT"
+  },
+  "isolatedGatesAdded": [
+    "webPublicationTransientBootRetry",
+    "webPublicationPermanentFailureNoRetry"
+  ],
+  "canonicalSource": {
+    "commit": "684b27bdb53e545047419baa87c63dd86dffa469",
+    "files": 121,
+    "logicalBytes": 627326,
+    "status": "PASS_UNCHANGED"
+  },
+  "sha256": {
+    "startGate": "aa923584ef449c78b4844ef342d34af9e002f38b36735c2a28c96363d875fe9d",
+    "primaryInit": "d72cd4dd429b2d049a2263a47db7ee13df9cc180af69e382a918b02f9a8b78b4",
+    "postinst": "5129154c89c5b4713eb6b7ee9cae7c0075910540599f56666fec8f7eacb8ffd0",
+    "builder": "3be4e440540415764b587e4fa9814b63236b3854c6738653a81a2b4c8b5b0321",
+    "testHarness": "7f7afbf905e65088d966cc4d5ee6c6b879936e00d577247309571beddfbaf8ad",
+    "webPolicy": "bdfbb665185b6cec2a792aab6131e6c9820dcf86a30d3eda7b7bff98eaa92190"
+  },
+  "staticValidation": {
+    "canonicalSourceIdentity": "PASS",
+    "pythonCompile": "PASS_2_OF_2",
+    "gitDashSyntax": "PASS_4_OF_4",
+    "busyboxAshSyntax": "PASS_4_OF_4",
+    "c08PolicyIdentity": "PASS"
+  },
+  "routerMutation": false,
+  "nextExactAction": "BUILD_C08_A_AND_INDEPENDENT_C08_B_THEN_RUN_ALL_27_ISOLATED_GATES"
+}

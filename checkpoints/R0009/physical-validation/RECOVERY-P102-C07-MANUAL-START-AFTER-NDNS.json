@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_AUTHORIZED_REMOTE_WEB_PUBLICATION_EXTENSION",
+  "revision": "p102-c07-manual-start-after-ndns-ready",
+  "at": "2026-09-01T02:15:00+03:00",
+  "status": "PASS_SERVICE_RESTORED_CANDIDATE_STILL_REJECTED",
+  "primaryStartReturnCode": 0,
+  "primaryStatusReturnCode": 0,
+  "publicationStatus": "https://brolight.tvervip.keenetic.link/",
+  "localRootHttpStatus": 200,
+  "rootCauseConfirmedByRecovery": "SAME_C07_START_SUCCEEDS_ONCE_KEENDNS_IDENTITY_IS_AVAILABLE",
+  "candidateC07Accepted": false,
+  "routerMutation": "MANUAL_PRIMARY_SERVICE_START",
+  "nextExactAction": "IMPLEMENT_C08_EXACT_TRANSIENT_BOOT_RETRY_WITH_IMMEDIATE_FAIL_CLOSED_FOR_ALL_OTHER_PUBLICATION_FAILURES_ADD_ISOLATED_RETRY_CLASSIFICATION_GATES_THEN_REBUILD_A_B"
+}

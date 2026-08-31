@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_AUTHORIZED_REMOTE_WEB_PUBLICATION_EXTENSION",
+  "revision": "p95-c07-signed-r8-to-r9-update-with-web-health",
+  "at": "2026-09-01T01:53:30+03:00",
+  "status": "PASS",
+  "updater": {
+    "engine": "broray-light-updater/5-light1",
+    "checkReturnCode": 0,
+    "checkRelation": "newer",
+    "updateReturnCode": 0,
+    "updated": true,
+    "previousReleaseId": "0.1.0-r8",
+    "installedReleaseId": "0.1.0-r9",
+    "state": "success",
+    "stage": "complete",
+    "transactionPresentAfter": false
+  },
+  "installed": {
+    "package": "broray-light 0.1.0-r0009c07",
+    "currentTarget": "releases/0.1.0-r9",
+    "appSha256SumsSha256": "31d95ac3147876fe890e8769403a8c1db17b496079b19bfa6633dda0c7569b75",
+    "slotManifestSha256": "773d1446ac7c2bdbc043fb2a7e3886274a8ad031e93eee96cd1dad2f02a13765",
+    "releaseJsonSha256": "08f2698537aa898c52e34920b17fc24b49c2218b36d2b23e864839a24877dcae"
+  },
+  "webHealth": {
+    "publicationStatus": "https://brolight.tvervip.keenetic.link/",
+    "primaryServiceStatusReturnCode": 0,
+    "updaterServiceStatusReturnCode": 0,
+    "localRoot": 200,
+    "localHome": 200,
+    "localUnauthenticatedProtectedApi": 401,
+    "lighttpdConfigSha256": "9a410db407103473b1816b21142fd0f19629fe385a66ab88b1396efce5dc4779",
+    "receiptSha256": "defa5839be8d3cb4098c0ee7dca42aace6469902bef8502c7d19529020f651a3"
+  },
+  "persistence": {
+    "settingsSha256": "7cb59866bede03da82b04ccb59d7e9b439f72f4d38d382c0bc409bc38827ba4d",
+    "serverAutoSwitchSha256": "6743d9128b6206747ef724fbe72ba9646ef027ba948962805baeb6b053d661cf",
+    "markerSha256": "ec87b9c2a4af1318f1cef581f33d8318e879365bb99f94b37bfa2c60de78b92d",
+    "serversTreeSha256": "0a7958d582098f48f05b5578943a50169b9d619855268aade60076a53d61ec44",
+    "subscriptionsTreeSha256": "d008f1ef1878a66b2ac1fe2f14b727320dfcee43deb6dc9f87bb27962dee9ce1",
+    "xraySha256": "4b8af237444801bf17b3dc10a1c5c24581fbe3d433eba3d78c6c3a0da1df56fc",
+    "unchanged": true
+  },
+  "safety": {
+    "fullBROrayOwnership": 0,
+    "routesViaProxy0": 0
+  },
+  "nextExactAction": "RUN_THE_SIGNED_C07_EQUAL_VERSION_NO_OP_GATE_AND_REQUIRE_ZERO_SLOT_SERVICE_PUBLICATION_PERSISTENCE_AND_XRAY_MUTATION"
+}

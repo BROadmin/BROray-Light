@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_AUTHORIZED_REMOTE_WEB_PUBLICATION_EXTENSION",
+  "revision": "p117-ephemeral-private-signing-key-apply-patch-delete",
+  "at": "2026-09-01T02:44:23+03:00",
+  "status": "PASS",
+  "privateKey": {
+    "filename": "release.key",
+    "ephemeralTempDirectory": "broray-light-r0009-c05-signing-52b8f0cf015c4f4d8ce98ae27918fc72",
+    "bytesBeforeDeletion": 264,
+    "persistedInWorkspace": false,
+    "transferredToRouter": false,
+    "existsAfterDeletion": false,
+    "destroyed": true,
+    "recoverableThroughGit": false
+  },
+  "publicKey": {
+    "workspacePath": "updater/release.pub",
+    "sha256": "90063373f1c0137c76600b0c1eef7eb66685789b3714097c8f893a710c6628bb",
+    "preserved": true
+  },
+  "candidateOrRouterMutation": false,
+  "nextExactAction": "RUN_FINAL_LOCAL_ACCEPTANCE_ARTIFACT_SIGNATURE_MANIFEST_JSON_SIDECAR_AND_CANONICAL_SOURCE_VALIDATION_THEN_RESEAL_FINAL_RECORDS"
+}

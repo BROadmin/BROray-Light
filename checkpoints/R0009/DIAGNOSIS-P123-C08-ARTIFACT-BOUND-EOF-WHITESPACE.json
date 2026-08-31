@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009",
+  "revision": "p123-artifact-bound-whitespace-diagnosis",
+  "at": "2026-09-01T02:56:41+03:00",
+  "status": "ROOT_CAUSE_CONFIRMED_ACCEPTED_WITHOUT_CANDIDATE_MUTATION",
+  "failureCheckpoint": "checkpoints/R0009/process-failures/FAILURE-R106-P122-STAGED-DIFF-BLANK-LINE-EOF.json",
+  "rootCause": "TWO_SHELL_FILES_HAVE_A_TRAILING_EMPTY_LINE_ALREADY_BOUND_INTO_THE_BYTE_REPRODUCIBLE_C08_IPK",
+  "exactWarnings": [
+    "packaging/opkg/broray-light-web-network.sh:146: new blank line at EOF.",
+    "packaging/opkg/broray-light-web-publishctl:4: new blank line at EOF."
+  ],
+  "unexpectedWarnings": 0,
+  "dashSyntax": "PASS",
+  "workspaceAndC08IpkScriptBytes": "IDENTICAL",
+  "safetyImpact": "NONE",
+  "candidateMutation": false,
+  "candidateRebuildRequired": false,
+  "acceptanceDecision": "PRESERVE_EXACT_C08_BYTES_AND_ACCEPT_ONLY_THE_TWO_ENUMERATED_WHITESPACE_WARNINGS",
+  "nextExactAction": "RESEAL_FINAL_RECORDS_FOR_64_PRESERVED_PROCESS_FAILURES_STAGE_ALL_FILES_AND_COMMIT_WITH_EXACT_WARNING_ALLOWLIST"
+}

@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_AUTHORIZED_REMOTE_WEB_PUBLICATION_EXTENSION",
+  "revision": "p118-final-local-acceptance-validation",
+  "at": "2026-09-01T02:45:18+03:00",
+  "event": "validation_failure",
+  "status": "FAILED_STOPPED_FIRST_ERROR",
+  "failureClass": "REPOSITORY_PUBLIC_KEY_HASH_MISMATCH_WITH_RECORDED_SIGNING_IDENTITY",
+  "firstError": {
+    "path": "updater/release.pub",
+    "expectedSha256": "90063373f1c0137c76600b0c1eef7eb66685789b3714097c8f893a710c6628bb",
+    "observedSha256": "8ed24e39ac0934947bc85f4a81dccb5dd28b44e9eeee0a26fe3ab80f37cc0aa8"
+  },
+  "passedBeforeFailure": {
+    "canonicalSourceGitDiff": "PASS_UNCHANGED_FROM_684b27bdb53e545047419baa87c63dd86dffa469",
+    "buildAArtifactCount": 8,
+    "buildBArtifactCount": 8,
+    "buildAAndBuildBHashesEqual": true,
+    "candidatePackageSha256": "efc3fc67e792f1a783894a977b1c2abfa059d002e720ca9574bfe3ef6295c573"
+  },
+  "privateSigningKeyDestroyed": true,
+  "candidateMutation": false,
+  "routerMutation": false,
+  "retryPolicy": "NO_RETRY_OR_PUBLIC_KEY_MUTATION_BEFORE_P119_IDENTITY_AND_SIGNATURE_DIAGNOSIS",
+  "nextRevision": "p119-public-key-identity-and-signature-diagnosis",
+  "nextExactAction": "READ_ONLY_COMPARE_REPOSITORY_AND_EPHEMERAL_PUBLIC_KEYS_CHECK_GIT_DIFF_AND_VERIFY_BUILD_A_SIGNATURE_WITH_EACH_KEY_TO_IDENTIFY_THE_VALID_SIGNING_IDENTITY"
+}

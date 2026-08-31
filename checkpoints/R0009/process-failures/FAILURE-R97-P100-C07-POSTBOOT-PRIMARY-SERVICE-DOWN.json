@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_AUTHORIZED_REMOTE_WEB_PUBLICATION_EXTENSION",
+  "revision": "p100-c07-uptime-decrease-and-postboot-validation",
+  "at": "2026-09-01T02:09:58+03:00",
+  "event": "validation_failure",
+  "status": "FAILED_STOPPED_FIRST_ERROR",
+  "failureClass": "POSTBOOT_PRIMARY_SERVICE_NOT_RUNNING",
+  "firstError": {
+    "uptimeBeforeSeconds": 9100,
+    "uptimeAfterSeconds": 538,
+    "bootCycleProvenByUptimeDecrease": true,
+    "primaryServiceStatusReturnCode": 1,
+    "localWebHttpStatuses": "000,000,000"
+  },
+  "preservedAfterBoot": {
+    "package": "broray-light 0.1.0-r0009c07",
+    "currentTarget": "releases/0.1.0-r9",
+    "updaterServiceStatusReturnCode": 0,
+    "webPublicationReceiptStatus": "PASS",
+    "proxyBlockExact": true,
+    "persistenceAndXrayHashesUnchanged": true,
+    "testSessionFiles": 0,
+    "fullBROrayOwnership": 0,
+    "routesViaProxy0": 0,
+    "recoveryMarkerAbsent": true,
+    "updaterTransactionAbsent": true
+  },
+  "manualPrimaryStartAttempted": false,
+  "repositoryMutationDuringValidation": false,
+  "routerMutationDuringValidation": false,
+  "retryPolicy": "NO_RETRY_OR_MANUAL_START_BEFORE_P101_DIAGNOSIS",
+  "nextRevision": "p101-c07-postboot-primary-autostart-diagnosis",
+  "nextExactAction": "READ_ONLY_INSPECT_INIT_ENABLEMENT_BOOT_LOGS_PROCESSES_PIDFILES_AND_PUBLICATION_START_DEPENDENCIES_TO_IDENTIFY_THE_FIRST_AUTOSTART_FAILURE_CAUSE"
+}

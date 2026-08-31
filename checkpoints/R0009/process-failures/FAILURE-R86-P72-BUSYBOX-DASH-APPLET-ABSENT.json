@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_AUTHORIZED_REMOTE_WEB_PUBLICATION_EXTENSION",
+  "revision": "p72-c05-validation-shell-wrapper",
+  "at": "2026-09-01T01:15:11+03:00",
+  "event": "process_failure",
+  "status": "FAILED_STOPPED_FIRST_ERROR",
+  "failureClass": "BUSYBOX_DASH_APPLET_ABSENT",
+  "firstError": {
+    "command": "dash.exe -c echo DASH_OK",
+    "returnCode": 127,
+    "message": "dash: applet not found"
+  },
+  "validatedBinary": {
+    "sha256": "7bfee530965315665044e6e01db58125f2763c8a39c2e72ba1a6beb6923e0e1f",
+    "knownAvailableApplet": "ash"
+  },
+  "buildAUnchanged": true,
+  "buildBUnchanged": true,
+  "repositoryImplementationMutationDuringCommand": false,
+  "routerMutation": false,
+  "retryPolicy": "NO_RETRY_OF_P72_DASH_APPLET_NAME",
+  "nextRevision": "p73-c05-busybox-ash-wrapper",
+  "nextExactAction": "COPY_THE_SAME_VERIFIED_BUSYBOX_BINARY_AS_ASH_EXE_VERIFY_ASH_EXECUTION_THEN_RUN_THE_FULL_ISOLATED_HARNESS"
+}

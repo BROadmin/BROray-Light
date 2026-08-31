@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_AUTHORIZED_REMOTE_WEB_PUBLICATION_EXTENSION",
+  "revision": "p70-c05-build-a",
+  "at": "2026-09-01T01:11:00+03:00",
+  "status": "PASS",
+  "candidateId": "0.1.0-r0009c05",
+  "output": "dist/R0009/R0009c05-Build-A",
+  "artifacts": {
+    "broray-light-app-0.1.0-r0009c05.tar.gz": "8fb594ecda6aa6e9d7ef2dc367b144e9a1b90c07c2b5b2c7bc33f2242137b7dc",
+    "broray-light-updater-platform-5-light1.tar.gz": "3d06380f85849e1d267473e9970ce48e4cadf6eb042b4245c1f2289b39dd8224",
+    "broray-light_0.1.0-r0009c05_aarch64-3.10.ipk": "37433c9ae877896eed8797074b2afa6453fe7ca2219f2073f089ff9d764d0162",
+    "broray-light-install-0.1.0-r0009c05.sh": "6fd9b6fcf289767ccda5258c100021c154eddfc7cda44739ca27fe3c408f0581",
+    "release.json": "7c1ddfcc74d1a5a8c4dcd765c455f36b363d87e18cf08a00befedc4c23cedf9c",
+    "release.json.minisig": "c03a86693183e360bd4a4d369ae7fefcb6a50ecb781c878990855e3b43a3fc19",
+    "CANDIDATE-MANIFEST.json": "4892bbc9d1c477ee14bd61ac3bfe0253241e45a82383ca9e041c4338c67c510c",
+    "SHA256SUMS": "70e01d3a8838a4a9ad69f792497c9aa8bed73ee60ead3a5ee554d79bb6c07c41"
+  },
+  "signingIdentity": {
+    "publicKeySha256": "90063373f1c0137c76600b0c1eef7eb66685789b3714097c8f893a710c6628bb",
+    "privateKeyLocation": "EPHEMERAL_OUTSIDE_WORKSPACE",
+    "privateKeyContentRecorded": false
+  },
+  "routerMutation": false,
+  "nextExactAction": "RUN_INDEPENDENT_BUILD_B_FROM_THE_SAME_PINNED_INPUTS_AND_EPHEMERAL_SIGNING_IDENTITY"
+}

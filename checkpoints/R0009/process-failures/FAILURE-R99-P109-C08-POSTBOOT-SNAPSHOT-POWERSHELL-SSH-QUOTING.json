@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_AUTHORIZED_REMOTE_WEB_PUBLICATION_EXTENSION",
+  "revision": "p109-c08-atomic-postboot-validation",
+  "at": "2026-09-01T02:35:39+03:00",
+  "event": "process_failure",
+  "status": "FAILED_STOPPED_FIRST_ERROR",
+  "failureClass": "LOCAL_POWERSHELL_SSH_NESTED_QUOTING_BROKE_SNAPSHOT_COMMAND",
+  "firstError": {
+    "phase": "postboot immutable snapshot collection",
+    "exitCode": 1,
+    "message": "Local PowerShell parsed part of the intended remote pipeline and rejected BatchMode=yes as an outputFormat value"
+  },
+  "passedBeforeFailure": {
+    "atomicPrimaryStatusReturnCode": 0,
+    "atomicUpdaterStatusReturnCode": 0,
+    "atomicPublicationStatusReturnCode": 0,
+    "publicationUrl": "https://brolight.tvervip.keenetic.link/"
+  },
+  "candidateId": "0.1.0-r0009c08",
+  "candidateMutation": false,
+  "routerMutation": false,
+  "repositoryMutationDuringFailedCommand": false,
+  "retryPolicy": "NO_RETRY_OF_P109_COMPOUND_SNAPSHOT_COMMAND",
+  "nextRevision": "p110-c08-atomized-postboot-validation",
+  "nextExactAction": "RUN_EACH_POSTBOOT_SNAPSHOT_PROBE_AS_A_SIMPLE_INDEPENDENT_SSH_COMMAND_WITHOUT_NESTED_AWK_OR_COMPOUND_REMOTE_QUOTING"
+}

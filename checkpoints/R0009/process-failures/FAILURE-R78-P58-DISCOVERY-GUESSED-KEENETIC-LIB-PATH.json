@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_AUTHORIZED_REMOTE_WEB_PUBLICATION_EXTENSION",
+  "revision": "p58-light-runtime-discovery-guessed-path",
+  "at": "2026-09-01T00:34:07+03:00",
+  "event": "process_failure",
+  "status": "FAILED_STOPPED_FIRST_ERROR",
+  "failureClass": "DISCOVERY_GUESSED_FILE_PATH_ABSENT",
+  "firstError": {
+    "tool": "Get-Content",
+    "path": "src/app/lib/keenetic.sh",
+    "message": "Path does not exist"
+  },
+  "repositoryImplementationMutation": false,
+  "routerMutation": false,
+  "retryPolicy": "NO_RETRY_OF_P58_GUESSED_PATH_COMMAND",
+  "nextRevision": "p59-enumerated-light-runtime-discovery",
+  "nextExactAction": "ENUMERATE_REAL_LIGHT_LIB_AND_BIN_PATHS_WITH_RG_FILES_THEN_READ_ONLY_TRACE_LAN_IP_AND_KEENETIC_CONTROL_WITHOUT_GUESSED_FILENAMES"
+}

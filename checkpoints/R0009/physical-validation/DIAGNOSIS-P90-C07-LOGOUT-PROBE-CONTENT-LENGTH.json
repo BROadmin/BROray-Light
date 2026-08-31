@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_AUTHORIZED_REMOTE_WEB_PUBLICATION_EXTENSION",
+  "revision": "p90-c07-safe-auth-status-diagnosis",
+  "at": "2026-09-01T01:47:00+03:00",
+  "status": "ROOT_CAUSE_CONFIRMED",
+  "failureCheckpoint": "checkpoints/R0009/process-failures/FAILURE-R94-P89-C07-AUTH-LIFECYCLE-STATUS-TUPLE.json",
+  "safeStatusOnlyProbe": {
+    "login": 200,
+    "session": 200,
+    "protectedApi": 200,
+    "logout": 411,
+    "postLogoutProtectedApi": 200,
+    "transportReturnCodes": "ZERO_ALL"
+  },
+  "rootCause": "TEST_PROBE_USED_POST_WITHOUT_A_BODY_OR_CONTENT_LENGTH",
+  "serverBehavior": "LIGHTTPD_REJECTED_THE_REQUEST_WITH_411_BEFORE_LOGOUT_CGI_EXECUTION",
+  "productImplementationFailure": false,
+  "correctedProbe": "POST_AN_EXPLICIT_EMPTY_BODY_SO_CURL_SENDS_CONTENT_LENGTH_ZERO",
+  "credentialsPrinted": false,
+  "credentialsWrittenToDisk": false,
+  "sessionTokenPrinted": false,
+  "routerMutation": "AUTH_SESSION_DIAGNOSTIC_REQUESTS_ONLY",
+  "nextExactAction": "RUN_A_FRESH_MEMORY_ONLY_AUTH_LIFECYCLE_WITH_EXPLICIT_EMPTY_LOGOUT_BODY_AND_REQUIRE_200_200_200_401"
+}

@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_AUTHORIZED_REMOTE_WEB_PUBLICATION_EXTENSION",
+  "revision": "p99-c07-native-reboot-observation",
+  "at": "2026-09-01T02:08:33+03:00",
+  "event": "validation_failure",
+  "status": "FAILED_STOPPED_FIRST_ERROR",
+  "failureClass": "SSH_DOWN_TRANSITION_NOT_OBSERVED_WITHIN_BOUNDED_POLL",
+  "firstError": {
+    "uptimeBeforeSeconds": 9100,
+    "nativeRebootCommandReturnCode": 0,
+    "nativeResponse": "Core::System::RebootManager: Activated system reboot.",
+    "pollWindowSeconds": 180,
+    "pollIntervalSeconds": 5,
+    "sshDownObserved": false,
+    "acceptedPostBootUptimeCaptured": false
+  },
+  "repositoryMutationDuringPoll": false,
+  "routerMutation": "NATIVE_REBOOT_COMMAND_ACCEPTED",
+  "retryPolicy": "NO_RETRY_OF_P99_SSH_DOWN_TRANSITION_OBSERVER",
+  "nextRevision": "p100-c07-read-only-uptime-decrease-diagnosis",
+  "nextExactAction": "READ_ONLY_CAPTURE_CURRENT_UPTIME_AND_COMPARE_IT_TO_9100_IF_LOWER_TREAT_THE_REBOOT_AS_PROVEN_BY_UPTIME_DECREASE_OTHERWISE_STOP_AT_THE_REBOOT_BLOCKER"
+}

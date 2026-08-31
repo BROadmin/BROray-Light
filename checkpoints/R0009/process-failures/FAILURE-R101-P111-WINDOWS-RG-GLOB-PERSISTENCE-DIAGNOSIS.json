@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_AUTHORIZED_REMOTE_WEB_PUBLICATION_EXTENSION",
+  "revision": "p111-c08-persistence-layout-diagnosis",
+  "at": "2026-09-01T02:37:49+03:00",
+  "event": "process_failure",
+  "status": "FAILED_STOPPED_FIRST_ERROR",
+  "failureClass": "WINDOWS_RG_PATH_GLOB_INVALID",
+  "firstError": {
+    "phase": "local publication receipt path source search",
+    "message": "ripgrep rejected packaging/opkg/broray-light-web-* as an invalid Windows path glob"
+  },
+  "observedBeforeStop": {
+    "settingsPath": "/opt/broray-light/config/system/settings.json",
+    "serverAutoSwitchPath": "/opt/broray-light/config/system/server-auto-switch.json",
+    "persistenceMarkerPath": "/opt/broray-light/config/R0009-PERSISTENCE.txt",
+    "xrayPath": "/opt/broray-light/runtime/xray",
+    "serverMarkerPath": "/opt/broray-light/servers/R0009-PERSISTENCE.txt",
+    "subscriptionMarkerPath": "/opt/broray-light/subscriptions/R0009-PERSISTENCE.txt"
+  },
+  "candidateMutation": false,
+  "routerMutation": false,
+  "retryPolicy": "NO_RETRY_OF_P111_WINDOWS_PATH_GLOB",
+  "nextRevision": "p112-c08-exact-persistence-layout-diagnosis",
+  "nextExactAction": "USE_RG_DIRECTORY_WITH_G_FILTER_THEN_HASH_ONLY_THE_EXACT_CONFIRMED_PERSISTENCE_RUNTIME_AND_RECEIPT_PATHS"
+}
