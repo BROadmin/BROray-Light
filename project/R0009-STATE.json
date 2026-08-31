@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009",
+  "status": "READY_FOR_CODEX",
+  "workingBranch": "codex/r0009-updater-package",
+  "authorizedTask": "BUILD_LIGHT_UPDATER_INSTALLER_AND_INSTALLABLE_CANDIDATE_FROM_R0008",
+  "canonicalInput": {
+    "sourceCommit": "684b27bdb53e545047419baa87c63dd86dffa469",
+    "sourceFiles": 121,
+    "sourceLogicalBytes": 627326,
+    "sourceSha256SumsSha256": "e056585d6a517ddbbbaebf08b68f17eb2d9d7ccd68d86df5cdee9fd4665f2419",
+    "sourceCheckpointSha256": "6686586ed777a7b0c37336d08143d388fdc301536b32c96eb35e8b20e5393953",
+    "baseStable": "3.0.0-r23",
+    "baseCandidate": "3.0.0-r23c02",
+    "updaterPlatformSha256": "eaf2eafb62d1b108fe576d1fda09ae7a5d15ad90f71272abc23f321d397611b0"
+  },
+  "completedBeforeHandoff": [
+    "R0007_PREPARATION_PASS",
+    "R0008_SOURCE_TREE_PASS",
+    "R0008_REMOTE_PERSISTENCE_PASS",
+    "CANONICAL_R0008_EXPORT_VERIFIED"
+  ],
+  "openWork": [
+    "resolve exact Xray clean-install artifact and identity",
+    "fork updater-v5 semantics to BROray-Light identity and paths",
+    "build Light package and clean installer",
+    "perform independent Build A and Build B",
+    "prove reproducibility",
+    "run isolated-root clean install/update/equal-version/downgrade/rollback/persistence gates",
+    "persist R0009 checkpoint and SHA-256 receipts"
+  ],
+  "candidateReady": false,
+  "hardwareTestingAuthorized": false,
+  "productionMutationAuthorized": false,
+  "codexEntryPoints": [
+    "AGENTS.md",
+    "docs/CODEX-R0009.md",
+    "docs/CODEX-HANDOFF.md",
+    "project/INVARIANTS.json",
+    "project/IMPLEMENTATION-STATE.json",
+    "project/R0009-STATE.json",
+    "project/WORKLOG.jsonl"
+  ],
+  "nextExactAction": "VERIFY_CANONICAL_R0008_INPUT_AND_RESOLVE_PINNED_XRAY_RUNTIME_BEFORE_WRITING_UPDATER_OR_PACKAGE_CODE"
+}
