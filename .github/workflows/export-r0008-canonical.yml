@@ -1,0 +1,40 @@
+name: Export canonical BROray-Light R0008 source
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/export-r0008-canonical.yml
+
+permissions:
+  contents: read
+
+jobs:
+  export:
+    if: "${{ github.event.head_commit.message == 'r0009: export canonical R0008 source' }}"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: 684b27bdb53e545047419baa87c63dd86dffa469
+          fetch-depth: 1
+      - name: Verify canonical source
+        shell: bash
+        run: |
+          set -euo pipefail
+          [ "$(git rev-parse HEAD)" = '684b27bdb53e545047419baa87c63dd86dffa469' ]
+          [ "$(find src -type f | wc -l)" -eq 121 ]
+          [ "$(find src -type f -printf '%s\n' | awk '{s+=$1} END{print s+0}')" -eq 627326 ]
+          echo 'e056585d6a517ddbbbaebf08b68f17eb2d9d7ccd68d86df5cdee9fd4665f2419  src/SHA256SUMS' | sha256sum -c -
+          (cd src && sha256sum -c SHA256SUMS)
+          printf '%s\n' '684b27bdb53e545047419baa87c63dd86dffa469' > R0008-COMMIT
+          sha256sum R0008-COMMIT src/SHA256SUMS > EXPORT-SHA256SUMS
+      - uses: actions/upload-artifact@v4
+        with:
+          name: broray-light-r0008-canonical-source
+          path: |
+            src/
+            R0008-COMMIT
+            EXPORT-SHA256SUMS
+          if-no-files-found: error
+          retention-days: 7
