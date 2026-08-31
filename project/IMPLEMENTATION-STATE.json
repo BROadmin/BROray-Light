@@ -3,11 +3,19 @@
   "baseStable": "3.0.0-r23",
   "builderSha256": "472473d9eb3082dc0198d0b189df21198b458bd24a136bfb3901bdba469b5e39",
   "canonicalCheckpoint": "R0008",
+  "canonicalSourceCommit": "684b27bdb53e545047419baa87c63dd86dffa469",
   "codexEntryPoint": "docs/CODEX-HANDOFF.md",
   "nextStage": "BUILD_LIGHT_UPDATER_INSTALLER_AND_INSTALLABLE_CANDIDATE_FROM_R0008",
   "product": "BROray-Light",
+  "remotePersistence": {
+    "receipt": "checkpoints/R0008/REMOTE-PERSISTENCE.json",
+    "status": "PASS",
+    "workflowRunId": "33388397818"
+  },
   "schemaVersion": 1,
+  "sourceBytes": 627326,
   "sourceCheckpointSha256": "6686586ed777a7b0c37336d08143d388fdc301536b32c96eb35e8b20e5393953",
+  "sourceFiles": 121,
   "sourceSha256SumsSha256": "e056585d6a517ddbbbaebf08b68f17eb2d9d7ccd68d86df5cdee9fd4665f2419",
-  "status": "SOURCE_TREE_PASS_PENDING_REMOTE_PERSISTENCE"
+  "status": "SOURCE_TREE_REMOTE_PASS"
 }
