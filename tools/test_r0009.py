@@ -16,7 +16,7 @@ import tempfile
 from pathlib import Path, PurePosixPath
 
 RELEASE_ID = "0.1.0-r9"
-CANDIDATE_ID = "0.1.0-r0009c01"
+CANDIDATE_ID = "0.1.0-r0009c02"
 XRAY_SHA256 = "4b8af237444801bf17b3dc10a1c5c24581fbe3d433eba3d78c6c3a0da1df56fc"
 
 
@@ -32,23 +32,22 @@ def json_write(path: Path, value: object) -> None:
     path.write_text(json.dumps(value, ensure_ascii=False, indent=2, sort_keys=True) + "\n", encoding="utf-8", newline="\n")
 
 
-def parse_ar(path: Path) -> dict[str, bytes]:
-    payload = path.read_bytes()
-    if not payload.startswith(b"!<arch>\n"):
-        raise RuntimeError("invalid ipk ar magic")
-    offset = 8
-    members: dict[str, bytes] = {}
-    while offset < len(payload):
-        header = payload[offset : offset + 60]
-        if len(header) != 60 or header[58:] != b"`\n":
-            raise RuntimeError("invalid ipk ar header")
-        name = header[:16].decode("ascii").strip().removesuffix("/")
-        size = int(header[48:58].decode("ascii").strip())
-        offset += 60
-        members[name] = payload[offset : offset + size]
-        offset += size + (size % 2)
-    if set(members) != {"debian-binary", "control.tar.gz", "data.tar.gz"} or members["debian-binary"] != b"2.0\n":
-        raise RuntimeError("invalid ipk member contract")
+def parse_ipk(path: Path) -> dict[str, bytes]:
+    with tarfile.open(path, "r:gz") as archive:
+        entries = archive.getmembers()
+        expected = [".", "./debian-binary", "./data.tar.gz", "./control.tar.gz"]
+        if [entry.name for entry in entries] != expected:
+            raise RuntimeError("invalid Entware ipk member order or names")
+        if not entries[0].isdir() or any(not entry.isfile() for entry in entries[1:]):
+            raise RuntimeError("invalid Entware ipk member types")
+        members: dict[str, bytes] = {}
+        for entry in entries[1:]:
+            extracted = archive.extractfile(entry)
+            if extracted is None:
+                raise RuntimeError(f"missing Entware ipk member payload: {entry.name}")
+            members[entry.name.removeprefix("./")] = extracted.read()
+    if members["debian-binary"] != b"2.0\n":
+        raise RuntimeError("invalid Entware ipk debian-binary contract")
     return members
 
 
@@ -248,7 +247,7 @@ def main() -> int:
 
     package = next(args.build.glob("broray-light_*.ipk"))
     app_bundle = next(args.build.glob("broray-light-app-*.tar.gz"))
-    members = parse_ar(package)
+    members = parse_ipk(package)
     system_root = root / "system"
     control_root = root / "control"
     extract_tar(members["data.tar.gz"], system_root)

@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "stage": "PHYSICAL_KEENETIC_INSTALL_UPDATE_ROLLBACK_VALIDATION_OF_R0009_INTERNAL_CANDIDATE",
+  "revision": "p6-c02-isolated-validation",
+  "status": "FAILED_STOPPED",
+  "failureClass": "CORRECTED_CANDIDATE_ISOLATED_UPDATE_RC1",
+  "failedGate": "ISOLATED_UPDATE",
+  "candidate": {
+    "candidateId": "0.1.0-r0009c02",
+    "packageSha256": "5778c8a4ca5b33796c888b9534b4f6a735de41b34e423ec21cd3237c692083e8",
+    "buildReproducibility": "PASS_8_OF_8_BYTE_IDENTICAL"
+  },
+  "firstError": "The fresh isolated harness reached updater update and returned rc=1 with empty stdout/stderr instead of expected rc=0.",
+  "routerImpact": "NONE_C02_NOT_TRANSFERRED",
+  "retryPolicy": "NO_RETRY_OF_P6",
+  "nextRevision": "p7-c02-update-trace-diagnosis",
+  "nextExactAction": "RUN_A_FRESH_KEPT_ISOLATED_ROOT_WITH_COMMAND_TRACE_IDENTIFY_THE_FIRST_INTERNAL_UPDATE_FAILURE_THEN_FIX_OR_FAIL_CLOSED"
+}

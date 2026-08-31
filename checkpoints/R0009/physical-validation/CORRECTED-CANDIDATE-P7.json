@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "stage": "PHYSICAL_KEENETIC_INSTALL_UPDATE_ROLLBACK_VALIDATION_OF_R0009_INTERNAL_CANDIDATE",
+  "revision": "p7-c02-isolated-validation",
+  "status": "PASS_READY_FOR_ROUTER_REVALIDATION",
+  "candidateId": "0.1.0-r0009c02",
+  "correction": "Entware gzip(tar) outer IPK carrier",
+  "implementation": {
+    "builderSha256": "ddc04c9ca84420ccd0acf374939a3882eac0a20841ca0bdbf019e783d009e8d2",
+    "harnessSha256": "e91827baf1dc9f02fe50f4bb024c8fd65007f0fd07bb4716a47c76339231a438",
+    "releasePublicKeySha256": "27e1a77526f6c6cc8e89005733a88541959992eae00949711c7574e32d2fd44f"
+  },
+  "buildA": "dist/R0009/R0009c02-Build-A",
+  "buildB": "dist/R0009/R0009c02-Build-B",
+  "reproducibility": "PASS_8_OF_8_BYTE_IDENTICAL",
+  "isolatedBehavior": "PASS_17_OF_17",
+  "artifacts": {
+    "package": {"sizeBytes":12787672,"sha256":"5778c8a4ca5b33796c888b9534b4f6a735de41b34e423ec21cd3237c692083e8"},
+    "appArchive": {"sizeBytes":142991,"sha256":"627862cfd3cfcb6859d190545a348616db766c94919976dddf42f576fb81dc16"},
+    "updaterArchive": {"sizeBytes":131428,"sha256":"a946b22927fb2291869f18216d6c404a8ace6505e0ebe61e724135996f4e689f"},
+    "installer": {"sizeBytes":1856,"sha256":"2c2ce33fb4ad8641432b1def5282799fc022fdde15aad023517242af4d5eaa9f"},
+    "releaseIndex": {"sizeBytes":577,"sha256":"5ea42d574cb5f88ddc57b23dd3cd93c441b5e2bb972ca43628fc01ff22bcd325"},
+    "releaseSignature": {"sizeBytes":277,"sha256":"14bfafae995d143b69e12b20920d873a34410ad348a69e17ad1c25d7054cd450"},
+    "candidateManifest": {"sizeBytes":2343,"sha256":"e49cd64fa53b3e2de89a2d387eaa312e41236ae4949d690e15cab20ede2a6821"},
+    "sha256Sums": {"sizeBytes":689,"sha256":"d7c563dcd87d45e8c04d245d98602502f6ce94f059de803fa2fb40e8090255ff"}
+  },
+  "routerImpact": "NONE_C02_NOT_YET_TRANSFERRED",
+  "nextExactAction": "TRANSFER_C02_VERIFY_SHA256_AND_REQUIRE_REAL_OPKG_TO_REACH_AND_ENFORCE_COINSTALL_PREINST_FAIL_CLOSED"
+}

@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "stage": "PHYSICAL_KEENETIC_INSTALL_UPDATE_ROLLBACK_VALIDATION_OF_R0009_INTERNAL_CANDIDATE",
+  "revision": "p8-c02-router-carrier-and-coownership",
+  "status": "PASS",
+  "candidateId": "0.1.0-r0009c02",
+  "package": {
+    "routerPath": "/tmp/broray-light_0.1.0-r0009c02_aarch64-3.10.ipk",
+    "sizeBytes": 12787672,
+    "sha256": "5778c8a4ca5b33796c888b9534b4f6a735de41b34e423ec21cd3237c692083e8",
+    "routerSha256Verification": "PASS",
+    "outerMembers": ["./", "./debian-binary", "./data.tar.gz", "./control.tar.gz"],
+    "opkgParsing": "PASS_REACHED_PREINST"
+  },
+  "coownershipGate": {
+    "expectedFailure": "ERROR: full BROray ownership is present; co-install is fail-closed.",
+    "opkgExit": 255,
+    "status": "PASS_FAIL_CLOSED"
+  },
+  "safetyOutcome": {
+    "lightRootCreated": false,
+    "lightServiceCreated": false,
+    "lightPackageRegistered": false,
+    "fullBROrayProcessesStillRunning": true,
+    "fullBROrayMutation": false
+  },
+  "nextExactAction": "INVENTORY_FULL_BRORAY_OWNERSHIP_AND_CREATE_A_RECOVERABLE_SAME_FILESYSTEM_MAINTENANCE_HANDOFF_BEFORE_CLEAN_INSTALL"
+}

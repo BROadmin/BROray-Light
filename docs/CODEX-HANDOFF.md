@@ -14,6 +14,14 @@ The exact next stage is `PHYSICAL_KEENETIC_INSTALL_UPDATE_ROLLBACK_VALIDATION_OF
 
 No physical router testing was performed in R0009.
 
+## Physical-validation continuation update
+
+Physical validation was subsequently authorized on Keenetic Peak KN-2710. Candidate `0.1.0-r0009c01` was rejected by the real Entware `opkg` because its outer IPK carrier was Debian `ar`; the failure is preserved in `checkpoints/R0009/physical-validation/FAILURE-P4-ROUTER-OPKG-MALFORMED-IPK.json`, and that candidate is superseded.
+
+Corrected internal candidate `0.1.0-r0009c02` uses the target Entware `gzip(tar)` outer carrier. Its package SHA-256 is `5778c8a4ca5b33796c888b9534b4f6a735de41b34e423ec21cd3237c692083e8`. Build A/B are byte-identical, isolated behavior is 17/17 PASS, real router SHA verification is PASS, real `opkg` parsing is PASS, and the full-BROray co-install refusal is PASS fail-closed.
+
+The router currently has active registered full BROray `3.0.0-r14`. Clean Light installation is blocked until the existing product performs its WebUI-authorized uninstall lifecycle. Do not forge the operation authorization, manually hide `/opt/broray`, or install Light while the `broray` package remains registered. Continue from `checkpoints/R0009/physical-validation/PREFLIGHT-P9-AUTHORIZED-FULL-BRORAY-HANDOFF-REQUIRED.json` after the user authenticates to the native WebUI.
+
 ## R0008 provenance
 
 ## Canonical continuation point

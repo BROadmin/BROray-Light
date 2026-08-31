@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "stage": "R0009",
-  "status": "PASS",
+  "status": "HARDWARE_VALIDATION_FAILED",
   "currentRevision": "r29-final-commit-ready",
   "workingBranch": "codex/r0009-updater-package",
   "authorizedTask": "BUILD_LIGHT_UPDATER_INSTALLER_AND_INSTALLABLE_CANDIDATE_FROM_R0008",
@@ -91,16 +91,31 @@
     "artifactSumsSha256": "29b4b7ae09a8db6ae35a4a9c730ce462e46a9cbb7c1a09cce74ecb5c5196c814"
   },
   "openWork": [],
-  "candidateReady": true,
+  "candidateReady": false,
   "privateSigningKeyDestroyed": true,
   "hardwareTestingAuthorized": true,
   "physicalValidation": {
     "stage": "PHYSICAL_KEENETIC_INSTALL_UPDATE_ROLLBACK_VALIDATION_OF_R0009_INTERNAL_CANDIDATE",
-    "status": "BLOCKED_AUTHENTICATION_REQUIRED",
+    "status": "BLOCKED_AUTHORIZED_FULL_BRORAY_HANDOFF_REQUIRED",
     "routerAddress": "192.168.1.1",
-    "routerMutationStarted": false,
+    "routerMutationStarted": true,
     "authorizationReceived": true,
-    "blockerCheckpoint": "checkpoints/R0009/physical-validation/PREFLIGHT-P2-AUTHENTICATION-BLOCKER.json"
+    "authentication": "PASS_EXISTING_ROOT_KEY",
+    "fullBROrayOwnership": "ACTIVE_FAIL_CLOSED_EXPECTED",
+    "candidatePackageTransferred": true,
+    "candidatePackageSha256VerifiedOnRouter": true,
+    "lightOwnershipCreated": false,
+    "routerCarrierParsing": "PASS",
+    "coownershipFailClosed": "PASS",
+    "fullBROrayPackage": "broray 3.0.0-r14",
+    "fullBROrayAuthorizedUninstallRequired": true,
+    "handoffBlockerCheckpoint": "checkpoints/R0009/physical-validation/PREFLIGHT-P9-AUTHORIZED-FULL-BRORAY-HANDOFF-REQUIRED.json",
+    "latestFailure": "checkpoints/R0009/physical-validation/FAILURE-P6-C02-ISOLATED-UPDATE-RC1.json",
+    "correctedCandidateCheckpoint": "checkpoints/R0009/physical-validation/CORRECTED-CANDIDATE-P7.json",
+    "correctedCandidatePackageSha256": "5778c8a4ca5b33796c888b9534b4f6a735de41b34e423ec21cd3237c692083e8",
+    "rootCause": "ENTWARE_OPKG_REQUIRES_GZIP_TAR_OUTER_IPK_NOT_DEBIAN_AR",
+    "diagnosisCheckpoint": "checkpoints/R0009/physical-validation/DIAGNOSIS-P5-ENTWARE-IPK-CONTAINER.json",
+    "nextCandidateId": "0.1.0-r0009c02"
   },
   "productionMutationAuthorized": false,
   "codexEntryPoints": [
@@ -112,7 +127,7 @@
     "project/R0009-STATE.json",
     "project/WORKLOG.jsonl"
   ],
-  "activeBlocker": "PHYSICAL_ROUTER_AUTHENTICATION_REQUIRED",
+  "activeBlocker": "AUTHENTICATED_NATIVE_WEB_SESSION_REQUIRED_FOR_FULL_BRORAY_AUTHORIZED_UNINSTALL_HANDOFF",
   "processFailures": [
     "checkpoints/R0009/process-failures/FAILURE-R2-BUSYBOX-VALIDATOR-DOWNLOAD-TIMEOUT.json",
     "checkpoints/R0009/process-failures/FAILURE-R3-BUSYBOX-OFFICIAL-HOST-CONNECT-TIMEOUT.json",
@@ -134,5 +149,5 @@
     "checkpoints/R0009/process-failures/FAILURE-R25-REMOVE-ITEM-POLICY-REJECTION.json",
     "checkpoints/R0009/process-failures/FAILURE-R28-GIT-AUTHOR-IDENTITY-MISSING.json"
   ],
-  "nextExactAction": "CLAIM_THE_AUTHENTICATED_WEB_SESSION_AND_CAPTURE_READ_ONLY_ROUTER_PREFLIGHT_BEFORE_ANY_INSTALLATION"
+  "nextExactAction": "USE_THE_AUTHENTICATED_NATIVE_WEB_SESSION_TO_INVOKE_THE_PRODUCT_AUTHORIZED_FULL_BRORAY_UNINSTALL_HANDOFF_THEN_VERIFY_ZERO_OWNERSHIP_BEFORE_LIGHT_CLEAN_INSTALL"
 }

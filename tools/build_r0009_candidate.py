@@ -28,8 +28,8 @@ XRAY_DIGEST_SHA256 = "7380220ffee3878f5841c5ac31e1bd2b4625d22cacc2d1248ea3dedaa2
 XRAY_BINARY_SIZE = 35389566
 XRAY_BINARY_SHA256 = "4b8af237444801bf17b3dc10a1c5c24581fbe3d433eba3d78c6c3a0da1df56fc"
 RELEASE_ID = "0.1.0-r9"
-CANDIDATE_ID = "0.1.0-r0009c01"
-PACKAGE_VERSION = "0.1.0-r0009c01"
+CANDIDATE_ID = "0.1.0-r0009c02"
+PACKAGE_VERSION = "0.1.0-r0009c02"
 ARCHITECTURE = "aarch64-3.10"
 MTIME = 0
 
@@ -286,22 +286,14 @@ def build_control_tar(repo: Path) -> bytes:
     return gzip_deterministic(archive.finish())
 
 
-def ar_member(name: str, payload: bytes, mode: int = 0o100644) -> bytes:
-    encoded_name = (name + "/").encode("ascii")
-    header = (
-        encoded_name.ljust(16, b" ")
-        + b"0".ljust(12, b" ")
-        + b"0".ljust(6, b" ")
-        + b"0".ljust(6, b" ")
-        + format(mode, "o").encode("ascii").ljust(8, b" ")
-        + str(len(payload)).encode("ascii").ljust(10, b" ")
-        + b"`\n"
-    )
-    return header + payload + (b"\n" if len(payload) % 2 else b"")
-
-
 def build_ipk(control_tar: bytes, data_tar: bytes) -> bytes:
-    return b"!<arch>\n" + ar_member("debian-binary", b"2.0\n") + ar_member("control.tar.gz", control_tar) + ar_member("data.tar.gz", data_tar)
+    archive = DeterministicTar()
+    archive.tar.addfile(tar_info(".", 0o755, kind=tarfile.DIRTYPE))
+    archive.directories.add(".")
+    archive.add_bytes("./debian-binary", b"2.0\n")
+    archive.add_bytes("./data.tar.gz", data_tar)
+    archive.add_bytes("./control.tar.gz", control_tar)
+    return gzip_deterministic(archive.finish())
 
 
 def artifact(path: Path) -> dict[str, object]:

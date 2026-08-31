@@ -1,12 +1,12 @@
 {
   "baseCandidate": "3.0.0-r23c02",
   "baseStable": "3.0.0-r23",
-  "builderSha256": "df07458c0885d558496165213cd1a984ad1c31bad074e61de7a157857585c592",
+  "builderSha256": "ddc04c9ca84420ccd0acf374939a3882eac0a20841ca0bdbf019e783d009e8d2",
   "canonicalCheckpoint": "R0009",
   "canonicalSourceCommit": "684b27bdb53e545047419baa87c63dd86dffa469",
   "codexEntryPoint": "docs/CODEX-HANDOFF.md",
-  "candidateId": "0.1.0-r0009c01",
-  "candidateReady": true,
+  "candidateId": "0.1.0-r0009c02",
+  "candidateReady": false,
   "candidateCheckpointSha256": "c4fd8f9abd73f1385c0892be801528dc85e37aafb55ab806b5d49d4a9449366a",
   "nextStage": "PHYSICAL_KEENETIC_INSTALL_UPDATE_ROLLBACK_VALIDATION_OF_R0009_INTERNAL_CANDIDATE",
   "product": "BROray-Light",
@@ -20,5 +20,5 @@
   "sourceCheckpointSha256": "6686586ed777a7b0c37336d08143d388fdc301536b32c96eb35e8b20e5393953",
   "sourceFiles": 121,
   "sourceSha256SumsSha256": "e056585d6a517ddbbbaebf08b68f17eb2d9d7ccd68d86df5cdee9fd4665f2419",
-  "status": "INSTALLABLE_INTERNAL_CANDIDATE_PASS"
+  "status": "PHYSICAL_VALIDATION_BLOCKED_AUTHORIZED_FULL_BRORAY_HANDOFF_REQUIRED"
 }

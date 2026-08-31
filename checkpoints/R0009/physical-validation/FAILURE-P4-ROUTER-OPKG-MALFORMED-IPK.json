@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "stage": "PHYSICAL_KEENETIC_INSTALL_UPDATE_ROLLBACK_VALIDATION_OF_R0009_INTERNAL_CANDIDATE",
+  "revision": "p4-legacy-scp-and-coinstall-gate",
+  "status": "FAILED_STOPPED",
+  "failureClass": "ROUTER_OPKG_REJECTED_MALFORMED_IPK",
+  "failedGate": "PHYSICAL_CLEAN_INSTALL_PACKAGE_PARSE",
+  "candidate": {
+    "path": "/tmp/broray-light_0.1.0-r0009c01_aarch64-3.10.ipk",
+    "sizeBytes": 12818170,
+    "sha256": "bf997fe4d1721cbb382723d686a7b2783d5715b46f37ab1d05929e0e9c2275a7",
+    "transfer": "PASS_LEGACY_SCP",
+    "routerSha256Verification": "PASS"
+  },
+  "router": {
+    "model": "Keenetic Peak KN-2710",
+    "firmware": "5.01.C.4.0-1",
+    "architecture": "aarch64-3.10",
+    "opkgExit": 255,
+    "opkgError": "pkg_init_from_file: Malformed package file"
+  },
+  "safetyOutcome": {
+    "lightRootCreated": false,
+    "lightServiceCreated": false,
+    "lightPackageRegistered": false,
+    "fullBROrayProcessesStillRunning": true,
+    "fullBROrayMutation": false
+  },
+  "firstError": "Real router opkg rejected the deterministic IPK carrier before package preinst could run.",
+  "retryPolicy": "NO_RETRY_OF_P4_OR_THE_SAME_IPK_SHA256",
+  "nextRevision": "p5-diagnose-router-opkg-carrier-format",
+  "nextExactAction": "COMPARE_THE_IPK_AR_HEADERS_AND_MEMBER_FORMAT_WITH_A_ROUTER_ACCEPTED_OPKG_PACKAGE_THEN_BUILD_A_CORRECTED_NEW_CANDIDATE_REVISION"
+}

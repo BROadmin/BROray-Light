@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "stage": "PHYSICAL_KEENETIC_INSTALL_UPDATE_ROLLBACK_VALIDATION_OF_R0009_INTERNAL_CANDIDATE",
+  "revision": "p5-diagnose-router-opkg-carrier-format",
+  "status": "ROOT_CAUSE_CONFIRMED",
+  "routerOpkgVersion": "80503d94e356476250adaf1f669ee955ec26de76",
+  "acceptedReference": {
+    "package": "entware-release_2025.05-1_all.ipk",
+    "sha256": "fe26b5b90f7293319240e2e79cef353d815a6d3f21a26c91c326ca32bf43d420",
+    "outerContainer": "gzip-compressed tar",
+    "members": ["./debian-binary", "./data.tar.gz", "./control.tar.gz"],
+    "debianBinary": "2.0 newline"
+  },
+  "failedCandidate": {
+    "candidateId": "0.1.0-r0009c01",
+    "sha256": "bf997fe4d1721cbb382723d686a7b2783d5715b46f37ab1d05929e0e9c2275a7",
+    "outerContainer": "Debian ar",
+    "members": ["debian-binary", "control.tar.gz", "data.tar.gz"]
+  },
+  "rootCause": "The isolated harness accepted a Debian ar IPK, while the target Entware opkg build accepts its gzip-compressed outer tar package format.",
+  "requiredCorrection": "Emit deterministic gzip(tar) IPK with the target member naming/order and make the harness require that exact carrier.",
+  "architectureReopenRequired": false,
+  "nextCandidateId": "0.1.0-r0009c02",
+  "nextExactAction": "PATCH_BUILDER_AND_HARNESS_GENERATE_A_NEW_SIGNING_IDENTITY_AND_RUN_FRESH_BUILD_A_B_AND_ISOLATED_VALIDATION"
+}

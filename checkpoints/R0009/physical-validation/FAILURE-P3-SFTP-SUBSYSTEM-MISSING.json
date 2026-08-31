@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "stage": "PHYSICAL_KEENETIC_INSTALL_UPDATE_ROLLBACK_VALIDATION_OF_R0009_INTERNAL_CANDIDATE",
+  "revision": "p3-sftp-transfer",
+  "status": "FAILED_STOPPED",
+  "failureClass": "ROUTER_SFTP_SUBSYSTEM_MISSING",
+  "failedOperation": "Transfer the verified candidate IPK to router /tmp with default scp transport",
+  "firstError": "Remote shell reported /opt/libexec/sftp-server: not found and closed the connection.",
+  "materialOutputState": "The target path was confirmed absent before transfer; the failed transport did not create the candidate file or begin installation.",
+  "routerMutationStarted": false,
+  "fullBROrayMutation": false,
+  "retryPolicy": "NO_RETRY_OF_P3",
+  "nextRevision": "p4-legacy-scp-transfer",
+  "nextExactAction": "TRANSFER_THE_EXACT_IPK_WITH_LEGACY_SCP_VERIFY_ROUTER_SHA256_THEN_RUN_EXPECTED_FAIL_CLOSED_COINSTALL_GATE"
+}

@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "stage": "PHYSICAL_KEENETIC_INSTALL_UPDATE_ROLLBACK_VALIDATION_OF_R0009_INTERNAL_CANDIDATE",
+  "revision": "p9-full-broray-ownership-handoff",
+  "status": "BLOCKED_FAIL_CLOSED",
+  "router": {
+    "model": "Keenetic Peak KN-2710",
+    "firmware": "5.01.C.4.0-1",
+    "architecture": "aarch64-3.10"
+  },
+  "fullBROray": {
+    "package": "broray",
+    "version": "3.0.0-r14",
+    "root": "/opt/broray",
+    "rootSizeKiB": 61408,
+    "services": [
+      "S22broray-updater",
+      "S23broray-monitor",
+      "S24broray",
+      "S25broray-web",
+      "S27broray-auto-switch",
+      "S28broray-subscriptions"
+    ],
+    "uninstallPolicy": "WebUI-authorized opkg remove",
+    "authorizationOwner": "BROray-WebUI",
+    "authorizationMaxAgeSeconds": 300
+  },
+  "reason": "Clean Light installation cannot proceed while full BROray is registered and active. Manually forging its operation authorization or hiding only filesystem paths would bypass native lifecycle protection and create ambiguous ownership.",
+  "safetyOutcome": {
+    "fullBROrayStopped": false,
+    "fullBROrayRemoved": false,
+    "fullBROrayMutated": false,
+    "lightInstalled": false,
+    "temporaryCandidateC02Present": true
+  },
+  "requiredUserAction": "Sign in to the opened KeeneticOS Web Panel and then the existing BROray WebUI if requested; do not send passwords in chat. Tell Codex when the browser session is ready.",
+  "nextExactAction": "USE_THE_AUTHENTICATED_NATIVE_WEB_SESSION_TO_INVOKE_THE_PRODUCT_AUTHORIZED_FULL_BRORAY_UNINSTALL_HANDOFF_THEN_VERIFY_ZERO_OWNERSHIP_BEFORE_LIGHT_CLEAN_INSTALL"
+}
