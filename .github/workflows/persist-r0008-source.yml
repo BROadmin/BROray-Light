@@ -11,7 +11,7 @@ permissions:
 
 jobs:
   persist:
-    if: "${{ github.event.head_commit.message == 'build: persist source tree R0008 r2' }}"
+    if: "${{ github.event.head_commit.message == 'build: persist source tree R0008 r3' }}"
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -19,7 +19,8 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          mkdir -p /mnt/data
+          sudo mkdir -p /mnt/data
+          sudo chown "$(id -u):$(id -g)" /mnt/data
 
           echo 'a2e5048272cb33fec28cc94e575593c638671bd8213cd398725e54eae94050cd  .prep-r0008-builder/part-00' | sha256sum -c -
           echo '9b0a6f051bcf8f86e6b954aa4b72a42c1e6ea14ed29ca5c29aa56c030c8d3b55  .prep-r0008-builder/part-01' | sha256sum -c -
@@ -95,7 +96,8 @@ jobs:
           cp -a /tmp/r0008-meta/project/WORKLOG.jsonl project/WORKLOG.jsonl
           cp -a /tmp/r0008-meta/project/IMPLEMENTATION-STATE.json project/IMPLEMENTATION-STATE.json
           printf '%s\n' '{"event":"remote_persistence_r1_failed","stage":"R0008","runId":33388132826,"jobId":99475300567,"failureClass":"GITHUB_RUNNER_PATH_MISSING","firstErrorPolicy":"STOPPED_NO_RERUN","canonicalSourceCommitted":false}' >> project/WORKLOG.jsonl
-          printf '%s\n' '{"event":"remote_persistence_r2_started","stage":"R0008","parentCommit":"'"$GITHUB_SHA"'","purpose":"persist exact builder-reproduced source and Codex handoff"}' >> project/WORKLOG.jsonl
+          printf '%s\n' '{"event":"remote_persistence_r2_failed","stage":"R0008","runId":33388259335,"jobId":99475689683,"failureClass":"GITHUB_RUNNER_MNT_PERMISSION_DENIED","firstErrorPolicy":"STOPPED_NO_RERUN","canonicalSourceCommitted":false}' >> project/WORKLOG.jsonl
+          printf '%s\n' '{"event":"remote_persistence_r3_started","stage":"R0008","parentCommit":"'"$GITHUB_SHA"'","purpose":"persist exact builder-reproduced source and Codex handoff using hosted-runner sudo for /mnt/data"}' >> project/WORKLOG.jsonl
           cp -a /tmp/r0008-meta/checkpoints/R0008/. checkpoints/R0008/
           mkdir -p checkpoints/R0008/process-failures
           python3 - <<'PY'
@@ -121,6 +123,23 @@ jobs:
           p.write_text(json.dumps(obj,indent=2,sort_keys=True)+'\n')
           h=hashlib.sha256(p.read_bytes()).hexdigest()
           p.with_name(p.name+'.sha256').write_text(f'{h}  {p.as_posix()}\n')
+          p2=Path('checkpoints/R0008/process-failures/FAILURE-REMOTE-PERSISTENCE-R2-MNT-PERMISSION-DENIED.json')
+          obj2={
+            'schemaVersion':1,
+            'failureId':'BROray-Light-R0008-REMOTE-PERSISTENCE-R2-MNT-PERMISSION-DENIED',
+            'status':'FAIL_PRESERVED',
+            'failureClass':'GITHUB_RUNNER_MNT_PERMISSION_DENIED',
+            'workflowRunId':'33388259335',
+            'jobId':'99475689683',
+            'workflowParentCommit':'e608348650e2d8b8fe0c0ef9b5ceff4c6a7be4d8',
+            'firstError':'mkdir: cannot create directory /mnt/data: Permission denied',
+            'canonicalSourceCommitted':False,
+            'firstErrorPolicy':'STOPPED_NO_RERUN',
+            'resolution':'R3 uses passwordless sudo to create and chown /mnt/data on GitHub hosted runner'
+          }
+          p2.write_text(json.dumps(obj2,indent=2,sort_keys=True)+'\n')
+          h2=hashlib.sha256(p2.read_bytes()).hexdigest()
+          p2.with_name(p2.name+'.sha256').write_text(f'{h2}  {p2.as_posix()}\n')
           PY
           mkdir -p tools
           cp /mnt/data/build_broray_light_r0008.py tools/build_broray_light_r0008.py
