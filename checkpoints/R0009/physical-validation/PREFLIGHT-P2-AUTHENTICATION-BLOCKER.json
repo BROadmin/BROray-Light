@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "stage": "PHYSICAL_KEENETIC_INSTALL_UPDATE_ROLLBACK_VALIDATION_OF_R0009_INTERNAL_CANDIDATE",
+  "revision": "p2-router-authentication-preflight",
+  "status": "BLOCKED_FAIL_CLOSED",
+  "router": {
+    "address": "192.168.1.1",
+    "webIdentity": "Keenetic Peak",
+    "sshPort22Reachable": true,
+    "httpPort80Reachable": true,
+    "httpsPort443Reachable": true,
+    "knownSshHostKeyPresent": true
+  },
+  "authentication": {
+    "sshRootBatch": "DENIED_PUBLICKEY_PASSWORD_REQUIRED",
+    "sshAdminBatch": "DENIED_PUBLICKEY_PASSWORD_REQUIRED",
+    "webSession": "LOGIN_REQUIRED"
+  },
+  "routerMutationStarted": false,
+  "packageTransferred": false,
+  "candidateInstalled": false,
+  "productionServerMutation": false,
+  "blocker": "An authenticated router session is required before read-only ownership, storage, Entware and backup preflight can continue.",
+  "requiredUserAction": "Sign in to the opened KeeneticOS Web Panel, then tell Codex that the session is ready. Do not send the password in chat.",
+  "nextExactAction": "CLAIM_THE_AUTHENTICATED_WEB_SESSION_AND_CAPTURE_READ_ONLY_ROUTER_PREFLIGHT_BEFORE_ANY_INSTALLATION"
+}

@@ -93,7 +93,15 @@
   "openWork": [],
   "candidateReady": true,
   "privateSigningKeyDestroyed": true,
-  "hardwareTestingAuthorized": false,
+  "hardwareTestingAuthorized": true,
+  "physicalValidation": {
+    "stage": "PHYSICAL_KEENETIC_INSTALL_UPDATE_ROLLBACK_VALIDATION_OF_R0009_INTERNAL_CANDIDATE",
+    "status": "BLOCKED_AUTHENTICATION_REQUIRED",
+    "routerAddress": "192.168.1.1",
+    "routerMutationStarted": false,
+    "authorizationReceived": true,
+    "blockerCheckpoint": "checkpoints/R0009/physical-validation/PREFLIGHT-P2-AUTHENTICATION-BLOCKER.json"
+  },
   "productionMutationAuthorized": false,
   "codexEntryPoints": [
     "AGENTS.md",
@@ -104,7 +112,7 @@
     "project/R0009-STATE.json",
     "project/WORKLOG.jsonl"
   ],
-  "activeBlocker": null,
+  "activeBlocker": "PHYSICAL_ROUTER_AUTHENTICATION_REQUIRED",
   "processFailures": [
     "checkpoints/R0009/process-failures/FAILURE-R2-BUSYBOX-VALIDATOR-DOWNLOAD-TIMEOUT.json",
     "checkpoints/R0009/process-failures/FAILURE-R3-BUSYBOX-OFFICIAL-HOST-CONNECT-TIMEOUT.json",
@@ -126,5 +134,5 @@
     "checkpoints/R0009/process-failures/FAILURE-R25-REMOVE-ITEM-POLICY-REJECTION.json",
     "checkpoints/R0009/process-failures/FAILURE-R28-GIT-AUTHOR-IDENTITY-MISSING.json"
   ],
-  "nextExactAction": "PHYSICAL_KEENETIC_INSTALL_UPDATE_ROLLBACK_VALIDATION_OF_R0009_INTERNAL_CANDIDATE"
+  "nextExactAction": "CLAIM_THE_AUTHENTICATED_WEB_SESSION_AND_CAPTURE_READ_ONLY_ROUTER_PREFLIGHT_BEFORE_ANY_INSTALLATION"
 }
