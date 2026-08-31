@@ -1,0 +1,133 @@
+name: Persist BROray-Light source tree R0008
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/persist-r0008-source.yml
+
+permissions:
+  contents: write
+
+jobs:
+  persist:
+    if: "${{ github.event.head_commit.message == 'build: persist source tree R0008' }}"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify transport, rebuild exact source, persist checkpoint
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          echo 'a2e5048272cb33fec28cc94e575593c638671bd8213cd398725e54eae94050cd  .prep-r0008-builder/part-00' | sha256sum -c -
+          echo '9b0a6f051bcf8f86e6b954aa4b72a42c1e6ea14ed29ca5c29aa56c030c8d3b55  .prep-r0008-builder/part-01' | sha256sum -c -
+          echo '5ad3292227ab6ab63b72f87ab7a8c975eb925d41c8ea93ad2839c5dcb6fbfca4  .prep-r0008-builder/part-02' | sha256sum -c -
+          echo '3550366b9a276925324585a5f9d8aaf1ad49a02446add297fde10aa24fadafbe  .prep-r0008-builder/part-03' | sha256sum -c -
+          echo '08678273f225ce04810bac91ab6e757094f17e4e3ea203e25d47ead96bb862d6  .prep-r0008-builder/part-04' | sha256sum -c -
+          echo '3dbaf2bdd8736db064f69b424b669dfef7294f14716efb2cabf9d73a2a363151  .prep-r0008-builder/part-05' | sha256sum -c -
+          echo '8bd392c39419c6444305b373bfd92f81a02245d91aec8ec05effb318c08de6a9  .prep-r0008-builder/part-06' | sha256sum -c -
+          echo '58d83e90887de5a205d920e4ed2c225c8e75c8e0be178cd92d858ed09c81e501  .prep-r0008-builder/part-07' | sha256sum -c -
+          cat .prep-r0008-builder/part-* > /tmp/r0008-builder.b64
+          echo '9a2a00c1f3d6b5f2b20b735b18d86fbc64fdc63303f28931a6a44b3cb691379e  /tmp/r0008-builder.b64' | sha256sum -c -
+          base64 -d /tmp/r0008-builder.b64 > /tmp/r0008-builder.py.gz
+          echo 'c1a72762c6ecf7b52bbec66f5312756354475dcfeb1b5f4097e928ded222b85a  /tmp/r0008-builder.py.gz' | sha256sum -c -
+          gzip -t /tmp/r0008-builder.py.gz
+          gzip -dc /tmp/r0008-builder.py.gz > /mnt/data/build_broray_light_r0008.py
+          echo '472473d9eb3082dc0198d0b189df21198b458bd24a136bfb3901bdba469b5e39  /mnt/data/build_broray_light_r0008.py' | sha256sum -c -
+
+          echo '5dfbc4d5dc577a16a497c419feab6fbc808b29a7e50049cd3d82d9e9ce99ffd4  .prep-r0008-meta/part-00' | sha256sum -c -
+          echo '710009a2fcd7a4429aab1f4f3bd424bb062bd1e38e442873be1192565a8893cc  .prep-r0008-meta/part-01' | sha256sum -c -
+          echo '822e260b7930661cf0d83b41a5ee44fca4a27487d6344d0913cb127a112143f7  .prep-r0008-meta/part-02' | sha256sum -c -
+          echo '0031ad8db1dfd4d780720987b61287247cd9c68a82053dc54abc895d1fd43531  .prep-r0008-meta/part-03' | sha256sum -c -
+          cat .prep-r0008-meta/part-* > /tmp/r0008-meta.b64
+          echo 'bd34d6fec6adce6c2b3357fdb8c4bbf8bdbdf52d88092abcf0eb6348a38eba3c  /tmp/r0008-meta.b64' | sha256sum -c -
+          base64 -d /tmp/r0008-meta.b64 > /tmp/r0008-meta.tar.gz
+          echo '8a614c3b9bdbede6b7b79ca7683f67328cc1ddbaf8df04f7361b7ccea216eab3  /tmp/r0008-meta.tar.gz' | sha256sum -c -
+          gzip -t /tmp/r0008-meta.tar.gz
+          rm -rf /tmp/r0008-meta
+          mkdir -p /tmp/r0008-meta
+          tar -xzf /tmp/r0008-meta.tar.gz -C /tmp/r0008-meta
+          (cd /tmp/r0008-meta && sha256sum -c META-SHA256SUMS)
+
+          rm -rf /mnt/data/_r23app /mnt/data/BROray-Light-R23-PREPARATION-R0007 /mnt/data/BROray-Light-SOURCE-R0008
+          mkdir -p /mnt/data/_r23app /mnt/data/BROray-Light-R23-PREPARATION-R0007
+          cp project/R23-DONOR-FILE-TREATMENT.json /mnt/data/BROray-Light-R23-PREPARATION-R0007/R23-DONOR-FILE-TREATMENT.json
+          echo 'e4a1e9fe496c3da9a88d958c0a9c9fb7cdc16847a80a05d87c321e93a101de09  /mnt/data/BROray-Light-R23-PREPARATION-R0007/R23-DONOR-FILE-TREATMENT.json' | sha256sum -c -
+
+          curl -q --proto '=https' --proto-redir '=https' --tlsv1.2 -fsSL \
+            -H 'Cache-Control: no-cache, no-store' -H 'Accept-Encoding: identity' \
+            'https://api.brovibe.cloud/releases/stable/broray/3.0.0-r23/broray-app-3.0.0-r23c02.tar.gz' \
+            -o /tmp/broray-app-r23c02.tar.gz
+          echo '69679f6d7339b856faf28f69cb1800254984e5400201fe97247011ab166c3f85  /tmp/broray-app-r23c02.tar.gz' | sha256sum -c -
+          gzip -t /tmp/broray-app-r23c02.tar.gz
+          python3 - <<'PY'
+          import tarfile
+          from pathlib import PurePosixPath
+          p='/tmp/broray-app-r23c02.tar.gz'
+          with tarfile.open(p,'r:gz') as tf:
+              bad=[]
+              for m in tf.getmembers():
+                  q=PurePosixPath(m.name)
+                  if q.is_absolute() or '..' in q.parts:
+                      bad.append(m.name)
+              if bad:
+                  raise SystemExit(f'unsafe donor paths: {bad[:10]}')
+              tf.extractall('/mnt/data/_r23app')
+          PY
+          (cd /mnt/data/_r23app && sha256sum -c SHA256SUMS)
+
+          python3 /mnt/data/build_broray_light_r0008.py
+          SRC=/mnt/data/BROray-Light-SOURCE-R0008/src
+          [ -d "$SRC" ]
+          [ "$(find "$SRC" -type f | wc -l)" -eq 121 ]
+          [ "$(find "$SRC" -type f -printf '%s\n' | awk '{s+=$1} END{print s+0}')" -eq 627326 ]
+          echo 'e056585d6a517ddbbbaebf08b68f17eb2d9d7ccd68d86df5cdee9fd4665f2419  /mnt/data/BROray-Light-SOURCE-R0008/src/SHA256SUMS' | sha256sum -c -
+          (cd "$SRC" && sha256sum -c SHA256SUMS)
+
+          rm -rf src
+          cp -a "$SRC" ./src
+          cp -a /tmp/r0008-meta/README.md ./README.md
+          mkdir -p docs project checkpoints/R0008
+          cp -a /tmp/r0008-meta/docs/CODEX-HANDOFF.md docs/CODEX-HANDOFF.md
+          cp -a /tmp/r0008-meta/project/INVARIANTS.json project/INVARIANTS.json
+          cp -a /tmp/r0008-meta/project/WORKLOG.jsonl project/WORKLOG.jsonl
+          cp -a /tmp/r0008-meta/project/IMPLEMENTATION-STATE.json project/IMPLEMENTATION-STATE.json
+          cp -a /tmp/r0008-meta/checkpoints/R0008/. checkpoints/R0008/
+          mkdir -p tools
+          cp /mnt/data/build_broray_light_r0008.py tools/build_broray_light_r0008.py
+
+          python3 - <<'PY'
+          from pathlib import Path
+          import json, hashlib, os
+          p=Path('checkpoints/R0008/REMOTE-PERSISTENCE.json')
+          obj={
+            'schemaVersion':1,
+            'checkpointId':'BROray-Light-R0008-REMOTE-PERSISTENCE',
+            'status':'PASS',
+            'sourceCheckpointSha256':'6686586ed777a7b0c37336d08143d388fdc301536b32c96eb35e8b20e5393953',
+            'builderSha256':'472473d9eb3082dc0198d0b189df21198b458bd24a136bfb3901bdba469b5e39',
+            'sourceSha256SumsSha256':'e056585d6a517ddbbbaebf08b68f17eb2d9d7ccd68d86df5cdee9fd4665f2419',
+            'sourceFiles':121,
+            'sourceBytes':627326,
+            'baseRelease':'3.0.0-r23',
+            'baseCandidate':'3.0.0-r23c02',
+            'workflowRunId':os.environ['GITHUB_RUN_ID'],
+            'workflowParentCommit':os.environ['GITHUB_SHA'],
+            'nextStage':'BUILD_LIGHT_UPDATER_INSTALLER_AND_INSTALLABLE_CANDIDATE_FROM_R0008',
+            'mutations':{'BROadmin/BROray':'NONE','productionServer':'NONE','router':'NONE'}
+          }
+          p.write_text(json.dumps(obj,indent=2,sort_keys=True)+'\n')
+          h=hashlib.sha256(p.read_bytes()).hexdigest()
+          p.with_name(p.name+'.sha256').write_text(f'{h}  {p.as_posix()}\n')
+          PY
+
+          rm -rf .prep-r0008-builder .prep-r0008-meta
+          rm -f .github/workflows/persist-r0008-source.yml
+
+          git config user.name 'BROadmin'
+          git config user.email '307129396+BROadmin@users.noreply.github.com'
+          git add -A
+          git diff --cached --quiet && { echo 'no persistence changes' >&2; exit 1; }
+          git commit -m 'build: persist first BROray-Light source tree R0008'
+          git push origin HEAD:main
