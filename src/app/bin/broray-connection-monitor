@@ -1,0 +1,4 @@
+#!/opt/bin/ash
+ROOT="${BRORAY_ROOT:-/opt/broray-light}"; STATE="$ROOT/run/connection-state.json"; mkdir -p "$ROOT/run" "$ROOT/tmp"; active="$(cat "$ROOT/config/active-server" 2>/dev/null || true)"; now="$(date '+%Y-%m-%dT%H:%M:%S%z')"; success=false; error=""
+if [ -n "$active" ]; then if "$ROOT/bin/broray-servers" check "$active" monitor >/dev/null 2>"$ROOT/tmp/connection-monitor.err"; then success=true; else error="$(tail -c 600 "$ROOT/tmp/connection-monitor.err" 2>/dev/null)"; fi; else error="активный сервер не выбран"; fi
+jq -n --arg serverId "$active" --arg checkedAt "$now" --arg error "$error" --argjson connected "$success" '{schemaVersion:1,connected:$connected,activeServerId:(if $serverId=="" then null else $serverId end),checkedAt:$checkedAt,error:(if $error=="" then null else $error end)}' > "$STATE.$$" && chmod 600 "$STATE.$$" && mv "$STATE.$$" "$STATE"; cat "$STATE"

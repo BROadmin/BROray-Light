@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "product": "BROray-Light",
+  "version": "0.1.0-dev",
+  "baseStable": "3.0.0-r23",
+  "baseCandidate": "3.0.0-r23c02",
+  "protocols": [
+    "VLESS"
+  ],
+  "webuiPages": [
+    "home",
+    "servers",
+    "subscriptions"
+  ],
+  "services": [
+    "S24broray-light"
+  ],
+  "excluded": [
+    "routes",
+    "DNS-over-TLS",
+    "VMess",
+    "Trojan",
+    "Shadowsocks",
+    "Hysteria2",
+    "scheduledQualityRefresh",
+    "serverRatings",
+    "qualityHistory",
+    "manualXrayMaintenance",
+    "WebUIRemoveRestore"
+  ]
+}

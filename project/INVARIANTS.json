@@ -1,0 +1,71 @@
+{
+  "authority": "R0008",
+  "base": {
+    "applicationSha256": "69679f6d7339b856faf28f69cb1800254984e5400201fe97247011ab166c3f85",
+    "candidateId": "3.0.0-r23c02",
+    "preparationCheckpoint": "R0007",
+    "releaseId": "3.0.0-r23"
+  },
+  "coInstallPolicy": "FAIL_CLOSED_IF_FULL_BRORAY_ACTIVE",
+  "currentMainAsDonor": "FORBIDDEN",
+  "exactDonor": "r23c02 only for R0008",
+  "forbiddenRuntime": [
+    "routes subsystem",
+    "BAT import",
+    "DNS-over-TLS management",
+    "VMess parser/import/config",
+    "Trojan parser/import/config",
+    "Shadowsocks parser/import/config",
+    "Hysteria2 parser/import/config",
+    "scheduled quality refresh",
+    "rating/ping/jitter ranking",
+    "best-quality/lowest-ping/preferred server selection",
+    "full BROray ownership adoption",
+    "/opt/broray runtime namespace",
+    "multiple BROray-Light app init services"
+  ],
+  "nextStage": "BUILD_LIGHT_UPDATER_INSTALLER_AND_INSTALLABLE_CANDIDATE_FROM_R0008",
+  "paths": {
+    "applicationRoot": "/opt/broray-light",
+    "globalLock": "/opt/var/lock/broray-light/global-operation.lock",
+    "runtimeXray": "/opt/broray-light/runtime/xray",
+    "updaterState": "/opt/var/lib/broray-light-updater"
+  },
+  "product": "BROray-Light",
+  "requiredSafety": [
+    "atomic state replacement",
+    "global operation serialization",
+    "updater interlock",
+    "Xray config test before activation",
+    "post-activation connectivity probe",
+    "rollback on failed activation",
+    "stable subscription importKey",
+    "manual VLESS duplicate guard",
+    "active subscription server disappearance fail-closed",
+    "Keenetic ownership exact comparison",
+    "r23 zero-or-one proxy connect via validator",
+    "foreign Keenetic/lighttpd state fail-closed"
+  ],
+  "schemaVersion": 1,
+  "scope": {
+    "automaticFailover": true,
+    "complexServerEditor": false,
+    "keeneticControlOnHome": true,
+    "manualXrayMaintenanceUi": false,
+    "primaryAppService": "S24broray-light",
+    "protocols": [
+      "VLESS"
+    ],
+    "qualityHistory": false,
+    "ratings": false,
+    "scheduledQualityRefresh": false,
+    "themeCount": 1,
+    "updaterControlPlane": "separate-light-updater",
+    "webuiFunctionalPages": [
+      "home",
+      "servers",
+      "subscriptions"
+    ],
+    "webuiRemoveRestore": false
+  }
+}

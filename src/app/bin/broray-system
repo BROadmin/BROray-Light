@@ -1,0 +1,3 @@
+#!/opt/bin/ash
+ROOT="${BRORAY_ROOT:-/opt/broray-light}"; VERSION="$(cat "$ROOT/config/version" 2>/dev/null || echo unknown)"; XRAY="$ROOT/runtime/xray"
+case "${1:-info}" in info|status) jq -n --arg version "$VERSION" --arg xrayVersion "$($XRAY version 2>/dev/null | head -1 | awk '{print $2}')" '{ok:true,product:"BROray-Light",version:$version,xrayVersion:(if $xrayVersion=="" then null else $xrayVersion end),releaseChannel:"stable"}';; *) exit 1;; esac

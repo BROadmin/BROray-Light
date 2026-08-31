@@ -1,0 +1,4 @@
+#!/opt/bin/ash
+ROOT="${BRORAY_ROOT:-/opt/broray-light}"; . "$ROOT/lib/server-service.sh"; . "$ROOT/lib/server-import.sh"
+cmd="${1:-summary}"; shift 2>/dev/null || true
+case "$cmd" in summary|list) broray_server_summary;; show) broray_server_details "${1:-}";; import) broray_server_import "${1:-}" manual "" 0;; check) broray_server_check "${1:-}" "${2:-manual}";; activate|use) broray_server_activate "${1:-}";; delete) broray_server_delete_safe "${1:-}";; *) echo "usage: broray-servers summary|show|import|check|activate|delete" >&2; exit 1;; esac

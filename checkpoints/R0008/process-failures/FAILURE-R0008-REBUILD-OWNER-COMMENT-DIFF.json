@@ -1,0 +1,11 @@
+{
+  "GitHubMutation": "NONE",
+  "failureClass": "BUILDER_WORKING_COPY_DRIFT",
+  "failureId": "BROray-Light-R0008-REBUILD-OWNER-COMMENT-DIFF",
+  "firstError": "first deterministic rebuild differed only in two interface-owner.sh historical R14C01 comment strings",
+  "resolution": "R14C01 comment normalization added to builder; subsequent rebuild matched implementation 119/119 byte-for-byte",
+  "schemaVersion": 1,
+  "source": "current-session-tool-output",
+  "stage": "REPRODUCIBILITY_GATE",
+  "status": "FAIL_PRESERVED"
+}

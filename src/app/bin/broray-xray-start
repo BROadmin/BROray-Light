@@ -1,0 +1,4 @@
+#!/opt/bin/ash
+ROOT="${BRORAY_ROOT:-/opt/broray-light}"; CONFIG="$ROOT/config/config.json"; XRAY="$ROOT/runtime/xray"
+[ -x "$XRAY" ] || { echo "Xray недоступен" >&2; exit 1; }; [ -s "$CONFIG" ] || { echo "Конфигурация Xray отсутствует" >&2; exit 1; }
+XRAY_LOCATION_ASSET="$ROOT/bin"; export XRAY_LOCATION_ASSET; exec "$XRAY" run -c "$CONFIG"

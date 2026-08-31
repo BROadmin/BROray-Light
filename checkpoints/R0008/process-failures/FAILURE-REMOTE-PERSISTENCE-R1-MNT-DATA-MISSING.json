@@ -1,0 +1,16 @@
+{
+  "builderBase64Sha256": "PASS",
+  "builderGzipSha256": "PASS",
+  "canonicalSourceCommitted": false,
+  "failureClass": "GITHUB_RUNNER_PATH_MISSING",
+  "failureId": "BROray-Light-R0008-REMOTE-PERSISTENCE-R1-MNT-DATA-MISSING",
+  "firstError": "/mnt/data/build_broray_light_r0008.py: No such file or directory",
+  "firstErrorPolicy": "STOPPED_NO_RERUN",
+  "jobId": "99475300567",
+  "resolution": "R2 creates /mnt/data explicitly before reconstruction",
+  "schemaVersion": 1,
+  "status": "FAIL_PRESERVED",
+  "transportBuilderChunks": "PASS_8_OF_8",
+  "workflowParentCommit": "cf71d399b360608bf8a53f7094a50ffbfed9452a",
+  "workflowRunId": "33388132826"
+}

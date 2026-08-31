@@ -1,0 +1,60 @@
+{
+  "base": {
+    "applicationSha256": "69679f6d7339b856faf28f69cb1800254984e5400201fe97247011ab166c3f85",
+    "candidateId": "3.0.0-r23c02",
+    "preparationCheckpoint": "R0007",
+    "releaseId": "3.0.0-r23"
+  },
+  "checkpointId": "BROray-Light-SOURCE-R0008",
+  "codexHandoffSha256": "c4aae3c941f075d8edb5396ac13e934d0a3965ebf070d891a9562ca018600b71",
+  "date": "2026-08-31",
+  "invariantsSha256": "d04cc03a3d846200990b22886f3fcb1bc9484eea6c670c1bace6731aba7a4196",
+  "mutations": {
+    "BROadmin/BROray": "NONE",
+    "BROadmin/BROray-Light": "PENDING_R0008_REMOTE_PERSISTENCE",
+    "productionServer": "NONE",
+    "router": "NONE"
+  },
+  "nextStage": "BUILD_LIGHT_UPDATER_INSTALLER_AND_INSTALLABLE_CANDIDATE_FROM_R0008",
+  "processFailureRecords": [
+    {
+      "file": "FAILURE-R0008-BUILDER-PATCH-POINT.json",
+      "sha256": "dc43002c9c7d496a31c49dd137fc22f03059d1ce93880ee80c753bf83841c023"
+    },
+    {
+      "file": "FAILURE-R0008-DEPENDENCY-XRAY-DOUBLE-ADAPT.json",
+      "sha256": "c6b08d01b652b0fd27d5adc918aa06609272322a234d727f6d8e231e84189f67"
+    },
+    {
+      "file": "FAILURE-R0008-INTERFACE-OWNER-READONLY.json",
+      "sha256": "e7065ef289ee1524fa750fecca648f301b2bce36f1db31c98bae03298797e666"
+    },
+    {
+      "file": "FAILURE-R0008-R1-DEFAULTS-DIR-MISSING.json",
+      "sha256": "8c17195c9d3336c96a49a643198b32665e61e0b3f43f9fbf790f66ea24f92400"
+    },
+    {
+      "file": "FAILURE-R0008-REBUILD-OWNER-COMMENT-DIFF.json",
+      "sha256": "ef51cb97706766047c0918a21c1e384600946b95c752697eaf263adf3098aff1"
+    },
+    {
+      "file": "FAILURE-R0008-SUBSCRIPTION-HARNESS-ROOT.json",
+      "sha256": "b1556af75811abd7d7b653e436dd3bd779fd881f931347f670c2f2ca1e2636e3"
+    }
+  ],
+  "schemaVersion": 1,
+  "source": {
+    "builderSha256": "472473d9eb3082dc0198d0b189df21198b458bd24a136bfb3901bdba469b5e39",
+    "bytes": 627326,
+    "deterministicRebuild": "PASS_BYTE_IDENTICAL_119_OF_119",
+    "files": 121,
+    "implementationFilesCompared": 119,
+    "sha256SumsSha256": "e056585d6a517ddbbbaebf08b68f17eb2d9d7ccd68d86df5cdee9fd4665f2419",
+    "sourceProvenanceSha256": "cbce642dcda6b230ae8d6c1d076c8a74a3c4580d62752b038b64113f432380d4",
+    "treatmentExecutionSha256": "f218d45c2ba3daf0e31972e511b0bac913d6b6a18faebe18bcb643ac158994f3"
+  },
+  "stage": "BUILD_LIGHT_SOURCE_TREE_FROM_R23_TREATMENT_MAP",
+  "status": "PASS",
+  "validationSha256": "7a6bf6cee76874f55594d5c053c2e10cc75ee9ee5a8cacc5410e3ced7f25f5c2",
+  "worklogSha256": "370aae84855a613460f1d5d0f4259b5a963fa5451bba9aa6724c1e2a8adb88de"
+}

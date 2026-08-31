@@ -1,0 +1,1 @@
+document.addEventListener('DOMContentLoaded',()=>{const p=location.pathname.split('/').pop()||'home.html';document.querySelectorAll('nav a').forEach(a=>a.classList.toggle('active',a.getAttribute('href')===p));});

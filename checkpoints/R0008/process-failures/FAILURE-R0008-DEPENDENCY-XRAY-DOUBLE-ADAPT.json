@@ -1,0 +1,11 @@
+{
+  "GitHubMutation": "NONE",
+  "failureClass": "DOUBLE_NAMESPACE_ADAPTATION",
+  "failureId": "BROray-Light-R0008-DEPENDENCY-XRAY-DOUBLE-ADAPT",
+  "firstError": "xray donor files were path-adapted twice, producing /opt/broray-light-light and nonexistent broray-xray-control-light",
+  "resolution": "builder no longer reapplies adapt_text to already adapted xray files; paths normalized to /opt/broray-light and helper broray-xray-control",
+  "schemaVersion": 1,
+  "source": "current-session-tool-output",
+  "stage": "DEPENDENCY_GATE",
+  "status": "FAIL_PRESERVED"
+}

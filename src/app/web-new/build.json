@@ -1,0 +1,12 @@
+{
+  "product": "BROray-Light",
+  "version": "0.1.0-dev",
+  "baseStable": "3.0.0-r23",
+  "baseCandidate": "3.0.0-r23c02",
+  "pages": [
+    "home",
+    "servers",
+    "subscriptions"
+  ],
+  "theme": "brand"
+}

@@ -1,0 +1,2 @@
+#!/opt/bin/ash
+. /opt/broray-light/web-new/api/auth-common.sh; broray_api_require_method GET; broray_api_require_session; cfg="$(cat /opt/broray-light/config/system/server-auto-switch.json 2>/dev/null || echo '{}')"; state="$(cat /opt/broray-light/run/server-auto-switch-state.json 2>/dev/null || echo '{}')"; broray_api_success "$(jq -n --argjson config "$cfg" --argjson state "$state" '{config:$config,state:$state}')"

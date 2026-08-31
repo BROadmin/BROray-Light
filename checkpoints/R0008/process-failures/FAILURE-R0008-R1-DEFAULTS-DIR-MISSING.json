@@ -1,0 +1,16 @@
+{
+  "failureClass": "LOCAL_BUILDER_PATH_CREATION_ORDER",
+  "failureId": "BROray-Light-R0008-R1-DEFAULTS-DIR-MISSING",
+  "firstError": "builder attempted to write app/share/defaults before creating that directory",
+  "mutation": {
+    "BROadmin/BROray": "NONE",
+    "BROadmin/BROray-Light": "NONE",
+    "productionServer": "NONE",
+    "router": "NONE"
+  },
+  "resolution": "builder revision creates destination parent before writing defaults",
+  "schemaVersion": 1,
+  "source": "recovered-session-tool-output",
+  "stage": "BUILD_LIGHT_SOURCE_TREE_FROM_R23_TREATMENT_MAP",
+  "status": "FAIL_PRESERVED"
+}

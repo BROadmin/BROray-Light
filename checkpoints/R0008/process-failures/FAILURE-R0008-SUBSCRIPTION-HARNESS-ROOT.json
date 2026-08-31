@@ -1,0 +1,12 @@
+{
+  "GitHubMutation": "NONE",
+  "failureClass": "TEST_HARNESS_CODE_STATE_ROOT_MIXUP",
+  "failureId": "BROray-Light-R0008-SUBSCRIPTION-HARNESS-ROOT",
+  "firstError": "test set BRORAY_BASE to source app while state root was separate; server-subscription module consequently wrote two temporary subscription files under src/app/servers",
+  "resolution": "temporary src/app/{servers,tmp,run,config} removed and verified absent; test rerun on isolated full app copy with one BRORAY_BASE and passed",
+  "schemaVersion": 1,
+  "source": "current-session-tool-output",
+  "sourcePollutionFiles": 2,
+  "stage": "FUNCTIONAL_SMOKE_SUBSCRIPTIONS",
+  "status": "FAIL_PRESERVED"
+}

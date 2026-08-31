@@ -1,0 +1,11 @@
+{
+  "donorMutation": "NONE",
+  "failureClass": "WORKING_COPY_READ_ONLY_PERMISSION",
+  "failureId": "BROray-Light-R0008-INTERFACE-OWNER-READONLY",
+  "firstError": "Permission denied while patching donor-derived interface-owner.sh working copy",
+  "resolution": "write permission changed only on local derived working copy; exact r23 donor remained immutable",
+  "schemaVersion": 1,
+  "source": "recovered-session-tool-output",
+  "stage": "BUILD_LIGHT_SOURCE_TREE_FROM_R23_TREATMENT_MAP",
+  "status": "FAIL_PRESERVED"
+}

@@ -1,0 +1,2 @@
+#!/opt/bin/ash
+. /opt/broray-light/web-new/api/auth-common.sh; . /opt/broray-light/lib/xray-web-operation.sh; broray_api_require_method POST; broray_api_require_session; if payload="$(broray_xray_web_update 2>&1)"; then broray_api_success "$(jq -n --arg message "$payload" '{started:true,message:$message}')"; else broray_api_error "500 Internal Server Error" "XRAY_UPDATE_FAILED" "Обновление Xray завершилось ошибкой." "$payload"; fi

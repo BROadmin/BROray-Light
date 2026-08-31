@@ -1,0 +1,15 @@
+{
+  "failureClass": "BUILDER_PATCH_POINT_NOT_FOUND",
+  "failureId": "BROray-Light-R0008-BUILDER-PATCH-POINT",
+  "firstError": "expected standalone xray-update.sh patch point was absent because xray files are processed by a shared donor loop",
+  "mutation": {
+    "GitHub": "NONE",
+    "builder": "not written by failed patch attempt",
+    "sourceTree": "two naming normalizations already applied"
+  },
+  "resolution": "normalization moved into the actual shared Xray loop / final builder logic",
+  "schemaVersion": 1,
+  "source": "current-session-tool-output",
+  "stage": "BUILDER_SYNC",
+  "status": "FAIL_PRESERVED"
+}

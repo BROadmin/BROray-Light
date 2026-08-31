@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "required": [
+    "Entware",
+    "jq",
+    "curl",
+    "lighttpd",
+    "lighttpd-mod-cgi",
+    "Keenetic proxy capability",
+    "Keenetic opkg capability"
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "name": "BROray-Light",
+  "short_name": "BROray-Light",
+  "start_url": "home.html",
+  "display": "standalone",
+  "theme_color": "#0c1110",
+  "background_color": "#0c1110"
+}

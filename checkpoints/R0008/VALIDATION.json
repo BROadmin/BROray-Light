@@ -1,0 +1,108 @@
+{
+  "base": {
+    "applicationSha256": "69679f6d7339b856faf28f69cb1800254984e5400201fe97247011ab166c3f85",
+    "candidateId": "3.0.0-r23c02",
+    "preparationCheckpoint": "R0007",
+    "releaseId": "3.0.0-r23"
+  },
+  "checkpointId": "BROray-Light-SOURCE-R0008",
+  "nextStage": "BUILD_LIGHT_UPDATER_INSTALLER_AND_INSTALLABLE_CANDIDATE_FROM_R0008",
+  "notTestedYet": [
+    "physical Keenetic install",
+    "real Xray binary execution on router",
+    "real ndmc write operations",
+    "BROray-Light updater/package install path"
+  ],
+  "schemaVersion": 1,
+  "smoke": {
+    "activationRollback": "PASS_POST_ACTIVATION_PROBE_FAILURE_RESTORES_CONFIG_ACTIVE_ID_AND_RESTARTS",
+    "failover": "PASS_DETERMINISTIC_ORDER_EXCLUSION_AND_HEALTHY_NO_SWITCH",
+    "keeneticOwnership": "PASS_R23_ZERO_OR_ONE_CONNECT_VIA_TWO_REJECTED_CANONICAL_HASH_STABLE",
+    "serviceTopology": "PASS_CLEAN_START_WITHOUT_XRAY_CONFIG_AND_STOP",
+    "subscriptions": "PASS_MIXED_2_VLESS_2_SKIPPED_STABLE_REORDER_ACTIVE_DISAPPEAR_FAIL_CLOSED",
+    "vless": "PASS_6_OF_6_RAW_REALITY_WS_GRPC_XHTTP_NEGATIVE_VMSS_DUPLICATE"
+  },
+  "source": {
+    "builderSha256": "472473d9eb3082dc0198d0b189df21198b458bd24a136bfb3901bdba469b5e39",
+    "bytes": 627326,
+    "deterministicRebuild": "PASS_BYTE_IDENTICAL_119_OF_119",
+    "files": 121,
+    "implementationFilesCompared": 119,
+    "sha256SumsSha256": "e056585d6a517ddbbbaebf08b68f17eb2d9d7ccd68d86df5cdee9fd4665f2419",
+    "sourceProvenanceSha256": "cbce642dcda6b230ae8d6c1d076c8a74a3c4580d62752b038b64113f432380d4",
+    "treatmentExecutionSha256": "f218d45c2ba3daf0e31972e511b0bac913d6b6a18faebe18bcb643ac158994f3"
+  },
+  "static": {
+    "ashSyntax": "PASS_79_OF_79",
+    "expectedWebApis": "PASS_29_OF_29",
+    "forbiddenRuntimeMarkers": "PASS_ZERO",
+    "functionalHtmlPages": [
+      "home.html",
+      "servers.html",
+      "subscriptions.html"
+    ],
+    "initSet": [
+      "S24broray-light"
+    ],
+    "internalDependencyRefs": "PASS_64_REFS_ZERO_MISSING",
+    "javascriptSyntax": "PASS_7_OF_7",
+    "jsonSyntax": "PASS_16_OF_16",
+    "loginHtml": "index.html",
+    "parserSet": [
+      "parser-vless.sh"
+    ],
+    "sha256Sums": "PASS_120_OF_120"
+  },
+  "status": "PASS",
+  "treatment": {
+    "dropPresent": 0,
+    "matrix": [
+      {
+        "count": 6,
+        "execution": "OMITTED_AFTER_DEPENDENCY_PRUNE",
+        "planned": "ADAPT",
+        "presence": "ABSENT"
+      },
+      {
+        "count": 59,
+        "execution": "RETAINED_OR_ADAPTED",
+        "planned": "ADAPT",
+        "presence": "PRESENT"
+      },
+      {
+        "count": 156,
+        "execution": "DROP",
+        "planned": "DROP",
+        "presence": "ABSENT"
+      },
+      {
+        "count": 11,
+        "execution": "RETAINED_OR_ADAPTED",
+        "planned": "PORT",
+        "presence": "PRESENT"
+      },
+      {
+        "count": 15,
+        "execution": "OMITTED_AFTER_DEPENDENCY_PRUNE",
+        "planned": "REPLACE",
+        "presence": "ABSENT"
+      },
+      {
+        "count": 33,
+        "execution": "RETAINED_OR_ADAPTED",
+        "planned": "REPLACE",
+        "presence": "PRESENT"
+      },
+      {
+        "count": 7,
+        "execution": "RETAINED_OR_ADAPTED",
+        "planned": "RETAIN",
+        "presence": "PRESENT"
+      }
+    ],
+    "portAbsent": 0,
+    "records": 287,
+    "retainAbsent": 0
+  },
+  "validatedAt": "2026-08-31T14:28:56+03:00"
+}

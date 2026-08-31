@@ -1,0 +1,604 @@
+{
+  "baseApplicationSha256": "69679f6d7339b856faf28f69cb1800254984e5400201fe97247011ab166c3f85",
+  "baseCandidate": "3.0.0-r23c02",
+  "baseStable": "3.0.0-r23",
+  "checkpoint": "R0008",
+  "files": [
+    {
+      "path": "TREATMENT-EXECUTION.json",
+      "sha256": "f218d45c2ba3daf0e31972e511b0bac913d6b6a18faebe18bcb643ac158994f3",
+      "size": 97224
+    },
+    {
+      "path": "app/bin/broray",
+      "sha256": "426167b1439a755f9ccd73cbf1c0182ddaa1f8de9d2d7e2ddd6509ac8c8d0768",
+      "size": 356
+    },
+    {
+      "path": "app/bin/broray-connection-monitor",
+      "sha256": "bc109412c7ff93ef179682d416380bb300b1e487f765c7776d035cc2efa38e53",
+      "size": 912
+    },
+    {
+      "path": "app/bin/broray-home-snapshot",
+      "sha256": "b0019bb16ed877c70aa4b47868639a50b303c2c44b589a36eb27d5413997363e",
+      "size": 1085
+    },
+    {
+      "path": "app/bin/broray-lightd",
+      "sha256": "9817f5be8df59469de43534f45b9cfa1917de7fdb1dbc4470ab6678efe0a12d7",
+      "size": 803
+    },
+    {
+      "path": "app/bin/broray-log-maintenance",
+      "sha256": "f9f77f150d5e9532adda30d65897a0683f9537687374e07b52dec0b372014c2f",
+      "size": 2888
+    },
+    {
+      "path": "app/bin/broray-runtime-prepare",
+      "sha256": "0eea5750c71d5c263ccdb2bb77133199cc5b32cff118c88b5833d5db1be19472",
+      "size": 770
+    },
+    {
+      "path": "app/bin/broray-server",
+      "sha256": "f46c4cb9f0abf1033f3a09b3b5b64247e8b1c4e5e63d7e3691fd6574aecd8e25",
+      "size": 62
+    },
+    {
+      "path": "app/bin/broray-server-auto-switch",
+      "sha256": "0513d36567d9a3e50eea3aad3eddc5b5f2d22d154ee986a4395bee647a7d0382",
+      "size": 2396
+    },
+    {
+      "path": "app/bin/broray-server-probe",
+      "sha256": "13d64b4200e88f9a95079829fa1f2aeb7265a900c6f1c9d600044f822984c7ec",
+      "size": 8947
+    },
+    {
+      "path": "app/bin/broray-servers",
+      "sha256": "f9fe544c48803bea6dcc6453abc2af38f52b7514b6ec22915af083798467a342",
+      "size": 551
+    },
+    {
+      "path": "app/bin/broray-subscriptions",
+      "sha256": "9e097a2345d926f16d549e6f0956f1fa79b0b962c73c9f0215fc0a93da0d2df2",
+      "size": 2154
+    },
+    {
+      "path": "app/bin/broray-system",
+      "sha256": "0fa5cb0ded1b36030d7a16f0e953ae501493f345508a8e108ee73cb0b857620f",
+      "size": 456
+    },
+    {
+      "path": "app/bin/broray-xray-control",
+      "sha256": "b223485668cc1a22cc4648e2cd36f2dc76a216ca23d88b768827e239ea25f82b",
+      "size": 776
+    },
+    {
+      "path": "app/bin/broray-xray-start",
+      "sha256": "4071337eac4f88641ba58a0a42ec3215dfdf56b8e1e53d90cdac4daa217c7bba",
+      "size": 375
+    },
+    {
+      "path": "app/bin/xray",
+      "sha256": "8ad5d3ff6ae7787d867b577a9e5e66343b48b41e3b8b2a49fb2c59595e36e964",
+      "size": 56
+    },
+    {
+      "path": "app/lib/interface-core.sh",
+      "sha256": "3f2564d2ce905d444b48a37bff60570261328175e56a28ff6b8eb664af328f2b",
+      "size": 15455
+    },
+    {
+      "path": "app/lib/interface-manage.sh",
+      "sha256": "2060bd4ecd7ac39a6413ad0459b5faa14e055ac6ad2a514ff5c0c867672827db",
+      "size": 19282
+    },
+    {
+      "path": "app/lib/interface-owner.sh",
+      "sha256": "e1d9a168858b9486b5ace29c1b4495a3016d562e42fc4bad80d389107b970630",
+      "size": 54825
+    },
+    {
+      "path": "app/lib/interface-sync.sh",
+      "sha256": "189f1629ac0fa9453eecc9d35152ab2b0f384679ba1ac46eda6b2a5768649315",
+      "size": 5089
+    },
+    {
+      "path": "app/lib/interface.sh",
+      "sha256": "f709a411612da3c0c4b3bb3751013e661c96e9756e7477dd261b21c02bf54002",
+      "size": 1663
+    },
+    {
+      "path": "app/lib/keenetic-config-compare.sh",
+      "sha256": "d351e82ce180de8a4d6e3a4b43d7b767eefe9a93c103e980c3f545ace0239556",
+      "size": 7473
+    },
+    {
+      "path": "app/lib/keenetic-page.sh",
+      "sha256": "7b3aa62a08a55d7b96fd9d1edc74d734c371f7e863c22c6c7313385446647885",
+      "size": 34050
+    },
+    {
+      "path": "app/lib/keenetic-write-policy.sh",
+      "sha256": "ba48e2352756037d68a891316408c420265016bf206a008368bbfbaf0d0d982b",
+      "size": 1186
+    },
+    {
+      "path": "app/lib/operation-lock.sh",
+      "sha256": "ac1193a6d976ab3687f1f2fd771a568fdece3f4a456b7c1af70589494df4bbf7",
+      "size": 1533
+    },
+    {
+      "path": "app/lib/parser-vless.sh",
+      "sha256": "9ddb683e7f96f625e64885138081f28b8c13faeca708f91f3ac283ccf0410791",
+      "size": 4007
+    },
+    {
+      "path": "app/lib/server-config-generator.sh",
+      "sha256": "c426a079d3b173764054fe05e8b5cf2e571911cb5fbb2b9ea62c877b7256cd45",
+      "size": 2739
+    },
+    {
+      "path": "app/lib/server-import.sh",
+      "sha256": "8e79fda1d7216e2338459bf5bec9bdbdc12b3c8ebbfde83d587904a0bdc43b1b",
+      "size": 4414
+    },
+    {
+      "path": "app/lib/server-service.sh",
+      "sha256": "76b3a298b5d5667f1ff923f0dbc0dec82030130e8011c4c0a88f3586ae6c4095",
+      "size": 2763
+    },
+    {
+      "path": "app/lib/server-subscription-service.sh",
+      "sha256": "f2b8b52dff12f54f0dd0cdb51af3b91d733352ad6023f3b36df74c592e1cdc98",
+      "size": 30386
+    },
+    {
+      "path": "app/lib/server-xray-manager.sh",
+      "sha256": "3b587f4ea269f4a8d2222a3344416a4b2c7ed1a0ab084fc0c01072d01be26cdb",
+      "size": 4756
+    },
+    {
+      "path": "app/lib/server.sh",
+      "sha256": "7f0c374ff1b308fd06278d65561b20c0d76ff1e00656e8d6634877076f872288",
+      "size": 2219
+    },
+    {
+      "path": "app/lib/status-contract.sh",
+      "sha256": "3de011b7394f6e28c6e021800b01f1cb095791d343b2a9ade751d0c6bea338d9",
+      "size": 5596
+    },
+    {
+      "path": "app/lib/subscription-service.sh",
+      "sha256": "6ba090afe5dae79871b6029bcfbffc6341435fbbbffd5905cdb6e5d0f437581d",
+      "size": 68775
+    },
+    {
+      "path": "app/lib/util.sh",
+      "sha256": "32cebb491a8660491c0d55408cc6e881bc47bf327f30c385a3a2e979f8da80fe",
+      "size": 1686
+    },
+    {
+      "path": "app/lib/web-auth-native.sh",
+      "sha256": "a4f97394cbde10d5b4bdc27c0c66ae5e819606d58e53546d9974e3d521cb271c",
+      "size": 9081
+    },
+    {
+      "path": "app/lib/web-auth.sh",
+      "sha256": "c95404afafaf399230aeafb9c1fb345a4190f27d459e5d82857b87c47c92dc0a",
+      "size": 8414
+    },
+    {
+      "path": "app/lib/web-request-body.sh",
+      "sha256": "465dda083771bd046fd00b0cf5ca4577edb57c6745105d1e62f3bc16af311682",
+      "size": 991
+    },
+    {
+      "path": "app/lib/xray-control.sh",
+      "sha256": "3ff5ec958dd3f19ba4b00bdfddc521c6f74dfc68191f8230356d6648a2ac8230",
+      "size": 6813
+    },
+    {
+      "path": "app/lib/xray-update.sh",
+      "sha256": "14c36a01660fbc9a05aed02624155ba24f4e141c1fcbf80f45107c7fe85e4d05",
+      "size": 34675
+    },
+    {
+      "path": "app/lib/xray-web-operation.sh",
+      "sha256": "d456eab279e3892c44b9d2ac542ea5c553d7816ead1532fec3f3d3e3ab907b9c",
+      "size": 399
+    },
+    {
+      "path": "app/lib/xray.sh",
+      "sha256": "884dde34fae4471db320da11662a78c21f2a849e6bb9cb472585cfd86ba90722",
+      "size": 19632
+    },
+    {
+      "path": "app/share/defaults/lighttpd.conf",
+      "sha256": "816aed2ab8fe59092d31a1cb1f80fe714cc31f8fe6ece45e5dfde09888bcc661",
+      "size": 627
+    },
+    {
+      "path": "app/share/defaults/server-auto-switch.json",
+      "sha256": "6743d9128b6206747ef724fbe72ba9646ef027ba948962805baeb6b053d661cf",
+      "size": 170
+    },
+    {
+      "path": "app/share/defaults/settings.json",
+      "sha256": "7cb59866bede03da82b04ccb59d7e9b439f72f4d38d382c0bc409bc38827ba4d",
+      "size": 175
+    },
+    {
+      "path": "app/share/defaults/version",
+      "sha256": "c2ef39e09593cca70be98a0fb0ab435b53e2eb3c3d4e812cd7d43794eafa7728",
+      "size": 10
+    },
+    {
+      "path": "app/share/licenses/xray/LICENSE",
+      "sha256": "1f256ecad192880510e84ad60474eab7589218784b9a50bc7ceee34c2b91f1d5",
+      "size": 16725
+    },
+    {
+      "path": "app/share/licenses/xray/README.md",
+      "sha256": "0d098928cf19c756a8c956c0b5ca736b75f9eaff0765fd71c26a3dcb413a3dde",
+      "size": 12666
+    },
+    {
+      "path": "app/share/release/RELEASE-REQUIREMENTS.md",
+      "sha256": "63440e06452376b15189ed6fc1b8e2a95f649d74f0dd558f73a326697422be4e",
+      "size": 282
+    },
+    {
+      "path": "app/share/release/UPDATER-ARCHITECTURE.md",
+      "sha256": "1e499022eda5522960cd88f4cc7da67b8085b257055eb554a878a58a09eb100b",
+      "size": 180
+    },
+    {
+      "path": "app/share/release/contracts/capability-contract.json",
+      "sha256": "36106a85af30e12e946663597b297b1480fecd57fbed37a3da823fd08c44c9b6",
+      "size": 187
+    },
+    {
+      "path": "app/share/release/contracts/page-workflow-contract.json",
+      "sha256": "7639fb6ebe34997aaf17729e7815aa915585894ebef9eccddd522a514529dc8e",
+      "size": 90
+    },
+    {
+      "path": "app/share/release/contracts/physical-write-certification-contract.json",
+      "sha256": "b6cf9ba0936fdfb0b0fe49d00c614b4b4fdf098d4d883e0a366977bc14fec9de",
+      "size": 95
+    },
+    {
+      "path": "app/share/release/contracts/source-admission-contract.json",
+      "sha256": "684e78e67dc48bc7a4ef57625f2f8c0c9e628eb411e38863b092a3124f6a8f64",
+      "size": 120
+    },
+    {
+      "path": "app/share/release/contracts/space-contract.json",
+      "sha256": "3adc0e84516aae0e9f0cee251381feceaa63e4aeed9cfb4bcbfa8c1e064ea270",
+      "size": 87
+    },
+    {
+      "path": "app/share/release/manifest.json",
+      "sha256": "81f47601fba0748b09b9c8a607a3a6df3ecde91b908d31736360b3a9d56f0f15",
+      "size": 537
+    },
+    {
+      "path": "app/share/release/requirements-traceability.json",
+      "sha256": "c5c083d1e85b8df67c996dab505d57ecd8509ca44334ce1a6f8859dc5022ace4",
+      "size": 254
+    },
+    {
+      "path": "app/web-new/api/auth-common.sh",
+      "sha256": "f538c38abb2eb3b3db9530dc28f507f624ee27d0baee6bb0cbc3d33acce30cda",
+      "size": 2834
+    },
+    {
+      "path": "app/web-new/api/broray/info.cgi",
+      "sha256": "b09a38737af787b5351717058ccb328e16451acb7a03fcec1afd188dd7a210d4",
+      "size": 186
+    },
+    {
+      "path": "app/web-new/api/broray/update-check.cgi",
+      "sha256": "a2da974ac12c97e5e8c21cbb90227a30faeadf377421aaa05850a39dfbd435b5",
+      "size": 528
+    },
+    {
+      "path": "app/web-new/api/broray/update-start.cgi",
+      "sha256": "ff1c8c2444cec73603790e8dce7715dff522330d05d6eb3f1ea8dad6f170fe3f",
+      "size": 544
+    },
+    {
+      "path": "app/web-new/api/broray/update-status.cgi",
+      "sha256": "3e913f79d6b31e2bb5445b5f53110a37ced8c5a783c3723515ffbcebdb8a46b2",
+      "size": 279
+    },
+    {
+      "path": "app/web-new/api/broray/updater-api-common.sh",
+      "sha256": "842179545297b6e21bf111553d6c711b6401530a42035fb6c534aea74a453ef5",
+      "size": 236
+    },
+    {
+      "path": "app/web-new/api/home/summary.cgi",
+      "sha256": "3d7cb70fe4e1138e77dc6d4105bcde4199272ae68882cf6b1e0da07992d8bbee",
+      "size": 292
+    },
+    {
+      "path": "app/web-new/api/keenetic/action-common.sh",
+      "sha256": "634687c332e67e1b96ea577fa3d562337740beb3da569624d0423f759145b5bd",
+      "size": 2998
+    },
+    {
+      "path": "app/web-new/api/keenetic/check-upstream.cgi",
+      "sha256": "dd03f95069858c6db5d420c29c62180c467503b6e2f579d7d7e3a88f6ebf641b",
+      "size": 112
+    },
+    {
+      "path": "app/web-new/api/keenetic/create.cgi",
+      "sha256": "642dcc83d94b6a447253a923d7722c9e80b91b2bcb85c4c636c4d6137208be0e",
+      "size": 104
+    },
+    {
+      "path": "app/web-new/api/keenetic/repair.cgi",
+      "sha256": "7da426b975760eb4d7b5489f493e7cd35d9884df7091fe82770302119278db30",
+      "size": 104
+    },
+    {
+      "path": "app/web-new/api/keenetic/status.cgi",
+      "sha256": "fbad888b26e2a8065f6c534abd0846f6d24c764affdc3f386d6ade882c05ed16",
+      "size": 1443
+    },
+    {
+      "path": "app/web-new/api/keenetic/sync-description.cgi",
+      "sha256": "3a9dfa453621ea4d0ed746307594520b490a63f334d612158a6c8eaf4784fac7",
+      "size": 114
+    },
+    {
+      "path": "app/web-new/api/login.cgi",
+      "sha256": "d4d1c7e43c53c95cf8a361b877c4b0b9ecebdd1f778f105e6a15b51fe28eb643",
+      "size": 3156
+    },
+    {
+      "path": "app/web-new/api/logout.cgi",
+      "sha256": "dcad25250b14fe855947408072389363b9d81c2c6070afeb0fab521480915681",
+      "size": 625
+    },
+    {
+      "path": "app/web-new/api/servers/activate.cgi",
+      "sha256": "f075a4f3cfe7ef4dbacdb0426ba8b5870fc6cc0663cb95e08e4789e05fd01f58",
+      "size": 645
+    },
+    {
+      "path": "app/web-new/api/servers/auto-switch-save.cgi",
+      "sha256": "456b8806d7baf17714e9221bf5f83e1581b025e0abaea5cceaa0901a71982805",
+      "size": 1250
+    },
+    {
+      "path": "app/web-new/api/servers/auto-switch-status.cgi",
+      "sha256": "fc78999a8e501063c43c0a45602347b4260e1a92bb99cbbe1cb7799638374389",
+      "size": 421
+    },
+    {
+      "path": "app/web-new/api/servers/check.cgi",
+      "sha256": "e3549d5e5895b1911f864d2b8f3a6df27745533f955ae8548ee0817c8dde93e5",
+      "size": 649
+    },
+    {
+      "path": "app/web-new/api/servers/common.sh",
+      "sha256": "7b15c5c3f0cb3885343a3a9a0ab324d81784c472e7a96341299af431f57e9f68",
+      "size": 1587
+    },
+    {
+      "path": "app/web-new/api/servers/delete.cgi",
+      "sha256": "bd279e25db0e03176b350fa69203b7958adf04803334ae3e3efefd814cdef132",
+      "size": 644
+    },
+    {
+      "path": "app/web-new/api/servers/details.cgi",
+      "sha256": "a1646f780b5f1510b8e9791b6e1e5e19c010beca3f55fd1b5c5d024907fbdc90",
+      "size": 389
+    },
+    {
+      "path": "app/web-new/api/servers/import.cgi",
+      "sha256": "7203c2a970f59b15901e77c42ab05152bcb792766464ebdf58bfb39d9c81998d",
+      "size": 823
+    },
+    {
+      "path": "app/web-new/api/servers/summary.cgi",
+      "sha256": "118d3424497b8db9d573302a459413c0faa7e4bd2249b13d8455ce3033c4ff30",
+      "size": 451
+    },
+    {
+      "path": "app/web-new/api/session.cgi",
+      "sha256": "c80e7513976ca88f5d79e81c0cf9e1018215de3229840762743ec680c8fff673",
+      "size": 475
+    },
+    {
+      "path": "app/web-new/api/subscriptions/common.sh",
+      "sha256": "51a2e93ab9f07b974e1a2a1822bb600671ae7418a0af47b03470f2ee41a9c209",
+      "size": 1637
+    },
+    {
+      "path": "app/web-new/api/subscriptions/create.cgi",
+      "sha256": "0c719b59a34ea745c4cb39652b881a2dc0a5d4a0c8c6a1ea45d0523f5c2f4d8d",
+      "size": 562
+    },
+    {
+      "path": "app/web-new/api/subscriptions/delete.cgi",
+      "sha256": "5a2aa2e9ca569662e00e9673708dfb2c5dd8f47af8033b334e6356a9d621b118",
+      "size": 296
+    },
+    {
+      "path": "app/web-new/api/subscriptions/details.cgi",
+      "sha256": "d24416c1a36e9db398a7e832007fc4c0488f2426f703b2e1948a098296f58f42",
+      "size": 255
+    },
+    {
+      "path": "app/web-new/api/subscriptions/list.cgi",
+      "sha256": "06276bf3c968a1ee750f68dc619b1e5dfa5e9aa656d05198ce9ec2f359b4117f",
+      "size": 182
+    },
+    {
+      "path": "app/web-new/api/subscriptions/refresh.cgi",
+      "sha256": "a6f23b3606fbc01d2071075df364e81a4e98e15a79c47b472afd661b5b7e0d20",
+      "size": 310
+    },
+    {
+      "path": "app/web-new/api/subscriptions/servers.cgi",
+      "sha256": "af669fe7f103f8f450d509270d7437250e58a5af8096e2443a5429f5e3bc5d51",
+      "size": 259
+    },
+    {
+      "path": "app/web-new/api/subscriptions/summary.cgi",
+      "sha256": "2dc2f0daff25ffdce1bde0e23e9c54c4320cfe170acff8f65e8bf1934d80b1ac",
+      "size": 185
+    },
+    {
+      "path": "app/web-new/api/xray/operation-status.cgi",
+      "sha256": "8ca091b9f241f2392a807dd962993643d116bdd37487e81e4b2a412654408dce",
+      "size": 1704
+    },
+    {
+      "path": "app/web-new/api/xray/status.cgi",
+      "sha256": "f5cde4c1e7b79cd40e2bdb035a852bf14bc98cf1de162cdac7dd0cd3732e6f0e",
+      "size": 849
+    },
+    {
+      "path": "app/web-new/api/xray/update-check.cgi",
+      "sha256": "26d367c56f04c0475a4179d3a1c0a2c742a732b8a9232233564ce6f78736a4c2",
+      "size": 1357
+    },
+    {
+      "path": "app/web-new/api/xray/update.cgi",
+      "sha256": "d906e4225a76c4d401601727a8cbd1d6edb304fc177fca881b39ef29972750cf",
+      "size": 463
+    },
+    {
+      "path": "app/web-new/assets/css/allpage.css",
+      "sha256": "92ce62e8db745f99c713e24d35639a55aa4741dc3a9523a6655e97b3265f6075",
+      "size": 1677
+    },
+    {
+      "path": "app/web-new/assets/images/branding/broray-logo-128.png",
+      "sha256": "65397f039d9bb4ad8f16e3b64f0db32719505f7aa6efd27a249b44d4dc3596e2",
+      "size": 16179
+    },
+    {
+      "path": "app/web-new/assets/images/branding/broray-logo-64.png",
+      "sha256": "8337a9abeb2fb467ee182f46f65595b0a29e13d98a570fa6aeb9f6d47c9715c8",
+      "size": 6031
+    },
+    {
+      "path": "app/web-new/assets/images/branding/favicon-16.png",
+      "sha256": "95a7fd6e95431dc668251e6f8e0090f3e53e7d998652eb4e416d8a0fd9eacfe9",
+      "size": 1046
+    },
+    {
+      "path": "app/web-new/assets/images/branding/favicon-32.png",
+      "sha256": "bf5ad3dcb51af6bd1efceae06fde8406ae7512f66065f6573e02f4041f3b7e2d",
+      "size": 2394
+    },
+    {
+      "path": "app/web-new/assets/images/branding/favicon.ico",
+      "sha256": "87e1206bce1a40d55777d67c32e61c6a3ff33f739fd0731c6d0c91cc831a643b",
+      "size": 13978
+    },
+    {
+      "path": "app/web-new/assets/js/app-shell.js",
+      "sha256": "ca7bd56b705b38cdf22c82c570dcc75f1db3ae072b580efa9b7825a618c8bab0",
+      "size": 213
+    },
+    {
+      "path": "app/web-new/assets/js/common.js",
+      "sha256": "526ad0309b670caf869dbfbf0f266c43dbc9b000b02090da67a35b7c07167244",
+      "size": 5791
+    },
+    {
+      "path": "app/web-new/assets/js/home.js",
+      "sha256": "38f8974380d72a105d94f447faaf9398d7aceda523671adc7a88fc7ba9756592",
+      "size": 1526
+    },
+    {
+      "path": "app/web-new/assets/js/login.js",
+      "sha256": "f164011baa9fc0a4bfac92b21faf7813b6a326b223f23b79601284ed1060084c",
+      "size": 2779
+    },
+    {
+      "path": "app/web-new/assets/js/servers-auto-switch.js",
+      "sha256": "f52d0278a6bdac214daeccf2ec428a30c37b3dd44b9a154a6e94c365f3ced72e",
+      "size": 1386
+    },
+    {
+      "path": "app/web-new/assets/js/servers.js",
+      "sha256": "e92be460b8bcbbba0918f0bd351e14e653040187cbefdfc70024a4361b70fdc9",
+      "size": 2183
+    },
+    {
+      "path": "app/web-new/assets/js/subscriptions.js",
+      "sha256": "99c2caf793402f49bff1142d651a10dc9e0a021c3e807931f095ecfb63da8390",
+      "size": 1506
+    },
+    {
+      "path": "app/web-new/build.json",
+      "sha256": "4e2e2b416468d376249e19507e89a70e6793b7513e6bbb26ef0ea56509485ea8",
+      "size": 207
+    },
+    {
+      "path": "app/web-new/home.html",
+      "sha256": "d6a4cc1502a2e4501bf0d985c5834dd15762c389a9d0c8d370c90a4c493745cb",
+      "size": 2120
+    },
+    {
+      "path": "app/web-new/index.html",
+      "sha256": "980273446b69007e78f6022a535b96e41578504bb22bb115d5291f9d3ddcbab6",
+      "size": 1370
+    },
+    {
+      "path": "app/web-new/manifest.json",
+      "sha256": "a904c2fcf60e1be6496d26974c4c90f005298f3ef6ea3b1c93e85642f7f19761",
+      "size": 177
+    },
+    {
+      "path": "app/web-new/servers.html",
+      "sha256": "a527ebb45e80f4357a6aa1c5a9822ca83bb95d3862b4aa527def7302e95580a6",
+      "size": 1412
+    },
+    {
+      "path": "app/web-new/subscriptions.html",
+      "sha256": "ebe5830dcddf9672d3f55792fceca0acdf4a639b9526e5e0d20ea9d46fffe374",
+      "size": 1062
+    },
+    {
+      "path": "init/S24broray-light",
+      "sha256": "e7291fc186180df37f53b3266214ec1e25279b94aa56ade69461fced927a749c",
+      "size": 1933
+    },
+    {
+      "path": "release.json",
+      "sha256": "81f47601fba0748b09b9c8a607a3a6df3ecde91b908d31736360b3a9d56f0f15",
+      "size": 537
+    },
+    {
+      "path": "state-seed/config/lighttpd.conf",
+      "sha256": "816aed2ab8fe59092d31a1cb1f80fe714cc31f8fe6ece45e5dfde09888bcc661",
+      "size": 627
+    },
+    {
+      "path": "state-seed/config/system/server-auto-switch.json",
+      "sha256": "6743d9128b6206747ef724fbe72ba9646ef027ba948962805baeb6b053d661cf",
+      "size": 170
+    },
+    {
+      "path": "state-seed/config/system/settings.json",
+      "sha256": "7cb59866bede03da82b04ccb59d7e9b439f72f4d38d382c0bc409bc38827ba4d",
+      "size": 175
+    },
+    {
+      "path": "state-seed/config/version",
+      "sha256": "c2ef39e09593cca70be98a0fb0ab435b53e2eb3c3d4e812cd7d43794eafa7728",
+      "size": 10
+    }
+  ],
+  "schemaVersion": 1
+}

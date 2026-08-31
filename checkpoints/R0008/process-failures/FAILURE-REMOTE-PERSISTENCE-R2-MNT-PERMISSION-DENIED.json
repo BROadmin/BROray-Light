@@ -1,0 +1,13 @@
+{
+  "canonicalSourceCommitted": false,
+  "failureClass": "GITHUB_RUNNER_MNT_PERMISSION_DENIED",
+  "failureId": "BROray-Light-R0008-REMOTE-PERSISTENCE-R2-MNT-PERMISSION-DENIED",
+  "firstError": "mkdir: cannot create directory /mnt/data: Permission denied",
+  "firstErrorPolicy": "STOPPED_NO_RERUN",
+  "jobId": "99475689683",
+  "resolution": "R3 uses passwordless sudo to create and chown /mnt/data on GitHub hosted runner",
+  "schemaVersion": 1,
+  "status": "FAIL_PRESERVED",
+  "workflowParentCommit": "e608348650e2d8b8fe0c0ef9b5ceff4c6a7be4d8",
+  "workflowRunId": "33388259335"
+}

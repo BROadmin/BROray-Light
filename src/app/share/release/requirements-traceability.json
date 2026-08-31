@@ -1,0 +1,11 @@
+{
+  "schemaVersion": 1,
+  "requirements": {
+    "VLESS_ONLY": "R0008",
+    "THREE_PAGES": "R0008",
+    "DETERMINISTIC_FAILOVER": "R0008",
+    "KEENETIC_HOME": "R0008",
+    "SINGLE_PRIMARY_SERVICE": "R0008",
+    "UPDATER_V5_SEMANTICS": "NEXT_STAGE"
+  }
+}

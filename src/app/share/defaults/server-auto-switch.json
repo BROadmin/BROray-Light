@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 1,
+  "enabled": false,
+  "failureThreshold": 3,
+  "cooldownSeconds": 600,
+  "orderedServerIds": [],
+  "excludedServerIds": [],
+  "updatedAt": null
+}

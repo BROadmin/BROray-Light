@@ -1,0 +1,76 @@
+#!/opt/bin/ash
+
+ROOT="${BRORAY_ROOT:-/opt/broray-light}"
+DAEMON="$ROOT/bin/broray-lightd"
+DP="$ROOT/run/broray-lightd.pid"
+WP="$ROOT/run/lighttpd.pid"
+
+pid_alive()
+{
+    p="${1:-}"
+    case "$p" in ''|*[!0-9]*) return 1 ;; esac
+    kill -0 "$p" 2>/dev/null
+}
+
+start_web()
+{
+    w="$(cat "$WP" 2>/dev/null || true)"
+    pid_alive "$w" && return 0
+    LIGHTTPD="$(command -v lighttpd 2>/dev/null || true)"
+    [ -n "$LIGHTTPD" ] || { echo "lighttpd недоступен" >&2; return 1; }
+    "$LIGHTTPD" -f "$ROOT/config/lighttpd.conf" || return 1
+    i=0
+    while [ "$i" -lt 5 ]; do
+        w="$(cat "$WP" 2>/dev/null || true)"
+        pid_alive "$w" && return 0
+        i=$((i + 1)); sleep 1
+    done
+    echo "lighttpd не подтвердил запуск" >&2
+    return 1
+}
+
+start_daemon()
+{
+    d="$(cat "$DP" 2>/dev/null || true)"
+    pid_alive "$d" && return 0
+    "$DAEMON" >>"$ROOT/logs/broray-lightd.log" 2>&1 &
+    i=0
+    while [ "$i" -lt 5 ]; do
+        d="$(cat "$DP" 2>/dev/null || true)"
+        pid_alive "$d" && return 0
+        i=$((i + 1)); sleep 1
+    done
+    echo "BROray-Light daemon не подтвердил запуск" >&2
+    return 1
+}
+
+start()
+{
+    "$ROOT/bin/broray-runtime-prepare" || return 1
+    mkdir -p "$ROOT/logs" "$ROOT/run" || return 1
+    start_web || return 1
+    start_daemon || return 1
+}
+
+stop()
+{
+    d="$(cat "$DP" 2>/dev/null || true)"
+    pid_alive "$d" && kill "$d" 2>/dev/null || true
+    w="$(cat "$WP" 2>/dev/null || true)"
+    pid_alive "$w" && kill "$w" 2>/dev/null || true
+    "$ROOT/bin/broray-xray-control" stop >/dev/null 2>&1 || true
+    rm -f "$DP" "$WP"
+}
+
+restart(){ stop; sleep 1; start; }
+status()
+{
+    d="$(cat "$DP" 2>/dev/null || true)"
+    w="$(cat "$WP" 2>/dev/null || true)"
+    pid_alive "$d" && pid_alive "$w"
+}
+
+case "${1:-}" in
+    start|stop|restart|status) "$1" ;;
+    *) echo 'Usage: S24broray-light {start|stop|restart|status}' >&2; exit 1 ;;
+esac
