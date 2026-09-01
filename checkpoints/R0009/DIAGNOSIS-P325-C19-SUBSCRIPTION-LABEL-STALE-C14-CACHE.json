@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_C19_SUBSCRIPTION_LABEL_COLOR_CORRECTION",
+  "revision": "p325-c19-unique-navigation-style-probe",
+  "at": "2026-09-01T15:58:27+03:00",
+  "status": "PASS",
+  "candidateId": "0.1.0-r0009c19",
+  "reportedElement": ".form-card .card-label",
+  "reportedText": "Новая подписка",
+  "observedStalePage": {
+    "url": "https://brolight.tvervip.keenetic.link/subscriptions.html",
+    "stylesheetVersion": "0.1.0-r0009c14",
+    "computedColor": "rgb(145, 174, 195)",
+    "computedMarginBottom": "13px"
+  },
+  "currentCandidateProbe": {
+    "url": "https://brolight.tvervip.keenetic.link/subscriptions.html?probe=p325",
+    "stylesheetVersion": "0.1.0-r0009c19",
+    "computedColor": "rgb(78, 214, 157)",
+    "computedMarginBottom": "13px",
+    "expectedBrandVariable": "--brand-hi: #4ed69d",
+    "result": "PASS"
+  },
+  "rootCause": "The unversioned browser tab reused a stale c14 HTML document which referenced the c14 stylesheet. The current c19 package and freshly requested c19 page already render the label in the requested green brand color.",
+  "candidateArtifactDefect": false,
+  "sourceChangeRequired": false,
+  "newBuildRequired": false,
+  "routerMutation": false,
+  "resolution": "Navigate the active browser to the versioned c19 subscriptions page; all c19 navigation links are already versioned and HTML responses are configured no-store.",
+  "candidateReady": true,
+  "nextStage": "DEFINE_AND_AUTHORIZE_R0010_BEFORE_ANY_STABLE_PUBLICATION"
+}

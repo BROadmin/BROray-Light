@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "failureId": "R197",
+  "stage": "R0009_C19_SUBSCRIPTION_LABEL_COLOR_CORRECTION",
+  "revision": "p322-c19-browser-style-inspection",
+  "at": "2026-09-01T15:55:46+03:00",
+  "status": "FAILED_STOPPED_FIRST_ERROR",
+  "failureClass": "BROWSER_DOMCONTENTLOADED_API_ASSUMPTION",
+  "operation": "Open the authenticated subscriptions page and wait for DOM content loading before reading the selected label style",
+  "error": "tab.playwright.domcontentloaded is not a function",
+  "candidateId": "0.1.0-r0009c19",
+  "candidateArtifactDefect": false,
+  "pageNavigationSucceeded": true,
+  "repositoryMutationBeforeFailure": false,
+  "routerMutation": false,
+  "hiddenRetryPerformed": false,
+  "cause": "The retained browser API exposes DOM operations through supported locator/evaluate methods but not a domcontentloaded helper.",
+  "nextRevision": "p323-c19-supported-dom-style-inspection",
+  "nextExactAction": "READ_THE_COMPUTED_CARD_LABEL_STYLE_WITH_THE_SUPPORTED_PLAYWRIGHT_EVALUATE_API_BEFORE_DECIDING_THE_CORRECTIVE_REVISION"
+}

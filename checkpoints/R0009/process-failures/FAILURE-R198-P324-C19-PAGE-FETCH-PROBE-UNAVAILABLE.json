@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "failureId": "R198",
+  "stage": "R0009_C19_SUBSCRIPTION_LABEL_COLOR_CORRECTION",
+  "revision": "p324-c19-page-fetch-cache-probe",
+  "at": "2026-09-01T15:57:24+03:00",
+  "status": "FAILED_STOPPED_FIRST_ERROR",
+  "failureClass": "PAGE_FETCH_PROBE_UNAVAILABLE",
+  "operation": "Fetch a unique subscriptions HTML probe from page context to confirm response cache headers and current asset version",
+  "error": "TypeError: fetch is not a function",
+  "candidateId": "0.1.0-r0009c19",
+  "candidateArtifactDefect": false,
+  "currentVersionedPageAlreadyVerifiedGreen": true,
+  "repositoryMutationBeforeFailure": false,
+  "routerMutation": false,
+  "hiddenRetryPerformed": false,
+  "cause": "The authenticated page context does not expose a callable fetch function to the browser evaluation bridge.",
+  "nextRevision": "p325-c19-unique-navigation-style-probe",
+  "nextExactAction": "NAVIGATE_TO_A_UNIQUE_SUBSCRIPTIONS_QUERY_AND_READ_THE_RENDERED_ASSET_VERSION_AND_COMPUTED_LABEL_COLOR"
+}

@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "stage": "R0009",
   "status": "PASS",
-  "currentRevision": "p321-c19-final-reseal",
+  "currentRevision": "p325-c19-subscription-label-cache-diagnosis",
   "workingBranch": "codex/r0009-updater-package",
   "authorizedTask": "BUILD_LIGHT_UPDATER_INSTALLER_AND_INSTALLABLE_CANDIDATE_FROM_R0008",
   "candidateReady": true,
@@ -45,11 +45,11 @@
   },
   "finalCheckpoint": {
     "path": "checkpoints/R0009/CHECKPOINT.json",
-    "sha256": "b2a092f2a9ea60d322fc7c6dd5ebcafbd9ef32f93d688e103734744125c3f14f",
+    "sha256": "93928831c8dd1ad76a73b7ede1a5f7d7d91aba2fc009256131abc12b2e420fc6",
     "validationPath": "checkpoints/R0009/VALIDATION.json",
-    "validationSha256": "95a9f6cc89c87e0ada304b6fb1a87d6c3785384959e788ee9677e2d1857c4de4",
+    "validationSha256": "899d19ef459e5949a00e9c92a92f117dc91775b5ba38c9eac39a521d490b92ae",
     "reportPath": "checkpoints/R0009/REPORT.md",
-    "reportSha256": "ef3f829d661d5e45d1a8143b73e025a8d384124368c384ab2405969be1f28b7a"
+    "reportSha256": "46da3c40ecf7f6b5780984d0900d168f5ed9cec35c4a217eec8e3e5d19fd3902"
   },
   "physicalValidation": {
     "authorized": true,
@@ -65,9 +65,9 @@
     "finalFunctionalReceiptSha256": "3ea07020995635dba9f7e9fe537ef068ece1e32668e5d43eef53d08caf83081c"
   },
   "processFailures": {
-    "preserved": 154,
-    "latest": "checkpoints/R0009/process-failures/FAILURE-R196-P320-C19-RESEAL-DELETE-ADD-SAME-PATCH.json",
-    "latestDiagnosis": "checkpoints/R0009/DIAGNOSIS-P272-C15-STALE-HTML-CACHE.json"
+    "preserved": 156,
+    "latest": "checkpoints/R0009/process-failures/FAILURE-R198-P324-C19-PAGE-FETCH-PROBE-UNAVAILABLE.json",
+    "latestDiagnosis": "checkpoints/R0009/DIAGNOSIS-P325-C19-SUBSCRIPTION-LABEL-STALE-C14-CACHE.json"
   },
   "canonicalPublicKeySha256": "9421289636a6a307a8ab874f2d680d249ec221a5d66506ce1ac8eabcebd99826",
   "privateSigningKeyDestroyed": true,

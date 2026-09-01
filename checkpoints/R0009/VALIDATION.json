@@ -40,7 +40,7 @@
     {"name":"signed update equal-version downgrade refusal and rollback","status":"PASS","receipt":"checkpoints/R0009/physical-validation/ROLLBACK-P98-C07-FORCED-HEALTH-WEB-PERSISTENCE.json"}
   ],
   "finalLocalValidation": {"status":"PASS","receipt":"checkpoints/R0009/FINAL-LOCAL-AUDIT-P319-C19.json","receiptSha256":"43a6691330e448d9ec87fe33295116efd298d5a684b75d89fee2f8fb0487e75d"},
-  "processFailuresPreserved": 154,
+  "processFailuresPreserved": 156,
   "privateSigningKeyDestroyed": true,
   "productionServerMutationPerformed": false,
   "publicReleasePublished": false,
