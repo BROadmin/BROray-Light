@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_CORRECTIVE_C14_AFTER_C13_USER_VALIDATION_FAILURES",
+  "revision": "p246-c14-private-signing-key-destruction",
+  "status": "PASS",
+  "candidateId": "0.1.0-r0009c14",
+  "exactSingleFilePreflight": true,
+  "privateSigningKeyDestroyed": true,
+  "absenceVerified": true,
+  "parentDirectoryPreserved": true,
+  "publicKeySha256": "79b436e96c19d9e268addfc0c780f34e1676d90b764d7fcd21a8327508063f7b",
+  "buildASignatureVerified": true,
+  "buildBSignatureVerified": true,
+  "repositoryMutation": false,
+  "routerMutation": false,
+  "nextRevision": "p247-c14-final-record-reseal",
+  "nextExactAction": "RESEAL_R0009_CHECKPOINT_VALIDATION_REPORT_REPRODUCIBILITY_ISOLATED_RECEIPTS_IMPLEMENTATION_STATE_AND_R0009_STATE_FOR_C14_WITH_CANDIDATE_READY_FALSE_PENDING_FINAL_AUDIT"
+}

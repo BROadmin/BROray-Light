@@ -1,26 +1,26 @@
 {
   "schemaVersion": 1,
-  "stage": "R0009_CORRECTIVE_C13_AFTER_C12_STATIC_ASSET_CACHE_FAILURE",
-  "revision": "p203-c13-independent-builds",
-  "at": "2026-09-01T12:31:00+03:00",
+  "stage": "R0009_CORRECTIVE_C14_AFTER_C13_USER_VALIDATION_FAILURES",
+  "revision": "p228-c14-ephemeral-signing-key-and-independent-builds",
+  "at": "2026-09-01T15:09:00+03:00",
   "status": "PASS",
-  "candidateId": "0.1.0-r0009c13",
-  "buildA": "dist/R0009/R0009c13-Build-A",
-  "buildB": "dist/R0009/R0009c13-Build-B",
+  "candidateId": "0.1.0-r0009c14",
+  "buildA": "dist/R0009/R0009c14-P231-Build-A",
+  "buildB": "dist/R0009/R0009c14-P231-Build-B",
   "comparison": "BYTE_IDENTICAL",
   "artifactCount": 8,
   "signedReleaseIndexVerified": true,
   "artifacts": {
-    "broray-light_0.1.0-r0009c13_aarch64-3.10.ipk": "18136b993f2f153f33b2932c9fee50c167f3b16e2cbd44ac9137612e27cc86d2",
-    "broray-light-app-0.1.0-r0009c13.tar.gz": "ef3dc465de59946798243ac7c6a7c27a4818f6c90db98133eb3c47fe43c61065",
-    "broray-light-install-0.1.0-r0009c13.sh": "482db129e12de9156ca21a17981b2d1ebcc4f3de458992886735fcc0a74deecf",
-    "broray-light-updater-platform-5-light1.tar.gz": "4235d3f6ab5b2305920ec2ad16bfb077f82d0c72b454e0d7ded32c85530765ea",
-    "CANDIDATE-MANIFEST.json": "e8b07f6d9437745f3584da20d29c08c08fca82ef5320f0e6b675144eebcd47aa",
-    "release.json": "9427a0f09c48d93b436cf070d3e0270e321ec98979f4a7386bc1b737fe6dc99a",
-    "release.json.minisig": "0f1ebbd2fb24f04d7104ce177026583535d3b440e7bbe4c6c755c84f8569d1dd",
-    "SHA256SUMS": "9f5750907b53f8d9315de8093ded7f821ef013dfc5becefe3175f05b6e6b3b87"
+    "broray-light_0.1.0-r0009c14_aarch64-3.10.ipk": "43c7ddbb59e3cb68c68f9e280f2859b0ed6170d4ad5fb1f6f108d2010c0ca6ee",
+    "broray-light-app-0.1.0-r0009c14.tar.gz": "d058cabb9cfb150bf6526ecf5129fc0840226756bb728d3d6f49473e5e5e18c6",
+    "broray-light-install-0.1.0-r0009c14.sh": "a9ffbed45d080648696ca73a32e62572889634eb097230005b829ecde76d903d",
+    "broray-light-updater-platform-5-light1.tar.gz": "6af6609808b086c09705a21f67002e873f12b548f8be33beb9e39924d16e35e6",
+    "CANDIDATE-MANIFEST.json": "98057e449d0d5cd9cde3a05e1ce324b64e7de5b3fe81ba23345a38c6fcf6b1fb",
+    "release.json": "284c7450fad06e22f0165ce96a44388d4aa8cd438d6783c2c424b8f6e95647a3",
+    "release.json.minisig": "c9d06c899c6280aabc12694591c5119eb487f0f69e85893876dbe2fdf6227509",
+    "SHA256SUMS": "fa7ecde34f9485dfeee81897bedba01f560f319ca3af5df65c59959783d465c5"
   },
   "routerMutation": false,
   "canonicalSource": "PASS_UNCHANGED",
-  "nextExactAction": "USE_THE_P203_RECEIPT_AS_THE_CANONICAL_FINAL_REPRODUCIBILITY_EVIDENCE"
+  "nextExactAction": "USE_THE_P228_C14_RECEIPT_AS_THE_CANONICAL_FINAL_REPRODUCIBILITY_EVIDENCE"
 }

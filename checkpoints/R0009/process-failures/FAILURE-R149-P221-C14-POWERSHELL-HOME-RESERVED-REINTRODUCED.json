@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_CORRECTIVE_C14_AFTER_C13_USER_VALIDATION_FAILURES",
+  "revision": "p221-c14-memory-only-http-api-and-source-diagnosis",
+  "at": "2026-09-01T14:12:00+03:00",
+  "status": "FAILED_STOPPED_FIRST_ERROR",
+  "failureId": "R149",
+  "failureClass": "POWERSHELL_HOME_RESERVED_VARIABLE_REINTRODUCED",
+  "candidateId": "0.1.0-r0009c13",
+  "firstError": "Cannot overwrite variable HOME because it is read-only or constant.",
+  "knownBadApproachRepeated": true,
+  "apiResponsesCaptured": false,
+  "credentialsPrintedOrWritten": false,
+  "guaranteedLogoutFinallyExecuted": true,
+  "routerMutation": false,
+  "candidateArtifactDefect": false,
+  "hiddenRetryPerformed": false,
+  "nextRevision": "p222-c14-memory-only-http-api-diagnosis-corrected-variable",
+  "nextExactAction": "USE_HOME_RESULT_NOT_HOME_IN_A_NEW_MEMORY_ONLY_SESSION_CAPTURE_READ_ONLY_API_RESPONSES_AND_LOG_OUT"
+}

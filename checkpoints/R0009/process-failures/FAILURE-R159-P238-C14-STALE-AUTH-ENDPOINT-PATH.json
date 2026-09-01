@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_CORRECTIVE_C14_AFTER_C13_USER_VALIDATION_FAILURES",
+  "revision": "p238-c14-authenticated-functional-validation",
+  "status": "FAILED_STOPPED_FIRST_ERROR",
+  "failureId": "R159",
+  "failureClass": "STALE_AUTH_ENDPOINT_PATH",
+  "candidateId": "0.1.0-r0009c14",
+  "loginStatus": 404,
+  "logoutStatus": 404,
+  "postLogoutStatus": 404,
+  "authenticated": false,
+  "keeneticRepairExecuted": false,
+  "xrayReinstallExecuted": false,
+  "credentialsPrintedOrWritten": false,
+  "candidateArtifactDefect": false,
+  "routerMutation": false,
+  "hiddenRetryPerformed": false,
+  "cause": "The validation client used obsolete api/auth endpoint paths instead of the current paths referenced by login.js.",
+  "nextRevision": "p239-c14-current-auth-route-functional-validation",
+  "nextExactAction": "READ_THE_INSTALLED_LOGIN_AND_COMMON_JAVASCRIPT_AUTH_ENDPOINTS_THEN_RUN_A_NEW_MEMORY_ONLY_AUTHENTICATED_CYCLE_WITH_GUARANTEED_CURRENT_ROUTE_LOGOUT"
+}

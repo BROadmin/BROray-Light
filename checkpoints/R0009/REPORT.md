@@ -1,43 +1,46 @@
 # R0009 completion report
 
-R0009 is **PASS**. Internal installable candidate `0.1.0-r0009c13` was built from immutable R0008 source commit `684b27bdb53e545047419baa87c63dd86dffa469`, reproduced independently, validated in isolated roots, installed on the separately authorized Keenetic router, visually validated against the BROray reference, and not publicly published.
+R0009 is **PASS**. Internal installable candidate `0.1.0-r0009c14` passed engineering, isolated-root, final local audit and authorized physical validation. It was built from immutable R0008 source commit `684b27bdb53e545047419baa87c63dd86dffa469`, reproduced independently, installed on the Keenetic router, visually validated against the BROray reference, and not publicly published.
 
 ## Candidate and reproducibility
 
-- Build A: `dist/R0009/R0009c13-Build-A`
-- Build B: `dist/R0009/R0009c13-Build-B`
+- Build A: `dist/R0009/R0009c14-P231-Build-A`
+- Build B: `dist/R0009/R0009c14-P231-Build-B`
 - Result: 8/8 artifacts byte-identical; both `SHA256SUMS` and both minisign verifications PASS.
-- IPK SHA-256: `18136b993f2f153f33b2932c9fee50c167f3b16e2cbd44ac9137612e27cc86d2`
-- App archive SHA-256: `ef3dc465de59946798243ac7c6a7c27a4818f6c90db98133eb3c47fe43c61065`
-- Updater archive SHA-256: `4235d3f6ab5b2305920ec2ad16bfb077f82d0c72b454e0d7ded32c85530765ea`
-- Installer SHA-256: `482db129e12de9156ca21a17981b2d1ebcc4f3de458992886735fcc0a74deecf`
-- Candidate manifest SHA-256: `e8b07f6d9437745f3584da20d29c08c08fca82ef5320f0e6b675144eebcd47aa`
-- Release index SHA-256: `9427a0f09c48d93b436cf070d3e0270e321ec98979f4a7386bc1b737fe6dc99a`
-- Release signature SHA-256: `0f1ebbd2fb24f04d7104ce177026583535d3b440e7bbe4c6c755c84f8569d1dd`
-- Artifact sums SHA-256: `9f5750907b53f8d9315de8093ded7f821ef013dfc5becefe3175f05b6e6b3b87`
+- IPK SHA-256: `43c7ddbb59e3cb68c68f9e280f2859b0ed6170d4ad5fb1f6f108d2010c0ca6ee`
+- App archive SHA-256: `d058cabb9cfb150bf6526ecf5129fc0840226756bb728d3d6f49473e5e5e18c6`
+- Updater archive SHA-256: `6af6609808b086c09705a21f67002e873f12b548f8be33beb9e39924d16e35e6`
+- Installer SHA-256: `a9ffbed45d080648696ca73a32e62572889634eb097230005b829ecde76d903d`
+- Candidate manifest SHA-256: `98057e449d0d5cd9cde3a05e1ce324b64e7de5b3fe81ba23345a38c6fcf6b1fb`
+- Release index SHA-256: `284c7450fad06e22f0165ce96a44388d4aa8cd438d6783c2c424b8f6e95647a3`
+- Release signature SHA-256: `c9d06c899c6280aabc12694591c5119eb487f0f69e85893876dbe2fdf6227509`
+- Artifact sums SHA-256: `fa7ecde34f9485dfeee81897bedba01f560f319ca3af5df65c59959783d465c5`
 - Canonical R0008 application bytes remain unchanged: 121 files, 627326 logical bytes, `src/SHA256SUMS` SHA-256 `e056585d6a517ddbbbaebf08b68f17eb2d9d7ccd68d86df5cdee9fd4665f2419`.
 
 ## Validation
 
-The c13 isolated-root suite passed 33/33 gates: clean install, safe installer rerun, exact Xray bootstrap, signed update, equal-version no-op, downgrade refusal, checksum and malicious archive rejection, request/global locks, atomic slot switch, forced health rollback, persistence, exact foreign-state ownership, transient boot retry, permanent-failure fail-closed behavior, JSON-only activation, exact corrective overlay, displayed identity, named subscriptions, BROray theme and Xray update-check backend.
+The c14 isolated-root suite passed 36/36 gates: the previous 33 clean-install, updater, rollback, persistence and safety gates plus Keenetic CLI dispatch, equal-version Xray reinstall exposure, and global server deduplication with active/manual priority, backup, stale-order cleanup and idempotence.
 
 The authorized physical validation passed package install, signed r8-to-r9 update, equal-version no-op, downgrade refusal, forced rollback, persistence, native reboot, automatic startup, native KeenDNS publication and authentication. After reboot:
 
-- installed package: `broray-light 0.1.0-r0009c13`;
+- installed package: `broray-light 0.1.0-r0009c14`;
 - current slot: `releases/0.1.0-r9`;
 - primary, updater and publication status: PASS;
 - public URL: `https://brolight.tvervip.keenetic.link/`;
 - local and external unauthenticated status tuple: `200,200,401`;
 - final authenticated API lifecycle: all login, summary, info, subscriptions, activation, Xray and logout calls `200`; post-logout protected request `401`;
-- external login page: BROray blue-black/slate/teal palette, 430 px centered card, Arial Cyrillic typography, 34 px padding, inline eye control and full-width submit PASS;
-- versioned CSS/JS URLs prevent stale UI after package upgrade;
-- active server name, two named subscriptions, Xray `26.7.28` and BROray-Light `0.1.0-r9` are visible through the API/UI contract;
-- zero session files after logout;
+- external pages: BROray blue-black/slate/teal palette, separated sections, 24 px action top margin, 6 px bottom margin and no text/button collisions PASS;
+- versioned c14 CSS/JS URLs prevent stale assets after package upgrade;
+- active server, two subscriptions, Xray `26.7.28`, BROray-Light `0.1.0-r9`, Keenetic `Готов` and connection state are visible;
+- Xray `26.7.28` was safely reinstalled at the same version through the new UI/API path and retained its exact SHA-256;
+- BROray-Light has an explicit update-check button and reports that the internal R0009 public channel is not configured;
+- disabled auto-switch now renders `Выключено` with an explanation instead of ambiguous `Ожидание`;
+- 11 overlapping subscription records were reconciled to 6 unique servers; 5 removed files are preserved in the app-owned backup, the active server remained present, and stale auto-switch references are zero;
 - Xray SHA-256 remains `4b8af237444801bf17b3dc10a1c5c24581fbe3d433eba3d78c6c3a0da1df56fc`;
 - config, servers, subscriptions, Xray, Lighttpd config and publication receipt persisted;
 - full BROray ownership is zero and routes via `Proxy0` are zero.
 
-All 104 material failed revisions are preserved as JSON checkpoints with SHA-256 sidecars. The ephemeral private signing key was not placed in the repository or transferred to the router and has been destroyed. The final public verification key SHA-256 is `401aad9c433c6c81b24412508774ae467a4c11a5752d2c6c0b286ae39079a93f`.
+All 123 material failed revisions are preserved as JSON checkpoints with SHA-256 sidecars. The ephemeral private signing key was not placed in the repository or transferred to the router and has been destroyed. The c14 public verification key SHA-256 is `79b436e96c19d9e268addfc0c780f34e1676d90b764d7fcd21a8327508063f7b`.
 
 ## Completion
 

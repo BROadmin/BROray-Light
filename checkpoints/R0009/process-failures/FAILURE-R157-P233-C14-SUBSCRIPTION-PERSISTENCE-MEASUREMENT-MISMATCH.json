@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_CORRECTIVE_C14_AFTER_C13_USER_VALIDATION_FAILURES",
+  "revision": "p233-c14-physical-preflight",
+  "status": "FAILED_STOPPED_FIRST_ERROR",
+  "failureId": "R157",
+  "failureClass": "SUBSCRIPTION_PERSISTENCE_MEASUREMENT_PATH_MISMATCH",
+  "candidateId": "0.1.0-r0009c14",
+  "expectedApiSubscriptionCount": 2,
+  "observedTopLevelJsonFileCount": 0,
+  "otherPreflightAtoms": {
+    "installedPackage": "broray-light 0.1.0-r0009c13",
+    "services": "PASS_PRIMARY_UPDATER_PUBLICATION",
+    "storedServers": 11,
+    "xrayIdentity": "PASS",
+    "fullBROrayOwnership": 0,
+    "routesViaProxy0": 0,
+    "remoteTransferTargetAbsent": true,
+    "recoveryMarkerAbsent": true
+  },
+  "candidateArtifactDefect": false,
+  "routerMutation": false,
+  "hiddenRetryPerformed": false,
+  "cause": "The preflight counted only top-level subscription JSON files, while subscription persistence uses a different layout.",
+  "nextRevision": "p234-c14-subscription-layout-aware-preflight",
+  "nextExactAction": "READ_ONLY_ENUMERATE_ONLY_SUBSCRIPTION_ENTRY_TYPES_AND_RELATIVE_DEPTHS_WITHOUT_CONTENT_OR_URLS_THEN_RECOMPUTE_A_LAYOUT_AWARE_PERSISTENCE_COUNT_AND_HASH"
+}

@@ -1,0 +1,158 @@
+#!/opt/bin/ash
+
+BRORAY_ROOT="${BRORAY_ROOT:-/opt/broray-light}"
+
+. "$BRORAY_ROOT/lib/subscription-service.sh"
+
+usage()
+{
+    cat <<'HELP'
+BROray Subscriptions
+
+Использование:
+  broray-subscriptions list|get|create|update|refresh|servers|delete|summary
+  broray-subscriptions scheduler-once|recover|deduplicate
+HELP
+}
+
+read_json_input()
+{
+    input_source="$1"
+    input_temp="$BRORAY_ROOT/tmp/subscription-cli-body.$$.json"
+    mkdir -p "$BRORAY_ROOT/tmp"
+    if [ "$input_source" = "-" ]; then
+        cat > "$input_temp"
+    else
+        cp "$input_source" "$input_temp"
+    fi
+    printf '%s\n' "$input_temp"
+}
+
+broray_subscription_dedupe_pass()
+{
+    dedupe_field="$1"
+    dedupe_backup="$2"
+    dedupe_inventory="$BRORAY_ROOT/tmp/server-deduplicate-$dedupe_field.$$.jsonl"
+    dedupe_remove="$BRORAY_ROOT/tmp/server-deduplicate-$dedupe_field.$$.remove"
+    : > "$dedupe_inventory" || return 1
+
+    for dedupe_file in "$BRORAY_ROOT"/servers/*.json; do
+        [ -f "$dedupe_file" ] && [ ! -L "$dedupe_file" ] || continue
+        jq --arg file "$dedupe_file" '. + {__file:$file}' "$dedupe_file" >> "$dedupe_inventory" || return 1
+    done
+
+    dedupe_active="$(cat "$BRORAY_ROOT/config/active-server" 2>/dev/null || true)"
+    jq -s -r --arg field "$dedupe_field" --arg active "$dedupe_active" '
+      map(. + {__key:(if $field=="identity" then (.identityKey // "") else (.source.importKey // "") end)})
+      | map(select(.__key != ""))
+      | sort_by(.__key)
+      | group_by(.__key)
+      | map(select(length > 1))[]
+      | sort_by([if .id == $active then 0 elif (.source.type // "manual") == "manual" then 1 else 2 end, .id])
+      | .[1:][]?.__file
+    ' "$dedupe_inventory" > "$dedupe_remove" || return 1
+
+    while IFS= read -r dedupe_file; do
+        [ -n "$dedupe_file" ] || continue
+        case "$dedupe_file" in
+            "$BRORAY_ROOT"/servers/*.json) ;;
+            *) return 1 ;;
+        esac
+        [ -f "$dedupe_file" ] && [ ! -L "$dedupe_file" ] || return 1
+        mkdir -p "$dedupe_backup" || return 1
+        cp -p "$dedupe_file" "$dedupe_backup/${dedupe_file##*/}" || return 1
+    done < "$dedupe_remove"
+
+    while IFS= read -r dedupe_file; do
+        [ -n "$dedupe_file" ] || continue
+        rm -f "$dedupe_file" || return 1
+        BRORAY_DEDUPE_REMOVED=$((BRORAY_DEDUPE_REMOVED + 1))
+    done < "$dedupe_remove"
+
+    rm -f "$dedupe_inventory" "$dedupe_remove"
+}
+
+broray_subscription_deduplicate()
+{
+    mkdir -p "$BRORAY_ROOT/servers" "$BRORAY_ROOT/backup" "$BRORAY_ROOT/tmp" || return 1
+    BRORAY_DEDUPE_REMOVED=0
+    dedupe_backup="$BRORAY_ROOT/backup/server-deduplicate-$(date '+%Y%m%d-%H%M%S')-$$"
+
+    broray_subscription_dedupe_pass identity "$dedupe_backup" || return 1
+    broray_subscription_dedupe_pass import "$dedupe_backup" || return 1
+
+    dedupe_ids="$BRORAY_ROOT/tmp/server-deduplicate-ids.$$.jsonl"
+    : > "$dedupe_ids" || return 1
+    for dedupe_file in "$BRORAY_ROOT"/servers/*.json; do
+        [ -f "$dedupe_file" ] && [ ! -L "$dedupe_file" ] || continue
+        jq -c '{id}' "$dedupe_file" >> "$dedupe_ids" || return 1
+    done
+    dedupe_id_array="$(jq -s '[.[].id]' "$dedupe_ids")" || return 1
+    rm -f "$dedupe_ids"
+
+    dedupe_config="$BRORAY_ROOT/config/system/server-auto-switch.json"
+    if [ -f "$dedupe_config" ] && [ ! -L "$dedupe_config" ]; then
+        jq --argjson ids "$dedupe_id_array" '
+          .orderedServerIds = [(.orderedServerIds // [])[] | select(. as $id | $ids | index($id))]
+          | .excludedServerIds = [(.excludedServerIds // [])[] | select(. as $id | $ids | index($id))]
+        ' "$dedupe_config" > "$dedupe_config.$$" &&
+            chmod 600 "$dedupe_config.$$" && mv "$dedupe_config.$$" "$dedupe_config" || return 1
+    fi
+
+    if [ "$BRORAY_DEDUPE_REMOVED" -eq 0 ]; then
+        rmdir "$dedupe_backup" 2>/dev/null || true
+        dedupe_backup=""
+    fi
+    jq -n --argjson removed "$BRORAY_DEDUPE_REMOVED" --arg backup "$dedupe_backup" \
+        '{ok:true,removed:$removed,backup:(if $backup=="" then null else $backup end)}'
+}
+
+command_name="${1:-list}"
+case "$command_name" in
+    list) broray_subscription_list ;;
+    get) broray_subscription_get "${2:-}" ;;
+    create)
+        body_file="$(read_json_input "${2:--}")" || exit 1
+        broray_subscription_create "$body_file"
+        result="$?"
+        rm -f "$body_file"
+        if [ "$result" -eq 0 ] && ! broray_subscription_deduplicate >/dev/null; then result=1; fi
+        exit "$result"
+        ;;
+    update)
+        subscription_id="${2:-}"
+        body_file="$(read_json_input "${3:--}")" || exit 1
+        broray_subscription_update_settings "$subscription_id" "$body_file"
+        result="$?"
+        rm -f "$body_file"
+        if [ "$result" -eq 0 ] && ! broray_subscription_deduplicate >/dev/null; then result=1; fi
+        exit "$result"
+        ;;
+    refresh|update-now)
+        broray_subscription_update "${2:-}" manual
+        result="$?"
+        if [ "$result" -eq 0 ] && ! broray_subscription_deduplicate >/dev/null; then result=1; fi
+        exit "$result"
+        ;;
+    servers) broray_subscription_servers "${2:-}" ;;
+    delete) broray_subscription_delete "${2:-}" ;;
+    summary) broray_subscription_summary ;;
+    scheduler-once)
+        broray_subscription_scheduler_once
+        result="$?"
+        if [ "$result" -eq 0 ] && ! broray_subscription_deduplicate >/dev/null; then result=1; fi
+        [ "$result" -eq 0 ] && broray_subscription_summary
+        exit "$result"
+        ;;
+    recover)
+        broray_subscription_recover_stale
+        broray_subscription_list
+        ;;
+    deduplicate) broray_subscription_deduplicate ;;
+    help|--help|-h) usage ;;
+    *)
+        printf 'Неизвестная команда: %s\n\n' "$command_name" >&2
+        usage >&2
+        exit 1
+        ;;
+esac

@@ -270,12 +270,38 @@ label {
   gap: 12px;
 }
 
-.actions { margin-top: 20px; }
+.actions {
+  margin-top: 24px;
+  margin-bottom: 6px;
+}
+
+.dashboard-grid .actions {
+  padding-top: 18px;
+  border-top: 1px solid rgba(38, 60, 50, .65);
+}
+
+.detail-text {
+  margin-top: 11px;
+  line-height: 1.65;
+}
+
+.section-copy {
+  max-width: 760px;
+  margin: 12px 0 20px;
+  line-height: 1.65;
+}
+
+.failover-grid {
+  grid-template-columns: minmax(220px, 1.2fr) repeat(2, minmax(190px, 1fr));
+  align-items: end;
+  margin-top: 22px;
+}
 .stack > * + * { margin-top: 14px; }
 
 .text-link {
   display: inline-block;
-  margin-top: 16px;
+  margin-top: 22px;
+  margin-bottom: 5px;
   color: var(--brand-hi);
   text-decoration: none;
 }
@@ -580,6 +606,7 @@ button.password-toggle {
   main { padding: 22px 13px 42px; }
   .dashboard-grid .card:first-child { grid-column: span 1; }
   .form-grid { grid-template-columns: 1fr; gap: 16px; }
+  .failover-grid { grid-template-columns: 1fr; }
   .grid { grid-template-columns: 1fr; gap: 16px; }
   .card { padding: 19px; border-radius: 15px; }
   .form-card { margin-bottom: 22px; }

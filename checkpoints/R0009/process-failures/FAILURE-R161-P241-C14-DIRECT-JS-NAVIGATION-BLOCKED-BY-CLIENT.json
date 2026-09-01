@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_CORRECTIVE_C14_AFTER_C13_USER_VALIDATION_FAILURES",
+  "revision": "p241-c14-home-js-load-and-runtime-diagnosis",
+  "status": "FAILED_STOPPED_FIRST_ERROR",
+  "failureId": "R161",
+  "failureClass": "DIRECT_JAVASCRIPT_RESOURCE_NAVIGATION_BLOCKED_BY_BROWSER_CLIENT",
+  "candidateId": "0.1.0-r0009c14",
+  "resource": "/assets/js/home.js?v=0.1.0-r0009c14",
+  "browserError": "net::ERR_BLOCKED_BY_CLIENT",
+  "httpRequestReached": false,
+  "candidateArtifactDefect": "UNDETERMINED",
+  "routerMutation": false,
+  "userDataMutation": false,
+  "hiddenRetryPerformed": false,
+  "nextRevision": "p242-c14-http-resource-and-preload-error-hook-diagnosis",
+  "nextExactAction": "VERIFY_HOME_JS_HTTP_STATUS_CONTENT_TYPE_SIZE_AND_SHA_OUTSIDE_BROWSER_THEN_INSTALL_A_PRELOAD_WINDOW_ERROR_HOOK_AND_RELOAD_C14_HOME"
+}

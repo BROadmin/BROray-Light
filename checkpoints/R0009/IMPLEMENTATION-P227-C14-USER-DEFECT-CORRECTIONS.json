@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_CORRECTIVE_C14_AFTER_C13_USER_VALIDATION_FAILURES",
+  "revision": "p227-c14-supported-workspace-runtime-locator",
+  "status": "PASS_IMPLEMENTED_PENDING_INDEPENDENT_BUILDS",
+  "candidateId": "0.1.0-r0009c14",
+  "corrections": {
+    "buttonSpacing": "PASS_ACTION_GROUP_TOP_24_BOTTOM_6_AND_CARD_SEPARATOR",
+    "keeneticCommands": "PASS_XRAY_AND_CURRENT_DISPATCH_RESTORED",
+    "xrayEqualVersionReinstall": "PASS_EXPLICIT_REINSTALL_MODE_IN_UI_API_AND_WEB_OPERATION",
+    "lightUpdateCheck": "PASS_EXPLICIT_CHECK_BUTTON_RESULT_AND_DISABLED_INSTALL_UNTIL_AVAILABLE",
+    "autoSwitchStatus": "PASS_DISABLED_ENABLED_HEALTHY_DEGRADED_SWITCHED_AND_NO_REPLACEMENT_EXPLANATIONS",
+    "serverDeduplication": "PASS_IDENTITY_AND_SUBSCRIPTION_IMPORT_KEY_GLOBAL_RECONCILIATION_WITH_ACTIVE_AND_MANUAL_PRIORITY_BACKUP_AND_CONFIG_CLEANUP",
+    "buttonFeedback": "PASS_TOAST_ERROR_BUSY_AND_UNSAVED_AUTO_SWITCH_STATES"
+  },
+  "staticValidation": {
+    "branch": "codex/r0009-updater-package",
+    "canonicalSource": "PASS_UNCHANGED",
+    "pythonSyntax": "PASS_2_OF_2",
+    "busyboxAshSyntax": "PASS_6_OF_6",
+    "javascriptSyntax": "PASS_4_OF_4",
+    "overlayFiles": 17,
+    "versionedAssetPages": "PASS_4_OF_4",
+    "gitDiffCheck": "PASS"
+  },
+  "changedFileSha256": {
+    "packaging/app-overlay/bin/broray": "c442e7a28bcb07034d4a4004822f38a0dab34d280127a64244f293b79ad75e75",
+    "packaging/app-overlay/bin/broray-runtime-prepare": "ccccf767e314d4d9bc75707e652270ef99ef69d5d810e583414723f7915fef54",
+    "packaging/app-overlay/bin/broray-subscriptions": "18fee33dfb2797ec1ef1c68cdaf3ebef14103eef664b2f5d30e805eebda8ccd3",
+    "packaging/app-overlay/lib/xray-web-operation.sh": "ee80007b0682a21f3fa7d786c97836fc8fbe49fcc5b273f20500393f1228f30c",
+    "packaging/app-overlay/web-new/api/subscriptions/common.sh": "83506f8300f35b4f774357a206b60b3192d91774d52ef140e27c217ab4de98a5",
+    "packaging/app-overlay/web-new/api/xray/update.cgi": "ddf2ac0561f0988c01095bdb560d062e50bc2d264f16467c319d58750db1ac39",
+    "packaging/app-overlay/web-new/home.html": "65d75986d095654e23d3b6b20a7bc5627a11a5bf6a2388dfa7d50f1c8d135ef3",
+    "packaging/app-overlay/web-new/servers.html": "a69dacbd3ba979b64d86e022073a8c5f0ad55f2d8410c953cf965d0376cee614",
+    "packaging/app-overlay/web-new/assets/css/allpage.css": "57213b35e47899d2b3df2573a4b650f7689d89b4f213ca1e4136617174192a63",
+    "packaging/app-overlay/web-new/assets/js/home.js": "642f255b5d119e602d29992d4dc209dd2ba445d4f9f3894e46dcc876aa8a5480",
+    "packaging/app-overlay/web-new/assets/js/servers.js": "650d81b500d232b4493d0998453caf91f37f74a06ed0294ff9b18d18a5b4b2d7",
+    "packaging/app-overlay/web-new/assets/js/servers-auto-switch.js": "1b596eff0b1d5642a1bd5d2075fc951e3e35b6e9f9046ce98b6fe1261c45ecc3",
+    "tools/build_r0009_candidate.py": "f5ac5d7b836449921af50c734a1cd8d91e91dfdb5861c98e66dcd967f27d4d0f",
+    "tools/test_r0009.py": "c94d750869baad6f40f0bffbb8054327522fc8b36cbf1a9a72fcfc7859112360",
+    "packaging/opkg/broray-light-web-publish-policy.sh": "9b3cde8ace5e745132765e9f1a096bfe2351538ea1f1bd3f11b1f0aa2252abe7"
+  },
+  "routerMutation": false,
+  "productionServerMutation": false,
+  "publicReleasePublished": false,
+  "nextRevision": "p228-c14-ephemeral-signing-key-and-independent-builds",
+  "nextExactAction": "GENERATE_A_NEW_EPHEMERAL_INTERNAL_SIGNING_KEY_UPDATE_THE_REPOSITORY_PUBLIC_KEY_BUILD_C14_A_AND_AN_INDEPENDENT_C14_B_AND_COMPARE_ALL_ARTIFACTS_BYTE_FOR_BYTE"
+}

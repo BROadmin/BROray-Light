@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_CORRECTIVE_C14_AFTER_C13_USER_VALIDATION_FAILURES",
+  "revision": "p219-c13-user-validation-defect-intake",
+  "at": "2026-09-01T14:00:00+03:00",
+  "status": "FAILED_STOPPED_FIRST_ERROR",
+  "failureId": "R147",
+  "failureClass": "INSTALLED_C13_USER_VALIDATION_DEFECT_BUNDLE",
+  "candidateId": "0.1.0-r0009c13",
+  "source": "USER_REPORT_AND_ATTACHED_HOME_SCREENSHOT",
+  "reportedDefects": [
+    "INSUFFICIENT_VERTICAL_SPACING_AROUND_BUTTON_GROUPS",
+    "ADJACENT_LABELS_AND_VALUES_VISUALLY_MERGE",
+    "SOME_WEBUI_BUTTON_ACTIONS_DO_NOT_COMPLETE",
+    "XRAY_SAME_VERSION_REINSTALL_IS_NOT_AVAILABLE",
+    "BRORAY_LIGHT_UPDATE_CHECK_HAS_NO_USABLE_UI_CONTRACT",
+    "FAILOVER_WAITING_STATUS_HAS_NO_EXPLANATION_OR_HEALTH_DETAIL",
+    "DUPLICATE_SERVERS_ARE_CREATED_ACROSS_OVERLAPPING_SUBSCRIPTIONS_OR_MANUAL_IMPORT"
+  ],
+  "candidateReady": false,
+  "canonicalSourceMutation": false,
+  "routerMutation": false,
+  "productionServerMutation": false,
+  "publicReleasePublished": false,
+  "hiddenRetryPerformed": false,
+  "nextRevision": "p220-c14-read-only-browser-api-and-source-diagnosis",
+  "nextExactAction": "READ_ONLY_MAP_EACH_VISIBLE_BUTTON_TO_ITS_API_OBSERVE_CURRENT_RESPONSES_AND_TRACE_XRAY_LIGHT_FAILOVER_AND_DEDUPLICATION_IMPLEMENTATIONS_BEFORE_EDITING"
+}

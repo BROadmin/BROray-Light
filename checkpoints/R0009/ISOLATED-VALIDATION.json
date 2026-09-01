@@ -1,13 +1,13 @@
 {
   "schemaVersion": 1,
-  "stage": "R0009_CORRECTIVE_C13_AFTER_C12_STATIC_ASSET_CACHE_FAILURE",
-  "revision": "p204-c13-full-isolated-validation",
-  "at": "2026-09-01T12:35:00+03:00",
+  "stage": "R0009_CORRECTIVE_C14_AFTER_C13_USER_VALIDATION_FAILURES",
+  "revision": "p232-c14-captured-session-full-isolated-validation",
+  "at": "2026-09-01T15:29:00+03:00",
   "status": "PASS",
-  "candidateId": "0.1.0-r0009c13",
-  "packageSha256": "18136b993f2f153f33b2932c9fee50c167f3b16e2cbd44ac9137612e27cc86d2",
-  "appArchiveSha256": "ef3dc465de59946798243ac7c6a7c27a4818f6c90db98133eb3c47fe43c61065",
-  "passedGates": 33,
+  "candidateId": "0.1.0-r0009c14",
+  "packageSha256": "43c7ddbb59e3cb68c68f9e280f2859b0ed6170d4ad5fb1f6f108d2010c0ca6ee",
+  "appArchiveSha256": "d058cabb9cfb150bf6526ecf5129fc0840226756bb728d3d6f49473e5e5e18c6",
+  "passedGates": 36,
   "failedGates": 0,
   "gates": {
     "packageCarrierLayout": "PASS",
@@ -42,8 +42,11 @@
     "homeIdentityPresentationContract": "PASS",
     "subscriptionNameAndDeleteConfirmation": "PASS",
     "themePresentationContract": "PASS",
-    "xrayUpdateCheckBackend": "PASS"
+    "xrayUpdateCheckBackend": "PASS",
+    "keeneticCliDispatchContract": "PASS",
+    "xrayEqualVersionReinstallContract": "PASS",
+    "globalServerDeduplication": "PASS"
   },
   "routerMutation": false,
-  "nextExactAction": "USE_THE_P204_RECEIPT_AS_THE_CANONICAL_FINAL_ISOLATED_VALIDATION_EVIDENCE"
+  "nextExactAction": "USE_THE_P232_C14_RECEIPT_AS_THE_CANONICAL_FINAL_ISOLATED_VALIDATION_EVIDENCE"
 }

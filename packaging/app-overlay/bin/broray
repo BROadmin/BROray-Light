@@ -1,0 +1,29 @@
+#!/opt/bin/ash
+
+ROOT="${BRORAY_ROOT:-/opt/broray-light}"
+command_name="${1:-info}"
+shift 2>/dev/null || true
+
+case "$command_name" in
+    info|status)
+        exec "$ROOT/bin/broray-system" info
+        ;;
+    server|servers)
+        exec "$ROOT/bin/broray-servers" "$@"
+        ;;
+    subscriptions)
+        exec "$ROOT/bin/broray-subscriptions" "$@"
+        ;;
+    xray)
+        . "$ROOT/lib/xray-control.sh"
+        broray_xray_command "$@"
+        ;;
+    current)
+        . "$ROOT/lib/server.sh"
+        broray_server_current
+        ;;
+    *)
+        echo "BROray-Light: info | servers | subscriptions | xray | current" >&2
+        exit 1
+        ;;
+esac

@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_CORRECTIVE_C14_AFTER_C13_USER_VALIDATION_FAILURES",
+  "revision": "p224-c14-in-place-web-ui-update",
+  "status": "FAILED_STOPPED_FIRST_ERROR",
+  "failureId": "R151",
+  "failureClass": "COMPOSITE_STATIC_VALIDATION_NONDIAGNOSTIC_EXIT",
+  "candidateId": "0.1.0-r0009c14",
+  "commandExitCode": 1,
+  "stdout": "",
+  "stderr": "",
+  "candidateArtifactDefect": "UNDETERMINED",
+  "candidateArtifactsBuilt": false,
+  "canonicalSourceMutation": false,
+  "routerMutation": false,
+  "hiddenRetryPerformed": false,
+  "cause": "A composite PowerShell command combined JavaScript syntax, canonical-source and HTML asset checks and did not identify the failing atom.",
+  "nextRevision": "p225-c14-atomized-static-validation",
+  "nextExactAction": "RUN_NODE_SYNTAX_CANONICAL_SOURCE_OVERLAY_COUNT_AND_HTML_ASSET_VERSION_CHECKS_AS_SEPARATE_DIAGNOSTIC_ATOMS"
+}

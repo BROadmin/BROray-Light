@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_CORRECTIVE_C14_AFTER_C13_USER_VALIDATION_FAILURES",
+  "revision": "p220-c14-read-only-browser-api-and-source-diagnosis",
+  "at": "2026-09-01T14:08:00+03:00",
+  "status": "FAILED_STOPPED_FIRST_ERROR",
+  "failureId": "R148",
+  "failureClass": "BROWSER_PAGE_EVALUATION_FETCH_UNAVAILABLE",
+  "candidateId": "0.1.0-r0009c13",
+  "completedBeforeFailure": {
+    "authenticatedHomeDomCaptured": true,
+    "computedActionSpacingCaptured": true,
+    "visibleStatusesCaptured": true,
+    "sourceMappingStarted": true
+  },
+  "firstError": "TypeError: fetch is not a function",
+  "buttonClicked": false,
+  "credentialsTyped": false,
+  "routerMutation": false,
+  "userDataMutation": false,
+  "candidateArtifactDefect": "UNDETERMINED_FOR_API_BEHAVIOR",
+  "hiddenRetryPerformed": false,
+  "nextRevision": "p221-c14-memory-only-http-api-and-source-diagnosis",
+  "nextExactAction": "USE_A_SEPARATE_MEMORY_ONLY_AUTHENTICATED_HTTP_SESSION_FOR_READ_ONLY_API_RESPONSES_AND_CONTINUE_SOURCE_ROOT_CAUSE_MAPPING"
+}

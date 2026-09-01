@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_CORRECTIVE_C14_AFTER_C13_USER_VALIDATION_FAILURES",
+  "revision": "p222-c14-memory-only-http-api-diagnosis-corrected-variable",
+  "status": "PASS_ROOT_CAUSES_CONFIRMED",
+  "candidateId": "0.1.0-r0009c13",
+  "authentication": {
+    "loginStatus": 200,
+    "logoutStatus": 200,
+    "credentialsPrintedOrWritten": false,
+    "guaranteedLogout": true
+  },
+  "findings": {
+    "spacing": {
+      "actionsMarginTopPx": 20,
+      "actionsMarginBottomPx": 0,
+      "wrappedActionsHeightPx": 100,
+      "diagnosis": "ACTION_GROUPS_HAVE_NO_BOTTOM_SEPARATION_AND_WRAPPED_BUTTONS_NEED_ROW_AND_BLOCK_RHYTHM"
+    },
+    "keeneticButtons": {
+      "diagnosis": "KEENETIC_PAGE_CALLS_BRORAY_XRAY_AND_CURRENT_COMMANDS_MISSING_FROM_THE_LIGHT_CLI_DISPATCHER",
+      "observedStatus": "error"
+    },
+    "xrayReinstall": {
+      "currentVersion": "26.7.28",
+      "latestVersion": "26.7.28",
+      "updateAvailable": false,
+      "libraryReinstallAllowed": true,
+      "diagnosis": "REINSTALL_IS_SUPPORTED_BY_XRAY_UPDATE_LIBRARY_BUT_NOT_EXPOSED_BY_WEB_OPERATION_API_OR_UI"
+    },
+    "lightUpdateCheck": {
+      "httpStatus": 502,
+      "errorCode": "UPDATE_CHECK_FAILED",
+      "diagnosis": "THE_INTERNAL_R0009_BUILD_HAS_NO_PUBLIC_UPDATE_FEED_AND_THE_HOME_PAGE_HAS_NO_EXPLICIT_CHECK_CONTROL_OR_ACTIONABLE_RESULT"
+    },
+    "autoSwitch": {
+      "enabled": false,
+      "state": {},
+      "visibleText": "Ожидание",
+      "diagnosis": "HOME_UI_DEFAULTS_TO_WAITING_WITHOUT_DISTINGUISHING_DISABLED_FROM_ENABLED_WITHOUT_A_CHECK"
+    },
+    "duplicateServers": {
+      "storedServerFiles": 11,
+      "subscriptionFiles": 2,
+      "manualServerFiles": 0,
+      "duplicateImportKeyGroups": 5,
+      "duplicateIdentityKeyGroups": 3,
+      "diagnosis": "SUBSCRIPTION_IMPORT_DEDUPLICATES_ONLY_INSIDE_ONE_STAGING_SET_AND_DOES_NOT_RECONCILE_OVERLAPS_ACROSS_SUBSCRIPTIONS_OR_MANUAL_IMPORTS"
+    }
+  },
+  "canonicalSourceMutation": false,
+  "routerMutation": false,
+  "productionServerMutation": false,
+  "publicReleasePublished": false,
+  "nextRevision": "p223-c14-corrective-implementation",
+  "nextExactAction": "IMPLEMENT_SPACING_FUNCTIONAL_BUTTONS_EQUAL_VERSION_XRAY_REINSTALL_LIGHT_UPDATE_CHECK_EXPLICIT_FAILOVER_STATES_AND_GLOBAL_SERVER_DEDUPLICATION_IN_PACKAGE_OVERLAYS"
+}

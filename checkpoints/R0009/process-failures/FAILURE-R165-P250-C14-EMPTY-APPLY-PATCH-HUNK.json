@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_CORRECTIVE_C14_AFTER_C13_USER_VALIDATION_FAILURES",
+  "revision": "p250-c14-failure-metadata-reseal",
+  "status": "FAILED_STOPPED_FIRST_ERROR",
+  "failureId": "R165",
+  "failureClass": "EMPTY_APPLY_PATCH_HUNK",
+  "candidateId": "0.1.0-r0009c14",
+  "firstError": "apply_patch verification failed because an empty REPORT.md update hunk was included",
+  "candidateArtifactDefect": "NO",
+  "repositoryMutationByFailedPatch": false,
+  "routerMutation": false,
+  "userDataMutation": false,
+  "hiddenRetryPerformed": false,
+  "rootCause": "The metadata patch declared a REPORT.md update without including a replacement hunk",
+  "nextRevision": "p251-c14-failure-metadata-reseal-fixed",
+  "nextExactAction": "APPLY_A_CORRECTED_NONEMPTY_PATCH_FOR_R164_R165_COUNTS_REPORT_AND_STATE_THEN_RUN_THE_POST_RESEAL_AUDIT"
+}

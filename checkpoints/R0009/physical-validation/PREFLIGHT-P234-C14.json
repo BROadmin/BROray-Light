@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_CORRECTIVE_C14_AFTER_C13_USER_VALIDATION_FAILURES",
+  "revision": "p234-c14-subscription-layout-aware-preflight",
+  "status": "PASS_READY_FOR_TRANSFER",
+  "candidateId": "0.1.0-r0009c14",
+  "installedPackage": "broray-light 0.1.0-r0009c13",
+  "services": "PASS_PRIMARY_UPDATER_PUBLICATION",
+  "persistenceBaseline": {
+    "subscriptionStateFiles": 1,
+    "subscriptionCount": 2,
+    "subscriptionTreeSha256": "41ca0b92bf562d69428411a88f67788c4530f7c9683deb9cf8c60434a9290ca4",
+    "serverFiles": 11,
+    "serversTreeSha256": "d9e85800464d41703a617fee563471c271d5f3f0f91fd1c66966ff9ab406a6df",
+    "settingsSha256": "7cb59866bede03da82b04ccb59d7e9b439f72f4d38d382c0bc409bc38827ba4d",
+    "autoSwitchSha256": "6743d9128b6206747ef724fbe72ba9646ef027ba948962805baeb6b053d661cf",
+    "activeServerIdSha256": "25e15e4354b92e2cf758f06e7a04da7d81ad4f19d48fe42eabd6ae0b474fe910"
+  },
+  "xraySha256": "4b8af237444801bf17b3dc10a1c5c24581fbe3d433eba3d78c6c3a0da1df56fc",
+  "fullBROrayOwnership": 0,
+  "routesViaProxy0": 0,
+  "runningConfigRoutesViaProxy0": 0,
+  "recoveryMarkerAbsent": true,
+  "remoteTransferTargetAbsent": true,
+  "candidatePackageSha256": "43c7ddbb59e3cb68c68f9e280f2859b0ed6170d4ad5fb1f6f108d2010c0ca6ee",
+  "routerMutation": false,
+  "nextRevision": "p235-c14-verified-transfer",
+  "nextExactAction": "TRANSFER_C14_P231_BUILD_A_TO_THE_EXACT_TEMPORARY_TARGET_AND_VERIFY_REMOTE_SIZE_AND_SHA256_BEFORE_INSTALLATION"
+}

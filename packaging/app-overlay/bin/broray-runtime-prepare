@@ -1,0 +1,15 @@
+#!/opt/bin/ash
+
+set -eu
+ROOT="${BRORAY_ROOT:-/opt/broray-light}"
+for directory in backup config config/system logs run servers subscriptions tmp web-new runtime; do
+    mkdir -p "$ROOT/$directory"
+done
+chmod 700 "$ROOT/backup" "$ROOT/config" "$ROOT/servers" "$ROOT/subscriptions" "$ROOT/tmp" 2>/dev/null || true
+
+[ -s "$ROOT/config/system/settings.json" ] || cp "$ROOT/share/defaults/settings.json" "$ROOT/config/system/settings.json"
+[ -s "$ROOT/config/system/server-auto-switch.json" ] || cp "$ROOT/share/defaults/server-auto-switch.json" "$ROOT/config/system/server-auto-switch.json"
+[ -s "$ROOT/config/lighttpd.conf" ] || cp "$ROOT/share/defaults/lighttpd.conf" "$ROOT/config/lighttpd.conf"
+[ -s "$ROOT/config/version" ] || cp "$ROOT/share/defaults/version" "$ROOT/config/version"
+
+"$ROOT/bin/broray-subscriptions" deduplicate >/dev/null

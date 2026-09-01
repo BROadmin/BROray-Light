@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_CORRECTIVE_C14_AFTER_C13_USER_VALIDATION_FAILURES",
+  "revision": "p225-c14-atomized-static-validation",
+  "status": "FAILED_STOPPED_FIRST_ERROR",
+  "failureId": "R152",
+  "failureClass": "NODE_RUNTIME_NOT_IN_SYSTEM_PATH",
+  "candidateId": "0.1.0-r0009c14",
+  "failedAtom": "JAVASCRIPT_NODE_CHECK",
+  "nodeCommandAvailable": false,
+  "parallelReadOnlyAtoms": {
+    "canonicalSource": "PASS_UNCHANGED",
+    "overlayFileCount": "PASS_17",
+    "versionedAssetPages": "PASS_4"
+  },
+  "candidateArtifactDefect": false,
+  "candidateArtifactsBuilt": false,
+  "canonicalSourceMutation": false,
+  "routerMutation": false,
+  "hiddenRetryPerformed": false,
+  "cause": "The system shell does not expose node.exe in PATH.",
+  "nextRevision": "p226-c14-bundled-node-static-validation",
+  "nextExactAction": "LOAD_THE_BUNDLED_WORKSPACE_NODE_RUNTIME_AND_RUN_JAVASCRIPT_SYNTAX_CHECKS_WITH_ITS_ABSOLUTE_PATH"
+}

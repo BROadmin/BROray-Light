@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_CORRECTIVE_C14_AFTER_C13_USER_VALIDATION_FAILURES",
+  "revision": "p229-c14-full-isolated-validation",
+  "status": "FAILED_STOPPED_FIRST_ERROR",
+  "failureId": "R154",
+  "failureClass": "BUSYBOX_DASH_APPLET_ABSENT",
+  "candidateId": "0.1.0-r0009c14",
+  "exitCode": 127,
+  "firstError": "dash: applet not found",
+  "failedGate": "WEB_PUBLICATION_TRANSIENT_BOOT_RETRY_HARNESS",
+  "newCandidateCodeReached": false,
+  "candidateArtifactDefect": false,
+  "candidateArtifactsBuilt": true,
+  "routerMutation": false,
+  "hiddenRetryPerformed": false,
+  "cause": "The selected cached dash.exe is a BusyBox multicall binary without a dash applet.",
+  "nextRevision": "p230-c14-busybox-ash-wrapper-isolated-validation",
+  "nextExactAction": "CREATE_A_TEMPORARY_DASH_WRAPPER_THAT_INVOKES_THE_VERIFIED_BUSYBOX_ASH_APPLET_AND_RUN_THE_FULL_HARNESS_WITH_THAT_WRAPPER"
+}

@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_CORRECTIVE_C14_AFTER_C13_USER_VALIDATION_FAILURES",
+  "revision": "p243-c14-local-closure-runtime-error-capture",
+  "status": "FAILED_STOPPED_FIRST_ERROR",
+  "failureId": "R163",
+  "failureClass": "BROWSER_EVALUATION_SANDBOX_HAS_NO_WINDOW_EVENT_API",
+  "candidateId": "0.1.0-r0009c14",
+  "firstError": "window.addEventListener is not a function",
+  "dynamicScriptInjected": false,
+  "diagnosticConclusion": "EVALUATE_GLOBAL_TYPE_CHECKS_ARE_NOT_VALID_EVIDENCE_FOR_PAGE_SCRIPT_EXECUTION_IN_THIS_BROWSER_SANDBOX",
+  "candidateArtifactDefect": "NOT_PROVEN",
+  "routerMutation": false,
+  "userDataMutation": false,
+  "hiddenRetryPerformed": false,
+  "nextRevision": "p244-c14-user-observable-dom-and-screenshot-validation",
+  "nextExactAction": "WAIT_FOR_THE_AUTHENTICATED_C14_PAGE_THEN_VALIDATE_ONLY_USER_OBSERVABLE_DOM_TEXT_BUTTON_STATES_AND_SCREENSHOT_WITHOUT_PAGE_GLOBAL_EVALUATION"
+}

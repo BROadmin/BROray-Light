@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_CORRECTIVE_C14_AFTER_C13_USER_VALIDATION_FAILURES",
+  "revision": "p239-c14-current-auth-route-functional-validation",
+  "status": "PASS_PENDING_EXTERNAL_VISUAL_VALIDATION",
+  "candidateId": "0.1.0-r0009c14",
+  "authentication": {
+    "login": 200,
+    "logout": 200,
+    "postLogoutSession": 401,
+    "credentialsPrintedOrWritten": false,
+    "guaranteedLogout": true
+  },
+  "autoSwitch": {
+    "status": 200,
+    "enabled": false,
+    "semanticState": "disabled"
+  },
+  "xray": {
+    "checkBefore": 200,
+    "currentBefore": "26.7.28",
+    "latest": "26.7.28",
+    "updateAvailable": false,
+    "reinstallAllowed": true,
+    "reinstallStatus": 200,
+    "operationMode": "reinstall",
+    "currentAfter": "26.7.28"
+  },
+  "brorayLightUpdateCheck": {
+    "status": 502,
+    "code": "UPDATE_CHECK_FAILED",
+    "expectedUiMeaning": "INTERNAL_R0009_PUBLIC_CHANNEL_NOT_CONFIGURED"
+  },
+  "keenetic": {
+    "repairStatus": 200,
+    "severityAfter": "ok"
+  },
+  "home": {
+    "status": 200,
+    "serverCount": 6,
+    "connected": true
+  },
+  "routerMutation": "AUTHORIZED_KEENETIC_REPAIR_AND_EQUAL_VERSION_XRAY_REINSTALL_WITH_AUTH_SESSION_LIFECYCLE",
+  "nextRevision": "p240-c14-external-browser-visual-and-button-validation",
+  "nextExactAction": "LOAD_C14_HOME_AND_SERVERS_IN_THE_IN_APP_BROWSER_VERIFY_VERSIONED_ASSETS_SPACING_VISIBLE_EXPLANATIONS_BUTTON_STATES_SERVER_COUNT_AND_SCREENSHOT"
+}

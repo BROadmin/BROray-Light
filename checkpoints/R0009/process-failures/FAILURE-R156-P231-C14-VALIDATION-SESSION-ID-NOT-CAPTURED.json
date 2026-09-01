@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_CORRECTIVE_C14_AFTER_C13_USER_VALIDATION_FAILURES",
+  "revision": "p231-c14-lf-active-id-fixture-isolated-validation",
+  "status": "FAILED_STOPPED_FIRST_ERROR",
+  "failureId": "R156",
+  "failureClass": "LONG_RUNNING_VALIDATION_SESSION_ID_NOT_CAPTURED",
+  "candidateId": "0.1.0-r0009c14",
+  "processCompleted": true,
+  "finalExitCodeCaptured": false,
+  "finalJsonCaptured": false,
+  "evidenceObserved": {
+    "globalServerDeduplicationBackupFiles": 2,
+    "harnessReachedUpdaterGlobalLockGate": true
+  },
+  "candidateArtifactDefect": "UNDETERMINED",
+  "candidateArtifactsBuilt": true,
+  "routerMutation": false,
+  "hiddenRetryPerformed": false,
+  "cause": "The initial orchestration printed only the nested command output and exit code; when the command yielded a session ID it was not surfaced for subsequent write_stdin retrieval.",
+  "nextRevision": "p232-c14-captured-session-full-isolated-validation",
+  "nextExactAction": "RUN_A_FRESH_FULL_HARNESS_AND_EXPLICITLY_POLL_THE_RETURNED_EXEC_SESSION_WITH_WRITE_STDIN_UNTIL_FINAL_JSON_AND_EXIT_CODE_ARE_CAPTURED"
+}

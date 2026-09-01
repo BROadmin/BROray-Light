@@ -17,7 +17,7 @@ import tempfile
 from pathlib import Path, PurePosixPath
 
 RELEASE_ID = "0.1.0-r9"
-CANDIDATE_ID = "0.1.0-r0009c13"
+CANDIDATE_ID = "0.1.0-r0009c14"
 XRAY_SHA256 = "4b8af237444801bf17b3dc10a1c5c24581fbe3d433eba3d78c6c3a0da1df56fc"
 
 
@@ -401,13 +401,18 @@ def main() -> int:
     overlay_root = Path(__file__).resolve().parents[1] / "packaging/app-overlay"
     installed_app = app_root / "current/app"
     overlay_files = sorted(path for path in overlay_root.rglob("*") if path.is_file())
-    if len(overlay_files) != 10:
+    if len(overlay_files) != 17:
         raise RuntimeError(f"unexpected corrective overlay file count: {len(overlay_files)}")
     for overlay_file in overlay_files:
         installed_file = installed_app / overlay_file.relative_to(overlay_root)
         if not installed_file.is_file() or installed_file.read_bytes() != overlay_file.read_bytes():
             raise RuntimeError(f"corrective app overlay mismatch: {overlay_file.relative_to(overlay_root)}")
     gates["correctiveOverlayExactInstall"] = "PASS"
+
+    light_cli = (installed_app / "bin/broray").read_text(encoding="utf-8")
+    if "broray_xray_command" not in light_cli or "broray_server_current" not in light_cli:
+        raise RuntimeError("Light CLI does not expose the Xray and current-server commands required by Keenetic actions")
+    gates["keeneticCliDispatchContract"] = "PASS"
 
     activation_api = (installed_app / "web-new/api/servers/activate.cgi").read_text(encoding="utf-8")
     if 'broray_server_activate "$activate_id" >/dev/null' not in activation_api or \
@@ -423,6 +428,18 @@ def main() -> int:
         raise RuntimeError("Home does not normalize the Xray envelope and request Light info")
     if 'id="xrayVersion"' not in home_html or 'id="lightVersion"' not in home_html:
         raise RuntimeError("Home version presentation elements are absent")
+    for functional_contract in (
+        "api/servers/auto-switch-status.cgi",
+        "temporaryStorage?.reinstallAllowed",
+        "JSON.stringify({mode})",
+        "api/broray/update-check.cgi",
+        "Внутренняя сборка R0009: публичный канал обновлений пока не настроен.",
+    ):
+        if functional_contract not in home_js:
+            raise RuntimeError(f"Home corrective functional contract is absent: {functional_contract}")
+    if 'id="xrayInstallButton"' not in home_html or 'id="lightInstallButton"' not in home_html or \
+       'id="failoverDetail"' not in home_html:
+        raise RuntimeError("Home corrective controls are absent")
     gates["homeIdentityPresentationContract"] = "PASS"
 
     subscriptions_js = (installed_app / "web-new/assets/js/subscriptions.js").read_text(encoding="utf-8")
@@ -443,6 +460,45 @@ def main() -> int:
     if 'broray_api_success "$(cat "$output")"\n    exit 0' not in xray_update_check:
         raise RuntimeError("Xray update check success branch does not terminate before the error response")
     gates["xrayUpdateCheckBackend"] = "PASS"
+
+    xray_update_api = (installed_app / "web-new/api/xray/update.cgi").read_text(encoding="utf-8")
+    xray_web_operation = (installed_app / "lib/xray-web-operation.sh").read_text(encoding="utf-8")
+    if 'update|reinstall' not in xray_web_operation or 'broray_xray_update_install "$install_mode"' not in xray_web_operation:
+        raise RuntimeError("equal-version Xray reinstall is not exposed by the web operation layer")
+    if 'mode="$(jq -r' not in xray_update_api or "broray_xray_web_reinstall" not in xray_update_api:
+        raise RuntimeError("Xray update API does not dispatch the explicit reinstall mode")
+    gates["xrayEqualVersionReinstallContract"] = "PASS"
+
+    dedupe_cli = installed_app / "bin/broray-subscriptions"
+    server_root = app_root / "servers"
+    auto_config = app_root / "config/system/server-auto-switch.json"
+    original_auto_config = auto_config.read_bytes()
+    dedupe_records = {
+        "manual-a": {"id": "manual-a", "identityKey": "identity-a", "source": {"type": "manual"}},
+        "subscription-b": {"id": "subscription-b", "identityKey": "identity-a", "source": {"type": "subscription", "importKey": "import-x"}},
+        "subscription-c": {"id": "subscription-c", "identityKey": "identity-c", "source": {"type": "subscription", "importKey": "import-y"}},
+        "subscription-d": {"id": "subscription-d", "identityKey": "identity-d", "source": {"type": "subscription", "importKey": "import-y"}},
+    }
+    for server_id, record in dedupe_records.items():
+        json_write(server_root / f"{server_id}.json", record)
+    (app_root / "config/active-server").write_bytes(b"subscription-d\n")
+    json_write(auto_config, {"schemaVersion": 1, "enabled": False, "failureThreshold": 3, "cooldownSeconds": 600,
+                             "orderedServerIds": list(dedupe_records), "excludedServerIds": ["subscription-b"]})
+    first_dedupe = json.loads(run([dash, posix(dedupe_cli), "deduplicate"], env={**env, "BRORAY_ROOT": posix(app_root)}).stdout)
+    remaining = sorted(path.stem for path in server_root.glob("*.json"))
+    if first_dedupe.get("removed") != 2 or remaining != ["manual-a", "subscription-d"]:
+        raise RuntimeError(f"global server deduplication chose unsafe winners: {first_dedupe} {remaining}")
+    deduped_config = json.loads(auto_config.read_text(encoding="utf-8"))
+    if deduped_config.get("orderedServerIds") != ["manual-a", "subscription-d"] or deduped_config.get("excludedServerIds"):
+        raise RuntimeError("global server deduplication left stale auto-switch references")
+    second_dedupe = json.loads(run([dash, posix(dedupe_cli), "deduplicate"], env={**env, "BRORAY_ROOT": posix(app_root)}).stdout)
+    if second_dedupe.get("removed") != 0:
+        raise RuntimeError("global server deduplication is not idempotent")
+    for path in server_root.glob("*.json"):
+        path.unlink()
+    (app_root / "config/active-server").unlink()
+    auto_config.write_bytes(original_auto_config)
+    gates["globalServerDeduplication"] = "PASS"
 
     theme_css = (installed_app / "web-new/assets/css/allpage.css").read_text(encoding="utf-8")
     login_html = (installed_app / "web-new/index.html").read_text(encoding="utf-8")
@@ -466,7 +522,7 @@ def main() -> int:
        'class="login-submit"' not in login_html or \
        'BROray-Light' not in login_html or 'VLESS для Keenetic' not in login_html:
         raise RuntimeError("BROray-Light login markup contract is incomplete")
-    asset_version = "?v=0.1.0-r0009c13"
+    asset_version = "?v=0.1.0-r0009c14"
     for page_name in ("index.html", "home.html", "servers.html", "subscriptions.html"):
         page_html = (installed_app / "web-new" / page_name).read_text(encoding="utf-8")
         if f"assets/css/allpage.css{asset_version}" not in page_html:

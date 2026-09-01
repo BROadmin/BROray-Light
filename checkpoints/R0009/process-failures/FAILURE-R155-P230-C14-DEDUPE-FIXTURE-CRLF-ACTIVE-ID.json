@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_CORRECTIVE_C14_AFTER_C13_USER_VALIDATION_FAILURES",
+  "revision": "p230-c14-busybox-ash-wrapper-isolated-validation",
+  "status": "FAILED_STOPPED_FIRST_ERROR",
+  "failureId": "R155",
+  "failureClass": "WINDOWS_CRLF_IN_ACTIVE_SERVER_TEST_FIXTURE",
+  "candidateId": "0.1.0-r0009c14",
+  "failedGate": "GLOBAL_SERVER_DEDUPLICATION_ACTIVE_PRIORITY",
+  "observedRemoved": 2,
+  "observedRemaining": ["manual-a", "subscription-c"],
+  "expectedRemaining": ["manual-a", "subscription-d"],
+  "candidateArtifactDefect": false,
+  "testHarnessDefect": true,
+  "cause": "Path.write_text translated LF to CRLF on Windows, leaving a carriage return in the shell command-substitution active ID. Router persistence uses LF.",
+  "candidateArtifactsBuilt": true,
+  "routerMutation": false,
+  "hiddenRetryPerformed": false,
+  "nextRevision": "p231-c14-lf-active-id-fixture-isolated-validation",
+  "nextExactAction": "WRITE_THE_ACTIVE_SERVER_FIXTURE_AS_EXACT_LF_BYTES_REBUILD_INDEPENDENT_A_AND_B_BECAUSE_THE_HARNESS_HASH_IS_MATERIAL_THEN_RERUN_THE_FULL_HARNESS"
+}

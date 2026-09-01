@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_CORRECTIVE_C14_AFTER_C13_USER_VALIDATION_FAILURES",
+  "revision": "p226-c14-bundled-node-static-validation",
+  "status": "FAILED_STOPPED_FIRST_ERROR",
+  "failureId": "R153",
+  "failureClass": "DEPRECATED_WORKSPACE_RUNTIME_LOCATOR",
+  "candidateId": "0.1.0-r0009c14",
+  "toolResult": "TOOL_NO_LONGER_AVAILABLE_THROUGH_DYNAMIC_TOOLS_USE_CODEX_APP_MCP",
+  "candidateArtifactDefect": false,
+  "candidateArtifactsBuilt": false,
+  "repositoryMutation": false,
+  "routerMutation": false,
+  "hiddenRetryPerformed": false,
+  "nextRevision": "p227-c14-supported-workspace-runtime-locator",
+  "nextExactAction": "CALL_THE_SUPPORTED_CODEX_APP_MCP_WORKSPACE_DEPENDENCY_LOCATOR_THEN_RUN_NODE_CHECK_WITH_THE_RETURNED_ABSOLUTE_PATH"
+}

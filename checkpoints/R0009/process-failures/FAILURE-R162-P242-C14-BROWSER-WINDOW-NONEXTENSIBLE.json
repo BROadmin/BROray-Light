@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_CORRECTIVE_C14_AFTER_C13_USER_VALIDATION_FAILURES",
+  "revision": "p242-c14-http-resource-and-preload-error-hook-diagnosis",
+  "status": "FAILED_STOPPED_FIRST_ERROR",
+  "failureId": "R162",
+  "failureClass": "BROWSER_EVALUATION_WINDOW_OBJECT_NONEXTENSIBLE",
+  "candidateId": "0.1.0-r0009c14",
+  "httpResource": {
+    "status": 200,
+    "contentType": "application/javascript; charset=utf-8",
+    "length": 7848,
+    "sha256": "642f255b5d119e602d29992d4dc209dd2ba445d4f9f3894e46dcc876aa8a5480",
+    "exactPackageMatch": true
+  },
+  "browserHookError": "Cannot add property __c14Errors, object is not extensible",
+  "dynamicScriptInjected": false,
+  "candidateArtifactDefect": "UNDETERMINED",
+  "routerMutation": false,
+  "userDataMutation": false,
+  "hiddenRetryPerformed": false,
+  "nextRevision": "p243-c14-local-closure-runtime-error-capture",
+  "nextExactAction": "CAPTURE_WINDOW_ERROR_EVENTS_IN_A_LOCAL_CLOSURE_INJECT_THE_EXACT_C14_HOME_JS_WITH_A_UNIQUE_QUERY_AND_REPORT_LOAD_OUTCOME_AND_FUNCTION_TYPES"
+}

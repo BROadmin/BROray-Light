@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_CORRECTIVE_C14_AFTER_C13_USER_VALIDATION_FAILURES",
+  "revision": "p232-c14-captured-session-full-isolated-validation",
+  "status": "PASS",
+  "candidateId": "0.1.0-r0009c14",
+  "build": "dist/R0009/R0009c14-P231-Build-A",
+  "gatesPassed": 36,
+  "gatesFailed": 0,
+  "newCorrectiveGates": {
+    "keeneticCliDispatchContract": "PASS",
+    "xrayEqualVersionReinstallContract": "PASS",
+    "globalServerDeduplication": "PASS"
+  },
+  "existingAcceptanceGates": "PASS_33_OF_33",
+  "packageSha256": "43c7ddbb59e3cb68c68f9e280f2859b0ed6170d4ad5fb1f6f108d2010c0ca6ee",
+  "appArchiveSha256": "d058cabb9cfb150bf6526ecf5129fc0840226756bb728d3d6f49473e5e5e18c6",
+  "testHarnessSha256": "996364552926bf485b34b0ba141a8b0b328d7a4722293f1f95c17564aaf4dddc",
+  "canonicalSource": "PASS_UNCHANGED",
+  "routerMutation": false,
+  "productionServerMutation": false,
+  "publicReleasePublished": false,
+  "nextRevision": "p233-c14-physical-preflight",
+  "nextExactAction": "RUN_PHYSICAL_READ_ONLY_PREFLIGHT_VERIFY_C13_INSTALLED_PERSISTENCE_XRAY_IDENTITY_FULL_BRORAY_ABSENCE_ROUTES_ZERO_AND_C14_TRANSFER_TARGET_ABSENCE"
+}

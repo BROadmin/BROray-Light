@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_CORRECTIVE_C14_AFTER_C13_USER_VALIDATION_FAILURES",
+  "revision": "p248-c14-final-local-audit",
+  "status": "PASS_AUTHORIZES_CANDIDATE_READY_TRANSITION",
+  "candidateId": "0.1.0-r0009c14",
+  "preAuditCandidateReady": false,
+  "audit": {
+    "branch": "PASS_CODEX_R0009_UPDATER_PACKAGE",
+    "canonicalSource": "PASS_UNCHANGED",
+    "gitDiffCheck": "PASS",
+    "jsonFilesParsed": 291,
+    "worklogLinesParsed": 290,
+    "processFailuresPreserved": 121,
+    "sha256SidecarsVerified": 270,
+    "canonicalSumsVerified": 6,
+    "buildArtifactsByteIdentical": 8,
+    "buildSignaturesVerified": 2,
+    "privateSigningKeyAbsent": true,
+    "acceptancePassed": 20,
+    "acceptanceFailed": 0,
+    "isolatedPassed": 36,
+    "isolatedFailed": 0
+  },
+  "physicalState": {
+    "installedPackage": "broray-light 0.1.0-r0009c14",
+    "servicesHealthy": 3,
+    "xraySha256Exact": true,
+    "serverFiles": 6,
+    "duplicateIdentityGroups": 0,
+    "routesViaProxy0": 0,
+    "fullBROrayAbsent": true,
+    "temporaryPackageAbsent": true
+  },
+  "candidateReadyTransitionAuthorized": true,
+  "productionServerMutationPerformed": false,
+  "publicReleasePublished": false,
+  "nextRevision": "p249-c14-final-ready-reseal-and-post-audit",
+  "nextExactAction": "SET_CANDIDATE_READY_TRUE_UPDATE_DEPENDENT_HASHES_RUN_A_SHORT_POST_RESEAL_AUDIT_AND_COMMIT"
+}

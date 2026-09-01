@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_CORRECTIVE_C14_AFTER_C13_USER_VALIDATION_FAILURES",
+  "revision": "p244-c14-user-observable-dom-and-screenshot-validation",
+  "status": "PASS",
+  "candidateId": "0.1.0-r0009c14",
+  "externalUrl": "https://brolight.tvervip.keenetic.link/",
+  "versionedAssets": "PASS_C14_CSS_AND_JAVASCRIPT",
+  "home": {
+    "headerConnection": "Подключено",
+    "activeServerRendered": true,
+    "connectionRendered": "Соединение работает",
+    "autoSwitchHeadline": "Выключено",
+    "autoSwitchExplanationRendered": true,
+    "keeneticState": "Готов",
+    "keeneticExplanationRendered": true,
+    "xrayVersion": "26.7.28",
+    "brorayLightVersion": "0.1.0-r9",
+    "xrayCheckButtonResult": "Переустановить 26.7.28",
+    "lightCheckButtonResult": "Внутренняя сборка R0009: публичный канал обновлений пока не настроен."
+  },
+  "servers": {
+    "renderedServerCards": 6,
+    "activeCards": 1,
+    "duplicateCards": 0,
+    "autoSwitchHeadline": "Выключено — автоматические проверки не выполняются",
+    "autoSwitchExplanationRendered": true,
+    "deduplicationExplanationRendered": true,
+    "serverCheckButtonReturnedToEnabled": true
+  },
+  "spacing": {
+    "actionsMarginTopPx": 24,
+    "actionsMarginBottomPx": 6,
+    "dashboardActionSeparator": true,
+    "sectionCopySeparation": true,
+    "screenshotCapturedAndInspected": true,
+    "visualResult": "PASS_NO_TEXT_OR_BUTTON_COLLISIONS"
+  },
+  "browserSkillInfluence": "USER_OBSERVABLE_DOM_BUTTON_AND_SCREENSHOT_VALIDATION_USED_INSTEAD_OF_NONREPRESENTATIVE_PAGE_GLOBAL_EVALUATION",
+  "routerMutation": "AUTHORIZED_SERVER_CONNECTIVITY_CHECK_ONLY",
+  "nextRevision": "p245-c14-final-physical-safety-and-cleanup",
+  "nextExactAction": "VERIFY_XRAY_SHA_SERVICES_ROUTES_OWNERSHIP_SERVER_DEDUPLICATION_SESSION_CLEANLINESS_AND_REMOVE_ONLY_THE_VERIFIED_TEMPORARY_C14_IPK"
+}

@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_CORRECTIVE_C14_AFTER_C13_USER_VALIDATION_FAILURES",
+  "revision": "p223-c14-corrective-implementation",
+  "status": "FAILED_STOPPED_FIRST_ERROR",
+  "failureId": "R150",
+  "failureClass": "APPLY_PATCH_DELETE_AND_ADD_SAME_PATH_REJECTED",
+  "candidateId": "0.1.0-r0009c14",
+  "failedOperation": "REPLACE_HOME_HTML_AND_HOME_JS_USING_DELETE_AND_ADD_FOR_THE_SAME_PATHS",
+  "patchApplied": false,
+  "filesChangedByFailedOperation": 0,
+  "earlierSuccessfulFilesInRevisionPreserved": true,
+  "candidateArtifactDefect": false,
+  "canonicalSourceMutation": false,
+  "routerMutation": false,
+  "hiddenRetryPerformed": false,
+  "cause": "apply_patch rejects multiple operations that target the same path in one patch.",
+  "nextRevision": "p224-c14-in-place-web-ui-update",
+  "nextExactAction": "UPDATE_HOME_HTML_HOME_JS_SERVERS_HTML_AUTO_SWITCH_JS_AND_CSS_IN_PLACE_WITH_ONE UPDATE OPERATION_PER_PATH"
+}

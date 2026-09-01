@@ -4,7 +4,7 @@
   "stage": "R0009",
   "status": "PASS",
   "candidateReady": true,
-  "candidateId": "0.1.0-r0009c13",
+  "candidateId": "0.1.0-r0009c14",
   "releaseId": "0.1.0-r9",
   "baseStable": "3.0.0-r23",
   "baseCandidate": "3.0.0-r23c02",
@@ -13,32 +13,32 @@
   "sourceBytes": 627326,
   "sourceSha256SumsSha256": "e056585d6a517ddbbbaebf08b68f17eb2d9d7ccd68d86df5cdee9fd4665f2419",
   "sourceCheckpointSha256": "6686586ed777a7b0c37336d08143d388fdc301536b32c96eb35e8b20e5393953",
-  "builderSha256": "2998e66a165f65aaee4b5b0e3b4bded35f90e6a2b520563378a2b6e80cfb3b13",
+  "builderSha256": "f5ac5d7b836449921af50c734a1cd8d91e91dfdb5861c98e66dcd967f27d4d0f",
   "candidateCheckpoint": "checkpoints/R0009/CHECKPOINT.json",
-  "candidateCheckpointSha256": "dcc533c463755350515f186168cb5b89ed43629f8c2b20cb7f659bcd8836007a",
+  "candidateCheckpointSha256": "0c07cd426cf0132bf1817fa64aa7e2e421b8b290c734497bdc507854986e9e55",
   "validationReceipt": "checkpoints/R0009/VALIDATION.json",
-  "validationSha256": "10092a6a4e34e156d291b6aef5a4252e035b726f77b66d5b31b334a07c0d13ad",
+  "validationSha256": "19f6e9a1d223f4d8e586e72f3eb8425efafb41a02ac9438516afe94c9180f5e7",
   "isolatedValidation": {
-    "passed": 33,
+    "passed": 36,
     "failed": 0,
-    "receipt": "checkpoints/R0009/ISOLATED-VALIDATION-P204-C13.json"
+    "receipt": "checkpoints/R0009/ISOLATED-VALIDATION-P232-C14.json"
   },
   "buildReproducibility": {
-    "buildA": "dist/R0009/R0009c13-Build-A",
-    "buildB": "dist/R0009/R0009c13-Build-B",
+    "buildA": "dist/R0009/R0009c14-P231-Build-A",
+    "buildB": "dist/R0009/R0009c14-P231-Build-B",
     "artifacts": 8,
     "comparison": "BYTE_IDENTICAL"
   },
   "physicalValidation": {
     "authorized": true,
     "status": "PASS",
-    "installedPackage": "broray-light 0.1.0-r0009c13",
+    "installedPackage": "broray-light 0.1.0-r0009c14",
     "currentTarget": "releases/0.1.0-r9",
     "publicUrl": "https://brolight.tvervip.keenetic.link/",
     "postbootReceipt": "checkpoints/R0009/physical-validation/POSTBOOT-P114-C08-AUTOSTART-WEB-AUTH-PERSISTENCE.json",
-    "finalInstallReceipt": "checkpoints/R0009/physical-validation/INSTALL-P207-C13-CACHE-SAFE.json",
-    "externalVisualReceipt": "checkpoints/R0009/physical-validation/EXTERNAL-VISUAL-P208-C13-LOGIN-THEME.json",
-    "finalFunctionalReceipt": "checkpoints/R0009/physical-validation/FUNCTIONAL-P209-C13-FINAL.json"
+    "finalInstallReceipt": "checkpoints/R0009/physical-validation/INSTALL-P237-C14-DEDUPLICATION.json",
+    "externalVisualReceipt": "checkpoints/R0009/physical-validation/EXTERNAL-VISUAL-P244-C14-HOME-SERVERS.json",
+    "finalFunctionalReceipt": "checkpoints/R0009/physical-validation/FUNCTIONAL-P239-C14-XRAY-REINSTALL-KEENETIC-LIGHT-FAILOVER.json"
   },
   "privateSigningKeyDestroyed": true,
   "publicReleasePublished": false,

@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>BROray-Light — Главная</title>
   <link rel="icon" href="assets/images/branding/favicon.ico">
-  <link rel="stylesheet" href="assets/css/allpage.css?v=0.1.0-r0009c13">
-  <script defer src="assets/js/common.js?v=0.1.0-r0009c13"></script>
-  <script defer src="assets/js/app-shell.js?v=0.1.0-r0009c13"></script>
-  <script defer src="assets/js/home.js?v=0.1.0-r0009c13"></script>
+  <link rel="stylesheet" href="assets/css/allpage.css?v=0.1.0-r0009c14">
+  <script defer src="assets/js/common.js?v=0.1.0-r0009c14"></script>
+  <script defer src="assets/js/app-shell.js?v=0.1.0-r0009c14"></script>
+  <script defer src="assets/js/home.js?v=0.1.0-r0009c14"></script>
 </head>
 <body>
   <header class="app-header">
@@ -20,10 +20,10 @@
     <div id="homeError" class="notice notice-error" hidden></div>
     <div class="grid dashboard-grid">
       <section class="card card-accent"><div class="card-label">Активный сервер</div><div id="activeServer" class="status status-large">—</div><div id="activeServerId" class="muted mono"></div><div id="connection" class="status-line">—</div></section>
-      <section class="card"><div class="card-label">Автопереключение</div><div id="failover" class="status">—</div><a class="text-link" href="servers.html">Настроить порядок серверов →</a></section>
-      <section class="card"><div class="card-label">Keenetic</div><div id="keeneticState" class="status">—</div><div class="row actions"><button onclick="keeneticAction('create')">Настроить</button><button class="secondary" onclick="keeneticAction('repair')">Исправить</button><button class="secondary" onclick="refreshHome()">Обновить</button></div></section>
-      <section class="card"><div class="card-label">Xray</div><div class="version-row"><span class="version-prefix">Версия</span><strong id="xrayVersion">—</strong></div><div id="xrayState" class="muted">—</div><div id="xrayUpdate" class="muted"></div><div class="row actions"><button class="secondary" onclick="xrayCheck()">Проверить обновление</button><button onclick="xrayUpdate()">Обновить</button></div></section>
-      <section class="card"><div class="card-label">BROray-Light</div><div class="version-row"><span class="version-prefix">Версия</span><strong id="lightVersion">—</strong></div><div id="lightChannel" class="muted">Внутренний канал R0009</div><div id="lightUpdate" class="muted">Публичный канал обновлений не настроен</div></section>
+      <section class="card"><div class="card-label">Автопереключение</div><div id="failover" class="status">—</div><div id="failoverDetail" class="muted detail-text">Проверка состояния…</div><a class="text-link" href="servers.html">Настроить порядок серверов →</a></section>
+      <section class="card"><div class="card-label">Keenetic</div><div id="keeneticState" class="status">—</div><div id="keeneticDetail" class="muted detail-text">Проверка интерфейса…</div><div class="row actions"><button onclick="keeneticAction('create')">Настроить</button><button class="secondary" onclick="keeneticAction('repair')">Исправить</button><button class="secondary" onclick="refreshHome()">Обновить статус</button></div></section>
+      <section class="card"><div class="card-label">Xray</div><div class="version-row"><span class="version-prefix">Версия</span><strong id="xrayVersion">—</strong></div><div id="xrayState" class="muted">—</div><div id="xrayUpdate" class="muted detail-text">Нажмите «Проверить обновление».</div><div class="row actions"><button class="secondary" onclick="xrayCheck()">Проверить обновление</button><button id="xrayInstallButton" onclick="xrayInstall()" disabled>Установить</button></div></section>
+      <section class="card"><div class="card-label">BROray-Light</div><div class="version-row"><span class="version-prefix">Версия</span><strong id="lightVersion">—</strong></div><div id="lightChannel" class="muted">Внутренняя сборка R0009</div><div id="lightUpdate" class="muted detail-text">Нажмите «Проверить обновление».</div><div class="row actions"><button class="secondary" onclick="lightCheck()">Проверить обновление</button><button id="lightInstallButton" onclick="lightInstall()" disabled>Обновить</button></div></section>
     </div>
   </main>
   <div id="toast-root" class="toast-root" aria-live="polite"></div>

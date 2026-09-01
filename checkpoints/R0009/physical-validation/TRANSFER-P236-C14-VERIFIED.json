@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_CORRECTIVE_C14_AFTER_C13_USER_VALIDATION_FAILURES",
+  "revision": "p236-c14-legacy-scp-verified-transfer",
+  "status": "PASS_READY_FOR_INSTALL",
+  "candidateId": "0.1.0-r0009c14",
+  "localArtifact": "dist/R0009/R0009c14-P231-Build-A/broray-light_0.1.0-r0009c14_aarch64-3.10.ipk",
+  "remoteArtifact": "/tmp/broray-light-r0009c14.ipk",
+  "size": 12793790,
+  "localSha256": "43c7ddbb59e3cb68c68f9e280f2859b0ed6170d4ad5fb1f6f108d2010c0ca6ee",
+  "remoteSha256": "43c7ddbb59e3cb68c68f9e280f2859b0ed6170d4ad5fb1f6f108d2010c0ca6ee",
+  "exactMatch": true,
+  "routerMutation": "AUTHORIZED_TEMPORARY_IPK_TRANSFER_ONLY",
+  "packageInstalled": false,
+  "nextRevision": "p237-c14-physical-install-and-deduplication-migration",
+  "nextExactAction": "RUN_EXACTLY_ONE_C13_TO_C14_OPKG_INSTALL_THEN_VERIFY_PACKAGE_SERVICES_XRAY_PERSISTENCE_ACTIVE_SERVER_GLOBAL_DEDUPLICATION_AND_ROUTES_ZERO"
+}

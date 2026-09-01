@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_CORRECTIVE_C14_AFTER_C13_USER_VALIDATION_FAILURES",
+  "revision": "p235-c14-verified-transfer",
+  "status": "FAILED_STOPPED_FIRST_ERROR",
+  "failureId": "R158",
+  "failureClass": "SCP_DEFAULT_SFTP_SERVER_ABSENT_ON_KEENETIC",
+  "candidateId": "0.1.0-r0009c14",
+  "firstError": "sh: /opt/libexec/sftp-server: not found",
+  "transferCompleted": false,
+  "packageInstalled": false,
+  "candidateArtifactDefect": false,
+  "routerMutation": "NO_CONFIRMED_REMOTE_FILE_CREATED",
+  "hiddenRetryPerformed": false,
+  "cause": "The Windows OpenSSH scp client defaults to SFTP, which is not installed on the router.",
+  "nextRevision": "p236-c14-legacy-scp-verified-transfer",
+  "nextExactAction": "VERIFY_THE_REMOTE_TARGET_IS_ABSENT_USE_SCP_LEGACY_MODE_O_TO_TRANSFER_AND_COMPARE_REMOTE_SIZE_AND_SHA256"
+}

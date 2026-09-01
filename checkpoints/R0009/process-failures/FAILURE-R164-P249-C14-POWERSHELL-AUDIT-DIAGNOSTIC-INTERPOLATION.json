@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_CORRECTIVE_C14_AFTER_C13_USER_VALIDATION_FAILURES",
+  "revision": "p249-c14-final-ready-reseal-and-post-audit",
+  "status": "FAILED_STOPPED_FIRST_ERROR",
+  "failureId": "R164",
+  "failureClass": "POWERSHELL_AUDIT_DIAGNOSTIC_INTERPOLATION_PARSE_ERROR",
+  "candidateId": "0.1.0-r0009c14",
+  "firstError": "Variable reference is not valid because a colon immediately followed the lineNo variable name in an interpolated diagnostic string",
+  "candidateArtifactDefect": "NO",
+  "auditChecksExecuted": false,
+  "repositoryMutationBeforeFailure": false,
+  "routerMutation": false,
+  "userDataMutation": false,
+  "hiddenRetryPerformed": false,
+  "rootCause": "The post-reseal audit command used WORKLOG:$lineNo: inside a double-quoted PowerShell string instead of delimiting the variable as ${lineNo}",
+  "nextRevision": "p250-c14-post-reseal-audit-interpolation-fix",
+  "nextExactAction": "RUN_THE_SAME_READ_ONLY_POST_RESEAL_AUDIT_WITH_ALL_DIAGNOSTIC_VARIABLES_EXPLICITLY_DELIMITED"
+}

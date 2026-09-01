@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_CORRECTIVE_C14_AFTER_C13_USER_VALIDATION_FAILURES",
+  "revision": "p245-c14-final-physical-safety-and-cleanup",
+  "status": "PASS",
+  "candidateId": "0.1.0-r0009c14",
+  "installedPackage": "broray-light 0.1.0-r0009c14",
+  "services": "PASS_PRIMARY_UPDATER_PUBLICATION",
+  "xraySha256": "4b8af237444801bf17b3dc10a1c5c24581fbe3d433eba3d78c6c3a0da1df56fc",
+  "serverFiles": 6,
+  "duplicateImportKeyGroups": 0,
+  "duplicateIdentityKeyGroups": 0,
+  "deduplicationBackupFiles": 5,
+  "activeServerPresent": true,
+  "routesViaProxy0": 0,
+  "fullBROrayOwnership": 0,
+  "fullBROrayRootAbsent": true,
+  "nativeSessionFiles": 1,
+  "nativeAuthenticationSessionProtection": "PASS",
+  "temporaryPackage": {
+    "path": "/tmp/broray-light-r0009c14.ipk",
+    "sha256VerifiedBeforeDelete": "43c7ddbb59e3cb68c68f9e280f2859b0ed6170d4ad5fb1f6f108d2010c0ca6ee",
+    "removed": true,
+    "recoverableFrom": "dist/R0009/R0009c14-P231-Build-A/broray-light_0.1.0-r0009c14_aarch64-3.10.ipk"
+  },
+  "diagnosticBrowserTabsClosed": 2,
+  "userBrowserTabLeftOpen": "https://brolight.tvervip.keenetic.link/servers.html",
+  "productionServerMutationPerformed": false,
+  "publicReleasePublished": false,
+  "routerMutation": "AUTHORIZED_EXACT_TEMPORARY_IPK_CLEANUP_AFTER_SHA_VERIFICATION",
+  "nextRevision": "p246-c14-private-signing-key-destruction",
+  "nextExactAction": "DELETE_ONLY_THE_EXACT_EPHEMERAL_C14_PRIVATE_SIGNING_KEY_VERIFY_ABSENCE_PRESERVE_PUBLIC_KEY_AND_VERIFY_BOTH_BUILD_SIGNATURES"
+}

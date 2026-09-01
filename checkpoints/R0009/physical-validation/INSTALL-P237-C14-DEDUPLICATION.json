@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_CORRECTIVE_C14_AFTER_C13_USER_VALIDATION_FAILURES",
+  "revision": "p237-c14-physical-install-and-deduplication-migration",
+  "status": "PASS_PENDING_AUTHENTICATED_FUNCTIONAL_AND_VISUAL_VALIDATION",
+  "candidateId": "0.1.0-r0009c14",
+  "package": "broray-light 0.1.0-r0009c14",
+  "previousPackage": "broray-light 0.1.0-r0009c13",
+  "installCount": 1,
+  "services": "PASS_PRIMARY_UPDATER_PUBLICATION",
+  "persistence": {
+    "subscriptionCount": 2,
+    "subscriptionsTreeUnchanged": true,
+    "settingsUnchanged": true,
+    "activeServerIdUnchanged": true,
+    "activeServerStillExists": true,
+    "xraySha256Unchanged": true
+  },
+  "deduplicationMigration": {
+    "serverFilesBefore": 11,
+    "serverFilesAfter": 6,
+    "removed": 5,
+    "backupFiles": 5,
+    "duplicateImportKeyGroupsAfter": 0,
+    "duplicateIdentityKeyGroupsAfter": 0,
+    "staleAutoSwitchReferencesAfter": 0
+  },
+  "keeneticCli": {
+    "xrayStatusReturnCode": 0,
+    "currentServerReturnCode": 0
+  },
+  "webOverlayExact": "PASS_4_OF_4",
+  "fullBROrayOwnership": 0,
+  "routesViaProxy0": 0,
+  "recoveryMarkerAbsent": true,
+  "routerMutation": "AUTHORIZED_SINGLE_C13_TO_C14_PACKAGE_UPGRADE_AND_APP_OWNED_DUPLICATE_SERVER_MIGRATION_WITH_BACKUP",
+  "nextRevision": "p238-c14-authenticated-functional-validation",
+  "nextExactAction": "RUN_ONE_MEMORY_ONLY_AUTHENTICATED_EXTERNAL_API_CYCLE_VALIDATE_LIGHT_UPDATE_CHECK_FAILOVER_STATUS_KEENETIC_REPAIR_AND_EQUAL_VERSION_XRAY_REINSTALL_THEN_LOG_OUT"
+}
