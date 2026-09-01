@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_C21_PHYSICAL_INSTALL",
+  "revision": "p346-c21-opkg-install-and-service-validation",
+  "at": "2026-09-01T16:42:07+03:00",
+  "status": "PASS",
+  "candidateId": "0.1.0-r0009c21",
+  "package": "broray-light 0.1.0-r0009c21",
+  "packageSha256": "a9a5d0172b305dd2e9fb640bc1588eb8e2dd4b3fdbdadc5c1515e685c2d25a16",
+  "upgradeFrom": "0.1.0-r0009c19",
+  "currentTarget": "releases/0.1.0-r9",
+  "releaseCandidateId": "0.1.0-r0009c21",
+  "primaryService": "PASS",
+  "updaterService": "PASS",
+  "persistence": {
+    "beforeSha256": "3dfce4f74ad41ae5df5671d56b01a79bfbd1a8eafd5af7e7748143d41b75bb06",
+    "afterSha256": "3dfce4f74ad41ae5df5671d56b01a79bfbd1a8eafd5af7e7748143d41b75bb06",
+    "match": true
+  },
+  "physicalRouterUsed": true,
+  "routerRebootPerformed": false,
+  "productionServerMutationPerformed": false,
+  "publicReleasePublished": false,
+  "nextRevision": "p347-c21-browser-and-subscription-scheduler-validation",
+  "nextExactAction": "VALIDATE_C21_EXTERNAL_WEB_UI_CONTROLS_LAYOUT_KEENETIC_STATUS_AND_A_REVERSIBLE_LIVE_SUBSCRIPTION_AUTO_UPDATE_CYCLE"
+}

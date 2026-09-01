@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_FINAL_1_0_0_R1_CROSS_RELEASE_LIFECYCLE_CORRECTION",
+  "revision": "p393-final-cross-release-postinst-correction",
+  "at": "2026-09-01T18:57:21+03:00",
+  "status": "PASS_IMPLEMENTED_PENDING_REBUILD_AND_REVALIDATION",
+  "failureReference": "checkpoints/R0009/process-failures/FAILURE-R228-P388-FINAL-PHYSICAL-UPGRADE-SLOT-ACTIVATION.json",
+  "packageVersion": "1.0.0-r1",
+  "releaseId": "1.0.0-r1",
+  "candidateId": "1.0.0-r1",
+  "correction": {
+    "postinst": "After validating the target slot, always replace current with releases/$RELEASE_ID using BusyBox-safe ln -sfnT before service startup.",
+    "postinstSha256": "0b24468d6f36ee8ed51baf9b7c9b5eebfd9d8f7ea9f62b01dba51e130b4badbd",
+    "regressionGate": "crossReleasePackageUpgradeActivatesTarget",
+    "testSha256": "a1d688bbdee411b29fe89c11ca9155ad1b1f4e5528d6076eeec80d0b7730cd3e"
+  },
+  "staticChecks": {
+    "postinstShellSyntax": "PASS",
+    "testPythonAst": "PASS",
+    "gitDiffCheck": "PASS",
+    "canonicalSourceDiff": "NONE",
+    "exactVersionConstants": "PASS_1.0.0-r1"
+  },
+  "materialCorrectionAfterFinalVersionDecision": true,
+  "reason": "Concrete physical acceptance failure R228 required a lifecycle correction; architecture was not otherwise reconsidered.",
+  "publicReleasePublished": false,
+  "candidateReady": false,
+  "nextRevision": "p394-final-corrected-build-a-b",
+  "nextExactAction": "BUILD_NEW_INDEPENDENT_A_AND_B_FROM_THE_CORRECTED_EXACT_1_0_0_R1_TREE_VERIFY_BYTE_IDENTITY_AND_SIGNATURES_THEN_REPEAT_ALL_50_ISOLATED_GATES"
+}

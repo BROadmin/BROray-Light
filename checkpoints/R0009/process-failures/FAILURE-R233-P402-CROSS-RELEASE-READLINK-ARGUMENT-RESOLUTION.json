@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "failureId": "R233",
+  "stage": "R0009_FINAL_1_0_0_R1_ISOLATED_VALIDATION",
+  "revision": "p402-final-full-isolated-validation",
+  "at": "2026-09-01T19:14:14+03:00",
+  "status": "FAIL_FIRST_ERROR_PRESERVED",
+  "operation": "RUN_CROSS_RELEASE_READLINK_ASSERTION",
+  "commandExit": 1,
+  "error": "The test posix() helper called Path.resolve(), so the current symlink argument was converted to the physical release-slot path before invoking the readlink shim.",
+  "observedArgumentSuffix": "releases/1.0.0-r1",
+  "expectedArgumentSuffix": "current",
+  "candidateArtifactDefect": false,
+  "testAssertionDefect": true,
+  "physicalPackageInstallStarted": false,
+  "hiddenRetryPerformed": false,
+  "canonicalSourceDiff": "NONE",
+  "publicReleasePublished": false,
+  "candidateReady": false,
+  "nextRevision": "p403-final-preserve-readlink-symlink-path",
+  "nextExactAction": "PATCH_ONLY_THE_READLINK_ASSERTION_ARGUMENT_TO_USE_THE_ALREADY_ABSOLUTE_NON_RESOLVED_PATH_THEN_REBUILD_A_AND_B_AND_RUN_ALL_50_GATES"
+}

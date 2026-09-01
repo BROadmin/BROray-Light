@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_C23_INDEPENDENT_BUILDS",
+  "revision": "p362-c23-independent-builds",
+  "at": "2026-09-01T17:18:00+03:00",
+  "status": "PASS",
+  "candidateId": "0.1.0-r0009c23",
+  "buildA": "dist/R0009/R0009c23-P362-Build-A",
+  "buildB": "dist/R0009/R0009c23-P362-Build-B",
+  "byteIdenticalArtifacts": 8,
+  "signatureBuildA": "PASS",
+  "signatureBuildB": "PASS",
+  "artifacts": {
+    "package": {"sha256":"0efa59a556cb256541414b56f6dcc3be2069dc7c2c6aab1ec9da4fc7e0f6d47d","sizeBytes":12806731},
+    "appArchive": {"sha256":"68b1291bf007a5c475e63715bf89715666fcef6ce06635c56e5b787a914f0718","sizeBytes":155723},
+    "installer": {"sha256":"9a2da6c6d3b2ca6d812a3a0a37ad178938eea5666cce5998cfca98f8306b9168","sizeBytes":1856},
+    "updaterArchive": {"sha256":"fb9edededff76248ee58c546deb39b64a2ae134c03f9c125424066703a6ed5e0","sizeBytes":131429},
+    "candidateManifest": {"sha256":"a8c539127dc8794b7b495bd16d947d15f5e4744b2553fcbcf1f0cb1e1c434303","sizeBytes":2612},
+    "releaseIndex": {"sha256":"36e2b732727ab75ccfa4d3b8783c1e829c2dbc7e2212bf09277802c6e5c373b9","sizeBytes":577},
+    "releaseSignature": {"sha256":"03bf4f084dd7b8a057a180c0473e755d91e1c0cb6f07d998b09354501d8e3df6","sizeBytes":277},
+    "artifactSums": {"sha256":"88117e059b7e1cd1690ce7b99d94645ffcd6f2b1bf4d8b818932eeb5cfe2991d","sizeBytes":689}
+  },
+  "publicKeySha256": "17308f28719200e6479b2a094d264344f3ad1b0d8b65792f5712e771b318f22e",
+  "privateSigningKeyDestroyed": false,
+  "canonicalSourceUnchanged": true,
+  "physicalRouterMutation": false,
+  "productionServerMutationPerformed": false,
+  "publicReleasePublished": false,
+  "nextRevision": "p363-c23-full-isolated-validation",
+  "nextExactAction": "RUN_THE_FULL_C23_ISOLATED_ROOT_HARNESS_WITH_AUTOMATIC_DUE_AND_BUSY_GLOBAL_LOCK_SCHEDULER_CASES"
+}

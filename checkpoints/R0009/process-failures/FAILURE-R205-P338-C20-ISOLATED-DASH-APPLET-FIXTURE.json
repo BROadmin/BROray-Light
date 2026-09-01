@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "failureId": "R205",
+  "stage": "R0009_C20_KEENETIC_INTERFACE_STATUS_CARD",
+  "revision": "p338-c20-full-isolated-validation",
+  "at": "2026-09-01T16:21:34+03:00",
+  "status": "FAILED_STOPPED_FIRST_ERROR",
+  "failureClass": "ISOLATED_DASH_APPLET_FIXTURE",
+  "operation": "Run the full updated isolated-root acceptance harness against c20 Build A",
+  "error": "dash: applet not found while the publication start-gate invoked the isolated retry controller",
+  "candidateId": "0.1.0-r0009c20",
+  "candidateArtifactDefect": false,
+  "newUiGatesReached": false,
+  "repositoryMutationBeforeFailure": false,
+  "routerMutation": false,
+  "hiddenRetryPerformed": false,
+  "cause": "The selected standalone dash validation binary lacked the companion BusyBox applet resolution used by the previously validated fixture.",
+  "nextRevision": "p339-c20-validated-busybox-applet-fixture",
+  "nextExactAction": "RESTORE_THE_PREVIOUSLY_VALIDATED_BUSYBOX_APPLET_FIXTURE_THEN_RERUN_THE_FULL_HARNESS_AFTER_INCORPORATING_THE_NEW_FORMATTING_AND_SUBSCRIPTION_AUTO_UPDATE_REQUIREMENTS"
+}

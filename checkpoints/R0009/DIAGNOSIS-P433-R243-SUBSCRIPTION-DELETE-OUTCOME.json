@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_USER_AUTHORIZED_SUBSCRIPTION_DELETE_BUTTON_TEST",
+  "revision": "p433-subscription-delete-outcome-diagnosis",
+  "at": "2026-09-01T20:52:24+03:00",
+  "status": "PASS_OUTCOME_IDENTIFIED_NOT_DELETED",
+  "failureReference": "checkpoints/R0009/process-failures/FAILURE-R243-P431-SUBSCRIPTION-DELETE-DIALOG-TIMEOUT.json",
+  "subscriptionDeleteOutcome": "NOT_DELETED",
+  "subscriptionsCount": 1,
+  "subscriptionId": "sub-130bddd06d26133e",
+  "subscriptionServersCount": 3,
+  "serversCount": 3,
+  "activeServerId": "subscription-sub-130bddd06d26133e-600217eb115c0e82",
+  "activeServerFilePresent": true,
+  "proxy0Exists": false,
+  "routesViaProxy0": 0,
+  "backupPath": "/opt/broray-light/backup/r0009-p422-before-delete-sub-130bddd06d26133e",
+  "backupPresent": true,
+  "deleteRetryPerformed": false,
+  "candidateReady": false,
+  "nextRevision": "p434-active-server-recreation-diagnosis",
+  "nextExactAction": "READ_ONLY_IDENTIFY_WHICH_SERVICE_OR_RECOVERY_PATH_RECREATED_ACTIVE_SERVER_AFTER_P429_BEFORE_ANY_FURTHER_MUTATION"
+}

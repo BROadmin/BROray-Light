@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "failureId": "R239",
+  "stage": "R0009_USER_AUTHORIZED_SUBSCRIPTION_DELETE_BUTTON_TEST",
+  "revision": "p424-user-subscription-delete-native-dialog",
+  "at": "2026-09-01T19:47:00+03:00",
+  "status": "FAIL_FIRST_ERROR_PRESERVED",
+  "operation": "START_VISIBLE_DELETE_CLICK_AND_NATIVE_CONFIRM_HANDLER",
+  "error": "ReferenceError: deleteButton is not defined",
+  "deleteButtonClicked": false,
+  "subscriptionDeleted": false,
+  "candidateArtifactDefect": false,
+  "automationBindingDefect": true,
+  "hiddenRetryPerformed": false,
+  "candidateReady": false,
+  "nextRevision": "p425-user-subscription-delete-native-dialog-fresh-binding",
+  "nextExactAction": "OBTAIN_A_FRESH_DELETE_BUTTON_LOCATOR_START_CLICK_GET_NATIVE_DIALOG_ACCEPT_AND_AWAIT_CLICK"
+}

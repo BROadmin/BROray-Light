@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "failureId": "R292",
+  "stage": "R0009_FINAL_P505_SERVER_CONTROLS_AUDIT_WITH_LITERAL_SOURCE_READ",
+  "revision": "p521-final-p505-server-controls-audit-with-literal-source-read",
+  "at": "2026-09-01T23:51:45+03:00",
+  "status": "FAIL_FIRST_ERROR_PRESERVED",
+  "operation": "READ_SERVER_SERVICE_AND_IMPORT_LIBRARIES_AT_ASSUMED_OVERLAY_PATH",
+  "error": "The assumed packaging/app-overlay/lib paths do not exist in the repository layout.",
+  "confirmedBeforeFailure": {
+    "emptyImportValidation": "PASS",
+    "emptyImportMessage": "Вставьте VLESS-ссылку",
+    "invalidVlessValidation": "PASS",
+    "invalidVlessMessage": "Некорректная или неподдерживаемая VLESS-ссылка."
+  },
+  "webUiMutationPerformed": false,
+  "routerMutationPerformed": false,
+  "candidateArtifactDefect": false,
+  "hiddenRetryPerformed": false,
+  "candidateReady": false,
+  "nextRevision": "p522-final-p505-server-controls-audit-with-discovered-library-paths",
+  "nextExactAction": "DISCOVER_THE_LIBRARY_PATHS_WITH_RG_FILES_THEN_CONTINUE_DUPLICATE_CHECK_REORDER_EXCLUSION_FAILOVER_SAVE_DELETE_AND_NAVIGATION_TESTS"
+}

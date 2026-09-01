@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_FINAL_LOCAL_AUDIT",
+  "revision": "p556-final-sidecar-audit-after-sums-sidecar-reseal",
+  "at": "2026-09-02T01:32:06+03:00",
+  "status": "PASS",
+  "candidateId": "1.0.0-r1",
+  "releaseId": "1.0.0-r1",
+  "branch": "codex/r0009-updater-package",
+  "canonicalSource": {
+    "commit": "684b27bdb53e545047419baa87c63dd86dffa469",
+    "files": 121,
+    "logicalBytes": 627326,
+    "sha256SumsSha256": "e056585d6a517ddbbbaebf08b68f17eb2d9d7ccd68d86df5cdee9fd4665f2419",
+    "unchanged": true
+  },
+  "builds": {
+    "buildA": "dist/R0009/1.0.0-r1-P531-Final-Build-A",
+    "buildB": "dist/R0009/1.0.0-r1-P532-Final-Build-B",
+    "artifactCount": 8,
+    "byteIdenticalArtifacts": 8,
+    "mismatchedArtifacts": 0,
+    "signatureBuildA": "PASS",
+    "signatureBuildB": "PASS",
+    "artifactSumsBuildA": "PASS",
+    "artifactSumsBuildB": "PASS",
+    "trustedComment": "releaseId=1.0.0-r1"
+  },
+  "staticValidation": {
+    "dashSyntaxFiles": 27,
+    "dashSyntax": "PASS",
+    "pythonAstFiles": 3,
+    "pythonAst": "PASS",
+    "javascriptSyntaxFiles": 5,
+    "javascriptSyntax": "PASS",
+    "bundledNodeVersion": "v24.19.0",
+    "gitDiffCheck": "PASS"
+  },
+  "isolatedValidation": {
+    "passed": 51,
+    "failed": 0,
+    "finalRepeatExitCode": 0,
+    "receipt": "checkpoints/R0009/ISOLATED-VALIDATION-P533-FINAL-1.0.0-R1.json",
+    "receiptSha256": "ff32ab45ec5b11a329626fed09802b6f6894df728f70c1b9184990d67901c761"
+  },
+  "machineReadableRecords": {
+    "jsonRecords": 590,
+    "utf8Records": 588,
+    "documentedLegacyCp1251Records": 2,
+    "worklogLines": 586,
+    "parse": "PASS"
+  },
+  "sha256Audit": {
+    "sidecarsVerified": 566,
+    "sidecarFailures": 0,
+    "aggregateSha256Sums": "PASS"
+  },
+  "security": {
+    "credentialLeakCount": 0,
+    "privateKeyMarkerCount": 0,
+    "ephemeralSigningKeyPresentForFinalAudit": true,
+    "privateSigningKeyDestroyed": false,
+    "canonicalPublicKeySha256": "17308f28719200e6479b2a094d264344f3ad1b0d8b65792f5712e771b318f22e",
+    "publicKeyFileSha256": "f4e49912ddb5ad6e0995d4b4992ce7d879dc765815aafa61fa1156e8ba1ae4a4"
+  },
+  "implementation": {
+    "builderSha256": "ce415971eaf98323d7f50a5a1f4d5609710a019cc93570dad4381fcf6665d5ab",
+    "testHarnessSha256": "adefd056a0f4588633e51e194cf194761b9d3deb6d6ee7dc2e22e96e63130284"
+  },
+  "processFailuresPreserved": 272,
+  "productionServerMutationPerformed": false,
+  "publicReleasePublished": false,
+  "candidateReady": false,
+  "nextRevision": "p557-destroy-ephemeral-signing-key",
+  "nextExactAction": "DELETE_ONLY_THE_EXACT_EPHEMERAL_MINISIGN_PRIVATE_KEY_VERIFY_ABSENCE_AND_RECORD_THE_DESTRUCTION_RECEIPT"
+}

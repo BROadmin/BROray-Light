@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_USER_AUTHORIZED_SUBSCRIPTION_DELETE_BUTTON_TEST",
+  "revision": "p436-clear-active-server-with-auto-switch-disabled",
+  "at": "2026-09-01T20:57:56+03:00",
+  "status": "PASS_ACTIVE_SERVER_CLEARED_WITH_AUTO_SWITCH_DISABLED",
+  "removedPath": "/opt/broray-light/config/active-server",
+  "removedPathWasRegularFile": true,
+  "removedPathWasSymlink": false,
+  "activeServerFileAbsent": true,
+  "autoSwitchEnabled": false,
+  "proxy0Exists": false,
+  "routesViaProxy0": 0,
+  "daemonPersistenceProbeComplete": false,
+  "subscriptionDeleteRetried": false,
+  "backupPath": "/opt/broray-light/backup/r0009-p422-before-delete-sub-130bddd06d26133e",
+  "recoverable": true,
+  "candidateReady": false,
+  "nextRevision": "p437-active-server-clear-daemon-persistence",
+  "nextExactAction": "WAIT_FOR_AT_LEAST_ONE_30_SECOND_DAEMON_CYCLE_THEN_VERIFY_ACTIVE_SERVER_REMAINS_ABSENT_AND_AUTO_SWITCH_REMAINS_DISABLED"
+}

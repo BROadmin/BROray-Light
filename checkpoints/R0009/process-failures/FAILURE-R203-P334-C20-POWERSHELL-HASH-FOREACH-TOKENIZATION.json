@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "failureId": "R203",
+  "stage": "R0009_C20_KEENETIC_INTERFACE_STATUS_CARD",
+  "revision": "p334-c20-implementation-checkpoint-hashing",
+  "at": "2026-09-01T16:13:45+03:00",
+  "status": "FAILED_STOPPED_FIRST_ERROR",
+  "failureClass": "POWERSHELL_HASH_FOREACH_TOKENIZATION",
+  "operation": "Compute SHA-256 values for the c20 implementation checkpoint",
+  "error": "ParserError: Missing 'in' after variable in foreach loop",
+  "candidateId": "0.1.0-r0009c20",
+  "candidateArtifactDefect": false,
+  "javascriptSyntax": "PASS_5_OF_5",
+  "hashesNotProduced": true,
+  "repositoryMutationBeforeFailure": false,
+  "routerMutation": false,
+  "hiddenRetryPerformed": false,
+  "cause": "Whitespace was again omitted between the PowerShell foreach 'in' keyword and the collection variable.",
+  "nextRevision": "p335-c20-expanded-implementation-checkpoint-hashing",
+  "nextExactAction": "COMPUTE_THE_IMPLEMENTATION_HASHES_WITH_AN_EXPANDED_POWERSHELL_FOREACH_BLOCK"
+}

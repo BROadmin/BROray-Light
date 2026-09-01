@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "failureId": "R241",
+  "stage": "R0009_USER_AUTHORIZED_SUBSCRIPTION_DELETE_BUTTON_TEST",
+  "revision": "p427-user-authorized-proxy0-deactivation",
+  "at": "2026-09-01T20:43:58+03:00",
+  "status": "FAIL_FIRST_ERROR_PRESERVED",
+  "operation": "VERIFY_PROXY0_ABSENT_WITH_NDMC_NAMED_INTERFACE_QUERY",
+  "error": "Command::Base error[7405602]: argument parse error.",
+  "proxy0DeleteExit": 0,
+  "officialPostDeleteSnapshotExists": false,
+  "routesViaProxy0": 0,
+  "activeServerCleared": false,
+  "subscriptionDeleteRetried": false,
+  "candidateArtifactDefect": false,
+  "validationProbeDefect": true,
+  "hiddenRetryPerformed": false,
+  "backupPath": "/opt/broray-light/backup/r0009-p422-before-delete-sub-130bddd06d26133e",
+  "candidateReady": false,
+  "nextRevision": "p428-user-authorized-proxy0-corrected-verification",
+  "nextExactAction": "VERIFY_PROXY0_ABSENCE_USING_THE_OFFICIAL_KEENETIC_STATUS_SNAPSHOT_AND_RUNNING_CONFIG_WITHOUT_REPEATING_THE_INVALID_NDMC_QUERY"
+}

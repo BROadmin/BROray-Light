@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_FINAL_1_0_0_R1_WEBUI_VERSION_SOURCE_DIAGNOSIS",
+  "revision": "p411-final-webui-version-source-diagnosis",
+  "at": "2026-09-01T19:28:07+03:00",
+  "status": "PASS_ROOT_CAUSE_CONFIRMED",
+  "failureId": "R235",
+  "webUiEndpoint": "api/broray/info.cgi",
+  "versionProvider": "/opt/broray-light/bin/broray-system info",
+  "versionSource": "/opt/broray-light/config/version",
+  "observedPersistentVersion": "0.1.0-r9",
+  "installedReleaseId": "1.0.0-r1",
+  "rootCause": "OPKG postinst seeded config/version only when absent, so an upgrade preserved the previous release identity even though current and OPKG changed.",
+  "updaterPathAlreadyAtomic": true,
+  "candidateArtifactDefect": true,
+  "architectureChangeRequired": false,
+  "publicReleasePublished": false,
+  "candidateReady": false,
+  "nextRevision": "p412-final-opkg-version-identity-correction",
+  "nextExactAction": "MAKE_POSTINST_ATOMICALLY_WRITE_RELEASE_ID_TO_THE_MANAGED_CONFIG_VERSION_FILE_AND_EXTEND_THE_CROSS_RELEASE_GATE"
+}

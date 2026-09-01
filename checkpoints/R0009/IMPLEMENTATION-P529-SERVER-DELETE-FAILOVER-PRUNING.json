@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_FINAL_SERVER_DELETE_FIX_STATIC_AND_ISOLATED_VALIDATION",
+  "revision": "p529-final-server-delete-fix-static-and-isolated-validation",
+  "at": "2026-09-02T00:11:51+03:00",
+  "status": "PASS_IMPLEMENTED_STATIC_VALIDATION_PASS_BUILD_PENDING",
+  "failureResolved": "R297",
+  "implementation": {
+    "overlayFile": "packaging/app-overlay/lib/server-service.sh",
+    "overlayFileSha256": "42ee77742de9aeef8f06cdf95844503efa3b49de8f1b9c310eb87e84ab398643",
+    "testFile": "tools/test_r0009.py",
+    "testFileSha256": "adefd056a0f4588633e51e194cf194761b9d3deb6d6ee7dc2e22e96e63130284",
+    "overlayFileCount": 24
+  },
+  "behavior": {
+    "activeServerDeletionRefusedBeforeMutation": true,
+    "failoverConfigPreparedBeforeServerRemoval": true,
+    "serverRecordTemporarilyMoved": true,
+    "serverRecordRestoredIfFailoverCommitFails": true,
+    "orderedServerIdsPruned": true,
+    "excludedServerIdsPruned": true,
+    "configCommitUsesAtomicRename": true,
+    "successResponseIncludesFailoverReferencesPruned": true
+  },
+  "regressionCoverage": {
+    "successfulDeletePrunesBothLists": true,
+    "invalidFailoverConfigFailsClosedAndPreservesServer": true
+  },
+  "staticValidation": {
+    "dashSyntax": "PASS",
+    "pythonAst": "PASS",
+    "overlayCount": "PASS_24",
+    "gitDiffCheck": "PASS"
+  },
+  "canonicalR0008SourceModified": false,
+  "routerMutationPerformedByImplementation": false,
+  "candidateReady": false,
+  "nextRevision": "p530-final-server-delete-fix-build-a",
+  "nextExactAction": "BUILD_A_FROM_THE_CORRECTED_24_FILE_OVERLAY_THEN_RUN_THE_FULL_ISOLATED_SUITE_AND_INDEPENDENT_BUILD_B"
+}

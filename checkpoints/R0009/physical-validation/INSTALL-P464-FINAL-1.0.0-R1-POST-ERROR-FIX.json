@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_FINAL_1_0_0_R1_POST_ERROR_FIX_PHYSICAL_INSTALL",
+  "revision": "p464-postinstall-daemon-cycle-and-installed-state-validation",
+  "at": "2026-09-01T21:54:29+03:00",
+  "status": "PASS",
+  "routerAddress": "192.168.1.1",
+  "installMode": "opkg --force-reinstall",
+  "installAttempts": 1,
+  "opkgExit": 0,
+  "package": "broray-light 1.0.0-r1",
+  "packageStatus": "install user installed",
+  "packageSha256": "3714c3a2effa07a8fb63bf71d5ace496111c090be3a5db1ee95af34d312c973d",
+  "currentTarget": "releases/1.0.0-r1",
+  "configVersion": "1.0.0-r1",
+  "releaseId": "1.0.0-r1",
+  "candidateId": "1.0.0-r1",
+  "installedCommonShSha256": "801cb7292219c67381031c0a5dac530d5b5cd04fbe4dba4213e703dd97e27c60",
+  "daemonCycleWaitSeconds": 35,
+  "services": {
+    "primary": "PASS",
+    "updater": "PASS"
+  },
+  "xray": {
+    "version": "26.7.28",
+    "sha256": "4b8af237444801bf17b3dc10a1c5c24581fbe3d433eba3d78c6c3a0da1df56fc"
+  },
+  "persistence": {
+    "beforeSha256": "b11cc8ba548d9cc9d9ef666909bfe79439c1ab7ed8377661c03b710c373a55a7",
+    "afterSha256": "b11cc8ba548d9cc9d9ef666909bfe79439c1ab7ed8377661c03b710c373a55a7",
+    "status": "PASS",
+    "backupPath": "/opt/broray-light/backup/r0009-p458-before-p452-package"
+  },
+  "inventory": {
+    "subscriptions": 0,
+    "servers": 0,
+    "activeServerFile": "ABSENT",
+    "autoSwitchEnabled": false,
+    "autoSwitchOrderedServerCount": 0
+  },
+  "authentication": {
+    "correctBindUnauthenticatedApiHttp": 401,
+    "externalUnauthenticatedApiHttp": 401,
+    "externalLoginPageHttp": 200
+  },
+  "ownership": {
+    "proxy0Exists": false,
+    "runningConfigProxy0Lines": 0,
+    "routesViaProxy0": 0,
+    "fullBrorayOwnership": 0,
+    "lightGlobalOperationLockAfterCycle": "ABSENT"
+  },
+  "routerRebootPerformed": false,
+  "productionServerMutationPerformed": false,
+  "publicReleasePublished": false,
+  "candidateReady": false,
+  "nextRevision": "p465-final-exact-webui-button-and-error-audit",
+  "nextExactAction": "AUTHENTICATE_IN_THE_EXISTING_EXTERNAL_WEBUI_SESSION_IF_AVAILABLE_AND_VALIDATE_ALL_VISIBLE_CONTROLS_PLUS_STRUCTURED_SUBSCRIPTION_DELETE_CONFLICT_WITHOUT_RESTORING_USER_DATA"
+}

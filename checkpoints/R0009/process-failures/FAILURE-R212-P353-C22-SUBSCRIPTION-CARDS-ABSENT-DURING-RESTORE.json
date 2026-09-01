@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "failureId": "R212",
+  "stage": "R0009_C22_TEST_SETTING_RESTORE",
+  "revision": "p353-c22-simple-locator-setting-restore",
+  "at": "2026-09-01T16:54:02+03:00",
+  "status": "FAILED_STOPPED_FIRST_ERROR",
+  "failureClass": "SUBSCRIPTION_CARDS_ABSENT_DURING_RESTORE",
+  "operation": "Restore the first subscription using the previously validated simple first-card locator",
+  "error": "No .subscription-card element became visible before the action deadline.",
+  "candidateId": "0.1.0-r0009c22",
+  "candidateArtifactDefect": false,
+  "subscriptionSettingChangedDuringFailedRevision": false,
+  "temporarySubscriptionSettingRestoreRequired": true,
+  "routerMutation": false,
+  "hiddenRetryPerformed": false,
+  "cause": "The actual browser URL, authentication state, and rendered page must be inspected before another UI action; the locator itself had succeeded earlier.",
+  "nextRevision": "p354-c22-inspect-browser-state-and-restore-via-supported-path",
+  "nextExactAction": "READ_THE_ACTUAL_BROWSER_URL_TITLE_AND_PAGE_MARKERS_THEN_RESTORE_FALSE_360_VIA_UI_IF_AUTHENTICATED_OR_VIA_THE_PACKAGE_CLI_IF_NOT"
+}

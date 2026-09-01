@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_FINAL_MACHINE_READABLE_AUDIT",
+  "revision": "p550-final-machine-readable-audit-with-legacy-classification",
+  "at": "2026-09-02T01:19:06+03:00",
+  "status": "FAIL_FIRST_ERROR_PRESERVED",
+  "failureId": "R310",
+  "operation": "VERIFY_ALL_SHA256_SIDECARS_RELATIVE_TO_THEIR_OWN_DIRECTORY",
+  "firstError": "A historical sidecar target was not found when its repository-relative path was incorrectly joined to the sidecar directory.",
+  "cause": "Historical sidecars use both basename-relative and repository-root-relative target paths; the audit handled only the first form.",
+  "completedBeforeFailure": {
+    "jsonRecordsParsed": 585,
+    "utf8Records": 583,
+    "legacyCp1251Records": 2,
+    "worklogLinesParsed": 580,
+    "machineReadableRecords": "PASS"
+  },
+  "candidateArtifactDefect": false,
+  "candidateBytesMutated": false,
+  "routerMutationPerformed": false,
+  "hiddenRetryPerformed": false,
+  "candidateReady": false,
+  "nextRevision": "p551-final-sidecar-audit-with-dual-path-resolution",
+  "nextExactAction": "VERIFY_EACH_SIDECAR_BY_RESOLVING_BASENAME_TARGETS_FROM_THE_SIDECAR_DIRECTORY_AND_REPOSITORY_RELATIVE_TARGETS_FROM_THE_REPOSITORY_ROOT"
+}

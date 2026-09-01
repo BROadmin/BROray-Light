@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_FINAL_P531_SUBSCRIPTION_BUTTON_AUDIT_SAFE_CLEANUP_AND_PERSISTENCE",
+  "revision": "p545-final-p531-pre-cleanup-backup-and-safe-deactivation",
+  "at": "2026-09-02T01:08:29+03:00",
+  "status": "PASS",
+  "installedPackageSha256": "d6add8cd0d27a8e8f29bd3f9c50f2ec889418da0f8e47d93b1a37703c8b6eca6",
+  "subscriptionSecretRecorded": false,
+  "subscriptionButtons": {
+    "requiredName": "PASS",
+    "requiredUrl": "PASS",
+    "createNamedSubscription": "PASS",
+    "initialImportedServers": 6,
+    "autoUpdateIntervalBelowMinimum": "PASS_REJECTED_4",
+    "autoUpdateIntervalAboveMaximum": "PASS_REJECTED_10081",
+    "autoUpdateEnable": "PASS_5_MINUTES_AND_NEXT_UPDATE_VISIBLE",
+    "autoUpdateDisable": "PASS_360_MINUTES",
+    "manualRefresh": "PASS",
+    "duplicateSubscriptionCreate": "PASS",
+    "duplicateSubscriptionDelete": "PASS_NATIVE_CONFIRM",
+    "primarySubscriptionDeleteWhileActive": "PASS_REFUSED_WITH_VISIBLE_MESSAGE",
+    "primarySubscriptionDeleteAfterDeactivation": "PASS_NATIVE_CONFIRM"
+  },
+  "deduplication": {
+    "sameUrlSubscriptionIntersectionTested": true,
+    "duplicateIdentityKeyCount": 0,
+    "manualAndSubscriptionRecordsCoexistedWithoutDuplicateIdentity": true
+  },
+  "activeServerGuards": {
+    "reachableServerCheck": "PASS_HTTP_204",
+    "reachableServerActivate": "PASS",
+    "activeServerNameVisible": true,
+    "activeServerDeleteRefusal": "PASS",
+    "activeSubscriptionDeleteRefusal": "PASS"
+  },
+  "preCleanupBackup": {
+    "path": "/opt/broray-light/backup/r0009-p545-before-final-cleanup",
+    "sourceFileCount": 20,
+    "backupFileCount": 20,
+    "sourceManifestSha256": "6a04408658ebac68abbeb4c40fb9b5a8c7d4e09d8d9c45e9a6c8910c555a69b3",
+    "backupManifestSha256": "6a04408658ebac68abbeb4c40fb9b5a8c7d4e09d8d9c45e9a6c8910c555a69b3",
+    "match": true,
+    "recoverable": true
+  },
+  "safeDeactivation": {
+    "activeFileWasRegular": true,
+    "verifiedActiveServerId": "subscription-sub-1f228e72343a3d13-600217eb115c0e82",
+    "autoSwitchDisabledBefore": true,
+    "ownedProxy0Delete": "PASS",
+    "activeFileRemoved": true,
+    "primaryServiceRestart": "PASS",
+    "routerRebootPerformed": false
+  },
+  "finalCleanup": {
+    "primarySubscriptionDeleted": true,
+    "controlledManualServerDeleted": true,
+    "serverDeleteFailoverPruning": "PASS",
+    "autoSwitch": {
+      "enabled": false,
+      "failureThreshold": 3,
+      "cooldownSeconds": 600,
+      "orderedServerIds": [],
+      "excludedServerIds": []
+    }
+  },
+  "daemonPersistence": {
+    "waitSeconds": 35,
+    "daemonIntervalSeconds": 30,
+    "serversAfter": 0,
+    "subscriptionsAfter": 0,
+    "activeServerIdAfter": null,
+    "connectionAfter": false,
+    "proxy0ExistsAfter": false,
+    "routesViaProxy0After": 0,
+    "primaryServiceStatusExit": 0,
+    "updaterServiceStatusExit": 0,
+    "status": "PASS"
+  },
+  "finalWebUi": {
+    "activeServer": "Не выбран",
+    "connection": "Нет соединения",
+    "failover": "Выключено",
+    "interfaceName": "Proxy0",
+    "interfaceState": "Не активен",
+    "xrayVersion": "26.7.28",
+    "xrayState": "Xray запущен",
+    "lightVersion": "1.0.0-r1",
+    "lightChannel": "Стабильный канал",
+    "homeError": ""
+  },
+  "ownership": {
+    "fullBrorayOwnership": 0,
+    "routesViaProxy0": 0
+  },
+  "productionServerMutationPerformed": false,
+  "publicReleasePublished": false,
+  "candidateReady": false,
+  "nextRevision": "p546-final-r0009-acceptance-records",
+  "nextExactAction": "REGENERATE_THE_AGGREGATED_R0009_CHECKPOINT_VALIDATION_REPORT_AND_HASH_MANIFEST_FROM_THE_FINAL_P531_EVIDENCE"
+}

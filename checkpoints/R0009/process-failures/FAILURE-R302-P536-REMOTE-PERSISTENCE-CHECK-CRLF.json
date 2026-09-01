@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_FINAL_P531_ONE_FORCE_REINSTALL_AND_VALIDATION",
+  "revision": "p536-final-p531-one-force-reinstall",
+  "at": "2026-09-02T00:35:50+03:00",
+  "status": "FAIL_FIRST_ERROR_PRESERVED",
+  "failureId": "R302",
+  "operation": "POSTINSTALL_READ_ONLY_PERSISTENCE_MANIFEST_ASSERTION_OVER_SSH_STDIN",
+  "firstError": "BusyBox sh reported 'missing ]' because the PowerShell here-string reached sh -s with CRLF line endings.",
+  "install": {
+    "attempts": 1,
+    "opkgExit": 0,
+    "reinstallMustNotBeRepeated": true,
+    "installedPackage": "broray-light 1.0.0-r1",
+    "installedServerServiceSha256": "42ee77742de9aeef8f06cdf95844503efa3b49de8f1b9c310eb87e84ab398643",
+    "xraySha256": "4b8af237444801bf17b3dc10a1c5c24581fbe3d433eba3d78c6c3a0da1df56fc",
+    "primaryInitStatusExit": 0,
+    "updaterInitStatusExit": 0,
+    "localRootHttp": 200,
+    "localProtectedHttp": 401
+  },
+  "manifestOutputBeforeShellSyntaxFailure": {
+    "sourceFileCount": 12,
+    "backupFileCount": 12,
+    "sourceManifestSha256": "4f21808cb6efad2dc8735f336078db1dcf5c65eeb362474b3622eb8be5b2eef9",
+    "backupManifestSha256": "4f21808cb6efad2dc8735f336078db1dcf5c65eeb362474b3622eb8be5b2eef9"
+  },
+  "candidateArtifactDefect": false,
+  "routerMutationPerformedByFailedValidation": false,
+  "hiddenRetryPerformed": false,
+  "candidateReady": false,
+  "retryPolicy": "DO_NOT_REPEAT_INSTALL_OR_P536_VALIDATION_COMMAND",
+  "nextRevision": "p537-final-p531-lf-normalized-postinstall-validation",
+  "nextExactAction": "REPEAT_ONLY_THE_READ_ONLY_PERSISTENCE_AND_EXTERNAL_AUTH_ASSERTIONS_WITH_EXPLICIT_LF_NORMALIZATION"
+}

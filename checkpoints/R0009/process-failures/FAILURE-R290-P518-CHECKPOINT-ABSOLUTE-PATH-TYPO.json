@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "failureId": "R290",
+  "stage": "R0009_FINAL_P505_STRUCTURED_ACTIVATION_TOAST_HIGH_FREQUENCY_CAPTURE",
+  "revision": "p518-final-p505-structured-activation-toast-high-frequency-capture",
+  "at": "2026-09-01T23:48:12+03:00",
+  "status": "FAIL_FIRST_ERROR_PRESERVED",
+  "operation": "SAVE_SUCCESSFUL_STRUCTURED_ACTIVATION_ROLLBACK_CHECKPOINT",
+  "error": "The apply_patch target contained a misspelled Windows user-directory segment, so the checkpoint parent directory could not be resolved.",
+  "functionalTestAlreadyCompleted": true,
+  "functionalTestWillNotBeRepeated": true,
+  "repositoryMutationPerformedByFailedPatch": false,
+  "routerMutationPerformedByFailedPatch": false,
+  "candidateArtifactDefect": false,
+  "hiddenRetryPerformed": false,
+  "candidateReady": false,
+  "nextRevision": "p519-final-p505-preserve-structured-activation-receipt",
+  "nextExactAction": "SAVE_THE_ALREADY_OBSERVED_P518_PASS_RECEIPT_AT_THE_CONFIRMED_REPOSITORY_PATH_WITHOUT_REPEATING_THE_BROWSER_ACTION"
+}

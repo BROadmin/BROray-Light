@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "failureId": "R202",
+  "stage": "R0009_C20_KEENETIC_INTERFACE_STATUS_CARD",
+  "revision": "p332-c20-javascript-runtime-discovery",
+  "at": "2026-09-01T16:12:24+03:00",
+  "status": "FAILED_STOPPED_FIRST_ERROR",
+  "failureClass": "LEGACY_WORKSPACE_DEPENDENCY_ENDPOINT",
+  "operation": "Locate the bundled Node.js runtime for JavaScript syntax validation",
+  "error": "The legacy Codex app dependency tool reports that it is no longer available through dynamic tools.",
+  "candidateId": "0.1.0-r0009c20",
+  "candidateArtifactDefect": false,
+  "implementationFilesAlreadyPatched": true,
+  "pythonSyntax": "PASS",
+  "javascriptSyntaxNotYetRun": true,
+  "routerMutation": false,
+  "hiddenRetryPerformed": false,
+  "cause": "The legacy dependency endpoint was used instead of the current codex_app MCP endpoint.",
+  "nextRevision": "p333-c20-current-workspace-dependency-endpoint",
+  "nextExactAction": "LOAD_THE_BUNDLED_RUNTIME_PATHS_WITH_THE_CURRENT_CODEX_APP_MCP_ENDPOINT_THEN_RUN_JAVASCRIPT_SYNTAX_VALIDATION"
+}

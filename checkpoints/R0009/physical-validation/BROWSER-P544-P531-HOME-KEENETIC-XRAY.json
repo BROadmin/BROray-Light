@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_FINAL_P531_HOME_KEENETIC_XRAY_AND_LIGHT_UPDATE_BUTTON_AUDIT",
+  "revision": "p544-final-p531-correct-browser-runtime-rebind-and-audit-continuation",
+  "at": "2026-09-02T01:02:33+03:00",
+  "status": "PASS",
+  "failureResolved": [
+    "R306",
+    "R307"
+  ],
+  "home": {
+    "activeServerNameVisible": true,
+    "activeServerIdVisible": true,
+    "connectionVisible": "Соединение работает",
+    "xrayVersionVisible": "26.7.28",
+    "lightVersionVisible": "1.0.0-r1",
+    "failoverDisabledExplanationVisible": true
+  },
+  "keeneticButtons": {
+    "refresh": "PASS",
+    "configure": "PASS_CREATED_PROXY0",
+    "ownedDeleteForRepairFixture": "PASS",
+    "repairClickCount": 1,
+    "repair": "PASS_RECREATED_PROXY0",
+    "interfaceName": "Proxy0",
+    "interfaceState": "Активен",
+    "exists": true,
+    "healthy": true,
+    "matchesExpected": true,
+    "link": true,
+    "connected": true,
+    "state": "up",
+    "ownershipConfirmed": true,
+    "routesViaProxy0": 0
+  },
+  "lightUpdate": {
+    "checkButton": "PASS",
+    "visibleMessage": "Внутренняя сборка R0009: публичный канал обновлений пока не настроен.",
+    "installButtonDisabled": true,
+    "publicReleasePublished": false
+  },
+  "xrayUpdate": {
+    "initialCheck": "PASS_STORAGE_GATED",
+    "removedRemoteTemporaryPackages": [
+      {
+        "path": "/opt/tmp/broray-light-final-1.0.0-r1-p510.ipk",
+        "sha256": "06956a63d30ba98aee99f2362cb66a1d82e50a95e0b683de26ce28b6332f9743",
+        "localRecoveryPresent": true
+      },
+      {
+        "path": "/opt/tmp/broray-light-final-1.0.0-r1-p535.ipk",
+        "sha256": "d6add8cd0d27a8e8f29bd3f9c50f2ec889418da0f8e47d93b1a37703c8b6eca6",
+        "localRecoveryPresent": true
+      }
+    ],
+    "availableKiBAfterCleanup": 48500,
+    "equalVersionReinstallOffered": true,
+    "equalVersionReinstall": "PASS",
+    "versionAfter": "26.7.28",
+    "runningAfter": true,
+    "sha256After": "4b8af237444801bf17b3dc10a1c5c24581fbe3d433eba3d78c6c3a0da1df56fc",
+    "connectionAfter": true
+  },
+  "routerRebootPerformed": false,
+  "productionServerMutationPerformed": false,
+  "publicReleasePublished": false,
+  "candidateReady": false,
+  "nextRevision": "p545-final-p531-pre-cleanup-backup-and-safe-deactivation",
+  "nextExactAction": "BACK_UP_THE_CURRENT_TEMPORARY_TEST_STATE_THEN_DELETE_OWNED_PROXY0_CLEAR_ONLY_THE_VERIFIED_ACTIVE_FILE_AND_RESTART_THE_PRIMARY_SERVICE"
+}

@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_FINAL_POST_RESEAL_AUDIT",
+  "revision": "p560-final-post-reseal-audit",
+  "at": "2026-09-02T01:41:25+03:00",
+  "status": "PASS",
+  "candidateId": "1.0.0-r1",
+  "releaseId": "1.0.0-r1",
+  "candidateReady": true,
+  "branch": "codex/r0009-updater-package",
+  "aggregates": {
+    "checkpointSha256": "3d7f7407df7b8eba6b4cc7f423e1bcba5ce48c1108a1ca3d7f0a850a2f3fd2fe",
+    "validationSha256": "172cbc7fab4985914c65c539e2595a330ef34dc86a013901391ca6ee20cf6c0d",
+    "reportSha256": "004d44ccfbc34c8526447821ad3d211da44a2d007f094ee16d081fdc3f417c47",
+    "sha256SumsSha256": "8dc0c79f4d4b9f6a23a1c65ab838b7c8fe843a9328c2752cb1d2bbcde95a4e4f",
+    "crossReferences": "PASS"
+  },
+  "records": {
+    "jsonParsed": 593,
+    "utf8": 591,
+    "documentedLegacyCp1251": 2,
+    "worklogLinesParsed": 590,
+    "sha256SidecarsVerified": 569,
+    "sha256SidecarFailures": 0,
+    "aggregateSha256Sums": "PASS"
+  },
+  "builds": {
+    "byteIdenticalArtifacts": 8,
+    "mismatchedArtifacts": 0,
+    "signatureBuildA": "PASS",
+    "signatureBuildB": "PASS"
+  },
+  "security": {
+    "credentialLeakCount": 0,
+    "privateKeyMarkerCount": 0,
+    "ephemeralPrivateKeyPresent": false,
+    "privateSigningKeyDestroyed": true
+  },
+  "acceptance": {
+    "passed": 20,
+    "failed": 0,
+    "isolatedPassed": 51,
+    "isolatedFailed": 0,
+    "physicalValidation": "PASS_EXACT_P531_ALL_WEBUI_BUTTONS_SUBSCRIPTIONS_CLEANUP_AND_PERSISTENCE"
+  },
+  "processFailuresPreserved": 273,
+  "gitDiffCheck": "PASS",
+  "productionServerMutationPerformed": false,
+  "publicReleasePublished": false,
+  "nextStage": "DEFINE_AND_AUTHORIZE_R0010_BEFORE_ANY_STABLE_PUBLICATION"
+}

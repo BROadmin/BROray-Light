@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "failureId": "R220",
+  "stage": "R0009_C23_LITERAL_INSTALLED_ASSET_VALIDATION",
+  "revision": "p370-c23-literal-installed-asset-validation",
+  "at": "2026-09-01T17:36:00+03:00",
+  "status": "FAILED_STOPPED_FIRST_ERROR",
+  "failureClass": "INSTALLED_SLOT_WEB_ROOT_MISMATCH",
+  "operation": "Validate c23 assets and automatic scheduler source at the app/web-new paths declared by the application archive",
+  "error": "The fail-fast remote assertion returned before the first evidence line; the assumed resolved installed path did not match the live release slot layout.",
+  "candidateId": "0.1.0-r0009c23",
+  "candidateArtifactDefect": "UNDETERMINED_PENDING_READ_ONLY_SLOT_INSPECTION",
+  "archiveMemberObserved": "app/web-new/subscriptions.html",
+  "assumedInstalledPath": "/opt/broray-light/current/app/web-new/subscriptions.html",
+  "routerMutation": false,
+  "hiddenRetryPerformed": false,
+  "productionServerMutationPerformed": false,
+  "publicReleasePublished": false,
+  "nextRevision": "p371-c23-read-only-live-slot-inspection",
+  "nextExactAction": "LIST_THE_RESOLVED_CURRENT_RELEASE_SLOT_AND_READ_SERVICE_WEB_ROOT_CONFIGURATION_BEFORE_FORMING_THE_NEXT_ASSET_ASSERTION"
+}

@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "failureId": "R256",
+  "stage": "R0009_FINAL_1_0_0_R1_POST_ERROR_FIX_PHYSICAL_INSTALL_VALIDATION",
+  "revision": "p460-final-post-error-fix-one-force-reinstall",
+  "at": "2026-09-01T21:47:30+03:00",
+  "status": "FAIL_FIRST_ERROR_PRESERVED",
+  "operation": "ONE_FORCE_REINSTALL_THEN_IMMEDIATE_READ_ONLY_VALIDATION",
+  "firstError": "The local unauthenticated summary API probe emitted 000000 instead of an HTTP status code.",
+  "install": {
+    "attempts": 1,
+    "opkgExit": 0,
+    "packageSha256": "3714c3a2effa07a8fb63bf71d5ace496111c090be3a5db1ee95af34d312c973d"
+  },
+  "passedBeforeFailure": {
+    "packageStatus": "install user installed",
+    "packageVersion": "1.0.0-r1",
+    "currentTarget": "releases/1.0.0-r1",
+    "configVersion": "1.0.0-r1",
+    "releaseId": "1.0.0-r1",
+    "candidateId": "1.0.0-r1",
+    "installedCommonShSha256": "801cb7292219c67381031c0a5dac530d5b5cd04fbe4dba4213e703dd97e27c60",
+    "primaryService": "PASS",
+    "updaterService": "PASS",
+    "xraySha256": "4b8af237444801bf17b3dc10a1c5c24581fbe3d433eba3d78c6c3a0da1df56fc",
+    "persistentInventorySha256": "b11cc8ba548d9cc9d9ef666909bfe79439c1ab7ed8377661c03b710c373a55a7",
+    "zeroInventory": "PASS",
+    "proxy0Exists": false,
+    "routesViaProxy0": 0,
+    "fullBrorayOwnership": "ABSENT"
+  },
+  "backupPath": "/opt/broray-light/backup/r0009-p458-before-p452-package",
+  "routerState": "EXACT_PACKAGE_INSTALLED_SERVICES_PASS_PENDING_WEB_AUTH_PROBE_DIAGNOSIS",
+  "candidateArtifactDefect": "UNKNOWN_PENDING_DIAGNOSIS",
+  "validationProbeDefect": "POSSIBLE",
+  "installRetryPerformed": false,
+  "hiddenRetryPerformed": false,
+  "candidateReady": false,
+  "nextRevision": "p461-r256-checkpoint-preservation",
+  "nextExactAction": "PRESERVE_THE_CHECKPOINT_PATCH_FAILURE_THEN_READ_ONLY_DIAGNOSE_CURL_LISTENERS_LIGHTTPD_CONFIG_AND_LOCAL_HTTP_WITHOUT_REINSTALLING"
+}

@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "failureId": "R217",
+  "stage": "R0009_C23_POSTINSTALL_FAILURE_CHECKPOINTING",
+  "revision": "p367-c23-checkpoint-context-correction",
+  "at": "2026-09-01T17:30:00+03:00",
+  "status": "FAILED_STOPPED_FIRST_ERROR",
+  "failureClass": "COMPOSITE_CHECKPOINT_PATCH_CONTEXT_MISMATCH",
+  "operation": "Persist R216 and update state and worklog atomically",
+  "error": "The composite apply_patch could not match a state-file context hunk; no part of that patch was applied.",
+  "candidateId": "0.1.0-r0009c23",
+  "candidateArtifactDefect": false,
+  "routerMutation": false,
+  "repositoryPartialMutation": false,
+  "hiddenRetryPerformed": false,
+  "cause": "The composite patch used a broader state context than necessary while the state file still described the pre-install candidate.",
+  "productionServerMutationPerformed": false,
+  "publicReleasePublished": false,
+  "nextRevision": "p368-c23-corrected-postinstall-validation",
+  "nextExactAction": "USE_MINIMAL_VERIFIED_STATE_HUNKS_READ_THE_INSTALLED_UPDATER_INIT_PID_CONTRACT_THEN_VALIDATE_THE_ALREADY_INSTALLED_C23"
+}

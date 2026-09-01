@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_FINAL_1_0_0_R1_FULL_BRORAY_OWNERSHIP_DIAGNOSIS",
+  "revision": "p457-full-broray-opkg-state-diagnosis",
+  "at": "2026-09-01T21:41:43+03:00",
+  "status": "PASS_AMBIGUITY_RESOLVED_NO_ACTIVE_FULL_BRORAY_OWNERSHIP",
+  "failureId": "R255",
+  "rootCause": "This Entware opkg returns exit zero and no output for 'opkg status broray' even when the package is not installed; exit status alone is not an ownership predicate.",
+  "verified": {
+    "opkgListInstalledBroray": "ABSENT",
+    "opkgFilesBroray": "PACKAGE_NOT_INSTALLED",
+    "fullBrorayRoot": "ABSENT",
+    "fullBrorayServiceS24broray": "ABSENT",
+    "fullBrorayOperationLock": "ABSENT",
+    "fullBrorayProcesses": 0
+  },
+  "bootstrapArtifact": {
+    "path": "/opt/etc/init.d/S99broray-bootstrap",
+    "sha256": "5be46ba9880a48b595806dfad1193cb75ef0674171f76dcbdd031859e6df0643",
+    "classification": "FOREIGN_MAINTENANCE_BOOTSTRAP_NOT_AN_ACTIVE_FULL_BRORAY_OWNERSHIP_PREDICATE",
+    "mutated": false
+  },
+  "preinstOwnershipPredicates": {
+    "/opt/broray": "ABSENT",
+    "/opt/etc/init.d/S24broray": "ABSENT",
+    "/opt/var/lock/broray/global-operation.lock": "ABSENT"
+  },
+  "routerMutationPerformed": false,
+  "candidateReady": false,
+  "nextRevision": "p458-final-post-error-fix-backup-and-transfer",
+  "nextExactAction": "CREATE_AND_VERIFY_A_RECOVERABLE_PERSISTENCE_BACKUP_THEN_TRANSFER_AND_HASH_VERIFY_EXACT_P452_PACKAGE_WITHOUT_INSTALLING"
+}

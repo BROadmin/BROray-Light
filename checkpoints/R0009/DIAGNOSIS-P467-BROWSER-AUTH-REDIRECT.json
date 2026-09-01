@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_FINAL_1_0_0_R1_EXACT_WEBUI_BUTTON_AUDIT",
+  "revision": "p467-final-webui-fresh-tab-binding-diagnosis",
+  "at": "2026-09-01T21:59:31+03:00",
+  "status": "PASS_ROOT_CAUSE_CONFIRMED_REAUTHENTICATION_REQUIRED",
+  "failureIds": ["R259", "R260"],
+  "rootCause": "The subscriptions snapshot was captured before the asynchronous authentication redirect completed; by click time both browser tabs were on the login page, so authenticated-page locators correctly matched nothing.",
+  "browserTabs": [
+    {"id": "9", "title": "BROray-Light — Вход", "url": "https://brolight.tvervip.keenetic.link/?v=1.0.0-r1"},
+    {"id": "14", "title": "BROray-Light — Вход", "url": "https://brolight.tvervip.keenetic.link/?v=1.0.0-r1"}
+  ],
+  "candidateArtifactDefect": false,
+  "nativeAuthenticationProtection": "PASS_REDIRECTED_EXPIRED_SESSION",
+  "credentialsEntered": false,
+  "routerMutationPerformed": false,
+  "candidateReady": false,
+  "requiredUserAction": "Authorize credential entry now or sign in to BROray-Light in the open browser and report readiness.",
+  "nextRevision": "p468-final-authenticated-webui-button-audit",
+  "nextExactAction": "AFTER_ACTION_TIME_AUTHORIZATION_OR_USER_SIGN_IN_VALIDATE_ALL_AUTHENTICATED_WEBUI_CONTROLS_ON_EXACT_P452_PACKAGE"
+}

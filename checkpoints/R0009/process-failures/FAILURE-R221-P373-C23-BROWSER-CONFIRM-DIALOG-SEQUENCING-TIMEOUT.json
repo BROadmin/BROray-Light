@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "failureId": "R221",
+  "stage": "R0009_C23_COMPLETE_WEBUI_BUTTON_AUDIT",
+  "revision": "p373-c23-complete-webui-button-audit",
+  "at": "2026-09-01T17:46:00+03:00",
+  "status": "FAILED_STOPPED_FIRST_ERROR",
+  "failureClass": "BROWSER_CONFIRM_DIALOG_SEQUENCING_TIMEOUT",
+  "operation": "Click the temporary subscription Delete button, observe the native confirmation dialog, accept it, and verify card removal",
+  "error": "The browser action awaited the click before reading the blocking confirmation dialog; execution timed out and reset the browser automation kernel.",
+  "candidateId": "0.1.0-r0009c23",
+  "candidateArtifactDefect": false,
+  "passedBeforeFailure": {
+    "subscriptionRequiredNameValidation": "PASS",
+    "subscriptionRequiredUrlValidation": "PASS",
+    "subscriptionCreate": "PASS",
+    "subscriptionAutoUpdateSave": "PASS_ENABLED_INTERVAL_5_NEXT_TIME_VISIBLE",
+    "subscriptionManualRefresh": "PASS_SUCCESS_AND_UPDATED_TIME_VISIBLE"
+  },
+  "temporarySubscriptionId": "sub-daeabef0d91ba621",
+  "temporarySubscriptionStateAfterTimeout": "UNKNOWN_PENDING_READ_ONLY_CHECK",
+  "transactionBackup": "/opt/broray-light/backup/r0009-p373-c23-webui-button-audit",
+  "baselineInventorySha256": "b823fd09a7860bfa177ad0b9ee75d069cc7c50e2f55a0d7e940d341f87dffbc1",
+  "baselineXraySha256": "4b8af237444801bf17b3dc10a1c5c24581fbe3d433eba3d78c6c3a0da1df56fc",
+  "hiddenRetryPerformed": false,
+  "productionServerMutationPerformed": false,
+  "publicReleasePublished": false,
+  "nextRevision": "p374-c23-browser-reconnect-and-concurrent-dialog-handling",
+  "nextExactAction": "RECONNECT_TO_THE_IN_APP_BROWSER_CHECK_THE_TEMPORARY_SUBSCRIPTION_STATE_THEN_HANDLE_DELETE_CLICK_AND_CONFIRMATION_CONCURRENTLY"
+}

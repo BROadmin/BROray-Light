@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_FINAL_1_0_0_R1_ISOLATED_VALIDATION",
+  "revision": "p398-final-full-isolated-validation",
+  "failureId": "R232",
+  "at": "2026-09-01T19:06:15+03:00",
+  "status": "FAIL_FIRST_ERROR_PRESERVED",
+  "operation": "ASSERT_CROSS_RELEASE_TARGET_AFTER_SUCCESSFUL_POSTINST",
+  "error": "cross-release package upgrade did not activate the target slot",
+  "postinstExit": 0,
+  "expectedLogicalTarget": "releases/1.0.0-r1",
+  "observedTarget": "PENDING_INSPECTION",
+  "physicalPackageInstallStarted": false,
+  "hiddenRetryPerformed": false,
+  "candidateArtifactDefect": "UNDETERMINED_LIKELY_TEST_ASSERTION_PATH_FORM",
+  "cause": "The regression assertion used pathlib.Path.readlink() on a Windows junction and compared its platform-native target form directly with a release-relative POSIX string.",
+  "correctedNextRevision": "p399-final-cross-release-assertion-diagnosis",
+  "nextExactAction": "INSPECT_THE_LATEST_ISOLATED_CURRENT_JUNCTION_RESOLVED_TARGET_AND_HELPER_SIDECAR_CONFIRM_TARGET_CONTENT_THEN_CORRECT_ONLY_THE_ASSERTION_IF_LIFECYCLE_SWITCH_SUCCEEDED"
+}

@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_FINAL_SERVER_CHECK_FIX_POST_HARNESS_BUILD_AND_ISOLATED_VALIDATION",
+  "revision": "p491-final-server-check-fix-post-harness-build-a-b",
+  "at": "2026-09-01T22:48:14+03:00",
+  "status": "FAIL_FIRST_ERROR_PRESERVED",
+  "failureId": "R275",
+  "operation": "RUN_ALL_50_ISOLATED_GATES_AGAINST_P491_BUILD_A",
+  "error": "The long-running exec call returned a session id internally, but the orchestration emitted only stdout and discarded the id; after process exit, final stdout and exit status were not retrievable.",
+  "buildsBeforeFailure": {
+    "buildA": "PASS",
+    "buildB": "PASS",
+    "byteIdenticalArtifacts": 8,
+    "signatures": "PASS"
+  },
+  "candidateArtifactDefect": false,
+  "isolatedResultAdjudicated": false,
+  "processExited": true,
+  "routerMutationPerformed": false,
+  "hiddenRetryPerformed": false,
+  "candidateReady": false,
+  "nextRevision": "p492-final-session-aware-isolated-validation",
+  "nextExactAction": "RUN_THE_HARNESS_ONCE_WITH_THE_FULL_EXEC_RESULT_EMITTED_RETAIN_SESSION_ID_AND_POLL_THAT_EXACT_SESSION_TO_FINAL_JSON"
+}

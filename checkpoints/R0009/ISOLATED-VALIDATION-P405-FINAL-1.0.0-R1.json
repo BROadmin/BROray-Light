@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_FINAL_1_0_0_R1_ISOLATED_VALIDATION",
+  "revision": "p405-final-full-isolated-validation",
+  "at": "2026-09-01T19:18:33+03:00",
+  "status": "PASS",
+  "build": "dist/R0009/1.0.0-r1-P404-Final-Build-A",
+  "packageSha256": "c1b0583a58d013e48eb223cccd5d65ca14c0aef85ed43c2b8960e7d9b82e7ff9",
+  "appArchiveSha256": "67def83ea4d464b408cbc501ae185b36b0143156a0f344e8ab4a5793a26040a9",
+  "gateCount": 50,
+  "passed": 50,
+  "failed": 0,
+  "requiredScenarios": {
+    "cleanInstall": "PASS",
+    "crossReleasePackageUpgradeActivatesTarget": "PASS",
+    "update": "PASS",
+    "equalVersion": "PASS",
+    "downgradeRefusal": "PASS",
+    "rollback": "PASS",
+    "persistence": "PASS",
+    "coownershipFailClosed": "PASS",
+    "globalServerDeduplication": "PASS",
+    "subscriptionAutoUpdate": "PASS",
+    "xrayEqualVersionReinstall": "PASS",
+    "allWebUiContracts": "PASS"
+  },
+  "canonicalSourceDiff": "NONE",
+  "physicalPackageInstallStarted": false,
+  "publicReleasePublished": false,
+  "candidateReady": false,
+  "nextRevision": "p406-final-physical-preflight-and-transfer",
+  "nextExactAction": "CAPTURE_ROUTER_PREFLIGHT_AND_TRANSACTION_BACKUP_TRANSFER_EXACT_P404_PACKAGE_VERIFY_SHA256_THEN_FORCE_REINSTALL_ONCE"
+}

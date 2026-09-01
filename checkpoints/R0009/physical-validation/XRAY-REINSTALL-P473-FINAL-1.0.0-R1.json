@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_FINAL_XRAY_EQUAL_VERSION_REINSTALL_BUTTON_AUDIT",
+  "revision": "p473-final-xray-equal-version-reinstall-button-audit",
+  "at": "2026-09-01T22:13:30+03:00",
+  "status": "PASS_EQUAL_VERSION_REINSTALL_BUTTON_AND_RUNTIME_VALIDATION",
+  "routerAddress": "192.168.1.1",
+  "webui": {
+    "updateCheckButton": "PASS",
+    "enabledActionLabelBefore": "Переустановить 26.7.28",
+    "reinstallButtonClick": "PASS",
+    "progressLabelObserved": "Переустановка Xray выполняется. Не закрывайте страницу.",
+    "postActionCheck": "PASS",
+    "enabledActionLabelAfter": "Переустановить 26.7.28"
+  },
+  "reinstallAttempts": 1,
+  "xray": {
+    "version": "26.7.28",
+    "sizeBytes": 35389566,
+    "sha256": "4b8af237444801bf17b3dc10a1c5c24581fbe3d433eba3d78c6c3a0da1df56fc",
+    "ownedProcessCount": 1
+  },
+  "services": {
+    "primaryStatusExit": 0,
+    "updaterStatusExit": 0
+  },
+  "storageAfter": {
+    "availableKb": 52956,
+    "availableBytes": 54226944,
+    "reinstallAllowed": true
+  },
+  "inventoryAfter": {
+    "subscriptions": 0,
+    "servers": 0,
+    "activeServerId": null,
+    "activeServerFileAbsent": true,
+    "routesViaProxy0": 0
+  },
+  "routerRebootPerformed": false,
+  "productionServerMutationPerformed": false,
+  "publicReleasePublished": false,
+  "candidateReady": false,
+  "nextRevision": "p474-final-light-update-check-button-audit",
+  "nextExactAction": "TEST_BROray_LIGHT_UPDATE_CHECK_AND_DISABLED_UPDATE_POLICY_THEN_CONTINUE_SERVERS_AND_SUBSCRIPTIONS_BUTTON_AUDIT"
+}

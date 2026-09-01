@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_FINAL_1_0_0_R1_CROSS_RELEASE_ASSERTION_DIAGNOSIS",
+  "revision": "p399-final-cross-release-assertion-diagnosis",
+  "at": "2026-09-01T19:07:31+03:00",
+  "status": "PASS_TEST_ASSERTION_DEFECT_CONFIRMED",
+  "failureReference": "checkpoints/R0009/process-failures/FAILURE-R232-P398-CROSS-RELEASE-ASSERTION-PATH-FORM.json",
+  "postinstExit": 0,
+  "isolatedCurrentLinkType": "Junction",
+  "isolatedCurrentPlatformTarget": "ABSOLUTE_PATH_ENDING_IN_releases/1.0.0-r1",
+  "isolatedReadlinkSidecar": "releases/1.0.0-r1",
+  "resolvedCurrentReleaseId": "1.0.0-r1",
+  "targetSlotReleasePresent": true,
+  "lifecycleSwitchSucceeded": true,
+  "candidateArtifactDefect": false,
+  "testAssertionDefect": true,
+  "correction": "Use the harness readlink shim for the logical relative target and independently read current/release.json for releaseId instead of comparing pathlib's platform-native junction target.",
+  "physicalPackageInstallStarted": false,
+  "publicReleasePublished": false,
+  "candidateReady": false,
+  "nextRevision": "p400-final-portable-cross-release-assertion",
+  "nextExactAction": "PATCH_ONLY_THE_REGRESSION_ASSERTION_REBUILD_A_AND_B_BECAUSE_TEST_SOURCE_IS_IN_ARTIFACT_PROVENANCE_THEN_RUN_ALL_50_GATES"
+}

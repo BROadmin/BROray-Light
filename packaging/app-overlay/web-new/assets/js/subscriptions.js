@@ -10,7 +10,7 @@ async function sapi(url, opts) {
     }
   }
   if (response.status === 401) {
-    location.replace('/?v=0.1.0-r0009c19');
+    location.replace('/?v=1.0.0-r1');
     throw new Error('Требуется вход');
   }
   if (!response.ok || payload.success === false || payload.ok === false) {
@@ -45,6 +45,47 @@ async function subscriptionAction(subscription, action) {
   await loadSubs();
 }
 
+function autoUpdatePanel(subscription) {
+  const panel = document.createElement('div');
+  panel.className = 'subscription-auto-update';
+  const enabled = subscription.autoUpdateEnabled === true;
+  const interval = Number(subscription.updateIntervalMinutes) || 360;
+  panel.innerHTML =
+    '<div class="subscription-auto-heading"><span class="subscription-auto-title">Автообновление</span>' +
+      '<span class="badge ' + (enabled ? 'badge-success' : '') + '" data-auto-status>' + (enabled ? 'Включено' : 'Выключено') + '</span></div>' +
+    '<div class="subscription-auto-grid">' +
+      '<label class="check-line"><input type="checkbox" data-auto-enabled ' + (enabled ? 'checked' : '') + '> Включить автообновление</label>' +
+      '<label>Интервал, минут<input type="number" min="5" max="10080" step="1" value="' + interval + '" data-auto-interval></label>' +
+    '</div>' +
+    '<div class="muted subscription-auto-next">' +
+      (enabled && subscription.nextUpdateAt ? 'Следующее обновление: ' + subscription.nextUpdateAt : 'Автоматическое обновление не запланировано') +
+    '</div>' +
+    '<div class="row actions subscription-auto-actions"><button type="button" data-auto-save>Сохранить автообновление</button></div>';
+
+  panel.querySelector('[data-auto-save]').addEventListener('click', async event => {
+    const autoUpdateEnabled = panel.querySelector('[data-auto-enabled]').checked;
+    const updateIntervalMinutes = Number(panel.querySelector('[data-auto-interval]').value);
+    if (!Number.isInteger(updateIntervalMinutes) || updateIntervalMinutes < 5 || updateIntervalMinutes > 10080) {
+      toast('Интервал должен быть от 5 до 10080 минут', 'error');
+      return;
+    }
+    try {
+      event.target.disabled = true;
+      await sapi('api/subscriptions/details.cgi?id=' + encodeURIComponent(subscription.id), {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ autoUpdateEnabled, updateIntervalMinutes })
+      });
+      toast(autoUpdateEnabled ? 'Автообновление включено' : 'Автообновление выключено');
+      await loadSubs();
+    } catch (error) {
+      event.target.disabled = false;
+      toast(error.message, 'error');
+    }
+  });
+  return panel;
+}
+
 async function loadSubs() {
   const data = await sapi('api/subscriptions/list.cgi');
   const box = document.getElementById('subscriptions');
@@ -77,6 +118,8 @@ async function loadSubs() {
       error.textContent = subscription.lastError;
       card.appendChild(error);
     }
+
+    card.appendChild(autoUpdatePanel(subscription));
 
     const actions = document.createElement('div');
     actions.className = 'row actions subscription-actions';

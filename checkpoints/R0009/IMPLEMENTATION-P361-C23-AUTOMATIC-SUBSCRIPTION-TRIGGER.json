@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_C23_AUTOMATIC_SUBSCRIPTION_TRIGGER_CORRECTION",
+  "revision": "p361-c23-automatic-trigger-correction",
+  "at": "2026-09-01T17:16:00+03:00",
+  "status": "PASS_READY_FOR_INDEPENDENT_BUILDS",
+  "candidateId": "0.1.0-r0009c23",
+  "correction": {
+    "previousTrigger": "scheduled",
+    "canonicalTrigger": "automatic",
+    "schedulerCallSha256": "bbdb99c879a37bc810f4c0fff61426c80a195e5c4bd60ebbf5c99af50896c3ba",
+    "testExpectationUpdated": true,
+    "candidateRevisionAdvanced": true
+  },
+  "preservedImplementation": {
+    "primaryDaemonSha256": "fd2de4135ccde825fed6d998273b497cd9a0d6f25859f676ad57a005e95f2e83",
+    "subscriptionDetailsApiSha256": "d497b1195ba68821f8f41dde5fa3bf2583be84a802651f86c775b92047e85cd6",
+    "stylesheetSha256": "d59ca9400ad40a4e6b7b58d2fcde33ce79f331d5ee5190b8fb79e67bcb42b707",
+    "homeJavascriptSha256": "17270cd8f0e74eec577e7c0a1a719c34a3d94f8dd14eaa2fb62568601a695742",
+    "subscriptionsJavascriptSha256": "70dc3989830d40bcc79bef168d38a43e8d913362b9028c26c6fe0c81d615e042"
+  },
+  "buildToolSha256": "995d854822dbac7d911cac235b8db0a5dcb545fb1f474c1ad0d1b737954b42dd",
+  "testHarnessSha256": "9690963d45c47b1576d57df5d2f301bef1e28049de888471697dd274af21a6e0",
+  "webPublishPolicySha256": "51673cc5aacf1e5b6b5a6a054f303ee2756f79961f3ed2caaedaafc9d83d1ae3",
+  "prebuildValidation": {
+    "pythonSyntax": "PASS",
+    "javascriptSyntax": "PASS",
+    "posixShellSyntax": "PASS",
+    "staleC22AssetReferences": 0,
+    "unsupportedScheduledTriggerReferences": 0,
+    "canonicalSourceFiles": 121,
+    "canonicalSourceUnchanged": true
+  },
+  "physicalRouterMutation": false,
+  "productionServerMutationPerformed": false,
+  "publicReleasePublished": false,
+  "nextRevision": "p362-c23-independent-builds",
+  "nextExactAction": "BUILD_C23_A_AND_B_COMPARE_ALL_ARTIFACTS_AND_VERIFY_BOTH_SIGNATURES"
+}

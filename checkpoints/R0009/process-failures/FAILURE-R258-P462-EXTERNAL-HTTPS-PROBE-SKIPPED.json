@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "failureId": "R258",
+  "stage": "R0009_FINAL_1_0_0_R1_LOCAL_WEB_AUTH_PROBE_DIAGNOSIS",
+  "revision": "p462-r256-r257-exact-context-preservation-and-auth-diagnosis",
+  "at": "2026-09-01T21:50:59+03:00",
+  "status": "FAIL_FIRST_ERROR_PRESERVED",
+  "operation": "DIAGNOSE_LOCAL_BIND_AND_THEN_PROBE_EXTERNAL_HTTPS",
+  "error": "The PowerShell command executed 'exit $LASTEXITCODE' immediately after SSH, so the appended external curl.exe probe did not run.",
+  "diagnosisCompletedBeforeError": {
+    "curlPath": "/opt/bin/curl",
+    "lighttpdListener": "192.168.1.1:8080",
+    "lighttpdPid": 25884,
+    "configuredBind": "192.168.1.1",
+    "configuredPort": 8080,
+    "failedProbeTarget": "127.0.0.1:8080",
+    "rootCauseR256": "PROBE_USED_ADDRESS_NOT_BOUND_BY_LIGHTTPD"
+  },
+  "candidateArtifactDefect": false,
+  "validationProbeDefect": true,
+  "routerMutationPerformed": false,
+  "packageInstallRetried": false,
+  "hiddenRetryPerformed": false,
+  "candidateReady": false,
+  "nextRevision": "p463-correct-bind-and-external-auth-probes",
+  "nextExactAction": "RUN_SEPARATE_READ_ONLY_PROBES_AGAINST_192_168_1_1_8080_AND_EXTERNAL_HTTPS_THEN_RECORD_R256_DIAGNOSIS"
+}

@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_FINAL_CORRECTED_1_0_0_R1_ISOLATED_VALIDATION",
+  "revision": "p395-final-corrected-full-isolated-validation",
+  "failureId": "R231",
+  "at": "2026-09-01T19:00:57+03:00",
+  "status": "FAIL_FIRST_ERROR_PRESERVED",
+  "operation": "CROSS_RELEASE_PACKAGE_UPGRADE_TARGET_ACTIVATION_GATE",
+  "error": "postinst returned ERROR: cannot activate target app slot",
+  "failedPrimitive": "ln -sfnT releases/$RELEASE_ID $APP_ROOT/current",
+  "keeneticBusyBoxSupportPreviouslyObserved": true,
+  "isolatedWindowsDashSupport": false,
+  "physicalCorrectedPackageInstallStarted": false,
+  "hiddenRetryPerformed": false,
+  "candidateArtifactDefect": true,
+  "cause": "The chosen direct symlink replacement primitive is not portable to the isolated Windows/Dash execution environment used by the acceptance harness.",
+  "correctedNextRevision": "p396-final-portable-current-slot-switch",
+  "nextExactAction": "INSPECT_ISOLATED_LINK_TOOL_BEHAVIOR_THEN_IMPLEMENT_A_PORTABLE_VALIDATED_CURRENT_LINK_REPLACEMENT_WITH_EXPLICIT_UNLINK_AND_NEW_SYMLINK_OR_SUPPORTED_STAGED_PRIMITIVE_AND_RERUN_FROM_NEW_BUILDS"
+}

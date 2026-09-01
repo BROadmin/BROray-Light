@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "failureId": "R261",
+  "stage": "R0009_FINAL_1_0_0_R1_AUTHENTICATED_WEBUI_BUTTON_AUDIT",
+  "revision": "p468-final-authenticated-webui-button-audit",
+  "at": "2026-09-01T22:02:19+03:00",
+  "status": "FAIL_FIRST_ERROR_PRESERVED",
+  "operation": "SELECT_EXISTING_BROLIGHT_LOGIN_TAB_AFTER_ACTION_TIME_AUTHORIZATION",
+  "error": "No current BROray-Light tab matched the previously known tab id or URL, so tab selection returned undefined.",
+  "actionTimeCredentialAuthorization": true,
+  "credentialsEntered": false,
+  "candidateArtifactDefect": false,
+  "browserTabLifecycleDefect": true,
+  "routerMutationPerformed": false,
+  "hiddenRetryPerformed": false,
+  "candidateReady": false,
+  "nextRevision": "p469-final-authenticated-webui-fresh-tab",
+  "nextExactAction": "LIST_CURRENT_TABS_AND_OPEN_A_FRESH_BROLIGHT_LOGIN_TAB_IF_NONE_EXISTS_THEN_AUTHENTICATE"
+}

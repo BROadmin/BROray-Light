@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "failureId": "R251",
+  "stage": "R0009_WEBUI_SUBSCRIPTION_ERROR_DETAIL_FIX",
+  "revision": "p448-structured-subscription-api-error-test-correction",
+  "at": "2026-09-01T21:19:09+03:00",
+  "status": "FAIL_FIRST_ERROR_PRESERVED",
+  "operation": "REPLACE_MALFORMED_STRUCTURED_ERROR_REGRESSION_ASSERTION",
+  "error": "apply_patch could not match the expected lines because the malformed string contains a different literal escape sequence than the patch context.",
+  "filesystemMutationApplied": false,
+  "candidateArtifactDefect": false,
+  "patchContextDefect": true,
+  "implementationPartiallyApplied": true,
+  "hiddenRetryPerformed": false,
+  "candidateReady": false,
+  "nextRevision": "p449-structured-subscription-api-error-exact-context-correction",
+  "nextExactAction": "READ_THE_EXACT_NUMBERED_ASSERTION_LINES_THEN_REPLACE_THE_SMALLEST_STABLE_SURROUNDING_BLOCK_WITH_APPLY_PATCH"
+}

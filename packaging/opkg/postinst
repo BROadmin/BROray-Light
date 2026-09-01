@@ -75,9 +75,11 @@ rm -f "$XRAY_SOURCE"
 
 TARGET_SLOT="$APP_ROOT/releases/$RELEASE_ID"
 [ -d "$TARGET_SLOT/app" ] && [ -r "$TARGET_SLOT/release.json" ] || fail 'initial app slot is missing'
-if [ ! -e "$APP_ROOT/current" ]; then
-    ln -s "releases/$RELEASE_ID" "$APP_ROOT/current" || fail 'cannot activate initial app slot'
-fi
+CURRENT_PATH="$APP_ROOT/current"
+CURRENT_STAGED="$APP_ROOT/.current.postinst.$$"
+[ ! -e "$CURRENT_STAGED" ] || fail 'staged current link already exists'
+ln -s "releases/$RELEASE_ID" "$CURRENT_STAGED" || fail 'cannot stage target app slot'
+mv -fT "$CURRENT_STAGED" "$CURRENT_PATH" || fail 'cannot activate target app slot'
 
 ensure_link "$APP_ROOT/bin" 'current/app/bin'
 ensure_link "$APP_ROOT/lib" 'current/app/lib'
@@ -89,7 +91,14 @@ for seed in system/settings.json system/server-auto-switch.json lighttpd.conf; d
     source="$APP_ROOT/current/app/share/defaults/${seed##*/}"
     [ -s "$destination" ] || cp "$source" "$destination" || fail "cannot seed $seed"
 done
-[ -s "$APP_ROOT/config/version" ] || printf '%s\n' "$RELEASE_ID" > "$APP_ROOT/config/version"
+VERSION_PATH="$APP_ROOT/config/version"
+VERSION_STAGED="$APP_ROOT/config/.version.postinst.$$"
+[ ! -L "$VERSION_PATH" ] || fail 'managed version path is a symlink'
+[ ! -d "$VERSION_PATH" ] || fail 'managed version path is a directory'
+[ ! -e "$VERSION_STAGED" ] || fail 'staged version file already exists'
+printf '%s\n' "$RELEASE_ID" > "$VERSION_STAGED" || fail 'cannot stage release identity'
+chmod 600 "$VERSION_STAGED" 2>/dev/null || true
+mv -f "$VERSION_STAGED" "$VERSION_PATH" || fail 'cannot activate release identity'
 
 chmod 755 "$APP_INIT" "$UPDATER_INIT" \
     "$ROOT_PREFIX/opt/bin/broray-light-updaterctl" \

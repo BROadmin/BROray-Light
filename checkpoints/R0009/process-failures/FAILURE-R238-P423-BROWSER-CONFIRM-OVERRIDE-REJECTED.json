@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "failureId": "R238",
+  "stage": "R0009_USER_AUTHORIZED_SUBSCRIPTION_DELETE_BUTTON_TEST",
+  "revision": "p423-user-subscription-delete-webui",
+  "at": "2026-09-01T19:46:00+03:00",
+  "status": "FAIL_FIRST_ERROR_PRESERVED",
+  "operation": "INSTALL_ONE_TIME_CONFIRM_OVERRIDE_BEFORE_DELETE_CLICK",
+  "error": "TypeError: Cannot add property confirm, object is not extensible",
+  "deleteButtonClicked": false,
+  "subscriptionDeleted": false,
+  "candidateArtifactDefect": false,
+  "automationMethodDefect": true,
+  "hiddenRetryPerformed": false,
+  "backupPath": "/opt/broray-light/backup/r0009-p422-before-delete-sub-130bddd06d26133e",
+  "candidateReady": false,
+  "nextRevision": "p424-user-subscription-delete-native-dialog",
+  "nextExactAction": "USE_THE_SUPPORTED_NATIVE_DIALOG_HANDLER_CONCURRENTLY_WITH_THE_VISIBLE_DELETE_BUTTON_CLICK_THEN_VALIDATE_REMOVAL"
+}

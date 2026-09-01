@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "failureId": "R278",
+  "stage": "R0009_FINAL_P491_SERVER_CARD_ACTION_AUDIT",
+  "revision": "p498-final-p491-server-card-action-audit",
+  "at": "2026-09-01T23:07:00+03:00",
+  "status": "FAIL_FIRST_ERROR_PRESERVED",
+  "operation": "ACTIVATE_TEMPORARY_MANUAL_SERVER_THROUGH_VISIBLE_WEBUI_BUTTON",
+  "installedPackage": "broray-light 1.0.0-r1",
+  "packageSha256": "26ea242a3a50684d665a5e747e3a1a161cc1c9b61beae7901edf067f0d107397",
+  "serverId": "manual-20260901222428-9e32ebdd66",
+  "observedWebUiError": "Операция с сервером завершилась ошибкой.",
+  "cardRemainedInactive": true,
+  "buttonReenabled": true,
+  "hiddenRetryPerformed": false,
+  "candidateArtifactDefect": "PENDING_READ_ONLY_ROOT_CAUSE",
+  "routerRebootPerformed": false,
+  "productionServerMutationPerformed": false,
+  "publicReleasePublished": false,
+  "candidateReady": false,
+  "nextRevision": "p499-final-p491-server-activation-read-only-diagnosis",
+  "nextExactAction": "READ_ONLY_INSPECT_ACTIVE_STATE_OPERATION_LOCKS_ACTIVATE_CGI_SERVICE_AND_LOGS_TO_IDENTIFY_THE_FIRST_BACKEND_ERROR_WITHOUT_RETRYING_ACTIVATION"
+}

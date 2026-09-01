@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "failureId": "R244",
+  "stage": "R0009_USER_AUTHORIZED_SUBSCRIPTION_DELETE_BUTTON_TEST",
+  "revision": "p432-record-r243-checkpoint-path-correction",
+  "at": "2026-09-01T20:50:28+03:00",
+  "status": "FAIL_FIRST_ERROR_PRESERVED",
+  "operation": "PRESERVE_R243_FAILURE_CHECKPOINT",
+  "error": "Failed to create parent directories because the absolute workspace path misspelled the Windows user directory.",
+  "filesystemMutationApplied": false,
+  "subscriptionDeleteRetried": false,
+  "candidateArtifactDefect": false,
+  "checkpointPathDefect": true,
+  "hiddenRetryPerformed": false,
+  "correctedRevision": "p433-subscription-delete-outcome-diagnosis",
+  "candidateReady": false,
+  "nextRevision": "p433-subscription-delete-outcome-diagnosis",
+  "nextExactAction": "READ_ONLY_CHECK_SUBSCRIPTION_SERVER_ACTIVE_PROXY0_AND_ROUTE_STATE_OVER_SSH_AND_A_FRESH_BROWSER_TAB_BEFORE_ANY_DELETE_RETRY"
+}

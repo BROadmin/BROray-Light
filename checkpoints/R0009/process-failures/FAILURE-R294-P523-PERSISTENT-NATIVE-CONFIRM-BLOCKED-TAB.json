@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "failureId": "R294",
+  "stage": "R0009_FINAL_P505_DELETE_OUTCOME_ADJUDICATION_AND_BROWSER_REBIND",
+  "revision": "p523-final-p505-delete-outcome-adjudication-and-browser-rebind",
+  "at": "2026-09-01T23:58:42+03:00",
+  "status": "FAIL_FIRST_ERROR_PRESERVED",
+  "operation": "READ_REBOUND_SERVER_TAB_AFTER_BACKEND_CONFIRMED_DELETE_NOT_DELIVERED",
+  "error": "The rebound tab timed out before basic locator reads and reset the browser session again; the prior native confirm dialog is inferred to remain open and block page automation.",
+  "confirmedBeforeFailure": {
+    "secondControlledServerFile": "PRESENT",
+    "serversCount": 2,
+    "activeServerFile": "ABSENT",
+    "deleteDelivered": false,
+    "tabDiscovered": true,
+    "tabUrl": "https://brolight.tvervip.keenetic.link/servers.html?v=1.0.0-r1"
+  },
+  "deleteRetried": false,
+  "routerMutationPerformed": false,
+  "candidateArtifactDefect": false,
+  "hiddenRetryPerformed": false,
+  "candidateReady": false,
+  "nextRevision": "p524-final-p505-existing-confirm-dialog-recovery",
+  "nextExactAction": "REINITIALIZE_THE_BROWSER_CONNECTION_GET_THE_EXISTING_JS_DIALOG_BEFORE_ANY_LOCATOR_OPERATION_ACCEPT_IT_ONCE_THEN_ADJUDICATE_DELETE_DELIVERY"
+}

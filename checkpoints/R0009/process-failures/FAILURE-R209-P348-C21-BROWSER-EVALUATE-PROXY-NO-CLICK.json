@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "failureId": "R209",
+  "stage": "R0009_C21_BROWSER_AND_SCHEDULER_VALIDATION",
+  "revision": "p348-c21-native-click-browser-scheduler-validation",
+  "at": "2026-09-01T16:45:27+03:00",
+  "status": "FAILED_STOPPED_FIRST_ERROR",
+  "failureClass": "BROWSER_EVALUATE_PROXY_NO_CLICK",
+  "operation": "Toggle the auto-update checkbox from inside browser evaluate",
+  "error": "The evaluate-layer element proxy does not expose click() as a function.",
+  "candidateId": "0.1.0-r0009c21",
+  "candidateArtifactDefect": false,
+  "uiMutationPerformed": false,
+  "subscriptionSettingChanged": false,
+  "routerMutation": false,
+  "hiddenRetryPerformed": false,
+  "cause": "Interactive actions must use the Playwright action surface, while evaluate is suitable only for inspection in this browser runtime.",
+  "nextRevision": "p349-c21-playwright-action-surface-browser-validation",
+  "nextExactAction": "DISCOVER_THE_DOCUMENTED_PLAYWRIGHT_ACTION_METHODS_THEN_USE_CLICK_AND_FILL_BY_STABLE_DATA_ATTRIBUTE_SELECTORS"
+}

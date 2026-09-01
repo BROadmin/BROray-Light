@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "failureId": "R254",
+  "stage": "R0009_FINAL_1_0_0_R1_POST_ERROR_FIX_ISOLATED_VALIDATION",
+  "revision": "p454-final-post-error-fix-isolated-validation",
+  "at": "2026-09-01T21:33:57+03:00",
+  "status": "FAIL_FIRST_ERROR_PRESERVED",
+  "operation": "RUN_ALL_50_ISOLATED_GATES_AGAINST_P452_BUILD_A",
+  "error": "The validation child completed after the 30-second tool yield, but the exec wrapper emitted only stdout and discarded the returned session identifier; final stdout and exit status could not be retrieved.",
+  "observed": {
+    "childProcessCompleted": true,
+    "isolatedRoot": "C:/Users/Администратор/AppData/Local/Temp/broray-light-r0009-isolated-vnl4gr00",
+    "rootShapeMatchedPreviousSuccessfulRuns": true,
+    "finalExitStatusCaptured": false,
+    "finalJsonCaptured": false
+  },
+  "candidateArtifactDefect": false,
+  "validationEvidenceCaptureDefect": true,
+  "hiddenRetryPerformed": false,
+  "candidateReady": false,
+  "nextRevision": "p455-final-post-error-fix-isolated-validation-session-aware",
+  "nextExactAction": "RUN_THE_SAME_50_GATE_HARNESS_AS_A_NEW_REVISION_AND_EMIT_THE_COMPLETE_EXEC_RESULT_INCLUDING_SESSION_ID_THEN_WAIT_FOR_FINAL_JSON"
+}

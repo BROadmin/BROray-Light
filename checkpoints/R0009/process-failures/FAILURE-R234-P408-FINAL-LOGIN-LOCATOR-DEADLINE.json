@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "failureId": "R234",
+  "stage": "R0009_FINAL_1_0_0_R1_EXACT_WEBUI_AUDIT",
+  "revision": "p408-final-exact-webui-audit",
+  "at": "2026-09-01T19:25:04+03:00",
+  "status": "FAIL_FIRST_ERROR_PRESERVED",
+  "operation": "AUTOMATE_EXTERNAL_HTTPS_LOGIN_AND_PASSWORD_TOGGLE",
+  "error": "Playwright selector deadline exceeded",
+  "loginPageVisible": true,
+  "candidateArtifactDefect": "UNDETERMINED_LIKELY_AUTOMATION_LOCATOR",
+  "routerServicesHealthyBeforeFailure": true,
+  "hiddenRetryPerformed": false,
+  "credentialsRecorded": false,
+  "productionServerMutationPerformed": false,
+  "publicReleasePublished": false,
+  "candidateReady": false,
+  "nextRevision": "p409-final-login-dom-diagnosis",
+  "nextExactAction": "INSPECT_CURRENT_URL_AND_DOM_SNAPSHOT_WITHOUT_INTERACTION_IDENTIFY_THE_EXACT_FAILED_LOCATOR_THEN_USE_A_CORRECTED_REVISION"
+}

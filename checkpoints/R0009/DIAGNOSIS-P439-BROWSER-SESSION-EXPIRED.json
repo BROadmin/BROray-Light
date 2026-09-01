@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_USER_AUTHORIZED_SUBSCRIPTION_DELETE_BUTTON_TEST",
+  "revision": "p439-user-subscription-delete-final-browser-attempt",
+  "at": "2026-09-01T21:04:13+03:00",
+  "status": "PASS_NO_DELETE_ATTEMPT_AUTH_SESSION_EXPIRED",
+  "requestedUrl": "https://brolight.tvervip.keenetic.link/subscriptions.html?v=0.1.0-r0009c23",
+  "postReloadUrl": "https://brolight.tvervip.keenetic.link/?v=1.0.0-r1",
+  "loginButtonCount": 1,
+  "loginLabelCount": 1,
+  "deleteButtonClicked": false,
+  "nativeDialogOpened": false,
+  "subscriptionDeleteRetried": false,
+  "credentialsTransmitted": false,
+  "candidateArtifactDefect": false,
+  "priorWebUiPathEvidence": {
+    "revision": "p425-user-subscription-delete-native-dialog-fresh-binding",
+    "deleteButtonCount": 1,
+    "nativeDialogAccepted": true,
+    "backendReached": true,
+    "backendRefusal": "ACTIVE_SERVER_CONFLICT"
+  },
+  "safeFallback": "Invoke the same broray_subscription_delete service under the global operation lock without transmitting credentials, then validate the resulting WebUI data model later.",
+  "activeServerId": null,
+  "autoSwitchEnabled": false,
+  "proxy0Exists": false,
+  "routesViaProxy0": 0,
+  "backupPath": "/opt/broray-light/backup/r0009-p422-before-delete-sub-130bddd06d26133e",
+  "candidateReady": false,
+  "nextRevision": "p440-user-subscription-delete-service-under-global-lock",
+  "nextExactAction": "ACQUIRE_THE_GLOBAL_OPERATION_LOCK_CALL_BRORAY_SUBSCRIPTIONS_DELETE_FOR_THE_EXACT_ID_ONCE_THEN_VALIDATE_ZERO_SUBSCRIPTIONS_AND_ZERO_SERVERS"
+}

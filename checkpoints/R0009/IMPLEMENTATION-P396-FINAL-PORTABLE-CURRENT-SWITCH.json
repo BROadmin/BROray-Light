@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_FINAL_1_0_0_R1_PORTABLE_CURRENT_SLOT_SWITCH",
+  "revision": "p396-final-portable-current-slot-switch",
+  "at": "2026-09-01T19:02:53+03:00",
+  "status": "PASS_IMPLEMENTED_PENDING_REBUILD_AND_REVALIDATION",
+  "failureReferences": [
+    "checkpoints/R0009/process-failures/FAILURE-R228-P388-FINAL-PHYSICAL-UPGRADE-SLOT-ACTIVATION.json",
+    "checkpoints/R0009/process-failures/FAILURE-R231-P395-ISOLATED-CROSS-RELEASE-LN-SFNT.json"
+  ],
+  "packageVersion": "1.0.0-r1",
+  "releaseId": "1.0.0-r1",
+  "candidateId": "1.0.0-r1",
+  "correction": {
+    "algorithm": "Validate target slot, stage a new release-relative current symlink at a unique path, then replace current using mv -fT before service startup.",
+    "safetyOrigin": "Same no-dereference destination semantics already validated for updater-v5 slot switching.",
+    "postinstSha256": "b4d75ff12493e82f7e886258079e73f4c2ddcd964eff4d7c12bff95fdbe3d4d0",
+    "regressionGate": "crossReleasePackageUpgradeActivatesTarget",
+    "testSha256": "a1d688bbdee411b29fe89c11ca9155ad1b1f4e5528d6076eeec80d0b7730cd3e"
+  },
+  "staticChecks": {
+    "postinstShellSyntax": "PASS",
+    "gitDiffCheck": "PASS",
+    "canonicalSourceDiff": "NONE",
+    "exactVersionConstants": "PASS_1.0.0-r1"
+  },
+  "publicReleasePublished": false,
+  "candidateReady": false,
+  "nextRevision": "p397-final-portable-switch-build-a-b",
+  "nextExactAction": "BUILD_NEW_INDEPENDENT_A_AND_B_VERIFY_ALL_8_ARTIFACTS_AND_SIGNATURES_THEN_RUN_ALL_50_ISOLATED_GATES"
+}

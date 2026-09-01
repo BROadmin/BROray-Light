@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_FINAL_P491_ONE_FORCE_REINSTALL_AND_POSTCHECK",
+  "revision": "p494-final-p491-one-force-reinstall",
+  "at": "2026-09-01T22:55:56+03:00",
+  "status": "FAIL_FIRST_ERROR_PRESERVED",
+  "failureId": "R276",
+  "operation": "POSTINSTALL_UNAUTHENTICATED_AUTH_PROBE",
+  "error": "The assumed /api/summary.cgi path returned 404 on both the exact local bind and external HTTPS endpoint, so it cannot adjudicate native session protection.",
+  "installBeforeFailure": {
+    "attempts": 1,
+    "opkgExit": 0,
+    "package": "broray-light 1.0.0-r1",
+    "currentTarget": "releases/1.0.0-r1",
+    "installedCheckCgiSha256": "28e656a622e941234d4f28aa6f07983d4434272bb357dacaaf10e4ef8af8e8b1",
+    "primaryService": "PASS",
+    "updaterService": "PASS",
+    "xraySha256": "4b8af237444801bf17b3dc10a1c5c24581fbe3d433eba3d78c6c3a0da1df56fc",
+    "persistenceManifestBefore": "f155166f719a5fcfe7f86e4397a29cf4d55d5491c13ef024f899aa6fdead4ffc",
+    "persistenceManifestAfter": "f155166f719a5fcfe7f86e4397a29cf4d55d5491c13ef024f899aa6fdead4ffc",
+    "persistenceFileCount": 13,
+    "serversCount": 2,
+    "subscriptionsCount": 0,
+    "routesViaProxy0": 0,
+    "fullBrorayOwnership": 0
+  },
+  "probe": {
+    "path": "/api/summary.cgi",
+    "correctBindHttp": 404,
+    "externalHttps": 404
+  },
+  "candidateArtifactDefect": false,
+  "authProtectionAdjudicated": false,
+  "packageInstallRetried": false,
+  "routerMutationPerformedByFailedProbe": false,
+  "hiddenRetryPerformed": false,
+  "candidateReady": false,
+  "nextRevision": "p495-final-installed-protected-endpoint-discovery-and-auth-validation",
+  "nextExactAction": "DERIVE_AN_EXISTING_SESSION_PROTECTED_API_PATH_FROM_THE_INSTALLED_HTML_AND_CGI_TREE_THEN_PROBE_THAT_EXACT_PATH_LOCALLY_AND_EXTERNALLY_WITHOUT_REINSTALLING"
+}

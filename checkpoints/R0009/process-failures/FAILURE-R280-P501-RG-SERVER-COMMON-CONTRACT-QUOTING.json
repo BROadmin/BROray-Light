@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "failureId": "R280",
+  "stage": "R0009_STRUCTURED_SERVER_OPERATION_ERRORS",
+  "revision": "p501-structured-server-operation-errors",
+  "at": "2026-09-01T23:14:00+03:00",
+  "status": "FAIL_FIRST_ERROR_PRESERVED",
+  "operation": "INSPECT_BUILT_SERVER_COMMON_RESPONSE_ISOLATION_CONTRACT",
+  "error": "PowerShell expanded shell metacharacters inside an rg regular expression, leaving an unclosed group.",
+  "toolError": "rg: regex parse error: unclosed group",
+  "codeChangeStarted": false,
+  "filesystemMutationPerformed": false,
+  "routerMutationPerformed": false,
+  "candidateArtifactDefect": false,
+  "hiddenRetryPerformed": false,
+  "candidateReady": false,
+  "nextRevision": "p502-structured-server-operation-errors-corrected-inspection",
+  "nextExactAction": "LOCATE_THE_BUILT_SERVER_COMMON_FILE_AND_USE_FIXED_STRING_SEARCH_BEFORE_APPLYING_THE_ALLOWLISTED_ERROR_MAPPING"
+}

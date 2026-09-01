@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "failureId": "R215",
+  "stage": "R0009_C23_PHYSICAL_PREFLIGHT",
+  "revision": "p364-c23-read-only-preflight",
+  "at": "2026-09-01T17:25:00+03:00",
+  "status": "FAILED_STOPPED_FIRST_ERROR",
+  "failureClass": "PHYSICAL_PREFLIGHT_SERVICE_PATH_ASSUMPTION",
+  "operation": "Read-only package, release, service, persistence, ownership, and route preflight",
+  "error": "The read-only preflight referenced /opt/etc/init.d/S22broray-light, which is not the package service path.",
+  "candidateId": "0.1.0-r0009c23",
+  "candidateArtifactDefect": false,
+  "routerMutation": false,
+  "packageObserved": "broray-light 0.1.0-r0009c22",
+  "releaseCandidateObserved": "0.1.0-r0009c22",
+  "cause": "Operator command used the wrong numeric init prefix; package metadata and local payload specify /opt/etc/init.d/S24broray-light.",
+  "correctedServicePath": "/opt/etc/init.d/S24broray-light",
+  "hiddenRetryPerformed": false,
+  "productionServerMutationPerformed": false,
+  "publicReleasePublished": false,
+  "nextRevision": "p365-c23-corrected-read-only-preflight",
+  "nextExactAction": "REPEAT_THE_READ_ONLY_PREFLIGHT_WITH_THE_PACKAGE_DECLARED_S24_PRIMARY_SERVICE_PATH_BEFORE_ANY_TRANSFER"
+}

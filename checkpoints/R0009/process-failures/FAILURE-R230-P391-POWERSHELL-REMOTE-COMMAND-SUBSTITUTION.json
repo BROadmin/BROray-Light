@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_FINAL_1_0_0_R1_ROUTER_RECOVERY",
+  "revision": "p391-final-busybox-safe-symlink-recovery",
+  "failureId": "R230",
+  "at": "2026-09-01T18:53:19+03:00",
+  "status": "FAIL_FIRST_ERROR_PRESERVED",
+  "operation": "VALIDATE_AND_REPOINT_CURRENT_WITH_BUSYBOX_LN_SFNT",
+  "error": "PowerShell evaluated remote $(readlink ...) substitutions locally before SSH.",
+  "routerMutationByThisRevision": false,
+  "serviceRecoveryCompleted": false,
+  "packageInstallRetried": false,
+  "hiddenRetryPerformed": false,
+  "candidateArtifactDefect": true,
+  "cause": "The PowerShell command string contained unescaped command-substitution syntax intended for the remote shell.",
+  "correctedNextRevision": "p392-final-literal-pipeline-router-recovery",
+  "nextExactAction": "USE_NO_REMOTE_VARIABLES_OR_COMMAND_SUBSTITUTIONS_VALIDATE_LINKS_WITH_READLINK_PIPE_GREP_REMOVE_ONLY_VERIFIED_TEMPORARY_SYMLINK_RUN_LN_SFNT_START_SERVICES_AND_VERIFY"
+}

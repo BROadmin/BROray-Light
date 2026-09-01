@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_C21_SUBSCRIPTION_AUTO_UPDATE_AND_LAYOUT",
+  "revision": "p339-c21-subscription-auto-update-and-layout-implementation",
+  "at": "2026-09-01T16:29:34+03:00",
+  "status": "PASS_IMPLEMENTED_PENDING_INDEPENDENT_BUILDS",
+  "candidateId": "0.1.0-r0009c21",
+  "supersedesCandidate": "0.1.0-r0009c20",
+  "scope": {
+    "keeneticInterfaceStatusCard": true,
+    "failoverResponsiveGrid": true,
+    "subscriptionAutoUpdateUi": true,
+    "subscriptionSettingsApi": true,
+    "subscriptionDueScheduler": true,
+    "additionalInitService": false,
+    "scheduledQualityRefresh": false
+  },
+  "schedulerContract": {
+    "owner": "single primary S24broray-light daemon",
+    "tickSeconds": 30,
+    "eligibility": "enabled=true and autoUpdateEnabled=true and nextUpdateEpoch<=now",
+    "updateTrigger": "scheduled",
+    "perSubscriptionLocking": "preserved from canonical subscription service",
+    "deduplicationAfterRun": true
+  },
+  "validation": {
+    "pythonSyntax": "PASS_2_OF_2",
+    "javascriptSyntax": "PASS_2_OF_2_CHANGED_SCRIPTS",
+    "routerAshSyntax": "PASS_4_OF_4",
+    "sourceUnchanged": true,
+    "diffCheck": "PASS",
+    "staleC20ReferencesInCurrentPackagingOrTools": 0
+  },
+  "files": {
+    "daemonSha256": "fd2de4135ccde825fed6d998273b497cd9a0d6f25859f676ad57a005e95f2e83",
+    "subscriptionsCliSha256": "01042fa62594c9045ad16ab712b00739b3bc53f87ad5477978a95779ee73fadd",
+    "subscriptionDetailsApiSha256": "d497b1195ba68821f8f41dde5fa3bf2583be84a802651f86c775b92047e85cd6",
+    "subscriptionsJsSha256": "9571108dbb00179c657b3361af5a25d3d0326a225c45ce02d020beac3d401f7f",
+    "themeCssSha256": "d59ca9400ad40a4e6b7b58d2fcde33ce79f331d5ee5190b8fb79e67bcb42b707",
+    "homeHtmlSha256": "4971131b1abefd1615518e63e4607a8d01c1c9bef281ab181ecd414066ae66c9",
+    "homeJsSha256": "d11c04fdbaa886fcb15e05c7ba403e682ef9bb0939d05ed1104c0e3a00e27c2a",
+    "builderSha256": "b27ded61ca37744481d6fad33e826e94aecbc6ab4541253dcbcfc8ecd69fcca8",
+    "testHarnessSha256": "f717e38091091f60f59a30412d40f4516bf6838ce311d0389285523b676b390f"
+  },
+  "routerMutation": false,
+  "productionServerMutationPerformed": false,
+  "publicReleasePublished": false,
+  "nextRevision": "p340-c21-independent-builds",
+  "nextExactAction": "BUILD_C21_A_AND_B_WITH_THE_PINNED_INPUTS_AND_COMPARE_ALL_SIGNED_ARTIFACTS_BYTE_FOR_BYTE"
+}

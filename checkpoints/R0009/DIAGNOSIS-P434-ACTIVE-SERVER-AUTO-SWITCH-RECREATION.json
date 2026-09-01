@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_USER_AUTHORIZED_SUBSCRIPTION_DELETE_BUTTON_TEST",
+  "revision": "p434-active-server-recreation-diagnosis",
+  "at": "2026-09-01T20:54:40+03:00",
+  "status": "PASS_AUTO_SWITCH_ROOT_CAUSE_CONFIRMED",
+  "failureReference": "checkpoints/R0009/process-failures/FAILURE-R245-P433-ACTIVE-SERVER-RECREATED.json",
+  "autoSwitchConfig": {
+    "enabled": true,
+    "failureThreshold": 3,
+    "cooldownSeconds": 600,
+    "orderedServerCount": 3
+  },
+  "autoSwitchState": {
+    "activeServerId": "subscription-sub-130bddd06d26133e-600217eb115c0e82",
+    "consecutiveFailures": 0,
+    "status": "healthy",
+    "lastCheckAt": "2026-09-01T20:53:42+03:00"
+  },
+  "daemonPid": 2422,
+  "rootCause": "The enabled broray-server-auto-switch loop treats an empty active-server selection as a failure and, after the configured threshold, activates the first ordered healthy server.",
+  "candidateArtifactDefect": false,
+  "expectedEnabledAutoSwitchBehavior": true,
+  "requiredOperationalOrder": [
+    "disable auto-switch",
+    "clear active-server",
+    "delete subscription"
+  ],
+  "hiddenRetryPerformed": false,
+  "backupPath": "/opt/broray-light/backup/r0009-p422-before-delete-sub-130bddd06d26133e",
+  "candidateReady": false,
+  "nextRevision": "p435-disable-auto-switch-before-subscription-delete",
+  "nextExactAction": "DISABLE_AUTO_SWITCH_THROUGH_THE_VISIBLE_SERVERS_WEBUI_SAVE_BUTTON_VERIFY_CONFIG_FALSE_THEN_CLEAR_ACTIVE_SERVER_AGAIN"
+}

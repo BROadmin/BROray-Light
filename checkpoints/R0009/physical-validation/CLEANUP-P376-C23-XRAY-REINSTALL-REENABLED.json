@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_C23_AGENT_TRANSFER_CLEANUP_AND_XRAY_RECHECK",
+  "revision": "p376-c23-agent-transfer-cleanup-and-xray-recheck",
+  "at": "2026-09-01T17:57:00+03:00",
+  "status": "PASS",
+  "candidateId": "0.1.0-r0009c23",
+  "removed": [
+    {"path":"/opt/tmp/broray-light-c21-p345.ipk","sha256":"a9a5d0172b305dd2e9fb640bc1588eb8e2dd4b3fdbdadc5c1515e685c2d25a16"},
+    {"path":"/opt/tmp/broray-light-c22-p357.ipk","sha256":"386eee617cf2d5a14779aead812e0d7fef15f7c680deb0f3431216915ed8a7ae"},
+    {"path":"/opt/tmp/broray-light-c23-p366.ipk","sha256":"0efa59a556cb256541414b56f6dcc3be2069dc7c2c6aab1ec9da4fc7e0f6d47d"}
+  ],
+  "removedCount": 3,
+  "removedBytes": 38420016,
+  "recoverability": "ORIGINAL_BUILD_A_AND_BUILD_B_REMAIN_IN_LOCAL_DIST",
+  "storageBeforeFreeBytes": 15151104,
+  "storageAfterFreeBytes": 51560448,
+  "storageRequiredBytes": 36438142,
+  "storageOk": true,
+  "temporaryFreeBytes": 191651840,
+  "reinstallAllowed": true,
+  "xrayCurrentVersion": "26.7.28",
+  "xrayLatestVersion": "26.7.28",
+  "candidateArtifactDefect": false,
+  "productionServerMutationPerformed": false,
+  "publicReleasePublished": false,
+  "nextRevision": "p377-c23-live-xray-equal-version-reinstall",
+  "nextExactAction": "REPEAT_THE_WEBUI_XRAY_CHECK_REQUIRE_THE_REINSTALL_BUTTON_ENABLED_CLICK_IT_AND_VERIFY_VERSION_BINARY_HASH_SERVICE_AND_CONNECTION"
+}

@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "failureId": "R249",
+  "stage": "R0009_WEBUI_SUBSCRIPTION_ERROR_DETAIL_FIX",
+  "revision": "p446-p445-hash-sidecar-path-correction",
+  "at": "2026-09-01T21:15:08+03:00",
+  "status": "FAIL_FIRST_ERROR_PRESERVED",
+  "operation": "WRITE_P445_HASH_SIDECAR_AND_UPDATE_WORKLOG",
+  "error": "apply_patch could not read project/WORKLOG.jsonl because the absolute Windows user directory was misspelled.",
+  "filesystemMutationApplied": false,
+  "candidateArtifactDefect": false,
+  "checkpointPathDefect": true,
+  "materialCodeChangeStarted": false,
+  "hiddenRetryPerformed": false,
+  "correctedRevision": "p447-structured-subscription-api-errors",
+  "candidateReady": false,
+  "nextRevision": "p447-structured-subscription-api-errors",
+  "nextExactAction": "PATCH_THE_CONFIRMED_SUBSCRIPTION_API_ERROR_MASKING_AND_ADD_REGRESSION_ASSERTIONS"
+}

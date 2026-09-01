@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_C21_TRANSFER_VERIFY",
+  "revision": "p345-c21-legacy-scp-transfer-verify",
+  "at": "2026-09-01T16:40:31+03:00",
+  "status": "PASS",
+  "candidateId": "0.1.0-r0009c21",
+  "source": "dist/R0009/R0009c21-P340-Build-A/broray-light_0.1.0-r0009c21_aarch64-3.10.ipk",
+  "routerTemporaryPath": "/opt/tmp/broray-light-c21-p345.ipk",
+  "sha256": "a9a5d0172b305dd2e9fb640bc1588eb8e2dd4b3fdbdadc5c1515e685c2d25a16",
+  "sizeBytes": 12806891,
+  "identityMatch": true,
+  "packageInstallStarted": false,
+  "routerMutation": "TEMPORARY_CANDIDATE_COPY_ONLY",
+  "productionServerMutationPerformed": false,
+  "publicReleasePublished": false,
+  "nextRevision": "p346-c21-opkg-install-and-service-validation",
+  "nextExactAction": "INSTALL_THE_ALREADY_VERIFIED_EXACT_C21_IPK_WITH_OPKG_THEN_VALIDATE_PACKAGE_SERVICES_AND_PERSISTENCE"
+}

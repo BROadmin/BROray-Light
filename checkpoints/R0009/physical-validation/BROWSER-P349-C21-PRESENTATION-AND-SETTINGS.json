@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_C21_BROWSER_PRESENTATION_AND_SETTINGS",
+  "revision": "p349-c21-playwright-action-surface-browser-validation",
+  "at": "2026-09-01T16:45:06+03:00",
+  "status": "PASS_PRESENTATION_AND_SETTINGS_PENDING_SCHEDULED_TRIGGER",
+  "candidateId": "0.1.0-r0009c21",
+  "externalUrl": "https://brolight.tvervip.keenetic.link/",
+  "home": {
+    "interfaceName": "Proxy0",
+    "interfaceStatus": "Активен",
+    "interfaceStatusClass": "interface-status-badge is-active",
+    "xrayVersion": "26.7.28",
+    "lightVersion": "0.1.0-r9",
+    "assetVersion": "0.1.0-r0009c21"
+  },
+  "servers": {
+    "desktopViewportWidth": 1280,
+    "failoverColumns": 3,
+    "computedColumns": "380.25px 316.875px 316.875px",
+    "cardLabelColor": "rgb(78, 214, 157)",
+    "layout": "PASS"
+  },
+  "subscriptions": {
+    "cards": 2,
+    "autoUpdatePanels": 2,
+    "settingsButton": "PASS",
+    "testSubscriptionId": "sub-4d56091e72fc1eb6",
+    "originalAutoUpdateEnabled": false,
+    "originalUpdateIntervalMinutes": 360,
+    "temporaryAutoUpdateEnabled": true,
+    "temporaryUpdateIntervalMinutes": 5,
+    "scheduledAt": "2026-09-01T16:49:08+0300",
+    "restoreRequired": true
+  },
+  "routerMutation": "REVERSIBLE_SUBSCRIPTION_SETTINGS_TEST_IN_PROGRESS",
+  "productionServerMutationPerformed": false,
+  "publicReleasePublished": false,
+  "nextRevision": "p350-c21-live-scheduled-trigger-and-settings-restore",
+  "nextExactAction": "WAIT_UNTIL_THE_RECORDED_DUE_TIME_VERIFY_TRIGGER_SCHEDULED_THEN_RESTORE_FALSE_AND_360_THROUGH_THE_WEB_UI"
+}

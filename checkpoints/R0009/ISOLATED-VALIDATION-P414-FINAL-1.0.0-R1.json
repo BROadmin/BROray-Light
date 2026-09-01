@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_FINAL_1_0_0_R1_VERSION_IDENTITY_ISOLATED_VALIDATION",
+  "revision": "p414-final-version-identity-isolated-validation",
+  "at": "2026-09-01T19:32:28+03:00",
+  "status": "PASS",
+  "build": "dist/R0009/1.0.0-r1-P413-Final-Build-A",
+  "packageSha256": "d18d322ada888c6c6b83c882328d498eb3df73ef677387762853bde59182fb09",
+  "gateCount": 50,
+  "passed": 50,
+  "failed": 0,
+  "crossReleaseSlotAndVersionIdentity": "PASS",
+  "cleanInstallUpdateEqualVersionDowngradeRollbackPersistence": "PASS",
+  "webUiAndSafetyContracts": "PASS",
+  "publicReleasePublished": false,
+  "candidateReady": false,
+  "nextRevision": "p415-final-version-identity-transfer-install",
+  "nextExactAction": "TRANSFER_EXACT_P413_PACKAGE_VERIFY_SHA256_FORCE_REINSTALL_ONCE_AND_VALIDATE_WEBUI_VERSION"
+}

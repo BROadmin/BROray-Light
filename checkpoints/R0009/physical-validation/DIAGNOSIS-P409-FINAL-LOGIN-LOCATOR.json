@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_FINAL_1_0_0_R1_LOGIN_LOCATOR_DIAGNOSIS",
+  "revision": "p409-final-login-dom-diagnosis",
+  "at": "2026-09-01T19:26:03+03:00",
+  "status": "PASS_AUTOMATION_LOCATOR_DEFECT_CONFIRMED",
+  "failureId": "R234",
+  "currentUrl": "https://brolight.tvervip.keenetic.link/?v=1.0.0-r1",
+  "pageTitle": "BROray-Light — Вход",
+  "passwordVisibleAfterFirstToggle": true,
+  "toggleAccessibleNameAfterFirstClick": "Скрыть пароль",
+  "failedLocatorAccessibleName": "Показать пароль",
+  "candidateArtifactDefect": false,
+  "automationLocatorDefect": true,
+  "credentialsRecorded": false,
+  "publicReleasePublished": false,
+  "candidateReady": false,
+  "nextRevision": "p410-final-exact-webui-audit-corrected-locator",
+  "nextExactAction": "CLICK_THE_CURRENT_HIDE_PASSWORD_LOCATOR_CONFIRM_PASSWORD_TYPE_THEN_SUBMIT_LOGIN_AND_COMPLETE_THE_EXACT_WEBUI_AUDIT"
+}

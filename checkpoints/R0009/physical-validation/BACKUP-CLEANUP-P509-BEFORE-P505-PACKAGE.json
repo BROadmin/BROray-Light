@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_FINAL_P505_PHYSICAL_PREFLIGHT",
+  "revision": "p509-final-p505-package-backup-transfer-and-install",
+  "at": "2026-09-01T23:32:00+03:00",
+  "status": "PASS",
+  "routerAddress": "192.168.1.1",
+  "installedBefore": "broray-light 1.0.0-r1",
+  "currentTargetBefore": "releases/1.0.0-r1",
+  "locks": {
+    "applicationGlobalLockAbsent": true,
+    "updaterRequestLockAbsent": true
+  },
+  "persistentState": {
+    "serversCount": 2,
+    "subscriptionsCount": 0,
+    "activeServerId": null,
+    "fileCount": 13,
+    "manifestSha256": "7af0a56d42f994472c4c41a289cd9d2ca103b05f5a7f369cbc8c8d1228c0d590"
+  },
+  "backup": {
+    "path": "/opt/broray-light/backup/r0009-p509-before-p505-package",
+    "fileCount": 13,
+    "manifestSha256": "7af0a56d42f994472c4c41a289cd9d2ca103b05f5a7f369cbc8c8d1228c0d590",
+    "match": true,
+    "recoverable": true
+  },
+  "storageCleanup": {
+    "removedPath": "/opt/tmp/broray-light-final-1.0.0-r1-p493.ipk",
+    "removedSha256": "26ea242a3a50684d665a5e747e3a1a161cc1c9b61beae7901edf067f0d107397",
+    "localRecoveryArtifact": "dist/R0009/1.0.0-r1-P491-Final-Build-A/broray-light_1.0.0-r1_aarch64-3.10.ipk",
+    "localRecoveryHashMatch": true,
+    "removed": true,
+    "availableBytesAfter": 47500492
+  },
+  "routerRebootPerformed": false,
+  "productionServerMutationPerformed": false,
+  "candidateReady": false,
+  "nextRevision": "p510-final-p505-exact-package-transfer",
+  "nextExactAction": "TRANSFER_P505_BUILD_A_IPK_TO_THE_CONFIRMED_ABSENT_TEMP_PATH_VERIFY_REMOTE_SHA256_THEN_INSTALL_ONCE"
+}

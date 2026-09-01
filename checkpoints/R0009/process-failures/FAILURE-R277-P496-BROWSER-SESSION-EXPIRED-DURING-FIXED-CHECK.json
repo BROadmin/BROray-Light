@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_FINAL_P491_AUTHENTICATED_WEBUI_REAUDIT",
+  "revision": "p496-final-p491-authenticated-webui-reaudit",
+  "at": "2026-09-01T22:58:56+03:00",
+  "status": "FAIL_FIRST_ERROR_PRESERVED",
+  "failureId": "R277",
+  "operation": "CLICK_FIXED_NEGATIVE_SERVER_CHECK_WITH_PREINSTALL_BROWSER_SESSION",
+  "error": "The prior browser session expired during the request and WebUI redirected to the login page before the fixed result could be adjudicated.",
+  "nativeSessionProtection": "PASS_EXPIRED_SESSION_REDIRECT",
+  "credentialsRecorded": false,
+  "candidateArtifactDefect": false,
+  "serverCheckMutationAdjudicated": false,
+  "routerMutationPerformedByFailedRequest": false,
+  "hiddenRetryPerformed": false,
+  "candidateReady": false,
+  "nextRevision": "p497-final-p491-reauthenticated-fixed-check-audit",
+  "nextExactAction": "REAUTHENTICATE_WITH_THE_ALREADY_AUTHORIZED_CREDENTIALS_WITHOUT_RECORDING_THE_PASSWORD_THEN_CLICK_THE_FIXED_CHECK_ONCE_AND_REQUIRE_INLINE_NEGATIVE_RESULT"
+}

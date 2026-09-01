@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_FINAL_P531_PHYSICAL_BACKUP_AND_TRANSFER",
+  "revision": "p534-final-p531-physical-backup-and-transfer",
+  "at": "2026-09-02T00:29:19+03:00",
+  "status": "FAIL_FIRST_ERROR_PRESERVED",
+  "failureId": "R301",
+  "operation": "READ_ONLY_PHYSICAL_PREFLIGHT_USING_UNCONFIRMED_INSTALL_LAYOUT_PATHS",
+  "firstError": "The assumed /opt/broray-light/current/lib/server-service.sh path does not exist.",
+  "additionalObservedPathMismatches": [
+    "/opt/broray-light/config/servers does not exist",
+    "/opt/etc/init.d/S99broray-light does not exist",
+    "/opt/etc/init.d/S98broray-light-web does not exist"
+  ],
+  "confirmedReadOnlyFacts": {
+    "installedPackage": "broray-light 1.0.0-r1",
+    "currentTarget": "releases/1.0.0-r1",
+    "storageAvailableKiB": 33540,
+    "oldRemotePackageSha256": "06956a63d30ba98aee99f2362cb66a1d82e50a95e0b683de26ce28b6332f9743",
+    "activeServerFilePresent": false
+  },
+  "routerMutationPerformed": false,
+  "candidateArtifactDefect": false,
+  "hiddenRetryPerformed": false,
+  "candidateReady": false,
+  "retryPolicy": "NO_RETRY_OF_P534",
+  "nextRevision": "p535-final-p531-confirmed-layout-preflight-backup-and-transfer",
+  "nextExactAction": "READ_THE_P513_INSTALL_RECEIPT_AND_PACKAGE_LAYOUT_THEN_PROBE_ONLY_CONFIRMED_REMOTE_PATHS_BEFORE_BACKUP"
+}

@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_SERVER_CHECK_OVERLAY_CARRIER_CONTRACT_CORRECTION",
+  "revision": "p490-server-check-overlay-carrier-contract-correction",
+  "at": "2026-09-01T22:43:20+03:00",
+  "status": "PASS_STATIC_VALIDATION",
+  "failureCorrected": "R274",
+  "expectedOverlayFileCount": 23,
+  "newExactOverlayFile": "web-new/api/servers/check.cgi",
+  "testHarness": {
+    "path": "tools/test_r0009.py",
+    "sha256": "66fc22e495712d7a44d942f887bf1935533d871c365f0726ea6603f110bf4ee8"
+  },
+  "validation": {
+    "pythonAst": "PASS",
+    "dashSyntax": "PASS",
+    "gitDiffCheck": "PASS"
+  },
+  "candidateReady": false,
+  "nextRevision": "p491-final-server-check-fix-post-harness-build-a-b",
+  "nextExactAction": "REBUILD_INDEPENDENT_A_AND_B_AFTER_THE_FINAL_HARNESS_CORRECTION_VERIFY_ALL_EIGHT_ARTIFACTS_AND_BOTH_SIGNATURES_THEN_RERUN_ALL_50_GATES"
+}

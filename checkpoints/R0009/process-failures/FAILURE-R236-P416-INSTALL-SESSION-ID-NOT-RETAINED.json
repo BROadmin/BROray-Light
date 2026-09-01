@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "failureId": "R236",
+  "stage": "R0009_FINAL_1_0_0_R1_VERSION_IDENTITY_PHYSICAL_INSTALL",
+  "revision": "p416-final-version-identity-install",
+  "at": "2026-09-01T19:34:12+03:00",
+  "status": "FAIL_FIRST_ERROR_PRESERVED_RESULT_UNDETERMINED",
+  "operation": "OPKG_FORCE_REINSTALL_EXACT_P413_PACKAGE",
+  "attemptsStarted": 1,
+  "toolObservation": "Command exceeded the 30-second yield and returned an ongoing session, but the caller did not retain its session identifier.",
+  "installResult": "UNDETERMINED_PENDING_READ_ONLY_DIAGNOSIS",
+  "hiddenRetryPerformed": false,
+  "publicReleasePublished": false,
+  "candidateReady": false,
+  "nextRevision": "p417-final-install-state-diagnosis",
+  "nextExactAction": "READ_ONLY_INSPECT_OPKG_LOCK_PACKAGE_STATUS_CONFIG_VERSION_CURRENT_TARGET_AND_SERVICES_WITHOUT_RETRYING_INSTALL"
+}

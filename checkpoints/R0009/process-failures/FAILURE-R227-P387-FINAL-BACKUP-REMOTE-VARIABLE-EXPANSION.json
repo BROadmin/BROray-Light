@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_FINAL_1_0_0_R1_PHYSICAL_BACKUP_TRANSFER_INSTALL",
+  "revision": "p387-final-resolved-service-preflight-transfer-install",
+  "failureId": "R227",
+  "at": "2026-09-01T18:45:25+03:00",
+  "status": "FAIL_FIRST_ERROR_PRESERVED",
+  "operation": "CREATE_ROUTER_TRANSACTION_BACKUP",
+  "error": "PowerShell altered the remote shell variable references and the cp command exited nonzero.",
+  "intendedBackupPath": "/opt/broray-light/backup/r0009-p387-final-1.0.0-r1",
+  "materialState": "POSSIBLE_PARTIAL_EMPTY_BACKUP_DIRECTORY_PENDING_INSPECTION",
+  "persistentSourceMutationKnown": false,
+  "packageTransferStarted": false,
+  "packageInstallStarted": false,
+  "hiddenRetryPerformed": false,
+  "candidateArtifactDefect": false,
+  "cause": "The remote command used a shell variable inside a PowerShell double-quoted command, causing local interpolation and malformed remote arguments.",
+  "correctedNextRevision": "p388-final-explicit-path-backup-transfer-install",
+  "nextExactAction": "INSPECT_EXACT_BACKUP_PATH_AND_PERSISTENT_SOURCES_REMOVE_NOTHING_THEN_CREATE_OR_COMPLETE_BACKUP_WITH_LITERAL_PATH_ARGUMENTS_VERIFY_HASH_TRANSFER_AND_INSTALL"
+}

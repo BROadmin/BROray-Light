@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "failureId": "R285",
+  "stage": "R0009_FINAL_P505_CORRECTED_POSTINSTALL_VALIDATION",
+  "revision": "p512-final-p505-corrected-postinstall-validation",
+  "at": "2026-09-01T23:38:00+03:00",
+  "status": "FAIL_FIRST_ERROR_PRESERVED",
+  "operation": "PROBE_PROTECTED_API_ON_ASSUMED_LOCAL_BIND_127_0_0_1_8080",
+  "error": "curl returned HTTP 000 on the assumed local bind, so native session protection cannot be adjudicated from this probe.",
+  "confirmedBeforeFailure": {
+    "package": "broray-light 1.0.0-r1",
+    "currentTarget": "releases/1.0.0-r1",
+    "installedServerCommonSha256": "ed6982a4f2acd8bc59720419be22f3e6ceff0535d196f6882131d0adfa8ffc49",
+    "installedCheckCgiSha256": "28e656a622e941234d4f28aa6f07983d4434272bb357dacaaf10e4ef8af8e8b1",
+    "xraySha256": "4b8af237444801bf17b3dc10a1c5c24581fbe3d433eba3d78c6c3a0da1df56fc",
+    "primaryDaemonRunning": true,
+    "lighttpdRunning": true,
+    "xrayRunning": true,
+    "persistenceManifestSha256": "7af0a56d42f994472c4c41a289cd9d2ca103b05f5a7f369cbc8c8d1228c0d590",
+    "persistenceMatch": true,
+    "serversCount": 2,
+    "subscriptionsCount": 0,
+    "activeServerId": null,
+    "fullBrorayOwnership": 0,
+    "routesViaProxy0": 0
+  },
+  "assumedProbe": {
+    "url": "http://127.0.0.1:8080/api/home/summary.cgi",
+    "httpStatus": 0
+  },
+  "installRetried": false,
+  "routerMutationPerformedByFailedProbe": false,
+  "candidateArtifactDefect": false,
+  "hiddenRetryPerformed": false,
+  "candidateReady": false,
+  "nextRevision": "p513-final-p505-installed-lighttpd-bind-discovery-and-auth-validation",
+  "nextExactAction": "READ_INSTALLED_LIGHTTPD_BIND_AND_LISTENING_SOCKET_THEN_PROBE_THE_EXACT_PROTECTED_PATH_LOCALLY_AND_EXTERNALLY_WITHOUT_REINSTALLING"
+}

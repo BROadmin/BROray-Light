@@ -31,6 +31,37 @@ broray_subscriptions_api_query()
     printf '%s' "${QUERY_STRING:-}" | tr '&' '\n' | awk -F= -v name="$1" '$1==name{sub(/^[^=]*=/,"");print;exit}'
 }
 
+broray_subscriptions_api_parse_error()
+{
+    broray_subscriptions_api_error_line="$1"
+    BRORAY_SUBSCRIPTIONS_API_ERROR_CODE=""
+    BRORAY_SUBSCRIPTIONS_API_ERROR_MESSAGE=""
+    BRORAY_SUBSCRIPTIONS_API_ERROR_STATUS="400 Bad Request"
+
+    case "$broray_subscriptions_api_error_line" in
+        BRORAY_ERROR:*:*) ;;
+        *) return 1 ;;
+    esac
+
+    broray_subscriptions_api_error_value="${broray_subscriptions_api_error_line#BRORAY_ERROR:}"
+    BRORAY_SUBSCRIPTIONS_API_ERROR_CODE="${broray_subscriptions_api_error_value%%:*}"
+    BRORAY_SUBSCRIPTIONS_API_ERROR_MESSAGE="${broray_subscriptions_api_error_value#*:}"
+    case "$BRORAY_SUBSCRIPTIONS_API_ERROR_CODE" in
+        ''|*[!A-Z0-9_]*) return 1 ;;
+    esac
+    [ -n "$BRORAY_SUBSCRIPTIONS_API_ERROR_MESSAGE" ] || return 1
+
+    case "$BRORAY_SUBSCRIPTIONS_API_ERROR_CODE" in
+        ACTIVE_SERVER_CONFLICT|SERVER_SYNC_BUSY|SUBSCRIPTION_LOCKED)
+            BRORAY_SUBSCRIPTIONS_API_ERROR_STATUS="409 Conflict"
+            ;;
+        SUBSCRIPTION_NOT_FOUND)
+            BRORAY_SUBSCRIPTIONS_API_ERROR_STATUS="404 Not Found"
+            ;;
+    esac
+    return 0
+}
+
 broray_subscriptions_api_run()
 {
     broray_subscriptions_api_operation="$1"
@@ -57,8 +88,17 @@ broray_subscriptions_api_run()
         rm -f "$broray_subscriptions_api_output_file" "$broray_subscriptions_api_error_file"
         broray_api_success "$broray_subscriptions_api_payload"
     else
-        broray_subscriptions_api_message="$(tail -c 1200 "$broray_subscriptions_api_error_file")"
+        broray_subscriptions_api_error_line="$(tail -n 1 "$broray_subscriptions_api_error_file" | tr -d '\r')"
         rm -f "$broray_subscriptions_api_output_file" "$broray_subscriptions_api_error_file"
-        broray_api_error "400 Bad Request" "SUBSCRIPTION_OPERATION_FAILED" "Операция с подпиской завершилась ошибкой." "$broray_subscriptions_api_message"
+        if broray_subscriptions_api_parse_error "$broray_subscriptions_api_error_line"; then
+            broray_api_error \
+                "$BRORAY_SUBSCRIPTIONS_API_ERROR_STATUS" \
+                "$BRORAY_SUBSCRIPTIONS_API_ERROR_CODE" \
+                "$BRORAY_SUBSCRIPTIONS_API_ERROR_MESSAGE"
+        fi
+        broray_api_error \
+            "400 Bad Request" \
+            "SUBSCRIPTION_OPERATION_FAILED" \
+            "Операция с подпиской завершилась ошибкой."
     fi
 }

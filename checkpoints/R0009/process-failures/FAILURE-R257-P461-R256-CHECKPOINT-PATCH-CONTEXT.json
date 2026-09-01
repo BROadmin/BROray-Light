@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "failureId": "R257",
+  "stage": "R0009_FINAL_1_0_0_R1_POST_ERROR_FIX_PHYSICAL_INSTALL_VALIDATION",
+  "revision": "p461-r256-checkpoint-preservation",
+  "at": "2026-09-01T21:48:33+03:00",
+  "status": "FAIL_FIRST_ERROR_PRESERVED",
+  "operation": "PRESERVE_R256_AND_UPDATE_MACHINE_READABLE_STATE",
+  "error": "The composite apply_patch could not match the physicalValidation status hunk after earlier generic status hunks in the same patch.",
+  "filesystemMutationApplied": false,
+  "routerMutationPerformed": false,
+  "candidateArtifactDefect": false,
+  "checkpointPatchContextDefect": true,
+  "hiddenRetryPerformed": false,
+  "candidateReady": false,
+  "nextRevision": "p462-r256-r257-exact-context-preservation-and-auth-diagnosis",
+  "nextExactAction": "USE_SMALL_EXACTLY_ANCHORED_PATCHES_TO_UPDATE_STATE_AND_WORKLOG_THEN_READ_ONLY_DIAGNOSE_THE_LOCAL_HTTP_PROBE"
+}

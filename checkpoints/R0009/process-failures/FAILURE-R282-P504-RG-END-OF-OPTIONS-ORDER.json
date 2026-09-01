@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "failureId": "R282",
+  "stage": "R0009_FINAL_1_0_0_R1_STRUCTURED_ERROR_BUILD_A",
+  "revision": "p504-final-1.0.0-r1-structured-error-build-a-corrected-input-discovery",
+  "at": "2026-09-01T23:21:00+03:00",
+  "status": "FAIL_FIRST_ERROR_PRESERVED",
+  "operation": "DISCOVER_PRIOR_DETERMINISTIC_BUILD_INPUT_PATHS_WITH_RG_END_OF_OPTIONS",
+  "error": "The rg glob options were placed after -- and were consequently parsed as filesystem paths.",
+  "buildAStarted": false,
+  "artifactsModified": false,
+  "routerMutationPerformed": false,
+  "candidateArtifactDefect": false,
+  "hiddenRetryPerformed": false,
+  "candidateReady": false,
+  "nextRevision": "p505-final-1.0.0-r1-structured-error-build-a-input-discovery",
+  "nextExactAction": "PLACE_ALL_RG_OPTIONS_BEFORE_THE_END_OF_OPTIONS_SEPARATOR_DISCOVER_INPUTS_AND_START_BUILD_A_ONCE"
+}

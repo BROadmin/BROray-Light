@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_FINAL_CONTROLLED_WEBUI_CARD_AUDIT_BACKUP",
+  "revision": "p480-final-pre-audit-backup-portable-sha-verification",
+  "at": "2026-09-01T22:23:30+03:00",
+  "status": "PASS_RECOVERABLE_PRE_AUDIT_BACKUP_VERIFIED",
+  "routerAddress": "192.168.1.1",
+  "backupPath": "/opt/broray-light/backup/r0009-p479-before-final-webui-card-audit",
+  "persistentRoots": [
+    "/opt/broray-light/config",
+    "/opt/broray-light/servers",
+    "/opt/broray-light/subscriptions"
+  ],
+  "persistentFileCount": 11,
+  "sourceRelativeManifestSha256": "af07b9df4961fa9d9c6ea2aa1a4d330fae740862adad8ab857b066adf8d82090",
+  "backupRelativeManifestSha256": "af07b9df4961fa9d9c6ea2aa1a4d330fae740862adad8ab857b066adf8d82090",
+  "manifestMatch": true,
+  "xraySha256": "4b8af237444801bf17b3dc10a1c5c24581fbe3d433eba3d78c6c3a0da1df56fc",
+  "serversCount": 0,
+  "subscriptionsCount": 0,
+  "activeServerId": null,
+  "autoSwitchEnabled": false,
+  "recoverable": true,
+  "candidateReady": false,
+  "nextRevision": "p481-final-controlled-server-card-button-audit",
+  "nextExactAction": "CREATE_TWO_CONTROLLED_MANUAL_VLESS_FIXTURES_THROUGH_WEBUI_TEST_MOVE_EXCLUDE_SAVE_CHECK_ACTIVATE_AND_DELETE_CONTROLS_THEN_CLEAN_UP"
+}

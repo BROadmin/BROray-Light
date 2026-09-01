@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_FINAL_1_0_0_R1_AUTHENTICATED_WEBUI_BUTTON_AUDIT",
+  "revision": "p476-final-webui-button-enumeration-safe-search",
+  "at": "2026-09-01T22:17:39+03:00",
+  "status": "FAIL_FIRST_ERROR_PRESERVED",
+  "failureId": "R265",
+  "operation": "READ_FAILOVER_CHECKBOX_STATE_WITH_BROWSER_ISCHECKED",
+  "error": "The in-app browser locator does not expose an isChecked function.",
+  "passedBeforeFailure": {
+    "staticButtonEnumeration": "PASS",
+    "emptyVlessAddValidation": "PASS",
+    "invalidVlessRejected": "PASS",
+    "failoverSaveButton": "PASS_NO_INVENTORY_CHANGE_OBSERVED"
+  },
+  "candidateArtifactDefect": false,
+  "browserDriverCapabilityDefect": true,
+  "routerMutationPerformedByFailedProbe": false,
+  "hiddenRetryPerformed": false,
+  "candidateReady": false,
+  "nextRevision": "p477-final-servers-state-supported-read-and-controlled-card-audit",
+  "nextExactAction": "READ_FAILOVER_STATE_WITH_SUPPORTED_DOM_OR_SSH_PRIMITIVES_THEN_CONTINUE_CONTROLLED_SERVER_CARD_BUTTON_AUDIT"
+}

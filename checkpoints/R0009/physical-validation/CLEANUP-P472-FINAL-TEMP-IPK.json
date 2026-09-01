@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_FINAL_XRAY_REINSTALL_STORAGE_RECOVERY",
+  "revision": "p472-final-temp-package-cleanup-and-xray-recheck",
+  "at": "2026-09-01T22:10:04+03:00",
+  "status": "PASS_VERIFIED_TEMP_PACKAGE_REMOVED_STORAGE_RECOVERED",
+  "routerAddress": "192.168.1.1",
+  "removed": {
+    "path": "/opt/tmp/broray-light-final-1.0.0-r1-p459.ipk",
+    "preDeleteSha256": "3714c3a2effa07a8fb63bf71d5ace496111c090be3a5db1ee95af34d312c973d",
+    "preDeleteSizeBytes": 12807483,
+    "postDeleteAbsent": true,
+    "recoverableFromLocalBuildA": true,
+    "localRecoveryPath": "dist/R0009/1.0.0-r1-P452-Final-Build-A/broray-light_1.0.0-r1_aarch64-3.10.ipk"
+  },
+  "storageAfter": {
+    "mount": "/opt",
+    "availableKb": 46956,
+    "availableBytes": 48082944,
+    "requiredBytes": 36438142,
+    "marginBytes": 11644802,
+    "sufficient": true
+  },
+  "temporaryStorageAfter": {
+    "mount": "/tmp",
+    "availableKb": 187164,
+    "availableBytes": 191655936,
+    "sufficient": true
+  },
+  "candidateReady": false,
+  "nextRevision": "p473-final-xray-equal-version-reinstall-button-audit",
+  "nextExactAction": "RERUN_XRAY_UPDATE_CHECK_IN_AUTHENTICATED_WEBUI_CONFIRM_EQUAL_VERSION_REINSTALL_ENABLED_THEN_EXECUTE_AND_VALIDATE"
+}

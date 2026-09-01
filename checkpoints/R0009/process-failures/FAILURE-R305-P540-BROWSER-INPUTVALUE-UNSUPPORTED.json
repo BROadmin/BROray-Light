@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_FINAL_P531_EXACT_NAV_DELETE_PRUNING_REGRESSION",
+  "revision": "p540-final-p531-exact-nav-delete-pruning-regression",
+  "at": "2026-09-02T00:43:03+03:00",
+  "status": "FAIL_FIRST_ERROR_PRESERVED",
+  "failureId": "R305",
+  "operation": "READ_TEXTAREA_CURRENT_VALUE_WITH_PLAYWRIGHT_INPUTVALUE",
+  "firstError": "auditPw.locator(...).inputValue is not a function",
+  "completedBeforeFailure": {
+    "exactServersNavigation": "PASS",
+    "emptyVlessImportValidation": "PASS",
+    "emptyVlessToast": "Вставьте VLESS-ссылку",
+    "serverCountAfterEmptyInput": 1,
+    "invalidVlessCreatedServer": false
+  },
+  "webUiMutationPerformed": false,
+  "routerMutationPerformed": false,
+  "candidateArtifactDefect": false,
+  "hiddenRetryPerformed": false,
+  "candidateReady": false,
+  "retryPolicy": "NO_RETRY_OF_P540_INPUTVALUE_METHOD",
+  "nextRevision": "p541-final-p531-supported-toast-polling-and-delete-pruning-regression",
+  "nextExactAction": "CAPTURE_THE_INVALID_IMPORT_RESULT_USING_SUPPORTED_INNERTEXT_POLLING_THEN_ADD_CONTROLLED_SERVER_B"
+}

@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "failureId": "R210",
+  "stage": "R0009_C21_LIVE_SCHEDULED_TRIGGER_AND_RESTORE",
+  "revision": "p350-c21-live-scheduled-trigger-and-settings-restore",
+  "at": "2026-09-01T16:47:18+03:00",
+  "status": "FAILED_STOPPED_FIRST_ERROR",
+  "failureClass": "SCHEDULER_GLOBAL_LOCK_OMISSION",
+  "operation": "Final safety audit of the subscription scheduler before the live due trigger",
+  "error": "The daemon scheduler invokes subscription updates without acquiring the shared BROray-Light global operation lock.",
+  "candidateId": "0.1.0-r0009c21",
+  "candidateArtifactDefect": true,
+  "risk": "A scheduled subscription sync could overlap with server activation, failover, or updater operations despite per-subscription locking.",
+  "candidateReady": false,
+  "temporarySubscriptionSettingRestoreRequired": true,
+  "productionServerMutationPerformed": false,
+  "publicReleasePublished": false,
+  "hiddenRetryPerformed": false,
+  "cause": "The new scheduler reused canonical subscription locking but omitted operation-lock.sh at the CLI scheduler boundary.",
+  "correctedCandidateId": "0.1.0-r0009c22",
+  "nextRevision": "p351-c22-global-locked-subscription-scheduler",
+  "nextExactAction": "WRAP_SCHEDULER_ONCE_IN_THE_SHARED_GLOBAL_OPERATION_LOCK_TREAT_BUSY_AS_A_SAFE_SKIPPED_TICK_ADD_CONTENTION_TESTS_AND_REBUILD"
+}

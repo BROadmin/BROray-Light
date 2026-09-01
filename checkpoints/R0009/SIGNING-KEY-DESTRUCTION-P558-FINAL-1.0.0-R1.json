@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_EPHEMERAL_SIGNING_KEY_DESTRUCTION",
+  "revision": "p558-destroy-ephemeral-signing-key-with-apply-patch",
+  "at": "2026-09-02T01:34:29+03:00",
+  "status": "PASS",
+  "candidateId": "1.0.0-r1",
+  "releaseId": "1.0.0-r1",
+  "key": {
+    "fileName": "release.key",
+    "locationClass": "external temporary directory outside repository",
+    "exactTargetVerifiedBeforeDeletion": true,
+    "deletionMethod": "apply_patch exact single-file delete",
+    "presentAfterDeletion": false,
+    "privateMaterialRecorded": false
+  },
+  "publicKey": {
+    "path": "updater/release.pub",
+    "presentAfterDeletion": true,
+    "fileSha256": "f4e49912ddb5ad6e0995d4b4992ce7d879dc765815aafa61fa1156e8ba1ae4a4",
+    "canonicalIdentitySha256": "17308f28719200e6479b2a094d264344f3ad1b0d8b65792f5712e771b318f22e"
+  },
+  "candidateBytesMutated": false,
+  "repositoryPrivateKeyLeakCount": 0,
+  "productionServerMutationPerformed": false,
+  "publicReleasePublished": false,
+  "privateSigningKeyDestroyed": true,
+  "candidateReady": false,
+  "nextRevision": "p559-final-r0009-reseal",
+  "nextExactAction": "RESEAL_ALL_FINAL_R0009_AGGREGATES_WITH_CANDIDATE_READY_TRUE_AND_THE_KEY_DESTRUCTION_AND_FINAL_AUDIT_RECEIPTS"
+}

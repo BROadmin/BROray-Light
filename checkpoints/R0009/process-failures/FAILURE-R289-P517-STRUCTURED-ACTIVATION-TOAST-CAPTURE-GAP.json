@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "failureId": "R289",
+  "stage": "R0009_FINAL_P505_RUNTIME_PATH_DISCOVERY_AND_BROWSER_TAB_REBIND",
+  "revision": "p517-final-p505-runtime-path-discovery-and-browser-tab-rebind",
+  "at": "2026-09-01T23:46:05+03:00",
+  "status": "FAIL_FIRST_ERROR_PRESERVED",
+  "operation": "CAPTURE_EXACT_STRUCTURED_UNREACHABLE_ACTIVATION_TOAST",
+  "error": "The activation operation completed safely, but the transient toast expired between polling points before its exact text was captured.",
+  "confirmed": {
+    "browserTabRebound": true,
+    "sessionReauthenticated": true,
+    "passwordVisibilityToggle": "PASS",
+    "activationButtonReenabled": true,
+    "activeServerFile": "ABSENT",
+    "xrayConfigSha256Before": "a7017f04c4b38c22e46eced8ee7870a3d4979a34b86c72df45e7eab9242b4ddb",
+    "xrayConfigSha256After": "a7017f04c4b38c22e46eced8ee7870a3d4979a34b86c72df45e7eab9242b4ddb",
+    "rollbackByteExact": true
+  },
+  "candidateArtifactDefect": false,
+  "candidateDefectAdjudication": "NOT_ADJUDICATED_TEST_OBSERVATION_GAP",
+  "hiddenRetryPerformed": false,
+  "candidateReady": false,
+  "nextRevision": "p518-final-p505-structured-activation-toast-high-frequency-capture",
+  "nextExactAction": "ACTIVATE_THE_SECOND_CONTROLLED_UNREACHABLE_SERVER_ONCE_AND_POLL_THE_TOAST_AT_250_MILLISECOND_INTERVALS_UNTIL_THE_BUTTON_REENABLES"
+}

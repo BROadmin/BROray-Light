@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_WEBUI_SUBSCRIPTION_ERROR_DETAIL_FIX",
+  "revision": "p451-structured-error-mcp-runtime-discovery",
+  "at": "2026-09-01T21:25:06+03:00",
+  "status": "PASS",
+  "candidateReady": false,
+  "implementation": {
+    "structuredErrorSource": "final BRORAY_ERROR:<CODE>:<MESSAGE> line only",
+    "validatedCodePattern": "[A-Z0-9_]+",
+    "httpMappings": {
+      "ACTIVE_SERVER_CONFLICT": "409 Conflict",
+      "SERVER_SYNC_BUSY": "409 Conflict",
+      "SUBSCRIPTION_LOCKED": "409 Conflict",
+      "SUBSCRIPTION_NOT_FOUND": "404 Not Found"
+    },
+    "genericFallback": "400 SUBSCRIPTION_OPERATION_FAILED without raw stderr"
+  },
+  "files": {
+    "packaging/app-overlay/web-new/api/subscriptions/common.sh": "801cb7292219c67381031c0a5dac530d5b5cd04fbe4dba4213e703dd97e27c60",
+    "tools/test_r0009.py": "ded8cb2f460ed65d89ba294029f656e5c323ed896a38e8eb8d0d44153b7ba3e8"
+  },
+  "validation": {
+    "configuredDependencyDiscovery": "PASS_MCP_CODEX_APP",
+    "shellRuntime": "C:/Users/Администратор/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/git/usr/bin/dash.exe",
+    "shellSyntax": "PASS",
+    "pythonCompile": "PASS",
+    "gitDiffCheck": "PASS"
+  },
+  "nextExactAction": "BUILD_INDEPENDENT_FINAL_1_0_0_R1_ARTIFACTS_A_AND_B_AND_RUN_ALL_ISOLATED_GATES"
+}

@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "failureId": "R297",
+  "stage": "R0009_FINAL_P505_INDEPENDENT_FRESH_BROWSER_TAB",
+  "revision": "p526-final-p505-independent-fresh-browser-tab",
+  "at": "2026-09-02T00:04:20+03:00",
+  "status": "FAIL_CANDIDATE_DEFECT_PRESERVED",
+  "operation": "DELETE_SECOND_NONACTIVE_CONTROLLED_SERVER_AND_VERIFY_ALL_PERSISTED_REFERENCES",
+  "error": "The server file was deleted and the WebUI reported success, but the deleted server ID remained in both orderedServerIds and excludedServerIds in server-auto-switch.json.",
+  "buttonResult": {
+    "nativeConfirmFound": true,
+    "toast": "Сервер удалён",
+    "cardRemoved": true,
+    "serverFileRemoved": true
+  },
+  "staleState": {
+    "configPath": "/opt/broray-light/config/system/server-auto-switch.json",
+    "deletedServerId": "manual-20260901222449-ae6207e1c2",
+    "presentInOrderedServerIds": true,
+    "presentInExcludedServerIds": true
+  },
+  "candidateArtifactDefect": true,
+  "hiddenRetryPerformed": false,
+  "candidateReady": false,
+  "nextRevision": "p527-final-server-delete-failover-reference-cleanup-diagnosis",
+  "nextExactAction": "TRACE_THE_SERVER_DELETE_API_AND_ADD_LOCKED_ATOMIC_PRUNING_OF_THE_DELETED_ID_FROM_ORDERED_AND_EXCLUDED_FAILOVER_LISTS"
+}

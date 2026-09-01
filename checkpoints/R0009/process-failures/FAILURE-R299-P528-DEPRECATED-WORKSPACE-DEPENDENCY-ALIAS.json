@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "failureId": "R299",
+  "stage": "R0009_FINAL_SERVER_DELETE_ATOMIC_FAILOVER_PRUNING_IMPLEMENTATION",
+  "revision": "p528-final-server-delete-atomic-failover-pruning-implementation",
+  "at": "2026-09-02T00:09:42+03:00",
+  "status": "FAIL_FIRST_ERROR_PRESERVED",
+  "operation": "LOAD_WORKSPACE_DEPENDENCIES_FOR_SHELL_AND_PYTHON_VALIDATION",
+  "error": "The legacy codex_app dynamic alias reported that it is no longer available and directed the task to the codex_app MCP server.",
+  "implementationCompletedBeforeFailure": true,
+  "repositoryMutationPerformedByFailedTool": false,
+  "routerMutationPerformed": false,
+  "candidateArtifactDefect": false,
+  "hiddenRetryPerformed": false,
+  "candidateReady": false,
+  "nextRevision": "p529-final-server-delete-fix-static-and-isolated-validation",
+  "nextExactAction": "LOAD_DEPENDENCIES_THROUGH_MCP_CODEX_APP_THEN_RUN_SHELL_SYNTAX_PYTHON_AST_OVERLAY_AND_ISOLATED_REGRESSION_VALIDATION"
+}

@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_C23_COMPLETE_WEBUI_BUTTON_AUDIT",
+  "revision": "p382-c23-post-reinstall-health-stabilization",
+  "at": "2026-09-01T18:29:48+03:00",
+  "status": "PASS",
+  "candidateId": "0.1.0-r0009c23",
+  "releaseId": "0.1.0-r9",
+  "baseAudit": "checkpoints/R0009/physical-validation/WEBUI-BUTTON-AUDIT-P377-C23-PENDING-SENSITIVE-ACTIONS.json",
+  "authentication": {
+    "externalHttpsLogin": "PASS",
+    "passwordVisibilityToggle": "PASS_PASSWORD_TEXT_PASSWORD_TEXT_TRANSITIONS",
+    "providedCredentialsAccepted": true,
+    "credentialsPersistedByLight": false,
+    "secretRecorded": false
+  },
+  "xrayEqualVersionReinstall": {
+    "updateCheck": "PASS_EQUAL_VERSION_REINSTALL_ENABLED",
+    "buttonLabel": "Переустановить 26.7.28",
+    "webuiResult": "PASS_REINSTALL_COMPLETED_SUCCESSFULLY",
+    "installedVersion": "26.7.28",
+    "installedBinarySha256": "4b8af237444801bf17b3dc10a1c5c24581fbe3d433eba3d78c6c3a0da1df56fc",
+    "processRunning": true,
+    "interfaceName": "Proxy0",
+    "interfaceStatus": "ACTIVE",
+    "connection": "WORKING"
+  },
+  "postRestartHealth": {
+    "firstProbeFailurePreserved": "checkpoints/R0009/process-failures/FAILURE-R225-P381-C23-POST-XRAY-REINSTALL-FIRST-PROBE.json",
+    "automaticRecovery": "PASS",
+    "consecutiveFailures": 0,
+    "failoverStatus": "healthy",
+    "activeServerProbe": "PASS_HTTP_204",
+    "activeServerId": "subscription-sub-130bddd06d26133e-600217eb115c0e82"
+  },
+  "persistentData": {
+    "configAndServersBeforeSha256": "2a8ca8b2837426f34021da0f0de68bd74ddc0cd04c895c2aade54ca848328599",
+    "configAndServersAfterSha256": "2a8ca8b2837426f34021da0f0de68bd74ddc0cd04c895c2aade54ca848328599",
+    "match": true,
+    "serverCount": 6,
+    "activeServerPreserved": true
+  },
+  "allDistinctWebuiControlsAudited": true,
+  "processFailuresPreservedDuringCompletion": [
+    "checkpoints/R0009/process-failures/FAILURE-R223-P379-C23-LOGIN-LOCATOR-TIMEOUT.json",
+    "checkpoints/R0009/process-failures/FAILURE-R224-P380-C23-XRAY-CHECK-GLOBAL-LOCK.json",
+    "checkpoints/R0009/process-failures/FAILURE-R225-P381-C23-POST-XRAY-REINSTALL-FIRST-PROBE.json"
+  ],
+  "routerRebootPerformed": false,
+  "productionServerMutationPerformed": false,
+  "publicReleasePublished": false,
+  "candidateReady": false,
+  "nextRevision": "p383-final-version-1.0.0-r1",
+  "nextExactAction": "APPLY_1_0_0_R1_AS_THE_LAST_MATERIAL_VERSION_CHANGE_THEN_BUILD_NEW_INDEPENDENT_A_AND_B_AND_REPEAT_FULL_ACCEPTANCE_ON_EXACT_FINAL_BYTES"
+}

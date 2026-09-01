@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "failureId": "R201",
+  "stage": "R0009_C20_KEENETIC_INTERFACE_STATUS_CARD",
+  "revision": "p330-c20-keenetic-ui-contract-inspection",
+  "at": "2026-09-01T16:07:57+03:00",
+  "status": "FAILED_STOPPED_FIRST_ERROR",
+  "failureClass": "KEENETIC_API_OVERLAY_PATH_ASSUMPTION",
+  "operation": "Read the home summary and Keenetic API implementations from the corrective overlay",
+  "error": "The assumed packaging/app-overlay/web-new/api/home and api/keenetic directories do not exist.",
+  "candidateId": "0.1.0-r0009c20",
+  "candidateArtifactDefect": false,
+  "repositoryMutationBeforeFailure": false,
+  "routerMutation": false,
+  "hiddenRetryPerformed": false,
+  "cause": "Only corrected API files are present in the overlay; untouched API implementations remain in the immutable application input or assembled output.",
+  "nextRevision": "p331-c20-supported-api-path-discovery",
+  "nextExactAction": "DISCOVER_THE_EXACT_HOME_AND_KEENETIC_API_PATHS_WITH_RG_FILES_AND_INSPECT_THEM_READ_ONLY"
+}

@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_FINAL_XRAY_REINSTALL_STORAGE_DIAGNOSIS",
+  "revision": "p471-xray-storage-read-only-diagnosis-and-temp-package-cleanup",
+  "at": "2026-09-01T22:08:58+03:00",
+  "status": "PASS_RUNTIME_STORAGE_PRESSURE_CONFIRMED",
+  "routerAddress": "192.168.1.1",
+  "storage": {
+    "mount": "/opt",
+    "availableKb": 35396,
+    "availableBytes": 36245504,
+    "requiredBytes": 36438142,
+    "shortfallBytes": 192638
+  },
+  "temporaryStorage": {
+    "mount": "/tmp",
+    "availableKb": 187164,
+    "availableBytes": 191655936,
+    "requiredBytes": 36438142,
+    "sufficient": true
+  },
+  "xrayRuntime": {
+    "path": "/opt/broray-light/runtime/xray",
+    "sizeBytes": 35389566,
+    "sha256": "4b8af237444801bf17b3dc10a1c5c24581fbe3d433eba3d78c6c3a0da1df56fc"
+  },
+  "verifiedRecoverableTemporaryPackage": {
+    "path": "/opt/tmp/broray-light-final-1.0.0-r1-p459.ipk",
+    "sizeBytes": 12807483,
+    "sha256": "3714c3a2effa07a8fb63bf71d5ace496111c090be3a5db1ee95af34d312c973d",
+    "matchesFinalBuildA": true,
+    "localRecoveryPath": "dist/R0009/1.0.0-r1-P452-Final-Build-A/broray-light_1.0.0-r1_aarch64-3.10.ipk"
+  },
+  "candidateArtifactDefect": false,
+  "candidateReady": false,
+  "nextRevision": "p472-final-temp-package-cleanup-and-xray-recheck",
+  "nextExactAction": "DELETE_ONLY_THE_HASH_VERIFIED_RECOVERABLE_P459_TEMP_IPK_CONFIRM_STORAGE_RECOVERY_THEN_RERUN_XRAY_UPDATE_CHECK"
+}

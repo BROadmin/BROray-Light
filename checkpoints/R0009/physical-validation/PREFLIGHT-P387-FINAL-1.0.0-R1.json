@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_FINAL_1_0_0_R1_PHYSICAL_PREFLIGHT",
+  "revision": "p387-final-resolved-service-preflight-transfer-install",
+  "at": "2026-09-01T18:43:56+03:00",
+  "status": "PASS_READY_FOR_BACKUP_TRANSFER_AND_INSTALL",
+  "targetPackageVersion": "1.0.0-r1",
+  "targetReleaseId": "1.0.0-r1",
+  "targetPackageSha256": "3d2768ee370d990871df7f974c0205ece413b0a5101efc742bb02496dc16fa34",
+  "installedBefore": "broray-light 0.1.0-r0009c23",
+  "currentTargetBefore": "releases/0.1.0-r9",
+  "services": {
+    "/opt/etc/init.d/S24broray-light": "PASS_EXIT_ZERO",
+    "/opt/etc/init.d/S23broray-light-updater": "PASS_EXIT_ZERO"
+  },
+  "persistentInventoryBeforeSha256": "33e178b8fb83e0dcef0337d0f2f44d5b42964c4a3f4dbccfa98f5a6a2c90cad8",
+  "xrayBeforeSha256": "4b8af237444801bf17b3dc10a1c5c24581fbe3d433eba3d78c6c3a0da1df56fc",
+  "serverCount": 6,
+  "activeServerId": "subscription-sub-130bddd06d26133e-600217eb115c0e82",
+  "globalLockPresent": false,
+  "storageFreeKilobytes": 52916,
+  "fullBROrayOwnership": 0,
+  "routerMutation": false,
+  "productionServerMutationPerformed": false,
+  "publicReleasePublished": false,
+  "candidateReady": false,
+  "nextExactAction": "CREATE_TRANSACTION_BACKUP_TRANSFER_WITH_LEGACY_SCP_VERIFY_EXACT_SHA256_THEN_RUN_ONE_OPKG_INSTALL"
+}

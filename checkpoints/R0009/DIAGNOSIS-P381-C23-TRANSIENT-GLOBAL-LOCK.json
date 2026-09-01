@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_C23_COMPLETE_WEBUI_BUTTON_AUDIT",
+  "revision": "p381-c23-global-lock-diagnosis-and-xray-reinstall",
+  "at": "2026-09-01T18:24:34+03:00",
+  "status": "PASS_SAFE_TO_RETRY_IN_CORRECTED_REVISION",
+  "failureReference": "checkpoints/R0009/process-failures/FAILURE-R224-P380-C23-XRAY-CHECK-GLOBAL-LOCK.json",
+  "globalLockPath": "/opt/var/lock/broray-light/global-operation.lock",
+  "globalLockPresentAtInspection": false,
+  "operationMarkerPresent": false,
+  "pidMarkerPresent": false,
+  "unexpectedUpdaterOrDownloadProcessPresent": false,
+  "xrayProcessPresent": true,
+  "webServiceProcessesPresent": true,
+  "diagnosis": "The WebUI refusal was caused by a transient global-operation lock that had already been released. No stale lock or competing update process remained.",
+  "safeCorrectedAction": "REPEAT_XRAY_UPDATE_CHECK_ONCE_IN_P381_THEN_START_EQUAL_VERSION_REINSTALL_IF_ENABLED",
+  "routerRebootPerformed": false,
+  "productionServerMutationPerformed": false,
+  "candidateReady": false
+}

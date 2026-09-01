@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "failureId": "R291",
+  "stage": "R0009_FINAL_P505_SERVER_CONTROLS_AND_FAILOVER_AUDIT",
+  "revision": "p520-final-p505-server-controls-and-failover-audit",
+  "at": "2026-09-01T23:50:19+03:00",
+  "status": "FAIL_FIRST_ERROR_PRESERVED",
+  "operation": "READ_EXPECTED_SERVER_API_MESSAGES_WITH_RG_ALTERNATION",
+  "error": "PowerShell quoting removed part of the regular expression and rg rejected the resulting unclosed group.",
+  "webUiMutationPerformed": false,
+  "routerMutationPerformed": false,
+  "candidateArtifactDefect": false,
+  "hiddenRetryPerformed": false,
+  "candidateReady": false,
+  "nextRevision": "p521-final-p505-server-controls-audit-with-literal-source-read",
+  "nextExactAction": "READ_THE_SERVER_COMMON_SOURCE_WITHOUT_A_COMPLEX_REGEX_THEN_VALIDATE_IMPORT_CHECK_REORDER_EXCLUSION_FAILOVER_SAVE_DELETE_AND_NAVIGATION_CONTROLS"
+}

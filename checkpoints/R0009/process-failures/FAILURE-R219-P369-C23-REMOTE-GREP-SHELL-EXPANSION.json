@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "failureId": "R219",
+  "stage": "R0009_C23_RELEASE_SLOT_WEB_ROOT_VALIDATION",
+  "revision": "p369-c23-release-slot-web-root-validation",
+  "at": "2026-09-01T17:34:00+03:00",
+  "status": "FAILED_STOPPED_FIRST_ERROR",
+  "failureClass": "REMOTE_GREP_SHELL_VARIABLE_EXPANSION",
+  "operation": "Validate installed web root, c23 assets, UI auto-update markers, daemon scheduler invocation, and automatic trigger",
+  "error": "The remote shell expanded $scheduler_id inside the grep pattern, so the literal source assertion returned nonzero without identifying an artifact defect.",
+  "candidateId": "0.1.0-r0009c23",
+  "candidateArtifactDefect": false,
+  "declaredWebRoot": "/opt/broray-light/current/app/web-new",
+  "routerMutation": false,
+  "hiddenRetryPerformed": false,
+  "cause": "The diagnostic pattern was double-quoted at the remote shell layer and contained a shell variable token.",
+  "productionServerMutationPerformed": false,
+  "publicReleasePublished": false,
+  "nextRevision": "p370-c23-literal-installed-asset-validation",
+  "nextExactAction": "VALIDATE_THE_INSTALLED_TRIGGER_USING_A_NONEXPANDING_LITERAL_OR_LINE_OUTPUT_AND_COMPLETE_THE_C23_INSTALL_RECEIPT"
+}

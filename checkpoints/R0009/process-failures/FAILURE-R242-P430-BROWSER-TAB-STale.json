@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "failureId": "R242",
+  "stage": "R0009_USER_AUTHORIZED_SUBSCRIPTION_DELETE_BUTTON_TEST",
+  "revision": "p430-user-subscription-delete-after-safe-deactivation",
+  "at": "2026-09-01T20:47:45+03:00",
+  "status": "FAIL_FIRST_ERROR_PRESERVED",
+  "operation": "INSPECT_EXISTING_AUTHENTICATED_SUBSCRIPTIONS_TAB_BEFORE_DELETE",
+  "error": "Unknown tab: 13",
+  "deleteButtonClicked": false,
+  "subscriptionDeleteRetried": false,
+  "candidateArtifactDefect": false,
+  "browserBindingStale": true,
+  "hiddenRetryPerformed": false,
+  "activeServerId": null,
+  "proxy0Exists": false,
+  "routesViaProxy0": 0,
+  "backupPath": "/opt/broray-light/backup/r0009-p422-before-delete-sub-130bddd06d26133e",
+  "candidateReady": false,
+  "nextRevision": "p431-user-subscription-delete-fresh-browser-tab",
+  "nextExactAction": "LIST_CURRENT_BROWSER_TABS_BIND_A_FRESH_SUBSCRIPTIONS_TAB_AUTHENTICATE_IF_NEEDED_THEN_CLICK_THE_ONLY_DELETE_BUTTON_AND_ACCEPT_NATIVE_CONFIRM"
+}

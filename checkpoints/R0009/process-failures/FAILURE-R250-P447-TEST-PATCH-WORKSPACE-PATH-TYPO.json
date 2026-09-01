@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "failureId": "R250",
+  "stage": "R0009_WEBUI_SUBSCRIPTION_ERROR_DETAIL_FIX",
+  "revision": "p447-structured-subscription-api-errors",
+  "at": "2026-09-01T21:17:56+03:00",
+  "status": "FAIL_FIRST_ERROR_PRESERVED",
+  "operation": "CORRECT_STRUCTURED_ERROR_REGRESSION_ASSERTION",
+  "error": "apply_patch could not read tools/test_r0009.py because the absolute Windows user directory was misspelled.",
+  "filesystemMutationApplied": false,
+  "candidateArtifactDefect": false,
+  "checkpointPathDefect": true,
+  "implementationPartiallyApplied": true,
+  "hiddenRetryPerformed": false,
+  "candidateReady": false,
+  "nextRevision": "p448-structured-subscription-api-error-test-correction",
+  "nextExactAction": "PATCH_THE_MALFORMED_REGRESSION_ASSERTION_AT_THE_CORRECT_WORKSPACE_PATH_THEN_RUN_PYTHON_AND_SHELL_SYNTAX_CHECKS"
+}

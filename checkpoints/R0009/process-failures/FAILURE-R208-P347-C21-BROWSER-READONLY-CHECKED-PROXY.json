@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "failureId": "R208",
+  "stage": "R0009_C21_BROWSER_AND_SCHEDULER_VALIDATION",
+  "revision": "p347-c21-browser-and-subscription-scheduler-validation",
+  "at": "2026-09-01T16:44:11+03:00",
+  "status": "FAILED_STOPPED_FIRST_ERROR",
+  "failureClass": "BROWSER_READONLY_CHECKED_PROXY",
+  "operation": "Enable auto-update on the first subscription through the rendered Web UI",
+  "error": "The browser automation DOM proxy rejected direct assignment to input.checked because it exposes a getter only.",
+  "candidateId": "0.1.0-r0009c21",
+  "candidateArtifactDefect": false,
+  "uiMutationPerformed": false,
+  "subscriptionSettingChanged": false,
+  "routerMutation": false,
+  "hiddenRetryPerformed": false,
+  "cause": "The interaction attempted property assignment instead of a native user click supported by the browser layer.",
+  "nextRevision": "p348-c21-native-click-browser-scheduler-validation",
+  "nextExactAction": "USE_NATIVE_CLICK_FOR_THE_CHECKBOX_AND_THE_INPUT_VALUE_SETTER_FOR_THE_INTERVAL_THEN_CLICK_SAVE_AND_VERIFY_RENDERED_STATE"
+}

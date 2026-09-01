@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_FINAL_CONTROLLED_WEBUI_CARD_AUDIT_BACKUP",
+  "revision": "p479-final-controlled-webui-audit-backup",
+  "at": "2026-09-01T22:22:30+03:00",
+  "status": "FAIL_FIRST_ERROR_PRESERVED",
+  "failureId": "R268",
+  "operation": "VERIFY_PRE_AUDIT_BACKUP_WITH_RECURSIVE_DIFF",
+  "error": "The router BusyBox diff applet does not support directory comparison.",
+  "backupCreatedBeforeFailure": true,
+  "backupPath": "/opt/broray-light/backup/r0009-p479-before-final-webui-card-audit",
+  "backupFileCount": 12,
+  "xrayHashCopyMatch": true,
+  "candidateArtifactDefect": false,
+  "busyboxObserverCapabilityDefect": true,
+  "routerMutationPerformed": "BACKUP_CREATION_ONLY",
+  "hiddenRetryPerformed": false,
+  "candidateReady": false,
+  "nextRevision": "p480-final-pre-audit-backup-portable-sha-verification",
+  "nextExactAction": "COMPARE_SOURCE_AND_BACKUP_WITH_SORTED_RELATIVE_PATH_SHA256_LISTS_THEN_START_CONTROLLED_WEBUI_CARD_MUTATIONS"
+}

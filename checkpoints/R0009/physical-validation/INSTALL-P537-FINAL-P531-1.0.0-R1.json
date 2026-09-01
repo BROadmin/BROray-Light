@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_FINAL_P531_INSTALL_AND_LF_NORMALIZED_POSTINSTALL_VALIDATION",
+  "revision": "p537-final-p531-lf-normalized-postinstall-validation",
+  "at": "2026-09-02T00:37:21+03:00",
+  "status": "PASS",
+  "failureResolved": "R302",
+  "routerAddress": "192.168.1.1",
+  "installMode": "opkg install --force-reinstall",
+  "installAttempts": 1,
+  "opkgExit": 0,
+  "package": "broray-light 1.0.0-r1",
+  "packageSha256": "d6add8cd0d27a8e8f29bd3f9c50f2ec889418da0f8e47d93b1a37703c8b6eca6",
+  "currentTarget": "releases/1.0.0-r1",
+  "installedVersionFile": "1.0.0-r1",
+  "installedServerServiceSha256": "42ee77742de9aeef8f06cdf95844503efa3b49de8f1b9c310eb87e84ab398643",
+  "services": {
+    "primaryInitStatusExit": 0,
+    "updaterInitStatusExit": 0,
+    "lighttpdPid": 24395,
+    "primaryDaemonPid": 24907,
+    "lighttpdListening": "192.168.1.1:8080",
+    "status": "PASS"
+  },
+  "xray": {
+    "version": "26.7.28",
+    "running": true,
+    "pid": 24913,
+    "sha256": "4b8af237444801bf17b3dc10a1c5c24581fbe3d433eba3d78c6c3a0da1df56fc"
+  },
+  "persistence": {
+    "beforeSha256": "4f21808cb6efad2dc8735f336078db1dcf5c65eeb362474b3622eb8be5b2eef9",
+    "afterSha256": "4f21808cb6efad2dc8735f336078db1dcf5c65eeb362474b3622eb8be5b2eef9",
+    "fileCount": 12,
+    "status": "PASS",
+    "backupPath": "/opt/broray-light/backup/r0009-p535-before-p531-package"
+  },
+  "authentication": {
+    "protectedPath": "/api/home/summary.cgi",
+    "localBind": "192.168.1.1:8080",
+    "localUnauthenticatedHttp": 401,
+    "localRootHttp": 200,
+    "externalUnauthenticatedHttps": 401,
+    "externalLoginPageHttps": 200,
+    "nativeSessionProtection": "PASS"
+  },
+  "ownership": {
+    "fullBrorayOwnership": 0,
+    "routesViaProxy0": 0
+  },
+  "routerRebootPerformed": false,
+  "productionServerMutationPerformed": false,
+  "publicReleasePublished": false,
+  "candidateReady": false,
+  "nextRevision": "p538-final-p531-authenticated-delete-pruning-regression",
+  "nextExactAction": "AUTHENTICATE_TO_THE_EXACT_P531_WEBUI_RECREATE_CONTROLLED_SERVER_B_SAVE_ORDER_AND_EXCLUSION_DELETE_B_AND_VERIFY_BOTH_REFERENCES_ARE_PRUNED"
+}

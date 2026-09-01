@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_FINAL_SIDECAR_AUDIT",
+  "revision": "p551-final-sidecar-audit-with-dual-path-resolution",
+  "at": "2026-09-02T01:20:16+03:00",
+  "status": "FAIL_FIRST_ERROR_PRESERVED",
+  "failureId": "R311",
+  "operation": "VERIFY_ALL_EXISTING_SHA256_SIDECARS_BEFORE_AGGREGATE_RESEAL",
+  "firstError": "checkpoints/R0009/REPORT.md.sha256 does not match the current pre-reseal REPORT.md.",
+  "cause": "The aggregate R0009 records and their sidecars still describe the earlier c19 candidate and were intentionally pending regeneration from the final P531 evidence.",
+  "expectedOldSha256": "ddb4b9ac2bb97585b4a1b43e1f75f4564d995e2b5b159ecc7ea1ca478bd4cad3",
+  "observedPreResealSha256": "86e21d37850c2652e80b48a276b37527bdb40986c5f549ae5bec9caa9f871ad6",
+  "candidateArtifactDefect": false,
+  "candidateBytesMutated": false,
+  "routerMutationPerformed": false,
+  "hiddenRetryPerformed": false,
+  "candidateReady": false,
+  "nextRevision": "p552-final-aggregate-record-regeneration",
+  "nextExactAction": "REGENERATE_GENERIC_ISOLATED_REPRODUCIBILITY_VALIDATION_CHECKPOINT_REPORT_AND_THEIR_SHA256_RECORDS_FROM_FINAL_P531_EVIDENCE_BEFORE_GLOBAL_SIDECAR_AUDIT"
+}

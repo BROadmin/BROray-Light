@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "failureId": "R279",
+  "stage": "R0009_FINAL_P491_SERVER_ACTIVATION_DIAGNOSIS",
+  "revision": "p499-final-p491-server-activation-read-only-diagnosis",
+  "at": "2026-09-01T23:09:00+03:00",
+  "status": "FAIL_FIRST_ERROR_PRESERVED",
+  "operation": "READ_TEMPORARY_SERVER_API_DIAGNOSTIC_FILES_OVER_SSH",
+  "error": "PowerShell expanded the remote shell loop variable before SSH, producing an incomplete remote for-loop.",
+  "remoteError": "sh: syntax error: unexpected end of file (expecting done)",
+  "diagnosticFilesRead": false,
+  "routerMutationPerformed": false,
+  "candidateArtifactDefect": false,
+  "hiddenRetryPerformed": false,
+  "candidateReady": false,
+  "nextRevision": "p500-final-p491-server-activation-corrected-read-only-diagnosis",
+  "nextExactAction": "READ_THE_CONFIRMED_TEMPORARY_SERVER_API_FILES_WITH_A_LITERAL_REMOTE_SCRIPT_THAT_PRESERVES_REMOTE_LOOP_VARIABLES"
+}

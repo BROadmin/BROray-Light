@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_C21_FULL_ISOLATED_VALIDATION",
+  "revision": "p341-c21-full-isolated-validation",
+  "at": "2026-09-01T16:35:02+03:00",
+  "status": "PASS",
+  "candidateId": "0.1.0-r0009c21",
+  "build": "dist/R0009/R0009c21-P340-Build-A",
+  "packageSha256": "a9a5d0172b305dd2e9fb640bc1588eb8e2dd4b3fdbdadc5c1515e685c2d25a16",
+  "appArchiveSha256": "63bb9e58b9a815a9c46d2de3e51138fb899570c305cc6314e83b291af8a15f4d",
+  "passedGates": 49,
+  "failedGates": 0,
+  "newGates": {
+    "keeneticInterfaceNameAndStatusCard": "PASS",
+    "keeneticStatusCardPresentation": "PASS",
+    "subscriptionAutoUpdateUiAndApi": "PASS",
+    "subscriptionAutoUpdateScheduler": "PASS",
+    "responsiveSettingsCardLayout": "PASS"
+  },
+  "coreGates": {
+    "isolatedCleanInstall": "PASS",
+    "isolatedUpdate": "PASS",
+    "equalVersionNoOp": "PASS",
+    "downgradeRefusal": "PASS",
+    "forcedHealthRollback": "PASS",
+    "persistence": "PASS",
+    "coownershipFailClosed": "PASS",
+    "exactXrayRuntime": "PASS",
+    "globalLockContentionAndStaleOwner": "PASS",
+    "requestLockContentionAndStaleOwner": "PASS"
+  },
+  "sourceUnchanged": true,
+  "routerMutation": false,
+  "productionServerMutationPerformed": false,
+  "publicReleasePublished": false,
+  "nextRevision": "p342-c21-physical-preflight-and-install",
+  "nextExactAction": "RUN_READ_ONLY_ROUTER_PREFLIGHT_THEN_TRANSFER_VERIFY_AND_INSTALL_THE_EXACT_BUILD_A_C21_IPK"
+}

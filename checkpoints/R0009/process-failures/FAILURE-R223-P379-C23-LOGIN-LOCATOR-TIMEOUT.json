@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_C23_COMPLETE_WEBUI_BUTTON_AUDIT",
+  "revision": "p379-c23-confirmed-sensitive-webui-actions",
+  "failureId": "R223",
+  "at": "2026-09-01T18:21:43+03:00",
+  "status": "FAIL_FIRST_ERROR_PRESERVED",
+  "operation": "FILL_LOGIN_PASSWORD_AND_TOGGLE_PASSWORD_VISIBILITY",
+  "error": "Playwright selector deadline exceeded",
+  "observed": "The combined accessible-name locator for the password field did not complete within the selector deadline. No successful login or Xray reinstall was claimed.",
+  "materialStateMutationKnown": false,
+  "credentialsPersisted": false,
+  "secretRecorded": false,
+  "hiddenRetryPerformed": false,
+  "cause": "The password input accessible name differs from the composite label emitted by the page snapshot; the selector was too broad and unstable.",
+  "correctedNextRevision": "p380-c23-login-exact-selector-and-sensitive-actions",
+  "nextExactAction": "INSPECT_CURRENT_LOGIN_FORM_WITH_NON_SECRET_DOM_ATTRIBUTES_USE_EXACT_INPUT_SELECTORS_VERIFY_TOGGLE_AND_LOGIN_THEN_TEST_XRAY_EQUAL_VERSION_REINSTALL"
+}

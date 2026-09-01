@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009",
+  "revision": "p497-final-p491-reauthenticated-fixed-check-audit",
+  "recordedAt": "2026-09-01T23:04:00+03:00",
+  "status": "PASS",
+  "installedPackage": "broray-light 1.0.0-r1",
+  "packageSha256": "26ea242a3a50684d665a5e747e3a1a161cc1c9b61beae7901edf067f0d107397",
+  "webUrl": "https://brolight.tvervip.keenetic.link/servers.html?v=1.0.0-r1",
+  "authentication": {
+    "reauthenticated": true,
+    "passwordRecorded": false,
+    "nativeSessionProtection": "PASS"
+  },
+  "serverCheck": {
+    "serverId": "manual-20260901222428-9e32ebdd66",
+    "expectedReachability": false,
+    "renderedResult": "Сервер недоступен",
+    "checkedAt": "2026-09-01T23:02:27+0300",
+    "freshResultPersisted": true,
+    "buttonReenabled": true,
+    "httpApiFailureRendered": false,
+    "status": "PASS"
+  },
+  "installedCheckCgiSha256": "28e656a622e941234d4f28aa6f07983d4434272bb357dacaaf10e4ef8af8e8b1",
+  "failureResolved": "R270",
+  "candidateReady": false,
+  "nextRevision": "p498-final-p491-server-card-action-audit",
+  "nextExactAction": "AUDIT_ACTIVATE_ACTIVE_DELETE_REFUSAL_HANDOFF_AND_NON_ACTIVE_DELETE_THEN_CONTINUE_SUBSCRIPTION_CONTROLS"
+}

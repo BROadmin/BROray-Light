@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_SERVER_CHECK_NEGATIVE_RESULT_API_NORMALIZATION",
+  "revision": "p486-server-check-mcp-runtime-syntax-validation",
+  "at": "2026-09-01T22:35:52+03:00",
+  "status": "PASS_IMPLEMENTATION_AND_STATIC_VALIDATION",
+  "failureCorrected": "R270",
+  "implementation": {
+    "endpoint": "packaging/app-overlay/web-new/api/servers/check.cgi",
+    "behavior": "A fresh schema-valid negative reachability result for the requested server is returned as successful API data; non-probe failures remain fail-closed.",
+    "requiredFields": [
+      "serverId matches request",
+      "success is boolean",
+      "checkedAt is non-empty string"
+    ],
+    "endpointSha256": "28e656a622e941234d4f28aa6f07983d4434272bb357dacaaf10e4ef8af8e8b1"
+  },
+  "regression": {
+    "file": "tools/test_r0009.py",
+    "sha256": "6a3eee6028c6c7dfbcbff04bf2db1bbe350b4ca95c4283e9d6c84f6983db6357",
+    "existingGateExtended": "serverResultBoundaryAndReversibleDirtyState",
+    "gateCountChanged": false
+  },
+  "validation": {
+    "workspaceDependencyDiscovery": "PASS_MCP_CODEX_APP",
+    "pythonAst": "PASS",
+    "dashSyntax": "PASS",
+    "gitDiffCheck": "PASS"
+  },
+  "routerMutationPerformed": false,
+  "buildStarted": false,
+  "candidateReady": false,
+  "nextRevision": "p487-final-server-check-fix-build-a-b",
+  "nextExactAction": "BUILD_INDEPENDENT_FINAL_1_0_0_R1_ARTIFACTS_A_AND_B_VERIFY_SIGNATURES_BYTE_IDENTITY_AND_RUN_ALL_50_ISOLATED_GATES"
+}

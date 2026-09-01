@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_FINAL_VERSION_TARGET",
+  "revision": "p378-final-version-target-decision",
+  "at": "2026-09-01T18:03:00+03:00",
+  "status": "ACCEPTED_DEFERRED_UNTIL_CURRENT_ACCEPTANCE_COMPLETES",
+  "currentCandidateId": "0.1.0-r0009c23",
+  "currentReleaseId": "0.1.0-r9",
+  "targetFinalVersion": "1.0.0-r1",
+  "sequence": [
+    "COMPLETE_REMAINING_C23_WEBUI_ACCEPTANCE_ACTIONS",
+    "APPLY_1_0_0_R1_AS_THE_LAST_MATERIAL_VERSION_CHANGE",
+    "BUILD_NEW_INDEPENDENT_A_AND_B_FROM_THE_FINAL_VERSIONED_TREE",
+    "REPEAT_FULL_ISOLATED_AND_FINAL_INSTALLED_LIVE_VALIDATION_ON_THE_EXACT_FINAL_BYTES",
+    "SEAL_R0009_WITHOUT_PUBLIC_STABLE_OR_RELEASE_PUBLICATION"
+  ],
+  "rationale": "A version change alters package, manifests, signatures, assets, and hashes; final acceptance must therefore be repeated against the exact 1.0.0-r1 artifacts.",
+  "publicReleasePublished": false,
+  "candidateReady": false,
+  "nextRevision": "p379-c23-confirmed-sensitive-webui-actions",
+  "nextExactAction": "AFTER_EXPLICIT_CONFIRMATION_CLICK_XRAY_REINSTALL_VERIFY_RUNTIME_THEN_TEST_PASSWORD_TOGGLE_AND_SUBMIT_LOGIN_WITH_THE_ALREADY_PROVIDED_CREDENTIALS"
+}

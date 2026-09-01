@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_FINAL_LOCAL_AUDIT",
+  "revision": "p547-final-local-audit",
+  "at": "2026-09-02T01:14:10+03:00",
+  "status": "FAIL_FIRST_ERROR_PRESERVED",
+  "failureId": "R308",
+  "operation": "RUN_JAVASCRIPT_SYNTAX_CHECKS_WITH_SYSTEM_NODE",
+  "firstError": "The term 'node' is not recognized as a command.",
+  "cause": "The audit assumed Node.js was present in the system PATH instead of resolving the bundled workspace runtime.",
+  "completedBeforeFailure": {
+    "dashSyntaxFiles": 27,
+    "dashSyntax": "PASS",
+    "pythonAstFiles": 3,
+    "pythonAst": "PASS"
+  },
+  "candidateArtifactDefect": false,
+  "candidateBytesMutated": false,
+  "routerMutationPerformed": false,
+  "hiddenRetryPerformed": false,
+  "candidateReady": false,
+  "nextRevision": "p548-final-local-audit-with-bundled-node",
+  "nextExactAction": "RESOLVE_THE_BUNDLED_WORKSPACE_NODE_RUNTIME_THEN_RUN_THE_JAVASCRIPT_SYNTAX_GATE_AS_A_NEW_REVISION"
+}

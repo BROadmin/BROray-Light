@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "failureId": "R253",
+  "stage": "R0009_WEBUI_SUBSCRIPTION_ERROR_DETAIL_FIX",
+  "revision": "p450-structured-error-corrected-shell-runtime-validation",
+  "at": "2026-09-01T21:22:05+03:00",
+  "status": "FAIL_FIRST_ERROR_PRESERVED",
+  "operation": "LOAD_CONFIGURED_WORKSPACE_DEPENDENCY_PATHS",
+  "error": "The legacy codex_app dynamic dependency tool is no longer available and directed callers to the Codex app MCP server.",
+  "candidateArtifactDefect": false,
+  "toolSelectionDefect": true,
+  "validationStarted": false,
+  "hiddenRetryPerformed": false,
+  "candidateReady": false,
+  "nextRevision": "p451-structured-error-mcp-runtime-discovery",
+  "nextExactAction": "CALL_MCP_CODEX_APP_LOAD_WORKSPACE_DEPENDENCIES_THEN_USE_THE_RETURNED_SHELL_RUNTIME_FOR_SYNTAX_VALIDATION"
+}

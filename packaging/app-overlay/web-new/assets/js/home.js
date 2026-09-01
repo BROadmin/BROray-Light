@@ -7,7 +7,7 @@ async function j(url, opts) {
     try { payload = JSON.parse(raw); }
     catch (_) { throw new Error('Сервер вернул некорректный ответ'); }
   }
-  if (response.status === 401) { location.replace('/?v=0.1.0-r0009c19'); throw new Error('Требуется вход'); }
+  if (response.status === 401) { location.replace('/?v=1.0.0-r1'); throw new Error('Требуется вход'); }
   if (!response.ok || payload.success === false || payload.ok === false) {
     const error = new Error(payload.error?.message || payload.message || 'Ошибка');
     error.code = payload.error?.code || payload.code || '';
@@ -19,6 +19,7 @@ async function j(url, opts) {
 }
 function text(id, value) { const element = document.getElementById(id); if (element) element.textContent = value ?? '—'; }
 function button(id, label, enabled) { const element = document.getElementById(id); if (!element) return; if (label) element.textContent = label; element.disabled = enabled !== true; }
+function statusBadge(id, label, tone) { const element = document.getElementById(id); if (!element) return; element.textContent = label; element.className = 'interface-status-badge is-' + tone; }
 function showError(message) { const element = document.getElementById('homeError'); if (!element) return; element.textContent = message || ''; element.hidden = !message; }
 function notify(message, type) { if (window.BROrayUI) window.BROrayUI.toast(message, type); else if (message) alert(message); }
 function activeServer(servers) { const id = servers?.activeServerId; return (servers?.servers || []).find(server => server.id === id) || null; }
@@ -60,9 +61,20 @@ async function refreshHome() {
     text('lightChannel', internalCandidate ? 'Внутренняя сборка R0009' : (info.releaseChannel === 'stable' ? 'Стабильный канал' : 'Канал ' + (info.releaseChannel || 'не определён')));
     renderFailover(failover);
     const keenetic = unwrap(data.keenetic);
-    const severity = keenetic.health?.severity || keenetic.state || keenetic.status || 'unknown';
-    const labels = { ok: 'Готов', warning: 'Требует внимания', error: 'Требует настройки', unknown: 'Не проверено' };
-    text('keeneticState', labels[severity] || severity);
+    const health = keenetic.health || {};
+    const facts = health.facts || {};
+    const severity = health.severity || keenetic.state || keenetic.status || 'unknown';
+    const interfaceName = facts.interfaceName || keenetic.interfaceName || 'Не определён';
+    const exists = facts.exists === true || keenetic.exists === true;
+    const operational = health.operational === true || keenetic.healthy === true;
+    let stateLabel = 'Не проверено';
+    let stateTone = 'pending';
+    if (severity === 'ok' && operational) { stateLabel = 'Активен'; stateTone = 'active'; }
+    else if (severity === 'warning') { stateLabel = 'Требует внимания'; stateTone = 'warning'; }
+    else if (severity === 'error' && !exists) { stateLabel = 'Не активен'; stateTone = 'inactive'; }
+    else if (severity === 'error') { stateLabel = 'Ошибка'; stateTone = 'error'; }
+    text('keeneticInterfaceName', interfaceName);
+    statusBadge('keeneticState', stateLabel, stateTone);
     const healthy = severity === 'ok';
     text('keeneticDetail', healthy ? 'Интерфейс Keenetic настроен и связан с активным сервером. Дополнительные действия не требуются.' : 'Нажмите «Настроить» или «Исправить», затем обновите статус.');
     button('keeneticCreateButton', 'Настроить', !healthy);

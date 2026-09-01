@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_C23_XRAY_TEMPORARY_STORAGE_DIAGNOSIS",
+  "revision": "p375-c23-xray-temporary-storage-diagnosis",
+  "at": "2026-09-01T17:55:00+03:00",
+  "status": "ROOT_CAUSE_CONFIRMED_READY_FOR_TEST_ARTIFACT_CLEANUP",
+  "candidateId": "0.1.0-r0009c23",
+  "correctsFailure": "R222",
+  "xray": {
+    "currentVersion": "26.7.28",
+    "latestVersion": "26.7.28",
+    "updateAvailable": false,
+    "assetSizeBytes": 19699639,
+    "runtimeSizeBytes": 35389566,
+    "storageFreeBytes": 15151104,
+    "storageRequiredBytes": 36438142,
+    "storageShortfallBytes": 21287038,
+    "storageOk": false,
+    "temporaryFreeBytes": 191651840,
+    "temporaryRequiredBytes": 36438142,
+    "temporaryShortfallBytes": 0,
+    "reinstallAllowed": false,
+    "message": "Недостаточно свободного места в /opt для безопасной установки Xray."
+  },
+  "cause": "Three exact candidate IPKs transferred by this engineering run remain under /opt/tmp and consume 38420016 bytes on the /opt storage filesystem.",
+  "agentOwnedCleanupTargets": [
+    "/opt/tmp/broray-light-c21-p345.ipk",
+    "/opt/tmp/broray-light-c22-p357.ipk",
+    "/opt/tmp/broray-light-c23-p366.ipk"
+  ],
+  "cleanupTargetBytes": 38420016,
+  "candidateArtifactDefect": false,
+  "productionServerMutationPerformed": false,
+  "publicReleasePublished": false,
+  "nextRevision": "p376-c23-agent-transfer-cleanup-and-xray-recheck",
+  "nextExactAction": "VERIFY_THE_THREE_EXACT_AGENT_TRANSFERRED_IPK_PATHS_AND_HASHES_REMOVE_ONLY_THOSE_FILES_THEN_REPEAT_THE_XRAY_UPDATE_CHECK"
+}

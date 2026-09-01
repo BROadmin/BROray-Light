@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "failureId": "R286",
+  "stage": "R0009_FINAL_P505_AUTHENTICATED_WEBUI_BUTTON_AUDIT",
+  "revision": "p514-final-p505-authenticated-webui-button-audit",
+  "at": "2026-09-01T23:40:24+03:00",
+  "status": "FAIL_FIRST_ERROR_PRESERVED",
+  "operation": "CLICK_FIRST_CONTROLLED_SERVER_ACTIVATE_AND_READ_STRUCTURED_ROLLBACK_MESSAGE",
+  "error": "The in-app browser driver returned Playwright selector deadline exceeded before a result could be read.",
+  "knownBeforeFailure": {
+    "url": "https://brolight.tvervip.keenetic.link/servers.html?v=1.0.0-r1",
+    "authenticatedSession": true,
+    "firstControlledServer": "R0009-Audit-A",
+    "firstControlledServerReachability": "UNREACHABLE",
+    "activeServerId": null
+  },
+  "clickDelivery": "UNKNOWN_UNTIL_NEXT_REVISION_READ_ONLY_AUDIT",
+  "routerMutationPerformed": "UNKNOWN_UNTIL_NEXT_REVISION_READ_ONLY_AUDIT",
+  "candidateArtifactDefect": false,
+  "candidateDefectAdjudication": "NOT_ADJUDICATED_BROWSER_DRIVER_SELECTOR_FAILURE",
+  "hiddenRetryPerformed": false,
+  "candidateReady": false,
+  "nextRevision": "p515-final-p505-browser-activation-state-discovery-and-confirmed-selector",
+  "nextExactAction": "READ_FRESH_SERVER_DOM_AND_BACKEND_ACTIVE_STATE_TO_DETERMINE_CLICK_DELIVERY_THEN_USE_A_CONFIRMED_DATA_SERVER_ID_SELECTOR_WITHOUT_REINSTALLING"
+}

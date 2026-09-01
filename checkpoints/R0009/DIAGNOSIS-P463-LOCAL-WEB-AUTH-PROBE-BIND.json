@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_FINAL_1_0_0_R1_LOCAL_WEB_AUTH_PROBE_DIAGNOSIS",
+  "revision": "p463-correct-bind-and-external-auth-probes",
+  "at": "2026-09-01T21:52:10+03:00",
+  "status": "PASS_ROOT_CAUSE_CONFIRMED_CANDIDATE_HEALTHY",
+  "failureIds": ["R256", "R258"],
+  "rootCause": "The failed R256 probe targeted 127.0.0.1:8080 while the managed Lighttpd instance intentionally binds 192.168.1.1:8080.",
+  "verified": {
+    "configuredBind": "192.168.1.1",
+    "configuredPort": 8080,
+    "listener": "192.168.1.1:8080",
+    "process": "/opt/sbin/lighttpd -f /opt/broray-light/config/lighttpd.conf",
+    "correctBindUnauthenticatedApiHttp": 401,
+    "externalUnauthenticatedApiHttp": 401,
+    "externalLoginPageHttp": 200,
+    "cacheControl": "no-store, no-cache, must-revalidate",
+    "xFrameOptions": "DENY",
+    "referrerPolicy": "no-referrer"
+  },
+  "nativeAuthenticationWeakened": false,
+  "candidateArtifactDefect": false,
+  "routerMutationPerformed": false,
+  "packageInstallRetried": false,
+  "candidateReady": false,
+  "nextRevision": "p464-postinstall-daemon-cycle-and-installed-state-validation",
+  "nextExactAction": "WAIT_ONE_PRIMARY_DAEMON_CYCLE_THEN_REVALIDATE_EXACT_PACKAGE_SERVICES_PERSISTENCE_ZERO_INVENTORY_OWNERSHIP_AND_EXTERNAL_HTTPS"
+}

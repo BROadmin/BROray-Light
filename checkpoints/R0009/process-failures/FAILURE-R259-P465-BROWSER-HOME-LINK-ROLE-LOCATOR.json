@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "failureId": "R259",
+  "stage": "R0009_FINAL_1_0_0_R1_EXACT_WEBUI_BUTTON_AUDIT",
+  "revision": "p465-final-exact-webui-button-and-error-audit",
+  "at": "2026-09-01T21:57:03+03:00",
+  "status": "FAIL_FIRST_ERROR_PRESERVED",
+  "operation": "CLICK_HOME_NAVIGATION_LINK_BY_ROLE",
+  "error": "The browser driver role locator reported no matches for the visible 'Главная' link present in the DOM snapshot.",
+  "page": "https://brolight.tvervip.keenetic.link/subscriptions.html?v=1.0.0-r1",
+  "domLinkPresent": true,
+  "candidateArtifactDefect": false,
+  "browserLocatorCompatibilityDefect": true,
+  "routerMutationPerformed": false,
+  "hiddenRetryPerformed": false,
+  "candidateReady": false,
+  "nextRevision": "p466-final-exact-webui-audit-css-navigation",
+  "nextExactAction": "CLICK_THE_EXACT_HOME_HREF_WITH_A_CSS_LOCATOR_THEN_CONTINUE_THE_BUTTON_AUDIT"
+}

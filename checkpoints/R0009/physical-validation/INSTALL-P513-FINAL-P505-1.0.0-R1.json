@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_FINAL_P505_INSTALLED_BIND_DISCOVERY_AND_AUTH_VALIDATION",
+  "revision": "p513-final-p505-installed-lighttpd-bind-discovery-and-auth-validation",
+  "at": "2026-09-01T23:39:00+03:00",
+  "status": "PASS",
+  "failureResolved": "R285",
+  "routerAddress": "192.168.1.1",
+  "installMode": "opkg install --force-reinstall",
+  "installAttempts": 1,
+  "opkgExit": 0,
+  "package": "broray-light 1.0.0-r1",
+  "packageSha256": "06956a63d30ba98aee99f2362cb66a1d82e50a95e0b683de26ce28b6332f9743",
+  "currentTarget": "releases/1.0.0-r1",
+  "installedServerCommonSha256": "ed6982a4f2acd8bc59720419be22f3e6ceff0535d196f6882131d0adfa8ffc49",
+  "installedCheckCgiSha256": "28e656a622e941234d4f28aa6f07983d4434272bb357dacaaf10e4ef8af8e8b1",
+  "services": {
+    "primaryInitStatusExit": 0,
+    "updaterInitStatusExit": 0,
+    "lighttpdPid": 30429,
+    "primaryDaemonPid": 30945,
+    "lighttpdListening": "192.168.1.1:8080",
+    "status": "PASS"
+  },
+  "xray": {
+    "version": "26.7.28",
+    "running": true,
+    "sha256": "4b8af237444801bf17b3dc10a1c5c24581fbe3d433eba3d78c6c3a0da1df56fc"
+  },
+  "persistence": {
+    "beforeSha256": "7af0a56d42f994472c4c41a289cd9d2ca103b05f5a7f369cbc8c8d1228c0d590",
+    "afterSha256": "7af0a56d42f994472c4c41a289cd9d2ca103b05f5a7f369cbc8c8d1228c0d590",
+    "fileCount": 13,
+    "status": "PASS",
+    "backupPath": "/opt/broray-light/backup/r0009-p509-before-p505-package"
+  },
+  "controlledInventory": {
+    "servers": 2,
+    "subscriptions": 0,
+    "activeServerId": null,
+    "autoSwitchEnabled": false
+  },
+  "authentication": {
+    "protectedPath": "/api/home/summary.cgi",
+    "discoveredBind": "192.168.1.1:8080",
+    "discoveredBindUnauthenticatedHttp": 401,
+    "discoveredBindRootHttp": 200,
+    "externalUnauthenticatedHttps": 401,
+    "externalLoginPageHttps": 200,
+    "nativeSessionProtection": "PASS"
+  },
+  "ownership": {
+    "fullBrorayOwnership": 0,
+    "routesViaProxy0": 0
+  },
+  "routerRebootPerformed": false,
+  "productionServerMutationPerformed": false,
+  "publicReleasePublished": false,
+  "candidateReady": false,
+  "nextRevision": "p514-final-p505-authenticated-webui-button-audit",
+  "nextExactAction": "REAUTHENTICATE_TO_THE_EXACT_INSTALLED_P505_WEBUI_VALIDATE_STRUCTURED_ACTIVATION_ROLLBACK_THEN_COMPLETE_ALL_SERVER_SUBSCRIPTION_HOME_AND_LOGIN_BUTTON_PATHS"
+}

@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "failureId": "R204",
+  "stage": "R0009_C20_KEENETIC_INTERFACE_STATUS_CARD",
+  "revision": "p335-c20-implementation-checkpoint-write",
+  "at": "2026-09-01T16:15:15+03:00",
+  "status": "FAILED_STOPPED_FIRST_ERROR",
+  "failureClass": "COMPOSITE_CHECKPOINT_PATCH_CONTEXT",
+  "operation": "Add the c20 implementation checkpoint and correct the R203 worklog failure class in one patch",
+  "error": "apply_patch verification failed because the abbreviated worklog context did not match the complete JSONL line",
+  "candidateId": "0.1.0-r0009c20",
+  "candidateArtifactDefect": false,
+  "rejectedPatchMutation": false,
+  "checkpointFileCreated": false,
+  "routerMutation": false,
+  "hiddenRetryPerformed": false,
+  "cause": "A partial JSONL line was supplied as an exact update context in a composite patch.",
+  "nextRevision": "p336-c20-separate-implementation-checkpoint-write",
+  "nextExactAction": "ADD_THE_IMPLEMENTATION_CHECKPOINT_IN_A_STANDALONE_PATCH_THEN_UPDATE_THE_WORKLOG_WITH_THE_COMPLETE_JSONL_LINE"
+}

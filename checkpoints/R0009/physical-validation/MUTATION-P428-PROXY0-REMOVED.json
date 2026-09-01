@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_USER_AUTHORIZED_SUBSCRIPTION_DELETE_BUTTON_TEST",
+  "revision": "p428-user-authorized-proxy0-corrected-verification",
+  "at": "2026-09-01T20:45:10+03:00",
+  "status": "PASS_PROXY0_REMOVED_AND_VERIFIED",
+  "authorization": "User selected option 2: remove Proxy0 and clear the active server before deleting the subscription",
+  "operation": "broray_keenetic_run_action delete",
+  "operationExit": 0,
+  "officialStatus": {
+    "interfaceName": "Proxy0",
+    "exists": false,
+    "ownershipReceiptPresent": true
+  },
+  "runningConfigProxy0Lines": 0,
+  "routesViaProxy0": 0,
+  "activeServerBeforeClear": "subscription-sub-130bddd06d26133e-600217eb115c0e82",
+  "activeServerCleared": false,
+  "subscriptionDeleteRetried": false,
+  "backupPath": "/opt/broray-light/backup/r0009-p422-before-delete-sub-130bddd06d26133e",
+  "backupPresent": true,
+  "recoverable": true,
+  "candidateReady": false,
+  "nextRevision": "p429-user-authorized-active-server-clear",
+  "nextExactAction": "REMOVE_ONLY_OPT_BRORAY_LIGHT_CONFIG_ACTIVE_SERVER_VERIFY_ABSENT_THEN_RETRY_VISIBLE_WEBUI_SUBSCRIPTION_DELETE"
+}

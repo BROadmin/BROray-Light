@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_FINAL_AGGREGATE_RECORD_REGENERATION",
+  "revision": "p552-final-aggregate-record-regeneration",
+  "at": "2026-09-02T01:22:17+03:00",
+  "status": "FAIL_FIRST_ERROR_PRESERVED",
+  "failureId": "R312",
+  "operation": "REPLACE_GENERIC_ISOLATED_AND_REPRODUCIBILITY_RECORDS_WITH_ONE_COMPOSITE_PATCH",
+  "firstError": "apply_patch verification failed because multiple operations targeted the same file.",
+  "cause": "The patch attempted Delete File and Add File for one path within a single apply_patch request, which the patch engine rejects.",
+  "repositoryFilesChangedByFailure": false,
+  "candidateArtifactDefect": false,
+  "candidateBytesMutated": false,
+  "routerMutationPerformed": false,
+  "hiddenRetryPerformed": false,
+  "candidateReady": false,
+  "nextRevision": "p553-final-aggregate-record-atomic-patches",
+  "nextExactAction": "REPLACE_EACH_AGGREGATE_RECORD_USING_SEPARATE_APPLY_PATCH_OPERATIONS_WITHOUT_MULTIPLE_OPERATIONS_ON_ONE_PATH"
+}

@@ -1,0 +1,21 @@
+#!/opt/bin/ash
+set -eu
+ROOT="${BRORAY_ROOT:-/opt/broray-light}"
+INTERVAL="${BRORAY_LIGHT_INTERVAL:-30}"
+PIDFILE="$ROOT/run/broray-lightd.pid"
+mkdir -p "$ROOT/run" "$ROOT/tmp"
+printf '%s\n' "$$" > "$PIDFILE"
+cleanup(){ rm -f "$PIDFILE"; }
+trap 'cleanup; exit 0' HUP INT TERM
+trap cleanup EXIT
+while :; do
+    if ! pidof xray >/dev/null 2>&1 && [ -x "$ROOT/runtime/xray" ] && [ -s "$ROOT/config/config.json" ]; then
+        XRAY_LOCATION_ASSET="$ROOT/bin" "$ROOT/runtime/xray" run -test -c "$ROOT/config/config.json" >/dev/null 2>&1 &&
+            "$ROOT/bin/broray-xray-start" >>"$ROOT/logs/xray.log" 2>&1 &
+    fi
+    "$ROOT/bin/broray-connection-monitor" >/dev/null 2>&1 || true
+    "$ROOT/bin/broray-server-auto-switch" >/dev/null 2>&1 || true
+    "$ROOT/bin/broray-subscriptions" scheduler-once >/dev/null 2>&1 || true
+    "$ROOT/bin/broray-home-snapshot" >/dev/null 2>&1 || true
+    sleep "$INTERVAL"
+done

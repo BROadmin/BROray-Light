@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "failureId": "R295",
+  "stage": "R0009_FINAL_P505_EXISTING_CONFIRM_DIALOG_RECOVERY",
+  "revision": "p524-final-p505-existing-confirm-dialog-recovery",
+  "at": "2026-09-02T00:00:26+03:00",
+  "status": "FAIL_FIRST_ERROR_PRESERVED",
+  "operation": "ACCEPT_THE_EXISTING_NATIVE_DELETE_CONFIRM_WITHOUT_REPEATING_THE_DELETE_CLICK",
+  "error": "The browser execution timed out while retrieving or accepting the already-open native confirm and the browser session reset again.",
+  "deleteClickRepeated": false,
+  "deleteDelivery": "UNKNOWN_UNTIL_NEXT_REVISION_BACKEND_READ",
+  "routerMutationPerformed": "UNKNOWN_UNTIL_NEXT_REVISION_BACKEND_READ",
+  "candidateArtifactDefect": false,
+  "hiddenRetryPerformed": false,
+  "candidateReady": false,
+  "nextRevision": "p525-final-p505-delete-outcome-read-and-stale-tab-replacement",
+  "nextExactAction": "READ_THE_SECOND_CONTROLLED_SERVER_FILE_OVER_SSH_THEN_CLOSE_THE_BLOCKED_TAB_AND_OPEN_A_FRESH_WEBUI_TAB_IF_THE_DIALOG_REMAINS"
+}

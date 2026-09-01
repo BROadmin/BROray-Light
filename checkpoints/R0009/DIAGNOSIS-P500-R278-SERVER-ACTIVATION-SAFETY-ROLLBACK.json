@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009",
+  "revision": "p500-final-p491-server-activation-corrected-read-only-diagnosis",
+  "recordedAt": "2026-09-01T23:12:00+03:00",
+  "status": "PASS_ROOT_CAUSE_IDENTIFIED",
+  "failureReference": "checkpoints/R0009/process-failures/FAILURE-R278-P498-SERVER-ACTIVATE-WEBUI-ERROR.json",
+  "serverId": "manual-20260901222428-9e32ebdd66",
+  "rootCause": "The controlled server intentionally points to an unreachable endpoint. Activation passed Xray config validation, failed the mandatory post-activation HTTPS probe, and rolled back exactly as designed.",
+  "safetySemantics": {
+    "preActivationConfigBackup": "/opt/broray-light/backup/config.server.20260901-230633.json",
+    "backupConfigSha256": "a7017f04c4b38c22e46eced8ee7870a3d4979a34b86c72df45e7eab9242b4ddb",
+    "restoredConfigSha256": "a7017f04c4b38c22e46eced8ee7870a3d4979a34b86c72df45e7eab9242b4ddb",
+    "configRestoredExactly": true,
+    "activeServerAbsentAfterRollback": true,
+    "xrayProcessRunningAfterRollback": true,
+    "primaryServiceStatus": "PASS",
+    "result": "PASS_FAIL_CLOSED"
+  },
+  "reachabilityEvidence": {
+    "success": false,
+    "stage": "proxy-tls",
+    "checkedAt": "2026-09-01T23:02:27+0300"
+  },
+  "webUiFinding": {
+    "backendKeepsTheActionableFailureInStderr": true,
+    "serverApiCollapsesAllServiceFailuresToOneGenericMessage": true,
+    "renderedMessage": "Операция с сервером завершилась ошибкой.",
+    "candidateArtifactDefect": "STRUCTURED_SERVER_ERROR_DETAIL_IS_MASKED"
+  },
+  "routerMutationDuringDiagnosis": false,
+  "activationRetried": false,
+  "candidateReady": false,
+  "nextRevision": "p501-structured-server-operation-errors",
+  "nextExactAction": "ADD_ALLOWLISTED_SERVER_ERROR_MAPPING_WITHOUT_RAW_STDERR_EXPOSURE_ADD_REGRESSION_TESTS_THEN_REBUILD_FINAL_A_AND_B"
+}

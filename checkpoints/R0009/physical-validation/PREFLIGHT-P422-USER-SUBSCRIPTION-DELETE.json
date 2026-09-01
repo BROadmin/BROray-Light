@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_USER_AUTHORIZED_SUBSCRIPTION_DELETE_BUTTON_TEST",
+  "revision": "p422-user-subscription-delete-preflight",
+  "at": "2026-09-01T19:44:00+03:00",
+  "status": "PASS_BACKUP_COMPLETE_PENDING_WEBUI_DELETE",
+  "authorization": "User explicitly requested deletion of the only remaining subscription",
+  "subscription": {
+    "id": "sub-130bddd06d26133e",
+    "name": "Подписка",
+    "serversCount": 4
+  },
+  "backupPath": "/opt/broray-light/backup/r0009-p422-before-delete-sub-130bddd06d26133e",
+  "inventorySha256Before": "625ab111a64935ab63a2d9ce40bf49995e83aaa3bdbe4ce478bd7a8661179261",
+  "backupInventorySha256": "625ab111a64935ab63a2d9ce40bf49995e83aaa3bdbe4ce478bd7a8661179261",
+  "backupVerified": true,
+  "deleteStarted": false,
+  "recoverable": true,
+  "candidateReady": false,
+  "nextRevision": "p423-user-subscription-delete-webui",
+  "nextExactAction": "CLICK_DELETE_FOR_SUB_130BDDD06D26133E_CONFIRM_DIALOG_THEN_VALIDATE_SUBSCRIPTION_AND_ASSOCIATED_SERVER_REMOVAL"
+}

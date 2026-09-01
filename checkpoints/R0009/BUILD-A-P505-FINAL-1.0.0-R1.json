@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_FINAL_1_0_0_R1_STRUCTURED_SERVER_ERROR_BUILD_A",
+  "revision": "p505-final-1.0.0-r1-structured-error-build-a-input-discovery",
+  "at": "2026-09-01T23:23:00+03:00",
+  "status": "PASS",
+  "build": "dist/R0009/1.0.0-r1-P505-Final-Build-A",
+  "releaseId": "1.0.0-r1",
+  "candidateId": "1.0.0-r1",
+  "artifactCount": 8,
+  "artifacts": {
+    "broray-light-app-1.0.0-r1.tar.gz": {"sizeBytes": 156979, "sha256": "917e1e1ae47fc62b86f02cc38b9ea88e93de7e229859df845a23659c9b8c6962"},
+    "broray-light-updater-platform-5-light1.tar.gz": {"sizeBytes": 131647, "sha256": "c7225a16ef6e769a2715c9000158ce17cc175173c98850592f7c1a1d6578ce8f"},
+    "broray-light_1.0.0-r1_aarch64-3.10.ipk": {"sizeBytes": 12799179, "sha256": "06956a63d30ba98aee99f2362cb66a1d82e50a95e0b683de26ce28b6332f9743"},
+    "broray-light-install-1.0.0-r1.sh": {"sizeBytes": 1844, "sha256": "63977291d67eecb1f61d25094e2d65f704bfacb1a97584faca25dc2d32707ff6"},
+    "release.json": {"sizeBytes": 559, "sha256": "ae45db0f9174071c0ba35018198ccc0db6e0e804036eb097e9815bdc93d070e4"},
+    "release.json.minisig": {"sizeBytes": 277, "sha256": "830e9602a749eedfd5999783cf781ce3a265c4f8ba7c251132b53af722d88a67"},
+    "CANDIDATE-MANIFEST.json": {"sizeBytes": 2582, "sha256": "0102eb50037c4be80cd4d93a3705cadeddc8afe27d9e349a83052e1c5a752ed1"},
+    "SHA256SUMS": {"sizeBytes": 671, "sha256": "bd264b4c7321efb42a2ddff6bb8ad6cdba3c64f3165c5266d4dfab3642e6c377"}
+  },
+  "inputs": {
+    "canonicalSourceCommit": "684b27bdb53e545047419baa87c63dd86dffa469",
+    "updaterPlatformSha256": "eaf2eafb62d1b108fe576d1fda09ae7a5d15ad90f71272abc23f321d397611b0",
+    "xrayArchiveSha256": "f5698bb218ada3b4022db26fafc39601c5f53b46b19eb76c9616325985807501",
+    "xrayDigestSha256": "7380220ffee3878f5841c5ac31e1bd2b4625d22cacc2d1248ea3dedaa255d02f"
+  },
+  "canonicalSourceUnchanged": true,
+  "publicReleasePublished": false,
+  "candidateReady": false,
+  "nextRevision": "p506-final-1.0.0-r1-structured-error-build-b",
+  "nextExactAction": "RUN_AN_INDEPENDENT_BUILD_B_IN_A_NEW_OUTPUT_ROOT_THEN_COMPARE_ALL_EIGHT_ARTIFACTS_BYTE_FOR_BYTE"
+}

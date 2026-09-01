@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_FINAL_1_0_0_R1_AUTHENTICATED_WEBUI_BUTTON_AUDIT",
+  "revision": "p478-final-servers-state-safe-ssh-quoting-and-controlled-card-audit",
+  "at": "2026-09-01T22:21:11+03:00",
+  "status": "FAIL_FIRST_ERROR_PRESERVED",
+  "failureId": "R267",
+  "operation": "COMPUTE_CONTENT_ONLY_PERSISTENCE_HASH_WITH_REMOTE_AWK",
+  "error": "PowerShell interpolation corrupted the remote awk field expression and the read-only hash pipeline terminated.",
+  "passedBeforeFailure": {
+    "savedFailoverEnabled": false,
+    "serversCount": 0,
+    "subscriptionsCount": 0,
+    "p458BackupTreeReadable": true
+  },
+  "candidateArtifactDefect": false,
+  "localShellQuotingDefect": true,
+  "routerMutationPerformed": false,
+  "hiddenRetryPerformed": false,
+  "candidateReady": false,
+  "nextRevision": "p479-final-controlled-webui-audit-backup",
+  "nextExactAction": "CREATE_A_NEW_RECOVERABLE_EXACT_PRE_AUDIT_BACKUP_WITHOUT_THE_FAILED_AWK_PIPELINE_THEN_RUN_CONTROLLED_SERVER_AND_SUBSCRIPTION_CARD_BUTTON_TESTS"
+}

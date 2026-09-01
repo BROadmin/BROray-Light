@@ -4,9 +4,12 @@
 
 - Branch: `codex/r0009-updater-package`
 - R0009 status: **PASS**
-- Candidate: `0.1.0-r0009c13`
-- Release ID: `0.1.0-r9`
+- Candidate and release ID: `1.0.0-r1`
 - `candidateReady=true`
+- Acceptance gates: 20/20 PASS
+- Isolated-root gates: 51/51 PASS
+- Build A/B: 8/8 artifacts byte-identical
+- Authorized physical WebUI and persistence validation: PASS
 - Public release: not published
 - Production server: not modified
 - Ephemeral private signing key: destroyed
@@ -16,21 +19,25 @@ Canonical R0008 source commit `684b27bdb53e545047419baa87c63dd86dffa469` remains
 ## Final evidence
 
 - Checkpoint: `checkpoints/R0009/CHECKPOINT.json`
-- Checkpoint SHA-256: `dcc533c463755350515f186168cb5b89ed43629f8c2b20cb7f659bcd8836007a`
+- Checkpoint SHA-256: `3d7f7407df7b8eba6b4cc7f423e1bcba5ce48c1108a1ca3d7f0a850a2f3fd2fe`
 - Validation: `checkpoints/R0009/VALIDATION.json`
-- Validation SHA-256: `10092a6a4e34e156d291b6aef5a4252e035b726f77b66d5b31b334a07c0d13ad`
+- Validation SHA-256: `172cbc7fab4985914c65c539e2595a330ef34dc86a013901391ca6ee20cf6c0d`
 - Report: `checkpoints/R0009/REPORT.md`
-- Build A/B: `dist/R0009/R0009c13-Build-A`, `dist/R0009/R0009c13-Build-B`
-- Reproducibility: 8/8 byte-identical
-- Isolated-root validation: 33/33 PASS
-- Final physical functional validation: `checkpoints/R0009/physical-validation/FUNCTIONAL-P209-C13-FINAL.json`
-- External BROray login theme/cache validation: `checkpoints/R0009/physical-validation/EXTERNAL-VISUAL-P208-C13-LOGIN-THEME.json`
-- Public validation URL: `https://brolight.tvervip.keenetic.link/`
+- Report SHA-256: `004d44ccfbc34c8526447821ad3d211da44a2d007f094ee16d081fdc3f417c47`
+- Aggregate SHA256SUMS SHA-256: `8dc0c79f4d4b9f6a23a1c65ab838b7c8fe843a9328c2752cb1d2bbcde95a4e4f`
+- Build A: `dist/R0009/1.0.0-r1-P531-Final-Build-A`
+- Build B: `dist/R0009/1.0.0-r1-P532-Final-Build-B`
+- Reproducibility receipt: `checkpoints/R0009/REPRODUCIBILITY-P532-FINAL-1.0.0-R1.json`
+- Isolated validation receipt: `checkpoints/R0009/ISOLATED-VALIDATION-P533-FINAL-1.0.0-R1.json`
+- Final local audit: `checkpoints/R0009/FINAL-LOCAL-AUDIT-P556-FINAL-1.0.0-R1.json`
+- Signing-key destruction: `checkpoints/R0009/SIGNING-KEY-DESTRUCTION-P558-FINAL-1.0.0-R1.json`
+- Exact physical install: `checkpoints/R0009/physical-validation/INSTALL-P537-FINAL-P531-1.0.0-R1.json`
+- Final physical functional state: `checkpoints/R0009/physical-validation/BROWSER-P545-P531-SUBSCRIPTION-CLEANUP-PERSISTENCE.json`
 
-The router ends with `broray-light 0.1.0-r0009c13`, `current -> releases/0.1.0-r9`, automatic service and publication startup PASS, external BROray-aligned login styling PASS, functional login/subscriptions/activation/version/logout cycle PASS, persistence PASS, full BROray ownership zero, and Proxy0 routes zero.
+The router ends with `broray-light 1.0.0-r1`, `current -> releases/1.0.0-r1`, primary/updater services healthy, exact Xray `26.7.28`, zero test servers, zero test subscriptions, no active server, automatic switching disabled, no owned `Proxy0`, zero routes via `Proxy0`, and zero full-BROray ownership. No router reboot was performed in the final corrective cycle; the retained earlier native-reboot automatic-start receipt is PASS.
 
 ## Exact next stage
 
 `DEFINE_AND_AUTHORIZE_R0010_BEFORE_ANY_STABLE_PUBLICATION`
 
-Stop here unless that stage is explicitly defined and authorized. Do not publish Stable or mutate a production server under the R0009 authorization.
+Stop here unless that stage is explicitly defined and authorized. Do not publish Stable or mutate a production server under the completed R0009 authorization.

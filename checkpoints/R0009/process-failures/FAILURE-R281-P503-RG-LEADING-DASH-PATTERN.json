@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "failureId": "R281",
+  "stage": "R0009_FINAL_1_0_0_R1_STRUCTURED_ERROR_BUILD_A",
+  "revision": "p503-final-1.0.0-r1-structured-error-build-a",
+  "at": "2026-09-01T23:19:00+03:00",
+  "status": "FAIL_FIRST_ERROR_PRESERVED",
+  "operation": "DISCOVER_PRIOR_DETERMINISTIC_BUILD_INPUT_PATHS",
+  "error": "rg interpreted the fixed search text beginning with -- as an option because the end-of-options separator was omitted.",
+  "toolError": "rg: unrecognized flag --updater-platform",
+  "buildAStarted": false,
+  "artifactsModified": false,
+  "routerMutationPerformed": false,
+  "candidateArtifactDefect": false,
+  "hiddenRetryPerformed": false,
+  "candidateReady": false,
+  "nextRevision": "p504-final-1.0.0-r1-structured-error-build-a-corrected-input-discovery",
+  "nextExactAction": "DISCOVER_THE_PINNED_BUILD_INPUT_PATHS_USING_RG_END_OF_OPTIONS_THEN_START_BUILD_A_ONCE"
+}

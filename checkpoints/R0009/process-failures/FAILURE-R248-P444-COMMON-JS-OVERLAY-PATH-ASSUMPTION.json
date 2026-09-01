@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "failureId": "R248",
+  "stage": "R0009_WEBUI_SUBSCRIPTION_ERROR_DETAIL_FIX",
+  "revision": "p444-webui-subscription-error-detail-diagnosis",
+  "at": "2026-09-01T21:12:36+03:00",
+  "status": "FAIL_FIRST_ERROR_PRESERVED",
+  "operation": "READ_PACKAGING_OVERLAY_COMMON_JS",
+  "error": "Cannot find path packaging/app-overlay/web-new/assets/js/common.js because it does not exist.",
+  "candidateArtifactDefect": false,
+  "inspectionPathAssumptionDefect": true,
+  "materialCodeChangeStarted": false,
+  "hiddenRetryPerformed": false,
+  "candidateReady": false,
+  "nextRevision": "p445-webui-subscription-error-detail-corrected-diagnosis",
+  "nextExactAction": "READ_SRC_APP_WEB_NEW_ASSETS_JS_COMMON_JS_AND_TRACE_THE_CGI_ERROR_ENVELOPE_WITHOUT_REPEATING_THE_MISSING_OVERLAY_PATH"
+}

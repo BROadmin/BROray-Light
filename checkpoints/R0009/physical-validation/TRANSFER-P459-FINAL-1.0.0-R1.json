@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_FINAL_1_0_0_R1_POST_ERROR_FIX_EXACT_TRANSFER",
+  "revision": "p459-final-post-error-fix-exact-package-transfer",
+  "at": "2026-09-01T21:44:29+03:00",
+  "status": "PASS_READY_FOR_ONE_FORCE_REINSTALL",
+  "localPackage": "dist/R0009/1.0.0-r1-P452-Final-Build-A/broray-light_1.0.0-r1_aarch64-3.10.ipk",
+  "remotePackage": "/opt/tmp/broray-light-final-1.0.0-r1-p459.ipk",
+  "packageSizeBytes": 12807483,
+  "localSha256": "3714c3a2effa07a8fb63bf71d5ace496111c090be3a5db1ee95af34d312c973d",
+  "remoteSha256": "3714c3a2effa07a8fb63bf71d5ace496111c090be3a5db1ee95af34d312c973d",
+  "identityMatch": true,
+  "backupPath": "/opt/broray-light/backup/r0009-p458-before-p452-package",
+  "backupInventorySha256": "b11cc8ba548d9cc9d9ef666909bfe79439c1ab7ed8377661c03b710c373a55a7",
+  "packageInstallStarted": false,
+  "publicReleasePublished": false,
+  "candidateReady": false,
+  "nextRevision": "p460-final-post-error-fix-one-force-reinstall",
+  "nextExactAction": "RUN_EXACTLY_ONE_OPKG_INSTALL_FORCE_REINSTALL_OF_THE_HASH_VERIFIED_P459_PACKAGE_AND_STOP_ON_THE_FIRST_ERROR"
+}

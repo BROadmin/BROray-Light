@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_FINAL_P491_PHYSICAL_INSTALL_AND_AUTH_VALIDATION",
+  "revision": "p495-final-installed-protected-endpoint-discovery-and-auth-validation",
+  "at": "2026-09-01T22:57:18+03:00",
+  "status": "PASS",
+  "failureResolved": "R276",
+  "routerAddress": "192.168.1.1",
+  "installMode": "opkg install --force-reinstall",
+  "installAttempts": 1,
+  "opkgExit": 0,
+  "package": "broray-light 1.0.0-r1",
+  "packageSha256": "26ea242a3a50684d665a5e747e3a1a161cc1c9b61beae7901edf067f0d107397",
+  "currentTarget": "releases/1.0.0-r1",
+  "installedCheckCgiSha256": "28e656a622e941234d4f28aa6f07983d4434272bb357dacaaf10e4ef8af8e8b1",
+  "services": {
+    "primary": "PASS",
+    "updater": "PASS"
+  },
+  "xray": {
+    "version": "26.7.28",
+    "sha256": "4b8af237444801bf17b3dc10a1c5c24581fbe3d433eba3d78c6c3a0da1df56fc"
+  },
+  "persistence": {
+    "beforeSha256": "f155166f719a5fcfe7f86e4397a29cf4d55d5491c13ef024f899aa6fdead4ffc",
+    "afterSha256": "f155166f719a5fcfe7f86e4397a29cf4d55d5491c13ef024f899aa6fdead4ffc",
+    "fileCount": 13,
+    "status": "PASS",
+    "backupPath": "/opt/broray-light/backup/r0009-p493-before-p491-package"
+  },
+  "controlledInventory": {
+    "servers": 2,
+    "subscriptions": 0,
+    "activeServerId": null,
+    "autoSwitchEnabled": false
+  },
+  "authentication": {
+    "protectedPath": "/api/home/summary.cgi",
+    "correctBindUnauthenticatedHttp": 401,
+    "externalUnauthenticatedHttps": 401,
+    "externalLoginPageHttps": 200,
+    "nativeSessionProtection": "PASS"
+  },
+  "ownership": {
+    "fullBrorayOwnership": 0,
+    "routesViaProxy0": 0
+  },
+  "routerRebootPerformed": false,
+  "productionServerMutationPerformed": false,
+  "publicReleasePublished": false,
+  "candidateReady": false,
+  "nextRevision": "p496-final-p491-authenticated-webui-reaudit",
+  "nextExactAction": "REAUTHENTICATE_TO_THE_EXACT_INSTALLED_P491_WEBUI_VALIDATE_THE_FIXED_NEGATIVE_SERVER_CHECK_THEN_COMPLETE_ALL_REMAINING_SERVER_AND_SUBSCRIPTION_BUTTONS_AND_CLEANUP"
+}

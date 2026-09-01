@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_C23_COMPLETE_WEBUI_BUTTON_AUDIT",
+  "revision": "p380-c23-login-exact-selector-and-sensitive-actions",
+  "failureId": "R224",
+  "at": "2026-09-01T18:23:37+03:00",
+  "status": "FAIL_FIRST_ERROR_PRESERVED",
+  "operation": "WEBUI_XRAY_EQUAL_VERSION_UPDATE_CHECK",
+  "error": "Другая операция уже выполняется.",
+  "observed": "The authenticated home page reported that another operation already held the global operation lock. Xray reinstall was not started.",
+  "loginAuthentication": "PASS",
+  "passwordVisibilityToggle": "PASS",
+  "xrayReinstallStarted": false,
+  "hiddenRetryPerformed": false,
+  "candidateReady": false,
+  "cause": "UNDETERMINED_GLOBAL_OPERATION_LOCK_OWNER_PENDING_ROUTER_INSPECTION",
+  "correctedNextRevision": "p381-c23-global-lock-diagnosis-and-xray-reinstall",
+  "nextExactAction": "READ_ONLY_INSPECT_ROUTER_GLOBAL_LOCK_AND_RUNNING_LIGHT_PROCESSES_RECORD_OWNER_THEN_RETRY_ONLY_IN_THE_CORRECTED_REVISION_IF_SAFE"
+}

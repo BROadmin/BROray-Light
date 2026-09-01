@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "failureId": "R247",
+  "stage": "R0009_USER_AUTHORIZED_SUBSCRIPTION_DELETE_BUTTON_TEST",
+  "revision": "p440-user-subscription-delete-service-under-global-lock",
+  "at": "2026-09-01T21:05:35+03:00",
+  "status": "FAIL_FIRST_ERROR_PRESERVED_OUTCOME_UNKNOWN",
+  "operation": "CALL_BRORAY_SUBSCRIPTIONS_DELETE_UNDER_GLOBAL_OPERATION_LOCK",
+  "subscriptionId": "sub-130bddd06d26133e",
+  "exitCode": 1,
+  "stdout": "",
+  "stderr": "",
+  "preconditions": {
+    "activeServerAbsent": true,
+    "autoSwitchEnabled": false,
+    "backupPresent": true,
+    "subscriptionWasRegularFile": true
+  },
+  "subscriptionDeleteOutcome": "UNKNOWN_PENDING_READ_ONLY_DIAGNOSIS",
+  "candidateArtifactDefect": "PENDING_ROOT_CAUSE",
+  "hiddenRetryPerformed": false,
+  "backupPath": "/opt/broray-light/backup/r0009-p422-before-delete-sub-130bddd06d26133e",
+  "candidateReady": false,
+  "nextRevision": "p441-locked-subscription-delete-outcome-diagnosis",
+  "nextExactAction": "READ_ONLY_INSPECT_SUBSCRIPTION_SERVER_LOCK_AND_LOG_STATE_TO_IDENTIFY_THE_EXIT_1_CAUSE_AND_ANY_PARTIAL_MUTATION_BEFORE_RETRY"
+}

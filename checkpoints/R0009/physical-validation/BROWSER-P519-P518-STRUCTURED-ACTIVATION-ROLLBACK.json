@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_FINAL_P505_PRESERVE_STRUCTURED_ACTIVATION_RECEIPT",
+  "revision": "p519-final-p505-preserve-structured-activation-receipt",
+  "testRevision": "p518-final-p505-structured-activation-toast-high-frequency-capture",
+  "at": "2026-09-01T23:49:00+03:00",
+  "status": "PASS",
+  "failuresResolved": ["R286", "R287", "R288", "R289", "R290"],
+  "installedVersion": "1.0.0-r1",
+  "browserUrl": "https://brolight.tvervip.keenetic.link/servers.html?v=1.0.0-r1",
+  "controlledTarget": {
+    "name": "R0009-Audit-B",
+    "expectedReachability": "UNREACHABLE"
+  },
+  "button": {
+    "name": "Активировать",
+    "clickedExactlyOnce": true,
+    "disabledDuringOperation": true,
+    "reenabledAfterOperation": true
+  },
+  "structuredMessage": "Сервер недоступен. Активация отменена, предыдущая конфигурация восстановлена.",
+  "messageMatch": true,
+  "rollback": {
+    "activeServerFile": "ABSENT",
+    "xrayConfigSha256Before": "a7017f04c4b38c22e46eced8ee7870a3d4979a34b86c72df45e7eab9242b4ddb",
+    "xrayConfigSha256After": "a7017f04c4b38c22e46eced8ee7870a3d4979a34b86c72df45e7eab9242b4ddb",
+    "byteExact": true
+  },
+  "nativeAuthentication": "PASS_REAUTHENTICATED_AFTER_SESSION_EXPIRY",
+  "passwordVisibilityToggle": "PASS_PASSWORD_TEXT_PASSWORD",
+  "testRepeatedAfterCheckpointPathFailure": false,
+  "routerRebootPerformed": false,
+  "productionServerMutationPerformed": false,
+  "publicReleasePublished": false,
+  "candidateReady": false,
+  "nextRevision": "p520-final-p505-server-controls-and-failover-audit",
+  "nextExactAction": "VALIDATE_IMPORT_VALIDATION_DUPLICATE_PREVENTION_CHECK_REORDER_EXCLUSION_FAILOVER_SAVE_DELETE_AND_NAVIGATION_CONTROLS"
+}

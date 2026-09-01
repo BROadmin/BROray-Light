@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "failureId": "R237",
+  "stage": "R0009_FINAL_1_0_0_R1_EXACT_WEBUI_COMPLETION",
+  "revision": "p418-final-exact-webui-completion",
+  "at": "2026-09-01T19:36:22+03:00",
+  "status": "FAIL_FIRST_ERROR_PRESERVED",
+  "operation": "XRAY_UPDATE_CHECK_BUTTON",
+  "installedXrayVersion": "26.7.28",
+  "observedStatus": "Установлена актуальная версия 26.7.28.",
+  "observedAction": "Переустановка недоступна",
+  "candidateArtifactDefect": "UNDETERMINED_LIKELY_RUNTIME_STORAGE_PRESSURE",
+  "webUiVersion": "1.0.0-r1",
+  "hiddenRetryPerformed": false,
+  "publicReleasePublished": false,
+  "candidateReady": false,
+  "nextRevision": "p419-final-xray-reinstall-availability-diagnosis",
+  "nextExactAction": "READ_ONLY_INSPECT_XRAY_UPDATE_CHECK_RESPONSE_FREE_STORAGE_AND_EXACT_TEMP_PACKAGE_INVENTORY_THEN_REMOVE_ONLY_RECOVERABLE_TEMP_ARTIFACTS_IF_CONFIRMED"
+}

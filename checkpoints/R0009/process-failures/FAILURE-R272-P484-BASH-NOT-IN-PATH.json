@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_SERVER_CHECK_NEGATIVE_RESULT_API_NORMALIZATION",
+  "revision": "p484-server-check-regression-assertion-correction",
+  "at": "2026-09-01T22:32:12+03:00",
+  "status": "FAIL_FIRST_ERROR_PRESERVED",
+  "failureId": "R272",
+  "operation": "DISCOVER_PYTHON_AND_BASH_FOR_SYNTAX_VALIDATION",
+  "error": "PowerShell found the Python alias but bash is not registered in PATH, so the combined discovery command failed before syntax validation.",
+  "candidateArtifactDefect": false,
+  "environmentPathDefect": true,
+  "syntaxChecksStarted": false,
+  "buildStarted": false,
+  "routerMutationPerformed": false,
+  "hiddenRetryPerformed": false,
+  "candidateReady": false,
+  "nextRevision": "p485-server-check-explicit-runtime-syntax-validation",
+  "nextExactAction": "LOAD_WORKSPACE_DEPENDENCY_PATHS_AND_RUN_PYTHON_AST_PLUS_EXPLICIT_DASH_SYNTAX_CHECKS_THEN_EXECUTE_ISOLATED_TESTS"
+}

@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "failureId": "R296",
+  "stage": "R0009_FINAL_P505_DELETE_OUTCOME_READ_AND_STALE_TAB_REPLACEMENT",
+  "revision": "p525-final-p505-delete-outcome-read-and-stale-tab-replacement",
+  "at": "2026-09-02T00:02:32+03:00",
+  "status": "FAIL_FIRST_ERROR_PRESERVED",
+  "operation": "CLOSE_THE_NATIVE_DIALOG_BLOCKED_TAB_BEFORE_OPENING_A_FRESH_WEBUI_TAB",
+  "error": "Closing the blocked tab also waited on its unresolved native dialog and timed out before a fresh tab could be confirmed.",
+  "confirmedBeforeFailure": {
+    "secondControlledServerFile": "PRESENT",
+    "deleteDelivered": false
+  },
+  "deleteRetried": false,
+  "routerMutationPerformed": false,
+  "candidateArtifactDefect": false,
+  "hiddenRetryPerformed": false,
+  "candidateReady": false,
+  "nextRevision": "p526-final-p505-independent-fresh-browser-tab",
+  "nextExactAction": "DO_NOT_TOUCH_THE_BLOCKED_TAB_CREATE_A_SEPARATE_NEW_TAB_NAVIGATE_TO_THE_WEBUI_AND_CONTINUE_THE_AUDIT_THERE"
+}

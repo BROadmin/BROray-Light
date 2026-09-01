@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_FINAL_P491_PACKAGE_PREFLIGHT_BACKUP_AND_TRANSFER",
+  "revision": "p493-final-p491-package-transfer-and-install",
+  "at": "2026-09-01T22:54:05+03:00",
+  "status": "PASS_READY_FOR_ONE_FORCE_REINSTALL",
+  "routerAddress": "192.168.1.1",
+  "installedBefore": "broray-light 1.0.0-r1",
+  "currentTargetBefore": "releases/1.0.0-r1",
+  "servicesBefore": {
+    "primary": "PASS",
+    "updater": "PASS"
+  },
+  "persistenceBefore": {
+    "manifestSha256": "f155166f719a5fcfe7f86e4397a29cf4d55d5491c13ef024f899aa6fdead4ffc",
+    "fileCount": 13,
+    "serversCount": 2,
+    "subscriptionsCount": 0,
+    "activeServerId": null,
+    "autoSwitchEnabled": false
+  },
+  "backup": {
+    "path": "/opt/broray-light/backup/r0009-p493-before-p491-package",
+    "manifestSha256": "f155166f719a5fcfe7f86e4397a29cf4d55d5491c13ef024f899aa6fdead4ffc",
+    "fileCount": 13,
+    "match": true,
+    "recoverable": true
+  },
+  "xraySha256Before": "4b8af237444801bf17b3dc10a1c5c24581fbe3d433eba3d78c6c3a0da1df56fc",
+  "localPackage": "dist/R0009/1.0.0-r1-P491-Final-Build-A/broray-light_1.0.0-r1_aarch64-3.10.ipk",
+  "remotePackage": "/opt/tmp/broray-light-final-1.0.0-r1-p493.ipk",
+  "packageSizeBytes": 12807684,
+  "packageSha256": "26ea242a3a50684d665a5e747e3a1a161cc1c9b61beae7901edf067f0d107397",
+  "identityMatch": true,
+  "routesViaProxy0Before": 0,
+  "fullBrorayOwnershipBefore": 0,
+  "physicalInstallStarted": false,
+  "candidateReady": false,
+  "nextRevision": "p494-final-p491-one-force-reinstall",
+  "nextExactAction": "RUN_EXACTLY_ONE_OPKG_INSTALL_FORCE_REINSTALL_OF_THE_HASH_VERIFIED_P493_PACKAGE_AND_STOP_ON_THE_FIRST_ERROR"
+}

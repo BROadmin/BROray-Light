@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_FINAL_P531_KEENETIC_REPAIR_OUTCOME_RECOVERY",
+  "revision": "p543-final-p531-keenetic-repair-outcome-recovery",
+  "at": "2026-09-02T00:58:49+03:00",
+  "status": "FAIL_FIRST_ERROR_PRESERVED",
+  "failureId": "R307",
+  "operation": "REBIND_BROWSER_RUNTIME_AFTER_NODE_REPL_RESET",
+  "firstError": "Module not found because the URL-encoded user-name segment omitted the encoded Cyrillic letter д.",
+  "repairOutcomeRecoveredBeforeFailure": {
+    "singleRepairClick": "PASS",
+    "interfaceName": "Proxy0",
+    "exists": true,
+    "healthy": true,
+    "matchesExpected": true,
+    "link": true,
+    "connected": true,
+    "state": "up",
+    "ownershipConfirmed": true,
+    "routesViaProxy0": 0
+  },
+  "routerMutationPerformedByFailure": false,
+  "candidateArtifactDefect": false,
+  "hiddenRetryPerformed": false,
+  "candidateReady": false,
+  "retryPolicy": "NO_RETRY_OF_P543_TYPO_PATH",
+  "nextRevision": "p544-final-p531-correct-browser-runtime-rebind-and-audit-continuation",
+  "nextExactAction": "REBIND_WITH_THE_EXACT_PREVIOUSLY_WORKING_BROWSER_RUNTIME_URL_THEN_VERIFY_THE_ACTIVE_INTERFACE_CARD_AND_CONTINUE_XRAY_STORAGE_CLEANUP"
+}

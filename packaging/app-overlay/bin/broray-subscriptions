@@ -3,6 +3,7 @@
 BRORAY_ROOT="${BRORAY_ROOT:-/opt/broray-light}"
 
 . "$BRORAY_ROOT/lib/subscription-service.sh"
+. "$BRORAY_ROOT/lib/operation-lock.sh"
 
 usage()
 {
@@ -107,6 +108,67 @@ broray_subscription_deduplicate()
         '{ok:true,removed:$removed,backup:(if $backup=="" then null else $backup end)}'
 }
 
+broray_subscription_run_due()
+{
+    broray_subscription_prepare_dirs || return 1
+    scheduler_now="$(broray_subscription_now_epoch)"
+    scheduler_due=0
+    scheduler_updated=0
+    scheduler_failed=0
+
+    for scheduler_file in "$BRORAY_SUB_DIR"/*.json; do
+        [ -f "$scheduler_file" ] && [ ! -L "$scheduler_file" ] || continue
+        broray_subscription_validate_file "$scheduler_file" || continue
+        scheduler_enabled="$(jq -r '.enabled' "$scheduler_file")"
+        scheduler_auto="$(jq -r '.autoUpdateEnabled' "$scheduler_file")"
+        scheduler_next="$(jq -r '.nextUpdateEpoch // 0' "$scheduler_file")"
+        scheduler_id="$(jq -r '.id' "$scheduler_file")"
+        [ "$scheduler_enabled" = true ] && [ "$scheduler_auto" = true ] || continue
+        case "$scheduler_next" in ''|*[!0-9]*) scheduler_next=0 ;; esac
+        [ "$scheduler_next" -gt 0 ] && [ "$scheduler_next" -le "$scheduler_now" ] || continue
+        scheduler_due=$((scheduler_due + 1))
+        if broray_subscription_update "$scheduler_id" automatic >/dev/null 2>&1; then
+            scheduler_updated=$((scheduler_updated + 1))
+        else
+            scheduler_failed=$((scheduler_failed + 1))
+        fi
+    done
+
+    jq -n \
+        --argjson due "$scheduler_due" \
+        --argjson updated "$scheduler_updated" \
+        --argjson failed "$scheduler_failed" \
+        '{ok:($failed == 0),due:$due,updated:$updated,failed:$failed}'
+    [ "$scheduler_failed" -eq 0 ]
+}
+
+broray_subscription_scheduler_once_locked()
+{
+    scheduler_lock_rc=0
+    broray_operation_lock_acquire "subscriptions:scheduler" || scheduler_lock_rc=$?
+    case "$scheduler_lock_rc" in
+        0) trap 'broray_operation_lock_release >/dev/null 2>&1 || true' EXIT ;;
+        2)
+            jq -n '{ok:true,skipped:"operation-busy",due:0,updated:0,failed:0}'
+            return 0
+            ;;
+        *)
+            jq -n '{ok:false,error:"global-lock-failed",due:0,updated:0,failed:0}'
+            return 1
+            ;;
+    esac
+
+    scheduler_result=0
+    broray_subscription_run_due || scheduler_result=$?
+    if [ "$scheduler_result" -eq 0 ] && ! broray_subscription_deduplicate >/dev/null; then
+        scheduler_result=1
+    fi
+    [ "$scheduler_result" -ne 0 ] || broray_subscription_summary
+    broray_operation_lock_release >/dev/null 2>&1 || scheduler_result=1
+    trap - EXIT
+    return "$scheduler_result"
+}
+
 command_name="${1:-list}"
 case "$command_name" in
     list) broray_subscription_list ;;
@@ -138,11 +200,8 @@ case "$command_name" in
     delete) broray_subscription_delete "${2:-}" ;;
     summary) broray_subscription_summary ;;
     scheduler-once)
-        broray_subscription_scheduler_once
-        result="$?"
-        if [ "$result" -eq 0 ] && ! broray_subscription_deduplicate >/dev/null; then result=1; fi
-        [ "$result" -eq 0 ] && broray_subscription_summary
-        exit "$result"
+        broray_subscription_scheduler_once_locked
+        exit "$?"
         ;;
     recover)
         broray_subscription_recover_stale

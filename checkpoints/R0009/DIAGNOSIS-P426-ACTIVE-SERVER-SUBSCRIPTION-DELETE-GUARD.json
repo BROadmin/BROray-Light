@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_USER_AUTHORIZED_SUBSCRIPTION_DELETE_BUTTON_TEST",
+  "revision": "p426-subscription-delete-backend-diagnosis",
+  "at": "2026-09-01T20:40:42+03:00",
+  "status": "PASS_ACTIVE_SERVER_SAFETY_REFUSAL_CONFIRMED",
+  "failureReference": "checkpoints/R0009/process-failures/FAILURE-R240-P425-SUBSCRIPTION-DELETE-BACKEND-ERROR.json",
+  "subscriptionId": "sub-130bddd06d26133e",
+  "activeServerId": "subscription-sub-130bddd06d26133e-600217eb115c0e82",
+  "rootCause": "broray_subscription_delete delegates to broray_server_subscription_remove, which intentionally returns ACTIVE_SERVER_CONFLICT when the active server belongs to the subscription.",
+  "backendErrorCode": "ACTIVE_SERVER_CONFLICT",
+  "backendErrorMessage": "Нельзя удалить подписку: её сервер сейчас активен. Сначала отключите или замените активный сервер.",
+  "safetySemanticCorrect": true,
+  "candidateArtifactDefect": false,
+  "webUiErrorDetailMasked": true,
+  "webUiUxFollowUpRequired": true,
+  "hiddenRetryPerformed": false,
+  "userSelectedRecovery": "DELETE_MANAGED_PROXY0_AND_CLEAR_ACTIVE_SERVER_BEFORE_RETRY",
+  "backupPath": "/opt/broray-light/backup/r0009-p422-before-delete-sub-130bddd06d26133e",
+  "candidateReady": false,
+  "nextRevision": "p427-user-authorized-proxy0-deactivation",
+  "nextExactAction": "DELETE_MANAGED_PROXY0_VERIFY_NO_PROXY0_ROUTES_CLEAR_ACTIVE_SERVER_THEN_RETRY_VISIBLE_WEBUI_SUBSCRIPTION_DELETE_AS_A_NEW_REVISION"
+}

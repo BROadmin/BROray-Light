@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_C23_FULL_ISOLATED_VALIDATION",
+  "revision": "p363-c23-full-isolated-validation",
+  "at": "2026-09-01T17:24:00+03:00",
+  "status": "PASS",
+  "candidateId": "0.1.0-r0009c23",
+  "build": "dist/R0009/R0009c23-P362-Build-A",
+  "packageSha256": "0efa59a556cb256541414b56f6dcc3be2069dc7c2c6aab1ec9da4fc7e0f6d47d",
+  "appArchiveSha256": "68b1291bf007a5c475e63715bf89715666fcef6ce06635c56e5b787a914f0718",
+  "passedGates": 49,
+  "failedGates": 0,
+  "correctiveGates": {
+    "keeneticInterfaceNameAndStatusCard": "PASS",
+    "keeneticStatusCardPresentation": "PASS",
+    "subscriptionAutoUpdateUiAndApi": "PASS",
+    "subscriptionAutoUpdateSchedulerAndGlobalLock": "PASS_AUTOMATIC_DUE_AND_BUSY_SKIP",
+    "responsiveSettingsCardLayout": "PASS"
+  },
+  "coreGates": {
+    "isolatedCleanInstall": "PASS",
+    "isolatedUpdate": "PASS",
+    "equalVersionNoOp": "PASS",
+    "downgradeRefusal": "PASS",
+    "forcedHealthRollback": "PASS",
+    "persistence": "PASS",
+    "coownershipFailClosed": "PASS",
+    "exactXrayRuntime": "PASS",
+    "globalLockContentionAndStaleOwner": "PASS",
+    "requestLockContentionAndStaleOwner": "PASS"
+  },
+  "sourceUnchanged": true,
+  "routerMutation": false,
+  "productionServerMutationPerformed": false,
+  "publicReleasePublished": false,
+  "nextRevision": "p364-c23-transfer-install",
+  "nextExactAction": "TRANSFER_VERIFY_AND_INSTALL_THE_EXACT_C23_BUILD_A_THEN_VALIDATE_SERVICES_AND_PERSISTENCE"
+}

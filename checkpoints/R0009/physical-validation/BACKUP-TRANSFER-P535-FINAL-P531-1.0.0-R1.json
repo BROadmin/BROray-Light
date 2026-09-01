@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_FINAL_P531_CONFIRMED_LAYOUT_PREFLIGHT_BACKUP_AND_TRANSFER",
+  "revision": "p535-final-p531-confirmed-layout-preflight-backup-and-transfer",
+  "at": "2026-09-02T00:32:29+03:00",
+  "status": "PASS_READY_FOR_ONE_FORCE_REINSTALL",
+  "routerAddress": "192.168.1.1",
+  "installedBefore": "broray-light 1.0.0-r1",
+  "currentTargetBefore": "releases/1.0.0-r1",
+  "installedServerServiceSha256Before": "76b3a298b5d5667f1ff923f0dbc0dec82030130e8011c4c0a88f3586ae6c4095",
+  "persistentState": {
+    "roots": [
+      "/opt/broray-light/config",
+      "/opt/broray-light/servers",
+      "/opt/broray-light/subscriptions"
+    ],
+    "serversCount": 1,
+    "subscriptionsCount": 0,
+    "activeServerId": null,
+    "fileCount": 12,
+    "manifestSha256": "4f21808cb6efad2dc8735f336078db1dcf5c65eeb362474b3622eb8be5b2eef9"
+  },
+  "backup": {
+    "path": "/opt/broray-light/backup/r0009-p535-before-p531-package",
+    "fileCount": 12,
+    "manifestSha256": "4f21808cb6efad2dc8735f336078db1dcf5c65eeb362474b3622eb8be5b2eef9",
+    "match": true,
+    "recoverable": true
+  },
+  "transfer": {
+    "localPackage": "dist/R0009/1.0.0-r1-P531-Final-Build-A/broray-light_1.0.0-r1_aarch64-3.10.ipk",
+    "remotePackage": "/opt/tmp/broray-light-final-1.0.0-r1-p535.ipk",
+    "packageSizeBytes": 12808555,
+    "localSha256": "d6add8cd0d27a8e8f29bd3f9c50f2ec889418da0f8e47d93b1a37703c8b6eca6",
+    "remoteSha256": "d6add8cd0d27a8e8f29bd3f9c50f2ec889418da0f8e47d93b1a37703c8b6eca6",
+    "identityMatch": true
+  },
+  "ownership": {
+    "fullBrorayOwnership": 0,
+    "routesViaProxy0": 0
+  },
+  "routerRebootPerformed": false,
+  "productionServerMutationPerformed": false,
+  "publicReleasePublished": false,
+  "candidateReady": false,
+  "nextRevision": "p536-final-p531-one-force-reinstall",
+  "nextExactAction": "RUN_EXACTLY_ONE_OPKG_INSTALL_FORCE_REINSTALL_OF_THE_HASH_VERIFIED_P535_PACKAGE_AND_STOP_ON_THE_FIRST_ERROR"
+}

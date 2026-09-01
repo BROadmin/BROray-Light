@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_FINAL_1_0_0_R1_AUTHENTICATED_WEBUI_BUTTON_AUDIT",
+  "revision": "p477-final-servers-state-supported-read-and-controlled-card-audit",
+  "at": "2026-09-01T22:18:43+03:00",
+  "status": "FAIL_FIRST_ERROR_PRESERVED",
+  "failureId": "R266",
+  "operation": "READ_REMOTE_FAILOVER_AND_INVENTORY_STATE_OVER_SSH",
+  "error": "PowerShell terminated the intended remote quoting and attempted to interpret the jq filter locally.",
+  "candidateArtifactDefect": false,
+  "localShellQuotingDefect": true,
+  "remoteCommandReachedMutation": false,
+  "routerMutationPerformed": false,
+  "hiddenRetryPerformed": false,
+  "candidateReady": false,
+  "nextRevision": "p478-final-servers-state-safe-ssh-quoting-and-controlled-card-audit",
+  "nextExactAction": "RUN_READ_ONLY_REMOTE_STATE_PROBES_WITH_A_SINGLE_POWERSHELL_DOUBLE_QUOTED_REMOTE_ARGUMENT_THEN_CONTINUE_CONTROLLED_SERVER_CARD_BUTTON_AUDIT"
+}

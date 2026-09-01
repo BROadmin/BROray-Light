@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_FINAL_1_0_0_R1_ROUTER_RECOVERY",
+  "revision": "p390-final-router-recovery-and-lifecycle-correction",
+  "failureId": "R229",
+  "at": "2026-09-01T18:51:50+03:00",
+  "status": "FAIL_FIRST_ERROR_PRESERVED",
+  "operation": "ATOMICALLY_REPOINT_CURRENT_WITH_MV_F_THEN_START_SERVICES",
+  "error": "/opt/broray-light/bin/broray-runtime-prepare: not found",
+  "observed": "BusyBox mv treated the current symlink-to-directory as a destination directory instead of replacing the symlink itself; current therefore still resolved to the damaged old slot.",
+  "serviceRecoveryCompleted": false,
+  "packageInstallRetried": false,
+  "hiddenRetryPerformed": false,
+  "persistentSourceMutationKnown": false,
+  "candidateArtifactDefect": true,
+  "cause": "The recovery used mv -f without a BusyBox-safe no-target-directory behavior for a destination symlink to a directory.",
+  "correctedNextRevision": "p391-final-busybox-safe-symlink-recovery",
+  "nextExactAction": "INSPECT_CURRENT_AND_TEMPORARY_LINK_LOCATIONS_THEN_USE_LN_SFN_OR_EXPLICIT_UNLINK_AND_RENAME_WITH_VALIDATED_LITERAL_PATHS_START_SERVICES_AND_VERIFY_HEALTH"
+}

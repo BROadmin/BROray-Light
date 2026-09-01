@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_C21_PHYSICAL_PREFLIGHT",
+  "revision": "p343-c21-literal-remote-physical-preflight",
+  "at": "2026-09-01T16:38:06+03:00",
+  "status": "PASS",
+  "candidateId": "0.1.0-r0009c21",
+  "routerAddress": "192.168.1.1",
+  "installedPackage": "broray-light 0.1.0-r0009c19",
+  "currentTarget": "releases/0.1.0-r9",
+  "primaryService": "PASS",
+  "updaterService": "PASS",
+  "fullBROrayOwnership": 0,
+  "routesViaProxy0": 0,
+  "brolightProxyBlocks": 1,
+  "packageTransferStarted": false,
+  "packageInstallStarted": false,
+  "routerMutation": false,
+  "productionServerMutationPerformed": false,
+  "publicReleasePublished": false,
+  "nextRevision": "p344-c21-transfer-verify-install",
+  "nextExactAction": "TRANSFER_THE_EXACT_BUILD_A_C21_IPK_VERIFY_SHA256_AND_SIZE_ON_ROUTER_THEN_INSTALL_WITH_OPKG"
+}

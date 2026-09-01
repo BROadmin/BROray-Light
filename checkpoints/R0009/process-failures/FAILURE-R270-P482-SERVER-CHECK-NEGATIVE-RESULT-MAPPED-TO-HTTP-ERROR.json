@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_FINAL_CONTROLLED_SERVER_CARD_BUTTON_AUDIT",
+  "revision": "p482-final-server-check-persisted-result-and-activation-audit",
+  "at": "2026-09-01T22:28:35+03:00",
+  "status": "FAIL_FIRST_ERROR_PRESERVED_CANDIDATE_DEFECT",
+  "failureId": "R270",
+  "operation": "CHECK_UNREACHABLE_SERVER_THROUGH_AUTHENTICATED_WEBUI_BUTTON",
+  "expected": "A completed negative reachability probe is returned as valid API data, the card reloads, and WebUI displays that the server is unavailable.",
+  "actual": "The probe returns a nonzero health status after writing valid JSON; check.cgi passes it through broray_servers_api_run, which maps it to HTTP 400. WebUI shows a generic operation error and leaves the card at Проверка ещё не выполнялась until a later reload.",
+  "evidence": {
+    "buttonDisabledDuringRequest": true,
+    "buttonReenabledAfterRequest": true,
+    "cardTextAfterRequest": "Проверка ещё не выполнялась",
+    "apiFailureMapping": "broray_servers_api_run converts every nonzero command result to SERVER_OPERATION_FAILED",
+    "serviceBehavior": "broray_server_check persists valid lastCheck JSON and returns the probe status"
+  },
+  "candidateArtifactDefect": true,
+  "securityOrOwnershipRegressionObserved": false,
+  "routerMutationPerformed": "TWO_CONTROLLED_MANUAL_SERVERS_AND_FAILOVER_TEST_SETTINGS_EXIST_UNDER_VERIFIED_BACKUP",
+  "hiddenRetryPerformed": false,
+  "candidateReady": false,
+  "nextRevision": "p483-server-check-negative-result-api-normalization",
+  "nextExactAction": "ADD_A_NARROW_SERVER_CHECK_API_ADAPTER_THAT_RETURNS_PERSISTED_VALID_NEGATIVE_PROBE_JSON_AS_SUCCESS_ADD_REGRESSION_TESTS_THEN_REBUILD_INDEPENDENT_A_B_AND_REINSTALL"
+}

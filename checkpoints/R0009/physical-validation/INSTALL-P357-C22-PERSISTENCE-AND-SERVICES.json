@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_C22_PHYSICAL_INSTALL",
+  "revision": "p357-c22-transfer-install-live-validation",
+  "at": "2026-09-01T17:02:31+03:00",
+  "status": "PASS_INSTALL_PENDING_LIVE_SCHEDULER_VALIDATION",
+  "candidateId": "0.1.0-r0009c22",
+  "package": "broray-light 0.1.0-r0009c22",
+  "packageSha256": "386eee617cf2d5a14779aead812e0d7fef15f7c680deb0f3431216915ed8a7ae",
+  "packageSizeBytes": 12806394,
+  "upgradeFrom": "0.1.0-r0009c21",
+  "releaseCandidateId": "0.1.0-r0009c22",
+  "primaryService": "PASS",
+  "updaterService": "PASS",
+  "persistence": {
+    "beforeSha256": "b4a7306635fe9026c2ccbba14dc59f684108f9e114decdf1744ff9845bb5da51",
+    "afterSha256": "b4a7306635fe9026c2ccbba14dc59f684108f9e114decdf1744ff9845bb5da51",
+    "match": true
+  },
+  "physicalRouterUsed": true,
+  "routerRebootPerformed": false,
+  "productionServerMutationPerformed": false,
+  "publicReleasePublished": false,
+  "nextRevision": "p358-c22-live-scheduler-global-lock-and-due",
+  "nextExactAction": "PROVE_BUSY_GLOBAL_LOCK_SKIP_AND_DAEMON_DUE_PROCESSING_THEN_RESTORE_THE_EXACT_SUBSCRIPTION_RECORD"
+}

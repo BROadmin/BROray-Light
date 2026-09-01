@@ -1,42 +1,93 @@
 {
   "schemaVersion": 1,
   "stage": "R0009",
+  "revision": "p559-final-r0009-reseal",
+  "at": "2026-09-02T01:35:00+03:00",
   "authorizedTask": "BUILD_LIGHT_UPDATER_INSTALLER_AND_INSTALLABLE_CANDIDATE_FROM_R0008",
   "status": "PASS",
   "candidateReady": true,
-  "candidateId": "0.1.0-r0009c19",
-  "releaseId": "0.1.0-r9",
-  "canonicalSource": {"commit":"684b27bdb53e545047419baa87c63dd86dffa469","files":121,"logicalBytes":627326,"sha256SumsSha256":"e056585d6a517ddbbbaebf08b68f17eb2d9d7ccd68d86df5cdee9fd4665f2419","unchanged":true},
-  "buildA": "dist/R0009/R0009c19-P306-Build-A",
-  "buildB": "dist/R0009/R0009c19-P306-Build-B",
+  "candidateId": "1.0.0-r1",
+  "releaseId": "1.0.0-r1",
+  "canonicalSource": {
+    "commit": "684b27bdb53e545047419baa87c63dd86dffa469",
+    "files": 121,
+    "logicalBytes": 627326,
+    "sha256SumsSha256": "e056585d6a517ddbbbaebf08b68f17eb2d9d7ccd68d86df5cdee9fd4665f2419",
+    "checkpointSha256": "6686586ed777a7b0c37336d08143d388fdc301536b32c96eb35e8b20e5393953",
+    "unchanged": true
+  },
+  "buildA": "dist/R0009/1.0.0-r1-P531-Final-Build-A",
+  "buildB": "dist/R0009/1.0.0-r1-P532-Final-Build-B",
   "artifactsByteIdentical": true,
   "artifactCount": 8,
   "artifacts": [
-    {"name":"broray-light_0.1.0-r0009c19_aarch64-3.10.ipk","bytes":12805704,"sha256":"bf73974e6aff89d6b43872d5ff62433b4748a4486db2f83d20b3337a23ca7b51"},
-    {"name":"broray-light-app-0.1.0-r0009c19.tar.gz","bytes":153926,"sha256":"d332fd192fab7826c7729c719a5e5a8d3708daec24c6a0832a6f3dbf06c5ef55"},
-    {"name":"broray-light-install-0.1.0-r0009c19.sh","bytes":1856,"sha256":"75fa590fe697ee8938a29fc402b63c91bb4d8609db3e8514889240aa8f2fecf1"},
-    {"name":"broray-light-updater-platform-5-light1.tar.gz","bytes":131431,"sha256":"c029afef72111d766eaa302d48fcfaa182ace542abecd036ee232f65be3a7985"},
-    {"name":"CANDIDATE-MANIFEST.json","bytes":2612,"sha256":"41a2889f038ce5563e58116e805980ce6284122c407bd09dfcb5118f10d1cff7"},
-    {"name":"release.json","bytes":577,"sha256":"607cc129389904da603467406f65085aa46a8658be80f4482df1df3761e942a0"},
-    {"name":"release.json.minisig","bytes":277,"sha256":"6e5529132dfb26002ae689a5a69544ff8ca2f6671f810664fa6d922ef72f4830"},
-    {"name":"SHA256SUMS","bytes":689,"sha256":"f1b7b84c55cb334e3763f1cf53dc3db14e8f4d9b7628cb6dcf303459d93b4ac0"}
+    {"name": "broray-light-app-1.0.0-r1.tar.gz", "bytes": 157221, "sha256": "94f9a0a7a7b22f9dd80b8857ba418a5c93f2bfbf39782219e620f499db387531"},
+    {"name": "broray-light-updater-platform-5-light1.tar.gz", "bytes": 131429, "sha256": "fb9edededff76248ee58c546deb39b64a2ae134c03f9c125424066703a6ed5e0"},
+    {"name": "broray-light_1.0.0-r1_aarch64-3.10.ipk", "bytes": 12808555, "sha256": "d6add8cd0d27a8e8f29bd3f9c50f2ec889418da0f8e47d93b1a37703c8b6eca6"},
+    {"name": "broray-light-install-1.0.0-r1.sh", "bytes": 1844, "sha256": "2b961bbb8b49419166f069f38378c025fb15ae73dd5716cb12f86d436e003c65"},
+    {"name": "release.json", "bytes": 559, "sha256": "f5179ffdb94c5d50b41c8c188200c6230b49a13b0ec0c76feb700c52fb5e4bea"},
+    {"name": "release.json.minisig", "bytes": 277, "sha256": "74c6af97367d477bcdb73893272bb17894023da084d315206ce8bd05ce8fd098"},
+    {"name": "CANDIDATE-MANIFEST.json", "bytes": 2582, "sha256": "9a049e1d403c3326dcd06f14aa9bd4562a88ded1d372d9425aea1fe59bf6e7b0"},
+    {"name": "SHA256SUMS", "bytes": 671, "sha256": "213a4040a24cd14d108ff077e54ff6e1959c51e7a2760da06f455306697184f9"}
   ],
-  "acceptance": {"passed":20,"failed":0,"receipt":"checkpoints/R0009/VALIDATION.json","receiptSha256":"7857855eb0c3551fa84031995d099bfe19ae65ac20279180313d45cb411baa49"},
-  "isolatedValidation": {"passed":44,"failed":0,"receipt":"checkpoints/R0009/ISOLATED-VALIDATION-P309-C19.json","receiptSha256":"19ad0477cf691dcdb147fc154e5bea3028f7defe395b8430cbe1d2b0cfd020b9"},
-  "reproducibility": {"artifacts":8,"comparison":"BYTE_IDENTICAL","signedReleaseIndexVerified":true,"receipt":"checkpoints/R0009/REPRODUCIBILITY-P306-C19.json","receiptSha256":"2e68b81819d9c9a235701bb596e0e15e92d44ad4d199c2f282363e2fe72b625c"},
-  "physicalValidation": {
-    "status":"PASS","receipt":"checkpoints/R0009/physical-validation/BROWSER-FUNCTIONAL-P316-C19.json","receiptSha256":"3ea07020995635dba9f7e9fe537ef068ece1e32668e5d43eef53d08caf83081c",
-    "finalInstalledPackage":"broray-light 0.1.0-r0009c19","finalCurrentTarget":"releases/0.1.0-r9","publicUrl":"https://brolight.tvervip.keenetic.link/",
-    "automaticStartAfterNativeReboot":true,"xrayEqualVersionReinstall":true,"rootAndHtmlNoStore":true,
-    "servers":6,"subscriptions":2,"duplicateGroups":0,"fullBROrayOwnership":0,"routesViaProxy0":0
+  "acceptance": {
+    "passed": 20,
+    "failed": 0,
+    "receipt": "checkpoints/R0009/VALIDATION.json",
+    "receiptSha256": "172cbc7fab4985914c65c539e2595a330ef34dc86a013901391ca6ee20cf6c0d"
   },
-  "finalLocalAudit": {"receipt":"checkpoints/R0009/FINAL-LOCAL-AUDIT-P319-C19.json","receiptSha256":"43a6691330e448d9ec87fe33295116efd298d5a684b75d89fee2f8fb0487e75d"},
-  "canonicalPublicKeySha256": "9421289636a6a307a8ab874f2d680d249ec221a5d66506ce1ac8eabcebd99826",
+  "isolatedValidation": {
+    "passed": 51,
+    "failed": 0,
+    "receipt": "checkpoints/R0009/ISOLATED-VALIDATION.json",
+    "receiptSha256": "49322e64f31677a5a74857b6e04f3fdbd9e485c2d065e3f54fc8bf2747845281"
+  },
+  "reproducibility": {
+    "artifacts": 8,
+    "comparison": "BYTE_IDENTICAL",
+    "signedReleaseIndexVerified": true,
+    "receipt": "checkpoints/R0009/REPRODUCIBILITY.json",
+    "receiptSha256": "6a3b7985d709a065fd0e7ae2616dc6b2aaa2de1198a19b3b915ee29475294b7d"
+  },
+  "physicalValidation": {
+    "status": "PASS_EXACT_P531_ALL_WEBUI_BUTTONS_SUBSCRIPTIONS_CLEANUP_AND_PERSISTENCE",
+    "finalInstalledPackage": "broray-light 1.0.0-r1",
+    "finalCurrentTarget": "releases/1.0.0-r1",
+    "publicUrl": "https://brolight.tvervip.keenetic.link/",
+    "installReceipt": "checkpoints/R0009/physical-validation/INSTALL-P537-FINAL-P531-1.0.0-R1.json",
+    "installReceiptSha256": "e207db6a89179c1529abba6747035541137c920194c20567cd0b77af3b103cf2",
+    "serverReceipt": "checkpoints/R0009/physical-validation/BROWSER-P541-P531-SERVER-DELETE-PRUNING.json",
+    "serverReceiptSha256": "e9013b643c012e15eca6ca7a9a24a17b229b817e3225b97446cddc1a9a2e9bf9",
+    "homeReceipt": "checkpoints/R0009/physical-validation/BROWSER-P544-P531-HOME-KEENETIC-XRAY.json",
+    "homeReceiptSha256": "bf739ac300e0f4a6eefe66b13bd2eeaabcc2faef66387f0cf9d1f29b745d8c57",
+    "finalFunctionalReceipt": "checkpoints/R0009/physical-validation/BROWSER-P545-P531-SUBSCRIPTION-CLEANUP-PERSISTENCE.json",
+    "finalFunctionalReceiptSha256": "de4e94c7552240ad2d5a78929ac21ef69c5aea820ba495b75d5c17adeff30d22",
+    "automaticStartAfterNativeReboot": true,
+    "xrayEqualVersionReinstall": true,
+    "servers": 0,
+    "subscriptions": 0,
+    "duplicateIdentityKeys": 0,
+    "fullBROrayOwnership": 0,
+    "proxy0Exists": false,
+    "routesViaProxy0": 0,
+    "routerRebootPerformedInFinalCycle": false
+  },
+  "finalLocalAudit": {
+    "status": "PASS",
+    "receipt": "checkpoints/R0009/FINAL-LOCAL-AUDIT-P556-FINAL-1.0.0-R1.json",
+    "receiptSha256": "98afd43ecd5362bbb234507efe29d24239852a5e31b30d692645d149da264cb0"
+  },
+  "signingKeyDestruction": {
+    "status": "PASS",
+    "receipt": "checkpoints/R0009/SIGNING-KEY-DESTRUCTION-P558-FINAL-1.0.0-R1.json",
+    "receiptSha256": "4229c801993258ae3f636d1e4f2acc62295816dce83dd48779465a47fd2673e6"
+  },
+  "canonicalPublicKeySha256": "17308f28719200e6479b2a094d264344f3ad1b0d8b65792f5712e771b318f22e",
   "privateSigningKeyDestroyed": true,
-  "processFailuresPreserved": 158,
+  "processFailuresPreserved": 273,
   "hardwareTestingPerformed": true,
-  "routerRebootPerformedInFinalCorrectiveCycle": false,
   "productionServerMutationPerformed": false,
   "publicReleasePublished": false,
+  "publication": "INTERNAL_NOT_PUBLICLY_PUBLISHED",
   "nextStage": "DEFINE_AND_AUTHORIZE_R0010_BEFORE_ANY_STABLE_PUBLICATION"
 }

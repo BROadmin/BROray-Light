@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "failureId": "R284",
+  "stage": "R0009_FINAL_P505_ONE_FORCE_REINSTALL_AND_POSTCHECK",
+  "revision": "p511-final-p505-one-force-reinstall",
+  "at": "2026-09-01T23:36:00+03:00",
+  "status": "FAIL_FIRST_ERROR_PRESERVED",
+  "operation": "READ_PRIOR_OWNERSHIP_DIAGNOSIS_BEFORE_POSTINSTALL_CHECKS",
+  "error": "The local reference was looked up under physical-validation although the receipt is stored directly under checkpoints/R0009.",
+  "install": {
+    "attempts": 1,
+    "opkgExit": 0,
+    "output": "Removing, installing, and configuring broray-light 1.0.0-r1 completed.",
+    "packageSha256": "06956a63d30ba98aee99f2362cb66a1d82e50a95e0b683de26ce28b6332f9743"
+  },
+  "postinstallAdjudicated": false,
+  "packageInstallRetried": false,
+  "routerMutationPerformedByFailedRead": false,
+  "candidateArtifactDefect": false,
+  "hiddenRetryPerformed": false,
+  "candidateReady": false,
+  "nextRevision": "p512-final-p505-corrected-postinstall-validation",
+  "nextExactAction": "READ_THE_PRIOR_RECEIPT_AT_ITS_CONFIRMED_PATH_THEN_VALIDATE_THE_ALREADY_INSTALLED_P505_BYTES_WITHOUT_REINSTALLING"
+}

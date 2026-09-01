@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_FINAL_MACHINE_READABLE_AUDIT",
+  "revision": "p549-final-machine-readable-and-sidecar-audit",
+  "at": "2026-09-02T01:17:52+03:00",
+  "status": "FAIL_FIRST_ERROR_PRESERVED",
+  "failureId": "R309",
+  "operation": "PARSE_ALL_HISTORICAL_JSON_AS_UTF8",
+  "firstError": "UnicodeDecodeError: UTF-8 decoder rejected byte 0xc0 in a historical JSON record.",
+  "cause": "The audit applied a UTF-8-only decoder to the complete historical evidence tree even though two legacy CP1251 records were already documented. New and final records remain UTF-8.",
+  "candidateArtifactDefect": false,
+  "candidateBytesMutated": false,
+  "routerMutationPerformed": false,
+  "hiddenRetryPerformed": false,
+  "candidateReady": false,
+  "nextRevision": "p550-final-machine-readable-audit-with-legacy-classification",
+  "nextExactAction": "IDENTIFY_AND_PARSE_LEGACY_CP1251_RECORDS_EXPLICITLY_REQUIRE_UTF8_FOR_ALL_OTHER_JSON_AND_THEN_CONTINUE_SIDECAR_AND_SECRET_SCANS"
+}

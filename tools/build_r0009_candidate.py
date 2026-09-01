@@ -27,9 +27,9 @@ XRAY_ARCHIVE_SHA256 = "f5698bb218ada3b4022db26fafc39601c5f53b46b19eb76c961632598
 XRAY_DIGEST_SHA256 = "7380220ffee3878f5841c5ac31e1bd2b4625d22cacc2d1248ea3dedaa255d02f"
 XRAY_BINARY_SIZE = 35389566
 XRAY_BINARY_SHA256 = "4b8af237444801bf17b3dc10a1c5c24581fbe3d433eba3d78c6c3a0da1df56fc"
-RELEASE_ID = "0.1.0-r9"
-CANDIDATE_ID = "0.1.0-r0009c19"
-PACKAGE_VERSION = "0.1.0-r0009c19"
+RELEASE_ID = "1.0.0-r1"
+CANDIDATE_ID = "1.0.0-r1"
+PACKAGE_VERSION = "1.0.0-r1"
 ARCHITECTURE = "aarch64-3.10"
 MTIME = 0
 
@@ -163,7 +163,7 @@ def slot_payload(repo: Path, modes: dict[str, int]) -> tuple[list[tuple[str, byt
         "product": "BROray-Light",
         "releaseId": RELEASE_ID,
         "candidateId": CANDIDATE_ID,
-        "version": "0.1.0-dev",
+        "version": PACKAGE_VERSION,
         "architecture": ARCHITECTURE,
         "sourceCommit": SOURCE_COMMIT,
         "lifecycleContract": "light-app-symlink-switch/1",

@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_FINAL_LOCAL_AUDIT_AFTER_AGGREGATE_RESEAL",
+  "revision": "p554-final-local-audit-after-aggregate-reseal",
+  "at": "2026-09-02T01:28:19+03:00",
+  "status": "FAIL_FIRST_ERROR_PRESERVED",
+  "failureId": "R313",
+  "operation": "VERIFY_DUAL_PATH_SHA256_SIDECARS_WITH_POWERSHELL_MATCHES",
+  "firstError": "Expected digest became null before comparison.",
+  "cause": "A second PowerShell -match operation used for path classification overwrote the automatic $Matches collection that held the parsed sidecar digest.",
+  "completedBeforeFailure": {
+    "jsonRecordsParsed": 588,
+    "utf8Records": 586,
+    "legacyCp1251Records": 2,
+    "worklogLinesParsed": 584,
+    "machineReadableRecords": "PASS"
+  },
+  "candidateArtifactDefect": false,
+  "candidateBytesMutated": false,
+  "routerMutationPerformed": false,
+  "hiddenRetryPerformed": false,
+  "candidateReady": false,
+  "nextRevision": "p555-final-sidecar-audit-with-captured-digest",
+  "nextExactAction": "CAPTURE_THE_PARSED_EXPECTED_DIGEST_AND_TARGET_NAME_IN_ORDINARY_VARIABLES_BEFORE_PATH_CLASSIFICATION_THEN_REPEAT_THE_SIDECAR_GATE"
+}

@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_FINAL_1_0_0_R1_PRESERVE_READLINK_SYMLINK_PATH",
+  "revision": "p403-final-preserve-readlink-symlink-path",
+  "at": "2026-09-01T19:15:13+03:00",
+  "status": "PASS_IMPLEMENTED_PENDING_REBUILD_AND_FULL_RERUN",
+  "failureReference": "checkpoints/R0009/process-failures/FAILURE-R233-P402-CROSS-RELEASE-READLINK-ARGUMENT-RESOLUTION.json",
+  "candidateArtifactDefect": false,
+  "testAssertionDefect": true,
+  "correction": "Pass the already absolute current path with as_posix() so the readlink shim receives the symlink itself rather than Path.resolve() output.",
+  "testSha256": "54a779d1a02d90de92821aad9d23c1753acd41b4248234e7188f9b6bcf8174de",
+  "pythonAst": "PASS",
+  "canonicalSourceDiff": "NONE",
+  "publicReleasePublished": false,
+  "candidateReady": false,
+  "nextRevision": "p404-final-post-readlink-fix-build-a-b",
+  "nextExactAction": "REBUILD_INDEPENDENT_A_AND_B_THEN_RUN_ALL_50_ISOLATED_GATES"
+}

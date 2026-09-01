@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_C23_LIVE_AUTOMATIC_SUBSCRIPTION_SCHEDULER",
+  "revision": "p372-c23-live-automatic-subscription-scheduler",
+  "at": "2026-09-01T17:39:00+03:00",
+  "status": "PASS",
+  "candidateId": "0.1.0-r0009c23",
+  "busyGlobalLock": {
+    "status": "PASS",
+    "result": {"ok":true,"skipped":"operation-busy","due":0,"updated":0,"failed":0}
+  },
+  "dueAutomaticRefresh": {
+    "subscriptionId": "sub-4d56091e72fc1eb6",
+    "stagedDueEpoch": 1788273501,
+    "originalLastUpdatedEpoch": 1788266245,
+    "observedLastUpdatedEpoch": 1788273505,
+    "lastUpdateStatus": "success",
+    "trigger": "automatic",
+    "nextUpdateEpoch": 1788273805,
+    "nextUpdateAt": "2026-09-01T17:43:25+0300",
+    "firstPollPass": true
+  },
+  "transactionBackup": "/opt/broray-light/backup/r0009-p372-c23-live-scheduler",
+  "restore": {
+    "beforeRelativeInventorySha256": "b823fd09a7860bfa177ad0b9ee75d069cc7c50e2f55a0d7e940d341f87dffbc1",
+    "restoredRelativeInventorySha256": "b823fd09a7860bfa177ad0b9ee75d069cc7c50e2f55a0d7e940d341f87dffbc1",
+    "exactMatch": true,
+    "subscriptionSha256": "edea867b5d76d4a56dbbd8b684592578cc52e533b2edca788ef265a371d11b26",
+    "autoUpdateEnabled": false,
+    "updateIntervalMinutes": 360,
+    "nextUpdateAt": null,
+    "serverCount": 6,
+    "recoverableObservedTestState": "/opt/broray-light/backup/r0009-p372-c23-live-scheduler/observed-after"
+  },
+  "physicalRouterUsed": true,
+  "routerRebootPerformed": false,
+  "productionServerMutationPerformed": false,
+  "publicReleasePublished": false,
+  "nextRevision": "p373-c23-complete-webui-button-audit",
+  "nextExactAction": "AUDIT_EVERY_INTERACTIVE_WEBUI_CONTROL_THROUGH_THE_EXTERNAL_AUTHENTICATED_INTERFACE_WITH_BACKUP_AND_RESTORE_FOR_MUTATING_ACTIONS"
+}

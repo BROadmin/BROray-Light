@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_C22_TEST_SETTING_RESTORE",
+  "revision": "p354-c22-inspect-browser-state-and-restore-via-supported-path",
+  "at": "2026-09-01T16:55:12+03:00",
+  "status": "PASS",
+  "candidateId": "0.1.0-r0009c22",
+  "browserDiagnosis": {
+    "actualUrl": "https://brolight.tvervip.keenetic.link/?v=0.1.0-r0009c21",
+    "actualTitle": "BROray-Light — Вход",
+    "cause": "session expired and subscriptions page redirected to login"
+  },
+  "subscriptionId": "sub-4d56091e72fc1eb6",
+  "restorePath": "installed package CLI update with bounded JSON body",
+  "restored": {
+    "autoUpdateEnabled": false,
+    "updateIntervalMinutes": 360,
+    "nextUpdateAt": null
+  },
+  "lastUpdatedAtPreserved": "2026-09-01T15:37:25+0300",
+  "lastUpdateStatusPreserved": "success",
+  "temporarySettingFullyRestored": true,
+  "productionServerMutationPerformed": false,
+  "publicReleasePublished": false,
+  "nextRevision": "p355-c22-independent-builds",
+  "nextExactAction": "BUILD_C22_A_AND_B_COMPARE_ALL_ARTIFACTS_AND_VERIFY_BOTH_SIGNATURES"
+}

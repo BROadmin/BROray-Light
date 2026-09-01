@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_FINAL_1_0_0_R1_AUTHENTICATED_WEBUI_BUTTON_AUDIT",
+  "revision": "p474-final-light-update-check-button-audit",
+  "at": "2026-09-01T22:14:41+03:00",
+  "status": "FAIL_FIRST_ERROR_PRESERVED",
+  "failureId": "R263",
+  "operation": "CLICK_SERVERS_NAVIGATION_WITH_PREFIX_HREF_SELECTOR",
+  "error": "Browser strict-mode locator matched both the main Серверы navigation link and the Настроить порядок серверов link.",
+  "matchedElements": 2,
+  "passedBeforeFailure": {
+    "lightUpdateCheckButton": "PASS",
+    "lightUpdatePolicyMessage": "Внутренняя сборка R0009: публичный канал обновлений пока не настроен.",
+    "lightUpdateButtonDisabled": true
+  },
+  "candidateArtifactDefect": false,
+  "browserSelectorDefect": true,
+  "routerMutationPerformed": false,
+  "hiddenRetryPerformed": false,
+  "candidateReady": false,
+  "nextRevision": "p475-final-servers-navigation-exact-link-and-button-audit",
+  "nextExactAction": "CLICK_THE_EXACT_MAIN_NAVIGATION_SERVERS_LINK_BY_ACCESSIBLE_NAME_THEN_AUDIT_ALL_SERVERS_PAGE_CONTROLS"
+}

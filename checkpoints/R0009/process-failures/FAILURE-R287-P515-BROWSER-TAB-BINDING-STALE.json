@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "failureId": "R287",
+  "stage": "R0009_FINAL_P505_BROWSER_ACTIVATION_STATE_DISCOVERY",
+  "revision": "p515-final-p505-browser-activation-state-discovery-and-confirmed-selector",
+  "at": "2026-09-01T23:41:39+03:00",
+  "status": "FAIL_FIRST_ERROR_PRESERVED",
+  "operation": "READ_TOAST_AND_SERVER_DOM_WITHOUT_REPEATING_ACTIVATION",
+  "error": "The in-app browser driver returned Playwright selector deadline exceeded while reading a basic locator on the existing tab binding.",
+  "diagnosis": "The tab binding is stale or detached after package reinstall; the failure is not specific to the activation button selector.",
+  "activationRetried": false,
+  "routerMutationPerformedByFailedRead": false,
+  "candidateArtifactDefect": false,
+  "hiddenRetryPerformed": false,
+  "candidateReady": false,
+  "nextRevision": "p516-final-p505-browser-tab-rebind-and-activation-state-adjudication",
+  "nextExactAction": "READ_BACKEND_ACTIVE_STATE_OVER_SSH_THEN_LIST_AND_REBIND_THE_CURRENT_BROWSER_TAB_BEFORE_ANY_FURTHER_BUTTON_ACTION"
+}

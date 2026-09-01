@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_WEBUI_SUBSCRIPTION_ERROR_DETAIL_FIX",
+  "revision": "p445-webui-subscription-error-detail-corrected-diagnosis",
+  "at": "2026-09-01T21:14:06+03:00",
+  "status": "PASS_GENERIC_ERROR_MASKING_ROOT_CAUSE_CONFIRMED",
+  "failureReference": "checkpoints/R0009/process-failures/FAILURE-R240-P425-SUBSCRIPTION-DELETE-BACKEND-ERROR.json",
+  "backendStructuredError": {
+    "format": "BRORAY_ERROR:<code>:<message>",
+    "code": "ACTIVE_SERVER_CONFLICT",
+    "message": "Нельзя удалить подписку: её сервер сейчас активен. Сначала отключите или замените активный сервер."
+  },
+  "apiWrapperBehavior": "The subscription API wrapper captures the structured service error only as error.details and replaces both the public code and public message with SUBSCRIPTION_OPERATION_FAILED and a generic message.",
+  "frontendBehavior": "subscriptions.js displays payload.error.message, so the specific safety instruction is not visible.",
+  "safetySemanticCorrect": true,
+  "candidateArtifactDefect": true,
+  "defectScope": "WEBUI_ERROR_PRESENTATION_ONLY",
+  "securityRequirement": "Expose only a validated final BRORAY_ERROR marker; keep arbitrary stderr private and retain the generic fallback for unstructured failures.",
+  "implementationPlan": [
+    "parse the final BRORAY_ERROR line in the API wrapper",
+    "validate the error code syntax and non-empty message",
+    "map known conflict and not-found codes to appropriate HTTP status",
+    "return the structured code and message without raw stderr details",
+    "retain SUBSCRIPTION_OPERATION_FAILED for all unstructured errors",
+    "add isolated regression assertions"
+  ],
+  "candidateReady": false,
+  "nextRevision": "p446-structured-subscription-api-errors",
+  "nextExactAction": "PATCH_ONLY_PACKAGING_APP_OVERLAY_WEB_NEW_API_SUBSCRIPTIONS_COMMON_SH_AND_TOOLS_TEST_R0009_PY_THEN_RUN_TARGETED_TESTS_BEFORE_REBUILD"
+}

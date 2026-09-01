@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_FINAL_P531_SUPPORTED_BROWSER_SERVER_BUTTON_AND_DELETE_PRUNING_REGRESSION",
+  "revision": "p541-final-p531-supported-toast-polling-and-delete-pruning-regression",
+  "at": "2026-09-02T00:47:16+03:00",
+  "status": "PASS",
+  "installedPackageSha256": "d6add8cd0d27a8e8f29bd3f9c50f2ec889418da0f8e47d93b1a37703c8b6eca6",
+  "installedServerServiceSha256": "42ee77742de9aeef8f06cdf95844503efa3b49de8f1b9c310eb87e84ab398643",
+  "authentication": {
+    "passwordVisibilityToggle": "PASS_PASSWORD_TEXT_PASSWORD",
+    "loginSubmit": "PASS",
+    "credentialsPersistedByCheckpoint": false
+  },
+  "navigation": {
+    "homeToServers": "PASS_EXACT_NAV_LINK"
+  },
+  "serverButtons": {
+    "emptyImport": "PASS_REJECTED_WITH_VISIBLE_MESSAGE",
+    "invalidImport": "PASS_REJECTED_WITH_VISIBLE_MESSAGE",
+    "validImport": "PASS",
+    "duplicateImport": "PASS_REJECTED_WITHOUT_DUPLICATE_CARD",
+    "moveUp": "PASS",
+    "moveDown": "PASS",
+    "excludeToggle": "PASS",
+    "failoverSaveEnabled": "PASS",
+    "failoverSaveDisabled": "PASS",
+    "serverCheckNegativeResult": "PASS_STRUCTURED_AND_VISIBLE",
+    "serverActivationFailure": "PASS_STRUCTURED_ROLLBACK",
+    "serverDeleteWithNativeConfirm": "PASS"
+  },
+  "activationRollback": {
+    "visibleMessage": "Сервер недоступен. Активация отменена, предыдущая конфигурация восстановлена.",
+    "activeServerIdAfter": null,
+    "activeBadgeCountAfter": 0
+  },
+  "deletePruning": {
+    "deletedServerId": "manual-20260902004409-f1d81e13c2",
+    "serverFileAbsent": true,
+    "serverCheckStateAbsent": true,
+    "orderedServerIdsBefore": [
+      "manual-20260902004409-f1d81e13c2",
+      "manual-20260901222428-9e32ebdd66"
+    ],
+    "excludedServerIdsBefore": [
+      "manual-20260902004409-f1d81e13c2"
+    ],
+    "orderedServerIdsAfter": [
+      "manual-20260901222428-9e32ebdd66"
+    ],
+    "excludedServerIdsAfter": [],
+    "bothReferenceSetsPruned": true
+  },
+  "postcondition": {
+    "serversCount": 1,
+    "subscriptionsCount": 0,
+    "activeServerId": null,
+    "autoSwitchEnabled": false,
+    "routesViaProxy0": 0
+  },
+  "routerRebootPerformed": false,
+  "productionServerMutationPerformed": false,
+  "publicReleasePublished": false,
+  "candidateReady": false,
+  "nextRevision": "p542-final-p531-authenticated-subscription-button-audit",
+  "nextExactAction": "CREATE_A_TEMPORARY_NAMED_SUBSCRIPTION_WITHOUT_RECORDING_ITS_SECRET_URL_VALIDATE_REFRESH_AUTO_UPDATE_DUPLICATE_INTERSECTIONS_AND_DELETE_IT"
+}

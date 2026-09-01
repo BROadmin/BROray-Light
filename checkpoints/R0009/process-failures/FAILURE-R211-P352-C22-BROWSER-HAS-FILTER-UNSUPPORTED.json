@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "failureId": "R211",
+  "stage": "R0009_C22_PREBUILD_TEST-SETTING_RESTORE",
+  "revision": "p352-c22-independent-builds",
+  "at": "2026-09-01T16:52:41+03:00",
+  "status": "FAILED_STOPPED_FIRST_ERROR",
+  "failureClass": "BROWSER_HAS_FILTER_UNSUPPORTED",
+  "operation": "Restore the tested subscription from true/5 to its original false/360 settings",
+  "error": "The browser runtime did not resolve the compound locator filter(has=...) before the action deadline.",
+  "candidateId": "0.1.0-r0009c22",
+  "candidateArtifactDefect": false,
+  "subscriptionSettingChangedDuringFailedRevision": false,
+  "temporarySubscriptionSettingRestoreRequired": true,
+  "routerMutation": false,
+  "hiddenRetryPerformed": false,
+  "cause": "The restore used an unnecessary compound filter instead of the already validated first-card selector.",
+  "nextRevision": "p353-c22-simple-locator-setting-restore",
+  "nextExactAction": "RESTORE_THE_FIRST_SUBSCRIPTION_WITH_LOCATOR_SUBSCRIPTION_CARD_FIRST_THEN_VERIFY_FALSE_360_AND_NO_NEXT_UPDATE"
+}

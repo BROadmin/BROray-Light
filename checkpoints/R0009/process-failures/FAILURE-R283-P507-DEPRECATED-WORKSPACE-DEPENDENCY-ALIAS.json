@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "failureId": "R283",
+  "stage": "R0009_FINAL_1_0_0_R1_STRUCTURED_ERROR_ISOLATED_VALIDATION",
+  "revision": "p507-final-1.0.0-r1-structured-error-isolated-validation",
+  "at": "2026-09-01T23:27:00+03:00",
+  "status": "FAIL_FIRST_ERROR_PRESERVED",
+  "operation": "LOAD_CONFIGURED_WORKSPACE_DEPENDENCIES",
+  "error": "The deprecated dynamic codex_app dependency alias returned an unavailable-tool response and instructed use of the codex_app MCP server.",
+  "isolatedValidationStarted": false,
+  "artifactsModified": false,
+  "routerMutationPerformed": false,
+  "candidateArtifactDefect": false,
+  "hiddenRetryPerformed": false,
+  "knownPriorFailureReference": "checkpoints/R0009/process-failures/FAILURE-R273-P485-DEPRECATED-WORKSPACE-DEPENDENCY-ALIAS.json",
+  "candidateReady": false,
+  "nextRevision": "p508-final-1.0.0-r1-structured-error-isolated-validation-mcp-runtime",
+  "nextExactAction": "LOAD_DEPENDENCIES_WITH_MCP_CODEX_APP_THEN_RUN_THE_COMPLETE_ISOLATED_SUITE_ON_EXACT_P505_BYTES"
+}

@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "failureId": "R207",
+  "stage": "R0009_C21_TRANSFER_VERIFY_INSTALL",
+  "revision": "p344-c21-transfer-verify-install",
+  "at": "2026-09-01T16:39:18+03:00",
+  "status": "FAILED_STOPPED_FIRST_ERROR",
+  "failureClass": "SCP_SFTP_SERVER_ABSENT",
+  "operation": "Transfer the exact Build A c21 IPK to router temporary storage",
+  "error": "scp attempted the SFTP protocol and the router reported /opt/libexec/sftp-server not found.",
+  "candidateId": "0.1.0-r0009c21",
+  "candidateArtifactDefect": false,
+  "expectedPackageSha256": "a9a5d0172b305dd2e9fb640bc1588eb8e2dd4b3fdbdadc5c1515e685c2d25a16",
+  "packageTransferCompleted": false,
+  "packageInstallStarted": false,
+  "routerMutation": false,
+  "hiddenRetryPerformed": false,
+  "cause": "Current OpenSSH scp defaults to SFTP, while this router exposes legacy SCP but no SFTP server.",
+  "nextRevision": "p345-c21-legacy-scp-transfer-verify-install",
+  "nextExactAction": "TRANSFER_WITH_SCP_LEGACY_PROTOCOL_FLAG_O_THEN_VERIFY_EXACT_SHA256_AND_SIZE_BEFORE_INSTALLATION"
+}

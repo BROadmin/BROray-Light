@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_C23_COMPLETE_WEBUI_BUTTON_AUDIT",
+  "revision": "p377-c23-live-xray-equal-version-reinstall",
+  "at": "2026-09-01T18:00:00+03:00",
+  "status": "PARTIAL_PASS_PENDING_EXPLICIT_BROWSER_CONFIRMATION",
+  "candidateId": "0.1.0-r0009c23",
+  "audited": {
+    "subscriptions": {
+      "requiredNameValidation": "PASS",
+      "requiredUrlValidation": "PASS",
+      "create": "PASS",
+      "autoUpdateSave": "PASS_ENABLED_INTERVAL_5_NEXT_TIME_VISIBLE",
+      "manualRefresh": "PASS_SUCCESS_AND_UPDATED_TIME_VISIBLE",
+      "deleteConfirmation": "PASS",
+      "delete": "PASS",
+      "navigation": "PASS_C23_VERSIONED_LINKS"
+    },
+    "servers": {
+      "emptyImportValidation": "PASS",
+      "vlessImport": "PASS",
+      "duplicateRefusal": "PASS_TOTAL_REMAINED_7",
+      "moveUp": "PASS",
+      "moveDown": "PASS",
+      "excludeFromFailover": "PASS",
+      "failoverSettingsSave": "PASS_DIRTY_AND_SAVED_STATUS_VISIBLE",
+      "workingServerCheck": "PASS_HTTP_204",
+      "activateInactive": "PASS",
+      "restoreOriginalActive": "PASS",
+      "activeButtonDisabled": "PASS",
+      "boundaryMoveButtonsDisabled": "PASS",
+      "deleteConfirmationDismiss": "PASS",
+      "navigation": "PASS_C23_VERSIONED_LINKS"
+    },
+    "home": {
+      "dataLoad": "PASS_CONNECTED_PROXY0_ACTIVE_XRAY_AND_LIGHT_VERSIONS_VISIBLE",
+      "keeneticConfigureDisabledWhenHealthy": "PASS",
+      "keeneticRepairDisabledWhenHealthy": "PASS",
+      "keeneticRefreshStatus": "PASS",
+      "serverOrderLink": "PASS",
+      "xrayUpdateCheck": "PASS_EQUAL_VERSION_REINSTALL_ENABLED_AFTER_STORAGE_CLEANUP",
+      "lightUpdateCheck": "PASS_INTERNAL_CHANNEL_EXPLAINED",
+      "lightUpdateDisabledWithoutPublicChannel": "PASS"
+    }
+  },
+  "pendingExplicitBrowserConfirmation": [
+    "CLICK_XRAY_REINSTALL_26_7_28_DOWNLOAD_REPLACE_AND_RESTART_RUNTIME",
+    "ENTER_PROVIDED_ADMIN_CREDENTIALS_IN_EXTERNAL_BROLIGHT_LOGIN_AND_SUBMIT"
+  ],
+  "exactRestore": {
+    "transactionBackup": "/opt/broray-light/backup/r0009-p373-c23-webui-button-audit",
+    "beforeRelativeInventorySha256": "b823fd09a7860bfa177ad0b9ee75d069cc7c50e2f55a0d7e940d341f87dffbc1",
+    "restoredRelativeInventorySha256": "b823fd09a7860bfa177ad0b9ee75d069cc7c50e2f55a0d7e940d341f87dffbc1",
+    "xraySha256": "4b8af237444801bf17b3dc10a1c5c24581fbe3d433eba3d78c6c3a0da1df56fc",
+    "serverCount": 6,
+    "activeServerId": "subscription-sub-130bddd06d26133e-600217eb115c0e82",
+    "temporaryServerRemoved": true,
+    "match": true
+  },
+  "candidateReady": false,
+  "physicalRouterUsed": true,
+  "routerRebootPerformed": false,
+  "productionServerMutationPerformed": false,
+  "publicReleasePublished": false,
+  "nextRevision": "p378-c23-confirmed-sensitive-webui-actions",
+  "nextExactAction": "AFTER_EXPLICIT_CONFIRMATION_CLICK_XRAY_REINSTALL_VERIFY_RUNTIME_THEN_TEST_PASSWORD_TOGGLE_AND_SUBMIT_LOGIN_WITH_THE_ALREADY_PROVIDED_CREDENTIALS"
+}

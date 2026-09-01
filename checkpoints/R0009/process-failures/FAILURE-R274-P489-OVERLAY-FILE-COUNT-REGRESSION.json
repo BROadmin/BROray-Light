@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_FINAL_SERVER_CHECK_FIX_ISOLATED_VALIDATION",
+  "revision": "p489-final-server-check-fix-isolated-validation",
+  "at": "2026-09-01T22:41:54+03:00",
+  "status": "FAIL_FIRST_ERROR_PRESERVED",
+  "failureId": "R274",
+  "operation": "RUN_ALL_ISOLATED_GATES_AGAINST_P487_BUILD_A",
+  "error": "The corrective overlay carrier gate expected 22 files but the deliberate new api/servers/check.cgi overlay increased the exact count to 23.",
+  "firstFailingGate": "correctiveOverlayExactInstall",
+  "actualOverlayFileCount": 23,
+  "expectedOverlayFileCountBeforeFix": 22,
+  "buildsBeforeFailure": {
+    "buildA": "PASS",
+    "buildB": "PASS",
+    "byteIdenticalArtifacts": 8,
+    "signatures": "PASS"
+  },
+  "candidateArtifactDefect": false,
+  "testCarrierExpectationDefect": true,
+  "routerMutationPerformed": false,
+  "hiddenRetryPerformed": false,
+  "candidateReady": false,
+  "nextRevision": "p490-server-check-overlay-carrier-contract-correction",
+  "nextExactAction": "ADD_THE_EXACT_NEW_CHECK_CGI_TO_THE_OVERLAY_CARRIER_EXPECTATION_UPDATE_THE_EXPECTED_COUNT_TO_23_THEN_RUN_STATIC_CHECKS_AND_REBUILD_A_B"
+}

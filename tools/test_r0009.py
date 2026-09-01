@@ -16,8 +16,10 @@ import tarfile
 import tempfile
 from pathlib import Path, PurePosixPath
 
-RELEASE_ID = "0.1.0-r9"
-CANDIDATE_ID = "0.1.0-r0009c19"
+RELEASE_ID = "1.0.0-r1"
+CANDIDATE_ID = "1.0.0-r1"
+PREVIOUS_RELEASE_ID = "0.9.9-r99"
+NEWER_RELEASE_ID = "1.0.0-r2"
 XRAY_SHA256 = "4b8af237444801bf17b3dc10a1c5c24581fbe3d433eba3d78c6c3a0da1df56fc"
 
 
@@ -247,7 +249,7 @@ def signed_index(
     signature = Path(str(index) + ".minisig")
     subprocess.run(
         [str(minisign), "-S", "-W", "-s", str(secret_key), "-m", str(index), "-x", str(signature),
-         "-c", "BROray-Light R0009 internal", "-t", "releaseId=0.1.0-r9"],
+         "-c", "BROray-Light R0009 internal", "-t", f"releaseId={RELEASE_ID}"],
         check=True,
         capture_output=True,
         text=True,
@@ -405,10 +407,23 @@ def main() -> int:
     if sha256(runtime) != XRAY_SHA256 or not (app_root / "current").exists():
         raise RuntimeError("clean install contract failed")
     gates["isolatedCleanInstall"] = "PASS"
+
+    clone_slot(app_root, RELEASE_ID, PREVIOUS_RELEASE_ID)
+    set_current(app_root, PREVIOUS_RELEASE_ID)
+    (app_root / "config/version").write_text(f"{PREVIOUS_RELEASE_ID}\n", encoding="utf-8")
+    run([dash, posix(control_root / "postinst")], env=env)
+    current_target = run([dash, posix(tools / "readlink"), (app_root / "current").as_posix()], env=env).stdout.strip()
+    current_release = json.loads((app_root / "current/release.json").read_text(encoding="utf-8"))["releaseId"]
+    current_version = (app_root / "config/version").read_text(encoding="utf-8").strip()
+    if current_target != f"releases/{RELEASE_ID}" or current_release != RELEASE_ID or current_version != RELEASE_ID:
+        raise RuntimeError("cross-release package upgrade did not activate the target slot")
+    shutil.rmtree(app_root / "releases" / PREVIOUS_RELEASE_ID)
+    gates["crossReleasePackageUpgradeActivatesTarget"] = "PASS"
+
     overlay_root = Path(__file__).resolve().parents[1] / "packaging/app-overlay"
     installed_app = app_root / "current/app"
     overlay_files = sorted(path for path in overlay_root.rglob("*") if path.is_file())
-    if len(overlay_files) != 20:
+    if len(overlay_files) != 24:
         raise RuntimeError(f"unexpected corrective overlay file count: {len(overlay_files)}")
     for overlay_file in overlay_files:
         installed_file = installed_app / overlay_file.relative_to(overlay_root)
@@ -455,6 +470,20 @@ def main() -> int:
         raise RuntimeError("internal-channel or healthy Keenetic action-state presentation is incomplete")
     gates["internalChannelAndKeeneticActionState"] = "PASS"
 
+    for keenetic_interface_contract in (
+        'id="keeneticInterfaceName"',
+        'id="keeneticState" class="interface-status-badge is-pending"',
+        "facts.interfaceName || keenetic.interfaceName",
+        "stateLabel = 'Активен'",
+        "stateLabel = 'Не активен'",
+        "stateLabel = 'Ошибка'",
+        "stateLabel = 'Требует внимания'",
+        "statusBadge('keeneticState', stateLabel, stateTone)",
+    ):
+        if keenetic_interface_contract not in home_html + home_js:
+            raise RuntimeError(f"Keenetic interface name or status-card contract is absent: {keenetic_interface_contract}")
+    gates["keeneticInterfaceNameAndStatusCard"] = "PASS"
+
     subscriptions_js = (installed_app / "web-new/assets/js/subscriptions.js").read_text(encoding="utf-8")
     subscriptions_html = (installed_app / "web-new/subscriptions.html").read_text(encoding="utf-8")
     if 'id="subName"' not in subscriptions_html or "JSON.stringify({name,url,updateImmediately:true})" not in subscriptions_js:
@@ -471,18 +500,92 @@ def main() -> int:
         raise RuntimeError("subscription count or empty-success compatibility contract is absent")
     gates["subscriptionCountAndResponseCompatibility"] = "PASS"
 
+    subscription_details = (installed_app / "web-new/api/subscriptions/details.cgi").read_text(encoding="utf-8")
+    for auto_update_contract in (
+        "autoUpdatePanel(subscription)",
+        "Включить автообновление",
+        "Сохранить автообновление",
+        "updateIntervalMinutes",
+        "subscription.nextUpdateAt",
+        "api/subscriptions/details.cgi?id=",
+    ):
+        if auto_update_contract not in subscriptions_js:
+            raise RuntimeError(f"subscription auto-update UI contract is absent: {auto_update_contract}")
+    if 'POST)' not in subscription_details or \
+       'broray_subscription_update_settings "$subscription_id" "$settings_body"' not in subscription_details or \
+       "broray_subscriptions_api_read_body_to_file" not in subscription_details:
+        raise RuntimeError("subscription settings API does not expose authenticated bounded updates")
+    gates["subscriptionAutoUpdateUiAndApi"] = "PASS"
+
     servers_js = (installed_app / "web-new/assets/js/servers.js").read_text(encoding="utf-8")
     failover_js = (installed_app / "web-new/assets/js/servers-auto-switch.js").read_text(encoding="utf-8")
     servers_common = (installed_app / "web-new/api/servers/common.sh").read_text(encoding="utf-8")
+    server_check_api = (installed_app / "web-new/api/servers/check.cgi").read_text(encoding="utf-8")
     subscriptions_common = (installed_app / "web-new/api/subscriptions/common.sh").read_text(encoding="utf-8")
     for wrapper_name, wrapper in (("servers", servers_common), ("subscriptions", subscriptions_common)):
         if 'if ( "$@" ) >' not in wrapper or "|| broray_" not in wrapper or "api_payload='{}'" not in wrapper or "jq -e ." not in wrapper:
             raise RuntimeError(f"{wrapper_name} CGI response isolation and JSON normalization contract is incomplete")
+    for structured_error_contract in (
+        "broray_subscriptions_api_parse_error",
+        "BRORAY_ERROR:*:*",
+        "*[!A-Z0-9_]*",
+        "ACTIVE_SERVER_CONFLICT|SERVER_SYNC_BUSY|SUBSCRIPTION_LOCKED",
+        'BRORAY_SUBSCRIPTIONS_API_ERROR_STATUS="409 Conflict"',
+        'BRORAY_SUBSCRIPTIONS_API_ERROR_STATUS="404 Not Found"',
+        '"$BRORAY_SUBSCRIPTIONS_API_ERROR_MESSAGE"',
+    ):
+        if structured_error_contract not in subscriptions_common:
+            raise RuntimeError(f"structured subscription error contract is absent: {structured_error_contract}")
+    generic_subscription_marker = '"SUBSCRIPTION_OPERATION_FAILED"'
+    generic_subscription_index = subscriptions_common.rfind(generic_subscription_marker)
+    generic_subscription_window = subscriptions_common[
+        generic_subscription_index:generic_subscription_index + 240
+    ]
+    if generic_subscription_index < 0 or \
+       '"Операция с подпиской завершилась ошибкой."' not in generic_subscription_window or \
+       '"$broray_subscriptions_api_message"' in generic_subscription_window:
+        raise RuntimeError("subscription API does not retain a non-leaking generic fallback")
+    for structured_server_error_contract in (
+        "broray_servers_api_parse_error",
+        'BRORAY_SERVERS_API_ERROR_CODE="ACTIVE_SERVER_CONFLICT"',
+        'BRORAY_SERVERS_API_ERROR_CODE="SERVER_UNREACHABLE"',
+        'BRORAY_SERVERS_API_ERROR_CODE="SERVER_CONFIG_INVALID"',
+        'BRORAY_SERVERS_API_ERROR_CODE="SERVER_NOT_FOUND"',
+        'BRORAY_SERVERS_API_ERROR_CODE="SERVER_DUPLICATE"',
+        'BRORAY_SERVERS_API_ERROR_CODE="INVALID_VLESS"',
+        'BRORAY_SERVERS_API_ERROR_STATUS="409 Conflict"',
+        'BRORAY_SERVERS_API_ERROR_STATUS="422 Unprocessable Entity"',
+        'BRORAY_SERVERS_API_ERROR_STATUS="404 Not Found"',
+        '"$BRORAY_SERVERS_API_ERROR_MESSAGE"',
+    ):
+        if structured_server_error_contract not in servers_common:
+            raise RuntimeError(f"structured server error contract is absent: {structured_server_error_contract}")
+    generic_server_marker = '"SERVER_OPERATION_FAILED"'
+    generic_server_index = servers_common.rfind(generic_server_marker)
+    generic_server_window = servers_common[
+        generic_server_index:generic_server_index + 220
+    ]
+    if generic_server_index < 0 or \
+       '"Операция с сервером завершилась ошибкой."' not in generic_server_window or \
+       'broray_servers_api_error_line' in generic_server_window:
+        raise RuntimeError("server API does not retain a non-leaking generic fallback")
     gates["cgiResponseIsolationAndJsonNormalization"] = "PASS"
 
     for server_ui_contract in ("checkText(server.lastCheck)", "server-check-result", "refreshMoveButtons()", "await response.text()"):
         if server_ui_contract not in servers_js:
             raise RuntimeError(f"server result or boundary UI contract is absent: {server_ui_contract}")
+    for negative_check_contract in (
+        "broray_servers_api_check_completed",
+        "broray_server_check",
+        '"$check_server_id"',
+        '>"$check_result_file" || check_rc=$?',
+        '.serverId == $serverId',
+        '((.success | type) == "boolean")',
+        '((.checkedAt | length) > 0)',
+        "[ \"$check_rc\" -ne 0 ] || check_rc=1",
+    ):
+        if negative_check_contract not in server_check_api:
+            raise RuntimeError(f"negative server check API normalization is absent: {negative_check_contract}")
     for failover_contract in ("BROrayLightFailoverSaved", "current === window.BROrayLightFailoverSaved", "index === 0", "index === cards.length - 1"):
         if failover_contract not in failover_js:
             raise RuntimeError(f"failover reversible-dirty or boundary contract is absent: {failover_contract}")
@@ -504,6 +607,53 @@ def main() -> int:
     gates["xrayEqualVersionReinstallContract"] = "PASS"
 
     dedupe_cli = installed_app / "bin/broray-subscriptions"
+    server_cli = installed_app / "bin/broray-servers"
+    light_daemon = (installed_app / "bin/broray-lightd").read_text(encoding="utf-8")
+    scheduler_cli = dedupe_cli.read_text(encoding="utf-8")
+    if '"$ROOT/bin/broray-subscriptions" scheduler-once' not in light_daemon or \
+       "broray_subscription_run_due" not in scheduler_cli or \
+       "broray_subscription_update \"$scheduler_id\" automatic" not in scheduler_cli or \
+       'broray_operation_lock_acquire "subscriptions:scheduler"' not in scheduler_cli or \
+       'skipped:"operation-busy"' not in scheduler_cli or \
+       '.nextUpdateEpoch // 0' not in scheduler_cli:
+        raise RuntimeError("primary daemon subscription scheduler contract is incomplete")
+    scheduler_root = root / "subscription-scheduler-contract"
+    scheduler_lib = scheduler_root / "lib/subscription-service.sh"
+    scheduler_lib.parent.mkdir(parents=True)
+    write_shim(
+        scheduler_lib,
+        "#!/bin/sh\n"
+        "BRORAY_SUB_DIR=\"$BRORAY_ROOT/config/subscriptions\"\n"
+        "BRORAY_SUB_TMP=\"$BRORAY_ROOT/tmp\"\n"
+        "BRORAY_SUB_LOG=\"$BRORAY_ROOT/logs/subscriptions.log\"\n"
+        "broray_subscription_prepare_dirs(){ mkdir -p \"$BRORAY_SUB_DIR\" \"$BRORAY_SUB_TMP\" \"$BRORAY_ROOT/logs\"; }\n"
+        "broray_subscription_now_epoch(){ printf '1000\\n'; }\n"
+        "broray_subscription_validate_file(){ return 0; }\n"
+        "broray_subscription_update(){ printf '%s\\n' \"$1\" >> \"$BRORAY_ROOT/scheduler-calls\"; return 0; }\n"
+        "broray_subscription_summary(){ printf '{\"ok\":true}\\n'; }\n",
+    )
+    write_shim(
+        scheduler_root / "lib/operation-lock.sh",
+        "#!/bin/sh\n"
+        "broray_operation_lock_acquire(){ [ \"${BRORAY_LIGHT_TEST_LOCK_BUSY:-0}\" != 1 ] || return 2; return 0; }\n"
+        "broray_operation_lock_release(){ return 0; }\n",
+    )
+    due_dir = scheduler_root / "config/subscriptions"
+    due_dir.mkdir(parents=True)
+    json_write(due_dir / "due-one.json", {
+        "id": "due-one", "enabled": True, "autoUpdateEnabled": True, "nextUpdateEpoch": 900,
+    })
+    run([dash, posix(dedupe_cli), "scheduler-once"], env={**env, "BRORAY_ROOT": posix(scheduler_root)})
+    if (scheduler_root / "scheduler-calls").read_text(encoding="utf-8").splitlines() != ["due-one"]:
+        raise RuntimeError("subscription scheduler did not execute the due enabled subscription exactly once")
+    busy_result = run([dash, posix(dedupe_cli), "scheduler-once"], env={
+        **env, "BRORAY_ROOT": posix(scheduler_root), "BRORAY_LIGHT_TEST_LOCK_BUSY": "1",
+    })
+    if '"skipped": "operation-busy"' not in busy_result.stdout or \
+       (scheduler_root / "scheduler-calls").read_text(encoding="utf-8").splitlines() != ["due-one"]:
+        raise RuntimeError("busy global operation lock did not safely skip the scheduled subscription tick")
+    gates["subscriptionAutoUpdateSchedulerAndGlobalLock"] = "PASS"
+
     server_root = app_root / "servers"
     auto_config = app_root / "config/system/server-auto-switch.json"
     original_auto_config = auto_config.read_bytes()
@@ -534,6 +684,41 @@ def main() -> int:
     auto_config.write_bytes(original_auto_config)
     gates["globalServerDeduplication"] = "PASS"
 
+    delete_id = "manual-delete-reference-test"
+    json_write(server_root / f"{delete_id}.json", {"schemaVersion": 2, "id": delete_id})
+    json_write(auto_config, {
+        "schemaVersion": 1,
+        "enabled": False,
+        "failureThreshold": 3,
+        "cooldownSeconds": 600,
+        "orderedServerIds": [delete_id, "keep-server"],
+        "excludedServerIds": [delete_id],
+    })
+    delete_result = json.loads(run(
+        [dash, posix(server_cli), "delete", delete_id],
+        env={**env, "BRORAY_ROOT": posix(app_root)},
+    ).stdout)
+    pruned_config = json.loads(auto_config.read_text(encoding="utf-8"))
+    if (server_root / f"{delete_id}.json").exists() or \
+       delete_result.get("failoverReferencesPruned") is not True or \
+       pruned_config.get("orderedServerIds") != ["keep-server"] or \
+       pruned_config.get("excludedServerIds"):
+        raise RuntimeError("server deletion left stale auto-switch references")
+
+    rollback_id = "manual-delete-rollback-test"
+    json_write(server_root / f"{rollback_id}.json", {"schemaVersion": 2, "id": rollback_id})
+    auto_config.write_text("{invalid\n", encoding="utf-8", newline="\n")
+    run(
+        [dash, posix(server_cli), "delete", rollback_id],
+        env={**env, "BRORAY_ROOT": posix(app_root)},
+        expected=1,
+    )
+    if not (server_root / f"{rollback_id}.json").is_file():
+        raise RuntimeError("server deletion did not fail closed when failover pruning preparation failed")
+    (server_root / f"{rollback_id}.json").unlink()
+    auto_config.write_bytes(original_auto_config)
+    gates["serverDeletePrunesFailoverReferences"] = "PASS"
+
     theme_css = (installed_app / "web-new/assets/css/allpage.css").read_text(encoding="utf-8")
     login_html = (installed_app / "web-new/index.html").read_text(encoding="utf-8")
     if "--brand-hi" not in theme_css or ".server-card.is-active" not in theme_css or ".toast-root" not in theme_css:
@@ -560,7 +745,21 @@ def main() -> int:
        ".card-label { color: var(--brand-hi); }" not in theme_css:
         raise RuntimeError("mobile circular logo or green card-label presentation contract is absent")
     gates["mobileLogoAndCardLabelColor"] = "PASS"
-    asset_version = "?v=0.1.0-r0009c19"
+    for keenetic_style_contract in (
+        ".keenetic-summary-row",
+        ".interface-status-badge.is-active",
+        ".interface-status-badge.is-inactive",
+        ".interface-status-badge.is-warning",
+        ".interface-status-badge.is-error",
+    ):
+        if keenetic_style_contract not in theme_css:
+            raise RuntimeError(f"Keenetic status-card style contract is absent: {keenetic_style_contract}")
+    gates["keeneticStatusCardPresentation"] = "PASS"
+    if ".form-grid.failover-grid" not in theme_css or ".subscription-auto-update" not in theme_css or \
+       ".subscription-auto-grid" not in theme_css:
+        raise RuntimeError("failover or subscription auto-update responsive layout contract is absent")
+    gates["responsiveSettingsCardLayout"] = "PASS"
+    asset_version = f"?v={CANDIDATE_ID}"
     for page_name in ("index.html", "home.html", "servers.html", "subscriptions.html"):
         page_html = (installed_app / "web-new" / page_name).read_text(encoding="utf-8")
         if 'http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate"' not in page_html or \
@@ -702,10 +901,10 @@ def main() -> int:
     for path, payload in persistent.items():
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_bytes(payload)
-    clone_slot(app_root, RELEASE_ID, "0.1.0-r8")
-    set_current(app_root, "0.1.0-r8")
+    clone_slot(app_root, RELEASE_ID, PREVIOUS_RELEASE_ID)
+    set_current(app_root, PREVIOUS_RELEASE_ID)
     shutil.rmtree(app_root / "releases" / RELEASE_ID)
-    (app_root / "config/version").write_text("0.1.0-r8\n", encoding="utf-8")
+    (app_root / "config/version").write_text(f"{PREVIOUS_RELEASE_ID}\n", encoding="utf-8")
 
     with tarfile.open(app_bundle, "r:gz") as archive:
         slot_manifest = json.load(archive.extractfile("SLOT-MANIFEST.json"))  # type: ignore[arg-type]
@@ -719,7 +918,7 @@ def main() -> int:
     service_hook = tools / "service-hook"
     health_hook = tools / "health-hook"
     write_shim(service_hook, "#!/bin/sh\nexit 0\n")
-    write_shim(health_hook, '#!/bin/sh\n[ -n "${BRORAY_TEST_FAIL_HEALTH:-}" ] && [ -e "$BRORAY_TEST_FAIL_HEALTH" ] && [ "$1" = "0.1.0-r9" ] && exit 1\nexit 0\n')
+    write_shim(health_hook, f'#!/bin/sh\n[ -n "${{BRORAY_TEST_FAIL_HEALTH:-}}" ] && [ -e "$BRORAY_TEST_FAIL_HEALTH" ] && [ "$1" = "{RELEASE_ID}" ] && exit 1\nexit 0\n')
     update_env = env.copy()
     update_env.update({
         "BRORAY_LIGHT_TEST_MODE": "1",
@@ -729,9 +928,9 @@ def main() -> int:
         "BRORAY_LIGHT_PUBLIC_KEY": posix(system_root / "opt/share/broray-light/release.pub"),
     })
 
-    relation = run([dash, posix(updater), "relation", "0.1.0-r8", RELEASE_ID], env=update_env).stdout.strip()
+    relation = run([dash, posix(updater), "relation", PREVIOUS_RELEASE_ID, RELEASE_ID], env=update_env).stdout.strip()
     equal = run([dash, posix(updater), "relation", RELEASE_ID, RELEASE_ID], env=update_env).stdout.strip()
-    older = run([dash, posix(updater), "relation", "0.1.0-r10", RELEASE_ID], env=update_env).stdout.strip()
+    older = run([dash, posix(updater), "relation", NEWER_RELEASE_ID, RELEASE_ID], env=update_env).stdout.strip()
     if (relation, equal, older) != ("newer", "equal", "older"):
         raise RuntimeError(f"release relation mismatch: {(relation, equal, older)}")
     gates["releaseIdDecision"] = "PASS"
@@ -751,20 +950,20 @@ def main() -> int:
     run([dash, posix(updater), "update"], env=update_env)
     gates["equalVersionNoOp"] = "PASS"
 
-    clone_slot(app_root, RELEASE_ID, "0.1.0-r10")
-    set_current(app_root, "0.1.0-r10")
+    clone_slot(app_root, RELEASE_ID, NEWER_RELEASE_ID)
+    set_current(app_root, NEWER_RELEASE_ID)
     run([dash, posix(updater), "update"], env=update_env, expected=20)
-    if json.loads((app_root / "current/release.json").read_text(encoding="utf-8"))["releaseId"] != "0.1.0-r10":
+    if json.loads((app_root / "current/release.json").read_text(encoding="utf-8"))["releaseId"] != NEWER_RELEASE_ID:
         raise RuntimeError("downgrade refusal mutated current")
     gates["downgradeRefusal"] = "PASS"
 
-    set_current(app_root, "0.1.0-r8")
+    set_current(app_root, PREVIOUS_RELEASE_ID)
     fail_marker = root / "force-health-failure"
     fail_marker.write_text("1\n", encoding="utf-8")
     rollback_env = update_env.copy()
     rollback_env["BRORAY_TEST_FAIL_HEALTH"] = posix(fail_marker)
     run([dash, posix(updater), "update"], env=rollback_env, expected=1)
-    if json.loads((app_root / "current/release.json").read_text(encoding="utf-8"))["releaseId"] != "0.1.0-r8":
+    if json.loads((app_root / "current/release.json").read_text(encoding="utf-8"))["releaseId"] != PREVIOUS_RELEASE_ID:
         raise RuntimeError("rollback did not restore previous-good slot")
     gates["forcedHealthRollback"] = "PASS"
     fail_marker.unlink()

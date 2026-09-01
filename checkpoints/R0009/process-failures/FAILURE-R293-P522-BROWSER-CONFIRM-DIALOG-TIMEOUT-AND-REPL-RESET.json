@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "failureId": "R293",
+  "stage": "R0009_FINAL_P505_SERVER_CONTROLS_AUDIT_WITH_DISCOVERED_LIBRARY_PATHS",
+  "revision": "p522-final-p505-server-controls-audit-with-discovered-library-paths",
+  "at": "2026-09-01T23:56:02+03:00",
+  "status": "FAIL_FIRST_ERROR_PRESERVED",
+  "operation": "DELETE_SECOND_NONACTIVE_CONTROLLED_SERVER_THROUGH_NATIVE_CONFIRM",
+  "error": "The browser JavaScript execution timed out while handling the native confirm flow and the persistent browser REPL was reset.",
+  "confirmedBeforeFailure": {
+    "duplicateManualImportProtection": "PASS",
+    "duplicateManualImportMessage": "Такой VLESS-сервер уже добавлен.",
+    "negativeCheckButton": "PASS",
+    "negativeCheckMessage": "Сервер недоступен",
+    "moveDown": "PASS",
+    "moveUp": "PASS",
+    "failoverEnableAndSave": "PASS",
+    "failoverDisableAndBaselineRestore": "PASS",
+    "baselineConfigRestored": true
+  },
+  "deleteDelivery": "UNKNOWN_UNTIL_NEXT_REVISION_BACKEND_READ",
+  "routerMutationPerformed": "UNKNOWN_UNTIL_NEXT_REVISION_BACKEND_READ",
+  "candidateArtifactDefect": false,
+  "hiddenRetryPerformed": false,
+  "candidateReady": false,
+  "nextRevision": "p523-final-p505-delete-outcome-adjudication-and-browser-rebind",
+  "nextExactAction": "READ_THE_SECOND_CONTROLLED_SERVER_FILE_AND_INVENTORY_OVER_SSH_THEN_REINITIALIZE_BROWSER_CLIENT_AND_REBIND_THE_CURRENT_TAB_BEFORE_DECIDING_WHETHER_DELETE_NEEDS_A_CORRECTED_ACTION"
+}

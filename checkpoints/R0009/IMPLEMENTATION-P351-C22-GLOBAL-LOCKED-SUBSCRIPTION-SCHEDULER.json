@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_C22_GLOBAL_LOCKED_SUBSCRIPTION_SCHEDULER",
+  "revision": "p351-c22-global-locked-subscription-scheduler",
+  "at": "2026-09-01T16:49:58+03:00",
+  "status": "PASS_IMPLEMENTED_PENDING_INDEPENDENT_BUILDS",
+  "candidateId": "0.1.0-r0009c22",
+  "correctsFailure": "R210",
+  "globalLockContract": {
+    "operation": "subscriptions:scheduler",
+    "coversDueUpdates": true,
+    "coversDeduplication": true,
+    "coversSummary": true,
+    "busyBehavior": "PASS_SAFE_SKIPPED_TICK",
+    "unexpectedLockFailure": "FAIL_CLOSED",
+    "staleOwnerRecovery": "operation-lock.sh canonical semantics"
+  },
+  "validation": {
+    "pythonSyntax": "PASS_2_OF_2",
+    "javascriptSyntax": "PASS",
+    "routerAshSyntax": "PASS",
+    "staleC21ReferencesInCurrentPackagingOrTools": 0,
+    "sourceUnchanged": true,
+    "diffCheck": "PASS"
+  },
+  "files": {
+    "subscriptionsCliSha256": "3dbf33321a16406bd08d8f9cb496f8dd2bcaa35aa1f415536b6c457d215cd71c",
+    "builderSha256": "3d3e12efbc97b49378e702d1157f9adace305cc088551cf39bcea6498bfcb17a",
+    "testHarnessSha256": "f464d960de9bc92c6476bda4b50049adeb435c96b8b986f3c345abdb3428c28e"
+  },
+  "routerMutation": false,
+  "productionServerMutationPerformed": false,
+  "publicReleasePublished": false,
+  "nextRevision": "p352-c22-independent-builds",
+  "nextExactAction": "BUILD_C22_A_AND_B_COMPARE_ALL_ARTIFACTS_AND_VERIFY_BOTH_SIGNATURES"
+}

@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_FINAL_XRAY_REINSTALL_AVAILABILITY_DIAGNOSIS",
+  "revision": "p419-final-xray-reinstall-availability-diagnosis",
+  "at": "2026-09-01T19:36:58+03:00",
+  "status": "PASS_RUNTIME_STORAGE_PRESSURE_CONFIRMED",
+  "failureId": "R237",
+  "storageAvailableKb": 15196,
+  "temporaryIpks": [
+    "/opt/tmp/broray-light-final-1.0.0-r1-p388.ipk",
+    "/opt/tmp/broray-light-final-1.0.0-r1-p406.ipk",
+    "/opt/tmp/broray-light-final-1.0.0-r1-p415.ipk"
+  ],
+  "temporaryIpksTotalKb": 37524,
+  "allRecoverableFromLocalBuilds": true,
+  "candidateArtifactDefect": false,
+  "candidateReady": false,
+  "nextRevision": "p420-final-temp-package-cleanup",
+  "nextExactAction": "DELETE_ONLY_THE_THREE_VERIFIED_RECOVERABLE_TEMP_IPKS_CONFIRM_STORAGE_RECOVERY_THEN_RERUN_XRAY_UPDATE_CHECK"
+}

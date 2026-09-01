@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_FINAL_1_0_0_R1_PHYSICAL_INSTALL",
+  "revision": "p388-final-explicit-path-backup-transfer-install",
+  "failureId": "R228",
+  "at": "2026-09-01T18:48:44+03:00",
+  "status": "FAIL_CLOSED_FIRST_ERROR_PRESERVED",
+  "operation": "ONE_OPKG_INSTALL_OF_HASH_VERIFIED_1_0_0_R1_PACKAGE",
+  "packageSha256": "3d2768ee370d990871df7f974c0205ece413b0a5101efc742bb02496dc16fa34",
+  "opkgExit": 1,
+  "observed": [
+    "OPKG began upgrading broray-light from 0.1.0-r0009c23 to 1.0.0-r1.",
+    "OPKG removed files under the previous packaged slot releases/0.1.0-r9 as obsolete.",
+    "The postinst service start resolved /opt/broray-light/bin/broray-runtime-prepare through current and the file was absent.",
+    "Postinst returned status 1 and package configuration failed."
+  ],
+  "firstError": "/opt/etc/init.d/S24broray-light: line 154: /opt/broray-light/bin/broray-runtime-prepare: not found",
+  "candidateArtifactDefect": true,
+  "acceptanceGate": "PHYSICAL_UPDATE_FROM_EXISTING_RELEASE_WITH_DIFFERENT_RELEASE_ID",
+  "packageInstallStarted": true,
+  "packageInstallCompleted": false,
+  "hiddenRetryPerformed": false,
+  "transactionBackup": "/opt/broray-light/backup/r0009-p388-final-1.0.0-r1",
+  "persistentInventoryBeforeSha256": "33e178b8fb83e0dcef0337d0f2f44d5b42964c4a3f4dbccfa98f5a6a2c90cad8",
+  "routerState": "MUTATED_BY_FAILED_OPKG_UPGRADE_PENDING_EXACT_INSPECTION_AND_RECOVERY",
+  "productionServerMutationPerformed": false,
+  "publicReleasePublished": false,
+  "candidateReady": false,
+  "correctedNextRevision": "p389-final-failed-install-inspection-and-recovery",
+  "nextExactAction": "READ_ONLY_INSPECT_OPKG_PACKAGE_CURRENT_SYMLINK_NEW_AND_OLD_SLOTS_SERVICES_XRAY_AND_PERSISTENT_HASH_THEN_RECOVER_ROUTER_WITHOUT_RETRYING_P388"
+}

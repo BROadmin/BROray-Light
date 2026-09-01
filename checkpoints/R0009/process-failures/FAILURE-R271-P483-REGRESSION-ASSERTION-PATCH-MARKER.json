@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_SERVER_CHECK_NEGATIVE_RESULT_API_NORMALIZATION",
+  "revision": "p483-server-check-negative-result-api-normalization",
+  "at": "2026-09-01T22:30:59+03:00",
+  "status": "FAIL_FIRST_ERROR_PRESERVED",
+  "failureId": "R271",
+  "operation": "INSPECT_NEW_NEGATIVE_SERVER_CHECK_REGRESSION_ASSERTION",
+  "error": "A patch marker plus sign was embedded in the Python string used to assert the multiline shell call.",
+  "candidateImplementation": {
+    "overlayCheckCgiAdded": true,
+    "implementationDefectObserved": false
+  },
+  "candidateArtifactDefect": false,
+  "testAssertionDefect": true,
+  "buildStarted": false,
+  "routerMutationPerformed": false,
+  "hiddenRetryPerformed": false,
+  "candidateReady": false,
+  "nextRevision": "p484-server-check-regression-assertion-correction",
+  "nextExactAction": "REPLACE_THE_MALFORMED_MULTILINE_ASSERTION_WITH_SEPARATE_EXACT_CONTRACT_STRINGS_THEN_RUN_PYTHON_AND_SHELL_SYNTAX_CHECKS"
+}

@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "failureId": "R288",
+  "stage": "R0009_FINAL_P505_BROWSER_TAB_REBIND_AND_ACTIVATION_STATE_ADJUDICATION",
+  "revision": "p516-final-p505-browser-tab-rebind-and-activation-state-adjudication",
+  "at": "2026-09-01T23:42:54+03:00",
+  "status": "FAIL_FIRST_ERROR_PRESERVED",
+  "operation": "READ_POST_TIMEOUT_ACTIVE_STATE_XRAY_CONFIG_HASH_AND_ASSUMED_DAEMON_LOG",
+  "error": "The assumed Xray config path /opt/etc/xray/config.json and daemon log /opt/broray-light/logs/broray-light.log do not exist.",
+  "confirmedBeforeFailure": {
+    "activeServerFile": "ABSENT",
+    "activationPersisted": false,
+    "lighttpdErrorLogReadable": true
+  },
+  "routerMutationPerformed": false,
+  "activationRetried": false,
+  "candidateArtifactDefect": false,
+  "hiddenRetryPerformed": false,
+  "candidateReady": false,
+  "nextRevision": "p517-final-p505-runtime-path-discovery-and-browser-tab-rebind",
+  "nextExactAction": "READ_THE_RUNNING_XRAY_PROCESS_ARGUMENTS_TO_DISCOVER_THE_CONFIG_PATH_THEN_LIST_AND_REBIND_THE_CURRENT_BROWSER_TAB_WITHOUT_REPEATING_ACTIVATION"
+}

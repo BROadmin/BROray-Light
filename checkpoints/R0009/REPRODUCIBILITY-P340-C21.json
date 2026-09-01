@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_C21_INDEPENDENT_BUILDS",
+  "revision": "p340-c21-independent-builds",
+  "at": "2026-09-01T16:32:15+03:00",
+  "status": "PASS",
+  "candidateId": "0.1.0-r0009c21",
+  "buildA": "dist/R0009/R0009c21-P340-Build-A",
+  "buildB": "dist/R0009/R0009c21-P340-Build-B",
+  "byteIdenticalArtifacts": 8,
+  "signatureVerification": {
+    "buildA": "PASS",
+    "buildB": "PASS"
+  },
+  "artifacts": {
+    "broray-light-app-0.1.0-r0009c21.tar.gz": "63bb9e58b9a815a9c46d2de3e51138fb899570c305cc6314e83b291af8a15f4d",
+    "broray-light-updater-platform-5-light1.tar.gz": "fb9edededff76248ee58c546deb39b64a2ae134c03f9c125424066703a6ed5e0",
+    "broray-light_0.1.0-r0009c21_aarch64-3.10.ipk": "a9a5d0172b305dd2e9fb640bc1588eb8e2dd4b3fdbdadc5c1515e685c2d25a16",
+    "broray-light-install-0.1.0-r0009c21.sh": "590db335fbe3d7a3108d83d4f9795c168d67bf02cffa19c512c34861bde02c85",
+    "release.json": "699489ef55a558ea4489f64ebff62d80520edeffdea74cc04cc49e8fba5b19e5",
+    "release.json.minisig": "e9a3018debefbc0a8a72d08e68245c11d7c5cebcce5889d9473eaba794e1ce74",
+    "CANDIDATE-MANIFEST.json": "254373ad46f6be2adeabd60c7e32e3c6e74e308e4efdf6ba857d33739bfcb55e",
+    "SHA256SUMS": "d30d4313a987f3de357e55c3dea93ea7aa365d3879db5c75572a1903288bf867"
+  },
+  "publicKeySha256": "17308f28719200e6479b2a094d264344f3ad1b0d8b65792f5712e771b318f22e",
+  "privateSigningKeyDestroyed": false,
+  "sourceUnchanged": true,
+  "routerMutation": false,
+  "productionServerMutationPerformed": false,
+  "publicReleasePublished": false,
+  "nextRevision": "p341-c21-full-isolated-validation",
+  "nextExactAction": "RUN_THE_FULL_ISOLATED_ROOT_ACCEPTANCE_HARNESS_WITH_A_VALIDATED_POSIX_SHELL_FIXTURE"
+}

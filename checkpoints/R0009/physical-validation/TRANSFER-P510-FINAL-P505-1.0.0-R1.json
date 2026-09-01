@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_FINAL_P505_EXACT_PACKAGE_TRANSFER",
+  "revision": "p510-final-p505-exact-package-transfer",
+  "at": "2026-09-01T23:34:00+03:00",
+  "status": "PASS_READY_FOR_ONE_FORCE_REINSTALL",
+  "localPackage": "dist/R0009/1.0.0-r1-P505-Final-Build-A/broray-light_1.0.0-r1_aarch64-3.10.ipk",
+  "remotePackage": "/opt/tmp/broray-light-final-1.0.0-r1-p510.ipk",
+  "packageSizeBytes": 12799179,
+  "localPackageSha256": "06956a63d30ba98aee99f2362cb66a1d82e50a95e0b683de26ce28b6332f9743",
+  "remotePackageSha256": "06956a63d30ba98aee99f2362cb66a1d82e50a95e0b683de26ce28b6332f9743",
+  "identityMatch": true,
+  "physicalInstallStarted": false,
+  "backupPath": "/opt/broray-light/backup/r0009-p509-before-p505-package",
+  "backupManifestSha256": "7af0a56d42f994472c4c41a289cd9d2ca103b05f5a7f369cbc8c8d1228c0d590",
+  "routerRebootPerformed": false,
+  "publicReleasePublished": false,
+  "candidateReady": false,
+  "nextRevision": "p511-final-p505-one-force-reinstall",
+  "nextExactAction": "RUN_EXACTLY_ONE_OPKG_INSTALL_FORCE_REINSTALL_OF_THE_HASH_VERIFIED_P510_PACKAGE_AND_STOP_ON_THE_FIRST_ERROR"
+}

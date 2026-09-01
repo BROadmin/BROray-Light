@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_C20_KEENETIC_INTERFACE_STATUS_CARD",
+  "revision": "p336-c20-separate-implementation-checkpoint-write",
+  "at": "2026-09-01T16:16:21+03:00",
+  "status": "PASS_IMPLEMENTED_PENDING_INDEPENDENT_BUILDS",
+  "candidateId": "0.1.0-r0009c20",
+  "scope": "Keenetic card presentation only; backend and ownership semantics unchanged",
+  "apiContract": {
+    "interfaceName": "keenetic.health.facts.interfaceName or keenetic.interfaceName",
+    "severity": "keenetic.health.severity",
+    "exists": "keenetic.health.facts.exists",
+    "operational": "keenetic.health.operational"
+  },
+  "statusMapping": {
+    "okAndOperational": {"label":"Активен","tone":"active"},
+    "warning": {"label":"Требует внимания","tone":"warning"},
+    "errorAndAbsent": {"label":"Не активен","tone":"inactive"},
+    "otherError": {"label":"Ошибка","tone":"error"},
+    "unknown": {"label":"Не проверено","tone":"pending"}
+  },
+  "validation": {
+    "pythonSyntax": "PASS_2_OF_2",
+    "javascriptSyntax": "PASS_5_OF_5",
+    "staleC19ReferencesInPackagingOrTools": 0,
+    "sourceUnchanged": true,
+    "diffCheck": "PASS"
+  },
+  "files": {
+    "homeHtmlSha256": "c229e0ae2287e4d29d313f69d8f8eabbe3c44c1372c2e8f0168fdd3483a459c5",
+    "homeJsSha256": "ad6a6505abe781c11b1c2c097abc3b8fc65c1d562eaa2b08a464b0f7e3a3781a",
+    "themeCssSha256": "2d9f25648f651f7e8b25d88b011c1d8f4b8d650d202b712cc0d91383c46b003d",
+    "builderSha256": "3321e314c5c06a2bb17694b707db69619ff8089c4136770d7e0318c9f5b6df19",
+    "testHarnessSha256": "f88308c66f693c6c4603d08fec6ce5aa7f839947ac0f63b24c68da4bc6eba3ae"
+  },
+  "routerMutation": false,
+  "productionServerMutationPerformed": false,
+  "publicReleasePublished": false,
+  "nextRevision": "p337-c20-ephemeral-signing-and-independent-builds",
+  "nextExactAction": "GENERATE_A_NEW_EPHEMERAL_INTERNAL_SIGNING_IDENTITY_BUILD_C20_A_AND_B_AND_COMPARE_ALL_ARTIFACTS_BYTE_FOR_BYTE"
+}

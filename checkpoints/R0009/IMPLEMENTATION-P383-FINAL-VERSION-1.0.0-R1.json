@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_FINAL_VERSION_1_0_0_R1",
+  "revision": "p383-final-version-1.0.0-r1",
+  "at": "2026-09-01T18:34:40+03:00",
+  "status": "PASS_FINAL_MATERIAL_TREE_SEALED_PENDING_BUILD",
+  "packageVersion": "1.0.0-r1",
+  "releaseId": "1.0.0-r1",
+  "candidateId": "1.0.0-r1",
+  "versionChangeIsLastMaterialChange": true,
+  "changedFileSha256": {
+    "tools/build_r0009_candidate.py": "ce415971eaf98323d7f50a5a1f4d5609710a019cc93570dad4381fcf6665d5ab",
+    "tools/test_r0009.py": "aa5d2c2833df8b5d30b169536594a452a79c49402ca1d47d2904f52e69574b75",
+    "packaging/opkg/broray-light-web-publish-policy.sh": "715dbf1b22c46cb5b7fb513fd2ae2ad48c67dab5a29f84899fe48e4a7c931979",
+    "packaging/app-overlay/web-new/index.html": "b275935ca7f92e3ec605d24563dd33d6db85b3cdfeae6d5923ddfcce0d5a7f54",
+    "packaging/app-overlay/web-new/home.html": "9a3fb689a2352ad1e4e2425189fdd8cd838d5c7a5bffa2aa33642df2eddd644c",
+    "packaging/app-overlay/web-new/servers.html": "8762e2e36f572604dd3dd27ba8e664ef1c507657aec9bd18035962cf1227663d",
+    "packaging/app-overlay/web-new/subscriptions.html": "4e7e4a0aa90ef0ba27ee573a204260009ffac11ef836d36045c8270786befc0e",
+    "packaging/app-overlay/web-new/assets/js/login.js": "98b5db4a2a29194df8bb5bd4628f1acafa91306d7546815efe625b197dbb4a4e",
+    "packaging/app-overlay/web-new/assets/js/home.js": "1ead604d644926f8c5594be85074e71410657080390814717ac7f0cdaa1bf51b",
+    "packaging/app-overlay/web-new/assets/js/servers.js": "d63c65eb02e53bbbac87e55f09190dc18529b626062698ef8f59c50e1e3e31d4",
+    "packaging/app-overlay/web-new/assets/js/subscriptions.js": "3ba29090faff16095d1616393df7312c32c41c59b4d42d4e7a1a55c56085f3b2"
+  },
+  "preBuildChecks": {
+    "activeBranch": "codex/r0009-updater-package",
+    "pythonAst": "PASS",
+    "shellSyntax": "PASS",
+    "gitDiffCheck": "PASS",
+    "canonicalSourceDiff": "NONE",
+    "canonicalSourceFiles": 121,
+    "canonicalSourceLogicalBytes": 627326,
+    "canonicalSourceSha256SumsSha256": "e056585d6a517ddbbbaebf08b68f17eb2d9d7ccd68d86df5cdee9fd4665f2419"
+  },
+  "publicReleasePublished": false,
+  "candidateReady": false,
+  "nextRevision": "p384-final-build-a-b",
+  "nextExactAction": "BUILD_INDEPENDENT_A_AND_B_FROM_THE_SEALED_1_0_0_R1_TREE_VERIFY_ALL_ARTIFACTS_BYTE_IDENTICAL_AND_BOTH_SIGNATURES"
+}

@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_FINAL_1_0_0_R1_OPKG_VERSION_IDENTITY_CORRECTION",
+  "revision": "p412-final-opkg-version-identity-correction",
+  "at": "2026-09-01T19:29:18+03:00",
+  "status": "PASS_IMPLEMENTED_PENDING_REBUILD_AND_FULL_RERUN",
+  "failureId": "R235",
+  "correction": "Postinst atomically replaces the managed config/version identity with RELEASE_ID and fails closed on symlink or directory ambiguity.",
+  "regressionGate": "crossReleasePackageUpgradeActivatesTarget now also requires config/version to equal RELEASE_ID",
+  "postinstSha256": "c657759b5342c62ddf725774e257e77711a0827a652612d42bbb4a94ed69e0f8",
+  "testSha256": "f96f7cf992f25c500fffc3c6a73c9ddb2e8cb378f53f122bc6ec050a1bbc7cb8",
+  "dashSyntax": "PASS",
+  "pythonAst": "PASS",
+  "canonicalSourceDiff": "NONE",
+  "publicReleasePublished": false,
+  "candidateReady": false,
+  "nextRevision": "p413-final-version-identity-build-a-b",
+  "nextExactAction": "REBUILD_INDEPENDENT_A_AND_B_COMPARE_ALL_BYTES_AND_SIGNATURES_THEN_RUN_ALL_50_ISOLATED_GATES"
+}

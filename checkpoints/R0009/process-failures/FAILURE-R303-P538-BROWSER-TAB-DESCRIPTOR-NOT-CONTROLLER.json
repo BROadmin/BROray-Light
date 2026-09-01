@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_FINAL_P531_AUTHENTICATED_DELETE_PRUNING_REGRESSION",
+  "revision": "p538-final-p531-authenticated-delete-pruning-regression",
+  "at": "2026-09-02T00:39:09+03:00",
+  "status": "FAIL_FIRST_ERROR_PRESERVED",
+  "failureId": "R303",
+  "operation": "BIND_EXISTING_BROWSER_TAB_16_AND_READ_PAGE_BODY",
+  "firstError": "auditTab.locator is not a function",
+  "cause": "browser.tabs.get('16') returned a tab descriptor rather than the controllable browser tab wrapper required for locator operations.",
+  "webUiMutationPerformed": false,
+  "routerMutationPerformed": false,
+  "candidateArtifactDefect": false,
+  "hiddenRetryPerformed": false,
+  "candidateReady": false,
+  "retryPolicy": "NO_RETRY_OF_P538_BINDING_METHOD",
+  "nextRevision": "p539-final-p531-browser-controller-binding-and-delete-pruning-regression",
+  "nextExactAction": "INSPECT_THE_TAB_DESCRIPTOR_AND_BROWSER_TAB_API_THEN_BIND_OR_CREATE_A_CONTROLLABLE_TAB_WITHOUT_TOUCHING_BLOCKED_TAB_15"
+}

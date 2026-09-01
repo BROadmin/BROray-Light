@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_FINAL_1_0_0_R1_PORTABLE_CROSS_RELEASE_ASSERTION",
+  "revision": "p400-final-portable-cross-release-assertion",
+  "at": "2026-09-01T19:08:54+03:00",
+  "status": "PASS_IMPLEMENTED_PENDING_REBUILD_AND_FULL_RERUN",
+  "failureReference": "checkpoints/R0009/process-failures/FAILURE-R232-P398-CROSS-RELEASE-ASSERTION-PATH-FORM.json",
+  "candidateArtifactDefect": false,
+  "testAssertionDefect": true,
+  "correction": "Assert the logical relative target through the harness readlink shim and independently require current/release.json releaseId=1.0.0-r1.",
+  "testSha256": "9f2d1db8dd8dca024847774de3badc5e3035aca8f18a80c7e6be47c41cca9454",
+  "pythonAst": "PASS",
+  "gitDiffCheck": "PASS",
+  "canonicalSourceDiff": "NONE",
+  "publicReleasePublished": false,
+  "candidateReady": false,
+  "nextRevision": "p401-final-post-assertion-build-a-b",
+  "nextExactAction": "REBUILD_INDEPENDENT_A_AND_B_CONFIRM_THE_ARTIFACT_BYTES_REMAIN_DETERMINISTIC_THEN_RUN_ALL_50_ISOLATED_GATES"
+}

@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "failureId": "R240",
+  "stage": "R0009_USER_AUTHORIZED_SUBSCRIPTION_DELETE_BUTTON_TEST",
+  "revision": "p425-user-subscription-delete-native-dialog-fresh-binding",
+  "at": "2026-09-01T19:48:00+03:00",
+  "status": "FAIL_FIRST_ERROR_PRESERVED",
+  "operation": "DELETE_SUBSCRIPTION_THROUGH_VISIBLE_WEBUI_BUTTON",
+  "subscriptionId": "sub-130bddd06d26133e",
+  "deleteButtonCount": 1,
+  "nativeDialogType": "confirm",
+  "nativeDialogAccepted": true,
+  "observedWebUiError": "Операция с подпиской завершилась ошибкой.",
+  "subscriptionStillPresent": true,
+  "candidateArtifactDefect": true,
+  "hiddenRetryPerformed": false,
+  "backupPath": "/opt/broray-light/backup/r0009-p422-before-delete-sub-130bddd06d26133e",
+  "candidateReady": false,
+  "nextRevision": "p426-subscription-delete-backend-diagnosis",
+  "nextExactAction": "READ_ONLY_INSPECT_DELETE_CGI_SUBSCRIPTION_SERVICE_AND_RELEVANT_LOGS_IDENTIFY_FIRST_BACKEND_ERROR_WITHOUT_RETRYING_DELETE"
+}

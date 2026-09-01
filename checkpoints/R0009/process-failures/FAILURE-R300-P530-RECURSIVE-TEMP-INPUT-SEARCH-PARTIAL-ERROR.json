@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "failureId": "R300",
+  "stage": "R0009_FINAL_SERVER_DELETE_FIX_BUILD_A",
+  "revision": "p530-final-server-delete-fix-build-a",
+  "at": "2026-09-02T00:14:54+03:00",
+  "status": "FAIL_FIRST_ERROR_PRESERVED",
+  "operation": "RECURSIVELY_DISCOVER_PINNED_BUILD_INPUTS_UNDER_THE_FULL_USER_TEMP_ROOT",
+  "error": "The searches found the expected R0009 input directories but exited with code 1 because unrelated temporary subdirectories were not fully readable.",
+  "successfulDiscovery": {
+    "updaterDirectory": "broray-light-r0009-pinned",
+    "xrayDirectory": "broray-light-r0009-xray-01b1429d3a4d46d4b06eb60e11508d22",
+    "minisignDirectory": "broray-light-r0009-minisign-931e94bdcad1488daabc19d6aec65772"
+  },
+  "buildStarted": false,
+  "repositoryMutationPerformed": false,
+  "routerMutationPerformed": false,
+  "candidateArtifactDefect": false,
+  "hiddenRetryPerformed": false,
+  "candidateReady": false,
+  "nextRevision": "p531-final-server-delete-fix-exact-input-verification-and-build-a",
+  "nextExactAction": "READ_ONLY_THE_THREE_DISCOVERED_EXACT_DIRECTORIES_VERIFY_PINNED_SIZE_AND_SHA256_THEN_RUN_BUILD_A_ONCE"
+}

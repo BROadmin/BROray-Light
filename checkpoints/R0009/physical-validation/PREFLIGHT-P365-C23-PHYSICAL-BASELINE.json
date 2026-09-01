@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_C23_CORRECTED_PHYSICAL_PREFLIGHT",
+  "revision": "p365-c23-corrected-read-only-preflight",
+  "at": "2026-09-01T17:27:00+03:00",
+  "status": "PASS",
+  "candidateId": "0.1.0-r0009c23",
+  "installedBefore": "broray-light 0.1.0-r0009c22",
+  "releaseCandidateBefore": "0.1.0-r0009c22",
+  "primaryServiceStatus": "PASS_EXIT_ZERO",
+  "updaterServiceStatus": "PASS_EXIT_ZERO",
+  "persistenceBeforeSha256": "4c1fd2f38cf62b00c77c09fbe011f3ea6d13d1c224d3aac4389fa7637f70031a",
+  "serverCount": 6,
+  "fullBROrayOwnership": 0,
+  "routerMutation": false,
+  "productionServerMutationPerformed": false,
+  "publicReleasePublished": false,
+  "nextRevision": "p366-c23-transfer-install",
+  "nextExactAction": "TRANSFER_VERIFY_AND_INSTALL_THE_EXACT_C23_BUILD_A_PACKAGE_THEN_COMPARE_PERSISTENCE_AND_SERVICES"
+}

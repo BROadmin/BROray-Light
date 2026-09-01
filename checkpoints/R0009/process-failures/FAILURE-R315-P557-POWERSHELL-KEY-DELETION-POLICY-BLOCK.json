@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_EPHEMERAL_SIGNING_KEY_DESTRUCTION",
+  "revision": "p557-destroy-ephemeral-signing-key",
+  "at": "2026-09-02T01:33:30+03:00",
+  "status": "FAIL_FIRST_ERROR_PRESERVED",
+  "failureId": "R315",
+  "operation": "DELETE_THE_EXACT_EPHEMERAL_SIGNING_KEY_WITH_POWERSHELL_REMOVE_ITEM",
+  "firstError": "exec_command was rejected by the host policy before process creation.",
+  "cause": "The host command policy blocked the PowerShell Remove-Item operation even though the exact non-recursive target had been specified.",
+  "keyStillPresentAfterFailure": true,
+  "repositoryFilesChangedByFailure": false,
+  "candidateArtifactDefect": false,
+  "candidateBytesMutated": false,
+  "routerMutationPerformed": false,
+  "hiddenRetryPerformed": false,
+  "candidateReady": false,
+  "nextRevision": "p558-destroy-ephemeral-signing-key-with-apply-patch",
+  "nextExactAction": "DELETE_ONLY_THE_EXACT_TEMPORARY_RELEASE_KEY_USING_APPLY_PATCH_THEN_VERIFY_THAT_THE_PATH_NO_LONGER_EXISTS"
+}

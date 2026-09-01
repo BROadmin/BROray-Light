@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "failureId": "R262",
+  "stage": "R0009_FINAL_1_0_0_R1_AUTHENTICATED_WEBUI_BUTTON_AUDIT",
+  "revision": "p470-final-authenticated-home-button-audit",
+  "at": "2026-09-01T22:05:21+03:00",
+  "status": "FAIL_FIRST_ERROR_PRESERVED",
+  "operation": "READ_XRAY_UPDATE_CHECK_DETAIL_WITH_BROWSER_EVALUATE_FETCH",
+  "error": "The browser driver's isolated evaluate context reported 'fetch is not a function'.",
+  "passedBeforeFailure": {
+    "loginPasswordShowHide": "PASS",
+    "loginSubmit": "PASS",
+    "homeRefreshStatus": "PASS",
+    "keeneticCreateNoActiveServerFailClosed": "PASS",
+    "keeneticRepair": "PASS",
+    "xrayUpdateCheckButton": "PASS_CURRENT_26_7_28",
+    "xrayReinstallButton": "DISABLED_BY_TEMPORARY_STORAGE_POLICY"
+  },
+  "credentialsEntered": true,
+  "credentialsRecorded": false,
+  "candidateArtifactDefect": false,
+  "browserEvaluateCapabilityDefect": true,
+  "routerMutationPerformedByFailedProbe": false,
+  "hiddenRetryPerformed": false,
+  "candidateReady": false,
+  "nextRevision": "p471-xray-storage-read-only-diagnosis-and-temp-package-cleanup",
+  "nextExactAction": "READ_FREE_SPACE_AND_XRAY_STORAGE_POLICY_STATE_OVER_SSH_THEN_REMOVE_ONLY_THE_HASH_VERIFIED_TEMPORARY_P459_IPK_IF_IT_IS_THE_CONFIRMED_SPACE_BLOCKER"
+}

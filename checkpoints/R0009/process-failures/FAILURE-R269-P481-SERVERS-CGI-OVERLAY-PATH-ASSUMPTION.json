@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_FINAL_CONTROLLED_SERVER_CARD_BUTTON_AUDIT",
+  "revision": "p481-final-controlled-server-card-button-audit",
+  "at": "2026-09-01T22:27:02+03:00",
+  "status": "FAIL_FIRST_ERROR_PRESERVED",
+  "failureId": "R269",
+  "operation": "READ_SERVER_CHECK_CGI_FROM_ASSUMED_OVERLAY_PATH",
+  "error": "The check.cgi endpoint is inherited from src/app and is not present at the assumed packaging overlay path.",
+  "passedBeforeFailure": {
+    "manualServerAAdd": "PASS",
+    "manualServerBAdd": "PASS",
+    "duplicateManualServerRejected": "PASS_COUNT_REMAINED_TWO",
+    "moveUp": "PASS",
+    "moveDown": "PASS",
+    "excludeToggle": "PASS",
+    "failoverToggle": "PASS",
+    "failoverSave": "PASS",
+    "unreachableServerCheckButtonReturned": "PASS"
+  },
+  "candidateArtifactDefect": false,
+  "localPathAssumptionDefect": true,
+  "routerMutationPerformedByFailedProbe": false,
+  "hiddenRetryPerformed": false,
+  "candidateReady": false,
+  "nextRevision": "p482-final-server-check-persisted-result-and-activation-audit",
+  "nextExactAction": "LOCATE_THE_INHERITED_CHECK_CGI_READ_ONLY_CONFIRM_SEMANTICS_RELOAD_SERVERS_AND_VERIFY_PERSISTED_NEGATIVE_CHECK_THEN_TEST_ACTIVATION_AND_DELETE_CONTROLS"
+}

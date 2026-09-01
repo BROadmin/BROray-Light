@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "failureId": "R252",
+  "stage": "R0009_WEBUI_SUBSCRIPTION_ERROR_DETAIL_FIX",
+  "revision": "p449-structured-subscription-api-error-exact-context-correction",
+  "at": "2026-09-01T21:20:56+03:00",
+  "status": "FAIL_FIRST_ERROR_PRESERVED",
+  "operation": "RUN_PYTHON_SHELL_AND_DIFF_SYNTAX_CHECKS",
+  "error": "The assumed C:/Program Files/Git/usr/bin/dash.exe runtime does not exist on this host.",
+  "pythonCompile": "PASS",
+  "gitDiffCheck": "PASS",
+  "shellSyntaxCheck": "NOT_RUN_RUNTIME_PATH_MISSING",
+  "candidateArtifactDefect": false,
+  "validationRuntimePathDefect": true,
+  "hiddenRetryPerformed": false,
+  "candidateReady": false,
+  "nextRevision": "p450-structured-error-corrected-shell-runtime-validation",
+  "nextExactAction": "DISCOVER_THE_CONFIGURED_WORKSPACE_SHELL_RUNTIME_THEN_RUN_SHELL_SYNTAX_AND_TARGETED_REGRESSION_CHECKS_WITHOUT_REUSING_THE_MISSING_PATH"
+}

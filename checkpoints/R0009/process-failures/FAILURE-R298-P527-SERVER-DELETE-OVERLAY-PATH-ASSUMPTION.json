@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "failureId": "R298",
+  "stage": "R0009_FINAL_SERVER_DELETE_FAILOVER_REFERENCE_CLEANUP_DIAGNOSIS",
+  "revision": "p527-final-server-delete-failover-reference-cleanup-diagnosis",
+  "at": "2026-09-02T00:04:36+03:00",
+  "status": "FAIL_FIRST_ERROR_PRESERVED",
+  "operation": "READ_SERVER_DELETE_CGI_FROM_ASSUMED_APP_OVERLAY_PATH",
+  "error": "packaging/app-overlay/web-new/api/servers/delete.cgi does not exist; the current delete CGI is sourced from src/app/web-new/api/servers/delete.cgi.",
+  "sourceDeleteCgiRead": true,
+  "repositoryMutationPerformed": false,
+  "routerMutationPerformed": false,
+  "candidateArtifactDefect": false,
+  "hiddenRetryPerformed": false,
+  "candidateReady": false,
+  "nextRevision": "p528-final-server-delete-atomic-failover-pruning-implementation",
+  "nextExactAction": "PATCH_THE_CONFIRMED_SOURCE_DELETE_CGI_AND_ADD_REGRESSION_COVERAGE_FOR_ATOMIC_PRUNING_WITHOUT_CHANGING_ARCHITECTURE"
+}

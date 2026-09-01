@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_FINAL_1_0_0_R1_AUTHENTICATED_WEBUI_BUTTON_AUDIT",
+  "revision": "p475-final-servers-navigation-exact-link-and-button-audit",
+  "at": "2026-09-01T22:15:53+03:00",
+  "status": "FAIL_FIRST_ERROR_PRESERVED",
+  "failureId": "R264",
+  "operation": "ENUMERATE_WEBUI_BUTTONS_AND_CLICK_HANDLERS_WITH_RG",
+  "error": "The composite ripgrep regular expression was malformed and reported an unclosed group.",
+  "passedBeforeFailure": {
+    "exactServersNavigationLink": "PASS",
+    "serversPageLoaded": "PASS",
+    "serversPageVersion": "1.0.0-r1"
+  },
+  "candidateArtifactDefect": false,
+  "localInspectionCommandDefect": true,
+  "routerMutationPerformed": false,
+  "hiddenRetryPerformed": false,
+  "candidateReady": false,
+  "nextRevision": "p476-final-webui-button-enumeration-safe-search",
+  "nextExactAction": "ENUMERATE_HTML_BUTTONS_AND_JAVASCRIPT_HANDLERS_WITH_SEPARATE_LITERAL_SEARCHES_THEN_CONTINUE_LIVE_SERVERS_BUTTON_AUDIT"
+}

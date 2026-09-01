@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_C22_SCHEDULER_DIAGNOSIS_AND_INVENTORY_RECOVERY",
+  "revision": "p360-c22-transaction-backup-inventory-recovery",
+  "at": "2026-09-01T17:10:08+03:00",
+  "status": "ROOT_CAUSE_CONFIRMED_AND_USER_INVENTORY_RECOVERED",
+  "candidateId": "0.1.0-r0009c22",
+  "rootCause": {
+    "schedulerTriggerSent": "scheduled",
+    "canonicalAcceptedTriggers": ["initial","manual","automatic"],
+    "effect": "INVALID_TRIGGER before fetch, state update, or subscription log entry",
+    "daemonLoopBlocked": false,
+    "correctedTrigger": "automatic"
+  },
+  "busyGlobalLockSkip": "PASS_LIVE",
+  "recovery": {
+    "subscriptionSha256": "edea867b5d76d4a56dbbd8b684592578cc52e533b2edca788ef265a371d11b26",
+    "restoredExistingServerSha256": "f2e7e5c23c1a24ffe9d8264a08153f8983dd7f69316bf647d1fdcb394da44eb0",
+    "diagnosticAddedServerRemoved": "subscription-sub-4d56091e72fc1eb6-0f7e9f9ffc7a1a15.json",
+    "serverCount": 6,
+    "duplicateIdentityGroups": 0,
+    "autoSwitchReferences": "VALID_EXISTING_SERVERS_ONLY",
+    "recoveryBackup": "/opt/broray-light/backup/r0009-p360-diagnostic-refresh-recovery",
+    "recoverable": true
+  },
+  "correctedCandidateId": "0.1.0-r0009c23",
+  "physicalRouterUsed": true,
+  "productionServerMutationPerformed": false,
+  "publicReleasePublished": false,
+  "nextRevision": "p361-c23-automatic-trigger-correction",
+  "nextExactAction": "CHANGE_ONLY_THE_SCHEDULER_TRIGGER_TO_CANONICAL_AUTOMATIC_UPDATE_TEST_EXPECTATIONS_AND_ASSET_CANDIDATE_ID_THEN_REBUILD"
+}

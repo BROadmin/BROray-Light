@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_FINAL_P531_BROWSER_CONTROLLER_BINDING_AND_DELETE_PRUNING_REGRESSION",
+  "revision": "p539-final-p531-browser-controller-binding-and-delete-pruning-regression",
+  "at": "2026-09-02T00:40:57+03:00",
+  "status": "FAIL_FIRST_ERROR_PRESERVED",
+  "failureId": "R304",
+  "operation": "CLICK_SERVERS_NAVIGATION_BY_HREF_PREFIX",
+  "firstError": "Strict mode violation: a[href^='servers.html'] resolved to both the navigation link and the failover configuration link.",
+  "loginPasswordToggle": "PASS",
+  "loginSubmit": "PASS",
+  "webUiMutationPerformed": false,
+  "routerMutationPerformed": false,
+  "candidateArtifactDefect": false,
+  "hiddenRetryPerformed": false,
+  "candidateReady": false,
+  "retryPolicy": "NO_RETRY_OF_P539_AMBIGUOUS_SELECTOR",
+  "nextRevision": "p540-final-p531-exact-nav-delete-pruning-regression",
+  "nextExactAction": "CLICK_THE_SERVERS_LINK_SCOPED_TO_NAV_THEN_CONTINUE_THE_CONTROLLED_DELETE_PRUNING_REGRESSION"
+}

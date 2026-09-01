@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_FINAL_SIDECAR_AUDIT_AFTER_AGGREGATE_RESEAL",
+  "revision": "p555-final-sidecar-audit-with-captured-digest",
+  "at": "2026-09-02T01:30:33+03:00",
+  "status": "FAIL_FIRST_ERROR_PRESERVED",
+  "failureId": "R314",
+  "operation": "VERIFY_ALL_SHA256_SIDECARS_AFTER_AGGREGATE_CONTENT_UPDATE",
+  "firstError": "checkpoints/R0009/SHA256SUMS.sha256 retained the pre-reseal digest.",
+  "cause": "The aggregate SHA256SUMS content was updated after its own sidecar had last been sealed.",
+  "expectedOldSha256": "1842bccc86c8599352db17f165e8af86ba8cd28e1bf8ff8637d30918de17e779",
+  "observedCurrentSha256": "5c8e795ae1a91f2b10b6bde082f211ccbe03c6f9e33f3000a679e45afdf11247",
+  "candidateArtifactDefect": false,
+  "candidateBytesMutated": false,
+  "routerMutationPerformed": false,
+  "hiddenRetryPerformed": false,
+  "candidateReady": false,
+  "nextRevision": "p556-final-sidecar-audit-after-sums-sidecar-reseal",
+  "nextExactAction": "UPDATE_ONLY_THE_SHA256SUMS_SIDECAR_TO_THE_CURRENT_AGGREGATE_DIGEST_THEN_REPEAT_THE_GLOBAL_SIDECAR_GATE"
+}

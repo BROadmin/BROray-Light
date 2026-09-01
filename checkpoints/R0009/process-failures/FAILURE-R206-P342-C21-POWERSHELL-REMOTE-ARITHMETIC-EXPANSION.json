@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "failureId": "R206",
+  "stage": "R0009_C21_PHYSICAL_PREFLIGHT",
+  "revision": "p342-c21-physical-preflight-and-install",
+  "at": "2026-09-01T16:36:24+03:00",
+  "status": "FAILED_STOPPED_FIRST_ERROR",
+  "failureClass": "POWERSHELL_REMOTE_ARITHMETIC_EXPANSION",
+  "operation": "Run the read-only router preflight before c21 transfer or installation",
+  "error": "PowerShell evaluated $((full+1)) locally and passed a truncated loop to the remote shell.",
+  "candidateId": "0.1.0-r0009c21",
+  "candidateArtifactDefect": false,
+  "packageTransferStarted": false,
+  "packageInstallStarted": false,
+  "repositoryMutationBeforeFailure": false,
+  "routerMutation": false,
+  "hiddenRetryPerformed": false,
+  "cause": "The remote command was embedded in a PowerShell double-quoted string instead of a literal here-string or a safely isolated argument.",
+  "nextRevision": "p343-c21-literal-remote-physical-preflight",
+  "nextExactAction": "RUN_THE_SAME_READ_ONLY_PREFLIGHT_WITH_A_LITERAL_SINGLE_QUOTED_REMOTE_COMMAND_ARGUMENT"
+}

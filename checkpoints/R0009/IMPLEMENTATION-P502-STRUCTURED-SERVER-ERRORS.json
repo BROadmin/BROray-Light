@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009",
+  "revision": "p502-structured-server-operation-errors-corrected-inspection",
+  "recordedAt": "2026-09-01T23:17:00+03:00",
+  "status": "PASS",
+  "failureResolved": "R278",
+  "implementation": {
+    "backend": "packaging/app-overlay/web-new/api/servers/common.sh",
+    "errorSource": "final allowlisted service stderr line only",
+    "rawStderrExposed": false,
+    "mappedCodes": [
+      "ACTIVE_SERVER_CONFLICT",
+      "SERVER_UNREACHABLE",
+      "SERVER_CONFIG_INVALID",
+      "SERVER_NOT_FOUND",
+      "SERVER_DUPLICATE",
+      "INVALID_VLESS"
+    ],
+    "genericFallback": "SERVER_OPERATION_FAILED without raw stderr"
+  },
+  "files": {
+    "packaging/app-overlay/web-new/api/servers/common.sh": "ed6982a4f2acd8bc59720419be22f3e6ceff0535d196f6882131d0adfa8ffc49",
+    "tools/test_r0009.py": "3fdd01c4d01ddaa71aa55b6f8b05f281bd41d9803cfddc32931b2f34013162ad"
+  },
+  "validation": {
+    "busyboxAshCompatibleDashSyntax": "PASS",
+    "pythonAstParse": "PASS",
+    "gitDiffCheck": "PASS",
+    "structuredMappingRegressionAssertions": "ADDED"
+  },
+  "routerMutationPerformed": false,
+  "publicReleasePublished": false,
+  "candidateReady": false,
+  "nextRevision": "p503-final-1.0.0-r1-structured-error-build-a",
+  "nextExactAction": "BUILD_FINAL_BUILD_A_FROM_A_CLEAN_INDEPENDENT_ROOT_THEN_STOP_ON_THE_FIRST_BUILD_ERROR"
+}
