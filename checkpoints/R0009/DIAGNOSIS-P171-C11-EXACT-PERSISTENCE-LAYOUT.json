@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_CORRECTIVE_C11_AFTER_C10_EXTERNAL_UI_FAILURE",
+  "revision": "p171-c11-persistence-layout-diagnosis",
+  "at": "2026-09-01T10:48:00+03:00",
+  "status": "PASS_EXACT_PATHS_DERIVED_READ_ONLY",
+  "candidateId": "0.1.0-r0009c11",
+  "failureCheckpoint": "checkpoints/R0009/process-failures/FAILURE-R131-P170-C11-PREFLIGHT-ASSUMED-PERSISTENCE-PATHS.json",
+  "exactLayout": {
+    "currentTarget": "releases/0.1.0-r9",
+    "serverStore": "/opt/broray-light/servers",
+    "subscriptionConfigStore": "/opt/broray-light/config/subscriptions",
+    "legacySubscriptionStore": "/opt/broray-light/subscriptions",
+    "sessionStore": "/opt/broray-light/run/web-new/sessions",
+    "xrayRuntime": "/opt/broray-light/runtime/xray",
+    "settings": "/opt/broray-light/config/system/settings.json",
+    "autoSwitch": "/opt/broray-light/config/system/server-auto-switch.json"
+  },
+  "observed": {
+    "serverJsonFiles": 5,
+    "subscriptionConfigFiles": 2,
+    "xraySha256": "4b8af237444801bf17b3dc10a1c5c24581fbe3d433eba3d78c6c3a0da1df56fc",
+    "settingsSha256": "7cb59866bede03da82b04ccb59d7e9b439f72f4d38d382c0bc409bc38827ba4d",
+    "autoSwitchSha256": "6743d9128b6206747ef724fbe72ba9646ef027ba948962805baeb6b053d661cf"
+  },
+  "candidateArtifactDefect": false,
+  "routerMutation": false,
+  "nextExactAction": "RUN_A_NEW_ATOMIZED_C11_PREFLIGHT_USING_ONLY_THE_DERIVED_PATHS_AND_STOP_ON_THE_FIRST_ATOM_FAILURE"
+}

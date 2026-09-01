@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_CORRECTIVE_C12_AFTER_C11_LOGIN_THEME_FAILURE",
+  "revision": "p185-c12-explicit-sans-typography-correction",
+  "at": "2026-09-01T11:36:00+03:00",
+  "status": "PASS_IMPLEMENTED_PENDING_CORRECTED_SCREENSHOT",
+  "candidateId": "0.1.0-r0009c12",
+  "failureCheckpoint": "checkpoints/R0009/process-failures/FAILURE-R137-P184-C12-LOGIN-TYPOGRAPHY-RENDER-MISMATCH.json",
+  "change": {
+    "scope": "CSS_FONT_STACK_ONLY_PLUS_REGRESSION_ASSERTION",
+    "globalFontStack": "Segoe UI, Arial, sans-serif",
+    "loginControlsExplicitFontStack": "Segoe UI, Arial, sans-serif",
+    "candidateBuiltBeforeCorrection": false,
+    "candidateArtifactsMutated": false
+  },
+  "changedFileSha256": {
+    "packaging/app-overlay/web-new/index.html": "e7b99fb3860123b0ed4d273cca41506922bdd6da98583cb044b83bb255bea5e3",
+    "packaging/app-overlay/web-new/assets/css/allpage.css": "55ae816e036b72ff26493c3472d178832d696e2e4ed342b9c0d41637a4771505",
+    "tools/build_r0009_candidate.py": "31ff89438e0a0edcfde66ed62ea347c2bb4912110559e3984982ceeb1aea78cb",
+    "tools/test_r0009.py": "f1a40686327fbeab4bfcce96fbfcbdb898bb1ebad70f2ae78b13c2e541b922ec",
+    "packaging/opkg/broray-light-web-publish-policy.sh": "04d9a48e17c87b140d7ab7c78514a88c36707859a6863fc1675f97764138c3de"
+  },
+  "staticValidation": {
+    "pythonSyntax": "PASS_2_OF_2",
+    "busyboxAshSyntax": "PASS_1_OF_1",
+    "canonicalSource": "PASS_UNCHANGED"
+  },
+  "routerMutation": false,
+  "nextExactAction": "RELOAD_THE_SCRIPT_FREE_TEMPORARY_PREVIEW_AT_1680X1050_CAPTURE_A_DIRECT_TAB_SCREENSHOT_AND_REQUIRE_SANS_TYPOGRAPHY_BEFORE_BUILD"
+}

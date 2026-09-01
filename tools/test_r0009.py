@@ -9,6 +9,7 @@ import hashlib
 import io
 import json
 import os
+import re
 import shutil
 import subprocess
 import tarfile
@@ -16,7 +17,7 @@ import tempfile
 from pathlib import Path, PurePosixPath
 
 RELEASE_ID = "0.1.0-r9"
-CANDIDATE_ID = "0.1.0-r0009c10"
+CANDIDATE_ID = "0.1.0-r0009c13"
 XRAY_SHA256 = "4b8af237444801bf17b3dc10a1c5c24581fbe3d433eba3d78c6c3a0da1df56fc"
 
 
@@ -400,7 +401,7 @@ def main() -> int:
     overlay_root = Path(__file__).resolve().parents[1] / "packaging/app-overlay"
     installed_app = app_root / "current/app"
     overlay_files = sorted(path for path in overlay_root.rglob("*") if path.is_file())
-    if len(overlay_files) != 9:
+    if len(overlay_files) != 10:
         raise RuntimeError(f"unexpected corrective overlay file count: {len(overlay_files)}")
     for overlay_file in overlay_files:
         installed_file = installed_app / overlay_file.relative_to(overlay_root)
@@ -430,6 +431,10 @@ def main() -> int:
         raise RuntimeError("subscription custom-name contract is absent")
     if "confirm('Удалить подписку" not in subscriptions_js:
         raise RuntimeError("subscription deletion confirmation is absent")
+    if "Array.isArray(data)?data:" not in subscriptions_js:
+        raise RuntimeError("subscription list does not accept the backend raw-array contract")
+    if "'?id=' + encodeURIComponent(subscription.id)" not in subscriptions_js:
+        raise RuntimeError("subscription refresh/delete actions do not use the backend query-id contract")
     gates["subscriptionNameAndDeleteConfirmation"] = "PASS"
 
     xray_update_check = (installed_app / "web-new/api/xray/update-check.cgi").read_text(encoding="utf-8")
@@ -440,8 +445,35 @@ def main() -> int:
     gates["xrayUpdateCheckBackend"] = "PASS"
 
     theme_css = (installed_app / "web-new/assets/css/allpage.css").read_text(encoding="utf-8")
+    login_html = (installed_app / "web-new/index.html").read_text(encoding="utf-8")
     if "--brand-hi" not in theme_css or ".server-card.is-active" not in theme_css or ".toast-root" not in theme_css:
         raise RuntimeError("corrective BROray-Light theme contract is incomplete")
+    for spacing_contract in ("--space-section:28px", "padding:24px", "min-height:44px", "gap:20px"):
+        if spacing_contract not in theme_css:
+            raise RuntimeError(f"corrective spacing contract is incomplete: {spacing_contract}")
+    for login_theme_contract in (
+        "--panel: #14212b;",
+        "width: min(478px, 100%);",
+        "border-radius: 24px;",
+        "font-family: Arial, sans-serif;",
+        ".password-toggle",
+        ".login-submit",
+    ):
+        if login_theme_contract not in theme_css:
+            raise RuntimeError(f"BROray login theme contract is incomplete: {login_theme_contract}")
+    if 'class="password-field"' not in login_html or \
+       'class="password-toggle"' not in login_html or \
+       'class="login-submit"' not in login_html or \
+       'BROray-Light' not in login_html or 'VLESS для Keenetic' not in login_html:
+        raise RuntimeError("BROray-Light login markup contract is incomplete")
+    asset_version = "?v=0.1.0-r0009c13"
+    for page_name in ("index.html", "home.html", "servers.html", "subscriptions.html"):
+        page_html = (installed_app / "web-new" / page_name).read_text(encoding="utf-8")
+        if f"assets/css/allpage.css{asset_version}" not in page_html:
+            raise RuntimeError(f"versioned CSS asset URL is absent from {page_name}")
+        for asset_url in re.findall(r'(?:src|href)="(assets/(?:css|js)/[^"]+)"', page_html):
+            if not asset_url.endswith(asset_version):
+                raise RuntimeError(f"unversioned static asset URL in {page_name}: {asset_url}")
     gates["themePresentationContract"] = "PASS"
     runtime_before = sha256(runtime)
     run([dash, posix(control_root / "postinst")], env=env)

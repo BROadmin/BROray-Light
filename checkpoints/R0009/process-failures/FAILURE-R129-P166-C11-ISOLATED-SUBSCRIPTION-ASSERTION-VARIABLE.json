@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_CORRECTIVE_C11_AFTER_C10_EXTERNAL_UI_FAILURE",
+  "revision": "p166-c11-full-isolated-validation-first-run",
+  "at": "2026-09-01T10:33:00+03:00",
+  "status": "FAILED_STOPPED_FIRST_ERROR",
+  "failureClass": "TEST_HARNESS_FALSE_NEGATIVE_SUBSCRIPTION_VARIABLE_NAME",
+  "candidateId": "0.1.0-r0009c11",
+  "failedAssertion": "Array.isArray(d)?d:",
+  "implementedContract": "Array.isArray(data)?data:",
+  "candidateArtifactDefect": false,
+  "candidateArtifactsMutated": false,
+  "routerMutation": false,
+  "candidateReady": false,
+  "retryPolicy": "NO_RETRY_OF_P166_WITH_THE_INCORRECT_ASSERTION",
+  "nextRevision": "p167-c11-corrected-subscription-harness-assertion",
+  "nextExactAction": "CHANGE_ONLY_THE_TEST_ASSERTION_FROM_D_TO_DATA_VALIDATE_THE_HARNESS_SHA_AND_RERUN_ALL_33_GATES_AS_A_NEW_PROCESS_REVISION"
+}

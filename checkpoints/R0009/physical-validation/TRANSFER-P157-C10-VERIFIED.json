@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_CORRECTIVE_C10_AFTER_C09_PHYSICAL_FAILURE",
+  "revision": "p157-c10-root-legacy-scp-transfer-and-hash",
+  "at": "2026-09-01T09:59:00+03:00",
+  "status": "PASS_READY_FOR_INSTALL",
+  "candidateId": "0.1.0-r0009c10",
+  "routerPath": "/tmp/broray-light-r0009c10.ipk",
+  "sizeBytes": 12785800,
+  "sha256": "e7ffb45269bc91d3022667b9f0602cd75e6e11bbdeb6348abf0eb11198ac17c2",
+  "identityMatchesBuildA": true,
+  "transport": "scp-legacy-protocol",
+  "authentication": "root-public-key",
+  "packageInstallStarted": false,
+  "routerMutation": "TEMPORARY_VERIFIED_CANDIDATE_COPY_ONLY",
+  "nextExactAction": "RUN_ONE_OPKG_INSTALL_OF_THE_VERIFIED_C10_IPK_THEN_VALIDATE_SERVICES_PUBLICATION_OVERLAY_AND_PERSISTENCE"
+}

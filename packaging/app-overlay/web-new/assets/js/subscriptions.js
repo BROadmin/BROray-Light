@@ -1,5 +1,127 @@
-async function sapi(url,opts){const r=await fetch(url,Object.assign({credentials:'same-origin',cache:'no-store'},opts||{}));let x=null;try{x=await r.json()}catch(_){throw new Error('Сервер вернул некорректный ответ')}if(r.status===401){location.replace('/');throw new Error('Требуется вход')}if(!r.ok||x.success===false||x.ok===false)throw new Error(x.error?.message||x.message||'Ошибка');return x.data??x}
-function toast(message,type){if(window.BROrayUI)window.BROrayUI.toast(message,type);else alert(message)}
-async function loadSubs(){const d=await sapi('api/subscriptions/list.cgi');const box=document.getElementById('subscriptions');box.innerHTML='';const items=d.subscriptions||d.items||[];if(!items.length){box.innerHTML='<section class="card empty-state"><strong>Подписок пока нет</strong><span class="muted">Добавьте название и ссылку выше.</span></section>';return}for(const s of items){const el=document.createElement('section');el.className='card subscription-card';el.dataset.subscriptionId=s.id;const title=document.createElement('strong');title.className='card-title';title.textContent=s.name||s.id;const meta=document.createElement('div');meta.className='muted';meta.textContent=s.lastUpdatedAt?'Обновлена: '+s.lastUpdatedAt:'Ещё не обновлялась';el.append(title,meta);if(s.lastError){const error=document.createElement('div');error.className='notice notice-error';error.textContent=s.lastError;el.append(error)}const actions=document.createElement('div');actions.className='row actions';actions.innerHTML='<button data-a="refresh">Обновить</button><button class="danger-button" data-a="delete">Удалить</button>';actions.onclick=async e=>{const a=e.target.dataset.a;if(!a)return;if(a==='delete'&&!confirm('Удалить подписку «'+(s.name||s.id)+'» и все полученные из неё серверы?'))return;try{await sapi('api/subscriptions/'+(a==='refresh'?'refresh.cgi':'delete.cgi'),{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({id:s.id})});toast(a==='refresh'?'Подписка обновлена':'Подписка удалена');await loadSubs()}catch(err){toast(err.message,'error')}};el.append(actions);box.appendChild(el)}}
-async function addSub(){const name=document.getElementById('subName').value.trim();const url=document.getElementById('subUrl').value.trim();if(!name){toast('Укажите название подписки','error');document.getElementById('subName').focus();return}if(!url){toast('Укажите ссылку подписки','error');document.getElementById('subUrl').focus();return}try{await sapi('api/subscriptions/create.cgi',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({name,url,updateImmediately:true})});document.getElementById('subName').value='';document.getElementById('subUrl').value='';toast('Подписка добавлена');await loadSubs()}catch(err){toast(err.message,'error')}}
-document.addEventListener('DOMContentLoaded',()=>{document.getElementById('addSubscription').addEventListener('click',addSub);loadSubs().catch(e=>toast(e.message,'error'))});
+async function sapi(url, opts) {
+  const response = await fetch(url, Object.assign({ credentials: 'same-origin', cache: 'no-store' }, opts || {}));
+  let payload = null;
+  try {
+    payload = await response.json();
+  } catch (_) {
+    throw new Error('Сервер вернул некорректный ответ');
+  }
+  if (response.status === 401) {
+    location.replace('/');
+    throw new Error('Требуется вход');
+  }
+  if (!response.ok || payload.success === false || payload.ok === false) {
+    throw new Error(payload.error?.message || payload.message || 'Ошибка');
+  }
+  return payload.data ?? payload;
+}
+
+function toast(message, type) {
+  if (window.BROrayUI) window.BROrayUI.toast(message, type);
+  else alert(message);
+}
+
+function subscriptionItems(data) {
+  return Array.isArray(data) ? data : (data.subscriptions || data.items || []);
+}
+
+function subscriptionMeta(subscription) {
+  const parts = [];
+  if (Number.isFinite(subscription.serverCount)) parts.push('Серверов: ' + subscription.serverCount);
+  parts.push(subscription.lastUpdatedAt ? 'Обновлена: ' + subscription.lastUpdatedAt : 'Ещё не обновлялась');
+  return parts.join(' · ');
+}
+
+async function subscriptionAction(subscription, action) {
+  if (action === 'delete' && !confirm('Удалить подписку «' + (subscription.name || subscription.id) + '» и все полученные из неё серверы?')) return;
+  const endpoint = action === 'refresh' ? 'refresh.cgi' : 'delete.cgi';
+  const url = 'api/subscriptions/' + endpoint + '?id=' + encodeURIComponent(subscription.id);
+  await sapi(url, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: '{}' });
+  toast(action === 'refresh' ? 'Подписка обновлена' : 'Подписка удалена');
+  await loadSubs();
+}
+
+async function loadSubs() {
+  const data = await sapi('api/subscriptions/list.cgi');
+  const box = document.getElementById('subscriptions');
+  const items = Array.isArray(data)?data:(data.subscriptions || data.items || []);
+  box.innerHTML = '';
+  if (!items.length) {
+    box.innerHTML = '<section class="card empty-state"><strong>Подписок пока нет</strong><span class="muted">Добавьте название и ссылку выше.</span></section>';
+    return;
+  }
+  for (const subscription of items) {
+    const card = document.createElement('section');
+    card.className = 'card subscription-card';
+    card.dataset.subscriptionId = subscription.id;
+
+    const heading = document.createElement('div');
+    heading.className = 'subscription-heading';
+    const title = document.createElement('strong');
+    title.className = 'card-title';
+    title.textContent = subscription.name || subscription.id;
+    heading.appendChild(title);
+
+    const meta = document.createElement('div');
+    meta.className = 'muted subscription-meta';
+    meta.textContent = subscriptionMeta(subscription);
+    card.append(heading, meta);
+
+    if (subscription.lastError) {
+      const error = document.createElement('div');
+      error.className = 'notice notice-error';
+      error.textContent = subscription.lastError;
+      card.appendChild(error);
+    }
+
+    const actions = document.createElement('div');
+    actions.className = 'row actions subscription-actions';
+    actions.innerHTML = '<button data-a="refresh">Обновить</button><button class="danger-button" data-a="delete">Удалить</button>';
+    actions.addEventListener('click', async event => {
+      const action = event.target.dataset.a;
+      if (!action) return;
+      try {
+        event.target.disabled = true;
+        await subscriptionAction(subscription, action);
+      } catch (error) {
+        event.target.disabled = false;
+        toast(error.message, 'error');
+      }
+    });
+    card.appendChild(actions);
+    box.appendChild(card);
+  }
+}
+
+async function addSub() {
+  const name = document.getElementById('subName').value.trim();
+  const url = document.getElementById('subUrl').value.trim();
+  if (!name) {
+    toast('Укажите название подписки', 'error');
+    document.getElementById('subName').focus();
+    return;
+  }
+  if (!url) {
+    toast('Укажите ссылку подписки', 'error');
+    document.getElementById('subUrl').focus();
+    return;
+  }
+  try {
+    await sapi('api/subscriptions/create.cgi', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({name,url,updateImmediately:true})
+    });
+    document.getElementById('subName').value = '';
+    document.getElementById('subUrl').value = '';
+    toast('Подписка добавлена');
+    await loadSubs();
+  } catch (error) {
+    toast(error.message, 'error');
+  }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  document.getElementById('addSubscription').addEventListener('click', addSub);
+  loadSubs().catch(error => toast(error.message, 'error'));
+});

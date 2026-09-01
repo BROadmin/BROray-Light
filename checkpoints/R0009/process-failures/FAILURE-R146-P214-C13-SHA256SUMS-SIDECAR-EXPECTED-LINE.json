@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_CORRECTIVE_C13_AFTER_C12_STATIC_ASSET_CACHE_FAILURE",
+  "revision": "p214-c13-sha256sums-sidecar-reseal",
+  "at": "2026-09-01T13:15:00+03:00",
+  "status": "FAILED_STOPPED_FIRST_ERROR",
+  "failureId": "R146",
+  "failureClass": "APPLY_PATCH_EXPECTED_OLD_SHA256SUMS_SIDECAR_LINE_MISMATCH",
+  "candidateId": "0.1.0-r0009c13",
+  "expectedOldDigest": "3b3fb1f3f723d38cc0791b7a796a95423024386653596ab1b906d8bc541dd491",
+  "observedOldDigest": "5f2a6c210139ba8826b51c42670c37b53a981c11bc141f3de0163d37b55f211b",
+  "requiredNewDigest": "292b64ac89ed3ec22fd12feecfe6173ca04a0575939b092a31d645fb584a6657",
+  "patchApplied": false,
+  "candidateArtifactDefect": false,
+  "routerMutation": false,
+  "hiddenRetryPerformed": false,
+  "rootCause": "The sidecar's actual previously sealed digest was not the stale value assumed by the patch context.",
+  "nextRevision": "p215-c13-sha256sums-sidecar-exact-update",
+  "nextExactAction": "REPLACE_THE_NOW_OBSERVED_EXACT_OLD_SIDECAR_LINE_WITH_THE_COMPUTED_NEW_DIGEST_THEN_RUN_FINAL_LOCAL_VALIDATION"
+}

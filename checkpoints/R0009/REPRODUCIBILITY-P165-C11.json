@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_CORRECTIVE_C11_AFTER_C10_EXTERNAL_UI_FAILURE",
+  "revision": "p165-c11-independent-build-byte-comparison",
+  "at": "2026-09-01T10:31:00+03:00",
+  "status": "PASS",
+  "candidateId": "0.1.0-r0009c11",
+  "buildA": "dist/R0009/R0009c11-Build-A",
+  "buildB": "dist/R0009/R0009c11-Build-B",
+  "artifactCount": 8,
+  "comparison": "BYTE_IDENTICAL_8_OF_8",
+  "artifacts": {
+    "CANDIDATE-MANIFEST.json": "ff0683e86bca1d64490b97ec56b40c5fe653185f1ad0d60f9b2c0f96d735dd15",
+    "SHA256SUMS": "87612e5bd0809bed75cd454328406826e0c76ee12f3990e4a9cca6ce2ed9f9e0",
+    "broray-light-app-0.1.0-r0009c11.tar.gz": "c504732507f63b37dae3ea13d1b09e6bfd1894989a1be2ada91053ab8fc93312",
+    "broray-light-install-0.1.0-r0009c11.sh": "47490b4693da3378a76e901bc4488f332b89ce1cf194e1e560037be5640dcdfa",
+    "broray-light-updater-platform-5-light1.tar.gz": "4235d3f6ab5b2305920ec2ad16bfb077f82d0c72b454e0d7ded32c85530765ea",
+    "broray-light_0.1.0-r0009c11_aarch64-3.10.ipk": "3834394889a856b1c758b9bda9cb0faefb6f523bea18d867cece372cd2d1d84c",
+    "release.json": "673296ae17d751b34ee449f2c0533cbd964e97c8254a2ac2919bdd413d96a482",
+    "release.json.minisig": "f8bdb7893b72d1bb594169a9d3870acbf042dcdac0167d4fa7d32cbfac397a6a"
+  },
+  "canonicalSource": "PASS_UNCHANGED",
+  "routerMutation": false,
+  "nextExactAction": "RUN_THE_FULL_C11_ISOLATED_ROOT_ACCEPTANCE_HARNESS"
+}

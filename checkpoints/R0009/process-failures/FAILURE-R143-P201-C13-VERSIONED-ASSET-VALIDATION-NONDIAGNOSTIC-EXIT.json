@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_CORRECTIVE_C13_AFTER_C12_STATIC_ASSET_CACHE_FAILURE",
+  "revision": "p201-c13-versioned-static-asset-implementation",
+  "at": "2026-09-01T12:25:00+03:00",
+  "status": "FAILED_STOPPED_FIRST_ERROR",
+  "failureId": "R143",
+  "failureClass": "VERSIONED_ASSET_STATIC_VALIDATION_NONDIAGNOSTIC_EXIT",
+  "candidateId": "0.1.0-r0009c13",
+  "firstError": {
+    "exitCode": 1,
+    "stdout": "",
+    "stderr": "",
+    "probe": "COMPOUND_PYTHON_AND_POWERSHELL_STATIC_VALIDATION_COMMAND"
+  },
+  "diagnosis": "The compound validation command did not identify which atom returned exit 1 and cannot be treated as evidence about the candidate implementation.",
+  "candidateArtifactDefect": "UNDETERMINED",
+  "candidateArtifactsBuilt": false,
+  "routerMutation": false,
+  "hiddenRetryPerformed": false,
+  "nextRevision": "p202-c13-atomized-versioned-asset-validation",
+  "nextExactAction": "VALIDATE_PYTHON_ASH_CANONICAL_SOURCE_AND_EACH_OF_FOUR_HTML_ASSET_URL_CONTRACTS_AS_SEPARATE_DIAGNOSTIC_ATOMS"
+}

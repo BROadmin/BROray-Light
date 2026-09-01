@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_CORRECTIVE_C10_AFTER_C09_PHYSICAL_FAILURE",
+  "revision": "p161-c10-authenticated-functional-cycle-corrected-variable",
+  "at": "2026-09-01T10:14:00+03:00",
+  "status": "PASS",
+  "candidateId": "0.1.0-r0009c10",
+  "origin": "http://192.168.1.1:8080",
+  "httpStatuses": {
+    "login": 200,
+    "homeSummary": 200,
+    "brorayInfo": 200,
+    "serversSummary": 200,
+    "activation": 200,
+    "xrayStatus": 200,
+    "xrayUpdateCheck": 200,
+    "logout": 200,
+    "postLogoutSession": 401
+  },
+  "activation": {
+    "responseValidSingleJson": true,
+    "activeServerName": "NL - KEENETIC",
+    "connectionState": true,
+    "postActivationConnectivity": "PASS"
+  },
+  "versions": {
+    "xray": "26.7.28",
+    "brorayLight": "0.1.0-r9",
+    "xrayLatest": "26.7.28",
+    "xrayUpdateAvailable": false
+  },
+  "sessionLifecycle": {
+    "guaranteedLogout": true,
+    "postLogoutUnauthorized": true,
+    "sessionFilesBefore": 3,
+    "sessionFilesAfter": 1,
+    "expiredOrphanCleanupByLogin": "PASS_NO_MANUAL_SESSION_DELETION"
+  },
+  "credentialsPrintedOrWritten": false,
+  "routerMutation": "AUTHORIZED_REACTIVATION_OF_ALREADY_ACTIVE_SERVER_AND_AUTH_SESSION_LIFECYCLE",
+  "nextExactAction": "VALIDATE_THE_EXTERNAL_HTTPS_UI_VISUALLY_FOR_ACTIVE_SERVER_NAME_XRAY_AND_LIGHT_VERSIONS_THEME_AND_SUBSCRIPTION_NAMING_CONTROLS"
+}

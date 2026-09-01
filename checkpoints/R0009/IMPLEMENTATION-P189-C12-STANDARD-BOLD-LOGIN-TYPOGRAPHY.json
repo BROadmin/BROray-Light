@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_CORRECTIVE_C12_AFTER_C11_LOGIN_THEME_FAILURE",
+  "revision": "p189-c12-standard-bold-login-typography",
+  "at": "2026-09-01T11:48:00+03:00",
+  "status": "PASS_IMPLEMENTED_PENDING_FINAL_LOCAL_SCREENSHOT",
+  "candidateId": "0.1.0-r0009c12",
+  "failureCheckpoint": "checkpoints/R0009/process-failures/FAILURE-R139-P188-C12-NONSTANDARD-BOLD-CYRILLIC-FALLBACK.json",
+  "change": {
+    "scope": "LOGIN_FONT_FAMILY_AND_BOLD_WEIGHTS_ONLY_PLUS_REGRESSION_ASSERTION",
+    "loginFontStack": "Arial, sans-serif",
+    "loginBoldWeight": 700,
+    "normalizedElements": [
+      "product",
+      "title",
+      "labels",
+      "submit"
+    ],
+    "candidateBuiltBeforeCorrection": false,
+    "candidateArtifactsMutated": false
+  },
+  "changedFileSha256": {
+    "packaging/app-overlay/web-new/index.html": "e7b99fb3860123b0ed4d273cca41506922bdd6da98583cb044b83bb255bea5e3",
+    "packaging/app-overlay/web-new/assets/css/allpage.css": "e4d99feba1bbf9430323843bc38d8d007bbf78425b41565d09fd6c8d6a86343c",
+    "tools/build_r0009_candidate.py": "31ff89438e0a0edcfde66ed62ea347c2bb4912110559e3984982ceeb1aea78cb",
+    "tools/test_r0009.py": "57dfbc2591c78e691e934f22cd94038f1d851d9550767fba0ab691d348417dfa",
+    "packaging/opkg/broray-light-web-publish-policy.sh": "04d9a48e17c87b140d7ab7c78514a88c36707859a6863fc1675f97764138c3de"
+  },
+  "staticValidation": {
+    "pythonSyntax": "PASS_2_OF_2",
+    "busyboxAshSyntax": "PASS_1_OF_1",
+    "canonicalSource": "PASS_UNCHANGED"
+  },
+  "routerMutation": false,
+  "nextExactAction": "RELOAD_THE_SCRIPT_FREE_PREVIEW_AT_1680X1050_CONFIRM_ARIAL_700_AND_CAPTURE_THE_FINAL_LOCAL_VISUAL_SCREENSHOT"
+}

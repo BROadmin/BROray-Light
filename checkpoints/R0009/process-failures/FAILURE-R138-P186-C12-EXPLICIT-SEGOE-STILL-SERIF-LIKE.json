@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_CORRECTIVE_C12_AFTER_C11_LOGIN_THEME_FAILURE",
+  "revision": "p186-c12-corrected-local-login-screenshot",
+  "at": "2026-09-01T11:39:00+03:00",
+  "status": "FAILED_STOPPED_FIRST_ERROR",
+  "failureId": "R138",
+  "failureClass": "EXPLICIT_SEGOE_STACK_COMPUTED_BUT_CYRILLIC_RENDER_REMAINS_SERIF_LIKE",
+  "candidateId": "0.1.0-r0009c12",
+  "passedBeforeFirstError": {
+    "computedBodyFont": "Segoe UI, Arial, sans-serif",
+    "computedCardFont": "Segoe UI, Arial, sans-serif",
+    "computedTitleFont": "Segoe UI, Arial, sans-serif",
+    "computedLabelFont": "Segoe UI, Arial, sans-serif",
+    "computedButtonFont": "Segoe UI, Arial, sans-serif",
+    "cardWidthPx": 430,
+    "screenshotCaptured": true
+  },
+  "firstError": "Cyrillic heading, labels, and button remain visually serif-like in the rendered screenshot despite the computed Segoe UI stack.",
+  "correction": "Prioritize the browser-native system-ui generic family, followed by Segoe UI and Arial, to avoid ambiguous local named-font resolution.",
+  "candidateBuilt": false,
+  "routerMutation": false,
+  "hiddenRetryPerformed": false,
+  "nextRevision": "p187-c12-system-ui-first-typography-correction",
+  "nextExactAction": "PATCH_ONLY_THE_CSS_AND_REGRESSION_ASSERTION_TO_SYSTEM_UI_FIRST_UPDATE_STATIC_HASHES_THEN_CAPTURE_A_NEW_SCREENSHOT_REVISION"
+}

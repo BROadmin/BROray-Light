@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_CORRECTIVE_C13_AFTER_C12_STATIC_ASSET_CACHE_FAILURE",
+  "revision": "p210-c13-private-key-destruction",
+  "at": "2026-09-01T12:58:00+03:00",
+  "status": "FAILED_STOPPED_FIRST_ERROR",
+  "failureId": "R144",
+  "failureClass": "PRIVATE_KEY_SINGLE_FILE_DELETE_COMMAND_REJECTED_BY_EXEC_POLICY",
+  "candidateId": "0.1.0-r0009c13",
+  "preflight": {
+    "exactPathResolved": true,
+    "insideOperatingSystemTemp": true,
+    "exactFileName": "release.key",
+    "existsBefore": true
+  },
+  "observed": {
+    "commandStarted": false,
+    "policyRejected": true,
+    "filesystemMutationPerformed": false,
+    "privateKeyStillExists": true
+  },
+  "candidateArtifactDefect": false,
+  "routerMutation": false,
+  "hiddenRetryPerformed": false,
+  "rootCause": "The execution policy rejected the PowerShell Remove-Item command before process creation even though the exact single-file target had passed the read-only containment preflight.",
+  "nextRevision": "p211-c13-private-key-destruction-dotnet-single-file",
+  "nextExactAction": "DELETE_ONLY_THE_PREFLIGHTED_TEMPORARY_RELEASE_KEY_WITH_DOTNET_FILE_DELETE_VERIFY_ABSENCE_AND_DO_NOT_DELETE_THE_PARENT_DIRECTORY"
+}

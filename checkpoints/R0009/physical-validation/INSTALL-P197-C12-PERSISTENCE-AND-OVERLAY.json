@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_CORRECTIVE_C12_AFTER_C11_LOGIN_THEME_FAILURE",
+  "revision": "p197-c12-physical-install",
+  "at": "2026-09-01T12:13:00+03:00",
+  "status": "PASS_PENDING_EXTERNAL_HTTPS_VISUAL_VALIDATION",
+  "candidateId": "0.1.0-r0009c12",
+  "package": "broray-light 0.1.0-r0009c12",
+  "packageSha256": "d6d66a13af04d195045c498c90f34387f3f302004d55dd17933c024141550135",
+  "installCount": 1,
+  "previousPackage": "broray-light 0.1.0-r0009c11",
+  "currentTarget": "releases/0.1.0-r9",
+  "services": "PASS_PRIMARY_UPDATER_PUBLICATION",
+  "persistence": {
+    "activeServerIdUnchanged": true,
+    "subscriptionConfigFiles": 2,
+    "xraySha256Unchanged": true,
+    "settingsSha256Unchanged": true,
+    "autoSwitchSha256Unchanged": true,
+    "activeServerFileSha256Unchanged": true
+  },
+  "overlayIdentity": {
+    "status": "PASS_10_OF_10_EXACT",
+    "loginHtmlSha256": "e7b99fb3860123b0ed4d273cca41506922bdd6da98583cb044b83bb255bea5e3",
+    "themeCssSha256": "e4d99feba1bbf9430323843bc38d8d007bbf78425b41565d09fd6c8d6a86343c"
+  },
+  "safety": {
+    "fullBROrayOwnership": 0,
+    "recoveryMarkerAbsent": true
+  },
+  "routerMutation": "AUTHORIZED_SINGLE_C11_TO_C12_PACKAGE_UPGRADE",
+  "nextExactAction": "RELOAD_THE_EXISTING_EXTERNAL_HTTPS_TAB_VALIDATE_SUBSCRIPTIONS_SPACING_THEN_OBTAIN_AN_ANONYMOUS_LOGIN_PAGE_VIEW_WITHOUT_TYPING_CREDENTIALS_AND_VALIDATE_THE_INSTALLED_C12_THEME"
+}

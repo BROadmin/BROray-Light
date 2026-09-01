@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_CORRECTIVE_C12_AFTER_C11_LOGIN_THEME_FAILURE",
+  "revision": "p199-c12-external-url-dom-diagnosis",
+  "at": "2026-09-01T12:19:00+03:00",
+  "status": "PASS_ROOT_CAUSE_IDENTIFIED",
+  "candidateId": "0.1.0-r0009c12",
+  "failureCheckpoint": "checkpoints/R0009/process-failures/FAILURE-R141-P198-C12-EXTERNAL-EXPECTED-SUBSCRIPTION-GRID-ABSENT.json",
+  "external": {
+    "url": "https://brolight.tvervip.keenetic.link/",
+    "title": "BROray-Light — Вход",
+    "anonymousLoginPage": true,
+    "credentialsTyped": false
+  },
+  "observedCachedC11Markers": {
+    "oldDescription": "Используйте логин и пароль интерфейса Keenetic.",
+    "oldPasswordToggleText": "Показать",
+    "newInlineEyeAriaAbsent": true
+  },
+  "installedC12Evidence": {
+    "routerLoginHtmlSha256": "e7b99fb3860123b0ed4d273cca41506922bdd6da98583cb044b83bb255bea5e3",
+    "routerThemeCssSha256": "e4d99feba1bbf9430323843bc38d8d007bbf78425b41565d09fd6c8d6a86343c",
+    "overlayIdentity": "PASS_10_OF_10"
+  },
+  "rootCause": "The existing browser tab reused cached c11 HTML after package installation; the installed c12 files are exact on the router.",
+  "candidateArtifactDefect": false,
+  "routerMutation": false,
+  "userDataMutation": false,
+  "nextExactAction": "NAVIGATE_THE_EXISTING_ANONYMOUS_TAB_TO_THE_SAME_HTTPS_ROOT_WITH_A_C12_CACHE_BUSTING_QUERY_THEN_VALIDATE_DOM_COMPUTED_STYLE_AND_SCREENSHOT"
+}

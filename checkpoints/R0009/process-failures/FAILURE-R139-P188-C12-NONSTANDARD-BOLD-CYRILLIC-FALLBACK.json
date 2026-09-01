@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_CORRECTIVE_C12_AFTER_C11_LOGIN_THEME_FAILURE",
+  "revision": "p188-c12-final-local-login-visual-validation",
+  "at": "2026-09-01T11:45:00+03:00",
+  "status": "FAILED_STOPPED_FIRST_ERROR",
+  "failureId": "R139",
+  "failureClass": "NONSTANDARD_BOLD_WEIGHTS_TRIGGER_CYRILLIC_SERIF_FALLBACK",
+  "candidateId": "0.1.0-r0009c12",
+  "passedBeforeFirstError": {
+    "computedFontStack": "system-ui, Segoe UI, Arial, sans-serif",
+    "regularCyrillicText": "PASS_SANS_RENDER",
+    "geometryPaletteControls": "PASS",
+    "screenshotCaptured": true
+  },
+  "firstError": "Only bold Cyrillic elements using weights 750-800 remain serif-like while regular Cyrillic text renders sans.",
+  "rootCause": "Nonstandard heavy weights select an incompatible Cyrillic fallback face in the preview renderer.",
+  "correction": "Use the standard 700 bold weight for the login title, labels, product, and submit control with an Arial/sans-serif-compatible stack.",
+  "candidateBuilt": false,
+  "routerMutation": false,
+  "hiddenRetryPerformed": false,
+  "nextRevision": "p189-c12-standard-bold-login-typography",
+  "nextExactAction": "PATCH_ONLY_LOGIN_TYPOGRAPHY_TO_STANDARD_700_AND_ARIAL_SANS_SERIF_UPDATE_REGRESSION_HASHES_THEN_REPEAT_THE_LOCAL_SCREENSHOT_GATE"
+}

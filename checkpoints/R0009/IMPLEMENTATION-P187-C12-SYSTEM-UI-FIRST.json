@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_CORRECTIVE_C12_AFTER_C11_LOGIN_THEME_FAILURE",
+  "revision": "p187-c12-system-ui-first-typography-correction",
+  "at": "2026-09-01T11:42:00+03:00",
+  "status": "PASS_IMPLEMENTED_PENDING_FINAL_LOCAL_SCREENSHOT",
+  "candidateId": "0.1.0-r0009c12",
+  "failureCheckpoint": "checkpoints/R0009/process-failures/FAILURE-R138-P186-C12-EXPLICIT-SEGOE-STILL-SERIF-LIKE.json",
+  "change": {
+    "scope": "CSS_FONT_STACK_ONLY_PLUS_REGRESSION_ASSERTION",
+    "fontStack": "system-ui, Segoe UI, Arial, sans-serif",
+    "rationale": "BROWSER_NATIVE_UI_SANS_PRECEDES_AMBIGUOUS_LOCAL_NAMED_FONT_RESOLUTION",
+    "candidateBuiltBeforeCorrection": false,
+    "candidateArtifactsMutated": false
+  },
+  "changedFileSha256": {
+    "packaging/app-overlay/web-new/index.html": "e7b99fb3860123b0ed4d273cca41506922bdd6da98583cb044b83bb255bea5e3",
+    "packaging/app-overlay/web-new/assets/css/allpage.css": "8f35e6cfb19b0613eabbb12dbf1fa91a77a3fd2613d0f6662fba7a4f096f8757",
+    "tools/build_r0009_candidate.py": "31ff89438e0a0edcfde66ed62ea347c2bb4912110559e3984982ceeb1aea78cb",
+    "tools/test_r0009.py": "5457fcbd6b1e5be96cce058ea58b70c7bfb771ffc45e7888473d2d125b9c7749",
+    "packaging/opkg/broray-light-web-publish-policy.sh": "04d9a48e17c87b140d7ab7c78514a88c36707859a6863fc1675f97764138c3de"
+  },
+  "staticValidation": {
+    "pythonSyntax": "PASS_2_OF_2",
+    "busyboxAshSyntax": "PASS_1_OF_1",
+    "canonicalSource": "PASS_UNCHANGED"
+  },
+  "routerMutation": false,
+  "nextExactAction": "RELOAD_THE_SCRIPT_FREE_PREVIEW_AT_1680X1050_CONFIRM_COMPUTED_SYSTEM_UI_AND_CAPTURE_THE_FINAL_LOCAL_VISUAL_SCREENSHOT"
+}

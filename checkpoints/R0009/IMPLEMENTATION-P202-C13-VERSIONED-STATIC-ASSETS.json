@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_CORRECTIVE_C13_AFTER_C12_STATIC_ASSET_CACHE_FAILURE",
+  "revision": "p202-c13-atomized-versioned-asset-validation",
+  "at": "2026-09-01T12:28:00+03:00",
+  "status": "PASS_IMPLEMENTED_PENDING_INDEPENDENT_BUILDS",
+  "candidateId": "0.1.0-r0009c13",
+  "failureCheckpoint": "checkpoints/R0009/process-failures/FAILURE-R143-P201-C13-VERSIONED-ASSET-VALIDATION-NONDIAGNOSTIC-EXIT.json",
+  "correction": {
+    "versionQuery": "?v=0.1.0-r0009c13",
+    "pages": {
+      "index.html": 3,
+      "home.html": 4,
+      "servers.html": 5,
+      "subscriptions.html": 4
+    },
+    "allCssAndJsUrlsVersioned": true,
+    "themeCssContentChangedFromC12": false,
+    "loginMarkupContentExceptAssetUrlsChangedFromC12": false
+  },
+  "changedFileSha256": {
+    "packaging/app-overlay/web-new/index.html": "6f3185a6eacc9a30775f0a313b019bc865cb3b7ae95c62277315d19c1728baab",
+    "packaging/app-overlay/web-new/home.html": "4128846f79788255bf4a9c7a98677ac9a574772f96323085546b81cdffa21bc9",
+    "packaging/app-overlay/web-new/servers.html": "fa672af6a28508a3c4db19e312e92144d06956bc0a249e215ab069dc8d73f245",
+    "packaging/app-overlay/web-new/subscriptions.html": "c95d59fe7b6b050f396196f2541557233997ab2a0389048ee6103cde920d39c0",
+    "packaging/app-overlay/web-new/assets/css/allpage.css": "e4d99feba1bbf9430323843bc38d8d007bbf78425b41565d09fd6c8d6a86343c",
+    "tools/build_r0009_candidate.py": "2998e66cf69b4cddea114f710521be2ba5751e76d37dd65ee642cdc34c6267ae",
+    "tools/test_r0009.py": "c2db681bccdfeb6ea56add9e0b4bde6b6428701a49a9b760f967240101607eae",
+    "packaging/opkg/broray-light-web-publish-policy.sh": "44613481ee4547902d2b5a1fc17663504864543894eb62fa32df159c92d0cacd"
+  },
+  "staticValidation": {
+    "pythonSyntax": "PASS_2_OF_2",
+    "busyboxAshSyntax": "PASS_1_OF_1",
+    "versionedAssetPages": "PASS_4_OF_4",
+    "versionedAssetUrls": "PASS_16_OF_16",
+    "staleC12Constants": 0,
+    "canonicalSource": "PASS_UNCHANGED"
+  },
+  "routerMutation": false,
+  "nextExactAction": "BUILD_C13_A_AND_AN_INDEPENDENT_C13_B_THEN_COMPARE_ALL_EIGHT_ARTIFACTS_BYTE_FOR_BYTE"
+}

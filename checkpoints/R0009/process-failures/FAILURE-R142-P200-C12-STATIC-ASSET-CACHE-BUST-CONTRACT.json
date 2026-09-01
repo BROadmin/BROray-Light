@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_CORRECTIVE_C12_AFTER_C11_LOGIN_THEME_FAILURE",
+  "revision": "p200-c12-cache-busted-external-login-validation",
+  "at": "2026-09-01T12:22:00+03:00",
+  "status": "FAILED_STOPPED_FIRST_ERROR",
+  "failureId": "R142",
+  "failureClass": "UPGRADE_STATIC_ASSET_URLS_DO_NOT_BUST_BROWSER_CACHE",
+  "candidateId": "0.1.0-r0009c12",
+  "passedBeforeFirstError": {
+    "externalHttps": "PASS",
+    "anonymousLoginPage": true,
+    "cacheBustedHtml": "PASS_C12_MARKERS_VISIBLE",
+    "description": "Используйте логин и пароль от интерфейса Keenetic.",
+    "inlineEyeAria": "Показать пароль",
+    "credentialsTyped": false
+  },
+  "firstError": {
+    "expectedCss": "C12_BRO_RAY_THEME",
+    "observedCss": "CACHED_C11_THEME",
+    "bodyBackgroundRgb": "12,17,16",
+    "bodyFont": "Inter, system-ui, sans-serif",
+    "cardWidthPx": 390,
+    "cardBackgroundRgb": "19,27,24",
+    "cardPaddingPx": 24,
+    "cardRadiusPx": 18,
+    "submitFullWidth": false,
+    "logoRadiusPx": 0
+  },
+  "rootCause": "HTML pages reference assets/css/allpage.css and JavaScript with stable unversioned URLs, so an upgraded browser can combine new HTML with cached previous-candidate assets.",
+  "correction": "Advance to c13 and add one deterministic candidate version query to every CSS and JavaScript asset URL in index, home, servers, and subscriptions HTML.",
+  "candidateReady": false,
+  "candidateArtifactDefect": true,
+  "routerMutation": false,
+  "userDataMutation": false,
+  "hiddenRetryPerformed": false,
+  "nextRevision": "p201-c13-versioned-static-asset-implementation",
+  "nextExactAction": "ADVANCE_TO_C13_PATCH_ONLY_OVERLAY_HTML_ASSET_URLS_AND_CANDIDATE_METADATA_ADD_CACHE_BUST_REGRESSION_GATES_THEN_RUN_STATIC_AND_LOCAL_VISUAL_VALIDATION"
+}

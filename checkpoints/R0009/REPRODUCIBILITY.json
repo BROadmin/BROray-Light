@@ -1,25 +1,26 @@
 {
   "schemaVersion": 1,
-  "stage": "R0009_AUTHORIZED_REMOTE_WEB_PUBLICATION_EXTENSION",
-  "revision": "p104-c08-build-a-b-reproducibility",
-  "at": "2026-09-01T02:18:30+03:00",
+  "stage": "R0009_CORRECTIVE_C13_AFTER_C12_STATIC_ASSET_CACHE_FAILURE",
+  "revision": "p203-c13-independent-builds",
+  "at": "2026-09-01T12:31:00+03:00",
   "status": "PASS",
-  "candidateId": "0.1.0-r0009c08",
-  "buildA": "dist/R0009/R0009c08-Build-A",
-  "buildB": "dist/R0009/R0009c08-Build-B",
+  "candidateId": "0.1.0-r0009c13",
+  "buildA": "dist/R0009/R0009c13-Build-A",
+  "buildB": "dist/R0009/R0009c13-Build-B",
   "comparison": "BYTE_IDENTICAL",
   "artifactCount": 8,
   "signedReleaseIndexVerified": true,
   "artifacts": {
-    "broray-light_0.1.0-r0009c08_aarch64-3.10.ipk": "efc3fc67e792f1a783894a977b1c2abfa059d002e720ca9574bfe3ef6295c573",
-    "broray-light-app-0.1.0-r0009c08.tar.gz": "ca5ec62c0d6419e8ef0e2284c7bf8465d01baeea4bef0d37172cd640de453434",
-    "broray-light-install-0.1.0-r0009c08.sh": "e2de68a19d5f94315d374c1266d043c467d979fefdbde8de4cd0bec093416ae0",
-    "broray-light-updater-platform-5-light1.tar.gz": "3d06380f85849e1d267473e9970ce48e4cadf6eb042b4245c1f2289b39dd8224",
-    "CANDIDATE-MANIFEST.json": "eabb5ef2aa85114a95862e2151e7919c23a08cb6d1d283dd2b31bb1347f78340",
-    "release.json": "bd9a348798e2591938c5021b7d7c7dddb1a90a7647508e6e39ba6ce397624656",
-    "release.json.minisig": "9b37feaa99a1261f1591273be19e5ea675c5380278c7cde227260922e770f548",
-    "SHA256SUMS": "c147aa9740975dbc12e5a968e388b2d58236a910988a5506b6a51706fb5cb18f"
+    "broray-light_0.1.0-r0009c13_aarch64-3.10.ipk": "18136b993f2f153f33b2932c9fee50c167f3b16e2cbd44ac9137612e27cc86d2",
+    "broray-light-app-0.1.0-r0009c13.tar.gz": "ef3dc465de59946798243ac7c6a7c27a4818f6c90db98133eb3c47fe43c61065",
+    "broray-light-install-0.1.0-r0009c13.sh": "482db129e12de9156ca21a17981b2d1ebcc4f3de458992886735fcc0a74deecf",
+    "broray-light-updater-platform-5-light1.tar.gz": "4235d3f6ab5b2305920ec2ad16bfb077f82d0c72b454e0d7ded32c85530765ea",
+    "CANDIDATE-MANIFEST.json": "e8b07f6d9437745f3584da20d29c08c08fca82ef5320f0e6b675144eebcd47aa",
+    "release.json": "9427a0f09c48d93b436cf070d3e0270e321ec98979f4a7386bc1b737fe6dc99a",
+    "release.json.minisig": "0f1ebbd2fb24f04d7104ce177026583535d3b440e7bbe4c6c755c84f8569d1dd",
+    "SHA256SUMS": "9f5750907b53f8d9315de8093ded7f821ef013dfc5becefe3175f05b6e6b3b87"
   },
   "routerMutation": false,
-  "nextExactAction": "RUN_ALL_27_C08_ISOLATED_GATES_INCLUDING_TRANSIENT_BOOT_CONVERGENCE_AND_PERMANENT_FAILURE_NO_RETRY"
+  "canonicalSource": "PASS_UNCHANGED",
+  "nextExactAction": "USE_THE_P203_RECEIPT_AS_THE_CANONICAL_FINAL_REPRODUCIBILITY_EVIDENCE"
 }

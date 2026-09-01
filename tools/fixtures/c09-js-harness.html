@@ -5,10 +5,10 @@
 window.__c09Errors=[];window.addEventListener('error',e=>window.__c09Errors.push(e.message));
 window.BROrayUI={toast:function(){}};window.BROrayLightFailoverConfig={orderedServerIds:[],excludedServerIds:[]};
 window.loadFailoverConfig=async function(){};window.moveServerCard=function(){};
-window.fetch=async function(url){var data={};if(String(url).includes('home/summary'))data={servers:{activeServerId:'server-1',servers:[{id:'server-1',name:'Test server'}]},connection:{connected:true},xray:{success:true,data:{version:'26.7.28',running:true}},failover:{status:'Ожидание'},keenetic:{}};else if(String(url).includes('broray/info'))data={version:'0.1.0-r9',releaseChannel:'internal-r0009'};else if(String(url).includes('servers/summary'))data={servers:[]};else if(String(url).includes('subscriptions/list'))data={subscriptions:[]};return {ok:true,status:200,json:async function(){return {success:true,data:data,error:null}}}};
+window.fetch=async function(url){var data={};if(String(url).includes('home/summary'))data={servers:{activeServerId:'server-1',servers:[{id:'server-1',name:'Test server'}]},connection:{connected:true},xray:{success:true,data:{version:'26.7.28',running:true}},failover:{status:'Ожидание'},keenetic:{}};else if(String(url).includes('broray/info'))data={version:'0.1.0-r9',releaseChannel:'internal-r0009'};else if(String(url).includes('servers/summary'))data={servers:[]};else if(String(url).includes('subscriptions/list'))data=[{id:'sub-1',name:'Named feed',serverCount:3,lastUpdatedAt:'2026-09-01T10:00:00+03:00'}];return {ok:true,status:200,json:async function(){return {success:true,data:data,error:null}}}};
 </script>
 <script src="../../packaging/app-overlay/web-new/assets/js/home.js"></script>
 <script src="../../packaging/app-overlay/web-new/assets/js/servers.js"></script>
 <script src="../../packaging/app-overlay/web-new/assets/js/subscriptions.js"></script>
-<script>window.addEventListener('load',function(){document.body.dataset.result=window.__c09Errors.length?'FAIL':'PASS';document.body.dataset.errors=window.__c09Errors.join(' | ')})</script>
+<script>window.addEventListener('load',function(){setTimeout(function(){var visible=document.body.textContent.includes('Named feed');document.body.dataset.result=window.__c09Errors.length||!visible?'FAIL':'PASS';document.body.dataset.subscriptionVisible=visible?'true':'false';document.body.dataset.errors=window.__c09Errors.join(' | ')},100)})</script>
 </body></html>

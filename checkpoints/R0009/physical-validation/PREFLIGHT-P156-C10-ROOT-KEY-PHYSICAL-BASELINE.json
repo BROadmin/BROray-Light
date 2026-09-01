@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_CORRECTIVE_C10_AFTER_C09_PHYSICAL_FAILURE",
+  "revision": "p156-c10-root-key-simple-command-physical-preflight",
+  "at": "2026-09-01T09:56:00+03:00",
+  "status": "PASS_READY_FOR_TRANSFER",
+  "routerAddress": "192.168.1.1",
+  "authentication": {
+    "account": "root",
+    "method": "verified-public-key",
+    "status": "PASS"
+  },
+  "installedPackage": "broray-light 0.1.0-r0009c09",
+  "currentTarget": "releases/0.1.0-r9",
+  "releaseId": "0.1.0-r9",
+  "services": {
+    "primaryStatusReturnCode": 0,
+    "updaterStatusReturnCode": 0,
+    "publicationStatusReturnCode": 0,
+    "publicUrl": "https://brolight.tvervip.keenetic.link/"
+  },
+  "persistence": {
+    "activeServerId": "subscription-sub-130bddd06d26133e-600217eb115c0e82",
+    "serverJsonFiles": 11,
+    "serverPersistenceMarkers": 1,
+    "subscriptionConfigFiles": 2,
+    "subscriptionPersistenceMarkers": 1,
+    "sessionFilesCount": 3,
+    "xraySha256": "4b8af237444801bf17b3dc10a1c5c24581fbe3d433eba3d78c6c3a0da1df56fc",
+    "configSha256": "a7017f04c4b38c22e46eced8ee7870a3d4979a34b86c72df45e7eab9242b4ddb"
+  },
+  "safety": {
+    "fullBROrayPackageAbsent": true,
+    "fullBROrayRootAbsent": true,
+    "recoveryMarkerAbsent": true,
+    "publicationTransactionAbsent": true
+  },
+  "candidatePackage": "dist/R0009/R0009c10-Build-A/broray-light_0.1.0-r0009c10_aarch64-3.10.ipk",
+  "candidatePackageSizeBytes": 12785800,
+  "candidatePackageSha256": "e7ffb45269bc91d3022667b9f0602cd75e6e11bbdeb6348abf0eb11198ac17c2",
+  "routerMutation": false,
+  "nextExactAction": "TRANSFER_C10_IPK_WITH_LEGACY_SCP_AS_ROOT_AND_REQUIRE_EXACT_ROUTER_SIZE_AND_SHA256_BEFORE_INSTALL"
+}

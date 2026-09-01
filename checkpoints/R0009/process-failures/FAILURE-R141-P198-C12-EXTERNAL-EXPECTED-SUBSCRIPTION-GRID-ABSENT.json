@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_CORRECTIVE_C12_AFTER_C11_LOGIN_THEME_FAILURE",
+  "revision": "p198-c12-external-https-ui-validation",
+  "at": "2026-09-01T12:16:00+03:00",
+  "status": "FAILED_STOPPED_FIRST_ERROR",
+  "failureId": "R141",
+  "failureClass": "EXTERNAL_UI_EXPECTED_SUBSCRIPTION_GRID_ABSENT_AFTER_RELOAD",
+  "candidateId": "0.1.0-r0009c12",
+  "passedBeforeFirstError": {
+    "existingExternalHttpsTabReloaded": true,
+    "domSnapshotCall": "PASS",
+    "credentialsTyped": false
+  },
+  "firstError": "TypeError: getComputedStyle expects an Element",
+  "diagnosis": "The evaluation assumed the subscriptions grid remained present; the prior browser session may have expired and redirected to the anonymous login page.",
+  "candidateArtifactDefect": "UNDETERMINED",
+  "routerMutation": false,
+  "userDataMutation": false,
+  "hiddenRetryPerformed": false,
+  "nextRevision": "p199-c12-external-url-dom-diagnosis",
+  "nextExactAction": "READ_ONLY_REPORT_THE_CURRENT_EXTERNAL_URL_TITLE_AND_LOGIN_OR_SUBSCRIPTION_SELECTOR_PRESENCE_WITHOUT_CALLING_GETCOMPUTEDSTYLE"
+}

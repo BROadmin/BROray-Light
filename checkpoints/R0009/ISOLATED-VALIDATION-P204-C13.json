@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_CORRECTIVE_C13_AFTER_C12_STATIC_ASSET_CACHE_FAILURE",
+  "revision": "p204-c13-full-isolated-validation",
+  "at": "2026-09-01T12:35:00+03:00",
+  "status": "PASS",
+  "candidateId": "0.1.0-r0009c13",
+  "build": "dist/R0009/R0009c13-Build-A",
+  "gatesPassed": 33,
+  "gatesFailed": 0,
+  "gates": {
+    "activationApiJsonOnly":"PASS","atomicSymlinkSwitchNoDereference":"PASS","coownershipFailClosed":"PASS","correctiveOverlayExactInstall":"PASS","downgradeRefusal":"PASS","equalVersionNoOp":"PASS","exactXrayRuntime":"PASS","failedHashVerification":"PASS","forcedHealthRollback":"PASS","foreignStateRemovalFailClosed":"PASS","globalLockContentionAndStaleOwner":"PASS","homeIdentityPresentationContract":"PASS","installerRerun":"PASS","isolatedCleanInstall":"PASS","isolatedUpdate":"PASS","maliciousArchiveRejection":"PASS","packageCarrierLayout":"PASS","persistence":"PASS","primaryServicePidHandoff":"PASS","releaseIdDecision":"PASS","requestLockContentionAndStaleOwner":"PASS","signedIndexVerification":"PASS","subscriptionNameAndDeleteConfirmation":"PASS","themePresentationContract":"PASS","webPublicationCleanEnsure":"PASS","webPublicationForcedRollback":"PASS","webPublicationForeignOwnershipFailClosed":"PASS","webPublicationPackageLayout":"PASS","webPublicationPermanentFailureNoRetry":"PASS","webPublicationRerunNoOp":"PASS","webPublicationTransientBootRetry":"PASS","webSessionDirectoryCleanInstall":"PASS","xrayUpdateCheckBackend":"PASS"
+  },
+  "artifactEvidence": {
+    "appArchiveSha256":"ef3dc465de59946798243ac7c6a7c27a4818f6c90db98133eb3c47fe43c61065",
+    "packageSha256":"18136b993f2f153f33b2932c9fee50c167f3b16e2cbd44ac9137612e27cc86d2",
+    "testHarnessSha256":"c2db681bccdfeb6ea56add9e0b4bde6b6428701a49a9b760f967240101607eae"
+  },
+  "routerMutation": false,
+  "nextExactAction": "RUN_C13_PHYSICAL_PREFLIGHT_TRANSFER_INSTALL_AND_EXTERNAL_CACHE_BUSTED_VISUAL_VALIDATION"
+}

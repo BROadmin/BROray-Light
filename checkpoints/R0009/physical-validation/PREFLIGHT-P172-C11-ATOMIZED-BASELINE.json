@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_CORRECTIVE_C11_AFTER_C10_EXTERNAL_UI_FAILURE",
+  "revision": "p172-c11-atomized-physical-preflight",
+  "at": "2026-09-01T10:51:00+03:00",
+  "status": "PASS_READY_FOR_TRANSFER",
+  "candidateId": "0.1.0-r0009c11",
+  "installedPackage": "broray-light 0.1.0-r0009c10",
+  "currentTarget": "releases/0.1.0-r9",
+  "services": {
+    "primary": "PASS",
+    "updater": "PASS",
+    "publication": "https://brolight.tvervip.keenetic.link/"
+  },
+  "persistenceBaseline": {
+    "activeServerId": "subscription-sub-130bddd06d26133e-600217eb115c0e82",
+    "serverJsonFiles": 6,
+    "subscriptionConfigFiles": 2,
+    "sessionFiles": 3,
+    "xraySha256": "4b8af237444801bf17b3dc10a1c5c24581fbe3d433eba3d78c6c3a0da1df56fc",
+    "settingsSha256": "7cb59866bede03da82b04ccb59d7e9b439f72f4d38d382c0bc409bc38827ba4d",
+    "autoSwitchSha256": "6743d9128b6206747ef724fbe72ba9646ef027ba948962805baeb6b053d661cf",
+    "activeServerFileSha256": "25e15e4354b92e2cf758f06e7a04da7d81ad4f19d48fe42eabd6ae0b474fe910"
+  },
+  "candidatePackage": {
+    "path": "dist/R0009/R0009c11-Build-A/broray-light_0.1.0-r0009c11_aarch64-3.10.ipk",
+    "size": 12787106,
+    "sha256": "3834394889a856b1c758b9bda9cb0faefb6f523bea18d867cece372cd2d1d84c"
+  },
+  "safety": {
+    "fullBROrayRootAbsent": true,
+    "fullBROrayInitAbsent": true,
+    "recoveryMarkerAbsent": true
+  },
+  "routerMutation": false,
+  "nextExactAction": "TRANSFER_THE_EXACT_C11_BUILD_A_IPK_WITH_LEGACY_SCP_AND_VERIFY_REMOTE_SIZE_AND_SHA256_BEFORE_INSTALL"
+}

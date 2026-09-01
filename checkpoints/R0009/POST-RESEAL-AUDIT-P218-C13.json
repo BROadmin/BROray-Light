@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_CORRECTIVE_C13_AFTER_C12_STATIC_ASSET_CACHE_FAILURE",
+  "revision": "p218-c13-post-reseal-audit",
+  "at": "2026-09-01T13:30:00+03:00",
+  "status": "PASS",
+  "candidateId": "0.1.0-r0009c13",
+  "acceptancePassed": 20,
+  "acceptanceFailed": 0,
+  "processFailuresPreserved": 104,
+  "sha256SidecarsVerified": 240,
+  "canonicalSumsVerified": 6,
+  "worklogLinesParsed": 260,
+  "finalRecords": {
+    "checkpointSha256": "dcc533c463755350515f186168cb5b89ed43629f8c2b20cb7f659bcd8836007a",
+    "validationSha256": "10092a6a4e34e156d291b6aef5a4252e035b726f77b66d5b31b334a07c0d13ad",
+    "reportSha256": "a28da98bcfcb2147db4cfd25420a17f3ad16d6cadc15c27a1a3eb514ed651dd5",
+    "sha256SumsSha256": "164dc796ac1db7db14f99b6395472716fa681a77c741fab9b852cd34b3ae581e"
+  },
+  "candidateReady": true,
+  "privateSigningKeyDestroyed": true,
+  "productionServerMutationPerformed": false,
+  "publicReleasePublished": false,
+  "routerMutation": false,
+  "nextStage": "DEFINE_AND_AUTHORIZE_R0010_BEFORE_ANY_STABLE_PUBLICATION",
+  "nextExactAction": "RUN_FINAL_GIT_DIFF_CHECK_STAGE_ALL_R0009_CHANGES_COMMIT_ON_CODEX_R0009_UPDATER_PACKAGE_AND_REPORT_THE_COMMIT_SHA"
+}

@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_CORRECTIVE_C12_AFTER_C11_LOGIN_THEME_FAILURE",
+  "revision": "p196-c12-verified-transfer",
+  "at": "2026-09-01T12:09:00+03:00",
+  "status": "PASS_READY_FOR_INSTALL",
+  "candidateId": "0.1.0-r0009c12",
+  "localArtifact": "dist/R0009/R0009c12-Build-A/broray-light_0.1.0-r0009c12_aarch64-3.10.ipk",
+  "remoteArtifact": "/tmp/broray-light-r0009c12.ipk",
+  "transfer": "LEGACY_SCP_AS_ROOT",
+  "remoteTargetAbsentBeforeTransfer": true,
+  "size": 12788368,
+  "localSha256": "d6d66a13af04d195045c498c90f34387f3f302004d55dd17933c024141550135",
+  "remoteSha256": "d6d66a13af04d195045c498c90f34387f3f302004d55dd17933c024141550135",
+  "exactMatch": true,
+  "routerMutation": "AUTHORIZED_TEMPORARY_IPK_TRANSFER_ONLY",
+  "packageInstalled": false,
+  "nextExactAction": "RUN_EXACTLY_ONE_OPKG_INSTALL_OF_THE_VERIFIED_REMOTE_C12_IPK_THEN_STOP_ON_THE_FIRST_INSTALL_OR_POSTINSTALL_ERROR"
+}

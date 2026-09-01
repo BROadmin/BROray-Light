@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_CORRECTIVE_C11_AFTER_C10_EXTERNAL_UI_FAILURE",
+  "revision": "p164-c11-subscription-array-and-spacing-implementation",
+  "at": "2026-09-01T10:28:00+03:00",
+  "status": "PASS_IMPLEMENTED_PENDING_BUILD",
+  "candidateId": "0.1.0-r0009c11",
+  "corrections": {
+    "subscriptionRawArrayResponse": "SUPPORTED",
+    "subscriptionRefreshDeleteQueryId": "SUPPORTED",
+    "customSubscriptionName": "PRESERVED",
+    "deleteConfirmation": "PRESERVED",
+    "visualSpacing": {
+      "sectionGapPx": 28,
+      "gridGapPx": 20,
+      "cardPaddingPx": 24,
+      "minimumControlHeightPx": 44,
+      "groupedActionSeparators": true,
+      "mobileSpacing": true
+    }
+  },
+  "changedFileSha256": {
+    "packaging/app-overlay/web-new/assets/js/subscriptions.js": "ac5ba7ad004f20b899f0cfec239ddb5e3a716093654688a61a5d431bc70a9c40",
+    "packaging/app-overlay/web-new/assets/css/allpage.css": "1ddef8d2d93e7f1abe197e1e3bdc0918b63c835ad53ffa5b3df86d61d54405b3",
+    "tools/test_r0009.py": "d838f76daea83235fadfdb58d4fbb1a4c48f3cc7aa14c606e60491388a976459"
+  },
+  "staticValidation": {
+    "pythonSyntax": "PASS_2_OF_2",
+    "busyboxAshSyntax": "PASS_3_OF_3",
+    "browserJsHarness": "PASS_RAW_ARRAY_SUBSCRIPTION_VISIBLE_NO_ERRORS",
+    "homeVersions": "PASS_XRAY_26_7_28_LIGHT_0_1_0_R9",
+    "spacingContract": "PASS",
+    "canonicalSource": "PASS_UNCHANGED",
+    "diffCheck": "PASS"
+  },
+  "routerMutation": false,
+  "nextExactAction": "BUILD_C11_A_AND_INDEPENDENT_C11_B_WITH_THE_VERIFIED_EPHEMERAL_SIGNING_IDENTITY"
+}

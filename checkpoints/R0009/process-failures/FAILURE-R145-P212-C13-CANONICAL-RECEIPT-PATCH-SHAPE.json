@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_CORRECTIVE_C13_AFTER_C12_STATIC_ASSET_CACHE_FAILURE",
+  "revision": "p212-c13-canonical-receipt-reseal",
+  "at": "2026-09-01T13:05:00+03:00",
+  "status": "FAILED_STOPPED_FIRST_ERROR",
+  "failureId": "R145",
+  "failureClass": "APPLY_PATCH_REJECTED_DELETE_AND_ADD_OF_SAME_PATH",
+  "candidateId": "0.1.0-r0009c13",
+  "observed": {
+    "patchApplied": false,
+    "filesChangedByFailedOperation": 0,
+    "candidateArtifactDefect": false,
+    "routerMutation": false
+  },
+  "rootCause": "The patch contained delete and add operations for the same canonical receipt path, which apply_patch rejects as multiple operations targeting one file.",
+  "hiddenRetryPerformed": false,
+  "nextRevision": "p213-c13-canonical-receipt-in-place-update",
+  "nextExactAction": "UPDATE_EACH_CANONICAL_RECEIPT_IN_PLACE_WITH_ONE_UPDATE_OPERATION_PER_PATH_THEN_VERIFY_JSON_AND_HASHES"
+}

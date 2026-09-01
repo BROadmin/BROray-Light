@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_CORRECTIVE_C10_AFTER_C09_PHYSICAL_FAILURE",
+  "revision": "p154-c10-telnet-read-only-physical-preflight",
+  "at": "2026-09-01T09:48:00+03:00",
+  "status": "FAILED_STOPPED_FIRST_ERROR",
+  "failureClass": "KEENETIC_TELNET_CLI_HAS_NO_POSIX_SHELL",
+  "authentication": "PASS",
+  "operation": "READ_ONLY_PHYSICAL_PREFLIGHT",
+  "observedCapabilities": [
+    "keenetic-configurator-cli",
+    "opkg-configuration-only",
+    "diagnostic-show-commands"
+  ],
+  "missingRequiredCapabilities": [
+    "opkg-install-command",
+    "sha256sum-command",
+    "broray-light-service-scripts",
+    "filesystem-shell"
+  ],
+  "routerMutation": false,
+  "candidateTransferred": false,
+  "packageInstallStarted": false,
+  "candidateReady": false,
+  "credentialsPrintedOrWritten": false,
+  "interactiveSessionClosed": true,
+  "retryPolicy": "NO_RETRY_OF_P154_BECAUSE_KEENETIC_TELNET_IS_NOT_A_POSIX_SHELL",
+  "nextRevision": "p155-c10-entware-root-dropbear-key-preflight",
+  "nextExactAction": "TRY_THE_VERIFIED_DROPBEAR_PUBLIC_KEY_WITH_THE_STANDARD_ENTWARE_ROOT_ACCOUNT_AND_RUN_THE_READ_ONLY_BASELINE_ONLY_IF_AUTHENTICATION_SUCCEEDS"
+}

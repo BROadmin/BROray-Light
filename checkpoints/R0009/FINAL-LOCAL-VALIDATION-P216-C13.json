@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_CORRECTIVE_C13_AFTER_C12_STATIC_ASSET_CACHE_FAILURE",
+  "revision": "p216-c13-final-local-validation",
+  "at": "2026-09-01T13:22:00+03:00",
+  "status": "PASS_PENDING_FAILURE_COUNT_RESEAL",
+  "candidateId": "0.1.0-r0009c13",
+  "branch": "codex/r0009-updater-package",
+  "canonicalSource": {
+    "commit": "684b27bdb53e545047419baa87c63dd86dffa469",
+    "gitDiff": "PASS_UNCHANGED",
+    "sha256SumsSha256": "e056585d6a517ddbbbaebf08b68f17eb2d9d7ccd68d86df5cdee9fd4665f2419"
+  },
+  "machineReadable": {
+    "jsonFilesParsed": 239,
+    "worklogLinesParsed": 258,
+    "sha256SidecarsVerified": 239,
+    "canonicalSumsVerified": 6,
+    "status": "PASS"
+  },
+  "syntax": {
+    "pythonFiles": 2,
+    "ashFiles": 1,
+    "status": "PASS"
+  },
+  "reproducibility": {
+    "buildSignaturesVerified": 2,
+    "artifactsByteIdentical": 8,
+    "status": "PASS"
+  },
+  "processFailuresPreserved": 104,
+  "canonicalPublicKeySha256": "401aad9c433c6c81b24412508774ae467a4c11a5752d2c6c0b286ae39079a93f",
+  "privateSigningKeyDestroyed": true,
+  "candidateArtifactDefect": false,
+  "routerMutation": false,
+  "nextExactAction": "RESEAL_THE_FINAL_SUMMARY_FAILURE_COUNT_FROM_103_TO_104_RECOMPUTE_DEPENDENT_HASHES_AND_RUN_A_SHORT_POST_RESEAL_AUDIT"
+}

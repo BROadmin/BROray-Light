@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_CORRECTIVE_C13_AFTER_C12_STATIC_ASSET_CACHE_FAILURE",
+  "revision": "p208-c13-external-login-visual-validation",
+  "at": "2026-09-01T12:48:00+03:00",
+  "status": "PASS",
+  "candidateId": "0.1.0-r0009c13",
+  "url": "https://brolight.tvervip.keenetic.link/?r0009c13=6f3185a6",
+  "reference": "USER_PROVIDED_BRO_RAY_LOGIN_SCREENSHOT_1680X1050",
+  "browser": {
+    "viewport": "1680x1050",
+    "anonymousSession": true,
+    "screenshotCapturedAndInspected": true,
+    "credentialsTyped": false
+  },
+  "cacheContract": {
+    "candidateHtmlMarkersVisible": true,
+    "stylesheet": "assets/css/allpage.css?v=0.1.0-r0009c13",
+    "versionedStylesheetLoaded": true,
+    "staleC11StylesObserved": false
+  },
+  "computed": {
+    "bodyBackgroundRgb": "5,12,17",
+    "bodyFontFamily": "Arial, sans-serif",
+    "cardBackgroundRgb": "20,33,43",
+    "cardWidthPx": 430,
+    "cardLeftPx": 625,
+    "cardRightPx": 1055,
+    "cardTopPx": 223.25,
+    "cardBottomPx": 826.734,
+    "cardCentered": true,
+    "cardRadiusPx": 24,
+    "cardPaddingPx": 34,
+    "submitWidthPx": 360,
+    "submitFullWidth": true,
+    "inlineEyeControl": true,
+    "eyeControlAriaLabel": "Показать пароль",
+    "circularLogo": true
+  },
+  "identity": {
+    "product": "BROray-Light",
+    "protocol": "VLESS для Keenetic",
+    "description": "Используйте логин и пароль интерфейса Keenetic."
+  },
+  "visual": {
+    "palette": "PASS_BRO_RAY_BLUE_BLACK_SLATE_NAVY_TEAL",
+    "typography": "PASS_SANS_CYRILLIC",
+    "spacing": "PASS_REFERENCE_RHYTHM",
+    "controls": "PASS_INLINE_EYE_AND_FULL_WIDTH_SUBMIT",
+    "identity": "PASS_BRORAY_LIGHT_VLESS",
+    "staticAssetCacheBust": "PASS"
+  },
+  "routerMutation": false,
+  "userDataMutation": false,
+  "nextExactAction": "RUN_ONE_MEMORY_ONLY_AUTHENTICATED_C13_FUNCTIONAL_CYCLE_AND_END_WITH_LOGOUT_AND_POST_LOGOUT_401"
+}

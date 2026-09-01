@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_CORRECTIVE_C10_AFTER_C09_PHYSICAL_FAILURE",
+  "revision": "p159-c10-authenticated-functional-cycle-port-80",
+  "at": "2026-09-01T10:07:00+03:00",
+  "status": "FAILED_STOPPED_FIRST_ERROR",
+  "failureClass": "FUNCTIONAL_PROBE_USED_KEENETIC_WEBUI_ORIGIN_INSTEAD_OF_LIGHTTPD_UPSTREAM",
+  "operation": "AUTHENTICATED_FUNCTIONAL_VALIDATION",
+  "attemptedOrigin": "http://192.168.1.1",
+  "requiredOrigin": "http://192.168.1.1:8080",
+  "firstHttpStatus": 405,
+  "lightSessionCreated": false,
+  "activationStarted": false,
+  "xrayUpdateCheckStarted": false,
+  "routerMutation": false,
+  "credentialsPrintedOrWritten": false,
+  "candidateReady": false,
+  "retryPolicy": "NO_RETRY_OF_P159_PORT_80_ORIGIN",
+  "nextRevision": "p160-c10-authenticated-functional-cycle-lighttpd-8080",
+  "nextExactAction": "RUN_THE_SAME_GUARANTEED_LOGOUT_FUNCTIONAL_CYCLE_AGAINST_HTTP_192_168_1_1_8080"
+}

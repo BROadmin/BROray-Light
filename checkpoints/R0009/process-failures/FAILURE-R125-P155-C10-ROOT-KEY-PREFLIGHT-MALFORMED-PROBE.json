@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_CORRECTIVE_C10_AFTER_C09_PHYSICAL_FAILURE",
+  "revision": "p155-c10-entware-root-dropbear-key-preflight",
+  "at": "2026-09-01T09:52:00+03:00",
+  "status": "FAILED_STOPPED_FIRST_ERROR",
+  "failureClass": "REMOTE_PREFLIGHT_PROBE_QUOTING_AND_PATH_ASSUMPTION_INVALID",
+  "authentication": {
+    "account": "root",
+    "method": "verified-public-key",
+    "status": "PASS"
+  },
+  "operation": "READ_ONLY_PHYSICAL_PREFLIGHT",
+  "observed": {
+    "posixShell": true,
+    "currentTarget": "releases/0.1.0-r9",
+    "primaryStatusReturnCode": 0,
+    "probeOutputComplete": false,
+    "nestedAwkQuotingValid": false,
+    "assumedPublicationBinaryPathValid": false
+  },
+  "routerMutation": false,
+  "candidateTransferred": false,
+  "packageInstallStarted": false,
+  "candidateReady": false,
+  "credentialsPrintedOrWritten": false,
+  "retryPolicy": "NO_RETRY_OF_P155_COMPOUND_PROBE",
+  "nextRevision": "p156-c10-root-key-simple-command-physical-preflight",
+  "nextExactAction": "RUN_INDEPENDENT_READ_ONLY_ROOT_SSH_COMMANDS_WITHOUT_NESTED_AWK_OR_COMPOUND_STATUS_FORMATTING_AND_USE_INSTALLED_PACKAGE_PATHS"
+}

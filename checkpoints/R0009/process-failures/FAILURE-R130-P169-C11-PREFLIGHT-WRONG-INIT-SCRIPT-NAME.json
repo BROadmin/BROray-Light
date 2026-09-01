@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_CORRECTIVE_C11_AFTER_C10_EXTERNAL_UI_FAILURE",
+  "revision": "p169-c11-physical-preflight",
+  "at": "2026-09-01T10:42:00+03:00",
+  "status": "FAILED_STOPPED_FIRST_ERROR",
+  "failureId": "R130",
+  "failureClass": "PREFLIGHT_PROBE_WRONG_INIT_SCRIPT_NAME",
+  "candidateId": "0.1.0-r0009c11",
+  "firstError": {
+    "command": "/opt/etc/init.d/S99broray-light status",
+    "exitCode": 1,
+    "stderr": "sh: /opt/etc/init.d/S99broray-light: not found",
+    "lastSuccessfulEvidence": {
+      "installedPackage": "broray-light 0.1.0-r0009c10",
+      "currentTarget": "releases/0.1.0-r9"
+    }
+  },
+  "diagnosis": "The read-only preflight used an assumed init-script name instead of discovering the package-installed script names.",
+  "candidateArtifactDefect": false,
+  "routerMutation": false,
+  "packageTransferred": false,
+  "packageInstalled": false,
+  "hiddenRetryPerformed": false,
+  "nextRevision": "p170-c11-corrected-physical-preflight",
+  "nextExactAction": "DISCOVER_THE_ACTUAL_BRORAY_LIGHT_INIT_SCRIPT_NAMES_READ_ONLY_THEN_RUN_A_CORRECTED_PREFLIGHT_WITH_ONLY_DISCOVERED_PATHS"
+}

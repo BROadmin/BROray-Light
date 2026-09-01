@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_CORRECTIVE_C13_AFTER_C12_STATIC_ASSET_CACHE_FAILURE",
+  "revision": "p209-c13-authenticated-functional-cycle",
+  "at": "2026-09-01T12:53:00+03:00",
+  "status": "PASS",
+  "candidateId": "0.1.0-r0009c13",
+  "origin": "http://192.168.1.1:8080",
+  "httpStatuses": {
+    "login": 200,
+    "homeSummary": 200,
+    "brorayInfo": 200,
+    "serversSummary": 200,
+    "subscriptionsList": 200,
+    "xrayStatus": 200,
+    "activation": 200,
+    "xrayUpdateCheck": 200,
+    "logout": 200,
+    "postLogoutSession": 401
+  },
+  "subscriptions": {
+    "frontendUnwrappedShape": "RAW_DATA_ARRAY",
+    "count": 2,
+    "allNamesPresent": true,
+    "secretUrlsPrintedOrWritten": false,
+    "deleteMutationPerformed": false
+  },
+  "activation": {
+    "responseValidJson": true,
+    "activeServerId": "subscription-sub-130bddd06d26133e-600217eb115c0e82",
+    "activeServerName": "🇳🇱 NL - KEENETIC",
+    "connectionState": true,
+    "operation": "AUTHORIZED_REACTIVATION_OF_ALREADY_ACTIVE_SERVER"
+  },
+  "versions": {
+    "xray": "26.7.28",
+    "brorayLight": "0.1.0-r9",
+    "xrayLatest": "26.7.28",
+    "xrayUpdateAvailable": false
+  },
+  "sessionLifecycle": {
+    "credentialsHeldInMemoryOnly": true,
+    "credentialsPrintedOrWritten": false,
+    "guaranteedLogout": true,
+    "postLogoutUnauthorized": true
+  },
+  "routerMutation": "AUTHORIZED_REACTIVATION_OF_ALREADY_ACTIVE_SERVER_AND_AUTH_SESSION_LIFECYCLE",
+  "nextExactAction": "RESEAL_R0009_FINAL_ACCEPTANCE_CHECKPOINT_REPORT_VALIDATION_MACHINE_STATE_AND_COMMIT_WITH_CANDIDATE_READY_TRUE"
+}

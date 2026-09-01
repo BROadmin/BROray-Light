@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_CORRECTIVE_C11_AFTER_C10_EXTERNAL_UI_FAILURE",
+  "revision": "p173-c11-verified-transfer",
+  "at": "2026-09-01T10:54:00+03:00",
+  "status": "PASS_READY_FOR_INSTALL",
+  "candidateId": "0.1.0-r0009c11",
+  "localArtifact": "dist/R0009/R0009c11-Build-A/broray-light_0.1.0-r0009c11_aarch64-3.10.ipk",
+  "remoteArtifact": "/tmp/broray-light-r0009c11.ipk",
+  "transfer": "LEGACY_SCP_AS_ROOT",
+  "remoteTargetAbsentBeforeTransfer": true,
+  "size": 12787106,
+  "localSha256": "3834394889a856b1c758b9bda9cb0faefb6f523bea18d867cece372cd2d1d84c",
+  "remoteSha256": "3834394889a856b1c758b9bda9cb0faefb6f523bea18d867cece372cd2d1d84c",
+  "exactMatch": true,
+  "routerMutation": "AUTHORIZED_TEMPORARY_IPK_TRANSFER_ONLY",
+  "packageInstalled": false,
+  "nextExactAction": "RUN_EXACTLY_ONE_OPKG_INSTALL_OF_THE_VERIFIED_REMOTE_C11_IPK_THEN_STOP_ON_THE_FIRST_INSTALL_OR_POSTINSTALL_ERROR"
+}

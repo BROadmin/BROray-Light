@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_CORRECTIVE_C13_AFTER_C12_STATIC_ASSET_CACHE_FAILURE",
+  "revision": "p211-c13-private-key-destruction-dotnet-single-file",
+  "at": "2026-09-01T13:01:00+03:00",
+  "status": "PASS",
+  "candidateId": "0.1.0-r0009c13",
+  "preflight": {
+    "exactPathResolved": true,
+    "insideOperatingSystemTemp": true,
+    "exactFileName": "release.key"
+  },
+  "result": {
+    "privateSigningKeyDestroyed": true,
+    "absenceVerified": true,
+    "parentDirectoryDeleted": false,
+    "repositoryMutation": false,
+    "routerMutation": false
+  },
+  "publicVerificationKey": {
+    "path": "updater/release.pub",
+    "sha256": "401aad9c433c6c81b24412508774ae467a4c11a5752d2c6c0b286ae39079a93f",
+    "buildASignatureVerified": true,
+    "buildBSignatureVerified": true
+  },
+  "nextExactAction": "RESEAL_R0009_FINAL_ACCEPTANCE_CHECKPOINT_REPORT_VALIDATION_MACHINE_STATE_AND_COMMIT_WITH_CANDIDATE_READY_TRUE"
+}

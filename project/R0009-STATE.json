@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
   "stage": "R0009",
-  "status": "BLOCKED_FAIL_CLOSED_ROUTER_SSH_AUTHENTICATION",
-  "currentRevision": "p151-c10-restored-router-access-preflight",
+  "status": "PASS",
+  "currentRevision": "p218-c13-post-reseal-audit",
   "workingBranch": "codex/r0009-updater-package",
   "authorizedTask": "BUILD_LIGHT_UPDATER_INSTALLER_AND_INSTALLABLE_CANDIDATE_FROM_R0008",
-  "candidateReady": false,
-  "candidateId": "0.1.0-r0009c10",
+  "candidateReady": true,
+  "candidateId": "0.1.0-r0009c13",
   "releaseId": "0.1.0-r9",
   "canonicalInput": {
     "sourceCommit": "684b27bdb53e545047419baa87c63dd86dffa469",
@@ -24,7 +24,7 @@
     "isolatedPassed": 33,
     "isolatedFailed": 0,
     "buildArtifactsByteIdentical": 8,
-    "physicalValidation": "BLOCKED_C10_SSH_AUTH_C09_REMAINS_INSTALLED",
+    "physicalValidation": "PASS_C13_INSTALL_AND_EXTERNAL_LOGIN_VISUAL_CACHE_CONTRACT",
     "nativeRebootAutomaticStart": "PASS",
     "externalHttpsAuthentication": "PASS",
     "persistence": "PASS",
@@ -32,46 +32,46 @@
     "routesViaProxy0": 0
   },
   "finalArtifacts": {
-    "buildA": "dist/R0009/R0009c10-Build-A",
-    "buildB": "dist/R0009/R0009c10-Build-B",
-    "packageSha256": "e7ffb45269bc91d3022667b9f0602cd75e6e11bbdeb6348abf0eb11198ac17c2",
-    "appArchiveSha256": "1dd6bcdbf90b2d3f9ab6b5614e76327e0046e9485947ae1599bd1e9c70cead02",
+    "buildA": "dist/R0009/R0009c13-Build-A",
+    "buildB": "dist/R0009/R0009c13-Build-B",
+    "packageSha256": "18136b993f2f153f33b2932c9fee50c167f3b16e2cbd44ac9137612e27cc86d2",
+    "appArchiveSha256": "ef3dc465de59946798243ac7c6a7c27a4818f6c90db98133eb3c47fe43c61065",
     "updaterArchiveSha256": "4235d3f6ab5b2305920ec2ad16bfb077f82d0c72b454e0d7ded32c85530765ea",
-    "installerSha256": "2822f9a63bf4b1e8a742b1388329f3b2faaa407bdf4839912c06273abaf678e8",
-    "releaseIndexSha256": "61b9231fa0c53180869a00aabb6998f4054d73d8f63a3105f83862d3f6c9f21c",
-    "releaseSignatureSha256": "c0946f6d7dfd5de3a7be5cc1093cd66e67d92cbe0da2a9482bd5f1a594018b51",
-    "candidateManifestSha256": "286139311d53d917a4518e54d6eff1866a1775e5d5869ee490bab10b488df209",
-    "artifactSumsSha256": "78c63f1e81b4a1dbe660a65a9f3843793aecc9897556cc95af0d66b7b7a9dfc3"
+    "installerSha256": "482db129e12de9156ca21a17981b2d1ebcc4f3de458992886735fcc0a74deecf",
+    "releaseIndexSha256": "9427a0f09c48d93b436cf070d3e0270e321ec98979f4a7386bc1b737fe6dc99a",
+    "releaseSignatureSha256": "0f1ebbd2fb24f04d7104ce177026583535d3b440e7bbe4c6c755c84f8569d1dd",
+    "candidateManifestSha256": "e8b07f6d9437745f3584da20d29c08c08fca82ef5320f0e6b675144eebcd47aa",
+    "artifactSumsSha256": "9f5750907b53f8d9315de8093ded7f821ef013dfc5becefe3175f05b6e6b3b87"
   },
   "finalCheckpoint": {
     "path": "checkpoints/R0009/CHECKPOINT.json",
-    "sha256": "6aa1056a8f41ec59773787b565dd5c97bec2ec6db5181f1c5648e9e680791086",
+    "sha256": "dcc533c463755350515f186168cb5b89ed43629f8c2b20cb7f659bcd8836007a",
     "validationPath": "checkpoints/R0009/VALIDATION.json",
-    "validationSha256": "3431e69863eafc0a565de82b7d5254fe49fb4b04d0b0cbf4a597c6d9061440ea",
+    "validationSha256": "10092a6a4e34e156d291b6aef5a4252e035b726f77b66d5b31b334a07c0d13ad",
     "reportPath": "checkpoints/R0009/REPORT.md"
   },
   "physicalValidation": {
     "authorized": true,
     "status": "PASS",
     "routerAddress": "192.168.1.1",
-    "installedPackage": "broray-light 0.1.0-r0009c09",
+    "installedPackage": "broray-light 0.1.0-r0009c13",
     "currentTarget": "releases/0.1.0-r9",
     "publicUrl": "https://brolight.tvervip.keenetic.link/",
     "postbootCheckpoint": "checkpoints/R0009/physical-validation/POSTBOOT-P114-C08-AUTOSTART-WEB-AUTH-PERSISTENCE.json",
     "postbootCheckpointSha256": "707789e352b136b40918c77f33646f93ef8afa5ab204214b14ca0cdb094dd914"
   },
   "processFailures": {
-    "preserved": 80,
-    "latest": "checkpoints/R0009/process-failures/FAILURE-R122-P151-C10-RESTORED-ACCESS-PREFLIGHT-DENIED.json",
+    "preserved": 104,
+    "latest": "checkpoints/R0009/process-failures/FAILURE-R146-P214-C13-SHA256SUMS-SIDECAR-EXPECTED-LINE.json",
     "latestDiagnosis": "checkpoints/R0009/DIAGNOSIS-P123-C08-ARTIFACT-BOUND-EOF-WHITESPACE.json"
   },
   "canonicalPublicKeySha256": "401aad9c433c6c81b24412508774ae467a4c11a5752d2c6c0b286ae39079a93f",
-  "privateSigningKeyDestroyed": false,
+  "privateSigningKeyDestroyed": true,
   "hardwareTestingAuthorized": true,
   "productionMutationAuthorized": false,
   "productionServerMutationPerformed": false,
   "publicReleasePublished": false,
-  "activeBlocker": "NO_ACCEPTED_SSH_AUTHENTICATION_METHOD_FOR_THE_AUTHORIZED_ROUTER",
-  "nextStage": "R0009_CORRECTIVE_C10_AFTER_C09_PHYSICAL_FAILURE",
-  "nextExactAction": "ENABLE_THE_EXISTING_CODEX_PUBLIC_KEY_OR_CONFIRM_A_NEW_WORKING_SSH_PASSWORD_ON_THE_ROUTER_THEN_EXPLICITLY_CONFIRM_ACCESS_RESTORATION_BEFORE_P152"
+  "activeBlocker": null,
+  "nextStage": "DEFINE_AND_AUTHORIZE_R0010_BEFORE_ANY_STABLE_PUBLICATION",
+  "nextExactAction": "RUN_FINAL_GIT_DIFF_CHECK_STAGE_ALL_R0009_CHANGES_COMMIT_ON_CODEX_R0009_UPDATER_PACKAGE_AND_REPORT_THE_COMMIT_SHA"
 }

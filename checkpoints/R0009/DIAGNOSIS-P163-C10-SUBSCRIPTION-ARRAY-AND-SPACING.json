@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_CORRECTIVE_C11_AFTER_C10_EXTERNAL_UI_FAILURE",
+  "revision": "p163-c10-subscription-storage-contract-and-spacing-diagnosis",
+  "at": "2026-09-01T10:24:00+03:00",
+  "status": "PASS_ROOT_CAUSE_IDENTIFIED",
+  "subscriptionVisibilityRootCause": {
+    "backendStoragePath": "/opt/broray-light/config/subscriptions",
+    "backendListShape": "RAW_JSON_ARRAY",
+    "frontendExpectedShapes": [
+      "OBJECT_WITH_SUBSCRIPTIONS",
+      "OBJECT_WITH_ITEMS"
+    ],
+    "failureMechanism": "RAW_ARRAY_FELL_THROUGH_TO_EMPTY_ARRAY",
+    "storagePersistenceFailure": false,
+    "requiredCorrection": "ACCEPT_RAW_ARRAY_BEFORE_OBJECT_ENVELOPES"
+  },
+  "spacingDiagnosis": {
+    "desktopGeometry": "PASS_1100PX_CONTENT_3_COLUMNS",
+    "currentGridGapPx": 15,
+    "currentCardPaddingPx": 19,
+    "currentFormSectionGapPx": 15,
+    "userValidation": "CONTROLS_AND_CONTENT_APPEAR_TOO_DENSE",
+    "requiredCorrection": "INCREASE_VERTICAL_RHYTHM_CARD_PADDING_GRID_GAPS_FORM_GROUPING_CONTROL_HEIGHT_AND_MOBILE_SPACING"
+  },
+  "browserSession": {
+    "diagnosticTabsClosed": true,
+    "temporaryViewportOverrideReset": true,
+    "manualServerSessionDeletion": false,
+    "remainingDiagnosticSessionPolicy": "NATIVE_TIMEOUT_AND_NEXT_LOGIN_CLEANUP"
+  },
+  "canonicalSourceMutation": false,
+  "routerMutation": false,
+  "nextRevision": "p164-c11-subscription-array-and-spacing-implementation",
+  "nextExactAction": "ADVANCE_TO_C11_PATCH_ONLY_THE_DETERMINISTIC_APP_OVERLAY_AND_ADD_REGRESSION_GATES_FOR_RAW_ARRAY_LISTS_AND_SPACING_CONTRACT"
+}

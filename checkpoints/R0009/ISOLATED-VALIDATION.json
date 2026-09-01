@@ -1,13 +1,13 @@
 {
   "schemaVersion": 1,
-  "stage": "R0009_AUTHORIZED_REMOTE_WEB_PUBLICATION_EXTENSION",
-  "revision": "p105-c08-full-isolated-validation",
-  "at": "2026-09-01T02:21:00+03:00",
+  "stage": "R0009_CORRECTIVE_C13_AFTER_C12_STATIC_ASSET_CACHE_FAILURE",
+  "revision": "p204-c13-full-isolated-validation",
+  "at": "2026-09-01T12:35:00+03:00",
   "status": "PASS",
-  "candidateId": "0.1.0-r0009c08",
-  "packageSha256": "efc3fc67e792f1a783894a977b1c2abfa059d002e720ca9574bfe3ef6295c573",
-  "appArchiveSha256": "ca5ec62c0d6419e8ef0e2284c7bf8465d01baeea4bef0d37172cd640de453434",
-  "passedGates": 27,
+  "candidateId": "0.1.0-r0009c13",
+  "packageSha256": "18136b993f2f153f33b2932c9fee50c167f3b16e2cbd44ac9137612e27cc86d2",
+  "appArchiveSha256": "ef3dc465de59946798243ac7c6a7c27a4818f6c90db98133eb3c47fe43c61065",
+  "passedGates": 33,
   "failedGates": 0,
   "gates": {
     "packageCarrierLayout": "PASS",
@@ -36,8 +36,14 @@
     "maliciousArchiveRejection": "PASS",
     "requestLockContentionAndStaleOwner": "PASS",
     "globalLockContentionAndStaleOwner": "PASS",
-    "foreignStateRemovalFailClosed": "PASS"
+    "foreignStateRemovalFailClosed": "PASS",
+    "activationApiJsonOnly": "PASS",
+    "correctiveOverlayExactInstall": "PASS",
+    "homeIdentityPresentationContract": "PASS",
+    "subscriptionNameAndDeleteConfirmation": "PASS",
+    "themePresentationContract": "PASS",
+    "xrayUpdateCheckBackend": "PASS"
   },
   "routerMutation": false,
-  "nextExactAction": "TRANSFER_VERIFY_AND_INSTALL_C08_THEN_REBOOT_AND_REQUIRE_AUTOMATIC_PRIMARY_WEB_PUBLICATION_START_WITHOUT_MANUAL_INTERVENTION"
+  "nextExactAction": "USE_THE_P204_RECEIPT_AS_THE_CANONICAL_FINAL_ISOLATED_VALIDATION_EVIDENCE"
 }

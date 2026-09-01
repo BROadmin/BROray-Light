@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_CORRECTIVE_C11_AFTER_C10_EXTERNAL_UI_FAILURE",
+  "revision": "p174-c11-physical-install",
+  "at": "2026-09-01T10:58:00+03:00",
+  "status": "PASS_PENDING_AUTHENTICATED_FUNCTIONAL_AND_EXTERNAL_UI_VALIDATION",
+  "candidateId": "0.1.0-r0009c11",
+  "package": "broray-light 0.1.0-r0009c11",
+  "packageSha256": "3834394889a856b1c758b9bda9cb0faefb6f523bea18d867cece372cd2d1d84c",
+  "installCount": 1,
+  "previousPackage": "broray-light 0.1.0-r0009c10",
+  "currentTarget": "releases/0.1.0-r9",
+  "services": {
+    "primary": "PASS",
+    "updater": "PASS",
+    "publication": "PASS_HTTPS_BROLIGHT_TVERVIP_KEENETIC_LINK"
+  },
+  "persistence": {
+    "activeServerIdUnchanged": true,
+    "activeServerId": "subscription-sub-130bddd06d26133e-600217eb115c0e82",
+    "subscriptionConfigFiles": 2,
+    "xraySha256Unchanged": true,
+    "settingsSha256Unchanged": true,
+    "autoSwitchSha256Unchanged": true,
+    "activeServerFileSha256Unchanged": true
+  },
+  "overlayIdentity": {
+    "status": "PASS_9_OF_9_EXACT",
+    "files": {
+      "web-new/api/servers/activate.cgi": "05dff8bb5c50e4856c01034190dfe5a924a42161b34298f0a48ee4ea843f9afb",
+      "web-new/api/xray/update-check.cgi": "5e0de0e2a3790fd8a48f0d461ebffe0f49c59fbcda50355ca90b8f552623b908",
+      "web-new/assets/css/allpage.css": "1ddef8d2d93e7f1abe197e1e3bdc0918b63c835ad53ffa5b3df86d61d54405b3",
+      "web-new/assets/js/home.js": "5e74f1eb9ec657af064ed235131b05723bd4b5ce264ced20b4f21430174a2c0c",
+      "web-new/assets/js/servers.js": "6344d662c6c07816e7badd5dcb1af03e10123bc3097fd183c00f4c8ecb68a2aa",
+      "web-new/assets/js/subscriptions.js": "ac5ba7ad004f20b899f0cfec239ddb5e3a716093654688a61a5d431bc70a9c40",
+      "web-new/home.html": "ca826c9a853b6dcb7be9005fb44e25adb5de82de5fa14dd6872f2d78c25c41a3",
+      "web-new/servers.html": "a43ce7cc4d5d9f405b02eb2a9f805322030f312894247a285c366ab267b5ee11",
+      "web-new/subscriptions.html": "68cd8f41b6964cfa80c92ac7e6489687507e36739154df53dcc9f66aa379a286"
+    }
+  },
+  "safety": {
+    "fullBROrayOwnership": 0,
+    "recoveryMarkerAbsent": true
+  },
+  "routerMutation": "AUTHORIZED_SINGLE_C10_TO_C11_PACKAGE_UPGRADE",
+  "nextExactAction": "RUN_ONE_MEMORY_ONLY_AUTHENTICATED_FUNCTIONAL_CYCLE_FOR_SUBSCRIPTION_LIST_ACTIVE_SERVER_CONNECTION_VERSIONS_AND_UPDATE_CHECK_WITH_GUARANTEED_LOGOUT"
+}

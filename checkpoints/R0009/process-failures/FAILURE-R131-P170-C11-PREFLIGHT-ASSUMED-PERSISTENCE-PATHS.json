@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_CORRECTIVE_C11_AFTER_C10_EXTERNAL_UI_FAILURE",
+  "revision": "p170-c11-corrected-physical-preflight",
+  "at": "2026-09-01T10:45:00+03:00",
+  "status": "FAILED_STOPPED_FIRST_ERROR",
+  "failureId": "R131",
+  "failureClass": "PREFLIGHT_PROBE_ASSUMED_PERSISTENCE_PATHS",
+  "candidateId": "0.1.0-r0009c11",
+  "passedBeforeFirstError": {
+    "installedPackage": "broray-light 0.1.0-r0009c10",
+    "currentTarget": "releases/0.1.0-r9",
+    "primaryStatusReturnCode": 0,
+    "updaterStatusReturnCode": 0,
+    "publicationStatus": "https://brolight.tvervip.keenetic.link/"
+  },
+  "firstError": {
+    "path": "/opt/broray-light/config/servers",
+    "stderr": "find: '/opt/broray-light/config/servers': No such file or directory"
+  },
+  "diagnosis": "The corrected service names were valid, but the probe still used persistence paths not derived from the installed lifecycle and symlink layout.",
+  "candidateArtifactDefect": false,
+  "routerMutation": false,
+  "packageTransferred": false,
+  "packageInstalled": false,
+  "hiddenRetryPerformed": false,
+  "nextRevision": "p171-c11-persistence-layout-diagnosis",
+  "nextExactAction": "READ_ONLY_DERIVE_THE_EXACT_PERSISTENCE_AND_XRAY_PATHS_FROM_PACKAGE_LIFECYCLE_FILES_AND_ROUTER_SYMLINKS_THEN_RUN_A_NEW_ATOMIZED_PREFLIGHT"
+}

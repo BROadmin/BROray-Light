@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_CORRECTIVE_C10_AFTER_C09_PHYSICAL_FAILURE",
+  "revision": "p160-c10-authenticated-functional-cycle-lighttpd-8080",
+  "at": "2026-09-01T10:10:00+03:00",
+  "status": "FAILED_STOPPED_FIRST_ERROR",
+  "failureClass": "POWERSHELL_RESERVED_HOME_VARIABLE_ASSIGNMENT",
+  "operation": "AUTHENTICATED_FUNCTIONAL_VALIDATION",
+  "origin": "http://192.168.1.1:8080",
+  "httpStatuses": {
+    "login": 200,
+    "homeSummary": 200,
+    "logout": 200,
+    "postLogoutSession": 401
+  },
+  "activationStarted": false,
+  "xrayUpdateCheckStarted": false,
+  "sessionLifecycle": "PASS_CREATED_AND_DELETED",
+  "routerMutation": "AUTHORIZED_AUTH_SESSION_LIFECYCLE_ONLY",
+  "credentialsPrintedOrWritten": false,
+  "candidateReady": false,
+  "retryPolicy": "NO_RETRY_OF_P160_WITH_RESERVED_HOME_VARIABLE",
+  "nextRevision": "p161-c10-authenticated-functional-cycle-corrected-variable",
+  "nextExactAction": "RENAME_THE_LOCAL_RESULT_VARIABLE_TO_HOMEDATA_AND_RUN_ONE_NEW_GUARANTEED_LOGOUT_FUNCTIONAL_CYCLE"
+}

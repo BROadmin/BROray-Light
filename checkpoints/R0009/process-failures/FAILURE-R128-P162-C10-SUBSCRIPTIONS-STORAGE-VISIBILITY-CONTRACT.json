@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_CORRECTIVE_C10_AFTER_C09_PHYSICAL_FAILURE",
+  "revision": "p162-c10-external-https-ui-validation",
+  "at": "2026-09-01T10:20:00+03:00",
+  "status": "FAILED_STOPPED_FIRST_ERROR",
+  "failureClass": "EXISTING_SUBSCRIPTIONS_NOT_VISIBLE_OR_DELETABLE_IN_UI",
+  "candidateId": "0.1.0-r0009c10",
+  "origin": "https://brolight.tvervip.keenetic.link/",
+  "passedBeforeFailure": {
+    "externalHttpsAuthentication": true,
+    "homeActiveServerName": "NL - KEENETIC",
+    "homeConnectionState": true,
+    "homeXrayVersion": "26.7.28",
+    "homeBrorayLightVersion": "0.1.0-r9",
+    "serverPageActiveNameAndBadge": true,
+    "desktopGeometry1280x900": "PASS_1100PX_CONTENT_3_COLUMNS_FULL_NAVIGATION"
+  },
+  "failedGate": {
+    "name": "SUBSCRIPTION_EXISTING_STATE_VISIBILITY_AND_DELETE_REACHABILITY",
+    "subscriptionConfigFilesOnRouter": 2,
+    "importedServerJsonFilesOnRouter": 11,
+    "uiDisplayedSubscriptionCount": 0,
+    "uiMessage": "NO_SUBSCRIPTIONS",
+    "existingSubscriptionsDeletableFromUi": false
+  },
+  "rootCauseStatus": "PENDING_STORAGE_PATH_CONTRACT_DIAGNOSIS",
+  "routerMutation": "AUTHORIZED_EXTERNAL_AUTH_SESSION_ONLY_NO_SUBSCRIPTION_MUTATION",
+  "credentialsPrintedOrWritten": false,
+  "candidateReady": false,
+  "retryPolicy": "NO_PROMOTION_OR_REPEAT_OF_C10_EXTERNAL_UI_ACCEPTANCE",
+  "nextRevision": "p163-c10-subscription-storage-contract-diagnosis",
+  "nextExactAction": "COMPLETE_DIAGNOSTIC_BROWSER_SESSION_LOGOUT_THEN_COMPARE_SUBSCRIPTION_API_STORAGE_PATHS_WITH_THE_ROUTER_PERSISTED_LAYOUT_BEFORE_IMPLEMENTING_C11"
+}

@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_CORRECTIVE_C11_AFTER_C10_EXTERNAL_UI_FAILURE",
+  "revision": "p167-c11-corrected-subscription-harness-assertion",
+  "at": "2026-09-01T10:35:00+03:00",
+  "status": "PASS_HARNESS_CORRECTED_PENDING_FULL_ISOLATED_VALIDATION",
+  "candidateId": "0.1.0-r0009c11",
+  "firstErrorPolicy": {
+    "failedRevision": "p166-c11-full-isolated-validation-first-run",
+    "failureCheckpoint": "checkpoints/R0009/process-failures/FAILURE-R129-P166-C11-ISOLATED-SUBSCRIPTION-ASSERTION-VARIABLE.json",
+    "hiddenRetryPerformed": false,
+    "correctedRevision": "p167-c11-corrected-subscription-harness-assertion"
+  },
+  "change": {
+    "file": "tools/test_r0009.py",
+    "oldAssertion": "Array.isArray(d)?d:",
+    "newAssertion": "Array.isArray(data)?data:",
+    "scope": "TEST_HARNESS_ONLY",
+    "candidateArtifactsMutated": false
+  },
+  "validation": {
+    "pythonSyntax": "PASS",
+    "testHarnessSha256": "10331972a31da87afe4b0e198699c14bdb047f8c1f7be276828e8dcfe03c5aab",
+    "candidatePackageSha256": "3834394889a856b1c758b9bda9cb0faefb6f523bea18d867cece372cd2d1d84c"
+  },
+  "routerMutation": false,
+  "nextExactAction": "RUN_ALL_33_ISOLATED_GATES_AS_P168_USING_THE_UNCHANGED_REPRODUCIBLE_C11_BUILD_A_ARTIFACT"
+}

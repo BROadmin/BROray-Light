@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>BROray-Light — Вход</title>
+  <link rel="icon" href="assets/images/branding/favicon.ico">
+  <link rel="stylesheet" href="assets/css/allpage.css?v=0.1.0-r0009c13">
+</head>
+<body class="login-body">
+  <main class="login-page">
+    <section class="login-card" aria-labelledby="login-title">
+      <div class="login-brand">
+        <img class="login-logo" src="assets/images/branding/broray-logo-64.png" width="56" height="56" alt="">
+        <div>
+          <div class="login-product">BROray-Light</div>
+          <div class="login-tagline">VLESS для Keenetic</div>
+        </div>
+      </div>
+
+      <div class="login-copy">
+        <h1 id="login-title" class="login-title">Вход</h1>
+        <p class="login-description">Используйте логин и пароль от интерфейса Keenetic.</p>
+      </div>
+
+      <form id="login-form" class="login-form">
+        <label class="login-field" for="login">
+          <span>Логин</span>
+          <input id="login" autocomplete="username" required>
+        </label>
+
+        <label class="login-field" for="password">
+          <span>Пароль</span>
+          <span class="password-field">
+            <input id="password" type="password" autocomplete="current-password" required>
+            <button id="password-toggle" class="password-toggle" type="button" aria-label="Показать пароль" title="Показать пароль">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M2.5 12s3.5-6 9.5-6 9.5 6 9.5 6-3.5 6-9.5 6-9.5-6-9.5-6Z"></path>
+                <circle cx="12" cy="12" r="2.7"></circle>
+              </svg>
+              <span class="visually-hidden">Показать пароль</span>
+            </button>
+          </span>
+        </label>
+
+        <div id="login-error" class="error login-error" hidden></div>
+        <button id="login-submit" class="login-submit" type="submit">
+          <span class="button-label">Войти</span>
+        </button>
+      </form>
+
+      <p class="login-security">BROray-Light не сохраняет пароль. Данные проверяются KeeneticOS.</p>
+    </section>
+  </main>
+
+  <script src="assets/js/common.js?v=0.1.0-r0009c13"></script>
+  <script src="assets/js/login.js?v=0.1.0-r0009c13"></script>
+</body>
+</html>
