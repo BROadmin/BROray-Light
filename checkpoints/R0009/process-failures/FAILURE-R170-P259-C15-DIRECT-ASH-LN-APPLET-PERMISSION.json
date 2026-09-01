@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_CORRECTIVE_C15_BUTTON_API_AND_VISUAL_CORRECTIONS",
+  "revision": "p259-c15-direct-ash-isolated-validation",
+  "status": "FAILED_STOPPED_FIRST_ERROR",
+  "failureId": "R170",
+  "failureClass": "WINDOWS_BUSYBOX_DIRECT_ASH_LN_APPLET_PERMISSION_DENIED",
+  "candidateId": "0.1.0-r0009c15",
+  "failedPhase": "ISOLATED_POSTINST_INITIAL_SLOT_ACTIVATION",
+  "firstError": "BusyBox ln could not create the isolated current link on Windows.",
+  "candidateArtifactDefect": false,
+  "testHostCompatibilityFailure": true,
+  "candidateArtifactsBuilt": true,
+  "buildAUnchanged": true,
+  "buildBUnchanged": true,
+  "sourceUnchanged": true,
+  "routerMutation": false,
+  "productionServerMutationPerformed": false,
+  "publicReleasePublished": false,
+  "hiddenRetryPerformed": false,
+  "nextRevision": "p260-c15-external-ash-wrapper-isolated-validation",
+  "nextExactAction": "LOCATE_OR_RECREATE_THE_C14_EXTERNAL_DASH_WRAPPER_THAT_INVOKES_BUSYBOX_ASH_WITHOUT_MULTICALL_PATH_APPLET_INTERCEPTION_THEN_RUN_A_FRESH_FULL_HARNESS"
+}

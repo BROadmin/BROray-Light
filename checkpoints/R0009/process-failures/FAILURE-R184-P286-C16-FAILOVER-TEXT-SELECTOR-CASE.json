@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "failureId": "R184",
+  "stage": "R0009_CORRECTIVE_C16_AFTER_C15_RUNTIME_CACHE_FAILURE",
+  "revision": "p286-c16-failover-form-element-discovery",
+  "status": "FAILED_STOPPED_FIRST_ERROR",
+  "failureClass": "BROWSER_FAILOVER_TEXT_SELECTOR_CASE_MISMATCH",
+  "firstError": "Cannot read properties of undefined while querying the section selected by case-sensitive text",
+  "rootCause": "The diagnostic searched for mixed-case text while the rendered card label is uppercase; the stable structural selector is the second section.form-card.",
+  "candidateId": "0.1.0-r0009c16",
+  "installedCandidate": "0.1.0-r0009c16",
+  "candidateArtifactDefect": false,
+  "routerMutation": false,
+  "buttonActionPerformed": false,
+  "hiddenRetryPerformed": false,
+  "completedFunctionalChecks": {
+    "serverCheckButton": "PASS_HTTP_204_NEW_TIMESTAMP",
+    "invalidVlessRejected": "PASS",
+    "serverCountAfterInvalidVless": 6
+  },
+  "nextRevision": "p287-c16-structural-failover-form-validation",
+  "nextExactAction": "USE_THE_SECOND_SECTION_FORM_CARD_TO_VALIDATE_REVERSIBLE_DIRTY_STATE_BOUNDARY_BUTTONS_AND_UNCHANGED_SAVE"
+}

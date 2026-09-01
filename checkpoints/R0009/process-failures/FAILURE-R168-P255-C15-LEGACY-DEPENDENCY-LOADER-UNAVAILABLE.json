@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_CORRECTIVE_C15_BUTTON_API_AND_VISUAL_CORRECTIONS",
+  "revision": "p255-c15-legacy-dependency-loader-unavailable",
+  "status": "FAILED_STOPPED_FIRST_ERROR",
+  "failureId": "R168",
+  "failureClass": "LEGACY_WORKSPACE_DEPENDENCY_LOADER_UNAVAILABLE",
+  "candidateId": "0.1.0-r0009c15",
+  "commandIntent": "DISCOVER_THE_EXPLICIT_BUNDLED_NODE_EXECUTABLE",
+  "cause": "The legacy Codex app dependency loader is unavailable and directs callers to the codex_app MCP server.",
+  "candidateArtifactDefect": false,
+  "sourceUnchanged": true,
+  "routerMutation": false,
+  "productionServerMutationPerformed": false,
+  "publicReleasePublished": false,
+  "hiddenRetryPerformed": false,
+  "nextRevision": "p256-c15-mcp-runtime-discovery",
+  "nextExactAction": "CALL_THE_CODEX_APP_MCP_WORKSPACE_DEPENDENCY_LOADER_AND_RUN_SYNTAX_VALIDATION_WITH_THE_RETURNED_NODE_PATH"
+}

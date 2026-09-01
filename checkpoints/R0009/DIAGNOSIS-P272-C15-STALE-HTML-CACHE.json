@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_CORRECTIVE_C16_AFTER_C15_RUNTIME_CACHE_FAILURE",
+  "revision": "p272-c16-no-revoke-external-header-probe",
+  "status": "ROOT_CAUSE_CONFIRMED",
+  "failedCandidateId": "0.1.0-r0009c15",
+  "rootCause": "The external static HTML response has ETag and Last-Modified but no Cache-Control or Pragma policy. Navigation to unversioned HTML can therefore reuse c14 markup and load c14 JavaScript after c15 is installed.",
+  "evidence": {
+    "browserServersHtmlAssetVersion": "0.1.0-r0009c14",
+    "installedServersHtmlAssetVersion": "0.1.0-r0009c15",
+    "browserCheckTextType": "undefined",
+    "browserRefreshMoveButtonsType": "undefined",
+    "installedAndDocumentRootServersHtmlSha256": "6cde50c1c97dee21117efd935bf8b04cfcd8da8207a2a4e6f9b0557fcf299e72",
+    "externalHttpStatus": 200,
+    "externalContentLength": 2620,
+    "externalEtag": "3113123878",
+    "externalLastModified": "Thu, 01 Jan 1970 00:00:00 GMT",
+    "externalCacheControlHeaderPresent": false,
+    "externalPragmaHeaderPresent": false
+  },
+  "additionalManifestCorrection": "The candidate manifest must retain the semantic Web publication policy identity e3e0e68b... rather than the package file SHA-256 introduced during c15.",
+  "candidateArtifactDefect": true,
+  "sourceUnchanged": true,
+  "routerMutation": false,
+  "productionServerMutationPerformed": false,
+  "publicReleasePublished": false,
+  "nextRevision": "p273-c16-html-no-store-and-versioned-navigation",
+  "nextExactAction": "IMPLEMENT_C16_EXACT_HTML_NO_STORE_CONFIG_SAFE_PERSISTENT_CONFIG_MIGRATION_VERSIONED_HTML_NAVIGATION_AND_SEMANTIC_POLICY_MANIFEST_CORRECTION"
+}

@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "failureId": "R182",
+  "stage": "R0009_CORRECTIVE_C16_AFTER_C15_RUNTIME_CACHE_FAILURE",
+  "revision": "p282-c16-browser-dom-action-validation",
+  "status": "FAILED_STOPPED_FIRST_ERROR",
+  "failureClass": "BROWSER_TAB_LOCATOR_API_ASSUMPTION",
+  "firstError": "tab.locator is not a function",
+  "rootCause": "The claimed in-app Browser tab exposes the Browser skill wrapper rather than a direct Playwright Page locator method.",
+  "candidateId": "0.1.0-r0009c16",
+  "installedCandidate": "0.1.0-r0009c16",
+  "candidateArtifactDefect": false,
+  "browserMutation": "navigation only",
+  "routerMutation": false,
+  "packageMutation": false,
+  "hiddenRetryPerformed": false,
+  "nextRevision": "p283-c16-browser-wrapper-api-discovery",
+  "nextExactAction": "INSPECT_THE_CLAIMED_TAB_WRAPPER_METHODS_THEN_USE_ITS_DOCUMENTED_PLAYWRIGHT_BRIDGE_FOR_DOM_VALIDATION"
+}

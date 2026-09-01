@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "failureId": "R183",
+  "stage": "R0009_CORRECTIVE_C16_AFTER_C15_RUNTIME_CACHE_FAILURE",
+  "revision": "p284-c16-browser-dom-validation",
+  "status": "FAILED_STOPPED_FIRST_ERROR",
+  "failureClass": "BROWSER_EXPECTED_HEADER_SELECTOR_NOT_FOUND",
+  "firstError": "Timed out evaluating header.app-header .brand img",
+  "candidateId": "0.1.0-r0009c16",
+  "installedCandidate": "0.1.0-r0009c16",
+  "candidateArtifactDefect": "UNDETERMINED_PENDING_CURRENT_DOCUMENT_INSPECTION",
+  "browserMutation": "navigation only",
+  "routerMutation": false,
+  "packageMutation": false,
+  "buttonActionPerformed": false,
+  "hiddenRetryPerformed": false,
+  "completedBeforeFailure": {
+    "browserWrapperApiDiscovery": "PASS",
+    "correctLocatorBridge": "tab.playwright"
+  },
+  "nextRevision": "p285-c16-browser-current-document-diagnosis",
+  "nextExactAction": "READ_THE_CURRENT_URL_TITLE_AND_DOM_SNAPSHOT_TO_DISTINGUISH_LOGIN_REDIRECT_FROM_A_CANDIDATE_DOM_DEFECT"
+}

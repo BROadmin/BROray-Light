@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1, "revision": "p311-c19-physical-install", "status": "PASS_PENDING_BROWSER_ACTION_VALIDATION",
+  "candidateId": "0.1.0-r0009c19", "installedPackage": "broray-light 0.1.0-r0009c19",
+  "servicesPassed": 2, "servers": 6, "subscriptions": 2, "duplicateGroups": 0,
+  "stateSha256": {
+    "activeServer": "25e15e4354b92e2cf758f06e7a04da7d81ad4f19d48fe42eabd6ae0b474fe910",
+    "autoSwitch": "6743d9128b6206747ef724fbe72ba9646ef027ba948962805baeb6b053d661cf",
+    "webPublication": "65ae1de6a308f99544c65ea9e27fe5d9c88abbe7e6bb6711209ceb2167d7172b",
+    "lighttpdConfig": "9132ded7635fa69a6951f38fd4e8f3e08ceda9a37de4b199c41f9a19700090e4",
+    "xray": "4b8af237444801bf17b3dc10a1c5c24581fbe3d433eba3d78c6c3a0da1df56fc"
+  },
+  "receiptConfigShaMatchesActual": true, "rootAndHtmlRuleCount": 1,
+  "versionedUnauthorizedRedirects": 3,
+  "externalRootHeaders": "PASS_NO_STORE_AND_PRAGMA", "externalHtmlHeaders": "PASS_NO_STORE_AND_PRAGMA",
+  "routesViaProxy0": 0, "fullBROrayOwnership": 0, "recoveryMarker": 0,
+  "routerRebootPerformed": false, "productionServerMutationPerformed": false, "publicReleasePublished": false,
+  "nextRevision": "p312-c19-browser-login-and-action-validation",
+  "nextExactAction": "LOGIN_THROUGH_THE_C19_VERSIONED_ROOT_AND_VALIDATE_REAL_DOM_STYLES_BUTTONS_HOME_AND_SUBSCRIPTIONS"
+}

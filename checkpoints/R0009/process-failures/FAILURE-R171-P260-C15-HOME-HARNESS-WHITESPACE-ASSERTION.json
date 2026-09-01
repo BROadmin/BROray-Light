@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_CORRECTIVE_C15_BUTTON_API_AND_VISUAL_CORRECTIONS",
+  "revision": "p260-c15-git-dash-isolated-validation",
+  "status": "FAILED_STOPPED_FIRST_ERROR",
+  "failureId": "R171",
+  "failureClass": "HOME_HARNESS_WHITESPACE_ASSERTION",
+  "candidateId": "0.1.0-r0009c15",
+  "failedGate": "HOME_IDENTITY_PRESENTATION_CONTRACT",
+  "firstError": "The harness required JSON.stringify({mode}) while the formatted equivalent is JSON.stringify({ mode }).",
+  "candidateArtifactDefect": false,
+  "testHarnessDefect": true,
+  "buildAUnchanged": true,
+  "buildBUnchanged": true,
+  "sourceUnchanged": true,
+  "routerMutation": false,
+  "productionServerMutationPerformed": false,
+  "publicReleasePublished": false,
+  "hiddenRetryPerformed": false,
+  "nextRevision": "p261-c15-format-tolerant-home-assertion",
+  "nextExactAction": "MAKE_THE_HOME_MODE_SERIALIZATION_ASSERTION_ACCEPT_THE_FORMATTED_EQUIVALENT_THEN_RUN_A_FRESH_FULL_HARNESS_ON_THE_UNCHANGED_BUILD_A"
+}

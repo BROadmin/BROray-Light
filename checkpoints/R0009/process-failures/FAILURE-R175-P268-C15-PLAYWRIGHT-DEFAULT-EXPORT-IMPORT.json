@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_CORRECTIVE_C15_BUTTON_API_AND_VISUAL_CORRECTIONS",
+  "revision": "p268-c15-browser-automation-connection",
+  "status": "FAILED_STOPPED_FIRST_ERROR",
+  "failureId": "R175",
+  "failureClass": "PLAYWRIGHT_DEFAULT_EXPORT_IMPORT_FAILURE",
+  "candidateId": "0.1.0-r0009c15",
+  "firstError": "The installed Playwright package requested a default export that ./index.js does not provide.",
+  "candidateArtifactDefect": false,
+  "browserInteractionStarted": false,
+  "routerMutation": false,
+  "installedCandidateUnchanged": true,
+  "productionServerMutationPerformed": false,
+  "publicReleasePublished": false,
+  "hiddenRetryPerformed": false,
+  "nextRevision": "p269-c15-supported-browser-runtime-connection",
+  "nextExactAction": "RESET_ONLY_THE_NODE_REPL_CONTEXT_LOAD_THE_CONFIGURED_BROWSER_RUNTIME_PACKAGE_AND_CONNECT_TO_THE_EXISTING_IN_APP_BROWSER_SESSION"
+}

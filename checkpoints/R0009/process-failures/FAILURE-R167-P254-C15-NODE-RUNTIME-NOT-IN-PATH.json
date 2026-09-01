@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_CORRECTIVE_C15_BUTTON_API_AND_VISUAL_CORRECTIONS",
+  "revision": "p254-c15-node-runtime-not-in-path",
+  "status": "FAILED_STOPPED_FIRST_ERROR",
+  "failureId": "R167",
+  "failureClass": "VALIDATION_RUNTIME_NOT_IN_PATH",
+  "candidateId": "0.1.0-r0009c15",
+  "commandIntent": "RUN_JAVASCRIPT_SYNTAX_CHECKS_AFTER_C15_CODE_EDITS",
+  "cause": "The system PowerShell PATH does not contain a node executable.",
+  "candidateArtifactDefect": false,
+  "sourceUnchanged": true,
+  "routerMutation": false,
+  "productionServerMutationPerformed": false,
+  "publicReleasePublished": false,
+  "hiddenRetryPerformed": false,
+  "nextRevision": "p255-c15-bundled-runtime-validation",
+  "nextExactAction": "LOAD_THE_CONFIGURED_WORKSPACE_DEPENDENCY_PATHS_AND_RUN_SYNTAX_VALIDATION_WITH_THE_EXPLICIT_BUNDLED_NODE_EXECUTABLE"
+}

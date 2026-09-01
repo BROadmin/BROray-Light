@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_CORRECTIVE_C15_BUTTON_API_AND_VISUAL_CORRECTIONS",
+  "revision": "p266-c15-install-and-persistence-validation",
+  "status": "PASS",
+  "candidateId": "0.1.0-r0009c15",
+  "installedPackage": "broray-light 0.1.0-r0009c15",
+  "currentTarget": "releases/0.1.0-r9",
+  "services": {
+    "S24broray-light": "PASS",
+    "S23broray-light-updater": "PASS"
+  },
+  "persistence": {
+    "serversBefore": 6,
+    "serversAfter": 6,
+    "subscriptionsBefore": 2,
+    "subscriptionsAfter": 2,
+    "activeServerSha256Before": "25e15e4354b92e2cf758f06e7a04da7d81ad4f19d48fe42eabd6ae0b474fe910",
+    "activeServerSha256After": "25e15e4354b92e2cf758f06e7a04da7d81ad4f19d48fe42eabd6ae0b474fe910",
+    "autoSwitchSha256Before": "6743d9128b6206747ef724fbe72ba9646ef027ba948962805baeb6b053d661cf",
+    "autoSwitchSha256After": "6743d9128b6206747ef724fbe72ba9646ef027ba948962805baeb6b053d661cf",
+    "webPublicationSha256Before": "defa5839be8d3cb4098c0ee7dca42aace6469902bef8502c7d19529020f651a3",
+    "webPublicationSha256After": "defa5839be8d3cb4098c0ee7dca42aace6469902bef8502c7d19529020f651a3"
+  },
+  "xraySha256": "4b8af237444801bf17b3dc10a1c5c24581fbe3d433eba3d78c6c3a0da1df56fc",
+  "duplicateIdentityGroups": 0,
+  "duplicateImportKeyGroups": 0,
+  "routesViaProxy0": 0,
+  "fullBROrayOwnership": 0,
+  "webPublicationRecoveryMarker": 0,
+  "installedOverlaySha256": {
+    "serversCommon": "f19b4c0e7e37e31e9ebf44c191d2681e8dd2a5aa8ffbcf33745c5fbd70121084",
+    "subscriptionsCommon": "40b4281b6f5acc1d1ae38f89925b2bb1c16ea10061909f740305c158dbcdd5ff",
+    "theme": "3f11fb81d7154a9979644b120f8c9c94e1db0f79ba5f3cf4ff31c699a67afbe7",
+    "home": "33ef629bd36a20e918780955eb751f8d46983150a35c672fa57b657fa3a25a3a",
+    "servers": "c0467435339fadca51c9f3e4837cee422ba49967abf786daa7895fd20dc8ea4d",
+    "failover": "77491ae3b5a4d4adf8c8712510ec76b2a4173db40d27fca513934c06d8608978",
+    "subscriptions": "a897043770a4fafebd4ef796aaa9a51277eab19f26293197ed71ee633d4d4adc"
+  },
+  "routerMutation": "AUTHORIZED_EXACT_HASH_VERIFIED_C15_IPK_INSTALLATION",
+  "productionServerMutationPerformed": false,
+  "publicReleasePublished": false,
+  "nextRevision": "p267-c15-authenticated-button-and-browser-validation",
+  "nextExactAction": "VALIDATE_AUTHENTICATED_API_ACTIONS_AND_BROWSER_PRESENTATION_WITH_REVERSIBLE_TESTS_THEN_RESTORE_EXACT_USER_STATE"
+}

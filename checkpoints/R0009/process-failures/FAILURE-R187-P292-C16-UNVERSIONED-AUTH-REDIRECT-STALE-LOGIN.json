@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "failureId": "R187",
+  "stage": "R0009_CORRECTIVE_C16_AFTER_C15_RUNTIME_CACHE_FAILURE",
+  "revision": "p292-c16-auth-expiry-browser-diagnosis",
+  "status": "FAILED_STOPPED_FIRST_ERROR",
+  "failureClass": "UNVERSIONED_AUTH_REDIRECT_REUSED_STALE_LOGIN_HTML",
+  "firstError": "After session expiry the browser landed at the unversioned root and loaded login scripts without a candidate query version.",
+  "rootCause": "c16 versioned static navigation and the login-to-home redirect, but the shared unauthorized-session redirect still targets bare /. A browser with an older cached root can therefore reuse stale login HTML before receiving the new no-store response.",
+  "candidateId": "0.1.0-r0009c16",
+  "installedCandidate": "0.1.0-r0009c16",
+  "candidateArtifactDefect": true,
+  "browserEvidence": {
+    "url": "https://brolight.tvervip.keenetic.link/",
+    "title": "BROray-Light — Вход",
+    "commonScript": "/assets/js/common.js",
+    "loginScript": "/assets/js/login.js",
+    "candidateQueryPresent": false
+  },
+  "backendMutation": false,
+  "autoSwitchSha256AfterFailure": "6743d9128b6206747ef724fbe72ba9646ef027ba948962805baeb6b053d661cf",
+  "deleteActionPerformed": false,
+  "hiddenRetryPerformed": false,
+  "failedCandidateReady": false,
+  "nextCandidateId": "0.1.0-r0009c17",
+  "nextRevision": "p293-c17-auth-redirect-source-location",
+  "nextExactAction": "LOCATE_AND_VERSION_THE_SHARED_UNAUTHORIZED_REDIRECT_THEN_REBUILD_AND_REVALIDATE_C17"
+}

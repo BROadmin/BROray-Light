@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "failureId": "R185",
+  "stage": "R0009_CORRECTIVE_C16_AFTER_C15_RUNTIME_CACHE_FAILURE",
+  "revision": "p288-c16-reversible-failover-ui-actions",
+  "status": "FAILED_STOPPED_FIRST_ERROR",
+  "failureClass": "BROWSER_ARROW_ACCESSIBLE_NAME_ASSUMPTION",
+  "firstError": "No role=button match with accessible name equal to the rendered down-arrow glyph",
+  "rootCause": "The button's accessible name differs from its visible arrow text; the test must use the actual aria-label or a stable structural selector.",
+  "candidateId": "0.1.0-r0009c16",
+  "installedCandidate": "0.1.0-r0009c16",
+  "candidateArtifactDefect": false,
+  "routerMutation": false,
+  "backendSavePerformed": false,
+  "completedBeforeFailure": {
+    "failoverEnabledToggleOn": "PASS_UI_ONLY",
+    "failoverEnabledToggleBackOff": "PASS_UI_ONLY"
+  },
+  "expectedFinalCheckboxState": false,
+  "hiddenRetryPerformed": false,
+  "nextRevision": "p289-c16-arrow-accessibility-diagnosis",
+  "nextExactAction": "READ_THE_ARROW_BUTTON_ARIA_LABELS_AND_CURRENT_FAILOVER_STATUS_THEN_REPEAT_THE_REVERSIBLE_ORDER_TEST_WITH_THE_STABLE_SELECTOR"
+}

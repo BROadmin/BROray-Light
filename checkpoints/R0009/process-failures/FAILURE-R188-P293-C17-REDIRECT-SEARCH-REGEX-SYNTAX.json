@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "failureId": "R188",
+  "stage": "R0009_CORRECTIVE_C17_AFTER_C16_AUTH_REDIRECT_CACHE_FAILURE",
+  "revision": "p293-c17-auth-redirect-source-location",
+  "status": "FAILED_STOPPED_FIRST_ERROR",
+  "failureClass": "DIAGNOSTIC_RG_REGEX_SYNTAX_ERROR",
+  "firstError": "ripgrep reported an unclosed group in the composite redirect-search expression",
+  "candidateId": "0.1.0-r0009c17",
+  "installedCandidate": "0.1.0-r0009c16",
+  "candidateArtifactDefect": false,
+  "filesystemMutation": false,
+  "routerMutation": false,
+  "hiddenRetryPerformed": false,
+  "nextRevision": "p294-c17-fixed-string-redirect-search",
+  "nextExactAction": "SEARCH_REDIRECT_CALLS_WITH_SEPARATE_FIXED_STRINGS_AND_PATCH_ONLY_THE_CONFIRMED_UNAUTHORIZED_REDIRECT"
+}

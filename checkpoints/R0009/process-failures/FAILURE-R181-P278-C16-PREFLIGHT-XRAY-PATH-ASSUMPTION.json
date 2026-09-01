@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "failureId": "R181",
+  "stage": "R0009_CORRECTIVE_C16_AFTER_C15_RUNTIME_CACHE_FAILURE",
+  "revision": "p278-c16-canonical-path-physical-preflight",
+  "status": "FAILED_STOPPED_FIRST_ERROR",
+  "failureClass": "PHYSICAL_PREFLIGHT_XRAY_PATH_ASSUMPTION",
+  "firstError": "sha256sum could not open /opt/bin/xray",
+  "rootCause": "The R0009 exact runtime is package-private at /opt/broray-light/runtime/xray; /opt/bin/xray is only one legacy discovery candidate in donor code and is not the install contract.",
+  "candidateId": "0.1.0-r0009c16",
+  "installedCandidate": "0.1.0-r0009c15",
+  "routerMutation": false,
+  "packageMutation": false,
+  "serviceMutation": false,
+  "hiddenRetryPerformed": false,
+  "evidenceBeforeFailure": {
+    "servers": 6,
+    "subscriptions": 2,
+    "duplicateIdentityGroups": 0,
+    "duplicateImportKeyGroups": 0,
+    "activeServerSha256": "25e15e4354b92e2cf758f06e7a04da7d81ad4f19d48fe42eabd6ae0b474fe910",
+    "autoSwitchSha256": "6743d9128b6206747ef724fbe72ba9646ef027ba948962805baeb6b053d661cf",
+    "webPublicationSha256": "defa5839be8d3cb4098c0ee7dca42aace6469902bef8502c7d19529020f651a3",
+    "lighttpdConfigSha256": "9a410db407103473b1816b21142fd0f19629fe385a66ab88b1396efce5dc4779",
+    "routesViaProxy0": 0,
+    "fullBROrayOwnership": 0,
+    "recoveryMarker": 0,
+    "c16TransferTargetExists": false
+  },
+  "correctedXrayPath": "/opt/broray-light/runtime/xray",
+  "nextRevision": "p279-c16-exact-runtime-physical-preflight",
+  "nextExactAction": "REPEAT_THE_READ_ONLY_PREFLIGHT_WITH_THE_R0009_PACKAGE_PRIVATE_XRAY_RUNTIME_PATH"
+}

@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "revision": "p299-c17-verified-transfer",
+  "status": "PASS_READY_FOR_INSTALL",
+  "candidateId": "0.1.0-r0009c17",
+  "remotePath": "/opt/tmp/broray-light_0.1.0-r0009c17_aarch64-3.10.ipk",
+  "sizeBytes": 12805764,
+  "sha256": "7b21269b7bb76821d59f03fc32971dee4ef2df4f841c564e99f2224551f6d50e",
+  "transferProtocol": "scp-legacy",
+  "remoteVerification": "PASS",
+  "installedPackageBefore": "broray-light 0.1.0-r0009c16",
+  "nextRevision": "p300-c17-physical-install",
+  "nextExactAction": "INSTALL_THE_VERIFIED_C17_IPK_WITHOUT_REBOOT"
+}

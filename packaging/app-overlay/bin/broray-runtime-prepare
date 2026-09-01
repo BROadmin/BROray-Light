@@ -2,6 +2,156 @@
 
 set -eu
 ROOT="${BRORAY_ROOT:-/opt/broray-light}"
+CACHE_MARKER='setenv.add-response-header = ('
+LEGACY_MODULES='server.modules = ( "mod_cgi" )'
+CACHE_MODULES='server.modules = ( "mod_cgi", "mod_setenv" )'
+HTML_ONLY_RULE='$HTTP["url"] =~ "\.html$" {'
+ROOT_AND_HTML_RULE='$HTTP["url"] =~ "(^/$|\.html$)" {'
+
+fail()
+{
+    printf 'BROray-Light runtime preparation failed: %s\n' "$*" >&2
+    exit 1
+}
+
+sha256_file()
+{
+    [ -f "$1" ] && [ ! -L "$1" ] || return 1
+    sha256sum "$1" | awk 'NR==1{print $1}'
+}
+
+cache_config_valid()
+{
+    cache_config="$1"
+    [ "$(grep -Fxc "$CACHE_MODULES" "$cache_config")" = 1 ] &&
+    [ "$(grep -Fxc '    "Cache-Control" => "no-store, no-cache, must-revalidate",' "$cache_config")" = 1 ] &&
+    [ "$(grep -Fxc '    "Pragma" => "no-cache"' "$cache_config")" = 1 ] &&
+    [ "$(grep -Fxc "$ROOT_AND_HTML_RULE" "$cache_config")" = 1 ]
+}
+
+html_only_cache_config_valid()
+{
+    cache_config="$1"
+    [ "$(grep -Fxc "$CACHE_MODULES" "$cache_config")" = 1 ] &&
+    [ "$(grep -Fxc '    "Cache-Control" => "no-store, no-cache, must-revalidate",' "$cache_config")" = 1 ] &&
+    [ "$(grep -Fxc '    "Pragma" => "no-cache"' "$cache_config")" = 1 ] &&
+    [ "$(grep -Fxc "$HTML_ONLY_RULE" "$cache_config")" = 1 ]
+}
+
+migrate_html_cache_policy()
+{
+    config="$ROOT/config/lighttpd.conf"
+    owner="$ROOT/config/web-publish.json"
+    [ -f "$config" ] && [ ! -L "$config" ] || fail 'lighttpd config is not a regular package-owned file'
+
+    current_sha="$(sha256_file "$config")" || fail 'cannot hash lighttpd config'
+    if grep -Fq "$CACHE_MARKER" "$config"; then
+        if cache_config_valid "$config"; then
+            if [ -e "$owner" ] || [ -L "$owner" ]; then
+                [ -f "$owner" ] && [ ! -L "$owner" ] || fail 'Web publication receipt is not a regular file'
+                jq -e --arg sha "$current_sha" \
+                    '.owner=="BROray-Light" and .name=="brolight" and .lighttpdConfigSha256==$sha' \
+                    "$owner" >/dev/null 2>&1 || fail 'Web publication receipt does not own the current cache-aware config'
+            fi
+            return 0
+        fi
+
+        html_only_cache_config_valid "$config" || fail 'existing HTML cache policy is ambiguous'
+        [ -e "$owner" ] || [ -L "$owner" ] || fail 'HTML-only cache policy has no ownership receipt'
+        [ -f "$owner" ] && [ ! -L "$owner" ] || fail 'Web publication receipt is not a regular file'
+        jq -e --arg sha "$current_sha" '
+          .schemaVersion==1 and .owner=="BROray-Light" and .name=="brolight" and
+          .policySha256=="e3e0e68b10ef69fce1c504f2689d1ecbd3f8b6b78ee6e7ab03d8ea73d63607dc" and
+          .lighttpdConfigSha256==$sha
+        ' "$owner" >/dev/null 2>&1 || fail 'Web publication receipt does not own the HTML-only cache config'
+
+        staged_config="$ROOT/tmp/lighttpd-root-cache-policy.$$.conf"
+        backup_config="$ROOT/tmp/lighttpd-root-cache-policy.$$.backup"
+        : >"$staged_config" || fail 'cannot create staged root HTML cache policy'
+        while IFS= read -r cache_line || [ -n "$cache_line" ]; do
+            if [ "$cache_line" = "$HTML_ONLY_RULE" ]; then
+                printf '%s\n' "$ROOT_AND_HTML_RULE"
+            else
+                printf '%s\n' "$cache_line"
+            fi
+        done <"$config" >"$staged_config" || fail 'cannot stage root HTML cache policy'
+        cache_config_valid "$staged_config" || { rm -f "$staged_config"; fail 'staged root HTML cache policy is invalid'; }
+        if command -v lighttpd >/dev/null 2>&1; then
+            lighttpd -tt -f "$staged_config" >/dev/null 2>&1 || { rm -f "$staged_config"; fail 'lighttpd rejected staged root HTML cache policy'; }
+        fi
+        chmod 600 "$staged_config" 2>/dev/null || true
+        new_sha="$(sha256_file "$staged_config")" || { rm -f "$staged_config"; fail 'cannot hash staged root HTML cache policy'; }
+        staged_owner="$ROOT/tmp/web-publish-root-cache-policy.$$.json"
+        jq --arg sha "$new_sha" --arg updatedAt "$(date '+%Y-%m-%dT%H:%M:%S%z')" \
+            '.lighttpdConfigSha256=$sha | .updatedAt=$updatedAt' "$owner" >"$staged_owner" || {
+                rm -f "$staged_config" "$staged_owner"; fail 'cannot stage root cache ownership receipt';
+            }
+        chmod 600 "$staged_owner" 2>/dev/null || true
+        cp -p "$config" "$backup_config" || { rm -f "$staged_config" "$staged_owner"; fail 'cannot back up HTML-only cache config'; }
+        mv -f "$staged_config" "$config" || { rm -f "$backup_config" "$staged_owner"; fail 'cannot install root HTML cache policy'; }
+        if ! mv -f "$staged_owner" "$owner"; then
+            cp -p "$backup_config" "$config" || true
+            rm -f "$backup_config" "$staged_owner"
+            fail 'cannot atomically update root cache ownership receipt'
+        fi
+        rm -f "$backup_config"
+        return 0
+    fi
+
+    [ "$(grep -Fxc "$LEGACY_MODULES" "$config")" = 1 ] || fail 'legacy lighttpd module declaration is ambiguous'
+    ! grep -Fq 'mod_setenv' "$config" || fail 'legacy lighttpd config contains an unowned setenv module declaration'
+
+    owner_exists=false
+    if [ -e "$owner" ] || [ -L "$owner" ]; then
+        [ -f "$owner" ] && [ ! -L "$owner" ] || fail 'Web publication receipt is not a regular file'
+        jq -e --arg sha "$current_sha" '
+          .schemaVersion==1 and .owner=="BROray-Light" and .name=="brolight" and
+          .policySha256=="e3e0e68b10ef69fce1c504f2689d1ecbd3f8b6b78ee6e7ab03d8ea73d63607dc" and
+          .lighttpdConfigSha256==$sha
+        ' "$owner" >/dev/null 2>&1 || fail 'legacy Web publication receipt does not own the current config'
+        owner_exists=true
+    fi
+
+    staged_config="$ROOT/tmp/lighttpd-cache-policy.$$.conf"
+    backup_config="$ROOT/tmp/lighttpd-cache-policy.$$.backup"
+    sed "s/^server\.modules = ( \"mod_cgi\" )$/server.modules = ( \"mod_cgi\", \"mod_setenv\" )/" \
+        "$config" >"$staged_config" || fail 'cannot stage HTML cache policy'
+    cat >>"$staged_config" <<'EOF'
+
+$HTTP["url"] =~ "(^/$|\.html$)" {
+  setenv.add-response-header = (
+    "Cache-Control" => "no-store, no-cache, must-revalidate",
+    "Pragma" => "no-cache"
+  )
+}
+EOF
+    cache_config_valid "$staged_config" || { rm -f "$staged_config"; fail 'staged HTML cache policy is invalid'; }
+    if command -v lighttpd >/dev/null 2>&1; then
+        lighttpd -tt -f "$staged_config" >/dev/null 2>&1 || { rm -f "$staged_config"; fail 'lighttpd rejected staged HTML cache policy'; }
+    fi
+    chmod 600 "$staged_config" 2>/dev/null || true
+    new_sha="$(sha256_file "$staged_config")" || { rm -f "$staged_config"; fail 'cannot hash staged HTML cache policy'; }
+
+    staged_owner=""
+    if [ "$owner_exists" = true ]; then
+        staged_owner="$ROOT/tmp/web-publish-cache-policy.$$.json"
+        jq --arg sha "$new_sha" --arg updatedAt "$(date '+%Y-%m-%dT%H:%M:%S%z')" \
+            '.lighttpdConfigSha256=$sha | .updatedAt=$updatedAt' "$owner" >"$staged_owner" || {
+                rm -f "$staged_config" "$staged_owner"; fail 'cannot stage updated Web publication receipt';
+            }
+        chmod 600 "$staged_owner" 2>/dev/null || true
+    fi
+
+    cp -p "$config" "$backup_config" || { rm -f "$staged_config" "$staged_owner"; fail 'cannot back up lighttpd config'; }
+    mv -f "$staged_config" "$config" || { rm -f "$backup_config" "$staged_owner"; fail 'cannot install HTML cache policy'; }
+    if [ "$owner_exists" = true ] && ! mv -f "$staged_owner" "$owner"; then
+        cp -p "$backup_config" "$config" || true
+        rm -f "$backup_config" "$staged_owner"
+        fail 'cannot atomically update Web publication receipt'
+    fi
+    rm -f "$backup_config"
+}
+
 for directory in backup config config/system logs run servers subscriptions tmp web-new runtime; do
     mkdir -p "$ROOT/$directory"
 done
@@ -12,4 +162,5 @@ chmod 700 "$ROOT/backup" "$ROOT/config" "$ROOT/servers" "$ROOT/subscriptions" "$
 [ -s "$ROOT/config/lighttpd.conf" ] || cp "$ROOT/share/defaults/lighttpd.conf" "$ROOT/config/lighttpd.conf"
 [ -s "$ROOT/config/version" ] || cp "$ROOT/share/defaults/version" "$ROOT/config/version"
 
+migrate_html_cache_policy
 "$ROOT/bin/broray-subscriptions" deduplicate >/dev/null

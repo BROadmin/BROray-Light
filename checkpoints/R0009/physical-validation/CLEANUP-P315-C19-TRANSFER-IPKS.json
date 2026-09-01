@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 1, "revision": "p315-c19-exact-transfer-temp-cleanup", "status": "PASS",
+  "candidateId": "0.1.0-r0009c19", "removedExactTemporaryFiles": 4,
+  "removedBytes": 51220662, "recoverableFromLocalBuilds": true,
+  "installedPackageMutation": false, "userDataMutation": false, "xrayMutation": false,
+  "storageFreeBytesAfter": 67436544, "storageRequiredBytes": 36438142, "storageOk": true,
+  "temporaryFreeBytesAfter": 191651840, "reinstallAllowed": true,
+  "nextRevision": "p316-c19-live-equal-version-reinstall-validation",
+  "nextExactAction": "RECHECK_XRAY_IN_THE_LIVE_UI_AND_VALIDATE_THE_ENABLED_REINSTALL_BUTTON"
+}

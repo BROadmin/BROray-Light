@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "revision": "p302-c18-root-cache-rule-and-owned-config-migration",
+  "status": "PASS_IMPLEMENTED_PENDING_INDEPENDENT_BUILDS",
+  "candidateId": "0.1.0-r0009c18",
+  "corrections": {
+    "rootAndHtmlNoStoreRule": true,
+    "receiptOwnedHtmlOnlyMigration": true,
+    "migrationFailClosedWithoutOwnership": true,
+    "atomicReceiptHashUpdate": true,
+    "c17VersionedAuthRedirectsPreserved": true
+  },
+  "staticValidation": {"pythonSyntax": "PASS", "javascriptSyntax": "PASS", "ashSyntax": "PASS", "routerLighttpdParse": "PASS_READ_ONLY_STDIN", "staleC17References": 0, "sourceUnchanged": true},
+  "sha256": {
+    "packaging/app-overlay/bin/broray-runtime-prepare": "eec92bac898eb50ff1592b5c591d3bdd5a92a5824319ba4bb86a04c7509c03e9",
+    "packaging/app-overlay/share/defaults/lighttpd.conf": "3ec7dcbead6bb22f5c97ceb01c7aa64a11f6d6b9f07b1d593b7ba8152737bf80",
+    "packaging/opkg/broray-light-web-publish.sh": "5fb82d54cba7515c7853f74cef8c473a6e3349e8eec4fd87e2cdaed922ea9664",
+    "tools/build_r0009_candidate.py": "e8513fd125c1f00dfd3c12ff9d225ccc31e05cece368394d4724bdfb5fd0fc97",
+    "tools/test_r0009.py": "21a2571386ad06d7d10839411cad2211de4dca766947f8456d810fc0bfe50262"
+  },
+  "installedCandidate": "0.1.0-r0009c17",
+  "routerMutation": false,
+  "nextRevision": "p303-c18-independent-builds",
+  "nextExactAction": "BUILD_C18_A_AND_B_COMPARE_EIGHT_ARTIFACTS_AND_VERIFY_BOTH_SIGNATURES"
+}

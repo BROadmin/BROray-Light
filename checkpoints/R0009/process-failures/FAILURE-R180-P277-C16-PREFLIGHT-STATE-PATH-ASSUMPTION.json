@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "failureId": "R180",
+  "stage": "R0009_CORRECTIVE_C16_AFTER_C15_RUNTIME_CACHE_FAILURE",
+  "revision": "p277-c16-physical-preflight",
+  "status": "FAILED_STOPPED_FIRST_ERROR",
+  "failureClass": "PHYSICAL_PREFLIGHT_STATE_PATH_ASSUMPTION",
+  "failedCommand": "read-only router preflight",
+  "firstError": "jq could not open /opt/broray-light/data/servers.json",
+  "rootCause": "The preflight used a non-existent aggregate data path; canonical server records are individual files under /opt/broray-light/servers and subscriptions are individual files under /opt/broray-light/config/subscriptions.",
+  "candidateId": "0.1.0-r0009c16",
+  "installedCandidate": "0.1.0-r0009c15",
+  "routerMutation": false,
+  "packageMutation": false,
+  "serviceMutation": false,
+  "hiddenRetryPerformed": false,
+  "evidenceBeforeFailure": {
+    "installedPackage": "broray-light 0.1.0-r0009c15",
+    "currentTarget": "releases/0.1.0-r9",
+    "primaryService": "PASS",
+    "updaterService": "PASS"
+  },
+  "correctedPaths": {
+    "servers": "/opt/broray-light/servers/*.json",
+    "subscriptions": "/opt/broray-light/config/subscriptions/*.json",
+    "activeServer": "/opt/broray-light/config/active-server",
+    "autoSwitch": "/opt/broray-light/config/system/server-auto-switch.json"
+  },
+  "nextRevision": "p278-c16-canonical-path-physical-preflight",
+  "nextExactAction": "RUN_A_NEW_READ_ONLY_PREFLIGHT_USING_THE_CANONICAL_PER_RECORD_PATHS"
+}

@@ -33,26 +33,32 @@ broray_subscriptions_api_query()
 
 broray_subscriptions_api_run()
 {
-    operation_name="$1"
-    output_file="/opt/broray-light/tmp/sub-api.$$.json"
-    error_file="$output_file.err"
+    broray_subscriptions_api_operation="$1"
+    broray_subscriptions_api_output_file="/opt/broray-light/tmp/sub-api.$$.json"
+    broray_subscriptions_api_error_file="$broray_subscriptions_api_output_file.err"
     mkdir -p /opt/broray-light/tmp
-    if "$@" >"$output_file" 2>"$error_file"; then
-        case "$operation_name" in
+    # Isolate service globals from the wrapper's capture paths.
+    if ( "$@" ) >"$broray_subscriptions_api_output_file" 2>"$broray_subscriptions_api_error_file"; then
+        case "$broray_subscriptions_api_operation" in
             broray_subscription_create|broray_subscription_update|broray_subscription_update_settings)
-                if ! /opt/broray-light/bin/broray-subscriptions deduplicate >/dev/null 2>"$error_file"; then
-                    message="$(tail -c 1200 "$error_file")"
-                    rm -f "$output_file" "$error_file"
-                    broray_api_error "500 Internal Server Error" "SERVER_DEDUPLICATION_FAILED" "Подписка сохранена, но устранить дубли серверов не удалось." "$message"
+                if ! /opt/broray-light/bin/broray-subscriptions deduplicate >/dev/null 2>"$broray_subscriptions_api_error_file"; then
+                    broray_subscriptions_api_message="$(tail -c 1200 "$broray_subscriptions_api_error_file")"
+                    rm -f "$broray_subscriptions_api_output_file" "$broray_subscriptions_api_error_file"
+                    broray_api_error "500 Internal Server Error" "SERVER_DEDUPLICATION_FAILED" "Подписка сохранена, но устранить дубли серверов не удалось." "$broray_subscriptions_api_message"
                 fi
                 ;;
         esac
-        payload="$(cat "$output_file")"
-        rm -f "$output_file" "$error_file"
-        broray_api_success "$payload"
+        broray_subscriptions_api_payload="$(cat "$broray_subscriptions_api_output_file")"
+        [ -n "$broray_subscriptions_api_payload" ] || broray_subscriptions_api_payload='{}'
+        if ! printf '%s\n' "$broray_subscriptions_api_payload" | jq -e . >/dev/null 2>&1; then
+            rm -f "$broray_subscriptions_api_output_file" "$broray_subscriptions_api_error_file"
+            broray_api_error "500 Internal Server Error" "SUBSCRIPTION_RESPONSE_INVALID" "Операция выполнена, но вернула некорректный результат."
+        fi
+        rm -f "$broray_subscriptions_api_output_file" "$broray_subscriptions_api_error_file"
+        broray_api_success "$broray_subscriptions_api_payload"
     else
-        message="$(tail -c 1200 "$error_file")"
-        rm -f "$output_file" "$error_file"
-        broray_api_error "400 Bad Request" "SUBSCRIPTION_OPERATION_FAILED" "Операция с подпиской завершилась ошибкой." "$message"
+        broray_subscriptions_api_message="$(tail -c 1200 "$broray_subscriptions_api_error_file")"
+        rm -f "$broray_subscriptions_api_output_file" "$broray_subscriptions_api_error_file"
+        broray_api_error "400 Bad Request" "SUBSCRIPTION_OPERATION_FAILED" "Операция с подпиской завершилась ошибкой." "$broray_subscriptions_api_message"
     fi
 }

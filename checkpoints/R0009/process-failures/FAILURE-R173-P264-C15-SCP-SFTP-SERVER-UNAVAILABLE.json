@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_CORRECTIVE_C15_BUTTON_API_AND_VISUAL_CORRECTIONS",
+  "revision": "p264-c15-verified-transfer",
+  "status": "FAILED_STOPPED_FIRST_ERROR",
+  "failureId": "R173",
+  "failureClass": "SCP_DEFAULT_SFTP_SERVER_UNAVAILABLE",
+  "candidateId": "0.1.0-r0009c15",
+  "firstError": "/opt/libexec/sftp-server is not installed on the Keenetic router.",
+  "candidateArtifactDefect": false,
+  "installationStarted": false,
+  "routerPackageStateMutated": false,
+  "productionServerMutationPerformed": false,
+  "publicReleasePublished": false,
+  "hiddenRetryPerformed": false,
+  "nextRevision": "p265-c15-legacy-scp-verified-transfer",
+  "nextExactAction": "TRANSFER_THE_SAME_VERIFIED_BUILD_A_IPK_WITH_LEGACY_SCP_MODE_THEN_VERIFY_REMOTE_SIZE_AND_SHA256_BEFORE_INSTALLATION"
+}

@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1, "revision": "p305-c19-literal-line-root-cache-migration",
+  "status": "PASS_IMPLEMENTED_PENDING_INDEPENDENT_BUILDS", "candidateId": "0.1.0-r0009c19",
+  "correction": "Literal shell read loop preserves the lighttpd regex backslash during receipt-owned HTML-only to root-and-HTML migration.",
+  "sha256": {
+    "packaging/app-overlay/bin/broray-runtime-prepare": "36828aba88f3aaebaa587087490a65db242b4d021c78cbc6601a1fd568971125",
+    "tools/build_r0009_candidate.py": "518d335b5bd46a63753c9f07688fa8d2424f96770076edeb5831054b5528032c",
+    "tools/test_r0009.py": "45a97f44b1519ffdd191b6ffa49e8ef09a80ccafc3cd1d3f4e7e5e549cf90dcc"
+  },
+  "ashSyntax": "PASS", "pythonSyntax": "PASS", "staleC18References": 0, "sourceUnchanged": true,
+  "installedCandidate": "0.1.0-r0009c17", "routerMutation": false,
+  "nextRevision": "p306-c19-independent-builds", "nextExactAction": "BUILD_AND_COMPARE_C19_A_AND_B"
+}

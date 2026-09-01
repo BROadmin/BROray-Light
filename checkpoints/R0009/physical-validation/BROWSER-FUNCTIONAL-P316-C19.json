@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1, "revision": "p316-c19-live-equal-version-reinstall-validation", "status": "PASS",
+  "candidateId": "0.1.0-r0009c19", "installedPackage": "broray-light 0.1.0-r0009c19",
+  "publicUrl": "https://brolight.tvervip.keenetic.link/",
+  "authentication": {"status": "PASS", "credentialStorage": false, "loginAssetsVersion": "0.1.0-r0009c19", "homeRedirectVersion": "0.1.0-r0009c19"},
+  "home": {
+    "activeServerNameVisible": true, "connectionWorkingVisible": true,
+    "failoverExplanation": "Выключено — автоматические проверки выключены",
+    "keenetic": "Готов", "xrayVersion": "26.7.28", "xrayState": "Xray запущен",
+    "lightVersion": "0.1.0-r9", "lightChannel": "Внутренняя сборка R0009",
+    "lightUpdateMessage": "Внутренняя сборка R0009: публичный канал обновлений пока не настроен."
+  },
+  "visual": {
+    "logoBorderRadius": "50%", "logoSize": "46px x 46px",
+    "cardLabelColor": "rgb(78, 214, 157)", "cardLabelMarginBottom": "13px",
+    "serverCards": 6, "serverCheckResults": 6
+  },
+  "buttons": {
+    "invalidVlessRejectedWithoutAdd": "PASS", "serverCheck": "PASS_HTTP_204_NEW_TIMESTAMP",
+    "firstMoveUpDisabled": true, "lastMoveDownDisabled": true,
+    "failoverToggleDirtyAndRevert": "PASS", "serverMoveDirtyAndRevert": "PASS", "failoverSave": "PASS",
+    "subscriptionRefresh": "PASS", "subscriptionCountsVisible": "PASS_1_AND_5",
+    "deleteConfirmation": "PASS_ISOLATED_NOT_DESTRUCTIVELY_EXECUTED",
+    "xrayUpdateCheck": "PASS", "xrayEqualVersionReinstall": "PASS",
+    "lightUpdateCheck": "PASS_INTERNAL_CHANNEL_EXPLANATION"
+  },
+  "postActionRouter": {
+    "servicesPassed": 2, "xraySha256": "4b8af237444801bf17b3dc10a1c5c24581fbe3d433eba3d78c6c3a0da1df56fc",
+    "activeServerSha256": "25e15e4354b92e2cf758f06e7a04da7d81ad4f19d48fe42eabd6ae0b474fe910",
+    "autoSwitchSha256": "9bd19d579b9207d7ca7d37c14f38754af259eafbabd051bf9e69b6864fa7cbfd",
+    "autoSwitch": {"enabled": false, "failureThreshold": 3, "cooldownSeconds": 600, "orderedCount": 6, "excludedCount": 0},
+    "servers": 6, "subscriptions": 2, "duplicateGroups": 0,
+    "webPublicationSha256": "65ae1de6a308f99544c65ea9e27fe5d9c88abbe7e6bb6711209ceb2167d7172b",
+    "lighttpdConfigSha256": "9132ded7635fa69a6951f38fd4e8f3e08ceda9a37de4b199c41f9a19700090e4",
+    "receiptConfigShaMatches": true, "temporaryTransferIpks": 0,
+    "routesViaProxy0": 0, "fullBROrayOwnership": 0, "recoveryMarker": 0
+  },
+  "routerRebootPerformed": false, "productionServerMutationPerformed": false, "publicReleasePublished": false,
+  "nextRevision": "p317-c19-final-local-audit-and-reseal",
+  "nextExactAction": "RUN_FINAL_LOCAL_AUDIT_DESTROY_THE_EPHEMERAL_PRIVATE_KEY_RESEAL_CHECKPOINT_VALIDATION_REPORT_AND_COMMIT"
+}

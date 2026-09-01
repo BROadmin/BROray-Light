@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1, "failureId": "R192",
+  "stage": "R0009_CORRECTIVE_C19_AFTER_C18_ISOLATED_MIGRATION_FAILURE",
+  "revision": "p307-c19-isolated-validation", "status": "FAILED_STOPPED_FIRST_ERROR",
+  "failureClass": "WINDOWS_ISOLATED_ROOT_ROUTER_SHEBANG_FIXTURE",
+  "firstError": "broray-runtime-prepare completed the staged migration but could not directly execute BRORAY_ROOT/bin/broray-subscriptions in the Windows dash fixture.",
+  "rootCause": "The installed CLI uses the router shebang /opt/bin/ash, which is valid on Keenetic but not directly executable from the Windows isolated root.",
+  "candidateId": "0.1.0-r0009c19", "installedCandidate": "0.1.0-r0009c17",
+  "candidateArtifactDefect": false, "migrationReachedFinalDedupeStep": true,
+  "routerMutation": false, "physicalInstallPerformed": false, "hiddenRetryPerformed": false,
+  "nextRevision": "p308-c19-windows-dedupe-shim-validation-fixture",
+  "nextExactAction": "ADD_A_TEMPORARY_RESTORED_POSIX_DEDUPE_SHIM_AROUND_THE_OWNED_MIGRATION_TEST_AND_RERUN_THE_FULL_HARNESS"
+}

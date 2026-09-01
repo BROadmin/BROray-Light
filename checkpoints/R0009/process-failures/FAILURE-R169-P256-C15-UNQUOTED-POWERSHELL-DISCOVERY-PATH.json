@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_CORRECTIVE_C15_BUTTON_API_AND_VISUAL_CORRECTIONS",
+  "revision": "p256-c15-unquoted-powershell-discovery-path",
+  "status": "FAILED_STOPPED_FIRST_ERROR",
+  "failureId": "R169",
+  "failureClass": "UNQUOTED_POWERSHELL_DISCOVERY_PATH",
+  "candidateId": "0.1.0-r0009c15",
+  "commandIntent": "DISCOVER_PINNED_BUILD_INPUTS_AFTER_SUCCESSFUL_C15_SYNTAX_VALIDATION",
+  "cause": "Get-ChildItem parsed the workspace path containing a space as multiple positional arguments.",
+  "candidateArtifactDefect": false,
+  "c15JavaScriptSyntax": "PASS",
+  "sourceUnchanged": true,
+  "routerMutation": false,
+  "productionServerMutationPerformed": false,
+  "publicReleasePublished": false,
+  "hiddenRetryPerformed": false,
+  "nextRevision": "p257-c15-literal-path-input-discovery",
+  "nextExactAction": "DISCOVER_PINNED_BUILD_INPUTS_WITH_AN_EXACT_QUOTED_LITERAL_PATH_THEN_COMPLETE_STATIC_ACCEPTANCE_VALIDATION"
+}

@@ -64,6 +64,10 @@ header > img {
   width: 46px;
   height: 46px;
   flex: 0 0 auto;
+  object-fit: cover;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: #071015;
   filter: drop-shadow(0 7px 14px rgba(59, 210, 139, .18));
 }
 
@@ -80,14 +84,14 @@ h1 {
 
 .eyebrow,
 .card-label {
-  color: var(--muted);
   font-size: 12px;
   font-weight: 750;
   letter-spacing: .085em;
   text-transform: uppercase;
 }
 
-.eyebrow { margin-bottom: 5px; }
+.eyebrow { margin-bottom: 5px; color: var(--muted); }
+.card-label { color: var(--brand-hi); }
 
 .header-state {
   display: flex;
@@ -353,6 +357,15 @@ label {
 }
 
 .subscription-meta { line-height: 1.6; }
+
+.server-check-result {
+  min-height: 24px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.server-check-result.is-success { color: var(--brand-hi); }
+.server-check-result.is-error { color: #ffaaa6; }
 
 .subscription-actions,
 .server-card .actions {

@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1, "revision": "p314-c20-overlay-update-check-contract-diagnosis", "status": "ROOT_CAUSE_CONFIRMED",
+  "candidateId": "0.1.0-r0009c19", "installedCandidate": "0.1.0-r0009c19",
+  "updateCheck": {
+    "currentVersion": "26.7.28", "latestVersion": "26.7.28", "updateAvailable": false,
+    "storageFreeBytes": 18784256, "storageRequiredBytes": 36438142, "storageShortfallBytes": 17653886, "storageOk": false,
+    "temporaryFreeBytes": 191647744, "temporaryRequiredBytes": 36438142, "reinstallAllowed": false
+  },
+  "rootCause": "Four exact R0009 temporary transfer IPKs remain in /opt/tmp and consume 51220662 bytes, causing the safe installer storage gate to refuse equal-version reinstall.",
+  "temporaryTransferFiles": [
+    "/opt/tmp/broray-light_0.1.0-r0009c15_aarch64-3.10.ipk",
+    "/opt/tmp/broray-light_0.1.0-r0009c16_aarch64-3.10.ipk",
+    "/opt/tmp/broray-light_0.1.0-r0009c17_aarch64-3.10.ipk",
+    "/opt/tmp/broray-light_0.1.0-r0009c19_aarch64-3.10.ipk"
+  ],
+  "candidateArtifactDefect": false, "safetyGateCorrect": true,
+  "routerMutation": false,
+  "nextRevision": "p315-c19-exact-transfer-temp-cleanup",
+  "nextExactAction": "REMOVE_ONLY_THE_FOUR_INVENTORIED_R0009_TRANSFER_IPKS_THEN_REPEAT_XRAY_UPDATE_CHECK"
+}

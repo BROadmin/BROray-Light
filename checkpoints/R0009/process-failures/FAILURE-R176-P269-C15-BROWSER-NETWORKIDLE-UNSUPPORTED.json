@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_CORRECTIVE_C15_BUTTON_API_AND_VISUAL_CORRECTIONS",
+  "revision": "p269-c15-supported-browser-runtime-connection",
+  "status": "FAILED_STOPPED_FIRST_ERROR",
+  "failureId": "R176",
+  "failureClass": "BROWSER_NETWORKIDLE_WAIT_UNSUPPORTED",
+  "candidateId": "0.1.0-r0009c15",
+  "firstError": "The in-app browser backend does not support networkidle for waitForLoadState.",
+  "browserConnection": "PASS",
+  "existingUserTabClaimed": true,
+  "pageReloaded": true,
+  "candidateArtifactDefect": false,
+  "routerApplicationStateMutation": false,
+  "installedCandidateUnchanged": true,
+  "productionServerMutationPerformed": false,
+  "publicReleasePublished": false,
+  "hiddenRetryPerformed": false,
+  "nextRevision": "p270-c15-domcontentloaded-browser-validation",
+  "nextExactAction": "WAIT_FOR_SUPPORTED_DOMCONTENTLOADED_STATE_CAPTURE_A_FRESH_DOM_SNAPSHOT_AND_CONTINUE_VISUAL_AND_BUTTON_VALIDATION"
+}

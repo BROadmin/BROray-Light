@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_CORRECTIVE_C15_BUTTON_API_AND_VISUAL_CORRECTIONS",
+  "revision": "p267-c15-authenticated-api-contract-discovery",
+  "status": "FAILED_STOPPED_FIRST_ERROR",
+  "failureId": "R174",
+  "failureClass": "LOGIN_JS_OVERLAY_PATH_ASSUMPTION",
+  "candidateId": "0.1.0-r0009c15",
+  "firstError": "packaging/app-overlay/web-new/assets/js/login.js does not exist because login.js is inherited unchanged from canonical src.",
+  "candidateArtifactDefect": false,
+  "routerMutation": false,
+  "installedCandidateUnchanged": true,
+  "productionServerMutationPerformed": false,
+  "publicReleasePublished": false,
+  "hiddenRetryPerformed": false,
+  "nextRevision": "p268-c15-source-login-contract-discovery",
+  "nextExactAction": "READ_THE_ACTUAL_CANONICAL_LOGIN_JS_AND_LOGIN_CGI_CONTRACT_THEN_RUN_AUTHENTICATED_C15_API_VALIDATION"
+}

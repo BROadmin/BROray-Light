@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_CORRECTIVE_C16_AFTER_C15_RUNTIME_CACHE_FAILURE",
+  "revision": "p274-c16-exact-small-hunk-implementation",
+  "status": "PASS_IMPLEMENTED_PENDING_INDEPENDENT_BUILDS",
+  "candidateId": "0.1.0-r0009c16",
+  "canonicalSource": {
+    "commit": "684b27bdb53e545047419baa87c63dd86dffa469",
+    "status": "PASS_UNCHANGED"
+  },
+  "corrections": {
+    "htmlNoStoreResponseHeaders": true,
+    "htmlMetaNoStoreFallback": true,
+    "versionedHtmlNavigation": true,
+    "versionedLoginRedirect": true,
+    "failClosedPersistentConfigMigration": true,
+    "ownershipReceiptConfigShaMigration": true,
+    "semanticPolicyManifestIdentityRestored": true,
+    "c15ButtonApiAndVisualCorrectionsPreserved": true
+  },
+  "staticValidation": {
+    "pythonSyntax": "PASS_2_OF_2",
+    "busyboxAshSyntax": "PASS",
+    "javascriptSyntax": "PASS",
+    "overlayFiles": 20,
+    "staleC15ReferencesInToolsAndPackaging": 0,
+    "lighttpdNoStoreConfigParseOnRouter": "PASS_READ_ONLY_STDIN"
+  },
+  "sha256": {
+    "packaging/app-overlay/bin/broray-runtime-prepare": "dd77e4c74dcb3366b3fe181e25ff89066645a69c8d1d6f6126b4f72340de70b6",
+    "packaging/app-overlay/share/defaults/lighttpd.conf": "f8257f4054f1eb1d896e68ecedf45a422c38844c43f4aef66412c8b4e7e36a63",
+    "packaging/app-overlay/web-new/assets/js/login.js": "ddeced588c167c04bd72ce1ecf307a441691b9327ba2e9a92fb10eacf29a3ebf",
+    "packaging/opkg/broray-light-web-publish.sh": "5b3f3c5407dbf3dafdb5c1a6ef413896c6208e1b9888cd087eca1326d2f9b0bc",
+    "packaging/opkg/broray-light-web-publish-policy.sh": "92251fa96661aceb0e549a34bc35bccfc707da636b2f8dcf9f970883e5a80f2b",
+    "tools/build_r0009_candidate.py": "f88eb81dd303bbc0cde1d103333c56cd6a55790e2954b31fbd4174535568f012",
+    "tools/test_r0009.py": "a3893c46b5abf075067b70f16535a97c9398bdb813ed88ac89429669b78278cc"
+  },
+  "routerMutation": false,
+  "installedCandidate": "0.1.0-r0009c15",
+  "productionServerMutationPerformed": false,
+  "publicReleasePublished": false,
+  "nextRevision": "p275-c16-independent-builds",
+  "nextExactAction": "BUILD_C16_A_AND_AN_INDEPENDENT_C16_B_WITH_THE_EXISTING_VERIFIED_EPHEMERAL_SIGNING_IDENTITY_AND_COMPARE_ALL_ARTIFACTS_BYTE_FOR_BYTE"
+}

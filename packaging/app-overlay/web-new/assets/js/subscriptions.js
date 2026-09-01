@@ -1,13 +1,16 @@
 async function sapi(url, opts) {
   const response = await fetch(url, Object.assign({ credentials: 'same-origin', cache: 'no-store' }, opts || {}));
-  let payload = null;
-  try {
-    payload = await response.json();
-  } catch (_) {
-    throw new Error('Сервер вернул некорректный ответ');
+  const raw = await response.text();
+  let payload = {};
+  if (raw.trim()) {
+    try {
+      payload = JSON.parse(raw);
+    } catch (_) {
+      throw new Error('Сервер вернул некорректный ответ');
+    }
   }
   if (response.status === 401) {
-    location.replace('/');
+    location.replace('/?v=0.1.0-r0009c19');
     throw new Error('Требуется вход');
   }
   if (!response.ok || payload.success === false || payload.ok === false) {
@@ -27,7 +30,8 @@ function subscriptionItems(data) {
 
 function subscriptionMeta(subscription) {
   const parts = [];
-  if (Number.isFinite(subscription.serverCount)) parts.push('Серверов: ' + subscription.serverCount);
+  const count = Number.isFinite(subscription.serversCount) ? subscription.serversCount : subscription.serverCount;
+  if (Number.isFinite(count)) parts.push('Серверов: ' + count);
   parts.push(subscription.lastUpdatedAt ? 'Обновлена: ' + subscription.lastUpdatedAt : 'Ещё не обновлялась');
   return parts.join(' · ');
 }

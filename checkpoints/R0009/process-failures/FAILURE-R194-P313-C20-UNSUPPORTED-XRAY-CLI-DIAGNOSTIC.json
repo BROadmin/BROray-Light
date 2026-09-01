@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 1, "failureId": "R194", "revision": "p313-c20-xray-update-envelope-diagnosis",
+  "status": "FAILED_STOPPED_FIRST_ERROR", "failureClass": "UNSUPPORTED_XRAY_UPDATE_CHECK_CLI_DIAGNOSTIC",
+  "firstError": "The read-only diagnostic called broray xray update-check, which Light intentionally does not expose.",
+  "candidateId": "0.1.0-r0009c20", "installedCandidate": "0.1.0-r0009c19",
+  "candidateArtifactDefect": false, "routerMutation": false, "xrayMutationPerformed": false,
+  "hiddenRetryPerformed": false,
+  "nextRevision": "p314-c20-overlay-update-check-contract-diagnosis",
+  "nextExactAction": "READ_THE_OVERLAY_UPDATE_CHECK_CGI_AND_CALL_ITS_LIBRARY_FUNCTION_READ_ONLY_TO_CAPTURE_STORAGE_FIELDS"
+}

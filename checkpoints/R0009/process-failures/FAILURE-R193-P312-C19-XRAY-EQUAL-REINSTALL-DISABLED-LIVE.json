@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1, "failureId": "R193",
+  "stage": "R0009_CORRECTIVE_C19_AFTER_C18_ISOLATED_MIGRATION_FAILURE",
+  "revision": "p312-c19-browser-login-and-action-validation", "status": "FAILED_STOPPED_FIRST_ERROR",
+  "failureClass": "XRAY_EQUAL_VERSION_REINSTALL_DISABLED_IN_LIVE_UI",
+  "firstError": "After a successful Xray update check the UI rendered Переустановка недоступна and disabled the install button.",
+  "candidateId": "0.1.0-r0009c19", "installedCandidate": "0.1.0-r0009c19",
+  "candidateArtifactDefect": true,
+  "browserEvidence": {"xrayVersion": "26.7.28", "xrayState": "Xray запущен", "xrayUpdate": "Установлена актуальная версия 26.7.28.", "installText": "Переустановка недоступна", "installDisabled": true},
+  "xrayMutationPerformed": false, "routerRebootPerformed": false, "deleteActionPerformed": false,
+  "completedLiveChecksBeforeFailure": ["versioned-login-c19", "home-identity-and-versions", "logo-and-label-styles", "server-boundaries", "reversible-failover-dirty-state", "failover-save", "server-check-http-204", "subscription-refresh-and-count"],
+  "hiddenRetryPerformed": false, "failedCandidateReady": false,
+  "nextCandidateId": "0.1.0-r0009c20", "nextRevision": "p313-c20-xray-update-envelope-diagnosis",
+  "nextExactAction": "COMPARE_THE_LIVE_UPDATE_CHECK_CONTRACT_WITH_HOME_JS_NORMALIZATION_THEN_ENABLE_EXPLICIT_EQUAL_VERSION_REINSTALL"
+}

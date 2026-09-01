@@ -2,11 +2,11 @@
   "schemaVersion": 1,
   "stage": "R0009",
   "status": "PASS",
-  "currentRevision": "p252-c14-post-reseal-audit-pass",
+  "currentRevision": "p321-c19-final-reseal",
   "workingBranch": "codex/r0009-updater-package",
   "authorizedTask": "BUILD_LIGHT_UPDATER_INSTALLER_AND_INSTALLABLE_CANDIDATE_FROM_R0008",
   "candidateReady": true,
-  "candidateId": "0.1.0-r0009c14",
+  "candidateId": "0.1.0-r0009c19",
   "releaseId": "0.1.0-r9",
   "canonicalInput": {
     "sourceCommit": "684b27bdb53e545047419baa87c63dd86dffa469",
@@ -21,10 +21,10 @@
   "completedGates": {
     "acceptancePassed": 20,
     "acceptanceFailed": 0,
-    "isolatedPassed": 36,
+    "isolatedPassed": 44,
     "isolatedFailed": 0,
     "buildArtifactsByteIdentical": 8,
-    "physicalValidation": "PASS_C14_INSTALL_DEDUPLICATION_XRAY_REINSTALL_KEENETIC_AND_EXTERNAL_UI",
+    "physicalValidation": "PASS_C19_INSTALL_PERSISTENCE_CACHE_XRAY_REINSTALL_AND_BROWSER_FUNCTIONAL",
     "nativeRebootAutomaticStart": "PASS",
     "externalHttpsAuthentication": "PASS",
     "persistence": "PASS",
@@ -32,40 +32,44 @@
     "routesViaProxy0": 0
   },
   "finalArtifacts": {
-    "buildA": "dist/R0009/R0009c14-P231-Build-A",
-    "buildB": "dist/R0009/R0009c14-P231-Build-B",
-    "packageSha256": "43c7ddbb59e3cb68c68f9e280f2859b0ed6170d4ad5fb1f6f108d2010c0ca6ee",
-    "appArchiveSha256": "d058cabb9cfb150bf6526ecf5129fc0840226756bb728d3d6f49473e5e5e18c6",
-    "updaterArchiveSha256": "6af6609808b086c09705a21f67002e873f12b548f8be33beb9e39924d16e35e6",
-    "installerSha256": "a9ffbed45d080648696ca73a32e62572889634eb097230005b829ecde76d903d",
-    "releaseIndexSha256": "284c7450fad06e22f0165ce96a44388d4aa8cd438d6783c2c424b8f6e95647a3",
-    "releaseSignatureSha256": "c9d06c899c6280aabc12694591c5119eb487f0f69e85893876dbe2fdf6227509",
-    "candidateManifestSha256": "98057e449d0d5cd9cde3a05e1ce324b64e7de5b3fe81ba23345a38c6fcf6b1fb",
-    "artifactSumsSha256": "fa7ecde34f9485dfeee81897bedba01f560f319ca3af5df65c59959783d465c5"
+    "buildA": "dist/R0009/R0009c19-P306-Build-A",
+    "buildB": "dist/R0009/R0009c19-P306-Build-B",
+    "packageSha256": "bf73974e6aff89d6b43872d5ff62433b4748a4486db2f83d20b3337a23ca7b51",
+    "appArchiveSha256": "d332fd192fab7826c7729c719a5e5a8d3708daec24c6a0832a6f3dbf06c5ef55",
+    "updaterArchiveSha256": "c029afef72111d766eaa302d48fcfaa182ace542abecd036ee232f65be3a7985",
+    "installerSha256": "75fa590fe697ee8938a29fc402b63c91bb4d8609db3e8514889240aa8f2fecf1",
+    "releaseIndexSha256": "607cc129389904da603467406f65085aa46a8658be80f4482df1df3761e942a0",
+    "releaseSignatureSha256": "6e5529132dfb26002ae689a5a69544ff8ca2f6671f810664fa6d922ef72f4830",
+    "candidateManifestSha256": "41a2889f038ce5563e58116e805980ce6284122c407bd09dfcb5118f10d1cff7",
+    "artifactSumsSha256": "f1b7b84c55cb334e3763f1cf53dc3db14e8f4d9b7628cb6dcf303459d93b4ac0"
   },
   "finalCheckpoint": {
     "path": "checkpoints/R0009/CHECKPOINT.json",
-    "sha256": "0c07cd426cf0132bf1817fa64aa7e2e421b8b290c734497bdc507854986e9e55",
+    "sha256": "b2a092f2a9ea60d322fc7c6dd5ebcafbd9ef32f93d688e103734744125c3f14f",
     "validationPath": "checkpoints/R0009/VALIDATION.json",
-    "validationSha256": "19f6e9a1d223f4d8e586e72f3eb8425efafb41a02ac9438516afe94c9180f5e7",
-    "reportPath": "checkpoints/R0009/REPORT.md"
+    "validationSha256": "95a9f6cc89c87e0ada304b6fb1a87d6c3785384959e788ee9677e2d1857c4de4",
+    "reportPath": "checkpoints/R0009/REPORT.md",
+    "reportSha256": "ef3f829d661d5e45d1a8143b73e025a8d384124368c384ab2405969be1f28b7a"
   },
   "physicalValidation": {
     "authorized": true,
     "status": "PASS",
     "routerAddress": "192.168.1.1",
-    "installedPackage": "broray-light 0.1.0-r0009c14",
+    "installedPackage": "broray-light 0.1.0-r0009c19",
     "currentTarget": "releases/0.1.0-r9",
     "publicUrl": "https://brolight.tvervip.keenetic.link/",
     "postbootCheckpoint": "checkpoints/R0009/physical-validation/POSTBOOT-P114-C08-AUTOSTART-WEB-AUTH-PERSISTENCE.json",
-    "postbootCheckpointSha256": "707789e352b136b40918c77f33646f93ef8afa5ab204214b14ca0cdb094dd914"
+    "postbootCheckpointSha256": "707789e352b136b40918c77f33646f93ef8afa5ab204214b14ca0cdb094dd914",
+    "finalInstallReceipt": "checkpoints/R0009/physical-validation/INSTALL-P311-C19-PERSISTENCE-AND-CACHE.json",
+    "finalFunctionalReceipt": "checkpoints/R0009/physical-validation/BROWSER-FUNCTIONAL-P316-C19.json",
+    "finalFunctionalReceiptSha256": "3ea07020995635dba9f7e9fe537ef068ece1e32668e5d43eef53d08caf83081c"
   },
   "processFailures": {
-    "preserved": 123,
-    "latest": "checkpoints/R0009/process-failures/FAILURE-R165-P250-C14-EMPTY-APPLY-PATCH-HUNK.json",
-    "latestDiagnosis": "checkpoints/R0009/DIAGNOSIS-P123-C08-ARTIFACT-BOUND-EOF-WHITESPACE.json"
+    "preserved": 154,
+    "latest": "checkpoints/R0009/process-failures/FAILURE-R196-P320-C19-RESEAL-DELETE-ADD-SAME-PATCH.json",
+    "latestDiagnosis": "checkpoints/R0009/DIAGNOSIS-P272-C15-STALE-HTML-CACHE.json"
   },
-  "canonicalPublicKeySha256": "79b436e96c19d9e268addfc0c780f34e1676d90b764d7fcd21a8327508063f7b",
+  "canonicalPublicKeySha256": "9421289636a6a307a8ab874f2d680d249ec221a5d66506ce1ac8eabcebd99826",
   "privateSigningKeyDestroyed": true,
   "hardwareTestingAuthorized": true,
   "productionMutationAuthorized": false,
@@ -73,5 +77,5 @@
   "publicReleasePublished": false,
   "activeBlocker": null,
   "nextStage": "DEFINE_AND_AUTHORIZE_R0010_BEFORE_ANY_STABLE_PUBLICATION",
-  "nextExactAction": "COMMIT_THE_COMPLETE_R0009_C14_CORRECTIVE_RESULT_ON_CODEX_R0009_UPDATER_PACKAGE_AND_REPORT_FINAL_SHA_ARTIFACTS_GATES_CHECKPOINT_AND_NEXT_STAGE"
+  "nextExactAction": "DEFINE_AND_AUTHORIZE_R0010_BEFORE_ANY_STABLE_PUBLICATION"
 }

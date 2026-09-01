@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_CORRECTIVE_C15_BUTTON_API_AND_VISUAL_CORRECTIONS",
+  "revision": "p257-c15-literal-path-input-discovery-and-static-validation",
+  "status": "PASS_IMPLEMENTED_PENDING_INDEPENDENT_BUILDS",
+  "candidateId": "0.1.0-r0009c15",
+  "canonicalSource": {
+    "commit": "684b27bdb53e545047419baa87c63dd86dffa469",
+    "status": "PASS_UNCHANGED"
+  },
+  "corrections": {
+    "cgiServiceGlobalIsolation": true,
+    "successfulJsonResponseNormalization": true,
+    "serverCheckResultPresentation": true,
+    "subscriptionServerCountFieldAlignment": true,
+    "boundaryMoveButtonState": true,
+    "reversibleFailoverDirtyState": true,
+    "internalCandidateChannelLabel": true,
+    "healthyKeeneticActionsDisabled": true,
+    "mobileCircularLogo": true,
+    "greenCardLabels": true
+  },
+  "staticValidation": {
+    "pythonSyntax": "PASS_2_OF_2",
+    "busyboxAshSyntax": "PASS_14_OF_14",
+    "javascriptSyntax": "PASS_4_OF_4",
+    "overlayFiles": 18,
+    "staleC14References": 0
+  },
+  "sha256": {
+    "packaging/app-overlay/web-new/api/servers/common.sh": "f19b4c0e7e37e31e9ebf44c191d2681e8dd2a5aa8ffbcf33745c5fbd70121084",
+    "packaging/app-overlay/web-new/api/subscriptions/common.sh": "40b4281b6f5acc1d1ae38f89925b2bb1c16ea10061909f740305c158dbcdd5ff",
+    "packaging/app-overlay/web-new/assets/css/allpage.css": "3f11fb81d7154a9979644b120f8c9c94e1db0f79ba5f3cf4ff31c699a67afbe7",
+    "packaging/app-overlay/web-new/assets/js/home.js": "33ef629bd36a20e918780955eb751f8d46983150a35c672fa57b657fa3a25a3a",
+    "packaging/app-overlay/web-new/assets/js/servers.js": "c0467435339fadca51c9f3e4837cee422ba49967abf786daa7895fd20dc8ea4d",
+    "packaging/app-overlay/web-new/assets/js/servers-auto-switch.js": "77491ae3b5a4d4adf8c8712510ec76b2a4173db40d27fca513934c06d8608978",
+    "packaging/app-overlay/web-new/assets/js/subscriptions.js": "a897043770a4fafebd4ef796aaa9a51277eab19f26293197ed71ee633d4d4adc",
+    "tools/build_r0009_candidate.py": "d6787c9258332345425973a493e026f29bdcf03ba4dd52a9860408a32c9bb68a",
+    "tools/test_r0009.py": "738e9adccf891995fcd6c570a67d6c8e051ebbfa6dd40e5040090a9dd32f4722"
+  },
+  "routerMutation": false,
+  "productionServerMutationPerformed": false,
+  "publicReleasePublished": false,
+  "nextRevision": "p258-c15-ephemeral-signing-identity",
+  "nextExactAction": "GENERATE_A_NEW_EPHEMERAL_INTERNAL_SIGNING_IDENTITY_INSTALL_ONLY_ITS_PUBLIC_KEY_AND_BUILD_INDEPENDENT_C15_A_AND_B"
+}

@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_CORRECTIVE_C15_BUTTON_API_AND_VISUAL_CORRECTIONS",
+  "revision": "p270-c15-domcontentloaded-browser-validation",
+  "status": "FAILED_CANDIDATE_REOPENED",
+  "failureId": "R177",
+  "failureClass": "PHYSICAL_SERVER_CARD_RUNTIME_CONTRACT_FAILURE",
+  "candidateId": "0.1.0-r0009c15",
+  "installedPackage": "broray-light 0.1.0-r0009c15",
+  "confirmedDefects": [
+    "the first server up button is enabled",
+    "the last server down button is enabled",
+    "the rendered server card does not contain the last-check presentation element"
+  ],
+  "observed": {
+    "serverCards": 6,
+    "firstUpEnabled": true,
+    "firstDownEnabled": true,
+    "lastUpEnabled": true,
+    "lastDownEnabled": true,
+    "firstCardCheckResultVisible": false
+  },
+  "candidateReadyBeforeValidation": false,
+  "candidateReadyAfterValidation": false,
+  "sourceUnchanged": true,
+  "routerApplicationStateMutationDuringBrowserValidation": false,
+  "productionServerMutationPerformed": false,
+  "publicReleasePublished": false,
+  "hiddenRetryPerformed": false,
+  "nextRevision": "p271-c16-runtime-loaded-asset-diagnosis",
+  "nextExactAction": "READ_ONLY_COMPARE_THE_DOCUMENT_SCRIPT_URLS_BROWSER_RUNTIME_MARKERS_AND_SERVED_ASSET_CONTENT_WITH_THE_INSTALLED_C15_FILES_THEN_IMPLEMENT_A_CORRECTED_C16_REVISION"
+}

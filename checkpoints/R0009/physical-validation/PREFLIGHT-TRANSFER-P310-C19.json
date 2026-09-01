@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1, "revision": "p310-c19-preflight-transfer", "status": "PASS_READY_FOR_INSTALL",
+  "candidateId": "0.1.0-r0009c19", "installedPackageBefore": "broray-light 0.1.0-r0009c17",
+  "servicesPassed": 2, "servers": 6, "subscriptions": 2, "duplicateGroups": 0,
+  "activeServerSha256": "25e15e4354b92e2cf758f06e7a04da7d81ad4f19d48fe42eabd6ae0b474fe910",
+  "autoSwitchSha256": "6743d9128b6206747ef724fbe72ba9646ef027ba948962805baeb6b053d661cf",
+  "lighttpdConfigSha256": "23ae1e5e9bbfde502327802986ac38253076a7d622f8340aebcac30dd920f791",
+  "xraySha256": "4b8af237444801bf17b3dc10a1c5c24581fbe3d433eba3d78c6c3a0da1df56fc",
+  "routesViaProxy0": 0, "fullBROrayOwnership": 0,
+  "remotePath": "/opt/tmp/broray-light_0.1.0-r0009c19_aarch64-3.10.ipk",
+  "sizeBytes": 12805704, "sha256": "bf73974e6aff89d6b43872d5ff62433b4748a4486db2f83d20b3337a23ca7b51",
+  "nextRevision": "p311-c19-physical-install", "nextExactAction": "INSTALL_AND_VALIDATE_C19_WITHOUT_REBOOT"
+}

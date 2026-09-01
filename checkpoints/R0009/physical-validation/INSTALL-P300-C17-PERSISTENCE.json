@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "revision": "p300-c17-physical-install",
+  "status": "PASS_INSTALLED_PENDING_ROOT_HEADER_VALIDATION",
+  "candidateId": "0.1.0-r0009c17",
+  "installedPackage": "broray-light 0.1.0-r0009c17",
+  "servicesPassed": 2,
+  "servers": 6, "subscriptions": 2,
+  "duplicateIdentityGroups": 0, "duplicateImportKeyGroups": 0,
+  "statePersistence": {
+    "activeServerSha256": "25e15e4354b92e2cf758f06e7a04da7d81ad4f19d48fe42eabd6ae0b474fe910",
+    "autoSwitchSha256": "6743d9128b6206747ef724fbe72ba9646ef027ba948962805baeb6b053d661cf",
+    "webPublicationSha256": "90342395709133b5b3c647c73ea818cca43d7cf822c6867499c846775fbeedbe",
+    "lighttpdConfigSha256": "23ae1e5e9bbfde502327802986ac38253076a7d622f8340aebcac30dd920f791",
+    "xraySha256": "4b8af237444801bf17b3dc10a1c5c24581fbe3d433eba3d78c6c3a0da1df56fc"
+  },
+  "installedC17HtmlReferences": 8,
+  "installedC17UnauthorizedRedirects": 3,
+  "routesViaProxy0": 0, "fullBROrayOwnership": 0, "recoveryMarker": 0,
+  "routerRebootPerformed": false,
+  "nextRevision": "p301-c17-root-header-validation"
+}

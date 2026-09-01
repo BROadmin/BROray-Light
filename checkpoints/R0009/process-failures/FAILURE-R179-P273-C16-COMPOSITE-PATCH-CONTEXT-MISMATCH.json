@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_CORRECTIVE_C16_AFTER_C15_RUNTIME_CACHE_FAILURE",
+  "revision": "p273-c16-html-no-store-and-versioned-navigation",
+  "status": "FAILED_STOPPED_FIRST_ERROR",
+  "failureId": "R179",
+  "failureClass": "COMPOSITE_APPLY_PATCH_CONTEXT_MISMATCH",
+  "candidateId": "0.1.0-r0009c16",
+  "firstError": "The test harness semantic-policy hunk did not match the current file context, so the composite patch was rejected.",
+  "rejectedPatchMutation": false,
+  "implementedBeforeRejectedPatch": [
+    "cache-aware canonical lighttpd default overlay",
+    "fail-closed persistent lighttpd config and ownership-receipt migration"
+  ],
+  "candidateArtifactDefect": false,
+  "routerMutation": false,
+  "installedCandidateUnchanged": true,
+  "productionServerMutationPerformed": false,
+  "publicReleasePublished": false,
+  "hiddenRetryPerformed": false,
+  "nextRevision": "p274-c16-exact-small-hunk-implementation",
+  "nextExactAction": "READ_THE_CURRENT_CONSTANT_AND_POLICY_ASSERTION_LINES_THEN_APPLY_C16_VERSION_MANIFEST_POLICY_NAVIGATION_LOGIN_AND_TEST_CHANGES_AS_SMALL_EXACT_PATCHES"
+}

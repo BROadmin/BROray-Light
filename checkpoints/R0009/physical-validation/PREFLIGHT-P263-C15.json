@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_CORRECTIVE_C15_BUTTON_API_AND_VISUAL_CORRECTIONS",
+  "revision": "p263-c15-package-owned-init-discovery-preflight",
+  "status": "PASS_READY_FOR_TRANSFER",
+  "candidateId": "0.1.0-r0009c15",
+  "routerAddress": "192.168.1.1",
+  "installedPackage": "broray-light 0.1.0-r0009c14",
+  "currentTarget": "releases/0.1.0-r9",
+  "services": {
+    "S24broray-light": "PASS",
+    "S23broray-light-updater": "PASS"
+  },
+  "servers": 6,
+  "subscriptions": 2,
+  "duplicateIdentityGroups": 0,
+  "duplicateImportKeyGroups": 0,
+  "activeServer": "subscription-sub-130bddd06d26133e-600217eb115c0e82",
+  "stateSha256": {
+    "activeServer": "25e15e4354b92e2cf758f06e7a04da7d81ad4f19d48fe42eabd6ae0b474fe910",
+    "autoSwitch": "6743d9128b6206747ef724fbe72ba9646ef027ba948962805baeb6b053d661cf",
+    "webPublication": "defa5839be8d3cb4098c0ee7dca42aace6469902bef8502c7d19529020f651a3",
+    "xray": "4b8af237444801bf17b3dc10a1c5c24581fbe3d433eba3d78c6c3a0da1df56fc"
+  },
+  "routesViaProxy0": 0,
+  "fullBROrayOwnership": 0,
+  "webPublicationRecoveryMarker": 0,
+  "c15TransferTargetExists": false,
+  "routerMutation": false,
+  "productionServerMutationPerformed": false,
+  "publicReleasePublished": false,
+  "nextRevision": "p264-c15-verified-transfer",
+  "nextExactAction": "TRANSFER_BUILD_A_IPK_TO_THE_EXACT_TEMPORARY_TARGET_AND_VERIFY_REMOTE_SIZE_AND_SHA256_BEFORE_INSTALLATION"
+}

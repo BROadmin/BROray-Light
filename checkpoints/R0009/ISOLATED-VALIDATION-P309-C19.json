@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 1, "revision": "p309-c19-full-isolated-validation", "status": "PASS",
+  "candidateId": "0.1.0-r0009c19", "passed": 44, "failed": 0,
+  "packageSha256": "bf73974e6aff89d6b43872d5ff62433b4748a4486db2f83d20b3337a23ca7b51",
+  "appArchiveSha256": "d332fd192fab7826c7729c719a5e5a8d3708daec24c6a0832a6f3dbf06c5ef55",
+  "newGate": {"ownedHtmlOnlyCacheMigration": "PASS"},
+  "baselineGates": 43, "baselineGatesStatus": "PASS_ALL",
+  "sourceCommit": "684b27bdb53e545047419baa87c63dd86dffa469", "sourceUnchanged": true,
+  "nextRevision": "p310-c19-preflight-transfer", "nextExactAction": "PREFLIGHT_C17_STATE_TRANSFER_AND_VERIFY_C19"
+}

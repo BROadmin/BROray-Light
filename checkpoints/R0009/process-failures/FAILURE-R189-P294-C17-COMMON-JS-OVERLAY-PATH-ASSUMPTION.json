@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "failureId": "R189",
+  "stage": "R0009_CORRECTIVE_C17_AFTER_C16_AUTH_REDIRECT_CACHE_FAILURE",
+  "revision": "p294-c17-fixed-string-redirect-search",
+  "status": "FAILED_STOPPED_FIRST_ERROR",
+  "failureClass": "COMMON_JS_OVERLAY_PATH_ASSUMPTION",
+  "firstError": "Get-Content could not find packaging/app-overlay/web-new/assets/js/common.js",
+  "rootCause": "common.js remains canonical R0008 content and is not overlaid; the unversioned redirects are confirmed in the three overlaid page modules home.js, servers.js and subscriptions.js.",
+  "confirmedRedirects": [
+    "packaging/app-overlay/web-new/assets/js/home.js",
+    "packaging/app-overlay/web-new/assets/js/servers.js",
+    "packaging/app-overlay/web-new/assets/js/subscriptions.js"
+  ],
+  "candidateId": "0.1.0-r0009c17",
+  "installedCandidate": "0.1.0-r0009c16",
+  "candidateArtifactDefect": false,
+  "filesystemMutation": false,
+  "routerMutation": false,
+  "hiddenRetryPerformed": false,
+  "nextRevision": "p295-c17-versioned-auth-redirect-implementation",
+  "nextExactAction": "PATCH_THE_THREE_CONFIRMED_REDIRECTS_AND_SYNCHRONIZE_ALL_C17_ASSET_BUILD_POLICY_AND_HARNESS_CONSTANTS"
+}

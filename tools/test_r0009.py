@@ -17,7 +17,7 @@ import tempfile
 from pathlib import Path, PurePosixPath
 
 RELEASE_ID = "0.1.0-r9"
-CANDIDATE_ID = "0.1.0-r0009c14"
+CANDIDATE_ID = "0.1.0-r0009c19"
 XRAY_SHA256 = "4b8af237444801bf17b3dc10a1c5c24581fbe3d433eba3d78c6c3a0da1df56fc"
 
 
@@ -316,6 +316,13 @@ def main() -> int:
             raise RuntimeError(f"KeenDNS WebUI safety contract missing: {fragment}")
     gates["webPublicationPackageLayout"] = "PASS"
 
+    candidate_manifest = json.loads((args.build / "CANDIDATE-MANIFEST.json").read_text(encoding="utf-8"))
+    semantic_policy_sha = "e3e0e68b10ef69fce1c504f2689d1ecbd3f8b6b78ee6e7ab03d8ea73d63607dc"
+    if candidate_manifest.get("webPublication", {}).get("policySha256") != semantic_policy_sha or \
+       f"BRORAY_LIGHT_WEB_POLICY_SHA256='{semantic_policy_sha}'" not in web_policy.read_text(encoding="utf-8"):
+        raise RuntimeError("candidate manifest and packaged Web publication semantic policy identity differ")
+    gates["webPublicationPolicyManifestIdentity"] = "PASS"
+
     primary_init = (system_root / "opt/etc/init.d/S24broray-light").read_text(encoding="utf-8")
     init_contract = (
         "pid_owned()",
@@ -401,7 +408,7 @@ def main() -> int:
     overlay_root = Path(__file__).resolve().parents[1] / "packaging/app-overlay"
     installed_app = app_root / "current/app"
     overlay_files = sorted(path for path in overlay_root.rglob("*") if path.is_file())
-    if len(overlay_files) != 17:
+    if len(overlay_files) != 20:
         raise RuntimeError(f"unexpected corrective overlay file count: {len(overlay_files)}")
     for overlay_file in overlay_files:
         installed_file = installed_app / overlay_file.relative_to(overlay_root)
@@ -422,16 +429,16 @@ def main() -> int:
 
     home_js = (installed_app / "web-new/assets/js/home.js").read_text(encoding="utf-8")
     home_html = (installed_app / "web-new/home.html").read_text(encoding="utf-8")
-    if "activeServer(d.servers)" not in home_js or "server?.name" not in home_js:
+    if "activeServer(data.servers)" not in home_js or "server?.name" not in home_js:
         raise RuntimeError("Home does not resolve the active server name")
-    if "unwrap(d.xray)" not in home_js or "api/broray/info.cgi" not in home_js:
+    if "unwrap(data.xray)" not in home_js or "api/broray/info.cgi" not in home_js:
         raise RuntimeError("Home does not normalize the Xray envelope and request Light info")
     if 'id="xrayVersion"' not in home_html or 'id="lightVersion"' not in home_html:
         raise RuntimeError("Home version presentation elements are absent")
     for functional_contract in (
         "api/servers/auto-switch-status.cgi",
         "temporaryStorage?.reinstallAllowed",
-        "JSON.stringify({mode})",
+        "JSON.stringify({ mode })",
         "api/broray/update-check.cgi",
         "Внутренняя сборка R0009: публичный канал обновлений пока не настроен.",
     ):
@@ -441,6 +448,12 @@ def main() -> int:
        'id="failoverDetail"' not in home_html:
         raise RuntimeError("Home corrective controls are absent")
     gates["homeIdentityPresentationContract"] = "PASS"
+
+    if "const internalCandidate = /r0009|0\\.1\\.0-r9/i" not in home_js or \
+       'id="keeneticCreateButton"' not in home_html or 'id="keeneticRepairButton"' not in home_html or \
+       "healthy ? 'Исправно' : 'Исправить'" not in home_js:
+        raise RuntimeError("internal-channel or healthy Keenetic action-state presentation is incomplete")
+    gates["internalChannelAndKeeneticActionState"] = "PASS"
 
     subscriptions_js = (installed_app / "web-new/assets/js/subscriptions.js").read_text(encoding="utf-8")
     subscriptions_html = (installed_app / "web-new/subscriptions.html").read_text(encoding="utf-8")
@@ -453,6 +466,27 @@ def main() -> int:
     if "'?id=' + encodeURIComponent(subscription.id)" not in subscriptions_js:
         raise RuntimeError("subscription refresh/delete actions do not use the backend query-id contract")
     gates["subscriptionNameAndDeleteConfirmation"] = "PASS"
+
+    if "subscription.serversCount" not in subscriptions_js or "await response.text()" not in subscriptions_js:
+        raise RuntimeError("subscription count or empty-success compatibility contract is absent")
+    gates["subscriptionCountAndResponseCompatibility"] = "PASS"
+
+    servers_js = (installed_app / "web-new/assets/js/servers.js").read_text(encoding="utf-8")
+    failover_js = (installed_app / "web-new/assets/js/servers-auto-switch.js").read_text(encoding="utf-8")
+    servers_common = (installed_app / "web-new/api/servers/common.sh").read_text(encoding="utf-8")
+    subscriptions_common = (installed_app / "web-new/api/subscriptions/common.sh").read_text(encoding="utf-8")
+    for wrapper_name, wrapper in (("servers", servers_common), ("subscriptions", subscriptions_common)):
+        if 'if ( "$@" ) >' not in wrapper or "|| broray_" not in wrapper or "api_payload='{}'" not in wrapper or "jq -e ." not in wrapper:
+            raise RuntimeError(f"{wrapper_name} CGI response isolation and JSON normalization contract is incomplete")
+    gates["cgiResponseIsolationAndJsonNormalization"] = "PASS"
+
+    for server_ui_contract in ("checkText(server.lastCheck)", "server-check-result", "refreshMoveButtons()", "await response.text()"):
+        if server_ui_contract not in servers_js:
+            raise RuntimeError(f"server result or boundary UI contract is absent: {server_ui_contract}")
+    for failover_contract in ("BROrayLightFailoverSaved", "current === window.BROrayLightFailoverSaved", "index === 0", "index === cards.length - 1"):
+        if failover_contract not in failover_js:
+            raise RuntimeError(f"failover reversible-dirty or boundary contract is absent: {failover_contract}")
+    gates["serverResultBoundaryAndReversibleDirtyState"] = "PASS"
 
     xray_update_check = (installed_app / "web-new/api/xray/update-check.cgi").read_text(encoding="utf-8")
     if "broray_xray_update_check" not in xray_update_check or '"$BRORAY" xray update-check' in xray_update_check:
@@ -522,15 +556,76 @@ def main() -> int:
        'class="login-submit"' not in login_html or \
        'BROray-Light' not in login_html or 'VLESS для Keenetic' not in login_html:
         raise RuntimeError("BROray-Light login markup contract is incomplete")
-    asset_version = "?v=0.1.0-r0009c14"
+    if "object-fit: cover;" not in theme_css or "border-radius: 50%;" not in theme_css or \
+       ".card-label { color: var(--brand-hi); }" not in theme_css:
+        raise RuntimeError("mobile circular logo or green card-label presentation contract is absent")
+    gates["mobileLogoAndCardLabelColor"] = "PASS"
+    asset_version = "?v=0.1.0-r0009c19"
     for page_name in ("index.html", "home.html", "servers.html", "subscriptions.html"):
         page_html = (installed_app / "web-new" / page_name).read_text(encoding="utf-8")
+        if 'http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate"' not in page_html or \
+           'http-equiv="Pragma" content="no-cache"' not in page_html:
+            raise RuntimeError(f"HTML no-store fallback metadata is absent from {page_name}")
         if f"assets/css/allpage.css{asset_version}" not in page_html:
             raise RuntimeError(f"versioned CSS asset URL is absent from {page_name}")
         for asset_url in re.findall(r'(?:src|href)="(assets/(?:css|js)/[^"]+)"', page_html):
             if not asset_url.endswith(asset_version):
                 raise RuntimeError(f"unversioned static asset URL in {page_name}: {asset_url}")
     gates["themePresentationContract"] = "PASS"
+
+    for page_name in ("home.html", "servers.html", "subscriptions.html"):
+        page_html = (installed_app / "web-new" / page_name).read_text(encoding="utf-8")
+        for target in ("home.html", "servers.html", "subscriptions.html"):
+            if f'href="{target}{asset_version}"' not in page_html:
+                raise RuntimeError(f"versioned HTML navigation to {target} is absent from {page_name}")
+    login_js = (installed_app / "web-new/assets/js/login.js").read_text(encoding="utf-8")
+    if f'const homeUrl = "/home.html{asset_version}";' not in login_js:
+        raise RuntimeError("login and existing-session redirects do not invalidate stale Home HTML")
+    for script_name in ("home.js", "servers.js", "subscriptions.js"):
+        page_js = (installed_app / "web-new/assets/js" / script_name).read_text(encoding="utf-8")
+        if f"location.replace('/{asset_version}')" not in page_js:
+            raise RuntimeError(f"unauthorized redirect does not invalidate stale login HTML in {script_name}")
+    cache_default = (installed_app / "share/defaults/lighttpd.conf").read_text(encoding="utf-8")
+    runtime_prepare = (installed_app / "bin/broray-runtime-prepare").read_text(encoding="utf-8")
+    for contract in ("mod_setenv", "setenv.add-response-header", '"Cache-Control" => "no-store, no-cache, must-revalidate"', '$HTTP["url"] =~ "(^/$|\\.html$)"'):
+        if contract not in cache_default:
+            raise RuntimeError(f"canonical lighttpd HTML cache contract is absent: {contract}")
+    for migration_contract in ("migrate_html_cache_policy", "legacy Web publication receipt does not own the current config", "HTML-only cache policy has no ownership receipt", "ROOT_AND_HTML_RULE", ".lighttpdConfigSha256=$sha", "lighttpd -tt -f"):
+        if migration_contract not in runtime_prepare:
+            raise RuntimeError(f"persistent cache-policy migration contract is absent: {migration_contract}")
+    gates["htmlNoStoreAndVersionedNavigation"] = "PASS"
+
+    persistent_config = app_root / "config/lighttpd.conf"
+    html_only_config = persistent_config.read_text(encoding="utf-8").replace(
+        '$HTTP["url"] =~ "(^/$|\\.html$)" {',
+        '$HTTP["url"] =~ "\\.html$" {',
+    )
+    if html_only_config == persistent_config.read_text(encoding="utf-8"):
+        raise RuntimeError("could not stage the prior HTML-only cache policy")
+    persistent_config.write_text(html_only_config, encoding="utf-8", newline="\n")
+    migration_owner = app_root / "config/web-publish.json"
+    json_write(migration_owner, {
+        "schemaVersion": 1,
+        "owner": "BROray-Light",
+        "name": "brolight",
+        "policySha256": "e3e0e68b10ef69fce1c504f2689d1ecbd3f8b6b78ee6e7ab03d8ea73d63607dc",
+        "lighttpdConfigSha256": sha256(persistent_config),
+    })
+    migration_cli = installed_app / "bin/broray-subscriptions"
+    migration_cli_original = migration_cli.read_bytes()
+    try:
+        write_shim(migration_cli, "#!/bin/sh\nexit 0\n")
+        run([dash, posix(installed_app / "bin/broray-runtime-prepare")], env={**env, "BRORAY_ROOT": posix(app_root)})
+    finally:
+        migration_cli.write_bytes(migration_cli_original)
+        migration_cli.chmod(0o755)
+    migrated_owner = json.loads(migration_owner.read_text(encoding="utf-8"))
+    if '$HTTP["url"] =~ "(^/$|\\.html$)" {' not in persistent_config.read_text(encoding="utf-8") or \
+       migrated_owner.get("lighttpdConfigSha256") != sha256(persistent_config):
+        raise RuntimeError("receipt-owned HTML-only cache policy did not migrate atomically to root plus HTML")
+    migration_owner.unlink()
+    gates["ownedHtmlOnlyCacheMigration"] = "PASS"
+
     runtime_before = sha256(runtime)
     run([dash, posix(control_root / "postinst")], env=env)
     if sha256(runtime) != runtime_before:

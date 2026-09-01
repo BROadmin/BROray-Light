@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_CORRECTIVE_C17_AFTER_C16_AUTH_REDIRECT_CACHE_FAILURE",
+  "revision": "p295-c17-versioned-auth-redirect-implementation",
+  "status": "PASS_IMPLEMENTED_PENDING_INDEPENDENT_BUILDS",
+  "candidateId": "0.1.0-r0009c17",
+  "corrections": {
+    "homeUnauthorizedRedirectVersioned": true,
+    "serversUnauthorizedRedirectVersioned": true,
+    "subscriptionsUnauthorizedRedirectVersioned": true,
+    "allHtmlAssetsVersionedC17": true,
+    "loginHomeRedirectVersionedC17": true,
+    "isolatedHarnessAuthRedirectGate": true,
+    "c16NoStoreAndC15FunctionalCorrectionsPreserved": true
+  },
+  "staticValidation": {
+    "pythonSyntax": "PASS_2_OF_2",
+    "javascriptSyntax": "PASS_4_OF_4",
+    "busyboxAshSyntax": "PASS",
+    "staleC16ReferencesInToolsAndPackaging": 0,
+    "sourceUnchanged": true
+  },
+  "sha256": {
+    "packaging/app-overlay/web-new/assets/js/home.js": "b58c0cfe9c9671a223a4f5fcf7778d7b1a1bc89c61a096cf4f872077ccb8d16f",
+    "packaging/app-overlay/web-new/assets/js/servers.js": "e34cee571842774ccd7afb586388d0b02611a9e231893addd2a5e9bd07c0486d",
+    "packaging/app-overlay/web-new/assets/js/subscriptions.js": "e0485d44edda3220c0579c169c2536e85b1e1db8a7a7c478cfba9521efcb8a51",
+    "packaging/app-overlay/web-new/assets/js/login.js": "f0515226c6999ac7a9aa43fa4ae9c5882c9fd81177fd2fc7892c440fe1e637e6",
+    "tools/build_r0009_candidate.py": "3d220ba5b0ce8fbbc3c8af6fba2b7e02d63925adcc6ac16477961c8f5726a987",
+    "tools/test_r0009.py": "5beb3a1b6b86e43f0b1851313092cf0239d71d87556250c8bf23391e5fdef7f8",
+    "packaging/opkg/broray-light-web-publish-policy.sh": "da016cbe29bbd02881a06272979102a86af3810905cb9b975a9d3c005ad5cf32"
+  },
+  "installedCandidate": "0.1.0-r0009c16",
+  "routerMutation": false,
+  "nextRevision": "p296-c17-independent-builds",
+  "nextExactAction": "BUILD_C17_A_AND_AN_INDEPENDENT_C17_B_AND_COMPARE_ALL_EIGHT_ARTIFACTS_AND_SIGNATURES"
+}

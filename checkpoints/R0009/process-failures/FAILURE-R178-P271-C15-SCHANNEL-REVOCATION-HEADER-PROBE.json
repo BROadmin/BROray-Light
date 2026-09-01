@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_CORRECTIVE_C16_AFTER_C15_RUNTIME_CACHE_FAILURE",
+  "revision": "p271-c16-runtime-loaded-asset-diagnosis",
+  "status": "FAILED_STOPPED_FIRST_ERROR",
+  "failureId": "R178",
+  "failureClass": "WINDOWS_SCHANNEL_REVOCATION_HEADER_PROBE_FAILURE",
+  "candidateId": "0.1.0-r0009c15",
+  "diagnosisBeforeFailure": {
+    "browserHtmlAssetVersion": "0.1.0-r0009c14",
+    "installedHtmlAssetVersion": "0.1.0-r0009c15",
+    "installedAndDocumentRootHtmlSha256": "6cde50c1c97dee21117efd935bf8b04cfcd8da8207a2a4e6f9b0557fcf299e72",
+    "documentRootSymlink": "current/app/web-new",
+    "rootCauseClass": "EXTERNAL_OR_BROWSER_HTML_CACHE_STALENESS"
+  },
+  "firstError": "Windows Schannel could not perform a certificate revocation check for the read-only external header probe.",
+  "candidateArtifactDefect": "UNDER_DIAGNOSIS",
+  "routerMutation": false,
+  "installedCandidateUnchanged": true,
+  "productionServerMutationPerformed": false,
+  "publicReleasePublished": false,
+  "hiddenRetryPerformed": false,
+  "nextRevision": "p272-c16-no-revoke-external-header-probe",
+  "nextExactAction": "RUN_THE_READ_ONLY_EXTERNAL_HEADER_PROBE_WITH_SCHANNEL_REVOCATION_CHECK_DISABLED_AND_DEFINE_THE_C16_HTML_CACHE_INVALIDATION_FIX"
+}

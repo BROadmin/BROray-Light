@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_CORRECTIVE_C15_BUTTON_API_AND_VISUAL_CORRECTIONS",
+  "revision": "p258-c15-ephemeral-signing-identity-and-independent-builds",
+  "status": "PASS",
+  "candidateId": "0.1.0-r0009c15",
+  "sourceCommit": "684b27bdb53e545047419baa87c63dd86dffa469",
+  "sourceUnchanged": true,
+  "builderSha256": "040eeb3cd83f3e3d59f3c40d75702134342ac3549deb86dcbee24901c6fbe345",
+  "testHarnessSha256": "42f4e1c90749c0a99d033dde61ce6b200c840e4a750fbda8f9fcdcc46f8291e8",
+  "signing": {
+    "keyId": "263ACED52ADC502A",
+    "repositoryPublicKeySha256": "9421289636a6a307a8ab874f2d680d249ec221a5d66506ce1ac8eabcebd99826",
+    "pairVerification": "PASS",
+    "buildSignaturesVerified": 2,
+    "privateKeyPersistedInRepository": false,
+    "privateKeyTransferredToRouter": false,
+    "privateKeyDestroyed": false
+  },
+  "buildA": "dist/R0009/R0009c15-P258-Build-A",
+  "buildB": "dist/R0009/R0009c15-P258-Build-B",
+  "artifactsCompared": 8,
+  "artifactsByteIdentical": 8,
+  "artifactSha256": {
+    "broray-light_0.1.0-r0009c15_aarch64-3.10.ipk": "199f44ea5c2a3c906bd0b90f2d10295f80058c23c0c13c10420692314c39febb",
+    "broray-light-app-0.1.0-r0009c15.tar.gz": "8fab9759814c8ae657caa18d79eef9b0f77babaa1ca061ac90307fff8fd2dc53",
+    "broray-light-install-0.1.0-r0009c15.sh": "3b9052d5d239c6330b45053225eed17dd06906aa8ed485f1756e6b21ba4cbd37",
+    "broray-light-updater-platform-5-light1.tar.gz": "c029afef72111d766eaa302d48fcfaa182ace542abecd036ee232f65be3a7985",
+    "CANDIDATE-MANIFEST.json": "83bb0a352ba19c0e7350eae54c2d28ee8b9828e7e5247f6b762aba82a3277241",
+    "release.json": "780170feaa9556e2597d4bc68e84ec7cd304ebe8554dae865721831a5ef0b0e3",
+    "release.json.minisig": "9b5a28af8957538e2f3a5bfaaddc16dfd6d5904133e7fc54276aa28ae5795d12",
+    "SHA256SUMS": "b44afff288626308e0ec2e4b29a7410ca57aa648473e213a25e4145cba4bf7b0"
+  },
+  "routerMutation": false,
+  "productionServerMutationPerformed": false,
+  "publicReleasePublished": false,
+  "nextRevision": "p259-c15-full-isolated-validation",
+  "nextExactAction": "RUN_THE_FULL_UPDATED_ISOLATED_ROOT_ACCEPTANCE_HARNESS_USING_BUILD_A"
+}

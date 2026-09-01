@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 1, "failureId": "R196", "revision": "p320-c19-final-reseal",
+  "status": "FAILED_STOPPED_FIRST_ERROR", "failureClass": "APPLY_PATCH_DELETE_AND_ADD_SAME_TARGET_UNSUPPORTED",
+  "firstError": "apply_patch rejected multiple operations targeting VALIDATION.json in one patch.",
+  "candidateId": "0.1.0-r0009c19", "candidateArtifactDefect": false,
+  "rejectedPatchMutation": false, "routerMutation": false, "privateSigningKeyDestroyed": true,
+  "hiddenRetryPerformed": false,
+  "nextRevision": "p321-c19-two-step-final-reseal",
+  "nextExactAction": "DELETE_THEN_ADD_VALIDATION_CHECKPOINT_AND_REPORT_IN_SEPARATE_APPLY_PATCH_OPERATIONS"
+}

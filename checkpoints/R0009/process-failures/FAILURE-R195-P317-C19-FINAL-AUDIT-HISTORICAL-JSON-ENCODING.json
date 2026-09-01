@@ -1,0 +1,11 @@
+{
+  "schemaVersion": 1, "failureId": "R195", "revision": "p317-c19-final-local-audit-and-reseal",
+  "status": "FAILED_STOPPED_FIRST_ERROR", "failureClass": "HISTORICAL_JSON_UTF8_DECODE_FAILURE",
+  "firstError": "Bulk JSON audit encountered byte 0xc0 at position 719 in an as-yet unidentified historical JSON file.",
+  "candidateId": "0.1.0-r0009c19", "installedCandidate": "0.1.0-r0009c19",
+  "candidateArtifactDefect": false, "privateSigningKeyDestroyed": true,
+  "filesystemMutationBeforeFailure": "private signing key deletion and P316 checkpoint only",
+  "routerMutation": false, "hiddenRetryPerformed": false,
+  "nextRevision": "p318-c19-json-encoding-file-identification",
+  "nextExactAction": "IDENTIFY_THE_EXACT_NON_UTF8_HISTORICAL_JSON_FILE_THEN_VALIDATE_ALL_CURRENT_C19_MACHINE_READABLE_RECORDS_SEPARATELY"
+}

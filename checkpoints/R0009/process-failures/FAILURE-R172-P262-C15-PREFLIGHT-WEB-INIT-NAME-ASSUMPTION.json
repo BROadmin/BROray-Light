@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_CORRECTIVE_C15_BUTTON_API_AND_VISUAL_CORRECTIONS",
+  "revision": "p262-c15-physical-read-only-preflight",
+  "status": "FAILED_STOPPED_FIRST_ERROR",
+  "failureId": "R172",
+  "failureClass": "PREFLIGHT_WEB_INIT_NAME_ASSUMPTION",
+  "candidateId": "0.1.0-r0009c15",
+  "firstError": "/opt/etc/init.d/S25broray-light-web-publish does not exist.",
+  "confirmedBeforeFailure": {
+    "installedPackage": "broray-light 0.1.0-r0009c14",
+    "currentTarget": "releases/0.1.0-r9",
+    "xraySha256": "4b8af237444801bf17b3dc10a1c5c24581fbe3d433eba3d78c6c3a0da1df56fc"
+  },
+  "candidateArtifactDefect": false,
+  "routerMutation": false,
+  "productionServerMutationPerformed": false,
+  "publicReleasePublished": false,
+  "hiddenRetryPerformed": false,
+  "nextRevision": "p263-c15-package-owned-init-discovery-preflight",
+  "nextExactAction": "READ_ONLY_LIST_THE_ACTUAL_BRORAY_LIGHT_INIT_ENTRIES_THEN_COMPLETE_THE_PREFLIGHT_WITH_ONLY_DISCOVERED_SERVICE_NAMES"
+}

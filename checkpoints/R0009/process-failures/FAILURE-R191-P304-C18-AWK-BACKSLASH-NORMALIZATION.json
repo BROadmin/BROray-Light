@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "failureId": "R191",
+  "stage": "R0009_CORRECTIVE_C18_AFTER_C17_ROOT_CACHE_HEADER_FAILURE",
+  "revision": "p304-c18-isolated-validation",
+  "status": "FAILED_STOPPED_FIRST_ERROR",
+  "failureClass": "AWK_BACKSLASH_NORMALIZATION_IN_OWNED_CONFIG_MIGRATION",
+  "firstError": "awk warned that \\. was treated as plain . and the staged root cache policy failed exact validation",
+  "rootCause": "Passing the lighttpd rule through awk -v interpreted the backslash escape instead of preserving the literal configuration line.",
+  "candidateId": "0.1.0-r0009c18",
+  "installedCandidate": "0.1.0-r0009c17",
+  "candidateArtifactDefect": true,
+  "isolatedPassedBeforeFailure": "not_finalized",
+  "routerMutation": false,
+  "physicalInstallPerformed": false,
+  "hiddenRetryPerformed": false,
+  "failedCandidateReady": false,
+  "nextCandidateId": "0.1.0-r0009c19",
+  "nextRevision": "p305-c19-literal-line-root-cache-migration",
+  "nextExactAction": "REPLACE_AWK_VARIABLE_SUBSTITUTION_WITH_A_LITERAL_SHELL_READ_LOOP_THEN_REBUILD_C19"
+}

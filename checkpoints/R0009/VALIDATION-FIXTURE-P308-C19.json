@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 1, "revision": "p308-c19-windows-dedupe-shim-validation-fixture",
+  "status": "PASS_FIXED_PENDING_FULL_HARNESS", "candidateId": "0.1.0-r0009c19",
+  "artifactMutation": false,
+  "fixtureCorrection": "Temporarily replace the router-shebang subscription CLI with a POSIX no-op only while exercising runtime migration, then restore original bytes and mode in finally.",
+  "toolsTestR0009Sha256": "ec10d046fd686a93124df834ed7799917a81ba60c4ae5c187a4c4544cbbf494d",
+  "pythonSyntax": "PASS", "routerMutation": false,
+  "nextRevision": "p309-c19-full-isolated-validation", "nextExactAction": "RUN_THE_FULL_44_GATE_C19_HARNESS_IN_A_NEW_ISOLATED_ROOT"
+}

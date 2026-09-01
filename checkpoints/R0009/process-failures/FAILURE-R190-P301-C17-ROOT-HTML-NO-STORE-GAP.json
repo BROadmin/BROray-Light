@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "failureId": "R190",
+  "stage": "R0009_CORRECTIVE_C17_AFTER_C16_AUTH_REDIRECT_CACHE_FAILURE",
+  "revision": "p301-c17-root-header-validation",
+  "status": "FAILED_STOPPED_FIRST_ERROR",
+  "failureClass": "ROOT_HTML_NO_STORE_RESPONSE_HEADER_GAP",
+  "firstError": "The external 200 response for /?v=0.1.0-r0009c17 has neither Cache-Control nor Pragma headers.",
+  "rootCause": "The lighttpd setenv condition matches URL paths ending in .html, while the root URL path remains / even when index.html is served internally.",
+  "candidateId": "0.1.0-r0009c17",
+  "installedCandidate": "0.1.0-r0009c17",
+  "candidateArtifactDefect": true,
+  "serverHtmlHeaderValidation": "PASS",
+  "rootHtmlHeaderValidation": "FAIL",
+  "persistenceValidation": "PASS",
+  "servicesValidation": "PASS",
+  "routerRebootPerformed": false,
+  "hiddenRetryPerformed": false,
+  "failedCandidateReady": false,
+  "nextCandidateId": "0.1.0-r0009c18",
+  "nextRevision": "p302-c18-root-cache-rule-and-owned-config-migration",
+  "nextExactAction": "EXTEND_THE_NO_STORE_MATCH_TO_ROOT_AND_DOT_HTML_AND_MIGRATE_ONLY_A_RECEIPT_OWNED_CURRENT_CONFIG"
+}

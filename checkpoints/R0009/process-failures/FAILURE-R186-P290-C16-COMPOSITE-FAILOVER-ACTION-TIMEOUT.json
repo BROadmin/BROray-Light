@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "failureId": "R186",
+  "stage": "R0009_CORRECTIVE_C16_AFTER_C15_RUNTIME_CACHE_FAILURE",
+  "revision": "p290-c16-composite-failover-action-validation",
+  "status": "FAILED_STOPPED_FIRST_ERROR",
+  "failureClass": "BROWSER_COMPOSITE_FAILOVER_ACTION_TIMEOUT",
+  "firstError": "Playwright selector deadline exceeded during a composite toggle/reorder/save action chain",
+  "rootCause": "The combined browser call did not report which locator action timed out; state must be inspected and each action validated independently.",
+  "candidateId": "0.1.0-r0009c16",
+  "installedCandidate": "0.1.0-r0009c16",
+  "candidateArtifactDefect": "UNDETERMINED_PENDING_STATE_INSPECTION",
+  "routerMutation": "UNDETERMINED_SAVE_MAY_OR_MAY_NOT_HAVE_BEEN_REACHED",
+  "deleteActionPerformed": false,
+  "hiddenRetryPerformed": false,
+  "nextRevision": "p291-c16-failover-state-inspection-and-atomic-actions",
+  "nextExactAction": "READ_CURRENT_CHECKBOX_STATUS_SERVER_ORDER_AND_AUTO_SWITCH_CONFIG_SHA_THEN_VALIDATE_EACH_REVERSIBLE_ACTION_ONE_AT_A_TIME"
+}

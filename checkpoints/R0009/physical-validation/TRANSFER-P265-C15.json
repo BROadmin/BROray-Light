@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_CORRECTIVE_C15_BUTTON_API_AND_VISUAL_CORRECTIONS",
+  "revision": "p265-c15-legacy-scp-verified-transfer",
+  "status": "PASS_READY_FOR_INSTALLATION",
+  "candidateId": "0.1.0-r0009c15",
+  "localArtifact": "dist/R0009/R0009c15-P258-Build-A/broray-light_0.1.0-r0009c15_aarch64-3.10.ipk",
+  "remoteTarget": "/opt/tmp/broray-light_0.1.0-r0009c15_aarch64-3.10.ipk",
+  "localSizeBytes": 12803451,
+  "remoteSizeBytes": 12803451,
+  "localSha256": "199f44ea5c2a3c906bd0b90f2d10295f80058c23c0c13c10420692314c39febb",
+  "remoteSha256": "199f44ea5c2a3c906bd0b90f2d10295f80058c23c0c13c10420692314c39febb",
+  "transport": "LEGACY_SCP_OVER_AUTHORIZED_SSH_KEY",
+  "installationStarted": false,
+  "productionServerMutationPerformed": false,
+  "publicReleasePublished": false,
+  "nextRevision": "p266-c15-install-and-persistence-validation",
+  "nextExactAction": "INSTALL_THE_EXACT_HASH_VERIFIED_C15_PACKAGE_THEN_VALIDATE_PACKAGE_SERVICES_PERSISTENCE_XRAY_AND_OWNERSHIP_SAFETY"
+}

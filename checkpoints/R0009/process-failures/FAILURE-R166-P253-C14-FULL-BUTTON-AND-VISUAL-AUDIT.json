@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_CORRECTIVE_C15_AFTER_C14_FULL_BUTTON_AUDIT",
+  "revision": "p253-c14-full-button-and-visual-audit",
+  "status": "FAILED_CANDIDATE_REOPENED",
+  "failureId": "R166",
+  "failureClass": "C14_BUTTON_API_RESPONSE_AND_VISUAL_DEFECT_BUNDLE",
+  "candidateId": "0.1.0-r0009c14",
+  "candidateReadyBeforeAudit": true,
+  "candidateReadyAfterAudit": false,
+  "sourceUnchanged": true,
+  "confirmedDefects": [
+    "server import succeeds but returns an empty HTTP 200 body and the UI reports an invalid response",
+    "subscription refresh succeeds but returns an empty HTTP 200 body and leaves stale UI metadata",
+    "server and subscription delete operations share the same empty-success-response risk",
+    "Keenetic repair can fail for an already healthy managed ProxyN",
+    "server checks persist lastCheck but the UI does not render the result",
+    "subscription server count uses the wrong frontend field name",
+    "boundary reorder buttons remain enabled when they cannot move a card",
+    "reverted failover edits remain marked dirty",
+    "internal R0009 candidate can be labelled as Stable channel",
+    "mobile header logo is rectangular instead of circular",
+    "card labels use a blue color that does not match the requested BROray presentation"
+  ],
+  "buttonAudit": {
+    "xrayEqualVersionReinstall": "PASS",
+    "lightUpdateCheck": "PASS_EXPECTED_INTERNAL_CHANNEL_ERROR",
+    "serverChecks": "PASS_WITH_MISSING_RESULT_PRESENTATION",
+    "serverActivationAndRestore": "PASS",
+    "subscriptionCreate": "PASS",
+    "subscriptionRefresh": "BACKEND_PASS_FRONTEND_FALSE_ERROR",
+    "keeneticRepair": "FAIL"
+  },
+  "routerRestoration": {
+    "status": "PASS",
+    "backup": "/opt/broray-light/backup/button-audit-20260901-1330",
+    "subscriptions": 2,
+    "servers": 6,
+    "activeServerRestored": true,
+    "xraySha256": "4b8af237444801bf17b3dc10a1c5c24581fbe3d433eba3d78c6c3a0da1df56fc",
+    "routesViaProxy0": 0,
+    "fullBROrayOwnership": 0
+  },
+  "routerMutation": "AUTHORIZED_REVERSIBLE_BUTTON_AUDIT_WITH_EXACT_SHA256_RESTORATION",
+  "productionServerMutationPerformed": false,
+  "publicReleasePublished": false,
+  "hiddenRetryPerformed": false,
+  "nextRevision": "p254-c15-button-api-and-visual-corrections",
+  "nextExactAction": "IMPLEMENT_C15_EMPTY_SUCCESS_JSON_NORMALIZATION_BUTTON_FEEDBACK_LASTCHECK_RENDERING_FIELD_ALIGNMENT_DIRTY_STATE_BOUNDARIES_INTERNAL_CHANNEL_AND_USER_REQUESTED_VISUAL_CORRECTIONS"
+}

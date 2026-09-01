@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_CORRECTIVE_C16_AFTER_C15_RUNTIME_CACHE_FAILURE",
+  "revision": "p280-c16-verified-transfer",
+  "status": "PASS_READY_FOR_INSTALL",
+  "candidateId": "0.1.0-r0009c16",
+  "localPath": "dist/R0009/R0009c16-P275-Build-A/broray-light_0.1.0-r0009c16_aarch64-3.10.ipk",
+  "remotePath": "/opt/tmp/broray-light_0.1.0-r0009c16_aarch64-3.10.ipk",
+  "sizeBytes": 12805743,
+  "sha256": "40f57e2259427084e7be89846065372d421b269e43ba1a52a93f3df2d7a3e74d",
+  "transferProtocol": "scp-legacy",
+  "remoteVerification": "PASS",
+  "installedPackageBefore": "broray-light 0.1.0-r0009c15",
+  "nextRevision": "p281-c16-physical-install",
+  "nextExactAction": "INSTALL_THE_VERIFIED_C16_IPK_WITH_OPKG_AND_VALIDATE_CONFIG_MIGRATION_PERSISTENCE_SERVICES_AND_OWNERSHIP"
+}
