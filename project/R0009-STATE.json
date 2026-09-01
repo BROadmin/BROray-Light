@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "stage": "R0009",
   "status": "BLOCKED_FAIL_CLOSED_ROUTER_SSH_AUTHENTICATION",
-  "currentRevision": "p150-c10-memory-only-interactive-password-preflight",
+  "currentRevision": "p151-c10-restored-router-access-preflight",
   "workingBranch": "codex/r0009-updater-package",
   "authorizedTask": "BUILD_LIGHT_UPDATER_INSTALLER_AND_INSTALLABLE_CANDIDATE_FROM_R0008",
   "candidateReady": false,
@@ -61,8 +61,8 @@
     "postbootCheckpointSha256": "707789e352b136b40918c77f33646f93ef8afa5ab204214b14ca0cdb094dd914"
   },
   "processFailures": {
-    "preserved": 79,
-    "latest": "checkpoints/R0009/process-failures/FAILURE-R121-P150-C10-SSH-PASSWORD-REJECTED.json",
+    "preserved": 80,
+    "latest": "checkpoints/R0009/process-failures/FAILURE-R122-P151-C10-RESTORED-ACCESS-PREFLIGHT-DENIED.json",
     "latestDiagnosis": "checkpoints/R0009/DIAGNOSIS-P123-C08-ARTIFACT-BOUND-EOF-WHITESPACE.json"
   },
   "canonicalPublicKeySha256": "401aad9c433c6c81b24412508774ae467a4c11a5752d2c6c0b286ae39079a93f",
@@ -73,5 +73,5 @@
   "publicReleasePublished": false,
   "activeBlocker": "NO_ACCEPTED_SSH_AUTHENTICATION_METHOD_FOR_THE_AUTHORIZED_ROUTER",
   "nextStage": "R0009_CORRECTIVE_C10_AFTER_C09_PHYSICAL_FAILURE",
-  "nextExactAction": "RESTORE_OR_PROVIDE_A_WORKING_ROUTER_SSH_AUTHENTICATION_METHOD_THEN_RUN_A_NEW_READ_ONLY_PREFLIGHT_BEFORE_ANY_C10_TRANSFER"
+  "nextExactAction": "ENABLE_THE_EXISTING_CODEX_PUBLIC_KEY_OR_CONFIRM_A_NEW_WORKING_SSH_PASSWORD_ON_THE_ROUTER_THEN_EXPLICITLY_CONFIRM_ACCESS_RESTORATION_BEFORE_P152"
 }

@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_CORRECTIVE_C10_AFTER_C09_PHYSICAL_FAILURE",
+  "revision": "p151-c10-restored-router-access-preflight",
+  "at": "2026-09-01T09:34:00+03:00",
+  "status": "FAILED_STOPPED_FIRST_ERROR",
+  "failureClass": "ROUTER_SSH_ACCESS_NOT_RESTORED",
+  "operation": "READ_ONLY_PHYSICAL_PREFLIGHT",
+  "observed": "Permission denied (publickey,password).",
+  "routerMutation": false,
+  "candidateTransferred": false,
+  "packageInstallStarted": false,
+  "candidateReady": false,
+  "credentialsPrintedOrWritten": false,
+  "retryPolicy": "NO_RETRY_OF_P151_UNTIL_ROUTER_SSH_AUTHENTICATION_IS_EXTERNALLY_RESTORED",
+  "activeBlocker": "NO_ACCEPTED_SSH_AUTHENTICATION_METHOD_FOR_THE_AUTHORIZED_ROUTER",
+  "nextRevision": "p152-c10-confirmed-restored-router-access-preflight",
+  "nextExactAction": "ENABLE_THE_EXISTING_CODEX_PUBLIC_KEY_OR_CONFIRM_A_NEW_WORKING_SSH_PASSWORD_ON_THE_ROUTER_THEN_EXPLICITLY_CONFIRM_ACCESS_RESTORATION_BEFORE_P152"
+}
