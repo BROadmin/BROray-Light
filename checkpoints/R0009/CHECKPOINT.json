@@ -21,7 +21,7 @@
     {"name":"release.json.minisig","bytes":277,"sha256":"6e5529132dfb26002ae689a5a69544ff8ca2f6671f810664fa6d922ef72f4830"},
     {"name":"SHA256SUMS","bytes":689,"sha256":"f1b7b84c55cb334e3763f1cf53dc3db14e8f4d9b7628cb6dcf303459d93b4ac0"}
   ],
-  "acceptance": {"passed":20,"failed":0,"receipt":"checkpoints/R0009/VALIDATION.json","receiptSha256":"899d19ef459e5949a00e9c92a92f117dc91775b5ba38c9eac39a521d490b92ae"},
+  "acceptance": {"passed":20,"failed":0,"receipt":"checkpoints/R0009/VALIDATION.json","receiptSha256":"7857855eb0c3551fa84031995d099bfe19ae65ac20279180313d45cb411baa49"},
   "isolatedValidation": {"passed":44,"failed":0,"receipt":"checkpoints/R0009/ISOLATED-VALIDATION-P309-C19.json","receiptSha256":"19ad0477cf691dcdb147fc154e5bea3028f7defe395b8430cbe1d2b0cfd020b9"},
   "reproducibility": {"artifacts":8,"comparison":"BYTE_IDENTICAL","signedReleaseIndexVerified":true,"receipt":"checkpoints/R0009/REPRODUCIBILITY-P306-C19.json","receiptSha256":"2e68b81819d9c9a235701bb596e0e15e92d44ad4d199c2f282363e2fe72b625c"},
   "physicalValidation": {
@@ -33,7 +33,7 @@
   "finalLocalAudit": {"receipt":"checkpoints/R0009/FINAL-LOCAL-AUDIT-P319-C19.json","receiptSha256":"43a6691330e448d9ec87fe33295116efd298d5a684b75d89fee2f8fb0487e75d"},
   "canonicalPublicKeySha256": "9421289636a6a307a8ab874f2d680d249ec221a5d66506ce1ac8eabcebd99826",
   "privateSigningKeyDestroyed": true,
-  "processFailuresPreserved": 156,
+  "processFailuresPreserved": 158,
   "hardwareTestingPerformed": true,
   "routerRebootPerformedInFinalCorrectiveCycle": false,
   "productionServerMutationPerformed": false,

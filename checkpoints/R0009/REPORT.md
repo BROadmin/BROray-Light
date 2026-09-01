@@ -34,7 +34,7 @@ Authorized physical validation passed:
 - temporary transfer IPKs were removed after installation; no user data was removed;
 - full BROray ownership is zero, routes via `Proxy0` are zero, and recovery marker is absent.
 
-All 156 material failed revisions are preserved as JSON with SHA-256 sidecars. The final browser diagnosis also confirms that the reported blue subscription label came from a stale c14 document; a fresh c19 request renders the requested green `rgb(78, 214, 157)` label. The signing private key was never committed or transferred and is destroyed. The c19 public verification key SHA-256 is `9421289636a6a307a8ab874f2d680d249ec221a5d66506ce1ac8eabcebd99826`.
+All 158 material failed revisions are preserved as JSON with SHA-256 sidecars. Final browser diagnostics confirm the requested green `rgb(78, 214, 157)` color for the subscription label and all five home card labels; blue rectangles in annotated screenshots are browser selection markers. The signing private key was never committed or transferred and is destroyed. The c19 public verification key SHA-256 is `9421289636a6a307a8ab874f2d680d249ec221a5d66506ce1ac8eabcebd99826`.
 
 ## Completion
 

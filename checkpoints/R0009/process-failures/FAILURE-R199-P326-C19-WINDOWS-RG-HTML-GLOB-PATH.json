@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "failureId": "R199",
+  "stage": "R0009_C19_HOME_LABEL_COLOR_CONFIRMATION",
+  "revision": "p326-c19-home-label-source-inspection",
+  "at": "2026-09-01T16:01:14+03:00",
+  "status": "FAILED_STOPPED_FIRST_ERROR",
+  "failureClass": "WINDOWS_RG_HTML_GLOB_PATH",
+  "operation": "Confirm the shared card-label color rule and versioned home links",
+  "error": "rg rejected packaging/app-overlay/web-new/*.html as an invalid Windows path",
+  "candidateId": "0.1.0-r0009c19",
+  "candidateArtifactDefect": false,
+  "cssRuleFoundBeforeFailure": ".card-label { color: var(--brand-hi); }",
+  "repositoryMutationBeforeFailure": false,
+  "routerMutation": false,
+  "hiddenRetryPerformed": false,
+  "cause": "The HTML wildcard was passed as a path instead of an rg -g include pattern on Windows.",
+  "nextRevision": "p327-c19-home-label-supported-source-and-browser-inspection",
+  "nextExactAction": "REPEAT_THE_READ_ONLY_SEARCH_WITH_RG_G_HTML_THEN_COMPARE_UNVERSIONED_AND_VERSIONED_HOME_COMPUTED_LABEL_COLORS"
+}

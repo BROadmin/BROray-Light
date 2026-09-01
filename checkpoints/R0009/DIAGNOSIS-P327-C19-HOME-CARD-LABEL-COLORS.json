@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_C19_HOME_LABEL_COLOR_CONFIRMATION",
+  "revision": "p327-c19-home-label-supported-source-and-browser-inspection",
+  "at": "2026-09-01T16:02:40+03:00",
+  "status": "PASS",
+  "candidateId": "0.1.0-r0009c19",
+  "page": "https://brolight.tvervip.keenetic.link/home.html?v=0.1.0-r0009c19",
+  "stylesheet": "https://brolight.tvervip.keenetic.link/assets/css/allpage.css?v=0.1.0-r0009c19",
+  "sharedSelector": ".dashboard-grid .card-label",
+  "expectedBrandVariable": "--brand-hi: #4ed69d",
+  "computedColor": "rgb(78, 214, 157)",
+  "computedMarginBottom": "13px",
+  "labels": [
+    {"text":"Активный сервер","status":"PASS"},
+    {"text":"Автопереключение","status":"PASS"},
+    {"text":"Keenetic","status":"PASS"},
+    {"text":"Xray","status":"PASS"},
+    {"text":"BROray-Light","status":"PASS"}
+  ],
+  "browserMarkerNote": "The blue rectangle and numbered circle in annotated screenshots are the browser comment selection marker, not the computed text color.",
+  "candidateArtifactDefect": false,
+  "sourceChangeRequired": false,
+  "newBuildRequired": false,
+  "routerMutation": false,
+  "candidateReady": true,
+  "nextStage": "DEFINE_AND_AUTHORIZE_R0010_BEFORE_ANY_STABLE_PUBLICATION"
+}

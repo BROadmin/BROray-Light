@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "failureId": "R200",
+  "stage": "R0009_C19_HOME_LABEL_COLOR_CONFIRMATION",
+  "revision": "p328-c19-home-label-final-audit",
+  "at": "2026-09-01T16:04:30+03:00",
+  "status": "FAILED_STOPPED_FIRST_ERROR",
+  "failureClass": "POWERSHELL_FOREACH_TOKENIZATION",
+  "operation": "Run the final JSON, SHA-256, state, immutable-source and diff audit after the home label color confirmation",
+  "error": "ParserError: Missing 'in' after variable in foreach loop",
+  "candidateId": "0.1.0-r0009c19",
+  "candidateArtifactDefect": false,
+  "auditChecksStarted": false,
+  "repositoryMutationBeforeFailure": false,
+  "routerMutation": false,
+  "hiddenRetryPerformed": false,
+  "cause": "Whitespace was omitted between the PowerShell foreach 'in' keyword and the collection variable in an over-compressed audit command.",
+  "nextRevision": "p329-c19-expanded-final-audit",
+  "nextExactAction": "RUN_THE_SAME_READ_ONLY_AUDIT_AS_AN_EXPANDED_POWERSHELL_SCRIPT_WITH_EXPLICIT_FOREACH_WHITESPACE"
+}

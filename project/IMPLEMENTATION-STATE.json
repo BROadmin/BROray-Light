@@ -16,9 +16,9 @@
   "builderSha256": "518d335b5bd46a63753c9f07688fa8d2424f96770076edeb5831054b5528032c",
   "testHarnessSha256": "ec10d046fd686a93124df834ed7799917a81ba60c4ae5c187a4c4544cbbf494d",
   "candidateCheckpoint": "checkpoints/R0009/CHECKPOINT.json",
-  "candidateCheckpointSha256": "93928831c8dd1ad76a73b7ede1a5f7d7d91aba2fc009256131abc12b2e420fc6",
+  "candidateCheckpointSha256": "8a01a5209aacaf889c4f01c81a55b0819f7de109eb69f46d108c04c4212496f8",
   "validationReceipt": "checkpoints/R0009/VALIDATION.json",
-  "validationSha256": "899d19ef459e5949a00e9c92a92f117dc91775b5ba38c9eac39a521d490b92ae",
+  "validationSha256": "7857855eb0c3551fa84031995d099bfe19ae65ac20279180313d45cb411baa49",
   "isolatedValidation": {
     "passed": 44,
     "failed": 0,
@@ -43,7 +43,7 @@
     "finalFunctionalReceiptSha256": "3ea07020995635dba9f7e9fe537ef068ece1e32668e5d43eef53d08caf83081c"
   },
   "privateSigningKeyDestroyed": true,
-  "processFailuresPreserved": 156,
+  "processFailuresPreserved": 158,
   "publicReleasePublished": false,
   "productionServerMutationPerformed": false,
   "codexEntryPoint": "docs/CODEX-HANDOFF.md",
