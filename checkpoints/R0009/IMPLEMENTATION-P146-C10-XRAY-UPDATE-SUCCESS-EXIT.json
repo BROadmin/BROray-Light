@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_CORRECTIVE_C10_AFTER_C09_PHYSICAL_FAILURE",
+  "revision": "p146-c10-xray-update-success-exit",
+  "at": "2026-09-01T09:18:00+03:00",
+  "status": "PASS_IMPLEMENTED_PENDING_BUILD",
+  "candidateId": "0.1.0-r0009c10",
+  "correction": "The Xray update-check CGI exits immediately after emitting its successful JSON response.",
+  "correctedFileSha256": "5e0de0e2a3790fd8a48f0d461ebffe0f49c59fbcda50355ca90b8f552623b908",
+  "regressionGateAdded": true,
+  "staticValidation": {
+    "busyboxAshSyntax": "PASS",
+    "pythonSyntax": "PASS_2_OF_2",
+    "canonicalSource": "PASS_UNCHANGED",
+    "diffCheck": "PASS"
+  },
+  "routerMutation": false,
+  "nextExactAction": "BUILD_C10_A_AND_INDEPENDENT_C10_B_WITH_THE_VERIFIED_P135_EPHEMERAL_SIGNING_IDENTITY"
+}

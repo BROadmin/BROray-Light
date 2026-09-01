@@ -28,8 +28,8 @@ XRAY_DIGEST_SHA256 = "7380220ffee3878f5841c5ac31e1bd2b4625d22cacc2d1248ea3dedaa2
 XRAY_BINARY_SIZE = 35389566
 XRAY_BINARY_SHA256 = "4b8af237444801bf17b3dc10a1c5c24581fbe3d433eba3d78c6c3a0da1df56fc"
 RELEASE_ID = "0.1.0-r9"
-CANDIDATE_ID = "0.1.0-r0009c08"
-PACKAGE_VERSION = "0.1.0-r0009c08"
+CANDIDATE_ID = "0.1.0-r0009c10"
+PACKAGE_VERSION = "0.1.0-r0009c10"
 ARCHITECTURE = "aarch64-3.10"
 MTIME = 0
 
@@ -138,10 +138,19 @@ class DeterministicTar:
 
 def source_app_files(repo: Path, modes: dict[str, int]) -> list[tuple[str, bytes, int]]:
     app_root = repo / "src" / "app"
+    overlay_root = repo / "packaging" / "app-overlay"
     result = []
+    overlay_targets = {
+        path.relative_to(overlay_root).as_posix(): path
+        for path in overlay_root.rglob("*")
+        if path.is_file()
+    }
     for path in sorted(p for p in app_root.rglob("*") if p.is_file()):
         relative = path.relative_to(app_root).as_posix()
-        result.append((f"app/{relative}", path.read_bytes(), modes[f"app/{relative}"]))
+        payload_path = overlay_targets.pop(relative, path)
+        result.append((f"app/{relative}", payload_path.read_bytes(), modes[f"app/{relative}"]))
+    if overlay_targets:
+        raise RuntimeError(f"app overlay targets do not exist in canonical source: {sorted(overlay_targets)}")
     return result
 
 

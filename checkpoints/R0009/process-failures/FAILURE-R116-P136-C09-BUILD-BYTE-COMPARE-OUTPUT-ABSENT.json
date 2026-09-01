@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_CORRECTIVE_C09_AFTER_AUTHORIZED_PHYSICAL_VALIDATION",
+  "revision": "p136-c09-build-a-b-and-byte-comparison",
+  "at": "2026-09-01T08:54:00+03:00",
+  "event": "process_observability_failure",
+  "status": "FAILED_STOPPED_FIRST_ERROR",
+  "failureClass": "POWERSHELL_COMPARE_OBJECT_BYTE_COMPARISON_EXCEEDED_OBSERVATION_WINDOW",
+  "passedBeforeFailure": {
+    "buildA": "PASS_8_ARTIFACTS",
+    "buildB": "PASS_8_ARTIFACTS",
+    "allBuilderReportedSha256Equal": true,
+    "packageSha256": "3fd42d7f2681f4e9d3b2118726e9f1d64d24b9bce78dcf5631837cd208f6226f",
+    "appArchiveSha256": "1231a0bd60df28019da34af1e96966d4f243cce956dc4959911e096b519c58bc"
+  },
+  "firstError": {
+    "operation": "Compare-Object over every byte of all eight Build A/B artifacts",
+    "message": "No final marker was returned within the 30 second observation window"
+  },
+  "artifactsMutated": false,
+  "routerMutation": false,
+  "retryPolicy": "NO_RETRY_OF_P136_COMPARE_OBJECT_ALGORITHM",
+  "nextRevision": "p137-c09-failure-record-patch",
+  "nextExactAction": "PERSIST_THE_P136_FAILURE_WITH_CURRENT_STATE_CONTEXT_BEFORE_ANY_NEW_COMPARISON_ALGORITHM"
+}

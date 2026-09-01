@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_CORRECTIVE_C09_AFTER_AUTHORIZED_PHYSICAL_VALIDATION",
+  "revision": "p140-c09-physical-read-only-preflight",
+  "at": "2026-09-01T09:05:00+03:00",
+  "status": "PASS_READY_FOR_INSTALL",
+  "routerAddress": "192.168.1.1",
+  "installedPackage": "broray-light 0.1.0-r0009c08",
+  "currentTarget": "releases/0.1.0-r9",
+  "releaseId": "0.1.0-r9",
+  "services": {
+    "primaryStatusReturnCode": 0,
+    "updaterStatusReturnCode": 0,
+    "publicationStatusReturnCode": 0,
+    "publicUrl": "https://brolight.tvervip.keenetic.link/"
+  },
+  "persistence": {
+    "activeServerId": "subscription-sub-130bddd06d26133e-600217eb115c0e82",
+    "serversCount": 12,
+    "subscriptionsCount": 1,
+    "sessionFilesCount": 2,
+    "xraySha256": "4b8af237444801bf17b3dc10a1c5c24581fbe3d433eba3d78c6c3a0da1df56fc",
+    "configSha256": "a7017f04c4b38c22e46eced8ee7870a3d4979a34b86c72df45e7eab9242b4ddb"
+  },
+  "candidatePackageSha256": "3fd42d7f2681f4e9d3b2118726e9f1d64d24b9bce78dcf5631837cd208f6226f",
+  "routerMutation": false,
+  "nextExactAction": "TRANSFER_C09_IPK_VERIFY_ROUTER_SHA256_AND_RUN_ONE_OPKG_UPGRADE"
+}

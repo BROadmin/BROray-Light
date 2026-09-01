@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_CORRECTIVE_C09_AFTER_AUTHORIZED_PHYSICAL_VALIDATION",
+  "revision": "p139-c09-full-isolated-validation",
+  "at": "2026-09-01T09:03:00+03:00",
+  "status": "PASS",
+  "candidateId": "0.1.0-r0009c09",
+  "passedGates": 33,
+  "failedGates": 0,
+  "packageSha256": "3fd42d7f2681f4e9d3b2118726e9f1d64d24b9bce78dcf5631837cd208f6226f",
+  "appArchiveSha256": "1231a0bd60df28019da34af1e96966d4f243cce956dc4959911e096b519c58bc",
+  "newRegressionGates": {
+    "correctiveOverlayExactInstall": "PASS",
+    "activationApiJsonOnly": "PASS",
+    "homeIdentityPresentationContract": "PASS",
+    "subscriptionNameAndDeleteConfirmation": "PASS",
+    "xrayUpdateCheckBackend": "PASS",
+    "themePresentationContract": "PASS"
+  },
+  "existingSafetyGates": {
+    "cleanInstall": "PASS",
+    "installerRerun": "PASS",
+    "isolatedUpdate": "PASS",
+    "equalVersionNoOp": "PASS",
+    "downgradeRefusal": "PASS",
+    "forcedHealthRollback": "PASS",
+    "persistence": "PASS",
+    "signedIndexVerification": "PASS",
+    "hashFailure": "PASS",
+    "maliciousArchiveRejection": "PASS",
+    "requestAndGlobalLocks": "PASS",
+    "coownershipFailClosed": "PASS"
+  },
+  "testHarnessSha256": "9020f6001e4c8f8d8002f815b87e679fb87ad390ce6913ff1725891748afa8b1",
+  "routerMutation": false,
+  "nextExactAction": "RUN_READ_ONLY_PHYSICAL_C08_BASELINE_TRANSFER_VERIFY_AND_INSTALL_C09_THEN_VALIDATE_THE_REPORTED_FUNCTIONAL_FAILURES"
+}

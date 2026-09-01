@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_CORRECTIVE_C09_AFTER_AUTHORIZED_PHYSICAL_VALIDATION",
+  "revision": "p130-c09-installed-chromium-headless-static-validation",
+  "at": "2026-09-01T08:38:00+03:00",
+  "event": "process_observability_failure",
+  "status": "FAILED_STOPPED_FIRST_ERROR",
+  "failureClass": "COMPOUND_HEADLESS_STATIC_VALIDATION_OUTPUT_ABSENT",
+  "passedBeforeFailure": {
+    "homeJavaScriptParsedByEdge": true,
+    "homeVersionElementRendered": true
+  },
+  "firstError": {
+    "operation": "Combined servers, subscriptions, shell, Python, source-identity and record validation",
+    "message": "The bounded command returned no output markers or observable completion evidence"
+  },
+  "implementationState": "C09_OVERLAY_WRITTEN_PENDING_ATOMIC_STATIC_VALIDATION",
+  "canonicalSourceMutation": false,
+  "candidateArtifactsGenerated": 0,
+  "routerMutation": false,
+  "retryPolicy": "NO_RETRY_OF_P130_COMPOUND_HEADLESS_COMMAND",
+  "nextRevision": "p131-c09-atomic-static-validation",
+  "nextExactAction": "RUN_SERVERS_SUBSCRIPTIONS_SHELL_PYTHON_SOURCE_AND_RECORD_CHECKS_AS_SEPARATE_SHORT_COMMANDS_WITH_EXPLICIT_EXIT_EVIDENCE"
+}

@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_CORRECTIVE_C09_AFTER_AUTHORIZED_PHYSICAL_VALIDATION",
+  "revision": "p141-c09-transfer-default-scp",
+  "at": "2026-09-01T09:07:00+03:00",
+  "event": "process_failure",
+  "status": "FAILED_STOPPED_FIRST_ERROR",
+  "failureClass": "KEENETIC_SFTP_SERVER_ABSENT",
+  "firstError": {
+    "command": "scp candidate.ipk root@192.168.1.1:/tmp/broray-light-r0009c09.ipk",
+    "message": "/opt/libexec/sftp-server: not found"
+  },
+  "candidateTransferred": false,
+  "packageInstallStarted": false,
+  "installedCandidateUnchanged": "0.1.0-r0009c08",
+  "routerMutation": false,
+  "retryPolicy": "NO_RETRY_OF_P141_DEFAULT_SFTP_MODE",
+  "nextRevision": "p142-c09-legacy-scp-transfer-and-hash",
+  "nextExactAction": "TRANSFER_WITH_SCP_LEGACY_PROTOCOL_OPTION_O_THEN_REQUIRE_EXACT_ROUTER_SHA256_BEFORE_INSTALL"
+}

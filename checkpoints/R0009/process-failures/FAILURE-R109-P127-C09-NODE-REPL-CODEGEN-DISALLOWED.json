@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_CORRECTIVE_C09_AFTER_AUTHORIZED_PHYSICAL_VALIDATION",
+  "revision": "p127-c09-bundled-node-static-validation",
+  "at": "2026-09-01T08:31:00+03:00",
+  "event": "process_failure",
+  "status": "FAILED_STOPPED_FIRST_ERROR",
+  "failureClass": "BUNDLED_NODE_REPL_STRING_CODE_GENERATION_DISALLOWED",
+  "firstError": {
+    "operation": "Parse overlay JavaScript with Function constructor",
+    "message": "Code generation from strings disallowed for this context"
+  },
+  "implementationState": "C09_OVERLAY_WRITTEN_PENDING_STATIC_VALIDATION",
+  "canonicalSourceMutation": false,
+  "candidateArtifactsGenerated": 0,
+  "routerMutation": false,
+  "retryPolicy": "NO_RETRY_OF_P127_REPL_CODE_GENERATION",
+  "nextRevision": "p128-c09-standalone-parser-static-validation",
+  "nextExactAction": "DISCOVER_AN_INSTALLED_STANDALONE_JAVASCRIPT_PARSER_THEN_PARSE_THE_THREE_OVERLAY_SCRIPTS_WITHOUT_CODE_GENERATION"
+}

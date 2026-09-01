@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_CORRECTIVE_C09_AFTER_AUTHORIZED_PHYSICAL_VALIDATION",
+  "revision": "p145-c09-authenticated-xray-update-check",
+  "at": "2026-09-01T09:16:00+03:00",
+  "event": "validation_failure",
+  "status": "FAILED_STOPPED_FIRST_ERROR",
+  "failureClass": "XRAY_UPDATE_CHECK_CGI_DOUBLE_RESPONSE_INVALID_JSON",
+  "firstError": {
+    "endpoint": "api/xray/update-check.cgi",
+    "method": "POST",
+    "message": "The authenticated response could not be parsed as one JSON document"
+  },
+  "rootCause": "The c09 success branch calls broray_api_success but does not exit, so execution continues into the error response block.",
+  "candidateId": "0.1.0-r0009c09",
+  "candidateReady": false,
+  "successfulBackendDispatchPreserved": true,
+  "credentialsPrintedOrWritten": false,
+  "knownOrphanedDiagnosticSession": 1,
+  "productionServerMutation": false,
+  "stablePublication": false,
+  "retryPolicy": "NO_RETRY_OR_PROMOTION_OF_C09",
+  "nextRevision": "p146-c10-xray-update-success-exit",
+  "nextExactAction": "ADD_EXIT_0_IMMEDIATELY_AFTER_BRORAY_API_SUCCESS_ADVANCE_TO_C10_THEN_REBUILD_A_B_AND_RERUN_ALL_33_ISOLATED_GATES"
+}

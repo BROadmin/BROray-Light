@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_CORRECTIVE_C09_AFTER_AUTHORIZED_PHYSICAL_VALIDATION",
+  "revision": "p134-c09-ephemeral-signing-identity",
+  "at": "2026-09-01T08:48:00+03:00",
+  "event": "process_failure",
+  "status": "FAILED_STOPPED_FIRST_ERROR",
+  "failureClass": "MINISIGN_REFUSED_EXISTING_REPOSITORY_PUBLIC_KEY",
+  "firstError": {
+    "message": "updater/release.pub already exists; use -f to overwrite",
+    "forceUsed": false
+  },
+  "privateKeyCreated": false,
+  "repositoryPublicKeyChanged": false,
+  "candidateArtifactsGenerated": 0,
+  "routerMutation": false,
+  "retryPolicy": "NO_RETRY_OF_P134_DIRECT_REPOSITORY_KEY_GENERATION",
+  "nextRevision": "p135-c09-temp-signing-identity-and-public-key-install",
+  "nextExactAction": "GENERATE_BOTH_KEY_FILES_IN_A_NEW_TEMPORARY_DIRECTORY_VERIFY_THE_PAIR_THEN_INSTALL_ONLY_THE_PUBLIC_KEY_IN_THE_REPOSITORY"
+}

@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_CORRECTIVE_C09_AFTER_AUTHORIZED_PHYSICAL_VALIDATION",
+  "revision": "p129-c09-isolated-browser-engine-syntax-validation",
+  "at": "2026-09-01T08:35:00+03:00",
+  "event": "process_failure",
+  "status": "FAILED_STOPPED_FIRST_ERROR",
+  "failureClass": "BROWSER_AUTOMATION_DOCUMENT_DOM_INJECTION_UNAVAILABLE",
+  "firstError": {
+    "operation": "Create an isolated iframe and inline script through browser evaluate",
+    "message": "document.createElement is not a function"
+  },
+  "implementationState": "C09_OVERLAY_WRITTEN_PENDING_STATIC_VALIDATION",
+  "canonicalSourceMutation": false,
+  "candidateArtifactsGenerated": 0,
+  "routerMutation": false,
+  "retryPolicy": "NO_RETRY_OF_P129_AUTOMATION_DOCUMENT_INJECTION",
+  "nextRevision": "p130-c09-installed-chromium-headless-static-validation",
+  "nextExactAction": "LOCATE_AN_INSTALLED_CHROMIUM_OR_EDGE_BINARY_AND_LOAD_LOCAL_OVERLAY_PAGES_HEADLESS_WHILE_CAPTURING_SCRIPT_PARSE_ERRORS"
+}

@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_CORRECTIVE_C09_AFTER_AUTHORIZED_PHYSICAL_VALIDATION",
+  "revision": "p143-c09-physical-package-install",
+  "at": "2026-09-01T09:12:00+03:00",
+  "status": "PASS_PENDING_FUNCTIONAL_WEB_VALIDATION",
+  "package": "broray-light 0.1.0-r0009c09",
+  "packageSha256": "3fd42d7f2681f4e9d3b2118726e9f1d64d24b9bce78dcf5631837cd208f6226f",
+  "currentTarget": "releases/0.1.0-r9",
+  "releaseId": "0.1.0-r9",
+  "services": {
+    "primaryStatusReturnCode": 0,
+    "updaterStatusReturnCode": 0,
+    "publicationStatusReturnCode": 0,
+    "publicUrl": "https://brolight.tvervip.keenetic.link/"
+  },
+  "persistence": {
+    "activeServerIdUnchanged": true,
+    "serversCountBefore": 12,
+    "serversCountAfter": 12,
+    "subscriptionsCountBefore": 1,
+    "subscriptionsCountAfter": 1,
+    "sessionFilesBefore": 2,
+    "sessionFilesAfter": 2,
+    "xraySha256Unchanged": true,
+    "configSha256Unchanged": true
+  },
+  "overlayIdentity": "PASS_6_SAMPLED_FILES_EXACT",
+  "routerMutation": "AUTHORIZED_C08_TO_C09_PACKAGE_UPGRADE",
+  "nextExactAction": "RUN_MEMORY_ONLY_AUTHENTICATED_API_VALIDATION_FOR_VERSIONS_ACTIVE_NAME_ACTIVATION_JSON_SUBSCRIPTION_NAME_AND_XRAY_UPDATE_CHECK"
+}

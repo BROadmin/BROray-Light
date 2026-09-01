@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_CORRECTIVE_C09_AFTER_AUTHORIZED_PHYSICAL_VALIDATION",
+  "revision": "p132-c09-loopback-http-static-validation",
+  "at": "2026-09-01T08:43:00+03:00",
+  "event": "process_failure",
+  "status": "FAILED_STOPPED_FIRST_ERROR",
+  "failureClass": "ASSUMED_GIT_BASH_PATH_ABSENT",
+  "passedBeforeFailure": {
+    "browserHarness": "PASS",
+    "activeServerNameRendered": "Test server",
+    "xrayVersionRendered": "26.7.28",
+    "brorayLightVersionRendered": "0.1.0-r9",
+    "browserErrors": 0,
+    "pythonSyntax": "PASS",
+    "canonicalSourceDiff": "PASS_UNCHANGED",
+    "recordsJson": "PASS"
+  },
+  "firstError": {
+    "path": "C:/Program Files/Git/bin/bash.exe",
+    "message": "The shell executable does not exist at the assumed path"
+  },
+  "candidateArtifactsGenerated": 0,
+  "routerMutation": false,
+  "retryPolicy": "NO_RETRY_OF_P132_ASSUMED_SHELL_PATH",
+  "nextRevision": "p133-c09-resolved-shell-static-validation",
+  "nextExactAction": "RESOLVE_THE_ACTUAL_GIT_OR_BUSYBOX_SHELL_PATH_THEN_RUN_ONLY_THE_TWO_PENDING_CGI_SYNTAX_CHECKS"
+}

@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_CORRECTIVE_C09_AFTER_AUTHORIZED_PHYSICAL_VALIDATION",
+  "revision": "p126-c09-package-overlay-functional-correction",
+  "at": "2026-09-01T08:29:00+03:00",
+  "event": "process_failure",
+  "status": "FAILED_STOPPED_FIRST_ERROR",
+  "failureClass": "SYSTEM_NODE_RUNTIME_NOT_IN_PATH",
+  "firstError": {
+    "command": "node --check packaging/app-overlay/web-new/assets/js/home.js",
+    "message": "The term node is not recognized"
+  },
+  "implementationState": "C09_OVERLAY_WRITTEN_PENDING_STATIC_VALIDATION",
+  "canonicalSourceMutation": false,
+  "candidateArtifactsGenerated": 0,
+  "routerMutation": false,
+  "retryPolicy": "NO_RETRY_OF_P126_DEFAULT_PATH_RUNTIME",
+  "nextRevision": "p127-c09-bundled-node-static-validation",
+  "nextExactAction": "RESOLVE_THE_CONFIGURED_CODEX_WORKSPACE_NODE_RUNTIME_THEN_RUN_THE_SAME_STATIC_CONTRACT_WITH_ITS_EXPLICIT_PATH"
+}

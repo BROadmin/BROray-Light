@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_CORRECTIVE_C09_AFTER_AUTHORIZED_PHYSICAL_VALIDATION",
+  "revision": "p128-c09-standalone-parser-static-validation",
+  "at": "2026-09-01T08:33:00+03:00",
+  "event": "process_failure",
+  "status": "FAILED_STOPPED_FIRST_ERROR",
+  "failureClass": "STANDALONE_JAVASCRIPT_PARSER_UNAVAILABLE",
+  "firstError": {
+    "searched": ["acorn", "esprima", "@babel/parser", "python-esprima", "pyjsparser", "tree_sitter"],
+    "message": "No standalone JavaScript parser is installed in the configured runtimes"
+  },
+  "implementationState": "C09_OVERLAY_WRITTEN_PENDING_STATIC_VALIDATION",
+  "canonicalSourceMutation": false,
+  "candidateArtifactsGenerated": 0,
+  "routerMutation": false,
+  "retryPolicy": "NO_RETRY_OF_P128_UNAVAILABLE_PARSER_SET",
+  "nextRevision": "p129-c09-isolated-browser-engine-syntax-validation",
+  "nextExactAction": "PARSE_EACH_OVERLAY_SCRIPT_BY_INJECTING_IT_INTO_AN_ISOLATED_ABOUT_BLANK_BROWSER_DOCUMENT_WITHOUT_NETWORK_OR_PRODUCT_AUTHENTICATION"
+}

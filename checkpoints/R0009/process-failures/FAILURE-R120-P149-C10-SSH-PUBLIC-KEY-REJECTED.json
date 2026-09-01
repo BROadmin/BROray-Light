@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_CORRECTIVE_C10_AFTER_C09_PHYSICAL_FAILURE",
+  "revision": "p149-c10-key-auth-physical-preflight",
+  "at": "2026-09-01T09:26:00+03:00",
+  "status": "FAILED_STOPPED_FIRST_ERROR",
+  "failureClass": "ROUTER_SSH_PUBLIC_KEY_REJECTED",
+  "operation": "READ_ONLY_PHYSICAL_PREFLIGHT",
+  "observed": "Permission denied (publickey,password).",
+  "routerMutation": false,
+  "candidateTransferred": false,
+  "packageInstallStarted": false,
+  "candidateReady": false,
+  "credentialsPrintedOrWritten": false,
+  "retryPolicy": "NO_RETRY_OF_P149_WITH_THE_REJECTED_PUBLIC_KEY_AUTHENTICATION_PATH",
+  "nextRevision": "p150-c10-memory-only-interactive-password-preflight",
+  "nextExactAction": "RUN_THE_SAME_READ_ONLY_PREFLIGHT_WITH_INTERACTIVE_PASSWORD_AUTHENTICATION_CONSTRUCTED_AND_SUPPLIED_ONLY_IN_MEMORY"
+}

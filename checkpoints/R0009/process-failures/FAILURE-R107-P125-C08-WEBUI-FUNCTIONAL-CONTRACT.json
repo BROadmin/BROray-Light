@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_AUTHORIZED_PHYSICAL_FUNCTIONAL_VALIDATION",
+  "revision": "p125-c08-webui-functional-contract",
+  "at": "2026-09-01T08:23:56+03:00",
+  "event": "validation_failure",
+  "status": "FAILED_STOPPED_FIRST_ERROR",
+  "failureClass": "C08_WEBUI_API_AND_PRESENTATION_CONTRACT_FAILURES",
+  "candidateId": "0.1.0-r0009c08",
+  "firstError": {
+    "endpoint": "api/servers/activate.cgi",
+    "observed": "The requested server was activated and passed the real connectivity probe, but the response body combined progress text with JSON and was not valid JSON for the browser client.",
+    "impact": "The browser rejected the successful activation response, did not refresh the server list, and presented the operation as failed."
+  },
+  "additionalConfirmedFailures": [
+    {
+      "surface": "Home active server",
+      "cause": "home.js renders servers.activeServerId instead of resolving the matching server name",
+      "observedActiveName": "NL - KEENETIC"
+    },
+    {
+      "surface": "Home Xray version",
+      "cause": "home snapshot embeds the Xray status envelope at xray.data, while home.js reads xray.version"
+    },
+    {
+      "surface": "Home BROray-Light version",
+      "cause": "home.html has no version element and home.js does not request api/broray/info.cgi"
+    },
+    {
+      "surface": "Xray update check",
+      "cause": "api/xray/update-check.cgi invokes an unsupported broray xray update-check command"
+    },
+    {
+      "surface": "BROray-Light update check",
+      "cause": "the internal candidate has no configured signed release-index URL, so the exposed control returns INDEX_VERIFY_FAILED"
+    },
+    {
+      "surface": "Subscriptions and theme",
+      "cause": "the UI hardcodes the subscription name, deletes without confirmation, and uses an incomplete simplified presentation"
+    }
+  ],
+  "routerEvidence": {
+    "activeServerId": "subscription-sub-130bddd06d26133e-600217eb115c0e82",
+    "activeServerName": "NL - KEENETIC",
+    "connectionState": true,
+    "postActivationProbeHttpStatus": 204,
+    "xrayVersion": "26.7.28",
+    "brorayLightVersion": "0.1.0-r9"
+  },
+  "safety": {
+    "productionServerMutation": false,
+    "stablePublication": false,
+    "fullBROrayMutation": false,
+    "routesMutation": false,
+    "diagnosticRouterMutation": "NETWORK_PROBE_ONLY"
+  },
+  "candidateReady": false,
+  "retryPolicy": "NO_PROMOTION_OR_HIDDEN_RETRY_OF_C08",
+  "nextRevision": "p126-c09-package-overlay-functional-correction",
+  "nextExactAction": "IMPLEMENT_C09_ONLY_AS_AN_R0009_PACKAGE_APP_OVERLAY_WITHOUT_MUTATING_CANONICAL_R0008_SRC_THEN_BUILD_INDEPENDENT_A_B_AND_RUN_FUNCTIONAL_AND_EXISTING_ACCEPTANCE_GATES"
+}

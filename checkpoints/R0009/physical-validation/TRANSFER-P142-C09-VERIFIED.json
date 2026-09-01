@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_CORRECTIVE_C09_AFTER_AUTHORIZED_PHYSICAL_VALIDATION",
+  "revision": "p142-c09-legacy-scp-transfer-and-hash",
+  "at": "2026-09-01T09:09:00+03:00",
+  "status": "PASS_READY_FOR_INSTALL",
+  "candidateId": "0.1.0-r0009c09",
+  "routerPath": "/tmp/broray-light-r0009c09.ipk",
+  "sizeBytes": 12785932,
+  "sha256": "3fd42d7f2681f4e9d3b2118726e9f1d64d24b9bce78dcf5631837cd208f6226f",
+  "identityMatchesBuildA": true,
+  "packageInstallStarted": false,
+  "routerMutation": "TEMPORARY_VERIFIED_CANDIDATE_COPY_ONLY",
+  "nextExactAction": "RUN_ONE_OPKG_INSTALL_OF_THE_VERIFIED_C09_IPK"
+}

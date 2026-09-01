@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_CORRECTIVE_C09_AFTER_AUTHORIZED_PHYSICAL_VALIDATION",
+  "revision": "p144-c09-authenticated-functional-validation",
+  "at": "2026-09-01T09:15:00+03:00",
+  "status": "PASS_BEFORE_NEXT_GATE",
+  "candidateId": "0.1.0-r0009c09",
+  "httpStatuses": {
+    "login": 200,
+    "homeSummary": 200,
+    "brorayInfo": 200,
+    "serversSummary": 200,
+    "activation": 200,
+    "xrayStatus": 200,
+    "logout": 200,
+    "postLogoutSession": 401
+  },
+  "activation": {
+    "responseValidJson": true,
+    "activeServerName": "NL - KEENETIC",
+    "connectionState": true,
+    "postActivationConnectivity": "PASS"
+  },
+  "versions": {
+    "xray": "26.7.28",
+    "brorayLight": "0.1.0-r9"
+  },
+  "credentialsPrintedOrWritten": false,
+  "routerMutation": "AUTHORIZED_REACTIVATION_OF_ALREADY_ACTIVE_SERVER",
+  "nextExactAction": "RUN_AUTHENTICATED_XRAY_UPDATE_CHECK_GATE"
+}

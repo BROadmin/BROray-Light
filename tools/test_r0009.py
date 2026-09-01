@@ -16,7 +16,7 @@ import tempfile
 from pathlib import Path, PurePosixPath
 
 RELEASE_ID = "0.1.0-r9"
-CANDIDATE_ID = "0.1.0-r0009c08"
+CANDIDATE_ID = "0.1.0-r0009c10"
 XRAY_SHA256 = "4b8af237444801bf17b3dc10a1c5c24581fbe3d433eba3d78c6c3a0da1df56fc"
 
 
@@ -397,6 +397,52 @@ def main() -> int:
     if sha256(runtime) != XRAY_SHA256 or not (app_root / "current").exists():
         raise RuntimeError("clean install contract failed")
     gates["isolatedCleanInstall"] = "PASS"
+    overlay_root = Path(__file__).resolve().parents[1] / "packaging/app-overlay"
+    installed_app = app_root / "current/app"
+    overlay_files = sorted(path for path in overlay_root.rglob("*") if path.is_file())
+    if len(overlay_files) != 9:
+        raise RuntimeError(f"unexpected corrective overlay file count: {len(overlay_files)}")
+    for overlay_file in overlay_files:
+        installed_file = installed_app / overlay_file.relative_to(overlay_root)
+        if not installed_file.is_file() or installed_file.read_bytes() != overlay_file.read_bytes():
+            raise RuntimeError(f"corrective app overlay mismatch: {overlay_file.relative_to(overlay_root)}")
+    gates["correctiveOverlayExactInstall"] = "PASS"
+
+    activation_api = (installed_app / "web-new/api/servers/activate.cgi").read_text(encoding="utf-8")
+    if 'broray_server_activate "$activate_id" >/dev/null' not in activation_api or \
+       'broray_server_details "$activate_id"' not in activation_api:
+        raise RuntimeError("activation API does not enforce a JSON-only success response")
+    gates["activationApiJsonOnly"] = "PASS"
+
+    home_js = (installed_app / "web-new/assets/js/home.js").read_text(encoding="utf-8")
+    home_html = (installed_app / "web-new/home.html").read_text(encoding="utf-8")
+    if "activeServer(d.servers)" not in home_js or "server?.name" not in home_js:
+        raise RuntimeError("Home does not resolve the active server name")
+    if "unwrap(d.xray)" not in home_js or "api/broray/info.cgi" not in home_js:
+        raise RuntimeError("Home does not normalize the Xray envelope and request Light info")
+    if 'id="xrayVersion"' not in home_html or 'id="lightVersion"' not in home_html:
+        raise RuntimeError("Home version presentation elements are absent")
+    gates["homeIdentityPresentationContract"] = "PASS"
+
+    subscriptions_js = (installed_app / "web-new/assets/js/subscriptions.js").read_text(encoding="utf-8")
+    subscriptions_html = (installed_app / "web-new/subscriptions.html").read_text(encoding="utf-8")
+    if 'id="subName"' not in subscriptions_html or "JSON.stringify({name,url,updateImmediately:true})" not in subscriptions_js:
+        raise RuntimeError("subscription custom-name contract is absent")
+    if "confirm('Удалить подписку" not in subscriptions_js:
+        raise RuntimeError("subscription deletion confirmation is absent")
+    gates["subscriptionNameAndDeleteConfirmation"] = "PASS"
+
+    xray_update_check = (installed_app / "web-new/api/xray/update-check.cgi").read_text(encoding="utf-8")
+    if "broray_xray_update_check" not in xray_update_check or '"$BRORAY" xray update-check' in xray_update_check:
+        raise RuntimeError("Xray update check still uses the unsupported CLI dispatch")
+    if 'broray_api_success "$(cat "$output")"\n    exit 0' not in xray_update_check:
+        raise RuntimeError("Xray update check success branch does not terminate before the error response")
+    gates["xrayUpdateCheckBackend"] = "PASS"
+
+    theme_css = (installed_app / "web-new/assets/css/allpage.css").read_text(encoding="utf-8")
+    if "--brand-hi" not in theme_css or ".server-card.is-active" not in theme_css or ".toast-root" not in theme_css:
+        raise RuntimeError("corrective BROray-Light theme contract is incomplete")
+    gates["themePresentationContract"] = "PASS"
     runtime_before = sha256(runtime)
     run([dash, posix(control_root / "postinst")], env=env)
     if sha256(runtime) != runtime_before:

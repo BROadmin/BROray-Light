@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0009_CORRECTIVE_C09_AFTER_AUTHORIZED_PHYSICAL_VALIDATION",
+  "revision": "p131-c09-atomic-static-validation",
+  "at": "2026-09-01T08:40:00+03:00",
+  "event": "process_failure",
+  "status": "FAILED_STOPPED_FIRST_ERROR",
+  "failureClass": "EDGE_FILE_PAGE_API_FETCH_DID_NOT_TERMINATE",
+  "firstError": {
+    "page": "packaging/app-overlay/web-new/servers.html",
+    "observationSeconds": 20,
+    "message": "Headless Edge emitted no DOM or completion marker while the file page attempted its relative API fetch"
+  },
+  "processStoppedByObserver": true,
+  "implementationState": "C09_OVERLAY_WRITTEN_PENDING_ATOMIC_STATIC_VALIDATION",
+  "canonicalSourceMutation": false,
+  "candidateArtifactsGenerated": 0,
+  "routerMutation": false,
+  "retryPolicy": "NO_RETRY_OF_P131_FILE_SCHEME_PAGE",
+  "nextRevision": "p132-c09-loopback-http-static-validation",
+  "nextExactAction": "SERVE_THE_OVERLAY_FROM_A_TEMPORARY_LOOPBACK_HTTP_SERVER_RUN_EACH_HEADLESS_PAGE_WITH_BOUNDED_VIRTUAL_TIME_THEN_STOP_ONLY_THAT_SERVER_PROCESS"
+}
