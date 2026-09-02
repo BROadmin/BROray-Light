@@ -4,25 +4,27 @@ This repository contains a separate lightweight product for Keenetic/KeeneticOS.
 
 ## Current authorized task
 
-Work only on stage `R0011` in the already active branch `codex/r0009-updater-package`:
+Work only on stage `R0012` in the already active branch `codex/r0009-updater-package`:
 
-`PUBLISH_RUSSIAN_GUIDE_AND_WEBUI_HOME_DOCUMENTATION_STABLE_1.0.0_R2`
+`RELOCATE_RUSSIAN_DOCUMENTATION_AND_REMOVE_EMBEDDED_WEBUI_GUIDE_STABLE_1.0.0_R3`
 
 Read these files before changing code:
 
 1. `docs/CODEX-HANDOFF.md`
-2. `docs/CODEX-R0011.md`
-3. `docs/CODEX-R0010.md`
-4. `docs/CODEX-R0009.md`
-5. `project/IMPLEMENTATION-STATE.json`
-6. `project/INVARIANTS.json`
-7. `project/R0011-STATE.json`
-8. `project/R0010-STATE.json`
-9. `project/R0009-STATE.json`
-10. `project/WORKLOG.jsonl`
-11. `checkpoints/R0010/CHECKPOINT.json`
+2. `docs/CODEX-R0012.md`
+3. `docs/CODEX-R0011.md`
+4. `docs/CODEX-R0010.md`
+5. `docs/CODEX-R0009.md`
+6. `project/IMPLEMENTATION-STATE.json`
+7. `project/INVARIANTS.json`
+8. `project/R0012-STATE.json`
+9. `project/R0011-STATE.json`
+10. `project/R0010-STATE.json`
+11. `project/R0009-STATE.json`
+12. `project/WORKLOG.jsonl`
+13. `checkpoints/R0012/START-P1.json`
 
-R0011 is explicitly authorized to publish the complete Russian instruction on GitHub and in the live Home WebUI, issue immutable Stable `1.0.0-r2`, and validate it on the already authorized physical test router. It is not authorized to overwrite `1.0.0-r1`, modify `BROadmin/BROray`, mutate a production server, or introduce excluded full-product features.
+R0012 corrects the user-rejected R0011 placement: the complete Russian instruction belongs on the `BROadmin/BROray-Light` GitHub landing page and in a distinct section on `docs.brovibe.cloud`, not inside the application WebUI. It is authorized to issue immutable Stable `1.0.0-r3`, validate it on the already authorized physical test router, and change only the documentation-site files under `BROadmin/BROray/site/docs.brovibe.cloud/` needed by the existing automatic publisher. It must not overwrite earlier releases, change the docs homepage content, change the production server, modify full-BROray application code, or introduce excluded full-product features.
 
 ## R0011 documentation release rules
 

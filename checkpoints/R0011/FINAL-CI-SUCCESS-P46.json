@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0011",
+  "revision": "p46-responsive-fix-commit-and-final-ci-build",
+  "status": "PASS",
+  "at": "2026-09-02T19:24:38.9482599+03:00",
+  "releaseSourceCommit": "6d44c164f3ce7e99195a806f0a191bd66d3b8ed2",
+  "githubActions": {
+    "runId": 33654618632,
+    "jobId": 100329945229,
+    "status": "completed",
+    "conclusion": "success",
+    "allStepsPassed": true,
+    "url": "https://github.com/BROadmin/BROray-Light/actions/runs/33654618632"
+  },
+  "validated": {
+    "documentationSource": "PASS",
+    "pinnedPublicInputs": "PASS",
+    "buildA": "PASS",
+    "buildB": "PASS",
+    "reproducibility": "PASS",
+    "isolatedAcceptance": "PASS",
+    "nonSecretReceipt": "PASS",
+    "artifactUpload": "PASS"
+  },
+  "workflowArtifact": {
+    "id": 9856190641,
+    "name": "broray-light-r0011-6d44c164f3ce7e99195a806f0a191bd66d3b8ed2",
+    "sizeBytes": 13113866,
+    "archiveSha256": "70b69eba95cadcf14878b3f4ac0413013a6c46e0e10d403c78e1df7016cd7871",
+    "expired": false
+  },
+  "supersedesWorkflowArtifactId": 9854583266,
+  "tagCreated": false,
+  "publicReleasePublished": false,
+  "routerChanged": false,
+  "nextRevision": "p47-final-ci-artifact-independent-audit",
+  "nextExactAction": "DOWNLOAD_AND_INDEPENDENTLY_VERIFY_THE_FINAL_CI_ARTIFACT_THEN_REPEAT_ARTIFACT_VISUAL_GEOMETRY_BEFORE_TAGGING"
+}

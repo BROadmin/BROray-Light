@@ -2,7 +2,7 @@
 
 Лёгкая отдельная редакция BROray для маршрутизаторов Keenetic: только VLESS, понятный WebUI и безопасное управление Xray без функций маршрутизации полного BROray.
 
-[Последний Stable-релиз](https://github.com/BROadmin/BROray-Light/releases/latest) · [Сообщить об ошибке](https://github.com/BROadmin/BROray-Light/issues) · [Поддержка в Telegram](https://t.me/BROvibe_vpn)
+[Документация](https://docs.brovibe.cloud/broray/#broray-light) · [Последний Stable-релиз](https://github.com/BROadmin/BROray-Light/releases/latest) · [Сообщить об ошибке](https://github.com/BROadmin/BROray-Light/issues) · [Поддержка в Telegram](https://t.me/BROvibe_vpn)
 
 ## Содержание
 
@@ -62,16 +62,16 @@ test ! -e /opt/broray && test ! -e /opt/etc/init.d/S24broray && echo "Конфл
 
 ## Установка
 
-Ниже приведена установка Stable `1.0.0-r2`. Выполняйте команды в SSH-сессии Keenetic от `root`.
+Ниже приведена установка Stable `1.0.0-r3`. Выполняйте команды в SSH-сессии Keenetic от `root`.
 
 ```sh
 opkg update
 cd /tmp
-curl -fL https://github.com/BROadmin/BROray-Light/releases/download/v1.0.0-r2/SHA256SUMS -o BROray-Light-SHA256SUMS
-curl -fL https://github.com/BROadmin/BROray-Light/releases/download/v1.0.0-r2/broray-light-install-1.0.0-r2.sh -o broray-light-install-1.0.0-r2.sh
-grep 'broray-light-install-1.0.0-r2.sh$' BROray-Light-SHA256SUMS | sha256sum -c -
-chmod 700 broray-light-install-1.0.0-r2.sh
-/opt/bin/ash ./broray-light-install-1.0.0-r2.sh
+curl -fL https://github.com/BROadmin/BROray-Light/releases/download/v1.0.0-r3/SHA256SUMS -o BROray-Light-SHA256SUMS
+curl -fL https://github.com/BROadmin/BROray-Light/releases/download/v1.0.0-r3/broray-light-install-1.0.0-r3.sh -o broray-light-install-1.0.0-r3.sh
+grep 'broray-light-install-1.0.0-r3.sh$' BROray-Light-SHA256SUMS | sha256sum -c -
+chmod 700 broray-light-install-1.0.0-r3.sh
+/opt/bin/ash ./broray-light-install-1.0.0-r3.sh
 ```
 
 Установщик:

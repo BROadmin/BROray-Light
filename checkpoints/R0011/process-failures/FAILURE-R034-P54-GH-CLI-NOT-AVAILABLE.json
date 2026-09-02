@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0011",
+  "revision": "p54-current-state-read-only-audit",
+  "failureId": "R034",
+  "status": "FAIL_FIRST_ERROR_PRESERVED_LOCAL_TOOL_AVAILABILITY",
+  "at": "2026-09-02T19:45:39.2160883+03:00",
+  "operation": "READ_CURRENT_DRAFT_RELEASE_WITH_GITHUB_CLI",
+  "firstError": "The gh executable is not available in the current PowerShell PATH.",
+  "compoundCommandReadOnlyContinuation": {
+    "remoteTagAuditCompleted": true,
+    "remoteTagObject": "599372219f6e162085ef42b8b9074adba34e5f47",
+    "remoteTagPeeledCommit": "6d44c164f3ce7e99195a806f0a191bd66d3b8ed2",
+    "routerPackageAuditCompleted": true,
+    "routerPackageVersion": "1.0.0-r1",
+    "mutationPerformed": false
+  },
+  "lastVerifiedDraftCheckpoint": "checkpoints/R0011/DRAFT-RELEASE-P51.json",
+  "publicReleasePublished": false,
+  "routerChanged": false,
+  "hiddenRetryPerformed": false,
+  "nextRevision": "p55-streaming-draft-asset-audit-with-existing-rest-client",
+  "nextExactAction": "USE_THE_ALREADY_VALIDATED_AUTHENTICATED_REST_DOWNLOAD_PATH_AND_A_STREAMING_FILE_COMPARATOR_WITHOUT_DEPENDING_ON_GH_CLI"
+}

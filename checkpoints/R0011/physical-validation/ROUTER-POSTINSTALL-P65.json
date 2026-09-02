@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0011",
+  "revision": "p65-router-postinstall-user-persistence-and-health-audit",
+  "status": "PASS",
+  "at": "2026-09-02T22:26:08.3184414+03:00",
+  "router": "192.168.1.1",
+  "install": {
+    "installerAttempts": 1,
+    "installerExitCode": 0,
+    "installerRetried": false,
+    "packageVersion": "1.0.0-r2",
+    "currentTarget": "releases/1.0.0-r2",
+    "managedVersionMarker": "1.0.0-r2",
+    "publicPackageSha256": "aab765609dd5fe9e266e680e4d8a1ccf7db6880702ef07aa7996b98b05393c87"
+  },
+  "application": {
+    "manifestSha256": "797e3113a742e4330b807342bd2cd2687dc10e895e34a6b5ca8fba0d2c5033c9",
+    "manifestValidation": "PASS",
+    "primaryService": "PASS",
+    "updaterService": "PASS"
+  },
+  "xray": {
+    "version": "26.7.28",
+    "sha256": "4b8af237444801bf17b3dc10a1c5c24581fbe3d433eba3d78c6c3a0da1df56fc",
+    "unchangedFromP59": true
+  },
+  "persistence": {
+    "managedVersionMarkerExcludedFromUserData": true,
+    "userFiles": 18,
+    "beforeSha256": "a971f6b641305432b0ff198d3636077856cf4136df065298b735f6d850c03180",
+    "afterSha256": "a971f6b641305432b0ff198d3636077856cf4136df065298b735f6d850c03180",
+    "unchanged": true,
+    "filesAdded": 0,
+    "filesRemoved": 0,
+    "filesChanged": 0
+  },
+  "webAssets": {
+    "homeHtmlSha256": "3140b8a619b05e58d10dd8707ddf597bb43fa69e7235101a8c11fa271cd588ea",
+    "allpageCssSha256": "1a1d31fe9e5be1330e6eeba6e1457b0807a8166a849ebc781f4bd8ac42a18bdb",
+    "homeJsSha256": "b556cb6f0ef90a7d4f9c46a14ddf3b68251620f8ba0d56a97a0f3a137f41a680",
+    "matchReleaseSource": true
+  },
+  "webAndAuthentication": {
+    "publicRootHttpStatus": 200,
+    "protectedApiHttpStatus": 401,
+    "nativeSessionProtection": "PASS"
+  },
+  "stableCheck": {
+    "ok": true,
+    "installedReleaseId": "1.0.0-r2",
+    "availableReleaseId": "1.0.0-r2",
+    "relation": "equal",
+    "updateAvailable": false,
+    "sameVersionPolicy": "NO_OP_SUCCESS"
+  },
+  "fullBrorayOwnershipAbsent": true,
+  "publicReleasePublished": true,
+  "candidateReady": false,
+  "nextRevision": "p66-router-equal-update-no-op",
+  "nextExactAction": "CAPTURE_R2_SLOT_XRAY_AND_USER_PERSISTENCE_HASHES_RUN_THE_STABLE_EQUAL_VERSION_UPDATE_COMMAND_AND_REQUIRE_AN_EXACT_NO_OP_WITH_ALL_HASHES_UNCHANGED"
+}

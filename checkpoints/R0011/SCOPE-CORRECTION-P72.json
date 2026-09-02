@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "checkpointId": "R0011-SCOPE-CORRECTION-P72",
+  "stage": "R0011_RUSSIAN_DOCUMENTATION",
+  "revision": "p72-docs-site-and-github-root-scope-correction",
+  "recordedAt": "2026-09-02T22:49:22.9805181+03:00",
+  "status": "PASS_SCOPE_CORRECTED_BEFORE_NEW_CHANGES",
+  "workingBranch": "codex/r0009-updater-package",
+  "head": "6d44c164f3ce7e99195a806f0a191bd66d3b8ed2",
+  "userCorrection": {
+    "docsSite": "Create a separate BROray-Light section/page on docs.brovibe.cloud; do not add a BROray-Light content card or guide section to the docs homepage.",
+    "github": "Publish the complete Russian guide in README.md of the BROadmin/BROray-Light default branch so it is visible on the repository root page.",
+    "webui": "Remove the previously added long-form guide from the BROray-Light application WebUI.",
+    "productFunctionality": "Do not change application behavior while correcting documentation placement."
+  },
+  "discovery": {
+    "docsSiteSourceRepository": "BROadmin/BROray",
+    "docsSiteSourcePath": "site/docs.brovibe.cloud",
+    "permittedMutationBoundary": "Documentation-site files only; no full BROray application, package, route, DNS, updater, or release logic changes.",
+    "plannedPublicPath": "https://docs.brovibe.cloud/broray-light/",
+    "docsHomepageContentCardPlanned": false
+  },
+  "supersedes": {
+    "authorizedTask": "ADD_FULL_RUSSIAN_DOCUMENTATION_TO_GITHUB_AND_WEBUI_HOME",
+    "webuiGuideAcceptance": true
+  },
+  "firstErrorPolicy": "Any material failure after this checkpoint is recorded as a separate JSON before a corrected revision is attempted.",
+  "candidateReady": false,
+  "nextRevision": "p73-source-and-publication-contract-audit",
+  "nextExactAction": "AUDIT_THE_EXACT_DOCS_SITE_PUBLICATION_CONTRACT_DEFAULT_BRANCH_README_AND_MINIMAL_WEBUI_GUIDE_REVERT_BEFORE_EDITING"
+}

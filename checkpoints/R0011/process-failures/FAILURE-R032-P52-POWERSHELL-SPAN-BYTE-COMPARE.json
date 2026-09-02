@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0011",
+  "revision": "p52-draft-asset-download-byte-audit",
+  "failureId": "R032",
+  "status": "FAIL_FIRST_ERROR_PRESERVED_VALIDATION_IMPLEMENTATION",
+  "at": "2026-09-02T19:39:15.5037146+03:00",
+  "operation": "DOWNLOAD_AND_SEQUENCE_COMPARE_DRAFT_RELEASE_ASSETS",
+  "firstError": "PowerShell cannot convert byte arrays to the byref-like ReadOnlySpan<byte> arguments required by MemoryExtensions.SequenceEqual.",
+  "partialState": {
+    "draftReleaseUnchanged": true,
+    "downloadDirectoryCreated": true,
+    "downloadedAsset": "broray-light-app-1.0.0-r2.tar.gz",
+    "downloadedSizeBytes": 161023,
+    "comparisonNotCompleted": true
+  },
+  "publicReleasePublished": false,
+  "routerChanged": false,
+  "hiddenRetryPerformed": false,
+  "nextRevision": "p53-streaming-file-byte-comparison",
+  "nextExactAction": "VERIFY_THE_ALREADY_DOWNLOADED_ASSET_AND_DOWNLOAD_THE_REMAINING_SEVEN_USING_A_STREAMING_FILE_COMPARISON_THAT_DOES_NOT_REQUIRE_BYREF_LIKE_POWERSHELL_TYPES"
+}

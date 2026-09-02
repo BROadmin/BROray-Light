@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0011",
+  "revision": "p71-supported-startup-config-route-audit-and-cleanup",
+  "status": "PASS",
+  "at": "2026-09-02T22:37:24.1093312+03:00",
+  "router": "192.168.1.1",
+  "installed": {
+    "packageVersion": "1.0.0-r2",
+    "currentTarget": "releases/1.0.0-r2",
+    "primaryService": "PASS",
+    "updaterService": "PASS"
+  },
+  "routes": {
+    "runningConfigCommand": "show running-config",
+    "startupConfigCommand": "more startup-config",
+    "runningRoutesViaProxy0": 0,
+    "startupRoutesViaProxy0": 0,
+    "status": "PASS"
+  },
+  "webPublication": {
+    "url": "https://brolight.tvervip.keenetic.link/",
+    "status": "PASS"
+  },
+  "cleanup": {
+    "targetsVerifiedByExactSha256BeforeRemoval": true,
+    "temporaryInputDirectory": "/tmp/broray-light-r0011-p61-input",
+    "temporaryInputDirectoryRemoved": true,
+    "verifiedPackageTarget": "/tmp/broray-light-r0011-p62-verified.ipk",
+    "verifiedPackageTargetRemoved": true,
+    "persistentBackupRetained": true
+  },
+  "fullBrorayMutationPerformed": false,
+  "productionServerMutationPerformed": false,
+  "publicReleasePublished": true,
+  "candidateReady": false,
+  "nextRevision": "p72-authenticated-live-webui-and-guide-audit-after-confirmation",
+  "nextExactAction": "AFTER_ACTION_TIME_USER_CONFIRMATION_ENTER_THE_PREVIOUSLY_SUPPLIED_CREDENTIALS_ONLY_IN_THE_BROLIGHT_LOGIN_FORM_AND_COMPLETE_THE_LIVE_R2_WEBUI_AUDIT"
+}

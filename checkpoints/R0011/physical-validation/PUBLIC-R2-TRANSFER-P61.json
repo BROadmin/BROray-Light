@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0011",
+  "revision": "p61-transfer-exact-public-r2-inputs",
+  "status": "PASS",
+  "at": "2026-09-02T22:18:36.2128384+03:00",
+  "router": "192.168.1.1",
+  "source": "unauthenticated public GitHub release downloads verified in p58",
+  "protocol": "legacy SCP forced with -O",
+  "remoteDirectory": "/tmp/broray-light-r0011-p61-input",
+  "inputs": [
+    {
+      "name": "broray-light-install-1.0.0-r2.sh",
+      "sizeBytes": 1851,
+      "sha256": "18d55763310bd494b7e3e079e9e51093c8d779d533025fa443752d34afb4ef3a",
+      "remoteVerified": true
+    },
+    {
+      "name": "broray-light_1.0.0-r2_aarch64-3.10.ipk",
+      "sizeBytes": 12812196,
+      "sha256": "aab765609dd5fe9e266e680e4d8a1ccf7db6880702ef07aa7996b98b05393c87",
+      "remoteVerified": true
+    }
+  ],
+  "installerExecuted": false,
+  "persistentStateMutated": false,
+  "temporaryRouterInputsCreated": true,
+  "nextRevision": "p62-exact-public-r2-router-install",
+  "nextExactAction": "EXECUTE_THE_VERIFIED_PUBLIC_INSTALLER_WITH_THE_VERIFIED_LOCAL_PACKAGE_INPUT_STOP_AT_ITS_FIRST_ERROR_OR_SUCCESS_THEN_AUDIT_PACKAGE_SLOT_SERVICES_XRAY_AND_PERSISTENCE"
+}

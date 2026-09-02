@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0011",
+  "revision": "p60-fresh-router-persistence-backup",
+  "status": "PASS",
+  "at": "2026-09-02T22:17:09.4957760+03:00",
+  "router": "192.168.1.1",
+  "protocol": "legacy SCP forced with -O",
+  "sources": [
+    "/opt/broray-light/config",
+    "/opt/broray-light/servers",
+    "/opt/broray-light/subscriptions",
+    "/opt/var/lib/broray-light",
+    "/opt/var/lib/broray-light-updater"
+  ],
+  "backup": {
+    "storageClass": "external local temporary directory outside repository",
+    "directoryName": "broray-light-r0011-router-backup-p60-5337679102f44f6abf843203b442ac16",
+    "sourceCount": 5,
+    "topLevelDirectoryCount": 5,
+    "fileCount": 21,
+    "logicalBytes": 15756,
+    "manifestSha256": "550e3358891a0fc159e408371379541662b3227a7d7e1f34b970510ebb0578b2"
+  },
+  "persistence": {
+    "files": 19,
+    "aggregateSha256": "adc446f6db7dcc32cb27c5e11dc51a76201d84350c1b57284110de6a3d27eec6",
+    "matchesP59": true
+  },
+  "containsUserPersistentState": true,
+  "committedToRepository": false,
+  "routerPersistentStateMutated": false,
+  "nextRevision": "p61-transfer-exact-public-r2-inputs",
+  "nextExactAction": "TRANSFER_THE_EXACT_PUBLIC_INSTALLER_AND_R2_IPK_TO_A_NEW_ROUTER_TEMP_DIRECTORY_AND_VERIFY_REMOTE_SIZE_AND_SHA256_BEFORE_EXECUTION"
+}

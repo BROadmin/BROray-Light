@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0011",
+  "revision": "p56-publish-and-public-release-audit",
+  "status": "PASS_PUBLICATION_PUBLIC_BYTE_AUDIT_REQUIRED",
+  "at": "2026-09-02T22:10:10.9179208+03:00",
+  "releaseId": 381418161,
+  "tag": "v1.0.0-r2",
+  "targetCommitish": "6d44c164f3ce7e99195a806f0a191bd66d3b8ed2",
+  "draft": false,
+  "prerelease": false,
+  "latest": true,
+  "assetCount": 8,
+  "publishedAt": "2026-09-02T19:10:02Z",
+  "htmlUrl": "https://github.com/BROadmin/BROray-Light/releases/tag/v1.0.0-r2",
+  "unauthenticatedLatestApi": "PASS",
+  "credentialValuePrinted": false,
+  "publicReleasePublished": true,
+  "routerChanged": false,
+  "nextRevision": "p57-public-release-asset-byte-audit",
+  "nextExactAction": "DOWNLOAD_ALL_EIGHT_ASSETS_THROUGH_UNAUTHENTICATED_PUBLIC_URLS_COMPARE_EVERY_BYTE_AND_VERIFY_RELEASE_SIGNATURE"
+}

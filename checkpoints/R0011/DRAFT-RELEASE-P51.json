@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0011",
+  "revision": "p51-create-draft-release-and-upload-assets",
+  "status": "PASS",
+  "at": "2026-09-02T19:37:25.6487245+03:00",
+  "releaseId": 381418161,
+  "tag": "v1.0.0-r2",
+  "targetCommitish": "6d44c164f3ce7e99195a806f0a191bd66d3b8ed2",
+  "draft": true,
+  "prerelease": false,
+  "makeLatest": false,
+  "assetCount": 8,
+  "assets": [
+    {"id":541457339,"name":"broray-light-app-1.0.0-r2.tar.gz","sizeBytes":161023,"sha256":"63e51282796f13a875c990fa6b0b527256fbfc829ea0ba313a83bad08441fffe","state":"uploaded"},
+    {"id":541457429,"name":"broray-light-install-1.0.0-r2.sh","sizeBytes":1851,"sha256":"18d55763310bd494b7e3e079e9e51093c8d779d533025fa443752d34afb4ef3a","state":"uploaded"},
+    {"id":541457357,"name":"broray-light-updater-platform-5-light1.tar.gz","sizeBytes":131458,"sha256":"cab97b6efd11a249cada2c7ceff540f732493ea11163fa5377b083ae450723ca","state":"uploaded"},
+    {"id":541457386,"name":"broray-light_1.0.0-r2_aarch64-3.10.ipk","sizeBytes":12812196,"sha256":"aab765609dd5fe9e266e680e4d8a1ccf7db6880702ef07aa7996b98b05393c87","state":"uploaded"},
+    {"id":541457468,"name":"RELEASE-MANIFEST.json","sizeBytes":3265,"sha256":"a97fd11a86516999181270a1119abd57ed081592b7827e7bbf0d157a6200bc29","state":"uploaded"},
+    {"id":541457447,"name":"release.json","sizeBytes":576,"sha256":"4ed74567ed8e5a767c61e6171ab0b52b0086c1fe431b8fcecd9fdcce3cafb001","state":"uploaded"},
+    {"id":541457462,"name":"release.json.minisig","sizeBytes":265,"sha256":"5c791bcc9d78750d1f873ca2119f38dc51f21a039b296b1570822de311aa4191","state":"uploaded"},
+    {"id":541457479,"name":"SHA256SUMS","sizeBytes":669,"sha256":"3f2e21fdb9ba16a8710a7c2c921600dd4f4a77a5c10fc5c774c40b40db490dbe","state":"uploaded"}
+  ],
+  "githubDigestMatchesLocal": 8,
+  "credentialValuePrinted": false,
+  "publicReleasePublished": false,
+  "routerChanged": false,
+  "nextRevision": "p52-draft-asset-download-byte-audit",
+  "nextExactAction": "DOWNLOAD_EACH_DRAFT_ASSET_THROUGH_THE_AUTHENTICATED_ASSET_API_COMPARE_ALL_BYTES_AND_VERIFY_SIGNATURE_BEFORE_PUBLISHING"
+}

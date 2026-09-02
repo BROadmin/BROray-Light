@@ -7,133 +7,26 @@
   <meta http-equiv="Pragma" content="no-cache">
   <title>BROray-Light — Главная</title>
   <link rel="icon" href="assets/images/branding/favicon.ico">
-  <link rel="stylesheet" href="assets/css/allpage.css?v=1.0.0-r2-r0011">
-  <script defer src="assets/js/common.js?v=1.0.0-r2-r0011"></script>
-  <script defer src="assets/js/app-shell.js?v=1.0.0-r2-r0011"></script>
-  <script defer src="assets/js/home.js?v=1.0.0-r2-r0011"></script>
+  <link rel="stylesheet" href="assets/css/allpage.css?v=1.0.0-r3-r0012">
+  <script defer src="assets/js/common.js?v=1.0.0-r3-r0012"></script>
+  <script defer src="assets/js/app-shell.js?v=1.0.0-r3-r0012"></script>
+  <script defer src="assets/js/home.js?v=1.0.0-r3-r0012"></script>
 </head>
 <body>
   <header class="app-header">
     <div class="brand"><img src="assets/images/branding/broray-logo-64.png" alt=""><div><div class="eyebrow">VLESS для Keenetic</div><h1>BROray-Light</h1></div></div>
     <div class="header-state"><span class="status-dot"></span><span id="headerConnection">Проверка…</span></div>
   </header>
-  <nav aria-label="Основная навигация"><a href="home.html?v=1.0.0-r2">Главная</a><a href="servers.html?v=1.0.0-r2">Серверы</a><a href="subscriptions.html?v=1.0.0-r2">Подписки</a></nav>
+  <nav aria-label="Основная навигация"><a href="home.html?v=1.0.0-r3">Главная</a><a href="servers.html?v=1.0.0-r3">Серверы</a><a href="subscriptions.html?v=1.0.0-r3">Подписки</a></nav>
   <main>
     <div id="homeError" class="notice notice-error" hidden></div>
     <div class="grid dashboard-grid">
       <section class="card card-accent"><div class="card-label">Активный сервер</div><div id="activeServer" class="status status-large">—</div><div id="activeServerId" class="muted mono"></div><div id="connection" class="status-line">—</div></section>
-      <section class="card"><div class="card-label">Автопереключение</div><div id="failover" class="status">—</div><div id="failoverDetail" class="muted detail-text">Проверка состояния…</div><a class="text-link" href="servers.html?v=1.0.0-r2">Настроить порядок серверов →</a></section>
+      <section class="card"><div class="card-label">Автопереключение</div><div id="failover" class="status">—</div><div id="failoverDetail" class="muted detail-text">Проверка состояния…</div><a class="text-link" href="servers.html?v=1.0.0-r3">Настроить порядок серверов →</a></section>
       <section class="card"><div class="card-label">Keenetic</div><div class="keenetic-summary-row"><div class="keenetic-interface"><span class="keenetic-interface-label">Интерфейс</span><strong id="keeneticInterfaceName">—</strong></div><span id="keeneticState" class="interface-status-badge is-pending">Проверка…</span></div><div id="keeneticDetail" class="muted detail-text">Проверка интерфейса…</div><div class="row actions"><button id="keeneticCreateButton" onclick="keeneticAction('create')">Настроить</button><button id="keeneticRepairButton" class="secondary" onclick="keeneticAction('repair')">Исправить</button><button class="secondary" onclick="refreshHome()">Обновить статус</button></div></section>
       <section class="card"><div class="card-label">Xray</div><div class="version-row"><span class="version-prefix">Версия</span><strong id="xrayVersion">—</strong></div><div id="xrayState" class="muted">—</div><div id="xrayUpdate" class="muted detail-text">Нажмите «Проверить обновление».</div><div class="row actions"><button class="secondary" onclick="xrayCheck()">Проверить обновление</button><button id="xrayInstallButton" onclick="xrayInstall()" disabled>Установить</button></div></section>
       <section class="card"><div class="card-label">BROray-Light</div><div class="version-row"><span class="version-prefix">Версия</span><strong id="lightVersion">—</strong></div><div id="lightChannel" class="muted">Загрузка Stable-канала…</div><div id="lightUpdate" class="muted detail-text">Нажмите «Проверить обновление».</div><div class="row actions"><button class="secondary" onclick="lightCheck()">Проверить обновление</button><button id="lightInstallButton" onclick="lightInstall()" disabled>Обновить</button></div></section>
     </div>
-    <section class="card guide-card" aria-labelledby="guideTitle">
-      <div class="guide-header">
-        <div>
-          <div class="card-label">Инструкция</div>
-          <h2 id="guideTitle">Как пользоваться BROray-Light</h2>
-          <p class="guide-lead">Установка, первый запуск, серверы, подписки, автопереключение и безопасные обновления — в одном месте.</p>
-        </div>
-        <span class="guide-version">Stable 1.0.0-r2</span>
-      </div>
-
-      <ol class="guide-quick-grid" aria-label="Быстрый запуск">
-        <li><span>1</span><div><strong>Добавьте источник</strong><p>Создайте подписку с понятным именем или вставьте одну ссылку VLESS.</p></div></li>
-        <li><span>2</span><div><strong>Проверьте сервер</strong><p>На странице «Серверы» нажмите «Проверить», затем «Активировать».</p></div></li>
-        <li><span>3</span><div><strong>Настройте Keenetic</strong><p>На Главной нажмите «Настроить» или «Исправить» в карточке интерфейса.</p></div></li>
-        <li><span>4</span><div><strong>Проверьте итог</strong><p>Соединение работает, интерфейс активен, Xray запущен.</p></div></li>
-      </ol>
-
-      <div class="guide-sections">
-        <details>
-          <summary>Требования и установка</summary>
-          <div class="guide-content">
-            <p>Нужны Keenetic с Entware <code>aarch64-3.10</code>, SSH-доступ <code>root</code>, интернет, не менее 100 МБ в <code>/opt</code> и отсутствие полного BROray.</p>
-            <div class="guide-code-toolbar"><strong>Проверка перед установкой</strong><button class="secondary copy-guide-button" type="button" data-copy-target="guidePreflight">Копировать</button></div>
-            <pre><code id="guidePreflight">opkg print-architecture
-df -h /opt
-test ! -e /opt/broray &amp;&amp; test ! -e /opt/etc/init.d/S24broray &amp;&amp; echo "Конфликтов нет"</code></pre>
-            <div class="guide-code-toolbar"><strong>Установка Stable 1.0.0-r2</strong><button class="secondary copy-guide-button" type="button" data-copy-target="guideInstall">Копировать</button></div>
-            <pre><code id="guideInstall">opkg update
-cd /tmp
-curl -fL https://github.com/BROadmin/BROray-Light/releases/download/v1.0.0-r2/SHA256SUMS -o BROray-Light-SHA256SUMS
-curl -fL https://github.com/BROadmin/BROray-Light/releases/download/v1.0.0-r2/broray-light-install-1.0.0-r2.sh -o broray-light-install-1.0.0-r2.sh
-grep 'broray-light-install-1.0.0-r2.sh$' BROray-Light-SHA256SUMS | sha256sum -c -
-chmod 700 broray-light-install-1.0.0-r2.sh
-/opt/bin/ash ./broray-light-install-1.0.0-r2.sh</code></pre>
-            <p class="guide-note">Полный BROray и BROray-Light нельзя устанавливать совместно. При неоднозначном ownership установка прекращается без изменений.</p>
-          </div>
-        </details>
-
-        <details>
-          <summary>Вход и адрес WebUI</summary>
-          <div class="guide-content">
-            <p>В локальной сети используйте <code>http://IP-KEENETIC:8080/</code>. При настроенном KeenDNS внешний адрес выглядит как <code>https://brolight.ВАШЕ-ИМЯ.keenetic.link/</code>.</p>
-            <p>Вход выполняется логином и паролем Keenetic. Пароль не сохраняется BROray-Light. Не публикуйте порт 8080 напрямую в интернет и не отключайте защиту сессии.</p>
-          </div>
-        </details>
-
-        <details>
-          <summary>Серверы, активация и дубли</summary>
-          <div class="guide-content">
-            <p>Light принимает только полные ссылки <code>vless://…</code>. Кнопка «Проверить» тестирует узел, «Активировать» применяет его, стрелки меняют порядок, а «Удалить» доступна только для неактивного сервера.</p>
-            <p>Дубли устраняются после ручного импорта и обновления подписок. Сохраняется активный сервер; затем приоритет имеет ручная запись, после неё — одна стабильная запись подписки. Перед очисткой создаётся резервная копия.</p>
-          </div>
-        </details>
-
-        <details>
-          <summary>Подписки и автообновление</summary>
-          <div class="guide-content">
-            <p>На странице «Подписки» задайте имя, вставьте HTTPS-ссылку и нажмите «Добавить подписку». URL хранится как секрет и не показывается в списке; импортируются только VLESS-узлы.</p>
-            <p>Для расписания включите «Автообновление», задайте интервал от 5 до 10080 минут и нажмите «Сохранить автообновление». Карточка покажет время следующего запуска.</p>
-            <p>Удаление подписки удаляет и принадлежащие ей серверы. Если один из них активен, сначала активируйте сервер из другого источника.</p>
-          </div>
-        </details>
-
-        <details>
-          <summary>Автопереключение: статусы и настройки</summary>
-          <div class="guide-content">
-            <p>На странице «Серверы» включите автопереключение, задайте от 1 до 10 ошибок до переключения, паузу и порядок кандидатов. Проверка идёт сверху вниз без рейтингов и истории качества.</p>
-            <dl class="guide-status-list">
-              <div><dt>Выключено</dt><dd>Автоматические проверки не запускаются.</dd></div>
-              <div><dt>Ожидание первой проверки</dt><dd>Настройки сохранены, первый цикл ещё не выполнялся.</dd></div>
-              <div><dt>Сервер работает</dt><dd>Последняя проверка успешна.</dd></div>
-              <div><dt>Обнаружены ошибки</dt><dd>Идёт подсчёт ошибок до заданного порога.</dd></div>
-              <div><dt>Сервер переключён</dt><dd>Активирован следующий доступный сервер.</dd></div>
-              <div><dt>Нет доступной замены</dt><dd>Рабочий кандидат не найден.</dd></div>
-            </dl>
-          </div>
-        </details>
-
-        <details>
-          <summary>Xray и обновление BROray-Light</summary>
-          <div class="guide-content">
-            <p>В карточке Xray сначала нажмите «Проверить обновление». Для новой версии станет доступно обновление; для актуальной версии при достаточном временном месте — переустановка той же версии.</p>
-            <p>В карточке BROray-Light кнопка проверки обращается к подписанному Stable-индексу. Обновление проверяет подпись, размер, SHA-256 и пути архива, запрещает downgrade, переключает слот атомарно и выполняет rollback при ошибке health-check.</p>
-          </div>
-        </details>
-
-        <details>
-          <summary>Диагностика и безопасное удаление</summary>
-          <div class="guide-content">
-            <div class="guide-code-toolbar"><strong>Проверка состояния</strong><button class="secondary copy-guide-button" type="button" data-copy-target="guideDiagnostics">Копировать</button></div>
-            <pre><code id="guideDiagnostics">/opt/etc/init.d/S23broray-light-updater status &amp;&amp; echo "Updater: OK"
-/opt/etc/init.d/S24broray-light status &amp;&amp; echo "BROray-Light: OK"
-/opt/broray-light/runtime/xray version
-/opt/bin/broray-light-updaterctl check
-/opt/bin/broray-light-web-publishctl status
-tail -n 100 /opt/broray-light/logs/broray-lightd.log</code></pre>
-            <p><code>opkg remove broray-light</code> останавливает и удаляет пакет, но намеренно сохраняет пользовательские данные, Xray и конфигурацию Keenetic. Перед полным удалением снимите принадлежащую Light Web-публикацию командой <code>/opt/bin/broray-light-web-publishctl delete</code>.</p>
-            <p class="guide-note">Не публикуйте пароли, cookies, VLESS-ссылки и URL подписок. Полная инструкция по резервной копии и очистке доступна на GitHub.</p>
-          </div>
-        </details>
-      </div>
-
-      <div class="guide-footer">
-        <a class="text-link" href="https://github.com/BROadmin/BROray-Light#readme" target="_blank" rel="noopener noreferrer">Полная инструкция на GitHub →</a>
-        <a class="text-link" href="https://github.com/BROadmin/BROray-Light/issues" target="_blank" rel="noopener noreferrer">Сообщить об ошибке →</a>
-      </div>
-    </section>
   </main>
   <div id="toast-root" class="toast-root" aria-live="polite"></div>
 </body>

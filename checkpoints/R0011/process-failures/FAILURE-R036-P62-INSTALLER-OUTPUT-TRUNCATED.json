@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0011",
+  "revision": "p62-exact-public-r2-router-install",
+  "failureId": "R036",
+  "status": "FAIL_FIRST_ERROR_PRESERVED_EVIDENCE_OUTPUT_TRUNCATION",
+  "at": "2026-09-02T22:20:17.1205620+03:00",
+  "operation": "EXECUTE_EXACT_PUBLIC_R2_INSTALLER_ON_AUTHORIZED_ROUTER",
+  "firstError": "The installer process exited zero, but its verbose opkg output was truncated before the final success message could be observed.",
+  "observed": {
+    "installerInvoked": true,
+    "opkgUpgradeStarted": "broray-light 1.0.0-r1 to 1.0.0-r2",
+    "localPublicPackageSha256": "aab765609dd5fe9e266e680e4d8a1ccf7db6880702ef07aa7996b98b05393c87",
+    "remoteInputSha256VerifiedBeforeExecution": true,
+    "processExitCode": 0,
+    "finalInstallerMessageVisible": false,
+    "postinstallStateNotYetAudited": true
+  },
+  "installerRetried": false,
+  "publicReleasePublished": true,
+  "routerChanged": true,
+  "hiddenRetryPerformed": false,
+  "nextRevision": "p63-router-postinstall-atomic-audit",
+  "nextExactAction": "DO_NOT_RERUN_THE_INSTALLER_READ_THE_ACTUAL_ROUTER_STATE_AND_VALIDATE_R2_PACKAGE_SLOT_MANIFEST_SERVICES_XRAY_PERSISTENCE_WEBUI_AND_AUTHENTICATION"
+}

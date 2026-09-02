@@ -7,7 +7,7 @@
     const submitButton = document.getElementById("login-submit");
     const errorBox = document.getElementById("login-error");
     const passwordToggle = document.getElementById("password-toggle");
-    const homeUrl = "/home.html?v=1.0.0-r2";
+    const homeUrl = "/home.html?v=1.0.0-r3";
 
     function setLoading(loading) {
         submitButton.disabled = loading;

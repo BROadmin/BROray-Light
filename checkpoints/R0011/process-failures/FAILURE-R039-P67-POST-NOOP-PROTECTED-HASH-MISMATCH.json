@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0011",
+  "revision": "p67-equal-update-saved-result-and-state-audit",
+  "failureId": "R039",
+  "status": "FAIL_FIRST_ERROR_PRESERVED_POST_NOOP_STATE_VALIDATION",
+  "at": "2026-09-02T22:29:46.5692355+03:00",
+  "operation": "READ_SAVED_EQUAL_UPDATE_RESULT_AND_COMPARE_POST_OPERATION_PROTECTED_STATE",
+  "firstError": "At least one of current slot, app manifest, Xray, or user-persistence aggregate did not match the p66 before values; the compound predicate stopped before individual values were emitted.",
+  "passedBeforeFailure": {
+    "savedUpdaterState": "success",
+    "savedUpdaterStage": "no-op",
+    "savedUpdaterMessageContainsNoMutation": true,
+    "signedCheckInstalledReleaseId": "1.0.0-r2",
+    "signedCheckAvailableReleaseId": "1.0.0-r2",
+    "signedCheckRelation": "equal",
+    "signedCheckUpdateAvailable": false,
+    "signedCheckSameVersionPolicy": "NO_OP_SUCCESS"
+  },
+  "possibleIndependentBackgroundWriter": "subscription auto-refresh daemon",
+  "updateCommandExecutions": 1,
+  "updateRetried": false,
+  "publicReleasePublished": true,
+  "routerChangedByEqualUpdate": "UNKNOWN_PENDING_ATOMIZED_READ_ONLY_AUDIT",
+  "hiddenRetryPerformed": false,
+  "nextRevision": "p68-atomized-post-noop-state-and-writer-diagnosis",
+  "nextExactAction": "DO_NOT_RERUN_UPDATE_EMIT_CURRENT_SLOT_MANIFEST_XRAY_AND_FILE_LEVEL_USER_PERSISTENCE_DELTAS_SEPARATELY_AND_CLASSIFY_ANY_BACKGROUND_WRITER"
+}

@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0011",
+  "revision": "p48-immutable-tag-and-draft-release",
+  "failureId": "R031",
+  "status": "FAIL_FIRST_ERROR_PRESERVED_COMMAND_SYNTAX",
+  "at": "2026-09-02T19:31:53.1856524+03:00",
+  "operation": "AUDIT_LOCAL_REMOTE_TAG_AND_RELEASE_ABSENCE",
+  "firstError": "PowerShell ParserError: missing closing parenthesis around an attempted git command expression.",
+  "commandExecuted": false,
+  "materialMutation": false,
+  "tagCreated": false,
+  "publicReleasePublished": false,
+  "routerChanged": false,
+  "hiddenRetryPerformed": false,
+  "nextRevision": "p49-tag-absence-audit-with-separate-exit-code",
+  "nextExactAction": "RUN_THE_READ_ONLY_TAG_AND_RELEASE_ABSENCE_AUDIT_WITH_THE_GIT_EXIT_CODE_CAPTURED_IN_A_SEPARATE_STATEMENT"
+}

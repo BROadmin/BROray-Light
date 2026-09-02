@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0011",
+  "revision": "p52-r032-checkpoint-write-observation",
+  "failureId": "R033",
+  "status": "FAIL_FIRST_ERROR_PRESERVED_TOOL_OUTPUT_TRUNCATION",
+  "at": "2026-09-02T19:42:55.0285743+03:00",
+  "operation": "OBSERVE_RESULT_OF_R032_CHECKPOINT_APPLY_PATCH",
+  "firstError": "The apply_patch result was truncated before its success or failure status could be observed.",
+  "readOnlyRecoveryAudit": {
+    "r032CheckpointExists": true,
+    "r032CheckpointReadable": true,
+    "r032ContentMatchesIntendedFailureRecord": true
+  },
+  "materialMutationUncertainAtFailureTime": true,
+  "publicReleasePublished": false,
+  "routerChanged": false,
+  "hiddenRetryPerformed": false,
+  "nextRevision": "p54-streaming-file-byte-comparison",
+  "nextExactAction": "HASH_R032_AND_R033_UPDATE_MACHINE_READABLE_STATE_THEN_CONTINUE_THE_DRAFT_ASSET_AUDIT_WITH_A_STREAMING_FILE_COMPARATOR"
+}

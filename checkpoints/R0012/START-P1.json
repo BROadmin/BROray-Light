@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "checkpointId": "BROray-Light-R0012-START-P1",
+  "stage": "R0012_DOCUMENTATION_RELOCATION_AND_CORRECTIVE_RELEASE",
+  "revision": "p1-start-after-user-scope-correction",
+  "recordedAt": "2026-09-02T22:54:07.4953533+03:00",
+  "status": "PASS",
+  "workingBranch": "codex/r0009-updater-package",
+  "branchVerified": true,
+  "head": "6d44c164f3ce7e99195a806f0a191bd66d3b8ed2",
+  "canonicalInput": {
+    "r0011ReleaseSourceCommit": "6d44c164f3ce7e99195a806f0a191bd66d3b8ed2",
+    "r0011Tag": "v1.0.0-r2",
+    "r0011TagObject": "599372219f6e162085ef42b8b9074adba34e5f47",
+    "r0011PublicPackageSha256": "aab765609dd5fe9e266e680e4d8a1ccf7db6880702ef07aa7996b98b05393c87",
+    "r0011ScopeCorrectionCheckpoint": "checkpoints/R0011/SCOPE-CORRECTION-P72.json",
+    "r0011ScopeCorrectionSha256": "c04dcb7e3e1d4af37694fecb10fe761919db1b8408a68fae238fdcf6720af793"
+  },
+  "objective": "Relocate the full Russian guide to the GitHub repository root and a separate BROray-Light section on docs.brovibe.cloud, remove the mistakenly embedded long-form guide from WebUI, and deliver the correction as a new immutable Stable release without changing product behavior.",
+  "publicationContract": {
+    "githubRoot": "README.md plus docs/USER-GUIDE-RU.md on BROadmin/BROray-Light default branch",
+    "docsSite": "https://docs.brovibe.cloud/broray/#broray-light",
+    "docsHomepageChanged": false,
+    "docsSourceMutationBoundary": "BROadmin/BROray:site/docs.brovibe.cloud/broray/index.html and SHA256SUMS only",
+    "productionServerMutation": false,
+    "webuiGuidePresentInCorrectedRelease": false
+  },
+  "releasePolicy": {
+    "previousStableImmutable": "1.0.0-r2",
+    "nextStable": "1.0.0-r3",
+    "nextTag": "v1.0.0-r3",
+    "overwriteExistingReleaseForbidden": true,
+    "sameSigningTrustRootRequired": true
+  },
+  "firstErrorPolicy": "Stop each revision at the first material failure, save a standalone JSON under checkpoints/R0012/process-failures with SHA-256, update state and worklog, then continue only under a named corrected revision.",
+  "candidateReady": false,
+  "nextRevision": "p2-contract-and-source-audit",
+  "nextExactAction": "SEAL_THE_R0012_CONTRACT_AND_AUDIT_ALL_EXACT_FILES_REQUIRED_FOR_THE_DOCS_RELOCATION_AND_R3_CORRECTIVE_BUILD"
+}

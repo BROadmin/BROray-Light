@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0011",
+  "revision": "p57-public-release-asset-byte-audit",
+  "failureId": "R035",
+  "status": "FAIL_FIRST_ERROR_PRESERVED_VALIDATION_PREDICATE",
+  "at": "2026-09-02T22:11:44.7140373+03:00",
+  "operation": "VERIFY_PUBLIC_RELEASE_ASSETS_SIGNATURE_AND_TAGGED_RUSSIAN_README",
+  "firstError": "The tagged README check required the literal phrase 'Полное руководство', but the published guide does not use that exact heading.",
+  "completedBeforeFailure": {
+    "publicLatestReleaseIdentity": "PASS",
+    "publicAssetMetadataCount": 8,
+    "publicAssetDownloads": 8,
+    "publicAssetSizeMatches": 8,
+    "publicAssetSha256Matches": 8,
+    "publicAssetStreamingByteMatches": 8,
+    "publicReleaseSignature": "PASS",
+    "taggedReadmeHttpStatus": 200
+  },
+  "artifactFailure": false,
+  "publicReleasePublished": true,
+  "routerChanged": false,
+  "hiddenRetryPerformed": false,
+  "nextRevision": "p58-tagged-readme-contract-audit",
+  "nextExactAction": "INSPECT_THE_PUBLIC_TAGGED_README_HEADINGS_THEN_VALIDATE_THE_REQUIRED_RUSSIAN_GUIDE_SECTIONS_AND_REUSE_THE_ALREADY_DOWNLOADED_PUBLIC_ASSETS_FOR_AN_INDEPENDENT_INTEGRITY_CONFIRMATION"
+}

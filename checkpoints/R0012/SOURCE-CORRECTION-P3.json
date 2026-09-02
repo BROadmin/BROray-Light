@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "checkpointId": "BROray-Light-R0012-SOURCE-CORRECTION-P3",
+  "stage": "R0012_DOCUMENTATION_RELOCATION_AND_CORRECTIVE_RELEASE",
+  "revision": "p3-surgical-webui-guide-removal-and-r3-source",
+  "recordedAt": "2026-09-02T23:04:27.5926993+03:00",
+  "status": "PASS",
+  "workingBranch": "codex/r0009-updater-package",
+  "canonicalInputCommit": "6d44c164f3ce7e99195a806f0a191bd66d3b8ed2",
+  "sourceAuditCommand": "python tools/test_r0012.py --source-only",
+  "sourceAudit": "PASS",
+  "webui": {
+    "functionalPages": 3,
+    "cacheToken": "1.0.0-r3-r0012",
+    "cacheTokenReferences": 16,
+    "staleR1R2OrR0011TokenHits": 0,
+    "embeddedGuideHits": 0,
+    "homeFunctionalButtons": 7,
+    "homeDetailsElements": 0,
+    "backendOrApiChanged": false,
+    "nativeAuthenticationChanged": false
+  },
+  "release": {
+    "releaseId": "1.0.0-r3",
+    "tag": "v1.0.0-r3",
+    "previousStable": "1.0.0-r2",
+    "newerRefusalFixture": "1.0.0-r4",
+    "homeGuideIncluded": false,
+    "updaterInputSizeBytes": 131458,
+    "updaterInputSha256": "cab97b6efd11a249cada2c7ceff540f732493ea11163fa5377b083ae450723ca"
+  },
+  "sourceSha256": {
+    "README.md": "6f4d5962399b072b7a77f65f01d90d787213b2c7f43e881e0bd772c7d6715b6a",
+    "docs/USER-GUIDE-RU.md": "93f244ad69f76aff228a2417f1f03463a9f51704944439abe7aa9e0d7c1e2b97",
+    "packaging/app-overlay/web-new/home.html": "505a3b3226f3cd8070c73fc71b111d1b894c69795734d1b5f5986d166cd1e36d",
+    "packaging/app-overlay/web-new/assets/js/home.js": "3074d9a152db7661e4d18a535b7623ed1668496a2116a35ff0469bfca802ac65",
+    "packaging/app-overlay/web-new/assets/css/allpage.css": "d59ca9400ad40a4e6b7b58d2fcde33ce79f331d5ee5190b8fb79e67bcb42b707",
+    "packaging/opkg/broray-light-web-publish-policy.sh": "1f1cca00267aeef53c2f95f6d49f95ce2125718a0605a6e9ebbe62e02d1ff624",
+    "tools/build_r0012_release.py": "d1b60bfaafb778fef0dbbe6c09864387dab561e33d7f633982a35feb2a360b2e",
+    "tools/test_r0012.py": "a3b0f2eedcc29d2de296af6f284e466096523d477124d90539bdb170e79d8166",
+    ".github/workflows/r0012-build.yml": "9a446cc5c1d003649ac22581f096b6d3717c6c52600dd1c769aa6fc60a8f9cdd"
+  },
+  "gitDiffCheck": "PASS",
+  "candidateReady": false,
+  "nextRevision": "p4-local-builder-and-isolated-acceptance",
+  "nextExactAction": "FETCH_THE_PINNED_PUBLIC_R2_UPDATER_AND_XRAY_INPUTS_BUILD_WITH_A_TEMPORARY_NON_RELEASE_TEST_KEY_AND_RUN_COMPLETE_LOCAL_ISOLATED_ACCEPTANCE"
+}

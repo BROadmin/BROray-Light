@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0011",
+  "revision": "p47-final-ci-artifact-independent-audit",
+  "status": "PASS",
+  "at": "2026-09-02T19:29:52.2289243+03:00",
+  "releaseSourceCommit": "6d44c164f3ce7e99195a806f0a191bd66d3b8ed2",
+  "githubActions": {"runId":33654618632,"jobId":100329945229,"artifactId":9856190641},
+  "ciArchive": {
+    "path": "dist/R0011/ci-33654618632.zip",
+    "sha256": "70b69eba95cadcf14878b3f4ac0413013a6c46e0e10d403c78e1df7016cd7871",
+    "safeEntryAudit": "PASS"
+  },
+  "ciReceipt": {
+    "path": "dist/R0011/ci-33654618632/R0011-CI-RECEIPT.json",
+    "sha256": "b91931ec4c0a3d49a914695754a98eefff5fefb1db032351c9eec0be6a4f4053",
+    "status": "PASS",
+    "builds": 2,
+    "comparison": "BYTE_IDENTICAL",
+    "commitExact": true,
+    "privateKeyRetained": false
+  },
+  "verification": {
+    "artifactSetExact": "PASS",
+    "artifactHashAndSizeCount": 8,
+    "sha256SumsEntries": 7,
+    "sha256Sums": "PASS",
+    "releaseSignature": "PASS",
+    "publicKeySha256": "b1587b8407f0c0443a361ed29b839319b66912b1b71414bcf31e848c29eab696",
+    "privateMaterialAbsent": "PASS",
+    "packagedWebUiMatchesValidatedSource": "PASS"
+  },
+  "browser": {
+    "desktop": {
+      "viewport": {"width":1280,"height":720},
+      "detailsCount": 7,
+      "actualCopyClicks": 3,
+      "clipboardExactMatches": 3
+    },
+    "mobile": {
+      "viewport": {"width":512,"height":890},
+      "documentScrollWidth": 497,
+      "horizontalOverflow": false,
+      "guideWidth": 471,
+      "detailsExpanded": 7,
+      "copyControlsInsideViewport": 3,
+      "copyControlsHitNativeButton": 3,
+      "codeBlocksContained": 3,
+      "codeBlocksInternallyScrollable": 3
+    },
+    "temporaryViewportReset": true
+  },
+  "artifacts": [
+    {"name":"RELEASE-MANIFEST.json","sha256":"a97fd11a86516999181270a1119abd57ed081592b7827e7bbf0d157a6200bc29","sizeBytes":3265},
+    {"name":"SHA256SUMS","sha256":"3f2e21fdb9ba16a8710a7c2c921600dd4f4a77a5c10fc5c774c40b40db490dbe","sizeBytes":669},
+    {"name":"broray-light-app-1.0.0-r2.tar.gz","sha256":"63e51282796f13a875c990fa6b0b527256fbfc829ea0ba313a83bad08441fffe","sizeBytes":161023},
+    {"name":"broray-light-install-1.0.0-r2.sh","sha256":"18d55763310bd494b7e3e079e9e51093c8d779d533025fa443752d34afb4ef3a","sizeBytes":1851},
+    {"name":"broray-light-updater-platform-5-light1.tar.gz","sha256":"cab97b6efd11a249cada2c7ceff540f732493ea11163fa5377b083ae450723ca","sizeBytes":131458},
+    {"name":"broray-light_1.0.0-r2_aarch64-3.10.ipk","sha256":"aab765609dd5fe9e266e680e4d8a1ccf7db6880702ef07aa7996b98b05393c87","sizeBytes":12812196},
+    {"name":"release.json","sha256":"4ed74567ed8e5a767c61e6171ab0b52b0086c1fe431b8fcecd9fdcce3cafb001","sizeBytes":576},
+    {"name":"release.json.minisig","sha256":"5c791bcc9d78750d1f873ca2119f38dc51f21a039b296b1570822de311aa4191","sizeBytes":265}
+  ],
+  "tagCreated": false,
+  "publicReleasePublished": false,
+  "routerChanged": false,
+  "candidateReady": false,
+  "nextRevision": "p48-immutable-tag-and-draft-release",
+  "nextExactAction": "VERIFY_TAG_AND_RELEASE_ABSENCE_CREATE_IMMUTABLE_TAG_V1_0_0_R2_ON_THE_EXACT_RELEASE_SOURCE_COMMIT_PUSH_IT_THEN_CREATE_A_DRAFT_RELEASE"
+}

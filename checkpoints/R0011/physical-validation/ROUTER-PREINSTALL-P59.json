@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0011",
+  "revision": "p59-router-preinstall-persistence-checkpoint",
+  "status": "PASS",
+  "at": "2026-09-02T22:15:44.4227058+03:00",
+  "router": "192.168.1.1",
+  "installed": {
+    "package": "broray-light",
+    "version": "1.0.0-r1",
+    "currentTarget": "releases/1.0.0-r1",
+    "appManifestSha256": "953fbad3bdf3609f1c25aaa763e2dc2c91be9ef8d11689cb78eec15a7a7b6841",
+    "appManifest": "PASS"
+  },
+  "xray": {
+    "version": "26.7.28",
+    "sha256": "4b8af237444801bf17b3dc10a1c5c24581fbe3d433eba3d78c6c3a0da1df56fc"
+  },
+  "services": {
+    "primary": "PASS",
+    "updater": "PASS"
+  },
+  "ownership": {
+    "fullBrorayRootAbsent": true,
+    "fullBrorayServiceAbsent": true,
+    "failClosedPrecondition": "PASS"
+  },
+  "persistence": {
+    "scope": [
+      "/opt/broray-light/config",
+      "/opt/broray-light/servers",
+      "/opt/broray-light/subscriptions"
+    ],
+    "files": 19,
+    "aggregateSha256": "adc446f6db7dcc32cb27c5e11dc51a76201d84350c1b57284110de6a3d27eec6"
+  },
+  "web": {
+    "publicRootHttpStatus": 200,
+    "protectedApiHttpStatus": 401,
+    "nativeAuthentication": "PASS"
+  },
+  "routerMutationPerformed": false,
+  "nextRevision": "p60-fresh-router-persistence-backup",
+  "nextExactAction": "CREATE_A_FRESH_EXTERNAL_LOCAL_BACKUP_OF_THE_FIVE_ROUTER_PERSISTENCE_DIRECTORIES_VERIFY_ITS_MANIFEST_THEN_TRANSFER_THE_EXACT_PUBLIC_R2_PACKAGE"
+}

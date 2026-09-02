@@ -7,7 +7,7 @@ async function j(url, opts) {
     try { payload = JSON.parse(raw); }
     catch (_) { throw new Error('Сервер вернул некорректный ответ'); }
   }
-  if (response.status === 401) { location.replace('/?v=1.0.0-r2'); throw new Error('Требуется вход'); }
+  if (response.status === 401) { location.replace('/?v=1.0.0-r3'); throw new Error('Требуется вход'); }
   if (!response.ok || payload.success === false || payload.ok === false) {
     const error = new Error(payload.error?.message || payload.message || 'Ошибка');
     error.code = payload.error?.code || payload.code || '';
@@ -134,44 +134,4 @@ async function lightInstall() {
   } catch (error) { text('lightUpdate', 'Обновление завершилось ошибкой: ' + error.message); showError(error.message); notify(error.message, 'error'); button('lightInstallButton', 'Обновить', true); }
 }
 
-async function copyGuideText(buttonElement) {
-  const targetId = buttonElement.dataset.copyTarget;
-  const target = targetId ? document.getElementById(targetId) : null;
-  if (!target) throw new Error('Команда для копирования не найдена');
-  const value = target.textContent.trim();
-  if (navigator.clipboard && window.isSecureContext) {
-    await navigator.clipboard.writeText(value);
-    return;
-  }
-  const helper = document.createElement('textarea');
-  helper.value = value;
-  helper.setAttribute('readonly', '');
-  helper.className = 'visually-hidden';
-  document.body.appendChild(helper);
-  helper.select();
-  const copied = document.execCommand('copy');
-  helper.remove();
-  if (!copied) throw new Error('Браузер запретил копирование');
-}
-
-function setupGuide() {
-  for (const copyButton of document.querySelectorAll('.copy-guide-button')) {
-    copyButton.addEventListener('click', async () => {
-      const originalLabel = copyButton.textContent;
-      try {
-        await copyGuideText(copyButton);
-        copyButton.textContent = 'Скопировано';
-        notify('Команды скопированы');
-      } catch (error) {
-        notify(error.message, 'error');
-      } finally {
-        window.setTimeout(() => { copyButton.textContent = originalLabel; }, 1600);
-      }
-    });
-  }
-}
-
-document.addEventListener('DOMContentLoaded', () => {
-  setupGuide();
-  refreshHome();
-});
+document.addEventListener('DOMContentLoaded', refreshHome);

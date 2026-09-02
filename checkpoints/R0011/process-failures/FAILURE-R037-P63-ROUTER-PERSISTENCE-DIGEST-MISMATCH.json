@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0011",
+  "revision": "p63-router-postinstall-atomic-audit",
+  "failureId": "R037",
+  "status": "FAIL_FIRST_ERROR_PRESERVED_PERSISTENCE_VALIDATION",
+  "at": "2026-09-02T22:22:14.4981617+03:00",
+  "operation": "VALIDATE_R2_PACKAGE_SLOT_SERVICES_XRAY_AND_PERSISTENCE_AFTER_INSTALL",
+  "firstError": "The aggregate SHA-256 of the 19-file persistent scope no longer matched the p59 preinstall checkpoint.",
+  "expectedPersistence": {
+    "files": 19,
+    "aggregateSha256": "adc446f6db7dcc32cb27c5e11dc51a76201d84350c1b57284110de6a3d27eec6"
+  },
+  "actualPersistenceNotEmittedBeforeFailClosedStop": true,
+  "passedBeforeFailure": {
+    "packageVersion": "1.0.0-r2",
+    "currentTarget": "releases/1.0.0-r2",
+    "xrayVersion": "26.7.28",
+    "xraySha256": "4b8af237444801bf17b3dc10a1c5c24581fbe3d433eba3d78c6c3a0da1df56fc",
+    "appManifestSha256": "797e3113a742e4330b807342bd2cd2687dc10e895e34a6b5ca8fba0d2c5033c9",
+    "appManifest": "PASS",
+    "primaryService": "PASS",
+    "updaterService": "PASS",
+    "fullBrorayOwnershipAbsent": true
+  },
+  "installerRetried": false,
+  "publicReleasePublished": true,
+  "routerChanged": true,
+  "hiddenRetryPerformed": false,
+  "nextRevision": "p64-router-persistence-file-delta-diagnosis",
+  "nextExactAction": "COMPARE_THE_CURRENT_ROUTER_PERSISTENT_FILE_HASH_MAP_TO_THE_FRESH_P60_BACKUP_WITHOUT_READING_OR_PRINTING_FILE_CONTENT_THEN_CLASSIFY_THE_EXACT_DELTA_BEFORE_ANY_REPAIR"
+}

@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0011",
+  "revision": "p69-authenticated-live-webui-and-guide-audit",
+  "failureId": "R040",
+  "status": "FAIL_FIRST_ERROR_PRESERVED_AUTHENTICATION_REQUIRED",
+  "at": "2026-09-02T22:33:39.8142610+03:00",
+  "operation": "OPEN_LIVE_INSTALLED_R2_HOME_IN_EXISTING_BROWSER_SESSION",
+  "firstError": "The previously authenticated WebUI session had expired and navigation redirected to the native login page.",
+  "observed": {
+    "requestedUrl": "https://brolight.tvervip.keenetic.link/home.html?v=1.0.0-r2-r0011",
+    "redirectedUrl": "https://brolight.tvervip.keenetic.link/?v=1.0.0-r2",
+    "pageTitle": "BROray-Light — Вход",
+    "loginFormVisible": true,
+    "credentialsEntered": false
+  },
+  "productFailure": false,
+  "routerMutationPerformed": false,
+  "publicReleasePublished": true,
+  "hiddenRetryPerformed": false,
+  "blockingConfirmation": "User must confirm at action time before the previously supplied credentials are transmitted to the router WebUI.",
+  "nextRevision": "p70-router-read-only-safety-and-cleanup-audit",
+  "nextExactAction": "COMPLETE_NON_BROWSER_READ_ONLY_SAFETY_CHECKS_THEN_REQUEST_ACTION_TIME_CONFIRMATION_FOR_WEBUI_LOGIN_AND_RESUME_THE_LIVE_BUTTON_AND_GUIDE_AUDIT"
+}

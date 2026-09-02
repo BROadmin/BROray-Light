@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
   "stage": "R0011",
-  "status": "SOURCE_VISUAL_PASS_RESPONSIVE_FIX_COMMIT_REQUIRED",
-  "currentRevision": "p46-responsive-fix-commit-and-final-ci-build",
+  "status": "SCOPE_CORRECTED_DOCS_PUBLICATION_AND_WEBUI_GUIDE_REMOVAL_IN_PROGRESS",
+  "currentRevision": "p72-docs-site-and-github-root-scope-correction",
   "workingBranch": "codex/r0009-updater-package",
-  "authorizedTask": "ADD_FULL_RUSSIAN_DOCUMENTATION_TO_GITHUB_AND_WEBUI_HOME",
+  "authorizedTask": "PUBLISH_FULL_RUSSIAN_GUIDE_TO_GITHUB_ROOT_AND_DOCS_SITE_SEPARATE_PAGE_REMOVE_WEBUI_GUIDE",
   "canonicalInput": {
     "r0010EvidenceCommit": "b21078406e950c3c32b63ecbe44787d4608978e7",
     "r0010ReleaseSourceCommit": "9e5fce9bfa7c82bfc2f2654d80fd3987c5259963",
@@ -16,11 +16,20 @@
     "sha256": "c067cdb8dd607e886cca545acb6c869a5998f9bbcf64a0fd5717e63409dbb07c"
   },
   "scope": {
-    "githubRussianGuide": true,
-    "webuiHomeGuideSection": true,
-    "fullBrorayReferenceReadOnly": true,
+    "githubDefaultBranchRussianGuide": true,
+    "docsSiteSeparateBrorayLightPage": true,
+    "docsSiteHomepageContentCard": false,
+    "removeWebuiHomeGuideSection": true,
+    "fullBrorayApplicationMutation": false,
+    "docsSiteFilesInFullBrorayRepositoryOnly": true,
     "physicalRouterValidationAuthorized": true,
     "publicReleaseOverwriteForbidden": true
+  },
+  "scopeCorrection": {
+    "checkpoint": "checkpoints/R0011/SCOPE-CORRECTION-P72.json",
+    "reason": "The requested site was docs.brovibe.cloud and the requested placement is a separate BROray-Light documentation page, not either application WebUI or a docs-homepage content section.",
+    "plannedDocsUrl": "https://docs.brovibe.cloud/broray-light/",
+    "webuiGuideMustBeRemoved": true
   },
   "completedGates": [
     "R0011_START_CHECKPOINT",
@@ -32,23 +41,26 @@
     "R0011_PREBUILD_SOURCE_AUDIT",
     "R0011_RELEASE_SOURCE_COMMIT_PUSH",
     "R0011_CI_BUILD_REPRODUCIBILITY_AND_ISOLATED_ACCEPTANCE",
-    "R0011_INDEPENDENT_CI_ARTIFACT_SIGNATURE_AUDIT"
+    "R0011_INDEPENDENT_CI_ARTIFACT_SIGNATURE_AUDIT",
+    "R0011_FINAL_ARTIFACT_VISUAL_AND_SIGNATURE_AUDIT",
+    "R0011_IMMUTABLE_TAG_EXACT_SOURCE",
+    "R0011_PUBLIC_RELEASE_LATEST_BYTE_AND_SIGNATURE_AUDIT"
   ],
-  "releaseSourceCommit": "5486cee5c62f96e1c7cc9461051ef5a97cb1e66d",
+  "releaseSourceCommit": "6d44c164f3ce7e99195a806f0a191bd66d3b8ed2",
   "githubActions": {
-    "runId": 33650523626,
-    "jobId": 100316067503,
+    "runId": 33654618632,
+    "jobId": 100329945229,
     "status": "completed",
     "conclusion": "success",
     "firstFailedStep": null,
-    "url": "https://github.com/BROadmin/BROray-Light/actions/runs/33650523626",
-    "artifactId": 9854583266,
-    "artifactArchiveSha256": "74b6e9b2265e5ea47f9d2d033be508e164e5e05ad45391b7fc10ef41524a1fcb"
+    "url": "https://github.com/BROadmin/BROray-Light/actions/runs/33654618632",
+    "artifactId": 9856190641,
+    "artifactArchiveSha256": "70b69eba95cadcf14878b3f4ac0413013a6c46e0e10d403c78e1df7016cd7871"
   },
   "processFailures": {
-    "preserved": 30,
-    "latest": "checkpoints/R0011/process-failures/FAILURE-R030-P44-POST-CLICK-CLIPBOARD-TIMEOUT.json",
-    "latestSha256": "7580459d69dd5f06f194c6fd6bc39c2713bdf557f2777c2df9a4f14db212186f"
+    "preserved": 41,
+    "latest": "checkpoints/R0011/process-failures/FAILURE-R041-P70-KEENETIC-STARTUP-CONFIG-COMMAND.json",
+    "latestSha256": "6abcd8cceabb1cc935a6d981ce765c84e1b2cca73ac487bd7e3dd81ab6735e4c"
   },
   "releasePolicy": {
     "currentStableImmutable": "1.0.0-r1",
@@ -58,6 +70,16 @@
     "publishAuthorized": true,
     "installBeforeValidation": false
   },
+  "publicRelease": {
+    "releaseId": 381418161,
+    "tag": "v1.0.0-r2",
+    "targetCommitish": "6d44c164f3ce7e99195a806f0a191bd66d3b8ed2",
+    "draft": false,
+    "prerelease": false,
+    "latest": true,
+    "assetCount": 8,
+    "url": "https://github.com/BROadmin/BROray-Light/releases/tag/v1.0.0-r2"
+  },
   "activeBlocker": null,
-  "nextExactAction": "COMMIT_AND_PUSH_THE_RESPONSIVE_FIX_WITH_ALL_PRESERVED_EVIDENCE_THEN_REQUIRE_A_NEW_FULL_CI_BUILD_AND_ARTIFACT_AUDIT"
+  "nextExactAction": "AUDIT_THE_EXACT_DOCS_SITE_PUBLICATION_CONTRACT_DEFAULT_BRANCH_README_AND_MINIMAL_WEBUI_GUIDE_REVERT_BEFORE_EDITING"
 }

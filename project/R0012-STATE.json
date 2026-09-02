@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0012_DOCUMENTATION_RELOCATION_AND_CORRECTIVE_RELEASE",
+  "status": "R3_SOURCE_CORRECTION_AND_SOURCE_AUDIT_PASS",
+  "currentRevision": "p3-surgical-webui-guide-removal-and-r3-source",
+  "workingBranch": "codex/r0009-updater-package",
+  "authorizedTask": "RELOCATE_RUSSIAN_DOCUMENTATION_AND_REMOVE_EMBEDDED_WEBUI_GUIDE_STABLE_1.0.0_R3",
+  "canonicalInput": {
+    "r0011ReleaseSourceCommit": "6d44c164f3ce7e99195a806f0a191bd66d3b8ed2",
+    "r0011Tag": "v1.0.0-r2",
+    "r0011PublicPackageSha256": "aab765609dd5fe9e266e680e4d8a1ccf7db6880702ef07aa7996b98b05393c87",
+    "scopeCorrectionSha256": "c04dcb7e3e1d4af37694fecb10fe761919db1b8408a68fae238fdcf6720af793"
+  },
+  "startCheckpoint": {
+    "path": "checkpoints/R0012/START-P1.json",
+    "sha256": "4e106babec41323d3a5451d72a2b0bc752b1e25d9b623ce4f15ae2efb4569a92"
+  },
+  "releasePolicy": {
+    "previousStableImmutable": "1.0.0-r2",
+    "nextVersion": "1.0.0-r3",
+    "nextTag": "v1.0.0-r3",
+    "webAssetCacheToken": "1.0.0-r3-r0012",
+    "sameSigningTrustRootRequired": true,
+    "overwriteExistingReleaseForbidden": true
+  },
+  "publicationTargets": {
+    "githubRoot": "https://github.com/BROadmin/BROray-Light",
+    "docsSection": "https://docs.brovibe.cloud/broray/#broray-light",
+    "docsHomepageContentChanged": false,
+    "webuiEmbeddedGuide": false
+  },
+  "completedGates": [
+    "R0012_START_CHECKPOINT",
+    "R0012_CONTRACT",
+    "R0012_SURGICAL_WEBUI_GUIDE_REMOVAL",
+    "R0012_R3_VERSION_AND_CACHE_SOURCE",
+    "R0012_SOURCE_AUDIT"
+  ],
+  "processFailures": {
+    "preserved": 0,
+    "latest": null,
+    "latestSha256": null
+  },
+  "activeBlocker": null,
+  "candidateReady": false,
+  "releaseReady": false,
+  "publicReleasePublished": false,
+  "nextExactAction": "FETCH_PINNED_INPUTS_BUILD_WITH_A_TEMPORARY_TEST_KEY_AND_RUN_COMPLETE_LOCAL_ISOLATED_ACCEPTANCE"
+}

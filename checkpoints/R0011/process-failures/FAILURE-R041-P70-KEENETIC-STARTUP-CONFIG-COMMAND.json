@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0011",
+  "revision": "p70-router-read-only-safety-and-cleanup-audit",
+  "failureId": "R041",
+  "status": "FAIL_FIRST_ERROR_PRESERVED_ROUTER_COMMAND_CAPABILITY",
+  "at": "2026-09-02T22:35:35.3064632+03:00",
+  "operation": "AUDIT_RUNNING_AND_STARTUP_ROUTES_BEFORE_EXACT_TEMPORARY_INPUT_CLEANUP",
+  "firstError": "Keenetic ndmc rejected the assumed 'show startup-config' command.",
+  "passedBeforeFailure": {
+    "packageVersion": "1.0.0-r2",
+    "currentTarget": "releases/1.0.0-r2",
+    "primaryService": "PASS",
+    "updaterService": "PASS",
+    "fullBrorayOwnershipAbsent": true,
+    "runningConfigRead": "PASS"
+  },
+  "startupConfigRead": "FAIL_UNSUPPORTED_COMMAND",
+  "temporaryInputCleanupStarted": false,
+  "routerMutationPerformedByFailure": false,
+  "publicReleasePublished": true,
+  "hiddenRetryPerformed": false,
+  "nextRevision": "p71-supported-startup-config-route-audit-and-cleanup",
+  "nextExactAction": "DISCOVER_THE_SUPPORTED_READ_ONLY_SAVED_CONFIG_SOURCE_USE_IT_TO_COUNT_ONLY_IP_ROUTE_LINES_VIA_PROXY0_THEN_VERIFY_AND_REMOVE_THE_EXACT_TEMPORARY_INSTALL_INPUTS"
+}

@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0011",
+  "revision": "p50-create-and-push-immutable-tag",
+  "status": "PASS",
+  "at": "2026-09-02T19:35:16.8252359+03:00",
+  "tag": "v1.0.0-r2",
+  "annotatedTagObject": "599372219f6e162085ef42b8b9074adba34e5f47",
+  "peeledCommit": "6d44c164f3ce7e99195a806f0a191bd66d3b8ed2",
+  "releaseSourceCommitExact": true,
+  "remoteTagPushed": true,
+  "existingTagOverwritten": false,
+  "publicReleasePublished": false,
+  "routerChanged": false,
+  "nextRevision": "p51-create-draft-release-and-upload-assets",
+  "nextExactAction": "CREATE_A_DRAFT_NON_PRERELEASE_GITHUB_RELEASE_FOR_V1_0_0_R2_UPLOAD_THE_EIGHT_EXACT_VERIFIED_ASSETS_AND_BYTE_VERIFY_EACH_DRAFT_ASSET"
+}

@@ -1,19 +1,7 @@
 name: R0011 deterministic release build
 
 on:
-  push:
-    branches:
-      - codex/r0009-updater-package
-    paths:
-      - README.md
-      - docs/USER-GUIDE-RU.md
-      - packaging/**
-      - updater/**
-      - tools/build_r0009_candidate.py
-      - tools/build_r0011_release.py
-      - tools/test_r0009.py
-      - tools/test_r0011.py
-      - .github/workflows/r0011-build.yml
+  workflow_dispatch:
 
 permissions:
   contents: read

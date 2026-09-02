@@ -7,7 +7,7 @@ async function api(url, opts) {
     catch (_) { throw new Error('Сервер вернул некорректный ответ'); }
   }
   if (response.status === 401) {
-    location.replace('/?v=1.0.0-r2');
+    location.replace('/?v=1.0.0-r3');
     throw new Error('Требуется вход');
   }
   if (!response.ok || payload.success === false || payload.ok === false) {

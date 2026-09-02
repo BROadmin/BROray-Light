@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0011",
+  "revision": "p58-tagged-readme-contract-audit",
+  "status": "PASS",
+  "at": "2026-09-02T22:13:12.1784554+03:00",
+  "acceptanceGate": 13,
+  "releaseId": 381418161,
+  "tag": "v1.0.0-r2",
+  "targetCommitish": "6d44c164f3ce7e99195a806f0a191bd66d3b8ed2",
+  "latest": true,
+  "draft": false,
+  "prerelease": false,
+  "publicAssetCount": 8,
+  "publicAssetDownloadCount": 8,
+  "publicAssetSizeMatchCount": 8,
+  "publicAssetSha256MatchCount": 8,
+  "publicAssetStreamingByteMatchCount": 8,
+  "releaseSignature": "PASS",
+  "taggedRussianReadme": {
+    "url": "https://github.com/BROadmin/BROray-Light/blob/v1.0.0-r2/README.md",
+    "http": "PASS",
+    "byteExactToReleaseSource": true,
+    "sha256": "20eb01927f16ad79a83d15ccf562cef326b1cd78a654d876048b2c4367a4b8d7",
+    "requiredHeadingCount": 15,
+    "requiredHeadingMatchCount": 15
+  },
+  "assets": [
+    {"name":"broray-light-app-1.0.0-r2.tar.gz","sha256":"63e51282796f13a875c990fa6b0b527256fbfc829ea0ba313a83bad08441fffe"},
+    {"name":"broray-light-install-1.0.0-r2.sh","sha256":"18d55763310bd494b7e3e079e9e51093c8d779d533025fa443752d34afb4ef3a"},
+    {"name":"broray-light-updater-platform-5-light1.tar.gz","sha256":"cab97b6efd11a249cada2c7ceff540f732493ea11163fa5377b083ae450723ca"},
+    {"name":"broray-light_1.0.0-r2_aarch64-3.10.ipk","sha256":"aab765609dd5fe9e266e680e4d8a1ccf7db6880702ef07aa7996b98b05393c87"},
+    {"name":"RELEASE-MANIFEST.json","sha256":"a97fd11a86516999181270a1119abd57ed081592b7827e7bbf0d157a6200bc29"},
+    {"name":"release.json","sha256":"4ed74567ed8e5a767c61e6171ab0b52b0086c1fe431b8fcecd9fdcce3cafb001"},
+    {"name":"release.json.minisig","sha256":"5c791bcc9d78750d1f873ca2119f38dc51f21a039b296b1570822de311aa4191"},
+    {"name":"SHA256SUMS","sha256":"3f2e21fdb9ba16a8710a7c2c921600dd4f4a77a5c10fc5c774c40b40db490dbe"}
+  ],
+  "publicReleasePublished": true,
+  "routerChanged": false,
+  "candidateReady": false,
+  "nextRevision": "p59-router-preinstall-persistence-checkpoint",
+  "nextExactAction": "CAPTURE_ROUTER_R1_PACKAGE_SERVICE_XRAY_OWNERSHIP_AND_PERSISTENCE_HASHES_BEFORE_INSTALLING_THE_EXACT_PUBLIC_R2_PACKAGE"
+}

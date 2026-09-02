@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0011",
+  "revision": "p49-tag-absence-audit-with-separate-exit-code",
+  "status": "PASS",
+  "at": "2026-09-02T19:33:54.0177756+03:00",
+  "branch": "codex/r0009-updater-package",
+  "releaseSourceCommit": "6d44c164f3ce7e99195a806f0a191bd66d3b8ed2",
+  "remoteBranchCommitExact": true,
+  "tag": "v1.0.0-r2",
+  "localTagExists": false,
+  "remoteTagExists": false,
+  "githubReleaseExists": false,
+  "githubDefaultBranch": "main",
+  "mainBranchChanged": false,
+  "guidePublication": {
+    "releaseTagReadme": "https://github.com/BROadmin/BROray-Light/blob/v1.0.0-r2/README.md",
+    "workingBranchReadme": "https://github.com/BROadmin/BROray-Light/blob/codex/r0009-updater-package/README.md",
+    "defaultMainReadmeChanged": false,
+    "reason": "The active-branch-only constraint forbids switching to or changing main. The immutable release tag carries the complete GitHub guide."
+  },
+  "publicReleasePublished": false,
+  "routerChanged": false,
+  "nextRevision": "p50-create-and-push-immutable-tag",
+  "nextExactAction": "CREATE_ANNOTATED_TAG_V1_0_0_R2_ON_6D44C164F3CE7E99195A806F0A191BD66D3B8ED2_PUSH_THE_EXACT_TAG_AND_VERIFY_REMOTE_PEELED_COMMIT"
+}
