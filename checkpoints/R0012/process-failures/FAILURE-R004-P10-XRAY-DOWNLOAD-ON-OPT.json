@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0012_DOCUMENTATION_RELOCATION_AND_CORRECTIVE_RELEASE",
+  "failureId": "R004",
+  "revision": "p10-router-storage-contract-audit",
+  "status": "FAIL_FIRST_ERROR_PRESERVED_XRAY_TEMPORARY_DOWNLOAD_ON_OPT",
+  "at": "2026-09-02T23:26:59.0837549+03:00",
+  "operation": "VERIFY_THAT_ALL_DOWNLOADED_AND_EXTRACTED_XRAY_TEMPORARY_INPUTS_USE_ROUTER_TMPFS",
+  "firstError": "The inherited Xray updater defaults BRORAY_XRAY_DOWNLOAD_ROOT to /opt/broray-light/tmp/broray-xray-download instead of /tmp.",
+  "failureClass": "PRODUCT_TEMPORARY_STORAGE_CONTRACT",
+  "candidateDefectObserved": true,
+  "userRequirement": "Temporary downloads and extraction work must use router RAM-backed /tmp.",
+  "measuredR3Package": {
+    "ipkSizeBytes": 12808528,
+    "installedRegularFileBytes": 36210847,
+    "installedRegularFileMiB": 34.53,
+    "xrayBinaryBytes": 35389566,
+    "nonXrayRegularFileBytes": 821281,
+    "installerDownloadTarget": "/tmp/broray-light_1.0.0-r3_aarch64-3.10.ipk",
+    "lightUpdaterWorkRoot": "/tmp/broray-light-updater",
+    "xrayUpdateWorkRoot": "/tmp/broray-xray-update",
+    "xrayDownloadRootObserved": "/opt/broray-light/tmp/broray-xray-download"
+  },
+  "additionalFinding": "Clean-install postinst copies the verified Xray bootstrap payload within /opt before removing the bootstrap source, temporarily doubling Xray storage consumption.",
+  "publicationStateAtFailure": {
+    "tag": "v1.0.0-r3",
+    "tagObject": "e243e0fe82584efac1f49cb3f8b3c69635456735",
+    "tagPeeledCommit": "3a756bb7e2506af97e4c7988947fee1e89639c2f",
+    "draftReleaseId": 381549858,
+    "draftAssets": 8,
+    "draftAssetHashesVerified": true,
+    "publicReleasePublished": false,
+    "latestStableChanged": false
+  },
+  "releaseDecision": {
+    "publishR3": false,
+    "moveOrOverwriteR3Tag": false,
+    "correctedReleaseId": "1.0.0-r4",
+    "correctedTag": "v1.0.0-r4"
+  },
+  "routerMutationPerformed": false,
+  "docsPublished": false,
+  "hiddenRetryPerformed": false,
+  "nextRevision": "p11-r4-tmpfs-xray-input-and-clean-bootstrap-storage-correction",
+  "nextExactAction": "PRESERVE_THE_R3_TAG_DELETE_ONLY_THE_UNPUBLISHED_R3_DRAFT_THEN_PATCH_XRAY_DOWNLOAD_AND_EXTRACTION_TO_TMPFS_REDUCE_CLEAN_BOOTSTRAP_DUPLICATION_AND_ADD_STORAGE_CONTRACT_GATES_FOR_R4"
+}

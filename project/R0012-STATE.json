@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "stage": "R0012_DOCUMENTATION_RELOCATION_AND_CORRECTIVE_RELEASE",
-  "status": "R3_CI_AND_INDEPENDENT_ARTIFACT_AUDIT_PASS",
-  "currentRevision": "p7-explicit-git-and-complete-ci-artifact-audit",
+  "status": "R3_REJECTED_BEFORE_PUBLICATION_XRAY_TMPFS_CONTRACT_FAILURE",
+  "currentRevision": "p10-router-storage-contract-audit",
   "workingBranch": "codex/r0009-updater-package",
   "authorizedTask": "RELOCATE_RUSSIAN_DOCUMENTATION_AND_REMOVE_EMBEDDED_WEBUI_GUIDE_STABLE_1.0.0_R3",
   "canonicalInput": {
@@ -17,9 +17,9 @@
   },
   "releasePolicy": {
     "previousStableImmutable": "1.0.0-r2",
-    "nextVersion": "1.0.0-r3",
-    "nextTag": "v1.0.0-r3",
-    "webAssetCacheToken": "1.0.0-r3-r0012",
+    "nextVersion": "1.0.0-r4",
+    "nextTag": "v1.0.0-r4",
+    "webAssetCacheToken": "1.0.0-r4-r0012",
     "sameSigningTrustRootRequired": true,
     "overwriteExistingReleaseForbidden": true
   },
@@ -40,14 +40,14 @@
     "R0012_INDEPENDENT_CI_ARTIFACT_AUDIT"
   ],
   "processFailures": {
-    "preserved": 2,
-    "latest": "checkpoints/R0012/process-failures/FAILURE-R002-P6-GIT-BASH-PATH.json",
-    "latestSha256": "70f0d3ddb7bc6a2afc04df1b6014d6c9400b33eefa435021fbd742b6f728bd0f",
-    "resolvedThroughRevision": "p7-explicit-git-and-complete-ci-artifact-audit"
+    "preserved": 4,
+    "latest": "checkpoints/R0012/process-failures/FAILURE-R004-P10-XRAY-DOWNLOAD-ON-OPT.json",
+    "latestSha256": "b9510f1ac9f8fc19758f024e40103ad3db31b6df13cf19e52cef749dc0efb912",
+    "resolvedThroughRevision": "p9-quoted-exact-object-and-repeat-prepublication-check"
   },
   "activeBlocker": null,
   "candidateReady": false,
   "releaseReady": false,
   "publicReleasePublished": false,
-  "nextExactAction": "RECHECK_THAT_V1_0_0_R3_DOES_NOT_EXIST_THEN_CREATE_THE_TAG_AT_THE_EXACT_VERIFIED_SOURCE_COMMIT_AND_PUBLISH_ONLY_THE_VERIFIED_BUILD_A_ASSETS"
+  "nextExactAction": "PRESERVE_THE_R3_TAG_DELETE_ONLY_THE_UNPUBLISHED_R3_DRAFT_THEN_PATCH_XRAY_DOWNLOAD_AND_EXTRACTION_TO_TMPFS_REDUCE_CLEAN_BOOTSTRAP_DUPLICATION_AND_ADD_STORAGE_CONTRACT_GATES_FOR_R4"
 }

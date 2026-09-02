@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0012_DOCUMENTATION_RELOCATION_AND_CORRECTIVE_RELEASE",
+  "failureId": "R003",
+  "revision": "p8-immutable-r3-prepublication-check",
+  "status": "FAIL_FIRST_ERROR_PRESERVED_POWERSHELL_REVISION_PARSE",
+  "at": "2026-09-02T23:20:03.2361938+03:00",
+  "operation": "VERIFY_THE_EXACT_RELEASE_SOURCE_COMMIT_OBJECT_BEFORE_CREATING_V1_0_0_R3",
+  "firstError": "PowerShell treated the unquoted ^{commit} suffix as shell syntax, so git rev-parse received an invalid extra argument.",
+  "errorCategory": "LOCAL_COMMAND_QUOTING",
+  "candidateDefectObserved": false,
+  "passedBeforeFailure": {
+    "remoteTagV1_0_0_R3Exists": false,
+    "githubReleaseV1_0_0_R3Exists": false,
+    "workingBranch": "codex/r0009-updater-package",
+    "workingTreeClean": true
+  },
+  "remoteMutationPerformed": false,
+  "tagCreated": false,
+  "releasePublished": false,
+  "docsPublished": false,
+  "hiddenRetryPerformed": false,
+  "nextRevision": "p9-quoted-exact-object-and-repeat-prepublication-check",
+  "nextExactAction": "VERIFY_THE_SOURCE_OBJECT_USING_GIT_CAT_FILE_WITH_A_QUOTED_HASH_RECHECK_REMOTE_TAG_AND_RELEASE_ABSENCE_THEN_CREATE_THE_IMMUTABLE_TAG"
+}
