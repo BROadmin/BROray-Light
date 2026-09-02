@@ -4,23 +4,35 @@ This repository contains a separate lightweight product for Keenetic/KeeneticOS.
 
 ## Current authorized task
 
-Work only on stage `R0010` in the already active branch `codex/r0009-updater-package`:
+Work only on stage `R0011` in the already active branch `codex/r0009-updater-package`:
 
-`PUBLISH_AND_VALIDATE_BRORAY_LIGHT_STABLE_RELEASE`
+`PUBLISH_RUSSIAN_GUIDE_AND_WEBUI_HOME_DOCUMENTATION_STABLE_1.0.0_R2`
 
 Read these files before changing code:
 
 1. `docs/CODEX-HANDOFF.md`
-2. `docs/CODEX-R0010.md`
-3. `docs/CODEX-R0009.md`
-4. `project/IMPLEMENTATION-STATE.json`
-5. `project/INVARIANTS.json`
-6. `project/R0010-STATE.json`
-7. `project/R0009-STATE.json`
-8. `project/WORKLOG.jsonl`
-9. `checkpoints/R0009/CHECKPOINT.json`
+2. `docs/CODEX-R0011.md`
+3. `docs/CODEX-R0010.md`
+4. `docs/CODEX-R0009.md`
+5. `project/IMPLEMENTATION-STATE.json`
+6. `project/INVARIANTS.json`
+7. `project/R0011-STATE.json`
+8. `project/R0010-STATE.json`
+9. `project/R0009-STATE.json`
+10. `project/WORKLOG.jsonl`
+11. `checkpoints/R0010/CHECKPOINT.json`
 
-R0010 is explicitly authorized to publish a public GitHub Stable release, configure the Stable channel, and repeat validation on the physical test router. It is not authorized to modify `BROadmin/BROray` or to introduce excluded full-product features.
+R0011 is explicitly authorized to publish the complete Russian instruction on GitHub and in the live Home WebUI, issue immutable Stable `1.0.0-r2`, and validate it on the already authorized physical test router. It is not authorized to overwrite `1.0.0-r1`, modify `BROadmin/BROray`, mutate a production server, or introduce excluded full-product features.
+
+## R0011 documentation release rules
+
+- Preserve Stable `1.0.0-r1` and tag `v1.0.0-r1` byte-for-byte.
+- Use release/package/candidate ID `1.0.0-r2`, tag `v1.0.0-r2`, and Web asset cache token `1.0.0-r2-r0011`.
+- Keep exactly three functional WebUI pages. The embedded guide belongs to Home and must not introduce a new functional page or API.
+- The Russian guide must document installation, first login, three-page operation, subscriptions and their auto-refresh, duplicate handling, failover, Keenetic interface, Xray reinstall/update, Light Stable update, diagnostics, persistence, removal, security, support, and license.
+- Use the existing Stable minisign trust root. Sign only through the encrypted GitHub Actions secret `BRORAY_LIGHT_MINISIGN_PRIVATE_KEY`; never read or print its value and never recreate a plaintext local private key.
+- Repeat Build A/B, isolated regression, WebUI control and endpoint audit, browser desktop/mobile validation, public-byte validation, and authorized physical-router validation.
+- CHECKPOINT-FIRST and FIRST-ERROR remain mandatory under `checkpoints/R0011/`.
 
 ## R0010 release rules
 

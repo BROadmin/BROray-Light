@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0011",
+  "revision": "p11-current-mcp-runtime-static-validation",
+  "status": "PASS",
+  "at": "2026-09-02T17:49:00+03:00",
+  "githubGuide": {
+    "path": "README.md",
+    "sha256": "20eb01927f16ad79a83d15ccf562cef326b1cd78a654d876048b2c4367a4b8d7",
+    "companionPath": "docs/USER-GUIDE-RU.md",
+    "companionSha256": "c96301186df2b1bf8eba4f9601ac8fc7b457b2f0f5387f1873d1749da27ce879",
+    "language": "ru",
+    "requiredTopics": 12,
+    "requiredTopicsPresent": 12
+  },
+  "webGuide": {
+    "homeHtmlSha256": "3140b8a619b05e58d10dd8707ddf597bb43fa69e7235101a8c11fa271cd588ea",
+    "cssSha256": "ebadc2a645ab1c71cb6295d963963c0ed7e34322f489aedd8ac939bfc6faf2a2",
+    "homeJavascriptSha256": "b556cb6f0ef90a7d4f9c46a14ddf3b68251620f8ba0d56a97a0f3a137f41a680",
+    "detailsSections": 7,
+    "copyControls": 3,
+    "copyTargets": 3,
+    "functionalPages": 3,
+    "newFunctionalApis": 0,
+    "oldVersionTokenHits": 0,
+    "cacheTokenHits": 9
+  },
+  "staticValidation": {
+    "javascriptFilesChecked": 5,
+    "javascriptSyntax": "PASS",
+    "htmlFilesParsed": 4,
+    "htmlParsing": "PASS",
+    "uniqueIds": "PASS",
+    "copyTargetResolution": "PASS",
+    "functionalNavigation": "PASS"
+  },
+  "boundaries": {
+    "vlessOnly": true,
+    "routesAdded": false,
+    "dotManagementAdded": false,
+    "ratingsOrQualityHistoryAdded": false,
+    "nativeAuthenticationChanged": false
+  },
+  "nextRevision": "p12-r0011-release-builder-and-regression-tests",
+  "nextExactAction": "ADD_THE_R0011_DETERMINISTIC_RELEASE_BUILDER_VERSION_CONTRACT_AND_DOCUMENTATION_REGRESSION_TESTS"
+}

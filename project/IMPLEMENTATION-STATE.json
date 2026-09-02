@@ -1,11 +1,11 @@
 {
   "schemaVersion": 1,
   "product": "BROray-Light",
-  "stage": "R0010",
-  "status": "PASS",
-  "candidateReady": true,
-  "candidateId": "1.0.0-r1",
-  "releaseId": "1.0.0-r1",
+  "stage": "R0011",
+  "status": "IN_PROGRESS",
+  "candidateReady": false,
+  "candidateId": "1.0.0-r2",
+  "releaseId": "1.0.0-r2",
   "baseStable": "3.0.0-r23",
   "baseCandidate": "3.0.0-r23c02",
   "canonicalSourceCommit": "684b27bdb53e545047419baa87c63dd86dffa469",
@@ -99,6 +99,18 @@
     },
     "closureIntegrityAudit": "PASS"
   },
+  "r0011": {
+    "objective": "PUBLISH_RUSSIAN_GUIDE_AND_WEBUI_HOME_DOCUMENTATION_STABLE_1.0.0_R2",
+    "startCheckpoint": "checkpoints/R0011/START-P1.json",
+    "referenceAudit": "checkpoints/R0011/REFERENCE-AUDIT-P6.json",
+    "releaseContract": "checkpoints/R0011/RELEASE-CONTRACT-P7.json",
+    "releaseId": "1.0.0-r2",
+    "tag": "v1.0.0-r2",
+    "webAssetCacheToken": "1.0.0-r2-r0011",
+    "acceptanceGates": 15,
+    "completedAcceptanceGates": 6,
+    "publicReleasePublished": false
+  },
   "codexEntryPoint": "docs/CODEX-HANDOFF.md",
-  "nextStage": "DEFINE_AND_AUTHORIZE_R0011_BEFORE_ANY_POST_RELEASE_CHANGE"
+  "nextStage": "COMPLETE_R0011"
 }

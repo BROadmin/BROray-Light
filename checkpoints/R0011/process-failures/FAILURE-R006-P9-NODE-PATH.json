@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0011",
+  "revision": "p9-corrected-guide-file-patches",
+  "failureId": "R006",
+  "status": "FAIL_FIRST_ERROR_PRESERVED_PARTIAL_VALIDATION_ACCEPTED",
+  "at": "2026-09-02T17:45:34+03:00",
+  "operation": "STATIC_WEBUI_SYNTAX_VALIDATION",
+  "firstError": "The system shell could not resolve node from PATH, so JavaScript syntax validation did not run.",
+  "completedBeforeFailure": {
+    "oldWebuiVersionTokenHits": 0,
+    "newCacheTokenHits": 9
+  },
+  "notExecutedAfterFailure": [
+    "JavaScript syntax validation",
+    "HTML parser validation",
+    "guide artifact hash capture"
+  ],
+  "impact": {
+    "productFilesChangedByValidation": false,
+    "routerChanged": false,
+    "publicReleaseChanged": false
+  },
+  "hiddenRetryPerformed": false,
+  "nextRevision": "p10-bundled-runtime-static-validation",
+  "nextExactAction": "RESOLVE_THE_BUNDLED_WORKSPACE_NODE_RUNTIME_THEN_REPEAT_THE_STATIC_VALIDATION_AS_A_NEW_REVISION"
+}

@@ -1,0 +1,144 @@
+name: R0011 deterministic release build
+
+on:
+  push:
+    branches:
+      - codex/r0009-updater-package
+    paths:
+      - README.md
+      - docs/USER-GUIDE-RU.md
+      - packaging/**
+      - updater/**
+      - tools/build_r0009_candidate.py
+      - tools/build_r0011_release.py
+      - tools/test_r0009.py
+      - tools/test_r0011.py
+      - .github/workflows/r0011-build.yml
+
+permissions:
+  contents: read
+
+concurrency:
+  group: r0011-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  build-test:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - name: Check out exact source
+        uses: actions/checkout@v4
+
+      - name: Install bounded build tools
+        run: |
+          set -eu
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends dash jq minisign
+
+      - name: Validate documentation source
+        run: python3 tools/test_r0011.py --source-only
+
+      - name: Fetch pinned public inputs
+        run: |
+          set -eu
+          mkdir -p "$RUNNER_TEMP/r0011-inputs"
+          curl -q --proto '=https' --proto-redir '=https' --tlsv1.2 -fsSL \
+            https://github.com/BROadmin/BROray-Light/releases/download/v1.0.0-r1/broray-light-updater-platform-5-light1.tar.gz \
+            -o "$RUNNER_TEMP/r0011-inputs/broray-light-updater-platform-5-light1.tar.gz"
+          curl -q --proto '=https' --proto-redir '=https' --tlsv1.2 -fsSL \
+            https://github.com/XTLS/Xray-core/releases/download/v26.7.28/Xray-linux-arm64-v8a.zip \
+            -o "$RUNNER_TEMP/r0011-inputs/Xray-linux-arm64-v8a.zip"
+          curl -q --proto '=https' --proto-redir '=https' --tlsv1.2 -fsSL \
+            https://github.com/XTLS/Xray-core/releases/download/v26.7.28/Xray-linux-arm64-v8a.zip.dgst \
+            -o "$RUNNER_TEMP/r0011-inputs/Xray-linux-arm64-v8a.zip.dgst"
+          printf '%s  %s\n' \
+            4983f0fc268a9f19f3e64959fe5f7d8086f26ad907d528ca82ca623f10d9a92a \
+            "$RUNNER_TEMP/r0011-inputs/broray-light-updater-platform-5-light1.tar.gz" \
+            f5698bb218ada3b4022db26fafc39601c5f53b46b19eb76c9616325985807501 \
+            "$RUNNER_TEMP/r0011-inputs/Xray-linux-arm64-v8a.zip" \
+            7380220ffee3878f5841c5ac31e1bd2b4625d22cacc2d1248ea3dedaa255d02f \
+            "$RUNNER_TEMP/r0011-inputs/Xray-linux-arm64-v8a.zip.dgst" | sha256sum -c -
+
+      - name: Build A and independent Build B with governed signing identity
+        env:
+          SIGNING_KEY: ${{ secrets.BRORAY_LIGHT_MINISIGN_PRIVATE_KEY }}
+        run: |
+          set -eu
+          [ -n "$SIGNING_KEY" ] || { echo 'Required signing secret is unavailable.' >&2; exit 1; }
+          key="$RUNNER_TEMP/r0011-release.key"
+          umask 077
+          printf '%s' "$SIGNING_KEY" > "$key"
+          unset SIGNING_KEY
+          mkdir -p dist-ci/Build-A dist-ci/Build-B
+          python3 tools/build_r0011_release.py \
+            --output dist-ci/Build-A \
+            --updater-platform "$RUNNER_TEMP/r0011-inputs/broray-light-updater-platform-5-light1.tar.gz" \
+            --xray-archive "$RUNNER_TEMP/r0011-inputs/Xray-linux-arm64-v8a.zip" \
+            --xray-digest "$RUNNER_TEMP/r0011-inputs/Xray-linux-arm64-v8a.zip.dgst" \
+            --minisign-tool "$(command -v minisign)" \
+            --signing-key "$key"
+          python3 tools/build_r0011_release.py \
+            --output dist-ci/Build-B \
+            --updater-platform "$RUNNER_TEMP/r0011-inputs/broray-light-updater-platform-5-light1.tar.gz" \
+            --xray-archive "$RUNNER_TEMP/r0011-inputs/Xray-linux-arm64-v8a.zip" \
+            --xray-digest "$RUNNER_TEMP/r0011-inputs/Xray-linux-arm64-v8a.zip.dgst" \
+            --minisign-tool "$(command -v minisign)" \
+            --signing-key "$key"
+          python3 tools/test_r0011.py \
+            --build dist-ci/Build-A \
+            --dash "$(command -v dash)" \
+            --jq "$(command -v jq)" \
+            --minisign "$(command -v minisign)" \
+            --signing-key "$key" \
+            --python "$(command -v python3)"
+          rm -f "$key"
+          [ ! -e "$key" ]
+
+      - name: Verify reproducibility and isolated acceptance
+        run: |
+          set -eu
+          diff -qr dist-ci/Build-A dist-ci/Build-B
+          (cd dist-ci/Build-A && sha256sum -c SHA256SUMS)
+          minisign -V -p updater/release.pub -m dist-ci/Build-A/release.json -x dist-ci/Build-A/release.json.minisig
+
+      - name: Write non-secret CI receipt
+        run: |
+          python3 - <<'PY'
+          import hashlib, json, os
+          from pathlib import Path
+          root = Path('dist-ci/Build-A')
+          artifacts = []
+          for path in sorted(root.iterdir()):
+              if path.is_file():
+                  artifacts.append({
+                      'name': path.name,
+                      'sizeBytes': path.stat().st_size,
+                      'sha256': hashlib.sha256(path.read_bytes()).hexdigest(),
+                  })
+          receipt = {
+              'schemaVersion': 1,
+              'stage': 'R0011',
+              'status': 'PASS',
+              'commit': os.environ['GITHUB_SHA'],
+              'releaseId': '1.0.0-r2',
+              'builds': 2,
+              'comparison': 'BYTE_IDENTICAL',
+              'privateKeyRetained': False,
+              'artifacts': artifacts,
+          }
+          Path('dist-ci/R0011-CI-RECEIPT.json').write_text(
+              json.dumps(receipt, ensure_ascii=False, indent=2, sort_keys=True) + '\n',
+              encoding='utf-8', newline='\n'
+          )
+          PY
+
+      - name: Upload verified candidate
+        uses: actions/upload-artifact@v4
+        with:
+          name: broray-light-r0011-${{ github.sha }}
+          path: |
+            dist-ci/Build-A/*
+            dist-ci/R0011-CI-RECEIPT.json
+          if-no-files-found: error
+          retention-days: 14

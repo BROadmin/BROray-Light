@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0011",
+  "revision": "p0-precheckpoint-read-only-preflight",
+  "failureId": "R001",
+  "recordedAt": "2026-09-02T17:12:03+03:00",
+  "status": "FAIL_FIRST_ERROR_PRESERVED_PRECHECKPOINT_READ_ONLY",
+  "operation": "READ_BROWSER_SKILL_INSTRUCTIONS",
+  "firstError": "The initial read-only Get-Content call used an invalid placeholder path and could not find the browser SKILL.md file.",
+  "impact": {
+    "repositoryMutationBeforeCheckpoint": false,
+    "productFilesChanged": false,
+    "browserControlled": false,
+    "routerChanged": false,
+    "publicReleaseChanged": false
+  },
+  "startCheckpointCreatedBeforeAnyRepositoryMutation": true,
+  "hiddenRetryPerformed": false,
+  "nextRevision": "p3-correct-browser-skill-read-and-reference-audit",
+  "nextExactAction": "READ_THE_EXACT_BROWSER_SKILL_PATH_THEN_INSPECT_THE_PUBLIC_FULL_BRORAY_GITHUB_AND_SITE_DOCUMENTATION_WITHOUT_MUTATING_EITHER"
+}

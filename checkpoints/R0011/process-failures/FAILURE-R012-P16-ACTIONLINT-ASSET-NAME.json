@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0011",
+  "revision": "p16-workflow-structure-validation-with-available-parser",
+  "failureId": "R012",
+  "status": "FAIL_FIRST_ERROR_PRESERVED_PRE_DOWNLOAD",
+  "at": "2026-09-02T18:06:54+03:00",
+  "operation": "RESOLVE_OFFICIAL_ACTIONLINT_WINDOWS_ASSET",
+  "firstError": "The assumed actionlint Windows asset naming pattern did not match any asset in the latest official release.",
+  "verification": {
+    "downloadStarted": false,
+    "temporaryDirectoryCreated": false,
+    "workflowValidationExecuted": false
+  },
+  "impact": {
+    "repositoryFilesChanged": false,
+    "routerChanged": false,
+    "publicReleaseChanged": false
+  },
+  "hiddenRetryPerformed": false,
+  "nextRevision": "p17-exact-actionlint-asset-selection",
+  "nextExactAction": "LIST_THE_OFFICIAL_LATEST_ACTIONLINT_ASSET_NAMES_SELECT_THE_EXACT_WINDOWS_X64_ASSET_AND_VALIDATE_THE_WORKFLOW"
+}

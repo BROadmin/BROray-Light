@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0011",
+  "revision": "p7-r0011-contract-and-version",
+  "status": "PASS",
+  "at": "2026-09-02T17:28:00+03:00",
+  "objective": "PUBLISH_RUSSIAN_GUIDE_AND_WEBUI_HOME_DOCUMENTATION_STABLE_1.0.0_R2",
+  "authorization": {
+    "githubDocumentationPublication": true,
+    "liveWebuiPublication": true,
+    "newStableReleaseRequiredForImmutableDelivery": true,
+    "physicalTestRouterValidation": true,
+    "fullBROrayMutation": false,
+    "productionServerMutation": false
+  },
+  "immutablePreviousRelease": {
+    "releaseId": "1.0.0-r1",
+    "tag": "v1.0.0-r1",
+    "githubReleaseId": 381203509,
+    "latestAtAudit": true,
+    "overwriteForbidden": true
+  },
+  "newRelease": {
+    "releaseId": "1.0.0-r2",
+    "candidateId": "1.0.0-r2",
+    "packageVersion": "1.0.0-r2",
+    "tag": "v1.0.0-r2",
+    "channel": "stable",
+    "webAssetCacheToken": "1.0.0-r2-r0011",
+    "tagAbsentAtAudit": true,
+    "stableIndexUrl": "https://github.com/BROadmin/BROray-Light/releases/latest/download/release.json",
+    "assetBaseUrl": "https://github.com/BROadmin/BROray-Light/releases/download/v1.0.0-r2/"
+  },
+  "signing": {
+    "existingTrustRootRequired": true,
+    "publicKeySha256": "b1587b8407f0c0443a361ed29b839319b66912b1b71414bcf31e848c29eab696",
+    "githubActionsSecret": "BRORAY_LIGHT_MINISIGN_PRIVATE_KEY",
+    "secretValueReadForbidden": true,
+    "plaintextPrivateKeyAllowedLocally": false
+  },
+  "acceptanceGates": 15,
+  "nextRevision": "p8-author-russian-guide-and-home-section",
+  "nextExactAction": "AUTHOR_THE_COMPLETE_RUSSIAN_GITHUB_GUIDE_AND_HOME_GUIDE_WITH_R0011_VERSION_TOKENS"
+}

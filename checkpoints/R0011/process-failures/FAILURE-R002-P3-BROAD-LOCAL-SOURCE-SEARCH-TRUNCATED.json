@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0011",
+  "revision": "p3-correct-browser-skill-read-and-reference-audit",
+  "failureId": "R002",
+  "at": "2026-09-02T17:15:57+03:00",
+  "status": "FAIL_FIRST_ERROR_PRESERVED_PARTIAL_DISCOVERY_ACCEPTED",
+  "operation": "DISCOVER_CURRENT_LIGHT_RELEASE_SOURCE_FILES",
+  "firstError": "The broad recursive rg output exceeded the output budget and was truncated.",
+  "factsEstablishedBeforeFailure": {
+    "releaseSourceRoot": "packaging/app-overlay",
+    "homeHtml": "packaging/app-overlay/web-new/home.html",
+    "homeJavascript": "packaging/app-overlay/web-new/assets/js/home.js",
+    "sharedCss": "packaging/app-overlay/web-new/assets/css/allpage.css"
+  },
+  "impact": {
+    "repositoryMutationByFailedCommand": false,
+    "routerChanged": false,
+    "publicReleaseChanged": false,
+    "referenceRepositoryChanged": false
+  },
+  "hiddenRetryPerformed": false,
+  "nextRevision": "p4-narrow-release-source-inspection",
+  "nextExactAction": "READ_ONLY_THE_IDENTIFIED_PACKAGING_APP_OVERLAY_HOME_CSS_JAVASCRIPT_AND_BUILD_INPUTS_WITH_BOUNDED_OUTPUT"
+}

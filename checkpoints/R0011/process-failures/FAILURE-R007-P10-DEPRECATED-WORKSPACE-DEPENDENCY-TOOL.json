@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0011",
+  "revision": "p10-bundled-runtime-static-validation",
+  "failureId": "R007",
+  "status": "FAIL_FIRST_ERROR_PRESERVED_TOOL_REDIRECT",
+  "at": "2026-09-02T17:47:07+03:00",
+  "operation": "RESOLVE_BUNDLED_WORKSPACE_RUNTIME",
+  "firstError": "The legacy Codex app dependency loader reported that it is no longer available through dynamic tools and directed the caller to the codex_app MCP server.",
+  "impact": {
+    "productFilesChanged": false,
+    "routerChanged": false,
+    "publicReleaseChanged": false
+  },
+  "hiddenRetryPerformed": false,
+  "nextRevision": "p11-current-mcp-runtime-static-validation",
+  "nextExactAction": "CALL_THE_CURRENT_CODEX_APP_MCP_DEPENDENCY_LOADER_THEN_RUN_STATIC_VALIDATION_WITH_ITS_NODE_PATH"
+}

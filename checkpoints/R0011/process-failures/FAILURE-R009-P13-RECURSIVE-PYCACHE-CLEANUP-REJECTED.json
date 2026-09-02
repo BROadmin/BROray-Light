@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0011",
+  "revision": "p13-corrected-cache-token-test",
+  "failureId": "R009",
+  "status": "FAIL_FIRST_ERROR_PRESERVED_COMMAND_NOT_EXECUTED",
+  "at": "2026-09-02T18:01:00+03:00",
+  "operation": "CLEAN_GENERATED_PYTHON_CACHE_AND_RUN_CORRECTED_VALIDATION",
+  "firstError": "The terminal safety layer rejected the combined command because it contained a recursive Remove-Item operation. The command was not executed.",
+  "verification": {
+    "commandExecuted": false,
+    "validationExecuted": false,
+    "pycacheDirectoryContainedPreexistingFiles": true,
+    "r0011GeneratedFilesIdentified": [
+      "tools/__pycache__/build_r0011_release.cpython-312.pyc",
+      "tools/__pycache__/test_r0011.cpython-312.pyc"
+    ]
+  },
+  "impact": {
+    "productFilesChanged": false,
+    "routerChanged": false,
+    "publicReleaseChanged": false
+  },
+  "hiddenRetryPerformed": false,
+  "nextRevision": "p14-explicit-cache-files-and-corrected-validation",
+  "nextExactAction": "REMOVE_ONLY_THE_TWO_EXACT_R0011_PYC_FILES_WITH_NON_RECURSIVE_COMMANDS_THEN_RUN_VALIDATION_SEPARATELY"
+}

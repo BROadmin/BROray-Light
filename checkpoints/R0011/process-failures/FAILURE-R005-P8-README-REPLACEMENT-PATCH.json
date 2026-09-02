@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0011",
+  "revision": "p8-author-russian-guide-and-home-section",
+  "failureId": "R005",
+  "status": "FAIL_FIRST_ERROR_PRESERVED_NO_PARTIAL_APPLICATION",
+  "at": "2026-09-02T17:36:43+03:00",
+  "operation": "APPLY_COMPLETE_RUSSIAN_GITHUB_GUIDE",
+  "firstError": "apply_patch rejected a patch that deleted and re-added README.md in the same operation because multiple operations targeted the same file.",
+  "verification": {
+    "readmeSha256Unchanged": "881307858ff2304bee9540521c6ac84f29d84f29fe32f093b6c23c929f77b665",
+    "userGuideCreated": false,
+    "partialPatchApplication": false
+  },
+  "impact": {
+    "productFilesChanged": false,
+    "routerChanged": false,
+    "publicReleaseChanged": false
+  },
+  "hiddenRetryPerformed": false,
+  "nextRevision": "p9-corrected-guide-file-patches",
+  "nextExactAction": "UPDATE_README_IN_PLACE_AND_ADD_THE_COMPANION_GUIDE_WITH_SEPARATE_APPLY_PATCH_OPERATIONS"
+}

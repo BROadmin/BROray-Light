@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0011",
+  "revision": "p12-r0011-release-builder-and-regression-tests",
+  "failureId": "R008",
+  "status": "FAIL_FIRST_ERROR_PRESERVED_TEST_DEFECT",
+  "at": "2026-09-02T17:58:47+03:00",
+  "operation": "R0011_SOURCE_REGRESSION_TEST",
+  "firstError": "The new source audit expected 9 cache-token occurrences, conflating the earlier count of matching lines with the exact count of individual asset URLs. The source contains 16 intentional cache-token URL occurrences.",
+  "completedBeforeFailure": {
+    "pythonSyntax": "PASS",
+    "readmeTopicChecks": "PASS",
+    "homeGuideStructureChecks": "PASS",
+    "oldWebuiTokenHits": 0
+  },
+  "failureClassification": "TEST_EXPECTATION_DEFECT",
+  "productDefect": false,
+  "generatedByValidation": [
+    "tools/__pycache__"
+  ],
+  "impact": {
+    "routerChanged": false,
+    "publicReleaseChanged": false
+  },
+  "hiddenRetryPerformed": false,
+  "nextRevision": "p13-corrected-cache-token-test",
+  "nextExactAction": "CHANGE_THE_TEST_EXPECTATION_TO_16_REMOVE_THE_EXACT_GENERATED_PYCACHE_AND_RERUN_SOURCE_WORKFLOW_VALIDATION"
+}

@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0011",
+  "status": "PREBUILD_AUDIT_PASS_RELEASE_SOURCE_COMMIT_REQUIRED",
+  "currentRevision": "p19-release-source-commit-push-and-ci",
+  "workingBranch": "codex/r0009-updater-package",
+  "authorizedTask": "ADD_FULL_RUSSIAN_DOCUMENTATION_TO_GITHUB_AND_WEBUI_HOME",
+  "canonicalInput": {
+    "r0010EvidenceCommit": "b21078406e950c3c32b63ecbe44787d4608978e7",
+    "r0010ReleaseSourceCommit": "9e5fce9bfa7c82bfc2f2654d80fd3987c5259963",
+    "r0010CheckpointSha256": "82d740011bd95cce3b97e893fefd4e397863a89e72d7dfe1959a536baaf8ddee",
+    "stableVersion": "1.0.0-r1"
+  },
+  "startCheckpoint": {
+    "path": "checkpoints/R0011/START-P1.json",
+    "sha256": "c067cdb8dd607e886cca545acb6c869a5998f9bbcf64a0fd5717e63409dbb07c"
+  },
+  "scope": {
+    "githubRussianGuide": true,
+    "webuiHomeGuideSection": true,
+    "fullBrorayReferenceReadOnly": true,
+    "physicalRouterValidationAuthorized": true,
+    "publicReleaseOverwriteForbidden": true
+  },
+  "completedGates": [
+    "R0011_START_CHECKPOINT",
+    "FULL_BRORAY_REFERENCE_AUDIT",
+    "R0011_RELEASE_AND_VERSION_CONTRACT",
+    "RUSSIAN_GITHUB_GUIDE_SOURCE",
+    "WEBUI_HOME_GUIDE_SOURCE_AND_STATIC_SYNTAX",
+    "R0011_BUILDER_TEST_AND_WORKFLOW_SOURCE",
+    "R0011_PREBUILD_SOURCE_AUDIT"
+  ],
+  "processFailures": {
+    "preserved": 12,
+    "latest": "checkpoints/R0011/process-failures/FAILURE-R012-P16-ACTIONLINT-ASSET-NAME.json",
+    "latestSha256": "f582b0466b51285d77ee2c31e0064b67ca087da56aef729f34d7ae1f214fb4c3"
+  },
+  "releasePolicy": {
+    "currentStableImmutable": "1.0.0-r1",
+    "nextVersion": "1.0.0-r2",
+    "nextTag": "v1.0.0-r2",
+    "webAssetCacheToken": "1.0.0-r2-r0011",
+    "publishAuthorized": true,
+    "installBeforeValidation": false
+  },
+  "activeBlocker": null,
+  "nextExactAction": "COMMIT_AND_PUSH_THE_EXACT_R0011_RELEASE_SOURCE_THEN_WAIT_FOR_THE_TRIGGERED_GITHUB_ACTIONS_BUILD_AND_TEST_RUN"
+}

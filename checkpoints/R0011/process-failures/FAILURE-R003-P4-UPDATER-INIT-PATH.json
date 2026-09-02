@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0011",
+  "revision": "p4-narrow-release-source-inspection",
+  "failureId": "R003",
+  "status": "FAIL_FIRST_ERROR_PRESERVED",
+  "at": "2026-09-02T17:21:38+03:00",
+  "operation": "READ_UPDATER_INIT_SCRIPT",
+  "firstError": "The read-only inspection addressed packaging/opkg/S23broray-light-updater, but the updater init script is stored at updater/opt/etc/init.d/S23broray-light-updater.",
+  "impact": {
+    "productFilesChanged": false,
+    "routerChanged": false,
+    "publicReleaseChanged": false,
+    "referenceRepositoryChanged": false
+  },
+  "inspectionBeforeRetry": {
+    "performed": true,
+    "resolvedPath": "updater/opt/etc/init.d/S23broray-light-updater"
+  },
+  "hiddenRetryPerformed": false,
+  "nextRevision": "p5-corrected-release-source-and-reference-audit",
+  "nextExactAction": "READ_THE_RESOLVED_UPDATER_INIT_PATH_AND_SEAL_THE_FULL_BRORAY_READ_ONLY_REFERENCE_AUDIT"
+}

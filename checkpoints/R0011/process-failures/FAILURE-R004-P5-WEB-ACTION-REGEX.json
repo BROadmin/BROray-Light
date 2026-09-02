@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0011",
+  "revision": "p5-corrected-release-source-and-reference-audit",
+  "failureId": "R004",
+  "status": "FAIL_FIRST_ERROR_PRESERVED_PARTIAL_READ_ACCEPTED",
+  "at": "2026-09-02T17:23:23+03:00",
+  "operation": "DISCOVER_USER_FACING_WEB_ACTIONS",
+  "firstError": "A combined ripgrep regular expression was malformed and reported an unclosed group.",
+  "completedBeforeFailure": {
+    "resolvedUpdaterInitRead": true,
+    "existingDocsListed": true
+  },
+  "impact": {
+    "productFilesChanged": false,
+    "routerChanged": false,
+    "publicReleaseChanged": false,
+    "referenceRepositoryChanged": false
+  },
+  "hiddenRetryPerformed": false,
+  "nextRevision": "p6-literal-action-discovery-and-reference-audit-seal",
+  "nextExactAction": "DISCOVER_WEB_ACTIONS_WITH_SEPARATE_LITERAL_SEARCHES_THEN_SEAL_THE_REFERENCE_AUDIT"
+}

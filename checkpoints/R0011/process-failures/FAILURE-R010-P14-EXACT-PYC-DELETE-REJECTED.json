@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0011",
+  "revision": "p14-explicit-cache-files-and-corrected-validation",
+  "failureId": "R010",
+  "status": "FAIL_FIRST_ERROR_PRESERVED_COMMAND_NOT_EXECUTED",
+  "at": "2026-09-02T18:02:52+03:00",
+  "operation": "REMOVE_TWO_EXACT_R0011_PYC_FILES",
+  "firstError": "The terminal safety layer rejected the non-recursive exact-file Remove-Item command. The command was not executed.",
+  "resolution": {
+    "cacheIsGitIgnored": true,
+    "cacheIncludedInBuild": false,
+    "cacheIncludedInCommit": false,
+    "furtherDeletionRequired": false,
+    "futureValidationEnvironment": "PYTHONDONTWRITEBYTECODE=1"
+  },
+  "impact": {
+    "trackedFilesChanged": false,
+    "routerChanged": false,
+    "publicReleaseChanged": false
+  },
+  "hiddenRetryPerformed": false,
+  "nextRevision": "p15-no-bytecode-corrected-validation",
+  "nextExactAction": "RUN_THE_CORRECTED_SOURCE_AND_WORKFLOW_VALIDATION_WITH_PYTHONDONTWRITEBYTECODE_SET_AND_LEAVE_IGNORED_CACHE_OUTSIDE_ALL_ARTIFACTS"
+}

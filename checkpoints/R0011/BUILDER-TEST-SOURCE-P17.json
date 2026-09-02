@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0011",
+  "revision": "p17-exact-actionlint-asset-selection",
+  "status": "PASS",
+  "at": "2026-09-02T18:09:00+03:00",
+  "releaseBuilder": {
+    "path": "tools/build_r0011_release.py",
+    "sha256": "6e71ee4c46302196f0c05f4244160b32eb30bf6c6dcf5ecbdd1e7795e5135d65",
+    "pythonSyntax": "PASS",
+    "releaseId": "1.0.0-r2",
+    "webAssetCacheToken": "1.0.0-r2-r0011",
+    "publishedR1UpdaterInputPinned": true,
+    "officialXrayInputPinned": true
+  },
+  "regressionHarness": {
+    "path": "tools/test_r0011.py",
+    "sha256": "1c9406ff1722f322cd67d018b6abb6b46e96e6c57e88fdd07d5dfc345e4ef843",
+    "pythonSyntax": "PASS",
+    "sourceAudit": "PASS",
+    "cacheTokenOccurrences": 16,
+    "inheritedIsolatedHarness": "tools/test_r0009.py"
+  },
+  "workflow": {
+    "path": ".github/workflows/r0011-build.yml",
+    "sha256": "955aab918640c18ec981a6ce13035a8128cbee8d661fba6ae540783ed54b3ab6",
+    "localValidation": "PASS",
+    "validator": {
+      "name": "actionlint",
+      "version": "v1.7.12",
+      "officialAsset": "actionlint_1.7.12_windows_amd64.zip",
+      "assetSha256": "6e7241b51e6817ea6a047693d8e6fed13b31819c9a0dd6c5a726e1592d22f6e9",
+      "checksumVerified": true
+    },
+    "signingSecretValueRead": false,
+    "plaintextPrivateKeyCreatedLocally": false
+  },
+  "webPublicationPolicy": {
+    "path": "packaging/opkg/broray-light-web-publish-policy.sh",
+    "sha256": "488f3cfaa6ca4126910af4cc90ffb5fb906937a1e50ef64f5dc386758b90e67b",
+    "candidateId": "1.0.0-r2",
+    "semanticPolicyIdentityChanged": false
+  },
+  "signingPublicKey": {
+    "path": "updater/release.pub",
+    "sha256": "b1587b8407f0c0443a361ed29b839319b66912b1b71414bcf31e848c29eab696",
+    "unchanged": true
+  },
+  "gitDiffCheck": "PASS",
+  "nextRevision": "p18-prebuild-source-audit-and-release-source-commit",
+  "nextExactAction": "RUN_THE_PREBUILD_SOURCE_SECURITY_AND_CONTRACT_AUDIT_THEN_COMMIT_AND_PUSH_THE_EXACT_R0011_RELEASE_SOURCE_TO_TRIGGER_CI_BUILD_A_AND_B"
+}

@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0011",
+  "revision": "p18-prebuild-source-audit-and-release-source-commit",
+  "status": "PASS",
+  "at": "2026-09-02T18:12:00+03:00",
+  "branch": "codex/r0009-updater-package",
+  "checks": {
+    "gitDiffCheck": "PASS",
+    "canonicalR0008Source": {
+      "status": "PASS",
+      "commit": "684b27bdb53e545047419baa87c63dd86dffa469",
+      "files": 121,
+      "logicalBytes": 627326
+    },
+    "machineReadableJson": {
+      "status": "PASS",
+      "files": 19
+    },
+    "r0011JsonSidecars": {
+      "status": "PASS",
+      "sidecars": 17
+    },
+    "worklogJsonl": "PASS",
+    "repositorySecretScan": {
+      "status": "PASS",
+      "filesScanned": 1684,
+      "privateKeyMarkers": 0,
+      "tokenMarkers": 0
+    },
+    "sourceAudit": "PASS",
+    "workflowActionlint": "PASS",
+    "publicSigningKeyUnchanged": true
+  },
+  "releaseState": {
+    "candidateReady": false,
+    "releaseReady": false,
+    "publicReleasePublished": false,
+    "routerChanged": false
+  },
+  "nextRevision": "p19-release-source-commit-push-and-ci",
+  "nextExactAction": "COMMIT_AND_PUSH_THE_EXACT_R0011_RELEASE_SOURCE_THEN_WAIT_FOR_THE_TRIGGERED_GITHUB_ACTIONS_BUILD_AND_TEST_RUN"
+}

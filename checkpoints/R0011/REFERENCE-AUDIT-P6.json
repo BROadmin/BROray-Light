@@ -1,0 +1,80 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0011",
+  "revision": "p6-literal-action-discovery-and-reference-audit-seal",
+  "status": "PASS",
+  "at": "2026-09-02T17:25:00+03:00",
+  "reference": {
+    "repository": "BROadmin/BROray",
+    "branch": "main",
+    "head": "d4aa2a841e10fc942cb9880fab65aaa0c45c4f3f",
+    "access": "READ_ONLY",
+    "files": [
+      {
+        "path": "README.md",
+        "url": "https://raw.githubusercontent.com/BROadmin/BROray/main/README.md",
+        "sizeBytes": 20710,
+        "sha256": "7c9ea3a5d8fe8ffdcd99746d34ff959434a52474aa1078e3cecf9cbab7a4f4df"
+      },
+      {
+        "path": "docs/requirements.md",
+        "url": "https://raw.githubusercontent.com/BROadmin/BROray/main/docs/requirements.md",
+        "sizeBytes": 6434,
+        "sha256": "f4d2435461ea079f743e014d83829417265a07611e9ea831a5f670f6e609d43b"
+      },
+      {
+        "path": "docs/installation.md",
+        "url": "https://raw.githubusercontent.com/BROadmin/BROray/main/docs/installation.md",
+        "sizeBytes": 12499,
+        "sha256": "d0ba9e21e654cfbc493463f51b005a818ef0071d344a49484cdf1a98674a5625"
+      },
+      {
+        "path": "docs/webui.md",
+        "url": "https://raw.githubusercontent.com/BROadmin/BROray/main/docs/webui.md",
+        "sizeBytes": 12893,
+        "sha256": "25f33eaf93dea2d92389d6f5907c292c9ed92df6e9798c2a8681ca3d63c63b75"
+      },
+      {
+        "path": "site/docs.brovibe.cloud/broray/index.html",
+        "url": "https://raw.githubusercontent.com/BROadmin/BROray/main/site/docs.brovibe.cloud/broray/index.html",
+        "sizeBytes": 31607,
+        "sha256": "bd591cc6980a420dd22d2e2160f9414b5412fee843fe9219f8e191ff9a552ab5"
+      }
+    ]
+  },
+  "adaptation": {
+    "include": [
+      "product purpose and limitations",
+      "requirements",
+      "clean installation",
+      "WebUI access and native Keenetic authentication",
+      "first configuration",
+      "Home Servers and Subscriptions workflows",
+      "automatic server failover",
+      "automatic subscription refresh",
+      "Xray reinstall and update",
+      "BROray-Light Stable update",
+      "diagnostics",
+      "safe removal and retained data",
+      "security and support"
+    ],
+    "exclude": [
+      "non-VLESS protocols",
+      "Routes",
+      "DNS-over-TLS management",
+      "ratings",
+      "quality history",
+      "scheduled quality refresh",
+      "full BROray service topology"
+    ],
+    "functionalWebPagesRemain": 3,
+    "webGuidePlacement": "collapsible full-width section on Home"
+  },
+  "mutation": {
+    "fullBROrayRepository": false,
+    "router": false,
+    "publicRelease": false
+  },
+  "nextRevision": "p7-r0011-contract-and-version",
+  "nextExactAction": "DEFINE_R0011_ACCEPTANCE_GATES_AND_THE_IMMUTABLE_NEXT_STABLE_VERSION_CONTRACT"
+}

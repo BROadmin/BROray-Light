@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0011",
+  "revision": "p15-no-bytecode-corrected-validation",
+  "failureId": "R011",
+  "status": "FAIL_FIRST_ERROR_PRESERVED_PARTIAL_VALIDATION_ACCEPTED",
+  "at": "2026-09-02T18:04:43+03:00",
+  "operation": "LOCAL_R0011_SOURCE_AND_WORKFLOW_VALIDATION",
+  "firstError": "The bundled Python runtime does not include the optional yaml module, so the auxiliary workflow YAML parse did not run.",
+  "completedBeforeFailure": {
+    "pythonSyntax": "2/2 PASS",
+    "r0011SourceAudit": "PASS",
+    "bytecodeWritesDisabled": true
+  },
+  "failureClassification": "OPTIONAL_LOCAL_VALIDATOR_DEPENDENCY_UNAVAILABLE",
+  "productDefect": false,
+  "workflowDefectProven": false,
+  "impact": {
+    "trackedFilesChangedByValidation": false,
+    "routerChanged": false,
+    "publicReleaseChanged": false
+  },
+  "hiddenRetryPerformed": false,
+  "nextRevision": "p16-workflow-structure-validation-with-available-parser",
+  "nextExactAction": "VALIDATE_WORKFLOW_STRUCTURE_WITH_AN_AVAILABLE_LOCAL_PARSER_OR_BOUNDED_STRUCTURAL_CHECK_THEN_SEAL_THE_BUILDER_AND_TEST_SOURCE"
+}

@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0011",
+  "revision": "p1-start-checkpoint",
+  "at": "2026-09-02T17:11:14+03:00",
+  "authorizedTask": "ADD_FULL_RUSSIAN_DOCUMENTATION_TO_GITHUB_AND_WEBUI_HOME",
+  "status": "PASS_START_CHECKPOINT",
+  "authorization": {
+    "source": "user_request",
+    "request": "Create a complete Russian guide analogous to BROray documentation on GitHub and its site, and add a guide section to the BROray-Light Home page.",
+    "physicalRouterMutationAuthorizedByPriorExplicitGrant": true,
+    "publicReleaseOverwriteAuthorized": false
+  },
+  "workingBranch": "codex/r0009-updater-package",
+  "canonicalInput": {
+    "r0010EvidenceCommit": "b21078406e950c3c32b63ecbe44787d4608978e7",
+    "r0010EvidenceTree": "e7b649f08a17bee791d6cbd6e7323aa65a07fdf7",
+    "r0010ReleaseSourceCommit": "9e5fce9bfa7c82bfc2f2654d80fd3987c5259963",
+    "r0010Checkpoint": "checkpoints/R0010/CHECKPOINT.json",
+    "r0010CheckpointSha256": "82d740011bd95cce3b97e893fefd4e397863a89e72d7dfe1959a536baaf8ddee",
+    "stableVersion": "1.0.0-r1",
+    "stableTag": "v1.0.0-r1"
+  },
+  "scope": {
+    "githubRussianGuide": true,
+    "webuiHomeGuideSection": true,
+    "referenceFullBrorayDocumentationReadOnly": true,
+    "retainExactlyThreeFunctionalPages": true,
+    "nativeAuthenticationMustRemain": true,
+    "forbiddenProductFeaturesRemainAbsent": true,
+    "modifyFullBrorayRepository": false,
+    "modifyProductionServer": false
+  },
+  "releasePolicy": {
+    "overwriteV1_0_0_R1Assets": "FORBIDDEN",
+    "nextVersion": "PENDING_REFERENCE_AND_VERSION_CONTRACT",
+    "publishOrInstallBeforeValidation": "FORBIDDEN"
+  },
+  "processPolicy": {
+    "checkpointFirst": true,
+    "firstError": true,
+    "failureDirectory": "checkpoints/R0011/process-failures",
+    "worklog": "project/WORKLOG.jsonl",
+    "state": "project/R0011-STATE.json"
+  },
+  "preCheckpointReadOnlyFailureObserved": true,
+  "nextRevision": "p2-preserve-skill-path-read-failure",
+  "nextExactAction": "PRESERVE_THE_PRECHECKPOINT_READ_ONLY_BROWSER_SKILL_PATH_ERROR_THEN_READ_THE_EXACT_SKILL_AND_AUDIT_THE_CURRENT_LIGHT_AND_FULL_BRORAY_DOCUMENTATION_SURFACES"
+}
