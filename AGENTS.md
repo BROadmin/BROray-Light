@@ -4,19 +4,36 @@ This repository contains a separate lightweight product for Keenetic/KeeneticOS.
 
 ## Current authorized task
 
-Work only on stage `R0009`:
+Work only on stage `R0010` in the already active branch `codex/r0009-updater-package`:
 
-`BUILD_LIGHT_UPDATER_INSTALLER_AND_INSTALLABLE_CANDIDATE_FROM_R0008`
+`PUBLISH_AND_VALIDATE_BRORAY_LIGHT_STABLE_RELEASE`
 
 Read these files before changing code:
 
 1. `docs/CODEX-HANDOFF.md`
-2. `docs/CODEX-R0009.md`
-3. `project/IMPLEMENTATION-STATE.json`
-4. `project/INVARIANTS.json`
-5. `project/R0009-STATE.json`
-6. `project/WORKLOG.jsonl`
-7. `checkpoints/R0008/REMOTE-PERSISTENCE.json`
+2. `docs/CODEX-R0010.md`
+3. `docs/CODEX-R0009.md`
+4. `project/IMPLEMENTATION-STATE.json`
+5. `project/INVARIANTS.json`
+6. `project/R0010-STATE.json`
+7. `project/R0009-STATE.json`
+8. `project/WORKLOG.jsonl`
+9. `checkpoints/R0009/CHECKPOINT.json`
+
+R0010 is explicitly authorized to publish a public GitHub Stable release, configure the Stable channel, and repeat validation on the physical test router. It is not authorized to modify `BROadmin/BROray` or to introduce excluded full-product features.
+
+## R0010 release rules
+
+- Keep public version and release ID `1.0.0-r1`; it has not previously been published.
+- Preserve the R0009 candidate and evidence as immutable historical input.
+- The R0009 internal bytes must not be published directly: their `internal.invalid` URLs, `internal-r0009` channel contract, absent default index URL, and destroyed signing key are a recorded R0010 first-error failure.
+- Build a corrected Stable revision from the verified R0009/R0008 inputs without redesigning the product.
+- Use the immutable GitHub release tag `v1.0.0-r1` and the Stable index URL `https://github.com/BROadmin/BROray-Light/releases/latest/download/release.json`.
+- Use versioned GitHub release asset URLs for the application archive, IPK, and installer.
+- Establish a new release signing identity. Store the private key only as an encrypted GitHub Actions secret and destroy all local plaintext copies after publication validation. Commit only the public key.
+- Repeat independent Build A/B, complete isolated-root validation, all WebUI button checks, public URL/TLS/MIME/cache validation, exact published-byte verification, and authorized physical-router install/update/equal-version validation.
+- CHECKPOINT-FIRST and FIRST-ERROR remain mandatory. Record every material failed revision under `checkpoints/R0010/process-failures/` before a corrected revision.
+- Do not tag, publish, or call the result ready until every R0010 acceptance gate is PASS.
 
 ## Immutable input
 

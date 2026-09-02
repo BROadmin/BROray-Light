@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0010",
+  "revision": "p14-stable-home-channel-initial-state",
+  "at": "2026-09-02T10:59:39+03:00",
+  "status": "PASS_IMPLEMENTED_REBUILD_REQUIRED",
+  "correction": {
+    "path": "packaging/app-overlay/web-new/home.html",
+    "sha256": "78afabf8e78f5c3316d7f0b694b6889bfa5fd54d2555024d74a54a0d0775f6a3",
+    "previousText": "Internal R0009 build",
+    "newText": "Loading Stable channel",
+    "runtimeInternalMarkerSearch": "PASS_ZERO"
+  },
+  "validation": {
+    "gitDiffCheck": "PASS",
+    "canonicalSourceUnchanged": true
+  },
+  "supersededBuildReceipts": [
+    "checkpoints/R0010/BUILD-A-P10-STABLE-1.0.0-R1.json",
+    "checkpoints/R0010/REPRODUCIBILITY-P11-STABLE-1.0.0-R1.json",
+    "checkpoints/R0010/ISOLATED-VALIDATION-P12-STABLE-1.0.0-R1.json"
+  ],
+  "publicReleasePublished": false,
+  "nextRevision": "p15-corrected-stable-build-a",
+  "nextExactAction": "BUILD_CORRECTED_STABLE_BUILD_A_IN_A_NEW_OUTPUT_DIRECTORY"
+}

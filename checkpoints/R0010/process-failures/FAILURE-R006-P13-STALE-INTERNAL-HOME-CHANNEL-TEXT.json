@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0010",
+  "revision": "p13-webui-button-contract-audit",
+  "failureId": "R006",
+  "at": "2026-09-02T10:58:00+03:00",
+  "status": "FAIL_FIRST_ERROR_PRESERVED",
+  "operation": "PREAUDIT_THE_STATIC_WEBUI_BUTTON_AND_RELEASE_CHANNEL_MARKUP",
+  "firstError": "Home HTML still initializes the BROray-Light channel card with 'Internal R0009 build'.",
+  "path": "packaging/app-overlay/web-new/home.html",
+  "impact": "If the initial info request fails or is delayed, a public Stable installation presents false internal-candidate status.",
+  "buildsSuperseded": [
+    "dist/R0010/1.0.0-r1-Build-A",
+    "dist/R0010/1.0.0-r1-Build-B"
+  ],
+  "published": false,
+  "productionMutationPerformed": false,
+  "routerMutationPerformed": false,
+  "hiddenRetryPerformed": false,
+  "nextRevision": "p14-stable-home-channel-initial-state",
+  "nextExactAction": "REPLACE_ONLY_THE_STALE_INITIAL_CHANNEL_TEXT_WITH_A_STABLE_LOADING_STATE_SEARCH_FOR_OTHER_RUNTIME_INTERNAL_MARKERS_THEN_REBUILD_IN_NEW_OUTPUT_DIRECTORIES"
+}

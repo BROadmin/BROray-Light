@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0010",
+  "revision": "p3-define-stable-contract-and-signing-governance",
+  "at": "2026-09-02T10:25:10+03:00",
+  "status": "PASS",
+  "releaseId": "1.0.0-r1",
+  "tag": "v1.0.0-r1",
+  "distribution": {
+    "repository": "BROadmin/BROray-Light",
+    "channel": "stable",
+    "stableIndexUrl": "https://github.com/BROadmin/BROray-Light/releases/latest/download/release.json",
+    "stableSignatureUrl": "https://github.com/BROadmin/BROray-Light/releases/latest/download/release.json.minisig",
+    "versionedAssetBaseUrl": "https://github.com/BROadmin/BROray-Light/releases/download/v1.0.0-r1/",
+    "httpsOnlyRedirects": true
+  },
+  "signingGovernance": {
+    "newStableIdentity": true,
+    "privateKeyRepositoryStorage": false,
+    "durableSecretProvider": "GitHub Actions encrypted repository secret",
+    "secretName": "BRORAY_LIGHT_MINISIGN_PRIVATE_KEY",
+    "githubCredentialPresent": true,
+    "repositoryAdminPermission": true,
+    "actionsSecretsPublicKeyEndpoint": "PASS",
+    "existingPublicReleaseCount": 0,
+    "localPlaintextLifetime": "BOUNDED_UNTIL_PUBLICATION_VALIDATION_THEN_DESTROY"
+  },
+  "samePublicVersionRationale": "The internal R0009 1.0.0-r1 bytes were never publicly published. They are preserved as historical candidate evidence and are superseded before the first immutable public publication. The single authorized physical test router will receive an explicit package replacement before Stable equal-version validation.",
+  "records": {
+    "workingContract": {"path": "AGENTS.md", "sha256": "c26606379cb4e72ad66e0aa0d960bb0e79ca5bcb17e4edcec7b5f24885b323af"},
+    "stageContract": {"path": "docs/CODEX-R0010.md", "sha256": "f84d9a19a092cad6dfe900a5bf09bf05af443a9e52e77339f01fd8e1a866acd5"},
+    "handoff": {"path": "docs/CODEX-HANDOFF.md", "sha256": "2a5011917fd259eb274fcf3b31489c213b64ba5aae4fb94db9057b2f26d96ec1"},
+    "stageState": {"path": "project/R0010-STATE.json", "sha256": "ed207a838de401344ae0674cb9a57eb2be2374600e982e9b0faf1b89022c9d92"},
+    "implementationState": {"path": "project/IMPLEMENTATION-STATE.json", "sha256": "cbb57616fe8ae254b7dea673a7cbb453de1c96de18fbe30d056679d93559c033"}
+  },
+  "publicReleasePublished": false,
+  "productionMutationPerformed": false,
+  "routerMutationPerformed": false,
+  "nextRevision": "p4-stable-implementation",
+  "nextExactAction": "IMPLEMENT_STABLE_CHANNEL_VALIDATION_DEFAULT_INDEX_URL_PUBLIC_PACKAGE_METADATA_INSTALLER_TEXT_AND_PARAMETERIZED_DETERMINISTIC_BUILDER"
+}

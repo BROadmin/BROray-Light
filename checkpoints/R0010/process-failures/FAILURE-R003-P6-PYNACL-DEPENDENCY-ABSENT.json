@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0010",
+  "revision": "p6-signing-secret-encryption-dependency-probe",
+  "failureId": "R003",
+  "at": "2026-09-02T10:35:00+03:00",
+  "status": "FAIL_FIRST_ERROR_PRESERVED",
+  "operation": "IMPORT_PYNACL_FOR_GITHUB_ACTIONS_SECRET_SEALED_BOX_ENCRYPTION",
+  "firstError": "ModuleNotFoundError: No module named 'nacl'",
+  "cause": "The bundled Python runtime does not include PyNaCl.",
+  "privateSigningKeyCreated": false,
+  "githubSecretMutated": false,
+  "repositoryDependencyMutated": false,
+  "productDefect": false,
+  "publicReleasePublished": false,
+  "productionMutationPerformed": false,
+  "routerMutationPerformed": false,
+  "hiddenRetryPerformed": false,
+  "nextRevision": "p7-isolated-pynacl-and-stable-signing-identity",
+  "nextExactAction": "INSTALL_PYNACL_IN_A_NEW_EXTERNAL_TEMP_DIRECTORY_VERIFY_IMPORT_THEN_GENERATE_AND_UPLOAD_THE_STABLE_SIGNING_IDENTITY"
+}

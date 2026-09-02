@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0010",
+  "revision": "p2-r0009-publication-input-validation",
+  "failureId": "R001",
+  "at": "2026-09-02T10:18:47+03:00",
+  "status": "FAIL_FIRST_ERROR_PRESERVED",
+  "operation": "VALIDATE_THE_R0009_ARTIFACTS_AS_DIRECT_PUBLIC_STABLE_INPUTS",
+  "firstError": "The R0009 bytes implement an internal-only feed and cannot form a functional public Stable channel.",
+  "evidence": {
+    "releaseIndex": {
+      "path": "dist/R0009/1.0.0-r1-P531-Final-Build-A/release.json",
+      "sha256": "f5179ffdb94c5d50b41c8c188200c6230b49a13b0ec0c76feb700c52fb5e4bea",
+      "channel": "internal-r0009",
+      "bundleUrl": "https://internal.invalid/broray-light/R0009/broray-light-app-1.0.0-r1.tar.gz"
+    },
+    "installer": {
+      "path": "dist/R0009/1.0.0-r1-P531-Final-Build-A/broray-light-install-1.0.0-r1.sh",
+      "sha256": "2b961bbb8b49419166f069f38378c025fb15ae73dd5716cb12f86d436e003c65",
+      "packageUrl": "https://internal.invalid/broray-light/R0009/broray-light_1.0.0-r1_aarch64-3.10.ipk",
+      "completionMessage": "BROray-Light internal R0009 candidate installed."
+    },
+    "updater": {
+      "path": "updater/opt/libexec/broray-light-updater/broray-light-updater.sh",
+      "sha256": "62b22893792d3a2c591afa109c675b686b8b3068bc21d186333803eae701d156",
+      "defaultIndexUrl": null,
+      "acceptedChannel": "internal-r0009"
+    },
+    "signing": {
+      "publicKeyPath": "updater/release.pub",
+      "publicKeyFileSha256": "f4e49912ddb5ad6e0995d4b4992ce7d879dc765815aafa61fa1156e8ba1ae4a4",
+      "r0009PrivateKeyDestroyed": true,
+      "destructionReceipt": "checkpoints/R0009/SIGNING-KEY-DESTRUCTION-P558-FINAL-1.0.0-R1.json",
+      "destructionReceiptSha256": "4229c801993258ae3f636d1e4f2acc62295816dce83dd48779465a47fd2673e6"
+    }
+  },
+  "impact": {
+    "directPublicationSafe": false,
+    "signedIndexCanBeCorrectedWithR0009Key": false,
+    "cleanInstallerCanDownloadFromPublicUrl": false,
+    "installedUpdaterCanConsumeAStableChannel": false
+  },
+  "publicationPerformed": false,
+  "productionMutationPerformed": false,
+  "routerMutationPerformed": false,
+  "hiddenRetryPerformed": false,
+  "candidateArtifactDefect": true,
+  "r0009HistoricalEvidenceMutated": false,
+  "resolutionPolicy": "Because 1.0.0-r1 was never publicly published, create a separately evidenced R0010 Stable build for the same requested public version, with production URLs, Stable channel validation, a newly governed signing identity, independent Build A/B, full isolated validation, and an authorized one-time physical package replacement before publication.",
+  "nextRevision": "p3-define-stable-contract-and-signing-governance",
+  "nextExactAction": "DEFINE_THE_IMMUTABLE_GITHUB_RELEASE_URLS_STABLE_INDEX_URL_AND_DURABLE_SIGNING_KEY_GOVERNANCE_BEFORE_CHANGING_BUILD_INPUTS"
+}

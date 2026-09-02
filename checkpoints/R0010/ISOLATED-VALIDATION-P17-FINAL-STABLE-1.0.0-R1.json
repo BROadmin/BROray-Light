@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0010",
+  "revision": "p17-final-isolated-validation",
+  "at": "2026-09-02T11:08:20+03:00",
+  "status": "PASS",
+  "build": "dist/R0010/1.0.0-r1-Final-Build-A",
+  "packageSha256": "efbc20e154be31233628226d8206acaad786534d25bba7b5f993b9dc1db3bc4c",
+  "appArchiveSha256": "749680ecee855078d5f46277d0a13b4285e81681c4166860fb1fa272383de796",
+  "gateCount": 51,
+  "passed": 51,
+  "failed": 0,
+  "requiredBehaviors": {
+    "cleanInstall": "PASS",
+    "newerUpdate": "PASS",
+    "equalVersionNoOp": "PASS",
+    "downgradeRefusal": "PASS",
+    "forcedHealthRollback": "PASS",
+    "persistence": "PASS",
+    "exactXray": "PASS",
+    "signedStableIndex": "PASS",
+    "requestAndGlobalLocks": "PASS",
+    "archiveSafety": "PASS",
+    "coownershipFailClosed": "PASS",
+    "webuiApiContracts": "PASS",
+    "subscriptionAutoUpdate": "PASS",
+    "serverDeduplication": "PASS"
+  },
+  "fullGateSet": "Same 51 named gates as checkpoints/R0010/ISOLATED-VALIDATION-P12-STABLE-1.0.0-R1.json with stableChannelAndKeeneticActionState replacing the historical internal-channel gate.",
+  "publicReleasePublished": false,
+  "nextRevision": "p18-dedicated-webui-button-audit",
+  "nextExactAction": "AUDIT_EVERY_STATIC_AND_DYNAMIC_WEBUI_BUTTON_BINDING_AND_REFERENCED_CGI_ENDPOINT_IN_THE_FINAL_APP_ARCHIVE"
+}

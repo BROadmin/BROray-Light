@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0010",
+  "revision": "p8-record-r004",
+  "failureId": "R005",
+  "at": "2026-09-02T10:42:00+03:00",
+  "status": "FAIL_FIRST_ERROR_PRESERVED",
+  "operation": "CREATE_THE_R004_FAILURE_RECORD",
+  "firstError": "apply_patch could not create parent directories because the absolute username segment was mistyped.",
+  "cause": "The path used an extra Cyrillic character in the username.",
+  "repositoryMutationDuringFailedPatch": false,
+  "githubSecretCreated": true,
+  "repositoryPublicKeyChanged": false,
+  "privateKeyStillPresentInBoundedTemp": true,
+  "publicReleasePublished": false,
+  "productionMutationPerformed": false,
+  "routerMutationPerformed": false,
+  "hiddenRetryPerformed": false,
+  "nextRevision": "p9-record-failures-and-install-key-with-exact-context",
+  "nextExactAction": "CREATE_R004_AND_R005_AT_THE_VERIFIED_WORKSPACE_PATH_THEN_REPLACE_THE_EXACT_CURRENT_PUBLIC_KEY_LINES"
+}

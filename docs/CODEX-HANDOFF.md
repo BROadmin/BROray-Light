@@ -2,6 +2,16 @@
 
 ## Current state
 
+R0010 `PUBLISH_AND_VALIDATE_BRORAY_LIGHT_STABLE_RELEASE` is authorized and in progress on `codex/r0009-updater-package`. Public version remains `1.0.0-r1`; no public release existed when R0010 started.
+
+R0010 CHECKPOINT-FIRST evidence begins at `checkpoints/R0010/START-P1.json`. Direct publication of the R0009 bytes failed closed at `checkpoints/R0010/process-failures/FAILURE-R001-P2-R0009-INTERNAL-PUBLICATION-CONTRACT.json`: those bytes use `internal.invalid`, require channel `internal-r0009`, lack a default Stable index URL, and their private signing key was destroyed. No public, production, or router mutation occurred during that failed revision.
+
+The corrected R0010 revision uses GitHub Releases, tag `v1.0.0-r1`, Stable index `https://github.com/BROadmin/BROray-Light/releases/latest/download/release.json`, versioned asset URLs, and a new Stable minisign identity whose private key must be retained only as encrypted GitHub Actions secret `BRORAY_LIGHT_MINISIGN_PRIVATE_KEY`.
+
+Until all 20 gates in `docs/CODEX-R0010.md` pass, `releaseReady=false` and `publicReleasePublished=false`.
+
+## R0009 baseline
+
 - Branch: `codex/r0009-updater-package`
 - R0009 status: **PASS**
 - Candidate and release ID: `1.0.0-r1`

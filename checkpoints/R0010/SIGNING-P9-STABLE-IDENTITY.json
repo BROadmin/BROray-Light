@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0010",
+  "revision": "p9-stable-signing-identity-installed",
+  "at": "2026-09-02T10:45:08+03:00",
+  "status": "PASS",
+  "identity": {
+    "algorithm": "minisign Ed25519",
+    "keyId": "F8ABF7C93FAB7C1F",
+    "repositoryPublicKeyPath": "updater/release.pub",
+    "repositoryPublicKeyFileSha256": "b1587b8407f0c0443a361ed29b839319b66912b1b71414bcf31e848c29eab696",
+    "temporaryCrlfExportSha256": "3b013737cde748a43e1b0371dc606c56154e861b7b701102fec88b01b841c7ba",
+    "newlineDifferenceOnly": true,
+    "repositoryPublicKeyPairVerification": "PASS"
+  },
+  "governance": {
+    "githubRepository": "BROadmin/BROray-Light",
+    "githubSecretName": "BRORAY_LIGHT_MINISIGN_PRIVATE_KEY",
+    "secretUploadHttpStatus": 201,
+    "secretPresenceAfterUpload": true,
+    "secretUpdatedAtUtc": "2026-09-02T07:41:35Z",
+    "transport": "GitHub repository public-key sealed box",
+    "privateMaterialRecorded": false,
+    "privateKeyPresentInRepository": false,
+    "localPlaintextPresentUntilBuildAndPublicationValidation": true
+  },
+  "publicReleasePublished": false,
+  "productionMutationPerformed": false,
+  "routerMutationPerformed": false,
+  "nextRevision": "p10-independent-stable-builds",
+  "nextExactAction": "BUILD_R0010_STABLE_BUILD_A_AND_INDEPENDENT_BUILD_B_FROM_THE_EXACT_PINNED_INPUTS_THEN_COMPARE_ALL_ARTIFACTS_BYTE_FOR_BYTE"
+}

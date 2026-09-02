@@ -232,7 +232,7 @@ def signed_index(
     value = {
         "schemaVersion": 1,
         "product": "BROray-Light",
-        "channel": "internal-r0009",
+        "channel": "stable",
         "candidate": {
             "releaseId": RELEASE_ID,
             "candidateId": CANDIDATE_ID,
@@ -249,7 +249,7 @@ def signed_index(
     signature = Path(str(index) + ".minisig")
     subprocess.run(
         [str(minisign), "-S", "-W", "-s", str(secret_key), "-m", str(index), "-x", str(signature),
-         "-c", "BROray-Light R0009 internal", "-t", f"releaseId={RELEASE_ID}"],
+         "-c", "BROray-Light Stable", "-t", f"releaseId={RELEASE_ID}"],
         check=True,
         capture_output=True,
         text=True,
@@ -318,7 +318,10 @@ def main() -> int:
             raise RuntimeError(f"KeenDNS WebUI safety contract missing: {fragment}")
     gates["webPublicationPackageLayout"] = "PASS"
 
-    candidate_manifest = json.loads((args.build / "CANDIDATE-MANIFEST.json").read_text(encoding="utf-8"))
+    manifest_path = args.build / "RELEASE-MANIFEST.json"
+    if not manifest_path.is_file():
+        manifest_path = args.build / "CANDIDATE-MANIFEST.json"
+    candidate_manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
     semantic_policy_sha = "e3e0e68b10ef69fce1c504f2689d1ecbd3f8b6b78ee6e7ab03d8ea73d63607dc"
     if candidate_manifest.get("webPublication", {}).get("policySha256") != semantic_policy_sha or \
        f"BRORAY_LIGHT_WEB_POLICY_SHA256='{semantic_policy_sha}'" not in web_policy.read_text(encoding="utf-8"):
@@ -455,7 +458,7 @@ def main() -> int:
         "temporaryStorage?.reinstallAllowed",
         "JSON.stringify({ mode })",
         "api/broray/update-check.cgi",
-        "Внутренняя сборка R0009: публичный канал обновлений пока не настроен.",
+        "Проверка Stable-канала не выполнена:",
     ):
         if functional_contract not in home_js:
             raise RuntimeError(f"Home corrective functional contract is absent: {functional_contract}")
@@ -464,11 +467,11 @@ def main() -> int:
         raise RuntimeError("Home corrective controls are absent")
     gates["homeIdentityPresentationContract"] = "PASS"
 
-    if "const internalCandidate = /r0009|0\\.1\\.0-r9/i" not in home_js or \
+    if "info.releaseChannel === 'stable'" not in home_js or \
        'id="keeneticCreateButton"' not in home_html or 'id="keeneticRepairButton"' not in home_html or \
        "healthy ? 'Исправно' : 'Исправить'" not in home_js:
-        raise RuntimeError("internal-channel or healthy Keenetic action-state presentation is incomplete")
-    gates["internalChannelAndKeeneticActionState"] = "PASS"
+        raise RuntimeError("Stable-channel or healthy Keenetic action-state presentation is incomplete")
+    gates["stableChannelAndKeeneticActionState"] = "PASS"
 
     for keenetic_interface_contract in (
         'id="keeneticInterfaceName"',

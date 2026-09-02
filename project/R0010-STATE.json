@@ -1,0 +1,87 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0010",
+  "status": "PREPUBLICATION_LOCAL_PASS",
+  "currentRevision": "p20-release-source-commit",
+  "workingBranch": "codex/r0009-updater-package",
+  "authorizedTask": "PUBLISH_AND_VALIDATE_BRORAY_LIGHT_STABLE_RELEASE",
+  "releaseReady": false,
+  "publicReleasePublished": false,
+  "releaseId": "1.0.0-r1",
+  "candidateId": "1.0.0-r1",
+  "tag": "v1.0.0-r1",
+  "canonicalInput": {
+    "r0008SourceCommit": "684b27bdb53e545047419baa87c63dd86dffa469",
+    "r0009Commit": "90431e9220ad17652189323785342a1c19b187b2",
+    "r0009CheckpointSha256": "3d7f7407df7b8eba6b4cc7f423e1bcba5ce48c1108a1ca3d7f0a850a2f3fd2fe"
+  },
+  "distribution": {
+    "repository": "BROadmin/BROray-Light",
+    "channel": "stable",
+    "indexUrl": "https://github.com/BROadmin/BROray-Light/releases/latest/download/release.json",
+    "assetBaseUrl": "https://github.com/BROadmin/BROray-Light/releases/download/v1.0.0-r1/"
+  },
+  "signing": {
+    "newStableIdentityRequired": true,
+    "githubActionsSecretName": "BRORAY_LIGHT_MINISIGN_PRIVATE_KEY",
+    "githubActionsSecretAccessPreflight": "PASS",
+    "privateKeyPresentInRepository": false,
+    "githubActionsSecretPresent": true,
+    "publicKeyFileSha256": "b1587b8407f0c0443a361ed29b839319b66912b1b71414bcf31e848c29eab696",
+    "localPlaintextDestroyed": false
+  },
+  "completedGates": [
+    "R0008_R0009_INPUT_IDENTITIES",
+    "R0010_CHECKPOINT_FIRST",
+    "STABLE_URL_CHANNEL_CONTRACT",
+    "STABLE_SIGNING_IDENTITY",
+    "UPDATER_PACKAGE_INSTALLER_STATIC",
+    "BUILD_A_B_BYTE_REPRODUCIBILITY",
+    "DETERMINISTIC_MANIFESTS_SHA256"
+    ,"ISOLATED_CLEAN_INSTALL_UPDATE_EQUAL_DOWNGRADE_ROLLBACK_PERSISTENCE"
+    ,"WEBUI_BUTTON_ENDPOINT_BINDING_AUDIT"
+    ,"PREPUBLICATION_LOCAL_AUDIT"
+  ],
+  "finalBuilds": {
+    "buildA": "dist/R0010/1.0.0-r1-Final-Build-A",
+    "buildB": "dist/R0010/1.0.0-r1-Final-Build-B",
+    "artifacts": 8,
+    "byteIdentical": 8,
+    "mismatched": 0,
+    "receipt": "checkpoints/R0010/REPRODUCIBILITY-P16-FINAL-STABLE-1.0.0-R1.json",
+    "receiptSha256": "0ed54901e9eddb41210631e460007887003ca3116d7f3e2b68523d5b9ccff5ab"
+  },
+  "finalArtifacts": {
+    "packageSha256": "efbc20e154be31233628226d8206acaad786534d25bba7b5f993b9dc1db3bc4c",
+    "appArchiveSha256": "749680ecee855078d5f46277d0a13b4285e81681c4166860fb1fa272383de796",
+    "updaterArchiveSha256": "fbd18cc90ca553af49645afcb1a7c6b7b16e4c852006499abeb10e66aff8abb7",
+    "installerSha256": "024a6074ada964abc73cbb2a5333e19a2d8bea0dec0988d067e68592fdb54437",
+    "releaseIndexSha256": "71f67b424e3addbedacaa5a7e3148e9844f6cbc9de47db97dfca1677380a6f5c",
+    "releaseSignatureSha256": "b9b47bf18e2e873a5dfe2eb35c961a2d3076c7c88a697e46ba1fa53425ac038d",
+    "releaseManifestSha256": "d450a7c2249806b6c37f53580f0fd88479b0441b1c263a8f33ba63561709faf3",
+    "sha256SumsSha256": "1889c94ff884732a817d77438f8413888c3eeadc57482292e96072a0a2d122b2"
+  },
+  "isolatedValidation": {
+    "passed": 51,
+    "failed": 0,
+    "receipt": "checkpoints/R0010/ISOLATED-VALIDATION-P17-FINAL-STABLE-1.0.0-R1.json",
+    "receiptSha256": "cb80cf123ba0cdd3ca95713ed26eaac4cab3b33d665d24a937f939f46d4d6c70"
+  },
+  "webuiButtonAudit": {
+    "buttonActions": 20,
+    "endpointBindings": 23,
+    "failures": 0,
+    "receipt": "checkpoints/R0010/WEBUI-BUTTON-AUDIT-P18-FINAL-STABLE.json",
+    "receiptSha256": "d4f987f49d394b34004769e258616296783679755c24784ecc389d6692067955"
+  },
+  "processFailures": {
+    "preserved": 6,
+    "latest": "checkpoints/R0010/process-failures/FAILURE-R006-P13-STALE-INTERNAL-HOME-CHANNEL-TEXT.json"
+  },
+  "productionMutationAuthorized": true,
+  "productionMutationPerformed": false,
+  "physicalRouterValidationAuthorized": true,
+  "routerMutationPerformed": false,
+  "activeBlocker": null,
+  "nextExactAction": "VERIFY_ALL_R0010_RECORDS_THEN_CREATE_AND_PUSH_THE_RELEASE_SOURCE_COMMIT"
+}

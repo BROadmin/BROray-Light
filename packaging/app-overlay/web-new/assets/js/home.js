@@ -57,8 +57,7 @@ async function refreshHome() {
     text('xrayVersion', xray.version || 'Не определена');
     text('xrayState', xray.running ? 'Xray запущен' : 'Xray остановлен');
     text('lightVersion', info.version || 'Не определена');
-    const internalCandidate = /r0009|0\.1\.0-r9/i.test((info.candidateId || '') + ' ' + (info.version || ''));
-    text('lightChannel', internalCandidate ? 'Внутренняя сборка R0009' : (info.releaseChannel === 'stable' ? 'Стабильный канал' : 'Канал ' + (info.releaseChannel || 'не определён')));
+    text('lightChannel', info.releaseChannel === 'stable' ? 'Стабильный канал' : 'Канал ' + (info.releaseChannel || 'не определён'));
     renderFailover(failover);
     const keenetic = unwrap(data.keenetic);
     const health = keenetic.health || {};
@@ -122,10 +121,9 @@ async function lightCheck() {
     if (data.updateAvailable === true) { text('lightUpdate', 'Доступна версия ' + (data.availableReleaseId || 'BROray-Light') + '. Установлена ' + (data.installedReleaseId || 'не определена') + '.'); button('lightInstallButton', 'Обновить', true); }
     else { text('lightUpdate', 'Установлена актуальная версия ' + (data.installedReleaseId || 'BROray-Light') + '.'); button('lightInstallButton', 'Обновлений нет', false); }
   } catch (error) {
-    const internal = error.code === 'UPDATE_CHECK_FAILED';
-    text('lightUpdate', internal ? 'Внутренняя сборка R0009: публичный канал обновлений пока не настроен.' : 'Проверка недоступна: ' + error.message);
+    text('lightUpdate', 'Проверка Stable-канала не выполнена: ' + error.message);
     button('lightInstallButton', 'Обновить', false);
-    if (!internal) showError(error.message);
+    showError(error.message);
   }
 }
 

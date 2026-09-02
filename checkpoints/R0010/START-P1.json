@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0010",
+  "revision": "p1-publication-preflight",
+  "at": "2026-09-02T10:18:47+03:00",
+  "status": "PASS_CHECKPOINT_CREATED",
+  "authorizedTask": "PUBLISH_AND_VALIDATE_BRORAY_LIGHT_STABLE_RELEASE",
+  "workingBranch": "codex/r0009-updater-package",
+  "headBeforeR0010": "90431e9220ad17652189323785342a1c19b187b2",
+  "canonicalInput": {
+    "r0008SourceCommit": "684b27bdb53e545047419baa87c63dd86dffa469",
+    "r0009Checkpoint": "checkpoints/R0009/CHECKPOINT.json",
+    "r0009CheckpointSha256": "3d7f7407df7b8eba6b4cc7f423e1bcba5ce48c1108a1ca3d7f0a850a2f3fd2fe",
+    "r0009CandidateId": "1.0.0-r1",
+    "r0009PublicReleasePublished": false
+  },
+  "authorization": {
+    "stablePublication": true,
+    "githubRelease": true,
+    "productionMutation": true,
+    "physicalRouterValidation": true,
+    "physicalRouterAddress": "192.168.1.1"
+  },
+  "safety": {
+    "checkpointFirst": true,
+    "firstError": true,
+    "fullBROrayMutation": false,
+    "publicBytesPublished": false,
+    "productionMutationPerformed": false,
+    "routerMutationPerformed": false
+  },
+  "nextRevision": "p2-r0009-publication-input-validation",
+  "nextExactAction": "VALIDATE_THE_R0009_ARTIFACTS_AS_DIRECT_PUBLIC_STABLE_INPUTS_BEFORE_ANY_PUBLICATION"
+}

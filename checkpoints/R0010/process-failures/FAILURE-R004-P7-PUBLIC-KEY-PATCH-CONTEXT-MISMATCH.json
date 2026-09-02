@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0010",
+  "revision": "p7-install-stable-public-key",
+  "failureId": "R004",
+  "at": "2026-09-02T10:41:35+03:00",
+  "status": "FAIL_FIRST_ERROR_PRESERVED",
+  "operation": "REPLACE_THE_R0009_PUBLIC_KEY_WITH_THE_NEW_STABLE_PUBLIC_KEY_USING_EXACT_PATCH_CONTEXT",
+  "firstError": "apply_patch verification failed because the expected old public-key lines did not match the file.",
+  "cause": "The patch used a remembered historical R0009 key instead of reading the current final R0009 public-key lines.",
+  "githubSecretCreated": true,
+  "githubSecretName": "BRORAY_LIGHT_MINISIGN_PRIVATE_KEY",
+  "repositoryPublicKeyChanged": false,
+  "privateKeyStillPresentInBoundedTemp": true,
+  "publicReleasePublished": false,
+  "productionMutationPerformed": false,
+  "routerMutationPerformed": false,
+  "hiddenRetryPerformed": false,
+  "nextRevision": "p8-read-exact-key-context-before-replacement",
+  "nextExactAction": "READ_THE_EXACT_CURRENT_PUBLIC_KEY_LINES_THEN_APPLY_A_CONTEXT_VERIFIED_REPLACEMENT"
+}

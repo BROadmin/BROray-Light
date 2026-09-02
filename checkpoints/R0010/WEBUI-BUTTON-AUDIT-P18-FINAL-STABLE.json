@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0010",
+  "revision": "p18-dedicated-webui-button-audit",
+  "at": "2026-09-02T11:12:18+03:00",
+  "status": "PASS",
+  "build": "dist/R0010/1.0.0-r1-Final-Build-A",
+  "appArchiveSha256": "749680ecee855078d5f46277d0a13b4285e81681c4166860fb1fa272383de796",
+  "auditTool": {
+    "path": "tools/audit_webui_buttons.py",
+    "sha256": "e8becfc96022c06af18fe480cb41d85d31b294f8e60e07f535ce52c4cbefdd95",
+    "pythonCompile": "PASS"
+  },
+  "results": {
+    "staticButtons": 12,
+    "dynamicButtons": 8,
+    "totalButtonActions": 20,
+    "pageEndpointBindings": 23,
+    "missingHandlers": 0,
+    "missingEndpoints": 0,
+    "nonExecutableEndpoints": 0
+  },
+  "pages": {
+    "index.html": ["password-toggle", "login-submit"],
+    "home.html": ["keenetic-create", "keenetic-repair", "status-refresh", "xray-check", "xray-install-or-reinstall", "light-check", "light-update"],
+    "servers.html": ["manual-import", "failover-save", "move-up", "move-down", "check", "activate", "delete"],
+    "subscriptions.html": ["add", "refresh", "delete", "auto-update-save"]
+  },
+  "dynamicEndpointMapsVerified": true,
+  "stateChangingPostContractsVerified": true,
+  "physicalBrowserAuditStillRequired": true,
+  "publicReleasePublished": false,
+  "nextRevision": "p19-prepublication-local-audit-and-commit",
+  "nextExactAction": "RUN_FULL_STATIC_MANIFEST_SIGNATURE_SECRET_AND_WORKTREE_AUDIT_THEN_CREATE_THE_EXACT_RELEASE_COMMIT"
+}

@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0010",
+  "revision": "p19-prepublication-local-audit",
+  "at": "2026-09-02T11:17:44+03:00",
+  "status": "PASS",
+  "branch": "codex/r0009-updater-package",
+  "releaseId": "1.0.0-r1",
+  "tagIntent": "v1.0.0-r1",
+  "canonicalSource": {
+    "commit": "684b27bdb53e545047419baa87c63dd86dffa469",
+    "workingDiff": "NONE"
+  },
+  "staticValidation": {
+    "gitDiffCheck": "PASS",
+    "shellSyntaxFiles": 86,
+    "pythonCompileFiles": 5,
+    "javascriptSyntaxFiles": 5,
+    "machineReadableJsonFiles": 20,
+    "worklogLines": 609,
+    "r0010Sha256Sidecars": 18,
+    "sidecarFailures": 0
+  },
+  "builds": {
+    "buildA": "dist/R0010/1.0.0-r1-Final-Build-A",
+    "buildB": "dist/R0010/1.0.0-r1-Final-Build-B",
+    "artifactsPerBuild": 8,
+    "byteIdentical": 8,
+    "artifactManifestVerification": "PASS_BOTH",
+    "signatureVerification": "PASS_BOTH",
+    "packageSha256": "efbc20e154be31233628226d8206acaad786534d25bba7b5f993b9dc1db3bc4c",
+    "appArchiveSha256": "749680ecee855078d5f46277d0a13b4285e81681c4166860fb1fa272383de796"
+  },
+  "functionalValidation": {
+    "isolatedPassed": 51,
+    "isolatedFailed": 0,
+    "webuiButtonActions": 20,
+    "webuiEndpointBindings": 23,
+    "missingHandlersOrEndpoints": 0
+  },
+  "security": {
+    "minisignPrivateKeyHeadersInRepository": 0,
+    "githubTokenMarkersInRepository": 0,
+    "pemPrivateKeyHeadersInRepository": 0,
+    "githubActionsSigningSecretPresent": true,
+    "localPlaintextKeyStillRequiredForBoundedPublication": true
+  },
+  "tools": {
+    "releaseBuilderSha256": "97c4765c24a29c5382ba28e0c7b154aca6b4ce8f4a3a3b8901c2cccb5728add2",
+    "isolatedHarnessSha256": "704c9f01e0c2069380514876c3015911f277c2ff447a1b83e7936c866e5a8855",
+    "stageContractSha256": "5e7d7f74f12e4f1390f8ffa43cb092f2d507ac6f3f8414e33a5f462a9bbc7bf3"
+  },
+  "publicReleasePublished": false,
+  "productionMutationPerformed": false,
+  "routerMutationPerformed": false,
+  "nextRevision": "p20-release-source-commit",
+  "nextExactAction": "SEAL_THIS_AUDIT_VERIFY_ALL_R0010_RECORDS_THEN_CREATE_AND_PUSH_THE_RELEASE_SOURCE_COMMIT"
+}

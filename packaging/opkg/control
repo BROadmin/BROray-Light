@@ -1,11 +1,11 @@
 Package: broray-light
 Version: @PACKAGE_VERSION@
 Architecture: aarch64-3.10
-Maintainer: BROray-Light internal engineering
+Maintainer: BROadmin
 Depends: ca-bundle, ca-certificates, curl, jq, lighttpd, lighttpd-mod-cgi, openssl-util, tar
 Section: net
 Priority: optional
-Description: BROray-Light internal R0009 installable candidate (VLESS only)
+Description: BROray-Light Stable for Keenetic (VLESS only)
 X-BROray-Light-ReleaseId: @RELEASE_ID@
 X-BROray-Light-CandidateId: @CANDIDATE_ID@
 X-BROray-Light-Updater: broray-light-updater/5-light1

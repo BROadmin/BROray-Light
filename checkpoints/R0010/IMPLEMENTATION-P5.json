@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0010",
+  "revision": "p5-narrow-tool-discovery-and-static-validation",
+  "at": "2026-09-02T10:45:08+03:00",
+  "status": "PASS_IMPLEMENTED_PENDING_BUILDS",
+  "releaseId": "1.0.0-r1",
+  "changes": {
+    "stableUpdater": {"path": "updater/opt/libexec/broray-light-updater/broray-light-updater.sh", "sha256": "773aaf37893ab100e7023d63c8061d8c4763a4d6186844bb3b671d758c145743"},
+    "packageMetadata": {"path": "packaging/opkg/control", "sha256": "64ea58ad235dcae281881dace1e9b71335c00f884917f60d24102b7dea8c8446"},
+    "installerTemplate": {"path": "packaging/installer/broray-light-install.sh.in", "sha256": "70b54359900bde1f97457040cada388358063eba687dd7d408b4246da335eac2"},
+    "homeUpdatePresentation": {"path": "packaging/app-overlay/web-new/assets/js/home.js", "sha256": "9deb071068253ff23ead46db601c5f97b8785791fc8ed3ed7761a20c79c3474c"},
+    "releaseBuilder": {"path": "tools/build_r0010_release.py", "sha256": "97c4765c24a29c5382ba28e0c7b154aca6b4ce8f4a3a3b8901c2cccb5728add2"},
+    "isolatedHarness": {"path": "tools/test_r0009.py", "sha256": "704c9f01e0c2069380514876c3015911f277c2ff447a1b83e7936c866e5a8855"}
+  },
+  "contracts": {
+    "channel": "stable",
+    "defaultIndexUrl": "https://github.com/BROadmin/BROray-Light/releases/latest/download/release.json",
+    "assetBaseUrl": "https://github.com/BROadmin/BROray-Light/releases/download/v1.0.0-r1/",
+    "installerMessage": "BROray-Light Stable installed.",
+    "packageDescription": "BROray-Light Stable for Keenetic (VLESS only)"
+  },
+  "validation": {
+    "gitDiffCheck": "PASS",
+    "pythonCompile": "PASS_3",
+    "javascriptSyntax": "PASS_1_CHANGED",
+    "dashSyntax": "PASS_2_CHANGED",
+    "machineReadableJson": "PASS_4",
+    "dashSha256": "12dd502bf747de51678aa3646a10c63322285750a9ca99531dc822869f0f23a8",
+    "jqSha256": "a6fc67fedaf9128a3309a1e2ebb8b986aeccf70122ee46d2cb4849e423f0c627",
+    "minisignSha256": "5535be9e4e123831ebe6ef324aafe9dde507015c176191f9e20c3ad60567f9e1"
+  },
+  "canonicalR0008SourceMutated": false,
+  "publicReleasePublished": false,
+  "productionMutationPerformed": false,
+  "routerMutationPerformed": false,
+  "nextRevision": "p9-stable-signing-identity-installed",
+  "nextExactAction": "VERIFY_AND_SEAL_THE_NEW_STABLE_SIGNING_IDENTITY_AND_GITHUB_SECRET"
+}

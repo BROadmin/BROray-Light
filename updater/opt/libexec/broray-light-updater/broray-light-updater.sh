@@ -11,7 +11,7 @@ OPERATIONS_ROOT="${BRORAY_LIGHT_OPERATIONS_ROOT:-$ROOT_PREFIX/opt/var/lib/broray
 REQUEST_LOCK="${BRORAY_LIGHT_REQUEST_LOCK:-$ROOT_PREFIX/opt/var/lock/broray-light-updater/request.lock}"
 GLOBAL_LOCK="${BRORAY_LIGHT_GLOBAL_LOCK:-$ROOT_PREFIX/opt/var/lock/broray-light/global-operation.lock}"
 WORK_ROOT="${BRORAY_LIGHT_WORK_ROOT:-$ROOT_PREFIX/tmp/broray-light-updater}"
-INDEX_URL="${BRORAY_LIGHT_RELEASE_INDEX_URL:-}"
+INDEX_URL="${BRORAY_LIGHT_RELEASE_INDEX_URL:-https://github.com/BROadmin/BROray-Light/releases/latest/download/release.json}"
 SIGNATURE_BIN="${BRORAY_LIGHT_SIGNATURE_BIN:-$ROOT_PREFIX/opt/libexec/broray-light-updater/minisign}"
 PUBLIC_KEY="${BRORAY_LIGHT_PUBLIC_KEY:-$ROOT_PREFIX/opt/share/broray-light/release.pub}"
 SERVICE_INIT="${BRORAY_LIGHT_SERVICE_INIT:-$ROOT_PREFIX/opt/etc/init.d/S24broray-light}"
@@ -197,7 +197,7 @@ index_valid()
     local index
     index="$1"
     jq -e --arg architecture 'aarch64-3.10' '
-      .schemaVersion == 1 and .product == "BROray-Light" and .channel == "internal-r0009" and
+      .schemaVersion == 1 and .product == "BROray-Light" and .channel == "stable" and
       .candidate.architecture == $architecture and
       (.candidate.releaseId | type == "string") and
       (.candidate.candidateId | type == "string") and

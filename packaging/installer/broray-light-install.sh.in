@@ -39,4 +39,4 @@ chmod 600 "$TARGET"
 opkg install "$TARGET" || fail 'opkg installation failed'
 [ -x /opt/broray-light/runtime/xray ] || fail 'clean install did not produce Xray runtime'
 [ -L /opt/broray-light/current ] || fail 'clean install did not activate app slot'
-echo 'BROray-Light internal R0009 candidate installed.'
+echo 'BROray-Light Stable installed.'

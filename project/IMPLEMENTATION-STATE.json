@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
   "product": "BROray-Light",
-  "stage": "R0009",
-  "status": "PASS",
-  "candidateReady": true,
+  "stage": "R0010",
+  "status": "PREPUBLICATION_LOCAL_PASS",
+  "candidateReady": false,
   "candidateId": "1.0.0-r1",
   "releaseId": "1.0.0-r1",
   "baseStable": "3.0.0-r23",
@@ -63,6 +63,25 @@
   "processFailuresPreserved": 273,
   "publicReleasePublished": false,
   "productionServerMutationPerformed": false,
+  "r0010": {
+    "startCheckpoint": "checkpoints/R0010/START-P1.json",
+    "directR0009Publication": "FAIL_CLOSED_R001",
+    "stableIndexUrl": "https://github.com/BROadmin/BROray-Light/releases/latest/download/release.json",
+    "versionedAssetBaseUrl": "https://github.com/BROadmin/BROray-Light/releases/download/v1.0.0-r1/",
+    "tag": "v1.0.0-r1",
+    "releaseReady": false,
+    "finalBuildA": "dist/R0010/1.0.0-r1-Final-Build-A",
+    "finalBuildB": "dist/R0010/1.0.0-r1-Final-Build-B",
+    "buildArtifactsByteIdentical": 8,
+    "packageSha256": "efbc20e154be31233628226d8206acaad786534d25bba7b5f993b9dc1db3bc4c",
+    "appArchiveSha256": "749680ecee855078d5f46277d0a13b4285e81681c4166860fb1fa272383de796",
+    "isolatedPassed": 51,
+    "isolatedFailed": 0,
+    "webuiButtonActions": 20,
+    "webuiEndpointBindings": 23,
+    "completedAcceptanceGates": 12,
+    "totalAcceptanceGates": 20
+  },
   "codexEntryPoint": "docs/CODEX-HANDOFF.md",
-  "nextStage": "DEFINE_AND_AUTHORIZE_R0010_BEFORE_ANY_STABLE_PUBLICATION"
+  "nextStage": "PUBLISH_AND_VALIDATE_BRORAY_LIGHT_STABLE_RELEASE"
 }

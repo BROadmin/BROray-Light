@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0010",
+  "revision": "p4-stable-implementation-tool-discovery",
+  "failureId": "R002",
+  "at": "2026-09-02T10:31:00+03:00",
+  "status": "FAIL_FIRST_ERROR_PRESERVED",
+  "operation": "RUN_A_COMPOUND_POWERSHELL_TOOL_DISCOVERY_COMMAND",
+  "firstError": "exec_command could not create the PowerShell process: Access denied (os error 5).",
+  "cause": "Host process creation rejected the compound discovery invocation before command execution; no product validation ran.",
+  "productDefect": false,
+  "repositoryMutationDuringFailedCommand": false,
+  "publicReleasePublished": false,
+  "productionMutationPerformed": false,
+  "routerMutationPerformed": false,
+  "hiddenRetryPerformed": false,
+  "nextRevision": "p5-narrow-tool-discovery-and-static-validation",
+  "nextExactAction": "DISCOVER_REQUIRED_EXECUTABLES_WITH_SHORT_INDEPENDENT_COMMANDS_THEN_RUN_STATIC_VALIDATION"
+}

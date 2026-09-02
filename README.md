@@ -4,14 +4,17 @@ BROray-Light is a separate lightweight VLESS-only edition for Keenetic.
 
 ## Current implementation checkpoint
 
-`R0008` is the first independent Light source tree built from exact BROray Stable `3.0.0-r23` / `r23c02` bytes. It is **not yet an installable release candidate**.
+`R0010` prepares the first public Stable release `1.0.0-r1` from the completed and validated R0009 installable candidate.
 
 - functional pages: Home, Servers, Subscriptions;
 - VLESS only;
 - deterministic automatic failover without ratings/history;
 - Keenetic managed proxy control on Home;
 - one primary application service: `S24broray-light`;
-- Light updater/installable package is the next stage.
+- signed Light updater and installable package;
+- public Stable channel through GitHub Releases;
+- clean installer with pinned size and SHA-256;
+- physical release validation only when explicitly authorized.
 
 For continuation, read **`docs/CODEX-HANDOFF.md` first**, then `project/INVARIANTS.json`, `project/IMPLEMENTATION-STATE.json`, and `project/WORKLOG.jsonl`.
 
