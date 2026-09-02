@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "stage": "R0012_DOCUMENTATION_RELOCATION_AND_CORRECTIVE_RELEASE",
-  "status": "R3_SOURCE_CORRECTION_AND_SOURCE_AUDIT_PASS",
-  "currentRevision": "p3-surgical-webui-guide-removal-and-r3-source",
+  "status": "R3_SOURCE_PUSHED_CI_RUNNING",
+  "currentRevision": "p4-source-commit-and-ci-dispatch",
   "workingBranch": "codex/r0009-updater-package",
   "authorizedTask": "RELOCATE_RUSSIAN_DOCUMENTATION_AND_REMOVE_EMBEDDED_WEBUI_GUIDE_STABLE_1.0.0_R3",
   "canonicalInput": {
@@ -34,7 +34,8 @@
     "R0012_CONTRACT",
     "R0012_SURGICAL_WEBUI_GUIDE_REMOVAL",
     "R0012_R3_VERSION_AND_CACHE_SOURCE",
-    "R0012_SOURCE_AUDIT"
+    "R0012_SOURCE_AUDIT",
+    "R0012_SOURCE_COMMIT_AND_PUSH"
   ],
   "processFailures": {
     "preserved": 0,
@@ -45,5 +46,5 @@
   "candidateReady": false,
   "releaseReady": false,
   "publicReleasePublished": false,
-  "nextExactAction": "FETCH_PINNED_INPUTS_BUILD_WITH_A_TEMPORARY_TEST_KEY_AND_RUN_COMPLETE_LOCAL_ISOLATED_ACCEPTANCE"
+  "nextExactAction": "WAIT_FOR_THE_R0012_GITHUB_ACTIONS_RUN_THEN_PRESERVE_ITS_BUILD_A_BUILD_B_AND_ACCEPTANCE_RESULTS_WITHOUT_HIDDEN_RETRY"
 }

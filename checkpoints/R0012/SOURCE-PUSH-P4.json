@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0012_DOCUMENTATION_RELOCATION_AND_CORRECTIVE_RELEASE",
+  "revision": "p4-source-commit-and-ci-dispatch",
+  "status": "PASS",
+  "at": "2026-09-02T23:10:51.3793315+03:00",
+  "workingBranch": "codex/r0009-updater-package",
+  "sourceCommit": "3a756bb7e2506af97e4c7988947fee1e89639c2f",
+  "remote": "origin",
+  "push": {
+    "ref": "refs/heads/codex/r0009-updater-package",
+    "previousRemoteHead": "6d44c164f3ce7e99195a806f0a191bd66d3b8ed2",
+    "newRemoteHead": "3a756bb7e2506af97e4c7988947fee1e89639c2f",
+    "result": "PASS"
+  },
+  "scope": {
+    "docsHomepageChanged": false,
+    "docsSection": "https://docs.brovibe.cloud/broray/#broray-light",
+    "githubRootReadme": true,
+    "webuiEmbeddedGuide": false
+  },
+  "candidateReady": false,
+  "releaseReady": false,
+  "nextRevision": "p5-ci-build-a-b-and-isolated-acceptance",
+  "nextExactAction": "WAIT_FOR_THE_R0012_GITHUB_ACTIONS_RUN_THEN_PRESERVE_ITS_BUILD_A_BUILD_B_AND_ACCEPTANCE_RESULTS_WITHOUT_HIDDEN_RETRY"
+}
