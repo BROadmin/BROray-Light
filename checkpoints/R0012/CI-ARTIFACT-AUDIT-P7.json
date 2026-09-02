@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0012_DOCUMENTATION_RELOCATION_AND_CORRECTIVE_RELEASE",
+  "revision": "p7-explicit-git-and-complete-ci-artifact-audit",
+  "status": "PASS",
+  "at": "2026-09-02T23:18:13.4717182+03:00",
+  "releaseSourceCommit": "3a756bb7e2506af97e4c7988947fee1e89639c2f",
+  "githubActions": {
+    "runId": 33677697794,
+    "runNumber": 1,
+    "attempt": 1,
+    "url": "https://github.com/BROadmin/BROray-Light/actions/runs/33677697794",
+    "workflow": "R0012 corrective deterministic release build",
+    "job": "build-test",
+    "conclusion": "success",
+    "allStepsPassed": true,
+    "buildA": "PASS",
+    "buildB": "PASS",
+    "comparison": "BYTE_IDENTICAL",
+    "isolatedAcceptance": "PASS"
+  },
+  "ciArtifact": {
+    "id": 9865005802,
+    "name": "broray-light-r0012-3a756bb7e2506af97e4c7988947fee1e89639c2f",
+    "archiveSizeBytes": 13106217,
+    "archiveSha256": "58e81a3fb7e3ff4c9a80a42ed14af87a371e8be073c5c6081b01b3843a2cf132",
+    "githubArchiveDigestMatch": true,
+    "ciReceiptSha256": "5bdf792f0b0e2aa33ce503fb345df7e6f145c8f304e3cb59aba992c6a7661b94"
+  },
+  "independentVerification": {
+    "safeZipEntries": "PASS",
+    "artifactSetExact": "PASS",
+    "artifactHashesAndSizes": 8,
+    "sha256Sums": "PASS",
+    "releaseManifestContract": "PASS",
+    "signedReleaseIndexContract": "PASS",
+    "releaseSignature": "PASS",
+    "privateMaterialAbsent": "PASS",
+    "verificationToolSha256": "5535be9e4e123831ebe6ef324aafe9dde507015c176191f9e20c3ad60567f9e1",
+    "trustedSignatureComment": "releaseId=1.0.0-r3"
+  },
+  "documentationContract": {
+    "homeGuideIncluded": false,
+    "readmeSha256": "6f4d5962399b072b7a77f65f01d90d787213b2c7f43e881e0bd772c7d6715b6a",
+    "userGuideSha256": "93f244ad69f76aff228a2417f1f03463a9f51704944439abe7aa9e0d7c1e2b97",
+    "exactCommitBlobHashesMatchManifest": true,
+    "docsHomepageChanged": false,
+    "docsSection": "https://docs.brovibe.cloud/broray/#broray-light"
+  },
+  "artifacts": [
+    {"name":"RELEASE-MANIFEST.json","sizeBytes":3266,"sha256":"e1aac12fef497952e69e39bad6ac9c17927ca9ae23971d7e41ec8b5fde11fbb9"},
+    {"name":"SHA256SUMS","sizeBytes":669,"sha256":"5741b04f9eac4c5b1a3316c0cb567f6cf0344b75ded2a49e6565c2cd107c543c"},
+    {"name":"broray-light-app-1.0.0-r3.tar.gz","sizeBytes":157076,"sha256":"4d72c9419f4a3770c156b2876e76d397780def4b7fbd83a42dac1d725855c11f"},
+    {"name":"broray-light-install-1.0.0-r3.sh","sizeBytes":1851,"sha256":"eb6bebe4a89498d99e07f98cc613b025a29e3f773ef6c0f25140395e6fe89b51"},
+    {"name":"broray-light-updater-platform-5-light1.tar.gz","sizeBytes":131458,"sha256":"cab97b6efd11a249cada2c7ceff540f732493ea11163fa5377b083ae450723ca"},
+    {"name":"broray-light_1.0.0-r3_aarch64-3.10.ipk","sizeBytes":12808528,"sha256":"f9e00174891f74a7a48e05a9b4c9a8bf94d94ec9790cb0794073e24b457aae72"},
+    {"name":"release.json","sizeBytes":576,"sha256":"de4b42a73da59b903e968438ec534d0a29532583b66c4a06f2728a18df5d8940"},
+    {"name":"release.json.minisig","sizeBytes":265,"sha256":"52c8b1ab78ab7c23830eef176e028150dff8aeb4b0bb2a604be11af7c2322ebd"}
+  ],
+  "resolvedFailures": [
+    "R001: explicit pinned minisign path and measured binary hash used",
+    "R002: installed Git executable discovered and commit blobs hashed through a binary-safe process stream"
+  ],
+  "tagCreated": false,
+  "publicReleasePublished": false,
+  "candidateReady": false,
+  "nextRevision": "p8-immutable-r3-tag-and-release-publication",
+  "nextExactAction": "RECHECK_THAT_V1_0_0_R3_DOES_NOT_EXIST_THEN_CREATE_THE_TAG_AT_THE_EXACT_VERIFIED_SOURCE_COMMIT_AND_PUBLISH_ONLY_THE_VERIFIED_BUILD_A_ASSETS"
+}

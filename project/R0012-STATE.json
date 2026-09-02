@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "stage": "R0012_DOCUMENTATION_RELOCATION_AND_CORRECTIVE_RELEASE",
-  "status": "R3_SOURCE_PUSHED_CI_RUNNING",
-  "currentRevision": "p4-source-commit-and-ci-dispatch",
+  "status": "R3_CI_AND_INDEPENDENT_ARTIFACT_AUDIT_PASS",
+  "currentRevision": "p7-explicit-git-and-complete-ci-artifact-audit",
   "workingBranch": "codex/r0009-updater-package",
   "authorizedTask": "RELOCATE_RUSSIAN_DOCUMENTATION_AND_REMOVE_EMBEDDED_WEBUI_GUIDE_STABLE_1.0.0_R3",
   "canonicalInput": {
@@ -35,16 +35,19 @@
     "R0012_SURGICAL_WEBUI_GUIDE_REMOVAL",
     "R0012_R3_VERSION_AND_CACHE_SOURCE",
     "R0012_SOURCE_AUDIT",
-    "R0012_SOURCE_COMMIT_AND_PUSH"
+    "R0012_SOURCE_COMMIT_AND_PUSH",
+    "R0012_CI_BUILD_A_B_AND_ISOLATED_ACCEPTANCE",
+    "R0012_INDEPENDENT_CI_ARTIFACT_AUDIT"
   ],
   "processFailures": {
-    "preserved": 0,
-    "latest": null,
-    "latestSha256": null
+    "preserved": 2,
+    "latest": "checkpoints/R0012/process-failures/FAILURE-R002-P6-GIT-BASH-PATH.json",
+    "latestSha256": "70f0d3ddb7bc6a2afc04df1b6014d6c9400b33eefa435021fbd742b6f728bd0f",
+    "resolvedThroughRevision": "p7-explicit-git-and-complete-ci-artifact-audit"
   },
   "activeBlocker": null,
   "candidateReady": false,
   "releaseReady": false,
   "publicReleasePublished": false,
-  "nextExactAction": "WAIT_FOR_THE_R0012_GITHUB_ACTIONS_RUN_THEN_PRESERVE_ITS_BUILD_A_BUILD_B_AND_ACCEPTANCE_RESULTS_WITHOUT_HIDDEN_RETRY"
+  "nextExactAction": "RECHECK_THAT_V1_0_0_R3_DOES_NOT_EXIST_THEN_CREATE_THE_TAG_AT_THE_EXACT_VERIFIED_SOURCE_COMMIT_AND_PUBLISH_ONLY_THE_VERIFIED_BUILD_A_ASSETS"
 }

@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0012_DOCUMENTATION_RELOCATION_AND_CORRECTIVE_RELEASE",
+  "failureId": "R002",
+  "revision": "p6-explicit-minisign-and-downloaded-artifact-audit",
+  "status": "FAIL_FIRST_ERROR_PRESERVED_GIT_BASH_PATH_ASSUMPTION",
+  "at": "2026-09-02T23:16:38.6347601+03:00",
+  "operation": "HASH_DOCUMENTATION_BLOBS_FROM_THE_EXACT_RELEASE_SOURCE_COMMIT",
+  "firstError": "The assumed C:\\Program Files\\Git\\bin\\bash.exe path does not exist on this host.",
+  "errorCategory": "LOCAL_VALIDATION_TOOL_DISCOVERY",
+  "candidateDefectObserved": false,
+  "passedBeforeFailure": {
+    "downloadedArtifactSafeZipEntries": true,
+    "artifactSetExact": true,
+    "receiptContract": true,
+    "artifactHashesAndSizesVerified": 8,
+    "sha256Sums": "PASS",
+    "manifestContract": "PASS",
+    "signedReleaseIndexContract": "PASS",
+    "localSignature": "PASS",
+    "privateMaterialAbsent": "PASS",
+    "minisignToolSha256": "5535be9e4e123831ebe6ef324aafe9dde507015c176191f9e20c3ad60567f9e1"
+  },
+  "documentationBlobHashes": "NOT_EXECUTED_BASH_PATH_NOT_RESOLVED",
+  "hiddenRetryPerformed": false,
+  "releasePublished": false,
+  "docsPublished": false,
+  "nextRevision": "p7-explicit-git-discovery-and-binary-safe-documentation-hash-audit",
+  "nextExactAction": "DISCOVER_THE_INSTALLED_GIT_EXECUTABLE_PATH_THEN_HASH_THE_EXACT_COMMIT_BLOBS_WITH_A_BINARY_SAFE_PIPELINE_AND_COMPARE_TO_RELEASE_MANIFEST"
+}

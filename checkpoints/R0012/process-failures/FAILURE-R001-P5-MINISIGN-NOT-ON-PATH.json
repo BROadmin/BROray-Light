@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0012_DOCUMENTATION_RELOCATION_AND_CORRECTIVE_RELEASE",
+  "failureId": "R001",
+  "revision": "p5-downloaded-ci-artifact-local-signature-audit",
+  "status": "FAIL_FIRST_ERROR_PRESERVED_TOOL_NOT_ON_PATH",
+  "at": "2026-09-02T23:13:50.1041542+03:00",
+  "operation": "VERIFY_DOWNLOADED_CI_ARTIFACT_SHA256SUMS_AND_MINISIGN_SIGNATURE_ON_WINDOWS",
+  "firstError": "PowerShell could not resolve the minisign executable from PATH.",
+  "errorCategory": "LOCAL_VALIDATION_TOOL_DISCOVERY",
+  "candidateDefectObserved": false,
+  "passedBeforeFailure": {
+    "workflowRun": "https://github.com/BROadmin/BROray-Light/actions/runs/33677697794",
+    "workflowConclusion": "success",
+    "workflowAttempt": 1,
+    "artifactId": 9865005802,
+    "artifactArchiveSizeBytes": 13106217,
+    "artifactArchiveSha256": "58e81a3fb7e3ff4c9a80a42ed14af87a371e8be073c5c6081b01b3843a2cf132",
+    "artifactArchiveDigestMatchesGitHub": true,
+    "sha256sumsEntriesMatch": true
+  },
+  "signatureVerificationInCi": "PASS",
+  "localSignatureVerification": "NOT_EXECUTED_TOOL_NOT_RESOLVED",
+  "hiddenRetryPerformed": false,
+  "releasePublished": false,
+  "docsPublished": false,
+  "nextRevision": "p6-explicit-minisign-discovery-and-downloaded-artifact-audit",
+  "nextExactAction": "DISCOVER_AN_EXISTING_TRUSTED_MINISIGN_EXECUTABLE_BY_READ_ONLY_PATH_INSPECTION_THEN_VERIFY_THE_SAME_DOWNLOADED_ARTIFACT_WITH_THAT_EXPLICIT_PATH"
+}
