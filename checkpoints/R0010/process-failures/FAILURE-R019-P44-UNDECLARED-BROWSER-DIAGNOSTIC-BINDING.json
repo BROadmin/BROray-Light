@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0010",
+  "revision": "p44-supported-loaded-script-diagnosis",
+  "failureId": "R019",
+  "at": "2026-09-02T12:56:00+03:00",
+  "status": "FAIL_FIRST_ERROR_PRESERVED",
+  "operation": "READ_THE_LOADED_SCRIPT_URLS_AND_LIGHTCHECK_FUNCTION_SOURCE",
+  "firstError": "The prior failed evaluation never created loadedUiIdentity, so assigning to that undeclared binding failed.",
+  "errorClass": "ReferenceError",
+  "browserPageMutated": false,
+  "routerPersistentStateMutated": false,
+  "publicReleasePublished": false,
+  "hiddenRetryPerformed": false,
+  "nextRevision": "p45-new-browser-diagnostic-binding",
+  "nextExactAction": "DECLARE_A_NEW_DIAGNOSTIC_BINDING_AND_READ_ONLY_THE_SUPPORTED_DOCUMENT_SCRIPT_AND_FUNCTION_FIELDS"
+}

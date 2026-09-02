@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0010",
+  "revision": "p33-postinstall-read-only-audit",
+  "failureId": "R013",
+  "at": "2026-09-02T11:44:49+03:00",
+  "status": "FAIL_CLOSED_FIRST_ERROR_PRESERVED",
+  "operation": "POSTINSTALL_PERSISTENCE_SERVICES_XRAY_TRUST_ROOT_AND_OWNERSHIP_AUDIT",
+  "firstError": "The command opkg status broray returned a successful exit status, so the ownership probe reported FULL_BRORAY_PACKAGE=PRESENT and stopped with exit code 82.",
+  "confirmedBeforeFailure": {
+    "packageVersion": "1.0.0-r1",
+    "currentTarget": "releases/1.0.0-r1",
+    "persistentFiles": 19,
+    "persistentManifestSha256": "6258b7be82ad69d87a04275f904f29d9a90f08d3f573daa0243d4a21996fd86d",
+    "persistenceUnchanged": true,
+    "trustRootSha256": "b1587b8407f0c0443a361ed29b839319b66912b1b71414bcf31e848c29eab696",
+    "updaterSha256": "773aaf37893ab100e7023d63c8061d8c4763a4d6186844bb3b671d758c145743",
+    "homeHtmlSha256": "78afabf8e78f5c3316d7f0b694b6889bfa5fd54d2555024d74a54a0d0775f6a3",
+    "releaseJsonSha256": "81e3a7c99cea193f3c86c9cc9b090c6aab3df3bd78a7f57c7cf37710c5800713",
+    "xraySha256": "4b8af237444801bf17b3dc10a1c5c24581fbe3d433eba3d78c6c3a0da1df56fc",
+    "xrayVersion": "26.7.28",
+    "appManifest": "PASS",
+    "primaryService": "PASS",
+    "updaterService": "PASS"
+  },
+  "ownershipConclusion": "AMBIGUOUS_FAIL_CLOSED",
+  "routerPersistentStateMutatedByAudit": false,
+  "packageInstalled": true,
+  "publicReleasePublished": false,
+  "hiddenRetryPerformed": false,
+  "nextRevision": "p34-exact-opkg-ownership-diagnosis",
+  "nextExactAction": "CAPTURE_THE_EXACT_OPKG_STATUS_OUTPUT_AND_INSTALLED_PACKAGE_LIST_THEN_DECIDE_FULL_BROray_OWNERSHIP_WITHOUT_MUTATION"
+}

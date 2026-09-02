@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0010",
+  "revision": "p26-transfer-final-package",
+  "at": "2026-09-02T11:31:20+03:00",
+  "status": "PASS",
+  "source": "dist/R0010/1.0.0-r1-Final-Build-A/broray-light_1.0.0-r1_aarch64-3.10.ipk",
+  "routerTarget": "/tmp/broray-light_1.0.0-r1-r0010-final.ipk",
+  "protocol": "legacy SCP forced with -O",
+  "localSha256": "efbc20e154be31233628226d8206acaad786534d25bba7b5f993b9dc1db3bc4c",
+  "routerSha256": "efbc20e154be31233628226d8206acaad786534d25bba7b5f993b9dc1db3bc4c",
+  "localSizeBytes": 12808590,
+  "routerSizeBytes": 12808590,
+  "byteIdentity": "PASS_SHA256_AND_SIZE",
+  "packageInstalled": false,
+  "publicReleasePublished": false,
+  "nextRevision": "p27-physical-final-package-replacement",
+  "nextExactAction": "INSTALL_THE_EXACT_VERIFIED_PACKAGE_AS_THE_AUTHORIZED_ONE_TIME_REPLACEMENT_FOR_THE_UNPUBLISHED_INTERNAL_SAME_VERSION_THEN_VALIDATE_PERSISTENCE_SERVICES_XRAY_AND_TRUST_ROOT"
+}

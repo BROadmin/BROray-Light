@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0010",
+  "revision": "p31-postinstall-read-only-audit-preparation",
+  "failureId": "R012",
+  "at": "2026-09-02T11:40:00+03:00",
+  "status": "FAIL_FIRST_ERROR_PRESERVED",
+  "operation": "RESOLVE_EXPECTED_LOCAL_DIGESTS_BEFORE_POSTINSTALL_ROUTER_AUDIT",
+  "firstError": "The assumed overlay/opt/broray-light paths for updater.sh and home.html do not exist in this repository layout.",
+  "failedPaths": [
+    "overlay/opt/broray-light/updater/updater.sh",
+    "overlay/opt/broray-light/www/home.html"
+  ],
+  "trustRootDigestResolution": "PASS",
+  "routerReadOnlyAuditStarted": false,
+  "routerPersistentStateMutatedByFailure": false,
+  "packageInstalled": true,
+  "publicReleasePublished": false,
+  "hiddenRetryPerformed": false,
+  "nextRevision": "p32-resolve-canonical-package-source-paths",
+  "nextExactAction": "LOCATE_THE_CANONICAL_UPDATER_AND_HOME_FILES_READ_ONLY_THEN_RUN_A_NEW_POSTINSTALL_AUDIT_REVISION"
+}

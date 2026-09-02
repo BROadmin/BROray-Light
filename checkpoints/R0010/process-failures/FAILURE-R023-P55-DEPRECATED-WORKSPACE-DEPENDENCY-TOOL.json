@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0010",
+  "revision": "p55-cache-corrected-full-isolated-validation-preparation",
+  "failureId": "R023",
+  "at": "2026-09-02T13:15:10+03:00",
+  "status": "FAIL_FIRST_ERROR_PRESERVED",
+  "operation": "LOCATE_THE_BUNDLED_VALIDATION_RUNTIMES",
+  "firstError": "The legacy codex_app workspace dependency tool is no longer callable through dynamic tools and directed the caller to the codex_app MCP server.",
+  "buildArtifactMutation": false,
+  "repositoryMutation": false,
+  "routerMutation": false,
+  "publicReleasePublished": false,
+  "hiddenRetryPerformed": false,
+  "nextRevision": "p56-supported-workspace-dependency-discovery",
+  "nextExactAction": "CALL_THE_SUPPORTED_MCP_CODEX_APP_WORKSPACE_DEPENDENCY_TOOL_THEN_RUN_THE_ISOLATED_HARNESS"
+}

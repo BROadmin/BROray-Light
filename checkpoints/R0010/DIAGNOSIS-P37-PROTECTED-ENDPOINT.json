@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0010",
+  "revision": "p37-exact-protected-endpoint-discovery",
+  "at": "2026-09-02T11:53:00+03:00",
+  "status": "PASS",
+  "failureId": "R015",
+  "evidenceSource": [
+    "packaging/app-overlay/web-new/assets/js/home.js",
+    "src/app/web-new/api/home/summary.cgi",
+    "src/app/web-new/api/auth-common.sh"
+  ],
+  "protectedEndpoint": "/api/home/summary.cgi",
+  "unauthenticatedHttpStatus": 401,
+  "nativeAuthenticationSessionProtection": "PASS",
+  "tlsValidation": {
+    "implementation": "Windows curl Schannel",
+    "hostnameChainAndExpiry": "ENABLED",
+    "revocationNetworkCheck": "DISABLED_ONLY_FOR_LOCAL_SCHANNEL_LIMITATION"
+  },
+  "routerMutation": false,
+  "publicReleasePublished": false,
+  "nextRevision": "p38-seal-physical-postinstall-validation",
+  "nextExactAction": "SEAL_THE_COMPLETE_POSTINSTALL_CHECKPOINT_AND_BEGIN_THE_BROWSER_WEBUI_AUDIT"
+}

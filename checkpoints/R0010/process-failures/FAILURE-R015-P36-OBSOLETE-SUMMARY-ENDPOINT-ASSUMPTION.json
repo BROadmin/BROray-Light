@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0010",
+  "revision": "p36-schannel-no-revoke-postinstall-audit",
+  "failureId": "R015",
+  "at": "2026-09-02T11:51:39+03:00",
+  "status": "FAIL_FIRST_ERROR_PRESERVED",
+  "operation": "VERIFY_PUBLIC_ROOT_AND_NATIVE_AUTHENTICATION_PROTECTION",
+  "firstError": "The assumed unauthenticated endpoint /api/summary returned HTTP 404 instead of the expected HTTP 401.",
+  "confirmedBeforeFailure": {
+    "routerPackageVersion": "1.0.0-r1",
+    "currentTarget": "releases/1.0.0-r1",
+    "persistenceUnchanged": true,
+    "installedHashes": "PASS_EXACT",
+    "xrayUnchanged": true,
+    "appManifest": "PASS",
+    "services": "PASS",
+    "fullBroray": "ABSENT",
+    "publicRootHttpStatus": 200
+  },
+  "assumedEndpoint": "/api/summary",
+  "observedHttpStatus": 404,
+  "authenticationConclusion": "NOT_EVALUATED_FOR_A_REAL_PROTECTED_ENDPOINT",
+  "routerPersistentStateMutatedByAudit": false,
+  "packageInstalled": true,
+  "publicReleasePublished": false,
+  "hiddenRetryPerformed": false,
+  "nextRevision": "p37-exact-protected-endpoint-discovery",
+  "nextExactAction": "DERIVE_AN_ACTUAL_PROTECTED_API_ENDPOINT_FROM_THE_PACKAGED_WEBUI_AND_DAEMON_SOURCE_THEN_TEST_IT_UNAUTHENTICATED"
+}

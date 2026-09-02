@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0010",
+  "revision": "p20-release-source-commit",
+  "at": "2026-09-02T11:21:41+03:00",
+  "status": "PASS",
+  "branch": "codex/r0009-updater-package",
+  "releaseSourceCommit": "0bde5139137cc8166d1ef282a41cf9e697254c9b",
+  "originBranchCommit": "0bde5139137cc8166d1ef282a41cf9e697254c9b",
+  "push": "PASS",
+  "worktreeAfterPush": "CLEAN_BEFORE_THIS_EVIDENCE_RECORD",
+  "releaseId": "1.0.0-r1",
+  "tagIntent": "v1.0.0-r1",
+  "tagCreated": false,
+  "publicReleasePublished": false,
+  "releaseBytes": {
+    "buildA": "dist/R0010/1.0.0-r1-Final-Build-A",
+    "buildB": "dist/R0010/1.0.0-r1-Final-Build-B",
+    "packageSha256": "efbc20e154be31233628226d8206acaad786534d25bba7b5f993b9dc1db3bc4c",
+    "appArchiveSha256": "749680ecee855078d5f46277d0a13b4285e81681c4166860fb1fa272383de796"
+  },
+  "nextRevision": "p21-physical-preinstall-backup-and-transfer",
+  "nextExactAction": "BACK_UP_THE_AUTHORIZED_TEST_ROUTER_PERSISTENT_STATE_TRANSFER_THE_EXACT_FINAL_PACKAGE_AND_VERIFY_ITS_ROUTER_SIDE_SHA256_BEFORE_INSTALLATION"
+}

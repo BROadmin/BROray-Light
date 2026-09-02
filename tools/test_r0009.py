@@ -18,6 +18,7 @@ from pathlib import Path, PurePosixPath
 
 RELEASE_ID = "1.0.0-r1"
 CANDIDATE_ID = "1.0.0-r1"
+WEB_ASSET_CACHE_TOKEN = f"{CANDIDATE_ID}-r0010"
 PREVIOUS_RELEASE_ID = "0.9.9-r99"
 NEWER_RELEASE_ID = "1.0.0-r2"
 XRAY_SHA256 = "4b8af237444801bf17b3dc10a1c5c24581fbe3d433eba3d78c6c3a0da1df56fc"
@@ -762,7 +763,8 @@ def main() -> int:
        ".subscription-auto-grid" not in theme_css:
         raise RuntimeError("failover or subscription auto-update responsive layout contract is absent")
     gates["responsiveSettingsCardLayout"] = "PASS"
-    asset_version = f"?v={CANDIDATE_ID}"
+    asset_version = f"?v={WEB_ASSET_CACHE_TOKEN}"
+    page_version = f"?v={CANDIDATE_ID}"
     for page_name in ("index.html", "home.html", "servers.html", "subscriptions.html"):
         page_html = (installed_app / "web-new" / page_name).read_text(encoding="utf-8")
         if 'http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate"' not in page_html or \
@@ -778,15 +780,16 @@ def main() -> int:
     for page_name in ("home.html", "servers.html", "subscriptions.html"):
         page_html = (installed_app / "web-new" / page_name).read_text(encoding="utf-8")
         for target in ("home.html", "servers.html", "subscriptions.html"):
-            if f'href="{target}{asset_version}"' not in page_html:
+            if f'href="{target}{page_version}"' not in page_html:
                 raise RuntimeError(f"versioned HTML navigation to {target} is absent from {page_name}")
     login_js = (installed_app / "web-new/assets/js/login.js").read_text(encoding="utf-8")
-    if f'const homeUrl = "/home.html{asset_version}";' not in login_js:
+    if f'const homeUrl = "/home.html{page_version}";' not in login_js:
         raise RuntimeError("login and existing-session redirects do not invalidate stale Home HTML")
     for script_name in ("home.js", "servers.js", "subscriptions.js"):
         page_js = (installed_app / "web-new/assets/js" / script_name).read_text(encoding="utf-8")
-        if f"location.replace('/{asset_version}')" not in page_js:
+        if f"location.replace('/{page_version}')" not in page_js:
             raise RuntimeError(f"unauthorized redirect does not invalidate stale login HTML in {script_name}")
+    gates["webAssetCacheToken"] = "PASS"
     cache_default = (installed_app / "share/defaults/lighttpd.conf").read_text(encoding="utf-8")
     runtime_prepare = (installed_app / "bin/broray-runtime-prepare").read_text(encoding="utf-8")
     for contract in ("mod_setenv", "setenv.add-response-header", '"Cache-Control" => "no-store, no-cache, must-revalidate"', '$HTTP["url"] =~ "(^/$|\\.html$)"'):

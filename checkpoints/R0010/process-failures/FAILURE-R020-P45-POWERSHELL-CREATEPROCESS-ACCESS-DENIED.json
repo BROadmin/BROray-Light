@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0010",
+  "revision": "p45-record-r019-timestamp",
+  "failureId": "R020",
+  "at": "2026-09-02T12:56:10+03:00",
+  "status": "FAIL_FIRST_ERROR_PRESERVED",
+  "operation": "READ_THE_LOCAL_CLOCK_FOR_THE_R019_CHECKPOINT",
+  "firstError": "The unified executor could not create the PowerShell process and returned operating-system access denied.",
+  "errorClass": "CreateProcess os error 5",
+  "commandStarted": false,
+  "repositoryMutationByFailedCommand": false,
+  "routerMutation": false,
+  "publicReleasePublished": false,
+  "hiddenRetryPerformed": false,
+  "nextRevision": "p46-direct-checkpoint-bookkeeping-and-shell-recovery",
+  "nextExactAction": "COMPLETE_R019_R020_BOOKKEEPING_WITH_DIRECT_PATCHING_THEN_RUN_A_NEW_READ_ONLY_SHELL_AVAILABILITY_CHECK"
+}

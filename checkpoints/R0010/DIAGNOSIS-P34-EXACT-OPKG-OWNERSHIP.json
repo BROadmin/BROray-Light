@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0010",
+  "revision": "p34-exact-opkg-ownership-diagnosis",
+  "at": "2026-09-02T11:47:38+03:00",
+  "status": "PASS_ROOT_CAUSE_CONFIRMED",
+  "failureId": "R013",
+  "observation": {
+    "opkgStatusBrorayExitCode": 0,
+    "opkgStatusBrorayOutput": "EMPTY",
+    "exactInstalledPackages": [
+      "broray-light - 1.0.0-r1"
+    ]
+  },
+  "fullBrorayOwnership": {
+    "packageNamedBroray": "ABSENT",
+    "rootOptBroray": "ABSENT",
+    "initS24Broray": "ABSENT",
+    "initS23BrorayMonitor": "ABSENT"
+  },
+  "lightOwnership": {
+    "package": "broray-light - 1.0.0-r1",
+    "initS24BrorayLight": "PRESENT",
+    "initS23BrorayLightUpdater": "PRESENT"
+  },
+  "rootCause": "This opkg implementation returns zero with empty output for an absent package; exit status alone cannot establish package ownership.",
+  "correctedProbe": "Match the first field of opkg list-installed exactly against broray.",
+  "ownershipConclusion": "PASS_FULL_BRORAY_ABSENT",
+  "routerMutation": false,
+  "publicReleasePublished": false,
+  "nextRevision": "p35-corrected-postinstall-read-only-audit",
+  "nextExactAction": "REPEAT_THE_POSTINSTALL_AUDIT_WITH_THE_EXACT_INSTALLED_PACKAGE_MATCH_AND_VERIFY_PUBLIC_HTTP_AUTH_BEHAVIOR"
+}

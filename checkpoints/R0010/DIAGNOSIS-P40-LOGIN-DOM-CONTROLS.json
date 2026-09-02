@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0010",
+  "revision": "p40-login-dom-attribute-discovery",
+  "at": "2026-09-02T11:58:57+03:00",
+  "status": "PASS",
+  "failureId": "R016",
+  "page": "https://brolight.tvervip.keenetic.link/?v=1.0.0-r1",
+  "controls": [
+    {
+      "id": "login",
+      "tag": "INPUT"
+    },
+    {
+      "id": "password",
+      "tag": "INPUT",
+      "type": "password"
+    },
+    {
+      "id": "password-toggle",
+      "tag": "BUTTON",
+      "type": "button",
+      "ariaLabel": "Показать пароль"
+    },
+    {
+      "id": "login-submit",
+      "tag": "BUTTON",
+      "type": "submit"
+    }
+  ],
+  "rootCause": "The visible label text is not exposed to the password input as a supported accessible label in the selected browser surface.",
+  "correctedSelectors": {
+    "password": "#password",
+    "toggle": "#password-toggle"
+  },
+  "credentialsEntered": false,
+  "routerMutation": false,
+  "nextRevision": "p41-login-toggle-exact-selector",
+  "nextExactAction": "VERIFY_THE_PASSWORD_VISIBILITY_TOGGLE_USING_THE_EXACT_DOM_IDS_WITHOUT_ENTERING_CREDENTIALS"
+}

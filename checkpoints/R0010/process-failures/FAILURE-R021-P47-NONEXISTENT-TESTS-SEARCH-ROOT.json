@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0010",
+  "revision": "p47-cache-collision-scope-search",
+  "failureId": "R021",
+  "at": "2026-09-02T12:59:00+03:00",
+  "status": "FAIL_FIRST_ERROR_PRESERVED",
+  "operation": "SEARCH_CURRENT_VERSION_TOKENS_IN_KNOWN_SOURCE_AND_TEST_ROOTS",
+  "firstError": "The diagnostic rg command included a tests directory that does not exist.",
+  "nativePipelineContinued": true,
+  "evidenceAfterErrorAccepted": false,
+  "repositoryMutation": false,
+  "routerMutation": false,
+  "publicReleasePublished": false,
+  "hiddenRetryPerformed": false,
+  "nextRevision": "p48-cache-collision-diagnosis-from-pre-error-evidence",
+  "nextExactAction": "SEAL_THE_CACHE_COLLISION_DIAGNOSIS_USING_ONLY_ALREADY_VALID_BROWSER_PUBLIC_HTTP_AND_ROUTER_HASH_EVIDENCE"
+}

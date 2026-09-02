@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0010",
+  "revision": "p32-resolve-canonical-package-source-paths",
+  "at": "2026-09-02T11:42:00+03:00",
+  "status": "PASS",
+  "canonicalSources": {
+    "updater": "updater/opt/libexec/broray-light-updater/broray-light-updater.sh",
+    "homeOverlay": "packaging/app-overlay/web-new/home.html",
+    "trustRoot": "updater/release.pub"
+  },
+  "expectedSha256": {
+    "updater": "773aaf37893ab100e7023d63c8061d8c4763a4d6186844bb3b671d758c145743",
+    "homeOverlay": "78afabf8e78f5c3316d7f0b694b6889bfa5fd54d2555024d74a54a0d0775f6a3",
+    "trustRoot": "b1587b8407f0c0443a361ed29b839319b66912b1b71414bcf31e848c29eab696"
+  },
+  "installedPaths": {
+    "updater": "/opt/libexec/broray-light-updater/broray-light-updater.sh",
+    "home": "/opt/broray-light/releases/1.0.0-r1/app/web-new/home.html",
+    "trustRoot": "/opt/share/broray-light/release.pub"
+  },
+  "currentTarget": "releases/1.0.0-r1",
+  "routerMutation": false,
+  "nextRevision": "p33-postinstall-read-only-audit",
+  "nextExactAction": "VALIDATE_THE_INSTALLED_PACKAGE_USING_THE_RESOLVED_CANONICAL_PATHS"
+}

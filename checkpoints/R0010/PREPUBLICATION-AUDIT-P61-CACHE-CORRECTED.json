@@ -1,0 +1,97 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0010",
+  "revision": "p61-atomized-prepublication-audit",
+  "at": "2026-09-02T13:37:51+03:00",
+  "status": "PASS",
+  "releaseId": "1.0.0-r1",
+  "workingBranch": "codex/r0009-updater-package",
+  "checks": {
+    "gitDiffCheck": "PASS",
+    "canonicalR0008Source": {
+      "status": "PASS",
+      "commit": "684b27bdb53e545047419baa87c63dd86dffa469",
+      "files": 121,
+      "logicalBytes": 627326
+    },
+    "machineReadableSyntax": {
+      "status": "PASS",
+      "jsonFiles": 692,
+      "worklogLines": 649,
+      "failures": 0
+    },
+    "checkpointSidecars": {
+      "status": "PASS",
+      "jsonReceipts": 58,
+      "failures": 0
+    },
+    "shellSyntax": {
+      "status": "PASS",
+      "trackedFiles": 81,
+      "failures": 0
+    },
+    "pythonSyntax": {
+      "status": "PASS",
+      "trackedFiles": 5,
+      "failures": 0
+    },
+    "javascriptSyntax": {
+      "status": "PASS",
+      "trackedFiles": 12,
+      "failures": 0
+    },
+    "repositorySecretMarkers": {
+      "status": "PASS",
+      "suspiciousFiles": 0
+    },
+    "stableSigningPublicKey": {
+      "status": "PASS",
+      "tracked": true,
+      "sha256": "b1587b8407f0c0443a361ed29b839319b66912b1b71414bcf31e848c29eab696"
+    },
+    "githubActionsEncryptedSecret": {
+      "status": "PASS",
+      "name": "BRORAY_LIGHT_MINISIGN_PRIVATE_KEY",
+      "apiStatus": 200
+    },
+    "boundedLocalSigningKey": {
+      "status": "PRESENT_UNTIL_PUBLIC_SIGNATURE_VERIFICATION",
+      "repositoryMaterial": false
+    },
+    "stableDistributionContract": {
+      "status": "PASS",
+      "channel": "stable",
+      "tag": "v1.0.0-r1",
+      "urlsChecked": 4
+    },
+    "prepublicationRemoteState": {
+      "status": "PASS",
+      "remoteTagExists": false,
+      "releaseApiStatus": 404
+    },
+    "deterministicArtifacts": {
+      "status": "PASS",
+      "builds": 2,
+      "manifestEntriesChecked": 14,
+      "artifactsCompared": 8,
+      "mismatches": 0
+    },
+    "releaseIndexSignatures": {
+      "status": "PASS",
+      "verified": 2,
+      "failures": 0
+    },
+    "forbiddenSurface": {
+      "status": "PASS",
+      "archiveMembers": 137,
+      "forbiddenNamedMembers": 0,
+      "forbiddenImplementationMatches": 0
+    }
+  },
+  "completedAcceptanceGates": [1, 2, 3, 4, 6, 7, 8, 9, 10, 11, 12, 13],
+  "remainingAcceptanceGates": [5, 14, 15, 16, 17, 18, 19, 20],
+  "releaseReady": false,
+  "publicReleasePublished": false,
+  "nextRevision": "p62-cache-corrected-release-source-commit",
+  "nextExactAction": "UPDATE_MACHINE_STATE_TO_THE_CACHE_CORRECTED_ARTIFACT_IDENTITIES_THEN_COMMIT_AND_PUSH_THE_EXACT_RELEASE_SOURCE"
+}

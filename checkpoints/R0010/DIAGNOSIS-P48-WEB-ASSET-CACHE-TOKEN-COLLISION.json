@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0010",
+  "revision": "p48-cache-collision-diagnosis-from-pre-error-evidence",
+  "at": "2026-09-02T12:59:54+03:00",
+  "status": "PASS_ROOT_CAUSE_CONFIRMED",
+  "failureId": "R017",
+  "installedHomeJs": {
+    "path": "/opt/broray-light/current/app/web-new/assets/js/home.js",
+    "sha256": "9deb071068253ff23ead46db601c5f97b8785791fc8ed3ed7761a20c79c3474c"
+  },
+  "publicHomeJs": {
+    "url": "https://brolight.tvervip.keenetic.link/assets/js/home.js?v=1.0.0-r1",
+    "httpStatus": 200,
+    "sha256": "9deb071068253ff23ead46db601c5f97b8785791fc8ed3ed7761a20c79c3474c",
+    "matchesInstalledAndBuildSource": true
+  },
+  "browser": {
+    "loadedScriptUrl": "https://brolight.tvervip.keenetic.link/assets/js/home.js?v=1.0.0-r1",
+    "displayedObsoleteMessage": "Внутренняя сборка R0009: публичный канал обновлений пока не настроен."
+  },
+  "rootCause": "The unpublished internal package and the final Stable package reused the visible 1.0.0-r1 version and therefore the same Web asset cache URL. The browser retained the old JavaScript while the router and direct HTTPS response contained the corrected JavaScript.",
+  "productDefectScope": "SAME_VISIBLE_VERSION_REPLACEMENT_CACHE_COLLISION",
+  "correction": {
+    "type": "TARGETED_HIDDEN_WEB_ASSET_CACHE_TOKEN",
+    "cacheToken": "1.0.0-r1-r0010",
+    "displayedPackageAndReleaseVersion": "1.0.0-r1",
+    "architectureChanged": false
+  },
+  "invalidatedPriorReleaseSourceCommit": "0bde5139137cc8166d1ef282a41cf9e697254c9b",
+  "invalidatedPriorBuilds": [
+    "dist/R0010/1.0.0-r1-Final-Build-A",
+    "dist/R0010/1.0.0-r1-Final-Build-B"
+  ],
+  "requiredValidation": "NEW_BUILD_A_AND_B_FULL_ISOLATED_BUTTON_STATIC_PHYSICAL_BROWSER_AND_PUBLICATION_PREFLIGHT",
+  "routerMutation": false,
+  "publicReleasePublished": false,
+  "nextRevision": "p49-targeted-web-asset-cache-token-correction",
+  "nextExactAction": "CHANGE_ONLY_WEB_ASSET_AND_INTERNAL_PAGE_NAVIGATION_CACHE_TOKENS_TO_1_0_0_R1_R0010_WITHOUT_CHANGING_THE_VISIBLE_VERSION"
+}

@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0010",
+  "revision": "p43-obsolete-update-message-source-diagnosis",
+  "failureId": "R018",
+  "at": "2026-09-02T12:54:57+03:00",
+  "status": "FAIL_FIRST_ERROR_PRESERVED",
+  "operation": "READ_THE_LOADED_WEBUI_SCRIPT_IDENTITIES_AND_FUNCTION_SOURCE_WITHOUT_MUTATION",
+  "firstError": "The browser evaluation context does not expose performance.getEntriesByType.",
+  "errorClass": "TypeError",
+  "browserPageMutated": false,
+  "routerPersistentStateMutated": false,
+  "publicReleasePublished": false,
+  "hiddenRetryPerformed": false,
+  "nextRevision": "p44-supported-loaded-script-diagnosis",
+  "nextExactAction": "READ_ONLY_THE_DOCUMENT_SCRIPT_URLS_LIGHTCHECK_FUNCTION_SOURCE_AND_INSTALLED_HTML_ASSET_TOKENS_WITHOUT_USING_PERFORMANCE_API"
+}

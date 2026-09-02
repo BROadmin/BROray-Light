@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0010",
+  "revision": "p24-scp-directory-backup",
+  "failureId": "R009",
+  "at": "2026-09-02T11:31:00+03:00",
+  "status": "FAIL_FIRST_ERROR_PRESERVED",
+  "operation": "COPY_THE_FIRST_PERSISTENT_DIRECTORY_WITH_DEFAULT_OPENSSH_SCP",
+  "firstError": "OpenSSH scp selected SFTP and the router lacks /opt/libexec/sftp-server.",
+  "failedSource": "/opt/broray-light/config",
+  "remoteDataCopied": false,
+  "localOutcome": "EMPTY_EXTERNAL_STAGING_DIRECTORY_ONLY",
+  "packageTransferred": false,
+  "packageInstalled": false,
+  "applicationPersistentStateMutated": false,
+  "publicReleasePublished": false,
+  "hiddenRetryPerformed": false,
+  "nextRevision": "p25-legacy-scp-directory-backup",
+  "nextExactAction": "USE_SCP_LEGACY_PROTOCOL_OPTION_O_AND_A_NEW_ABSENT_EXTERNAL_BACKUP_ROOT"
+}

@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0010",
+  "revision": "p29-preinstall-machine-record-verification",
+  "failureId": "R011",
+  "at": "2026-09-02T11:36:00+03:00",
+  "status": "FAIL_FIRST_ERROR_PRESERVED",
+  "operation": "VERIFY_THE_P28_WORKLOG_RECORD_BEFORE_PACKAGE_INSTALLATION",
+  "firstError": "The installedUpdaterSha256 value in the P28 WORKLOG entry was transcribed incorrectly.",
+  "authoritativeCheckpoint": "checkpoints/R0010/physical-validation/PREINSTALL-FINGERPRINT-P28.json",
+  "correctSha256": "62b22893792d3a2c591afa109c675b686b8b3068bc21d186333803eae701d156",
+  "packageInstalled": false,
+  "routerPersistentStateMutated": false,
+  "publicReleasePublished": false,
+  "hiddenRetryPerformed": false,
+  "nextRevision": "p30-correct-worklog-then-install",
+  "nextExactAction": "CORRECT_ONLY_THE_P28_WORKLOG_DIGEST_VALIDATE_JSON_THEN_RUN_THE_EXACT_PACKAGE_INSTALLATION"
+}

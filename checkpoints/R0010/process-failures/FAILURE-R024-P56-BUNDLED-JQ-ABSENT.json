@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0010",
+  "revision": "p56-supported-workspace-dependency-discovery",
+  "failureId": "R024",
+  "at": "2026-09-02T13:16:45+03:00",
+  "status": "FAIL_FIRST_ERROR_PRESERVED",
+  "operation": "RESOLVE_DASH_JQ_AND_PYTHON_FROM_THE_SUPPORTED_WORKSPACE_DEPENDENCY_BUNDLE",
+  "firstError": "The supported dependency bundle contains dash and Python but no jq.exe.",
+  "isolatedHarnessStarted": false,
+  "buildArtifactMutation": false,
+  "repositoryMutation": false,
+  "routerMutation": false,
+  "publicReleasePublished": false,
+  "hiddenRetryPerformed": false,
+  "nextRevision": "p57-verified-retained-jq-tool",
+  "nextExactAction": "SELECT_A_RETAINED_R0009_JQ_BINARY_VERIFY_ITS_IDENTITY_AND_EXECUTION_THEN_RUN_THE_HARNESS_IN_A_NEW_REVISION"
+}

@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0010",
+  "revision": "p35-corrected-postinstall-read-only-audit",
+  "failureId": "R014",
+  "at": "2026-09-02T11:49:46+03:00",
+  "status": "FAIL_FIRST_ERROR_PRESERVED",
+  "operation": "VERIFY_PUBLIC_HTTPS_ROOT_AND_UNAUTHENTICATED_SUMMARY_AFTER_CORRECTED_ROUTER_AUDIT",
+  "firstError": "Windows curl Schannel failed with CRYPT_E_NO_REVOCATION_CHECK while attempting certificate revocation validation.",
+  "curlExitCode": 35,
+  "routerAuditBeforeFailure": "PASS_IN_MEMORY_NOT_YET_SEALED",
+  "publicHttpAssertionsEvaluated": false,
+  "tlsCertificateValidationDisabled": false,
+  "routerPersistentStateMutatedByAudit": false,
+  "packageInstalled": true,
+  "publicReleasePublished": false,
+  "hiddenRetryPerformed": false,
+  "nextRevision": "p36-schannel-no-revoke-postinstall-audit",
+  "nextExactAction": "REPEAT_THE_FULL_READ_ONLY_AUDIT_AND_USE_CURL_SSL_NO_REVOKE_WHILE_RETAINING_HOSTNAME_CHAIN_AND_EXPIRY_VALIDATION"
+}

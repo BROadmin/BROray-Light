@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0010",
+  "revision": "p23-literal-path-router-backup",
+  "failureId": "R008",
+  "at": "2026-09-02T11:28:00+03:00",
+  "status": "FAIL_FIRST_ERROR_PRESERVED",
+  "operation": "CREATE_A_GZIP_TAR_BACKUP_ON_THE_TEST_ROUTER",
+  "firstError": "BusyBox tar rejected create option -c and supports only x or t on this firmware.",
+  "routerTarVersion": "BusyBox 1.37.0",
+  "backupCreated": false,
+  "packageTransferred": false,
+  "packageInstalled": false,
+  "applicationPersistentStateMutated": false,
+  "publicReleasePublished": false,
+  "hiddenRetryPerformed": false,
+  "nextRevision": "p24-scp-directory-backup",
+  "nextExactAction": "COPY_THE_EXACT_PERSISTENT_DIRECTORIES_RECURSIVELY_TO_A_NEW_EXTERNAL_LOCAL_BACKUP_ROOT_THEN_CREATE_AND_HASH_A_LOCAL_MANIFEST"
+}

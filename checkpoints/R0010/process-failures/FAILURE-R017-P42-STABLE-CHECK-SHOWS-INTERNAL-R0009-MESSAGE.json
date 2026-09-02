@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0010",
+  "revision": "p42-authenticated-browser-webui-audit",
+  "failureId": "R017",
+  "at": "2026-09-02T12:52:51+03:00",
+  "status": "FAIL_FIRST_ERROR_PRESERVED",
+  "operation": "VERIFY_THE_BRORAY_LIGHT_STABLE_UPDATE_CHECK_BUTTON_ON_THE_INSTALLED_FINAL_PACKAGE",
+  "firstError": "The update check displayed the obsolete message that an internal R0009 build has no public update channel, despite the installed Stable package and Stable channel label.",
+  "page": "https://brolight.tvervip.keenetic.link/home.html?v=1.0.0-r1",
+  "installedVersion": "1.0.0-r1",
+  "displayedChannel": "Стабильный канал",
+  "displayedMessage": "Внутренняя сборка R0009: публичный канал обновлений пока не настроен.",
+  "updateButtonEnabled": false,
+  "confirmedBeforeFailure": {
+    "authenticatedSession": "PASS",
+    "homeNavigation": "PASS",
+    "statusRefreshButton": "PASS",
+    "keeneticInterface": "Proxy0",
+    "keeneticState": "Активен",
+    "xrayVersion": "26.7.28",
+    "xrayUpdateCheck": "PASS_REINSTALL_OFFER_ENABLED",
+    "lightVersion": "1.0.0-r1"
+  },
+  "routerPersistentStateMutatedByBrowserAudit": false,
+  "publicReleasePublished": false,
+  "hiddenRetryPerformed": false,
+  "nextRevision": "p43-obsolete-update-message-source-diagnosis",
+  "nextExactAction": "TRACE_THE_MESSAGE_THROUGH_INSTALLED_WEB_ASSETS_UPDATE_CGI_UPDATER_STATE_AND_DEFAULT_STABLE_INDEX_WITHOUT_MUTATION"
+}

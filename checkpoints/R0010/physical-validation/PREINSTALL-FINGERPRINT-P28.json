@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0010",
+  "revision": "p28-literal-remote-script-persistent-fingerprint",
+  "at": "2026-09-02T11:34:10+03:00",
+  "status": "PASS",
+  "routerAddress": "192.168.1.1",
+  "persistentScope": [
+    "/opt/broray-light/config",
+    "/opt/broray-light/servers",
+    "/opt/broray-light/subscriptions"
+  ],
+  "persistentFiles": 19,
+  "aggregateSha256ManifestSha256": "6258b7be82ad69d87a04275f904f29d9a90f08d3f573daa0243d4a21996fd86d",
+  "installedTrustRootSha256": "f4e49912ddb5ad6e0995d4b4992ce7d879dc765815aafa61fa1156e8ba1ae4a4",
+  "installedUpdaterSha256": "62b22893792d3a2c591afa109c675b686b8b3068bc21d186333803eae701d156",
+  "installedHomeHtmlSha256": "9a3fb689a2352ad1e4e2425189fdd8cd838d5c7a5bffa2aa33642df2eddd644c",
+  "packageInstalled": false,
+  "publicReleasePublished": false,
+  "nextRevision": "p29-physical-final-package-replacement",
+  "nextExactAction": "RUN_OPKG_FORCE_REINSTALL_FOR_THE_EXACT_VERIFIED_FINAL_IPK_AND_STOP_AT_ITS_FIRST_ERROR_OR_SUCCESS"
+}

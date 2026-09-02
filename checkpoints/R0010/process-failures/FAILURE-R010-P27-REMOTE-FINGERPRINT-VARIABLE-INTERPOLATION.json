@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0010",
+  "revision": "p27-physical-preinstall-fingerprint",
+  "failureId": "R010",
+  "at": "2026-09-02T11:34:00+03:00",
+  "status": "FAIL_FIRST_ERROR_PRESERVED",
+  "operation": "COMPUTE_A_PRIVACY_PRESERVING_AGGREGATE_HASH_OF_ROUTER_PERSISTENT_FILES",
+  "firstError": "The remote sha256sum received an invalid interpolated path and emitted an error while the pipeline returned exit code 0.",
+  "invalidObservedDigest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "cause": "PowerShell expanded the remote loop variable before SSH passed the script to the router.",
+  "fingerprintAccepted": false,
+  "packageInstalled": false,
+  "applicationPersistentStateMutated": false,
+  "publicReleasePublished": false,
+  "hiddenRetryPerformed": false,
+  "nextRevision": "p28-literal-remote-script-persistent-fingerprint",
+  "nextExactAction": "RUN_THE_REMOTE_LOOP_IN_A_SINGLE_QUOTED_SCRIPT_FAIL_ON_ANY_SHA_ERROR_AND_CAPTURE_A_VALID_PREINSTALL_FINGERPRINT"
+}

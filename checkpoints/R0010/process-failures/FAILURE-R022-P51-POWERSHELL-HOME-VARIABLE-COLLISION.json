@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0010",
+  "revision": "p51-cache-corrected-build-a-verification",
+  "failureId": "R022",
+  "at": "2026-09-02T13:09:01+03:00",
+  "status": "FAIL_FIRST_ERROR_PRESERVED",
+  "operation": "VERIFY_BUILD_A_SHA256SUMS_SIGNATURE_CACHE_TOKEN_AND_STABLE_CHANNEL",
+  "firstError": "PowerShell rejected assignment to the case-insensitive reserved HOME variable.",
+  "confirmedBeforeFailure": {
+    "sha256Sums": "PASS",
+    "releaseIndexSignature": "PASS",
+    "trustedComment": "releaseId=1.0.0-r1"
+  },
+  "notEvaluatedAfterFailure": [
+    "appArchiveCacheToken",
+    "releaseIndexStableChannel"
+  ],
+  "buildArtifactMutation": false,
+  "routerMutation": false,
+  "publicReleasePublished": false,
+  "hiddenRetryPerformed": false,
+  "nextRevision": "p52-cache-corrected-build-a-portable-verification",
+  "nextExactAction": "REPEAT_THE_COMPLETE_BUILD_A_VERIFICATION_USING_A_TASK_SPECIFIC_VARIABLE_NAME"
+}

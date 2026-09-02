@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0010",
+  "revision": "p41-login-toggle-exact-selector",
+  "at": "2026-09-02T12:00:23+03:00",
+  "status": "PASS_PARTIAL_BROWSER_AUDIT",
+  "page": "https://brolight.tvervip.keenetic.link/?v=1.0.0-r1",
+  "pageTitle": "BROray-Light — Вход",
+  "controls": {
+    "loginInput": "PRESENT",
+    "passwordInput": "PRESENT",
+    "loginSubmit": "PRESENT",
+    "passwordVisibilityToggle": {
+      "initialType": "password",
+      "shownType": "text",
+      "shownAriaLabel": "Скрыть пароль",
+      "restoredType": "password",
+      "restoredAriaLabel": "Показать пароль",
+      "result": "PASS"
+    }
+  },
+  "credentialsEntered": false,
+  "loginSubmitted": false,
+  "routerPersistentStateMutated": false,
+  "publicReleasePublished": false,
+  "remainingBrowserAudit": "AUTHENTICATED_PAGES_AND_SAFE_BUTTON_ACTIONS",
+  "nextRevision": "p42-authenticated-browser-webui-audit",
+  "nextExactAction": "AFTER_ACTION_TIME_USER_CONFIRMATION_ENTER_THE_PREVIOUSLY_PROVIDED_CREDENTIALS_AND_COMPLETE_THE_AUTHENTICATED_WEBUI_AUDIT"
+}

@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0010",
+  "revision": "p30-physical-final-package-replacement",
+  "at": "2026-09-02T11:38:30+03:00",
+  "status": "PASS_INSTALL_COMMAND",
+  "routerAddress": "192.168.1.1",
+  "packagePath": "/tmp/broray-light_1.0.0-r1-r0010-final.ipk",
+  "packageSha256": "efbc20e154be31233628226d8206acaad786534d25bba7b5f993b9dc1db3bc4c",
+  "packageVersion": "1.0.0-r1",
+  "operation": "opkg install --force-reinstall",
+  "exitCode": 0,
+  "observedSequence": [
+    "Removing package broray-light from root",
+    "Installing broray-light (1.0.0-r1) to root",
+    "Configuring broray-light"
+  ],
+  "authorizedSameVersionReplacement": true,
+  "replacedBuildWasPubliclyReleased": false,
+  "packageInstalled": true,
+  "postInstallValidation": "PENDING",
+  "publicReleasePublished": false,
+  "nextRevision": "p31-postinstall-read-only-audit",
+  "nextExactAction": "VALIDATE_PERSISTENCE_SERVICES_XRAY_WEBUI_UPDATER_AND_TRUST_ROOT_READ_ONLY"
+}

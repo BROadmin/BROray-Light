@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0010",
+  "revision": "p59-cache-corrected-webui-button-binding-audit",
+  "at": "2026-09-02T13:23:15+03:00",
+  "status": "PASS",
+  "releaseId": "1.0.0-r1",
+  "appArchive": "dist/R0010/1.0.0-r1-P50-Cache-Final-Build-A/broray-light-app-1.0.0-r1.tar.gz",
+  "appArchiveSha256": "2b2d22e9a172b28229aa19ca904f1810722da21b5d34f27eafd79d5acac1e5b0",
+  "staticButtons": {
+    "count": 12,
+    "pages": {
+      "index.html": ["password-toggle", "login-submit"],
+      "home.html": ["keenetic-create", "keenetic-repair", "status-refresh", "xray-check", "xray-install", "light-check", "light-update"],
+      "servers.html": ["server-import", "auto-switch-save"],
+      "subscriptions.html": ["subscription-add"]
+    }
+  },
+  "dynamicButtons": {
+    "count": 8,
+    "serverActions": ["up", "down", "check", "activate", "delete"],
+    "subscriptionActions": ["refresh", "delete", "auto-update-save"]
+  },
+  "totalButtonActions": 20,
+  "pageEndpointBindings": 23,
+  "missingHandlers": 0,
+  "missingEndpoints": 0,
+  "nonExecutableEndpoints": 0,
+  "cacheCorrectedArchive": true,
+  "physicalBrowserAuditStillRequired": true,
+  "routerMutation": false,
+  "publicReleasePublished": false,
+  "nextRevision": "p60-cache-corrected-prepublication-audit",
+  "nextExactAction": "RUN_THE_COMPLETE_STATIC_MANIFEST_SIGNATURE_SECRET_WORKTREE_AND_CHECKPOINT_AUDIT_THEN_CREATE_A_NEW_RELEASE_SOURCE_COMMIT"
+}

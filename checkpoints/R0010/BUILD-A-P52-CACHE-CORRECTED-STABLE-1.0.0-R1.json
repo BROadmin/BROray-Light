@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0010",
+  "revision": "p52-cache-corrected-build-a-portable-verification",
+  "at": "2026-09-02T13:10:39+03:00",
+  "status": "PASS",
+  "build": "dist/R0010/1.0.0-r1-P50-Cache-Final-Build-A",
+  "releaseId": "1.0.0-r1",
+  "webAssetCacheToken": "1.0.0-r1-r0010",
+  "artifactCount": 8,
+  "artifacts": {
+    "broray-light-app-1.0.0-r1.tar.gz": {"sizeBytes": 157138, "sha256": "2b2d22e9a172b28229aa19ca904f1810722da21b5d34f27eafd79d5acac1e5b0"},
+    "broray-light-updater-platform-5-light1.tar.gz": {"sizeBytes": 131682, "sha256": "4983f0fc268a9f19f3e64959fe5f7d8086f26ad907d528ca82ca623f10d9a92a"},
+    "broray-light_1.0.0-r1_aarch64-3.10.ipk": {"sizeBytes": 12799724, "sha256": "707431aa20c01958edfe40ed04a70c24308a9dabc9ff26f758101c952827d432"},
+    "broray-light-install-1.0.0-r1.sh": {"sizeBytes": 1851, "sha256": "da8c57ee3b68156462a2dea5cb2f3b6d1706ed754b1cd8904b745ee1fb86c51d"},
+    "release.json": {"sizeBytes": 576, "sha256": "ccbd353f6042be992ae1aab293447ae7f6f57727d263a5b58253bde276cd0cf6"},
+    "release.json.minisig": {"sizeBytes": 269, "sha256": "da2ff05d973c19b3b4ea79bc48329cecdb9e0cdae99f3dcd05efd2b703e2d84d"},
+    "RELEASE-MANIFEST.json": {"sizeBytes": 2966, "sha256": "05523426a5edd246330e8987ab9a772f9ec61a4c19bb99f145170aa882ac6f42"},
+    "SHA256SUMS": {"sizeBytes": 669, "sha256": "00de57fe2472b642e88a3f90ccdad7e1ad4fb8092963a505b509a21628618a72"}
+  },
+  "sha256SumsVerification": "PASS",
+  "signatureVerification": "PASS",
+  "trustedComment": "releaseId=1.0.0-r1",
+  "channel": "stable",
+  "cacheTokenVerification": "PASS",
+  "canonicalSourceUnchanged": true,
+  "publicReleasePublished": false,
+  "nextRevision": "p53-cache-corrected-independent-build-b",
+  "nextExactAction": "CREATE_BUILD_B_IN_A_NEW_OUTPUT_DIRECTORY_AND_COMPARE_ALL_EIGHT_ARTIFACTS_BYTE_FOR_BYTE"
+}

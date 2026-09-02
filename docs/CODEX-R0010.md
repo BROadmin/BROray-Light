@@ -36,6 +36,7 @@ R0009 remains historical internal evidence. Its artifacts are not directly publi
 - Redirects are permitted only from HTTPS to HTTPS.
 - The updater must default to the Stable index while retaining an explicit environment override for isolated tests.
 - Published objects must be byte-identical to both independently reproduced final builds.
+- The visible product/package version remains `1.0.0-r1`, while final CSS/JavaScript URLs use the distinct deterministic cache token `1.0.0-r1-r0010`. This prevents a browser from reusing JavaScript from the unpublished internal package that temporarily carried the same visible version.
 
 ## Signing-key governance
 
@@ -66,6 +67,7 @@ R0009 remains historical internal evidence. Its artifacts are not directly publi
 - Signed Stable `release.json` and `release.json.minisig`.
 - Isolated-root clean install, update, equal-version, downgrade refusal, rollback, persistence, and public installer tests.
 - Automated WebUI button/API contract audit.
+- Same-visible-version Web asset cache-collision regression coverage.
 - Public URL TLS/redirect/MIME/cache and byte-identity evidence.
 - Authorized physical-router replacement of the unpublished internal r1 package, then Stable check/equal-version and functional validation.
 - Git tag and GitHub Release.
@@ -84,7 +86,7 @@ R0009 remains historical internal evidence. Its artifacts are not directly publi
 9. All deterministic manifests and SHA-256 files verify.
 10. Isolated clean install produces exact Xray and a healthy app slot.
 11. Isolated newer update, equal-version no-op, downgrade refusal, rollback, and persistence PASS.
-12. Automated WebUI page/button/API contract audit PASS.
+12. Automated WebUI page/button/API contract audit and the distinct final Web asset cache-token regression PASS.
 13. No forbidden full-BROray routes/DNS/quality/protocol modules are introduced.
 14. Exact release-source commit is pushed; tag `v1.0.0-r1` targets that commit. A later evidence-only checkpoint commit may record observations that can exist only after publication, but must not change release inputs or bytes.
 15. GitHub Release is public, non-draft, non-prerelease, and contains the complete asset set.

@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0010",
+  "revision": "p25-legacy-scp-directory-backup",
+  "at": "2026-09-02T11:31:10+03:00",
+  "status": "PASS",
+  "routerAddress": "192.168.1.1",
+  "protocol": "legacy SCP forced with -O",
+  "sources": [
+    "/opt/broray-light/config",
+    "/opt/broray-light/servers",
+    "/opt/broray-light/subscriptions",
+    "/opt/var/lib/broray-light",
+    "/opt/var/lib/broray-light-updater"
+  ],
+  "backup": {
+    "storageClass": "external local temporary directory outside repository",
+    "directoryName": "broray-light-r0010-router-backup-p25",
+    "fileCount": 21,
+    "logicalBytes": 15760,
+    "manifestFile": "BACKUP-MANIFEST.json",
+    "manifestSha256": "1c68b2a0122c394f3ceacb2e3282f5486399a48c5742241ea8f22109ac9ff9af"
+  },
+  "containsUserPersistentState": true,
+  "committedToRepository": false,
+  "applicationPersistentStateMutated": false,
+  "packageTransferred": false,
+  "packageInstalled": false,
+  "publicReleasePublished": false,
+  "nextRevision": "p26-transfer-final-package",
+  "nextExactAction": "TRANSFER_THE_EXACT_FINAL_BUILD_A_IPK_TO_A_NEW_ROUTER_TEMP_PATH_AND_COMPARE_ROUTER_SHA256_AND_SIZE"
+}

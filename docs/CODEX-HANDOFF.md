@@ -2,11 +2,17 @@
 
 ## Current state
 
-R0010 `PUBLISH_AND_VALIDATE_BRORAY_LIGHT_STABLE_RELEASE` is authorized and in progress on `codex/r0009-updater-package`. Public version remains `1.0.0-r1`; no public release existed when R0010 started.
+R0010 `PUBLISH_AND_VALIDATE_BRORAY_LIGHT_STABLE_RELEASE` is authorized and in progress on `codex/r0009-updater-package`. Public version remains `1.0.0-r1`; no public release exists yet.
 
 R0010 CHECKPOINT-FIRST evidence begins at `checkpoints/R0010/START-P1.json`. Direct publication of the R0009 bytes failed closed at `checkpoints/R0010/process-failures/FAILURE-R001-P2-R0009-INTERNAL-PUBLICATION-CONTRACT.json`: those bytes use `internal.invalid`, require channel `internal-r0009`, lack a default Stable index URL, and their private signing key was destroyed. No public, production, or router mutation occurred during that failed revision.
 
 The corrected R0010 revision uses GitHub Releases, tag `v1.0.0-r1`, Stable index `https://github.com/BROadmin/BROray-Light/releases/latest/download/release.json`, versioned asset URLs, and a new Stable minisign identity whose private key must be retained only as encrypted GitHub Actions secret `BRORAY_LIGHT_MINISIGN_PRIVATE_KEY`.
+
+A physical browser gate found that the unpublished internal package and the prospective Stable package shared the same `1.0.0-r1` Web asset URLs, allowing old JavaScript to remain cached. Failure R017 and diagnosis P48 invalidate release-source commit `0bde5139137cc8166d1ef282a41cf9e697254c9b` and its builds. The targeted correction keeps the visible version `1.0.0-r1` and uses hidden CSS/JavaScript cache token `1.0.0-r1-r0010`.
+
+The cache-corrected Build A at `dist/R0010/1.0.0-r1-P50-Cache-Final-Build-A` and independent Build B at `dist/R0010/1.0.0-r1-P53-Cache-Final-Build-B` are 8/8 byte-identical. Their package SHA-256 is `707431aa20c01958edfe40ed04a70c24308a9dabc9ff26f758101c952827d432`; the app archive SHA-256 is `2b2d22e9a172b28229aa19ca904f1810722da21b5d34f27eafd79d5acac1e5b0`. The new isolated suite is 52/52 PASS and the WebUI binding audit is 20 actions/23 endpoints PASS.
+
+The router still runs the now-invalidated pre-cache-correction package. The next physical mutation must install only the exact cache-corrected package after a new release-source commit is created and pushed. The Stable private key remains temporarily present only in its bounded external signing directory until public byte/signature validation completes; its encrypted GitHub Actions secret is already present.
 
 Until all 20 gates in `docs/CODEX-R0010.md` pass, `releaseReady=false` and `publicReleasePublished=false`.
 
@@ -48,6 +54,6 @@ The router ends with `broray-light 1.0.0-r1`, `current -> releases/1.0.0-r1`, pr
 
 ## Exact next stage
 
-`DEFINE_AND_AUTHORIZE_R0010_BEFORE_ANY_STABLE_PUBLICATION`
+`SEAL_AND_PUSH_CACHE_CORRECTED_RELEASE_SOURCE_COMMIT_THEN_INSTALL_AND_BROWSER_VALIDATE_THE_EXACT_CACHE_CORRECTED_PACKAGE`
 
-Stop here unless that stage is explicitly defined and authorized. Do not publish Stable or mutate a production server under the completed R0009 authorization.
+R0010 publication, production mutation, and physical-router validation are explicitly authorized. Do not publish until the remaining R0010 gates pass on the cache-corrected bytes.

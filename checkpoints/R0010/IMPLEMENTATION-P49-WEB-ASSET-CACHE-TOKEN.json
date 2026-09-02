@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0010",
+  "revision": "p49-targeted-web-asset-cache-token-correction",
+  "at": "2026-09-02T13:05:00+03:00",
+  "status": "PASS_IMPLEMENTED_PENDING_FULL_REBUILD",
+  "failureId": "R017",
+  "visibleVersion": "1.0.0-r1",
+  "webAssetCacheToken": "1.0.0-r1-r0010",
+  "versionedCssAndJsReferences": 16,
+  "legacyCollidingAssetReferences": 0,
+  "changedFiles": {
+    "packaging/app-overlay/web-new/index.html": "d3740f668781fc55a5e55851d0d26253e74689ebd2f70f033b81c64d69910236",
+    "packaging/app-overlay/web-new/home.html": "10e4d16d8cdab33468a597511d823e33b04b173f4ba788cad066fc88c36e2bd2",
+    "packaging/app-overlay/web-new/servers.html": "8bec192cb5c08cff8629732924c6ec20180f2dfd071d7963aaf47cf3a079f12e",
+    "packaging/app-overlay/web-new/subscriptions.html": "439cc55be22ac396c371f45fb3266f166611c26512d8eef6a5156116c16e30be",
+    "tools/test_r0009.py": "898d7c8a0629b6e024f3547763adbf6e54cda360607748629e687130fdf9e975"
+  },
+  "targetedValidation": {
+    "pythonAst": "PASS",
+    "gitDiffCheck": "PASS",
+    "assetTokenCoverage": "PASS"
+  },
+  "canonicalR0008SourceModified": false,
+  "architectureChanged": false,
+  "routerMutation": false,
+  "publicReleasePublished": false,
+  "priorBuildsValidForRelease": false,
+  "nextRevision": "p50-cache-corrected-build-a-b",
+  "nextExactAction": "CREATE_NEW_INDEPENDENT_BUILD_A_AND_BUILD_B_VERIFY_BYTE_IDENTITY_MANIFESTS_AND_SIGNATURES"
+}

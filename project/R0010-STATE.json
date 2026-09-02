@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "stage": "R0010",
-  "status": "PREPUBLICATION_LOCAL_PASS",
-  "currentRevision": "p20-release-source-commit",
+  "status": "CACHE_CORRECTED_PREPUBLICATION_AUDIT_PASS_RELEASE_SOURCE_COMMIT_REQUIRED",
+  "currentRevision": "p62-cache-corrected-release-source-commit",
   "workingBranch": "codex/r0009-updater-package",
   "authorizedTask": "PUBLISH_AND_VALIDATE_BRORAY_LIGHT_STABLE_RELEASE",
   "releaseReady": false,
@@ -36,52 +36,118 @@
     "STABLE_URL_CHANNEL_CONTRACT",
     "STABLE_SIGNING_IDENTITY",
     "UPDATER_PACKAGE_INSTALLER_STATIC",
-    "BUILD_A_B_BYTE_REPRODUCIBILITY",
-    "DETERMINISTIC_MANIFESTS_SHA256"
-    ,"ISOLATED_CLEAN_INSTALL_UPDATE_EQUAL_DOWNGRADE_ROLLBACK_PERSISTENCE"
-    ,"WEBUI_BUTTON_ENDPOINT_BINDING_AUDIT"
-    ,"PREPUBLICATION_LOCAL_AUDIT"
+    "CACHE_CORRECTED_BUILD_A_B_BYTE_REPRODUCIBILITY",
+    "CACHE_CORRECTED_ISOLATED_CLEAN_INSTALL_UPDATE_EQUAL_DOWNGRADE_ROLLBACK_PERSISTENCE",
+    "CACHE_CORRECTED_WEBUI_BUTTON_ENDPOINT_BINDING_AUDIT",
+    "R0010_PROCESS_FAILURE_SIDECARS",
+    "STABLE_UPDATER_PACKAGE_INSTALLER_SYNTAX",
+    "DETERMINISTIC_MANIFESTS_AND_SHA256",
+    "FORBIDDEN_SURFACE_ABSENT"
   ],
   "finalBuilds": {
-    "buildA": "dist/R0010/1.0.0-r1-Final-Build-A",
-    "buildB": "dist/R0010/1.0.0-r1-Final-Build-B",
+    "buildA": "dist/R0010/1.0.0-r1-P50-Cache-Final-Build-A",
+    "buildB": "dist/R0010/1.0.0-r1-P53-Cache-Final-Build-B",
     "artifacts": 8,
     "byteIdentical": 8,
     "mismatched": 0,
-    "receipt": "checkpoints/R0010/REPRODUCIBILITY-P16-FINAL-STABLE-1.0.0-R1.json",
-    "receiptSha256": "0ed54901e9eddb41210631e460007887003ca3116d7f3e2b68523d5b9ccff5ab"
+    "validForRelease": true,
+    "receipt": "checkpoints/R0010/REPRODUCIBILITY-P54-CACHE-CORRECTED-STABLE-1.0.0-R1.json",
+    "receiptSha256": "e4ca0193bb00bb6493d457210a09dcb24e2a6908c73a7162d905678bef898125"
   },
   "finalArtifacts": {
-    "packageSha256": "efbc20e154be31233628226d8206acaad786534d25bba7b5f993b9dc1db3bc4c",
-    "appArchiveSha256": "749680ecee855078d5f46277d0a13b4285e81681c4166860fb1fa272383de796",
-    "updaterArchiveSha256": "fbd18cc90ca553af49645afcb1a7c6b7b16e4c852006499abeb10e66aff8abb7",
-    "installerSha256": "024a6074ada964abc73cbb2a5333e19a2d8bea0dec0988d067e68592fdb54437",
-    "releaseIndexSha256": "71f67b424e3addbedacaa5a7e3148e9844f6cbc9de47db97dfca1677380a6f5c",
-    "releaseSignatureSha256": "b9b47bf18e2e873a5dfe2eb35c961a2d3076c7c88a697e46ba1fa53425ac038d",
-    "releaseManifestSha256": "d450a7c2249806b6c37f53580f0fd88479b0441b1c263a8f33ba63561709faf3",
-    "sha256SumsSha256": "1889c94ff884732a817d77438f8413888c3eeadc57482292e96072a0a2d122b2"
+    "packageSha256": "707431aa20c01958edfe40ed04a70c24308a9dabc9ff26f758101c952827d432",
+    "appArchiveSha256": "2b2d22e9a172b28229aa19ca904f1810722da21b5d34f27eafd79d5acac1e5b0",
+    "updaterArchiveSha256": "4983f0fc268a9f19f3e64959fe5f7d8086f26ad907d528ca82ca623f10d9a92a",
+    "installerSha256": "da8c57ee3b68156462a2dea5cb2f3b6d1706ed754b1cd8904b745ee1fb86c51d",
+    "releaseIndexSha256": "ccbd353f6042be992ae1aab293447ae7f6f57727d263a5b58253bde276cd0cf6",
+    "releaseSignatureSha256": "da2ff05d973c19b3b4ea79bc48329cecdb9e0cdae99f3dcd05efd2b703e2d84d",
+    "releaseManifestSha256": "05523426a5edd246330e8987ab9a772f9ec61a4c19bb99f145170aa882ac6f42",
+    "sha256SumsSha256": "00de57fe2472b642e88a3f90ccdad7e1ad4fb8092963a505b509a21628618a72"
   },
   "isolatedValidation": {
-    "passed": 51,
+    "passed": 52,
     "failed": 0,
-    "receipt": "checkpoints/R0010/ISOLATED-VALIDATION-P17-FINAL-STABLE-1.0.0-R1.json",
-    "receiptSha256": "cb80cf123ba0cdd3ca95713ed26eaac4cab3b33d665d24a937f939f46d4d6c70"
+    "receipt": "checkpoints/R0010/ISOLATED-VALIDATION-P58-CACHE-CORRECTED-STABLE-1.0.0-R1.json",
+    "receiptSha256": "4f3d11a62e2809d16ced06b380a1a86874c78a22c7c40719440219f022c3932e",
+    "validForRelease": true
   },
   "webuiButtonAudit": {
     "buttonActions": 20,
     "endpointBindings": 23,
     "failures": 0,
-    "receipt": "checkpoints/R0010/WEBUI-BUTTON-AUDIT-P18-FINAL-STABLE.json",
-    "receiptSha256": "d4f987f49d394b34004769e258616296783679755c24784ecc389d6692067955"
+    "receipt": "checkpoints/R0010/WEBUI-BUTTON-AUDIT-P59-CACHE-CORRECTED-STABLE.json",
+    "receiptSha256": "5735fe4552ad66a58c4f9da0738e0289aef58c15088bbe69b40c895ebb36abc4",
+    "validForRelease": true
+  },
+  "physicalPostInstall": {
+    "status": "PASS",
+    "persistentFiles": 19,
+    "persistentManifestSha256": "6258b7be82ad69d87a04275f904f29d9a90f08d3f573daa0243d4a21996fd86d",
+    "xraySha256": "4b8af237444801bf17b3dc10a1c5c24581fbe3d433eba3d78c6c3a0da1df56fc",
+    "fullBrorayAbsent": true,
+    "receipt": "checkpoints/R0010/physical-validation/POSTINSTALL-P38-FINAL-STABLE-PACKAGE.json",
+    "receiptSha256": "e2df23d9370267e7768fe6fc1dcfdb5b052948ef8751a67a8c67e2039b129f85",
+    "validForRelease": false
+  },
+  "physicalBrowserAudit": {
+    "loginControls": "PASS",
+    "passwordVisibilityToggle": "PASS",
+    "authenticatedSession": "PASS_USER_ALREADY_AUTHENTICATED",
+    "homeNavigation": "PASS",
+    "statusRefreshButton": "PASS",
+    "xrayUpdateCheck": "PASS_REINSTALL_OFFER_ENABLED",
+    "lightStableUpdateCheck": "FAIL_OBSOLETE_INTERNAL_R0009_MESSAGE",
+    "receipt": "checkpoints/R0010/physical-validation/WEBUI-LOGIN-CONTROLS-P41.json",
+    "receiptSha256": "487a7f4995a3768ec778c2c67add0e7a26c60d74253a116033307dce5272dc70"
   },
   "processFailures": {
-    "preserved": 6,
-    "latest": "checkpoints/R0010/process-failures/FAILURE-R006-P13-STALE-INTERNAL-HOME-CHANNEL-TEXT.json"
+    "preserved": 25,
+    "latest": "checkpoints/R0010/process-failures/FAILURE-R025-P60-PREPUBLICATION-AUDIT-OUTPUT-TRUNCATED.json"
   },
   "productionMutationAuthorized": true,
-  "productionMutationPerformed": false,
+  "productionMutationPerformed": true,
   "physicalRouterValidationAuthorized": true,
-  "routerMutationPerformed": false,
+  "routerMutationPerformed": true,
+  "releaseSourceCommit": "0bde5139137cc8166d1ef282a41cf9e697254c9b",
+  "releaseSourceCommitStatus": "INVALIDATED_BY_R017_CACHE_COLLISION",
+  "cacheCorrection": {
+    "visibleVersion": "1.0.0-r1",
+    "newHiddenAssetToken": "1.0.0-r1-r0010",
+    "diagnosis": "checkpoints/R0010/DIAGNOSIS-P48-WEB-ASSET-CACHE-TOKEN-COLLISION.json",
+    "diagnosisSha256": "208e329596491a2829628592677f7d3e3d1f7b928100b4caa4e2dad65ed2d34b",
+    "implementation": "checkpoints/R0010/IMPLEMENTATION-P49-WEB-ASSET-CACHE-TOKEN.json",
+    "implementationSha256": "64181e4197b8547c26b56cb31239ac248aa9088717af37259fdaaceb734dd589",
+    "targetedValidation": "PASS"
+  },
+  "cacheCorrectedBuilds": {
+    "buildA": "dist/R0010/1.0.0-r1-P50-Cache-Final-Build-A",
+    "buildAStatus": "PASS",
+    "buildAReceipt": "checkpoints/R0010/BUILD-A-P52-CACHE-CORRECTED-STABLE-1.0.0-R1.json",
+    "buildAReceiptSha256": "fa03a6dd01d131de38cd2758a0f18aeb971e6edb7c338ebe30a0b6db72628291",
+    "buildB": "dist/R0010/1.0.0-r1-P53-Cache-Final-Build-B",
+    "buildBStatus": "PASS",
+    "reproducibility": "PASS_8_OF_8_BYTE_IDENTICAL",
+    "receipt": "checkpoints/R0010/REPRODUCIBILITY-P54-CACHE-CORRECTED-STABLE-1.0.0-R1.json",
+    "receiptSha256": "e4ca0193bb00bb6493d457210a09dcb24e2a6908c73a7162d905678bef898125"
+  },
+  "cacheCorrectedIsolatedValidation": {
+    "passed": 52,
+    "failed": 0,
+    "receipt": "checkpoints/R0010/ISOLATED-VALIDATION-P58-CACHE-CORRECTED-STABLE-1.0.0-R1.json",
+    "receiptSha256": "4f3d11a62e2809d16ced06b380a1a86874c78a22c7c40719440219f022c3932e"
+  },
+  "cacheCorrectedWebuiButtonAudit": {
+    "buttonActions": 20,
+    "endpointBindings": 23,
+    "failures": 0,
+    "receipt": "checkpoints/R0010/WEBUI-BUTTON-AUDIT-P59-CACHE-CORRECTED-STABLE.json",
+    "receiptSha256": "5735fe4552ad66a58c4f9da0738e0289aef58c15088bbe69b40c895ebb36abc4"
+  },
   "activeBlocker": null,
-  "nextExactAction": "VERIFY_ALL_R0010_RECORDS_THEN_CREATE_AND_PUSH_THE_RELEASE_SOURCE_COMMIT"
+  "prepublicationAudit": {
+    "status": "PASS",
+    "receipt": "checkpoints/R0010/PREPUBLICATION-AUDIT-P61-CACHE-CORRECTED.json",
+    "receiptSha256": "3bb4528cc9864d2272afe1610bfc12934a13b7a93949874d15c4cd6799b978aa"
+  },
+  "nextExactAction": "COMMIT_AND_PUSH_THE_EXACT_CACHE_CORRECTED_RELEASE_SOURCE_THEN_INSTALL_THAT_PACKAGE_ON_THE_AUTHORIZED_ROUTER"
 }

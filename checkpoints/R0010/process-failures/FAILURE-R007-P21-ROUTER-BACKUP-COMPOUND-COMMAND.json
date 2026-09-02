@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0010",
+  "revision": "p21-physical-preinstall-backup-and-transfer",
+  "failureId": "R007",
+  "at": "2026-09-02T11:25:00+03:00",
+  "status": "FAIL_FIRST_ERROR_PRESERVED",
+  "operation": "CREATE_ROUTER_PERSISTENT_STATE_BACKUP_AND_COPY_IT_LOCALLY",
+  "firstError": "The compound SSH/SCP command returned exit code 1 with no stdout or stderr.",
+  "knownCompletedBeforeFailure": {
+    "routerReadOnlyPreflight": "PASS",
+    "installedPackage": "broray-light 1.0.0-r1",
+    "xraySha256": "4b8af237444801bf17b3dc10a1c5c24581fbe3d433eba3d78c6c3a0da1df56fc",
+    "fullBROrayAbsent": true,
+    "serverFilesObserved": 7,
+    "subscriptionFilesObserved": 1
+  },
+  "backupOutcome": "UNKNOWN_PENDING_READ_ONLY_DIAGNOSIS",
+  "packageTransferred": false,
+  "packageInstalled": false,
+  "applicationPersistentStateMutated": false,
+  "publicReleasePublished": false,
+  "hiddenRetryPerformed": false,
+  "nextRevision": "p22-read-only-backup-outcome-diagnosis",
+  "nextExactAction": "CHECK_THE_EXACT_REMOTE_AND_LOCAL_BACKUP_PATHS_READ_ONLY_THEN_SELECT_A_NEW_CORRECTED_BACKUP_REVISION"
+}

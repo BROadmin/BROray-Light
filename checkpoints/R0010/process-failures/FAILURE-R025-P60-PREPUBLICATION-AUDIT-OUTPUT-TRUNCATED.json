@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0010",
+  "revision": "p60-cache-corrected-prepublication-audit",
+  "failureId": "R025",
+  "at": "2026-09-02T13:30:21+03:00",
+  "status": "FAIL_FIRST_ERROR_PRESERVED",
+  "operation": "RUN_COMPLETE_STATIC_MANIFEST_SIGNATURE_SECRET_WORKTREE_AND_CHECKPOINT_AUDIT_AS_ONE_COMPOUND_COMMAND",
+  "firstError": "The command output exceeded the available model context and was truncated, so completion and pass/fail status are unknown.",
+  "auditResultTrusted": false,
+  "buildArtifactMutation": false,
+  "repositoryMutation": false,
+  "routerMutation": false,
+  "publicReleasePublished": false,
+  "hiddenRetryPerformed": false,
+  "nextRevision": "p61-atomized-prepublication-audit",
+  "nextExactAction": "RUN_EACH_PREPUBLICATION_AUDIT_GROUP_SEPARATELY_WITH_BOUNDED_OUTPUT_AND_STOP_AT_THE_FIRST_REAL_FAILURE"
+}

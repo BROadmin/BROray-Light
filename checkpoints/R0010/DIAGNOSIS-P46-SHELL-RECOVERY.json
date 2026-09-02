@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0010",
+  "revision": "p46-direct-checkpoint-bookkeeping-and-shell-recovery",
+  "at": "2026-09-02T12:56:59+03:00",
+  "status": "PASS",
+  "failureId": "R020",
+  "powershellProcessCreated": true,
+  "failureCheckpointHashesComputed": true,
+  "clockRead": true,
+  "repositoryMutationByRecoveryCheck": false,
+  "routerMutation": false,
+  "publicReleasePublished": false,
+  "conclusion": "The prior CreateProcess access-denied condition was transient and is no longer present.",
+  "nextRevision": "p47-new-browser-diagnostic-binding",
+  "nextExactAction": "DECLARE_A_NEW_BROWSER_DIAGNOSTIC_BINDING_AND_INSPECT_THE_ACTUALLY_LOADED_LIGHTCHECK_IMPLEMENTATION"
+}

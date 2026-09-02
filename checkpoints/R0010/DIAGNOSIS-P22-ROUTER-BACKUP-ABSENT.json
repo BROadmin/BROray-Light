@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0010",
+  "revision": "p22-read-only-backup-outcome-diagnosis",
+  "at": "2026-09-02T11:25:10+03:00",
+  "status": "PASS_ROOT_CAUSE_CONFIRMED",
+  "failure": "R007",
+  "remoteBackupPath": "/tmp/broray-light-r0010-preinstall-p21.tar.gz",
+  "remoteBackupPresent": false,
+  "localBackupPathClass": "external temporary directory",
+  "localBackupPresent": false,
+  "applicationPersistentStateMutated": false,
+  "rootCause": "The PowerShell command string interpolated the remote-shell backup variable before SSH execution, leaving an invalid empty remote path.",
+  "correction": "Use one literal prevalidated remote path throughout the SSH command and separate SSH creation from SCP transfer and hash validation.",
+  "publicReleasePublished": false,
+  "nextRevision": "p23-literal-path-router-backup",
+  "nextExactAction": "CREATE_THE_BACKUP_USING_THE_LITERAL_REMOTE_PATH_THEN_COPY_AND_COMPARE_REMOTE_AND_LOCAL_SHA256"
+}
