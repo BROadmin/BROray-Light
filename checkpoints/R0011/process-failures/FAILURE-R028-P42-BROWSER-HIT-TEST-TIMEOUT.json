@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0011",
+  "revision": "p42-mobile-copy-control-hit-test-diagnosis",
+  "failureId": "R028",
+  "status": "FAIL_FIRST_ERROR_PRESERVED_BROWSER_INFRASTRUCTURE",
+  "at": "2026-09-02T19:15:00.5868599+03:00",
+  "operation": "READ_ELEMENT_FROM_POINT_AT_MOBILE_COPY_CONTROL",
+  "firstError": "Node browser execution timed out after 30 seconds and reset the kernel.",
+  "diagnosticResultAvailable": false,
+  "priorSelectorTimeoutInSameBrowserSession": true,
+  "pageMutation": false,
+  "releaseArtifactAffected": "UNKNOWN_PENDING_FRESH_SESSION_HIT_TEST",
+  "tagCreated": false,
+  "publicReleasePublished": false,
+  "routerChanged": false,
+  "hiddenRetryPerformed": false,
+  "nextRevision": "p43-fresh-browser-hit-test-before-click",
+  "nextExactAction": "REINITIALIZE_A_FRESH_BROWSER_SESSION_AND_RUN_THE_HIT_TEST_BEFORE_ANY_COPY_CLICK_THEN_USE_DOM_CUA_IF_THE_NATIVE_BUTTON_IS_UNOBSTRUCTED"
+}

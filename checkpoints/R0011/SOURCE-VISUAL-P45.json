@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0011",
+  "revision": "p45-separate-functional-and-responsive-proof",
+  "status": "PASS",
+  "at": "2026-09-02T19:21:15.0011715+03:00",
+  "source": {
+    "homeHtmlSha256": "3140b8a619b05e58d10dd8707ddf597bb43fa69e7235101a8c11fa271cd588ea",
+    "homeJavaScriptSha256": "b556cb6f0ef90a7d4f9c46a14ddf3b68251620f8ba0d56a97a0f3a137f41a680",
+    "allPageCssSha256": "1a1d31fe9e5be1330e6eeba6e1457b0807a8166a849ebc781f4bd8ac42a18bdb",
+    "r0011TestSha256": "b370c467a7b8a8535a14903fe4529d5d1b5b85d119def58a4bc2ac8d85644cdf"
+  },
+  "browser": {
+    "desktop": {
+      "viewport": {"width":1280,"height":720},
+      "visual": "PASS",
+      "guideCardWidth": 1104,
+      "copyControlsInsideGuide": true
+    },
+    "mobile": {
+      "viewport": {"width":512,"height":890},
+      "visual": "PASS",
+      "documentScrollWidth": 497,
+      "horizontalOverflow": false,
+      "guideWidth": 471,
+      "quickGridColumns": 1,
+      "detailsCount": 7,
+      "detailsExpandedAndVisible": 7,
+      "copyControlCount": 3,
+      "copyControlsInsideViewport": 3,
+      "copyControlsHitNativeButton": 3,
+      "copyControlHorizontalRange": {"left":346,"right":448},
+      "codeBlocksContained": 3,
+      "codeBlocksInternallyScrollable": 3
+    }
+  },
+  "interactionProof": {
+    "actualDesktopCopyClicks": 3,
+    "clipboardExactMatches": 3,
+    "targets": ["guidePreflight","guideInstall","guideDiagnostics"],
+    "javascriptChangedByResponsiveCorrection": false,
+    "mobileNativeHitTest": "PASS"
+  },
+  "sourceValidation": {
+    "pythonSyntax": "PASS",
+    "r0011SourceAudit": "PASS",
+    "gitDiffCheck": "PASS"
+  },
+  "supersedesCiArtifactRun": 33650523626,
+  "reasonForRebuild": "Responsive CSS correction changes the app archive and must receive new independent Build A/B, signature, and isolated-root validation.",
+  "tagCreated": false,
+  "publicReleasePublished": false,
+  "routerChanged": false,
+  "nextRevision": "p46-responsive-fix-commit-and-final-ci-build",
+  "nextExactAction": "COMMIT_AND_PUSH_THE_RESPONSIVE_FIX_WITH_ALL_PRESERVED_EVIDENCE_THEN_REQUIRE_A_NEW_FULL_CI_BUILD_AND_ARTIFACT_AUDIT"
+}

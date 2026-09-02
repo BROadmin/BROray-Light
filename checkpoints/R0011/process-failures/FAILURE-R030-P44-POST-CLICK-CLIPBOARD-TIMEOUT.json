@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0011",
+  "revision": "p44-post-click-clipboard-read-only-audit",
+  "failureId": "R030",
+  "status": "FAIL_FIRST_ERROR_PRESERVED_BROWSER_INFRASTRUCTURE",
+  "at": "2026-09-02T19:18:58.5590735+03:00",
+  "operation": "READ_CLIPBOARD_AFTER_POSSIBLY_COMPLETED_COORDINATE_CLICK",
+  "firstError": "Node browser execution timed out after 30 seconds and reset the kernel.",
+  "clipboardResultAvailable": false,
+  "pageMutation": false,
+  "releaseArtifactAffected": false,
+  "productEvidenceAlreadyAvailable": {
+    "desktopActualCopyClicks": 3,
+    "desktopClipboardMatches": 3,
+    "mobileGeometryInsideViewport": 3,
+    "mobileHitTestIsNativeButton": true
+  },
+  "tagCreated": false,
+  "publicReleasePublished": false,
+  "routerChanged": false,
+  "hiddenRetryPerformed": false,
+  "nextRevision": "p45-separate-functional-and-responsive-proof",
+  "nextExactAction": "FINALIZE_SOURCE_VISUAL_ACCEPTANCE_USING_THE_EXISTING_ACTUAL_COPY_FUNCTION_PROOF_AND_SEPARATE_MOBILE_GEOMETRY_HIT_TEST_THEN_REBUILD_THE_CORRECTED_ARTIFACT"
+}

@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0011",
+  "revision": "p38-browser-geometry-and-responsive-css-validation",
+  "failureId": "R024",
+  "status": "FAIL_FIRST_ERROR_PRESERVED_VISUAL_ACCEPTANCE",
+  "at": "2026-09-02T19:05:28.7874232+03:00",
+  "operation": "MOBILE_WEBUI_GUIDE_GEOMETRY_VALIDATION",
+  "firstError": "All three guide copy controls were rendered outside the 512 px viewport.",
+  "viewport": {"width":512,"height":890},
+  "pageHorizontalOverflow": false,
+  "guideWidth": 471,
+  "copyControlGeometry": [
+    {"index":1,"left":999,"right":1102,"insideViewport":false},
+    {"index":2,"left":999,"right":1102,"insideViewport":false},
+    {"index":3,"left":999,"right":1102,"insideViewport":false}
+  ],
+  "desktopVisual": "PASS",
+  "sectionExpansion": "PASS",
+  "clipboardBehaviorProgrammatic": "PASS",
+  "mobileVisual": "FAIL",
+  "releaseArtifactAffected": true,
+  "tagCreated": false,
+  "publicReleasePublished": false,
+  "routerChanged": false,
+  "hiddenRetryPerformed": false,
+  "nextRevision": "p39-responsive-code-copy-control-layout-fix",
+  "nextExactAction": "FIX_THE_GUIDE_CODE_CONTAINER_SO_COPY_CONTROLS_REMAIN_VISIBLE_AT_512PX_AND_REBUILD_REVALIDATE_FROM_A_NEW_SOURCE_REVISION"
+}

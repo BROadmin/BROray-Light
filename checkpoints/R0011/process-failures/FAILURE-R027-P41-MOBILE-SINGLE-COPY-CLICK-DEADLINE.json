@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0011",
+  "revision": "p41-fresh-browser-mobile-copy-validation",
+  "failureId": "R027",
+  "status": "FAIL_FIRST_ERROR_PRESERVED_BROWSER_VALIDATION",
+  "at": "2026-09-02T19:13:10.0360115+03:00",
+  "operation": "CLICK_ONE_VISIBLE_MOBILE_COPY_CONTROL_IN_FRESH_TAB",
+  "firstError": "Playwright selector deadline exceeded",
+  "preconditions": {
+    "freshTab": true,
+    "viewport": {"width":512,"height":890},
+    "detailsOpen": true,
+    "buttonVisible": true,
+    "buttonEnabled": true,
+    "buttonGeometry": {"left":346,"right":448,"top":428,"bottom":462},
+    "buttonInsideViewport": true
+  },
+  "causeKnown": false,
+  "releaseArtifactAffected": "UNKNOWN_PENDING_HIT_TEST",
+  "tagCreated": false,
+  "publicReleasePublished": false,
+  "routerChanged": false,
+  "hiddenRetryPerformed": false,
+  "nextRevision": "p42-mobile-copy-control-hit-test-diagnosis",
+  "nextExactAction": "READ_ELEMENT_FROM_POINT_POINTER_EVENT_AND_OVERLAP_STATE_AT_THE_BUTTON_CENTER_WITHOUT_RETRYING_THE_CLICK"
+}

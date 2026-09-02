@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0011",
+  "revision": "p33-independent-ci-artifact-audit",
+  "failureId": "R020",
+  "status": "FAIL_FIRST_ERROR_PRESERVED_EVIDENCE_DRAFT",
+  "at": "2026-09-02T18:52:09.7114554+03:00",
+  "operation": "WRITE_CI_ARTIFACT_AUDIT_CHECKPOINT_DRAFT",
+  "firstError": "The draft checkpoint included an unverified x86_64 minisign binary SHA-256 value.",
+  "draftPath": "checkpoints/R0011/CI-ARTIFACT-AUDIT-P33.json",
+  "unverifiedValue": "1d1da91b07c99f00d32e6fce1f1a056d8b36748c55e63bed03e87985f5aa1e03",
+  "measuredValue": "5535be9e4e123831ebe6ef324aafe9dde507015c176191f9e20c3ad60567f9e1",
+  "checkpointFinalized": false,
+  "sidecarCreatedBeforeDetection": false,
+  "releaseArtifactAffected": false,
+  "githubActionsRerun": false,
+  "tagCreated": false,
+  "publicReleasePublished": false,
+  "routerChanged": false,
+  "hiddenCorrectionPerformed": false,
+  "nextRevision": "p35-measured-minisign-hash-artifact-audit",
+  "nextExactAction": "REPLACE_THE_DRAFT_VALUE_WITH_THE_MEASURED_SHA256_THEN_FINALIZE_AND_HASH_THE_INDEPENDENT_ARTIFACT_AUDIT"
+}

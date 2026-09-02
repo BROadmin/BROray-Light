@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0011",
+  "revision": "p40-mobile-copy-click-deadline-diagnosis",
+  "failureId": "R026",
+  "status": "FAIL_FIRST_ERROR_PRESERVED_BROWSER_INFRASTRUCTURE",
+  "at": "2026-09-02T19:10:50.9262595+03:00",
+  "operation": "READ_CURRENT_MOBILE_PAGE_STATE_AFTER_SELECTOR_DEADLINE",
+  "firstError": "Node browser execution timed out after 30 seconds and reset the kernel.",
+  "diagnosticResultAvailable": false,
+  "browserBindingsLost": true,
+  "pageMutation": false,
+  "releaseArtifactAffected": false,
+  "tagCreated": false,
+  "publicReleasePublished": false,
+  "routerChanged": false,
+  "hiddenRetryPerformed": false,
+  "nextRevision": "p41-fresh-browser-mobile-copy-validation",
+  "nextExactAction": "REINITIALIZE_THE_BROWSER_RUNTIME_OPEN_A_FRESH_FIXED_SOURCE_TAB_SET_THE_SUPPORTED_512PX_VIEWPORT_AND_TEST_ONE_COPY_CONTROL_WITH_BOUNDED_OPERATIONS"
+}

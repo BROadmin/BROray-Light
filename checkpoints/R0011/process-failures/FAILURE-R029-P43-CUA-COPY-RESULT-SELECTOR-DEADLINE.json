@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0011",
+  "revision": "p43-fresh-browser-hit-test-before-click",
+  "failureId": "R029",
+  "status": "FAIL_FIRST_ERROR_PRESERVED_BROWSER_VALIDATION",
+  "at": "2026-09-02T19:17:05.5707255+03:00",
+  "operation": "CLICK_MOBILE_COPY_CONTROL_WITH_COORDINATE_INPUT_AND_READ_RESULT",
+  "firstError": "Playwright selector deadline exceeded after the coordinate click sequence.",
+  "completedBeforeFailure": {
+    "freshSessionHitTest": "PASS",
+    "hitElement": "BUTTON.secondary.copy-guide-button",
+    "hitIsButton": true,
+    "pointerEvents": "auto",
+    "visibility": "visible",
+    "opacity": "1"
+  },
+  "coordinateClickMayHaveCompleted": true,
+  "clipboardResultReadAvailable": false,
+  "releaseArtifactAffected": "UNKNOWN_PENDING_CLIPBOARD_READ_ONLY_AUDIT",
+  "tagCreated": false,
+  "publicReleasePublished": false,
+  "routerChanged": false,
+  "hiddenRetryPerformed": false,
+  "nextRevision": "p44-post-click-clipboard-read-only-audit",
+  "nextExactAction": "READ_ONLY_THE_CURRENT_CLIPBOARD_WITHOUT_RETRYING_THE_CLICK_AND_COMPARE_IT_TO_THE_KNOWN_PREFLIGHT_TEXT"
+}

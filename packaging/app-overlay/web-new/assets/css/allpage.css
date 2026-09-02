@@ -598,6 +598,12 @@ label {
   gap: 10px;
 }
 
+.guide-sections,
+.guide-sections details,
+.guide-content {
+  min-width: 0;
+}
+
 .guide-sections details {
   background: rgba(5, 12, 17, .3);
   border: 1px solid var(--line);
@@ -656,6 +662,7 @@ label {
 }
 
 .guide-content pre {
+  width: 100%;
   max-width: 100%;
   margin: 0 0 18px;
   padding: 16px;
@@ -948,7 +955,7 @@ button.password-toggle {
   .guide-quick-grid { grid-template-columns: 1fr; margin: 20px 0; }
   .guide-sections summary { padding: 16px 46px 16px 15px; }
   .guide-content { padding: 0 15px 17px; }
-  .guide-code-toolbar { align-items: flex-start; }
+  .guide-code-toolbar { align-items: flex-start; flex-wrap: wrap; }
   .copy-guide-button { flex: 0 0 auto !important; }
   .guide-status-list div { grid-template-columns: 1fr; gap: 3px; }
 }

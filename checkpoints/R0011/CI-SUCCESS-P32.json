@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0011",
+  "revision": "p32-readlink-correction-commit-and-ci-run",
+  "status": "PASS",
+  "at": "2026-09-02T18:45:59.8954794+03:00",
+  "releaseSourceCommit": "5486cee5c62f96e1c7cc9461051ef5a97cb1e66d",
+  "githubActions": {
+    "runId": 33650523626,
+    "jobId": 100316067503,
+    "status": "completed",
+    "conclusion": "success",
+    "url": "https://github.com/BROadmin/BROray-Light/actions/runs/33650523626",
+    "allStepsPassed": true
+  },
+  "validated": {
+    "documentationSource": "PASS",
+    "pinnedPublicInputs": "PASS",
+    "buildA": "PASS",
+    "buildB": "PASS",
+    "reproducibility": "PASS",
+    "isolatedAcceptance": "PASS",
+    "nonSecretReceipt": "PASS",
+    "artifactUpload": "PASS"
+  },
+  "workflowArtifact": {
+    "id": 9854583266,
+    "name": "broray-light-r0011-5486cee5c62f96e1c7cc9461051ef5a97cb1e66d",
+    "sizeBytes": 13114022,
+    "archiveSha256": "74b6e9b2265e5ea47f9d2d033be508e164e5e05ad45391b7fc10ef41524a1fcb",
+    "expired": false
+  },
+  "tagCreated": false,
+  "publicReleasePublished": false,
+  "routerChanged": false,
+  "nextRevision": "p33-independent-ci-artifact-audit",
+  "nextExactAction": "DOWNLOAD_THE_EXACT_CI_ARTIFACT_VERIFY_ARCHIVE_DIGEST_CONTENT_HASHES_SIGNATURE_RECEIPT_AND_SOURCE_COMMIT"
+}

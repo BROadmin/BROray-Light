@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0011",
+  "revision": "p37-pty-local-static-server-and-browser-validation",
+  "failureId": "R023",
+  "status": "FAIL_FIRST_ERROR_PRESERVED_BROWSER_CAPABILITY",
+  "at": "2026-09-02T19:02:26.6395324+03:00",
+  "operation": "RESIZE_IN_APP_BROWSER_WINDOW_FOR_MOBILE_VISUAL_VALIDATION",
+  "firstError": "TypeError: window.resizeTo is not a function",
+  "completedBeforeFailure": {
+    "verifiedArtifactStaticServer": "PASS",
+    "desktopGuideVisual": "PASS",
+    "guideSectionCount": 7,
+    "allGuideSectionsExpandedAndVisible": "PASS",
+    "copyControlCount": 3,
+    "allCopyControls": "PASS"
+  },
+  "cause": "The browser evaluation environment does not expose a window resize primitive.",
+  "pageMutation": false,
+  "releaseArtifactAffected": false,
+  "tagCreated": false,
+  "publicReleasePublished": false,
+  "routerChanged": false,
+  "hiddenRetryPerformed": false,
+  "nextRevision": "p38-browser-geometry-and-responsive-css-validation",
+  "nextExactAction": "USE_SUPPORTED_BROWSER_GEOMETRY_CHECKS_AND_STATIC_MEDIA_QUERY_VALIDATION_WITHOUT_RETRYING_WINDOW_RESIZE"
+}

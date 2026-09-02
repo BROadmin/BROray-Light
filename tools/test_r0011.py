@@ -128,10 +128,13 @@ def source_audit(repo: Path) -> None:
             ".guide-card",
             ".guide-quick-grid",
             ".guide-sections summary:focus-visible",
+            ".guide-sections details,\n.guide-content {\n  min-width: 0;",
             ".guide-content pre",
+            "width: 100%;",
             ".guide-status-list",
             "@media (max-width: 700px)",
             ".guide-quick-grid { grid-template-columns: 1fr;",
+            ".guide-code-toolbar { align-items: flex-start; flex-wrap: wrap; }",
         ),
         "Home guide styles",
     )

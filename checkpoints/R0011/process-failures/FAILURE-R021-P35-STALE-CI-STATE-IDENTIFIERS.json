@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0011",
+  "revision": "p35-measured-minisign-hash-artifact-audit",
+  "failureId": "R021",
+  "status": "FAIL_FIRST_ERROR_PRESERVED_MACHINE_STATE",
+  "at": "2026-09-02T18:53:55.9089976+03:00",
+  "operation": "AUDIT_R0011_MACHINE_STATE_AFTER_CI_SUCCESS",
+  "firstError": "project/R0011-STATE.json reported the successful run URL but retained the preceding failed runId, jobId, and releaseSourceCommit values.",
+  "stale": {
+    "releaseSourceCommit": "9ac646f188193ad17075dab172f239a9e939133a",
+    "runId": 33649744452,
+    "jobId": 100313434141
+  },
+  "exact": {
+    "releaseSourceCommit": "5486cee5c62f96e1c7cc9461051ef5a97cb1e66d",
+    "runId": 33650523626,
+    "jobId": 100316067503
+  },
+  "releaseArtifactAffected": false,
+  "tagCreated": false,
+  "publicReleasePublished": false,
+  "routerChanged": false,
+  "hiddenCorrectionPerformed": false,
+  "nextRevision": "p36-exact-ci-state-and-local-webui-visual-validation",
+  "nextExactAction": "CORRECT_THE_MACHINE_STATE_TO_THE_EXACT_SUCCESSFUL_RUN_AND_SOURCE_COMMIT_THEN_CONTINUE_LOCAL_ARTIFACT_WEBUI_VALIDATION"
+}

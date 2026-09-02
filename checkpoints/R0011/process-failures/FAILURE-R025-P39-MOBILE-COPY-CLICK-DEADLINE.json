@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0011",
+  "revision": "p39-responsive-code-copy-control-layout-fix",
+  "failureId": "R025",
+  "status": "FAIL_FIRST_ERROR_PRESERVED_BROWSER_VALIDATION",
+  "at": "2026-09-02T19:08:58.7954732+03:00",
+  "operation": "RECHECK_MOBILE_COPY_CONTROLS_AFTER_LAYOUT_FIX",
+  "firstError": "Playwright selector deadline exceeded",
+  "completedBeforeFailure": {
+    "sourceSyntaxAndAudit": "PASS",
+    "mobileViewport": {"width":512,"height":890},
+    "pageHorizontalOverflow": false,
+    "copyControlGeometryInsideViewport": "PASS",
+    "preBlocksContained": "PASS"
+  },
+  "causeKnown": false,
+  "releaseArtifactAffected": false,
+  "tagCreated": false,
+  "publicReleasePublished": false,
+  "routerChanged": false,
+  "hiddenRetryPerformed": false,
+  "nextRevision": "p40-mobile-copy-click-deadline-diagnosis",
+  "nextExactAction": "INSPECT_CURRENT_DETAILS_AND_COPY_BUTTON_VISIBILITY_AND_EXECUTE_ONE_BOUNDED_CLICK_TO_SEPARATE_BROWSER_TIMING_FROM_PRODUCT_BEHAVIOR"
+}

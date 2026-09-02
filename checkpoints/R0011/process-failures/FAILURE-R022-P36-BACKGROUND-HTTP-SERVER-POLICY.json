@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0011",
+  "revision": "p36-exact-ci-state-and-local-webui-visual-validation",
+  "failureId": "R022",
+  "status": "FAIL_FIRST_ERROR_PRESERVED_TOOL_POLICY",
+  "at": "2026-09-02T18:56:46.1634080+03:00",
+  "operation": "START_LOCAL_STATIC_WEBUI_SERVER_WITH_START_PROCESS",
+  "firstError": "The command was rejected by execution policy before PowerShell or the HTTP server started.",
+  "materialMutation": false,
+  "serverStarted": false,
+  "releaseArtifactAffected": false,
+  "tagCreated": false,
+  "publicReleasePublished": false,
+  "routerChanged": false,
+  "hiddenRetryPerformed": false,
+  "nextRevision": "p37-pty-local-static-server-and-browser-validation",
+  "nextExactAction": "START_THE_STATIC_SERVER_AS_A_MANAGED_EXEC_SESSION_WITHOUT_START_PROCESS_THEN_RUN_THE_BROWSER_VALIDATION"
+}

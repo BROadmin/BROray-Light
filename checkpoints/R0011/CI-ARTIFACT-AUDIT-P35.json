@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0011",
+  "revision": "p35-measured-minisign-hash-artifact-audit",
+  "status": "PASS",
+  "at": "2026-09-02T18:52:09.7114554+03:00",
+  "releaseSourceCommit": "5486cee5c62f96e1c7cc9461051ef5a97cb1e66d",
+  "githubActionsRunId": 33650523626,
+  "ciArchive": {
+    "path": "dist/R0011/ci-33650523626.zip",
+    "sha256": "74b6e9b2265e5ea47f9d2d033be508e164e5e05ad45391b7fc10ef41524a1fcb",
+    "safeEntryAudit": "PASS"
+  },
+  "ciReceipt": {
+    "path": "dist/R0011/ci-33650523626/R0011-CI-RECEIPT.json",
+    "sha256": "6115e2459956eaf79e769acf7f0f87fa4d138a0c594599a98ccb7d4fc2676410",
+    "status": "PASS",
+    "builds": 2,
+    "comparison": "BYTE_IDENTICAL",
+    "commitExact": true,
+    "privateKeyRetained": false
+  },
+  "verification": {
+    "artifactSetExact": "PASS",
+    "artifactHashAndSizeCount": 8,
+    "sha256SumsEntries": 7,
+    "sha256Sums": "PASS",
+    "releaseContract": "PASS",
+    "releaseManifestContract": "PASS",
+    "releaseSignature": "PASS",
+    "publicKeySha256": "b1587b8407f0c0443a361ed29b839319b66912b1b71414bcf31e848c29eab696",
+    "privateMaterialAbsent": "PASS"
+  },
+  "verificationTool": {
+    "source": "official jedisct1/minisign release 0.12 over HTTPS",
+    "archiveSha256": "37b600344e20c19314b2e82813db2bfdcc408b77b876f7727889dbd46d539479",
+    "x86_64BinarySha256": "5535be9e4e123831ebe6ef324aafe9dde507015c176191f9e20c3ad60567f9e1"
+  },
+  "artifacts": [
+    {"name":"RELEASE-MANIFEST.json","sha256":"8f178964efbb5abf185908467c5bd0a6378dd6bd61d62ee76980af5642162ecd","sizeBytes":3265},
+    {"name":"SHA256SUMS","sha256":"508e5faaa6a79283d54aea8f893be53d9e50eada38dc759115b107bee6ecfeb6","sizeBytes":669},
+    {"name":"broray-light-app-1.0.0-r2.tar.gz","sha256":"f77dadd992791abcb0dd0f0a427d0e1a2a77a1bb411741d70d39d5b441f2d2a4","sizeBytes":161011},
+    {"name":"broray-light-install-1.0.0-r2.sh","sha256":"ad06dce7dbdb7b2e8bfc09633d420b4a633a1e72c8b94b936ebe86e68a30e102","sizeBytes":1851},
+    {"name":"broray-light-updater-platform-5-light1.tar.gz","sha256":"cab97b6efd11a249cada2c7ceff540f732493ea11163fa5377b083ae450723ca","sizeBytes":131458},
+    {"name":"broray-light_1.0.0-r2_aarch64-3.10.ipk","sha256":"ddf48f2581207931fc868297f50c3810c536e88f72b871926c429910a5fa1be8","sizeBytes":12812421},
+    {"name":"release.json","sha256":"96dd7a67dcd4683ffc9316eb16f74cec71f97655a2ecdd05cd3804ea1d7f5270","sizeBytes":576},
+    {"name":"release.json.minisig","sha256":"c5c46ef4137043be76ff3cac2b45e8fb4c7866de2d297cbfa70e6e3ec62d62ab","sizeBytes":265}
+  ],
+  "tagCreated": false,
+  "publicReleasePublished": false,
+  "routerChanged": false,
+  "nextRevision": "p36-local-artifact-webui-visual-validation",
+  "nextExactAction": "EXTRACT_THE_VERIFIED_APP_ARCHIVE_TO_A_LOCAL_STATIC_ROOT_AND_VALIDATE_THE_HOME_GUIDE_WITH_THE_IN_APP_BROWSER_AT_DESKTOP_AND_MOBILE_WIDTHS"
+}
