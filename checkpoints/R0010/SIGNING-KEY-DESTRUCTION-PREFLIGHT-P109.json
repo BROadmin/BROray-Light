@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0010",
+  "revision": "p109-resolve-authenticated-github-api-client",
+  "at": "2026-09-02T15:51:44+03:00",
+  "status": "PASS",
+  "githubSecret": {
+    "repository": "BROadmin/BROray-Light",
+    "name": "BRORAY_LIGHT_MINISIGN_PRIVATE_KEY",
+    "present": true,
+    "createdAt": "2026-09-02T07:41:35Z",
+    "updatedAt": "2026-09-02T07:41:35Z",
+    "secretValueRead": false,
+    "authenticatedClient": "Git credential helper plus GitHub REST API"
+  },
+  "publicSigningIdentity": {
+    "keyId": "F8ABF7C93FAB7C1F",
+    "publicKeySha256": "b1587b8407f0c0443a361ed29b839319b66912b1b71414bcf31e848c29eab696",
+    "publicReleaseSignatureVerified": true
+  },
+  "plaintextKey": {
+    "path": "C:\\Users\\Администратор\\AppData\\Local\\Temp\\broray-light-r0010-signing-310cd6a6c3814d3f8b1cfbbc3d3c069f\\release.key",
+    "parentPath": "C:\\Users\\Администратор\\AppData\\Local\\Temp\\broray-light-r0010-signing-310cd6a6c3814d3f8b1cfbbc3d3c069f",
+    "ordinaryFile": true,
+    "symlink": false,
+    "sizeBytes": 264,
+    "deletionTargetExactAndVerified": true,
+    "deleted": false
+  },
+  "nextRevision": "p110-exact-plaintext-signing-key-destruction",
+  "nextExactAction": "DELETE_ONLY_THE_VERIFIED_RELEASE_KEY_FILE_WITH_SYSTEM_IO_FILE_DELETE_THEN_PROVE_THE_FILE_IS_ABSENT_AND_THE_GITHUB_SECRET_REMAINS_PRESENT"
+}

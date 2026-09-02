@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0010",
+  "revision": "p100-tar-carrier-chroot-runner-correction",
+  "at": "2026-09-02T15:26:41+03:00",
+  "status": "PASS",
+  "scope": "evidence-only public installer chroot runner",
+  "releaseInputsChanged": false,
+  "publishedAssetsChanged": false,
+  "corrections": [
+    "outer public IPK extraction uses tar -xzf for the proven deterministic gzip tar carrier",
+    "debian-binary marker is checked before lifecycle execution",
+    "expected Xray SHA-256 is sourced exactly from the public release manifest"
+  ],
+  "staticValidation": {
+    "opkgShimSyntax": "PASS",
+    "chrootRunnerSyntax": "PASS",
+    "gitDiffCheck": "PASS"
+  },
+  "files": [
+    {
+      "path": "tools/r0010-public-installer-opkg-shim.sh",
+      "sha256": "e3ac0eb5441a0a4a1314ad379b9d003cf4dd8864510de012cce32bc5483dc9ab"
+    },
+    {
+      "path": "tools/run-r0010-public-installer-chroot.sh",
+      "sha256": "aca8327b2e44eced432d8cc21a460819a3935821fd0d71383220df2403395ce6"
+    }
+  ],
+  "nextRevision": "p101-corrected-public-installer-fresh-chroot-execution",
+  "nextExactAction": "REMOVE_ONLY_THE_PRESERVED_FAILED_TEMPORARY_ROOT_RECREATE_A_FRESH_ROOT_TRANSFER_THE_CORRECTED_EVIDENCE_RUNNERS_VERIFY_HASHES_AND_EXECUTE_THE_EXACT_PUBLIC_INSTALLER"
+}

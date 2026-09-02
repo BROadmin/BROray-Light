@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0010",
+  "revision": "p67-validate-existing-router-backup",
+  "at": "2026-09-02T13:49:37+03:00",
+  "status": "PASS",
+  "routerAddress": "192.168.1.1",
+  "protocol": "legacy SCP forced with -O",
+  "sources": [
+    "/opt/broray-light/config",
+    "/opt/broray-light/servers",
+    "/opt/broray-light/subscriptions",
+    "/opt/var/lib/broray-light",
+    "/opt/var/lib/broray-light-updater"
+  ],
+  "backup": {
+    "storageClass": "external local temporary directory outside repository",
+    "directoryName": "broray-light-r0010-router-backup-p66-b9d9ff4c1f484a63a4e7172f58ad2043",
+    "fileCount": 21,
+    "logicalBytes": 15760,
+    "manifestFile": "BACKUP-MANIFEST.json",
+    "manifestSha256": "09d8a1ca76a008117ed58a8f743b0cecc6e8bb9a2eb06b6d9787bfad94b5a71b"
+  },
+  "persistence": {
+    "files": 19,
+    "aggregateSha256ManifestSha256": "6258b7be82ad69d87a04275f904f29d9a90f08d3f573daa0243d4a21996fd86d",
+    "unchangedFromP28": true
+  },
+  "containsUserPersistentState": true,
+  "committedToRepository": false,
+  "applicationPersistentStateMutated": false,
+  "packageTransferred": false,
+  "packageInstalled": false,
+  "publicReleasePublished": false,
+  "nextRevision": "p68-transfer-cache-corrected-package",
+  "nextExactAction": "TRANSFER_THE_EXACT_CACHE_CORRECTED_BUILD_A_IPK_TO_A_NEW_ROUTER_TEMP_PATH_AND_VERIFY_REMOTE_SIZE_AND_SHA256"
+}

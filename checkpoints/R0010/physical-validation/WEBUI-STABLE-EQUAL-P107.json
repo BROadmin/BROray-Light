@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0010",
+  "revision": "p107-authenticated-webui-stable-equal-button-validation",
+  "at": "2026-09-02T15:47:15+03:00",
+  "status": "PASS",
+  "acceptanceGate": 19,
+  "page": "https://brolight.tvervip.keenetic.link/home.html?v=1.0.0-r1",
+  "authentication": {
+    "nativeKeeneticSession": "PASS",
+    "passwordPersistedByBROrayLight": false,
+    "credentialsIncludedInEvidence": false
+  },
+  "preActionState": {
+    "activeServer": "NL - KEENETIC",
+    "connection": "Соединение работает",
+    "keeneticInterface": "Proxy0",
+    "keeneticStatus": "Активен",
+    "xrayVersion": "26.7.28",
+    "xrayStatus": "Xray запущен",
+    "lightVersion": "1.0.0-r1",
+    "lightChannel": "Стабильный канал",
+    "updateButtonDisabled": true
+  },
+  "action": {
+    "control": "BROray-Light / Проверить обновление",
+    "interaction": "CLICK",
+    "resultText": "Установлена актуальная версия 1.0.0-r1.",
+    "resultActionText": "Обновлений нет",
+    "resultActionDisabled": true,
+    "status": "PASS_EQUAL_NO_UPDATE"
+  },
+  "postActionRouterState": {
+    "persistentFiles": 19,
+    "persistentSha256": "ff28e9aa7920cbfbcebcff91d2259224ca10f6943dceebd8cd0980192a7f00a8",
+    "persistenceUnchangedFromPhysicalInstallerGate": true,
+    "currentTarget": "releases/1.0.0-r1",
+    "xraySha256": "4b8af237444801bf17b3dc10a1c5c24581fbe3d433eba3d78c6c3a0da1df56fc",
+    "primaryService": "PASS_EXIT_ZERO",
+    "updaterService": "PASS_EXIT_ZERO"
+  },
+  "supportingReceipts": {
+    "physicalBackend": "checkpoints/R0010/physical-validation/PUBLIC-PACKAGE-EQUAL-BACKEND-P106.json",
+    "physicalBackendSha256": "466ef2800dba60ad383d7587d1413fd2c0106ef54c9d282fa424c9c213047b8b",
+    "completePrepublicationButtonAudit": "checkpoints/R0010/physical-validation/WEBUI-P81-CACHE-CORRECTED-PREPUBLICATION-AUDIT.json",
+    "completePrepublicationButtonAuditSha256": "9e4f2be8e08c92ab9742c27c896890f556b6f9708299a630b2b3a3f033ca147a"
+  },
+  "acceptanceGate19": "PASS",
+  "nextRevision": "p108-plaintext-signing-key-destruction",
+  "nextExactAction": "VERIFY_THE_EXACT_EPHEMERAL_PLAINTEXT_SIGNING_KEY_PATH_AND_GITHUB_ACTIONS_SECRET_THEN_DELETE_ONLY_THE_PLAINTEXT_KEY_AND_PROVE_IT_IS_ABSENT"
+}

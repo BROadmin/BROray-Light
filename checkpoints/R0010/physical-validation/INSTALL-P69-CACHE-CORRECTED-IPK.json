@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0010",
+  "revision": "p69-install-cache-corrected-package",
+  "at": "2026-09-02T13:54:01+03:00",
+  "status": "PASS_INSTALL_COMMAND",
+  "routerAddress": "192.168.1.1",
+  "packagePath": "/tmp/broray-light_1.0.0-r1-r0010-cache-final-p68.ipk",
+  "packageSha256": "707431aa20c01958edfe40ed04a70c24308a9dabc9ff26f758101c952827d432",
+  "packageVersion": "1.0.0-r1",
+  "operation": "opkg install --force-reinstall",
+  "exitCode": 0,
+  "observedSequence": [
+    "Removing package broray-light from root",
+    "Installing broray-light (1.0.0-r1) to root",
+    "Configuring broray-light"
+  ],
+  "authorizedSameVersionReplacement": true,
+  "packageInstalled": true,
+  "postInstallValidation": "PENDING",
+  "publicReleasePublished": false,
+  "nextRevision": "p70-cache-corrected-router-postinstall-audit",
+  "nextExactAction": "VALIDATE_EXACT_INSTALLED_HASHES_PERSISTENCE_SERVICES_XRAY_AUTHENTICATION_AND_COOWNERSHIP_READ_ONLY"
+}

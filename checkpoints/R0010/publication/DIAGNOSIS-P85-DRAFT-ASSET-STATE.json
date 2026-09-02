@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0010",
+  "revision": "p85-inspect-draft-assets-after-unknown-upload",
+  "at": "2026-09-02T14:43:25+03:00",
+  "status": "PASS_REMOTE_STATE_RESOLVED",
+  "releaseId": 381203509,
+  "draft": true,
+  "prerelease": false,
+  "expectedAssets": 8,
+  "uploadedAssets": 7,
+  "uploadedNames": [
+    "broray-light_1.0.0-r1_aarch64-3.10.ipk",
+    "broray-light-install-1.0.0-r1.sh",
+    "broray-light-updater-platform-5-light1.tar.gz",
+    "RELEASE-MANIFEST.json",
+    "release.json",
+    "release.json.minisig",
+    "SHA256SUMS"
+  ],
+  "missingNames": [
+    "broray-light-app-1.0.0-r1.tar.gz"
+  ],
+  "duplicateNames": [],
+  "publicReleasePublished": false,
+  "nextRevision": "p86-upload-only-proven-missing-app-archive",
+  "nextExactAction": "UPLOAD_ONLY_BRORAY_LIGHT_APP_1.0.0_R1_TAR_GZ_THEN_VERIFY_THE_DRAFT_CONTAINS_EIGHT_UNIQUE_ASSETS"
+}

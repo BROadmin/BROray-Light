@@ -2,8 +2,8 @@
   "schemaVersion": 1,
   "product": "BROray-Light",
   "stage": "R0010",
-  "status": "CACHE_CORRECTED_PREPUBLICATION_AUDIT_PASS_RELEASE_SOURCE_COMMIT_REQUIRED",
-  "candidateReady": false,
+  "status": "PASS",
+  "candidateReady": true,
   "candidateId": "1.0.0-r1",
   "releaseId": "1.0.0-r1",
   "baseStable": "3.0.0-r23",
@@ -15,53 +15,55 @@
   "sourceCheckpointSha256": "6686586ed777a7b0c37336d08143d388fdc301536b32c96eb35e8b20e5393953",
   "builderSha256": "97c4765c24a29c5382ba28e0c7b154aca6b4ce8f4a3a3b8901c2cccb5728add2",
   "testHarnessSha256": "898d7c8a0629b6e024f3547763adbf6e54cda360607748629e687130fdf9e975",
-  "candidateCheckpoint": "checkpoints/R0009/CHECKPOINT.json",
-  "candidateCheckpointSha256": "3d7f7407df7b8eba6b4cc7f423e1bcba5ce48c1108a1ca3d7f0a850a2f3fd2fe",
-  "validationReceipt": "checkpoints/R0009/VALIDATION.json",
-  "validationSha256": "172cbc7fab4985914c65c539e2595a330ef34dc86a013901391ca6ee20cf6c0d",
-  "report": "checkpoints/R0009/REPORT.md",
-  "reportSha256": "004d44ccfbc34c8526447821ad3d211da44a2d007f094ee16d081fdc3f417c47",
-  "aggregateSha256SumsSha256": "8dc0c79f4d4b9f6a23a1c65ab838b7c8fe843a9328c2752cb1d2bbcde95a4e4f",
+  "candidateCheckpoint": "checkpoints/R0010/CHECKPOINT.json",
+  "candidateCheckpointSha256": "82d740011bd95cce3b97e893fefd4e397863a89e72d7dfe1959a536baaf8ddee",
+  "validationReceipt": "checkpoints/R0010/VALIDATION.json",
+  "validationSha256": "517a1d3db56065fb343a12000ecf56daec5d67d7126c2fb3c1bf0db10dc8bdf6",
+  "report": "checkpoints/R0010/REPORT.md",
+  "reportSha256": "95dc46326eafcb41d6ba4cf426c3652e4fd5d2378570b8ed6f62cde7f4cf9020",
+  "aggregateSha256SumsSha256": "9233840af01227d14e5d29a1f01d181d29791e9ecfffee17783a474a8d12910c",
   "isolatedValidation": {
-    "passed": 51,
+    "passed": 52,
     "failed": 0,
-    "receipt": "checkpoints/R0009/ISOLATED-VALIDATION.json",
-    "receiptSha256": "49322e64f31677a5a74857b6e04f3fdbd9e485c2d065e3f54fc8bf2747845281"
+    "receipt": "checkpoints/R0010/ISOLATED-VALIDATION-P58-CACHE-CORRECTED-STABLE-1.0.0-R1.json",
+    "receiptSha256": "4f3d11a62e2809d16ced06b380a1a86874c78a22c7c40719440219f022c3932e"
   },
   "buildReproducibility": {
-    "buildA": "dist/R0009/1.0.0-r1-P531-Final-Build-A",
-    "buildB": "dist/R0009/1.0.0-r1-P532-Final-Build-B",
+    "buildA": "dist/R0010/1.0.0-r1-P50-Cache-Final-Build-A",
+    "buildB": "dist/R0010/1.0.0-r1-P53-Cache-Final-Build-B",
     "artifacts": 8,
     "comparison": "BYTE_IDENTICAL",
-    "receipt": "checkpoints/R0009/REPRODUCIBILITY.json",
-    "receiptSha256": "6a3b7985d709a065fd0e7ae2616dc6b2aaa2de1198a19b3b915ee29475294b7d"
+    "receipt": "checkpoints/R0010/REPRODUCIBILITY-P54-CACHE-CORRECTED-STABLE-1.0.0-R1.json",
+    "receiptSha256": "e4ca0193bb00bb6493d457210a09dcb24e2a6908c73a7162d905678bef898125"
   },
   "physicalValidation": {
     "authorized": true,
-    "status": "PASS_EXACT_P531_ALL_WEBUI_BUTTONS_SUBSCRIPTIONS_CLEANUP_AND_PERSISTENCE",
+    "status": "PASS_EXACT_PUBLIC_INSTALLER_PACKAGE_EQUAL_UPDATE_WEBUI_HEALTH_AND_PERSISTENCE",
     "installedPackage": "broray-light 1.0.0-r1",
     "currentTarget": "releases/1.0.0-r1",
     "publicUrl": "https://brolight.tvervip.keenetic.link/",
-    "postbootReceipt": "checkpoints/R0009/physical-validation/POSTBOOT-P114-C08-AUTOSTART-WEB-AUTH-PERSISTENCE.json",
-    "finalInstallReceipt": "checkpoints/R0009/physical-validation/INSTALL-P537-FINAL-P531-1.0.0-R1.json",
-    "finalFunctionalReceipt": "checkpoints/R0009/physical-validation/BROWSER-P545-P531-SUBSCRIPTION-CLEANUP-PERSISTENCE.json",
-    "finalFunctionalReceiptSha256": "de4e94c7552240ad2d5a78929ac21ef69c5aea820ba495b75d5c17adeff30d22",
-    "finalServers": 0,
-    "finalSubscriptions": 0,
+    "publicInstallerIsolationReceipt": "checkpoints/R0010/publication/PUBLIC-INSTALLER-ISOLATED-P101.json",
+    "publicInstallerIsolationReceiptSha256": "a7ebee5bb1c772946b22f7a16ad175f2b49c1c0b0745901ef88eec9caac138e6",
+    "finalBackendReceipt": "checkpoints/R0010/physical-validation/PUBLIC-PACKAGE-EQUAL-BACKEND-P106.json",
+    "finalBackendReceiptSha256": "466ef2800dba60ad383d7587d1413fd2c0106ef54c9d282fa424c9c213047b8b",
+    "finalBrowserReceipt": "checkpoints/R0010/physical-validation/WEBUI-STABLE-EQUAL-P107.json",
+    "finalBrowserReceiptSha256": "52d8c0a35e3d89a90f08dc046768f0aa53a7c8e8dce16254cdc257d8214e00cb",
+    "persistentFiles": 19,
+    "persistentSha256": "ff28e9aa7920cbfbcebcff91d2259224ca10f6943dceebd8cd0980192a7f00a8",
     "fullBROrayOwnership": 0,
     "routesViaProxy0": 0
   },
   "finalLocalAudit": {
-    "receipt": "checkpoints/R0009/FINAL-LOCAL-AUDIT-P556-FINAL-1.0.0-R1.json",
-    "receiptSha256": "98afd43ecd5362bbb234507efe29d24239852a5e31b30d692645d149da264cb0"
+    "receipt": "checkpoints/R0010/POSTSEAL-AUDIT-P117.json",
+    "receiptSha256": "d7b77e2b8d679da4d80b462fcbd430e1768f5561d8805d8447b994631562c080"
   },
   "signingKeyDestruction": {
-    "receipt": "checkpoints/R0009/SIGNING-KEY-DESTRUCTION-P558-FINAL-1.0.0-R1.json",
-    "receiptSha256": "4229c801993258ae3f636d1e4f2acc62295816dce83dd48779465a47fd2673e6"
+    "receipt": "checkpoints/R0010/SIGNING-KEY-DESTRUCTION-P111.json",
+    "receiptSha256": "aa5aa9c0354c6ca3e617bd11ef769f41f5d3d2769ca2cbef63fcbc9ef8d90f1c"
   },
   "privateSigningKeyDestroyed": true,
-  "processFailuresPreserved": 297,
-  "publicReleasePublished": false,
+  "processFailuresPreserved": 338,
+  "publicReleasePublished": true,
   "productionServerMutationPerformed": false,
   "r0010": {
     "startCheckpoint": "checkpoints/R0010/START-P1.json",
@@ -69,7 +71,7 @@
     "stableIndexUrl": "https://github.com/BROadmin/BROray-Light/releases/latest/download/release.json",
     "versionedAssetBaseUrl": "https://github.com/BROadmin/BROray-Light/releases/download/v1.0.0-r1/",
     "tag": "v1.0.0-r1",
-    "releaseReady": false,
+    "releaseReady": true,
     "webAssetCacheToken": "1.0.0-r1-r0010",
     "invalidatedReleaseSourceCommit": "0bde5139137cc8166d1ef282a41cf9e697254c9b",
     "finalBuildA": "dist/R0010/1.0.0-r1-P50-Cache-Final-Build-A",
@@ -81,9 +83,22 @@
     "isolatedFailed": 0,
     "webuiButtonActions": 20,
     "webuiEndpointBindings": 23,
-    "completedAcceptanceGates": 12,
-    "totalAcceptanceGates": 20
+    "completedAcceptanceGates": 20,
+    "privateSigningKeyDestroyed": true,
+    "totalAcceptanceGates": 20,
+    "r0010ProcessFailuresPreserved": 50,
+    "releaseSourceCommit": "9e5fce9bfa7c82bfc2f2654d80fd3987c5259963",
+    "tagObject": "88107747fe9c76763a2c6fb2166fc8a840444078",
+    "githubReleaseId": 381203509,
+    "postsealAudit": "checkpoints/R0010/POSTSEAL-AUDIT-P117.json",
+    "postsealAuditSha256": "d7b77e2b8d679da4d80b462fcbd430e1768f5561d8805d8447b994631562c080",
+    "finalMetaAudit": {
+      "status": "PASS",
+      "receipt": "checkpoints/R0010/FINAL-META-AUDIT-P118.json",
+      "receiptSha256": "17e8b6ad023fbf17c2ac282888ec087e82de81142f2b3b7f4a92af88d8b2ab70"
+    },
+    "closureIntegrityAudit": "PASS"
   },
   "codexEntryPoint": "docs/CODEX-HANDOFF.md",
-  "nextStage": "PUBLISH_AND_VALIDATE_BRORAY_LIGHT_STABLE_RELEASE"
+  "nextStage": "DEFINE_AND_AUTHORIZE_R0011_BEFORE_ANY_POST_RELEASE_CHANGE"
 }

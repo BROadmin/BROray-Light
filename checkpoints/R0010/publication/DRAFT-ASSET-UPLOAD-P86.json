@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0010",
+  "revision": "p86-upload-only-proven-missing-app-archive",
+  "at": "2026-09-02T14:44:53+03:00",
+  "status": "PASS",
+  "releaseId": 381203509,
+  "draft": true,
+  "uploadedName": "broray-light-app-1.0.0-r1.tar.gz",
+  "uploadedAssetId": 541096445,
+  "uploadedSizeBytes": 157138,
+  "uploadedSourceSha256": "2b2d22e9a172b28229aa19ca904f1810722da21b5d34f27eafd79d5acac1e5b0",
+  "finalAssetCount": 8,
+  "uniqueAssetNames": 8,
+  "duplicateAssetNames": 0,
+  "publicReleasePublished": false,
+  "nextRevision": "p87-download-and-verify-draft-assets",
+  "nextExactAction": "DOWNLOAD_ALL_EIGHT_DRAFT_ASSETS_THROUGH_AUTHENTICATED_ASSET_API_TO_A_NEW_TEMP_DIRECTORY_AND_VERIFY_EACH_SIZE_AND_SHA256_AGAINST_BUILD_A"
+}

@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0010",
+  "revision": "p111-exact-public-key-path-post-destruction-verification",
+  "at": "2026-09-02T15:56:18+03:00",
+  "status": "PASS",
+  "acceptanceGate": 5,
+  "plaintextPrivateKey": {
+    "exactPath": "C:\\Users\\Администратор\\AppData\\Local\\Temp\\broray-light-r0010-signing-310cd6a6c3814d3f8b1cfbbc3d3c069f\\release.key",
+    "exactOrdinaryFileVerifiedBeforeDeletion": true,
+    "deletedWith": "System.IO.File.Delete",
+    "absentAfterDeletion": true,
+    "recoverable": false
+  },
+  "durableSecret": {
+    "provider": "GitHub Actions encrypted repository secret",
+    "repository": "BROadmin/BROray-Light",
+    "name": "BRORAY_LIGHT_MINISIGN_PRIVATE_KEY",
+    "presentAfterPlaintextDeletion": true,
+    "createdAt": "2026-09-02T07:41:35Z",
+    "updatedAt": "2026-09-02T07:41:35Z",
+    "secretValueRead": false
+  },
+  "publicSigningIdentity": {
+    "algorithm": "minisign Ed25519",
+    "keyId": "F8ABF7C93FAB7C1F",
+    "repositoryPublicKeyPath": "updater/release.pub",
+    "repositoryPublicKeySha256": "b1587b8407f0c0443a361ed29b839319b66912b1b71414bcf31e848c29eab696",
+    "publicReleaseSignatureVerified": true
+  },
+  "privateMaterialRecordedInEvidence": false,
+  "acceptanceGate5": "PASS",
+  "nextRevision": "p112-final-records-secret-scan-and-checkpoint-seal",
+  "nextExactAction": "BUILD_FINAL_MACHINE_READABLE_CHECKPOINT_VALIDATION_REPORT_AND_AGGREGATE_HASHES_THEN_RUN_ALL_SIDEcar_JSON_WORKLOG_SECRET_GIT_TAG_RELEASE_AND_ROUTER_FINAL_AUDITS"
+}

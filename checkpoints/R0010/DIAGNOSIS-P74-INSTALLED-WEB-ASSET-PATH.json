@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0010",
+  "revision": "p74-resolve-installed-web-asset-path",
+  "at": "2026-09-02T14:03:21+03:00",
+  "status": "PASS",
+  "homeJavascriptArchivePath": "app/web-new/assets/js/home.js",
+  "homeJavascriptInstalledPath": "/opt/broray-light/releases/1.0.0-r1/app/web-new/assets/js/home.js",
+  "verifiedInstalledFiles": 5,
+  "mismatches": 0,
+  "expectedHashes": {
+    "indexHtml": "d3740f668781fc55a5e55851d0d26253e74689ebd2f70f033b81c64d69910236",
+    "homeHtml": "10e4d16d8cdab33468a597511d823e33b04b173f4ba788cad066fc88c36e2bd2",
+    "serversHtml": "8bec192cb5c08cff8629732924c6ec20180f2dfd071d7963aaf47cf3a079f12e",
+    "subscriptionsHtml": "439cc55be22ac396c371f45fb3266f166611c26512d8eef6a5156116c16e30be",
+    "homeJavascript": "9deb071068253ff23ead46db601c5f97b8785791fc8ed3ed7761a20c79c3474c"
+  },
+  "routerMutation": false,
+  "publicReleasePublished": false,
+  "nextRevision": "p75-seal-cache-corrected-router-postinstall-audit",
+  "nextExactAction": "SEAL_THE_COMPLETE_CACHE_CORRECTED_ROUTER_POSTINSTALL_RESULT_FROM_THE_ATOMIZED_PASSING_CHECKS"
+}

@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0010",
+  "revision": "p97-legacy-scp-public-installer-transfer",
+  "failureId": "R043",
+  "at": "2026-09-02T15:19:25+03:00",
+  "status": "FAIL_FIRST_ERROR_PRESERVED",
+  "operation": "PREFLIGHT_EMPTY_TEMPORARY_INPUT_DIRECTORY_BEFORE_LEGACY_SCP",
+  "firstError": "PowerShell Out-File attempted to resolve C:\\dev\\null because the nested remote redirection was parsed locally.",
+  "cause": "The remote empty-directory check combined command substitution and POSIX redirection inside a PowerShell command string.",
+  "legacyScpStarted": false,
+  "temporaryInputFilesTransferred": 0,
+  "installerExecuted": false,
+  "packageInstalled": false,
+  "installedLightMutation": false,
+  "persistentStateMutation": false,
+  "hiddenRetryPerformed": false,
+  "nextRevision": "p98-separated-remote-preflight-and-legacy-scp-transfer",
+  "nextExactAction": "RUN_A_SEPARATE_LITERAL_REMOTE_DIRECTORY_LISTING_VERIFY_ZERO_OUTPUT_LOCALLY_THEN_TRANSFER_WITH_SCP_O_WITHOUT_NESTED_REMOTE_SUBSTITUTIONS"
+}

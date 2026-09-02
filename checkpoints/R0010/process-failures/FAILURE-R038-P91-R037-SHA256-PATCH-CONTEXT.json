@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0010",
+  "revision": "p91-targeted-installer-contract-discovery",
+  "failureId": "R038",
+  "at": "2026-09-02T14:59:57+03:00",
+  "status": "FAIL_FIRST_ERROR_PRESERVED",
+  "operation": "ADD_R037_SHA256_SIDECAR_AND_RECEIPT_REFERENCES",
+  "firstError": "The combined apply_patch was rejected because the WORKLOG record was accidentally placed under the R0010 state-file patch context and therefore could not match.",
+  "patchApplied": false,
+  "repositoryFileMutationFromFailedPatch": false,
+  "publicReleasePublished": true,
+  "releaseAssetMutation": false,
+  "routerMutation": false,
+  "hiddenRetryPerformed": false,
+  "nextRevision": "p92-failure-sidecar-repair-and-targeted-installer-discovery",
+  "nextExactAction": "ADD_R037_AND_R038_SHA256_SIDECARS_WITH_SEPARATE_FILE_SCOPED_PATCHES_THEN_CONTINUE_BOUNDED_INSTALLER_CONTRACT_DISCOVERY"
+}

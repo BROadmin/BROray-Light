@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0010",
+  "revision": "p94-router-busybox-loader-discovery",
+  "failureId": "R041",
+  "at": "2026-09-02T15:10:32+03:00",
+  "status": "FAIL_FIRST_ERROR_PRESERVED",
+  "operation": "READ_PACKAGE_PREINST_AND_POSTINST_FOR_CHROOT_DEPENDENCY_ANALYSIS",
+  "firstError": "The read assumed packaging/opkg/control/preinst and postinst, but the repository listing showed the lifecycle scripts are packaging/opkg/preinst and packaging/opkg/postinst.",
+  "repositoryProductMutation": false,
+  "releaseAssetMutation": false,
+  "routerMutation": false,
+  "hiddenRetryPerformed": false,
+  "nextRevision": "p95-exact-lifecycle-script-dependency-analysis",
+  "nextExactAction": "READ_PACKAGING_OPKG_PREINST_AND_POSTINST_AT_THE_LISTED_PATHS_AND_DERIVE_THE_MINIMAL_ISOLATED_CHROOT_RUNTIME"
+}

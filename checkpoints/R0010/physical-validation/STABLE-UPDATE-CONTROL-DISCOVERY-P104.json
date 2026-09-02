@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0010",
+  "revision": "p104-exact-existing-root-updater-control-discovery",
+  "at": "2026-09-02T15:37:03+03:00",
+  "status": "PASS",
+  "control": {
+    "cli": "/opt/bin/broray-light-updaterctl",
+    "implementation": "/opt/libexec/broray-light-updater/broray-light-updater.sh",
+    "checkCommand": "broray-light-updaterctl check",
+    "equalUpdateCommand": "broray-light-updaterctl update"
+  },
+  "equalVersionContract": {
+    "relation": "equal",
+    "updateAvailable": false,
+    "downgradeRefused": false,
+    "sameVersionPolicy": "NO_OP_SUCCESS",
+    "updateMutation": "state success/no-op only; app slot remains unchanged"
+  },
+  "routerCapabilities": {
+    "find": "/opt/bin/find",
+    "sort": "/opt/bin/sort",
+    "cmp": "/opt/bin/cmp",
+    "curl": "/opt/bin/curl",
+    "jq": "/opt/bin/jq",
+    "pgrep": "/opt/usr/bin/pgrep"
+  },
+  "installedPackage": {
+    "name": "broray-light",
+    "version": "1.0.0-r1",
+    "architecture": "aarch64-3.10",
+    "status": "install user installed",
+    "appManifestPresent": true
+  },
+  "nextRevision": "p105-public-router-equal-validation-runner",
+  "nextExactAction": "CREATE_AND_STATIC_VALIDATE_AN_EVIDENCE_ONLY_ROUTER_RUNNER_THAT_CAPTURES_PERSISTENCE_RUNS_THE_EXACT_PUBLIC_INSTALLER_EXECUTES_STABLE_CHECK_AND_EQUAL_UPDATE_NO_OP_AND_REVALIDATES_HEALTH"
+}

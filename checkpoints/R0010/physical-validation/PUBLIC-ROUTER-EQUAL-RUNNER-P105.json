@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0010",
+  "revision": "p105-public-router-equal-validation-runner",
+  "at": "2026-09-02T15:40:13+03:00",
+  "status": "PASS",
+  "scope": "evidence-only authorized physical-router Gate 19 runner",
+  "releaseInputsChanged": false,
+  "publishedAssetsChanged": false,
+  "runner": {
+    "path": "tools/run-r0010-public-router-equal-validation.sh",
+    "sha256": "bd3caefb1c58d569b9e59f3939fa0f85fd89da27e1d47ea42be56df64bc12c67",
+    "dashSyntax": "PASS",
+    "gitDiffCheck": "PASS"
+  },
+  "validatedContracts": [
+    "exact public installer and IPK identity before physical execution",
+    "installed package/current slot/Xray/app manifest before and after",
+    "Stable signed-index check reports relation equal and NO_OP_SUCCESS",
+    "Stable update command executes an equal-version successful no-op",
+    "config/server/subscription persistent state remains byte-identical",
+    "primary and updater services remain healthy",
+    "public WebUI root is HTTP 200 and protected API is HTTP 401",
+    "temporary inputs are removed on success"
+  ],
+  "nextRevision": "p106-exact-public-package-physical-equal-validation",
+  "nextExactAction": "TRANSFER_THE_EXACT_PUBLIC_INSTALLER_AND_IPK_PLUS_THE_VERIFIED_RUNNER_TO_FRESH_ROUTER_TEMP_PATHS_VERIFY_ALL_HASHES_AND_EXECUTE_GATE_19"
+}

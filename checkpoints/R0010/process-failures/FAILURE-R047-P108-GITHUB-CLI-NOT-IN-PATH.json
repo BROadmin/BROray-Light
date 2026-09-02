@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0010",
+  "revision": "p108-plaintext-signing-key-destruction",
+  "failureId": "R047",
+  "at": "2026-09-02T15:49:39+03:00",
+  "status": "FAIL_FIRST_ERROR_PRESERVED",
+  "operation": "PREFLIGHT_GITHUB_ACTIONS_SECRET_BEFORE_PLAINTEXT_SIGNING_KEY_DESTRUCTION",
+  "firstError": "gh.exe is not recognized in the current PowerShell PATH.",
+  "plaintextKeyPreflight": {
+    "exactPathVerified": true,
+    "ordinaryFile": true,
+    "symlink": false,
+    "sizeBytes": 264,
+    "deleted": false
+  },
+  "githubSecretRecheckCompleted": false,
+  "repositoryMutation": false,
+  "releaseAssetMutation": false,
+  "routerMutation": false,
+  "hiddenRetryPerformed": false,
+  "nextRevision": "p109-resolve-authenticated-github-api-client",
+  "nextExactAction": "LOCATE_THE_EXACT_AUTHENTICATED_GITHUB_API_CLIENT_OR_PRIOR_PUBLICATION_METHOD_WITHOUT_READING_SECRET_CONTENT_THEN_RECHECK_SECRET_METADATA"
+}

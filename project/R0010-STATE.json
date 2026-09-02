@@ -1,12 +1,14 @@
 {
   "schemaVersion": 1,
   "stage": "R0010",
-  "status": "CACHE_CORRECTED_PREPUBLICATION_AUDIT_PASS_RELEASE_SOURCE_COMMIT_REQUIRED",
-  "currentRevision": "p62-cache-corrected-release-source-commit",
+  "status": "PASS",
+  "currentRevision": "p119-final-closure-integrity-audit-and-evidence-commit",
   "workingBranch": "codex/r0009-updater-package",
   "authorizedTask": "PUBLISH_AND_VALIDATE_BRORAY_LIGHT_STABLE_RELEASE",
-  "releaseReady": false,
-  "publicReleasePublished": false,
+  "releaseReady": true,
+  "candidateReady": true,
+  "publicReleasePublished": true,
+  "privateSigningKeyDestroyed": true,
   "releaseId": "1.0.0-r1",
   "candidateId": "1.0.0-r1",
   "tag": "v1.0.0-r1",
@@ -28,7 +30,7 @@
     "privateKeyPresentInRepository": false,
     "githubActionsSecretPresent": true,
     "publicKeyFileSha256": "b1587b8407f0c0443a361ed29b839319b66912b1b71414bcf31e848c29eab696",
-    "localPlaintextDestroyed": false
+    "localPlaintextDestroyed": true
   },
   "completedGates": [
     "R0008_R0009_INPUT_IDENTITIES",
@@ -42,7 +44,15 @@
     "R0010_PROCESS_FAILURE_SIDECARS",
     "STABLE_UPDATER_PACKAGE_INSTALLER_SYNTAX",
     "DETERMINISTIC_MANIFESTS_AND_SHA256",
-    "FORBIDDEN_SURFACE_ABSENT"
+    "FORBIDDEN_SURFACE_ABSENT",
+    "RELEASE_SOURCE_COMMIT_PUSHED_AND_TAGGED",
+    "PUBLIC_GITHUB_RELEASE_COMPLETE",
+    "PUBLIC_HTTPS_URLS_CONTENT_TYPES_CACHE_AND_HASHES",
+    "PUBLISHED_ASSETS_BYTE_IDENTICAL_TO_BUILD_A_AND_B",
+    "PUBLIC_CLEAN_INSTALLER_ISOLATED_ROOT",
+    "PHYSICAL_EXACT_PUBLIC_PACKAGE_EQUAL_UPDATE_HEALTH_PERSISTENCE",
+    "LOCAL_PLAINTEXT_SIGNING_KEY_DESTRUCTION",
+    "FINAL_POSTSEAL_AUDIT_AND_CHECKPOINT_SEAL"
   ],
   "finalBuilds": {
     "buildA": "dist/R0010/1.0.0-r1-P50-Cache-Final-Build-A",
@@ -85,31 +95,35 @@
     "persistentManifestSha256": "6258b7be82ad69d87a04275f904f29d9a90f08d3f573daa0243d4a21996fd86d",
     "xraySha256": "4b8af237444801bf17b3dc10a1c5c24581fbe3d433eba3d78c6c3a0da1df56fc",
     "fullBrorayAbsent": true,
-    "receipt": "checkpoints/R0010/physical-validation/POSTINSTALL-P38-FINAL-STABLE-PACKAGE.json",
-    "receiptSha256": "e2df23d9370267e7768fe6fc1dcfdb5b052948ef8751a67a8c67e2039b129f85",
-    "validForRelease": false
+    "receipt": "checkpoints/R0010/physical-validation/POSTINSTALL-P75-CACHE-CORRECTED-IPK.json",
+    "receiptSha256": "94902a66f2a5b9e98812ba6c6cc52a895dcc4850ac6ad6548ab0860f3dca4df3",
+    "validForRelease": true
   },
   "physicalBrowserAudit": {
     "loginControls": "PASS",
     "passwordVisibilityToggle": "PASS",
-    "authenticatedSession": "PASS_USER_ALREADY_AUTHENTICATED",
+    "authenticatedSession": "PASS_USER_COMPLETED_LOGIN_AFTER_EXPECTED_POSTINSTALL_SESSION_RESET",
     "homeNavigation": "PASS",
     "statusRefreshButton": "PASS",
     "xrayUpdateCheck": "PASS_REINSTALL_OFFER_ENABLED",
-    "lightStableUpdateCheck": "FAIL_OBSOLETE_INTERNAL_R0009_MESSAGE",
-    "receipt": "checkpoints/R0010/physical-validation/WEBUI-LOGIN-CONTROLS-P41.json",
-    "receiptSha256": "487a7f4995a3768ec778c2c67add0e7a26c60d74253a116033307dce5272dc70"
+    "lightStableUpdateCheck": "PASS_PREPUBLICATION_EXPECTED_FEED_UNAVAILABLE_CACHE_CORRECTED_MESSAGE",
+    "webAssetCacheToken": "PASS_1.0.0-r1-r0010",
+    "serverSafeActions": "PASS_RESTORED",
+    "subscriptionSafeActions": "PASS_RESTORED",
+    "receipt": "checkpoints/R0010/physical-validation/WEBUI-P81-CACHE-CORRECTED-PREPUBLICATION-AUDIT.json",
+    "receiptSha256": "9e4f2be8e08c92ab9742c27c896890f556b6f9708299a630b2b3a3f033ca147a"
   },
   "processFailures": {
-    "preserved": 25,
-    "latest": "checkpoints/R0010/process-failures/FAILURE-R025-P60-PREPUBLICATION-AUDIT-OUTPUT-TRUNCATED.json"
+    "preserved": 50,
+    "latest": "checkpoints/R0010/process-failures/FAILURE-R050-P116-POSTSEAL-CREDENTIAL-HIT-COUNT.json",
+    "latestSha256": "8221ad3b9c08392e99d27de9606dea8c651df678036ae39d6cb29a47e6aa314e"
   },
   "productionMutationAuthorized": true,
   "productionMutationPerformed": true,
   "physicalRouterValidationAuthorized": true,
   "routerMutationPerformed": true,
-  "releaseSourceCommit": "0bde5139137cc8166d1ef282a41cf9e697254c9b",
-  "releaseSourceCommitStatus": "INVALIDATED_BY_R017_CACHE_COLLISION",
+  "releaseSourceCommit": "9e5fce9bfa7c82bfc2f2654d80fd3987c5259963",
+  "releaseSourceCommitStatus": "PUSHED_AND_TAGGED_V1.0.0_R1",
   "cacheCorrection": {
     "visibleVersion": "1.0.0-r1",
     "newHiddenAssetToken": "1.0.0-r1-r0010",
@@ -149,5 +163,197 @@
     "receipt": "checkpoints/R0010/PREPUBLICATION-AUDIT-P61-CACHE-CORRECTED.json",
     "receiptSha256": "3bb4528cc9864d2272afe1610bfc12934a13b7a93949874d15c4cd6799b978aa"
   },
-  "nextExactAction": "COMMIT_AND_PUSH_THE_EXACT_CACHE_CORRECTED_RELEASE_SOURCE_THEN_INSTALL_THAT_PACKAGE_ON_THE_AUTHORIZED_ROUTER"
+  "releaseSourceCommitReceipt": {
+    "status": "PASS",
+    "receipt": "checkpoints/R0010/RELEASE-SOURCE-COMMIT-P63-CACHE-CORRECTED.json",
+    "receiptSha256": "2f2d34218e73695d0e82c8e7fb97487a68c1ebae8be4d648f43469227b804738"
+  },
+  "cacheCorrectedRouterBackup": {
+    "status": "PASS",
+    "files": 21,
+    "logicalBytes": 15760,
+    "manifestSha256": "09d8a1ca76a008117ed58a8f743b0cecc6e8bb9a2eb06b6d9787bfad94b5a71b",
+    "persistentFiles": 19,
+    "persistentAggregateSha256ManifestSha256": "6258b7be82ad69d87a04275f904f29d9a90f08d3f573daa0243d4a21996fd86d",
+    "receipt": "checkpoints/R0010/physical-validation/BACKUP-P67-CACHE-CORRECTED-PREINSTALL.json",
+    "receiptSha256": "bced43ef3603fb6da2e6614304f7d85a606cf04059ce142f5b6cf8aadd7ccba9"
+  },
+  "cacheCorrectedRouterTransfer": {
+    "status": "PASS",
+    "remotePath": "/tmp/broray-light_1.0.0-r1-r0010-cache-final-p68.ipk",
+    "sizeBytes": 12799724,
+    "sha256": "707431aa20c01958edfe40ed04a70c24308a9dabc9ff26f758101c952827d432",
+    "receipt": "checkpoints/R0010/physical-validation/TRANSFER-P68-CACHE-CORRECTED-IPK.json",
+    "receiptSha256": "55023b9474b36915b975e0189a292cf8c64317f586c015a363f6e20426bbf7a2"
+  },
+  "cacheCorrectedRouterInstall": {
+    "status": "PASS_INSTALL_COMMAND",
+    "packageSha256": "707431aa20c01958edfe40ed04a70c24308a9dabc9ff26f758101c952827d432",
+    "version": "1.0.0-r1",
+    "receipt": "checkpoints/R0010/physical-validation/INSTALL-P69-CACHE-CORRECTED-IPK.json",
+    "receiptSha256": "64a398d7e16be50a81579294fd34b368591bd2547ad955920a14027f7ace0500"
+  },
+  "stableTag": {
+    "status": "PASS",
+    "tag": "v1.0.0-r1",
+    "tagObject": "88107747fe9c76763a2c6fb2166fc8a840444078",
+    "targetCommit": "9e5fce9bfa7c82bfc2f2654d80fd3987c5259963",
+    "receipt": "checkpoints/R0010/TAG-P82-V1.0.0-R1.json",
+    "receiptSha256": "1a52ab35866ae930ed456f77480a8c546d95cc9fe0d2ed0a892791d71ca10875"
+  },
+  "draftRelease": {
+    "status": "PASS_DRAFT_CREATED",
+    "id": 381203509,
+    "tag": "v1.0.0-r1",
+    "targetCommitish": "9e5fce9bfa7c82bfc2f2654d80fd3987c5259963",
+    "assets": 0,
+    "receipt": "checkpoints/R0010/publication/DRAFT-RELEASE-P83.json",
+    "receiptSha256": "ba31d14f0b606ce05e0b8d32837fac6f33a86a5da04051e60a4e829f0b0d4ab8"
+  },
+  "draftAssetVerification": {
+    "status": "PASS",
+    "verifiedAssets": 8,
+    "byteIdenticalToBuildA": 8,
+    "byteIdenticalToBuildB": 8,
+    "mismatches": 0,
+    "signature": "PASS",
+    "receipt": "checkpoints/R0010/publication/DRAFT-ASSET-VERIFICATION-P87.json",
+    "receiptSha256": "8fa9ac7ea68b828a45bd9af53f3a80acf88dbc77cf9c2c9f0efdf5924a76d570"
+  },
+  "publicRelease": {
+    "status": "PASS",
+    "id": 381203509,
+    "tag": "v1.0.0-r1",
+    "draft": false,
+    "prerelease": false,
+    "latest": true,
+    "assets": 8,
+    "url": "https://github.com/BROadmin/BROray-Light/releases/tag/v1.0.0-r1",
+    "receipt": "checkpoints/R0010/publication/PUBLICATION-P88-STABLE-1.0.0-R1.json",
+    "receiptSha256": "0fa81e39f77edcbf095cda5e9e8570c8497a924f92b03d10effc7a5e79a536b5"
+  },
+  "publicUrlValidation": {
+    "status": "PASS",
+    "versionedAssets": 8,
+    "latestIndexAndSignature": "PASS",
+    "httpsOnlyRedirects": "PASS",
+    "byteIdenticalToBuildA": 8,
+    "byteIdenticalToBuildB": 8,
+    "receipt": "checkpoints/R0010/publication/PUBLIC-URL-VALIDATION-P89.json",
+    "receiptSha256": "d315aa5f9cee5fd3dd8ddcbb9e5de85f64d62d50ccea303849356e33af076e74"
+  },
+  "publicInstallerIsolationDesign": {
+    "status": "PASS",
+    "mechanism": "FRESH_BUSYBOX_CHROOT_ON_AUTHORIZED_ROUTER_TMPFS",
+    "receipt": "checkpoints/R0010/publication/INSTALLER-ISOLATION-DESIGN-P95.json",
+    "receiptSha256": "72256459fa02649343d646184ad326a32a55185b83ab83deb4f917105ceb1654"
+  },
+  "publicInstallerCarrierDiagnosis": {
+    "status": "PASS_ROOT_CAUSE_CONFIRMED",
+    "carrier": "DETERMINISTIC_GZIP_COMPRESSED_TAR",
+    "receipt": "checkpoints/R0010/publication/DIAGNOSIS-P99-PUBLIC-IPK-CARRIER.json",
+    "receiptSha256": "b76552309e47439c37fdd5ece5a5d45133cc0bb6d707a6dbadb28d02bae04856"
+  },
+  "publicInstallerEvidenceRunnerCorrection": {
+    "status": "PASS",
+    "releaseInputsChanged": false,
+    "receipt": "checkpoints/R0010/publication/INSTALLER-CHROOT-RUNNER-CORRECTION-P100.json",
+    "receiptSha256": "ab33e38455d10daa195e01c8264cecf45e15d31635adb5098ce7866222e6a3d6"
+  },
+  "publicInstallerIsolatedValidation": {
+    "status": "PASS",
+    "acceptanceGate": 18,
+    "installerExecutedUnmodified": true,
+    "exactPackageLifecycle": "preinst+data+postinst",
+    "productionStateUnchanged": true,
+    "receipt": "checkpoints/R0010/publication/PUBLIC-INSTALLER-ISOLATED-P101.json",
+    "receiptSha256": "a7ebee5bb1c772946b22f7a16ad175f2b49c1c0b0745901ef88eec9caac138e6"
+  },
+  "stableUpdateControlDiscovery": {
+    "status": "PASS",
+    "equalRelation": "equal",
+    "sameVersionPolicy": "NO_OP_SUCCESS",
+    "receipt": "checkpoints/R0010/physical-validation/STABLE-UPDATE-CONTROL-DISCOVERY-P104.json",
+    "receiptSha256": "d2803b8ade25ebfe36f790b9f6b746472301029f6a98c936513fe05d0911c261"
+  },
+  "publicRouterEqualValidationRunner": {
+    "status": "PASS",
+    "releaseInputsChanged": false,
+    "path": "tools/run-r0010-public-router-equal-validation.sh",
+    "sha256": "bd3caefb1c58d569b9e59f3939fa0f85fd89da27e1d47ea42be56df64bc12c67",
+    "receipt": "checkpoints/R0010/physical-validation/PUBLIC-ROUTER-EQUAL-RUNNER-P105.json",
+    "receiptSha256": "a985a63c55bb21997736583afece2662ac73b7116ff14796a410e34758213c27"
+  },
+  "physicalPublicPackageEqualBackendValidation": {
+    "status": "PASS_BACKEND_BROWSER_CONFIRMATION_REQUIRED",
+    "stableCheckRelation": "equal",
+    "stableEqualUpdate": "NO_OP_SUCCESS",
+    "persistenceUnchanged": true,
+    "receipt": "checkpoints/R0010/physical-validation/PUBLIC-PACKAGE-EQUAL-BACKEND-P106.json",
+    "receiptSha256": "466ef2800dba60ad383d7587d1413fd2c0106ef54c9d282fa424c9c213047b8b"
+  },
+  "physicalWebuiStableEqualValidation": {
+    "status": "PASS",
+    "acceptanceGate": 19,
+    "resultText": "Установлена актуальная версия 1.0.0-r1.",
+    "resultActionText": "Обновлений нет",
+    "resultActionDisabled": true,
+    "persistenceUnchanged": true,
+    "receipt": "checkpoints/R0010/physical-validation/WEBUI-STABLE-EQUAL-P107.json",
+    "receiptSha256": "52d8c0a35e3d89a90f08dc046768f0aa53a7c8e8dce16254cdc257d8214e00cb"
+  },
+  "signingKeyDestructionPreflight": {
+    "status": "PASS",
+    "githubSecretPresent": true,
+    "secretValueRead": false,
+    "plaintextKeyExactPathVerified": true,
+    "receipt": "checkpoints/R0010/SIGNING-KEY-DESTRUCTION-PREFLIGHT-P109.json",
+    "receiptSha256": "a1b1de7d52de70ea4eba1208906789097037dc335b5b38fb2f0f1d59b9827a04"
+  },
+  "signingKeyDestruction": {
+    "status": "PASS",
+    "acceptanceGate": 5,
+    "plaintextPrivateKeyAbsent": true,
+    "githubSecretPresent": true,
+    "receipt": "checkpoints/R0010/SIGNING-KEY-DESTRUCTION-P111.json",
+    "receiptSha256": "aa5aa9c0354c6ca3e617bd11ef769f41f5d3d2769ca2cbef63fcbc9ef8d90f1c"
+  },
+  "presealAudit": {
+    "status": "PASS",
+    "validJson": 109,
+    "validJsonSidecars": 109,
+    "secretHits": 0,
+    "releaseInputsDifferFromTag": false,
+    "receipt": "checkpoints/R0010/PRESEAL-AUDIT-P112.json",
+    "receiptSha256": "34c704bdd63434437a156b98e830808eaf97717332b9434ab3f2f5ffeb8688dc"
+  },
+  "finalRecords": {
+    "checkpoint": "checkpoints/R0010/CHECKPOINT.json",
+    "checkpointSha256": "82d740011bd95cce3b97e893fefd4e397863a89e72d7dfe1959a536baaf8ddee",
+    "validation": "checkpoints/R0010/VALIDATION.json",
+    "validationSha256": "517a1d3db56065fb343a12000ecf56daec5d67d7126c2fb3c1bf0db10dc8bdf6",
+    "report": "checkpoints/R0010/REPORT.md",
+    "reportSha256": "95dc46326eafcb41d6ba4cf426c3652e4fd5d2378570b8ed6f62cde7f4cf9020",
+    "aggregateSha256Sums": "checkpoints/R0010/SHA256SUMS",
+    "aggregateSha256SumsSha256": "9233840af01227d14e5d29a1f01d181d29791e9ecfffee17783a474a8d12910c",
+    "aggregateEntries": 11
+  },
+  "postsealAudit": {
+    "status": "PASS",
+    "receipt": "checkpoints/R0010/POSTSEAL-AUDIT-P117.json",
+    "receiptSha256": "d7b77e2b8d679da4d80b462fcbd430e1768f5561d8805d8447b994631562c080",
+    "acceptanceGatesPassed": 20,
+    "acceptanceGatesFailed": 0,
+    "publicReleaseAssetsVerified": 8,
+    "routerHealth": "PASS",
+    "secretHits": 0,
+    "finalMetaAuditAfterStateAndHandoff": "PASS"
+  },
+  "finalMetaAudit": {
+    "status": "PASS",
+    "receipt": "checkpoints/R0010/FINAL-META-AUDIT-P118.json",
+    "receiptSha256": "17e8b6ad023fbf17c2ac282888ec087e82de81142f2b3b7f4a92af88d8b2ab70",
+    "closureIntegrityAuditAfterFinalStatusWrite": "PASS"
+  },
+  "nextExactAction": "DEFINE_AND_AUTHORIZE_R0011_BEFORE_ANY_POST_RELEASE_CHANGE"
 }

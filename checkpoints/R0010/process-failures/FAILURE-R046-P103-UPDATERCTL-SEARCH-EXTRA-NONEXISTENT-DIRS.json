@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0010",
+  "revision": "p103-existing-path-stable-update-control-discovery",
+  "failureId": "R046",
+  "at": "2026-09-02T15:34:15+03:00",
+  "status": "FAIL_FIRST_ERROR_PRESERVED",
+  "operation": "SEARCH_EXISTING_REPOSITORY_PATHS_FOR_STABLE_UPDATE_CHECK_CONTROL",
+  "firstError": "rg returned exit code 1 because vendor and app were still included even though the enumerated repository directories do not contain them.",
+  "confirmedExistingSearchRoots": [
+    "packaging",
+    "tools",
+    "src",
+    "updater"
+  ],
+  "physicalInstallerStarted": false,
+  "routerMutation": false,
+  "repositoryProductMutation": false,
+  "releaseAssetMutation": false,
+  "hiddenRetryPerformed": false,
+  "nextRevision": "p104-exact-existing-root-updater-control-discovery",
+  "nextExactAction": "SEARCH_ONLY_PACKAGING_TOOLS_SRC_AND_UPDATER_AND_INSPECT_THE_MATCHING_UPDATE_CONTROL_FILES_IN_BOUNDED_SLICES"
+}

@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0010",
+  "revision": "p76-cache-corrected-authenticated-browser-audit",
+  "at": "2026-09-02T14:07:53+03:00",
+  "status": "PASS_PREAUTHENTICATION_AUTHENTICATED_AUDIT_PENDING",
+  "url": "https://brolight.tvervip.keenetic.link/?v=1.0.0-r1",
+  "title": "BROray-Light — Вход",
+  "postReinstallSessionState": "EXPECTED_LOGIN_REQUIRED",
+  "loadedAssets": {
+    "commonJavascript": "/assets/js/common.js?v=1.0.0-r1-r0010",
+    "loginJavascript": "/assets/js/login.js?v=1.0.0-r1-r0010",
+    "stylesheet": "/assets/css/allpage.css?v=1.0.0-r1-r0010",
+    "cacheToken": "1.0.0-r1-r0010",
+    "status": "PASS"
+  },
+  "passwordVisibilityToggle": {
+    "initial": "password/Pоказать пароль",
+    "shown": "text/Скрыть пароль",
+    "hiddenAgain": "password/Показать пароль",
+    "status": "PASS"
+  },
+  "credentialsEntered": false,
+  "authenticatedActionsPerformed": false,
+  "routerPersistentStateMutated": false,
+  "publicReleasePublished": false,
+  "nextRevision": "p77-authenticated-cache-corrected-browser-actions",
+  "nextExactAction": "AFTER_ACTION_TIME_LOGIN_AUTHORIZATION_SIGN_IN_AND_RUN_THE_SAFE_AUTHENTICATED_WEBUI_ACTION_MATRIX"
+}

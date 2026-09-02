@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0010",
+  "revision": "p83-create-draft-and-upload-stable-assets",
+  "at": "2026-09-02T14:38:46+03:00",
+  "status": "PASS_DRAFT_CREATED",
+  "repository": "BROadmin/BROray-Light",
+  "releaseId": 381203509,
+  "tag": "v1.0.0-r1",
+  "targetCommitish": "9e5fce9bfa7c82bfc2f2654d80fd3987c5259963",
+  "draft": true,
+  "prerelease": false,
+  "assets": 0,
+  "publicReleasePublished": false,
+  "nextRevision": "p84-upload-and-verify-draft-assets",
+  "nextExactAction": "UPLOAD_ALL_EIGHT_CACHE_CORRECTED_BUILD_A_FILES_TO_DRAFT_RELEASE_381203509_THEN_DOWNLOAD_EACH_DRAFT_ASSET_AUTHENTICATED_AND_VERIFY_SIZE_AND_SHA256"
+}

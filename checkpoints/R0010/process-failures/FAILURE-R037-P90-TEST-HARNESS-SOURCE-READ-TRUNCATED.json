@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0010",
+  "revision": "p90-public-clean-installer-isolated-root",
+  "failureId": "R037",
+  "at": "2026-09-02T14:58:11+03:00",
+  "status": "FAIL_FIRST_ERROR_PRESERVED",
+  "operation": "READ_TEST_HARNESS_SOURCE_FOR_PUBLIC_INSTALLER_ISOLATION_CONTRACT",
+  "firstError": "The broad tools/test_r0009.py source read exceeded the available model context and was truncated before the installer-test contract could be established.",
+  "publicReleasePublished": true,
+  "releaseAssetMutation": false,
+  "routerMutation": false,
+  "localArtifactMutation": false,
+  "hiddenRetryPerformed": false,
+  "nextRevision": "p91-targeted-installer-contract-discovery",
+  "nextExactAction": "USE_BOUNDED_RG_MATCHES_AND_SMALL_SOURCE_SLICES_TO_IDENTIFY_EXISTING_INSTALLER_AND_ISOLATED_ROOT_HELPERS_WITHOUT_REPEATING_THE_TRUNCATED_BROAD_READ"
+}

@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0010",
+  "revision": "p66-constant-command-router-backup",
+  "failureId": "R029",
+  "at": "2026-09-02T13:47:29+03:00",
+  "status": "FAIL_FIRST_ERROR_PRESERVED",
+  "operation": "COPY_FRESH_ROUTER_BACKUP_AND_EMIT_LOCAL_RESULT",
+  "firstError": "The final PowerShell result object used true instead of the $true Boolean literal after all five guarded scp operations had succeeded.",
+  "routerMutation": false,
+  "allScpOperationsCompleted": true,
+  "localBackupCreated": true,
+  "localBackupDirectory": "C:/Users/Администратор/AppData/Local/Temp/broray-light-r0010-router-backup-p66-b9d9ff4c1f484a63a4e7172f58ad2043",
+  "backupIntegrityValidated": false,
+  "publicReleasePublished": false,
+  "hiddenRetryPerformed": false,
+  "nextRevision": "p67-validate-existing-router-backup",
+  "nextExactAction": "VALIDATE_AND_MANIFEST_THE_ALREADY_CREATED_P66_BACKUP_WITHOUT_REPEATING_ANY_SCP_OPERATION"
+}

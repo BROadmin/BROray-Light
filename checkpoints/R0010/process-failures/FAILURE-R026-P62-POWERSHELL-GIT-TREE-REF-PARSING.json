@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0010",
+  "revision": "p62-cache-corrected-release-source-commit",
+  "failureId": "R026",
+  "at": "2026-09-02T13:40:51+03:00",
+  "status": "FAIL_FIRST_ERROR_PRESERVED",
+  "operation": "CAPTURE_RELEASE_SOURCE_COMMIT_TREE_AND_PARENT_IDENTITIES",
+  "firstError": "PowerShell parsed the unquoted HEAD^{tree} revision expression incorrectly and git received an invalid encoded argument.",
+  "releaseSourceCommitCreated": true,
+  "releaseSourceCommitPushed": true,
+  "releaseSourceCommit": "9e5fce9bfa7c82bfc2f2654d80fd3987c5259963",
+  "releaseSourceCommitAffected": false,
+  "routerMutation": false,
+  "publicReleasePublished": false,
+  "hiddenRetryPerformed": false,
+  "nextRevision": "p63-release-source-commit-receipt",
+  "nextExactAction": "CAPTURE_THE_ALREADY_PUSHED_COMMIT_METADATA_USING_EXPLICITLY_QUOTED_GIT_REVISION_ARGUMENTS"
+}

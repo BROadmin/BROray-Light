@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0010",
+  "revision": "p77-authenticated-cache-corrected-browser-actions",
+  "failureId": "R033",
+  "at": "2026-09-02T14:27:21+03:00",
+  "status": "FAIL_FIRST_ERROR_PRESERVED",
+  "operation": "READ_SUBSCRIPTION_FORM_VALUES_AND_NATIVE_VALIDITY_WITH_BROWSER_EVALUATE",
+  "firstError": "The in-app browser evaluate wrapper does not expose input.checkValidity as a callable function.",
+  "productDefectConfirmed": false,
+  "subscriptionRequestSubmitted": false,
+  "backendMutation": false,
+  "completedBeforeFailure": {
+    "authenticatedHome": "PASS",
+    "cacheCorrectedAssets": "PASS",
+    "statusRefresh": "PASS",
+    "xrayEqualVersionReinstallOffer": "PASS",
+    "stablePrepublicationErrorCopy": "PASS_NOT_STALE_R0009",
+    "serverInvalidVlessNoAddition": "PASS",
+    "serverFailoverControlsRestored": "PASS",
+    "serverExcludeControlRestored": "PASS",
+    "serverOrderRestored": "PASS",
+    "subscriptionAutoUpdateControlsRestored": "PASS"
+  },
+  "routerPersistentStateMutation": false,
+  "publicReleasePublished": false,
+  "hiddenRetryPerformed": false,
+  "nextRevision": "p78-browser-form-state-recovery",
+  "nextExactAction": "READ_AND_RESTORE_SUBSCRIPTION_FORM_VALUES_WITH_SUPPORTED_PROPERTIES_ONLY_THEN_SEAL_THE_PREPUBLICATION_BROWSER_AUDIT"
+}

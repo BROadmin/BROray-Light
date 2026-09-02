@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0010",
+  "revision": "p73-atomized-router-postinstall-audit",
+  "failureId": "R032",
+  "at": "2026-09-02T14:01:49+03:00",
+  "status": "FAIL_FIRST_ERROR_PRESERVED",
+  "operation": "VERIFY_INSTALLED_WEBUI_HTML_AND_HOME_JAVASCRIPT_HASHES",
+  "firstError": "The audit assumed home.js was directly under app/web-new, but the installed file uses a different archive-relative path.",
+  "webFileGroupAccepted": false,
+  "packageDefectConfirmed": false,
+  "routerMutation": false,
+  "publicReleasePublished": false,
+  "hiddenRetryPerformed": false,
+  "nextRevision": "p74-resolve-installed-web-asset-path",
+  "nextExactAction": "READ_THE_APP_ARCHIVE_MEMBER_PATH_FOR_HOME_JS_THEN_VERIFY_ALL_FIVE_INSTALLED_WEB_FILES_AT_CONFIRMED_PATHS"
+}

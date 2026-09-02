@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0010",
+  "revision": "p113-final-machine-readable-record-construction",
+  "failureId": "R049",
+  "at": "2026-09-02T16:15:03+03:00",
+  "status": "FAIL_FIRST_ERROR_PRESERVED_PATCH_APPLICATION_VERIFIED_COMPLETE",
+  "operation": "FINAL_STATE_AND_WORKLOG_APPLY_PATCH",
+  "firstError": "The apply_patch tool response exceeded the available model context and was truncated, leaving patch application status initially unknown.",
+  "inspection": {
+    "performedBeforeRetry": true,
+    "r0010StatePatchApplied": true,
+    "implementationStatePatchApplied": true,
+    "worklogAppendApplied": true,
+    "partialApplicationDetected": false
+  },
+  "repositoryMutation": true,
+  "releaseAssetMutation": false,
+  "routerMutation": false,
+  "hiddenRetryPerformed": false,
+  "nextRevision": "p115-reseal-final-records-after-r049",
+  "nextExactAction": "ADD_THIS_FAILURE_TO_STATE_AND_WORKLOG_UPDATE_FINAL_RECORD_FAILURE_COUNTS_AND_RECOMPUTE_ALL_DEPENDENT_SHA256_VALUES_BEFORE_THE_POSTSEAL_AUDIT"
+}

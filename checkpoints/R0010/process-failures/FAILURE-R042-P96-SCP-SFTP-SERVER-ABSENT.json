@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0010",
+  "revision": "p96-public-installer-fresh-chroot-execution",
+  "failureId": "R042",
+  "at": "2026-09-02T15:17:18+03:00",
+  "status": "FAIL_FIRST_ERROR_PRESERVED",
+  "operation": "TRANSFER_VERIFIED_PUBLIC_INSTALLER_AND_PACKAGE_TO_ROUTER_TEMPORARY_INPUT_ROOT",
+  "firstError": "sh: /opt/libexec/sftp-server: not found; scp.exe: Connection closed",
+  "cause": "The Windows OpenSSH scp client defaulted to the SFTP protocol, while this Keenetic installation exposes legacy SCP but no sftp-server.",
+  "installerExecuted": false,
+  "packageInstalled": false,
+  "temporaryInputDirectoryCreated": true,
+  "temporaryInputFilesTransferred": 0,
+  "isolatedRootCreated": false,
+  "installedLightMutation": false,
+  "persistentStateMutation": false,
+  "hiddenRetryPerformed": false,
+  "nextRevision": "p97-legacy-scp-public-installer-transfer",
+  "nextExactAction": "VERIFY_THE_TEMPORARY_INPUT_DIRECTORY_IS_EMPTY_THEN_TRANSFER_THE_FOUR_EXACT_INPUTS_WITH_SCP_LEGACY_PROTOCOL_OPTION_O"
+}

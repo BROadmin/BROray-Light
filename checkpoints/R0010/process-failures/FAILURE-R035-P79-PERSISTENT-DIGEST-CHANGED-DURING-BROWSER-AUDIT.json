@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0010",
+  "revision": "p79-complete-browser-failure-records-and-recover-form",
+  "failureId": "R035",
+  "at": "2026-09-02T14:31:02+03:00",
+  "status": "FAIL_FIRST_ERROR_PRESERVED",
+  "operation": "VERIFY_PERSISTENT_STATE_UNCHANGED_AFTER_REVERSIBLE_BROWSER_ACTIONS",
+  "firstError": "The persistent file count remained 19 but the aggregate content digest changed from the preinstall baseline during the browser audit.",
+  "persistentFiles": 19,
+  "expectedAggregateSha256ManifestSha256": "6258b7be82ad69d87a04275f904f29d9a90f08d3f573daa0243d4a21996fd86d",
+  "observedAggregateSha256ManifestSha256": "c1f3f21a783a4505cce7a5c9cd625af15c8265acdf66956bfce70d613a1556dc",
+  "suspectedBackgroundCause": "The enabled subscription auto-update became due during the browser audit.",
+  "causeConfirmed": false,
+  "dataLossConfirmed": false,
+  "rollbackPerformed": false,
+  "routerMutationByDiagnostic": false,
+  "publicReleasePublished": false,
+  "hiddenRetryPerformed": false,
+  "nextRevision": "p80-diagnose-persistent-delta",
+  "nextExactAction": "COPY_THE_CURRENT_PERSISTENT_SCOPE_TO_A_NEW_EXTERNAL_DIRECTORY_AND_COMPARE_EACH_FILE_TO_THE_P67_BACKUP_WITHOUT_RESTORING_OR_MUTATING_USER_STATE"
+}

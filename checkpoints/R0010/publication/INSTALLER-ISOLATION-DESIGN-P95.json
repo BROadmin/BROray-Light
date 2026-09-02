@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0010",
+  "revision": "p95-exact-lifecycle-script-dependency-analysis",
+  "at": "2026-09-02T15:12:35+03:00",
+  "status": "PASS",
+  "objective": "EXECUTE_THE_EXACT_PUBLIC_INSTALLER_IN_A_FRESH_ISOLATED_ROOT",
+  "executionHost": "authorized physical router temporary filesystem",
+  "isolation": {
+    "mechanism": "BusyBox chroot under a unique /tmp root",
+    "productionOptVisibleInsideChroot": false,
+    "serviceStartDisabled": true,
+    "temporaryRootRemovedAfterEvidenceCapture": true
+  },
+  "runtime": {
+    "architecture": "aarch64",
+    "chroot": "/opt/sbin/chroot",
+    "busybox": "/opt/bin/busybox",
+    "busyboxSha256": "d9792911c6b46014ea24fbdaf4af4ec16ca94ba7580472989e47d32c3f7346",
+    "dynamicLoader": "/opt/lib/ld-linux-aarch64.so.1",
+    "libraryDirectorySizeKiB": 15512,
+    "requiredInstallerAppletsPresent": true
+  },
+  "publicInputs": {
+    "installerSizeBytes": 1851,
+    "installerSha256": "da8c57ee3b68156462a2dea5cb2f3b6d1706ed754b1cd8904b745ee1fb86c51d",
+    "packageSizeBytes": 12799724,
+    "packageSha256": "707431aa20c01958edfe40ed04a70c24308a9dabc9ff26f758101c952827d432"
+  },
+  "packageExecution": {
+    "carrierExtraction": "BusyBox ar and tar inside chroot",
+    "preinst": "exact public package control script",
+    "postinst": "exact public package control script",
+    "xrayVerification": "native aarch64 runtime and exact SHA-256",
+    "activationVerification": "current symlink, release identity, version file, WebUI payload"
+  },
+  "productionStateMutation": false,
+  "nextRevision": "p96-public-installer-fresh-chroot-execution",
+  "nextExactAction": "TRANSFER_THE_VERIFIED_PUBLIC_INSTALLER_AND_IPK_TO_A_FRESH_CHROOT_RUN_THE_EXACT_INSTALLER_WITH_THE_EXACT_PACKAGE_LIFECYCLE_AND_CAPTURE_ALL_IDENTITIES_BEFORE_REMOVING_THE_TEMPORARY_ROOT"
+}

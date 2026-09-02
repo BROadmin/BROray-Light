@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0010",
+  "revision": "p81-seal-cache-corrected-prepublication-browser-audit",
+  "at": "2026-09-02T14:34:41+03:00",
+  "status": "PASS",
+  "publicWebUi": "https://brolight.tvervip.keenetic.link/",
+  "visibleVersion": "1.0.0-r1",
+  "webAssetCacheToken": "1.0.0-r1-r0010",
+  "loadedCacheCorrectedAssets": "PASS_ON_LOGIN_HOME_SERVERS_SUBSCRIPTIONS",
+  "authenticatedSession": "PASS_USER_COMPLETED_LOGIN_AFTER_EXPECTED_POSTINSTALL_SESSION_RESET",
+  "home": {
+    "activeServerName": "NL - KEENETIC",
+    "connection": "PASS",
+    "keeneticInterface": "Proxy0",
+    "keeneticInterfaceStatus": "Активен",
+    "xrayVersion": "26.7.28",
+    "lightVersion": "1.0.0-r1",
+    "statusRefreshButton": "PASS",
+    "xrayUpdateCheckButton": "PASS_EQUAL_VERSION_REINSTALL_OFFER",
+    "xrayReinstallButtonLabel": "Переустановить 26.7.28",
+    "lightStableCheckBeforePublication": "PASS_EXPECTED_FEED_UNAVAILABLE_WITH_CACHE_CORRECTED_MESSAGE",
+    "obsoleteR0009MessagePresent": false
+  },
+  "servers": {
+    "serverCount": 6,
+    "activeServerCount": 1,
+    "invalidVlessAddRejected": true,
+    "serverCountAfterInvalidVless": 6,
+    "failoverToggleAndNumericFieldsRestored": true,
+    "excludeCheckboxRestored": true,
+    "orderMoveDownAndUpRestored": true,
+    "backendSavePerformed": false
+  },
+  "subscriptions": {
+    "subscriptionCount": 1,
+    "name": "K-OFFICE",
+    "serverCount": 6,
+    "autoUpdateEnabled": true,
+    "intervalMinutes": 360,
+    "toggleAndIntervalRestored": true,
+    "newSubscriptionFormRestoredEmpty": true,
+    "secretUrlReadOrRecorded": false,
+    "backgroundSchedulerOutcome": "AUTOMATIC_DOWNLOAD_TIMEOUT_RECORDED_WITHOUT_SERVER_CHANGE"
+  },
+  "automatedBindingAudit": {
+    "staticButtons": 12,
+    "dynamicButtons": 8,
+    "totalButtonActions": 20,
+    "endpointBindings": 23,
+    "failures": 0,
+    "receipt": "checkpoints/R0010/WEBUI-BUTTON-AUDIT-P59-CACHE-CORRECTED-STABLE.json",
+    "receiptSha256": "5735fe4552ad66a58c4f9da0738e0289aef58c15088bbe69b40c895ebb36abc4"
+  },
+  "mutatingOrDestructivePhysicalButtons": {
+    "executed": false,
+    "reason": "Preserve user state; their handlers, endpoints, validation, equal-version reinstall, update, activation, save, and delete semantics are covered by the isolated 52-gate suite and the complete binding audit."
+  },
+  "persistentState": {
+    "browserCausedMutation": false,
+    "backgroundDeltaReceipt": "checkpoints/R0010/DIAGNOSIS-P80-PERSISTENT-AUTOUPDATE-DELTA.json",
+    "backgroundDeltaReceiptSha256": "a839e6f4fac025708acd50245a74c80d34264831ca11651191733dfc22302147",
+    "currentFiles": 19,
+    "currentAggregateSha256ManifestSha256": "c1f3f21a783a4505cce7a5c9cd625af15c8265acdf66956bfce70d613a1556dc"
+  },
+  "publicReleasePublished": false,
+  "nextRevision": "p82-create-and-push-stable-tag",
+  "nextExactAction": "CREATE_ANNOTATED_TAG_V1.0.0_R1_AT_RELEASE_SOURCE_COMMIT_9E5FCE9_AND_PUSH_ONLY_THAT_TAG"
+}

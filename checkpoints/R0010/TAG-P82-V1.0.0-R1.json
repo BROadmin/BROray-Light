@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0010",
+  "revision": "p82-create-and-push-stable-tag",
+  "at": "2026-09-02T14:36:55+03:00",
+  "status": "PASS",
+  "repository": "BROadmin/BROray-Light",
+  "tag": "v1.0.0-r1",
+  "tagObject": "88107747fe9c76763a2c6fb2166fc8a840444078",
+  "targetCommit": "9e5fce9bfa7c82bfc2f2654d80fd3987c5259963",
+  "expectedReleaseSourceCommit": "9e5fce9bfa7c82bfc2f2654d80fd3987c5259963",
+  "remoteRefs": 2,
+  "annotated": true,
+  "pushed": true,
+  "targetIdentity": "PASS",
+  "publicReleasePublished": false,
+  "acceptanceGate14": "PASS",
+  "nextRevision": "p83-create-draft-and-upload-stable-assets",
+  "nextExactAction": "CREATE_A_DRAFT_GITHUB_RELEASE_FOR_THE_EXACT_TAG_UPLOAD_ALL_EIGHT_BUILD_A_ASSETS_AND_VERIFY_DRAFT_ASSET_HASHES_BEFORE_PUBLICATION"
+}

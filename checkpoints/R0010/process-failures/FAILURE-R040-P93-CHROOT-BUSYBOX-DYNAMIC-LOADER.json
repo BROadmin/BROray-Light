@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0010",
+  "revision": "p93-explicit-remote-capability-probe",
+  "failureId": "R040",
+  "at": "2026-09-02T15:07:38+03:00",
+  "status": "FAIL_FIRST_ERROR_PRESERVED",
+  "operation": "RUN_COPIED_BUSYBOX_ASH_INSIDE_FRESH_ROUTER_CHROOT",
+  "firstError": "chroot: can't execute '/opt/bin/ash': No such file or directory",
+  "cause": "The copied BusyBox executable is dynamically linked and its ELF loader or shared libraries were not yet present inside the isolated root.",
+  "temporaryRoot": "/tmp/broray-light-r0010-p93-chroot-probe",
+  "temporaryRootRemoved": true,
+  "installedLightMutation": false,
+  "persistentStateMutation": false,
+  "releaseAssetMutation": false,
+  "hiddenRetryPerformed": false,
+  "nextRevision": "p94-router-busybox-loader-discovery",
+  "nextExactAction": "IDENTIFY_THE_BUSYBOX_ELF_INTERPRETER_AND_SHARED_LIBRARY_CLOSURE_THEN_BUILD_A_NEW_FRESH_CHROOT_WITH_THOSE_EXACT_RUNTIME_FILES"
+}

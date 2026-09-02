@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0010",
+  "revision": "p65-literal-stdin-router-backup",
+  "failureId": "R028",
+  "at": "2026-09-02T13:45:39+03:00",
+  "status": "FAIL_FIRST_ERROR_PRESERVED",
+  "operation": "PREFLIGHT_ROUTER_BACKUP_PATHS_WITH_LITERAL_SCRIPT_ON_REMOTE_STDIN",
+  "firstError": "The Windows native pipeline did not deliver the complete loop to BusyBox sh, which reported unexpected end of file while expecting done.",
+  "reportedPathStatesTrusted": false,
+  "routerMutation": false,
+  "localBackupCreated": false,
+  "publicReleasePublished": false,
+  "hiddenRetryPerformed": false,
+  "nextRevision": "p66-constant-command-router-backup",
+  "nextExactAction": "USE_ONLY_CONSTANT_REMOTE_TEST_COMMANDS_WITH_NO_LOOPS_VARIABLES_OR_STDIN_SCRIPT_TRANSPORT"
+}

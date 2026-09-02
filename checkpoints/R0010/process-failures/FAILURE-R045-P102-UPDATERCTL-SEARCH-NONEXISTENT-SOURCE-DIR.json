@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0010",
+  "revision": "p102-public-package-physical-equal-update-validation",
+  "failureId": "R045",
+  "at": "2026-09-02T15:32:05+03:00",
+  "status": "FAIL_FIRST_ERROR_PRESERVED",
+  "operation": "LOCATE_STABLE_UPDATE_CHECK_CONTROL_PATHS",
+  "firstError": "rg: source: path not found",
+  "cause": "The bounded search included an assumed source/ directory that is not present in this repository.",
+  "trustedPartialRead": "The prior physical postinstall receipt remains PASS; the search result itself is not used as a completed discovery gate.",
+  "physicalInstallerStarted": false,
+  "routerMutation": false,
+  "repositoryProductMutation": false,
+  "releaseAssetMutation": false,
+  "hiddenRetryPerformed": false,
+  "nextRevision": "p103-existing-path-stable-update-control-discovery",
+  "nextExactAction": "ENUMERATE_EXISTING_TOP_LEVEL_PATHS_THEN_SEARCH_ONLY_PACKAGING_TOOLS_AND_THE_BUILT_SLOT_FOR_THE_STABLE_UPDATE_CHECK_CONTROL"
+}

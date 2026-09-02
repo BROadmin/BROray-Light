@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0010",
+  "revision": "p118-final-state-handoff-and-meta-audit",
+  "at": "2026-09-02T16:34:33+03:00",
+  "status": "PASS",
+  "scope": {
+    "metaAuditReceiptAndSidecarCreatedAfterAudit": true,
+    "closureIntegrityAuditRequiredAfterFinalStatusAndWorklogUpdate": true
+  },
+  "records": {
+    "jsonFilesAuditedBeforeReceipt": 115,
+    "validJsonSidecarsBeforeReceipt": 115,
+    "worklogLinesAuditedBeforeReceipt": 705,
+    "r0010FailureFiles": 50,
+    "invalidJson": 0,
+    "invalidJsonSidecars": 0,
+    "orphanJsonSidecars": 0,
+    "invalidWorklogLines": 0
+  },
+  "acceptance": {
+    "passed": 20,
+    "failed": 0,
+    "completedGateLabels": 20,
+    "candidateReady": true,
+    "releaseReady": true
+  },
+  "integrity": {
+    "aggregateSha256": "9233840af01227d14e5d29a1f01d181d29791e9ecfffee17783a474a8d12910c",
+    "postsealAuditReceipt": "checkpoints/R0010/POSTSEAL-AUDIT-P117.json",
+    "postsealAuditReceiptSha256": "d7b77e2b8d679da4d80b462fcbd430e1768f5561d8805d8447b994631562c080",
+    "evidenceDeltaFiles": 123,
+    "unexpectedEvidenceChanges": 0,
+    "credentialHits": 0,
+    "privateKeyMarkerHits": 0,
+    "plaintextSigningKeyAbsent": true
+  },
+  "projectState": {
+    "r0010State": "PASS_PENDING_CLOSURE_STATUS_WRITE",
+    "implementationState": "PASS_PENDING_CLOSURE_STATUS_WRITE",
+    "handoff": "PASS_R0010_FINAL",
+    "nextStage": "DEFINE_AND_AUTHORIZE_R0011_BEFORE_ANY_POST_RELEASE_CHANGE"
+  },
+  "nextRevision": "p119-final-closure-integrity-audit-and-evidence-commit",
+  "nextExactAction": "WRITE_FINAL_PASS_STATUS_APPEND_THE_META_AUDIT_WORKLOG_ENTRY_RUN_CLOSURE_INTEGRITY_AUDIT_THEN_COMMIT_AND_PUSH_THE_EVIDENCE_ONLY_DELTA"
+}

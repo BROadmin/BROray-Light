@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0010",
+  "revision": "p64-router-cache-corrected-preinstall-backup",
+  "failureId": "R027",
+  "at": "2026-09-02T13:44:15+03:00",
+  "status": "FAIL_FIRST_ERROR_PRESERVED",
+  "operation": "PREFLIGHT_ROUTER_BACKUP_SOURCE_PATHS",
+  "firstError": "PowerShell quoting altered the inline remote loop and BusyBox sh reported missing closing test brackets.",
+  "reportedPathStatesTrusted": false,
+  "routerMutation": false,
+  "localBackupCreated": false,
+  "publicReleasePublished": false,
+  "hiddenRetryPerformed": false,
+  "nextRevision": "p65-literal-stdin-router-backup",
+  "nextExactAction": "PIPE_A_SINGLE_QUOTED_LITERAL_SCRIPT_TO_REMOTE_SH_STDIN_THEN_CREATE_A_FRESH_EXTERNAL_BACKUP"
+}

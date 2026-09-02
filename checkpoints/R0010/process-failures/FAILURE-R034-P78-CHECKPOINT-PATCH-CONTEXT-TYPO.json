@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0010",
+  "revision": "p78-browser-form-state-recovery",
+  "failureId": "R034",
+  "at": "2026-09-02T14:28:40+03:00",
+  "status": "FAIL_FIRST_ERROR_PRESERVED",
+  "operation": "ADD_R033_SIDECAR_AND_UPDATE_MACHINE_STATE_AND_WORKLOG",
+  "firstError": "The apply_patch context contained a typographical corruption of the expected nextExactAction string and the patch was rejected atomically.",
+  "partialPatchApplied": false,
+  "productDefectConfirmed": false,
+  "routerMutation": false,
+  "publicReleasePublished": false,
+  "hiddenRetryPerformed": false,
+  "nextRevision": "p79-complete-browser-failure-records-and-recover-form",
+  "nextExactAction": "ADD_R033_AND_R034_SIDECARS_USING_EXACT_CURRENT_CONTEXT_UPDATE_MACHINE_STATE_THEN_RECOVER_THE_FORM_WITH_SUPPORTED_BROWSER_PROPERTIES"
+}

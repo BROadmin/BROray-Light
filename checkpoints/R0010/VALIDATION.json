@@ -1,0 +1,165 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0010",
+  "revision": "p113-final-machine-readable-record-construction",
+  "at": "2026-09-02T16:05:44+03:00",
+  "status": "PASS",
+  "candidateReady": true,
+  "releaseReady": true,
+  "publicReleasePublished": true,
+  "releaseId": "1.0.0-r1",
+  "tag": "v1.0.0-r1",
+  "releaseUrl": "https://github.com/BROadmin/BROray-Light/releases/tag/v1.0.0-r1",
+  "hardwareTestingPerformed": true,
+  "hardwareTestingAuthorized": true,
+  "acceptanceGates": [
+    {
+      "id": 1,
+      "name": "R0008 and R0009 input identities",
+      "status": "PASS",
+      "evidence": "R0008 commit 684b27bdb53e545047419baa87c63dd86dffa469, 121 files, 627326 logical bytes, source sums e056585d6a517ddbbbaebf08b68f17eb2d9d7ccd68d86df5cdee9fd4665f2419; R0009 checkpoint 3d7f7407df7b8eba6b4cc7f423e1bcba5ce48c1108a1ca3d7f0a850a2f3fd2fe; R0010 START-P1 5dfe62959e9aa0d4e5039d055a80f8b39857a8d5649445b4ccfc2aa92bdf5105"
+    },
+    {
+      "id": 2,
+      "name": "R0010 start checkpoint and process-failure sidecars",
+      "status": "PASS",
+      "evidence": "50 R0010 material failures through R050 are individually preserved; R049 records the truncated state-patch response and R050 rejects an invalid credential-hit counter before the corrected audit; zero hidden retries were performed"
+    },
+    {
+      "id": 3,
+      "name": "exact Stable URLs tag channel and updater default",
+      "status": "PASS",
+      "evidence": "Stable index https://github.com/BROadmin/BROray-Light/releases/latest/download/release.json, tag v1.0.0-r1, stable channel and versioned asset base verified by STABLE-CONTRACT-P3 f5e20ae6ae2108c3987c2eca18c664d9677cacec3879f748041a5ba103f9449d"
+    },
+    {
+      "id": 4,
+      "name": "Stable public signing identity without repository private material",
+      "status": "PASS",
+      "evidence": "minisign Ed25519 key F8ABF7C93FAB7C1F; updater/release.pub SHA-256 b1587b8407f0c0443a361ed29b839319b66912b1b71414bcf31e848c29eab696; signing receipt 9aa7de198b9147aeaeefdb9d4ccf725855b88413790a102809528e7d6857694d"
+    },
+    {
+      "id": 5,
+      "name": "encrypted GitHub Actions secret present and plaintext key absent",
+      "status": "PASS",
+      "evidence": "BRORAY_LIGHT_MINISIGN_PRIVATE_KEY present; secret value never read; exact local release.key destroyed and absent; receipt aa5aa9c0354c6ca3e617bd11ef769f41f5d3d2769ca2cbef63fcbc9ef8d90f1c"
+    },
+    {
+      "id": 6,
+      "name": "Stable updater static syntax and signed-index tests",
+      "status": "PASS",
+      "evidence": "cache-corrected isolated suite 52/52 PASS with Stable signed-index verification; receipt 4f3d11a62e2809d16ced06b380a1a86874c78a22c7c40719440219f022c3932e"
+    },
+    {
+      "id": 7,
+      "name": "package metadata lifecycle and clean-installer static syntax",
+      "status": "PASS",
+      "evidence": "package carrier, metadata, preinst/postinst and installer contracts passed local isolated validation and the exact public installer lifecycle"
+    },
+    {
+      "id": 8,
+      "name": "Build A and independent Build B reproducibility",
+      "status": "PASS",
+      "evidence": "8/8 release artifacts byte-identical; receipt e4ca0193bb00bb6493d457210a09dcb24e2a6908c73a7162d905678bef898125"
+    },
+    {
+      "id": 9,
+      "name": "deterministic manifests and SHA-256 verification",
+      "status": "PASS",
+      "evidence": "Build A and Build B SHA256SUMS verify; release manifests are identical; every public asset size and SHA-256 matches both builds"
+    },
+    {
+      "id": 10,
+      "name": "isolated clean install exact Xray and healthy slot",
+      "status": "PASS",
+      "evidence": "52-gate isolated suite produced release 1.0.0-r1 and Xray 26.7.28 SHA-256 4b8af237444801bf17b3dc10a1c5c24581fbe3d433eba3d78c6c3a0da1df56fc"
+    },
+    {
+      "id": 11,
+      "name": "isolated update equal downgrade rollback and persistence",
+      "status": "PASS",
+      "evidence": "newer update, equal-version NO_OP_SUCCESS, downgrade refusal, forced rollback, request/global locks and persistence all PASS in ISOLATED-VALIDATION-P58"
+    },
+    {
+      "id": 12,
+      "name": "WebUI button API and cache-token regressions",
+      "status": "PASS",
+      "evidence": "20 button actions and 23 endpoints PASS; Web asset token 1.0.0-r1-r0010 PASS; static receipt 5735fe4552ad66a58c4f9da0738e0289aef58c15088bbe69b40c895ebb36abc4 and physical audit 9e4f2be8e08c92ab9742c27c896890f556b6f9708299a630b2b3a3f033ca147a"
+    },
+    {
+      "id": 13,
+      "name": "forbidden full-BROray subsystem exclusion",
+      "status": "PASS",
+      "evidence": "VLESS only; no Routes module, DoT management, ratings, quality history or scheduled quality refresh; full BROray co-ownership remains fail-closed; prepublication audit 3bb4528cc9864d2272afe1610bfc12934a13b7a93949874d15c4cd6799b978aa"
+    },
+    {
+      "id": 14,
+      "name": "release-source commit pushed and tag targets exact commit",
+      "status": "PASS",
+      "evidence": "release-source commit 9e5fce9bfa7c82bfc2f2654d80fd3987c5259963 pushed; annotated tag object 88107747fe9c76763a2c6fb2166fc8a840444078 dereferences exactly to it; receipts 2f2d34218e73695d0e82c8e7fb97487a68c1ebae8be4d648f43469227b804738 and 1a52ab35866ae930ed456f77480a8c546d95cc9fe0d2ed0a892791d71ca10875"
+    },
+    {
+      "id": 15,
+      "name": "public complete non-draft non-prerelease GitHub Release",
+      "status": "PASS",
+      "evidence": "GitHub Release 381203509 published 2026-09-02T11:48:48Z, latest, draft=false, prerelease=false, eight assets; receipt 0fa81e39f77edcbf095cda5e9e8570c8497a924f92b03d10effc7a5e79a536b5"
+    },
+    {
+      "id": 16,
+      "name": "public HTTPS redirect MIME cache size and SHA-256 validation",
+      "status": "PASS",
+      "evidence": "latest and versioned URLs returned HTTP 200 after HTTPS-only redirects with expected application/octet-stream/no-cache delivery and exact sizes/hashes; receipt d315aa5f9cee5fd3dd8ddcbb9e5de85f64d62d50ccea303849356e33af076e74"
+    },
+    {
+      "id": 17,
+      "name": "every public asset byte-identical to Build A and Build B",
+      "status": "PASS",
+      "evidence": "8/8 authenticated draft downloads and 8/8 public downloads byte-identical to both independent builds; zero mismatches"
+    },
+    {
+      "id": 18,
+      "name": "public clean installer in isolated root",
+      "status": "PASS",
+      "evidence": "unmodified public installer and public IPK ran in a fresh chroot with exact preinst+data+postinst; exact Xray and active slot verified; production state unchanged; receipt a7ebee5bb1c772946b22f7a16ad175f2b49c1c0b0745901ef88eec9caac138e6"
+    },
+    {
+      "id": 19,
+      "name": "authorized physical exact-public-package equal update health and persistence",
+      "status": "PASS",
+      "evidence": "public installer reported package up to date; Stable check and update reported equal/NO_OP_SUCCESS; 19 persistent files byte-identical; services, Xray, WebUI and HTTP 401 auth healthy; backend 466ef2800dba60ad383d7587d1413fd2c0106ef54c9d282fa424c9c213047b8b and browser 52d8c0a35e3d89a90f08dc046768f0aa53a7c8e8dce16254cdc257d8214e00cb"
+    },
+    {
+      "id": 20,
+      "name": "final records secret scan status and checkpoint sealing",
+      "status": "PASS",
+      "evidence": "preseal audit 34c704bdd63434437a156b98e830808eaf97717332b9434ab3f2f5ffeb8688dc verified JSON, sidecars, WORKLOG, Build A/B, manifests, allowlisted evidence delta and zero secret hits; CHECKPOINT, VALIDATION, REPORT and aggregate SHA256SUMS are sealed with SHA-256"
+    }
+  ],
+  "passed": 20,
+  "failed": 0,
+  "builds": {
+    "buildA": "dist/R0010/1.0.0-r1-P50-Cache-Final-Build-A",
+    "buildB": "dist/R0010/1.0.0-r1-P53-Cache-Final-Build-B",
+    "artifacts": 8,
+    "comparison": "BYTE_IDENTICAL",
+    "receipt": "checkpoints/R0010/REPRODUCIBILITY-P54-CACHE-CORRECTED-STABLE-1.0.0-R1.json",
+    "receiptSha256": "e4ca0193bb00bb6493d457210a09dcb24e2a6908c73a7162d905678bef898125"
+  },
+  "isolatedValidation": {
+    "passed": 52,
+    "failed": 0,
+    "receipt": "checkpoints/R0010/ISOLATED-VALIDATION-P58-CACHE-CORRECTED-STABLE-1.0.0-R1.json",
+    "receiptSha256": "4f3d11a62e2809d16ced06b380a1a86874c78a22c7c40719440219f022c3932e"
+  },
+  "webuiAudit": {
+    "buttonActions": 20,
+    "endpointBindings": 23,
+    "missingHandlers": 0,
+    "missingEndpoints": 0,
+    "cacheToken": "1.0.0-r1-r0010"
+  },
+  "privateSigningKeyDestroyed": true,
+  "githubActionsEncryptedSecretPresent": true,
+  "r0010ProcessFailuresPreserved": 50,
+  "productionServerMutationPerformed": false,
+  "nextStage": "DEFINE_AND_AUTHORIZE_R0011_BEFORE_ANY_POST_RELEASE_CHANGE"
+}

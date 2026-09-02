@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0010",
+  "revision": "p71-resolve-slot-manifest-path",
+  "at": "2026-09-02T13:57:32+03:00",
+  "status": "PASS",
+  "buildArchiveManifestPath": "APP-SHA256SUMS",
+  "installedManifestPath": "/opt/broray-light/releases/1.0.0-r1/APP-SHA256SUMS",
+  "installedManifestSha256": "953fbad3bdf3609f1c25aaa763e2dc2c91be9ef8d11689cb78eec15a7a7b6841",
+  "validationWorkingDirectory": "/opt/broray-light/releases/1.0.0-r1",
+  "sha256Check": "PASS",
+  "routerMutation": false,
+  "publicReleasePublished": false,
+  "nextRevision": "p72-cache-corrected-router-postinstall-audit",
+  "nextExactAction": "COMPLETE_PERSISTENCE_SERVICES_AUTHENTICATION_COOWNERSHIP_AND_WEB_ASSET_TOKEN_VALIDATION_READ_ONLY"
+}

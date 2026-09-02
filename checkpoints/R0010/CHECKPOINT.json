@@ -1,0 +1,170 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0010",
+  "revision": "p113-final-machine-readable-record-construction",
+  "at": "2026-09-02T16:05:44+03:00",
+  "authorizedTask": "PUBLISH_AND_VALIDATE_BRORAY_LIGHT_STABLE_RELEASE",
+  "status": "PASS",
+  "candidateReady": true,
+  "releaseReady": true,
+  "publicReleasePublished": true,
+  "candidateId": "1.0.0-r1",
+  "releaseId": "1.0.0-r1",
+  "canonicalSource": {
+    "r0008Commit": "684b27bdb53e545047419baa87c63dd86dffa469",
+    "files": 121,
+    "logicalBytes": 627326,
+    "sha256SumsSha256": "e056585d6a517ddbbbaebf08b68f17eb2d9d7ccd68d86df5cdee9fd4665f2419",
+    "r0009CheckpointSha256": "3d7f7407df7b8eba6b4cc7f423e1bcba5ce48c1108a1ca3d7f0a850a2f3fd2fe",
+    "unchanged": true
+  },
+  "releaseSource": {
+    "branch": "codex/r0009-updater-package",
+    "commit": "9e5fce9bfa7c82bfc2f2654d80fd3987c5259963",
+    "tree": "cc257a7069800c593a3bc27c67380c698dcb69fc",
+    "tag": "v1.0.0-r1",
+    "tagObject": "88107747fe9c76763a2c6fb2166fc8a840444078",
+    "tagCommit": "9e5fce9bfa7c82bfc2f2654d80fd3987c5259963",
+    "pushed": true,
+    "releaseInputsUnchangedByEvidence": true
+  },
+  "publication": {
+    "repository": "BROadmin/BROray-Light",
+    "githubReleaseId": 381203509,
+    "url": "https://github.com/BROadmin/BROray-Light/releases/tag/v1.0.0-r1",
+    "publishedAt": "2026-09-02T11:48:48Z",
+    "draft": false,
+    "prerelease": false,
+    "latest": true,
+    "assets": 8,
+    "stableIndexUrl": "https://github.com/BROadmin/BROray-Light/releases/latest/download/release.json",
+    "publicUrlValidationReceipt": "checkpoints/R0010/publication/PUBLIC-URL-VALIDATION-P89.json",
+    "publicUrlValidationReceiptSha256": "d315aa5f9cee5fd3dd8ddcbb9e5de85f64d62d50ccea303849356e33af076e74"
+  },
+  "buildA": "dist/R0010/1.0.0-r1-P50-Cache-Final-Build-A",
+  "buildB": "dist/R0010/1.0.0-r1-P53-Cache-Final-Build-B",
+  "artifactsByteIdentical": true,
+  "artifactCount": 8,
+  "artifacts": [
+    {
+      "name": "broray-light_1.0.0-r1_aarch64-3.10.ipk",
+      "bytes": 12799724,
+      "sha256": "707431aa20c01958edfe40ed04a70c24308a9dabc9ff26f758101c952827d432"
+    },
+    {
+      "name": "broray-light-app-1.0.0-r1.tar.gz",
+      "bytes": 157138,
+      "sha256": "2b2d22e9a172b28229aa19ca904f1810722da21b5d34f27eafd79d5acac1e5b0"
+    },
+    {
+      "name": "broray-light-install-1.0.0-r1.sh",
+      "bytes": 1851,
+      "sha256": "da8c57ee3b68156462a2dea5cb2f3b6d1706ed754b1cd8904b745ee1fb86c51d"
+    },
+    {
+      "name": "broray-light-updater-platform-5-light1.tar.gz",
+      "bytes": 131682,
+      "sha256": "4983f0fc268a9f19f3e64959fe5f7d8086f26ad907d528ca82ca623f10d9a92a"
+    },
+    {
+      "name": "RELEASE-MANIFEST.json",
+      "bytes": 2966,
+      "sha256": "05523426a5edd246330e8987ab9a772f9ec61a4c19bb99f145170aa882ac6f42"
+    },
+    {
+      "name": "release.json",
+      "bytes": 576,
+      "sha256": "ccbd353f6042be992ae1aab293447ae7f6f57727d263a5b58253bde276cd0cf6"
+    },
+    {
+      "name": "release.json.minisig",
+      "bytes": 269,
+      "sha256": "da2ff05d973c19b3b4ea79bc48329cecdb9e0cdae99f3dcd05efd2b703e2d84d"
+    },
+    {
+      "name": "SHA256SUMS",
+      "bytes": 669,
+      "sha256": "00de57fe2472b642e88a3f90ccdad7e1ad4fb8092963a505b509a21628618a72"
+    }
+  ],
+  "reproducibility": {
+    "artifacts": 8,
+    "comparison": "BYTE_IDENTICAL",
+    "receipt": "checkpoints/R0010/REPRODUCIBILITY-P54-CACHE-CORRECTED-STABLE-1.0.0-R1.json",
+    "receiptSha256": "e4ca0193bb00bb6493d457210a09dcb24e2a6908c73a7162d905678bef898125"
+  },
+  "isolatedValidation": {
+    "passed": 52,
+    "failed": 0,
+    "receipt": "checkpoints/R0010/ISOLATED-VALIDATION-P58-CACHE-CORRECTED-STABLE-1.0.0-R1.json",
+    "receiptSha256": "4f3d11a62e2809d16ced06b380a1a86874c78a22c7c40719440219f022c3932e"
+  },
+  "webuiValidation": {
+    "buttonActions": 20,
+    "endpointBindings": 23,
+    "cacheToken": "1.0.0-r1-r0010",
+    "staticReceipt": "checkpoints/R0010/WEBUI-BUTTON-AUDIT-P59-CACHE-CORRECTED-STABLE.json",
+    "staticReceiptSha256": "5735fe4552ad66a58c4f9da0738e0289aef58c15088bbe69b40c895ebb36abc4",
+    "physicalReceipt": "checkpoints/R0010/physical-validation/WEBUI-P81-CACHE-CORRECTED-PREPUBLICATION-AUDIT.json",
+    "physicalReceiptSha256": "9e4f2be8e08c92ab9742c27c896890f556b6f9708299a630b2b3a3f033ca147a"
+  },
+  "publicInstallerValidation": {
+    "status": "PASS",
+    "executedUnmodified": true,
+    "exactPackageLifecycle": "preinst+data+postinst",
+    "receipt": "checkpoints/R0010/publication/PUBLIC-INSTALLER-ISOLATED-P101.json",
+    "receiptSha256": "a7ebee5bb1c772946b22f7a16ad175f2b49c1c0b0745901ef88eec9caac138e6"
+  },
+  "physicalValidation": {
+    "authorized": true,
+    "installedPackage": "broray-light 1.0.0-r1 aarch64-3.10",
+    "currentTarget": "releases/1.0.0-r1",
+    "xrayVersion": "26.7.28",
+    "xraySha256": "4b8af237444801bf17b3dc10a1c5c24581fbe3d433eba3d78c6c3a0da1df56fc",
+    "stableCheckRelation": "equal",
+    "stableEqualUpdate": "NO_OP_SUCCESS",
+    "persistentFiles": 19,
+    "persistentSha256": "ff28e9aa7920cbfbcebcff91d2259224ca10f6943dceebd8cd0980192a7f00a8",
+    "persistenceUnchanged": true,
+    "primaryService": "PASS",
+    "updaterService": "PASS",
+    "publicRootHttpStatus": 200,
+    "protectedApiHttpStatus": 401,
+    "browserResultText": "Установлена актуальная версия 1.0.0-r1.",
+    "browserUpdateAction": "Обновлений нет",
+    "backendReceipt": "checkpoints/R0010/physical-validation/PUBLIC-PACKAGE-EQUAL-BACKEND-P106.json",
+    "backendReceiptSha256": "466ef2800dba60ad383d7587d1413fd2c0106ef54c9d282fa424c9c213047b8b",
+    "browserReceipt": "checkpoints/R0010/physical-validation/WEBUI-STABLE-EQUAL-P107.json",
+    "browserReceiptSha256": "52d8c0a35e3d89a90f08dc046768f0aa53a7c8e8dce16254cdc257d8214e00cb"
+  },
+  "signing": {
+    "algorithm": "minisign Ed25519",
+    "keyId": "F8ABF7C93FAB7C1F",
+    "publicKeySha256": "b1587b8407f0c0443a361ed29b839319b66912b1b71414bcf31e848c29eab696",
+    "githubActionsEncryptedSecretPresent": true,
+    "privateSigningKeyDestroyed": true,
+    "receipt": "checkpoints/R0010/SIGNING-KEY-DESTRUCTION-P111.json",
+    "receiptSha256": "aa5aa9c0354c6ca3e617bd11ef769f41f5d3d2769ca2cbef63fcbc9ef8d90f1c"
+  },
+  "acceptance": {
+    "passed": 20,
+    "failed": 0,
+    "receipt": "checkpoints/R0010/VALIDATION.json",
+    "receiptSha256": "517a1d3db56065fb343a12000ecf56daec5d67d7126c2fb3c1bf0db10dc8bdf6"
+  },
+  "report": {
+    "path": "checkpoints/R0010/REPORT.md",
+    "sha256": "95dc46326eafcb41d6ba4cf426c3652e4fd5d2378570b8ed6f62cde7f4cf9020"
+  },
+  "presealAudit": {
+    "status": "PASS",
+    "receipt": "checkpoints/R0010/PRESEAL-AUDIT-P112.json",
+    "receiptSha256": "34c704bdd63434437a156b98e830808eaf97717332b9434ab3f2f5ffeb8688dc"
+  },
+  "r0010ProcessFailuresPreserved": 50,
+  "privateSigningKeyDestroyed": true,
+  "hardwareTestingPerformed": true,
+  "productionServerMutationPerformed": false,
+  "broadminBrorayRepositoryModified": false,
+  "nextStage": "DEFINE_AND_AUTHORIZE_R0011_BEFORE_ANY_POST_RELEASE_CHANGE"
+}

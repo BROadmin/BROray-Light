@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0010",
+  "revision": "p92-failure-sidecar-repair-and-targeted-installer-discovery",
+  "failureId": "R039",
+  "at": "2026-09-02T15:04:31+03:00",
+  "status": "FAIL_FIRST_ERROR_PRESERVED",
+  "operation": "PROBE_ROUTER_CHROOT_AND_INSTALLER_COMMAND_CAPABILITIES",
+  "firstError": "PowerShell-to-SSH quoting did not preserve the remote loop variable, so the per-command capability results were not trustworthy.",
+  "trustedPartialObservations": {
+    "architecture": "aarch64",
+    "busyboxVersion": "1.37.0",
+    "opkgOfflineRootAdvertised": true,
+    "tmpFreeKilobytes": 162140
+  },
+  "repositoryProductMutation": false,
+  "releaseAssetMutation": false,
+  "routerMutation": false,
+  "hiddenRetryPerformed": false,
+  "nextRevision": "p93-explicit-remote-capability-probe",
+  "nextExactAction": "PROBE_EACH_REQUIRED_ROUTER_COMMAND_EXPLICITLY_WITHOUT_A_REMOTE_LOOP_OR_INTERPOLATED_REMOTE_VARIABLE"
+}

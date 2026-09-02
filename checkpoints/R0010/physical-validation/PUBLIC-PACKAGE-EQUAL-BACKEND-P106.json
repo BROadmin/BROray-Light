@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0010",
+  "revision": "p106-exact-public-package-physical-equal-validation",
+  "at": "2026-09-02T15:43:01+03:00",
+  "status": "PASS_BACKEND_BROWSER_CONFIRMATION_REQUIRED",
+  "router": "192.168.1.1",
+  "publicInputs": {
+    "installerSha256": "da8c57ee3b68156462a2dea5cb2f3b6d1706ed754b1cd8904b745ee1fb86c51d",
+    "packageSizeBytes": 12799724,
+    "packageSha256": "707431aa20c01958edfe40ed04a70c24308a9dabc9ff26f758101c952827d432",
+    "transferredHashesVerifiedBeforeExecution": true
+  },
+  "installer": {
+    "result": "PASS",
+    "opkgResult": "Package broray-light (1.0.0-r1) installed in root is up to date.",
+    "completionMessage": "BROray-Light Stable installed.",
+    "installedPackage": "broray-light 1.0.0-r1 aarch64-3.10",
+    "currentTarget": "releases/1.0.0-r1"
+  },
+  "stableUpdate": {
+    "check": {
+      "ok": true,
+      "installedReleaseId": "1.0.0-r1",
+      "availableReleaseId": "1.0.0-r1",
+      "relation": "equal",
+      "updateAvailable": false,
+      "downgradeRefused": false,
+      "sameVersionPolicy": "NO_OP_SUCCESS"
+    },
+    "equalUpdateCommand": "PASS_NO_OP_SUCCESS",
+    "state": "success",
+    "stage": "no-op",
+    "message": "Installed release equals signed release; no mutation.",
+    "engine": "broray-light-updater/5-light1"
+  },
+  "health": {
+    "xrayVersion": "26.7.28",
+    "xraySha256": "4b8af237444801bf17b3dc10a1c5c24581fbe3d433eba3d78c6c3a0da1df56fc",
+    "appManifestSha256": "953fbad3bdf3609f1c25aaa763e2dc2c91be9ef8d11689cb78eec15a7a7b6841",
+    "appManifest": "PASS",
+    "primaryService": "PASS_EXIT_ZERO",
+    "updaterService": "PASS_EXIT_ZERO",
+    "publicRootHttpStatus": 200,
+    "protectedApiHttpStatus": 401
+  },
+  "persistence": {
+    "filesBefore": 19,
+    "filesAfter": 19,
+    "aggregateSha256Before": "ff28e9aa7920cbfbcebcff91d2259224ca10f6943dceebd8cd0980192a7f00a8",
+    "aggregateSha256After": "ff28e9aa7920cbfbcebcff91d2259224ca10f6943dceebd8cd0980192a7f00a8",
+    "unchanged": true
+  },
+  "cleanup": {
+    "publicInputDirectoryRemoved": true,
+    "verifiedPackageRemoved": true,
+    "runnerRemoved": true
+  },
+  "acceptanceGate19": "PENDING_AUTHENTICATED_WEBUI_STABLE_EQUAL_CONFIRMATION",
+  "nextRevision": "p107-authenticated-webui-stable-equal-button-validation",
+  "nextExactAction": "USE_THE_AUTHENTICATED_WEBUI_HOME_PAGE_CLICK_BRORAY_LIGHT_CHECK_UPDATE_AND_VERIFY_EQUAL_CURRENT_NO_UPDATE_TEXT_AND_DISABLED_UPDATE_ACTION"
+}

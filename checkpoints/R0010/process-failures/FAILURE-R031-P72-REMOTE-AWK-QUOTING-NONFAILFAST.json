@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0010",
+  "revision": "p72-cache-corrected-router-postinstall-audit",
+  "failureId": "R031",
+  "at": "2026-09-02T13:59:19+03:00",
+  "status": "FAIL_FIRST_ERROR_PRESERVED",
+  "operation": "VALIDATE_SERVICES_COOWNERSHIP_AND_WEB_ASSET_TOKEN_AS_A_REMOTE_GROUP",
+  "firstError": "The exact package-name awk expression was altered by quoting and failed, while a later successful command made the compound remote command return zero.",
+  "groupResultAccepted": false,
+  "confirmedObservations": {
+    "primaryService": "PASS",
+    "updaterService": "PASS",
+    "optBroray": "ABSENT",
+    "S24broray": "ABSENT",
+    "S23brorayMonitor": "ABSENT",
+    "webAssetCacheToken": "PASS"
+  },
+  "exactPackageNameOwnership": "UNTRUSTED",
+  "routerMutation": false,
+  "publicReleasePublished": false,
+  "hiddenRetryPerformed": false,
+  "nextRevision": "p73-atomized-router-postinstall-audit",
+  "nextExactAction": "RUN_THE_EXACT_FULL_BRORAY_PACKAGE_PROBE_AS_AN_INDEPENDENT_GREP_COMMAND_THEN_COMPLETE_THE_REMAINING_AUDIT_GROUPS"
+}

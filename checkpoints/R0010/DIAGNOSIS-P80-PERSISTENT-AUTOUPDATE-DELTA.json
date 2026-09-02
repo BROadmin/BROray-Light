@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0010",
+  "revision": "p80-diagnose-persistent-delta",
+  "at": "2026-09-02T14:33:16+03:00",
+  "status": "PASS_ROOT_CAUSE_CONFIRMED",
+  "failureId": "R035",
+  "persistentFilesBefore": 19,
+  "persistentFilesAfter": 19,
+  "aggregateSha256ManifestBefore": "6258b7be82ad69d87a04275f904f29d9a90f08d3f573daa0243d4a21996fd86d",
+  "aggregateSha256ManifestAfter": "c1f3f21a783a4505cce7a5c9cd625af15c8265acdf66956bfce70d613a1556dc",
+  "changedFiles": [
+    {
+      "path": "config/subscriptions/sub-5be7cbefb910ca75.json",
+      "beforeSha256": "9e10b3dde4eeb5fca69645eab8b70cb78d0102891ed83aa36f78b654eb212fb8",
+      "afterSha256": "a75d5ec57c131faa865d525dff5a9fccc421790bcd4996afaf00b97fe8b619db"
+    }
+  ],
+  "unchangedServerFiles": 6,
+  "subscriptionDelta": {
+    "trigger": "automatic",
+    "statusBefore": "success",
+    "statusAfter": "error",
+    "errorCode": "DOWNLOAD_TIMEOUT",
+    "durationMs": 10000,
+    "activeServerImpact": "none",
+    "serversAdded": 0,
+    "serversUpdated": 0,
+    "serversRemoved": 0,
+    "serversAccepted": 0,
+    "lastUpdatedAt": "2026-09-02T14:26:44+03:00",
+    "nextUpdateAt": "2026-09-02T20:26:44+03:00"
+  },
+  "secretSubscriptionUrlReadOrRecorded": false,
+  "rootCause": "The enabled six-hour subscription scheduler became due during the browser audit and recorded a timeout outcome without changing any server or active-server data.",
+  "browserActionsCausedPersistentMutation": false,
+  "dataLoss": false,
+  "rollbackRequired": false,
+  "routerMutationByDiagnostic": false,
+  "publicReleasePublished": false,
+  "newLegitimatePersistenceBaselineSha256": "c1f3f21a783a4505cce7a5c9cd625af15c8265acdf66956bfce70d613a1556dc",
+  "nextRevision": "p81-seal-cache-corrected-prepublication-browser-audit",
+  "nextExactAction": "SEAL_THE_AUTHENTICATED_BROWSER_AUDIT_WITH_THE_CONFIRMED_BACKGROUND_SCHEDULER_DELTA_AND_NO_BROWSER_CAUSED_PERSISTENT_MUTATION"
+}

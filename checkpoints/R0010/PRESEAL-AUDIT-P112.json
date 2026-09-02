@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0010",
+  "revision": "p112-final-records-secret-scan-and-checkpoint-seal",
+  "at": "2026-09-02T16:02:24+03:00",
+  "status": "PASS_PRESEAL",
+  "git": {
+    "branch": "codex/r0009-updater-package",
+    "releaseSourceCommit": "9e5fce9bfa7c82bfc2f2654d80fd3987c5259963",
+    "tagObject": "88107747fe9c76763a2c6fb2166fc8a840444078",
+    "tagCommit": "9e5fce9bfa7c82bfc2f2654d80fd3987c5259963",
+    "remoteBranchCommitBeforeEvidenceCommit": "9e5fce9bfa7c82bfc2f2654d80fd3987c5259963",
+    "remoteTagCommit": "9e5fce9bfa7c82bfc2f2654d80fd3987c5259963",
+    "releaseInputsDifferFromTag": false,
+    "unexpectedEvidenceChanges": 0
+  },
+  "records": {
+    "r0010JsonFiles": 109,
+    "invalidJson": 0,
+    "missingSha256Sidecars": 0,
+    "invalidSha256Sidecars": 0,
+    "orphanSha256Sidecars": 0,
+    "worklogLines": 700,
+    "invalidWorklogLines": 0,
+    "invalidProjectStateFiles": 0
+  },
+  "builds": {
+    "buildAFiles": 8,
+    "buildBFiles": 8,
+    "byteMismatches": 0,
+    "manifestFailures": 0,
+    "result": "PASS_8_OF_8_BYTE_IDENTICAL"
+  },
+  "secretScan": {
+    "filesScanned": 1626,
+    "privateKeyOrCredentialHits": 0,
+    "plaintextSigningKeyAbsent": true,
+    "result": "PASS"
+  },
+  "publication": {
+    "githubReleaseId": 381203509,
+    "tag": "v1.0.0-r1",
+    "draft": false,
+    "prerelease": false,
+    "publishedAt": "2026-09-02T11:48:48Z",
+    "assets": 8,
+    "result": "PASS"
+  },
+  "processFailures": {
+    "r0010": 48,
+    "allCheckpointStages": 332,
+    "r0010AllHaveValidSha256Sidecars": true
+  },
+  "acceptanceGatesCompletedBeforeSeal": 19,
+  "acceptanceGatesTotal": 20,
+  "nextRevision": "p113-final-machine-readable-record-construction",
+  "nextExactAction": "CREATE_R0010_VALIDATION_REPORT_CHECKPOINT_AND_AGGREGATE_SHA256SUMS_FROM_THE_VERIFIED_FACTS_THEN_RUN_A_FINAL_POST_SEAL_AUDIT"
+}

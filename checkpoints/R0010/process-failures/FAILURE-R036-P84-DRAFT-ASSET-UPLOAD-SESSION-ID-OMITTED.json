@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0010",
+  "revision": "p84-upload-and-verify-draft-assets",
+  "failureId": "R036",
+  "at": "2026-09-02T14:41:01+03:00",
+  "status": "FAIL_FIRST_ERROR_PRESERVED",
+  "operation": "UPLOAD_EIGHT_ASSETS_TO_GITHUB_DRAFT_RELEASE_381203509",
+  "firstError": "The upload command exceeded the 30-second yield and the result projection omitted its continuing session identifier, leaving the final upload state unknown.",
+  "releaseRemainsDraft": true,
+  "uploadedAssetCountTrusted": false,
+  "publicReleasePublished": false,
+  "localArtifactMutation": false,
+  "hiddenRetryPerformed": false,
+  "nextRevision": "p85-inspect-draft-assets-after-unknown-upload",
+  "nextExactAction": "READ_RELEASE_381203509_AND_ITS_ASSETS_THROUGH_THE_GITHUB_API_THEN_UPLOAD_ONLY_NAMES_PROVEN_ABSENT"
+}

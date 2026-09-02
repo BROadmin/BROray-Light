@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0010",
+  "revision": "p110-exact-plaintext-signing-key-destruction",
+  "failureId": "R048",
+  "at": "2026-09-02T15:54:05+03:00",
+  "status": "FAIL_FIRST_ERROR_PRESERVED_AFTER_SUCCESSFUL_KEY_DELETION",
+  "operation": "POST_DELETION_SIGNING_IDENTITY_VERIFICATION",
+  "firstError": "Get-FileHash could not find the assumed updater/opt/etc/broray-light-updater/release.pub path.",
+  "plaintextKey": {
+    "exactFileDeleted": true,
+    "absenceVerified": true,
+    "recoverable": false
+  },
+  "githubSecret": {
+    "metadataRequestSucceededBeforePathError": true,
+    "present": true,
+    "secretValueRead": false
+  },
+  "publicKeyHashRecheckCompleted": false,
+  "repositoryMutation": false,
+  "releaseAssetMutation": false,
+  "routerMutation": false,
+  "hiddenRetryPerformed": false,
+  "nextRevision": "p111-exact-public-key-path-post-destruction-verification",
+  "nextExactAction": "READ_THE_PRIOR_SIGNING_IDENTITY_CHECKPOINT_TO_RESOLVE_THE_EXACT_REPOSITORY_PUBLIC_KEY_PATH_THEN_VERIFY_ITS_HASH_WITHOUT_RETRYING_THE_WRONG_PATH"
+}
