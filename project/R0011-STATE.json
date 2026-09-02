@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "stage": "R0011",
-  "status": "PREBUILD_AUDIT_PASS_RELEASE_SOURCE_COMMIT_REQUIRED",
-  "currentRevision": "p19-release-source-commit-push-and-ci",
+  "status": "CI_CORRECTION_VALIDATED_COMMIT_REQUIRED",
+  "currentRevision": "p25-corrected-source-commit-and-ci-run",
   "workingBranch": "codex/r0009-updater-package",
   "authorizedTask": "ADD_FULL_RUSSIAN_DOCUMENTATION_TO_GITHUB_AND_WEBUI_HOME",
   "canonicalInput": {
@@ -29,12 +29,22 @@
     "RUSSIAN_GITHUB_GUIDE_SOURCE",
     "WEBUI_HOME_GUIDE_SOURCE_AND_STATIC_SYNTAX",
     "R0011_BUILDER_TEST_AND_WORKFLOW_SOURCE",
-    "R0011_PREBUILD_SOURCE_AUDIT"
+    "R0011_PREBUILD_SOURCE_AUDIT",
+    "R0011_RELEASE_SOURCE_COMMIT_PUSH"
   ],
+  "releaseSourceCommit": "5bd68076435930e4823dbf10d14be2a97c867c62",
+  "githubActions": {
+    "runId": 33647117931,
+    "jobId": 100304558552,
+    "status": "completed_failure",
+    "conclusion": "failure",
+    "firstFailedStep": "Build A and independent Build B with governed signing identity",
+    "url": "https://github.com/BROadmin/BROray-Light/actions/runs/33647117931"
+  },
   "processFailures": {
-    "preserved": 12,
-    "latest": "checkpoints/R0011/process-failures/FAILURE-R012-P16-ACTIONLINT-ASSET-NAME.json",
-    "latestSha256": "f582b0466b51285d77ee2c31e0064b67ca087da56aef729f34d7ae1f214fb4c3"
+    "preserved": 16,
+    "latest": "checkpoints/R0011/process-failures/FAILURE-R016-P22-CORRECTION-HASH-OUTPUT-TRUNCATED.json",
+    "latestSha256": "13c412e1b7b588df58d84a904bb1f0419d1375e5636a2853de21e4e7fcb16ba1"
   },
   "releasePolicy": {
     "currentStableImmutable": "1.0.0-r1",
@@ -45,5 +55,5 @@
     "installBeforeValidation": false
   },
   "activeBlocker": null,
-  "nextExactAction": "COMMIT_AND_PUSH_THE_EXACT_R0011_RELEASE_SOURCE_THEN_WAIT_FOR_THE_TRIGGERED_GITHUB_ACTIONS_BUILD_AND_TEST_RUN"
+  "nextExactAction": "COMMIT_AND_PUSH_THE_FULL_HISTORY_CHECKOUT_CORRECTION_THEN_AUDIT_THE_NEW_CI_RUN"
 }

@@ -29,6 +29,8 @@ jobs:
     steps:
       - name: Check out exact source
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Install bounded build tools
         run: |

@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0011",
+  "revision": "p20-ci-build-result-audit",
+  "failureId": "R014",
+  "status": "FAIL_FIRST_ERROR_PRESERVED_DIAGNOSTIC",
+  "at": "2026-09-02T18:15:49+03:00",
+  "operation": "READ_GITHUB_ACTIONS_JOB_LOG",
+  "firstError": "The authenticated job-log response was treated as a ZIP archive, but it did not contain a ZIP central directory.",
+  "impact": {
+    "repositoryFilesChanged": false,
+    "githubActionsRerun": false,
+    "tagCreated": false,
+    "publicReleaseChanged": false,
+    "routerChanged": false,
+    "credentialValuePrinted": false
+  },
+  "hiddenRetryPerformed": false,
+  "nextRevision": "p21-exact-ci-log-format-and-root-cause",
+  "nextExactAction": "INSPECT_THE_LOG_RESPONSE_HEADERS_AND_READ_IT_AS_THE_REPORTED_CONTENT_TYPE_THEN_PRESERVE_THE_EXACT_CI_ROOT_CAUSE"
+}

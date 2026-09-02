@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0011",
+  "revision": "p22-full-history-checkout-correction",
+  "status": "PASS",
+  "at": "2026-09-02T18:22:00+03:00",
+  "failedRun": 33647117931,
+  "rootCauseReceipt": {
+    "path": "checkpoints/R0011/CI-DIAGNOSIS-P21.json",
+    "sha256": "170e6ded9a8df77149e17a76de73f4c3a4a0bd2af645c73e1c4577ff575f5b3a"
+  },
+  "change": {
+    "path": ".github/workflows/r0011-build.yml",
+    "checkoutFetchDepth": 0,
+    "sha256": "076fa5edc4d7aa6eee88345d251820da43714af1e83e95b6ce4c55b6e6519caf"
+  },
+  "validation": {
+    "actionlint": "PASS",
+    "r0011SourceAudit": "PASS",
+    "gitDiffCheck": "PASS"
+  },
+  "releaseState": {
+    "newCiRunStarted": false,
+    "tagCreated": false,
+    "publicReleasePublished": false,
+    "routerChanged": false
+  },
+  "nextRevision": "p23-corrected-source-commit-and-ci-run",
+  "nextExactAction": "COMMIT_AND_PUSH_THE_FULL_HISTORY_CHECKOUT_CORRECTION_THEN_AUDIT_THE_NEW_CI_RUN"
+}

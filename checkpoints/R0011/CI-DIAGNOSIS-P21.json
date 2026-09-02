@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0011",
+  "revision": "p21-exact-ci-log-format-and-root-cause",
+  "status": "PASS_ROOT_CAUSE_PROVEN",
+  "at": "2026-09-02T18:20:00+03:00",
+  "githubActions": {
+    "runId": 33647117931,
+    "jobId": 100304558552,
+    "headSha": "5bd68076435930e4823dbf10d14be2a97c867c62",
+    "failedStep": "Build A and independent Build B with governed signing identity"
+  },
+  "log": {
+    "httpStatus": 200,
+    "contentType": "text/plain",
+    "utf8Bom": true,
+    "bytes": 24718,
+    "credentialValuePrinted": false,
+    "signingSecretMasked": true,
+    "signingSecretAvailable": true
+  },
+  "firstProductBuildError": {
+    "command": "git diff --quiet 684b27bdb53e545047419baa87c63dd86dffa469 -- src",
+    "stderr": "fatal: bad object 684b27bdb53e545047419baa87c63dd86dffa469",
+    "builderError": "working src differs from canonical R0008 commit"
+  },
+  "rootCause": "actions/checkout used its default shallow history, so the immutable canonical R0008 commit was absent from the CI checkout.",
+  "correctiveChange": {
+    "workflowPath": ".github/workflows/r0011-build.yml",
+    "checkoutFetchDepth": 0,
+    "reason": "make the canonical R0008 commit available to the existing exact source lineage check"
+  },
+  "releaseState": {
+    "artifactsPublished": false,
+    "tagCreated": false,
+    "publicReleasePublished": false,
+    "routerChanged": false
+  },
+  "nextRevision": "p22-full-history-checkout-correction",
+  "nextExactAction": "SET_ACTIONS_CHECKOUT_FETCH_DEPTH_TO_ZERO_VALIDATE_THE_WORKFLOW_COMMIT_AND_PUSH_A_NEW_CORRECTED_REVISION"
+}

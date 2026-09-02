@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0011",
+  "revision": "p20-ci-build-result-audit",
+  "failureId": "R015",
+  "status": "FAIL_FIRST_ERROR_PRESERVED_NO_PARTIAL_APPLICATION",
+  "at": "2026-09-02T18:17:05+03:00",
+  "operation": "PRESERVE_R013_R014_AND_UPDATE_R0011_STATE",
+  "firstError": "apply_patch could not match a nested githubActions status context and rejected the complete patch atomically.",
+  "verification": {
+    "r013CreatedByRejectedPatch": false,
+    "r014CreatedByRejectedPatch": false,
+    "stateChangedByRejectedPatch": false,
+    "worklogChangedByRejectedPatch": false,
+    "partialApplication": false
+  },
+  "impact": {
+    "productFilesChanged": false,
+    "githubActionsRerun": false,
+    "publicReleaseChanged": false,
+    "routerChanged": false
+  },
+  "hiddenRetryPerformed": false,
+  "nextRevision": "p21-exact-ci-log-format-and-root-cause",
+  "nextExactAction": "PRESERVE_THE_FAILURE_FILES_WITH_SMALL_PATCHES_UPDATE_STATE_USING_EXACT_CURRENT_CONTEXT_AND_INSPECT_THE_LOG_RESPONSE_FORMAT"
+}

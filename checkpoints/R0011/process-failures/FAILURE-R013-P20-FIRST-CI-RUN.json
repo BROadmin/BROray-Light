@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0011",
+  "revision": "p20-ci-build-result-audit",
+  "failureId": "R013",
+  "status": "FAIL_FIRST_ERROR_PRESERVED_CI",
+  "at": "2026-09-02T18:15:00+03:00",
+  "operation": "GITHUB_ACTIONS_R0011_BUILD_AND_TEST",
+  "firstError": "GitHub Actions run 33647117931 completed with failure in step 6, Build A and independent Build B with governed signing identity.",
+  "githubActions": {
+    "runId": 33647117931,
+    "jobId": 100304558552,
+    "headSha": "5bd68076435930e4823dbf10d14be2a97c867c62",
+    "conclusion": "failure",
+    "successfulStepsBeforeFailure": [
+      "Check out exact source",
+      "Install bounded build tools",
+      "Validate documentation source",
+      "Fetch pinned public inputs"
+    ],
+    "firstFailedStep": "Build A and independent Build B with governed signing identity",
+    "stepsAfterFailureSkipped": true,
+    "artifactsPublished": false
+  },
+  "rootCause": "PENDING_EXACT_LOG_EXTRACTION",
+  "releaseState": {
+    "tagCreated": false,
+    "publicReleasePublished": false,
+    "routerChanged": false
+  },
+  "hiddenRetryPerformed": false,
+  "nextRevision": "p21-exact-ci-log-format-and-root-cause",
+  "nextExactAction": "READ_THE_EXACT_JOB_LOG_RESPONSE_FORMAT_AND_EXTRACT_THE_FIRST_FAILED_COMMAND_WITHOUT_RERUNNING_THE_FAILED_REVISION"
+}
