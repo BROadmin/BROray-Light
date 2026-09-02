@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0011",
+  "revision": "p27-posix-isolated-harness-adapter",
+  "failureId": "R018",
+  "status": "FAIL_FIRST_ERROR_PRESERVED_VALIDATION",
+  "at": "2026-09-02T18:34:04.9726230+03:00",
+  "operation": "LOCAL_POSIX_ADAPTER_MOCK_VALIDATION",
+  "firstError": "pathlib.UnsupportedOperation: cannot instantiate PosixPath on your system",
+  "completedBeforeFailure": {
+    "pythonSyntax": "PASS",
+    "r0011SourceAudit": "PASS"
+  },
+  "cause": "The validation script changed the process-wide os.name value on Windows; pathlib then attempted to instantiate PosixPath on Windows before the adapter could be exercised.",
+  "productCodeFailure": false,
+  "repositoryMutationFromFailedCommand": false,
+  "githubActionsRerun": false,
+  "tagCreated": false,
+  "publicReleasePublished": false,
+  "routerChanged": false,
+  "hiddenRetryPerformed": false,
+  "nextRevision": "p28-static-posix-adapter-validation",
+  "nextExactAction": "VALIDATE_THE_POSIX_ADAPTER_WITH_STATIC_AST_CONTRACTS_AND_WINDOWS_NO_OP_IMPORT_WITHOUT_MUTATING_OS_NAME"
+}

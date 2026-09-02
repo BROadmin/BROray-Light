@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0011",
+  "revision": "p25-corrected-source-commit-and-ci-run",
+  "failureId": "R017",
+  "status": "FAIL_FIRST_ERROR_PRESERVED_CI",
+  "at": "2026-09-02T18:29:15.9404452+03:00",
+  "operation": "GITHUB_ACTIONS_R0011_CORRECTED_BUILD_AND_TEST",
+  "firstError": "Corrected GitHub Actions run 33648675603 failed in the Build A and independent Build B with governed signing identity step.",
+  "githubActions": {
+    "runId": 33648675603,
+    "jobId": 100309778593,
+    "status": "completed",
+    "conclusion": "failure",
+    "failedStep": "Build A and independent Build B with governed signing identity",
+    "url": "https://github.com/BROadmin/BROray-Light/actions/runs/33648675603"
+  },
+  "releaseSourceCommit": "88f2e877231935f0f5717bf39ef675d19badbcff",
+  "artifactsPublished": false,
+  "tagCreated": false,
+  "publicReleasePublished": false,
+  "routerChanged": false,
+  "hiddenRetryPerformed": false,
+  "nextRevision": "p26-exact-corrected-ci-root-cause",
+  "nextExactAction": "READ_THE_EXACT_TEXT_JOB_LOG_AND_PRESERVE_THE_FIRST_FAILED_COMMAND_BEFORE_ANY_CORRECTIVE_REVISION"
+}

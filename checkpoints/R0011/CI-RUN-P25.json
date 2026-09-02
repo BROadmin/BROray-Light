@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0011",
+  "revision": "p25-corrected-source-commit-and-ci-run",
+  "status": "RUNNING",
+  "at": "2026-09-02T18:27:51.5408341+03:00",
+  "branch": "codex/r0009-updater-package",
+  "releaseSourceCommit": "88f2e877231935f0f5717bf39ef675d19badbcff",
+  "githubActions": {
+    "runId": 33648675603,
+    "status": "queued",
+    "conclusion": null,
+    "url": "https://github.com/BROadmin/BROray-Light/actions/runs/33648675603"
+  },
+  "correction": {
+    "checkoutFetchDepth": 0,
+    "workflowSha256": "076fa5edc4d7aa6eee88345d251820da43714af1e83e95b6ce4c55b6e6519caf"
+  },
+  "tagCreated": false,
+  "publicReleasePublished": false,
+  "routerChanged": false,
+  "nextExactAction": "WAIT_FOR_GITHUB_ACTIONS_RUN_33648675603_AND_AUDIT_ITS_FIRST_TERMINAL_RESULT"
+}

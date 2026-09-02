@@ -4,6 +4,8 @@
 from __future__ import annotations
 
 import importlib.util
+import os
+import shutil
 import sys
 from html.parser import HTMLParser
 from pathlib import Path
@@ -186,7 +188,51 @@ def load_legacy(repo: Path):
     module.WEB_ASSET_CACHE_TOKEN = WEB_ASSET_CACHE_TOKEN
     module.PREVIOUS_RELEASE_ID = PREVIOUS_RELEASE_ID
     module.NEWER_RELEASE_ID = NEWER_RELEASE_ID
+    adapt_legacy_for_host(module)
     return module
+
+
+def adapt_legacy_for_host(module) -> None:
+    """Keep the inherited Windows harness intact while enabling its POSIX CI run."""
+    if os.name == "nt":
+        return
+
+    def prepare_tools_posix(
+        root: Path,
+        dash: Path,
+        jq: Path,
+        minisign: Path,
+        python: Path,
+    ) -> tuple[dict[str, str], Path]:
+        tools = root / "test-tools"
+        tools.mkdir()
+        environment = os.environ.copy()
+        path_entries = [
+            str(tools),
+            str(dash.parent),
+            str(jq.parent),
+            str(minisign.parent),
+            str(python.parent),
+        ]
+        path_entries.extend(environment.get("PATH", "").split(os.pathsep))
+        environment["PATH"] = os.pathsep.join(dict.fromkeys(entry for entry in path_entries if entry))
+        environment["BRORAY_LIGHT_SIGNATURE_BIN"] = module.posix(minisign)
+        return environment, tools
+
+    def remove_posix_link(path: Path) -> None:
+        if path.is_symlink():
+            path.unlink()
+        elif path.exists():
+            shutil.rmtree(path)
+
+    def make_posix_link(path: Path, target: Path) -> None:
+        path.parent.mkdir(parents=True, exist_ok=True)
+        relative_target = os.path.relpath(target, start=path.parent)
+        path.symlink_to(relative_target, target_is_directory=True)
+
+    module.prepare_tools = prepare_tools_posix
+    module.remove_junction = remove_posix_link
+    module.make_junction = make_posix_link
 
 
 def main() -> int:
