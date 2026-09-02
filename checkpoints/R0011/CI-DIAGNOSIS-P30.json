@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0011",
+  "revision": "p30-exact-posix-adapter-ci-root-cause",
+  "status": "PASS_ROOT_CAUSE_PROVEN",
+  "at": "2026-09-02T18:41:27.7043476+03:00",
+  "githubActions": {
+    "runId": 33649744452,
+    "jobId": 100313434141,
+    "logHttpStatus": 200,
+    "logContentType": "text/plain",
+    "failedStep": "Build A and independent Build B with governed signing identity"
+  },
+  "completedBeforeFailure": {
+    "buildA": "PASS",
+    "buildB": "PASS",
+    "artifactHashesByteIdentical": true,
+    "artifactCountPerBuild": 8
+  },
+  "firstProductTestError": {
+    "returnCode": 2,
+    "expectedReturnCode": 0,
+    "source": "tools/test_r0009.py:419",
+    "operation": "explicit test-tools/readlink invocation",
+    "stderr": "dash cannot open test-tools/readlink: No such file"
+  },
+  "rootCause": "The POSIX adapter correctly supplied native commands through PATH but the inherited harness invokes one readlink shim by its exact test-tools path; the adapter did not create that explicit wrapper.",
+  "correctionScope": "Create a bounded test-tools/readlink shell wrapper targeting the resolved native readlink binary in the R0011 POSIX adapter.",
+  "credentialValuePrinted": false,
+  "githubActionsRerun": false,
+  "tagCreated": false,
+  "publicReleasePublished": false,
+  "routerChanged": false,
+  "nextRevision": "p31-explicit-posix-readlink-wrapper",
+  "nextExactAction": "ADD_AND_STATICALLY_VALIDATE_THE_EXPLICIT_POSIX_READLINK_WRAPPER_THEN_COMMIT_AND_PUSH_A_NEW_REVISION"
+}

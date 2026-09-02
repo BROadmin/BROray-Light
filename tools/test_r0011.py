@@ -216,6 +216,13 @@ def adapt_legacy_for_host(module) -> None:
         ]
         path_entries.extend(environment.get("PATH", "").split(os.pathsep))
         environment["PATH"] = os.pathsep.join(dict.fromkeys(entry for entry in path_entries if entry))
+        readlink_command = shutil.which("readlink", path=environment["PATH"])
+        if readlink_command is None:
+            raise RuntimeError("POSIX acceptance adapter requires readlink")
+        module.write_shim(
+            tools / "readlink",
+            f"#!/bin/sh\nexec '{module.posix(Path(readlink_command))}' \"$@\"\n",
+        )
         environment["BRORAY_LIGHT_SIGNATURE_BIN"] = module.posix(minisign)
         return environment, tools
 
