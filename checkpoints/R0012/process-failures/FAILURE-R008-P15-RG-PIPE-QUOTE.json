@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0012_DOCUMENTATION_RELOCATION_AND_CORRECTIVE_RELEASE",
+  "failureId": "R008",
+  "revision": "p15-global-tmpfs-contract-source-audit",
+  "status": "FAIL_FIRST_ERROR_PRESERVED_RG_PIPE_QUOTE",
+  "at": "2026-09-02T23:44:38.9313449+03:00",
+  "operation": "INSPECT_R4_BUILDER_AND_POSTINST_TRANSACTION_REFERENCES",
+  "firstError": "PowerShell stripped the embedded double-quoted shell fragment inside the combined ripgrep alternation, so rg received an unclosed group and stopped before any inspection output was produced.",
+  "errorCategory": "LOCAL_AUDIT_COMMAND_QUOTING",
+  "candidateDefectObserved": false,
+  "sourceMutationStarted": true,
+  "sourceMutationPublished": false,
+  "remoteMutationPerformed": false,
+  "hiddenRetryPerformed": false,
+  "headCommit": "386b1eaaca1801fff93e367c39218bc4fe310321",
+  "nextRevision": "p16-literal-separated-builder-postinst-audit-and-global-tmpfs-correction",
+  "nextExactAction": "USE_SEPARATE_FIXED_STRING_SEARCHES_WITHOUT_A_COMBINED_REGEX_THEN_COMPLETE_THE_GLOBAL_TMPFS_AND_POSTINST_TRANSACTION_CORRECTION"
+}

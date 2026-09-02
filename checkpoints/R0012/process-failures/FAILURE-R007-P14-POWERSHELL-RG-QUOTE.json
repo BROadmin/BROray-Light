@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0012_DOCUMENTATION_RELOCATION_AND_CORRECTIVE_RELEASE",
+  "failureId": "R007",
+  "revision": "p14-r4-storage-source-correction-and-test-audit",
+  "status": "FAIL_FIRST_ERROR_PRESERVED_POWERSHELL_RG_QUOTE",
+  "at": "2026-09-02T23:38:08.2400857+03:00",
+  "operation": "SEARCH_INHERITED_XRAY_ACCEPTANCE_GATES_AFTER_INITIAL_R4_STORAGE_PATCH",
+  "firstError": "PowerShell parsed the double-quoted ripgrep expression before rg and rejected the embedded quote sequence.",
+  "errorCategory": "LOCAL_AUDIT_COMMAND_QUOTING",
+  "candidateDefectObserved": false,
+  "sourceMutationStarted": true,
+  "sourceMutationPublished": false,
+  "remoteMutationPerformed": false,
+  "hiddenRetryPerformed": false,
+  "nextRevision": "p15-single-quoted-xray-gate-audit-and-complete-r4-source-correction",
+  "nextExactAction": "USE_A_SINGLE_QUOTED_LITERAL_SAFE_SEARCH_COMPLETE_THE_8_MIB_STORAGE_FORMULAS_VERSION_PATCH_AND_DETERMINISTIC_BUILT_ARTIFACT_GATES"
+}

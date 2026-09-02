@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0012_DOCUMENTATION_RELOCATION_AND_CORRECTIVE_RELEASE",
+  "failureId": "R009",
+  "revision": "p16-literal-separated-builder-postinst-audit-and-global-tmpfs-correction",
+  "status": "FAIL_FIRST_ERROR_PRESERVED_MISSING_AUTH_OVERLAY",
+  "at": "2026-09-02T23:48:44.1263295+03:00",
+  "operation": "INSPECT_AUTH_SESSION_RUNTIME_PATHS_IN_CANONICAL_AND_OVERLAY_SOURCES",
+  "firstError": "The audit command assumed packaging/app-overlay/web-new/api/auth-common.sh existed; Get-Content reported that the overlay path was absent after successfully reading the canonical file.",
+  "errorCategory": "LOCAL_AUDIT_NONEXISTENT_PATH",
+  "candidateDefectObserved": false,
+  "successfulResultsBeforeFailure": {
+    "canonicalAuthCommonRead": true,
+    "overlayAuthCommonRead": false
+  },
+  "sourceMutationStarted": true,
+  "sourceMutationPublished": false,
+  "remoteMutationPerformed": false,
+  "hiddenRetryPerformed": false,
+  "headCommit": "386b1eaaca1801fff93e367c39218bc4fe310321",
+  "nextRevision": "p17-existing-path-global-volatile-state-audit-and-r4-correction",
+  "nextExactAction": "ENUMERATE_EXISTING_OVERLAY_FILES_FIRST_THEN_INSPECT_ONLY_RESOLVED_PATHS_AND_COMPLETE_THE_GLOBAL_TMPFS_CONTRACT"
+}

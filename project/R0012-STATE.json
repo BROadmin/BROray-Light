@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "stage": "R0012_DOCUMENTATION_RELOCATION_AND_CORRECTIVE_RELEASE",
-  "status": "R3_DRAFT_RETIRED_TAG_PRESERVED_R4_CORRECTION_STARTED",
-  "currentRevision": "p11-retire-unpublished-r3-draft-preserve-tag",
+  "status": "R4_SOURCE_CORRECTION_IN_PROGRESS_FIRST_ERROR_PRESERVED",
+  "currentRevision": "p17-existing-path-global-volatile-state-audit-and-r4-correction",
   "workingBranch": "codex/r0009-updater-package",
   "authorizedTask": "RELOCATE_RUSSIAN_DOCUMENTATION_AND_REMOVE_EMBEDDED_WEBUI_GUIDE_STABLE_1.0.0_R3",
   "canonicalInput": {
@@ -40,14 +40,14 @@
     "R0012_INDEPENDENT_CI_ARTIFACT_AUDIT"
   ],
   "processFailures": {
-    "preserved": 4,
-    "latest": "checkpoints/R0012/process-failures/FAILURE-R004-P10-XRAY-DOWNLOAD-ON-OPT.json",
-    "latestSha256": "b9510f1ac9f8fc19758f024e40103ad3db31b6df13cf19e52cef749dc0efb912",
-    "resolvedThroughRevision": "p9-quoted-exact-object-and-repeat-prepublication-check"
+    "preserved": 9,
+    "latest": "checkpoints/R0012/process-failures/FAILURE-R009-P16-MISSING-AUTH-OVERLAY.json",
+    "latestSha256": "e80e24161af23e6fd77816459195a14c5daf411eb248500e75e2399b036b038a",
+    "resolvedThroughRevision": "p16-literal-separated-builder-postinst-audit-and-global-tmpfs-correction"
   },
   "activeBlocker": null,
   "candidateReady": false,
   "releaseReady": false,
   "publicReleasePublished": false,
-  "nextExactAction": "PATCH_THE_R4_XRAY_TMPFS_AND_CLEAN_BOOTSTRAP_STORAGE_CONTRACT_ADD_DETERMINISTIC_GATES_AND_RUN_SOURCE_AUDIT_BEFORE_ANY_NEW_BUILD"
+  "nextExactAction": "ENUMERATE_EXISTING_OVERLAY_FILES_FIRST_THEN_INSPECT_ONLY_RESOLVED_PATHS_AND_COMPLETE_THE_GLOBAL_TMPFS_CONTRACT"
 }

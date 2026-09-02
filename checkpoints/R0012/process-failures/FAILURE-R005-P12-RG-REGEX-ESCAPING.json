@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0012_DOCUMENTATION_RELOCATION_AND_CORRECTIVE_RELEASE",
+  "failureId": "R005",
+  "revision": "p12-r4-tmpfs-source-reference-audit",
+  "status": "FAIL_FIRST_ERROR_PRESERVED_RG_REGEX_ESCAPING",
+  "at": "2026-09-02T23:31:00.3261792+03:00",
+  "operation": "SEARCH_FOR_ALL_XRAY_TEMPORARY_STORAGE_AND_BOOTSTRAP_TEST_REFERENCES_BEFORE_PATCHING",
+  "firstError": "The combined ripgrep regular expression was malformed after PowerShell escaping and rg rejected it as an unclosed group.",
+  "errorCategory": "LOCAL_AUDIT_COMMAND_QUOTING",
+  "candidateDefectObserved": false,
+  "sourceMutationStarted": false,
+  "remoteMutationPerformed": false,
+  "hiddenRetryPerformed": false,
+  "nextRevision": "p13-literal-storage-reference-audit-and-r4-source-correction",
+  "nextExactAction": "RUN_SEPARATE_FIXED_STRING_SEARCHES_FOR_XRAY_STORAGE_REFERENCES_THEN_PATCH_ONLY_THE_IDENTIFIED_FILES_AND_ADD_EXACT_REGRESSION_GATES"
+}

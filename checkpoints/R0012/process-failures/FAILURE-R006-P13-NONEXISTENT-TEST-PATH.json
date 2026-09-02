@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0012_DOCUMENTATION_RELOCATION_AND_CORRECTIVE_RELEASE",
+  "failureId": "R006",
+  "revision": "p13-literal-storage-reference-audit",
+  "status": "FAIL_FIRST_ERROR_PRESERVED_NONEXISTENT_SEARCH_PATH",
+  "at": "2026-09-02T23:32:11.5599178+03:00",
+  "operation": "SEARCH_ISOLATED_TESTS_FOR_POSTINST_AND_XRAY_TEMPORARY_STORAGE_COVERAGE",
+  "firstError": "The audit command included tools/test_r0010.py, which does not exist, so ripgrep reported incomplete path coverage.",
+  "errorCategory": "LOCAL_AUDIT_PATH_ASSUMPTION",
+  "candidateDefectObserved": false,
+  "sourceMutationStarted": false,
+  "successfulResultsBeforeFailure": {
+    "historicalPostinstExecutionsLocated": 3,
+    "temporaryStorageWebuiAssertionLocated": true,
+    "builderLifecycleInputLocated": true
+  },
+  "remoteMutationPerformed": false,
+  "hiddenRetryPerformed": false,
+  "nextRevision": "p14-existing-file-storage-test-audit-and-r4-source-correction",
+  "nextExactAction": "SEARCH_ONLY_EXISTING_TEST_FILES_THEN_APPLY_THE_R4_STORAGE_AND_VERSION_PATCH_WITH_WORKFLOW_SRC_TRIGGER_COVERAGE"
+}
