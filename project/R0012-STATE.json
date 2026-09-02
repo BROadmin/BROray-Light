@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "stage": "R0012_DOCUMENTATION_RELOCATION_AND_CORRECTIVE_RELEASE",
-  "status": "R3_REJECTED_BEFORE_PUBLICATION_XRAY_TMPFS_CONTRACT_FAILURE",
-  "currentRevision": "p10-router-storage-contract-audit",
+  "status": "R3_DRAFT_RETIRED_TAG_PRESERVED_R4_CORRECTION_STARTED",
+  "currentRevision": "p11-retire-unpublished-r3-draft-preserve-tag",
   "workingBranch": "codex/r0009-updater-package",
   "authorizedTask": "RELOCATE_RUSSIAN_DOCUMENTATION_AND_REMOVE_EMBEDDED_WEBUI_GUIDE_STABLE_1.0.0_R3",
   "canonicalInput": {
@@ -49,5 +49,5 @@
   "candidateReady": false,
   "releaseReady": false,
   "publicReleasePublished": false,
-  "nextExactAction": "PRESERVE_THE_R3_TAG_DELETE_ONLY_THE_UNPUBLISHED_R3_DRAFT_THEN_PATCH_XRAY_DOWNLOAD_AND_EXTRACTION_TO_TMPFS_REDUCE_CLEAN_BOOTSTRAP_DUPLICATION_AND_ADD_STORAGE_CONTRACT_GATES_FOR_R4"
+  "nextExactAction": "PATCH_THE_R4_XRAY_TMPFS_AND_CLEAN_BOOTSTRAP_STORAGE_CONTRACT_ADD_DETERMINISTIC_GATES_AND_RUN_SOURCE_AUDIT_BEFORE_ANY_NEW_BUILD"
 }

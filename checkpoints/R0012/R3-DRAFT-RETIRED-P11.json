@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0012_DOCUMENTATION_RELOCATION_AND_CORRECTIVE_RELEASE",
+  "revision": "p11-retire-unpublished-r3-draft-preserve-tag",
+  "status": "PASS",
+  "at": "2026-09-02T23:29:25.2959159+03:00",
+  "rejectedRevision": {
+    "releaseId": "1.0.0-r3",
+    "tag": "v1.0.0-r3",
+    "tagObject": "e243e0fe82584efac1f49cb3f8b3c69635456735",
+    "tagPeeledCommit": "3a756bb7e2506af97e4c7988947fee1e89639c2f",
+    "tagPreserved": true,
+    "tagMovedOrOverwritten": false,
+    "publicReleasePublished": false
+  },
+  "draftCleanup": {
+    "deletedDraftReleaseId": 381549858,
+    "deletedDraftAssets": 8,
+    "exactIdentityVerifiedBeforeDelete": true,
+    "recoverableCiArtifactId": 9865005802,
+    "recoverableCiArtifactSha256": "58e81a3fb7e3ff4c9a80a42ed14af87a371e8be073c5c6081b01b3843a2cf132"
+  },
+  "stableChannel": {
+    "unchanged": true,
+    "latestTag": "v1.0.0-r2",
+    "latestReleaseId": 381418161
+  },
+  "correctedRevision": {
+    "releaseId": "1.0.0-r4",
+    "tag": "v1.0.0-r4",
+    "sourceCommit": null,
+    "publicReleasePublished": false
+  },
+  "routerMutationPerformed": false,
+  "productionServerMutationPerformed": false,
+  "docsPublished": false,
+  "candidateReady": false,
+  "nextRevision": "p12-r4-tmpfs-and-storage-contract-source-correction",
+  "nextExactAction": "PATCH_THE_R4_XRAY_TMPFS_AND_CLEAN_BOOTSTRAP_STORAGE_CONTRACT_ADD_DETERMINISTIC_GATES_AND_RUN_SOURCE_AUDIT_BEFORE_ANY_NEW_BUILD"
+}
