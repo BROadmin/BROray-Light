@@ -1,0 +1,199 @@
+name: R0012 atomic rename helper proof
+
+on:
+  push:
+    branches:
+      - codex/r0009-updater-package
+    paths:
+      - tools/native/aarch64/broray-light-rename-noreplace.S
+      - tools/test_r0012_rename_helper.py
+      - .github/workflows/r0012-helper-proof.yml
+      - .gitattributes
+
+permissions:
+  contents: read
+
+concurrency:
+  group: r0012-helper-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  helper-build-a:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install bounded AArch64 assembler and linker
+        run: |
+          set -eu
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends binutils-aarch64-linux-gnu
+      - name: Build and statically inspect helper A
+        run: |
+          set -eu
+          export LC_ALL=C TZ=UTC SOURCE_DATE_EPOCH=0
+          umask 022
+          out="$RUNNER_TEMP/helper-a"
+          mkdir -p "$out"
+          aarch64-linux-gnu-as --fatal-warnings -march=armv8-a \
+            -o "$out/helper.o" tools/native/aarch64/broray-light-rename-noreplace.S
+          aarch64-linux-gnu-ld -EL -nostdlib -static --no-dynamic-linker \
+            --build-id=none -z noexecstack -z separate-code -s --fatal-warnings \
+            -e _start -o "$out/broray-light-rename-noreplace" "$out/helper.o"
+          chmod 0755 "$out/broray-light-rename-noreplace"
+          python3 tools/test_r0012_rename_helper.py \
+            --helper "$out/broray-light-rename-noreplace" > "$out/static-audit.json"
+          aarch64-linux-gnu-readelf -W -h -l -S -d -r \
+            "$out/broray-light-rename-noreplace" > "$out/readelf.txt"
+          aarch64-linux-gnu-objdump -d \
+            "$out/broray-light-rename-noreplace" > "$out/objdump.txt"
+          sha256sum tools/native/aarch64/broray-light-rename-noreplace.S \
+            | awk '{print $1}' > "$out/SOURCE-SHA256"
+          (
+            cd "$out"
+            sha256sum broray-light-rename-noreplace > SHA256SUMS
+            sha256sum -c SHA256SUMS
+          )
+          aarch64-linux-gnu-as --version | head -n 1 > "$out/toolchain.txt"
+          aarch64-linux-gnu-ld --version | head -n 1 >> "$out/toolchain.txt"
+          rm -f "$out/helper.o"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: r0012-helper-build-a
+          path: ${{ runner.temp }}/helper-a/*
+          if-no-files-found: error
+          retention-days: 14
+
+  helper-build-b:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install bounded AArch64 assembler and linker
+        run: |
+          set -eu
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends binutils-aarch64-linux-gnu
+      - name: Build and statically inspect helper B
+        run: |
+          set -eu
+          export LC_ALL=C TZ=UTC SOURCE_DATE_EPOCH=0
+          umask 022
+          out="$RUNNER_TEMP/helper-b"
+          mkdir -p "$out"
+          aarch64-linux-gnu-as --fatal-warnings -march=armv8-a \
+            -o "$out/helper.o" tools/native/aarch64/broray-light-rename-noreplace.S
+          aarch64-linux-gnu-ld -EL -nostdlib -static --no-dynamic-linker \
+            --build-id=none -z noexecstack -z separate-code -s --fatal-warnings \
+            -e _start -o "$out/broray-light-rename-noreplace" "$out/helper.o"
+          chmod 0755 "$out/broray-light-rename-noreplace"
+          python3 tools/test_r0012_rename_helper.py \
+            --helper "$out/broray-light-rename-noreplace" > "$out/static-audit.json"
+          aarch64-linux-gnu-readelf -W -h -l -S -d -r \
+            "$out/broray-light-rename-noreplace" > "$out/readelf.txt"
+          aarch64-linux-gnu-objdump -d \
+            "$out/broray-light-rename-noreplace" > "$out/objdump.txt"
+          sha256sum tools/native/aarch64/broray-light-rename-noreplace.S \
+            | awk '{print $1}' > "$out/SOURCE-SHA256"
+          (
+            cd "$out"
+            sha256sum broray-light-rename-noreplace > SHA256SUMS
+            sha256sum -c SHA256SUMS
+          )
+          aarch64-linux-gnu-as --version | head -n 1 > "$out/toolchain.txt"
+          aarch64-linux-gnu-ld --version | head -n 1 >> "$out/toolchain.txt"
+          rm -f "$out/helper.o"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: r0012-helper-build-b
+          path: ${{ runner.temp }}/helper-b/*
+          if-no-files-found: error
+          retention-days: 14
+
+  compare-and-isolated-test:
+    needs:
+      - helper-build-a
+      - helper-build-b
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: r0012-helper-build-a
+          path: ${{ runner.temp }}/proof/a
+      - uses: actions/download-artifact@v4
+        with:
+          name: r0012-helper-build-b
+          path: ${{ runner.temp }}/proof/b
+      - name: Compare independent bytes and run isolated syscall matrix
+        run: |
+          set -eu
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends qemu-user-static
+          a="$RUNNER_TEMP/proof/a/broray-light-rename-noreplace"
+          b="$RUNNER_TEMP/proof/b/broray-light-rename-noreplace"
+          chmod 0755 "$a" "$b"
+          cmp "$a" "$b"
+          mkdir -p "$RUNNER_TEMP/runtime-filesystem"
+          python3 tools/test_r0012_rename_helper.py \
+            --helper "$a" \
+            --runner "$(command -v qemu-aarch64-static)" \
+            --runtime-root "$RUNNER_TEMP/runtime-filesystem" \
+            --runtime-root /dev/shm > "$RUNNER_TEMP/proof/runtime-audit.json"
+          HELPER_PATH="$a" RECEIPT_PATH="$RUNNER_TEMP/proof/R0012-HELPER-CI-RECEIPT.json" \
+            python3 - <<'PY'
+          import hashlib
+          import json
+          import os
+          from pathlib import Path
+
+          helper = Path(os.environ["HELPER_PATH"])
+          payload = helper.read_bytes()
+          receipt = {
+              "schemaVersion": 1,
+              "stage": "R0012",
+              "status": "PASS",
+              "commit": os.environ["GITHUB_SHA"],
+              "source": "tools/native/aarch64/broray-light-rename-noreplace.S",
+              "sourceSha256": hashlib.sha256(
+                  Path("tools/native/aarch64/broray-light-rename-noreplace.S").read_bytes()
+              ).hexdigest(),
+              "artifact": "broray-light-rename-noreplace",
+              "artifactSha256": hashlib.sha256(payload).hexdigest(),
+              "artifactSizeBytes": len(payload),
+              "architecture": "AArch64",
+              "builds": 2,
+              "freshRunners": 2,
+              "comparison": "BYTE_IDENTICAL",
+              "isolatedRuntimeMatrices": ["RUNNER_TEMP", "TMPFS_DEV_SHM"],
+              "updaterIntegrated": False,
+          }
+          Path(os.environ["RECEIPT_PATH"]).write_text(
+              json.dumps(receipt, indent=2, sort_keys=True) + "\n",
+              encoding="utf-8",
+              newline="\n",
+          )
+          PY
+          cp "$a" "$RUNNER_TEMP/proof/broray-light-rename-noreplace"
+          (
+            cd "$RUNNER_TEMP/proof"
+            sha256sum \
+              broray-light-rename-noreplace \
+              R0012-HELPER-CI-RECEIPT.json \
+              runtime-audit.json > FINAL-SHA256SUMS
+            sha256sum -c FINAL-SHA256SUMS
+          )
+      - uses: actions/upload-artifact@v4
+        with:
+          name: r0012-helper-proof-${{ github.sha }}
+          path: |
+            ${{ runner.temp }}/proof/broray-light-rename-noreplace
+            ${{ runner.temp }}/proof/R0012-HELPER-CI-RECEIPT.json
+            ${{ runner.temp }}/proof/runtime-audit.json
+            ${{ runner.temp }}/proof/FINAL-SHA256SUMS
+            ${{ runner.temp }}/proof/a/readelf.txt
+            ${{ runner.temp }}/proof/a/objdump.txt
+            ${{ runner.temp }}/proof/a/toolchain.txt
+          if-no-files-found: error
+          retention-days: 14
