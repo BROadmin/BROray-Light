@@ -2,10 +2,26 @@
 
 Лёгкая отдельная редакция BROray для маршрутизаторов Keenetic: только VLESS, понятный WebUI и безопасное управление Xray без функций маршрутизации полного BROray.
 
-[Документация](https://docs.brovibe.cloud/broray/#broray-light) · [Последний Stable-релиз](https://github.com/BROadmin/BROray-Light/releases/latest) · [Сообщить об ошибке](https://github.com/BROadmin/BROray-Light/issues) · [Поддержка в Telegram](https://t.me/BROvibe_vpn)
+[Документация](https://docs.brovibe.cloud/broray-light/) · [Последний Stable-релиз](https://github.com/BROadmin/BROray-Light/releases/latest) · [Сообщить об ошибке](https://github.com/BROadmin/BROray-Light/issues) · [Поддержка в Telegram](https://t.me/BROvibe_vpn)
+
+## Статус релиза
+
+BROray-Light `1.0.0-r1` опубликован в Stable 2 сентября 2026 года.
+
+| Компонент | Значение |
+| --- | --- |
+| BROray-Light | `1.0.0-r1` |
+| Архитектура | `aarch64-3.10` |
+| Xray при чистой установке | `26.7.28` |
+| Обновитель | `broray-light-updater/5-light1` |
+| Страницы WebUI | Главная, Серверы, Подписки |
+| Протокол | только VLESS |
+
+Релиз прошёл независимые Build A/B, проверку воспроизводимости, isolated-root сценарии чистой установки, обновления, равной версии, запрета downgrade, rollback и сохранности пользовательских данных, а также разрешённую физическую проверку на Keenetic. Публичный пакет и индекс обновления привязаны к проверенным SHA-256; Stable не пересобирался при публикации.
 
 ## Содержание
 
+- [Статус релиза](#статус-релиза)
 - [Возможности и ограничения](#возможности-и-ограничения)
 - [Требования](#требования)
 - [Установка](#установка)
@@ -47,14 +63,20 @@ BROray-Light предназначен для одного понятного с�
 - архитектуру Entware `aarch64-3.10`;
 - рабочий доступ в интернет с маршрутизатора;
 - SSH-доступ с правами `root`;
-- не менее 100 МБ свободного места в `/opt` для пакета, Xray, обновления и предыдущего рабочего слота;
+- около 80 МиБ свободного места в `/opt` перед чистой установкой r1;
+- не менее 64 МиБ свободного места в `/tmp` (оперативной памяти) на время установки и операций Xray;
 - отсутствие установленного полного BROray в `/opt/broray`.
+
+После установки постоянные файлы занимают около 35 МиБ в `/opt`: Xray — около 33,75 МиБ, собственные файлы BROray-Light без Xray — около 0,8 МиБ. Во время чистой установки r1 проверенный Xray кратковременно существует и как bootstrap, и как итоговый runtime, поэтому до запуска рекомендуется около 80 МиБ свободного места в `/opt`. Это запас на безопасную операцию, а не постоянный размер BROray-Light.
+
+Загрузки чистой установки выполняются в `/tmp`, то есть в оперативную память роутера. В `/opt` находятся приложение, пользовательская конфигурация, серверы, подписки, рабочий Xray и служебное состояние безопасных операций. Указанные 80 МиБ — рекомендуемый свободный объём перед установкой для сохранения запаса на последующую атомарную замену Xray, а не постоянный размер Light.
 
 Команды предварительной проверки:
 
 ```sh
 opkg print-architecture
 df -h /opt
+df -h /tmp
 test ! -e /opt/broray && test ! -e /opt/etc/init.d/S24broray && echo "Конфликтов нет"
 ```
 
@@ -62,28 +84,44 @@ test ! -e /opt/broray && test ! -e /opt/etc/init.d/S24broray && echo "Конфл
 
 ## Установка
 
-Ниже приведена установка Stable `1.0.0-r3`. Выполняйте команды в SSH-сессии Keenetic от `root`.
+Ниже приведена установка Stable `1.0.0-r1`. Выполняйте команды в SSH-сессии Keenetic от `root`.
 
 ```sh
+(
+set -eu
+INSTALLER=/tmp/broray-light-install-1.0.0-r1.sh
+PACKAGE=/tmp/broray-light_1.0.0-r1_aarch64-3.10.ipk
+trap 'rm -f "$INSTALLER" "$PACKAGE"' EXIT
+
 opkg update
-cd /tmp
-curl -fL https://github.com/BROadmin/BROray-Light/releases/download/v1.0.0-r3/SHA256SUMS -o BROray-Light-SHA256SUMS
-curl -fL https://github.com/BROadmin/BROray-Light/releases/download/v1.0.0-r3/broray-light-install-1.0.0-r3.sh -o broray-light-install-1.0.0-r3.sh
-grep 'broray-light-install-1.0.0-r3.sh$' BROray-Light-SHA256SUMS | sha256sum -c -
-chmod 700 broray-light-install-1.0.0-r3.sh
-/opt/bin/ash ./broray-light-install-1.0.0-r3.sh
+opkg install ca-bundle ca-certificates curl
+
+curl -q --proto '=https' --proto-redir '=https' --tlsv1.2 \
+  --connect-timeout 15 --max-time 600 --retry 3 -fsSL \
+  -H 'Cache-Control: no-cache, no-store' -H 'Accept-Encoding: identity' \
+  'https://github.com/BROadmin/BROray-Light/releases/download/v1.0.0-r1/broray-light-install-1.0.0-r1.sh' \
+  -o "$INSTALLER"
+
+[ "$(sha256sum "$INSTALLER" | awk 'NR==1{print $1}')" = \
+  'da8c57ee3b68156462a2dea5cb2f3b6d1706ed754b1cd8904b745ee1fb86c51d' ]
+
+chmod 700 "$INSTALLER"
+/opt/bin/ash "$INSTALLER"
+)
 ```
 
 Установщик:
 
 1. требует запуск от `root`;
 2. прекращает работу при обнаружении полного BROray;
-3. загружает пакет только по HTTPS;
-4. проверяет точный размер и SHA-256 пакета;
-5. устанавливает зависимости через `opkg`;
-6. разворачивает проверенный Xray в `/opt/broray-light/runtime/xray`;
+3. загружает точный пакет `1.0.0-r1` по HTTPS во временную память `/tmp`;
+4. проверяет размер и SHA-256 пакета до передачи в `opkg`;
+5. устанавливает зависимости и пакет через `opkg`;
+6. разворачивает проверенный Xray `26.7.28` в `/opt/broray-light/runtime/xray`;
 7. запускает `S23broray-light-updater` и `S24broray-light`;
 8. публикует WebUI через отдельный объект KeenDNS `brolight`, если его ownership можно доказать однозначно.
+
+Обработчик `trap` удаляет загруженные установочные файлы из `/tmp` и при успехе, и при ошибке. Если сама SSH-сессия оборвалась, удалите два точных файла `/tmp/broray-light-install-1.0.0-r1.sh` и `/tmp/broray-light_1.0.0-r1_aarch64-3.10.ipk`, затем повторите блок после устранения причины.
 
 После установки проверьте:
 
@@ -93,6 +131,17 @@ chmod 700 broray-light-install-1.0.0-r3.sh
 /opt/broray-light/runtime/xray version
 /opt/bin/broray-light-web-publishctl status
 ```
+
+### Контрольные суммы публичного r1
+
+| Артефакт | SHA-256 |
+| --- | --- |
+| `broray-light_1.0.0-r1_aarch64-3.10.ipk` | `707431aa20c01958edfe40ed04a70c24308a9dabc9ff26f758101c952827d432` |
+| `broray-light-install-1.0.0-r1.sh` | `da8c57ee3b68156462a2dea5cb2f3b6d1706ed754b1cd8904b745ee1fb86c51d` |
+| `release.json` | `ccbd353f6042be992ae1aab293447ae7f6f57727d263a5b58253bde276cd0cf6` |
+| `release.json.minisig` | `da2ff05d973c19b3b4ea79bc48329cecdb9e0cdae99f3dcd05efd2b703e2d84d` |
+
+Полный список находится в [`SHA256SUMS`](https://github.com/BROadmin/BROray-Light/releases/download/v1.0.0-r1/SHA256SUMS) релиза.
 
 ## Вход в WebUI
 
@@ -288,4 +337,4 @@ rm -rf /opt/var/lock/broray-light /opt/var/lock/broray-light-updater
 - релизы: [GitHub Releases](https://github.com/BROadmin/BROray-Light/releases);
 - лицензия проекта: [GNU GPL v3](LICENSE).
 
-Расширенная самостоятельная памятка: [docs/USER-GUIDE-RU.md](docs/USER-GUIDE-RU.md). Техническое продолжение для Codex начинается с [docs/CODEX-HANDOFF.md](docs/CODEX-HANDOFF.md).
+Версия этого руководства для сайта: [docs.brovibe.cloud/broray-light/](https://docs.brovibe.cloud/broray-light/).
