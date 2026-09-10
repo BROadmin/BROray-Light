@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0013",
+  "revision": "p26-real-webui-updater-invocation-audit",
+  "status": "FAIL_FIRST_ERROR",
+  "gate": "legacy_webui_actual_update_argv",
+  "observed": "Accepted r1 update-start.cgi invokes the unchanged updater as 'update --json'. P24's admission argv grammar and P24/P25 fixtures covered 'update' only.",
+  "evidence": {
+    "path": "web-new/api/broray/update-start.cgi",
+    "baselineCommit": "9e5fce9bfa7c82bfc2f2654d80fd3987c5259963",
+    "invocation": "$BRORAY_LIGHT_UPDATER update --json"
+  },
+  "cause": "The compatibility fixture omitted the real WebUI's optional output-format flag, so the strict migration guard would refuse a genuine WebUI-triggered r1 update.",
+  "nextRevision": "p27-exact-r1-webui-json-argv-compatibility",
+  "correction": "Permit only the exact known optional --json argument after update and run both admission and reboot-recovery suites using that real argv.",
+  "candidateReady": false
+}

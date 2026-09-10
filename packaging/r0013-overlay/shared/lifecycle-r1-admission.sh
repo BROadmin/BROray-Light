@@ -52,8 +52,8 @@ brl_r1_owner_argv()
       END {
         shell=(a[1]=="/opt/bin/ash" || a[1]=="/bin/sh" || a[1]=="/bin/dash" || a[1]=="/usr/bin/dash");
         busybox=(a[1]=="/bin/busybox" || a[1]=="/usr/bin/busybox");
-        ok=(NR==3 && shell && a[2]==engine && a[3]=="update") ||
-           (NR==4 && busybox && a[2]=="ash" && a[3]==engine && a[4]=="update");
+        ok=(shell && a[2]==engine && a[3]=="update" && (NR==3 || (NR==4 && a[4]=="--json"))) ||
+           (busybox && a[2]=="ash" && a[3]==engine && a[4]=="update" && (NR==4 || (NR==5 && a[5]=="--json")));
         exit !ok
       }'
 }

@@ -70,7 +70,7 @@ exit 0
         self.write(self.executable / 'service', hook.encode(), 0o755)
 
     def interrupted(self):
-        child = subprocess.Popen([*self.shell, str(self.engine), 'update'], env=self.env,
+        child = subprocess.Popen([*self.shell, str(self.engine), *self.update_options], env=self.env,
                                  stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True, start_new_session=True)
         self.children.append(child)
         deadline = time.monotonic()+10
@@ -185,9 +185,10 @@ def main():
     if args.busybox_tools:
         import r0013_busybox_fixture
         utility_fixture = r0013_busybox_fixture.enable()
-    report = dict(stage='R0013', revision='p25-durable-transition-receipt-and-legacy-lock-recovery',
+    report = dict(stage='R0013', revision='p27-exact-r1-webui-json-argv-compatibility',
                   scope='REAL_R1_ENGINE_SIMULATED_RAM_LOSS_FIXTURE_APP_SERVICE', engineSha256=ENGINE_SHA,
-                  journalSha256=hashlib.sha256(JOURNAL.read_bytes()).hexdigest(), shell=shell,
+                  journalSha256=hashlib.sha256(JOURNAL.read_bytes()).hexdigest(),
+                  admissionSha256=hashlib.sha256(ADMISSION.read_bytes()).hexdigest(), shell=shell,
                   utilities='BusyBox applets' if args.busybox_tools else 'host utilities', tests=[])
     failed = False
     for name, mode, test in cases():

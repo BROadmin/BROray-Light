@@ -112,6 +112,7 @@ class R1Fixture(Fixture):
         assert hashlib.sha256(payload).hexdigest() == ENGINE_SHA
         self.write(self.engine, payload, 0o755)
         self.env['R0013_FIXTURE_SHELL'] = json.dumps(shell)
+        self.update_options = ['update', '--json']
         command = ' '.join(shlex.quote(x) for x in [sys.executable, '-B', str(Path(__file__).resolve()), '--callback', mode])
         hook = '''#!/bin/sh
 if [ "$1" = start ] && [ "$(readlink "$2/current")" = releases/2.0.0-r1 ]; then
@@ -122,7 +123,7 @@ exit 0
         self.write(self.executable / 'service', hook.encode(), 0o755)
 
     def update(self, expected=0):
-        result = subprocess.run([*self.shell, str(self.engine), 'update'], env=self.env,
+        result = subprocess.run([*self.shell, str(self.engine), *self.update_options], env=self.env,
                                 capture_output=True, text=True, timeout=20)
         assert result.returncode == expected, (result.returncode, result.stdout, result.stderr)
         assert hashlib.sha256(self.engine.read_bytes()).hexdigest() == ENGINE_SHA
@@ -131,6 +132,8 @@ exit 0
 
 def cases():
     yield 'exact_live_r1_signed_transaction_admitted_read_only', 'valid', None
+    yield 'exact_live_r1_cli_without_json_is_still_supported', 'cli', None
+    yield 'unrecognized_update_argument_is_refused', 'bad-argv', 'NOT_UPDATER_CHILD'
     for mode, error in [('wrong-lock-owner', 'LOCK_OWNER_MISMATCH'),
                         ('wrong-operation', 'LOCK_SHAPE'), ('wrong-phase', 'TRANSACTION'),
                         ('tampered-slot', 'SLOT_MANIFEST'), ('changed-engine', 'ENGINE_IDENTITY'),
@@ -154,13 +157,15 @@ def main():
     if args.busybox_tools:
         import r0013_busybox_fixture
         utility_fixture = r0013_busybox_fixture.enable()
-    report = dict(stage='R0013', revision='p24-exact-r1-transition-admission',
+    report = dict(stage='R0013', revision='p27-exact-r1-webui-json-argv-compatibility',
                   scope='READ_ONLY_ADMISSION_REAL_R1_ENGINE_TEST_SIGNATURES_FIXTURE_APP_SERVICE',
                   engineSha256=ENGINE_SHA, admissionSha256=hashlib.sha256(ADMISSION.read_bytes()).hexdigest(),
                   shell=shell, utilities='BusyBox applets' if args.busybox_tools else 'host utilities', tests=[])
     failed = False
     for name, mode, error in cases():
         fixture = R1Fixture(shell, mode)
+        if mode == 'cli': fixture.update_options = ['update']
+        elif mode == 'bad-argv': fixture.update_options.append('--force')
         try:
             before = fixture.persistent()
             result = fixture.update(1 if error else 0)
@@ -181,7 +186,7 @@ def main():
     if not failed:
         fixture = R1Fixture(shell, 'pause')
         try:
-            child = subprocess.Popen([*shell, str(fixture.engine), 'update'], env=fixture.env,
+            child = subprocess.Popen([*shell, str(fixture.engine), *fixture.update_options], env=fixture.env,
                                      stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True, start_new_session=True)
             fixture.children.append(child)
             deadline = time.monotonic()+10

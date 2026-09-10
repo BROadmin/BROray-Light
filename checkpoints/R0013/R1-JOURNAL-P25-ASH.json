@@ -1,0 +1,51 @@
+{
+  "stage": "R0013",
+  "revision": "p25-durable-transition-receipt-and-legacy-lock-recovery",
+  "scope": "REAL_R1_ENGINE_SIMULATED_RAM_LOSS_FIXTURE_APP_SERVICE",
+  "engineSha256": "773aaf37893ab100e7023d63c8061d8c4763a4d6186844bb3b671d758c145743",
+  "journalSha256": "ff6f5ad82f0356d9743a17fbba25486598aa052541619f032e593f142c3cfb21",
+  "shell": [
+    "/usr/bin/busybox",
+    "ash"
+  ],
+  "utilities": "BusyBox applets",
+  "tests": [
+    {
+      "name": "record_once_idempotence_live_fence_then_normal_completion",
+      "status": "PASS"
+    },
+    {
+      "name": "foreign_durable_receipt_preserved",
+      "status": "PASS"
+    },
+    {
+      "name": "interrupted_r1_and_ram_loss_reconcile_exact_persistent_locks",
+      "status": "PASS"
+    },
+    {
+      "name": "partial_legacy_cleanup_is_recoverable_inside_recorded_inodes",
+      "status": "PASS"
+    },
+    {
+      "name": "refuse_inode_without_deleting_either_lock",
+      "status": "PASS"
+    },
+    {
+      "name": "refuse_extra-child_without_deleting_either_lock",
+      "status": "PASS"
+    },
+    {
+      "name": "refuse_receipt-mode_without_deleting_either_lock",
+      "status": "PASS"
+    },
+    {
+      "name": "refuse_symlink_without_deleting_either_lock",
+      "status": "PASS"
+    },
+    {
+      "name": "old_unmarked_ram_work_requires_explicit_transition",
+      "status": "PASS"
+    }
+  ],
+  "status": "PASS_LEGACY_RECEIPT_AND_RECONCILIATION"
+}
