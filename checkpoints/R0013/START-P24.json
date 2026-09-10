@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0013",
+  "revision": "p24-exact-r1-transition-admission",
+  "status": "IN_PROGRESS",
+  "inputPlatform": "published-r1-engine-unchanged",
+  "inputEngineSha256": "773aaf37893ab100e7023d63c8061d8c4763a4d6186844bb3b671d758c145743",
+  "targetRelease": "2.0.0-r1",
+  "scope": "Read-only admission proof for app startup migration under the exact legacy updater; no filesystem migration in this subgate",
+  "admission": [
+    "Exact installed r1 engine bytes and update argv",
+    "Same live PID owns both legacy request/global update locks",
+    "Calling process descends from that updater PID",
+    "Durable transaction is target-active from 1.0.0-r1 to 2.0.0-r1",
+    "Current symlink and canonical candidate manifest match target",
+    "Full-product coexistence and malformed/foreign paths fail closed"
+  ],
+  "followOnDesign": [
+    "Place a manifest-verified standalone transition/rollback driver before changing external init files",
+    "Handle old cached S24 start-gate: initial old start must see newly started web/daemon; only exact transient runtime aliases are permissible, never a persistent operational lock alias",
+    "Preserve old RAM work and old runtime files without adopting an unmarked namespace",
+    "Atomically replace external scripts by rename; running r1 script inode remains intact",
+    "Keep both legacy locks as read-only admission fences until their exact owner finishes",
+    "Journal external/config ownership changes durably; on old updater rollback to r1 restore exact external baseline and configuration before r1 startup"
+  ],
+  "candidateReady": false,
+  "routerTouched": false
+}

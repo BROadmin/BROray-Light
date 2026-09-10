@@ -77,3 +77,14 @@ jobs:
           name: r0013-updater-core-${{ github.sha }}
           path: /tmp/r0013-updater-*.json
           if-no-files-found: ignore
+      - name: Exact r1 updater child admission (dash)
+        run: sudo python3 -B tools/test_r0013_r1_admission.py --shell /bin/dash --result /tmp/r0013-r1-admission-dash.json
+      - name: Exact r1 updater child admission (BusyBox applets)
+        run: sudo python3 -B tools/test_r0013_r1_admission.py --shell /usr/bin/busybox --busybox --busybox-tools --result /tmp/r0013-r1-admission-ash.json
+      - name: Preserve exact-r1 admission evidence including first failure
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: r0013-r1-admission-${{ github.sha }}
+          path: /tmp/r0013-r1-admission-*.json
+          if-no-files-found: ignore
