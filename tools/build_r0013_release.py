@@ -111,11 +111,17 @@ def verify_external(platform, archive_path, digest_path):
 def build(output, platform, archive, digest):
     assert not output.exists(), "new independent output directory required"
     base = primitives()
+    bootstrap_helper = (inputs.REPO / "packaging/r0013-overlay/bootstrap-ram.sh").read_bytes()
+    original_render = base.render
+    def render_with_bootstrap(path, replacements):
+        return original_render(path, {"BOOTSTRAP_RAM_HELPERS": bootstrap_helper.decode(), **replacements})
+    base.render = render_with_bootstrap
     source = base.verify_source(inputs.REPO)
     app = prepared_app()
     base.source_app_files = lambda repo, modes: [("app/" + name, data, mode) for name, (data, mode) in sorted(app.items())]
     minisign, xray = verify_external(platform, archive, digest)
-    rows = []
+    rows = [dict(path="build-input/bootstrap-ram.sh", sha256=sha(bootstrap_helper),
+                 sizeBytes=len(bootstrap_helper), mode="0o644", origin="R0013-overlay")]
     for name, (data, mode) in sorted(app.items()):
         rows.append(dict(path="app/" + name, sha256=sha(data), sizeBytes=len(data), mode=oct(mode),
                          origin="R0013-overlay" if (inputs.REPO / "packaging/r0013-overlay/app" / name).is_file()
@@ -152,7 +158,19 @@ def build(output, platform, archive, digest):
             "broray-light-updater-platform-5-light1.tar.gz": base.build_updater_archive(updater),
         }
         package_name = "broray-light_" + PUBLIC_VERSION + "_" + base.ARCHITECTURE + ".ipk"
-        outputs[package_name] = base.build_ipk(base.build_control_tar(tree), base.build_data_tar(tree, {}, slot, updater, xray))
+        old_data = base.build_data_tar(tree, {}, slot, updater, xray)
+        ram_data = base.DeterministicTar()
+        with tarfile.open(fileobj=io.BytesIO(old_data), mode="r:gz") as archive:
+            for member in archive:
+                if not member.isfile() or member.name.startswith("opt/libexec/broray-light-bootstrap/"):
+                    continue
+                ram_data.add_bytes(member.name, archive.extractfile(member).read(), member.mode)
+        # preinst owns/creates this directory. Do not ship /tmp directory headers
+        # that could change its sticky mode or the private namespace permissions.
+        bootstrap_path = "tmp/broray-light-bootstrap/xray-" + XRAY["version"]
+        ram_data.tar.addfile(base.tar_info(bootstrap_path, 0o755, len(xray)), io.BytesIO(xray))
+        data_payload = base.gzip_deterministic(ram_data.finish())
+        outputs[package_name] = base.build_ipk(base.build_control_tar(tree), data_payload)
         package = outputs[package_name]
         outputs["broray-light-install-" + PUBLIC_VERSION + ".sh"] = base.render(
             tree / "packaging/installer/broray-light-install.sh.in", dict(

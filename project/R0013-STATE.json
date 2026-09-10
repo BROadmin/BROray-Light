@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
   "stage": "R0013_SELECTIVE_UPSTREAM_STABLE_PORT",
-  "status": "PASS_ENGINEERING_STRUCTURE_AND_LOCAL_REPRODUCIBILITY",
-  "currentRevision": "p13-executable-entrypoint-mode-contract",
-  "activeFailure": null,
+  "status": "BUILT_STATIC_PASS_LINUX_VALIDATION_PENDING",
+  "currentRevision": "p15-protected-ram-clean-bootstrap-and-installer",
+  "activeFailure": "checkpoints/R0013/process-failures/FAILURE-P14-PERSISTENT-BOOTSTRAP.json",
   "publicVersion": "2.0.0",
   "buildA": "NOT_RUN",
   "buildB": "NOT_RUN",
@@ -65,7 +65,7 @@
     "path": "checkpoints/R0013/UPSTREAM-PORT-MAP-P2.json",
     "sha256": "009a0f5adae08f399c82510cf680690b4c2e50bc8c659eda9c48d91b5a838121"
   },
-  "nextExactAction": "P14_PROTECTED_RAM_STORAGE_AND_LEGACY_LIFECYCLE_TRANSITION_AUDIT",
+  "nextExactAction": "P15_LINUX_BOOTSTRAP_INSTALLER_OWNERSHIP_AND_FAILURE_CLEANUP_TESTS_THEN_RAM_RUNTIME_MIGRATION",
   "versionAndXray": {
     "status": "PASS_VERSION_AND_BOOTSTRAP_INPUT",
     "path": "checkpoints/R0013/UPGRADE-AND-XRAY-P10.json",
@@ -75,5 +75,9 @@
     "status": "PASS_PRELIMINARY_ONLY",
     "path": "checkpoints/R0013/ENGINEERING-BUILDS-P13.json",
     "sha256": "ef05b06f98464a50232291e9021144c1752c880f3c0cb6688d7b20d6191d5e5f"
+  },
+  "bootstrapBuild": {
+    "path": "checkpoints/R0013/RAM-BOOTSTRAP-BUILD-P15.json",
+    "sha256": "0725d9ea2db979f252bb7a4abfcdd57b1fdef010b8a069fdce24156133b8193c"
   }
 }

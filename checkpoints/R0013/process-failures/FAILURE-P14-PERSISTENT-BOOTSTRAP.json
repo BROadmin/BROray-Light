@@ -1,0 +1,24 @@
+{
+  "stage": "R0013",
+  "revision": "p14-protected-ram-lifecycle-audit",
+  "status": "FAIL_FIRST_ERROR",
+  "gate": "clean-bootstrap-ram-only",
+  "path": "opt/libexec/broray-light-bootstrap/xray-26.9.9",
+  "sizeBytes": 35061884,
+  "reason": "Temporary clean-bootstrap input is packaged on persistent /opt",
+  "candidateReady": false,
+  "cause": "Accepted r1 package bootstrap is a temporary data member under /opt. R0013 inherits it pending an explicit bounded storage port; it does not satisfy the user's RAM-only rule.",
+  "relatedAuditFindings": [
+    "r1 installer leaves verified IPK in /tmp after completion without invocation-private ownership",
+    "r1 app run/log/tmp and Xray downloads/locks are under /opt",
+    "r1 external updater uses persistent lock paths; app-slot-only update does not replace external lifecycle files"
+  ],
+  "sameRevisionRetry": false,
+  "nextCorrectedRevision": "p15-protected-ram-clean-bootstrap-and-installer",
+  "correction": "First isolate and validate clean bootstrap/installer inputs in protected tmpfs namespaces. Then separately validate app/updater lock migration and rollback before any target installation.",
+  "routerTouched": false,
+  "artifact": {
+    "path": "dist/R0013/p12-engineering-build-A/broray-light_2.0.0_aarch64-3.10.ipk",
+    "sha256": "1472a86f44ff14d2b9861e7185b3897d28cd284d37cc3b4e22f95a95b008871c"
+  }
+}

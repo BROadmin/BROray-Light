@@ -88,7 +88,8 @@ def main():
     data = files(package["data.tar.gz"][0])
     prefix = "opt/broray-light/releases/" + RELEASE_ID + "/"
     assert {p[len(prefix):]: row for p, row in data.items() if p.startswith(prefix)} == slot
-    bootstrap = data["opt/libexec/broray-light-bootstrap/xray-" + XRAY["version"]][0]
+    bootstrap = data["tmp/broray-light-bootstrap/xray-" + XRAY["version"]][0]
+    assert not any(name.startswith("opt/libexec/broray-light-bootstrap/") for name in data)
     assert len(bootstrap) == XRAY["binarySize"] and sha(bootstrap) == XRAY["binarySha256"]
     passed("ipk-version-slot-and-exact-clean-xray")
     updater = files(entries["broray-light-updater-platform-5-light1.tar.gz"][0])

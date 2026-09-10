@@ -52,3 +52,5 @@ jobs:
         run: |
           python3 -B tools/test_r0013_system_version.py --shell /bin/dash
           node tools/test_r0013_versions.js
+      - name: Protected RAM bootstrap and installer ownership
+        run: sudo python3 -B tools/test_r0013_bootstrap.py --shell /bin/dash

@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0013",
+  "revision": "p14-protected-ram-lifecycle-audit",
+  "status": "STARTED_BEFORE_VALIDATION",
+  "input": "dist/R0013/p12-engineering-build-A",
+  "scope": "Check actual package bootstrap placement and inspect retained r1 scratch/lock lifecycle before permitting install",
+  "candidateReady": false
+}

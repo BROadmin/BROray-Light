@@ -1,0 +1,79 @@
+#!/opt/bin/ash
+set -eu
+ROOT_PREFIX="${BRORAY_LIGHT_ROOT_PREFIX:-}"
+PACKAGE_URL='@PACKAGE_URL@'
+PACKAGE_SIZE='@PACKAGE_SIZE@'
+PACKAGE_SHA256='@PACKAGE_SHA256@'
+PACKAGE_NAME='@PACKAGE_NAME@'
+WORK_DIR=
+WORK_ID=
+
+fail() { printf 'ERROR: %s\n' "$*" >&2; exit 1; }
+
+owned_work()
+{
+    case "$WORK_DIR" in "$ROOT_PREFIX/tmp/broray-light-install."??????) ;; *) return 1 ;; esac
+    [ -d "$WORK_DIR" ] && [ ! -L "$WORK_DIR" ] || return 1
+    [ "$(stat -c '%u:%a' "$WORK_DIR")" = 0:700 ] || return 1
+    [ "$(stat -c '%d:%i' "$WORK_DIR")" = "$WORK_ID" ] || return 1
+}
+
+finish()
+{
+    install_rc=$?
+    trap - 0
+    if [ -n "$WORK_DIR" ]; then
+        if owned_work; then
+            # opkg owns only this invocation's private subdirectory.
+            if [ -d "$WORK_DIR/opkg" ] && [ ! -L "$WORK_DIR/opkg" ] &&
+               [ "$(stat -c '%u:%a' "$WORK_DIR/opkg")" = 0:700 ]; then
+                rm -rf "$WORK_DIR/opkg" || install_rc=1
+            fi
+            rm -f "$WORK_DIR/package.ipk.part" "$WORK_DIR/package.ipk" || install_rc=1
+            rmdir "$WORK_DIR" || install_rc=1
+        else
+            printf 'ERROR: installer cleanup refused changed ownership.\n' >&2
+            install_rc=1
+        fi
+    fi
+    exit "$install_rc"
+}
+
+[ "$(id -u)" = 0 ] || fail 'installer requires root'
+for command_name in cp curl sha256sum awk wc opkg mv chmod rm mktemp stat rmdir id tr mkdir; do
+    command -v "$command_name" >/dev/null 2>&1 || fail "missing command: $command_name"
+done
+[ -d "$ROOT_PREFIX/tmp" ] && [ ! -L "$ROOT_PREFIX/tmp" ] || fail '/tmp must be a real directory'
+[ "$(stat -c %u "$ROOT_PREFIX/tmp")" = 0 ] || fail '/tmp must be root-owned'
+case "$(stat -f -c %T "$ROOT_PREFIX/tmp")" in tmpfs|ramfs) ;; *) fail '/tmp is not RAM-backed' ;; esac
+for path in "$ROOT_PREFIX/opt/broray" "$ROOT_PREFIX/opt/etc/init.d/S24broray" "$ROOT_PREFIX/opt/var/lock/broray/global-operation.lock"; do
+    [ ! -e "$path" ] && [ ! -L "$path" ] || fail 'full BROray ownership is present; co-install is fail-closed'
+done
+umask 077
+WORK_DIR="$(mktemp -d "$ROOT_PREFIX/tmp/broray-light-install.XXXXXX")" || fail 'cannot create private installer RAM directory'
+WORK_ID="$(stat -c '%d:%i' "$WORK_DIR")" || fail 'cannot record installer directory identity'
+trap finish 0
+trap 'exit 129' 1
+trap 'exit 130' 2
+trap 'exit 143' 15
+owned_work || fail 'installer directory ownership validation failed'
+TARGET="$WORK_DIR/package.ipk"
+mkdir "$WORK_DIR/opkg" || fail 'cannot create private opkg temporary directory'
+
+if [ -n "${BRORAY_LIGHT_PACKAGE_FILE:-}" ]; then
+    [ -f "$BRORAY_LIGHT_PACKAGE_FILE" ] && [ ! -L "$BRORAY_LIGHT_PACKAGE_FILE" ] || fail 'local package is not a regular file'
+    cp "$BRORAY_LIGHT_PACKAGE_FILE" "$TARGET.part" || fail 'cannot stage local package'
+else
+    curl -q --proto '=https' --proto-redir '=https' --tlsv1.2 \
+        --connect-timeout 15 --max-time 900 --max-filesize "$PACKAGE_SIZE" -fsSL \
+        -H 'Cache-Control: no-cache, no-store' -H 'Accept-Encoding: identity' \
+        "$PACKAGE_URL" -o "$TARGET.part" || fail 'package download failed'
+fi
+[ "$(wc -c < "$TARGET.part" | tr -d ' ')" = "$PACKAGE_SIZE" ] || fail 'package size mismatch'
+[ "$(sha256sum "$TARGET.part" | awk 'NR==1{print $1}')" = "$PACKAGE_SHA256" ] || fail 'package SHA-256 mismatch'
+mv "$TARGET.part" "$TARGET" || fail 'cannot stage verified package'
+chmod 600 "$TARGET"
+TMPDIR="$WORK_DIR/opkg" opkg --tmp-dir "$WORK_DIR/opkg" install "$TARGET" || fail 'opkg installation failed'
+[ -x "$ROOT_PREFIX/opt/broray-light/runtime/xray" ] || fail 'clean install did not produce Xray runtime'
+[ -L "$ROOT_PREFIX/opt/broray-light/current" ] || fail 'clean install did not activate app slot'
+echo 'BROray-Light 2.0.0 installed.'
