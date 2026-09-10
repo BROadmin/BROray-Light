@@ -1,0 +1,10 @@
+{
+  "stage": "R0013",
+  "revision": "p18-updater-ram-core-and-isolated-transactions",
+  "status": "IN_PROGRESS",
+  "scope": "Explicit r1 updater port using the independently tested P17 RAM primitive; not yet deployed or integrated with app startup migration",
+  "changes": ["Operational status, admission, locks and per-invocation download/extraction work in protected RAM", "Keep transaction receipts and installed release slots durable", "Retain signed index trust, version semantics, health and rollback", "Tighten archive and manifest path validation"],
+  "requiredTests": ["Valid signed update", "Equal no-op", "Downgrade refusal", "Signature and archive rejection", "Rollback and persistence", "Concurrent request/global locks", "No unsafe work cleanup"],
+  "candidateReady": false,
+  "routerTouched": false
+}

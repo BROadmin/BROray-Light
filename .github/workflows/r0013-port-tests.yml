@@ -32,7 +32,7 @@ jobs:
       - name: Install isolated test dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y --no-install-recommends busybox dash gcc jq
+          sudo apt-get install -y --no-install-recommends busybox dash gcc jq minisign
       - name: BusyBox ash syntax
         run: |
           set -eu
@@ -64,4 +64,15 @@ jobs:
         with:
           name: r0013-ram-primitive-${{ github.sha }}
           path: /tmp/r0013-ram-*.json
+          if-no-files-found: ignore
+      - name: Updater RAM transactions (dash, real signatures)
+        run: sudo python3 -B tools/test_r0013_updater_ram.py --shell /bin/dash --result /tmp/r0013-updater-dash.json
+      - name: Updater RAM transactions (BusyBox ash, real signatures)
+        run: sudo python3 -B tools/test_r0013_updater_ram.py --shell /usr/bin/busybox --busybox --result /tmp/r0013-updater-ash.json
+      - name: Preserve updater transaction evidence including first failure
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: r0013-updater-core-${{ github.sha }}
+          path: /tmp/r0013-updater-*.json
           if-no-files-found: ignore

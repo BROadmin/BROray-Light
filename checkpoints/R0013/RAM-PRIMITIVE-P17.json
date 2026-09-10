@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0013",
+  "revision": "p17-shared-ram-lock-primitive",
+  "status": "PASS_BOUNDED_PRIMITIVE",
+  "sourceCommit": "642e8bc1bf42d6f9bb1fbdce37ad1adc5eb6e7d6",
+  "sourceSha256": "34a959bcb1b6acedd070b2c86571f497adf0996c76cdf2a9e75724ddc03e95af",
+  "ci": "https://github.com/BROadmin/BROray-Light/actions/runs/34515462704",
+  "artifactId": 10167488008,
+  "artifactZipSha256": "9ccca26186842ba453314afb8521cccc41042a9d1675392c3c44fd2aaa82a427",
+  "testsPerShell": 19,
+  "shells": [
+    "dash",
+    "BusyBox ash"
+  ],
+  "totalPassed": 38,
+  "previousRegression": "PASS",
+  "notProven": [
+    "Integrated external updater and app lifecycle",
+    "r1 transaction migration and rollback",
+    "All operational scratch moved",
+    "Router behavior",
+    "Final candidate builds"
+  ],
+  "evidenceTransport": {
+    "firstFailure": "process-failures/FAILURE-P17-EVIDENCE-REDIRECT.json",
+    "correctedRevision": "p17-ci-evidence-fetch-r2-explicit-unauthenticated-storage-redirect",
+    "status": "PASS"
+  },
+  "candidateReady": false,
+  "nextExactAction": "INTEGRATE_SHARED_RAM_CORE_IN_EXPLICIT_UPDATER_OVERLAY_AND_TEST_SIGNATURE_ARCHIVE_LOCK_TRANSACTIONS_IN_ISOLATED_ROOT"
+}

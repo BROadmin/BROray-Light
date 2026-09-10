@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0013",
+  "revision": "p17-ci-evidence-fetch-r1",
+  "status": "FAIL_FIRST_ERROR",
+  "type": "EVIDENCE_TRANSPORT_NOT_PRODUCT_TEST",
+  "ciRun": 34515462704,
+  "artifactId": 10167488008,
+  "observed": "Authenticated GitHub API returned a redirect; automatic redirect request failed HTTP 401 at artifact storage.",
+  "cause": "The evidence collector reused authorization on a cross-host redirect. Artifact fetching must strip GitHub Authorization before following the signed storage URL.",
+  "nextRevision": "p17-ci-evidence-fetch-r2-explicit-unauthenticated-storage-redirect",
+  "productCIResult": "SUCCESS",
+  "candidateReady": false
+}
