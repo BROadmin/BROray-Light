@@ -156,8 +156,7 @@ update_locks_cleanup()
 
 runtime_cleanup()
 {
-    local rc
-    rc="$?"
+    local rc="$?"
     trap - 0
     if [ -n "$WORK_ROOT" ]; then
         if brl_ram_prepare && brl_ram_dir_valid "$WORK_ROOT" &&

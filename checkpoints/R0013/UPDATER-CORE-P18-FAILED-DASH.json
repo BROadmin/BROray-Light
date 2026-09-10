@@ -1,0 +1,25 @@
+{
+  "stage": "R0013",
+  "revision": "p18-updater-ram-core",
+  "scope": "REAL_UPDATER_SIGNATURES_TMPFS_FIXTURE_SLOTS_SERVICE_BOUNDARY",
+  "sourceSha256": "08da294aebfada758551b579b355b1327501d3c044ee0cdc5191c5925f9b3913",
+  "shell": [
+    "/bin/dash"
+  ],
+  "tests": [
+    {
+      "name": "signed_update_and_user_xray_previous_slot_persistence",
+      "status": "PASS"
+    },
+    {
+      "name": "equal_version_is_no_op_without_service_restart",
+      "status": "PASS"
+    },
+    {
+      "name": "signed_downgrade_refusal",
+      "status": "FAIL",
+      "error": "('update', 0, '', '')"
+    }
+  ],
+  "status": "FAIL_FIRST_ERROR"
+}

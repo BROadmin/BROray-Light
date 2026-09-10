@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0013",
+  "revision": "p18-updater-ram-core-and-isolated-transactions",
+  "status": "FAIL_FIRST_ERROR",
+  "sourceCommit": "d2fc61f6a6f92e6cbf73ae547b917c71d10c69d6",
+  "sourceSha256": "08da294aebfada758551b579b355b1327501d3c044ee0cdc5191c5925f9b3913",
+  "ci": "https://github.com/BROadmin/BROray-Light/actions/runs/34516502498",
+  "gate": "signed_downgrade_refusal",
+  "observed": "Update process returned exit 0, expected downgrade refusal exit 20.",
+  "cause": "runtime_cleanup executed local rc before capturing $?. The declaration replaced the command exit status with zero, so EXIT cleanup masked the refusal.",
+  "nextRevision": "p19-updater-preserve-exit-status-before-cleanup",
+  "correction": "Capture original status in the local declaration itself, before any command. Repeat both-shell suite under a new source commit.",
+  "evidence": {
+    "path": "UPDATER-CORE-P18-FAILED-DASH.json",
+    "sha256": "5dbfab6229cdc720024264cfdaf231ba967d06d4db0704dc0596f89fe0c241b1"
+  },
+  "completedBeforeFirstError": [
+    {
+      "name": "signed_update_and_user_xray_previous_slot_persistence",
+      "status": "PASS"
+    },
+    {
+      "name": "equal_version_is_no_op_without_service_restart",
+      "status": "PASS"
+    }
+  ],
+  "candidateReady": false
+}

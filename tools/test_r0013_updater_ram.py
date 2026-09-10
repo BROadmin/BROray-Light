@@ -271,7 +271,7 @@ def main():
     args = parser.parse_args()
     assert os.geteuid() == 0, 'Disposable root Linux CI only'
     shell = [args.shell, 'ash'] if args.busybox else [args.shell]
-    report = dict(stage='R0013', revision='p18-updater-ram-core', scope='REAL_UPDATER_SIGNATURES_TMPFS_FIXTURE_SLOTS_SERVICE_BOUNDARY',
+    report = dict(stage='R0013', revision='p19-updater-preserve-exit-status-before-cleanup', scope='REAL_UPDATER_SIGNATURES_TMPFS_FIXTURE_SLOTS_SERVICE_BOUNDARY',
                   sourceSha256=hashlib.sha256(UPDATER.read_bytes()).hexdigest(), shell=shell, tests=[])
     failed = False
     for name, test in cases():
