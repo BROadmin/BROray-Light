@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0013",
+  "revision": "p19-updater-preserve-exit-status-before-cleanup",
+  "status": "FAIL_FIRST_ERROR",
+  "type": "TEST_HARNESS_API_ERROR",
+  "sourceCommit": "545290146e4be134fcef17abda41110c0c8078ed",
+  "ci": "https://github.com/BROadmin/BROray-Light/actions/runs/34516745345",
+  "gate": "interrupted_target_active_recovers_previous_slot_with_stale_locks",
+  "observed": "Popen.__init__() got an unexpected keyword argument 'capture_output'",
+  "cause": "The new interruption fixture used subprocess.run's capture_output convenience argument with Popen, which requires explicit stdout/stderr pipes. No interrupted product transaction was executed.",
+  "passedBeforeFirstError": 13,
+  "productSourceSha256": "4376ae29e17a601098238f78a8f67fafbc15985b0c8a172ba574f85b434a2434",
+  "nextRevision": "p20-interruption-fixture-explicit-pipes",
+  "evidence": {
+    "path": "UPDATER-CORE-P19-FAILED-DASH.json",
+    "sha256": "8856089f70ca77d4abefe226173ef69d62d51429c3d73303a1b7296e6881cc22"
+  },
+  "candidateReady": false
+}

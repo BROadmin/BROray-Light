@@ -243,7 +243,7 @@ def cases():
 
     def interrupted(f):
         f.env['FIXTURE_PAUSE_START'] = '1'
-        child = subprocess.Popen([*f.shell, str(UPDATER), 'update'], env=f.env, capture_output=True,
+        child = subprocess.Popen([*f.shell, str(UPDATER), 'update'], env=f.env, stdout=subprocess.PIPE, stderr=subprocess.PIPE,
                                  text=True, start_new_session=True)
         f.children.append(child)
         deadline = time.monotonic()+10
@@ -271,7 +271,7 @@ def main():
     args = parser.parse_args()
     assert os.geteuid() == 0, 'Disposable root Linux CI only'
     shell = [args.shell, 'ash'] if args.busybox else [args.shell]
-    report = dict(stage='R0013', revision='p19-updater-preserve-exit-status-before-cleanup', scope='REAL_UPDATER_SIGNATURES_TMPFS_FIXTURE_SLOTS_SERVICE_BOUNDARY',
+    report = dict(stage='R0013', revision='p20-interruption-fixture-explicit-pipes', scope='REAL_UPDATER_SIGNATURES_TMPFS_FIXTURE_SLOTS_SERVICE_BOUNDARY',
                   sourceSha256=hashlib.sha256(UPDATER.read_bytes()).hexdigest(), shell=shell, tests=[])
     failed = False
     for name, test in cases():

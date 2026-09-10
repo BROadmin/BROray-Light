@@ -1,0 +1,69 @@
+{
+  "stage": "R0013",
+  "revision": "p19-updater-preserve-exit-status-before-cleanup",
+  "scope": "REAL_UPDATER_SIGNATURES_TMPFS_FIXTURE_SLOTS_SERVICE_BOUNDARY",
+  "sourceSha256": "4376ae29e17a601098238f78a8f67fafbc15985b0c8a172ba574f85b434a2434",
+  "shell": [
+    "/bin/dash"
+  ],
+  "tests": [
+    {
+      "name": "signed_update_and_user_xray_previous_slot_persistence",
+      "status": "PASS"
+    },
+    {
+      "name": "equal_version_is_no_op_without_service_restart",
+      "status": "PASS"
+    },
+    {
+      "name": "signed_downgrade_refusal",
+      "status": "PASS"
+    },
+    {
+      "name": "forced_health_failure_rolls_back_and_recovers_receipt",
+      "status": "PASS"
+    },
+    {
+      "name": "altered_signed_index_refused_before_service_stop",
+      "status": "PASS"
+    },
+    {
+      "name": "signed_wrong_bundle_hash_refused",
+      "status": "PASS"
+    },
+    {
+      "name": "signed_duplicate_archive_refused",
+      "status": "PASS"
+    },
+    {
+      "name": "signed_traversal_archive_refused",
+      "status": "PASS"
+    },
+    {
+      "name": "signed_symlink_archive_refused",
+      "status": "PASS"
+    },
+    {
+      "name": "signed_hardlink_archive_refused",
+      "status": "PASS"
+    },
+    {
+      "name": "manifest_traversal_rejected_before_hash_reads",
+      "status": "PASS"
+    },
+    {
+      "name": "manifest_duplicate_refused",
+      "status": "PASS"
+    },
+    {
+      "name": "dangling_full_product_ownership_refused_before_ram_write",
+      "status": "PASS"
+    },
+    {
+      "name": "interrupted_target_active_recovers_previous_slot_with_stale_locks",
+      "status": "FAIL",
+      "error": "Popen.__init__() got an unexpected keyword argument 'capture_output'"
+    }
+  ],
+  "status": "FAIL_FIRST_ERROR"
+}
