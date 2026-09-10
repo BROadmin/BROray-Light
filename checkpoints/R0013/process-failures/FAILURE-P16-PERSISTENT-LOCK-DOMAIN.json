@@ -1,0 +1,28 @@
+{
+  "stage": "R0013",
+  "revision": "p16-remaining-operational-ram-gate",
+  "status": "FAIL_FIRST_ERROR",
+  "gate": "operational-global-lock-ram-only",
+  "path": "opt/broray-light/releases/2.0.0-r1/app/lib/operation-lock.sh",
+  "evidence": "BRORAY_LIGHT_LOCK_ROOT=\"${BRORAY_LIGHT_LOCK_ROOT:-/opt/var/lock/broray-light}\"",
+  "reason": "Application still creates its default operational lock on persistent /opt",
+  "candidateReady": false,
+  "cause": "The accepted r1 application and its separately installed updater still share persistent /opt locks. The verified app-slot update only replaces current/app, not the external updater and init files.",
+  "safetyImpact": "Changing only the application lock path would allow old-updater and new-application operations to run under different locks. That is unsafe; no target install/publication is permitted without a coordinated migration and rollback proof.",
+  "additionalPendingPaths": [
+    "application run/log/tmp and WebUI sessions",
+    "Xray download/update work and lock",
+    "external updater request/global locks"
+  ],
+  "previousGate": "Protected RAM clean bootstrap and installer unit transactions passed in Linux at 7ef2834233d8e8ecce9db2bb3fa639a9fb231a94.",
+  "sameRevisionRetry": false,
+  "nextCorrectedRevision": "p17-coordinated-ram-runtime-and-updater-migration",
+  "nextExactAction": "DESIGN_IMPLEMENT_AND_ISOLATE_TEST_COORDINATED_R1_TO_2_0_RAM_RUNTIME_UPDATER_MIGRATION_WITH_SINGLE_LOCK_DOMAIN_AND_ROLLBACK",
+  "routerTouched": false,
+  "productionServerTouched": false,
+  "releasePublished": false,
+  "artifact": {
+    "path": "dist/R0013/p15-engineering-build-A/broray-light_2.0.0_aarch64-3.10.ipk",
+    "sha256": "76d31e27e7a2449e9fe9ecd05937f2e882b2180495568fdf341e97dadbd29fdf"
+  }
+}

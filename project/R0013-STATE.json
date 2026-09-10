@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
   "stage": "R0013_SELECTIVE_UPSTREAM_STABLE_PORT",
-  "status": "BUILT_STATIC_PASS_LINUX_VALIDATION_PENDING",
-  "currentRevision": "p15-protected-ram-clean-bootstrap-and-installer",
-  "activeFailure": "checkpoints/R0013/process-failures/FAILURE-P14-PERSISTENT-BOOTSTRAP.json",
+  "status": "CHECKPOINTED_FAIL_CLOSED_RAM_MIGRATION_REQUIRED",
+  "currentRevision": "p16-remaining-operational-ram-gate",
+  "activeFailure": "checkpoints/R0013/process-failures/FAILURE-P16-PERSISTENT-LOCK-DOMAIN.json",
   "publicVersion": "2.0.0",
-  "buildA": "NOT_RUN",
-  "buildB": "NOT_RUN",
+  "buildA": "PRELIMINARY_ENGINEERING_BYTE_PASS_NOT_FINAL_ACCEPTANCE",
+  "buildB": "PRELIMINARY_ENGINEERING_BYTE_PASS_NOT_FINAL_ACCEPTANCE",
   "catalogAndControlsPort": {
     "status": "PASS_ISOLATED_REGRESSION",
     "path": "checkpoints/R0013/CATALOG-AND-CONTROLS-P8.json",
@@ -18,10 +18,7 @@
     "path": "checkpoints/R0013/SUBSCRIPTION-NAME-P6.json",
     "sha256": "2b1fe451272dc233e1f8ccd4cc3d6ea2f212ba81e009f93d3a4b9e9b9601577a"
   },
-  "lastResolvedFailure": [
-    "process-failures/FAILURE-P11-OVERLAY-MODES.json",
-    "process-failures/FAILURE-P12-LIBRARY-MODE-ASSERTION.json"
-  ],
+  "lastResolvedFailure": "checkpoints/R0013/process-failures/FAILURE-P14-PERSISTENT-BOOTSTRAP.json",
   "processPort": {
     "status": "PASS_ISOLATED_LINUX",
     "tests": 33,
@@ -65,7 +62,7 @@
     "path": "checkpoints/R0013/UPSTREAM-PORT-MAP-P2.json",
     "sha256": "009a0f5adae08f399c82510cf680690b4c2e50bc8c659eda9c48d91b5a838121"
   },
-  "nextExactAction": "P15_LINUX_BOOTSTRAP_INSTALLER_OWNERSHIP_AND_FAILURE_CLEANUP_TESTS_THEN_RAM_RUNTIME_MIGRATION",
+  "nextExactAction": "DESIGN_IMPLEMENT_AND_ISOLATE_TEST_COORDINATED_R1_TO_2_0_RAM_RUNTIME_UPDATER_MIGRATION_WITH_SINGLE_LOCK_DOMAIN_AND_ROLLBACK",
   "versionAndXray": {
     "status": "PASS_VERSION_AND_BOOTSTRAP_INPUT",
     "path": "checkpoints/R0013/UPGRADE-AND-XRAY-P10.json",
@@ -79,5 +76,10 @@
   "bootstrapBuild": {
     "path": "checkpoints/R0013/RAM-BOOTSTRAP-BUILD-P15.json",
     "sha256": "0725d9ea2db979f252bb7a4abfcdd57b1fdef010b8a069fdce24156133b8193c"
-  }
+  },
+  "bootstrapValidation": {
+    "path": "RAM-BOOTSTRAP-VALIDATION-P15.json",
+    "sha256": "050a4d9b7e8c82194d1e4dd03e6e014031ec1b24d44f06833cc3189d5ca1c33d"
+  },
+  "latestCI": "https://github.com/BROadmin/BROray-Light/actions/runs/34509101953"
 }

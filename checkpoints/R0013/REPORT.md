@@ -1,25 +1,82 @@
-# BROray-Light 2.0.0 — R0013, остановка перед несовместимым выпуском
+# BROray-Light 2.0.0 — R0013, checkpoint P16
 
-Публичная версия 2.0.0 выбрана пользователем. Готового кандидата и публикации пока нет.
+Публичная версия и версия пакета: `2.0.0`; будущий тег: `v2.0.0`.
+Пользователь согласовал отдельные служебные `releaseId/candidateId=2.0.0-r1` для совместимости со старым обновителем.
+**Кандидат пока не готов, выпуск не опубликован: candidateReady=false, releaseReady=false.**
 
-## Фактически выполнено
+## Выполнено
 
-- Сохранены незавершённые файлы R0012; они не используются как исходники нового приложения.
-- База приложения — проверенный Light 1.0.0-r1, commit `9e5fce9bfa7c82bfc2f2654d80fd3987c5259963`.
-- Сверены архивы полного BROray 3.0.0-r23c02 и 3.1.0-r09c02: 234 файла одинаковы, 65 изменений классифицированы. Текущий GitHub tag полного BROray содержит документацию, поэтому донор — опубликованный архив с проверенным SHA-256.
-- В отдельный R0013 overlay перенесены точное распознавание процесса Xray, передача ошибок start/stop/restart, транзакционная синхронизация имени активного сервера, каталог версий Xray и явные подтверждения установки.
-- Сохранены три страницы Light; выбор Xray встроен в Home. Данные совместимости полного BROray не выдаются за проверку Light.
-- Linux CI успешно проверил синтаксис BusyBox ash, реальные процессы и ограниченную отправку сигналов, файловые транзакции подписок, политику каталога/подтверждений и поведение новых UI-кнопок на подставных DOM/HTTP.
-- Последняя успешная CI-проверка: https://github.com/BROadmin/BROray-Light/actions/runs/34492610642, commit `2e5139127fb4eeff99d6a3c80fac458526e66815`.
+База — проверенный Light r1, commit `9e5fce9bfa7c82bfc2f2654d80fd3987c5259963`, плюс отдельный явный R0013 overlay. Канонический R0008 проверен сборщиком. Незавершённый код R0012 не включён в сборку: 502 ранее существовавших файла кода/истории совпали по SHA-256; исключения — служебные AGENTS, WORKLOG и статус перенаправления R0012 на R0013, перечисленные в `R0012-PRESERVATION-P16.json`.
 
-## Реальный блокер
+Из точного опубликованного BROray 3.1.0-r09c02 перенесены распознавание собственного процесса Xray, обработка start/stop, синхронизация имени активного сервера, выбор версий Xray и явные подтверждения риска. Сохранены три страницы, VLESS, native auth и Light ownership. Каталог совместимости полного BROray не считается приёмкой Light.
 
-Точный опубликованный updater из r1 возвращает `uncomparable` при сравнении `1.0.0-r1` → `2.0.0`: его parser требует суффикс `-rN`. Проверка обновления и установка отклонят такой releaseId до загрузки нового app-slot. Обновление parser внутри недоступного app-slot проблему не решает.
+Старый опубликованный updater прошёл сравнения r1 → 2.0.0-r1, равной версии и понижения. Это проверка решения, не полный update-тест. API и WebUI показывают публичную версию 2.0.0 отдельно от служебного номера.
 
-Не выполнены обход сравнения, скрытое переименование версии, промежуточная публикация либо изменение установленного updater на роутере. FIRST-ERROR сохранён в `process-failures/FAILURE-P9-R1-REJECTS-SEMVER-ID.json`.
+Для чистой установки проверены архив, официальный digest и бинарник Xray 26.9.9 (ELF64 AArch64, 35061884 байта). Обновление приложения сохраняет установленный Xray.
 
-Нужно согласовать контракт: публичная версия 2.0.0 с отдельным совместимым техническим releaseId либо предварительная доверенная миграция updater при требовании releaseId строго 2.0.0. После этого необходимы сборка пакета/установщика, независимые Build A/B, полная приёмка, проверка RAM-only scratch и только затем выпуск.
+Установщик и bootstrap вынесены в защищённые RAM-каталоги: проверяются владелец, права, тип ФС, маркер и SHA-256; временные входы очищаются. В пакет не включены заголовки каталогов /tmp, которые могли бы изменить их права. В установщике явно задан `opkg --tmp-dir`, поддерживаемый [opkg](https://openwrt.org/docs/guide-user/additional-software/opkg).
 
-## Состояние приёмки
+Linux CI на commit `7ef2834233d8e8ecce9db2bb3fa639a9fb231a94` завершился успешно: [run 34509101953](https://github.com/BROadmin/BROray-Light/actions/runs/34509101953). Проверены BusyBox ash, настоящие Linux-процессы, файловые транзакции подписок, политика выбора Xray, поведение UI на подставных DOM/HTTP, версия через shell/jq и 11 сценариев bootstrap/installer. В последних подставлены тип ФС, opkg, бинарник Xray и запуск сервиса — это не физическая приёмка.
 
-`candidateReady=false`, `releaseReady=false`. Build A/B не выполнялись. Полная проверка всех кнопок, native auth, установки/обновления/отката/сохранности данных, браузерной раскладки и физического роутера ещё не проведена для новых байтов. Подробности — `VALIDATION.json`; SHA-256 исходников — `PRODUCED-SOURCE-MANIFEST.json`; контрольная точка — `CHECKPOINT.json`.
+## Предварительные Build A/B
+
+`dist/R0013/p15-engineering-build-A` и `dist/R0013/p15-engineering-build-B` созданы отдельными процессами со свежими временными каталогами. Все 8 файлов совпали побайтно. Финальная независимая сборка из чистых checkout и подпись ещё не выполнены.
+
+| Артефакт | Байт | SHA-256 |
+| --- | ---: | --- |
+| ENGINEERING-MANIFEST.json | 2343 | `01c85a64b9459653cf00dbbd77c047f27d0e91a8f187b64b5b32bcf3ab2052ef` |
+| INPUT-MANIFEST.json | 31755 | `b861c52dcb500f223bfea00f31a7b8ced5799d084c06990b6bdd8fb4690db62b` |
+| SHA256SUMS | 666 | `25e23d40bda23cc2b488c97bf99b8fe24f47d198c174e798cafa09b2b7178f2a` |
+| broray-light-app-2.0.0-r1.tar.gz | 163974 | `4dcb15246111d242099463a315009126ba3e69fa9781d0b3b476144d32c9d095` |
+| broray-light-install-2.0.0.sh | 3860 | `fc1800b889f37a026a29a9e230c76f0afdcbb6287da36f99c465fad5ab4a44ea` |
+| broray-light-updater-platform-5-light1.tar.gz | 131458 | `81b7b70bd8180d0293be1e0de116c34801646234daf811b447ac82b0b676051c` |
+| broray-light_2.0.0_aarch64-3.10.ipk | 12917824 | `76d31e27e7a2449e9fe9ecd05937f2e882b2180495568fdf341e97dadbd29fdf` |
+| release.json | 597 | `f7328899c85b3077886e561e5ea752454721bf39459e2cdd38c4d968811077bc` |
+
+## Блокер P16
+
+Полная проверка RAM обнаружила действующий путь операционной блокировки `/opt/var/lock/broray-light`. Внешний updater r1 также использует старые блокировки. App-slot обновление само по себе не заменяет внешние init/updater-файлы. Простая смена пути лишь у приложения создаст две независимые блокировки и допустит конфликтующие операции.
+
+Также остаются run/log/tmp приложения, сессии WebUI и рабочие файлы/блокировка Xray. Чистый bootstrap исправлен, но общий RAM-контракт пока не выполнен. Отказ сохранён в `process-failures/FAILURE-P16-PERSISTENT-LOCK-DOMAIN.json`. Установка на роутер и публикация не выполнялись.
+
+Точный следующий этап: `p17-coordinated-ram-runtime-and-updater-migration` — реализовать и проверить изолированно согласованную миграцию r1 → 2.0.0 с единым механизмом блокировки и откатом. Затем полные clean/update/equal/downgrade/rollback/persistence, все кнопки/API и native auth, финальные Build A/B/подпись, браузерная и разрешённая целевая приёмка.
+
+## Каждый acceptance gate
+
+Обозначение PASS с уточнением не заменяет финальную приёмку указанной подсистемы.
+
+| Gate | Состояние | Доказательство |
+| --- | --- | --- |
+| pinned_donor_archives | PASS | UPSTREAM-DELTA-P2.json |
+| complete_upstream_change_map | PASS_AUDIT_ONLY | UPSTREAM-PORT-MAP-P2.json |
+| scoped_xray_identity | PASS_ISOLATED_LINUX | RAM-BOOTSTRAP-VALIDATION-P15.json |
+| busybox_ash_overlay_syntax | PASS | RAM-BOOTSTRAP-VALIDATION-P15.json |
+| active_subscription_rename_and_rollback | PASS_ISOLATED_ROUTER_BOUNDARY_MOCKED | SUBSCRIPTION-NAME-P6.json |
+| xray_catalog_and_explicit_consent | PASS_POLICY_OFFICIAL_NETWORK_MOCKED | RAM-BOOTSTRAP-VALIDATION-P15.json |
+| home_xray_controls | PASS_DOM_HTTP_BOUNDARIES_MOCKED | RAM-BOOTSTRAP-VALIDATION-P15.json |
+| published_r1_to_2_0_0_admission | PASS_COMPARATOR_ONLY | UPGRADE-AND-XRAY-P10.json |
+| canonical_source_and_final_input_manifest | PASS_ENGINEERING_INPUTS_FINAL_PENDING | RAM-BOOTSTRAP-VALIDATION-P15.json |
+| xray_clean_binary_verification | PASS_ARCHIVE_DIGEST_BINARY_ELF | UPGRADE-AND-XRAY-P10.json |
+| all_webui_buttons_and_apis | NOT_RUN_FULL_CANDIDATE | — |
+| native_authentication_and_sessions | NOT_RUN_FULL_CANDIDATE | — |
+| protected_tmpfs_all_operational_scratch | FAIL_CLOSED | process-failures/FAILURE-P16-PERSISTENT-LOCK-DOMAIN.json |
+| archive_updater_and_ownership_safety | NOT_RUN_FULL_CANDIDATE | — |
+| isolated_clean_install | NOT_RUN | — |
+| isolated_update_from_r1 | BLOCKED_COORDINATED_RAM_LIFECYCLE_MIGRATION | process-failures/FAILURE-P16-PERSISTENT-LOCK-DOMAIN.json |
+| isolated_equal_version | NOT_RUN | — |
+| isolated_downgrade_refusal | NOT_RUN | — |
+| forced_health_rollback | NOT_RUN_FULL_CANDIDATE | — |
+| persistence | NOT_RUN_FULL_CANDIDATE | — |
+| independent_build_a | PASS_PRELIMINARY_LOCAL_NOT_FINAL_ACCEPTANCE | RAM-BOOTSTRAP-VALIDATION-P15.json |
+| independent_build_b | PASS_PRELIMINARY_LOCAL_NOT_FINAL_ACCEPTANCE | RAM-BOOTSTRAP-VALIDATION-P15.json |
+| a_b_byte_reproducibility | PASS_PRELIMINARY_LOCAL_NOT_FINAL_ACCEPTANCE | RAM-BOOTSTRAP-VALIDATION-P15.json |
+| existing_trust_root_signing | NOT_RUN | — |
+| browser_desktop_mobile_layout | NOT_RUN | — |
+| authorized_router_validation | NOT_RUN | — |
+| immutable_release_and_public_byte_validation | NOT_PUBLISHED | — |
+| public_version_vs_internal_updater_identity | PASS_SHELL_JQ_AND_MOCK_DOM_HTTP | RAM-BOOTSTRAP-VALIDATION-P15.json |
+| clean_bootstrap_and_installer_protected_ram | PASS_BOUNDED_UNIT_TRANSACTIONS_NOT_TARGET | RAM-BOOTSTRAP-VALIDATION-P15.json |
+| engineering_package_structure_hashes_and_modes | PASS | RAM-BOOTSTRAP-VALIDATION-P15.json |
+| preexisting_r0012_preservation | PASS_502_FILES_WITH_THREE_EXPLICIT_ROUTING_LOG_EXCEPTIONS | R0012-PRESERVATION-P16.json |
+
+Контрольная точка: `checkpoints/R0013/CHECKPOINT.json`; machine-readable gates: `VALIDATION.json`; SHA-256 всех записей: `SHA256SUMS`.

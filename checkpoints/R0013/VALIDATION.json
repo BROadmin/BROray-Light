@@ -18,12 +18,12 @@
     {
       "gate": "scoped_xray_identity",
       "status": "PASS_ISOLATED_LINUX",
-      "evidence": "CATALOG-AND-CONTROLS-P8.json"
+      "evidence": "RAM-BOOTSTRAP-VALIDATION-P15.json"
     },
     {
       "gate": "busybox_ash_overlay_syntax",
       "status": "PASS",
-      "evidence": "CATALOG-AND-CONTROLS-P8.json"
+      "evidence": "RAM-BOOTSTRAP-VALIDATION-P15.json"
     },
     {
       "gate": "active_subscription_rename_and_rollback",
@@ -33,27 +33,27 @@
     {
       "gate": "xray_catalog_and_explicit_consent",
       "status": "PASS_POLICY_OFFICIAL_NETWORK_MOCKED",
-      "evidence": "CATALOG-AND-CONTROLS-P8.json"
+      "evidence": "RAM-BOOTSTRAP-VALIDATION-P15.json"
     },
     {
       "gate": "home_xray_controls",
       "status": "PASS_DOM_HTTP_BOUNDARIES_MOCKED",
-      "evidence": "HOME-XRAY-CONTROLS-P8.json"
+      "evidence": "RAM-BOOTSTRAP-VALIDATION-P15.json"
     },
     {
       "gate": "published_r1_to_2_0_0_admission",
-      "status": "FAIL_CLOSED",
-      "evidence": "process-failures/FAILURE-P9-R1-REJECTS-SEMVER-ID.json"
+      "status": "PASS_COMPARATOR_ONLY",
+      "evidence": "UPGRADE-AND-XRAY-P10.json"
     },
     {
       "gate": "canonical_source_and_final_input_manifest",
-      "status": "NOT_RUN_FINAL_BUILD",
-      "evidence": null
+      "status": "PASS_ENGINEERING_INPUTS_FINAL_PENDING",
+      "evidence": "RAM-BOOTSTRAP-VALIDATION-P15.json"
     },
     {
       "gate": "xray_clean_binary_verification",
-      "status": "ARCHIVE_SHA256_VERIFIED_BINARY_PENDING",
-      "evidence": null
+      "status": "PASS_ARCHIVE_DIGEST_BINARY_ELF",
+      "evidence": "UPGRADE-AND-XRAY-P10.json"
     },
     {
       "gate": "all_webui_buttons_and_apis",
@@ -67,8 +67,8 @@
     },
     {
       "gate": "protected_tmpfs_all_operational_scratch",
-      "status": "NOT_RUN_FULL_CANDIDATE",
-      "evidence": null
+      "status": "FAIL_CLOSED",
+      "evidence": "process-failures/FAILURE-P16-PERSISTENT-LOCK-DOMAIN.json"
     },
     {
       "gate": "archive_updater_and_ownership_safety",
@@ -82,8 +82,8 @@
     },
     {
       "gate": "isolated_update_from_r1",
-      "status": "BLOCKED_VERSION_CONTRACT",
-      "evidence": null
+      "status": "BLOCKED_COORDINATED_RAM_LIFECYCLE_MIGRATION",
+      "evidence": "process-failures/FAILURE-P16-PERSISTENT-LOCK-DOMAIN.json"
     },
     {
       "gate": "isolated_equal_version",
@@ -107,18 +107,18 @@
     },
     {
       "gate": "independent_build_a",
-      "status": "NOT_RUN",
-      "evidence": null
+      "status": "PASS_PRELIMINARY_LOCAL_NOT_FINAL_ACCEPTANCE",
+      "evidence": "RAM-BOOTSTRAP-VALIDATION-P15.json"
     },
     {
       "gate": "independent_build_b",
-      "status": "NOT_RUN",
-      "evidence": null
+      "status": "PASS_PRELIMINARY_LOCAL_NOT_FINAL_ACCEPTANCE",
+      "evidence": "RAM-BOOTSTRAP-VALIDATION-P15.json"
     },
     {
       "gate": "a_b_byte_reproducibility",
-      "status": "NOT_RUN",
-      "evidence": null
+      "status": "PASS_PRELIMINARY_LOCAL_NOT_FINAL_ACCEPTANCE",
+      "evidence": "RAM-BOOTSTRAP-VALIDATION-P15.json"
     },
     {
       "gate": "existing_trust_root_signing",
@@ -139,6 +139,28 @@
       "gate": "immutable_release_and_public_byte_validation",
       "status": "NOT_PUBLISHED",
       "evidence": null
+    },
+    {
+      "gate": "public_version_vs_internal_updater_identity",
+      "status": "PASS_SHELL_JQ_AND_MOCK_DOM_HTTP",
+      "evidence": "RAM-BOOTSTRAP-VALIDATION-P15.json"
+    },
+    {
+      "gate": "clean_bootstrap_and_installer_protected_ram",
+      "status": "PASS_BOUNDED_UNIT_TRANSACTIONS_NOT_TARGET",
+      "evidence": "RAM-BOOTSTRAP-VALIDATION-P15.json"
+    },
+    {
+      "gate": "engineering_package_structure_hashes_and_modes",
+      "status": "PASS",
+      "evidence": "RAM-BOOTSTRAP-VALIDATION-P15.json"
+    },
+    {
+      "gate": "preexisting_r0012_preservation",
+      "status": "PASS_502_FILES_WITH_THREE_EXPLICIT_ROUTING_LOG_EXCEPTIONS",
+      "evidence": "R0012-PRESERVATION-P16.json"
     }
-  ]
+  ],
+  "releaseId": "2.0.0-r1",
+  "currentRevision": "p16-remaining-operational-ram-gate"
 }

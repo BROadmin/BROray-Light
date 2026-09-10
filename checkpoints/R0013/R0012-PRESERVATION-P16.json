@@ -1,0 +1,10 @@
+{
+  "status": "PASS_CODE_AND_HISTORY_FILES",
+  "checked": 502,
+  "explicitRoutingAndLogExceptions": [
+    "AGENTS.md",
+    "project/R0012-STATE.json",
+    "project/WORKLOG.jsonl"
+  ],
+  "mismatches": []
+}

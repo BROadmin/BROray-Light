@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0013",
+  "revision": "p16-remaining-operational-ram-gate",
+  "status": "STARTED_BEFORE_VALIDATION",
+  "input": "dist/R0013/p15-engineering-build-A",
+  "previousCorrection": "Clean bootstrap and installer protected RAM tests passed in Linux; inspect remaining application/updater scratch defaults separately",
+  "candidateReady": false
+}

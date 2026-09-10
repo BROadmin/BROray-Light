@@ -3,124 +3,184 @@
   "stage": "R0013",
   "artifacts": [
     {
+      "path": "packaging/r0013-overlay/bootstrap-ram.sh",
+      "sizeBytes": 1868,
+      "sha256": "a857e2328d949db10d36149256ce0dd84d8de2b12f6de607607928498e1eee0b"
+    },
+    {
       "path": "packaging/r0013-overlay/app/bin/broray-lightd",
-      "bytes": 1039,
+      "sizeBytes": 1039,
       "sha256": "8e250c2d2b66d073f9b96e202bbc056672610969cd508c2c4246e09266b6ae53"
     },
     {
+      "path": "packaging/r0013-overlay/app/bin/broray-system",
+      "sizeBytes": 792,
+      "sha256": "38840c0a1b5faae214f258ce3d308acb8cdfa4a1309167949909f483931a02bc"
+    },
+    {
       "path": "packaging/r0013-overlay/app/bin/broray-xray-control",
-      "bytes": 1082,
+      "sizeBytes": 1082,
       "sha256": "1f881e789e3da874895b3b922d57113fb58cae2c18e59c90b55ab31d86880024"
     },
     {
       "path": "packaging/r0013-overlay/app/lib/server-service.sh",
-      "bytes": 4821,
+      "sizeBytes": 4821,
       "sha256": "1c52a2c9f78d8fb31198d2bfe1db63606c611ad355e14b056701aa398dc8880c"
     },
     {
       "path": "packaging/r0013-overlay/app/lib/server-subscription-service.sh",
-      "bytes": 32193,
+      "sizeBytes": 32193,
       "sha256": "7d1f007c966ad21b29e42f4546f5d0b25e839c880447d3c189f329471cf119ea"
     },
     {
       "path": "packaging/r0013-overlay/app/lib/server-xray-manager.sh",
-      "bytes": 4914,
+      "sizeBytes": 4914,
       "sha256": "90a41c4a0247d1116430219d03a8e8caa02e86387890c8ee101783b288b4758a"
     },
     {
       "path": "packaging/r0013-overlay/app/lib/xray-control.sh",
-      "bytes": 7109,
+      "sizeBytes": 7109,
       "sha256": "d80bfee40d7fcb68f7a55a6fd4a7db8f5819da6de0bf663d0d3e51343d5587eb"
     },
     {
       "path": "packaging/r0013-overlay/app/lib/xray-process.sh",
-      "bytes": 2915,
+      "sizeBytes": 2915,
       "sha256": "22e1b0f2257f28d7ba2e9eb308c9378f48c7c716a0a4c6826d396dadf6787196"
     },
     {
       "path": "packaging/r0013-overlay/app/lib/xray-releases.jq",
-      "bytes": 3200,
+      "sizeBytes": 3200,
       "sha256": "151b24f5a028a0a7781dc4bd94f4b2d7fbecab4c0dc5c78182acd82335328731"
     },
     {
       "path": "packaging/r0013-overlay/app/lib/xray-releases.sh",
-      "bytes": 13491,
+      "sizeBytes": 13491,
       "sha256": "f57239b7fc11c199476b443e4078453ec6300ed114f030f8cefa53151bef718f"
     },
     {
       "path": "packaging/r0013-overlay/app/lib/xray-update.sh",
-      "bytes": 35017,
+      "sizeBytes": 35017,
       "sha256": "20cff7e9f977bc6986c84a6f5306600c46c7b9f26a1cbbebcb9c8b0406bd7bdb"
     },
     {
       "path": "packaging/r0013-overlay/app/lib/xray-web-operation.sh",
-      "bytes": 403,
+      "sizeBytes": 403,
       "sha256": "ca155b9b4562e9c05141fd097c14a9ed4392dc2f1067e5277c2c62f4967204c9"
     },
     {
       "path": "packaging/r0013-overlay/app/lib/xray.sh",
-      "bytes": 16906,
+      "sizeBytes": 16906,
       "sha256": "c6d6be301d2dd209bb059b58270dcef82bbc8c710e49d757a77bbc44c9d3fad7"
     },
     {
       "path": "packaging/r0013-overlay/app/share/xray-compatibility.json",
-      "bytes": 191,
+      "sizeBytes": 191,
       "sha256": "cb9b2c5a4e99ffa9045f6acc7df8379369bd0fce4f39b1b024d36d67713de791"
     },
     {
+      "path": "packaging/r0013-overlay/app/web-new/home.html",
+      "sizeBytes": 4700,
+      "sha256": "b1817b41539ec4b33439afbbb7a3a17a9e669aab3dd38dfd9dfe855f8a952903"
+    },
+    {
       "path": "packaging/r0013-overlay/app/web-new/api/xray/install.cgi",
-      "bytes": 1182,
+      "sizeBytes": 1182,
       "sha256": "203cc9c9d1c3972b04173ddc1daf9dcea2ae52942a45d02f8fedbe0494c361fc"
     },
     {
       "path": "packaging/r0013-overlay/app/web-new/assets/css/allpage.css",
-      "bytes": 14039,
+      "sizeBytes": 14039,
       "sha256": "588dead0ef7be73949c33265d4539db0d369af7929374a2691a43164a61baf7d"
     },
     {
       "path": "packaging/r0013-overlay/app/web-new/assets/js/home.js",
-      "bytes": 14604,
-      "sha256": "433828aee748222c44f788afa6b96771b90bf161d6d6e1e083020fab6d0bf3fe"
+      "sizeBytes": 14875,
+      "sha256": "9b7b84e0af44368aa4c188c9f96913d4ae86d0da9b97a8704fbf5fafaf40727e"
     },
     {
-      "path": "packaging/r0013-overlay/app/web-new/home.html",
-      "bytes": 4700,
-      "sha256": "b1817b41539ec4b33439afbbb7a3a17a9e669aab3dd38dfd9dfe855f8a952903"
+      "path": "packaging/r0013-overlay/system/packaging/installer/broray-light-install.sh.in",
+      "sizeBytes": 3709,
+      "sha256": "6523cf401fdd5b8771d90038c258d620822cb3d454aa2d474600c9453ae95abb"
+    },
+    {
+      "path": "packaging/r0013-overlay/system/packaging/opkg/postinst",
+      "sizeBytes": 5802,
+      "sha256": "4617896b4af547506dfa656940080f10342a4325b071c4c303243cf6ce1b57e9"
+    },
+    {
+      "path": "packaging/r0013-overlay/system/packaging/opkg/preinst",
+      "sizeBytes": 1056,
+      "sha256": "f49006ea3672ecf0459a86e7c3528e7e435825c0ea4a213c981dd6425f04bdf8"
+    },
+    {
+      "path": "tools/audit_r0013_storage.py",
+      "sizeBytes": 2087,
+      "sha256": "70cc58c3c9910c8ea0cf814c0b7080d12585a775195f4871edb60a7892a3c88a"
     },
     {
       "path": "tools/audit_r0013_upstream.py",
-      "bytes": 3821,
+      "sizeBytes": 3821,
       "sha256": "4580cf1a29b0a33f66b472161dde670684a7178ba591a6e9ec6baf5f2593f908"
     },
     {
+      "path": "tools/build_r0013_release.py",
+      "sizeBytes": 12437,
+      "sha256": "b77f12bab4be3054a9e08d9a1708276f31324a0cc87f752cf32f50e6bf970775"
+    },
+    {
       "path": "tools/r0013_inputs.py",
-      "bytes": 2378,
-      "sha256": "675460759fefa7ed9e105810a7f560008a165f5abfb2283f65c321a9d56409e7"
+      "sizeBytes": 2676,
+      "sha256": "c4ad07ddce4aa2f5b88ac2d0845305caddd947719799d7462cef3335f4e6315f"
+    },
+    {
+      "path": "tools/test_r0013_bootstrap.py",
+      "sizeBytes": 9105,
+      "sha256": "76862d7fceede903e16feb453d8be6af491c52adbee9a0ffc4c21f678513d4af"
+    },
+    {
+      "path": "tools/test_r0013_build.py",
+      "sizeBytes": 5759,
+      "sha256": "4fb5cc9e983cf0a38d067abab8cb6bfa3c4b020b441771a4ec7dd81b7f85d757"
     },
     {
       "path": "tools/test_r0013_home.js",
-      "bytes": 5721,
+      "sizeBytes": 5721,
       "sha256": "1cf7f8dd82542bbfcb94b15bb136aa5dc485c796f9068e9526d72e125d452e9a"
     },
     {
       "path": "tools/test_r0013_process.py",
-      "bytes": 9483,
+      "sizeBytes": 9483,
       "sha256": "8209552d9e5cf64fcad76955a7f40710b521ced3690af6790fc6b7ec3f210ce7"
     },
     {
       "path": "tools/test_r0013_subscriptions.py",
-      "bytes": 6954,
+      "sizeBytes": 6954,
       "sha256": "c3107f235c262035c2871615f7e466895e21b9e15a11b665556a52c330a655e2"
     },
     {
+      "path": "tools/test_r0013_system_version.py",
+      "sizeBytes": 2168,
+      "sha256": "43ae8233b08373f14e1942ed286b4ff8d75845fa01b9f24f2f6fe6532abc8d60"
+    },
+    {
       "path": "tools/test_r0013_upgrade_contract.py",
-      "bytes": 1828,
+      "sizeBytes": 1828,
       "sha256": "c38496faaa51dd830f5c840cb0f13bae75a05e7431fa71dad9c2b56f1224a446"
     },
     {
+      "path": "tools/test_r0013_versions.js",
+      "sizeBytes": 2616,
+      "sha256": "29096300e69738a90b62affe562dc3988562ab645accf9b8a8056c13996c9362"
+    },
+    {
       "path": "tools/test_r0013_xray_selection.py",
-      "bytes": 7813,
+      "sizeBytes": 7813,
       "sha256": "1a9ba8466e29db1ff6e1935b9bbd445060eebfe4cd4ce4d6855af7afda6322c2"
+    },
+    {
+      "path": ".github/workflows/r0013-port-tests.yml",
+      "sizeBytes": 1997,
+      "sha256": "8112fce8e0aea8daf96a95e3ccec448cde53d4e03d968be87df80cf8b9bf3048"
     }
   ]
 }

@@ -1,0 +1,197 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0013",
+  "revision": "p15-protected-ram-clean-bootstrap-and-installer",
+  "status": "PASS_BOUNDED_BOOTSTRAP_REGRESSION",
+  "commit": "7ef2834233d8e8ecce9db2bb3fa639a9fb231a94",
+  "ci": "https://github.com/BROadmin/BROray-Light/actions/runs/34509101953",
+  "job": {
+    "name": "isolated-process",
+    "conclusion": "success",
+    "html_url": "https://github.com/BROadmin/BROray-Light/actions/runs/34509101953/job/102978500238",
+    "steps": [
+      {
+        "name": "Set up job",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 1,
+        "started_at": "2026-09-10T17:35:10Z",
+        "completed_at": "2026-09-10T17:35:11Z"
+      },
+      {
+        "name": "Run actions/checkout@v4",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 2,
+        "started_at": "2026-09-10T17:35:11Z",
+        "completed_at": "2026-09-10T17:35:12Z"
+      },
+      {
+        "name": "Install isolated test dependencies",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 3,
+        "started_at": "2026-09-10T17:35:12Z",
+        "completed_at": "2026-09-10T17:35:24Z"
+      },
+      {
+        "name": "BusyBox ash syntax",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 4,
+        "started_at": "2026-09-10T17:35:24Z",
+        "completed_at": "2026-09-10T17:35:24Z"
+      },
+      {
+        "name": "Real Linux process ownership and signal isolation",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 5,
+        "started_at": "2026-09-10T17:35:24Z",
+        "completed_at": "2026-09-10T17:35:25Z"
+      },
+      {
+        "name": "Subscription rename and rollback transactions",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 6,
+        "started_at": "2026-09-10T17:35:25Z",
+        "completed_at": "2026-09-10T17:35:26Z"
+      },
+      {
+        "name": "Xray catalog and explicit consent",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 7,
+        "started_at": "2026-09-10T17:35:26Z",
+        "completed_at": "2026-09-10T17:35:26Z"
+      },
+      {
+        "name": "Home Xray selector control behavior",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 8,
+        "started_at": "2026-09-10T17:35:26Z",
+        "completed_at": "2026-09-10T17:35:30Z"
+      },
+      {
+        "name": "Public version and legacy updater identity separation",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 9,
+        "started_at": "2026-09-10T17:35:30Z",
+        "completed_at": "2026-09-10T17:35:30Z"
+      },
+      {
+        "name": "Protected RAM bootstrap and installer ownership",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 10,
+        "started_at": "2026-09-10T17:35:30Z",
+        "completed_at": "2026-09-10T17:35:30Z"
+      },
+      {
+        "name": "Post Run actions/checkout@v4",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 20,
+        "started_at": "2026-09-10T17:35:30Z",
+        "completed_at": "2026-09-10T17:35:30Z"
+      },
+      {
+        "name": "Complete job",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 21,
+        "started_at": "2026-09-10T17:35:30Z",
+        "completed_at": "2026-09-10T17:35:31Z"
+      }
+    ]
+  },
+  "bootstrapTests": 11,
+  "scope": "Actual preinst/postinst/installer shell with mount type, opkg, runtime binary and service boundaries mocked; not physical clean-install acceptance",
+  "buildA": "dist/R0013/p15-engineering-build-A",
+  "buildB": "dist/R0013/p15-engineering-build-B",
+  "independence": "Fresh build/output temporary directories in separate local processes. Final clean-checkout release A/B remains pending.",
+  "reproducibility": {
+    "stage": "R0013",
+    "revision": "p13-executable-entrypoint-mode-contract",
+    "status": "PASS",
+    "candidateReady": false,
+    "scope": "structural only; not lifecycle acceptance",
+    "tests": [
+      {
+        "test": "outer-sha256-manifest",
+        "status": "PASS"
+      },
+      {
+        "test": "slot-version-internal-identity-and-all-file-hashes",
+        "status": "PASS"
+      },
+      {
+        "test": "three-pages-entrypoint-modes-complete-mode-manifest-and-versioned-assets",
+        "status": "PASS"
+      },
+      {
+        "test": "legacy-compatible-unsigned-index-contract",
+        "status": "PASS"
+      },
+      {
+        "test": "ipk-version-slot-and-exact-clean-xray",
+        "status": "PASS"
+      },
+      {
+        "test": "r1-updater-byte-and-mode-preservation",
+        "status": "PASS"
+      },
+      {
+        "test": "independent-process-build-byte-reproducibility",
+        "status": "PASS"
+      }
+    ]
+  },
+  "artifacts": [
+    {
+      "path": "ENGINEERING-MANIFEST.json",
+      "sizeBytes": 2343,
+      "sha256": "01c85a64b9459653cf00dbbd77c047f27d0e91a8f187b64b5b32bcf3ab2052ef"
+    },
+    {
+      "path": "INPUT-MANIFEST.json",
+      "sizeBytes": 31755,
+      "sha256": "b861c52dcb500f223bfea00f31a7b8ced5799d084c06990b6bdd8fb4690db62b"
+    },
+    {
+      "path": "SHA256SUMS",
+      "sizeBytes": 666,
+      "sha256": "25e23d40bda23cc2b488c97bf99b8fe24f47d198c174e798cafa09b2b7178f2a"
+    },
+    {
+      "path": "broray-light-app-2.0.0-r1.tar.gz",
+      "sizeBytes": 163974,
+      "sha256": "4dcb15246111d242099463a315009126ba3e69fa9781d0b3b476144d32c9d095"
+    },
+    {
+      "path": "broray-light-install-2.0.0.sh",
+      "sizeBytes": 3860,
+      "sha256": "fc1800b889f37a026a29a9e230c76f0afdcbb6287da36f99c465fad5ab4a44ea"
+    },
+    {
+      "path": "broray-light-updater-platform-5-light1.tar.gz",
+      "sizeBytes": 131458,
+      "sha256": "81b7b70bd8180d0293be1e0de116c34801646234daf811b447ac82b0b676051c"
+    },
+    {
+      "path": "broray-light_2.0.0_aarch64-3.10.ipk",
+      "sizeBytes": 12917824,
+      "sha256": "76d31e27e7a2449e9fe9ecd05937f2e882b2180495568fdf341e97dadbd29fdf"
+    },
+    {
+      "path": "release.json",
+      "sizeBytes": 597,
+      "sha256": "f7328899c85b3077886e561e5ea752454721bf39459e2cdd38c4d968811077bc"
+    }
+  ],
+  "candidateReady": false,
+  "releaseReady": false
+}

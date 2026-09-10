@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0013",
+  "revision": "p16-preservation-audit",
+  "status": "FAIL_FIRST_ERROR_AUDIT_SCOPE",
+  "expected": "503 preexisting files unchanged after excluding AGENTS.md and WORKLOG",
+  "actual": {
+    "matched": 502,
+    "mismatch": "project/R0012-STATE.json",
+    "sha256": "9ebc4b4f5e1d764a92a08cb7ca888ed6607fe8da4138d31bf60a505785f87c1d"
+  },
+  "diagnosis": "The routing state was changed at the earlier R0013 scope correction to SUPERSEDED_BY_USER_R0013, at 2026-09-10 17:27:22 local, after the P1 snapshot at 17:24. It is not a build input and was not changed by the current turn. Excluding only AGENTS/WORKLOG overstated byte immutability of routing records.",
+  "nextCorrectedRevision": "p16-preservation-routing-exception",
+  "correction": "Report 502 exact preserved source/history files and explicitly list all three routing/log exceptions; do not modify or restore the R0012 state.",
+  "candidateReady": false
+}
