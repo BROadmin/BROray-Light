@@ -1,0 +1,15 @@
+{
+  "stage": "R0013",
+  "revision": "p23-preservation-audit",
+  "status": "PASS",
+  "baselineManifest": "PREEXISTING-WORKTREE-P1.json",
+  "checkedFiles": 502,
+  "sha256Mismatches": [],
+  "excluded": [
+    "AGENTS.md",
+    "project/WORKLOG.jsonl",
+    "project/R0012-STATE.json"
+  ],
+  "exceptionEvidence": "R0012-PRESERVATION-P16.json",
+  "candidateReady": false
+}

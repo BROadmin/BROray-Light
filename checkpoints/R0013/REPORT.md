@@ -1,10 +1,22 @@
-# BROray-Light 2.0.0 — R0013, checkpoint P16
+# BROray-Light 2.0.0 — R0013, checkpoint P23
 
 Публичная версия и версия пакета: `2.0.0`; будущий тег: `v2.0.0`.
 Пользователь согласовал отдельные служебные `releaseId/candidateId=2.0.0-r1` для совместимости со старым обновителем.
 **Кандидат пока не готов, выпуск не опубликован: candidateReady=false, releaseReady=false.**
 
-## Выполнено
+## Результат P17–P23
+
+Общий механизм RAM-папок и блокировок проверен на настоящей tmpfs с живыми процессами: 38 проверок под dash и BusyBox. Внешний updater перенесён в отдельный явный R0013 overlay: операционный статус, блокировки, загрузки, распаковка и ready-файл S23 находятся в защищённой RAM; журнал транзакции и установленные слоты остаются постоянными.
+
+Проверены 32 сценария обновителя и S23 под двумя shell, включая native BusyBox applets, настоящие тестовые подписи minisign, равную версию, отказ от понижения, опасные архивы, health rollback, аварийное прерывание и восстановление. Слоты используют канонический формат сборщика r1; приложение и service/health boundary в этих тестах — подставные. Ошибки P18/P19/P21 сохранены отдельно и исправлены в новых ревизиях. Источник различия вывода hardlink в BusyBox: [header_verbose_list.c](https://raw.githubusercontent.com/mirror/busybox/1_36_stable/archival/libarchive/header_verbose_list.c).
+
+В [CI P23](https://github.com/BROadmin/BROray-Light/actions/runs/34518444806) все текущие проверки прошли. Новая платформа `5-light2-ram` включена в IPK, её файлы совпадают с отдельным архивом. Публичный ключ и бинарник minisign сохранены побайтно из r1.
+
+Предварительные `p23-engineering-build-A` и `p23-engineering-build-B` совпали по всем восьми файлам. SHA-256 и точные границы проверок: `UPDATER-PLATFORM-AND-BUILDS-P23.json`. Это не финальные clean-checkout Build A/B и не готовый кандидат.
+
+Миграция действующей установки r1 ещё не завершена: app-slot не заменяет внешнюю платформу автоматически; старые lock/work и startup semantics требуют согласованного перехода и отката. Приложение в этих сборках ещё использует прежние runtime/log/tmp-пути. Роутер, production server и публичные релизы не изменялись.
+
+## Выполнено ранее
 
 База — проверенный Light r1, commit `9e5fce9bfa7c82bfc2f2654d80fd3987c5259963`, плюс отдельный явный R0013 overlay. Канонический R0008 проверен сборщиком. Незавершённый код R0012 не включён в сборку: 502 ранее существовавших файла кода/истории совпали по SHA-256; исключения — служебные AGENTS, WORKLOG и статус перенаправления R0012 на R0013, перечисленные в `R0012-PRESERVATION-P16.json`.
 
@@ -18,7 +30,7 @@
 
 Linux CI на commit `7ef2834233d8e8ecce9db2bb3fa639a9fb231a94` завершился успешно: [run 34509101953](https://github.com/BROadmin/BROray-Light/actions/runs/34509101953). Проверены BusyBox ash, настоящие Linux-процессы, файловые транзакции подписок, политика выбора Xray, поведение UI на подставных DOM/HTTP, версия через shell/jq и 11 сценариев bootstrap/installer. В последних подставлены тип ФС, opkg, бинарник Xray и запуск сервиса — это не физическая приёмка.
 
-## Предварительные Build A/B
+## Предыдущие предварительные Build A/B (P15, исторические)
 
 `dist/R0013/p15-engineering-build-A` и `dist/R0013/p15-engineering-build-B` созданы отдельными процессами со свежими временными каталогами. Все 8 файлов совпали побайтно. Финальная независимая сборка из чистых checkout и подпись ещё не выполнены.
 
@@ -39,7 +51,7 @@ Linux CI на commit `7ef2834233d8e8ecce9db2bb3fa639a9fb231a94` завершил
 
 Также остаются run/log/tmp приложения, сессии WebUI и рабочие файлы/блокировка Xray. Чистый bootstrap исправлен, но общий RAM-контракт пока не выполнен. Отказ сохранён в `process-failures/FAILURE-P16-PERSISTENT-LOCK-DOMAIN.json`. Установка на роутер и публикация не выполнялись.
 
-Точный следующий этап: `p17-coordinated-ram-runtime-and-updater-migration` — реализовать и проверить изолированно согласованную миграцию r1 → 2.0.0 с единым механизмом блокировки и откатом. Затем полные clean/update/equal/downgrade/rollback/persistence, все кнопки/API и native auth, финальные Build A/B/подпись, браузерная и разрешённая целевая приёмка.
+Точный следующий этап: `P24_IMPLEMENT_MANIFEST_BOUND_R1_LIFECYCLE_TRANSITION_WITH_LEGACY_LOCK_FENCE_RAM_RUNTIME_PATHS_AND_EXTERNAL_PLATFORM_ROLLBACK`. Уже проверенные RAM-примитив и updater P23 подключаются к переходу с r1; это ещё не завершённый переход. Затем полные clean/update/equal/downgrade/rollback/persistence, все кнопки/API и native auth, финальные Build A/B/подпись, браузерная и разрешённая целевая приёмка.
 
 ## Каждый acceptance gate
 

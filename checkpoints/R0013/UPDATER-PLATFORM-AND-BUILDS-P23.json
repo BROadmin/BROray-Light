@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0013",
+  "revision": "p23-updater-platform-package-integration",
+  "status": "PASS_BOUNDED_PLATFORM_AND_PRELIMINARY_BUILDS",
+  "sourceCommit": "5d52ec4d5bb7083d6ed1e09a58b9c729958a211a",
+  "ci": "https://github.com/BROadmin/BROray-Light/actions/runs/34518444806",
+  "updaterTransactionsAndInitTests": 32,
+  "sharedRamTests": 38,
+  "packageStructureAndReproducibilityTests": [
+    {
+      "test": "outer-sha256-manifest",
+      "status": "PASS"
+    },
+    {
+      "test": "slot-version-internal-identity-and-all-file-hashes",
+      "status": "PASS"
+    },
+    {
+      "test": "three-pages-entrypoint-modes-complete-mode-manifest-and-versioned-assets",
+      "status": "PASS"
+    },
+    {
+      "test": "legacy-compatible-unsigned-index-contract",
+      "status": "PASS"
+    },
+    {
+      "test": "ipk-version-slot-and-exact-clean-xray",
+      "status": "PASS"
+    },
+    {
+      "test": "explicit-ram-updater-port-with-r1-trust-and-wrapper-preservation",
+      "status": "PASS"
+    },
+    {
+      "test": "independent-process-build-byte-reproducibility",
+      "status": "PASS"
+    }
+  ],
+  "buildA": "dist/R0013/p23-engineering-build-A",
+  "buildB": "dist/R0013/p23-engineering-build-B",
+  "reproducibility": "ALL_EIGHT_ARTIFACTS_BYTE_IDENTICAL_SEPARATE_LOCAL_PROCESSES_NOT_FINAL_CLEAN_CHECKOUT_BUILDS",
+  "artifacts": [
+    {
+      "path": "broray-light_2.0.0_aarch64-3.10.ipk",
+      "sizeBytes": 12920823,
+      "sha256": "adfc5f7e48ba20a2895269f68fe6ef41d3142d19c574febdd070c1292b70f3e9"
+    },
+    {
+      "path": "broray-light-app-2.0.0-r1.tar.gz",
+      "sizeBytes": 163974,
+      "sha256": "4dcb15246111d242099463a315009126ba3e69fa9781d0b3b476144d32c9d095"
+    },
+    {
+      "path": "broray-light-install-2.0.0.sh",
+      "sizeBytes": 3860,
+      "sha256": "83a3add8c0275066a250c731aa24814acb85aa231c2ab6be5124a8fd3a8d609d"
+    },
+    {
+      "path": "broray-light-updater-platform-5-light2-ram.tar.gz",
+      "sizeBytes": 134529,
+      "sha256": "763fc09fe87e7b4092d036aab6a4f2960dd3983a35586bafd0b2eac97ec57d60"
+    },
+    {
+      "path": "ENGINEERING-MANIFEST.json",
+      "sizeBytes": 2347,
+      "sha256": "7e053934523e642b6dc6fb3c29d7b5dcfa720d3a7d23ccb28d30b7c6649a1ee3"
+    },
+    {
+      "path": "INPUT-MANIFEST.json",
+      "sizeBytes": 32115,
+      "sha256": "212ba14245a4cadb8ed35f6813e186ae8f71ba6f0d0ece7e56dc69f994183608"
+    },
+    {
+      "path": "release.json",
+      "sizeBytes": 597,
+      "sha256": "f7328899c85b3077886e561e5ea752454721bf39459e2cdd38c4d968811077bc"
+    },
+    {
+      "path": "SHA256SUMS",
+      "sizeBytes": 670,
+      "sha256": "dd582dea0c239608118c2f8090f76d7860d4579227b0294a0a0300411ef4fe94"
+    }
+  ],
+  "ciArtifacts": [
+    {
+      "id": 10168642109,
+      "name": "r0013-updater-core-5d52ec4d5bb7083d6ed1e09a58b9c729958a211a",
+      "digest": "sha256:481c55051067e9127e7baa83b30187bb4ab14e1033094dce17400b6b21e452b9"
+    },
+    {
+      "id": 10168634946,
+      "name": "r0013-ram-primitive-5d52ec4d5bb7083d6ed1e09a58b9c729958a211a",
+      "digest": "sha256:d42eb32e850d752fa30802a1108defd216dbaf6976be8a9e801308e2987c2da8"
+    }
+  ],
+  "keyAndMinisign": "EXACT_R1_BYTES_PRESERVED",
+  "candidateReady": false,
+  "releaseReady": false,
+  "routerTouched": false,
+  "notIncludedYet": [
+    "App runtime/log/tmp/session relocation",
+    "Legacy r1 request/global lock bridge",
+    "External platform activation/rollback on app-slot update",
+    "Final complete candidate acceptance"
+  ]
+}

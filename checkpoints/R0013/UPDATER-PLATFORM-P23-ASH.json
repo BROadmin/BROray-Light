@@ -1,0 +1,78 @@
+{
+  "stage": "R0013",
+  "revision": "p23-updater-platform-package-integration",
+  "scope": "REAL_UPDATER_SIGNATURES_TMPFS_CANONICAL_SLOT_FORMAT_FIXTURE_APP_AND_SERVICE",
+  "utilities": "BusyBox applets",
+  "sourceSha256": "8e3dd063556b255bd5fe78266278817262a1adeea9fc37e5c3699a8782acd2bc",
+  "shell": [
+    "/usr/bin/busybox",
+    "ash"
+  ],
+  "tests": [
+    {
+      "name": "signed_update_and_user_xray_previous_slot_persistence",
+      "status": "PASS"
+    },
+    {
+      "name": "equal_version_is_no_op_without_service_restart",
+      "status": "PASS"
+    },
+    {
+      "name": "signed_downgrade_refusal",
+      "status": "PASS"
+    },
+    {
+      "name": "forced_health_failure_rolls_back_and_recovers_receipt",
+      "status": "PASS"
+    },
+    {
+      "name": "altered_signed_index_refused_before_service_stop",
+      "status": "PASS"
+    },
+    {
+      "name": "signed_wrong_bundle_hash_refused",
+      "status": "PASS"
+    },
+    {
+      "name": "signed_duplicate_archive_refused",
+      "status": "PASS"
+    },
+    {
+      "name": "signed_traversal_archive_refused",
+      "status": "PASS"
+    },
+    {
+      "name": "signed_symlink_archive_refused",
+      "status": "PASS"
+    },
+    {
+      "name": "signed_hardlink_archive_refused",
+      "status": "PASS"
+    },
+    {
+      "name": "manifest_traversal_rejected_before_hash_reads",
+      "status": "PASS"
+    },
+    {
+      "name": "manifest_duplicate_refused",
+      "status": "PASS"
+    },
+    {
+      "name": "dangling_full_product_ownership_refused_before_ram_write",
+      "status": "PASS"
+    },
+    {
+      "name": "interrupted_target_active_recovers_previous_slot_with_stale_locks",
+      "status": "PASS"
+    },
+    {
+      "name": "updater_service_ready_lifecycle_is_ram_only",
+      "status": "PASS"
+    },
+    {
+      "name": "updater_service_foreign_ready_is_preserved",
+      "status": "PASS"
+    }
+  ],
+  "status": "PASS_BOUNDED_CORE"
+}

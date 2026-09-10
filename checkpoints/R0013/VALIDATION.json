@@ -108,17 +108,17 @@
     {
       "gate": "independent_build_a",
       "status": "PASS_PRELIMINARY_LOCAL_NOT_FINAL_ACCEPTANCE",
-      "evidence": "RAM-BOOTSTRAP-VALIDATION-P15.json"
+      "evidence": "UPDATER-PLATFORM-AND-BUILDS-P23.json"
     },
     {
       "gate": "independent_build_b",
       "status": "PASS_PRELIMINARY_LOCAL_NOT_FINAL_ACCEPTANCE",
-      "evidence": "RAM-BOOTSTRAP-VALIDATION-P15.json"
+      "evidence": "UPDATER-PLATFORM-AND-BUILDS-P23.json"
     },
     {
       "gate": "a_b_byte_reproducibility",
       "status": "PASS_PRELIMINARY_LOCAL_NOT_FINAL_ACCEPTANCE",
-      "evidence": "RAM-BOOTSTRAP-VALIDATION-P15.json"
+      "evidence": "UPDATER-PLATFORM-AND-BUILDS-P23.json"
     },
     {
       "gate": "existing_trust_root_signing",
@@ -153,14 +153,29 @@
     {
       "gate": "engineering_package_structure_hashes_and_modes",
       "status": "PASS",
-      "evidence": "RAM-BOOTSTRAP-VALIDATION-P15.json"
+      "evidence": "UPDATER-PLATFORM-AND-BUILDS-P23.json"
     },
     {
       "gate": "preexisting_r0012_preservation",
       "status": "PASS_502_FILES_WITH_THREE_EXPLICIT_ROUTING_LOG_EXCEPTIONS",
       "evidence": "R0012-PRESERVATION-P16.json"
+    },
+    {
+      "gate": "shared_ram_namespace_and_locks",
+      "status": "PASS_REAL_TMPFS_NATIVE_BUSYBOX",
+      "evidence": "NATIVE-UPDATER-VALIDATION-P22.json"
+    },
+    {
+      "gate": "updater_core_transactions_and_ready_service",
+      "status": "PASS_CANONICAL_SLOT_FORMAT_FIXTURE_APP_SERVICE_REAL_MINISIGN_BUSYBOX",
+      "evidence": "UPDATER-PLATFORM-AND-BUILDS-P23.json"
+    },
+    {
+      "gate": "ram_updater_platform_package_binding",
+      "status": "PASS_ENGINEERING_NOT_MIGRATION_ACCEPTANCE",
+      "evidence": "UPDATER-PLATFORM-AND-BUILDS-P23.json"
     }
   ],
   "releaseId": "2.0.0-r1",
-  "currentRevision": "p16-remaining-operational-ram-gate"
+  "currentRevision": "p23-updater-platform-package-integration"
 }

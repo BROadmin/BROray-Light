@@ -3,9 +3,9 @@
   "stage": "R0013",
   "artifacts": [
     {
-      "path": "packaging/r0013-overlay/bootstrap-ram.sh",
-      "sizeBytes": 1868,
-      "sha256": "a857e2328d949db10d36149256ce0dd84d8de2b12f6de607607928498e1eee0b"
+      "path": ".github/workflows/r0013-port-tests.yml",
+      "sizeBytes": 3397,
+      "sha256": "9e449e21c31446508c0c361f3c24cfb984f6d4d2a5e1439138125df168ddb953"
     },
     {
       "path": "packaging/r0013-overlay/app/bin/broray-lightd",
@@ -78,11 +78,6 @@
       "sha256": "cb9b2c5a4e99ffa9045f6acc7df8379369bd0fce4f39b1b024d36d67713de791"
     },
     {
-      "path": "packaging/r0013-overlay/app/web-new/home.html",
-      "sizeBytes": 4700,
-      "sha256": "b1817b41539ec4b33439afbbb7a3a17a9e669aab3dd38dfd9dfe855f8a952903"
-    },
-    {
       "path": "packaging/r0013-overlay/app/web-new/api/xray/install.cgi",
       "sizeBytes": 1182,
       "sha256": "203cc9c9d1c3972b04173ddc1daf9dcea2ae52942a45d02f8fedbe0494c361fc"
@@ -96,6 +91,21 @@
       "path": "packaging/r0013-overlay/app/web-new/assets/js/home.js",
       "sizeBytes": 14875,
       "sha256": "9b7b84e0af44368aa4c188c9f96913d4ae86d0da9b97a8704fbf5fafaf40727e"
+    },
+    {
+      "path": "packaging/r0013-overlay/app/web-new/home.html",
+      "sizeBytes": 4700,
+      "sha256": "b1817b41539ec4b33439afbbb7a3a17a9e669aab3dd38dfd9dfe855f8a952903"
+    },
+    {
+      "path": "packaging/r0013-overlay/bootstrap-ram.sh",
+      "sizeBytes": 1868,
+      "sha256": "a857e2328d949db10d36149256ce0dd84d8de2b12f6de607607928498e1eee0b"
+    },
+    {
+      "path": "packaging/r0013-overlay/shared/runtime-ram.sh",
+      "sizeBytes": 6927,
+      "sha256": "34a959bcb1b6acedd070b2c86571f497adf0996c76cdf2a9e75724ddc03e95af"
     },
     {
       "path": "packaging/r0013-overlay/system/packaging/installer/broray-light-install.sh.in",
@@ -113,6 +123,16 @@
       "sha256": "f49006ea3672ecf0459a86e7c3528e7e435825c0ea4a213c981dd6425f04bdf8"
     },
     {
+      "path": "packaging/r0013-overlay/system/updater/opt/etc/init.d/S23broray-light-updater",
+      "sizeBytes": 1195,
+      "sha256": "7ff6f26ec50637c090bbf006f616bdcf6ad5ce7ddb126e3a3838ed91775d8542"
+    },
+    {
+      "path": "packaging/r0013-overlay/system/updater/opt/libexec/broray-light-updater/broray-light-updater.sh",
+      "sizeBytes": 21892,
+      "sha256": "8e3dd063556b255bd5fe78266278817262a1adeea9fc37e5c3699a8782acd2bc"
+    },
+    {
       "path": "tools/audit_r0013_storage.py",
       "sizeBytes": 2087,
       "sha256": "70cc58c3c9910c8ea0cf814c0b7080d12585a775195f4871edb60a7892a3c88a"
@@ -124,8 +144,13 @@
     },
     {
       "path": "tools/build_r0013_release.py",
-      "sizeBytes": 12437,
-      "sha256": "b77f12bab4be3054a9e08d9a1708276f31324a0cc87f752cf32f50e6bf970775"
+      "sizeBytes": 13263,
+      "sha256": "3aeef3f38fe23e7d394e266373ee661ccbea216d095c97b625c1fe3d5df6da98"
+    },
+    {
+      "path": "tools/r0013_busybox_fixture.py",
+      "sizeBytes": 874,
+      "sha256": "6283f26ecc8b48696e341b07967f79a9958118e1aac3cf9d5c9d5c1aa33a96a7"
     },
     {
       "path": "tools/r0013_inputs.py",
@@ -139,8 +164,8 @@
     },
     {
       "path": "tools/test_r0013_build.py",
-      "sizeBytes": 5759,
-      "sha256": "4fb5cc9e983cf0a38d067abab8cb6bfa3c4b020b441771a4ec7dd81b7f85d757"
+      "sizeBytes": 6859,
+      "sha256": "7ad9837fe94dd6bf71db5142c38e689ca220378f0e1017790d291563d34dfa99"
     },
     {
       "path": "tools/test_r0013_home.js",
@@ -153,6 +178,11 @@
       "sha256": "8209552d9e5cf64fcad76955a7f40710b521ced3690af6790fc6b7ec3f210ce7"
     },
     {
+      "path": "tools/test_r0013_ram.py",
+      "sizeBytes": 11909,
+      "sha256": "b209953587183f42064b99515941c1206d757183ed4ceb0f494f6e5be6858392"
+    },
+    {
       "path": "tools/test_r0013_subscriptions.py",
       "sizeBytes": 6954,
       "sha256": "c3107f235c262035c2871615f7e466895e21b9e15a11b665556a52c330a655e2"
@@ -161,6 +191,11 @@
       "path": "tools/test_r0013_system_version.py",
       "sizeBytes": 2168,
       "sha256": "43ae8233b08373f14e1942ed286b4ff8d75845fa01b9f24f2f6fe6532abc8d60"
+    },
+    {
+      "path": "tools/test_r0013_updater_ram.py",
+      "sizeBytes": 16484,
+      "sha256": "919d6d1e3fdb1d2e657ff5a584640b305c6e3aebf4166e92289b742b9ad26b7d"
     },
     {
       "path": "tools/test_r0013_upgrade_contract.py",
@@ -176,11 +211,7 @@
       "path": "tools/test_r0013_xray_selection.py",
       "sizeBytes": 7813,
       "sha256": "1a9ba8466e29db1ff6e1935b9bbd445060eebfe4cd4ce4d6855af7afda6322c2"
-    },
-    {
-      "path": ".github/workflows/r0013-port-tests.yml",
-      "sizeBytes": 1997,
-      "sha256": "8112fce8e0aea8daf96a95e3ccec448cde53d4e03d968be87df80cf8b9bf3048"
     }
-  ]
+  ],
+  "currentRevision": "p23-updater-platform-package-integration"
 }
