@@ -1,0 +1,19 @@
+{
+  "stage": "R0013",
+  "revision": "p31-xray-rollback-safety-audit",
+  "status": "FAIL_FIRST_ERROR",
+  "source": "packaging/r0013-overlay/app/lib/xray-update.sh",
+  "sourceSha256": "20cff7e9f977bc6986c84a6f5306600c46c7b9f26a1cbbebcb9c8b0406bd7bdb",
+  "test": {
+    "scope": "Disposable local fixture only; actual library, mocked stop refusal, nonexistent invalid backup argument",
+    "backupSuffix": ".br oray-light-backup",
+    "returncode": 1,
+    "currentRuntimePreserved": false,
+    "stderr": ""
+  },
+  "cause": "restore_binary ignores stop refusal and unlinks current/.new before validating the backup. Abort cleanup suppresses recovery failure; dispatch releases the global fence before the EXIT cleanup runs.",
+  "nextRevision": "p32-xray-validated-rollback-before-fence-release",
+  "correction": "Validate exact adjacent backup and SHA before any mutation, respect scoped stop refusal, atomically restore, preserve unknown candidates, and complete rollback before releasing operation ownership.",
+  "candidateReady": false,
+  "routerTouched": false
+}

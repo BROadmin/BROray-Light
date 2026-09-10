@@ -1,0 +1,337 @@
+{
+  "stage": "R0013",
+  "revision": "p30-per-target-platform-stage-journal",
+  "status": "PASS_PLATFORM_ACTIVATION_AND_RESTORE",
+  "commit": "c6af4ead6da9a956d9696b139bcb5358542d428c",
+  "ci": "https://github.com/BROadmin/BROray-Light/actions/runs/34525219271",
+  "testsPassed": 32,
+  "scope": "Actual exact r1 updater and external platform bytes in signed fixture slot; application/service boundaries mocked; not complete application migration",
+  "resolvedFailure": "process-failures/FAILURE-P29-SINGLE-PLATFORM-STAGED-RECEIPT.json",
+  "evidence": {
+    "r0013-platform-ash.json": {
+      "report": {
+        "stage": "R0013",
+        "revision": "p30-per-target-platform-stage-journal",
+        "scope": "REAL_R1_ENGINE_PLATFORM_BYTES_FIXTURE_APP_SERVICE",
+        "engineSha256": "773aaf37893ab100e7023d63c8061d8c4763a4d6186844bb3b671d758c145743",
+        "sourceSha256": "294ec69772632cbcef1e88ec1c889d8c157f3c3d424135e83f3b2ac0b80929c4",
+        "shell": [
+          "/usr/bin/busybox",
+          "ash"
+        ],
+        "utilities": "BusyBox applets",
+        "tests": [
+          {
+            "name": "activate-restore",
+            "status": "PASS",
+            "callback": {
+              "returncode": 0,
+              "stderr": "",
+              "phase": "restored"
+            }
+          },
+          {
+            "name": "foreign-target",
+            "status": "PASS",
+            "callback": {
+              "returncode": 1,
+              "stderr": "BRORAY_LIGHT_MIGRATION_REFUSED:PLATFORM_TARGET_IDENTITY\n",
+              "phase": "refused-before-platform-write"
+            }
+          },
+          {
+            "name": "symlink-parent",
+            "status": "PASS",
+            "callback": {
+              "returncode": 1,
+              "stderr": "BRORAY_LIGHT_MIGRATION_REFUSED:PLATFORM_PAYLOAD\n",
+              "phase": "refused-before-platform-write"
+            }
+          },
+          {
+            "name": "tampered-payload",
+            "status": "PASS",
+            "callback": {
+              "returncode": 1,
+              "stderr": "BRORAY_LIGHT_MIGRATION_REFUSED:PLATFORM_PAYLOAD\n",
+              "phase": "refused-before-platform-write"
+            }
+          },
+          {
+            "name": "partial-4-resume",
+            "status": "PASS",
+            "callback": {
+              "returncode": 0,
+              "stderr": "",
+              "phase": "restored"
+            }
+          },
+          {
+            "name": "partial-4-rollback",
+            "status": "PASS",
+            "callback": {
+              "returncode": 0,
+              "stderr": "",
+              "phase": "restored"
+            }
+          },
+          {
+            "name": "partial-5-resume",
+            "status": "PASS",
+            "callback": {
+              "returncode": 0,
+              "stderr": "",
+              "phase": "restored"
+            }
+          },
+          {
+            "name": "partial-5-rollback",
+            "status": "PASS",
+            "callback": {
+              "returncode": 0,
+              "stderr": "",
+              "phase": "restored"
+            }
+          },
+          {
+            "name": "partial-6-resume",
+            "status": "PASS",
+            "callback": {
+              "returncode": 0,
+              "stderr": "",
+              "phase": "restored"
+            }
+          },
+          {
+            "name": "partial-6-rollback",
+            "status": "PASS",
+            "callback": {
+              "returncode": 0,
+              "stderr": "",
+              "phase": "restored"
+            }
+          },
+          {
+            "name": "staged-4-resume",
+            "status": "PASS",
+            "callback": {
+              "returncode": 0,
+              "stderr": "",
+              "phase": "restored"
+            }
+          },
+          {
+            "name": "staged-4-rollback",
+            "status": "PASS",
+            "callback": {
+              "returncode": 0,
+              "stderr": "",
+              "phase": "restored"
+            }
+          },
+          {
+            "name": "staged-5-resume",
+            "status": "PASS",
+            "callback": {
+              "returncode": 0,
+              "stderr": "",
+              "phase": "restored"
+            }
+          },
+          {
+            "name": "staged-5-rollback",
+            "status": "PASS",
+            "callback": {
+              "returncode": 0,
+              "stderr": "",
+              "phase": "restored"
+            }
+          },
+          {
+            "name": "staged-6-resume",
+            "status": "PASS",
+            "callback": {
+              "returncode": 0,
+              "stderr": "",
+              "phase": "restored"
+            }
+          },
+          {
+            "name": "staged-6-rollback",
+            "status": "PASS",
+            "callback": {
+              "returncode": 0,
+              "stderr": "",
+              "phase": "restored"
+            }
+          }
+        ],
+        "status": "PASS_PLATFORM_ACTIVATION_AND_RESTORE"
+      },
+      "sha256": "15044c4615ec9cfe89c701e709d122a4df3c176e2c78adba50b5c5e70423108e"
+    },
+    "r0013-platform-dash.json": {
+      "report": {
+        "stage": "R0013",
+        "revision": "p30-per-target-platform-stage-journal",
+        "scope": "REAL_R1_ENGINE_PLATFORM_BYTES_FIXTURE_APP_SERVICE",
+        "engineSha256": "773aaf37893ab100e7023d63c8061d8c4763a4d6186844bb3b671d758c145743",
+        "sourceSha256": "294ec69772632cbcef1e88ec1c889d8c157f3c3d424135e83f3b2ac0b80929c4",
+        "shell": [
+          "/bin/dash"
+        ],
+        "utilities": "host utilities",
+        "tests": [
+          {
+            "name": "activate-restore",
+            "status": "PASS",
+            "callback": {
+              "returncode": 0,
+              "stderr": "",
+              "phase": "restored"
+            }
+          },
+          {
+            "name": "foreign-target",
+            "status": "PASS",
+            "callback": {
+              "returncode": 1,
+              "stderr": "BRORAY_LIGHT_MIGRATION_REFUSED:PLATFORM_TARGET_IDENTITY\n",
+              "phase": "refused-before-platform-write"
+            }
+          },
+          {
+            "name": "symlink-parent",
+            "status": "PASS",
+            "callback": {
+              "returncode": 1,
+              "stderr": "BRORAY_LIGHT_MIGRATION_REFUSED:PLATFORM_PAYLOAD\n",
+              "phase": "refused-before-platform-write"
+            }
+          },
+          {
+            "name": "tampered-payload",
+            "status": "PASS",
+            "callback": {
+              "returncode": 1,
+              "stderr": "BRORAY_LIGHT_MIGRATION_REFUSED:PLATFORM_PAYLOAD\n",
+              "phase": "refused-before-platform-write"
+            }
+          },
+          {
+            "name": "partial-4-resume",
+            "status": "PASS",
+            "callback": {
+              "returncode": 0,
+              "stderr": "",
+              "phase": "restored"
+            }
+          },
+          {
+            "name": "partial-4-rollback",
+            "status": "PASS",
+            "callback": {
+              "returncode": 0,
+              "stderr": "",
+              "phase": "restored"
+            }
+          },
+          {
+            "name": "partial-5-resume",
+            "status": "PASS",
+            "callback": {
+              "returncode": 0,
+              "stderr": "",
+              "phase": "restored"
+            }
+          },
+          {
+            "name": "partial-5-rollback",
+            "status": "PASS",
+            "callback": {
+              "returncode": 0,
+              "stderr": "",
+              "phase": "restored"
+            }
+          },
+          {
+            "name": "partial-6-resume",
+            "status": "PASS",
+            "callback": {
+              "returncode": 0,
+              "stderr": "",
+              "phase": "restored"
+            }
+          },
+          {
+            "name": "partial-6-rollback",
+            "status": "PASS",
+            "callback": {
+              "returncode": 0,
+              "stderr": "",
+              "phase": "restored"
+            }
+          },
+          {
+            "name": "staged-4-resume",
+            "status": "PASS",
+            "callback": {
+              "returncode": 0,
+              "stderr": "",
+              "phase": "restored"
+            }
+          },
+          {
+            "name": "staged-4-rollback",
+            "status": "PASS",
+            "callback": {
+              "returncode": 0,
+              "stderr": "",
+              "phase": "restored"
+            }
+          },
+          {
+            "name": "staged-5-resume",
+            "status": "PASS",
+            "callback": {
+              "returncode": 0,
+              "stderr": "",
+              "phase": "restored"
+            }
+          },
+          {
+            "name": "staged-5-rollback",
+            "status": "PASS",
+            "callback": {
+              "returncode": 0,
+              "stderr": "",
+              "phase": "restored"
+            }
+          },
+          {
+            "name": "staged-6-resume",
+            "status": "PASS",
+            "callback": {
+              "returncode": 0,
+              "stderr": "",
+              "phase": "restored"
+            }
+          },
+          {
+            "name": "staged-6-rollback",
+            "status": "PASS",
+            "callback": {
+              "returncode": 0,
+              "stderr": "",
+              "phase": "restored"
+            }
+          }
+        ],
+        "status": "PASS_PLATFORM_ACTIVATION_AND_RESTORE"
+      },
+      "sha256": "12ba22e50de82099dc6d24fb63e583e55b106256342e13c1b8d958f6d6e3b059"
+    }
+  },
+  "candidateReady": false,
+  "routerTouched": false
+}

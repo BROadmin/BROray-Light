@@ -50,6 +50,17 @@ jobs:
         run: python3 -B tools/test_r0013_xray_selection.py --shell /bin/dash --jq /usr/bin/jq
       - name: Home Xray selector control behavior
         run: node tools/test_r0013_home.js
+      - name: Xray rollback identity and operation fence ordering (dash)
+        run: sudo python3 -B tools/test_r0013_xray_rollback.py --shell /bin/dash --result /tmp/r0013-xray-rollback-dash.json
+      - name: Xray rollback identity and operation fence ordering (BusyBox)
+        run: sudo python3 -B tools/test_r0013_xray_rollback.py --shell /usr/bin/busybox --busybox --busybox-tools --result /tmp/r0013-xray-rollback-ash.json
+      - name: Preserve Xray rollback evidence including first failure
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: r0013-xray-rollback-${{ github.sha }}
+          path: /tmp/r0013-xray-rollback-*.json
+          if-no-files-found: ignore
       - name: Public version and legacy updater identity separation
         run: |
           python3 -B tools/test_r0013_system_version.py --shell /bin/dash

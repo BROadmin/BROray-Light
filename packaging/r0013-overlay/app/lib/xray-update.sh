@@ -472,27 +472,37 @@ broray_xray_update_validate_sha256()
 
 broray_xray_update_restore_binary()
 {
+    local restore_parent restore_path restore_id
     broray_xray_restore_backup="$1"
     broray_xray_restore_was_running="$2"
-
-    broray_xray_stop >/dev/null 2>&1 || true
-
-    rm -f \
-        "$BRORAY_XRAY_BINARY" \
-        "$BRORAY_XRAY_BINARY.new"
-
+    case "$broray_xray_restore_was_running" in true|false) ;; *) return 1 ;; esac
+    [ "${BRORAY_XRAY_REPLACEMENT_ACTIVE:-false}" = true ] &&
+        [ "$BRORAY_XRAY_BINARY" = "$BRORAY_BASE/runtime/xray" ] &&
+        [ "$broray_xray_restore_backup" = "$BRORAY_XRAY_BINARY.broray-light-backup" ] || return 1
+    restore_parent="$BRORAY_BASE/runtime"
+    [ -d "$restore_parent" ] && [ ! -L "$restore_parent" ] || return 1
+    case "$(stat -c '%u:%a' "$restore_parent")" in 0:700|0:755) ;; *) return 1 ;; esac
     [ -f "$broray_xray_restore_backup" ] &&
-        [ ! -L "$broray_xray_restore_backup" ] || return 1
-
-    if ! mv "$broray_xray_restore_backup" \
-        "$BRORAY_XRAY_BINARY"
-    then
-        return 1
-    fi
-
-    chmod 755 "$BRORAY_XRAY_BINARY" ||
-        return 1
-
+        [ ! -L "$broray_xray_restore_backup" ] &&
+        [ "$(stat -c '%u:%a' "$broray_xray_restore_backup")" = 0:755 ] || return 1
+    broray_xray_update_validate_sha256 "${broray_xray_old_sha256:-}" &&
+        [ "$(sha256sum "$broray_xray_restore_backup" | awk '{print $1}')" = "$broray_xray_old_sha256" ] || return 1
+    # Current/new are replaceable only when this invocation recorded their
+    # candidate inode before writing. Unknown objects must survive a refusal.
+    for restore_path in "$BRORAY_XRAY_BINARY" "$BRORAY_XRAY_BINARY.new"; do
+        [ -e "$restore_path" ] || [ -L "$restore_path" ] || continue
+        [ -f "$restore_path" ] && [ ! -L "$restore_path" ] &&
+            [ "$(stat -c '%u' "$restore_path")" = 0 ] || return 1
+        restore_id="$(stat -c '%d:%i' "$restore_path")"
+        [ -n "${broray_xray_stage_id:-}" ] && [ "$restore_id" = "$broray_xray_stage_id" ] || return 1
+    done
+    broray_xray_stop >/dev/null 2>&1 || return 1
+    broray_xray_is_running && return 1
+    # Do not unlink the current runtime first: the old verified inode replaces
+    # the candidate in one same-filesystem rename.
+    mv -fT "$broray_xray_restore_backup" "$BRORAY_XRAY_BINARY" || return 1
+    [ "$(sha256sum "$BRORAY_XRAY_BINARY" | awk '{print $1}')" = "$broray_xray_old_sha256" ] || return 1
+    if [ -e "$BRORAY_XRAY_BINARY.new" ]; then rm "$BRORAY_XRAY_BINARY.new" || return 1; fi
     BRORAY_XRAY_REPLACEMENT_ACTIVE=false
 
     if [ "$broray_xray_restore_was_running" = "true" ]; then
@@ -506,16 +516,25 @@ broray_xray_update_restore_binary()
 
 broray_xray_update_abort_cleanup()
 {
-    if [ "${BRORAY_XRAY_REPLACEMENT_ACTIVE:-false}" = true ] &&
-       [ -n "${broray_xray_old_backup:-}" ] &&
-       [ -f "$broray_xray_old_backup" ]; then
+    trap - 0
+    if [ "${BRORAY_XRAY_REPLACEMENT_ACTIVE:-false}" = true ]; then
         broray_xray_update_restore_binary \
-            "$broray_xray_old_backup" \
-            "${broray_xray_was_running:-false}" >/dev/null 2>&1 || true
+            "${broray_xray_old_backup:-}" \
+            "${broray_xray_was_running:-false}" >/dev/null 2>&1 || {
+            printf 'XRAY_RECOVERY_REQUIRED: rollback refused; runtime, backup and operation evidence preserved.\n' >&2
+            return 1
+        }
     fi
-    broray_xray_update_work_clean
-    broray_xray_update_lock_release
+    broray_xray_update_work_clean || return 1
+    broray_xray_update_lock_release || return 1
     broray_xray_release_operation_fence
+}
+
+broray_xray_update_restore_or_error()
+{
+    broray_xray_update_restore_binary "$1" "$2" && return 0
+    broray_xray_update_error 'XRAY_RECOVERY_REQUIRED: откат не подтверждён; бинарники и данные операции сохранены.'
+    return 1
 }
 
 broray_xray_update_success_cleanup()
@@ -542,6 +561,7 @@ broray_xray_update_install()
 {
     broray_xray_update_mode="${1:-update}"
     broray_xray_requested_file="${2:-}"
+    broray_xray_stage_id=''
 
     case "$broray_xray_update_mode" in
         update|reinstall|install)
@@ -570,7 +590,7 @@ broray_xray_update_install()
         return 1
     }
 
-    trap 'broray_xray_update_abort_cleanup' 0
+    trap 'broray_xray_trap_rc=$?; broray_xray_update_abort_cleanup || broray_xray_trap_rc=1; exit "$broray_xray_trap_rc"' 0
     trap 'exit 129' 1
     trap 'exit 130' 2
     trap 'exit 143' 15
@@ -874,6 +894,11 @@ broray_xray_update_install()
     # before replacement keeps /opt consumption bounded by one new binary.
     rm -f "$broray_xray_archive" "$broray_xray_digest"
 
+    if [ -e "$BRORAY_XRAY_BINARY.new" ] || [ -L "$BRORAY_XRAY_BINARY.new" ]; then
+        broray_xray_update_error 'Обнаружен неизвестный подготовленный бинарник Xray; замена запрещена.'
+        return 1
+    fi
+
     broray_xray_was_running=false
 
     if broray_xray_is_running; then
@@ -919,8 +944,6 @@ broray_xray_update_install()
         return 1
     fi
 
-    rm -f "$BRORAY_XRAY_BINARY.new"
-
     if ! mv "$BRORAY_XRAY_BINARY" "$broray_xray_old_backup"; then
         if [ "$broray_xray_was_running" = "true" ]; then
             broray_xray_start >/dev/null 2>&1
@@ -941,12 +964,14 @@ broray_xray_update_install()
         return 1
     fi
 
+    (umask 077; set -C; : > "$BRORAY_XRAY_BINARY.new") || return 1
+    broray_xray_stage_id="$(stat -c '%d:%i' "$BRORAY_XRAY_BINARY.new")" || return 1
     if ! cp "$broray_xray_candidate" \
         "$BRORAY_XRAY_BINARY.new"
     then
-        broray_xray_update_restore_binary \
+        broray_xray_update_restore_or_error \
             "$broray_xray_old_backup" \
-            "$broray_xray_was_running"
+            "$broray_xray_was_running" || return 1
 
         broray_xray_update_error \
             "Не удалось записать новый Xray. Старый бинарник восстановлен."
@@ -955,9 +980,9 @@ broray_xray_update_install()
 
     chmod 755 "$BRORAY_XRAY_BINARY.new" ||
     {
-        broray_xray_update_restore_binary \
+        broray_xray_update_restore_or_error \
             "$broray_xray_old_backup" \
-            "$broray_xray_was_running"
+            "$broray_xray_was_running" || return 1
 
         broray_xray_update_error \
             "Не удалось установить права. Старый Xray восстановлен."
@@ -977,9 +1002,9 @@ broray_xray_update_install()
     if [ "$broray_xray_written_sha256" != \
          "$broray_xray_candidate_sha256" ]
     then
-        broray_xray_update_restore_binary \
+        broray_xray_update_restore_or_error \
             "$broray_xray_old_backup" \
-            "$broray_xray_was_running"
+            "$broray_xray_was_running" || return 1
 
         broray_xray_update_error \
             "Новый бинарник повреждён при записи. Выполнен откат."
@@ -989,9 +1014,9 @@ broray_xray_update_install()
     if ! mv "$BRORAY_XRAY_BINARY.new" \
         "$BRORAY_XRAY_BINARY"
     then
-        broray_xray_update_restore_binary \
+        broray_xray_update_restore_or_error \
             "$broray_xray_old_backup" \
-            "$broray_xray_was_running"
+            "$broray_xray_was_running" || return 1
 
         broray_xray_update_error \
             "Не удалось завершить замену. Выполнен откат."

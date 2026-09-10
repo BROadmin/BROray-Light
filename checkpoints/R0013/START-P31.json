@@ -1,0 +1,8 @@
+{
+  "stage": "R0013",
+  "revision": "p31-xray-rollback-safety-audit",
+  "status": "CHECKPOINT_BEFORE_FAULT_TEST",
+  "scope": "Read the selectively ported Xray replacement code and test whether a missing rollback backup can remove the current runtime; only disposable local fixtures",
+  "candidateReady": false,
+  "routerTouched": false
+}

@@ -212,6 +212,11 @@ broray_xray_install_dispatch() (
     # Installer cleanup restores the runtime before releasing this fence.
     broray_xray_update_install "$@"
     install_rc=$?
+    if [ "$install_rc" -ne 0 ]; then
+        # EXIT would run only after this function releases its fence. Restore
+        # explicitly while we still own it, and retain it on recovery failure.
+        broray_xray_update_abort_cleanup || exit 1
+    fi
     broray_xray_release_operation_fence || exit 1
     exit "$install_rc"
 )

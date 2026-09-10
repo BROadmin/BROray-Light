@@ -1,0 +1,89 @@
+{
+  "stage": "R0013",
+  "revision": "p29-manifest-bound-platform-transaction",
+  "status": "PASS_ENGINEERING_BUILD_BYTES_ONLY_PLATFORM_REVISION_FAILED_P29",
+  "buildA": "dist/R0013/p29-engineering-build-A",
+  "buildB": "dist/R0013/p29-engineering-build-B",
+  "independence": "Separate local processes and fresh per-process baseline source materialization; not final clean-checkout independent runners",
+  "artifacts": [
+    {
+      "path": "ENGINEERING-MANIFEST.json",
+      "sizeBytes": 2347,
+      "sha256": "3b18f0d44b02efc45b70347cc6d16bf311f40be45442f4d974641e256f73c8ec"
+    },
+    {
+      "path": "INPUT-MANIFEST.json",
+      "sizeBytes": 37454,
+      "sha256": "fe10cc529cac7a8045adda7deade2e9b6c43d0a45b1ab96313aece3a41d3a85b"
+    },
+    {
+      "path": "SHA256SUMS",
+      "sizeBytes": 670,
+      "sha256": "8af526572c1448daadf0bea7d59356b3b4a7b0cabef5cd64cbf4351f0951d94f"
+    },
+    {
+      "path": "broray-light-app-2.0.0-r1.tar.gz",
+      "sizeBytes": 201061,
+      "sha256": "7e7d030dd115e9f13f635f22d40dc0dc61e4f2ae7d25cc182da93c8e6e09c688"
+    },
+    {
+      "path": "broray-light-install-2.0.0.sh",
+      "sizeBytes": 3860,
+      "sha256": "03c918d912b144c57be1d4afa3b12b534e8db4ff244db7dfa182cc023dcdf2b2"
+    },
+    {
+      "path": "broray-light-updater-platform-5-light2-ram.tar.gz",
+      "sizeBytes": 134529,
+      "sha256": "763fc09fe87e7b4092d036aab6a4f2960dd3983a35586bafd0b2eac97ec57d60"
+    },
+    {
+      "path": "broray-light_2.0.0_aarch64-3.10.ipk",
+      "sizeBytes": 12957504,
+      "sha256": "33bd4cb5d10c2742380acbee0c80090e8335814d7706f8146b0648c8fdabbf5a"
+    },
+    {
+      "path": "release.json",
+      "sizeBytes": 597,
+      "sha256": "8085f05d525f58924c01370155ff66fba85a1ed71d18d5e08bdf98ab1a02e33c"
+    }
+  ],
+  "validation": {
+    "stage": "R0013",
+    "revision": "p23-updater-platform-package-integration",
+    "status": "PASS",
+    "candidateReady": false,
+    "scope": "structural only; not lifecycle acceptance",
+    "tests": [
+      {
+        "test": "outer-sha256-manifest",
+        "status": "PASS"
+      },
+      {
+        "test": "slot-version-internal-identity-and-all-file-hashes",
+        "status": "PASS"
+      },
+      {
+        "test": "three-pages-entrypoint-modes-complete-mode-manifest-and-versioned-assets",
+        "status": "PASS"
+      },
+      {
+        "test": "legacy-compatible-unsigned-index-contract",
+        "status": "PASS"
+      },
+      {
+        "test": "ipk-version-slot-and-exact-clean-xray",
+        "status": "PASS"
+      },
+      {
+        "test": "explicit-ram-updater-port-with-r1-trust-and-wrapper-preservation",
+        "status": "PASS"
+      },
+      {
+        "test": "independent-process-build-byte-reproducibility",
+        "status": "PASS"
+      }
+    ]
+  },
+  "candidateReady": false,
+  "releaseReady": false
+}
