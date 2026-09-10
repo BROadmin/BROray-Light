@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
   "stage": "R0013_SELECTIVE_UPSTREAM_STABLE_PORT",
-  "status": "P48_CORRECTED_PUBLICATION_FIXTURE_LINUX_PENDING_P47_PAUSED",
-  "currentRevision": "p48-restored-publication-fixture-contract",
-  "activeFailure": "checkpoints/R0013/process-failures/FAILURE-P46-RESTORED-PUBLICATION-FIXTURE-CONTRACT.json",
+  "status": "P49_CORRECTED_RAM_DIAGNOSTIC_AND_P47_CLEAN_INSTALL_LINUX_PENDING",
+  "currentRevision": "p49-work-shape-diagnostic-and-p47-clean-install-gate",
+  "activeFailure": "checkpoints/R0013/process-failures/FAILURE-P48-EARLY-WORK-SHAPE-DIAGNOSTIC.json",
   "publicVersion": "2.0.0",
   "buildA": "PRELIMINARY_ENGINEERING_BYTE_PASS_NOT_FINAL_ACCEPTANCE",
   "buildB": "PRELIMINARY_ENGINEERING_BYTE_PASS_NOT_FINAL_ACCEPTANCE",
@@ -18,7 +18,7 @@
     "path": "checkpoints/R0013/SUBSCRIPTION-NAME-P6.json",
     "sha256": "2b1fe451272dc233e1f8ccd4cc3d6ea2f212ba81e009f93d3a4b9e9b9601577a"
   },
-  "lastResolvedFailure": "checkpoints/R0013/process-failures/FAILURE-P43-LIVE-ROLLBACK-FIXTURE-DEFAULTS.json",
+  "lastResolvedFailure": "checkpoints/R0013/process-failures/FAILURE-P46-RESTORED-PUBLICATION-FIXTURE-CONTRACT.json",
   "processPort": {
     "status": "PASS_ISOLATED_LINUX",
     "tests": 33,
@@ -62,7 +62,7 @@
     "path": "checkpoints/R0013/UPSTREAM-PORT-MAP-P2.json",
     "sha256": "009a0f5adae08f399c82510cf680690b4c2e50bc8c659eda9c48d91b5a838121"
   },
-  "nextExactAction": "P48_COMPLETE_MOCKED_PUBLICATION_CONTRACT_BEFORE_RESUMING_P47",
+  "nextExactAction": "P49_RESTORE_STABLE_REFUSAL_MARKER_AND_VALIDATE_P47_CLEAN_INSTALL",
   "versionAndXray": {
     "status": "PASS_VERSION_AND_BOOTSTRAP_INPUT",
     "path": "checkpoints/R0013/UPGRADE-AND-XRAY-P10.json",
@@ -70,8 +70,8 @@
   },
   "engineeringBuilds": {
     "status": "PASS_PRELIMINARY_ONLY",
-    "path": "checkpoints/R0013/RUNTIME-TREES-AND-BUILDS-P40.json",
-    "sha256": "9cabcb9715ea3eec14c495781c89e94f612ccd40f10c3086a6d508f4154c0afb"
+    "path": "checkpoints/R0013/ENGINEERING-BUILDS-P47.json",
+    "sha256": "73ceaf5f6179c87abf0ca25c0fe2e829cb91fb8edc0a33b815e6110e69ced708"
   },
   "bootstrapBuild": {
     "path": "checkpoints/R0013/RAM-BOOTSTRAP-BUILD-P15.json",
@@ -81,7 +81,7 @@
     "path": "RAM-BOOTSTRAP-VALIDATION-P15.json",
     "sha256": "050a4d9b7e8c82194d1e4dd03e6e014031ec1b24d44f06833cc3189d5ca1c33d"
   },
-  "latestCI": "https://github.com/BROadmin/BROray-Light/actions/runs/34535505249",
+  "latestCI": "https://github.com/BROadmin/BROray-Light/actions/runs/34540209870",
   "actualWebDaemons": {
     "status": "PASS_BOUNDED",
     "tests": 42,
@@ -165,6 +165,12 @@
     "tests": 22,
     "path": "checkpoints/R0013/RUNTIME-TREES-AND-BUILDS-P40.json",
     "sha256": "9cabcb9715ea3eec14c495781c89e94f612ccd40f10c3086a6d508f4154c0afb"
+  },
+  "deadOwnerRecovery": {
+    "status": "PASS_BOUNDED",
+    "tests": 10,
+    "path": "checkpoints/R0013/DEAD-OWNER-RECOVERY-P48.json",
+    "sha256": "dd1d13b2edd9b80658ef7d6a6ec34ce0c15bdac0d91f36cd4c66aba1cd9c8215"
   },
   "liveR1Transition": {
     "status": "PASS_BOUNDED",

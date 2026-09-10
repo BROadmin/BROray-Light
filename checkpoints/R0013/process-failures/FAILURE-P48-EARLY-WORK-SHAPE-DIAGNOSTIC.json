@@ -1,0 +1,65 @@
+{
+  "stage": "R0013",
+  "revision": "p48-restored-publication-fixture-contract",
+  "status": "FAIL_FIRST_ERROR_IN_FULL_REGRESSION",
+  "commit": "5f153e4ae54213a9e38ff21526519496a00e8b55",
+  "ci": "https://github.com/BROadmin/BROray-Light/actions/runs/34540209870",
+  "artifact": {
+    "id": 10177196584,
+    "zipSha256": "b4aa2c38cf378a22811ace1bfbfc75d73432bbde62420a7a48a1c2f926871e5c"
+  },
+  "failure": "P28 extra-old-file callback did not produce admission-result.json; two preceding RAM handoff cases passed.",
+  "cause": "P45 moved the old work inventory check into initial durable transition recording. It now refuses the extra file before the older brl_r1_ram_promote LEGACY_WORK_SHAPE diagnostic, returning 1 without that stable marker. The negative test asserts that marker, raises before writing its callback report, and the outer test exposes only missing evidence. Ownership refusal itself remains fail-closed.",
+  "nextRevision": "p49-work-shape-diagnostic-and-p47-clean-install-gate",
+  "correction": [
+    "Emit the existing LEGACY_WORK_SHAPE refusal marker at the new earlier journal check, without weakening the inventory",
+    "Ensure RamFixture callback assertion exceptions are written as explicit failing evidence and checked by parent",
+    "Include already checkpointed P47 clean-install sources in the next fresh CI commit; no retry of P48"
+  ],
+  "acceptedPartial": "P48 recovery remains 10 bounded PASS on dash/BusyBox; live update/health rollback also passed both shells. Whole P48 is NOT PASS.",
+  "evidence": {
+    "r0013-r1-ram-dash.json": {
+      "report": {
+        "stage": "R0013",
+        "revision": "p28-r1-ram-namespace-transaction",
+        "scope": "REAL_R1_ENGINE_LIVE_RAM_HANDOFF_FIXTURE_APP_SERVICE",
+        "engineSha256": "773aaf37893ab100e7023d63c8061d8c4763a4d6186844bb3b671d758c145743",
+        "handoffSha256": "c2e43adb52af6445116ac5f50153e712acaf3698de35d2b369cad9659d686d77",
+        "shell": [
+          "/bin/dash"
+        ],
+        "utilities": "host utilities",
+        "tests": [
+          {
+            "name": "commit",
+            "status": "PASS",
+            "callback": {
+              "returncode": 0,
+              "stderr": "",
+              "phase": "ready"
+            }
+          },
+          {
+            "name": "rollback",
+            "status": "PASS",
+            "callback": {
+              "returncode": 0,
+              "stderr": "",
+              "phase": "restored"
+            }
+          },
+          {
+            "name": "extra-old-file",
+            "status": "FAIL",
+            "error": "[Errno 2] No such file or directory: '/dev/shm/r0013-updater-js9417ft/admission-result.json'"
+          }
+        ],
+        "status": "FAIL_FIRST_ERROR"
+      },
+      "sha256": "9295c11b3b4b2387bf73debb1a31aa15c8098c282403379f13dadd1cd4b67682"
+    }
+  },
+  "otherJob": "isolated-service cancelled after observing first failure; no later result accepted",
+  "candidateReady": false,
+  "routerTouched": false
+}

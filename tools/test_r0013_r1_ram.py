@@ -138,13 +138,20 @@ def main():
     parser.add_argument('--result', type=Path)
     parser.add_argument('--callback')
     args = parser.parse_args()
-    if args.callback: raise SystemExit(callback(args.callback))
+    if args.callback:
+        try: result=callback(args.callback)
+        except Exception as error:
+            import traceback
+            record=dict(callbackFailure=True,error=str(error),traceback=traceback.format_exc())
+            (Path(os.environ['BRORAY_LIGHT_ROOT_PREFIX'])/'admission-result.json').write_text(json.dumps(record))
+            raise SystemExit(1)
+        raise SystemExit(result)
     assert os.geteuid() == 0, 'Root on disposable Linux CI only'
     shell = [args.shell, 'ash'] if args.busybox else [args.shell]
     if args.busybox_tools:
         import r0013_busybox_fixture
         utility_fixture = r0013_busybox_fixture.enable()
-    report = dict(stage='R0013', revision='p28-r1-ram-namespace-transaction',
+    report = dict(stage='R0013', revision='p49-work-shape-diagnostic-and-callback-evidence',
                   scope='REAL_R1_ENGINE_LIVE_RAM_HANDOFF_FIXTURE_APP_SERVICE', engineSha256=ENGINE_SHA,
                   handoffSha256=hashlib.sha256(HANDOFF.read_bytes()).hexdigest(), shell=shell,
                   utilities='BusyBox applets' if args.busybox_tools else 'host utilities', tests=[])
@@ -156,6 +163,7 @@ def main():
         try:
             before = fixture.persistent()
             result = fixture.update(0 if mode == 'commit' else 1)
+            assert not result.get('callbackFailure'),result
             assert fixture.current() == ('2.0.0-r1' if mode == 'commit' else '1.0.0-r1')
             assert fixture.persistent() == before
             # r1 retains its own cleanup authority; our handoff never deletes its locks.

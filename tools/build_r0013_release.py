@@ -128,7 +128,8 @@ def build(output, platform, archive, digest):
     ram_helper = (inputs.REPO / "packaging/r0013-overlay/shared/runtime-ram.sh").read_bytes()
     original_render = base.render
     def render_with_bootstrap(path, replacements):
-        return original_render(path, {"BOOTSTRAP_RAM_HELPERS": bootstrap_helper.decode(), **replacements})
+        return original_render(path, {"BOOTSTRAP_RAM_HELPERS": bootstrap_helper.decode(),
+                                      "RUNTIME_RAM_HELPERS": ram_helper.decode(), **replacements})
     base.render = render_with_bootstrap
     source = base.verify_source(inputs.REPO)
     app = prepared_app()

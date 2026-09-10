@@ -18,8 +18,8 @@ APP_ROOT="$ROOT_PREFIX/opt/broray-light"
     exit 1
 }
 
-if [ -e "$APP_ROOT/current" ] && [ ! -L "$APP_ROOT/current" ]; then
-    echo 'ERROR: BROray-Light current slot is not a managed symlink.' >&2
+if [ -e "$APP_ROOT/current" ] || [ -L "$APP_ROOT/current" ]; then
+    echo 'ERROR: BROray-Light is already installed; use its signed updater, not the clean package installer.' >&2
     exit 1
 fi
 

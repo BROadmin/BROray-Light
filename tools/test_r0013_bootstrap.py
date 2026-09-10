@@ -8,7 +8,7 @@ from pathlib import Path
 import subprocess
 import tempfile
 
-from build_r0013_release import RELEASE_ID, XRAY
+from build_r0013_release import RELEASE_ID, XRAY, prepared_app, primitives
 import r0013_inputs as inputs
 
 ROOT = inputs.REPO / "packaging/r0013-overlay"
@@ -19,6 +19,7 @@ PARAMS = {"RELEASE_ID": RELEASE_ID, "CANDIDATE_ID": RELEASE_ID, "XRAY_VERSION": 
 def render(relative, params):
     text = (ROOT / relative).read_text()
     text = text.replace("@BOOTSTRAP_RAM_HELPERS@", (ROOT / "bootstrap-ram.sh").read_text())
+    text = text.replace("@RUNTIME_RAM_HELPERS@", (ROOT / "shared/runtime-ram.sh").read_text())
     for key, value in params.items():
         text = text.replace("@" + key + "@", value)
     assert "@RELEASE_ID@" not in text and "@XRAY_VERSION@" not in text
@@ -58,9 +59,10 @@ class Fixture:
     def data(self):
         self.write("tmp/broray-light-bootstrap/xray-" + XRAY["version"], BINARY, 0o755)
         slot = "opt/broray-light/releases/" + RELEASE_ID + "/"
-        self.write(slot + "release.json", json.dumps(dict(product="BROray-Light", releaseId=RELEASE_ID, version="2.0.0")).encode())
-        for name in ("settings.json", "server-auto-switch.json", "lighttpd.conf"):
-            self.write(slot + "app/share/defaults/" + name, b"{}\n")
+        app=prepared_app();base=primitives()
+        base.source_app_files=lambda repo,modes:[('app/'+name,data,mode) for name,(data,mode) in sorted(app.items())]
+        members,_=base.slot_payload(self.root,{})
+        for name,data,mode in members:self.write(slot+name,data,mode)
         for relative in ("opt/etc/init.d/S24broray-light", "opt/etc/init.d/S23broray-light-updater",
                          "opt/bin/broray-light-updaterctl", "opt/bin/broray-light-web-publishctl",
                          "opt/libexec/broray-light-updater/broray-light-updater.sh",
@@ -96,17 +98,24 @@ ln -s releases/fixture "$BRORAY_LIGHT_ROOT_PREFIX/opt/broray-light/current"
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--shell", required=True)
+    parser.add_argument("--result", type=Path)
     args = parser.parse_args()
     assert os.geteuid() == 0, "Run isolated ownership tests as root on disposable CI, not a router"
     records = []
+    def emit(value):
+        payload=json.dumps(value,indent=2)+'\n'
+        if args.result:
+            args.result.parent.mkdir(parents=True,exist_ok=True)
+            args.result.write_text(payload)
+        print(payload,flush=True)
     def test(name, function):
         fixture = Fixture(args.shell)
         try:
             function(fixture)
             records.append(dict(test=name, status="PASS"))
         except Exception as error:
-            print(json.dumps(dict(stage="R0013", revision="p15", status="FAIL_FIRST_ERROR",
-                                  test=name, error=str(error), completed=records), indent=2))
+            emit(dict(stage="R0013", revision="p49-p47-clean-install-ram", status="FAIL_FIRST_ERROR",
+                      test=name, error=str(error), completed=records))
             raise
         finally:
             fixture.temp.cleanup()
@@ -122,6 +131,11 @@ def main():
         assert (f.app / "runtime/xray").read_bytes() == BINARY
         assert (f.app / "current").is_symlink()
         assert not f.bootstrap.exists()
+        assert not (f.root/'opt/var/lock').exists()
+        for name in ('run','logs','tmp','update'):
+            assert (f.app/name).is_symlink() and os.readlink(f.app/name)==str(f.root/'tmp/broray-light'/name)
+            assert (f.root/'tmp/broray-light'/name).stat().st_mode&0o777==0o700
+        assert (f.root/'tmp/broray-light/run/web-new/sessions').stat().st_mode&0o777==0o700
     def preserve(f):
         pre_ok(f); f.data()
         old = b"#!/bin/sh\necho 'Xray 26.7.28 accepted'\n"
@@ -158,6 +172,16 @@ def main():
     def foreign_product(f):
         f.write("opt/broray/foreign", b"preserve")
         assert f.pre().returncode != 0 and not f.bootstrap.exists()
+    def already_installed(f):
+        f.write('opt/broray-light/releases/1.0.0-r1/owned',b'preserve')
+        (f.app/'current').symlink_to('releases/1.0.0-r1')
+        assert f.pre().returncode != 0 and not f.bootstrap.exists()
+        assert os.readlink(f.app/'current')=='releases/1.0.0-r1'
+    def manifest_tamper(f):
+        pre_ok(f);f.data()
+        (f.app/'releases'/RELEASE_ID/'app/web-new/home.html').write_bytes(b'tampered')
+        assert f.post().returncode != 0 and not (f.app/'current').exists()
+        assert not (f.app/'runtime/xray').exists()
     def installer(f):
         result = f.installer()
         assert result.returncode == 0, result.stderr.decode()
@@ -175,12 +199,14 @@ def main():
                      ("symlink-namespace-preserved", symlink), ("nonram-refused-before-write", nonram),
                      ("changed-owner-fails-closed-preserves-evidence", marker_tamper),
                      ("full-product-ownership-refused", foreign_product),
+                     ("installed-package-overwrite-refused", already_installed),
+                     ("tampered-app-slot-refused", manifest_tamper),
                      ("installer-private-opkg-ram-cleanup", installer),
                      ("installer-bad-hash-no-opkg-cleanup", install_bad_hash),
                      ("installer-opkg-failure-cleanup", install_opkg_fail)]:
         test(name, fn)
-    print(json.dumps(dict(stage="R0013", revision="p15", status="PASS", candidateReady=False,
-                         mockedBoundaries=["mount type", "opkg", "Xray binary", "service start"], tests=records), indent=2))
+    emit(dict(stage="R0013", revision="p49-p47-clean-install-ram", status="PASS", candidateReady=False,
+              mockedBoundaries=["mount type", "opkg", "Xray binary", "service start"], tests=records))
 
 if __name__ == "__main__":
     main()

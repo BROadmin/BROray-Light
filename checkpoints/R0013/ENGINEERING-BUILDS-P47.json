@@ -1,0 +1,116 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0013",
+  "revision": "p47-clean-install-ram-contract",
+  "status": "PRELIMINARY_BUILD_AB_STRUCTURAL_PASS_NOT_LIFECYCLE_ACCEPTANCE",
+  "buildA": "dist/R0013/p47-engineering-build-A",
+  "buildB": "dist/R0013/p47-engineering-build-B",
+  "independence": "Two separate local Python processes, separate fresh input trees and distinct output directories. Not final independent clean-checkout release acceptance.",
+  "files": [
+    {
+      "path": "ENGINEERING-MANIFEST.json",
+      "sizeBytes": 2347,
+      "sha256": "4b4757c699fc9060186db4acbc4d5daaea3d0d786e433fed299df96b06e35fe7"
+    },
+    {
+      "path": "INPUT-MANIFEST.json",
+      "sizeBytes": 40798,
+      "sha256": "269a6c8a869ad8119ef2d01b66fd88eaf34e925a4e02b998bfdc656082b452b0"
+    },
+    {
+      "path": "SHA256SUMS",
+      "sizeBytes": 670,
+      "sha256": "ec8a0a15492dc7f85e4eebb905b1485dac0f4c5933bc34934429f1f533290bd1"
+    },
+    {
+      "path": "broray-light-app-2.0.0-r1.tar.gz",
+      "sizeBytes": 224748,
+      "sha256": "c50009b38522ca287536bead5338b6fba436320a38a548131b83452f7a975931"
+    },
+    {
+      "path": "broray-light-install-2.0.0.sh",
+      "sizeBytes": 3860,
+      "sha256": "3067ac57e5da234d375abfc4b2ccac0242a29048304ca5d9ff5640ad83d03cdd"
+    },
+    {
+      "path": "broray-light-updater-platform-5-light2-ram.tar.gz",
+      "sizeBytes": 134729,
+      "sha256": "abf69dbf31db510fa78c7bba15429e5fe0453bd68ee9d381b21e10703452fe17"
+    },
+    {
+      "path": "broray-light_2.0.0_aarch64-3.10.ipk",
+      "sizeBytes": 12983448,
+      "sha256": "beee5c5699238c8f01e1902924a083694ec45b5574db3bbf22ec55fe319c5c8b"
+    },
+    {
+      "path": "release.json",
+      "sizeBytes": 597,
+      "sha256": "9a224c63961f0b834c3bfbfc1dc301a5dee0588680d163741bbc2069ac16417d"
+    }
+  ],
+  "buildBMatchesAllEight": true,
+  "validation": {
+    "stage": "R0013",
+    "revision": "p23-updater-platform-package-integration",
+    "status": "PASS",
+    "candidateReady": false,
+    "scope": "structural only; not lifecycle acceptance",
+    "tests": [
+      {
+        "test": "outer-sha256-manifest",
+        "status": "PASS"
+      },
+      {
+        "test": "slot-version-internal-identity-and-all-file-hashes",
+        "status": "PASS"
+      },
+      {
+        "test": "three-pages-entrypoint-modes-complete-mode-manifest-and-versioned-assets",
+        "status": "PASS"
+      },
+      {
+        "test": "legacy-compatible-unsigned-index-contract",
+        "status": "PASS"
+      },
+      {
+        "test": "ipk-version-slot-and-exact-clean-xray",
+        "status": "PASS"
+      },
+      {
+        "test": "explicit-ram-updater-port-with-r1-trust-and-wrapper-preservation",
+        "status": "PASS"
+      },
+      {
+        "test": "independent-process-build-byte-reproducibility",
+        "status": "PASS"
+      }
+    ]
+  },
+  "uncommittedSourceInputs": [
+    {
+      "path": "tools/build_r0013_release.py",
+      "sha256": "191284268d6c21268d5ba4c59b75a5b6e09ed0706214bcf4f71fec8d72bb81c9"
+    },
+    {
+      "path": "tools/test_r0013_bootstrap.py",
+      "sha256": "5be3c6acfd07a1d689ea1c90e97c6b740bc0e9a051c802ad4b68ef177cf19b81"
+    },
+    {
+      "path": "packaging/r0013-overlay/system/packaging/opkg/preinst",
+      "sha256": "9fac9d5e4cf9a141a0f4cc9493e705996d5a385443d4725d08259408ef9a8951"
+    },
+    {
+      "path": "packaging/r0013-overlay/system/packaging/opkg/postinst",
+      "sha256": "04a8c10c4bc83eee7de95982a66f49fd4ca7da0573ef9d2f81cd66eeba653bc2"
+    }
+  ],
+  "appMeasurement": {
+    "files": 146,
+    "logicalBytes": 836767,
+    "xrayBinaryBytes": 35061884,
+    "scope": "Not installed filesystem allocation"
+  },
+  "candidateReady": false,
+  "signed": false,
+  "routerTouched": false
+}

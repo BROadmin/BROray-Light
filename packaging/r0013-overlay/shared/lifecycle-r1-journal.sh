@@ -58,7 +58,7 @@ brl_r1_transition_record()
     boot="$(cat /proc/sys/kernel/random/boot_id)" || return 1
     printf '%s\n' "$boot" | grep -Eq '^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$' || return 1
     work="$prefix/tmp/broray-light-updater"
-    inventory="$(brl_r1_work_inventory "$work")" || return 1
+    inventory="$(brl_r1_work_inventory "$work")" || { brl_r1_refuse LEGACY_WORK_SHAPE; return 1; }
     work_id="$(stat -c '%d:%i' "$work")"; work_mode="$(stat -c '%a' "$work")"
     if [ -e "$BRL_R1_JOURNAL" ] || [ -L "$BRL_R1_JOURNAL" ]; then
         brl_r1_receipt_valid && jq -e --arg pid "$BRL_LEGACY_UPDATER_PID" --arg start "$BRL_LEGACY_UPDATER_START" \

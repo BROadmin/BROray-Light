@@ -1,0 +1,17 @@
+{
+  "stage": "R0013",
+  "revision": "p49-work-shape-diagnostic-and-p47-clean-install-gate",
+  "status": "CHECKPOINT_BEFORE_CORRECTION",
+  "failure": {
+    "path": "process-failures/FAILURE-P48-EARLY-WORK-SHAPE-DIAGNOSTIC.json",
+    "sha256": "d1c4fcd70f12613dd69baa78abb9956b8c90d65ff34646f6ae6f3608e51ea46d"
+  },
+  "changes": [
+    "Earlier journal inventory check retains stable LEGACY_WORK_SHAPE error marker",
+    "RAM callback failures are explicit JSON, never mistaken for successful expected refusal",
+    "Checkpointed P47 clean-install sources included and tested for first time on Linux",
+    "Fast legacy RAM and clean-bootstrap checks precede expensive live recovery tests"
+  ],
+  "p47Start": "START-P47.json",
+  "candidateReady": false
+}

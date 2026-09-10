@@ -1,0 +1,155 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0013",
+  "revision": "p48-restored-publication-fixture-contract",
+  "status": "PASS_BOUNDED_RECOVERY",
+  "commit": "5f153e4ae54213a9e38ff21526519496a00e8b55",
+  "ci": "https://github.com/BROadmin/BROray-Light/actions/runs/34540209870",
+  "artifact": {
+    "id": 10177164808,
+    "zipSha256": "625525b47adc2e0e2e2dd77786ca9fe831952f63d7361df1278e800e7e850d42"
+  },
+  "tests": 10,
+  "evidence": {
+    "r0013-recovery-ash.json": {
+      "report": {
+        "stage": "R0013",
+        "revision": "p48-restored-publication-fixture-contract",
+        "status": "PASS_BOUNDED_RECOVERY",
+        "shell": [
+          "/usr/bin/busybox",
+          "ash"
+        ],
+        "tests": [
+          {
+            "name": "finalize",
+            "status": "PASS",
+            "detail": {
+              "finalized": true,
+              "snapshotsRemoved": true,
+              "sessionPreserved": true,
+              "idempotent": true
+            }
+          },
+          {
+            "name": "dead-owner",
+            "status": "PASS",
+            "detail": {
+              "rollback": true,
+              "sourceRelease": "1.0.0-r1",
+              "durablePersistence": true,
+              "ramLoss": false,
+              "snapshotsRemoved": true
+            }
+          },
+          {
+            "name": "ram-loss",
+            "status": "PASS",
+            "detail": {
+              "rollback": true,
+              "sourceRelease": "1.0.0-r1",
+              "durablePersistence": true,
+              "ramLoss": true,
+              "snapshotsRemoved": true
+            }
+          },
+          {
+            "name": "foreign-lock",
+            "status": "PASS",
+            "detail": {
+              "foreignLockRefused": true,
+              "foreignObjectPreserved": true
+            }
+          },
+          {
+            "name": "foreign-slot",
+            "status": "PASS",
+            "detail": {
+              "tamperedSourceRefused": true
+            }
+          }
+        ],
+        "entrySha256": "f607f7071187bcdc6506f94f06e5f5072cfd55f2bb43bdaa899bceeea964d919",
+        "recoverySha256": "3a0c8d119bd4e11fb2f0152422bfeeab3c8ccd2b641eb2dcf5629a3dcb24aea4",
+        "scope": "Exact old engine, real S24/entry, actual SIGKILL and private tmpfs remount; fixture app loop/lighttpd/publication OS calls."
+      },
+      "sha256": "e77ea14273faccbb07aa1994d5ebed51c556abcd8d07824e6cc24525001da13b"
+    },
+    "r0013-recovery-dash.json": {
+      "report": {
+        "stage": "R0013",
+        "revision": "p48-restored-publication-fixture-contract",
+        "status": "PASS_BOUNDED_RECOVERY",
+        "shell": [
+          "/bin/dash"
+        ],
+        "tests": [
+          {
+            "name": "finalize",
+            "status": "PASS",
+            "detail": {
+              "finalized": true,
+              "snapshotsRemoved": true,
+              "sessionPreserved": true,
+              "idempotent": true
+            }
+          },
+          {
+            "name": "dead-owner",
+            "status": "PASS",
+            "detail": {
+              "rollback": true,
+              "sourceRelease": "1.0.0-r1",
+              "durablePersistence": true,
+              "ramLoss": false,
+              "snapshotsRemoved": true
+            }
+          },
+          {
+            "name": "ram-loss",
+            "status": "PASS",
+            "detail": {
+              "rollback": true,
+              "sourceRelease": "1.0.0-r1",
+              "durablePersistence": true,
+              "ramLoss": true,
+              "snapshotsRemoved": true
+            }
+          },
+          {
+            "name": "foreign-lock",
+            "status": "PASS",
+            "detail": {
+              "foreignLockRefused": true,
+              "foreignObjectPreserved": true
+            }
+          },
+          {
+            "name": "foreign-slot",
+            "status": "PASS",
+            "detail": {
+              "tamperedSourceRefused": true
+            }
+          }
+        ],
+        "entrySha256": "f607f7071187bcdc6506f94f06e5f5072cfd55f2bb43bdaa899bceeea964d919",
+        "recoverySha256": "3a0c8d119bd4e11fb2f0152422bfeeab3c8ccd2b641eb2dcf5629a3dcb24aea4",
+        "scope": "Exact old engine, real S24/entry, actual SIGKILL and private tmpfs remount; fixture app loop/lighttpd/publication OS calls."
+      },
+      "sha256": "c15a0da5c7dde15687e1c1d1dc8ada0b4bbcef275a46f3734c75a2b24a7a60f2"
+    }
+  },
+  "scope": "Unchanged r1 updater, real old/new S24, actual SIGKILL and private tmpfs remount; daemon workload/lighttpd and publication OS boundary mocked. Native real web daemons covered separately P39.",
+  "resolvedFailures": [
+    "FAILURE-P45-RECOVERY-FIXTURE-PID-BINDING.json",
+    "FAILURE-P46-RESTORED-PUBLICATION-FIXTURE-CONTRACT.json"
+  ],
+  "remaining": [
+    "Early S23/partial-anchor recovery",
+    "Old persistent operational state/ready retirement",
+    "Live rollback snapshot cleanup",
+    "Full candidate and clean installer lifecycle"
+  ],
+  "candidateReady": false,
+  "routerTouched": false
+}
