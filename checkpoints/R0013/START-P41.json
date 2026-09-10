@@ -1,0 +1,25 @@
+{
+  "stage": "R0013",
+  "revision": "p41-r1-live-entry-service-and-rollback-coordinator",
+  "status": "CHECKPOINT_BEFORE_IMPLEMENTATION",
+  "prerequisite": {
+    "revision": "P40",
+    "ci": "https://github.com/BROadmin/BROray-Light/actions/runs/34533414089",
+    "status": "DASH_PASS_BUSYBOX_PENDING_AT_CHECKPOINT"
+  },
+  "scope": "Connect the signed new runtime-prepare entry and new S24 rollback dispatcher to the exact unchanged live r1 updater. Exercise actual r1 and new S24 code with explicitly bounded daemon/native OS dependencies. Boot recovery/finalization remains the next gate.",
+  "sequence": [
+    "Exact legacy transaction admission and durable signed-slot binding",
+    "Protected updater RAM handoff; old application quiescence and snapshots",
+    "Legacy operational aliases, exact config+receipt and external platform activation",
+    "New S24 start while old updater still owns persistent locks; nested startup is read-only admitted",
+    "On live failure restore service/config/platform/operational roots before returning to old updater rollback"
+  ],
+  "invariants": [
+    "No caller environment grants legacy lock bypass",
+    "No foreign process signaling or unknown object deletion",
+    "All rollback source content except durable config/receipts stays in protected RAM",
+    "No public release or target deployment"
+  ],
+  "candidateReady": false
+}

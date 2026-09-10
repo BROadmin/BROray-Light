@@ -191,3 +191,27 @@ jobs:
           name: r0013-runtime-trees-${{ github.sha }}
           path: /tmp/r0013-runtime-trees-*.json
           if-no-files-found: ignore
+  isolated-live-entry:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+          fetch-depth: 0
+      - name: Install live transition fixture dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends busybox dash gcc jq minisign
+      - name: Real r1 and new S24 live transition (dash)
+        run: sudo python3 -B tools/test_r0013_live_entry.py --shell /bin/dash --result /tmp/r0013-live-entry-dash.json
+      - name: Real r1 and new S24 live transition (BusyBox)
+        run: sudo python3 -B tools/test_r0013_live_entry.py --shell /usr/bin/busybox --busybox --busybox-tools --result /tmp/r0013-live-entry-ash.json
+      - name: Preserve live transition evidence including first failure
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: r0013-live-entry-${{ github.sha }}
+          path: /tmp/r0013-live-entry-*.json
+          if-no-files-found: ignore

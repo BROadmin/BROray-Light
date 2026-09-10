@@ -1,0 +1,50 @@
+{
+  "stage": "R0013",
+  "revision": "P40",
+  "status": "BYTE_IDENTICAL_A_B_PRELIMINARY",
+  "buildA": "dist/R0013/p40-engineering-build-A",
+  "buildB": "dist/R0013/p40-engineering-build-B",
+  "artifacts": [
+    {
+      "path": "broray-light_2.0.0_aarch64-3.10.ipk",
+      "sizeBytes": 12973977,
+      "sha256": "3df606c6e9806d59ccb216183c7ac23a9a818a58fcf5be4db7ae1341711578f8"
+    },
+    {
+      "path": "broray-light-app-2.0.0-r1.tar.gz",
+      "sizeBytes": 217650,
+      "sha256": "a739d42dddc0611aa21e3a5f5163b789e2448051506c82a8a9783d5008d4a84e"
+    },
+    {
+      "path": "broray-light-install-2.0.0.sh",
+      "sizeBytes": 3860,
+      "sha256": "9481ee2d437506b987bc8d1e9d07ef4523d56fd0c8baa826ad40d7a96fe8f167"
+    },
+    {
+      "path": "broray-light-updater-platform-5-light2-ram.tar.gz",
+      "sizeBytes": 134529,
+      "sha256": "763fc09fe87e7b4092d036aab6a4f2960dd3983a35586bafd0b2eac97ec57d60"
+    },
+    {
+      "path": "ENGINEERING-MANIFEST.json",
+      "sizeBytes": 2347,
+      "sha256": "5f014b962e53b6436eaf7a65c9d17e30e021b2637b9fa090e053a577aa0a798a"
+    },
+    {
+      "path": "INPUT-MANIFEST.json",
+      "sizeBytes": 40274,
+      "sha256": "2ffe2c8b4dea6e542065092253e7fc8680c85e52935a2030654bb038e141a813"
+    },
+    {
+      "path": "release.json",
+      "sizeBytes": 597,
+      "sha256": "64867b461a1d39eba4ee9f2b642cf0e62e23b50571a54d5dca7386cb02cfa607"
+    },
+    {
+      "path": "SHA256SUMS",
+      "sizeBytes": 670,
+      "sha256": "113770d6c5cafbdf267399d80110d567b45e4ec5fd70319a076e7dae200a6459"
+    }
+  ],
+  "candidateReady": false
+}

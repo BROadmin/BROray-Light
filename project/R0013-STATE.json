@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "stage": "R0013_SELECTIVE_UPSTREAM_STABLE_PORT",
-  "status": "ACTUAL_DAEMON_COMPONENT_PASS_LEGACY_RUNTIME_MIGRATION_IN_PROGRESS",
-  "currentRevision": "p40-legacy-runtime-tree-quiescence-and-ram-handoff",
+  "status": "RUNTIME_TREE_COMPONENT_PASS_LIVE_R1_ENTRY_INTEGRATION_IN_PROGRESS",
+  "currentRevision": "p41-r1-live-entry-service-and-rollback-coordinator",
   "activeFailure": null,
   "publicVersion": "2.0.0",
   "buildA": "PRELIMINARY_ENGINEERING_BYTE_PASS_NOT_FINAL_ACCEPTANCE",
@@ -62,7 +62,7 @@
     "path": "checkpoints/R0013/UPSTREAM-PORT-MAP-P2.json",
     "sha256": "009a0f5adae08f399c82510cf680690b4c2e50bc8c659eda9c48d91b5a838121"
   },
-  "nextExactAction": "P40_COMPLETE_AND_VALIDATE_RUNTIME_TREE_HANDOFF_THEN_FULL_R1_ENTRY_BOOT_RECOVERY",
+  "nextExactAction": "P41_VALIDATE_ACTUAL_R1_AND_NEW_S24_LIVE_UPDATE_ROLLBACK_THEN_BOOT_RECOVERY",
   "versionAndXray": {
     "status": "PASS_VERSION_AND_BOOTSTRAP_INPUT",
     "path": "checkpoints/R0013/UPGRADE-AND-XRAY-P10.json",
@@ -70,8 +70,8 @@
   },
   "engineeringBuilds": {
     "status": "PASS_PRELIMINARY_ONLY",
-    "path": "checkpoints/R0013/SERVICE-AND-BUILDS-P37.json",
-    "sha256": "95cdbac8d3580dccd88e37a2864f2cc5d2f9a489445e0041ebcbb9826ce47197"
+    "path": "checkpoints/R0013/RUNTIME-TREES-AND-BUILDS-P40.json",
+    "sha256": "9cabcb9715ea3eec14c495781c89e94f612ccd40f10c3086a6d508f4154c0afb"
   },
   "bootstrapBuild": {
     "path": "checkpoints/R0013/RAM-BOOTSTRAP-BUILD-P15.json",
@@ -81,7 +81,7 @@
     "path": "RAM-BOOTSTRAP-VALIDATION-P15.json",
     "sha256": "050a4d9b7e8c82194d1e4dd03e6e014031ec1b24d44f06833cc3189d5ca1c33d"
   },
-  "latestCI": "https://github.com/BROadmin/BROray-Light/actions/runs/34531630446",
+  "latestCI": "https://github.com/BROadmin/BROray-Light/actions/runs/34533414089",
   "actualWebDaemons": {
     "status": "PASS_BOUNDED",
     "tests": 42,
@@ -159,5 +159,11 @@
     "tests": 30,
     "path": "checkpoints/R0013/SERVICE-AND-BUILDS-P37.json",
     "sha256": "95cdbac8d3580dccd88e37a2864f2cc5d2f9a489445e0041ebcbb9826ce47197"
+  },
+  "runtimeTreeHandoff": {
+    "status": "PASS_BOUNDED",
+    "tests": 22,
+    "path": "checkpoints/R0013/RUNTIME-TREES-AND-BUILDS-P40.json",
+    "sha256": "9cabcb9715ea3eec14c495781c89e94f612ccd40f10c3086a6d508f4154c0afb"
   }
 }

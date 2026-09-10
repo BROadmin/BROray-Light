@@ -1,0 +1,32 @@
+{
+  "stage": "R0013",
+  "revision": "p41-r1-live-entry-service-and-rollback-coordinator",
+  "status": "IMPLEMENTED_PENDING_LINUX_TESTS",
+  "files": [
+    {
+      "path": "packaging/r0013-overlay/shared/lifecycle-r1-entry.sh",
+      "sha256": "c45f8cdde6f843e413ba67f570ef2ae67102ad80a208e7dc71e6e8260d23a294"
+    },
+    {
+      "path": "packaging/r0013-overlay/shared/runtime-prepare.sh",
+      "sha256": "2dc8d8cea84860ad8ed11c0c5202954c0d981cc4923eebb1bfaf97ba35693301"
+    },
+    {
+      "path": "packaging/r0013-overlay/system/packaging/opkg/S24broray-light",
+      "sha256": "b8c73c344abbe25a287dc8d6fe69ca3b7f396da25b01a0362e084492c2b7ac7c"
+    },
+    {
+      "path": "tools/test_r0013_live_entry.py",
+      "sha256": "81b90879412f37bf3276f385b66508233aea90dad1709cdb5bc672dfff1e419b"
+    },
+    {
+      "path": "tools/build_r0013_release.py",
+      "sha256": "7bb83b9e1fdbb985b826ebd63b30c523bdeba7022835e34f66a0251234a11188"
+    },
+    {
+      "path": ".github/workflows/r0013-port-tests.yml",
+      "sha256": "b55172e6406d47fb2b664296f9bfba01964c213e26e6d40b661e3eea99edb8d6"
+    }
+  ],
+  "candidateReady": false
+}

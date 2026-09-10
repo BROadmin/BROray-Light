@@ -1,6 +1,18 @@
 #!/opt/bin/ash
 set -eu
 ROOT="${BRORAY_LIGHT_ROOT_PREFIX:-}/opt/broray-light"
+legacy_root="${BRORAY_LIGHT_ROOT_PREFIX:-}/opt/var/lock"
+legacy_receipt="${BRORAY_LIGHT_ROOT_PREFIX:-}/opt/var/lib/broray-light-updater/legacy-transition.json"
+if [ -e "$legacy_receipt" ] || [ -L "$legacy_receipt" ] ||
+    [ -e "$legacy_root/broray-light/global-operation.lock" ] || [ -L "$legacy_root/broray-light/global-operation.lock" ] ||
+    [ -e "$legacy_root/broray-light-updater/request.lock" ] || [ -L "$legacy_root/broray-light-updater/request.lock" ]; then
+    legacy_entry="$ROOT/releases/2.0.0-r1/app/share/lifecycle/helpers/lifecycle-r1-entry.sh"
+    [ -f "$legacy_entry" ] && [ ! -L "$legacy_entry" ] && [ "$(stat -c '%u:%a:%h' "$legacy_entry")" = 0:644:1 ] || exit 1
+    . "$legacy_entry" || exit 1
+    legacy_rc=0
+    brl_r1_entry prepare || legacy_rc=$?
+    case "$legacy_rc" in 0) ;; 10) exit 0 ;; *) exit 1 ;; esac
+fi
 . "$ROOT/lib/runtime-environment.sh" || exit 1
 
 fail()

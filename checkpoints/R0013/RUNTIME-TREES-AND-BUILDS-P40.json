@@ -1,0 +1,289 @@
+{
+  "stage": "R0013",
+  "revision": "p40-legacy-runtime-tree-quiescence-and-ram-handoff",
+  "status": "PASS_BOUNDED_RUNTIME_TREES_AND_ENGINEERING_BUILDS",
+  "ci": {
+    "url": "https://github.com/BROadmin/BROray-Light/actions/runs/34533414089",
+    "commit": "dcb0a625897f6fb556dc29d777187bcd7416ec5b",
+    "artifactId": 10174654142,
+    "artifactSha256": "352758fe4aeb68de861936f8ae61ced1028c3dc985923d8abdc4bf5bf01c68f9"
+  },
+  "testsPassed": 22,
+  "reports": {
+    "r0013-runtime-trees-ash.json": {
+      "report": {
+        "stage": "R0013",
+        "revision": "p40-legacy-runtime-tree-quiescence-and-ram-handoff",
+        "status": "PASS_RUNTIME_TREE_HANDOFF",
+        "tests": [
+          {
+            "name": "promote-restore",
+            "status": "PASS",
+            "callback": {
+              "status": "PASS",
+              "mode": "promote-restore",
+              "crossFilesystem": true
+            }
+          },
+          {
+            "name": "foreign-symlink",
+            "status": "PASS",
+            "callback": {
+              "status": "PASS",
+              "mode": "foreign-symlink",
+              "crossFilesystem": true
+            }
+          },
+          {
+            "name": "foreign-owner",
+            "status": "PASS",
+            "callback": {
+              "status": "PASS",
+              "mode": "foreign-owner",
+              "crossFilesystem": true
+            }
+          },
+          {
+            "name": "foreign-live-pid",
+            "status": "PASS",
+            "callback": {
+              "status": "PASS",
+              "mode": "foreign-live-pid",
+              "crossFilesystem": true
+            }
+          },
+          {
+            "name": "prepared-rollback",
+            "status": "PASS",
+            "callback": {
+              "status": "PASS",
+              "mode": "prepared-rollback",
+              "crossFilesystem": true
+            }
+          },
+          {
+            "name": "partial-backup",
+            "status": "PASS",
+            "callback": {
+              "status": "PASS",
+              "mode": "partial-backup",
+              "crossFilesystem": true
+            }
+          },
+          {
+            "name": "partial-destination",
+            "status": "PASS",
+            "callback": {
+              "status": "PASS",
+              "mode": "partial-destination",
+              "crossFilesystem": true
+            }
+          },
+          {
+            "name": "partial-original-removal",
+            "status": "PASS",
+            "callback": {
+              "status": "PASS",
+              "mode": "partial-original-removal",
+              "crossFilesystem": true
+            }
+          },
+          {
+            "name": "whole-original-removed",
+            "status": "PASS",
+            "callback": {
+              "status": "PASS",
+              "mode": "whole-original-removed",
+              "crossFilesystem": true
+            }
+          },
+          {
+            "name": "partial-restore-candidate",
+            "status": "PASS",
+            "callback": {
+              "status": "PASS",
+              "mode": "partial-restore-candidate",
+              "crossFilesystem": true
+            }
+          },
+          {
+            "name": "restore-rename-before-receipt",
+            "status": "PASS",
+            "callback": {
+              "status": "PASS",
+              "mode": "restore-rename-before-receipt",
+              "crossFilesystem": true
+            }
+          }
+        ],
+        "sourceSha256": "c6ba4ef3942d619dce5f8f7780093be4bd189b28744122c6a36e4d00ec802adc",
+        "shell": [
+          "/usr/bin/busybox",
+          "ash"
+        ],
+        "scope": "Actual r1 updater + real cross-filesystem RAM copy/rollback and foreign PID refusal; application/service boundary mocked. Boot RAM loss not yet integrated."
+      },
+      "sha256": "1e372eafaf2ae0eb819e5b30b5ec1de868ab3c9740a482e4283338733040f665"
+    },
+    "r0013-runtime-trees-dash.json": {
+      "report": {
+        "stage": "R0013",
+        "revision": "p40-legacy-runtime-tree-quiescence-and-ram-handoff",
+        "status": "PASS_RUNTIME_TREE_HANDOFF",
+        "tests": [
+          {
+            "name": "promote-restore",
+            "status": "PASS",
+            "callback": {
+              "status": "PASS",
+              "mode": "promote-restore",
+              "crossFilesystem": true
+            }
+          },
+          {
+            "name": "foreign-symlink",
+            "status": "PASS",
+            "callback": {
+              "status": "PASS",
+              "mode": "foreign-symlink",
+              "crossFilesystem": true
+            }
+          },
+          {
+            "name": "foreign-owner",
+            "status": "PASS",
+            "callback": {
+              "status": "PASS",
+              "mode": "foreign-owner",
+              "crossFilesystem": true
+            }
+          },
+          {
+            "name": "foreign-live-pid",
+            "status": "PASS",
+            "callback": {
+              "status": "PASS",
+              "mode": "foreign-live-pid",
+              "crossFilesystem": true
+            }
+          },
+          {
+            "name": "prepared-rollback",
+            "status": "PASS",
+            "callback": {
+              "status": "PASS",
+              "mode": "prepared-rollback",
+              "crossFilesystem": true
+            }
+          },
+          {
+            "name": "partial-backup",
+            "status": "PASS",
+            "callback": {
+              "status": "PASS",
+              "mode": "partial-backup",
+              "crossFilesystem": true
+            }
+          },
+          {
+            "name": "partial-destination",
+            "status": "PASS",
+            "callback": {
+              "status": "PASS",
+              "mode": "partial-destination",
+              "crossFilesystem": true
+            }
+          },
+          {
+            "name": "partial-original-removal",
+            "status": "PASS",
+            "callback": {
+              "status": "PASS",
+              "mode": "partial-original-removal",
+              "crossFilesystem": true
+            }
+          },
+          {
+            "name": "whole-original-removed",
+            "status": "PASS",
+            "callback": {
+              "status": "PASS",
+              "mode": "whole-original-removed",
+              "crossFilesystem": true
+            }
+          },
+          {
+            "name": "partial-restore-candidate",
+            "status": "PASS",
+            "callback": {
+              "status": "PASS",
+              "mode": "partial-restore-candidate",
+              "crossFilesystem": true
+            }
+          },
+          {
+            "name": "restore-rename-before-receipt",
+            "status": "PASS",
+            "callback": {
+              "status": "PASS",
+              "mode": "restore-rename-before-receipt",
+              "crossFilesystem": true
+            }
+          }
+        ],
+        "sourceSha256": "c6ba4ef3942d619dce5f8f7780093be4bd189b28744122c6a36e4d00ec802adc",
+        "shell": [
+          "/bin/dash"
+        ],
+        "scope": "Actual r1 updater + real cross-filesystem RAM copy/rollback and foreign PID refusal; application/service boundary mocked. Boot RAM loss not yet integrated."
+      },
+      "sha256": "bd215133512f3ce15f8f2ca96bd23f01b15ec971243c3e681e5d362b54c90fc8"
+    }
+  },
+  "engineering": {
+    "buildA": "dist/R0013/p40-engineering-build-A",
+    "buildB": "dist/R0013/p40-engineering-build-B",
+    "byteIdenticalFiles": 8,
+    "structuralValidation": {
+      "stage": "R0013",
+      "revision": "p23-updater-platform-package-integration",
+      "status": "PASS",
+      "candidateReady": false,
+      "scope": "structural only; not lifecycle acceptance",
+      "tests": [
+        {
+          "test": "outer-sha256-manifest",
+          "status": "PASS"
+        },
+        {
+          "test": "slot-version-internal-identity-and-all-file-hashes",
+          "status": "PASS"
+        },
+        {
+          "test": "three-pages-entrypoint-modes-complete-mode-manifest-and-versioned-assets",
+          "status": "PASS"
+        },
+        {
+          "test": "legacy-compatible-unsigned-index-contract",
+          "status": "PASS"
+        },
+        {
+          "test": "ipk-version-slot-and-exact-clean-xray",
+          "status": "PASS"
+        },
+        {
+          "test": "explicit-ram-updater-port-with-r1-trust-and-wrapper-preservation",
+          "status": "PASS"
+        },
+        {
+          "test": "independent-process-build-byte-reproducibility",
+          "status": "PASS"
+        }
+      ]
+    },
+    "qualification": "Separate local processes/fresh input trees; unsigned engineering artifacts, not independent clean-runner final acceptance."
+  },
+  "candidateReady": false,
+  "routerTouched": false,
+  "next": "P41 live r1 entry and S24 rollback coordinator, then boot recovery and full application gates."
+}
