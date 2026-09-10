@@ -12,7 +12,7 @@ import tempfile
 import time
 
 from build_r0013_release import prepared_app, primitives
-from r0013_inputs import REPO
+from r0013_inputs import REPO, git_bytes
 from test_r0013_web_config import WebFixture
 from test_r0013_service import C_SOURCE
 from test_r0013_runtime_trees import snapshot, NAMES
@@ -37,6 +37,10 @@ class LiveFixture(WebFixture):
         self.write(self.app/'logs/old.log',b'old-log\n')
         self.write(self.app/'tmp/probe.json',b'{"old":true}\n')
         self.write(self.app/'update/state.json',b'{"old":true}\n')
+        # Accepted r1 runtime-prepare always seeds these before service startup.
+        # Model an installed/running r1, not a partial synthetic installation.
+        for name in ('settings.json','server-auto-switch.json'):
+            self.write(self.app/'config/system'/name,git_bytes('src/app/share/defaults/'+name),0o644)
         for name in ('lib','web-new','share'):
             (self.app/name).symlink_to('current/app/'+name,target_is_directory=True)
         # All lifecycle scripts/legacy engine bytes are unmodified. Only OS
@@ -47,6 +51,10 @@ export BRL_FIXTURE_PIDFILE="$BRORAY_ROOT/run/lighttpd.pid"
 exec /opt/bin/ash "$BRORAY_LIGHT_ROOT_PREFIX/opt/etc/init.d/S24broray-light" "$1"
 '''
         self.write(self.executable/'service',script.encode(),0o755)
+        self.write(self.executable/'health',b'''#!/bin/sh
+[ "$1" != "${FIXTURE_HEALTH_FAIL:-none}" ] || exit 1
+exec /opt/bin/ash "$BRORAY_LIGHT_ROOT_PREFIX/opt/etc/init.d/S24broray-light" status
+''',0o755)
         self.env.update(BRORAY_ROOT=str(self.app),BRORAY_BASE=str(self.app),
                         BRORAY_LIGHT_WEB_PUBLISH_CTL=str(self.root/'opt/bin/broray-light-web-publishctl'),
                         BRORAY_LIGHT_WEB_START_GATE_LIBRARY=str(self.root/'opt/libexec/broray-light-web-publish/start-gate.sh'),
@@ -92,7 +100,10 @@ while :;do sleep 0.1;done
         assert self.current()==(OLD if mode=='health-rollback' else NEW),detail
         if mode=='health-rollback':
             assert detail['receipt']['coordinator']['phase']=='restored',detail
-            assert self.persistent()==before,'Durable configuration/data not restored byte-for-byte'
+            after=self.persistent()
+            differences=dict(created=sorted(set(after)-set(before)),removed=sorted(set(before)-set(after)),
+                             changed=sorted(name for name in before.keys()&after.keys() if before[name]!=after[name]))
+            assert after==before,'Durable configuration/data not restored byte-for-byte: '+json.dumps(differences)
             for name in NAMES:assert not (self.app/name).is_symlink(),name
         else:
             assert detail['receipt']['coordinator']['phase']=='activated',detail
@@ -177,7 +188,7 @@ def main():
     ash.parent.mkdir(parents=True,exist_ok=True);ash.symlink_to(args.shell)
     records=[];failed=False
     def persist():
-        report=dict(stage='R0013',revision='p43-live-fixture-tmpfs-reference-drain',
+        report=dict(stage='R0013',revision='p44-accepted-r1-config-fixture-and-real-health-status',
                     status='FAIL_FIRST_ERROR' if failed else 'IN_PROGRESS',shell=shell,tests=records,
                     sourceSha256=hashlib.sha256(ENTRY.read_bytes()).hexdigest(),
                     scope='Real r1/new S24 and entry; daemon workload/lighttpd/publication OS calls mocked. Boot/finalization not integrated.')
@@ -212,7 +223,7 @@ def main():
     finally:
         ash.unlink()
         if args.busybox_tools:utilities.cleanup()
-    report=dict(stage='R0013',revision='p43-live-fixture-tmpfs-reference-drain',
+    report=dict(stage='R0013',revision='p44-accepted-r1-config-fixture-and-real-health-status',
                 status='FAIL_FIRST_ERROR' if failed else 'PASS_LIVE_R1_SERVICE_TRANSITION',
                 shell=shell,tests=records,sourceSha256=hashlib.sha256(ENTRY.read_bytes()).hexdigest(),
                 scope='Real signed fixture r1 update engine, cached r1 S24, new runtime-prepare and new S24, cross-filesystem RAM handoff. Daemon workload, lighttpd and publication OS calls mocked. Boot/finalization not yet integrated.')

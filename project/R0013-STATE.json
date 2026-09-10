@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
   "stage": "R0013_SELECTIVE_UPSTREAM_STABLE_PORT",
-  "status": "LIVE_R1_UPDATE_PASS_FIXTURE_CLEANUP_CORRECTION_IN_PROGRESS",
-  "currentRevision": "p43-live-fixture-tmpfs-reference-drain",
-  "activeFailure": "checkpoints/R0013/process-failures/FAILURE-P42-LIVE-FIXTURE-TMPFS-BUSY.json",
+  "status": "LIVE_UPDATE_AND_CLEANUP_PASS_ROLLBACK_FIXTURE_CORRECTION_IN_PROGRESS",
+  "currentRevision": "p44-accepted-r1-config-fixture-and-real-health-status",
+  "activeFailure": "checkpoints/R0013/process-failures/FAILURE-P43-LIVE-ROLLBACK-FIXTURE-DEFAULTS.json",
   "publicVersion": "2.0.0",
   "buildA": "PRELIMINARY_ENGINEERING_BYTE_PASS_NOT_FINAL_ACCEPTANCE",
   "buildB": "PRELIMINARY_ENGINEERING_BYTE_PASS_NOT_FINAL_ACCEPTANCE",
@@ -18,7 +18,7 @@
     "path": "checkpoints/R0013/SUBSCRIPTION-NAME-P6.json",
     "sha256": "2b1fe451272dc233e1f8ccd4cc3d6ea2f212ba81e009f93d3a4b9e9b9601577a"
   },
-  "lastResolvedFailure": "checkpoints/R0013/process-failures/FAILURE-P41-LIVE-FIXTURE-UNMOUNT-EVIDENCE.json",
+  "lastResolvedFailure": "checkpoints/R0013/process-failures/FAILURE-P42-LIVE-FIXTURE-TMPFS-BUSY.json",
   "processPort": {
     "status": "PASS_ISOLATED_LINUX",
     "tests": 33,
@@ -62,7 +62,7 @@
     "path": "checkpoints/R0013/UPSTREAM-PORT-MAP-P2.json",
     "sha256": "009a0f5adae08f399c82510cf680690b4c2e50bc8c659eda9c48d91b5a838121"
   },
-  "nextExactAction": "P43_DRAIN_PRIVATE_TMPFS_REFERENCES_AND_VALIDATE_LIVE_HEALTH_ROLLBACK",
+  "nextExactAction": "P44_VALIDATE_STRICT_R1_ROLLBACK_WITH_ACCEPTED_CONFIG_AND_REAL_S24_HEALTH",
   "versionAndXray": {
     "status": "PASS_VERSION_AND_BOOTSTRAP_INPUT",
     "path": "checkpoints/R0013/UPGRADE-AND-XRAY-P10.json",
@@ -81,7 +81,7 @@
     "path": "RAM-BOOTSTRAP-VALIDATION-P15.json",
     "sha256": "050a4d9b7e8c82194d1e4dd03e6e014031ec1b24d44f06833cc3189d5ca1c33d"
   },
-  "latestCI": "https://github.com/BROadmin/BROray-Light/actions/runs/34534743946",
+  "latestCI": "https://github.com/BROadmin/BROray-Light/actions/runs/34535054966",
   "actualWebDaemons": {
     "status": "PASS_BOUNDED",
     "tests": 42,

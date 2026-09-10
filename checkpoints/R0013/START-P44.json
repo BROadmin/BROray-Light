@@ -1,0 +1,17 @@
+{
+  "stage": "R0013",
+  "revision": "p44-accepted-r1-config-fixture-and-real-health-status",
+  "status": "CHECKPOINT_BEFORE_CORRECTION",
+  "corrects": "LIVE_ROLLBACK_PERSISTENCE_FIXTURE_MISSING_R1_DEFAULTS",
+  "scope": "Seed the fixture's two existing r1 default files directly from pinned r1 Git objects, retain strict byte-for-byte equality, add created/removed/changed path diagnostics, and run actual S24 status for positive health checks. Product runtime bytes unchanged.",
+  "sourceEvidence": {
+    "commit": "9e5fce9bfa7c82bfc2f2654d80fd3987c5259963",
+    "prepare": "packaging/app-overlay/bin/broray-runtime-prepare",
+    "defaults": [
+      "src/app/share/defaults/settings.json",
+      "src/app/share/defaults/server-auto-switch.json"
+    ]
+  },
+  "candidateReady": false,
+  "routerTouched": false
+}

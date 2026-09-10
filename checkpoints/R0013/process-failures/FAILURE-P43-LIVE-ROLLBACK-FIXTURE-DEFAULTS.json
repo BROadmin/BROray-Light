@@ -1,0 +1,50 @@
+{
+  "stage": "R0013",
+  "revision": "p43-live-fixture-tmpfs-reference-drain",
+  "status": "FAIL_FIRST_ERROR",
+  "failure": "LIVE_ROLLBACK_PERSISTENCE_FIXTURE_MISSING_R1_DEFAULTS",
+  "cause": "The update case now passes and private tmpfs cleanup completes. Forced health failure reaches restored coordinator/current r1 but strict durable dictionary equality fails. Static comparison finds the fixture omitted config/system/settings.json and server-auto-switch.json, which the pinned r1 runtime-prepare seeds before normal use. The new real runtime-prepare legitimately creates these missing defaults; the previous assertion did not report per-path differences, so this explanation will be checked in P44 without weakening strict equality.",
+  "ci": {
+    "url": "https://github.com/BROadmin/BROray-Light/actions/runs/34535054966",
+    "commit": "9b07041f3919a6eb1b87db18a6b33840ac036d18",
+    "artifactId": 10175124273,
+    "artifactSha256": "158f13f476497ad6262324222e8cf8e7d377a649e45e23741be461c5727d8391"
+  },
+  "reports": {
+    "r0013-live-entry-dash.json": {
+      "report": {
+        "stage": "R0013",
+        "revision": "p43-live-fixture-tmpfs-reference-drain",
+        "status": "FAIL_FIRST_ERROR",
+        "shell": [
+          "/bin/dash"
+        ],
+        "tests": [
+          {
+            "name": "update",
+            "status": "PASS",
+            "detail": {
+              "returncode": 0,
+              "current": "2.0.0-r1",
+              "coordinatorPhase": "activated",
+              "legacyUpdaterCompleted": true,
+              "sessionPreserved": true
+            }
+          },
+          {
+            "name": "health-rollback",
+            "status": "FAIL",
+            "error": "Durable configuration/data not restored byte-for-byte"
+          }
+        ],
+        "sourceSha256": "c45f8cdde6f843e413ba67f570ef2ae67102ad80a208e7dc71e6e8260d23a294",
+        "scope": "Real signed fixture r1 update engine, cached r1 S24, new runtime-prepare and new S24, cross-filesystem RAM handoff. Daemon workload, lighttpd and publication OS calls mocked. Boot/finalization not yet integrated."
+      },
+      "sha256": "787e78eb3923690026dd9052ce3ab296bad993e8253b61331a4ad8eb635a2c30"
+    }
+  },
+  "nextRevision": "p44-accepted-r1-config-fixture-and-real-health-status",
+  "correction": "Seed the fixture's two existing r1 default files directly from pinned r1 Git objects, retain strict byte-for-byte equality, add created/removed/changed path diagnostics, and run actual S24 status for positive health checks. Product runtime bytes unchanged.",
+  "candidateReady": false,
+  "routerTouched": false
+}
