@@ -28,13 +28,18 @@ OLD, NEW = '1.0.0-r1', '2.0.0-r1'
 
 class Fixture:
     def __init__(self, shell):
-        self.temp = tempfile.TemporaryDirectory(prefix='r0013-updater-', dir='/dev/shm')
+        self.temp = tempfile.TemporaryDirectory(prefix='r0013-updater-', dir=getattr(self, 'root_parent', '/dev/shm'))
         self.exec_temp = tempfile.TemporaryDirectory(prefix='r0013-updater-hooks-', dir='/var/tmp')
         self.root, self.executable = Path(self.temp.name), Path(self.exec_temp.name)
         self.shell = shell
         self.children = []
         (self.root / 'tmp').mkdir(mode=0o1777)
         (self.root / 'tmp').chmod(0o1777)
+        self.tmpfs_mounted = False
+        if getattr(self, 'mount_tmpfs', False):
+            subprocess.run(['mount', '-t', 'tmpfs', '-o', 'size=64m,mode=1777', 'tmpfs', str(self.root / 'tmp')],
+                           check=True, capture_output=True)
+            self.tmpfs_mounted = True
         (self.root / 'opt/var/lib').mkdir(parents=True)
         self.app = self.root / 'opt/broray-light'
         self.durable = self.root / 'opt/var/lib/broray-light-updater'
@@ -160,6 +165,8 @@ exit 0
             if child.poll() is None:
                 os.killpg(child.pid, signal.SIGKILL)
                 child.communicate(timeout=10)
+        if self.tmpfs_mounted:
+            subprocess.run(['umount', str(self.root / 'tmp')], check=True, capture_output=True)
         self.temp.cleanup()
         self.exec_temp.cleanup()
 

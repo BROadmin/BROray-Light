@@ -1,0 +1,224 @@
+{
+  "stage": "R0013",
+  "revision": "p39-private-root-owned-daemon-pid-contract",
+  "status": "PASS_BOUNDED_ACTUAL_WEB_DAEMONS",
+  "candidateReady": false,
+  "testsPassed": 42,
+  "routerTouched": false,
+  "ci": {
+    "url": "https://github.com/BROadmin/BROray-Light/actions/runs/34531630446",
+    "commit": "cb8e335644e929b15cfa76a3d1113c40184ee7f7",
+    "job": "isolated-service",
+    "conclusion": "success",
+    "artifactId": 10173763575,
+    "artifactSha256": "8c647b042db2be82a51a5d5301e838a5881e5b8ab2a4cdf097d07980ed99dafa"
+  },
+  "reports": {
+    "r0013-service-ash.json": {
+      "report": {
+        "stage": "R0013",
+        "revision": "p39-private-root-owned-daemon-pid-contract",
+        "status": "PASS_SCOPED_SERVICE_AND_PUBLICATION",
+        "shell": [
+          "/usr/bin/busybox",
+          "ash"
+        ],
+        "tests": [
+          {
+            "name": "actual-linux-daemon-web",
+            "status": "PASS"
+          },
+          {
+            "name": "actual-linux-daemon-auth",
+            "status": "PASS"
+          },
+          {
+            "name": "publication-negative-status-before-publication",
+            "status": "PASS"
+          },
+          {
+            "name": "publication-negative-invalid-action",
+            "status": "PASS"
+          },
+          {
+            "name": "publication-negative-ambiguous-lan",
+            "status": "PASS"
+          },
+          {
+            "name": "real-s24-start-status-restart-stop-and-publication",
+            "status": "PASS"
+          },
+          {
+            "name": "exact-owned-web-stops",
+            "status": "PASS"
+          },
+          {
+            "name": "pid-contract-refuses-writable",
+            "status": "PASS"
+          },
+          {
+            "name": "pid-contract-refuses-symlink",
+            "status": "PASS"
+          },
+          {
+            "name": "pid-contract-refuses-hardlink",
+            "status": "PASS"
+          },
+          {
+            "name": "pid-contract-refuses-public-parent",
+            "status": "PASS"
+          },
+          {
+            "name": "web-refuses-config-suffix",
+            "status": "PASS"
+          },
+          {
+            "name": "web-refuses-validator",
+            "status": "PASS"
+          },
+          {
+            "name": "web-refuses-extra-arg",
+            "status": "PASS"
+          },
+          {
+            "name": "web-refuses-foreign-exe",
+            "status": "PASS"
+          },
+          {
+            "name": "web-refuses-unrecorded",
+            "status": "PASS"
+          },
+          {
+            "name": "duplicate-web-fails-closed",
+            "status": "PASS"
+          },
+          {
+            "name": "native-auth-exact",
+            "status": "PASS"
+          },
+          {
+            "name": "native-auth-config-suffix",
+            "status": "PASS"
+          },
+          {
+            "name": "native-auth-foreign-exe",
+            "status": "PASS"
+          },
+          {
+            "name": "publication-respects-live-updater-request",
+            "status": "PASS"
+          }
+        ],
+        "scope": "Actual lighttpd/nginx and real S24/publication/private tmpfs; application daemon loop, Xray and Keenetic commands mocked. Not full r1/boot acceptance.",
+        "sourceSha256": {
+          "packaging/r0013-overlay/system/packaging/opkg/S24broray-light": "4c0b6cd4c2eb1e5deaee92007288cc2f9dedaa43fb16ee6b99921acad950f55b",
+          "packaging/r0013-overlay/shared/service-process.sh": "e2ea391465c544bedc5e91f3a8100049cd8a13da86c8723fadadb51e35a7e3da"
+        }
+      },
+      "sha256": "1d4cf0f1c4a095d6a9cca7da792bce1abaab6717f43552e45ec265ec6ca40e77"
+    },
+    "r0013-service-dash.json": {
+      "report": {
+        "stage": "R0013",
+        "revision": "p39-private-root-owned-daemon-pid-contract",
+        "status": "PASS_SCOPED_SERVICE_AND_PUBLICATION",
+        "shell": [
+          "/bin/dash"
+        ],
+        "tests": [
+          {
+            "name": "actual-linux-daemon-web",
+            "status": "PASS"
+          },
+          {
+            "name": "actual-linux-daemon-auth",
+            "status": "PASS"
+          },
+          {
+            "name": "publication-negative-status-before-publication",
+            "status": "PASS"
+          },
+          {
+            "name": "publication-negative-invalid-action",
+            "status": "PASS"
+          },
+          {
+            "name": "publication-negative-ambiguous-lan",
+            "status": "PASS"
+          },
+          {
+            "name": "real-s24-start-status-restart-stop-and-publication",
+            "status": "PASS"
+          },
+          {
+            "name": "exact-owned-web-stops",
+            "status": "PASS"
+          },
+          {
+            "name": "pid-contract-refuses-writable",
+            "status": "PASS"
+          },
+          {
+            "name": "pid-contract-refuses-symlink",
+            "status": "PASS"
+          },
+          {
+            "name": "pid-contract-refuses-hardlink",
+            "status": "PASS"
+          },
+          {
+            "name": "pid-contract-refuses-public-parent",
+            "status": "PASS"
+          },
+          {
+            "name": "web-refuses-config-suffix",
+            "status": "PASS"
+          },
+          {
+            "name": "web-refuses-validator",
+            "status": "PASS"
+          },
+          {
+            "name": "web-refuses-extra-arg",
+            "status": "PASS"
+          },
+          {
+            "name": "web-refuses-foreign-exe",
+            "status": "PASS"
+          },
+          {
+            "name": "web-refuses-unrecorded",
+            "status": "PASS"
+          },
+          {
+            "name": "duplicate-web-fails-closed",
+            "status": "PASS"
+          },
+          {
+            "name": "native-auth-exact",
+            "status": "PASS"
+          },
+          {
+            "name": "native-auth-config-suffix",
+            "status": "PASS"
+          },
+          {
+            "name": "native-auth-foreign-exe",
+            "status": "PASS"
+          },
+          {
+            "name": "publication-respects-live-updater-request",
+            "status": "PASS"
+          }
+        ],
+        "scope": "Actual lighttpd/nginx and real S24/publication/private tmpfs; application daemon loop, Xray and Keenetic commands mocked. Not full r1/boot acceptance.",
+        "sourceSha256": {
+          "packaging/r0013-overlay/system/packaging/opkg/S24broray-light": "4c0b6cd4c2eb1e5deaee92007288cc2f9dedaa43fb16ee6b99921acad950f55b",
+          "packaging/r0013-overlay/shared/service-process.sh": "e2ea391465c544bedc5e91f3a8100049cd8a13da86c8723fadadb51e35a7e3da"
+        }
+      },
+      "sha256": "bda519a86955ebb20176eb7347d95ebf1210d8f60fbae4c4c34b16cdd1d7139f"
+    }
+  },
+  "limitations": "Actual Linux web daemons verified; still not full firmware native-auth challenge/session or r1 migration/boot acceptance."
+}

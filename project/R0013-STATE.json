@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
   "stage": "R0013_SELECTIVE_UPSTREAM_STABLE_PORT",
-  "status": "FIRST_ERROR_RECORDED_CORRECTION_PENDING",
-  "currentRevision": "p39-private-root-owned-daemon-pid-contract",
-  "activeFailure": "checkpoints/R0013/process-failures/FAILURE-P38-REAL-DAEMON-PID-MODE.json",
+  "status": "ACTUAL_DAEMON_COMPONENT_PASS_LEGACY_RUNTIME_MIGRATION_IN_PROGRESS",
+  "currentRevision": "p40-legacy-runtime-tree-quiescence-and-ram-handoff",
+  "activeFailure": null,
   "publicVersion": "2.0.0",
   "buildA": "PRELIMINARY_ENGINEERING_BYTE_PASS_NOT_FINAL_ACCEPTANCE",
   "buildB": "PRELIMINARY_ENGINEERING_BYTE_PASS_NOT_FINAL_ACCEPTANCE",
@@ -18,7 +18,7 @@
     "path": "checkpoints/R0013/SUBSCRIPTION-NAME-P6.json",
     "sha256": "2b1fe451272dc233e1f8ccd4cc3d6ea2f212ba81e009f93d3a4b9e9b9601577a"
   },
-  "lastResolvedFailure": "checkpoints/R0013/process-failures/FAILURE-P36-PUBLICATION-CLEANUP-EXIT-STATUS.json",
+  "lastResolvedFailure": "checkpoints/R0013/process-failures/FAILURE-P38-REAL-DAEMON-PID-MODE.json",
   "processPort": {
     "status": "PASS_ISOLATED_LINUX",
     "tests": 33,
@@ -62,7 +62,7 @@
     "path": "checkpoints/R0013/UPSTREAM-PORT-MAP-P2.json",
     "sha256": "009a0f5adae08f399c82510cf680690b4c2e50bc8c659eda9c48d91b5a838121"
   },
-  "nextExactAction": "P39_CORRECT_PRIVATE_PID_MODE_CONTRACT_AND_VALIDATE_ACTUAL_DAEMONS",
+  "nextExactAction": "P40_COMPLETE_AND_VALIDATE_RUNTIME_TREE_HANDOFF_THEN_FULL_R1_ENTRY_BOOT_RECOVERY",
   "versionAndXray": {
     "status": "PASS_VERSION_AND_BOOTSTRAP_INPUT",
     "path": "checkpoints/R0013/UPGRADE-AND-XRAY-P10.json",
@@ -81,7 +81,13 @@
     "path": "RAM-BOOTSTRAP-VALIDATION-P15.json",
     "sha256": "050a4d9b7e8c82194d1e4dd03e6e014031ec1b24d44f06833cc3189d5ca1c33d"
   },
-  "latestCI": "https://github.com/BROadmin/BROray-Light/actions/runs/34530275676",
+  "latestCI": "https://github.com/BROadmin/BROray-Light/actions/runs/34531630446",
+  "actualWebDaemons": {
+    "status": "PASS_BOUNDED",
+    "tests": 42,
+    "path": "checkpoints/R0013/ACTUAL-DAEMON-VALIDATION-P39.json",
+    "sha256": "fd121cbef05e758044d84252b7c7226129f53bb05ae3775db57be2b5ba769584"
+  },
   "webConfigTransaction": {
     "status": "PASS_BOUNDED",
     "tests": 28,

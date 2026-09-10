@@ -116,7 +116,7 @@ brl_r1_ram_save --arg sha "$BRL_PLATFORM_SHA" '.platform={phase:"prepared",manif
 class PlatformFixture(R1Fixture):
     def update(self, expected=1):
         result = subprocess.run([*self.shell, str(self.engine), *self.update_options], env=self.env,
-                                capture_output=True, text=True, timeout=45)
+                                capture_output=True, text=True, timeout=getattr(self, 'update_timeout', 45))
         report = self.root / 'admission-result.json'
         assert result.returncode == expected and report.is_file(), (result.returncode, result.stdout, result.stderr)
         assert hashlib.sha256(self.engine.read_bytes()).hexdigest() == ENGINE_SHA

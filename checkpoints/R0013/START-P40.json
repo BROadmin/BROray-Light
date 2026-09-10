@@ -1,0 +1,17 @@
+{
+  "stage": "R0013",
+  "revision": "p40-legacy-runtime-tree-quiescence-and-ram-handoff",
+  "status": "CHECKPOINT_BEFORE_IMPLEMENTATION",
+  "scope": "Move only root-owned known-shape r1 run/logs/tmp/update trees to private RAM, prove service quiescence, preserve sessions/content, record exact source inventory before removal, and provide rollback. This closes the runtime-data prerequisite for the full r1 startup/boot coordinator.",
+  "invariants": [
+    "Exact live r1 transaction authority and signed-slot binding",
+    "Verify all input tree identities before deleting any source file",
+    "Refuse links, foreign ownership, unknown names/objects and live foreign PID references",
+    "Installed Xray, config, servers and subscriptions are not runtime trees",
+    "Keep rollback snapshot only in protected RAM; durable record contains ownership/manifests, not scratch payload",
+    "Legacy compatibility aliases point to protected RAM, never another operational lock domain"
+  ],
+  "candidateReady": false,
+  "routerTouched": false,
+  "nextAfterPass": "Wire full r1 entry/rollback coordinator, postinst, boot recovery and full application acceptance."
+}

@@ -73,7 +73,8 @@ def prepared_app():
         assert name not in app, 'platform payload collides with application input'
         app[name] = content
     for name in ('runtime-ram.sh', 'lifecycle-r1-admission.sh', 'lifecycle-r1-journal.sh',
-                 'lifecycle-r1-ram.sh', 'lifecycle-r1-platform.sh', 'lifecycle-r1-web-config.sh'):
+                 'lifecycle-r1-ram.sh', 'lifecycle-r1-platform.sh', 'lifecycle-r1-web-config.sh',
+                 'lifecycle-r1-runtime-trees.sh', 'service-process.sh'):
         target = 'share/lifecycle/helpers/'+name
         assert target not in app
         app[target] = ((inputs.REPO / 'packaging/r0013-overlay/shared' / name).read_bytes(), 0o644)
