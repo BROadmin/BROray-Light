@@ -1,68 +1,59 @@
-# BROray-Light 2.0.0 — R0013, checkpoint P23
+# BROray-Light 2.0.0 — R0013, checkpoint P34
 
-Публичная версия и версия пакета: `2.0.0`; будущий тег: `v2.0.0`.
-Пользователь согласовал отдельные служебные `releaseId/candidateId=2.0.0-r1` для совместимости со старым обновителем.
-**Кандидат пока не готов, выпуск не опубликован: candidateReady=false, releaseReady=false.**
+Публичная версия и пакет: `2.0.0`, будущий тег: `v2.0.0`. Согласованный служебный releaseId/candidateId: `2.0.0-r1`.
+Кандидат пока не готов: `candidateReady=false`, `releaseReady=false`. Публичный выпуск не создан.
 
-## Результат P17–P23
+## Подтверждённые результаты
 
-Общий механизм RAM-папок и блокировок проверен на настоящей tmpfs с живыми процессами: 38 проверок под dash и BusyBox. Внешний updater перенесён в отдельный явный R0013 overlay: операционный статус, блокировки, загрузки, распаковка и ready-файл S23 находятся в защищённой RAM; журнал транзакции и установленные слоты остаются постоянными.
+База — принятый Light r1 (`9e5fce9bfa7c82bfc2f2654d80fd3987c5259963`) и выборочные изменения опубликованного BROray 3.1.0-r09c02. Незавершённый R0012 не используется как сборочный вход. При повторной проверке 502 прежних файла совпали по SHA-256; три ранее описанных исключения — служебные AGENTS, WORKLOG и статус R0012.
 
-Проверены 32 сценария обновителя и S23 под двумя shell, включая native BusyBox applets, настоящие тестовые подписи minisign, равную версию, отказ от понижения, опасные архивы, health rollback, аварийное прерывание и восстановление. Слоты используют канонический формат сборщика r1; приложение и service/health boundary в этих тестах — подставные. Ошибки P18/P19/P21 сохранены отдельно и исправлены в новых ревизиях. Источник различия вывода hardlink в BusyBox: [header_verbose_list.c](https://raw.githubusercontent.com/mirror/busybox/1_36_stable/archival/libarchive/header_verbose_list.c).
+В [CI P34](https://github.com/BROadmin/BROray-Light/actions/runs/34527153274) прошли текущие изолированные проверки. Их границы не равны полной приёмке кандидата:
 
-В [CI P23](https://github.com/BROadmin/BROray-Light/actions/runs/34518444806) все текущие проверки прошли. Новая платформа `5-light2-ram` включена в IPK, её файлы совпадают с отдельным архивом. Публичный ключ и бинарник minisign сохранены побайтно из r1.
-
-Предварительные `p23-engineering-build-A` и `p23-engineering-build-B` совпали по всем восьми файлам. SHA-256 и точные границы проверок: `UPDATER-PLATFORM-AND-BUILDS-P23.json`. Это не финальные clean-checkout Build A/B и не готовый кандидат.
-
-Миграция действующей установки r1 ещё не завершена: app-slot не заменяет внешнюю платформу автоматически; старые lock/work и startup semantics требуют согласованного перехода и отката. Приложение в этих сборках ещё использует прежние runtime/log/tmp-пути. Роутер, production server и публичные релизы не изменялись.
-
-## Выполнено ранее
-
-База — проверенный Light r1, commit `9e5fce9bfa7c82bfc2f2654d80fd3987c5259963`, плюс отдельный явный R0013 overlay. Канонический R0008 проверен сборщиком. Незавершённый код R0012 не включён в сборку: 502 ранее существовавших файла кода/истории совпали по SHA-256; исключения — служебные AGENTS, WORKLOG и статус перенаправления R0012 на R0013, перечисленные в `R0012-PRESERVATION-P16.json`.
-
-Из точного опубликованного BROray 3.1.0-r09c02 перенесены распознавание собственного процесса Xray, обработка start/stop, синхронизация имени активного сервера, выбор версий Xray и явные подтверждения риска. Сохранены три страницы, VLESS, native auth и Light ownership. Каталог совместимости полного BROray не считается приёмкой Light.
-
-Старый опубликованный updater прошёл сравнения r1 → 2.0.0-r1, равной версии и понижения. Это проверка решения, не полный update-тест. API и WebUI показывают публичную версию 2.0.0 отдельно от служебного номера.
-
-Для чистой установки проверены архив, официальный digest и бинарник Xray 26.9.9 (ELF64 AArch64, 35061884 байта). Обновление приложения сохраняет установленный Xray.
-
-Установщик и bootstrap вынесены в защищённые RAM-каталоги: проверяются владелец, права, тип ФС, маркер и SHA-256; временные входы очищаются. В пакет не включены заголовки каталогов /tmp, которые могли бы изменить их права. В установщике явно задан `opkg --tmp-dir`, поддерживаемый [opkg](https://openwrt.org/docs/guide-user/additional-software/opkg).
-
-Linux CI на commit `7ef2834233d8e8ecce9db2bb3fa639a9fb231a94` завершился успешно: [run 34509101953](https://github.com/BROadmin/BROray-Light/actions/runs/34509101953). Проверены BusyBox ash, настоящие Linux-процессы, файловые транзакции подписок, политика выбора Xray, поведение UI на подставных DOM/HTTP, версия через shell/jq и 11 сценариев bootstrap/installer. В последних подставлены тип ФС, opkg, бинарник Xray и запуск сервиса — это не физическая приёмка.
-
-## Предыдущие предварительные Build A/B (P15, исторические)
-
-`dist/R0013/p15-engineering-build-A` и `dist/R0013/p15-engineering-build-B` созданы отдельными процессами со свежими временными каталогами. Все 8 файлов совпали побайтно. Финальная независимая сборка из чистых checkout и подпись ещё не выполнены.
-
-| Артефакт | Байт | SHA-256 |
+| Компонент | Проверки | Что действительно проверено |
 | --- | ---: | --- |
-| ENGINEERING-MANIFEST.json | 2343 | `01c85a64b9459653cf00dbbd77c047f27d0e91a8f187b64b5b32bcf3ab2052ef` |
-| INPUT-MANIFEST.json | 31755 | `b861c52dcb500f223bfea00f31a7b8ced5799d084c06990b6bdd8fb4690db62b` |
-| SHA256SUMS | 666 | `25e23d40bda23cc2b488c97bf99b8fe24f47d198c174e798cafa09b2b7178f2a` |
-| broray-light-app-2.0.0-r1.tar.gz | 163974 | `4dcb15246111d242099463a315009126ba3e69fa9781d0b3b476144d32c9d095` |
-| broray-light-install-2.0.0.sh | 3860 | `fc1800b889f37a026a29a9e230c76f0afdcbb6287da36f99c465fad5ab4a44ea` |
-| broray-light-updater-platform-5-light1.tar.gz | 131458 | `81b7b70bd8180d0293be1e0de116c34801646234daf811b447ac82b0b676051c` |
-| broray-light_2.0.0_aarch64-3.10.ipk | 12917824 | `76d31e27e7a2449e9fe9ecd05937f2e882b2180495568fdf341e97dadbd29fdf` |
-| release.json | 597 | `f7328899c85b3077886e561e5ea752454721bf39459e2cdd38c4d968811077bc` |
+| RAM и общие блокировки | 38 | Настоящая tmpfs, процессы, конкуренция, dash и native BusyBox |
+| Updater и S23 | 32 | Реальные тестовые подписи и канонический формат слота, подставные приложение/служба |
+| Допуск старого r1 и журнал блокировок | 42 | Неизменённый старый updater, вызовы CLI и WebUI `update --json`, имитация потери RAM |
+| Перенос старого рабочего каталога | 20 | Перенос внутри RAM и возврат исходных байтов/inode при откате |
+| Внешние файлы платформы | 32 | Реальные байты r1/new, журнал по каждому файлу, частичная замена и возврат |
+| Откат Xray | 32 | Настоящие файлы; процессы и блокировка подставлены для проверки порядка |
+| Пути приложения в RAM | 22 | Скомпилированные скрипты, фиксированные пути, права, подмена окружения и общий lock adapter |
 
-## Блокер P16
+Подробности и SHA-256: `R1-WEBUI-AND-JOURNAL-P27.json`, `R1-RAM-VALIDATION-P28.json`, `PLATFORM-VALIDATION-P30.json`, `XRAY-ROLLBACK-VALIDATION-P32.json`, `RUNTIME-PATHS-AND-BUILDS-P34.json`.
+Предыдущие проверки выборочного порта Xray, имён серверов, каталога версий и DOM/HTTP сохранены в ранних checkpoint.
 
-Полная проверка RAM обнаружила действующий путь операционной блокировки `/opt/var/lock/broray-light`. Внешний updater r1 также использует старые блокировки. App-slot обновление само по себе не заменяет внешние init/updater-файлы. Простая смена пути лишь у приложения создаст две независимые блокировки и допустит конфликтующие операции.
+## Последние инженерные сборки
 
-Также остаются run/log/tmp приложения, сессии WebUI и рабочие файлы/блокировка Xray. Чистый bootstrap исправлен, но общий RAM-контракт пока не выполнен. Отказ сохранён в `process-failures/FAILURE-P16-PERSISTENT-LOCK-DOMAIN.json`. Установка на роутер и публикация не выполнялись.
+`dist/R0013/p34-engineering-build-A` и `dist/R0013/p34-engineering-build-B` собраны отдельными локальными процессами со свежими входными деревьями. Все восемь артефактов совпали побайтно; семь структурных проверок архива/IPK/manifests прошли. Это НЕ финальные независимые clean-checkout runners и НЕ готовый кандидат.
 
-Точный следующий этап: `P24_IMPLEMENT_MANIFEST_BOUND_R1_LIFECYCLE_TRANSITION_WITH_LEGACY_LOCK_FENCE_RAM_RUNTIME_PATHS_AND_EXTERNAL_PLATFORM_ROLLBACK`. Уже проверенные RAM-примитив и updater P23 подключаются к переходу с r1; это ещё не завершённый переход. Затем полные clean/update/equal/downgrade/rollback/persistence, все кнопки/API и native auth, финальные Build A/B/подпись, браузерная и разрешённая целевая приёмка.
+| Основной артефакт | Байт | SHA-256 |
+| --- | ---: | --- |
+| broray-light-app-2.0.0-r1.tar.gz | 208749 | `263d57ca9a97ed8338dc54afb67ea0a5118536ae53ee7ee06c5e24488957a1ee` |
+| broray-light-install-2.0.0.sh | 3860 | `317bc27efc6bb0345a288dddfa89d59024a79e16a5a663f2e6cdd1993c0dcc05` |
+| broray-light-updater-platform-5-light2-ram.tar.gz | 134529 | `763fc09fe87e7b4092d036aab6a4f2960dd3983a35586bafd0b2eac97ec57d60` |
+| broray-light_2.0.0_aarch64-3.10.ipk | 12964354 | `5465d0a94c31026ee4d18892aae51d23b8dc35f880d33b33d2105fb986db9dbe` |
+| release.json | 597 | `72db44b67ebe8b60500e62fb1bf50f748691faa4bead799c2f1f140b412d01b4` |
 
-## Каждый acceptance gate
+Установленный Xray сохраняется при обновлении приложения. Для чистой установки зафиксирован Xray 26.9.9, официальный архив/digest и ELF64 AArch64; его binary SHA-256: `c1defe42b6db958a97c5e049a02a00a4baaedaca7b51c1c229f0830e288acef5`.
 
-Обозначение PASS с уточнением не заменяет финальную приёмку указанной подсистемы.
+## Что ещё не принято
 
-| Gate | Состояние | Доказательство |
+Нужно связать проверенные компоненты в реальный lifecycle: атомарно мигрировать lighttpd config вместе с ownership receipt, обновить S24/startup/boot recovery, перенести старые оперативные данные и исправить clean-install postinst. Простая сборка новых путей этого не доказывает. Инженерные P34-артефакты нельзя устанавливать как готовый кандидат.
+
+После интеграции обязательны полные clean install, r1 update, equal-version, downgrade refusal, rollback, persistence, все кнопки/API и native authentication/session, browser desktop/mobile, финальные независимые Build A/B, подпись через существующий encrypted Actions secret и авторизованная приёмка на тестовом роутере. Публикация и проверка публичных байтов — отдельный последующий gate.
+
+В R0013 роутер, production server, full-BROray и публичные релизы не изменялись. Ошибки P26/P29/P31/P33 сохранены отдельными JSON до исправленных ревизий; скрытых повторов провалившихся тестов не было.
+
+Следующий этап: `P35_CONFIG_RECEIPT_ATOMIC_MIGRATION_THEN_S24_BOOT_ROLLBACK_AND_FULL_R1_STARTUP`.
+
+## Все acceptance gates
+
+| Gate | Статус | Evidence |
 | --- | --- | --- |
 | pinned_donor_archives | PASS | UPSTREAM-DELTA-P2.json |
 | complete_upstream_change_map | PASS_AUDIT_ONLY | UPSTREAM-PORT-MAP-P2.json |
 | scoped_xray_identity | PASS_ISOLATED_LINUX | RAM-BOOTSTRAP-VALIDATION-P15.json |
-| busybox_ash_overlay_syntax | PASS | RAM-BOOTSTRAP-VALIDATION-P15.json |
+| busybox_ash_overlay_syntax | PASS | RUNTIME-PATHS-AND-BUILDS-P34.json |
 | active_subscription_rename_and_rollback | PASS_ISOLATED_ROUTER_BOUNDARY_MOCKED | SUBSCRIPTION-NAME-P6.json |
 | xray_catalog_and_explicit_consent | PASS_POLICY_OFFICIAL_NETWORK_MOCKED | RAM-BOOTSTRAP-VALIDATION-P15.json |
 | home_xray_controls | PASS_DOM_HTTP_BOUNDARIES_MOCKED | RAM-BOOTSTRAP-VALIDATION-P15.json |
@@ -71,24 +62,35 @@ Linux CI на commit `7ef2834233d8e8ecce9db2bb3fa639a9fb231a94` завершил
 | xray_clean_binary_verification | PASS_ARCHIVE_DIGEST_BINARY_ELF | UPGRADE-AND-XRAY-P10.json |
 | all_webui_buttons_and_apis | NOT_RUN_FULL_CANDIDATE | — |
 | native_authentication_and_sessions | NOT_RUN_FULL_CANDIDATE | — |
-| protected_tmpfs_all_operational_scratch | FAIL_CLOSED | process-failures/FAILURE-P16-PERSISTENT-LOCK-DOMAIN.json |
+| protected_tmpfs_all_operational_scratch | COMPONENT_PASS_LIFECYCLE_PENDING | RUNTIME-PATHS-AND-BUILDS-P34.json |
 | archive_updater_and_ownership_safety | NOT_RUN_FULL_CANDIDATE | — |
 | isolated_clean_install | NOT_RUN | — |
-| isolated_update_from_r1 | BLOCKED_COORDINATED_RAM_LIFECYCLE_MIGRATION | process-failures/FAILURE-P16-PERSISTENT-LOCK-DOMAIN.json |
+| isolated_update_from_r1 | PENDING_FULL_LIFECYCLE_COMPONENTS_PASS | process-failures/FAILURE-P16-PERSISTENT-LOCK-DOMAIN.json |
 | isolated_equal_version | NOT_RUN | — |
 | isolated_downgrade_refusal | NOT_RUN | — |
 | forced_health_rollback | NOT_RUN_FULL_CANDIDATE | — |
 | persistence | NOT_RUN_FULL_CANDIDATE | — |
-| independent_build_a | PASS_PRELIMINARY_LOCAL_NOT_FINAL_ACCEPTANCE | RAM-BOOTSTRAP-VALIDATION-P15.json |
-| independent_build_b | PASS_PRELIMINARY_LOCAL_NOT_FINAL_ACCEPTANCE | RAM-BOOTSTRAP-VALIDATION-P15.json |
-| a_b_byte_reproducibility | PASS_PRELIMINARY_LOCAL_NOT_FINAL_ACCEPTANCE | RAM-BOOTSTRAP-VALIDATION-P15.json |
+| independent_build_a | PASS_PRELIMINARY_LOCAL_NOT_FINAL_ACCEPTANCE | RUNTIME-PATHS-AND-BUILDS-P34.json |
+| independent_build_b | PASS_PRELIMINARY_LOCAL_NOT_FINAL_ACCEPTANCE | RUNTIME-PATHS-AND-BUILDS-P34.json |
+| a_b_byte_reproducibility | PASS_PRELIMINARY_LOCAL_NOT_FINAL_ACCEPTANCE | RUNTIME-PATHS-AND-BUILDS-P34.json |
 | existing_trust_root_signing | NOT_RUN | — |
 | browser_desktop_mobile_layout | NOT_RUN | — |
 | authorized_router_validation | NOT_RUN | — |
 | immutable_release_and_public_byte_validation | NOT_PUBLISHED | — |
 | public_version_vs_internal_updater_identity | PASS_SHELL_JQ_AND_MOCK_DOM_HTTP | RAM-BOOTSTRAP-VALIDATION-P15.json |
 | clean_bootstrap_and_installer_protected_ram | PASS_BOUNDED_UNIT_TRANSACTIONS_NOT_TARGET | RAM-BOOTSTRAP-VALIDATION-P15.json |
-| engineering_package_structure_hashes_and_modes | PASS | RAM-BOOTSTRAP-VALIDATION-P15.json |
-| preexisting_r0012_preservation | PASS_502_FILES_WITH_THREE_EXPLICIT_ROUTING_LOG_EXCEPTIONS | R0012-PRESERVATION-P16.json |
+| engineering_package_structure_hashes_and_modes | PASS | RUNTIME-PATHS-AND-BUILDS-P34.json |
+| preexisting_r0012_preservation | PASS_502_FILES_WITH_THREE_EXPLICIT_ROUTING_LOG_EXCEPTIONS | R0012-PRESERVATION-P34.json |
+| shared_ram_namespace_and_locks | PASS_REAL_TMPFS_NATIVE_BUSYBOX | NATIVE-UPDATER-VALIDATION-P22.json |
+| updater_core_transactions_and_ready_service | PASS_CANONICAL_SLOT_FORMAT_FIXTURE_APP_SERVICE_REAL_MINISIGN_BUSYBOX | UPDATER-PLATFORM-AND-BUILDS-P23.json |
+| ram_updater_platform_package_binding | PASS_ENGINEERING_NOT_MIGRATION_ACCEPTANCE | UPDATER-PLATFORM-AND-BUILDS-P23.json |
+| exact_live_r1_webui_cli_admission | PASS_FIXTURE_SIGNED_TRANSACTIONS | R1-WEBUI-AND-JOURNAL-P27.json |
+| legacy_lock_journal_and_ram_loss_reconciliation | PASS_BOUNDED | R1-WEBUI-AND-JOURNAL-P27.json |
+| legacy_ram_namespace_handoff_and_restore | PASS_BOUNDED | R1-RAM-VALIDATION-P28.json |
+| external_platform_activation_and_restore | PASS_REAL_BYTES_FIXTURE_SERVICE | PLATFORM-VALIDATION-P30.json |
+| xray_rollback_before_fence_release | PASS_REAL_FILES_MOCKED_PROCESS_FENCE | XRAY-ROLLBACK-VALIDATION-P32.json |
+| compiled_application_ram_paths_and_environment_guard | PASS_BOUNDED | RUNTIME-PATHS-AND-BUILDS-P34.json |
+| config_publication_receipt_migration | NOT_IMPLEMENTED | — |
+| coordinated_service_start_and_boot_rollback | NOT_IMPLEMENTED | — |
 
-Контрольная точка: `checkpoints/R0013/CHECKPOINT.json`; machine-readable gates: `VALIDATION.json`; SHA-256 всех записей: `SHA256SUMS`.
+Machine-readable checkpoint: `CHECKPOINT.json`; gates: `VALIDATION.json`; исходные SHA-256: `PRODUCED-SOURCE-MANIFEST.json`; записи: `SHA256SUMS`.

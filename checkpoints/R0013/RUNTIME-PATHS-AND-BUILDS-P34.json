@@ -1,0 +1,180 @@
+{
+  "stage": "R0013",
+  "revision": "p34-component-bounded-application-ram-path-contract",
+  "status": "PASS_COMPILED_PATHS_AND_PRELIMINARY_BUILD_BYTES",
+  "commit": "6ea3ff22effe34ae168657f19cdf502e1341f06d",
+  "ci": "https://github.com/BROadmin/BROray-Light/actions/runs/34527153274",
+  "testsPassed": 22,
+  "evidence": {
+    "r0013-runtime-paths-ash.json": {
+      "report": {
+        "stage": "R0013",
+        "revision": "p34-component-bounded-application-ram-path-contract",
+        "status": "PASS_COMPILED_PATHS_GUARD_AND_LOCK_ADAPTER",
+        "scope": "Compiled shell syntax, path manifest, actual tmpfs environment guard/lock adapter; NOT full startup or old-data migration",
+        "specificationSha256": "7fbd4abab5cd569411e9baef76861ee762a1ea6e08d6609c2b1854ccf1782557",
+        "shell": [
+          "/usr/bin/busybox",
+          "ash"
+        ],
+        "utilities": "BusyBox applets",
+        "tests": [
+          {
+            "name": "exact_41_file_manifest_and_durable_xray_references",
+            "status": "PASS"
+          },
+          {
+            "name": "changed_native_auth_input_refused_before_transformation",
+            "status": "PASS"
+          },
+          {
+            "name": "every_compiled_shell_entrypoint_syntax",
+            "status": "PASS"
+          },
+          {
+            "name": "runtime_guard_fresh",
+            "status": "PASS"
+          },
+          {
+            "name": "runtime_guard_overrides",
+            "status": "PASS"
+          },
+          {
+            "name": "runtime_guard_foreign-namespace",
+            "status": "PASS"
+          },
+          {
+            "name": "runtime_guard_foreign-root",
+            "status": "PASS"
+          },
+          {
+            "name": "runtime_guard_helper-symlink",
+            "status": "PASS"
+          },
+          {
+            "name": "runtime_guard_coownership",
+            "status": "PASS"
+          },
+          {
+            "name": "runtime_guard_legacy-fence",
+            "status": "PASS"
+          },
+          {
+            "name": "runtime_guard_global-lock",
+            "status": "PASS"
+          }
+        ]
+      },
+      "sha256": "04a727f08dc5786481b6121b719fd54c1d1b85dce502a23416f574d6b32dea91"
+    },
+    "r0013-runtime-paths-dash.json": {
+      "report": {
+        "stage": "R0013",
+        "revision": "p34-component-bounded-application-ram-path-contract",
+        "status": "PASS_COMPILED_PATHS_GUARD_AND_LOCK_ADAPTER",
+        "scope": "Compiled shell syntax, path manifest, actual tmpfs environment guard/lock adapter; NOT full startup or old-data migration",
+        "specificationSha256": "7fbd4abab5cd569411e9baef76861ee762a1ea6e08d6609c2b1854ccf1782557",
+        "shell": [
+          "/bin/dash"
+        ],
+        "utilities": "host utilities",
+        "tests": [
+          {
+            "name": "exact_41_file_manifest_and_durable_xray_references",
+            "status": "PASS"
+          },
+          {
+            "name": "changed_native_auth_input_refused_before_transformation",
+            "status": "PASS"
+          },
+          {
+            "name": "every_compiled_shell_entrypoint_syntax",
+            "status": "PASS"
+          },
+          {
+            "name": "runtime_guard_fresh",
+            "status": "PASS"
+          },
+          {
+            "name": "runtime_guard_overrides",
+            "status": "PASS"
+          },
+          {
+            "name": "runtime_guard_foreign-namespace",
+            "status": "PASS"
+          },
+          {
+            "name": "runtime_guard_foreign-root",
+            "status": "PASS"
+          },
+          {
+            "name": "runtime_guard_helper-symlink",
+            "status": "PASS"
+          },
+          {
+            "name": "runtime_guard_coownership",
+            "status": "PASS"
+          },
+          {
+            "name": "runtime_guard_legacy-fence",
+            "status": "PASS"
+          },
+          {
+            "name": "runtime_guard_global-lock",
+            "status": "PASS"
+          }
+        ]
+      },
+      "sha256": "248620691e7503fc7befb1c615855510ef951f449ae4201853424a353e209a66"
+    }
+  },
+  "buildA": "dist/R0013/p34-engineering-build-A",
+  "buildB": "dist/R0013/p34-engineering-build-B",
+  "buildStatus": "EIGHT_FILES_BYTE_IDENTICAL_SEPARATE_LOCAL_PROCESSES_NOT_FINAL_RUNNERS",
+  "artifacts": [
+    {
+      "path": "ENGINEERING-MANIFEST.json",
+      "sizeBytes": 2347,
+      "sha256": "39623e7357457d21fd04c2a3ec5d3dbf21c377211fbbbd7f158852d8b0fb29cc"
+    },
+    {
+      "path": "INPUT-MANIFEST.json",
+      "sizeBytes": 38999,
+      "sha256": "217870b32e8541d737d40e49f2066ebed3e0ab503856fbb722ed1a9f838bf1e5"
+    },
+    {
+      "path": "SHA256SUMS",
+      "sizeBytes": 670,
+      "sha256": "f379e557d0cec4c118b05ec16d57213c94b3fa8cfe8e6715bb64d4d46a19eb51"
+    },
+    {
+      "path": "broray-light-app-2.0.0-r1.tar.gz",
+      "sizeBytes": 208749,
+      "sha256": "263d57ca9a97ed8338dc54afb67ea0a5118536ae53ee7ee06c5e24488957a1ee"
+    },
+    {
+      "path": "broray-light-install-2.0.0.sh",
+      "sizeBytes": 3860,
+      "sha256": "317bc27efc6bb0345a288dddfa89d59024a79e16a5a663f2e6cdd1993c0dcc05"
+    },
+    {
+      "path": "broray-light-updater-platform-5-light2-ram.tar.gz",
+      "sizeBytes": 134529,
+      "sha256": "763fc09fe87e7b4092d036aab6a4f2960dd3983a35586bafd0b2eac97ec57d60"
+    },
+    {
+      "path": "broray-light_2.0.0_aarch64-3.10.ipk",
+      "sizeBytes": 12964354,
+      "sha256": "5465d0a94c31026ee4d18892aae51d23b8dc35f880d33b33d2105fb986db9dbe"
+    },
+    {
+      "path": "release.json",
+      "sizeBytes": 597,
+      "sha256": "72db44b67ebe8b60500e62fb1bf50f748691faa4bead799c2f1f140b412d01b4"
+    }
+  ],
+  "packageStructureTests": 7,
+  "scope": "Compiled path/namespace/lock tests and engineering artifact structure only; startup/data/config migration still pending",
+  "candidateReady": false,
+  "routerTouched": false
+}

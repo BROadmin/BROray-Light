@@ -23,7 +23,7 @@
     {
       "gate": "busybox_ash_overlay_syntax",
       "status": "PASS",
-      "evidence": "RAM-BOOTSTRAP-VALIDATION-P15.json"
+      "evidence": "RUNTIME-PATHS-AND-BUILDS-P34.json"
     },
     {
       "gate": "active_subscription_rename_and_rollback",
@@ -67,8 +67,8 @@
     },
     {
       "gate": "protected_tmpfs_all_operational_scratch",
-      "status": "FAIL_CLOSED",
-      "evidence": "process-failures/FAILURE-P16-PERSISTENT-LOCK-DOMAIN.json"
+      "status": "COMPONENT_PASS_LIFECYCLE_PENDING",
+      "evidence": "RUNTIME-PATHS-AND-BUILDS-P34.json"
     },
     {
       "gate": "archive_updater_and_ownership_safety",
@@ -82,7 +82,7 @@
     },
     {
       "gate": "isolated_update_from_r1",
-      "status": "BLOCKED_COORDINATED_RAM_LIFECYCLE_MIGRATION",
+      "status": "PENDING_FULL_LIFECYCLE_COMPONENTS_PASS",
       "evidence": "process-failures/FAILURE-P16-PERSISTENT-LOCK-DOMAIN.json"
     },
     {
@@ -108,17 +108,17 @@
     {
       "gate": "independent_build_a",
       "status": "PASS_PRELIMINARY_LOCAL_NOT_FINAL_ACCEPTANCE",
-      "evidence": "UPDATER-PLATFORM-AND-BUILDS-P23.json"
+      "evidence": "RUNTIME-PATHS-AND-BUILDS-P34.json"
     },
     {
       "gate": "independent_build_b",
       "status": "PASS_PRELIMINARY_LOCAL_NOT_FINAL_ACCEPTANCE",
-      "evidence": "UPDATER-PLATFORM-AND-BUILDS-P23.json"
+      "evidence": "RUNTIME-PATHS-AND-BUILDS-P34.json"
     },
     {
       "gate": "a_b_byte_reproducibility",
       "status": "PASS_PRELIMINARY_LOCAL_NOT_FINAL_ACCEPTANCE",
-      "evidence": "UPDATER-PLATFORM-AND-BUILDS-P23.json"
+      "evidence": "RUNTIME-PATHS-AND-BUILDS-P34.json"
     },
     {
       "gate": "existing_trust_root_signing",
@@ -153,12 +153,12 @@
     {
       "gate": "engineering_package_structure_hashes_and_modes",
       "status": "PASS",
-      "evidence": "UPDATER-PLATFORM-AND-BUILDS-P23.json"
+      "evidence": "RUNTIME-PATHS-AND-BUILDS-P34.json"
     },
     {
       "gate": "preexisting_r0012_preservation",
       "status": "PASS_502_FILES_WITH_THREE_EXPLICIT_ROUTING_LOG_EXCEPTIONS",
-      "evidence": "R0012-PRESERVATION-P16.json"
+      "evidence": "R0012-PRESERVATION-P34.json"
     },
     {
       "gate": "shared_ram_namespace_and_locks",
@@ -174,8 +174,48 @@
       "gate": "ram_updater_platform_package_binding",
       "status": "PASS_ENGINEERING_NOT_MIGRATION_ACCEPTANCE",
       "evidence": "UPDATER-PLATFORM-AND-BUILDS-P23.json"
+    },
+    {
+      "gate": "exact_live_r1_webui_cli_admission",
+      "status": "PASS_FIXTURE_SIGNED_TRANSACTIONS",
+      "evidence": "R1-WEBUI-AND-JOURNAL-P27.json"
+    },
+    {
+      "gate": "legacy_lock_journal_and_ram_loss_reconciliation",
+      "status": "PASS_BOUNDED",
+      "evidence": "R1-WEBUI-AND-JOURNAL-P27.json"
+    },
+    {
+      "gate": "legacy_ram_namespace_handoff_and_restore",
+      "status": "PASS_BOUNDED",
+      "evidence": "R1-RAM-VALIDATION-P28.json"
+    },
+    {
+      "gate": "external_platform_activation_and_restore",
+      "status": "PASS_REAL_BYTES_FIXTURE_SERVICE",
+      "evidence": "PLATFORM-VALIDATION-P30.json"
+    },
+    {
+      "gate": "xray_rollback_before_fence_release",
+      "status": "PASS_REAL_FILES_MOCKED_PROCESS_FENCE",
+      "evidence": "XRAY-ROLLBACK-VALIDATION-P32.json"
+    },
+    {
+      "gate": "compiled_application_ram_paths_and_environment_guard",
+      "status": "PASS_BOUNDED",
+      "evidence": "RUNTIME-PATHS-AND-BUILDS-P34.json"
+    },
+    {
+      "gate": "config_publication_receipt_migration",
+      "status": "NOT_IMPLEMENTED",
+      "evidence": null
+    },
+    {
+      "gate": "coordinated_service_start_and_boot_rollback",
+      "status": "NOT_IMPLEMENTED",
+      "evidence": null
     }
   ],
   "releaseId": "2.0.0-r1",
-  "currentRevision": "p23-updater-platform-package-integration"
+  "currentRevision": "p34-component-bounded-application-ram-path-contract"
 }

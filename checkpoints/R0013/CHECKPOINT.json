@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "stage": "R0013_SELECTIVE_UPSTREAM_STABLE_PORT",
-  "status": "UPDATER_RAM_PLATFORM_BOUNDED_PASS_MIGRATION_IN_PROGRESS",
-  "currentRevision": "p23-updater-platform-package-integration",
+  "status": "COMPONENT_RUNTIME_PLATFORM_PASS_LIFECYCLE_INTEGRATION_PENDING",
+  "currentRevision": "p34-component-bounded-application-ram-path-contract",
   "publicVersion": "2.0.0",
   "packageVersion": "2.0.0",
   "releaseId": "2.0.0-r1",
@@ -10,8 +10,8 @@
   "releaseTag": "v2.0.0",
   "branch": "codex/r0009-updater-package",
   "baseLightCommit": "9e5fce9bfa7c82bfc2f2654d80fd3987c5259963",
-  "latestTestedSourceCommit": "5d52ec4d5bb7083d6ed1e09a58b9c729958a211a",
-  "latestCI": "https://github.com/BROadmin/BROray-Light/actions/runs/34518444806",
+  "latestTestedSourceCommit": "6ea3ff22effe34ae168657f19cdf502e1341f06d",
+  "latestCI": "https://github.com/BROadmin/BROray-Light/actions/runs/34527153274",
   "candidateReady": false,
   "releaseReady": false,
   "publicReleasePublished": false,
@@ -22,12 +22,13 @@
   "buildA": "PRELIMINARY_ENGINEERING_BYTE_PASS_NOT_FINAL_ACCEPTANCE",
   "buildB": "PRELIMINARY_ENGINEERING_BYTE_PASS_NOT_FINAL_ACCEPTANCE",
   "buildEvidence": {
-    "path": "UPDATER-PLATFORM-AND-BUILDS-P23.json",
-    "sha256": "1c93335dbee1d6313935781f62d3fd681015ed2e323ca473abc5c162000148f5"
+    "path": "RUNTIME-PATHS-AND-BUILDS-P34.json",
+    "sha256": "b0fdc171938d82ce546b2ae314dbd340f9121fc71a062f61aa5f4c5b94b9a5e3"
   },
-  "activeFailure": {
-    "path": "checkpoints/R0013/process-failures/FAILURE-P16-PERSISTENT-LOCK-DOMAIN.json",
-    "sha256": "7184fd4bf73fac1a34704fd7561ab4d2b07fa9a401533de20bc3a38c55afddda"
-  },
-  "nextExactAction": "P24_IMPLEMENT_MANIFEST_BOUND_R1_LIFECYCLE_TRANSITION_WITH_LEGACY_LOCK_FENCE_RAM_RUNTIME_PATHS_AND_EXTERNAL_PLATFORM_ROLLBACK"
+  "activeFailure": null,
+  "nextExactAction": "P35_CONFIG_RECEIPT_ATOMIC_MIGRATION_THEN_S24_BOOT_ROLLBACK_AND_FULL_R1_STARTUP",
+  "remainingIntegrationGap": {
+    "originFailure": "process-failures/FAILURE-P16-PERSISTENT-LOCK-DOMAIN.json",
+    "description": "RAM application paths and external platform handoff are implemented as separately tested components; normal/legacy S24 startup, config+receipt migration, legacy runtime data migration, clean package lifecycle and reboot rollback are not integrated."
+  }
 }

@@ -4,8 +4,8 @@
   "artifacts": [
     {
       "path": ".github/workflows/r0013-port-tests.yml",
-      "sizeBytes": 3397,
-      "sha256": "9e449e21c31446508c0c361f3c24cfb984f6d4d2a5e1439138125df168ddb953"
+      "sizeBytes": 7647,
+      "sha256": "6155c6530e0cc5a68072efc95ed310c0a7d3e85653b09a8e2517fb09dd43b191"
     },
     {
       "path": "packaging/r0013-overlay/app/bin/broray-lightd",
@@ -54,13 +54,13 @@
     },
     {
       "path": "packaging/r0013-overlay/app/lib/xray-releases.sh",
-      "sizeBytes": 13491,
-      "sha256": "f57239b7fc11c199476b443e4078453ec6300ed114f030f8cefa53151bef718f"
+      "sizeBytes": 13743,
+      "sha256": "2a30f488c9b4d2edf74f40148d39a23e8c93bae3f1182dad1172674cd786f793"
     },
     {
       "path": "packaging/r0013-overlay/app/lib/xray-update.sh",
-      "sizeBytes": 35017,
-      "sha256": "20cff7e9f977bc6986c84a6f5306600c46c7b9f26a1cbbebcb9c8b0406bd7bdb"
+      "sizeBytes": 37551,
+      "sha256": "14eac0629f16de3cbedf5321dec9f7f0d7e9c2943bb8035d7bb49b79d2bd458a"
     },
     {
       "path": "packaging/r0013-overlay/app/lib/xray-web-operation.sh",
@@ -101,6 +101,46 @@
       "path": "packaging/r0013-overlay/bootstrap-ram.sh",
       "sizeBytes": 1868,
       "sha256": "a857e2328d949db10d36149256ce0dd84d8de2b12f6de607607928498e1eee0b"
+    },
+    {
+      "path": "packaging/r0013-overlay/runtime-paths.json",
+      "sizeBytes": 17242,
+      "sha256": "7fbd4abab5cd569411e9baef76861ee762a1ea6e08d6609c2b1854ccf1782557"
+    },
+    {
+      "path": "packaging/r0013-overlay/shared/lifecycle-r1-admission.sh",
+      "sizeBytes": 6875,
+      "sha256": "76d2a2f90c9becdde2f652497951c5eb5fa34a77f5cfa704cdb55d1faad71f19"
+    },
+    {
+      "path": "packaging/r0013-overlay/shared/lifecycle-r1-journal.sh",
+      "sizeBytes": 7143,
+      "sha256": "ff6f5ad82f0356d9743a17fbba25486598aa052541619f032e593f142c3cfb21"
+    },
+    {
+      "path": "packaging/r0013-overlay/shared/lifecycle-r1-platform.sh",
+      "sizeBytes": 8571,
+      "sha256": "294ec69772632cbcef1e88ec1c889d8c157f3c3d424135e83f3b2ac0b80929c4"
+    },
+    {
+      "path": "packaging/r0013-overlay/shared/lifecycle-r1-ram.sh",
+      "sizeBytes": 9288,
+      "sha256": "5d005be9f259708824808e7fdfeb3ceaa03241b16f01de394a8e56ae7a8e3268"
+    },
+    {
+      "path": "packaging/r0013-overlay/shared/operation-lock.sh",
+      "sizeBytes": 369,
+      "sha256": "85f0cf43407d9b1fe60746c43a147a56d6a0f91b0fda7a13f8be9c594162f473"
+    },
+    {
+      "path": "packaging/r0013-overlay/shared/runtime-environment.sh",
+      "sizeBytes": 2837,
+      "sha256": "06bd6ac8004868e7531682f82a74e4d0b3971b9c0576970712dbbeb933740415"
+    },
+    {
+      "path": "packaging/r0013-overlay/shared/runtime-prepare.sh",
+      "sizeBytes": 2437,
+      "sha256": "aa537e203c68adf79cfe0863d6f5c13cb7837d1eed8fcc53b372807420e32c3a"
     },
     {
       "path": "packaging/r0013-overlay/shared/runtime-ram.sh",
@@ -144,8 +184,8 @@
     },
     {
       "path": "tools/build_r0013_release.py",
-      "sizeBytes": 13263,
-      "sha256": "3aeef3f38fe23e7d394e266373ee661ccbea216d095c97b625c1fe3d5df6da98"
+      "sizeBytes": 14422,
+      "sha256": "5ab6e417dfb16fb796bc2702cf663d4e75661ba1862beecf882b2b697e5e4440"
     },
     {
       "path": "tools/r0013_busybox_fixture.py",
@@ -156,6 +196,16 @@
       "path": "tools/r0013_inputs.py",
       "sizeBytes": 2676,
       "sha256": "c4ad07ddce4aa2f5b88ac2d0845305caddd947719799d7462cef3335f4e6315f"
+    },
+    {
+      "path": "tools/r0013_platform.py",
+      "sizeBytes": 2090,
+      "sha256": "54b366099843e342df6ea143edcb415f09dccdbfdd4e51e2fec522982ba8cf45"
+    },
+    {
+      "path": "tools/r0013_runtime_paths.py",
+      "sizeBytes": 2668,
+      "sha256": "217afd401e31019cf7d0a4db00afd219eb25d15106709dfa2a1dc7f1c14a1946"
     },
     {
       "path": "tools/test_r0013_bootstrap.py",
@@ -173,14 +223,39 @@
       "sha256": "1cf7f8dd82542bbfcb94b15bb136aa5dc485c796f9068e9526d72e125d452e9a"
     },
     {
+      "path": "tools/test_r0013_platform.py",
+      "sizeBytes": 10258,
+      "sha256": "0e9d87f6043bfa4972464d79ddeb828a70f3e2a68a0d3f93cbfcb99684c6c143"
+    },
+    {
       "path": "tools/test_r0013_process.py",
       "sizeBytes": 9483,
       "sha256": "8209552d9e5cf64fcad76955a7f40710b521ced3690af6790fc6b7ec3f210ce7"
     },
     {
+      "path": "tools/test_r0013_r1_admission.py",
+      "sizeBytes": 10453,
+      "sha256": "158ae3376790396a7d6b23da5d78fa47283e02950162b40e126ade1a74f857a5"
+    },
+    {
+      "path": "tools/test_r0013_r1_journal.py",
+      "sizeBytes": 9532,
+      "sha256": "6efaf6e3d9a92492536fc06e062969721a130d53ea5239514b2d4fa6318302fd"
+    },
+    {
+      "path": "tools/test_r0013_r1_ram.py",
+      "sizeBytes": 9159,
+      "sha256": "d6bf48424fde382ce1849455574110c56d7550bdc4e22fa5bf5190628eab5334"
+    },
+    {
       "path": "tools/test_r0013_ram.py",
       "sizeBytes": 11909,
       "sha256": "b209953587183f42064b99515941c1206d757183ed4ceb0f494f6e5be6858392"
+    },
+    {
+      "path": "tools/test_r0013_runtime_paths.py",
+      "sizeBytes": 8383,
+      "sha256": "af958a831c5611f3da6b87874db419457672adfadc89a8422201fd13fce4270c"
     },
     {
       "path": "tools/test_r0013_subscriptions.py",
@@ -208,10 +283,14 @@
       "sha256": "29096300e69738a90b62affe562dc3988562ab645accf9b8a8056c13996c9362"
     },
     {
+      "path": "tools/test_r0013_xray_rollback.py",
+      "sizeBytes": 8674,
+      "sha256": "e4e8c4e2d445d21cece319f3769864f33c8cac1725556487b6265448c1a08075"
+    },
+    {
       "path": "tools/test_r0013_xray_selection.py",
       "sizeBytes": 7813,
       "sha256": "1a9ba8466e29db1ff6e1935b9bbd445060eebfe4cd4ce4d6855af7afda6322c2"
     }
-  ],
-  "currentRevision": "p23-updater-platform-package-integration"
+  ]
 }

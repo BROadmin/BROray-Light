@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
   "stage": "R0013_SELECTIVE_UPSTREAM_STABLE_PORT",
-  "status": "UPDATER_RAM_PLATFORM_BOUNDED_PASS_MIGRATION_IN_PROGRESS",
+  "status": "COMPONENT_RUNTIME_PLATFORM_PASS_LIFECYCLE_INTEGRATION_PENDING",
   "currentRevision": "p34-component-bounded-application-ram-path-contract",
-  "activeFailure": "checkpoints/R0013/process-failures/FAILURE-P33-RUN-RUNTIME-SUBSTRING.json",
+  "activeFailure": null,
   "publicVersion": "2.0.0",
   "buildA": "PRELIMINARY_ENGINEERING_BYTE_PASS_NOT_FINAL_ACCEPTANCE",
   "buildB": "PRELIMINARY_ENGINEERING_BYTE_PASS_NOT_FINAL_ACCEPTANCE",
@@ -18,7 +18,7 @@
     "path": "checkpoints/R0013/SUBSCRIPTION-NAME-P6.json",
     "sha256": "2b1fe451272dc233e1f8ccd4cc3d6ea2f212ba81e009f93d3a4b9e9b9601577a"
   },
-  "lastResolvedFailure": "checkpoints/R0013/process-failures/FAILURE-P14-PERSISTENT-BOOTSTRAP.json",
+  "lastResolvedFailure": "checkpoints/R0013/process-failures/FAILURE-P33-RUN-RUNTIME-SUBSTRING.json",
   "processPort": {
     "status": "PASS_ISOLATED_LINUX",
     "tests": 33,
@@ -62,7 +62,7 @@
     "path": "checkpoints/R0013/UPSTREAM-PORT-MAP-P2.json",
     "sha256": "009a0f5adae08f399c82510cf680690b4c2e50bc8c659eda9c48d91b5a838121"
   },
-  "nextExactAction": "P34_VALIDATE_COMPILED_RAM_PATHS_THEN_INTEGRATE_STARTUP_CONFIG_RECEIPT_AND_LEGACY_RUNTIME_MIGRATION",
+  "nextExactAction": "P35_CONFIG_RECEIPT_ATOMIC_MIGRATION_THEN_S24_BOOT_ROLLBACK_AND_FULL_R1_STARTUP",
   "versionAndXray": {
     "status": "PASS_VERSION_AND_BOOTSTRAP_INPUT",
     "path": "checkpoints/R0013/UPGRADE-AND-XRAY-P10.json",
@@ -70,8 +70,8 @@
   },
   "engineeringBuilds": {
     "status": "PASS_PRELIMINARY_ONLY",
-    "path": "checkpoints/R0013/ENGINEERING-BUILDS-P13.json",
-    "sha256": "ef05b06f98464a50232291e9021144c1752c880f3c0cb6688d7b20d6191d5e5f"
+    "path": "checkpoints/R0013/RUNTIME-PATHS-AND-BUILDS-P34.json",
+    "sha256": "b0fdc171938d82ce546b2ae314dbd340f9121fc71a062f61aa5f4c5b94b9a5e3"
   },
   "bootstrapBuild": {
     "path": "checkpoints/R0013/RAM-BOOTSTRAP-BUILD-P15.json",
@@ -81,14 +81,65 @@
     "path": "RAM-BOOTSTRAP-VALIDATION-P15.json",
     "sha256": "050a4d9b7e8c82194d1e4dd03e6e014031ec1b24d44f06833cc3189d5ca1c33d"
   },
-  "latestCI": "https://github.com/BROadmin/BROray-Light/actions/runs/34526160593",
-  "platformActivationAndRollback": {"status":"PASS_BOUNDED", "tests":32, "path":"checkpoints/R0013/PLATFORM-VALIDATION-P30.json", "sha256":"6223d06c4f63a44c4bd66bf5da42b19b2358296a1dab8b58af9f5e4beb89c299"},
-  "xrayRollback": {"status":"PASS_BOUNDED", "tests":32, "path":"checkpoints/R0013/XRAY-ROLLBACK-VALIDATION-P32.json", "sha256":"35aab3f8277fb323c6c8c693fece3cd8635addf862e52d186ad351da5474bd09"},
-  "ramNamespaceHandoff": {"status":"PASS_BOUNDED", "tests":20, "path":"checkpoints/R0013/R1-RAM-VALIDATION-P28.json", "sha256":"1653a3c24470b78b054458960a96c5b7867d2d19beba520c3ebcd11bd8f4d25b"},
-  "exactR1WebuiAndJournal": {"status":"PASS_BOUNDED", "tests":42, "path":"checkpoints/R0013/R1-WEBUI-AND-JOURNAL-P27.json", "sha256":"70e8f9bba41a7e3ee82afd553c243d8ced134de5e2842b421ad8568061988f41"},
-  "exactR1Admission": {"status":"PASS_READ_ONLY_ADMISSION", "tests":20, "path":"checkpoints/R0013/R1-ADMISSION-VALIDATION-P24.json", "sha256":"63e0f405c1821f5266dfb5534322129af32dd8002143577ef73563051caa737c"},
-  "updaterPlatformAndBuilds": {"status":"PASS_BOUNDED_PLATFORM_AND_PRELIMINARY_BUILDS", "path":"checkpoints/R0013/UPDATER-PLATFORM-AND-BUILDS-P23.json", "sha256":"1c93335dbee1d6313935781f62d3fd681015ed2e323ca473abc5c162000148f5"},
-  "nativeRamAndUpdaterCore": {"status":"PASS_NATIVE_BUSYBOX_AND_CANONICAL_SLOT_FORMAT", "tests":66, "path":"checkpoints/R0013/NATIVE-UPDATER-VALIDATION-P22.json"},
-  "updaterRamCore": {"status":"PASS_BOUNDED_CORE", "tests":28, "path":"checkpoints/R0013/UPDATER-CORE-P20.json"},
-  "ramPrimitive": {"status":"PASS_BOUNDED_PRIMITIVE", "tests":38, "path":"checkpoints/R0013/RAM-PRIMITIVE-P17.json"}
+  "latestCI": "https://github.com/BROadmin/BROray-Light/actions/runs/34527153274",
+  "platformActivationAndRollback": {
+    "status": "PASS_BOUNDED",
+    "tests": 32,
+    "path": "checkpoints/R0013/PLATFORM-VALIDATION-P30.json",
+    "sha256": "6223d06c4f63a44c4bd66bf5da42b19b2358296a1dab8b58af9f5e4beb89c299"
+  },
+  "xrayRollback": {
+    "status": "PASS_BOUNDED",
+    "tests": 32,
+    "path": "checkpoints/R0013/XRAY-ROLLBACK-VALIDATION-P32.json",
+    "sha256": "35aab3f8277fb323c6c8c693fece3cd8635addf862e52d186ad351da5474bd09"
+  },
+  "ramNamespaceHandoff": {
+    "status": "PASS_BOUNDED",
+    "tests": 20,
+    "path": "checkpoints/R0013/R1-RAM-VALIDATION-P28.json",
+    "sha256": "1653a3c24470b78b054458960a96c5b7867d2d19beba520c3ebcd11bd8f4d25b"
+  },
+  "exactR1WebuiAndJournal": {
+    "status": "PASS_BOUNDED",
+    "tests": 42,
+    "path": "checkpoints/R0013/R1-WEBUI-AND-JOURNAL-P27.json",
+    "sha256": "70e8f9bba41a7e3ee82afd553c243d8ced134de5e2842b421ad8568061988f41"
+  },
+  "exactR1Admission": {
+    "status": "PASS_READ_ONLY_ADMISSION",
+    "tests": 20,
+    "path": "checkpoints/R0013/R1-ADMISSION-VALIDATION-P24.json",
+    "sha256": "63e0f405c1821f5266dfb5534322129af32dd8002143577ef73563051caa737c"
+  },
+  "updaterPlatformAndBuilds": {
+    "status": "PASS_BOUNDED_PLATFORM_AND_PRELIMINARY_BUILDS",
+    "path": "checkpoints/R0013/UPDATER-PLATFORM-AND-BUILDS-P23.json",
+    "sha256": "1c93335dbee1d6313935781f62d3fd681015ed2e323ca473abc5c162000148f5"
+  },
+  "nativeRamAndUpdaterCore": {
+    "status": "PASS_NATIVE_BUSYBOX_AND_CANONICAL_SLOT_FORMAT",
+    "tests": 66,
+    "path": "checkpoints/R0013/NATIVE-UPDATER-VALIDATION-P22.json"
+  },
+  "updaterRamCore": {
+    "status": "PASS_BOUNDED_CORE",
+    "tests": 28,
+    "path": "checkpoints/R0013/UPDATER-CORE-P20.json"
+  },
+  "ramPrimitive": {
+    "status": "PASS_BOUNDED_PRIMITIVE",
+    "tests": 38,
+    "path": "checkpoints/R0013/RAM-PRIMITIVE-P17.json"
+  },
+  "runtimePathContract": {
+    "status": "PASS_BOUNDED",
+    "tests": 22,
+    "path": "checkpoints/R0013/RUNTIME-PATHS-AND-BUILDS-P34.json",
+    "sha256": "b0fdc171938d82ce546b2ae314dbd340f9121fc71a062f61aa5f4c5b94b9a5e3"
+  },
+  "remainingIntegrationGap": {
+    "originFailure": "process-failures/FAILURE-P16-PERSISTENT-LOCK-DOMAIN.json",
+    "description": "RAM application paths and external platform handoff are implemented as separately tested components; normal/legacy S24 startup, config+receipt migration, legacy runtime data migration, clean package lifecycle and reboot rollback are not integrated."
+  }
 }
