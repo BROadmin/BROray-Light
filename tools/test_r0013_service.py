@@ -164,6 +164,15 @@ class Fixture:
 
 
 def cases():
+    for mode in ('status-before-publication','invalid-action','ambiguous-lan'):
+        def negative(f,mode=mode):
+            action='status' if mode=='status-before-publication' else 'invalid' if mode=='invalid-action' else 'ensure'
+            if mode=='ambiguous-lan':f.env['BRORAY_LIGHT_WEB_LAN_IP_OVERRIDE']='203.0.113.7'
+            result=subprocess.run([str(f.ctl),action],env=f.env,capture_output=True,text=True,timeout=15)
+            assert result.returncode!=0,(mode,result.stdout,result.stderr)
+            assert not (f.app/'config/web-publish.json').exists()
+            f.clean_scratch()
+        yield 'publication-negative-'+mode,negative
     def lifecycle(f):
         f.service('start');f.service('status');f.service('start');f.service('restart');f.service('stop');f.service('status',1);f.clean_scratch()
         owner=json.loads((f.app/'config/web-publish.json').read_bytes())
@@ -244,7 +253,7 @@ def main():
                 records.append(dict(name=name,status='FAIL',error=str(error)));failed=True;break
             finally:
                 if fixture:fixture.close()
-    report=dict(stage='R0013',revision='p36-scoped-service-and-ram-publication-integration',status='FAIL_FIRST_ERROR' if failed else 'PASS_SCOPED_SERVICE_AND_PUBLICATION',shell=shell,tests=records,
+    report=dict(stage='R0013',revision='p37-preserve-publication-failure-through-cleanup',status='FAIL_FIRST_ERROR' if failed else 'PASS_SCOPED_SERVICE_AND_PUBLICATION',shell=shell,tests=records,
                 scope='Real S24, publication and Linux processes/private tmpfs; daemon loop, Xray and Keenetic commands mocked. Not full r1/boot acceptance.',sourceSha256={str(p.relative_to(REPO)):hashlib.sha256(p.read_bytes()).hexdigest() for p in (SERVICE,PROCESS)})
     payload=(json.dumps(report,indent=2)+'\n').encode()
     if args.result:args.result.parent.mkdir(parents=True,exist_ok=True);args.result.write_bytes(payload)

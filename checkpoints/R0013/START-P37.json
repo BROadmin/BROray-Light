@@ -1,0 +1,10 @@
+{
+  "stage": "R0013",
+  "revision": "p37-preserve-publication-failure-through-cleanup",
+  "status": "CHECKPOINT_BEFORE_CORRECTION",
+  "failure": "process-failures/FAILURE-P36-PUBLICATION-CLEANUP-EXIT-STATUS.json",
+  "failureSha256": "c82ff43edbbffa62b273d03938bdcf244361c3ed6798b029ad621a80365c2bba",
+  "correction": "Preserve the incoming trap status before running local/cleanup commands, and assert negative publication paths explicitly.",
+  "candidateReady": false,
+  "routerTouched": false
+}

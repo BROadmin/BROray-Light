@@ -1,0 +1,42 @@
+{
+  "stage": "R0013",
+  "revision": "p36-scoped-service-and-ram-publication-integration",
+  "status": "FAIL_FIRST_ERROR",
+  "failure": "WEB_PUBLICATION_CLEANUP_MASKED_EXIT_STATUS",
+  "cause": "brl_web_invocation_cleanup executed local rc child before rc=$?; local resets shell status to zero. A failed status operation therefore returned success and S24 skipped initial ensure. The real lifecycle test later found web-publish.json absent.",
+  "ci": {
+    "url": "https://github.com/BROadmin/BROray-Light/actions/runs/34530003468",
+    "commit": "1a5941079ef255c7a9340b29698e5730a39f2293",
+    "artifactId": 10173104501,
+    "artifactSha256": "6b26f92ebf97aee27cae241ebafe97c89d3a73a4c9b25892d535329c7ead85f6"
+  },
+  "reports": {
+    "r0013-service-dash.json": {
+      "report": {
+        "stage": "R0013",
+        "revision": "p36-scoped-service-and-ram-publication-integration",
+        "status": "FAIL_FIRST_ERROR",
+        "shell": [
+          "/bin/dash"
+        ],
+        "tests": [
+          {
+            "name": "real-s24-start-status-restart-stop-and-publication",
+            "status": "FAIL",
+            "error": "[Errno 2] No such file or directory: '/var/tmp/r0013-service-1pk1vz4i/opt/broray-light/config/web-publish.json'"
+          }
+        ],
+        "scope": "Real S24, publication and Linux processes/private tmpfs; daemon loop, Xray and Keenetic commands mocked. Not full r1/boot acceptance.",
+        "sourceSha256": {
+          "packaging/r0013-overlay/system/packaging/opkg/S24broray-light": "4c0b6cd4c2eb1e5deaee92007288cc2f9dedaa43fb16ee6b99921acad950f55b",
+          "packaging/r0013-overlay/shared/service-process.sh": "285ccc22291f367f27b7a95e05fc58bd1db3bbec93bd1949c1ff30c03daba2c5"
+        }
+      },
+      "sha256": "1310931950716c926b5cc3c8d8da9081d929ba2ec330e9f6b8b6ec08af5f4596"
+    }
+  },
+  "nextRevision": "p37-preserve-publication-failure-through-cleanup",
+  "correction": "Capture incoming status in the first local assignment; add explicit missing-publication, malformed action and ambiguous LAN negative return-code tests.",
+  "candidateReady": false,
+  "routerTouched": false
+}

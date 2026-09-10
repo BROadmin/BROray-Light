@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
   "stage": "R0013_SELECTIVE_UPSTREAM_STABLE_PORT",
-  "status": "COMPONENT_RUNTIME_PLATFORM_PASS_LIFECYCLE_INTEGRATION_PENDING",
-  "currentRevision": "p36-scoped-service-and-ram-publication-integration",
-  "activeFailure": null,
+  "status": "FIRST_ERROR_RECORDED_CORRECTION_PENDING",
+  "currentRevision": "p37-preserve-publication-failure-through-cleanup",
+  "activeFailure": "checkpoints/R0013/process-failures/FAILURE-P36-PUBLICATION-CLEANUP-EXIT-STATUS.json",
   "publicVersion": "2.0.0",
   "buildA": "PRELIMINARY_ENGINEERING_BYTE_PASS_NOT_FINAL_ACCEPTANCE",
   "buildB": "PRELIMINARY_ENGINEERING_BYTE_PASS_NOT_FINAL_ACCEPTANCE",
@@ -62,7 +62,7 @@
     "path": "checkpoints/R0013/UPSTREAM-PORT-MAP-P2.json",
     "sha256": "009a0f5adae08f399c82510cf680690b4c2e50bc8c659eda9c48d91b5a838121"
   },
-  "nextExactAction": "P36_TEST_SCOPED_S24_AND_RAM_PUBLICATION_THEN_WIRE_LEGACY_ENTRY_AND_BOOT_RECOVERY",
+  "nextExactAction": "P37_CORRECT_TRAP_STATUS_AND_REPEAT_SERVICE_TESTS_WITH_NEGATIVE_PUBLICATION_CASES",
   "versionAndXray": {
     "status": "PASS_VERSION_AND_BOOTSTRAP_INPUT",
     "path": "checkpoints/R0013/UPGRADE-AND-XRAY-P10.json",

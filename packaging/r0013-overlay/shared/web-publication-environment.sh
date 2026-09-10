@@ -13,8 +13,8 @@ BRL_WEB_FENCE=false
 
 brl_web_invocation_cleanup()
 {
-    local rc child
-    rc=$?; trap - 0
+    local rc="$?" child
+    trap - 0
     if brl_ram_dir_valid "$BRL_WEB_WORK" && [ "$(stat -c '%d:%i' "$BRL_WEB_WORK")" = "$BRL_WEB_WORK_ID" ]; then
         for child in "$BRL_WEB_WORK"/* "$BRL_WEB_WORK"/.[!.]* "$BRL_WEB_WORK"/..?*; do
             [ -e "$child" ] || [ -L "$child" ] || continue
