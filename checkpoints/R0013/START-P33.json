@@ -1,0 +1,14 @@
+{
+  "stage": "R0013",
+  "revision": "p33-explicit-application-ram-path-contract",
+  "status": "CHECKPOINT_BEFORE_IMPLEMENTATION",
+  "scope": "Hash-pinned build transformations for application scratch paths, plus a shared protected runtime environment and global lock adapter. Source/storage changes remain explicit inputs, not inherited R0012 code.",
+  "invariants": [
+    "Native authentication/session logic stays intact; only its private runtime paths change",
+    "Never accept environment overrides that redirect scratch to persistent or foreign locations",
+    "Keep config, subscriptions, servers and installed Xray durable",
+    "Application startup/migration integration and lifecycle acceptance remain separate pending gates"
+  ],
+  "candidateReady": false,
+  "routerTouched": false
+}

@@ -1,0 +1,636 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0013",
+  "revision": "p34-component-bounded-application-ram-path-contract",
+  "files": [
+    {
+      "path": "bin/broray-connection-monitor",
+      "sourceSha256": "bc109412c7ff93ef179682d416380bb300b1e487f765c7776d035cc2efa38e53",
+      "replacements": [
+        {
+          "old": "$ROOT/run",
+          "new": "$BRL_RAM/run",
+          "count": 2,
+          "kind": "path-component"
+        },
+        {
+          "old": "$ROOT/tmp",
+          "new": "$BRL_RAM/tmp",
+          "count": 3,
+          "kind": "path-component"
+        }
+      ],
+      "guard": true
+    },
+    {
+      "path": "bin/broray-home-snapshot",
+      "sourceSha256": "b0019bb16ed877c70aa4b47868639a50b303c2c44b589a36eb27d5413997363e",
+      "replacements": [
+        {
+          "old": "$ROOT/run",
+          "new": "$BRL_RAM/run",
+          "count": 4,
+          "kind": "path-component"
+        },
+        {
+          "old": "$ROOT/tmp",
+          "new": "$BRL_RAM/tmp",
+          "count": 1,
+          "kind": "path-component"
+        }
+      ],
+      "guard": true
+    },
+    {
+      "path": "bin/broray-lightd",
+      "sourceSha256": "8e250c2d2b66d073f9b96e202bbc056672610969cd508c2c4246e09266b6ae53",
+      "replacements": [
+        {
+          "old": "$ROOT/run",
+          "new": "$BRL_RAM/run",
+          "count": 2,
+          "kind": "path-component"
+        },
+        {
+          "old": "$ROOT/tmp",
+          "new": "$BRL_RAM/tmp",
+          "count": 1,
+          "kind": "path-component"
+        },
+        {
+          "old": "$ROOT/logs",
+          "new": "$BRL_RAM/logs",
+          "count": 1,
+          "kind": "path-component"
+        }
+      ],
+      "guard": true
+    },
+    {
+      "path": "bin/broray-log-maintenance",
+      "sourceSha256": "f9f77f150d5e9532adda30d65897a0683f9537687374e07b52dec0b372014c2f",
+      "replacements": [
+        {
+          "old": "$ROOT/logs",
+          "new": "$BRL_RAM/logs",
+          "count": 1,
+          "kind": "path-component"
+        }
+      ],
+      "guard": true
+    },
+    {
+      "path": "bin/broray-server-auto-switch",
+      "sourceSha256": "0513d36567d9a3e50eea3aad3eddc5b5f2d22d154ee986a4395bee647a7d0382",
+      "replacements": [
+        {
+          "old": "$ROOT/run",
+          "new": "$BRL_RAM/run",
+          "count": 2,
+          "kind": "path-component"
+        },
+        {
+          "old": "$ROOT/tmp",
+          "new": "$BRL_RAM/tmp",
+          "count": 1,
+          "kind": "path-component"
+        }
+      ],
+      "guard": true
+    },
+    {
+      "path": "bin/broray-server-probe",
+      "sourceSha256": "13d64b4200e88f9a95079829fa1f2aeb7265a900c6f1c9d600044f822984c7ec",
+      "replacements": [
+        {
+          "old": "/opt/broray-light/tmp",
+          "new": "/tmp/broray-light/tmp",
+          "count": 1,
+          "kind": "path-component"
+        }
+      ],
+      "guard": true
+    },
+    {
+      "path": "bin/broray-subscriptions",
+      "sourceSha256": "bbdb99c879a37bc810f4c0fff61426c80a195e5c4bd60ebbf5c99af50896c3ba",
+      "replacements": [
+        {
+          "old": "$BRORAY_ROOT/tmp",
+          "new": "$BRL_RAM/tmp",
+          "count": 6,
+          "kind": "path-component"
+        }
+      ],
+      "guard": true
+    },
+    {
+      "path": "bin/broray-xray-control",
+      "sourceSha256": "1f881e789e3da874895b3b922d57113fb58cae2c18e59c90b55ab31d86880024",
+      "replacements": [
+        {
+          "old": "$ROOT/logs",
+          "new": "$BRL_RAM/logs",
+          "count": 1,
+          "kind": "path-component"
+        }
+      ],
+      "guard": true
+    },
+    {
+      "path": "lib/interface-core.sh",
+      "sourceSha256": "3f2564d2ce905d444b48a37bff60570261328175e56a28ff6b8eb664af328f2b",
+      "replacements": [
+        {
+          "old": "$BRORAY_BASE/run",
+          "new": "$BRL_RAM/run",
+          "count": 1,
+          "kind": "path-component"
+        }
+      ],
+      "guard": true
+    },
+    {
+      "path": "lib/interface-manage.sh",
+      "sourceSha256": "2060bd4ecd7ac39a6413ad0459b5faa14e055ac6ad2a514ff5c0c867672827db",
+      "replacements": [
+        {
+          "old": "$BRORAY_BASE/run",
+          "new": "$BRL_RAM/run",
+          "count": 1,
+          "kind": "path-component"
+        }
+      ],
+      "guard": true
+    },
+    {
+      "path": "lib/keenetic-page.sh",
+      "sourceSha256": "7b3aa62a08a55d7b96fd9d1edc74d734c371f7e863c22c6c7313385446647885",
+      "replacements": [
+        {
+          "old": "/opt/broray-light/run",
+          "new": "/tmp/broray-light/run",
+          "count": 2,
+          "kind": "path-component"
+        },
+        {
+          "old": "/opt/broray-light/tmp",
+          "new": "/tmp/broray-light/tmp",
+          "count": 2,
+          "kind": "path-component"
+        }
+      ],
+      "guard": true
+    },
+    {
+      "path": "lib/server-config-generator.sh",
+      "sourceSha256": "c426a079d3b173764054fe05e8b5cf2e571911cb5fbb2b9ea62c877b7256cd45",
+      "replacements": [
+        {
+          "old": "$BRORAY_BASE/tmp",
+          "new": "$BRL_RAM/tmp",
+          "count": 1,
+          "kind": "path-component"
+        }
+      ],
+      "guard": true
+    },
+    {
+      "path": "lib/server-import.sh",
+      "sourceSha256": "8e79fda1d7216e2338459bf5bec9bdbdc12b3c8ebbfde83d587904a0bdc43b1b",
+      "replacements": [
+        {
+          "old": "$BRORAY_BASE/tmp",
+          "new": "$BRL_RAM/tmp",
+          "count": 1,
+          "kind": "path-component"
+        }
+      ],
+      "guard": true
+    },
+    {
+      "path": "lib/server-service.sh",
+      "sourceSha256": "1c52a2c9f78d8fb31198d2bfe1db63606c611ad355e14b056701aa398dc8880c",
+      "replacements": [
+        {
+          "old": "$BRORAY_BASE/run",
+          "new": "$BRL_RAM/run",
+          "count": 1,
+          "kind": "path-component"
+        },
+        {
+          "old": "$BRORAY_BASE/tmp",
+          "new": "$BRL_RAM/tmp",
+          "count": 4,
+          "kind": "path-component"
+        }
+      ],
+      "guard": true
+    },
+    {
+      "path": "lib/server-subscription-service.sh",
+      "sourceSha256": "7d1f007c966ad21b29e42f4546f5d0b25e839c880447d3c189f329471cf119ea",
+      "replacements": [
+        {
+          "old": "$BRORAY_SERVER_SUB_BASE/run",
+          "new": "$BRL_RAM/run",
+          "count": 3,
+          "kind": "path-component"
+        },
+        {
+          "old": "$BRORAY_SERVER_SUB_BASE/tmp",
+          "new": "$BRL_RAM/tmp",
+          "count": 1,
+          "kind": "path-component"
+        }
+      ],
+      "guard": true
+    },
+    {
+      "path": "lib/server-xray-manager.sh",
+      "sourceSha256": "90a41c4a0247d1116430219d03a8e8caa02e86387890c8ee101783b288b4758a",
+      "replacements": [
+        {
+          "old": "$BRORAY_BASE/run",
+          "new": "$BRL_RAM/run",
+          "count": 2,
+          "kind": "path-component"
+        },
+        {
+          "old": "$BRORAY_BASE/tmp",
+          "new": "$BRL_RAM/tmp",
+          "count": 2,
+          "kind": "path-component"
+        }
+      ],
+      "guard": true
+    },
+    {
+      "path": "lib/subscription-service.sh",
+      "sourceSha256": "6ba090afe5dae79871b6029bcfbffc6341435fbbbffd5905cdb6e5d0f437581d",
+      "replacements": [
+        {
+          "old": "$BRORAY_SUB_BASE/run",
+          "new": "$BRL_RAM/run",
+          "count": 1,
+          "kind": "path-component"
+        },
+        {
+          "old": "$BRORAY_SUB_BASE/tmp",
+          "new": "$BRL_RAM/tmp",
+          "count": 1,
+          "kind": "path-component"
+        },
+        {
+          "old": "$BRORAY_SUB_BASE/logs",
+          "new": "$BRL_RAM/logs",
+          "count": 1,
+          "kind": "path-component"
+        }
+      ],
+      "guard": true
+    },
+    {
+      "path": "lib/web-auth-native.sh",
+      "sourceSha256": "a4f97394cbde10d5b4bdc27c0c66ae5e819606d58e53546d9974e3d521cb271c",
+      "replacements": [
+        {
+          "old": "$BRORAY_NATIVE_AUTH_BASE/run",
+          "new": "$BRL_RAM/run",
+          "count": 1,
+          "kind": "path-component"
+        },
+        {
+          "old": "\"$BRORAY_NATIVE_AUTH_BASE\"/run",
+          "new": "\"$BRL_RAM\"/run",
+          "count": 1,
+          "kind": "path-component"
+        },
+        {
+          "old": "/tmp/broray-native-auth-probe.",
+          "new": "/tmp/broray-light/tmp/native-auth-probe.",
+          "count": 2,
+          "kind": "literal"
+        }
+      ],
+      "guard": true
+    },
+    {
+      "path": "lib/web-auth.sh",
+      "sourceSha256": "c95404afafaf399230aeafb9c1fb345a4190f27d459e5d82857b87c47c92dc0a",
+      "replacements": [
+        {
+          "old": "$BRORAY_BASE/run",
+          "new": "$BRL_RAM/run",
+          "count": 2,
+          "kind": "path-component"
+        }
+      ],
+      "guard": true
+    },
+    {
+      "path": "lib/xray-update.sh",
+      "sourceSha256": "14eac0629f16de3cbedf5321dec9f7f0d7e9c2943bb8035d7bb49b79d2bd458a",
+      "replacements": [
+        {
+          "old": "/opt/broray-light/tmp",
+          "new": "/tmp/broray-light/tmp",
+          "count": 1,
+          "kind": "path-component"
+        },
+        {
+          "old": "/opt/broray-light/update",
+          "new": "/tmp/broray-light/update",
+          "count": 2,
+          "kind": "path-component"
+        }
+      ],
+      "guard": true
+    },
+    {
+      "path": "lib/xray.sh",
+      "sourceSha256": "c6d6be301d2dd209bb059b58270dcef82bbc8c710e49d757a77bbc44c9d3fad7",
+      "replacements": [
+        {
+          "old": "$BRORAY_ROOT/run",
+          "new": "$BRL_RAM/run",
+          "count": 2,
+          "kind": "path-component"
+        },
+        {
+          "old": "$BRORAY_ROOT/tmp",
+          "new": "$BRL_RAM/tmp",
+          "count": 3,
+          "kind": "path-component"
+        }
+      ],
+      "guard": true
+    },
+    {
+      "path": "share/defaults/lighttpd.conf",
+      "sourceSha256": "3ec7dcbead6bb22f5c97ceb01c7aa64a11f6d6b9f07b1d593b7ba8152737bf80",
+      "replacements": [
+        {
+          "old": "/opt/broray-light/run",
+          "new": "/tmp/broray-light/run",
+          "count": 1,
+          "kind": "path-component"
+        },
+        {
+          "old": "/opt/broray-light/logs",
+          "new": "/tmp/broray-light/logs",
+          "count": 1,
+          "kind": "path-component"
+        }
+      ],
+      "guard": false
+    },
+    {
+      "path": "web-new/api/broray/update-status.cgi",
+      "sourceSha256": "3e913f79d6b31e2bb5445b5f53110a37ced8c5a783c3723515ffbcebdb8a46b2",
+      "replacements": [
+        {
+          "old": "/opt/var/lib/broray-light-updater/state.json",
+          "new": "/tmp/broray-light-updater/state.json",
+          "count": 1,
+          "kind": "literal"
+        }
+      ],
+      "guard": true
+    },
+    {
+      "path": "web-new/api/home/summary.cgi",
+      "sourceSha256": "3d7cb70fe4e1138e77dc6d4105bcde4199272ae68882cf6b1e0da07992d8bbee",
+      "replacements": [
+        {
+          "old": "/opt/broray-light/run",
+          "new": "/tmp/broray-light/run",
+          "count": 1,
+          "kind": "path-component"
+        }
+      ],
+      "guard": true
+    },
+    {
+      "path": "web-new/api/keenetic/action-common.sh",
+      "sourceSha256": "634687c332e67e1b96ea577fa3d562337740beb3da569624d0423f759145b5bd",
+      "replacements": [
+        {
+          "old": "/opt/broray-light/tmp",
+          "new": "/tmp/broray-light/tmp",
+          "count": 2,
+          "kind": "path-component"
+        }
+      ],
+      "guard": true
+    },
+    {
+      "path": "web-new/api/keenetic/status.cgi",
+      "sourceSha256": "fbad888b26e2a8065f6c534abd0846f6d24c764affdc3f386d6ade882c05ed16",
+      "replacements": [
+        {
+          "old": "/opt/broray-light/tmp",
+          "new": "/tmp/broray-light/tmp",
+          "count": 1,
+          "kind": "path-component"
+        }
+      ],
+      "guard": true
+    },
+    {
+      "path": "web-new/api/login.cgi",
+      "sourceSha256": "d4d1c7e43c53c95cf8a361b877c4b0b9ecebdd1f778f105e6a15b51fe28eb643",
+      "replacements": [
+        {
+          "old": "/opt/broray-light/tmp",
+          "new": "/tmp/broray-light/tmp",
+          "count": 1,
+          "kind": "path-component"
+        }
+      ],
+      "guard": true
+    },
+    {
+      "path": "web-new/api/servers/activate.cgi",
+      "sourceSha256": "05dff8bb5c50e4856c01034190dfe5a924a42161b34298f0a48ee4ea843f9afb",
+      "replacements": [
+        {
+          "old": "/opt/broray-light/tmp",
+          "new": "/tmp/broray-light/tmp",
+          "count": 1,
+          "kind": "path-component"
+        }
+      ],
+      "guard": true
+    },
+    {
+      "path": "web-new/api/servers/auto-switch-save.cgi",
+      "sourceSha256": "456b8806d7baf17714e9221bf5f83e1581b025e0abaea5cceaa0901a71982805",
+      "replacements": [
+        {
+          "old": "/opt/broray-light/tmp",
+          "new": "/tmp/broray-light/tmp",
+          "count": 1,
+          "kind": "path-component"
+        }
+      ],
+      "guard": true
+    },
+    {
+      "path": "web-new/api/servers/auto-switch-status.cgi",
+      "sourceSha256": "fc78999a8e501063c43c0a45602347b4260e1a92bb99cbbe1cb7799638374389",
+      "replacements": [
+        {
+          "old": "/opt/broray-light/run",
+          "new": "/tmp/broray-light/run",
+          "count": 1,
+          "kind": "path-component"
+        }
+      ],
+      "guard": true
+    },
+    {
+      "path": "web-new/api/servers/check.cgi",
+      "sourceSha256": "28e656a622e941234d4f28aa6f07983d4434272bb357dacaaf10e4ef8af8e8b1",
+      "replacements": [
+        {
+          "old": "/opt/broray-light/tmp",
+          "new": "/tmp/broray-light/tmp",
+          "count": 2,
+          "kind": "path-component"
+        }
+      ],
+      "guard": true
+    },
+    {
+      "path": "web-new/api/servers/common.sh",
+      "sourceSha256": "ed6982a4f2acd8bc59720419be22f3e6ceff0535d196f6882131d0adfa8ffc49",
+      "replacements": [
+        {
+          "old": "/opt/broray-light/tmp",
+          "new": "/tmp/broray-light/tmp",
+          "count": 2,
+          "kind": "path-component"
+        }
+      ],
+      "guard": true
+    },
+    {
+      "path": "web-new/api/servers/delete.cgi",
+      "sourceSha256": "bd279e25db0e03176b350fa69203b7958adf04803334ae3e3efefd814cdef132",
+      "replacements": [
+        {
+          "old": "/opt/broray-light/tmp",
+          "new": "/tmp/broray-light/tmp",
+          "count": 1,
+          "kind": "path-component"
+        }
+      ],
+      "guard": true
+    },
+    {
+      "path": "web-new/api/servers/import.cgi",
+      "sourceSha256": "7203c2a970f59b15901e77c42ab05152bcb792766464ebdf58bfb39d9c81998d",
+      "replacements": [
+        {
+          "old": "/opt/broray-light/tmp",
+          "new": "/tmp/broray-light/tmp",
+          "count": 1,
+          "kind": "path-component"
+        }
+      ],
+      "guard": true
+    },
+    {
+      "path": "web-new/api/subscriptions/common.sh",
+      "sourceSha256": "801cb7292219c67381031c0a5dac530d5b5cd04fbe4dba4213e703dd97e27c60",
+      "replacements": [
+        {
+          "old": "/opt/broray-light/tmp",
+          "new": "/tmp/broray-light/tmp",
+          "count": 2,
+          "kind": "path-component"
+        }
+      ],
+      "guard": true
+    },
+    {
+      "path": "web-new/api/subscriptions/create.cgi",
+      "sourceSha256": "0c719b59a34ea745c4cb39652b881a2dc0a5d4a0c8c6a1ea45d0523f5c2f4d8d",
+      "replacements": [
+        {
+          "old": "/opt/broray-light/tmp",
+          "new": "/tmp/broray-light/tmp",
+          "count": 1,
+          "kind": "path-component"
+        }
+      ],
+      "guard": true
+    },
+    {
+      "path": "web-new/api/subscriptions/details.cgi",
+      "sourceSha256": "d497b1195ba68821f8f41dde5fa3bf2583be84a802651f86c775b92047e85cd6",
+      "replacements": [
+        {
+          "old": "/opt/broray-light/tmp",
+          "new": "/tmp/broray-light/tmp",
+          "count": 1,
+          "kind": "path-component"
+        }
+      ],
+      "guard": true
+    },
+    {
+      "path": "web-new/api/xray/install.cgi",
+      "sourceSha256": "203cc9c9d1c3972b04173ddc1daf9dcea2ae52942a45d02f8fedbe0494c361fc",
+      "replacements": [
+        {
+          "old": "/tmp/broray-light-xray-request.",
+          "new": "/tmp/broray-light/tmp/xray-request.",
+          "count": 1,
+          "kind": "literal"
+        }
+      ],
+      "guard": true
+    },
+    {
+      "path": "web-new/api/xray/operation-status.cgi",
+      "sourceSha256": "8ca091b9f241f2392a807dd962993643d116bdd37487e81e4b2a412654408dce",
+      "replacements": [
+        {
+          "old": "/opt/broray-light/run",
+          "new": "/tmp/broray-light/run",
+          "count": 1,
+          "kind": "path-component"
+        }
+      ],
+      "guard": true
+    },
+    {
+      "path": "web-new/api/xray/update-check.cgi",
+      "sourceSha256": "5e0de0e2a3790fd8a48f0d461ebffe0f49c59fbcda50355ca90b8f552623b908",
+      "replacements": [
+        {
+          "old": "/opt/broray-light/tmp",
+          "new": "/tmp/broray-light/tmp",
+          "count": 1,
+          "kind": "path-component"
+        }
+      ],
+      "guard": true
+    },
+    {
+      "path": "web-new/api/xray/update.cgi",
+      "sourceSha256": "ddf2ac0561f0988c01095bdb560d062e50bc2d264f16467c319d58750db1ac39",
+      "replacements": [
+        {
+          "old": "/opt/broray-light/tmp",
+          "new": "/tmp/broray-light/tmp",
+          "count": 2,
+          "kind": "path-component"
+        }
+      ],
+      "guard": true
+    }
+  ]
+}

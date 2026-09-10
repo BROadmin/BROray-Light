@@ -19,6 +19,7 @@ import tarfile
 
 import r0013_inputs as inputs
 import r0013_platform
+import r0013_runtime_paths
 
 PUBLIC_VERSION = "2.0.0"
 RELEASE_ID = "2.0.0-r1"
@@ -67,7 +68,7 @@ def primitives():
 
 
 def prepared_app():
-    app = inputs.app_inputs()
+    app = r0013_runtime_paths.compile_runtime(inputs.app_inputs())
     for name, content in r0013_platform.payload().items():
         assert name not in app, 'platform payload collides with application input'
         app[name] = content
@@ -129,13 +130,16 @@ def build(output, platform, archive, digest):
     base.render = render_with_bootstrap
     source = base.verify_source(inputs.REPO)
     app = prepared_app()
+    runtime_transformed = {row['path'] for row in json.loads(app['share/lifecycle/RUNTIME-PATH-MANIFEST.json'][0])['files']}
+    runtime_transformed.update(('lib/runtime-ram.sh', 'lib/runtime-environment.sh', 'lib/operation-lock.sh', 'bin/broray-runtime-prepare', 'share/lifecycle/RUNTIME-PATH-MANIFEST.json'))
     base.source_app_files = lambda repo, modes: [("app/" + name, data, mode) for name, (data, mode) in sorted(app.items())]
     minisign, xray = verify_external(platform, archive, digest)
     rows = [dict(path="build-input/bootstrap-ram.sh", sha256=sha(bootstrap_helper),
                  sizeBytes=len(bootstrap_helper), mode="0o644", origin="R0013-overlay")]
     for name, (data, mode) in sorted(app.items()):
         rows.append(dict(path="app/" + name, sha256=sha(data), sizeBytes=len(data), mode=oct(mode),
-                         origin="R0013-manifest-bound-platform" if name.startswith('share/lifecycle/')
+                         origin="R0013-explicit-RAM-path-contract" if name in runtime_transformed
+                         else "R0013-manifest-bound-platform" if name.startswith('share/lifecycle/')
                          else "R0013-overlay" if (inputs.REPO / "packaging/r0013-overlay/app" / name).is_file()
                          else "accepted-r1-git"))
     with tempfile.TemporaryDirectory(prefix="broray-light-r0013-build-") as temporary:
@@ -208,7 +212,7 @@ def build(output, platform, archive, digest):
     outputs["INPUT-MANIFEST.json"] = canonical_json({
         "schemaVersion": 1, "stage": "R0013", "baselineCommit": inputs.BASE_COMMIT,
         "primitiveBuilderSha256": R1_BUILDER_SHA256, "canonicalSource": source,
-        "transforms": ["versioned web query tokens", "web build metadata", "internal version seed"],
+        "transforms": ["versioned web query tokens", "web build metadata", "internal version seed", "hash-pinned component-bounded RAM paths and guard"],
         "files": sorted(rows, key=lambda row: row["path"]), "xray": XRAY,
         "baselineUpdaterPlatformSha256": R1_UPDATER_SHA256,
         "updaterPlatformSha256": sha(outputs[UPDATER_PLATFORM_NAME]),

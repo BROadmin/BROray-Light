@@ -1,0 +1,23 @@
+{
+  "stage": "R0013",
+  "revision": "p33-explicit-application-ram-path-contract",
+  "status": "FAIL_FIRST_ERROR",
+  "scope": "Unbuilt path-transformation specification; static review only",
+  "cause": "Substring replacement of /opt/broray-light/run also matched /opt/broray-light/runtime, incorrectly relocating the durable installed Xray path. No application/build/router was changed by this specification.",
+  "evidence": {
+    "path": "bin/xray",
+    "sourceSha256": "8ad5d3ff6ae7787d867b577a9e5e66343b48b41e3b8b2a49fb2c59595e36e964",
+    "replacements": [
+      {
+        "old": "/opt/broray-light/run",
+        "new": "/tmp/broray-light/run",
+        "count": 1
+      }
+    ],
+    "guard": true
+  },
+  "nextRevision": "p34-component-bounded-application-ram-path-contract",
+  "correction": "Require an exact path-component boundary and validate every resulting Xray runtime reference remains durable.",
+  "candidateReady": false,
+  "routerTouched": false
+}

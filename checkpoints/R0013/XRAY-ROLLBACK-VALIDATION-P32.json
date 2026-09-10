@@ -1,0 +1,180 @@
+{
+  "stage": "R0013",
+  "revision": "p32-xray-validated-rollback-before-fence-release",
+  "status": "PASS_SCOPED_XRAY_ROLLBACK",
+  "commit": "be74cc3c3446bc7978f8fdcef34759756f6c9880",
+  "ci": "https://github.com/BROadmin/BROray-Light/actions/runs/34526160593",
+  "testsPassed": 32,
+  "evidence": {
+    "r0013-xray-rollback-ash.json": {
+      "report": {
+        "stage": "R0013",
+        "revision": "p32-xray-validated-rollback-before-fence-release",
+        "status": "PASS_SCOPED_XRAY_ROLLBACK",
+        "shell": [
+          "/usr/bin/busybox",
+          "ash"
+        ],
+        "scope": "Actual replacement/restore bytes; process and global-lock calls mocked for ordering only",
+        "utilities": "BusyBox applets",
+        "sourceSha256": {
+          "xray-update.sh": "14eac0629f16de3cbedf5321dec9f7f0d7e9c2943bb8035d7bb49b79d2bd458a",
+          "xray-releases.sh": "2a30f488c9b4d2edf74f40148d39a23e8c93bae3f1182dad1172674cd786f793"
+        },
+        "tests": [
+          {
+            "name": "missing-backup",
+            "status": "PASS"
+          },
+          {
+            "name": "wrong-backup-path",
+            "status": "PASS"
+          },
+          {
+            "name": "backup-symlink",
+            "status": "PASS"
+          },
+          {
+            "name": "backup-sha-mismatch",
+            "status": "PASS"
+          },
+          {
+            "name": "stop-refused",
+            "status": "PASS"
+          },
+          {
+            "name": "foreign-current",
+            "status": "PASS"
+          },
+          {
+            "name": "foreign-new",
+            "status": "PASS"
+          },
+          {
+            "name": "runtime-parent-symlink",
+            "status": "PASS"
+          },
+          {
+            "name": "no-active-transaction",
+            "status": "PASS"
+          },
+          {
+            "name": "valid-stopped",
+            "status": "PASS"
+          },
+          {
+            "name": "valid-running",
+            "status": "PASS"
+          },
+          {
+            "name": "partial-owned-new",
+            "status": "PASS"
+          },
+          {
+            "name": "current-absent",
+            "status": "PASS"
+          },
+          {
+            "name": "restart-failed",
+            "status": "PASS"
+          },
+          {
+            "name": "dispatch-rollback-before-release",
+            "status": "PASS"
+          },
+          {
+            "name": "dispatch-recovery-failure-preserves-fence",
+            "status": "PASS"
+          }
+        ]
+      },
+      "sha256": "bf9002fb81dd0064d28c33e72026e816eaf474599e557d255f8bd2877e793172"
+    },
+    "r0013-xray-rollback-dash.json": {
+      "report": {
+        "stage": "R0013",
+        "revision": "p32-xray-validated-rollback-before-fence-release",
+        "status": "PASS_SCOPED_XRAY_ROLLBACK",
+        "shell": [
+          "/bin/dash"
+        ],
+        "scope": "Actual replacement/restore bytes; process and global-lock calls mocked for ordering only",
+        "utilities": "host utilities",
+        "sourceSha256": {
+          "xray-update.sh": "14eac0629f16de3cbedf5321dec9f7f0d7e9c2943bb8035d7bb49b79d2bd458a",
+          "xray-releases.sh": "2a30f488c9b4d2edf74f40148d39a23e8c93bae3f1182dad1172674cd786f793"
+        },
+        "tests": [
+          {
+            "name": "missing-backup",
+            "status": "PASS"
+          },
+          {
+            "name": "wrong-backup-path",
+            "status": "PASS"
+          },
+          {
+            "name": "backup-symlink",
+            "status": "PASS"
+          },
+          {
+            "name": "backup-sha-mismatch",
+            "status": "PASS"
+          },
+          {
+            "name": "stop-refused",
+            "status": "PASS"
+          },
+          {
+            "name": "foreign-current",
+            "status": "PASS"
+          },
+          {
+            "name": "foreign-new",
+            "status": "PASS"
+          },
+          {
+            "name": "runtime-parent-symlink",
+            "status": "PASS"
+          },
+          {
+            "name": "no-active-transaction",
+            "status": "PASS"
+          },
+          {
+            "name": "valid-stopped",
+            "status": "PASS"
+          },
+          {
+            "name": "valid-running",
+            "status": "PASS"
+          },
+          {
+            "name": "partial-owned-new",
+            "status": "PASS"
+          },
+          {
+            "name": "current-absent",
+            "status": "PASS"
+          },
+          {
+            "name": "restart-failed",
+            "status": "PASS"
+          },
+          {
+            "name": "dispatch-rollback-before-release",
+            "status": "PASS"
+          },
+          {
+            "name": "dispatch-recovery-failure-preserves-fence",
+            "status": "PASS"
+          }
+        ]
+      },
+      "sha256": "6b5a0c9389e088b42aa696bff2fbdb670b7cefada83d283eae6dfb9036148330"
+    }
+  },
+  "scope": "Actual runtime file operations; mocked process/fence calls to prove ordering. Full installer, runtime startup and router acceptance remain pending.",
+  "candidateReady": false,
+  "routerTouched": false
+}
