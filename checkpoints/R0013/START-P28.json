@@ -1,0 +1,15 @@
+{
+  "stage": "R0013",
+  "revision": "p28-r1-ram-namespace-transaction",
+  "status": "IN_PROGRESS",
+  "scope": "Move the manifest-bound legacy updater RAM work into a private RAM-only transaction directory, initialize protected new namespaces, restore the exact original namespace on rollback, and resume only from a bound durable receipt",
+  "invariants": [
+    "No scratch or backup archive under /opt",
+    "Never borrow a live unrelated updater's locks",
+    "No deletion of unknown namespace or children",
+    "Record identities before each rename; preserve transaction evidence on interruption",
+    "Keep old legacy locks as fences until the exact old updater exits"
+  ],
+  "candidateReady": false,
+  "routerTouched": false
+}

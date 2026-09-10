@@ -99,3 +99,14 @@ jobs:
           name: r0013-r1-journal-${{ github.sha }}
           path: /tmp/r0013-r1-journal-*.json
           if-no-files-found: ignore
+      - name: Legacy RAM namespace handoff and rollback (dash)
+        run: sudo python3 -B tools/test_r0013_r1_ram.py --shell /bin/dash --result /tmp/r0013-r1-ram-dash.json
+      - name: Legacy RAM namespace handoff and rollback (BusyBox)
+        run: sudo python3 -B tools/test_r0013_r1_ram.py --shell /usr/bin/busybox --busybox --busybox-tools --result /tmp/r0013-r1-ram-ash.json
+      - name: Preserve RAM handoff evidence including first failure
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: r0013-r1-ram-${{ github.sha }}
+          path: /tmp/r0013-r1-ram-*.json
+          if-no-files-found: ignore

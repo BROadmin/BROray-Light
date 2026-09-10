@@ -1,0 +1,255 @@
+{
+  "stage": "R0013",
+  "revision": "p27-exact-r1-webui-json-argv-compatibility",
+  "status": "PASS_EXACT_R1_WEBUI_AND_CLI_ADMISSION_AND_LOCK_RECOVERY",
+  "commit": "dc180a15e02239d72fb7456d1a074b8d2aa10c53",
+  "ci": "https://github.com/BROadmin/BROray-Light/actions/runs/34521690740",
+  "testsPassed": 42,
+  "admission": {
+    "r0013-r1-admission-ash.json": {
+      "report": {
+        "stage": "R0013",
+        "revision": "p27-exact-r1-webui-json-argv-compatibility",
+        "scope": "READ_ONLY_ADMISSION_REAL_R1_ENGINE_TEST_SIGNATURES_FIXTURE_APP_SERVICE",
+        "engineSha256": "773aaf37893ab100e7023d63c8061d8c4763a4d6186844bb3b671d758c145743",
+        "admissionSha256": "76d2a2f90c9becdde2f652497951c5eb5fa34a77f5cfa704cdb55d1faad71f19",
+        "shell": [
+          "/usr/bin/busybox",
+          "ash"
+        ],
+        "utilities": "BusyBox applets",
+        "tests": [
+          {
+            "name": "exact_live_r1_signed_transaction_admitted_read_only",
+            "status": "PASS"
+          },
+          {
+            "name": "exact_live_r1_cli_without_json_is_still_supported",
+            "status": "PASS"
+          },
+          {
+            "name": "unrecognized_update_argument_is_refused",
+            "status": "PASS"
+          },
+          {
+            "name": "wrong-lock-owner",
+            "status": "PASS"
+          },
+          {
+            "name": "wrong-operation",
+            "status": "PASS"
+          },
+          {
+            "name": "wrong-phase",
+            "status": "PASS"
+          },
+          {
+            "name": "tampered-slot",
+            "status": "PASS"
+          },
+          {
+            "name": "changed-engine",
+            "status": "PASS"
+          },
+          {
+            "name": "foreign-coowner",
+            "status": "PASS"
+          },
+          {
+            "name": "absolute-current",
+            "status": "PASS"
+          },
+          {
+            "name": "world-writable-work",
+            "status": "PASS"
+          },
+          {
+            "name": "unrelated_caller_cannot_borrow_live_r1_locks",
+            "status": "PASS"
+          }
+        ],
+        "status": "PASS_READ_ONLY_ADMISSION"
+      },
+      "sha256": "3c4254e02100af0cb5684543c7cc8fd0071d4924ffe67ccbbcb973f9cb88ec9e"
+    },
+    "r0013-r1-admission-dash.json": {
+      "report": {
+        "stage": "R0013",
+        "revision": "p27-exact-r1-webui-json-argv-compatibility",
+        "scope": "READ_ONLY_ADMISSION_REAL_R1_ENGINE_TEST_SIGNATURES_FIXTURE_APP_SERVICE",
+        "engineSha256": "773aaf37893ab100e7023d63c8061d8c4763a4d6186844bb3b671d758c145743",
+        "admissionSha256": "76d2a2f90c9becdde2f652497951c5eb5fa34a77f5cfa704cdb55d1faad71f19",
+        "shell": [
+          "/bin/dash"
+        ],
+        "utilities": "host utilities",
+        "tests": [
+          {
+            "name": "exact_live_r1_signed_transaction_admitted_read_only",
+            "status": "PASS"
+          },
+          {
+            "name": "exact_live_r1_cli_without_json_is_still_supported",
+            "status": "PASS"
+          },
+          {
+            "name": "unrecognized_update_argument_is_refused",
+            "status": "PASS"
+          },
+          {
+            "name": "wrong-lock-owner",
+            "status": "PASS"
+          },
+          {
+            "name": "wrong-operation",
+            "status": "PASS"
+          },
+          {
+            "name": "wrong-phase",
+            "status": "PASS"
+          },
+          {
+            "name": "tampered-slot",
+            "status": "PASS"
+          },
+          {
+            "name": "changed-engine",
+            "status": "PASS"
+          },
+          {
+            "name": "foreign-coowner",
+            "status": "PASS"
+          },
+          {
+            "name": "absolute-current",
+            "status": "PASS"
+          },
+          {
+            "name": "world-writable-work",
+            "status": "PASS"
+          },
+          {
+            "name": "unrelated_caller_cannot_borrow_live_r1_locks",
+            "status": "PASS"
+          }
+        ],
+        "status": "PASS_READ_ONLY_ADMISSION"
+      },
+      "sha256": "302aa2d200f898eabc25da333412bac42d026d7a3943f7b8ab6b46f390092808"
+    }
+  },
+  "journal": {
+    "r0013-r1-journal-ash.json": {
+      "report": {
+        "stage": "R0013",
+        "revision": "p27-exact-r1-webui-json-argv-compatibility",
+        "scope": "REAL_R1_ENGINE_SIMULATED_RAM_LOSS_FIXTURE_APP_SERVICE",
+        "engineSha256": "773aaf37893ab100e7023d63c8061d8c4763a4d6186844bb3b671d758c145743",
+        "journalSha256": "ff6f5ad82f0356d9743a17fbba25486598aa052541619f032e593f142c3cfb21",
+        "admissionSha256": "76d2a2f90c9becdde2f652497951c5eb5fa34a77f5cfa704cdb55d1faad71f19",
+        "shell": [
+          "/usr/bin/busybox",
+          "ash"
+        ],
+        "utilities": "BusyBox applets",
+        "tests": [
+          {
+            "name": "record_once_idempotence_live_fence_then_normal_completion",
+            "status": "PASS"
+          },
+          {
+            "name": "foreign_durable_receipt_preserved",
+            "status": "PASS"
+          },
+          {
+            "name": "interrupted_r1_and_ram_loss_reconcile_exact_persistent_locks",
+            "status": "PASS"
+          },
+          {
+            "name": "partial_legacy_cleanup_is_recoverable_inside_recorded_inodes",
+            "status": "PASS"
+          },
+          {
+            "name": "refuse_inode_without_deleting_either_lock",
+            "status": "PASS"
+          },
+          {
+            "name": "refuse_extra-child_without_deleting_either_lock",
+            "status": "PASS"
+          },
+          {
+            "name": "refuse_receipt-mode_without_deleting_either_lock",
+            "status": "PASS"
+          },
+          {
+            "name": "refuse_symlink_without_deleting_either_lock",
+            "status": "PASS"
+          },
+          {
+            "name": "old_unmarked_ram_work_requires_explicit_transition",
+            "status": "PASS"
+          }
+        ],
+        "status": "PASS_LEGACY_RECEIPT_AND_RECONCILIATION"
+      },
+      "sha256": "d12f9072a6e3ce2c383bc5db83c761976c164f7c860777cf5aaa8d6fb583c1aa"
+    },
+    "r0013-r1-journal-dash.json": {
+      "report": {
+        "stage": "R0013",
+        "revision": "p27-exact-r1-webui-json-argv-compatibility",
+        "scope": "REAL_R1_ENGINE_SIMULATED_RAM_LOSS_FIXTURE_APP_SERVICE",
+        "engineSha256": "773aaf37893ab100e7023d63c8061d8c4763a4d6186844bb3b671d758c145743",
+        "journalSha256": "ff6f5ad82f0356d9743a17fbba25486598aa052541619f032e593f142c3cfb21",
+        "admissionSha256": "76d2a2f90c9becdde2f652497951c5eb5fa34a77f5cfa704cdb55d1faad71f19",
+        "shell": [
+          "/bin/dash"
+        ],
+        "utilities": "host utilities",
+        "tests": [
+          {
+            "name": "record_once_idempotence_live_fence_then_normal_completion",
+            "status": "PASS"
+          },
+          {
+            "name": "foreign_durable_receipt_preserved",
+            "status": "PASS"
+          },
+          {
+            "name": "interrupted_r1_and_ram_loss_reconcile_exact_persistent_locks",
+            "status": "PASS"
+          },
+          {
+            "name": "partial_legacy_cleanup_is_recoverable_inside_recorded_inodes",
+            "status": "PASS"
+          },
+          {
+            "name": "refuse_inode_without_deleting_either_lock",
+            "status": "PASS"
+          },
+          {
+            "name": "refuse_extra-child_without_deleting_either_lock",
+            "status": "PASS"
+          },
+          {
+            "name": "refuse_receipt-mode_without_deleting_either_lock",
+            "status": "PASS"
+          },
+          {
+            "name": "refuse_symlink_without_deleting_either_lock",
+            "status": "PASS"
+          },
+          {
+            "name": "old_unmarked_ram_work_requires_explicit_transition",
+            "status": "PASS"
+          }
+        ],
+        "status": "PASS_LEGACY_RECEIPT_AND_RECONCILIATION"
+      },
+      "sha256": "7eb00f85dd7b6596fd4687c1b94b668939701de32086aa505f83f8210f02f8d7"
+    }
+  },
+  "resolvedFailure": "process-failures/FAILURE-P26-R1-WEBUI-ARGV.json",
+  "candidateReady": false,
+  "scope": "Exact unchanged r1 updater with real ephemeral test signatures, fixture application/service, dash and native BusyBox applets; not full application migration"
+}
