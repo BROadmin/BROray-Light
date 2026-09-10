@@ -1,0 +1,10 @@
+{
+  "stage": "R0013",
+  "revision": "p25-durable-transition-receipt-and-legacy-lock-recovery",
+  "status": "IN_PROGRESS",
+  "scope": "Record the P24 admitted updater PID/starttime and exact legacy lock directory/file identities durably; reconcile only those locks after that owner exits or after simulated reboot",
+  "invariants": ["Never create a new operational lock under /opt", "Never remove a live admitted owner's locks", "Refuse changed inode, content, mode, symlink or extra child", "Serialize removal with the tested RAM admission guard", "Preserve unknown state and journals on failure"],
+  "notIncluded": ["Runtime path relocation", "External platform activation", "Config receipt migration", "Full installed-r1 lifecycle"],
+  "candidateReady": false,
+  "routerTouched": false
+}

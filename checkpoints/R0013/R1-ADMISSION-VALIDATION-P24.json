@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0013",
+  "revision": "p24-exact-r1-transition-admission",
+  "status": "PASS_READ_ONLY_ADMISSION",
+  "sourceCommit": "2107bb23fb35c1e468cef73d7812c66c10ee8cd7",
+  "ci": "https://github.com/BROadmin/BROray-Light/actions/runs/34519795179",
+  "artifact": {
+    "id": 10169172129,
+    "name": "r0013-r1-admission-2107bb23fb35c1e468cef73d7812c66c10ee8cd7",
+    "digest": "sha256:5a8255cf18e7bd1f1e099db7ec36534981623b3165310ab8ec3ff21526c296a5"
+  },
+  "testsPassed": 20,
+  "legacyEngine": "EXACT_UNCHANGED_R1_BYTES",
+  "legacyEngineSha256": "773aaf37893ab100e7023d63c8061d8c4763a4d6186844bb3b671d758c145743",
+  "admissionSha256": "5214173d3e0e4d9114acc72fdd7f6ae2b3349b44d2dfced8d511aac5288dc9a4",
+  "coverage": [
+    "Signed old-engine transaction can admit its own child",
+    "Unrelated process cannot borrow the old locks",
+    "Mismatched owners/operation/phase/engine/archive-slot identity and ambiguous containers refused",
+    "Admission itself leaves every fixture object unchanged",
+    "Expected refusal triggers actual r1 updater rollback and preserves user state"
+  ],
+  "scopeLimit": "No runtime namespace/platform mutation yet; service callback and application are fixture boundaries.",
+  "candidateReady": false,
+  "nextExactAction": "P25_IMPLEMENT_DURABLE_ADMISSION_RECEIPT_AND_IDENTITY_BOUND_LEGACY_LOCK_RECONCILIATION_FOR_REBOOT_RECOVERY"
+}

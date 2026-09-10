@@ -1,0 +1,54 @@
+{
+  "stage": "R0013",
+  "revision": "p24-exact-r1-transition-admission",
+  "scope": "READ_ONLY_ADMISSION_REAL_R1_ENGINE_TEST_SIGNATURES_FIXTURE_APP_SERVICE",
+  "engineSha256": "773aaf37893ab100e7023d63c8061d8c4763a4d6186844bb3b671d758c145743",
+  "admissionSha256": "5214173d3e0e4d9114acc72fdd7f6ae2b3349b44d2dfced8d511aac5288dc9a4",
+  "shell": [
+    "/bin/dash"
+  ],
+  "utilities": "host utilities",
+  "tests": [
+    {
+      "name": "exact_live_r1_signed_transaction_admitted_read_only",
+      "status": "PASS"
+    },
+    {
+      "name": "wrong-lock-owner",
+      "status": "PASS"
+    },
+    {
+      "name": "wrong-operation",
+      "status": "PASS"
+    },
+    {
+      "name": "wrong-phase",
+      "status": "PASS"
+    },
+    {
+      "name": "tampered-slot",
+      "status": "PASS"
+    },
+    {
+      "name": "changed-engine",
+      "status": "PASS"
+    },
+    {
+      "name": "foreign-coowner",
+      "status": "PASS"
+    },
+    {
+      "name": "absolute-current",
+      "status": "PASS"
+    },
+    {
+      "name": "world-writable-work",
+      "status": "PASS"
+    },
+    {
+      "name": "unrelated_caller_cannot_borrow_live_r1_locks",
+      "status": "PASS"
+    }
+  ],
+  "status": "PASS_READ_ONLY_ADMISSION"
+}

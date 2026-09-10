@@ -88,3 +88,14 @@ jobs:
           name: r0013-r1-admission-${{ github.sha }}
           path: /tmp/r0013-r1-admission-*.json
           if-no-files-found: ignore
+      - name: Legacy transaction receipt and simulated RAM loss recovery (dash)
+        run: sudo python3 -B tools/test_r0013_r1_journal.py --shell /bin/dash --result /tmp/r0013-r1-journal-dash.json
+      - name: Legacy transaction receipt and simulated RAM loss recovery (BusyBox)
+        run: sudo python3 -B tools/test_r0013_r1_journal.py --shell /usr/bin/busybox --busybox --busybox-tools --result /tmp/r0013-r1-journal-ash.json
+      - name: Preserve legacy receipt/recovery evidence including first failure
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: r0013-r1-journal-${{ github.sha }}
+          path: /tmp/r0013-r1-journal-*.json
+          if-no-files-found: ignore
