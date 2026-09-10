@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "stage": "R0013",
-  "revision": "p51-binary-stdin-syntax-and-lifecycle-completion",
+  "revision": "p52-exact-old-recover-empty-namespace-survivor",
   "files": [
     {
       "path": ".github/workflows/r0013-port-tests.yml",
@@ -140,8 +140,8 @@
     },
     {
       "path": "packaging/r0013-overlay/shared/lifecycle-r1-recovery.sh",
-      "sizeBytes": 23971,
-      "sha256": "3a0c8d119bd4e11fb2f0152422bfeeab3c8ccd2b641eb2dcf5629a3dcb24aea4"
+      "sizeBytes": 26595,
+      "sha256": "8a92ac7a5537ec7e8ae0acbe6690d99be9593c52e99c2e0c7c43de832e853cc7"
     },
     {
       "path": "packaging/r0013-overlay/shared/lifecycle-r1-runtime-trees.sh",
@@ -245,8 +245,8 @@
     },
     {
       "path": "tools/check_r0013_completion.py",
-      "sizeBytes": 7341,
-      "sha256": "1673b2fda05a46aaa0d9fb72210b42d0b1121a283bcfdaacb2ae07f8e5a66391"
+      "sizeBytes": 8607,
+      "sha256": "5fc7ad10987284bae20e4e47bfcc89556bf79acd6ef24ae1c4ed192b1cd14a6f"
     },
     {
       "path": "tools/r0013_busybox_fixture.py",

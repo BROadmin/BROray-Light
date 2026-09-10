@@ -401,12 +401,57 @@ brl_recovery_finalize()
     brl_r1_ram_save '.coordinator.phase="finalized" | .recovery.phase="finalized"'
 }
 
+brl_recovery_old_recover_ancestor()
+{
+    local engine cursor start raw parent steps
+    engine="${BRORAY_LIGHT_ROOT_PREFIX:-}/opt/libexec/broray-light-updater/broray-light-updater.sh"
+    brl_r1_regular "$engine" && [ "$(stat -c '%u:%a:%h' "$engine")" = 0:755:1 ] &&
+        [ "$(sha256sum "$engine" | awk '{print $1}')" = '773aaf37893ab100e7023d63c8061d8c4763a4d6186844bb3b671d758c145743' ] || return 1
+    cursor="$$"; steps=0
+    while [ "$steps" -lt 12 ]; do
+        start="$(brl_process_start "$cursor")" || return 1
+        if tr '\000' '\n' < "/proc/$cursor/cmdline" | awk -v engine="$engine" '
+            {a[NR]=$0}
+            END {
+                shell=(a[1]=="/opt/bin/ash" || a[1]=="/bin/sh" || a[1]=="/bin/dash" || a[1]=="/usr/bin/dash");
+                busybox=(a[1]=="/bin/busybox" || a[1]=="/usr/bin/busybox");
+                exit !((shell && NR==3 && a[2]==engine && a[3]=="recover") ||
+                    (busybox && NR==4 && a[2]=="ash" && a[3]==engine && a[4]=="recover"));
+            }'; then
+            [ "$(brl_process_start "$cursor")" = "$start" ] || return 1
+            BRL_OLD_RECOVER_PID="$cursor"; BRL_OLD_RECOVER_START="$start"
+            return 0
+        fi
+        raw="$(cat "/proc/$cursor/stat" 2>/dev/null)" || return 1
+        parent="$(printf '%s\n' "${raw##*) }" | awk '{print $2}')"
+        case "$parent" in ''|*[!0-9]*) return 1 ;; esac
+        [ "$parent" -gt 1 ] && [ "$parent" != "$cursor" ] || return 1
+        cursor="$parent"; steps=$((steps+1))
+    done
+    return 1
+}
+
 brl_recovery_lost_updater_restore()
 {
-    local path child
+    local path child inode mode
     brl_r1_recovery_authorized && [ "$(jq -r '.recovery.ramLost' "$BRL_R1_JOURNAL")" = true ] || return 1
     path="$BRL_UPDATER_RAM"
     if [ -e "$path" ] || [ -L "$path" ]; then
+        if brl_r1_directory "$path" && [ -z "$(find "$path" -mindepth 1 -maxdepth 1 -print)" ]; then
+            # Old recover's mkdir -p may leave an unmarked empty survivor.
+            # Never adopt, mark or delete that directory: leave its inode and
+            # mode intact while returning to r1 under the exact live ancestor.
+            [ "$(readlink "$ROOT/current")" = releases/1.0.0-r1 ] &&
+                brl_recovery_old_recover_ancestor || return 1
+            inode="$(stat -c '%d:%i' "$path")"; mode="$(stat -c '%a' "$path")"
+            brl_r1_ram_save --arg pid "$BRL_OLD_RECOVER_PID" --arg start "$BRL_OLD_RECOVER_START" \
+                --arg id "$inode" --arg mode "$mode" \
+                '.recovery.oldWorkSurvivor={pid:$pid,start:$start,id:$id,mode:$mode,preserved:true}' || return 1
+            [ "$(brl_process_start "$BRL_OLD_RECOVER_PID")" = "$BRL_OLD_RECOVER_START" ] &&
+                [ "$(stat -c '%u:%a:%d:%i' "$path")" = "0:$mode:$inode" ] &&
+                [ -z "$(find "$path" -mindepth 1 -maxdepth 1 -print)" ]
+            return $?
+        fi
         # Only a private new-engine namespace containing its empty work
         # skeleton can be retired. Unmarked foreign namespaces are refused.
         brl_ram_dir_valid "$path" && brl_ram_file_valid "$path/owner" &&

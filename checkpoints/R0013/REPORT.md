@@ -1,4 +1,4 @@
-# BROray-Light 2.0.0 — R0013, checkpoint P51
+# BROray-Light 2.0.0 — R0013, checkpoint P52
 
 `candidateReady=false`, `releaseReady=false`. Публичная версия `2.0.0`, внутренний releaseId `2.0.0-r1`. Релиз не опубликован; роутер, production server и приложение полного BROray не изменялись.
 
@@ -19,7 +19,9 @@ P45/P46 остановились на неполном тестовом окру
 
 P49: все три задания regression PASS на commit `66616c8ccd4efc0fea72218b212a128a1ea91493`. Проверены 14 архивов evidence по SHA-256; 337 тестов из JSON-отчётов, повторные preflight отчёты посчитаны один раз. `REGRESSION-P49.json`: SHA-256 `b5d00600ec26f0c3b56cf5701c20e2ab42b55d2b70a9da798fb983c4e9f64e9f`. В том числе 33 bootstrap/RAM preflight, live/recovery, runtime trees и процессная регрессия. Clean package не перезаписывает установленный current; postinst создаёт operational данные в защищённом RAM и проверяет manifest слота.
 
-P50 добавил очистку снимков после live rollback и тест прерывания сразу после реальной замены S24. Локальный syntax check тестовой обёртки получил CRLF через Windows text pipe: ошибка записана отдельно. P51 проверил правильные LF-байты, syntax/AST PASS; первая Linux-проверка P51 ещё ожидается. Повторного запуска проваленной ревизии не было.
+P51: очистка снимков после live rollback и ранний SIGKILL после замены S24 без reboot — PASS на dash. Ранний reboot через старый S23 — FAIL: старый updater создаёт пустой немаркированный work directory; новый recovery отказывает. Ошибка сохранена в `process-failures/FAILURE-P51-EARLY-S23-EMPTY-RAM-SURVIVOR.json`, SHA-256 `21c7e0fdecce1a5019c525a9f2339bd77577932b862a44570a99aad386e69652`. Повторного запуска проваленной ревизии не было.
+
+P52 оставляет этот пустой каталог нетронутым только при подтверждённом живом предке — неизменённом r1 updater `recover`, после разрешённого возврата к r1. Каталог не усыновляется, не маркируется и не удаляется. Добавлены отказы для постороннего вызывающего процесса и постороннего файла. Syntax/AST PASS, первая Linux-проверка ещё ожидается.
 
 ## Build A/B
 

@@ -1,0 +1,66 @@
+{
+  "stage": "R0013",
+  "revision": "p51-binary-stdin-syntax-and-lifecycle-completion",
+  "status": "FAIL_FIRST_ERROR",
+  "commit": "598e6ced1281be96dff7f1d3db6b062185fe4469",
+  "ci": "https://github.com/BROadmin/BROray-Light/actions/runs/34542641057",
+  "artifact": {
+    "id": 10177874945,
+    "zipSha256": "cc2177e37133b3e80547b4597569f3278dd4e47aaa1212625cf4e791a4b0e5fe"
+  },
+  "evidence": {
+    "r0013-completion-dash.json": {
+      "report": {
+        "stage": "R0013",
+        "revision": "p51-binary-stdin-syntax-and-lifecycle-completion",
+        "status": "FAIL_FIRST_ERROR",
+        "shell": [
+          "/bin/dash"
+        ],
+        "tests": [
+          {
+            "name": "live-rollback-cleanup",
+            "status": "PASS",
+            "detail": {
+              "returncode": 1,
+              "current": "1.0.0-r1",
+              "coordinatorPhase": "restored",
+              "legacyUpdaterCompleted": true,
+              "sessionPreserved": true
+            }
+          },
+          {
+            "name": "early-anchor",
+            "status": "PASS",
+            "detail": {
+              "earlyAnchorRollback": true,
+              "realOldS23": false,
+              "durablePersistence": true,
+              "originalUnmovedSessionPreserved": true,
+              "snapshotsRemoved": true,
+              "privateTmpfsRemounted": false
+            }
+          },
+          {
+            "name": "early-anchor-old-s23-boot",
+            "status": "FAIL",
+            "error": "{'returncode': 1, 'stdout': '', 'stderr': '', 'receipt': {'schemaVersion': 1, 'product': 'BROray-Light', 'sourceRelease': '1.0.0-r1', 'targetRelease': '2.0.0-r1', 'legacyLocks': 'cleared', 'legacyPid': '72397', 'legacyStart': '21939', 'requestIds': ['2049:8938824', '2049:8938825', '2049:8938826'], 'globalIds': ['2049:8938827', '2049:8938828', '2049:8938829'], 'slotManifestSha256': '18f266fca3ac5e64f4e70a2128c007185a7355559364f3a3732eb67c771d3f4c', 'sourceSlotManifestSha256': '1df02b6243cde7576b6b96561e4e13fda1af8eccbae6b687e82e1cbfeb68584d', 'legacyBootId': '12d34305-479d-4567-bbf7-c308787354db', 'legacyWork': {'id': '49:2', 'mode': '755', 'inventory': 'app.tar.gz 49:5 644 db2fe0cb6bba8acd27d00dd88d78f4c33a00dff61a54e698b66635a4fb4d1214\\narchive.list 49:6 644 6a3e826303a2bfa8a33f2cae9c70e05aef8367ac31fde3d7e726a5449f6ec381\\nrelease.json 49:3 644 45d64bfd9b6dfd979352e4276aef8da18b91dcd07047316bf3dcf6abb5e8ea72\\nrelease.json.minisig 49:4 644 e0142e2e9815213eb5c804c874fe79ed1b2f3664a301da1c2657bbd0088faa89'}, 'engineSha256': '773aaf37893ab100e7023d63c8061d8c4763a4d6186844bb3b671d758c145743', 'coordinator': {'schemaVersion': 1, 'phase': 'restoring'}, 'platform': {'phase': 'prepared', 'manifestSha256': '0286a1f24befc4f99141ced40ce353eb1760f08bc75cf9a9ef046179413a0645', 'staged': {'opt/etc/init.d/S24broray-light': {'inode': '2049:8939022', 'sha256': '1abe1169c6dd3bd2908f41d0721fba9ed1222bed910f766ab5e80a5293c2246c'}}}, 'recovery': {'schemaVersion': 1, 'phase': 'namespace-restore', 'pid': '101063', 'start': '24230', 'bootId': '06511a38-d957-450f-8909-11bc08228924', 'intent': 'rollback', 'transactionSha256': '9d7ce44acbe2693efe0d4033edb7f8c0219ead7116b996e39641595bb69ea1f1', 'ramLost': True, 'sourceSwitch': {'phase': 'restored', 'linkId': '2049:8938789', 'versionId': '2049:8938824'}}}, 'current': '1.0.0-r1', 'updaterRam': []}"
+          }
+        ],
+        "candidateReady": false,
+        "entrySha256": "49081efafe4e25bcd8afee598671452628fb82acf9d4f55aa1e286720d854ea3",
+        "scope": "Real legacy updater/S23/S24 and rename, fixture OS publication/workload; actual SIGKILL/private tmpfs remount."
+      },
+      "sha256": "8294933c8553f920bec4f566f1edd5becc40d40e4b4532f1bc49eb9298bcfc76"
+    }
+  },
+  "cause": "Exact old S23 executes unchanged old updater recover. Its ensure_layout recreates an empty unmarked updater RAM directory after reboot. Rollback reaches namespace-restore with old current restored, but lost_updater_restore accepts only absent or marked new namespace, therefore safely refuses the empty legacy survivor.",
+  "passedBeforeFailure": [
+    "live rollback deletes transition snapshots",
+    "early S24 rename SIGKILL same-boot rollback preserves original data/session"
+  ],
+  "nextCorrectedRevision": "p52-exact-old-recover-empty-namespace-survivor",
+  "correction": "Only while rollback is authorized and current is r1, accept an empty root-owned unmarked namespace as an untouched survivor when caller descends from exact SHA-pinned old engine recover with live PID/start/argv. Never mark/adopt/remove it. Add outsider and foreign-file refusal tests.",
+  "candidateReady": false,
+  "routerTouched": false
+}

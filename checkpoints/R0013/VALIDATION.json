@@ -212,8 +212,8 @@
     },
     {
       "gate": "coordinated_service_start_and_boot_rollback",
-      "status": "PASS_BOUNDED_DEAD_OWNER_AND_RAM_LOSS_EARLY_S23_PENDING",
-      "evidence": "DEAD-OWNER-RECOVERY-P48.json"
+      "status": "P51_EARLY_S23_BOOT_FAIL_P52_CORRECTION_PENDING",
+      "evidence": "process-failures/FAILURE-P51-EARLY-S23-EMPTY-RAM-SURVIVOR.json"
     },
     {
       "gate": "scoped_s24_and_private_ram_publication",
@@ -232,5 +232,5 @@
     }
   ],
   "releaseId": "2.0.0-r1",
-  "currentRevision": "p51-binary-stdin-syntax-and-lifecycle-completion"
+  "currentRevision": "p52-exact-old-recover-empty-namespace-survivor"
 }

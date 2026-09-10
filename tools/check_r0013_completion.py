@@ -15,7 +15,7 @@ from test_r0013_live_entry import LiveFixture, C_SOURCE, ENTRY, OLD, NEW
 from test_r0013_r1_admission import ENGINE_SHA
 
 
-def early_anchor(f, ram_loss):
+def early_anchor(f, ram_loss, negative=None):
     before = f.persistent()
     journal = f.durable/'legacy-transition.json'
     s24 = f.root/'opt/etc/init.d/S24broray-light'
@@ -66,17 +66,33 @@ esac
                         'tmpfs', str(f.root/'tmp')], check=True, capture_output=True)
         value['legacyBootId'] = str(uuid.uuid4())
         f.write(journal, (json.dumps(value)+'\n').encode())
-    command = [*f.shell, str(s23), 'start'] if ram_loss else [*f.shell, str(s24), 'recover']
+    if negative:
+        f.ram.mkdir(mode=0o700)
+        if negative == 'foreign-child':
+            f.write(f.ram/'foreign', b'never-remove\n')
+        original_id = (f.ram.stat().st_dev, f.ram.stat().st_ino, f.ram.stat().st_mode)
+        original_files = {p.name:p.read_bytes() for p in f.ram.iterdir()}
+    command = [*f.shell, str(s23), 'start'] if ram_loss and negative != 'outsider' else [*f.shell, str(s24), 'recover']
     result = subprocess.run(command, env=f.env, capture_output=True, text=True, timeout=240)
     detail = dict(returncode=result.returncode, stdout=result.stdout, stderr=result.stderr,
                   receipt=json.loads(journal.read_bytes()), current=f.current(),
                   updaterRam=[p.name for p in f.ram.iterdir()] if f.ram.exists() else None)
+    if negative:
+        assert result.returncode == 1, detail
+        assert (f.ram.stat().st_dev, f.ram.stat().st_ino, f.ram.stat().st_mode) == original_id
+        assert {p.name:p.read_bytes() for p in f.ram.iterdir()} == original_files
+        assert 'oldWorkSurvivor' not in detail['receipt']['recovery'], detail
+        return dict(refused=True, namespaceInodeModeAndChildrenPreserved=True, negative=negative)
     assert result.returncode == 0, detail
     assert f.current() == OLD and f.persistent() == before, detail
     assert s24.read_bytes() == old_service and s23.read_bytes() == old_updater_service
     assert not (f.durable/'transaction.json').exists(), detail
     assert not list((f.root/'tmp').glob('broray-light-transition.*')), detail
     assert (f.app/'run/web-new/sessions'/('a'*48)).read_bytes() == b'preserved-session\n'
+    if ram_loss:
+        survivor = detail['receipt']['recovery']['oldWorkSurvivor']
+        assert survivor['preserved'] and survivor['id'] == str(f.ram.stat().st_dev)+':'+str(f.ram.stat().st_ino)
+        assert not list(f.ram.iterdir()), 'Old empty survivor was marked or adopted'
     return dict(earlyAnchorRollback=True, realOldS23=ram_loss,
                 durablePersistence=True, originalUnmovedSessionPreserved=True,
                 snapshotsRemoved=True, privateTmpfsRemounted=ram_loss)
@@ -102,7 +118,7 @@ def main():
     failed = False
 
     def persist(status):
-        report = dict(stage='R0013', revision='p51-binary-stdin-syntax-and-lifecycle-completion',
+        report = dict(stage='R0013', revision='p52-exact-old-recover-empty-namespace-survivor',
                       status=status, shell=shell, tests=records, candidateReady=False,
                       entrySha256=hashlib.sha256(ENTRY.read_bytes()).hexdigest(),
                       scope='Real legacy updater/S23/S24 and rename, fixture OS publication/workload; actual SIGKILL/private tmpfs remount.')
@@ -116,13 +132,15 @@ def main():
             source.write_text(C_SOURCE)
             binary = Path(tmp)/'fixture'
             subprocess.run(['gcc', '-O2', '-o', str(binary), str(source)], check=True, capture_output=True)
-            for mode in ('live-rollback-cleanup', 'early-anchor', 'early-anchor-old-s23-boot'):
+            for mode in ('live-rollback-cleanup', 'early-anchor', 'early-anchor-old-s23-boot',
+                         'empty-namespace-outsider', 'old-s23-foreign-child'):
                 fixture = None
                 try:
                     fixture = LiveFixture(shell, binary.read_bytes(),
                                           'health-rollback' if mode == 'live-rollback-cleanup' else 'update')
+                    negative = 'outsider' if mode == 'empty-namespace-outsider' else 'foreign-child' if mode == 'old-s23-foreign-child' else None
                     detail = fixture.run_update('health-rollback') if mode == 'live-rollback-cleanup' else early_anchor(
-                        fixture, mode == 'early-anchor-old-s23-boot')
+                        fixture, mode != 'early-anchor', negative)
                     records.append(dict(name=mode, status='PASS', detail=detail))
                 except Exception as error:
                     records.append(dict(name=mode, status='FAIL', error=str(error)))
