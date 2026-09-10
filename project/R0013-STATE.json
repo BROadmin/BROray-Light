@@ -2,8 +2,9 @@
   "schemaVersion": 1,
   "stage": "R0013_SELECTIVE_UPSTREAM_STABLE_PORT",
   "status": "IN_PROGRESS",
-  "currentRevision": "p6-active-name-linux-harness",
-  "activeFailure": "checkpoints/R0013/process-failures/FAILURE-P5-LOCAL-COREUTILS.json",
+  "currentRevision": "p8-linux-catalog-and-ui-tests",
+  "activeFailure": "checkpoints/R0013/process-failures/FAILURE-P7-JQ-MODULE-LOADING.json",
+  "subscriptionNamePort": {"status": "PASS_ISOLATED_LINUX", "tests": 5, "path": "checkpoints/R0013/SUBSCRIPTION-NAME-P6.json", "sha256": "2b1fe451272dc233e1f8ccd4cc3d6ea2f212ba81e009f93d3a4b9e9b9601577a"},
   "lastResolvedFailure": "checkpoints/R0013/process-failures/FAILURE-P3-CONFIG-EQUALS-ARGC.json",
   "processPort": {"status": "PASS_ISOLATED_LINUX", "tests": 33, "liveLinux": "PASS", "path": "checkpoints/R0013/LINUX-PROCESS-P4.json", "sha256": "ecc2ca1a2aa1ecf853b3cb7777ad294d4c97a1e84efd84e295bc816c3e21c2e6", "commit": "ed7b85b326e4d85f9ed7f3fdeb714b255c0b6b92"},
   "workingBranch": "codex/r0009-updater-package",
@@ -11,7 +12,9 @@
   "baseLightCommit": "9e5fce9bfa7c82bfc2f2654d80fd3987c5259963",
   "upstreamStable": "3.1.0-r09",
   "upstreamCandidate": "3.1.0-r09c02",
-  "releaseId": null,
+  "releaseId": "2.0.0",
+  "releaseTag": "v2.0.0",
+  "versionAuthority": "Explicit user instruction: BROray-Light version must become 2.0.0",
   "candidateReady": false,
   "releaseReady": false,
   "publicReleasePublished": false,
@@ -27,5 +30,5 @@
   "completedGates": ["PINNED_UPSTREAM_ARCHIVE_IDENTITIES", "ARCHIVE_MEMBER_SAFETY", "COMPLETE_UPSTREAM_DELTA_CLASSIFICATION"],
   "upstreamDelta": {"path": "checkpoints/R0013/UPSTREAM-DELTA-P2.json", "sha256": "3eff396c3755fbe4a74644434c72c1aa428ea55fa4c95374648127057aadeda5"},
   "portMap": {"path": "checkpoints/R0013/UPSTREAM-PORT-MAP-P2.json", "sha256": "009a0f5adae08f399c82510cf680690b4c2e50bc8c659eda9c48d91b5a838121"},
-  "nextExactAction": "LINUX_PROCESS_TEST_AND_TRANSACTIONAL_SUBSCRIPTION_NAME_PORT"
+  "nextExactAction": "P7_XRAY_CATALOG_SELECTION_AND_CONSENT_TESTS"
 }

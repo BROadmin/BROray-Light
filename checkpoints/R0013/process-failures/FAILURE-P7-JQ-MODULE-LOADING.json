@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0013",
+  "revision": "p7-xray-catalog-and-consent",
+  "status": "FAIL_FIRST_ERROR",
+  "gate": "XRAY_RELEASE_SELECTION",
+  "test": "valid-tag:v26.9.9",
+  "actual": "jq invocation returned nonzero; test assertion omitted stderr",
+  "cause": "PENDING_DIAGNOSTIC",
+  "sameRevisionRetried": false,
+  "nextCorrectedRevision": "p8-jq-module-loading-diagnostic",
+  "candidateReady": false
+}

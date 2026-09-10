@@ -1,0 +1,44 @@
+{
+  "stage": "R0013",
+  "revision": "p8-linux-catalog-and-ui-tests",
+  "status": "PASS",
+  "browserLayoutTested": false,
+  "tests": [
+    {
+      "test": "installed-stable-visible-and-reinstall-enabled",
+      "status": "PASS"
+    },
+    {
+      "test": "prerelease-toggle",
+      "status": "PASS"
+    },
+    {
+      "test": "incompatible-no-install-request",
+      "status": "PASS"
+    },
+    {
+      "test": "declined-consent-no-install-request",
+      "status": "PASS"
+    },
+    {
+      "test": "bound-digest-and-separate-prerelease-consent",
+      "status": "PASS"
+    },
+    {
+      "test": "same-version-reinstall-confirmation",
+      "status": "PASS"
+    },
+    {
+      "test": "separate-downgrade-consent",
+      "status": "PASS"
+    },
+    {
+      "test": "server-refusal-visible-no-stale-retry",
+      "status": "PASS"
+    },
+    {
+      "test": "catalog-error-fails-closed",
+      "status": "PASS"
+    }
+  ]
+}

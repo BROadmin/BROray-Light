@@ -7,6 +7,8 @@ on:
       - '.github/workflows/r0013-port-tests.yml'
       - 'packaging/r0013-overlay/**'
       - 'tools/test_r0013*.py'
+      - 'tools/test_r0013*.js'
+      - 'tools/r0013_inputs.py'
   workflow_dispatch:
 
 permissions:
@@ -35,9 +37,13 @@ jobs:
           set -eu
           find packaging/r0013-overlay/app -type f -print0 |
             while IFS= read -r -d '' file; do
-              case "$file" in */bin/*|*.sh) busybox ash -n "$file";; esac
+              case "$file" in */bin/*|*.sh|*.cgi) busybox ash -n "$file";; esac
             done
       - name: Real Linux process ownership and signal isolation
         run: python3 -B tools/test_r0013_process.py --shell /bin/dash --live-linux
       - name: Subscription rename and rollback transactions
         run: python3 -B tools/test_r0013_subscriptions.py --shell /bin/dash
+      - name: Xray catalog and explicit consent
+        run: python3 -B tools/test_r0013_xray_selection.py --shell /bin/dash --jq /usr/bin/jq
+      - name: Home Xray selector control behavior
+        run: node tools/test_r0013_home.js

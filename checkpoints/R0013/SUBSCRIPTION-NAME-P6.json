@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0013",
+  "status": "PASS_ISOLATED_LINUX",
+  "tests": [
+    "active-rename-no-xray-restart",
+    "unchanged-name",
+    "nonactive-rename",
+    "interface-refusal-rollback",
+    "rollback-failure-keeps-backup"
+  ],
+  "physicalRouterTouched": false,
+  "job": {
+    "id": 102918568606,
+    "head_sha": "7f8023cedccdf1a3f2f5893493b190a26a31f0b5",
+    "status": "completed",
+    "conclusion": "success",
+    "html_url": "https://github.com/BROadmin/BROray-Light/actions/runs/34491343009/job/102918568606",
+    "steps": [
+      {
+        "name": "Set up job",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 1,
+        "started_at": "2026-09-10T14:47:12Z",
+        "completed_at": "2026-09-10T14:47:12Z"
+      },
+      {
+        "name": "Run actions/checkout@v4",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 2,
+        "started_at": "2026-09-10T14:47:12Z",
+        "completed_at": "2026-09-10T14:47:14Z"
+      },
+      {
+        "name": "Install isolated test dependencies",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 3,
+        "started_at": "2026-09-10T14:47:14Z",
+        "completed_at": "2026-09-10T14:47:24Z"
+      },
+      {
+        "name": "BusyBox ash syntax",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 4,
+        "started_at": "2026-09-10T14:47:24Z",
+        "completed_at": "2026-09-10T14:47:24Z"
+      },
+      {
+        "name": "Real Linux process ownership and signal isolation",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 5,
+        "started_at": "2026-09-10T14:47:24Z",
+        "completed_at": "2026-09-10T14:47:24Z"
+      },
+      {
+        "name": "Subscription rename and rollback transactions",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 6,
+        "started_at": "2026-09-10T14:47:24Z",
+        "completed_at": "2026-09-10T14:47:25Z"
+      },
+      {
+        "name": "Post Run actions/checkout@v4",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 12,
+        "started_at": "2026-09-10T14:47:25Z",
+        "completed_at": "2026-09-10T14:47:25Z"
+      },
+      {
+        "name": "Complete job",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 13,
+        "started_at": "2026-09-10T14:47:25Z",
+        "completed_at": "2026-09-10T14:47:25Z"
+      }
+    ]
+  }
+}
