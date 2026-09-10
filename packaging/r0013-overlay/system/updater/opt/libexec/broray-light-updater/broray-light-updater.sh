@@ -285,6 +285,9 @@ archive_safe()
         esac
     done < "$listing" || return 1
     tar -tvzf "$archive" 2>/dev/null | while IFS= read -r line; do
+        # BusyBox prints hardlinks as regular mode plus " -> target";
+        # GNU tar uses "link to". Reject both before extraction.
+        case "$line" in *' -> '*|*' link to '*) exit 1 ;; esac
         case "$line" in -*) ;; d*) ;; *) exit 1 ;; esac
     done
 }
@@ -302,13 +305,13 @@ slot_valid()
     # Validate manifest paths before sha256sum can open anything outside the slot.
     while read -r digest relative; do
         valid_sha256 "$digest" || return 1
-        case "$relative" in app/*) ;; *) return 1 ;; esac
+        case "$relative" in app/*|release.json) ;; *) return 1 ;; esac
         case "$relative" in *..*|*/./*|*//*|*[!A-Za-z0-9_./-]*) return 1 ;; esac
         printf '%s\n' "$relative"
     done < "$slot/APP-SHA256SUMS" > "$WORK_ROOT/manifest.paths" || return 1
     [ -z "$(sort "$WORK_ROOT/manifest.paths" | uniq -d)" ] || return 1
     sort "$WORK_ROOT/manifest.paths" > "$WORK_ROOT/manifest.sorted" || return 1
-    (cd "$slot" && find app -type f | sort) > "$WORK_ROOT/files.sorted" || return 1
+    (cd "$slot" && { find app -type f; printf '%s\n' release.json; } | sort) > "$WORK_ROOT/files.sorted" || return 1
     cmp -s "$WORK_ROOT/manifest.sorted" "$WORK_ROOT/files.sorted" || return 1
     (cd "$slot" && sha256sum -c APP-SHA256SUMS >/dev/null 2>&1) || return 1
     jq -e --arg release "$expected_release" --arg candidate "$expected_candidate" \

@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
   "stage": "R0013_SELECTIVE_UPSTREAM_STABLE_PORT",
-  "status": "IMPLEMENTING_COORDINATED_RAM_MIGRATION",
-  "currentRevision": "p21-native-busybox-utility-acceptance",
-  "activeFailure": "checkpoints/R0013/process-failures/FAILURE-P16-PERSISTENT-LOCK-DOMAIN.json",
+  "status": "CORRECTED_REVISION_PENDING_NATIVE_UTILITIES_AND_CANONICAL_MANIFEST_TESTS",
+  "currentRevision": "p22-native-hardlink-rejection-and-real-manifest-contract",
+  "activeFailure": "checkpoints/R0013/process-failures/FAILURE-P21-BUSYBOX-HARDLINK.json",
   "publicVersion": "2.0.0",
   "buildA": "PRELIMINARY_ENGINEERING_BYTE_PASS_NOT_FINAL_ACCEPTANCE",
   "buildB": "PRELIMINARY_ENGINEERING_BYTE_PASS_NOT_FINAL_ACCEPTANCE",

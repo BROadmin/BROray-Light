@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0013",
+  "revision": "p21-real-package-manifest-cross-check",
+  "status": "FAIL_FIRST_ERROR",
+  "gate": "real_artifact_updater_manifest_contract",
+  "artifact": "dist/R0013/p15-engineering-build-A/broray-light-app-2.0.0-r1.tar.gz",
+  "artifactSha256": "4dcb15246111d242099463a315009126ba3e69fa9781d0b3b476144d32c9d095",
+  "hashEntries": 118,
+  "observed": "Actual accepted builder APP-SHA256SUMS includes release.json; new path whitelist accepted app/* only.",
+  "cause": "Hand-written minimal fixture omitted the canonical metadata hash entry. The tightened checker would reject real Light packages.",
+  "nextRevision": "p22-native-hardlink-rejection-and-real-manifest-contract",
+  "correction": "Permit exact release.json plus app paths, compare against the full canonical inventory, and build fixtures with pinned r1 slot_payload instead of a hand-written manifest.",
+  "candidateReady": false
+}

@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0013",
+  "revision": "p21-native-busybox-utility-acceptance",
+  "status": "FAIL_FIRST_ERROR",
+  "gate": "signed_hardlink_archive_refused",
+  "sourceCommit": "e515e90ac31ce4b30343ead9c1528fda716282ec",
+  "ci": "https://github.com/BROadmin/BROray-Light/actions/runs/34517390872",
+  "observed": "BusyBox updater returned nonzero and preserved installed slot, but failed the pre-extraction ARCHIVE_UNSAFE assertion; exact alternate error was not included by the test's bare assertion.",
+  "cause": "The r1 verbose-tar guard accepts any line starting with '-'. BusyBox prints hardlinks with regular file mode and a trailing ' -> target', so first-character checks do not exclude them.",
+  "sourceReference": "https://raw.githubusercontent.com/mirror/busybox/1_36_stable/archival/libarchive/header_verbose_list.c",
+  "evidence": {
+    "path": "UPDATER-CORE-P21-FAILED-ASH.json",
+    "sha256": "4937ebd969ad6a3cd6a846827ce2069f72c8958b5231842dda891505b6ec2881"
+  },
+  "nextRevision": "p22-native-hardlink-rejection-and-real-manifest-contract",
+  "correction": "Reject both GNU hardlink and BusyBox link annotations before accepting file mode; improve assertion diagnostics.",
+  "candidateReady": false
+}

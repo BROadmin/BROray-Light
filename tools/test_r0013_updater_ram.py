@@ -16,6 +16,8 @@ import tarfile
 import tempfile
 import time
 
+from build_r0013_release import primitives
+
 REPO = Path(__file__).resolve().parents[1]
 OVERLAY = REPO / 'packaging/r0013-overlay'
 UPDATER = OVERLAY / 'system/updater/opt/libexec/broray-light-updater/broray-light-updater.sh'
@@ -85,13 +87,17 @@ exit 0
                     'lib/test.sh': b'# fixture only\n',
                     'share/defaults/version': (release+'\n').encode(),
                     'web-new/home.html': b'fixture home\n'}
-        for name, data in payloads.items():
-            self.write(slot / 'app' / name, data, 0o755 if name.startswith('bin/') else 0o644)
-        meta = dict(product='BROray-Light', releaseId=release, candidateId=release)
-        self.write(slot / 'release.json', json.dumps(meta).encode())
-        self.write(slot / 'SLOT-MANIFEST.json', json.dumps(meta).encode())
-        sums = ''.join(hashlib.sha256(data).hexdigest()+'  app/'+name+'\n' for name, data in sorted(payloads.items()))
-        self.write(slot / 'APP-SHA256SUMS', sums.encode())
+        # Keep a small application/service fixture, but generate its archive
+        # contract with the hash-pinned accepted r1 builder, not an imitation.
+        base = primitives()
+        base.RELEASE_ID = base.CANDIDATE_ID = release
+        base.PACKAGE_VERSION = '2.0.0' if release == NEW else OLD
+        base.source_app_files = lambda repo, modes: [
+            ('app/'+name, data, 0o755 if name.startswith('bin/') else 0o644)
+            for name, data in sorted(payloads.items())]
+        members, _ = base.slot_payload(REPO, {})
+        for name, data, mode in members:
+            self.write(slot / name, data, mode)
         return slot
 
     def archive(self, extra=None):
@@ -217,7 +223,8 @@ def cases():
         f.run('update', 1)
         assert f.current() == OLD and not (f.root / 'service.calls').exists()
         assert not (f.root / 'escaped').exists()
-        assert json.loads((f.ram / 'state.json').read_text())['errorCode'] == 'ARCHIVE_UNSAFE'
+        state = json.loads((f.ram / 'state.json').read_text())
+        assert state['errorCode'] == 'ARCHIVE_UNSAFE', state
         f.clean_work()
     for kind in ('duplicate', 'traversal', 'symlink', 'hardlink'):
         yield 'signed_' + kind + '_archive_refused', lambda f, kind=kind: unsafe(f, kind)
@@ -275,7 +282,7 @@ def main():
     if args.busybox_tools:
         import r0013_busybox_fixture
         utility_fixture = r0013_busybox_fixture.enable()
-    report = dict(stage='R0013', revision='p21-native-busybox-utility-acceptance', scope='REAL_UPDATER_SIGNATURES_TMPFS_FIXTURE_SLOTS_SERVICE_BOUNDARY',
+    report = dict(stage='R0013', revision='p22-native-hardlink-rejection-and-real-manifest-contract', scope='REAL_UPDATER_SIGNATURES_TMPFS_CANONICAL_SLOT_FORMAT_FIXTURE_APP_AND_SERVICE',
                   utilities='BusyBox applets' if args.busybox_tools else 'host utilities',
                   sourceSha256=hashlib.sha256(UPDATER.read_bytes()).hexdigest(), shell=shell, tests=[])
     failed = False
