@@ -1,0 +1,18 @@
+{
+  "stage": "R0013",
+  "revision": "p54-full-prepared-application-lifecycle",
+  "status": "STATIC_PASS_LINUX_PENDING",
+  "sources": [
+    {
+      "path": "tools/check_r0013_prepared_app.py",
+      "sizeBytes": 9049,
+      "sha256": "a7cb900ad2cb160640c9ffb11080f6006af63fa38532acc2943ce153186d89b6"
+    },
+    {
+      "path": ".github/workflows/r0013-port-tests.yml",
+      "sizeBytes": 15204,
+      "sha256": "0f4bb9dd6d1f8e7f00f05ecbc6eccf0fe1107b94d919a68cc832cebbcd5a6b00"
+    }
+  ],
+  "candidateReady": false
+}

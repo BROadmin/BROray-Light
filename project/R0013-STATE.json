@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "stage": "R0013_SELECTIVE_UPSTREAM_STABLE_PORT",
-  "status": "P52_EARLY_RECOVERY_PASS_P53_STATUS_RETIREMENT_PENDING",
-  "currentRevision": "p53-retire-legacy-operational-status",
+  "status": "P53_RETIREMENT_CI_QUEUED_P54_FULL_APP_TEST_PREPARED",
+  "currentRevision": "p54-full-prepared-application-lifecycle",
   "activeFailure": null,
   "publicVersion": "2.0.0",
   "buildA": "PRELIMINARY_ENGINEERING_BYTE_PASS_NOT_FINAL_ACCEPTANCE",
@@ -62,7 +62,7 @@
     "path": "checkpoints/R0013/UPSTREAM-PORT-MAP-P2.json",
     "sha256": "009a0f5adae08f399c82510cf680690b4c2e50bc8c659eda9c48d91b5a838121"
   },
-  "nextExactAction": "P53_LEGACY_STATUS_RETIREMENT_WITH_FOREIGN_FILE_REFUSAL_THEN_FULL_PREPARED_APP",
+  "nextExactAction": "VALIDATE_P53_RETIREMENT_THEN_P54_FULL_APP_LIFECYCLE",
   "versionAndXray": {
     "status": "PASS_VERSION_AND_BOOTSTRAP_INPUT",
     "path": "checkpoints/R0013/UPGRADE-AND-XRAY-P10.json",
@@ -81,7 +81,7 @@
     "path": "RAM-BOOTSTRAP-VALIDATION-P15.json",
     "sha256": "050a4d9b7e8c82194d1e4dd03e6e014031ec1b24d44f06833cc3189d5ca1c33d"
   },
-  "latestCI": "https://github.com/BROadmin/BROray-Light/actions/runs/34543137488",
+  "latestCI": "https://github.com/BROadmin/BROray-Light/actions/runs/34543606312",
   "latestFullComponentRegression": {
     "status": "PASS",
     "commit": "66616c8ccd4efc0fea72218b212a128a1ea91493",

@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
   "stage": "R0013",
-  "revision": "p53-retire-legacy-operational-status",
+  "revision": "p54-full-prepared-application-lifecycle",
   "files": [
     {
       "path": ".github/workflows/r0013-port-tests.yml",
-      "sizeBytes": 13984,
-      "sha256": "8d9ec8bacb9b7927dd692792d63ab5fc317760eb88c4f57187059b504be52ff3"
+      "sizeBytes": 15204,
+      "sha256": "0f4bb9dd6d1f8e7f00f05ecbc6eccf0fe1107b94d919a68cc832cebbcd5a6b00"
     },
     {
       "path": "packaging/r0013-overlay/app/bin/broray-lightd",
@@ -247,6 +247,11 @@
       "path": "tools/check_r0013_completion.py",
       "sizeBytes": 8607,
       "sha256": "5fc7ad10987284bae20e4e47bfcc89556bf79acd6ef24ae1c4ed192b1cd14a6f"
+    },
+    {
+      "path": "tools/check_r0013_prepared_app.py",
+      "sizeBytes": 9049,
+      "sha256": "a7cb900ad2cb160640c9ffb11080f6006af63fa38532acc2943ce153186d89b6"
     },
     {
       "path": "tools/r0013_busybox_fixture.py",

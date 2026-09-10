@@ -1,4 +1,4 @@
-# BROray-Light 2.0.0 — R0013, checkpoint P53
+# BROray-Light 2.0.0 — R0013, checkpoint P54
 
 `candidateReady=false`, `releaseReady=false`. Публичная версия `2.0.0`, внутренний releaseId `2.0.0-r1`. Релиз не опубликован; роутер, production server и приложение полного BROray не изменялись.
 
@@ -26,6 +26,8 @@ P52: 10 PASS на dash/BusyBox, включая ранний old-S23 reboot и о
 P53 добавляет удаление только опознанных старых operational state/ready после успешной миграции, под собственной RAM-блокировкой с записью inode/размера/SHA-256 в durable receipt. Повторный вход S24 удаляет опознанный поздний ready старого S23. Чужой JSON или symlink вызывает отказ без удаления пары. Syntax/AST PASS; первая Linux-проверка ожидается.
 
 ## Build A/B
+
+P54 подготовил отдельный Linux-набор с полными принятыми r1 и R0013 app-скриптами, без замены daemon/subscriptions/Xray-control. Изолированная network namespace запрещает доступ к реальным серверам. Проверяются старый/new updater, equal-version, downgrade, синтетическая следующая версия, health rollback и persistence. Syntax/AST PASS; выполнение — после проверки P53.
 
 `dist/R0013/p47-engineering-build-A` и `...-B`: отдельные процессы и свежие входные деревья; восемь файлов совпали побайтно, семь структурных проверок PASS. Это предварительные неподписанные сборки **до последней диагностики P49**, не финальный кандидат. Полный список размеров и SHA-256 — `ENGINEERING-BUILDS-P47.json` (SHA-256 `73ceaf5f6179c87abf0ca25c0fe2e829cb91fb8edc0a33b815e6110e69ced708`). App-slot P47: 146 файлов, 836767 логических байт; Xray: 35061884 байта. Это не замер выделенных блоков на роутере.
 

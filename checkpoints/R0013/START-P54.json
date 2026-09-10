@@ -1,0 +1,17 @@
+{
+  "stage": "R0013",
+  "revision": "p54-full-prepared-application-lifecycle",
+  "status": "CHECKPOINT_BEFORE_TEST_IMPLEMENTATION",
+  "scope": [
+    "Assemble complete accepted r1 app from pinned Git blobs and complete R0013 prepared app without replacing daemon, subscriptions or Xray-control scripts",
+    "Prime actual r1 runtime-prepare, then real old engine/S24 update, finalization, equal-version, downgrade refusal, future-version synthetic signed update, health rollback and user-data persistence",
+    "Run isolated fixture in network namespace, never on physical router"
+  ],
+  "mockedBoundaries": [
+    "lighttpd workload binary (real lighttpd/native auth acceptance is separate)",
+    "Keenetic publication OS boundary",
+    "Xray executable (separate verified ARM64 bytes gate)"
+  ],
+  "candidateReady": false,
+  "routerTouched": false
+}

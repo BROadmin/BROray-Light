@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "stage": "R0013_SELECTIVE_UPSTREAM_STABLE_PORT",
-  "status": "P52_EARLY_RECOVERY_PASS_P53_STATUS_RETIREMENT_PENDING",
-  "currentRevision": "p53-retire-legacy-operational-status",
+  "status": "P53_RETIREMENT_CI_QUEUED_P54_FULL_APP_TEST_PREPARED",
+  "currentRevision": "p54-full-prepared-application-lifecycle",
   "publicVersion": "2.0.0",
   "packageVersion": "2.0.0",
   "releaseId": "2.0.0-r1",
@@ -27,12 +27,12 @@
     "sha256": "73ceaf5f6179c87abf0ca25c0fe2e829cb91fb8edc0a33b815e6110e69ced708"
   },
   "activeFailure": null,
-  "nextExactAction": "P53_LEGACY_STATUS_RETIREMENT_WITH_FOREIGN_FILE_REFUSAL_THEN_FULL_PREPARED_APP",
+  "nextExactAction": "VALIDATE_P53_RETIREMENT_THEN_P54_FULL_APP_LIFECYCLE",
   "remainingIntegrationGap": {
     "originFailure": "process-failures/FAILURE-P16-PERSISTENT-LOCK-DOMAIN.json",
     "description": "10 dead-owner/reboot-loss/finalization tests passed on dash/BusyBox. Whole P48 failed on a missing stable diagnostic in old RAM negative test. P49 corrects this and integrates checkpointed P47 clean postinst. Early S23 boot, operational state retirement, live snapshot cleanup, full prepared-app/native-auth/WebUI, final independent builds/signing and target gates remain."
   },
   "pendingSourceCommit": null,
   "lastResolvedFailure": "process-failures/FAILURE-P50-WINDOWS-SYNTAX-PIPE-NEWLINES.json",
-  "pendingSourceManifest": "SOURCE-INPUTS-P53.json"
+  "pendingSourceManifest": "SOURCE-INPUTS-P54.json"
 }
