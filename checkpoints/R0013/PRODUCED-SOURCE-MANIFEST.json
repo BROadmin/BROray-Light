@@ -1,0 +1,126 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0013",
+  "artifacts": [
+    {
+      "path": "packaging/r0013-overlay/app/bin/broray-lightd",
+      "bytes": 1039,
+      "sha256": "8e250c2d2b66d073f9b96e202bbc056672610969cd508c2c4246e09266b6ae53"
+    },
+    {
+      "path": "packaging/r0013-overlay/app/bin/broray-xray-control",
+      "bytes": 1082,
+      "sha256": "1f881e789e3da874895b3b922d57113fb58cae2c18e59c90b55ab31d86880024"
+    },
+    {
+      "path": "packaging/r0013-overlay/app/lib/server-service.sh",
+      "bytes": 4821,
+      "sha256": "1c52a2c9f78d8fb31198d2bfe1db63606c611ad355e14b056701aa398dc8880c"
+    },
+    {
+      "path": "packaging/r0013-overlay/app/lib/server-subscription-service.sh",
+      "bytes": 32193,
+      "sha256": "7d1f007c966ad21b29e42f4546f5d0b25e839c880447d3c189f329471cf119ea"
+    },
+    {
+      "path": "packaging/r0013-overlay/app/lib/server-xray-manager.sh",
+      "bytes": 4914,
+      "sha256": "90a41c4a0247d1116430219d03a8e8caa02e86387890c8ee101783b288b4758a"
+    },
+    {
+      "path": "packaging/r0013-overlay/app/lib/xray-control.sh",
+      "bytes": 7109,
+      "sha256": "d80bfee40d7fcb68f7a55a6fd4a7db8f5819da6de0bf663d0d3e51343d5587eb"
+    },
+    {
+      "path": "packaging/r0013-overlay/app/lib/xray-process.sh",
+      "bytes": 2915,
+      "sha256": "22e1b0f2257f28d7ba2e9eb308c9378f48c7c716a0a4c6826d396dadf6787196"
+    },
+    {
+      "path": "packaging/r0013-overlay/app/lib/xray-releases.jq",
+      "bytes": 3200,
+      "sha256": "151b24f5a028a0a7781dc4bd94f4b2d7fbecab4c0dc5c78182acd82335328731"
+    },
+    {
+      "path": "packaging/r0013-overlay/app/lib/xray-releases.sh",
+      "bytes": 13491,
+      "sha256": "f57239b7fc11c199476b443e4078453ec6300ed114f030f8cefa53151bef718f"
+    },
+    {
+      "path": "packaging/r0013-overlay/app/lib/xray-update.sh",
+      "bytes": 35017,
+      "sha256": "20cff7e9f977bc6986c84a6f5306600c46c7b9f26a1cbbebcb9c8b0406bd7bdb"
+    },
+    {
+      "path": "packaging/r0013-overlay/app/lib/xray-web-operation.sh",
+      "bytes": 403,
+      "sha256": "ca155b9b4562e9c05141fd097c14a9ed4392dc2f1067e5277c2c62f4967204c9"
+    },
+    {
+      "path": "packaging/r0013-overlay/app/lib/xray.sh",
+      "bytes": 16906,
+      "sha256": "c6d6be301d2dd209bb059b58270dcef82bbc8c710e49d757a77bbc44c9d3fad7"
+    },
+    {
+      "path": "packaging/r0013-overlay/app/share/xray-compatibility.json",
+      "bytes": 191,
+      "sha256": "cb9b2c5a4e99ffa9045f6acc7df8379369bd0fce4f39b1b024d36d67713de791"
+    },
+    {
+      "path": "packaging/r0013-overlay/app/web-new/api/xray/install.cgi",
+      "bytes": 1182,
+      "sha256": "203cc9c9d1c3972b04173ddc1daf9dcea2ae52942a45d02f8fedbe0494c361fc"
+    },
+    {
+      "path": "packaging/r0013-overlay/app/web-new/assets/css/allpage.css",
+      "bytes": 14039,
+      "sha256": "588dead0ef7be73949c33265d4539db0d369af7929374a2691a43164a61baf7d"
+    },
+    {
+      "path": "packaging/r0013-overlay/app/web-new/assets/js/home.js",
+      "bytes": 14604,
+      "sha256": "433828aee748222c44f788afa6b96771b90bf161d6d6e1e083020fab6d0bf3fe"
+    },
+    {
+      "path": "packaging/r0013-overlay/app/web-new/home.html",
+      "bytes": 4700,
+      "sha256": "b1817b41539ec4b33439afbbb7a3a17a9e669aab3dd38dfd9dfe855f8a952903"
+    },
+    {
+      "path": "tools/audit_r0013_upstream.py",
+      "bytes": 3821,
+      "sha256": "4580cf1a29b0a33f66b472161dde670684a7178ba591a6e9ec6baf5f2593f908"
+    },
+    {
+      "path": "tools/r0013_inputs.py",
+      "bytes": 2378,
+      "sha256": "675460759fefa7ed9e105810a7f560008a165f5abfb2283f65c321a9d56409e7"
+    },
+    {
+      "path": "tools/test_r0013_home.js",
+      "bytes": 5721,
+      "sha256": "1cf7f8dd82542bbfcb94b15bb136aa5dc485c796f9068e9526d72e125d452e9a"
+    },
+    {
+      "path": "tools/test_r0013_process.py",
+      "bytes": 9483,
+      "sha256": "8209552d9e5cf64fcad76955a7f40710b521ced3690af6790fc6b7ec3f210ce7"
+    },
+    {
+      "path": "tools/test_r0013_subscriptions.py",
+      "bytes": 6954,
+      "sha256": "c3107f235c262035c2871615f7e466895e21b9e15a11b665556a52c330a655e2"
+    },
+    {
+      "path": "tools/test_r0013_upgrade_contract.py",
+      "bytes": 1828,
+      "sha256": "c38496faaa51dd830f5c840cb0f13bae75a05e7431fa71dad9c2b56f1224a446"
+    },
+    {
+      "path": "tools/test_r0013_xray_selection.py",
+      "bytes": 7813,
+      "sha256": "1a9ba8466e29db1ff6e1935b9bbd445060eebfe4cd4ce4d6855af7afda6322c2"
+    }
+  ]
+}

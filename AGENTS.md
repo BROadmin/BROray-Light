@@ -4,6 +4,12 @@ This repository contains a separate lightweight product for Keenetic/KeeneticOS.
 
 ## Current authorized task
 
+The user explicitly superseded the R0012-only task on 2026-09-10. Current stage is `R0013_SELECTIVE_UPSTREAM_STABLE_PORT`; read `docs/CODEX-R0013.md` and `project/R0013-STATE.json` first. Use validated Light `1.0.0-r1` plus selective, traceable changes from the pinned BROray Stable release archive. Preserve the unfinished R0012 files; they are not accepted build inputs. The user explicitly selected release ID `2.0.0`, tag `v2.0.0`, without an r-suffix. Keep the already active branch `codex/r0009-updater-package`.
+
+The following R0012 material is historical. Current decisions and blockers are in the R0013 state and checkpoint.
+
+## Historical R0012 contract
+
 Work only on stage `R0012` in the already active branch `codex/r0009-updater-package`:
 
 `RELOCATE_RUSSIAN_DOCUMENTATION_AND_REMOVE_EMBEDDED_WEBUI_GUIDE_STABLE_1.0.0_R3`

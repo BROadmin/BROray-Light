@@ -1,0 +1,144 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0013",
+  "publicVersion": "2.0.0",
+  "candidateReady": false,
+  "releaseReady": false,
+  "gates": [
+    {
+      "gate": "pinned_donor_archives",
+      "status": "PASS",
+      "evidence": "UPSTREAM-DELTA-P2.json"
+    },
+    {
+      "gate": "complete_upstream_change_map",
+      "status": "PASS_AUDIT_ONLY",
+      "evidence": "UPSTREAM-PORT-MAP-P2.json"
+    },
+    {
+      "gate": "scoped_xray_identity",
+      "status": "PASS_ISOLATED_LINUX",
+      "evidence": "CATALOG-AND-CONTROLS-P8.json"
+    },
+    {
+      "gate": "busybox_ash_overlay_syntax",
+      "status": "PASS",
+      "evidence": "CATALOG-AND-CONTROLS-P8.json"
+    },
+    {
+      "gate": "active_subscription_rename_and_rollback",
+      "status": "PASS_ISOLATED_ROUTER_BOUNDARY_MOCKED",
+      "evidence": "SUBSCRIPTION-NAME-P6.json"
+    },
+    {
+      "gate": "xray_catalog_and_explicit_consent",
+      "status": "PASS_POLICY_OFFICIAL_NETWORK_MOCKED",
+      "evidence": "CATALOG-AND-CONTROLS-P8.json"
+    },
+    {
+      "gate": "home_xray_controls",
+      "status": "PASS_DOM_HTTP_BOUNDARIES_MOCKED",
+      "evidence": "HOME-XRAY-CONTROLS-P8.json"
+    },
+    {
+      "gate": "published_r1_to_2_0_0_admission",
+      "status": "FAIL_CLOSED",
+      "evidence": "process-failures/FAILURE-P9-R1-REJECTS-SEMVER-ID.json"
+    },
+    {
+      "gate": "canonical_source_and_final_input_manifest",
+      "status": "NOT_RUN_FINAL_BUILD",
+      "evidence": null
+    },
+    {
+      "gate": "xray_clean_binary_verification",
+      "status": "ARCHIVE_SHA256_VERIFIED_BINARY_PENDING",
+      "evidence": null
+    },
+    {
+      "gate": "all_webui_buttons_and_apis",
+      "status": "NOT_RUN_FULL_CANDIDATE",
+      "evidence": null
+    },
+    {
+      "gate": "native_authentication_and_sessions",
+      "status": "NOT_RUN_FULL_CANDIDATE",
+      "evidence": null
+    },
+    {
+      "gate": "protected_tmpfs_all_operational_scratch",
+      "status": "NOT_RUN_FULL_CANDIDATE",
+      "evidence": null
+    },
+    {
+      "gate": "archive_updater_and_ownership_safety",
+      "status": "NOT_RUN_FULL_CANDIDATE",
+      "evidence": null
+    },
+    {
+      "gate": "isolated_clean_install",
+      "status": "NOT_RUN",
+      "evidence": null
+    },
+    {
+      "gate": "isolated_update_from_r1",
+      "status": "BLOCKED_VERSION_CONTRACT",
+      "evidence": null
+    },
+    {
+      "gate": "isolated_equal_version",
+      "status": "NOT_RUN",
+      "evidence": null
+    },
+    {
+      "gate": "isolated_downgrade_refusal",
+      "status": "NOT_RUN",
+      "evidence": null
+    },
+    {
+      "gate": "forced_health_rollback",
+      "status": "NOT_RUN_FULL_CANDIDATE",
+      "evidence": null
+    },
+    {
+      "gate": "persistence",
+      "status": "NOT_RUN_FULL_CANDIDATE",
+      "evidence": null
+    },
+    {
+      "gate": "independent_build_a",
+      "status": "NOT_RUN",
+      "evidence": null
+    },
+    {
+      "gate": "independent_build_b",
+      "status": "NOT_RUN",
+      "evidence": null
+    },
+    {
+      "gate": "a_b_byte_reproducibility",
+      "status": "NOT_RUN",
+      "evidence": null
+    },
+    {
+      "gate": "existing_trust_root_signing",
+      "status": "NOT_RUN",
+      "evidence": null
+    },
+    {
+      "gate": "browser_desktop_mobile_layout",
+      "status": "NOT_RUN",
+      "evidence": null
+    },
+    {
+      "gate": "authorized_router_validation",
+      "status": "NOT_RUN",
+      "evidence": null
+    },
+    {
+      "gate": "immutable_release_and_public_byte_validation",
+      "status": "NOT_PUBLISHED",
+      "evidence": null
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0013",
+  "revision": "p9-release-2.0.0-upgrade-admission",
+  "status": "BLOCKED_FAIL_CLOSED",
+  "gate": "PUBLISHED_R1_TO_USER_REQUESTED_2_0_0_UPDATE",
+  "userRequestedPublicVersion": "2.0.0",
+  "proposedTag": "v2.0.0",
+  "observed": {
+    "stage": "R0013",
+    "status": "FAIL_FIRST_ERROR",
+    "tests": [
+      {
+        "installed": "1.0.0-r1",
+        "available": "2.0.0",
+        "expected": "newer",
+        "actual": "uncomparable",
+        "status": "FAIL"
+      }
+    ],
+    "updaterSha256": "773aaf37893ab100e7023d63c8061d8c4763a4d6186844bb3b671d758c145743"
+  },
+  "sourceArchiveSha256": "4983f0fc268a9f19f3e64959fe5f7d8086f26ad907d528ca82ca623f10d9a92a",
+  "cause": "The published r1 release_parts parser requires a -r suffix. Both check and update reject uncomparable release IDs before downloading the app slot. Shipping an updated parser inside the 2.0.0 app archive cannot help the installed r1 updater reach that archive.",
+  "impact": "A signed release index with candidate.releaseId=2.0.0 is not reachable through the existing r1 WebUI update button.",
+  "sameRevisionRetried": false,
+  "bypassesUsed": false,
+  "productionOrRouterMutated": false,
+  "candidateReady": false,
+  "releaseReady": false,
+  "buildA": "NOT_RUN",
+  "buildB": "NOT_RUN",
+  "resolutionRequiresChoice": {
+    "preferred": "Keep public version 2.0.0 and tag v2.0.0; explicitly separate legacy-compatible technical releaseId 2.0.0-r1 in signed metadata/slot paths, after confirming that this is acceptable to the user.",
+    "alternative": "Keep all identifiers exactly 2.0.0; define and validate a separate trusted updater migration/bootstrap before the 2.0.0 release. No implicit bridge release or physical-router mutation."
+  },
+  "nextExactAction": "CONFIRM_PUBLIC_VERSION_VS_LEGACY_RELEASE_ID_CONTRACT_THEN_VALIDATE_UPDATE_EQUAL_AND_DOWNGRADE_WITH_EXACT_R1_UPDATER"
+}
