@@ -267,11 +267,16 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--shell', default='/bin/dash')
     parser.add_argument('--busybox', action='store_true')
+    parser.add_argument('--busybox-tools', action='store_true')
     parser.add_argument('--result', type=Path)
     args = parser.parse_args()
     assert os.geteuid() == 0, 'Disposable root Linux CI only'
     shell = [args.shell, 'ash'] if args.busybox else [args.shell]
-    report = dict(stage='R0013', revision='p20-interruption-fixture-explicit-pipes', scope='REAL_UPDATER_SIGNATURES_TMPFS_FIXTURE_SLOTS_SERVICE_BOUNDARY',
+    if args.busybox_tools:
+        import r0013_busybox_fixture
+        utility_fixture = r0013_busybox_fixture.enable()
+    report = dict(stage='R0013', revision='p21-native-busybox-utility-acceptance', scope='REAL_UPDATER_SIGNATURES_TMPFS_FIXTURE_SLOTS_SERVICE_BOUNDARY',
+                  utilities='BusyBox applets' if args.busybox_tools else 'host utilities',
                   sourceSha256=hashlib.sha256(UPDATER.read_bytes()).hexdigest(), shell=shell, tests=[])
     failed = False
     for name, test in cases():
@@ -291,6 +296,8 @@ def main():
         args.result.parent.mkdir(parents=True, exist_ok=True)
         args.result.write_bytes(payload)
     print(payload.decode())
+    if args.busybox_tools:
+        utility_fixture.cleanup()
     raise SystemExit(1 if failed else 0)
 
 

@@ -241,11 +241,16 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--shell', default='/bin/dash')
     parser.add_argument('--busybox', action='store_true')
+    parser.add_argument('--busybox-tools', action='store_true')
     parser.add_argument('--result', type=Path)
     args = parser.parse_args()
     assert os.geteuid() == 0, 'Run only as root in disposable Linux CI'
     shell = [args.shell, 'ash'] if args.busybox else [args.shell]
-    report = dict(stage='R0013', revision='p17-shared-ram-lock-primitive', status='IN_PROGRESS',
+    if args.busybox_tools:
+        import r0013_busybox_fixture
+        utility_fixture = r0013_busybox_fixture.enable()
+    report = dict(stage='R0013', revision='p21-native-busybox-utility-acceptance', status='IN_PROGRESS',
+                  utilities='BusyBox applets' if args.busybox_tools else 'host utilities',
                   scope='REAL_TMPFS_AND_PROCESSES_NO_LIFECYCLE_OR_ROUTER', shell=shell,
                   sourceSha256=hashlib.sha256(SOURCE.read_bytes()).hexdigest(), tests=[])
     failed = False
@@ -266,6 +271,8 @@ def main():
         args.result.parent.mkdir(parents=True, exist_ok=True)
         args.result.write_bytes(payload)
     print(payload.decode())
+    if args.busybox_tools:
+        utility_fixture.cleanup()
     raise SystemExit(1 if failed else 0)
 
 

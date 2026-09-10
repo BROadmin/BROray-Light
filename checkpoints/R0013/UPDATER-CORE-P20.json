@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0013",
+  "revision": "p20-interruption-fixture-explicit-pipes",
+  "status": "PASS_BOUNDED_CORE",
+  "sourceCommit": "ee3f16e9582efc0d6f10e2859c3ac40b2277cbdd",
+  "updaterSha256": "4376ae29e17a601098238f78a8f67fafbc15985b0c8a172ba574f85b434a2434",
+  "ci": "https://github.com/BROadmin/BROray-Light/actions/runs/34517045435",
+  "artifactId": 10168107309,
+  "artifactZipSha256": "1182693480a43a55842495bc2f6eebe9504bdd77904bf4e37c8e8a2510772410",
+  "testsPerShell": 14,
+  "totalPassed": 28,
+  "testBoundaries": "Real tmpfs, updater, minisign signatures, archive extraction and process interruption; small fixture slots and mocked service/health commands. Both shells currently use host GNU utilities.",
+  "resolvedFailures": [
+    "process-failures/FAILURE-P18-EXIT-TRAP-STATUS.json",
+    "process-failures/FAILURE-P19-INTERRUPTION-FIXTURE.json"
+  ],
+  "candidateReady": false,
+  "remaining": "Native BusyBox utility behavior, complete app/runtime/platform migration from actual r1, package integration, all final acceptance gates"
+}

@@ -1,0 +1,9 @@
+{
+  "stage": "R0013",
+  "revision": "p21-native-busybox-utility-acceptance",
+  "status": "IN_PROGRESS",
+  "scope": "Repeat P17 and P20 with BusyBox applets, not only the BusyBox shell using host GNU commands",
+  "productChanges": false,
+  "candidateReady": false,
+  "routerTouched": false
+}

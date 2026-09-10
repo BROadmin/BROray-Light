@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
   "stage": "R0013_SELECTIVE_UPSTREAM_STABLE_PORT",
-  "status": "CORRECTED_REVISION_PENDING_TRANSACTION_TESTS",
-  "currentRevision": "p20-interruption-fixture-explicit-pipes",
-  "activeFailure": "checkpoints/R0013/process-failures/FAILURE-P19-INTERRUPTION-FIXTURE.json",
+  "status": "IMPLEMENTING_COORDINATED_RAM_MIGRATION",
+  "currentRevision": "p21-native-busybox-utility-acceptance",
+  "activeFailure": "checkpoints/R0013/process-failures/FAILURE-P16-PERSISTENT-LOCK-DOMAIN.json",
   "publicVersion": "2.0.0",
   "buildA": "PRELIMINARY_ENGINEERING_BYTE_PASS_NOT_FINAL_ACCEPTANCE",
   "buildB": "PRELIMINARY_ENGINEERING_BYTE_PASS_NOT_FINAL_ACCEPTANCE",
@@ -81,6 +81,7 @@
     "path": "RAM-BOOTSTRAP-VALIDATION-P15.json",
     "sha256": "050a4d9b7e8c82194d1e4dd03e6e014031ec1b24d44f06833cc3189d5ca1c33d"
   },
-  "latestCI": "https://github.com/BROadmin/BROray-Light/actions/runs/34515462704",
+  "latestCI": "https://github.com/BROadmin/BROray-Light/actions/runs/34517045435",
+  "updaterRamCore": {"status":"PASS_BOUNDED_CORE", "tests":28, "path":"checkpoints/R0013/UPDATER-CORE-P20.json"},
   "ramPrimitive": {"status":"PASS_BOUNDED_PRIMITIVE", "tests":38, "path":"checkpoints/R0013/RAM-PRIMITIVE-P17.json"}
 }
