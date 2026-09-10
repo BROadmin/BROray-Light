@@ -1,0 +1,57 @@
+{
+  "stage": "R0013",
+  "revision": "p46-direct-service-fixture-pid-binding",
+  "status": "FAIL_FIRST_ERROR",
+  "commit": "1dd0118d16a09b789f1fd3c72c9fe324b4d2bc2d",
+  "ci": "https://github.com/BROadmin/BROray-Light/actions/runs/34539645710",
+  "artifact": {
+    "id": 10176854422,
+    "zipSha256": "4f11791786d19703358a4210031b398490c95310904583638fa74d903797c9de"
+  },
+  "failure": "Dead-owner test again returns 1 after exact file restoration and snapshot cleanup; finalization PASS.",
+  "cause": "Old r1 S24 starts a stopped web role through broray_light_web_publication_start_gate, which invokes ctl ensure. The fixture controller only accepts status. P45's PID-binding diagnosis was incomplete: its fix is necessary for fixture lighttpd startup but execution first stops at the mocked ensure boundary.",
+  "evidenceBasis": [
+    "Pinned r1 S24 start(): when role is down, publication start gate precedes start_web",
+    "Pinned r1 start gate invokes ctl ensure",
+    "LiveFixture controller is `[ \"$1\" = status ]` and therefore returns 1 silently for ensure",
+    "P46 receipt is restored before invoking old service, no stderr"
+  ],
+  "evidence": {
+    "r0013-recovery-dash.json": {
+      "report": {
+        "stage": "R0013",
+        "revision": "p46-direct-service-fixture-pid-binding",
+        "status": "FAIL_FIRST_ERROR",
+        "shell": [
+          "/bin/dash"
+        ],
+        "tests": [
+          {
+            "name": "finalize",
+            "status": "PASS",
+            "detail": {
+              "finalized": true,
+              "snapshotsRemoved": true,
+              "sessionPreserved": true,
+              "idempotent": true
+            }
+          },
+          {
+            "name": "dead-owner",
+            "status": "FAIL",
+            "error": "{'returncode': 1, 'stdout': '', 'stderr': '', 'receipt': {'schemaVersion': 1, 'product': 'BROray-Light', 'sourceRelease': '1.0.0-r1', 'targetRelease': '2.0.0-r1', 'legacyLocks': 'cleared', 'legacyPid': '197695', 'legacyStart': '63178', 'requestIds': ['2049:8938819', '2049:8938820', '2049:8938821'], 'globalIds': ['2049:8938822', '2049:8938823', '2049:8938824'], 'slotManifestSha256': '59b00afe453db4e235a4df1239ba8f80e28fc852fb87a19eae436126bcefe1f1', 'sourceSlotManifestSha256': '1df02b6243cde7576b6b96561e4e13fda1af8eccbae6b687e82e1cbfeb68584d', 'legacyBootId': 'c8a89114-a616-4bff-b877-2bcbc4a44e97', 'legacyWork': {'id': '48:2', 'mode': '755', 'inventory': 'app.tar.gz 48:5 644 b0752e643468a875440b066da8996956af95283ca364be3bbc9eb4d1bb3e1147\\narchive.list 48:6 644 6a3e826303a2bfa8a33f2cae9c70e05aef8367ac31fde3d7e726a5449f6ec381\\nrelease.json 48:3 644 b995408367832a78884773fec021ff99e53cc303eea4ebc265942b1bbda4ebfa\\nrelease.json.minisig 48:4 644 fb627a27fd64f733c0cecc29e1d9d06eb1004aba1f0551b378fb5b4ef403a3b0'}, 'engineSha256': '773aaf37893ab100e7023d63c8061d8c4763a4d6186844bb3b671d758c145743', 'coordinator': {'schemaVersion': 1, 'phase': 'restored'}, 'platform': {'phase': 'restored', 'manifestSha256': '0286a1f24befc4f99141ced40ce353eb1760f08bc75cf9a9ef046179413a0645', 'staged': {}}, 'ramTransition': {'schemaVersion': 1, 'phase': 'restored', 'directory': 'broray-light-transition.eFqJX9', 'directoryId': '48:7', 'oldWorkId': '48:2', 'oldWorkMode': '755', 'inventory': 'app.tar.gz 48:5 644 b0752e643468a875440b066da8996956af95283ca364be3bbc9eb4d1bb3e1147\\narchive.list 48:6 644 6a3e826303a2bfa8a33f2cae9c70e05aef8367ac31fde3d7e726a5449f6ec381\\nrelease.json 48:3 644 b995408367832a78884773fec021ff99e53cc303eea4ebc265942b1bbda4ebfa\\nrelease.json.minisig 48:4 644 fb627a27fd64f733c0cecc29e1d9d06eb1004aba1f0551b378fb5b4ef403a3b0', 'newWorkId': '48:18'}, 'runtimeTrees': {'run': {'phase': 'restored', 'inventory': 'D 755 2049:8938795 0 - .\\nD 700 2049:8938799 0 - web-new\\nD 700 2049:8938800 0 - web-new/sessions\\nF 600 2049:8938801 18 ddb67c83c27f4d657cabe6ede5ed83e5d5dca1213a81792b0a8fcc414d6fd943 web-new/sessions/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', 'contentInventory': 'D 755 - 0 - .\\nD 700 - 0 - web-new\\nD 700 - 0 - web-new/sessions\\nF 600 - 18 ddb67c83c27f4d657cabe6ede5ed83e5d5dca1213a81792b0a8fcc414d6fd943 web-new/sessions/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', 'backupId': '48:22', 'ramDestinationId': '48:11', 'restoreId': '2049:8938787'}, 'logs': {'phase': 'restored', 'inventory': 'D 755 2049:8938796 0 - .\\nF 600 2049:8938802 8 7670623253ae894a99ede04e9c01a3d1f75798cf859bce61eaeede35d7d9103a old.log', 'contentInventory': 'D 755 - 0 - .\\nF 600 - 8 7670623253ae894a99ede04e9c01a3d1f75798cf859bce61eaeede35d7d9103a old.log', 'backupId': '48:26', 'ramDestinationId': '48:13', 'restoreId': '2049:8938804'}, 'tmp': {'phase': 'restored', 'inventory': 'D 755 2049:8938797 0 - .\\nF 600 2049:8938803 13 7ae43323d4a85299541dced1301d54953efcb36796e974599ced2f7d55436f7e probe.json', 'contentInventory': 'D 755 - 0 - .\\nF 600 - 13 7ae43323d4a85299541dced1301d54953efcb36796e974599ced2f7d55436f7e probe.json', 'backupId': '48:28', 'ramDestinationId': '48:12', 'restoreId': '2049:8938821'}, 'update': {'phase': 'restored', 'inventory': 'D 755 2049:8938798 0 - .\\nF 600 2049:8938804 13 7ae43323d4a85299541dced1301d54953efcb36796e974599ced2f7d55436f7e state.json', 'contentInventory': 'D 755 - 0 - .\\nF 600 - 13 7ae43323d4a85299541dced1301d54953efcb36796e974599ced2f7d55436f7e state.json', 'backupId': '48:30', 'ramDestinationId': '48:35', 'restoreId': '2049:8938822'}}, 'webConfig': {'schemaVersion': 1, 'phase': 'restored', 'oldConfig': 'server.modules = ( \"mod_cgi\", \"mod_setenv\" )\\nserver.document-root = \"/opt/broray-light/web-new\"\\nserver.bind = \"127.0.0.1\"\\nserver.port = 8080\\nserver.max-request-size = 5120\\nserver.pid-file = \"/opt/broray-light/run/lighttpd.pid\"\\nserver.errorlog = \"/opt/broray-light/logs/lighttpd-error.log\"\\nindex-file.names = ( \"index.html\" )\\nmimetype.assign = ( \".html\" => \"text/html; charset=utf-8\", \".css\" => \"text/css; charset=utf-8\", \".js\" => \"application/javascript; charset=utf-8\", \".json\" => \"application/json; charset=utf-8\", \".png\" => \"image/png\", \".ico\" => \"image/x-icon\" )\\ncgi.assign = ( \".cgi\" => \"\" )\\nstatic-file.exclude-extensions = ( \".cgi\" )\\n\\n$HTTP[\"url\"] =~ \"(^/$|\\\\.html$)\" {\\n  setenv.add-response-header = (\\n    \"Cache-Control\" => \"no-store, no-cache, must-revalidate\",\\n    \"Pragma\" => \"no-cache\"\\n  )\\n}\\n', 'oldOwner': '{\\n  \"schemaVersion\": 1,\\n  \"owner\": \"BROray-Light\",\\n  \"name\": \"brolight\",\\n  \"policySha256\": \"e3e0e68b10ef69fce1c504f2689d1ecbd3f8b6b78ee6e7ab03d8ea73d63607dc\",\\n  \"lighttpdConfigSha256\": \"3ec7dcbead6bb22f5c97ceb01c7aa64a11f6d6b9f07b1d593b7ba8152737bf80\",\\n  \"upstreamHost\": \"192.0.2.1\",\\n  \"upstreamPort\": 8080\\n}\\n', 'oldConfigMode': '644', 'oldConfigSha': '3ec7dcbead6bb22f5c97ceb01c7aa64a11f6d6b9f07b1d593b7ba8152737bf80', 'oldOwnerSha': '0e034396c48ace9f629179d5c9b62f00a815af2536d8ccacdad0accf85cc3036', 'newConfig': 'server.modules = ( \"mod_cgi\", \"mod_setenv\" )\\nserver.document-root = \"/opt/broray-light/web-new\"\\nserver.bind = \"127.0.0.1\"\\nserver.port = 8080\\nserver.max-request-size = 5120\\nserver.pid-file = \"/tmp/broray-light/run/lighttpd.pid\"\\nserver.errorlog = \"/tmp/broray-light/logs/lighttpd-error.log\"\\nindex-file.names = ( \"index.html\" )\\nmimetype.assign = ( \".html\" => \"text/html; charset=utf-8\", \".css\" => \"text/css; charset=utf-8\", \".js\" => \"application/javascript; charset=utf-8\", \".json\" => \"application/json; charset=utf-8\", \".png\" => \"image/png\", \".ico\" => \"image/x-icon\" )\\ncgi.assign = ( \".cgi\" => \"\" )\\nstatic-file.exclude-extensions = ( \".cgi\" )\\n\\n$HTTP[\"url\"] =~ \"(^/$|\\\\.html$)\" {\\n  setenv.add-response-header = (\\n    \"Cache-Control\" => \"no-store, no-cache, must-revalidate\",\\n    \"Pragma\" => \"no-cache\"\\n  )\\n}\\n', 'newConfigSha': 'b6966860dbe7f074aebe195f956d4fd572666c943b716803fd9422a40ec0420b', 'newOwner': '{\"schemaVersion\":1,\"owner\":\"BROray-Light\",\"name\":\"brolight\",\"policySha256\":\"e3e0e68b10ef69fce1c504f2689d1ecbd3f8b6b78ee6e7ab03d8ea73d63607dc\",\"lighttpdConfigSha256\":\"b6966860dbe7f074aebe195f956d4fd572666c943b716803fd9422a40ec0420b\",\"upstreamHost\":\"192.0.2.1\",\"upstreamPort\":8080}\\n', 'newOwnerSha': 'e1ecd034b2ed67318caa188e227fc30799f5e7c6a3559a55bd6afcc0d51b81ac', 'staged': {}}, 'recovery': {'schemaVersion': 1, 'phase': 'restored', 'pid': '226697', 'start': '65856', 'bootId': 'c8a89114-a616-4bff-b877-2bcbc4a44e97', 'intent': 'rollback', 'transactionSha256': '8662c8b85240800c2f060a6635b190dfe3be1318af735b83ec2b8277c8c0ea78', 'ramLost': False, 'sourceSwitch': {'phase': 'restored', 'linkId': '2049:8938788', 'versionId': '2049:8938801'}, 'transactionRetired': True}, 'snapshotCleanup': 'complete'}}"
+          }
+        ],
+        "entrySha256": "f607f7071187bcdc6506f94f06e5f5072cfd55f2bb43bdaa899bceeea964d919",
+        "recoverySha256": "3a0c8d119bd4e11fb2f0152422bfeeab3c8ccd2b641eb2dcf5629a3dcb24aea4",
+        "scope": "Exact old engine, real S24/entry, actual SIGKILL and private tmpfs remount; fixture app loop/lighttpd/publication OS calls."
+      },
+      "sha256": "844f2f58e758bf33242ff1ab4ea08b8e764a2c7440b58487c2809692dff23c1b"
+    }
+  },
+  "nextRevision": "p48-restored-publication-fixture-contract",
+  "correction": "Allow exactly status and ensure in the isolated publication fixture, record invoked calls, preserve real S24 status/persistence checks. Add failure-only service diagnostic evidence.",
+  "parallelWork": "P47 clean postinst is uncommitted, static syntax PASS only; pause until P48 recovery result. It was not part of P46 CI checkout.",
+  "candidateReady": false,
+  "routerTouched": false
+}

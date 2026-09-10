@@ -1,0 +1,21 @@
+{
+  "stage": "R0013",
+  "revision": "p47-clean-install-ram-contract",
+  "status": "CHECKPOINT_BEFORE_IMPLEMENTATION",
+  "basis": "Known remaining P16 whole-lifecycle gap; prior bootstrap units cover ownership/hash cleanup but not postinst operational placement.",
+  "parallelValidation": {
+    "revision": "p46-direct-service-fixture-pid-binding",
+    "commit": "1dd0118d16a09b789f1fd3c72c9fe324b4d2bc2d",
+    "ci": "https://github.com/BROadmin/BROray-Light/actions/runs/34539645710",
+    "scope": "Immutable CI checkout; no same-revision retry"
+  },
+  "changes": [
+    "Reject package overwrite of an already installed current slot; updates use signed Light updater",
+    "Prepare app/updater operational paths using the tested protected RAM primitive",
+    "Create only durable user/runtime/ownership paths under /opt; legacy operational names are exact RAM aliases",
+    "Verify installed app-slot manifest before activation",
+    "Use real prepared app slot in bootstrap fixture and assert zero persistent operational data/locks"
+  ],
+  "candidateReady": false,
+  "routerTouched": false
+}

@@ -22,6 +22,10 @@ def exercise(f, mode):
         result=subprocess.run([*f.shell,str(service),'recover'],env=f.env,capture_output=True,text=True,timeout=240)
         detail=dict(returncode=result.returncode,stdout=result.stdout,stderr=result.stderr,
                     receipt=json.loads(journal.read_bytes()) if journal.exists() else None)
+        if result.returncode!=expected:
+            detail['fixturePublicationCalls']=(f.root/'fixture.publication-calls').read_text() if (f.root/'fixture.publication-calls').exists() else None
+            detail['fixturePidDestination']=f.env.get('BRL_FIXTURE_PIDFILE')
+            detail['pidFiles']={name:(f.app/'run'/name).read_text() if (f.app/'run'/name).exists() else None for name in ('broray-lightd.pid','lighttpd.pid')}
         assert result.returncode==expected,detail
         return detail
     if mode=='finalize':
@@ -91,6 +95,7 @@ fi
     assert f.persistent()==before,'Durable user data/config/Xray changed during dead-owner rollback'
     assert not (f.durable/'transaction.json').exists()
     assert not list((f.root/'tmp').glob('broray-light-transition.*'))
+    assert 'ensure' in (f.root/'fixture.publication-calls').read_text().splitlines()
     for name in NAMES:assert not (f.app/name).is_symlink(),name
     if mode=='dead-owner':assert (f.app/'run/web-new/sessions'/('a'*48)).read_bytes()==b'preserved-session\n'
     else:assert not (f.app/'run/web-new/sessions'/('a'*48)).exists(),'RAM session unexpectedly survived simulated reboot'
@@ -109,7 +114,7 @@ def main():
     ash.parent.mkdir(parents=True,exist_ok=True);ash.symlink_to(args.shell)
     records=[];failed=False
     def persist(status):
-        report=dict(stage='R0013',revision='p46-direct-service-fixture-pid-binding',status=status,shell=shell,tests=records,
+        report=dict(stage='R0013',revision='p48-restored-publication-fixture-contract',status=status,shell=shell,tests=records,
                     entrySha256=hashlib.sha256(ENTRY.read_bytes()).hexdigest(),
                     recoverySha256=hashlib.sha256(ENTRY.with_name('lifecycle-r1-recovery.sh').read_bytes()).hexdigest(),
                     scope='Exact old engine, real S24/entry, actual SIGKILL and private tmpfs remount; fixture app loop/lighttpd/publication OS calls.')

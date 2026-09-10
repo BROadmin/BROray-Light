@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
   "stage": "R0013_SELECTIVE_UPSTREAM_STABLE_PORT",
-  "status": "P46_CORRECTED_FIXTURE_LINUX_VALIDATION_PENDING",
-  "currentRevision": "p46-direct-service-fixture-pid-binding",
-  "activeFailure": "checkpoints/R0013/process-failures/FAILURE-P45-RECOVERY-FIXTURE-PID-BINDING.json",
+  "status": "P48_CORRECTED_PUBLICATION_FIXTURE_LINUX_PENDING_P47_PAUSED",
+  "currentRevision": "p48-restored-publication-fixture-contract",
+  "activeFailure": "checkpoints/R0013/process-failures/FAILURE-P46-RESTORED-PUBLICATION-FIXTURE-CONTRACT.json",
   "publicVersion": "2.0.0",
   "buildA": "PRELIMINARY_ENGINEERING_BYTE_PASS_NOT_FINAL_ACCEPTANCE",
   "buildB": "PRELIMINARY_ENGINEERING_BYTE_PASS_NOT_FINAL_ACCEPTANCE",
@@ -62,7 +62,7 @@
     "path": "checkpoints/R0013/UPSTREAM-PORT-MAP-P2.json",
     "sha256": "009a0f5adae08f399c82510cf680690b4c2e50bc8c659eda9c48d91b5a838121"
   },
-  "nextExactAction": "P46_BIND_DIRECT_SERVICE_FIXTURE_PID_THEN_NEW_CI_REVISION",
+  "nextExactAction": "P48_COMPLETE_MOCKED_PUBLICATION_CONTRACT_BEFORE_RESUMING_P47",
   "versionAndXray": {
     "status": "PASS_VERSION_AND_BOOTSTRAP_INPUT",
     "path": "checkpoints/R0013/UPGRADE-AND-XRAY-P10.json",

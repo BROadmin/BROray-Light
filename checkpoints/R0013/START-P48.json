@@ -1,0 +1,12 @@
+{
+  "stage": "R0013",
+  "revision": "p48-restored-publication-fixture-contract",
+  "status": "CHECKPOINT_BEFORE_CORRECTION",
+  "failure": {
+    "path": "process-failures/FAILURE-P46-RESTORED-PUBLICATION-FIXTURE-CONTRACT.json",
+    "sha256": "1882506170603a3a6474da65cfaa600ba006335e1a1b866ddfa68d0afb7424a2"
+  },
+  "change": "Only publication OS fixture accepts status/ensure and logs exact calls; failure diagnostics expose service state. Product recovery bytes unchanged from P45.",
+  "p47": "Clean install changes remain isolated, uncommitted, not included in P48 CI.",
+  "candidateReady": false
+}

@@ -45,7 +45,10 @@ class LiveFixture(WebFixture):
             (self.app/name).symlink_to('current/app/'+name,target_is_directory=True)
         # All lifecycle scripts/legacy engine bytes are unmodified. Only OS
         # publication and service workload dependencies are explicitly mocked.
-        self.write(self.root/'opt/bin/broray-light-web-publishctl',b'#!/bin/sh\n[ "$1" = status ]\n',0o755)
+        self.write(self.root/'opt/bin/broray-light-web-publishctl',b'''#!/bin/sh
+printf '%s\\n' "$1" >> "$BRORAY_LIGHT_ROOT_PREFIX/fixture.publication-calls"
+case "$1" in status|ensure) exit 0 ;; *) exit 1 ;; esac
+''',0o755)
         script='''#!/bin/sh
 export BRL_FIXTURE_PIDFILE="$BRORAY_ROOT/run/lighttpd.pid"
 exec /opt/bin/ash "$BRORAY_LIGHT_ROOT_PREFIX/opt/etc/init.d/S24broray-light" "$1"
