@@ -1,0 +1,50 @@
+{
+  "stage": "R0013",
+  "revision": "p42-live-fixture-terminal-evidence-and-scoped-exit-wait",
+  "status": "FAIL_FIRST_ERROR",
+  "failure": "LIVE_FIXTURE_TMPFS_STILL_BUSY_AFTER_KNOWN_PROCESS_EXIT",
+  "cause": "The actual live r1 update passed and its evidence was preserved. Waiting for the enumerated PID/start set did not make tmpfs unmountable (exit 32). A transient descendant inheriting a RAM log descriptor is suspected; no open-reference evidence was collected yet, so the exact residual holder is not proven.",
+  "ci": {
+    "url": "https://github.com/BROadmin/BROray-Light/actions/runs/34534743946",
+    "commit": "8326bbaaca9296354d717377a0fb9d029ca4c1ff",
+    "artifactId": 10174980744,
+    "artifactSha256": "660424376e246f261e373675e5b72cc3242b27102702ed29bb9ee286c4108e78"
+  },
+  "reports": {
+    "r0013-live-entry-dash.json": {
+      "report": {
+        "stage": "R0013",
+        "revision": "p42-live-fixture-terminal-evidence-and-scoped-exit-wait",
+        "status": "FAIL_FIRST_ERROR",
+        "shell": [
+          "/bin/dash"
+        ],
+        "tests": [
+          {
+            "name": "update",
+            "status": "PASS",
+            "detail": {
+              "returncode": 0,
+              "current": "2.0.0-r1",
+              "coordinatorPhase": "activated",
+              "legacyUpdaterCompleted": true,
+              "sessionPreserved": true
+            }
+          },
+          {
+            "name": "update-cleanup",
+            "status": "FAIL",
+            "error": "Command '['umount', '/var/tmp/r0013-updater-2cwbmb1e/tmp']' returned non-zero exit status 32."
+          }
+        ],
+        "sourceSha256": "c45f8cdde6f843e413ba67f570ef2ae67102ad80a208e7dc71e6e8260d23a294",
+        "scope": "Real signed fixture r1 update engine, cached r1 S24, new runtime-prepare and new S24, cross-filesystem RAM handoff. Daemon workload, lighttpd and publication OS calls mocked. Boot/finalization not yet integrated."
+      },
+      "sha256": "4f471b03bdda52c338c954b8b4e91d7075782931dc0b1c7f7641118d9a4fb848"
+    }
+  },
+  "nextRevision": "p43-live-fixture-tmpfs-reference-drain",
+  "correction": "Wait for /proc file-descriptor/cwd/executable references to the exact private tmpfs to drain before a single unmount; preserve bounded holder diagnostics if they do not. Do not signal unclassified holders. Gate other regression jobs on the live-entry test to stop failed revisions promptly.",
+  "candidateReady": false,
+  "routerTouched": false
+}

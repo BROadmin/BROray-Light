@@ -144,6 +144,24 @@ while :;do sleep 0.1;done
         deadline=time.monotonic()+3
         while any(live(pid) for pid in owned) and time.monotonic()<deadline:time.sleep(.02)
         assert not any(live(pid) for pid in owned),'Fixture-owned process did not exit'
+        def ram_references():
+            refs=[]
+            prefix=str(self.root/'tmp')
+            for proc in Path('/proc').glob('[0-9]*'):
+                try:
+                    links=[proc/'cwd',proc/'root',proc/'exe',*list((proc/'fd').iterdir())]
+                except OSError:continue
+                for link in links:
+                    try:value=os.readlink(link)
+                    except OSError:continue
+                    if value==prefix or value.startswith(prefix+'/'):
+                        refs.append(dict(pid=int(proc.name),object=str(link.relative_to(proc)),target=value))
+            return refs
+        deadline=time.monotonic()+3
+        refs=ram_references()
+        while refs and time.monotonic()<deadline:
+            time.sleep(.05);refs=ram_references()
+        assert not refs,'Private tmpfs holders did not drain: '+json.dumps(refs)
         super().close()
 
 
@@ -159,7 +177,7 @@ def main():
     ash.parent.mkdir(parents=True,exist_ok=True);ash.symlink_to(args.shell)
     records=[];failed=False
     def persist():
-        report=dict(stage='R0013',revision='p42-live-fixture-terminal-evidence-and-scoped-exit-wait',
+        report=dict(stage='R0013',revision='p43-live-fixture-tmpfs-reference-drain',
                     status='FAIL_FIRST_ERROR' if failed else 'IN_PROGRESS',shell=shell,tests=records,
                     sourceSha256=hashlib.sha256(ENTRY.read_bytes()).hexdigest(),
                     scope='Real r1/new S24 and entry; daemon workload/lighttpd/publication OS calls mocked. Boot/finalization not integrated.')
@@ -194,7 +212,7 @@ def main():
     finally:
         ash.unlink()
         if args.busybox_tools:utilities.cleanup()
-    report=dict(stage='R0013',revision='p42-live-fixture-terminal-evidence-and-scoped-exit-wait',
+    report=dict(stage='R0013',revision='p43-live-fixture-tmpfs-reference-drain',
                 status='FAIL_FIRST_ERROR' if failed else 'PASS_LIVE_R1_SERVICE_TRANSITION',
                 shell=shell,tests=records,sourceSha256=hashlib.sha256(ENTRY.read_bytes()).hexdigest(),
                 scope='Real signed fixture r1 update engine, cached r1 S24, new runtime-prepare and new S24, cross-filesystem RAM handoff. Daemon workload, lighttpd and publication OS calls mocked. Boot/finalization not yet integrated.')

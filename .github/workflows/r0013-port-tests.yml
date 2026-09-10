@@ -24,6 +24,7 @@ concurrency:
 
 jobs:
   isolated-process:
+    needs: isolated-live-entry
     runs-on: ubuntu-24.04
     timeout-minutes: 10
     steps:
@@ -157,6 +158,7 @@ jobs:
           path: /tmp/r0013-web-config-*.json
           if-no-files-found: ignore
   isolated-service:
+    needs: isolated-live-entry
     runs-on: ubuntu-24.04
     timeout-minutes: 10
     steps:

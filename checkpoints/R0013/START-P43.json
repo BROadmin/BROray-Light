@@ -1,0 +1,10 @@
+{
+  "stage": "R0013",
+  "revision": "p43-live-fixture-tmpfs-reference-drain",
+  "status": "CHECKPOINT_BEFORE_CORRECTION",
+  "corrects": "LIVE_FIXTURE_TMPFS_STILL_BUSY_AFTER_KNOWN_PROCESS_EXIT",
+  "scope": "Wait for /proc file-descriptor/cwd/executable references to the exact private tmpfs to drain before a single unmount; preserve bounded holder diagnostics if they do not. Do not signal unclassified holders. Gate other regression jobs on the live-entry test to stop failed revisions promptly.",
+  "productRuntimeBytesChanged": false,
+  "candidateReady": false,
+  "routerTouched": false
+}
