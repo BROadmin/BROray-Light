@@ -145,3 +145,14 @@ jobs:
           name: r0013-platform-${{ github.sha }}
           path: /tmp/r0013-platform-*.json
           if-no-files-found: ignore
+      - name: Web config and ownership receipt transaction (dash)
+        run: sudo python3 -B tools/test_r0013_web_config.py --shell /bin/dash --result /tmp/r0013-web-config-dash.json
+      - name: Web config and ownership receipt transaction (BusyBox)
+        run: sudo python3 -B tools/test_r0013_web_config.py --shell /usr/bin/busybox --busybox --busybox-tools --result /tmp/r0013-web-config-ash.json
+      - name: Preserve web configuration transaction evidence including first failure
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: r0013-web-config-${{ github.sha }}
+          path: /tmp/r0013-web-config-*.json
+          if-no-files-found: ignore

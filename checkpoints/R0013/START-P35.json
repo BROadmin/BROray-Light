@@ -1,0 +1,15 @@
+{
+  "stage": "R0013",
+  "revision": "p35-web-config-and-ownership-receipt-transaction",
+  "status": "CHECKPOINT_BEFORE_IMPLEMENTATION",
+  "scope": "Migrate the two Light-owned lighttpd runtime paths and its matching web-publish ownership receipt as one journaled lifecycle operation; preserve exact old config/receipt bytes and modes for rollback and interrupted recovery.",
+  "invariants": [
+    "Validate accepted native-auth/publication ownership and exact old config hash before changes",
+    "Change only PID/log paths, not bind/auth/session settings",
+    "Store configuration rollback state as a durable transaction record, never download scratch",
+    "Publish each verified config through a same-filesystem rename; service startup waits for the pair",
+    "Refuse missing/ambiguous ownership rather than adopt foreign config"
+  ],
+  "candidateReady": false,
+  "routerTouched": false
+}

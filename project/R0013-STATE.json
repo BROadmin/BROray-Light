@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "stage": "R0013_SELECTIVE_UPSTREAM_STABLE_PORT",
   "status": "COMPONENT_RUNTIME_PLATFORM_PASS_LIFECYCLE_INTEGRATION_PENDING",
-  "currentRevision": "p34-component-bounded-application-ram-path-contract",
+  "currentRevision": "p35-web-config-and-ownership-receipt-transaction",
   "activeFailure": null,
   "publicVersion": "2.0.0",
   "buildA": "PRELIMINARY_ENGINEERING_BYTE_PASS_NOT_FINAL_ACCEPTANCE",
@@ -62,7 +62,7 @@
     "path": "checkpoints/R0013/UPSTREAM-PORT-MAP-P2.json",
     "sha256": "009a0f5adae08f399c82510cf680690b4c2e50bc8c659eda9c48d91b5a838121"
   },
-  "nextExactAction": "P35_CONFIG_RECEIPT_ATOMIC_MIGRATION_THEN_S24_BOOT_ROLLBACK_AND_FULL_R1_STARTUP",
+  "nextExactAction": "VALIDATE_P35_WEB_CONFIG_RECEIPT_THEN_INTEGRATE_REAL_S24_STARTUP",
   "versionAndXray": {
     "status": "PASS_VERSION_AND_BOOTSTRAP_INPUT",
     "path": "checkpoints/R0013/UPGRADE-AND-XRAY-P10.json",
