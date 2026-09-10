@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0013",
+  "status": "PASS",
+  "testCount": 33,
+  "fixtureAndRealLinux": true,
+  "physicalRouterTouched": false,
+  "job": {
+    "id": 102916356985,
+    "head_sha": "ed7b85b326e4d85f9ed7f3fdeb714b255c0b6b92",
+    "status": "completed",
+    "conclusion": "success",
+    "html_url": "https://github.com/BROadmin/BROray-Light/actions/runs/34490696642/job/102916356985",
+    "steps": [
+      {
+        "name": "Set up job",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 1,
+        "started_at": "2026-09-10T14:41:25Z",
+        "completed_at": "2026-09-10T14:41:26Z"
+      },
+      {
+        "name": "Run actions/checkout@v4",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 2,
+        "started_at": "2026-09-10T14:41:26Z",
+        "completed_at": "2026-09-10T14:41:27Z"
+      },
+      {
+        "name": "Install isolated test dependencies",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 3,
+        "started_at": "2026-09-10T14:41:27Z",
+        "completed_at": "2026-09-10T14:41:39Z"
+      },
+      {
+        "name": "BusyBox ash syntax",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 4,
+        "started_at": "2026-09-10T14:41:39Z",
+        "completed_at": "2026-09-10T14:41:39Z"
+      },
+      {
+        "name": "Real Linux process ownership and signal isolation",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 5,
+        "started_at": "2026-09-10T14:41:39Z",
+        "completed_at": "2026-09-10T14:41:40Z"
+      },
+      {
+        "name": "Post Run actions/checkout@v4",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 10,
+        "started_at": "2026-09-10T14:41:40Z",
+        "completed_at": "2026-09-10T14:41:40Z"
+      },
+      {
+        "name": "Complete job",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 11,
+        "started_at": "2026-09-10T14:41:40Z",
+        "completed_at": "2026-09-10T14:41:40Z"
+      }
+    ]
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0013",
+  "revision": "p5-active-name-local",
+  "status": "FAIL_FIRST_ERROR",
+  "gate": "SUBSCRIPTION_TRANSACTION_TEST_HARNESS",
+  "test": "active-rename",
+  "cause": "Bundled Windows Git shell lacks sha256sum and chmod. The fixture reached the real transaction without a dependency preflight; shell commands failed and rollback returned SERVER_SYNC_ERROR.",
+  "productDefectProven": false,
+  "sameRevisionRetried": false,
+  "nextCorrectedRevision": "p6-active-name-linux-harness",
+  "correction": "Require sha256sum/chmod/jq before mutation; run filesystem transaction regression under isolated Ubuntu/dash with declared dependencies. Do not substitute hashing or permission semantics.",
+  "candidateReady": false
+}
