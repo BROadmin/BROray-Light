@@ -1,0 +1,42 @@
+{
+  "stage": "R0013",
+  "revision": "p38-real-web-daemon-identity-before-runtime-migration",
+  "status": "FAIL_FIRST_ERROR",
+  "failure": "REAL_DAEMON_PID_MODE_0644_REFUSED",
+  "cause": "Actual lighttpd process identity was accepted, but stop refused its root-owned 0644 PID file because service PID validation reused the 0600-only generic private record helper. C fixtures had written 0600 and did not reveal the daemon contract.",
+  "ci": {
+    "url": "https://github.com/BROadmin/BROray-Light/actions/runs/34531364805",
+    "commit": "7ae4faab8a1b7e4f5fed2c1966574602c00b4740",
+    "artifactId": 10173614319,
+    "artifactSha256": "1ab0b48f00da150cb8bf11f0cdd44656cf55ee06d4485a3cc592739f6ec44ccd"
+  },
+  "reports": {
+    "r0013-service-dash.json": {
+      "report": {
+        "stage": "R0013",
+        "revision": "p38-real-web-daemon-identity-before-runtime-migration",
+        "status": "FAIL_FIRST_ERROR",
+        "shell": [
+          "/bin/dash"
+        ],
+        "tests": [
+          {
+            "name": "actual-linux-daemon-web",
+            "status": "FAIL",
+            "error": "{\"role\": \"web\", \"pidMode\": \"0o644\", \"cmdline\": \"/var/tmp/r0013-service-is4r0jji/tools/lighttpd\\u0000-f\\u0000/var/tmp/r0013-service-is4r0jji/opt/broray-light/config/lighttpd.conf\\u0000\"} ('brl_service_stop_role web', 1, '', '')"
+          }
+        ],
+        "scope": "Actual lighttpd/nginx and real S24/publication/private tmpfs; application daemon loop, Xray and Keenetic commands mocked. Not full r1/boot acceptance.",
+        "sourceSha256": {
+          "packaging/r0013-overlay/system/packaging/opkg/S24broray-light": "4c0b6cd4c2eb1e5deaee92007288cc2f9dedaa43fb16ee6b99921acad950f55b",
+          "packaging/r0013-overlay/shared/service-process.sh": "285ccc22291f367f27b7a95e05fc58bd1db3bbec93bd1949c1ff30c03daba2c5"
+        }
+      },
+      "sha256": "9f5398cea227889d8b0b8bc4ec0d854209dca3a08bdabd121ebfb4ff61e5b0ef"
+    }
+  },
+  "nextRevision": "p39-private-root-owned-daemon-pid-contract",
+  "correction": "Use role-specific PID validation accepting only root-owned regular single-link 0600/0644 files beneath an entirely 0700 protected RAM parent chain. Retain exact executable/argv/PID start checks and add writable/symlink/hardlink negative cases.",
+  "candidateReady": false,
+  "routerTouched": false
+}

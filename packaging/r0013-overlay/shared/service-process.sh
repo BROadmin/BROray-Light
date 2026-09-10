@@ -64,12 +64,27 @@ brl_service_pids()
     return 0
 }
 
+brl_service_pidfile_valid()
+{
+    local path parent
+    path="$1"
+    case "$path" in "$BRL_RAM/run/broray-lightd.pid"|"$BRL_RAM/run/lighttpd.pid"|"$BRL_RAM/run/web-new/native-auth/nginx.pid") ;; *) return 1 ;; esac
+    [ -f "$path" ] && [ ! -L "$path" ] && [ "$(stat -c '%h' "$path")" = 1 ] || return 1
+    case "$(stat -c '%u:%a' "$path")" in 0:600|0:644) ;; *) return 1 ;; esac
+    parent="${path%/*}"
+    while :; do
+        brl_ram_dir_valid "$parent" || return 1
+        [ "$parent" != "$BRL_RAM" ] || break
+        parent="${parent%/*}"
+    done
+}
+
 brl_service_pidfile()
 {
     local pid
     brl_service_role "$1" || return 1
     [ -e "$BRL_ROLE_PID" ] || [ -L "$BRL_ROLE_PID" ] || return 0
-    brl_ram_file_valid "$BRL_ROLE_PID" || return 1
+    brl_service_pidfile_valid "$BRL_ROLE_PID" || return 1
     pid="$(awk 'NR==1 && /^[0-9]+$/ && $0>1 {p=$0;next} {bad=1} END {if(NR==1&&!bad)print p;else exit 1}' "$BRL_ROLE_PID")" || return 1
     if [ -n "$(brl_service_start_id "$pid")" ]; then
         brl_service_identity "$1" "$pid" >/dev/null || return 1
@@ -129,5 +144,5 @@ brl_service_stop_role()
             [ "$(readlink "$current" 2>/dev/null)" != "$BRL_ROLE_BIN" ] || return 1
         done
     fi
-    [ ! -e "$BRL_ROLE_PID" ] || { brl_ram_file_valid "$BRL_ROLE_PID" && rm "$BRL_ROLE_PID"; }
+    [ ! -e "$BRL_ROLE_PID" ] || { brl_service_pidfile_valid "$BRL_ROLE_PID" && rm "$BRL_ROLE_PID"; }
 }

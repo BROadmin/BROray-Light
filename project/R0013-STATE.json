@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
   "stage": "R0013_SELECTIVE_UPSTREAM_STABLE_PORT",
-  "status": "SERVICE_COMPONENTS_PASS_FULL_LEGACY_LIFECYCLE_PENDING",
-  "currentRevision": "p38-real-web-daemon-identity-before-runtime-migration",
-  "activeFailure": null,
+  "status": "FIRST_ERROR_RECORDED_CORRECTION_PENDING",
+  "currentRevision": "p39-private-root-owned-daemon-pid-contract",
+  "activeFailure": "checkpoints/R0013/process-failures/FAILURE-P38-REAL-DAEMON-PID-MODE.json",
   "publicVersion": "2.0.0",
   "buildA": "PRELIMINARY_ENGINEERING_BYTE_PASS_NOT_FINAL_ACCEPTANCE",
   "buildB": "PRELIMINARY_ENGINEERING_BYTE_PASS_NOT_FINAL_ACCEPTANCE",
@@ -62,7 +62,7 @@
     "path": "checkpoints/R0013/UPSTREAM-PORT-MAP-P2.json",
     "sha256": "009a0f5adae08f399c82510cf680690b4c2e50bc8c659eda9c48d91b5a838121"
   },
-  "nextExactAction": "P38_VALIDATE_ACTUAL_WEB_DAEMONS_BEFORE_LEGACY_RUNTIME_HANDOFF",
+  "nextExactAction": "P39_CORRECT_PRIVATE_PID_MODE_CONTRACT_AND_VALIDATE_ACTUAL_DAEMONS",
   "versionAndXray": {
     "status": "PASS_VERSION_AND_BOOTSTRAP_INPUT",
     "path": "checkpoints/R0013/UPGRADE-AND-XRAY-P10.json",
