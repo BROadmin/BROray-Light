@@ -37,7 +37,7 @@ brl_ram_child()
     brl_ram_dir_valid "$1"
 }
 
-brl_ram_prepare()
+brl_ram_prepare_app()
 {
     local prefix base kind child
     prefix="${BRORAY_LIGHT_ROOT_PREFIX:-}"
@@ -53,7 +53,6 @@ brl_ram_prepare()
     BRL_RAM="$base/broray-light"
     BRL_UPDATER_RAM="$base/broray-light-updater"
     brl_ram_namespace "$BRL_RAM" 'BROray-Light:runtime/1' || return $?
-    brl_ram_namespace "$BRL_UPDATER_RAM" 'BROray-Light:updater-runtime/1' || return $?
     for child in run tmp logs cache; do
         brl_ram_child "$BRL_RAM/$child" || return $?
     done
@@ -61,11 +60,17 @@ brl_ram_prepare()
         brl_ram_child "$BRL_RAM/run/$child" || return $?
     done
     brl_ram_child "$BRL_RAM/run/web-new/sessions" || return $?
-    brl_ram_child "$BRL_UPDATER_RAM/work" || return $?
     BRL_GLOBAL_LOCK="$BRL_RAM/run/locks/global-operation.lock"
     BRL_REQUEST_LOCK="$BRL_UPDATER_RAM/request.lock"
     BRL_ADMISSION="$BRL_RAM/run/locks/admission"
     export BRL_RAM BRL_UPDATER_RAM BRL_GLOBAL_LOCK BRL_REQUEST_LOCK
+}
+
+brl_ram_prepare()
+{
+    brl_ram_prepare_app || return $?
+    brl_ram_namespace "$BRL_UPDATER_RAM" 'BROray-Light:updater-runtime/1' || return $?
+    brl_ram_child "$BRL_UPDATER_RAM/work"
 }
 
 brl_process_start()

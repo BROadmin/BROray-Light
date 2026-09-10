@@ -1,0 +1,42 @@
+{
+  "stage": "R0013",
+  "revision": "p45-implementation-notes",
+  "status": "INCOMPLETE_NOT_VALIDATED",
+  "sourceCommitBeforeP45": "da35ad28eff2924fc0510beeb6fe6a902d15ef64",
+  "importantFindings": [
+    "Current P41 live coordinator is bounded PASS in P44; no product runtime failure was involved in P41/P42/P43 fixture corrections.",
+    "Old S23 calls whichever updater executable is currently installed. Old updater recover invokes service status/rollback. Therefore new S24 must be the first installed external recovery anchor, before RAM aliases/config mutation. P45 has reordered its anchor but recovery dispatcher is still not implemented.",
+    "Normal RAM preparation refuses the old unmarked r1 updater download namespace. P45 splits brl_ram_prepare_app to allow protected application admission first, then dead-owner authority can journal/move the old updater namespace.",
+    "New RAM global lock release calls full brl_ram_prepare. Do not call it after restoring the old unmarked updater namespace. Final restore must remove own global lock under held admission, perform namespace restoration with narrowly validated admission authority, then leave admission without full RAM prepare.",
+    "Process lock contract is cooperative; concurrent root administration replacing trusted directories is explicitly out of scope in runtime-ram.sh. Still refuse foreign process identities, links, unknown objects and live lock holders.",
+    "Code sourcing must validate every ancestor from fixed slot helper directory through ROOT before reading an entry/helper, not just the final file; otherwise a writable/symlink ancestor could defeat pre-execution trust."
+  ],
+  "implementedPartial": [
+    "runtime-ram.sh: brl_ram_prepare_app creates/validates application namespace and lock paths only; brl_ram_prepare completes updater namespace/work.",
+    "lifecycle-r1-journal.sh: receipt now records/requires actual legacyBootId and sourceSlotManifestSha256; old slot complete manifest checked before record.",
+    "lifecycle-r1-platform.sh: extracted prepare, added recovery_anchor installing S24 first, preserved installed-phase activate idempotence.",
+    "lifecycle-r1-entry.sh: invokes recovery_anchor before RAM promotion.",
+    "New unbundled lifecycle-r1-recovery.sh contains only slots_bound/base/authorized/begin foundations. It is NOT loaded, integrated or functionally tested."
+  ],
+  "nextImplementation": [
+    "Move brl_r1_work_inventory definition from lifecycle-r1-ram.sh to admission.sh (P27 journal tests do not source lifecycle-r1-ram). Capture original updater work inode/mode/inventory in initial journal so recovery before ramTransition exists remains bound to exact old download files.",
+    "Keep brl_r1_transition_live exact. Add an explicitly separate transition_authorized wrapper with default-deny recovery function; load real recovery authority from sealed helper last. Platform and controlled RAM/tree restore may use the wrapper; normal live entry must not gain an environment bypass.",
+    "Complete RAM handling: same boot requires original snapshot identities and exact unmarked work binding; actual different boot plus absent snapshot allows RAM-lost branch. Do not silently recreate missing same-boot backups.",
+    "Implement conservative decision: absent/committed old transaction + current new + coordinator activated + exact new platform/config/aliases => finalize. Unfinished target-active => rollback. Validate exact source/target IDs/current link before acting; reject inconsistent foreign state.",
+    "For same-boot rollback, scoped-stop new daemon/web/auth/Xray, restore byte-exact config/receipt and old runtime snapshots; defer updater RAM restoration until after new global fence release under admission.",
+    "For RAM-lost rollback, config/platform are durable; validate original surviving operational objects and remove only exact known aliases. Recreate empty original run/logs/tmp/update roots with recorded root modes as needed. Losing sessions/logs at reboot is expected; user config/servers/subscriptions/runtime cannot be lost.",
+    "Restore current link/version through recorded adjacent same-filesystem installed candidates; validate old slot manifest SHA from original durable receipt. Do not overwrite unknown staging objects.",
+    "Restore S24 last when complete old service state is coherent. Release the new fence before invoking old service start. Keep signature/trust/update compare semantics unchanged.",
+    "Finalize successful live update automatically from an appropriate product lifecycle entry after old owner exits (e.g. daemon one-step lifecycle call and/or S23/updater/runtime-prepare preguard); no extra primary service. While old owner is still alive, return busy without mutating.",
+    "Retire only exact old operational state/ready records and recorded RAM snapshots/download inputs. Cleanup of newly created snapshot copies is needed on both success and rollback; old accepted r1 download files can remain only as the historical r1 contract, not unbounded new duplicate snapshots.",
+    "Wire fixed-slot entry before ordinary S24/S23/updater RAM guards. Normal finalized state must validate and permit regular startup without requiring deleted snapshot directories.",
+    "Add actual owner-death tests: pause real service hook after coordinator activates, kill exact old updater, release hook; use actual same-boot recovery. Simulated reboot: stop fixture-owned processes, drain descriptors, unmount/remount tmpfs, change only fixture receipt's legacyBootId to another valid UUID (no production boot-id env bypass). Add early-anchor, partial/config/platform, foreign-lock/object cases."
+  ],
+  "fixtureLessons": [
+    "test_r0013_live_entry.py now writes primary evidence before cleanup, kills only fixture PID/start + known descendants, then waits for /proc FD/cwd/executable refs to exact private tmpfs to drain before one unmount. This fixed exit32 cleanup races.",
+    "Accepted r1 fixture must preseed config/system/settings.json and server-auto-switch.json from pinned Git defaults. Keep strict rollback byte equality; per-path difference diagnostics are now included.",
+    "Real positive health uses actual S24 status. Daemon workload, lighttpd process and publication OS calls remain bounded fixtures; true Linux lighttpd/nginx were tested separately in P39."
+  ],
+  "candidateReady": false,
+  "routerTouched": false
+}

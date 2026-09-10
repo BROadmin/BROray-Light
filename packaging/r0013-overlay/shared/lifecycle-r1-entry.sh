@@ -4,15 +4,20 @@
 
 brl_live_load()
 {
-    local prefix slot helper path
+    local prefix slot helper path parent
     prefix="${BRORAY_LIGHT_ROOT_PREFIX:-}"
     case "$prefix" in *[!A-Za-z0-9/_.-]*|*/../*|*/..|*/./*|*/.|*//*|*/) return 1 ;; esac
     case "$prefix" in ''|/*) ;; *) return 1 ;; esac
     ROOT="$prefix/opt/broray-light"
     slot="$ROOT/releases/2.0.0-r1/app"
+    for parent in "$ROOT" "$ROOT/releases" "$ROOT/releases/2.0.0-r1" "$slot" "$slot/lib" \
+        "$slot/share" "$slot/share/lifecycle" "$slot/share/lifecycle/helpers"; do
+        [ -d "$parent" ] && [ ! -L "$parent" ] || return 1
+        case "$(stat -c '%u:%a' "$parent")" in 0:700|0:755) ;; *) return 1 ;; esac
+    done
     for helper in runtime-ram.sh lifecycle-r1-admission.sh lifecycle-r1-journal.sh \
         lifecycle-r1-ram.sh lifecycle-r1-platform.sh lifecycle-r1-web-config.sh \
-        service-process.sh lifecycle-r1-runtime-trees.sh; do
+        service-process.sh lifecycle-r1-runtime-trees.sh lifecycle-r1-recovery.sh; do
         path="$slot/share/lifecycle/helpers/$helper"
         [ -f "$path" ] && [ ! -L "$path" ] && [ "$(stat -c '%u:%a:%h' "$path")" = 0:644:1 ] || return 1
         . "$path" || return 1
@@ -110,7 +115,7 @@ brl_live_prepare()
         *) return 1 ;;
     esac
     brl_r1_ram_save '.coordinator={schemaVersion:1,phase:"prepared"}' || return 1
-    if brl_r1_ram_promote && brl_tree_prepare_all && brl_web_config_prepare &&
+    if brl_platform_recovery_anchor && brl_r1_ram_promote && brl_tree_prepare_all && brl_web_config_prepare &&
         brl_tree_promote && brl_web_config_activate && brl_platform_activate &&
         brl_r1_ram_save '.coordinator.phase="starting"' &&
         "${BRORAY_LIGHT_ROOT_PREFIX:-}/opt/etc/init.d/S24broray-light" start &&
@@ -126,9 +131,14 @@ brl_r1_entry()
     local kind action current
     kind="$1"; action="${2:-}"
     brl_live_load || return 1
+    if brl_r1_receipt_valid &&
+        [ "$(brl_process_start "$(jq -r '.legacyPid' "$BRL_R1_JOURNAL")" 2>/dev/null || true)" != "$(jq -r '.legacyStart' "$BRL_R1_JOURNAL")" ]; then
+        brl_recovery_run; return $?
+    fi
     case "$kind" in
         prepare) brl_live_prepare; return $? ;;
         service)
+            [ "$action" != recover ] || return 2
             brl_live_transaction || return 1
             current="$(readlink "$ROOT/current")"
             if [ "$current" = releases/1.0.0-r1 ]; then

@@ -12,6 +12,12 @@ cleanup(){ rm -f "$PIDFILE"; }
 trap 'cleanup; exit 0' HUP INT TERM
 trap cleanup EXIT
 while :; do
+    if [ -e "${BRORAY_LIGHT_ROOT_PREFIX:-}/opt/var/lib/broray-light-updater/legacy-transition.json" ]; then
+        "${BRORAY_LIGHT_ROOT_PREFIX:-}/opt/etc/init.d/S24broray-light" recover >/dev/null 2>&1 || {
+            sleep "$INTERVAL"
+            continue
+        }
+    fi
     if ! broray_xray_runtime_pid >/dev/null 2>&1 && [ -x "$ROOT/runtime/xray" ] && [ -s "$ROOT/config/config.json" ]; then
         XRAY_LOCATION_ASSET="$ROOT/bin" "$ROOT/runtime/xray" run -test -c "$ROOT/config/config.json" >/dev/null 2>&1 &&
             "$ROOT/bin/broray-xray-start" >>"$ROOT/logs/xray.log" 2>&1 &

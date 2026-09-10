@@ -1,0 +1,22 @@
+{
+  "stage": "R0013",
+  "revision": "p45-dead-legacy-owner-recovery-and-boot-coordinator",
+  "status": "CHECKPOINT_BEFORE_IMPLEMENTATION",
+  "scope": "Complete the r1 lifecycle after the old updater exits or power is lost. Keep authorization backed by signed-slot/durable receipt identities and an independently held new RAM lock.",
+  "requiredChanges": [
+    "Record actual /proc boot_id and source-slot manifest SHA in the initial transition receipt.",
+    "Install manifest-bound new S24 as recovery entry before mutating old RAM/tree/config; leave other platform activation order explicit.",
+    "Load recovery from the sealed fixed candidate slot before ordinary S24/S23/updater RAM guards. No environment flag may bypass legacy admission.",
+    "Admit recovery only with dead recorded legacy PID/start, exact old/new slot hashes, coownership clear and old lock inode/content validation. Reconcile old locks under new RAM admission, then acquire/record this recovery process's global lock.",
+    "Separate live-child authority from recovery authority. Recovery requires its own actual PID/start and exact root-owned global lock owner; all platform/config/tree writes must revalidate it.",
+    "If the original boot is unchanged, require RAM snapshot identities; never turn missing same-boot backups into automatic acceptance.",
+    "If actual boot_id changed and RAM snapshots are absent, restore only durable config/platform, exact current/version and known operational root shapes. Recreate empty r1 runtime roots; sessions/logs may be absent after reboot, user data/Xray may not.",
+    "Conservatively roll back unfinished target-active transactions. Only finalize current new slot if old transaction is absent/committed and coordinator reached activated, with all installed targets/config/aliases verified.",
+    "Release the new operation fence before final old-updater RAM namespace restoration. Serialize the last namespace step under validated admission; no new operation may cross a half-restored namespace.",
+    "Finalization removes only recorded old RAM download/runtime snapshots and exact old operational state/ready records; keep user data, old app slots and durable receipts. No recursive deletion of unknown files.",
+    "Test real old-owner death, same-boot recovery, simulated boot-id change plus actual tmpfs loss, foreign PID/lock/object refusals, and config/platform/version/current persistence."
+  ],
+  "candidateReady": false,
+  "routerTouched": false,
+  "nextAfterPass": "Clean postinst + full prepared-app install/update/equal/downgrade/rollback/persistence; every WebUI control/API/native session; independent signed A/B and authorized target gates."
+}

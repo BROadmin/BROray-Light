@@ -3,10 +3,30 @@ set -eu
 ROOT="${BRORAY_LIGHT_ROOT_PREFIX:-}/opt/broray-light"
 legacy_root="${BRORAY_LIGHT_ROOT_PREFIX:-}/opt/var/lock"
 legacy_receipt="${BRORAY_LIGHT_ROOT_PREFIX:-}/opt/var/lib/broray-light-updater/legacy-transition.json"
-if [ -e "$legacy_receipt" ] || [ -L "$legacy_receipt" ] ||
+legacy_finalized=false
+if [ -d "${legacy_receipt%/*}" ] && [ ! -L "${legacy_receipt%/*}" ] &&
+    [ -f "$legacy_receipt" ] && [ ! -L "$legacy_receipt" ] &&
+    [ "$(stat -c '%u:%a:%h' "$legacy_receipt")" = 0:600:1 ] &&
+    [ ! -e "$legacy_root/broray-light/global-operation.lock" ] && [ ! -L "$legacy_root/broray-light/global-operation.lock" ] &&
+    [ ! -e "$legacy_root/broray-light-updater/request.lock" ] && [ ! -L "$legacy_root/broray-light-updater/request.lock" ]; then
+    case "$(stat -c '%u:%a' "${legacy_receipt%/*}")" in
+        0:700|0:755)
+            if jq -e '.schemaVersion==1 and .product=="BROray-Light" and .sourceRelease=="1.0.0-r1" and
+                .targetRelease=="2.0.0-r1" and .legacyLocks=="cleared" and .coordinator.phase=="finalized" and
+                .recovery.phase=="finalized" and (.snapshotCleanup=="complete" or .snapshotCleanup=="ram-lost")' "$legacy_receipt" >/dev/null 2>&1; then legacy_finalized=true; fi ;;
+    esac
+fi
+if [ "$legacy_finalized" != true ] && { [ -e "$legacy_receipt" ] || [ -L "$legacy_receipt" ] ||
     [ -e "$legacy_root/broray-light/global-operation.lock" ] || [ -L "$legacy_root/broray-light/global-operation.lock" ] ||
-    [ -e "$legacy_root/broray-light-updater/request.lock" ] || [ -L "$legacy_root/broray-light-updater/request.lock" ]; then
+    [ -e "$legacy_root/broray-light-updater/request.lock" ] || [ -L "$legacy_root/broray-light-updater/request.lock" ]; }; then
     legacy_entry="$ROOT/releases/2.0.0-r1/app/share/lifecycle/helpers/lifecycle-r1-entry.sh"
+    legacy_parent="${legacy_entry%/*}"
+    while :; do
+        [ -d "$legacy_parent" ] && [ ! -L "$legacy_parent" ] || exit 1
+        case "$(stat -c '%u:%a' "$legacy_parent")" in 0:700|0:755) ;; *) exit 1 ;; esac
+        [ "$legacy_parent" != "$ROOT" ] || break
+        legacy_parent="${legacy_parent%/*}"
+    done
     [ -f "$legacy_entry" ] && [ ! -L "$legacy_entry" ] && [ "$(stat -c '%u:%a:%h' "$legacy_entry")" = 0:644:1 ] || exit 1
     . "$legacy_entry" || exit 1
     legacy_rc=0

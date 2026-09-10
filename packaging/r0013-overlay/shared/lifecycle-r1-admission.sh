@@ -22,6 +22,20 @@ brl_r1_directory()
     case "$(stat -c '%u:%a' "$1" 2>/dev/null)" in 0:700|0:755) ;; *) return 1 ;; esac
 }
 
+brl_r1_work_inventory()
+{
+    local path name count
+    brl_r1_directory "$1" || return 1
+    count="$(find "$1" -mindepth 1 -maxdepth 1 -print | wc -l | tr -d ' ')"
+    [ "$count" = 4 ] || return 1
+    for name in app.tar.gz archive.list release.json release.json.minisig; do
+        path="$1/$name"
+        brl_r1_regular "$path" || return 1
+        printf '%s %s %s %s\n' "$name" "$(stat -c '%d:%i' "$path")" \
+            "$(stat -c '%a' "$path")" "$(sha256sum "$path" | awk '{print $1}')"
+    done
+}
+
 brl_r1_lock_shape()
 {
     brl_r1_directory "$1" && brl_r1_regular "$1/pid" &&

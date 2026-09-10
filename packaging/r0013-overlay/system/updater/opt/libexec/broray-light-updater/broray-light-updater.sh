@@ -5,6 +5,15 @@ set -u
 UPDATER_VERSION=5
 UPDATER_ENGINE='broray-light-updater/5-light2-ram'
 ROOT_PREFIX="${BRORAY_LIGHT_ROOT_PREFIX:-}"
+LEGACY_RECEIPT="$ROOT_PREFIX/opt/var/lib/broray-light-updater/legacy-transition.json"
+if [ -e "$LEGACY_RECEIPT" ] || [ -L "$LEGACY_RECEIPT" ]; then
+    RECOVERY_SERVICE="$ROOT_PREFIX/opt/etc/init.d/S24broray-light"
+    [ -f "$RECOVERY_SERVICE" ] && [ ! -L "$RECOVERY_SERVICE" ] &&
+        [ "$(stat -c '%u:%a:%h' "$RECOVERY_SERVICE")" = 0:755:1 ] || exit 1
+    "$RECOVERY_SERVICE" recover || exit 1
+    # A cached new engine must not continue after recovery restored r1.
+    [ "$(readlink "$ROOT_PREFIX/opt/broray-light/current")" != releases/1.0.0-r1 ] || exit 1
+fi
 APP_ROOT="${BRORAY_LIGHT_APP_ROOT:-$ROOT_PREFIX/opt/broray-light}"
 STATE_ROOT="${BRORAY_LIGHT_UPDATER_STATE_ROOT:-$ROOT_PREFIX/opt/var/lib/broray-light-updater}"
 OPERATIONS_ROOT="${BRORAY_LIGHT_OPERATIONS_ROOT:-$ROOT_PREFIX/opt/var/lib/broray-light/operations}"

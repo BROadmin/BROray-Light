@@ -1,0 +1,113 @@
+{
+  "stage": "R0013",
+  "revision": "p45-dead-owner-and-boot-recovery",
+  "status": "LOCAL_SYNTAX_AST_AND_PREPARED_APP_PASS_LINUX_PENDING",
+  "files": [
+    {
+      "path": ".github/workflows/r0013-port-tests.yml",
+      "sha256": "67f0d3017b3b3bdab20d8b023413b70cec7c2f6dae948e849032efc2f743b5a0",
+      "bytes": 11948
+    },
+    {
+      "path": "packaging/r0013-overlay/app/bin/broray-lightd",
+      "sha256": "3e98dc393ce10cd8c2ab55b54004815727bed45f02f36faaf914f87d0f2d2544",
+      "bytes": 1315
+    },
+    {
+      "path": "packaging/r0013-overlay/runtime-paths.json",
+      "sha256": "2084e66e761c327080a871ad336007ee5ef0e67c710c24ac10769945039806a9",
+      "bytes": 17242
+    },
+    {
+      "path": "packaging/r0013-overlay/shared/lifecycle-r1-admission.sh",
+      "sha256": "ab9e064667584f83266236a3fd9d6aa3b739332e43117388a12a458b0546cd52",
+      "bytes": 7381
+    },
+    {
+      "path": "packaging/r0013-overlay/shared/lifecycle-r1-entry.sh",
+      "sha256": "f607f7071187bcdc6506f94f06e5f5072cfd55f2bb43bdaa899bceeea964d919",
+      "bytes": 7169
+    },
+    {
+      "path": "packaging/r0013-overlay/shared/lifecycle-r1-journal.sh",
+      "sha256": "c8344a0465f194863c27f4b0f2f1ee01f20b2f194b3fad9acbac1183d2608031",
+      "bytes": 8874
+    },
+    {
+      "path": "packaging/r0013-overlay/shared/lifecycle-r1-platform.sh",
+      "sha256": "fa0923e8932e1172ae5c9debe23cfdcd7d836b950c319c0874bec166aa3fcb41",
+      "bytes": 9016
+    },
+    {
+      "path": "packaging/r0013-overlay/shared/lifecycle-r1-ram.sh",
+      "sha256": "c2e43adb52af6445116ac5f50153e712acaf3698de35d2b369cad9659d686d77",
+      "bytes": 9678
+    },
+    {
+      "path": "packaging/r0013-overlay/shared/lifecycle-r1-runtime-trees.sh",
+      "sha256": "fd71ee7dd8a33a30734bdb63964e315f10a784e02702fbf0750b021eb8d2e4bc",
+      "bytes": 16338
+    },
+    {
+      "path": "packaging/r0013-overlay/shared/runtime-prepare.sh",
+      "sha256": "8bc4b2f3065a86fa8701fd28219c0d74fed3975fd126c10373788aec21883d54",
+      "bytes": 4593
+    },
+    {
+      "path": "packaging/r0013-overlay/shared/runtime-ram.sh",
+      "sha256": "9a291fe58ffcff10175c377ffd08fe57255e26203879e30241a626d88787f8e0",
+      "bytes": 6978
+    },
+    {
+      "path": "packaging/r0013-overlay/system/packaging/opkg/S24broray-light",
+      "sha256": "1abe1169c6dd3bd2908f41d0721fba9ed1222bed910f766ab5e80a5293c2246c",
+      "bytes": 4426
+    },
+    {
+      "path": "packaging/r0013-overlay/system/updater/opt/etc/init.d/S23broray-light-updater",
+      "sha256": "b3a0ccc1fec1f6f38a3ea2ae289a23eed901033e13cb311646735cd574a9eb05",
+      "bytes": 1762
+    },
+    {
+      "path": "packaging/r0013-overlay/system/updater/opt/libexec/broray-light-updater/broray-light-updater.sh",
+      "sha256": "717094a3dcebe2dfe59d5c990c138914c498d34443bce4820ed591cf26a149aa",
+      "bytes": 22459
+    },
+    {
+      "path": "tools/build_r0013_release.py",
+      "sha256": "43ce58144a7bca80ebf4eab761cf0f08b6f479f3ffed3d19220f1f09e37ca9f8",
+      "bytes": 14658
+    },
+    {
+      "path": "tools/test_r0013_live_entry.py",
+      "sha256": "cbd0d72beb53a8d99c8411eaf0b272c65cc09e6bc88ade8cf0f30b6c2af9e69e",
+      "bytes": 13567
+    },
+    {
+      "path": "packaging/r0013-overlay/shared/lifecycle-r1-recovery.sh",
+      "sha256": "3a0c8d119bd4e11fb2f0152422bfeeab3c8ccd2b641eb2dcf5629a3dcb24aea4",
+      "bytes": 23971
+    },
+    {
+      "path": "tools/test_r0013_recovery.py",
+      "sha256": "932a7ee35bbb7d0d191ac01c5de78471c9b87af42d76ecc764843fe2e8e50ece",
+      "bytes": 7892
+    }
+  ],
+  "preparedApplicationFiles": 146,
+  "testsAdded": [
+    "successful migration finalization and repeat",
+    "real old updater SIGKILL then rollback",
+    "actual private tmpfs remount then rollback",
+    "foreign legacy lock object refused",
+    "tampered old slot refused"
+  ],
+  "notYetAccepted": [
+    "early old S23 boot path",
+    "all intermediate interruption windows",
+    "old persistent operational state retirement",
+    "complete clean install / prepared WebUI / target / final builds"
+  ],
+  "candidateReady": false,
+  "routerTouched": false
+}

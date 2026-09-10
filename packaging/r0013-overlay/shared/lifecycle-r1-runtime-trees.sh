@@ -10,7 +10,7 @@ brl_legacy_tree_names()
 brl_legacy_quiesce()
 {
     local ROOT BRL_RAM role pid pids start i path actual binary
-    brl_r1_transition_live || return 1
+    brl_r1_transition_authorized || return 1
     ROOT="${BRORAY_LIGHT_ROOT_PREFIX:-}/opt/broray-light"
     BRL_RAM="$ROOT" # Only this scoped function addresses the OLD PID locations.
     for role in daemon web auth; do

@@ -30,13 +30,19 @@ brl_r1_receipt_valid()
       (.legacyStart|type=="string" and test("^[0-9]+$")) and
       .engineSha256=="773aaf37893ab100e7023d63c8061d8c4763a4d6186844bb3b671d758c145743" and
       (.slotManifestSha256|type=="string" and test("^[0-9a-f]{64}$")) and
+      (.sourceSlotManifestSha256|type=="string" and test("^[0-9a-f]{64}$")) and
+      (.legacyBootId|type=="string" and test("^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$")) and
+      (.legacyWork.id|type=="string" and test("^[0-9]+:[0-9]+$")) and
+      (.legacyWork.mode=="700" or .legacyWork.mode=="755") and
+      (.legacyWork.inventory|type=="string" and length>0) and
       ([.requestIds,.globalIds] | all(type=="array" and length==3 and all(type=="string" and test("^[0-9]+:[0-9]+$"))))
     ' "$BRL_R1_JOURNAL" >/dev/null 2>&1
 }
 
 brl_r1_transition_record()
 {
-    local prefix request global request_ids global_ids slot_sha staged
+    local prefix request global request_ids global_ids slot_sha source_sha source_slot boot staged
+    local work inventory work_id work_mode
     brl_r1_transition_admitted || return 1
     brl_r1_journal_path || return 1
     prefix="${BRORAY_LIGHT_ROOT_PREFIX:-}"
@@ -45,21 +51,36 @@ brl_r1_transition_record()
     request_ids="$(brl_r1_lock_ids "$request")" || return 1
     global_ids="$(brl_r1_lock_ids "$global")" || return 1
     slot_sha="$(sha256sum "$prefix/opt/broray-light/current/APP-SHA256SUMS" | awk '{print $1}')"
+    source_slot="$prefix/opt/broray-light/releases/1.0.0-r1"
+    brl_r1_manifest_valid "$source_slot" "$(awk 'END{print NR-1}' "$source_slot/APP-SHA256SUMS")" \
+        "$(find "$source_slot/app" -type f -exec wc -c {} \; | awk '{s+=$1} END{print s+0}')" || return 1
+    source_sha="$(sha256sum "$source_slot/APP-SHA256SUMS" | awk '{print $1}')"
+    boot="$(cat /proc/sys/kernel/random/boot_id)" || return 1
+    printf '%s\n' "$boot" | grep -Eq '^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$' || return 1
+    work="$prefix/tmp/broray-light-updater"
+    inventory="$(brl_r1_work_inventory "$work")" || return 1
+    work_id="$(stat -c '%d:%i' "$work")"; work_mode="$(stat -c '%a' "$work")"
     if [ -e "$BRL_R1_JOURNAL" ] || [ -L "$BRL_R1_JOURNAL" ]; then
         brl_r1_receipt_valid && jq -e --arg pid "$BRL_LEGACY_UPDATER_PID" --arg start "$BRL_LEGACY_UPDATER_START" \
-            --argjson request "$request_ids" --argjson global "$global_ids" --arg sha "$slot_sha" '
+            --argjson request "$request_ids" --argjson global "$global_ids" --arg sha "$slot_sha" --arg source "$source_sha" --arg boot "$boot" \
+            --arg workId "$work_id" --arg workMode "$work_mode" --arg inventory "$inventory" '
             .legacyLocks=="owned" and .legacyPid==$pid and .legacyStart==$start and
-            .requestIds==$request and .globalIds==$global and .slotManifestSha256==$sha
+            .requestIds==$request and .globalIds==$global and .slotManifestSha256==$sha and
+            .sourceSlotManifestSha256==$source and .legacyBootId==$boot and
+            .legacyWork=={id:$workId,mode:$workMode,inventory:$inventory}
             ' "$BRL_R1_JOURNAL" >/dev/null 2>&1 || { brl_r1_refuse RECEIPT_COLLISION; return 1; }
         return 0
     fi
     staged="$BRL_R1_JOURNAL.$$.new"
     [ ! -e "$staged" ] && [ ! -L "$staged" ] || return 1
     (umask 077; set -C; jq -n --arg pid "$BRL_LEGACY_UPDATER_PID" --arg start "$BRL_LEGACY_UPDATER_START" \
-        --argjson request "$request_ids" --argjson global "$global_ids" --arg sha "$slot_sha" '
+        --argjson request "$request_ids" --argjson global "$global_ids" --arg sha "$slot_sha" --arg source "$source_sha" --arg boot "$boot" \
+        --arg workId "$work_id" --arg workMode "$work_mode" --arg inventory "$inventory" '
         {schemaVersion:1,product:"BROray-Light",sourceRelease:"1.0.0-r1",targetRelease:"2.0.0-r1",
          legacyLocks:"owned",legacyPid:$pid,legacyStart:$start,requestIds:$request,globalIds:$global,
-         slotManifestSha256:$sha,engineSha256:"773aaf37893ab100e7023d63c8061d8c4763a4d6186844bb3b671d758c145743"}
+         slotManifestSha256:$sha,sourceSlotManifestSha256:$source,legacyBootId:$boot,
+         legacyWork:{id:$workId,mode:$workMode,inventory:$inventory},
+         engineSha256:"773aaf37893ab100e7023d63c8061d8c4763a4d6186844bb3b671d758c145743"}
         ' > "$staged") || return 1
     ln -T "$staged" "$BRL_R1_JOURNAL" || return 1
     rm "$staged"

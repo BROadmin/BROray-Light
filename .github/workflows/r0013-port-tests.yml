@@ -195,7 +195,7 @@ jobs:
           if-no-files-found: ignore
   isolated-live-entry:
     runs-on: ubuntu-24.04
-    timeout-minutes: 10
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
         with:
@@ -216,4 +216,15 @@ jobs:
         with:
           name: r0013-live-entry-${{ github.sha }}
           path: /tmp/r0013-live-entry-*.json
+          if-no-files-found: ignore
+      - name: Dead legacy owner and boot recovery (dash)
+        run: sudo python3 -B tools/test_r0013_recovery.py --shell /bin/dash --result /tmp/r0013-recovery-dash.json
+      - name: Dead legacy owner and boot recovery (BusyBox)
+        run: sudo python3 -B tools/test_r0013_recovery.py --shell /usr/bin/busybox --busybox --busybox-tools --result /tmp/r0013-recovery-ash.json
+      - name: Preserve dead-owner recovery evidence including first failure
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: r0013-recovery-${{ github.sha }}
+          path: /tmp/r0013-recovery-*.json
           if-no-files-found: ignore

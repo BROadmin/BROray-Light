@@ -1,0 +1,99 @@
+{
+  "stage": "R0013",
+  "revision": "p44-accepted-r1-config-fixture-and-real-health-status",
+  "status": "PASS_BOUNDED_LIVE_R1_UPDATE_AND_ROLLBACK",
+  "testsPassed": 4,
+  "ci": {
+    "url": "https://github.com/BROadmin/BROray-Light/actions/runs/34535505249",
+    "commit": "da35ad28eff2924fc0510beeb6fe6a902d15ef64",
+    "artifactId": 10175268404,
+    "artifactSha256": "09a178b34d82ebd7df438843d775de765b7c7bb2a4407efba0df5e8c2805621f",
+    "remainingRegressionJobs": "IN_PROGRESS_AT_RECEIPT"
+  },
+  "reports": {
+    "r0013-live-entry-ash.json": {
+      "report": {
+        "stage": "R0013",
+        "revision": "p44-accepted-r1-config-fixture-and-real-health-status",
+        "status": "PASS_LIVE_R1_SERVICE_TRANSITION",
+        "shell": [
+          "/usr/bin/busybox",
+          "ash"
+        ],
+        "tests": [
+          {
+            "name": "update",
+            "status": "PASS",
+            "detail": {
+              "returncode": 0,
+              "current": "2.0.0-r1",
+              "coordinatorPhase": "activated",
+              "legacyUpdaterCompleted": true,
+              "sessionPreserved": true
+            }
+          },
+          {
+            "name": "health-rollback",
+            "status": "PASS",
+            "detail": {
+              "returncode": 1,
+              "current": "1.0.0-r1",
+              "coordinatorPhase": "restored",
+              "legacyUpdaterCompleted": true,
+              "sessionPreserved": true
+            }
+          }
+        ],
+        "sourceSha256": "c45f8cdde6f843e413ba67f570ef2ae67102ad80a208e7dc71e6e8260d23a294",
+        "scope": "Real signed fixture r1 update engine, cached r1 S24, new runtime-prepare and new S24, cross-filesystem RAM handoff. Daemon workload, lighttpd and publication OS calls mocked. Boot/finalization not yet integrated."
+      },
+      "sha256": "7b08b76ba1d6f7e22c5923ada4542a6cb1966bff9705d848d324dfe726947f22"
+    },
+    "r0013-live-entry-dash.json": {
+      "report": {
+        "stage": "R0013",
+        "revision": "p44-accepted-r1-config-fixture-and-real-health-status",
+        "status": "PASS_LIVE_R1_SERVICE_TRANSITION",
+        "shell": [
+          "/bin/dash"
+        ],
+        "tests": [
+          {
+            "name": "update",
+            "status": "PASS",
+            "detail": {
+              "returncode": 0,
+              "current": "2.0.0-r1",
+              "coordinatorPhase": "activated",
+              "legacyUpdaterCompleted": true,
+              "sessionPreserved": true
+            }
+          },
+          {
+            "name": "health-rollback",
+            "status": "PASS",
+            "detail": {
+              "returncode": 1,
+              "current": "1.0.0-r1",
+              "coordinatorPhase": "restored",
+              "legacyUpdaterCompleted": true,
+              "sessionPreserved": true
+            }
+          }
+        ],
+        "sourceSha256": "c45f8cdde6f843e413ba67f570ef2ae67102ad80a208e7dc71e6e8260d23a294",
+        "scope": "Real signed fixture r1 update engine, cached r1 S24, new runtime-prepare and new S24, cross-filesystem RAM handoff. Daemon workload, lighttpd and publication OS calls mocked. Boot/finalization not yet integrated."
+      },
+      "sha256": "43a8600d67507c7e55c047834ac22467ea9cefb3fcec4ba15d0a431d4cd598fb"
+    }
+  },
+  "scope": "Exact live r1 engine, cached r1 S24, new S24 and runtime-prepare; positive health invokes actual S24 status. Workload/lighttpd/publication OS calls are fixtures. Strict durable rollback bytes and session preservation pass; full application and boot recovery are not covered.",
+  "resolvedFailures": [
+    "FAILURE-P41-LIVE-FIXTURE-UNMOUNT-EVIDENCE.json",
+    "FAILURE-P42-LIVE-FIXTURE-TMPFS-BUSY.json",
+    "FAILURE-P43-LIVE-ROLLBACK-FIXTURE-DEFAULTS.json"
+  ],
+  "candidateReady": false,
+  "routerTouched": false,
+  "next": "P45 durable boot recovery/finalization and recovery-anchor-first ordering"
+}

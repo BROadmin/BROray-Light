@@ -3,6 +3,18 @@
 # Only the admitted old updater's descendants may perform this live handoff.
 # The receipt is durable; both old and new downloaded work stay on tmpfs.
 
+# Definitions-only callers have no recovery authority. The sealed recovery
+# helper overrides this with actual PID/start and held-lock validation.
+brl_r1_recovery_authorized()
+{
+    return 1
+}
+
+brl_r1_transition_authorized()
+{
+    brl_r1_transition_live 2>/dev/null || brl_r1_recovery_authorized
+}
+
 brl_r1_transition_live()
 {
     local prefix pid start engine path
@@ -35,20 +47,6 @@ brl_r1_ram_base()
         [ "$(stat -c '%u:%a' "$BRL_TRANSITION_TMP")" = 0:1777 ] || return 1
     case "$(stat -f -c '%T' "$BRL_TRANSITION_TMP")" in tmpfs|ramfs) ;; *) return 1 ;; esac
     BRL_TRANSITION_WORK="$BRL_TRANSITION_TMP/broray-light-updater"
-}
-
-brl_r1_work_inventory()
-{
-    local path name count
-    brl_r1_directory "$1" || return 1
-    count="$(find "$1" -mindepth 1 -maxdepth 1 -print | wc -l | tr -d ' ')"
-    [ "$count" = 4 ] || return 1
-    for name in app.tar.gz archive.list release.json release.json.minisig; do
-        path="$1/$name"
-        brl_r1_regular "$path" || return 1
-        printf '%s %s %s %s\n' "$name" "$(stat -c '%d:%i' "$path")" \
-            "$(stat -c '%a' "$path")" "$(sha256sum "$path" | awk '{print $1}')"
-    done
 }
 
 brl_r1_ram_save()
@@ -97,10 +95,12 @@ brl_r1_ram_promote()
     brl_r1_ram_base || { brl_r1_refuse RAM_BASE; return 1; }
     brl_r1_journal_path || return 1
     if ! brl_r1_receipt_valid || ! jq -e '.ramTransition' "$BRL_R1_JOURNAL" >/dev/null 2>&1; then
-        brl_r1_transition_record || return 1
+        if ! brl_r1_recovery_authorized; then brl_r1_transition_record || return 1; fi
         inventory="$(brl_r1_work_inventory "$BRL_TRANSITION_WORK")" || { brl_r1_refuse LEGACY_WORK_SHAPE; return 1; }
         old_id="$(stat -c '%d:%i' "$BRL_TRANSITION_WORK")"
         old_mode="$(stat -c '%a' "$BRL_TRANSITION_WORK")"
+        jq -e --arg id "$old_id" --arg mode "$old_mode" --arg inventory "$inventory" \
+            '.legacyWork=={id:$id,mode:$mode,inventory:$inventory}' "$BRL_R1_JOURNAL" >/dev/null || return 1
         BRL_TRANSITION_PRIVATE="$(umask 077; mktemp -d "$BRL_TRANSITION_TMP/broray-light-transition.XXXXXX")" || return 1
         (umask 077; set -C; printf 'BROray-Light:r1-transition/1\n' > "$BRL_TRANSITION_PRIVATE/owner") || return 1
         private_id="$(stat -c '%d:%i' "$BRL_TRANSITION_PRIVATE")"
@@ -109,7 +109,7 @@ brl_r1_ram_promote()
             '.ramTransition={schemaVersion:1,phase:"prepared",directory:$directory,directoryId:$privateId,
               oldWorkId:$id,oldWorkMode:$mode,inventory:$inventory}' || return 1
     fi
-    brl_r1_transition_live && brl_r1_ram_bound || { brl_r1_refuse RAM_RECEIPT; return 1; }
+    brl_r1_transition_authorized && brl_r1_ram_bound || { brl_r1_refuse RAM_RECEIPT; return 1; }
     phase="$(jq -r '.ramTransition.phase' "$BRL_R1_JOURNAL")"
     case "$phase" in prepared|old-moved|ready) ;; *) brl_r1_refuse RAM_PHASE; return 1 ;; esac
     if [ "$phase" = prepared ]; then
@@ -136,7 +136,7 @@ brl_r1_ram_promote()
 brl_r1_ram_restore()
 {
     local phase new_id path
-    brl_r1_transition_live && brl_r1_ram_bound || { brl_r1_refuse RAM_RECEIPT; return 1; }
+    brl_r1_transition_authorized && brl_r1_ram_bound || { brl_r1_refuse RAM_RECEIPT; return 1; }
     phase="$(jq -r '.ramTransition.phase' "$BRL_R1_JOURNAL")"
     if [ "$phase" = restored ]; then brl_r1_old_work_bound "$BRL_TRANSITION_WORK"; return $?; fi
     case "$phase" in ready|restoring|old-moved|prepared) ;; *) return 1 ;; esac
@@ -153,10 +153,16 @@ brl_r1_ram_restore()
             brl_ram_file_valid "$BRL_TRANSITION_WORK/owner" &&
             [ "$(cat "$BRL_TRANSITION_WORK/owner")" = 'BROray-Light:updater-runtime/1' ] || return 1
         # A new live operation cannot be evicted even during rollback.
-        for path in "$BRL_TRANSITION_WORK/request.lock" "$BRL_TRANSITION_TMP/broray-light/run/locks/admission" \
-                    "$BRL_TRANSITION_TMP/broray-light/run/locks/global-operation.lock"; do
+        for path in "$BRL_TRANSITION_WORK/request.lock" "$BRL_TRANSITION_TMP/broray-light/run/locks/global-operation.lock"; do
             [ ! -e "$path" ] && [ ! -L "$path" ] || return 1
         done
+        path="$BRL_TRANSITION_TMP/broray-light/run/locks/admission"
+        if [ -e "$path" ] || [ -L "$path" ]; then
+            # Only the recovery driver's own admission may bridge the final
+            # updater namespace rename after it has released its global lock.
+            brl_r1_recovery_authorized &&
+                [ "$(jq -r '.recovery.phase' "$BRL_R1_JOURNAL")" = namespace-restore ] || return 1
+        fi
         [ ! -e "$BRL_TRANSITION_PRIVATE/updater-new" ] && [ ! -L "$BRL_TRANSITION_PRIVATE/updater-new" ] || return 1
         # Preserve rather than recursively delete all new RAM data.
         mv -T "$BRL_TRANSITION_WORK" "$BRL_TRANSITION_PRIVATE/updater-new" || return 1

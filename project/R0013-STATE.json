@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
   "stage": "R0013_SELECTIVE_UPSTREAM_STABLE_PORT",
-  "status": "LIVE_UPDATE_AND_CLEANUP_PASS_ROLLBACK_FIXTURE_CORRECTION_IN_PROGRESS",
-  "currentRevision": "p44-accepted-r1-config-fixture-and-real-health-status",
-  "activeFailure": "checkpoints/R0013/process-failures/FAILURE-P43-LIVE-ROLLBACK-FIXTURE-DEFAULTS.json",
+  "status": "P45_LOCAL_STATIC_PASS_LINUX_RECOVERY_VALIDATION_PENDING",
+  "currentRevision": "p45-dead-legacy-owner-recovery-and-boot-coordinator",
+  "activeFailure": null,
   "publicVersion": "2.0.0",
   "buildA": "PRELIMINARY_ENGINEERING_BYTE_PASS_NOT_FINAL_ACCEPTANCE",
   "buildB": "PRELIMINARY_ENGINEERING_BYTE_PASS_NOT_FINAL_ACCEPTANCE",
@@ -18,7 +18,7 @@
     "path": "checkpoints/R0013/SUBSCRIPTION-NAME-P6.json",
     "sha256": "2b1fe451272dc233e1f8ccd4cc3d6ea2f212ba81e009f93d3a4b9e9b9601577a"
   },
-  "lastResolvedFailure": "checkpoints/R0013/process-failures/FAILURE-P42-LIVE-FIXTURE-TMPFS-BUSY.json",
+  "lastResolvedFailure": "checkpoints/R0013/process-failures/FAILURE-P43-LIVE-ROLLBACK-FIXTURE-DEFAULTS.json",
   "processPort": {
     "status": "PASS_ISOLATED_LINUX",
     "tests": 33,
@@ -62,7 +62,7 @@
     "path": "checkpoints/R0013/UPSTREAM-PORT-MAP-P2.json",
     "sha256": "009a0f5adae08f399c82510cf680690b4c2e50bc8c659eda9c48d91b5a838121"
   },
-  "nextExactAction": "P44_VALIDATE_STRICT_R1_ROLLBACK_WITH_ACCEPTED_CONFIG_AND_REAL_S24_HEALTH",
+  "nextExactAction": "P45_FIRST_LINUX_RUN_LIVE_REGRESSION_AND_DEAD_OWNER_RECOVERY",
   "versionAndXray": {
     "status": "PASS_VERSION_AND_BOOTSTRAP_INPUT",
     "path": "checkpoints/R0013/UPGRADE-AND-XRAY-P10.json",
@@ -81,7 +81,7 @@
     "path": "RAM-BOOTSTRAP-VALIDATION-P15.json",
     "sha256": "050a4d9b7e8c82194d1e4dd03e6e014031ec1b24d44f06833cc3189d5ca1c33d"
   },
-  "latestCI": "https://github.com/BROadmin/BROray-Light/actions/runs/34535054966",
+  "latestCI": "https://github.com/BROadmin/BROray-Light/actions/runs/34535505249",
   "actualWebDaemons": {
     "status": "PASS_BOUNDED",
     "tests": 42,
@@ -152,7 +152,7 @@
   },
   "remainingIntegrationGap": {
     "originFailure": "process-failures/FAILURE-P16-PERSISTENT-LOCK-DOMAIN.json",
-    "description": "S24 and publication, config+receipt and platform transactions are separately tested; the full legacy runtime-data handoff, r1 entry/rollback driver, clean postinst and reboot recovery still need integration."
+    "description": "Live r1 update/health rollback is now bounded PASS. Boot/dead-owner recovery and finalization, clean postinst, full prepared-app and WebUI/native-auth acceptance remain."
   },
   "scopedServiceAndPublication": {
     "status": "PASS_BOUNDED",
@@ -165,5 +165,11 @@
     "tests": 22,
     "path": "checkpoints/R0013/RUNTIME-TREES-AND-BUILDS-P40.json",
     "sha256": "9cabcb9715ea3eec14c495781c89e94f612ccd40f10c3086a6d508f4154c0afb"
+  },
+  "liveR1Transition": {
+    "status": "PASS_BOUNDED",
+    "tests": 4,
+    "path": "checkpoints/R0013/LIVE-R1-UPDATE-AND-ROLLBACK-P44.json",
+    "sha256": "36bb5b328a533a300342ecf88ca605f96b6673e36ad717f3341e06e9f15f2fbb"
   }
 }

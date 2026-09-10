@@ -22,7 +22,7 @@ brl_platform_file()
 brl_platform_payload()
 {
     local prefix slot sha path old new count parent
-    brl_r1_transition_live || return 1
+    brl_r1_transition_authorized || return 1
     prefix="${BRORAY_LIGHT_ROOT_PREFIX:-}"
     slot="$prefix/opt/broray-light/releases/2.0.0-r1"
     brl_r1_directory "$slot" && brl_r1_regular "$slot/APP-SHA256SUMS" || return 1
@@ -130,7 +130,7 @@ brl_platform_replace()
     brl_r1_ram_save --arg path "$path" 'del(.platform.staged[$path])'
 }
 
-brl_platform_activate()
+brl_platform_prepare()
 {
     local path
     brl_platform_payload || { brl_r1_refuse PLATFORM_PAYLOAD; return 1; }
@@ -145,6 +145,20 @@ brl_platform_activate()
         brl_platform_targets_valid old || return 1
         brl_r1_ram_save --arg sha "$BRL_PLATFORM_SHA" '.platform={phase:"prepared",manifestSha256:$sha}' || return 1
     fi
+}
+
+brl_platform_recovery_anchor()
+{
+    # S24 is the durable recovery entry. Install it before changing either RAM
+    # namespace or the old operational/config trees, not at the end of startup.
+    brl_platform_prepare && brl_platform_replace opt/etc/init.d/S24broray-light new
+}
+
+brl_platform_activate()
+{
+    local path
+    brl_platform_prepare || return 1
+    [ "$(jq -r '.platform.phase' "$BRL_R1_JOURNAL")" != installed ] || return 0
     for path in $(brl_platform_paths); do brl_platform_replace "$path" new || return 1; done
     brl_platform_targets_valid new || return 1
     brl_r1_ram_save '.platform.phase="installed"'

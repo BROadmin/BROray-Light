@@ -125,7 +125,7 @@ while :;do sleep 0.1;done
         return dict(returncode=result.returncode,current=self.current(),coordinatorPhase=detail['receipt']['coordinator']['phase'],
                     legacyUpdaterCompleted=True,sessionPreserved=True)
 
-    def close(self):
+    def stop_fixture_processes(self):
         processes={};owned=set()
         for path in Path('/proc').glob('[0-9]*/cmdline'):
             try:
@@ -173,6 +173,9 @@ while :;do sleep 0.1;done
         while refs and time.monotonic()<deadline:
             time.sleep(.05);refs=ram_references()
         assert not refs,'Private tmpfs holders did not drain: '+json.dumps(refs)
+
+    def close(self):
+        self.stop_fixture_processes()
         super().close()
 
 
