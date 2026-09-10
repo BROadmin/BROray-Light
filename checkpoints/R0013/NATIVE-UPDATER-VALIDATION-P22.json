@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0013",
+  "revision": "p22-native-hardlink-rejection-and-real-manifest-contract",
+  "status": "PASS_NATIVE_BUSYBOX_AND_CANONICAL_SLOT_FORMAT",
+  "sourceCommit": "3424fc390be13b5711b9286d195c461b6093cd79",
+  "updaterSha256": "8e3dd063556b255bd5fe78266278817262a1adeea9fc37e5c3699a8782acd2bc",
+  "sharedRamSha256": "34a959bcb1b6acedd070b2c86571f497adf0996c76cdf2a9e75724ddc03e95af",
+  "ci": "https://github.com/BROadmin/BROray-Light/actions/runs/34517795350",
+  "artifacts": [
+    {
+      "id": 10168392914,
+      "name": "r0013-updater-core-3424fc390be13b5711b9286d195c461b6093cd79",
+      "digest": "sha256:a6bf25631b47059e921d1fc8d356b7e448fba827fda1c93e8dd9a2f23f66dfa0"
+    },
+    {
+      "id": 10168384431,
+      "name": "r0013-ram-primitive-3424fc390be13b5711b9286d195c461b6093cd79",
+      "digest": "sha256:87114ad9fe7d42ea15fb61f6c4d5843844b830b5eb2f8506b0ed10fcaab601b7"
+    }
+  ],
+  "sharedRamTests": 38,
+  "updaterTests": 28,
+  "total": 66,
+  "canonicalManifest": true,
+  "productionSigningIdentityUsed": false,
+  "serviceBoundary": "Fixture application/service; native minisign, tar, filesystem and process behavior",
+  "resolvedFailures": [
+    "process-failures/FAILURE-P21-BUSYBOX-HARDLINK.json",
+    "process-failures/FAILURE-P21-REAL-MANIFEST-CONTRACT.json"
+  ],
+  "candidateReady": false,
+  "releaseReady": false,
+  "routerTouched": false,
+  "nextExactAction": "PACKAGE_NEW_UPDATER_CORE_SHARED_HELPER_AND_RAM_READY_SERVICE_WITH_EXPLICIT_INPUT_MANIFEST_THEN_IMPLEMENT_ACTUAL_R1_LIFECYCLE_BRIDGE"
+}

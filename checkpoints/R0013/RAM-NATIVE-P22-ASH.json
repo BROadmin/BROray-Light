@@ -1,0 +1,90 @@
+{
+  "stage": "R0013",
+  "revision": "p21-native-busybox-utility-acceptance",
+  "status": "PASS_BOUNDED_PRIMITIVE",
+  "utilities": "BusyBox applets",
+  "scope": "REAL_TMPFS_AND_PROCESSES_NO_LIFECYCLE_OR_ROUTER",
+  "shell": [
+    "/usr/bin/busybox",
+    "ash"
+  ],
+  "sourceSha256": "34a959bcb1b6acedd070b2c86571f497adf0996c76cdf2a9e75724ddc03e95af",
+  "tests": [
+    {
+      "name": "clean_real_tmpfs_and_no_persistent_write",
+      "status": "PASS"
+    },
+    {
+      "name": "namespace_idempotence",
+      "status": "PASS"
+    },
+    {
+      "name": "refuse_symlink_namespace_without_mutation",
+      "status": "PASS"
+    },
+    {
+      "name": "refuse_unowned_namespace_without_mutation",
+      "status": "PASS"
+    },
+    {
+      "name": "refuse_wrong_mode_without_repair",
+      "status": "PASS"
+    },
+    {
+      "name": "refuse_non_tmpfs_before_namespace_creation",
+      "status": "PASS"
+    },
+    {
+      "name": "live_owner_blocks_second_owner_and_foreign_release",
+      "status": "PASS"
+    },
+    {
+      "name": "dead_owner_reclaimed_with_serialized_admission",
+      "status": "PASS"
+    },
+    {
+      "name": "reused_pid_starttime_does_not_block",
+      "status": "PASS"
+    },
+    {
+      "name": "legacy_global_fence_is_read_only",
+      "status": "PASS"
+    },
+    {
+      "name": "legacy_request_fence_is_read_only",
+      "status": "PASS"
+    },
+    {
+      "name": "updater_request_and_application_share_admission",
+      "status": "PASS"
+    },
+    {
+      "name": "application_global_owner_blocks_updater",
+      "status": "PASS"
+    },
+    {
+      "name": "refuse_symlink_lock_without_cleanup",
+      "status": "PASS"
+    },
+    {
+      "name": "refuse_malformed_lock_without_cleanup",
+      "status": "PASS"
+    },
+    {
+      "name": "refuse_unexpected-child_lock_without_cleanup",
+      "status": "PASS"
+    },
+    {
+      "name": "abandoned_admission_requires_explicit_recovery",
+      "status": "PASS"
+    },
+    {
+      "name": "admission_directory_collision_no_nested_claim",
+      "status": "PASS"
+    },
+    {
+      "name": "twelve_concurrent_contenders_exactly_one_owner",
+      "status": "PASS"
+    }
+  ]
+}

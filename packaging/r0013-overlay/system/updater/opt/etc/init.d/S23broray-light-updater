@@ -1,0 +1,43 @@
+#!/opt/bin/ash
+
+ROOT_PREFIX="${BRORAY_LIGHT_ROOT_PREFIX:-}"
+RAM_LIBRARY="$ROOT_PREFIX/opt/libexec/broray-light-updater/runtime-ram.sh"
+UPDATER="${BRORAY_LIGHT_UPDATER_BIN:-$ROOT_PREFIX/opt/libexec/broray-light-updater/broray-light-updater.sh}"
+[ -f "$RAM_LIBRARY" ] && [ ! -L "$RAM_LIBRARY" ] || exit 1
+. "$RAM_LIBRARY" || exit 1
+brl_ram_prepare || exit 1
+READY="$BRL_UPDATER_RAM/ready"
+ENGINE='broray-light-updater/5-light2-ram'
+
+ready_owned()
+{
+    brl_ram_file_valid "$READY" && [ "$(cat "$READY")" = "$ENGINE" ]
+}
+
+start()
+{
+    local temporary
+    [ ! -e "$READY" ] && [ ! -L "$READY" ] || ready_owned || return 1
+    "$UPDATER" recover >/dev/null 2>&1 || return 1
+    temporary="$(umask 077; mktemp "$BRL_UPDATER_RAM/.ready.XXXXXX")" || return 1
+    printf '%s\n' "$ENGINE" > "$temporary" || return 1
+    mv -fT "$temporary" "$READY"
+}
+
+stop()
+{
+    [ -e "$READY" ] || [ -L "$READY" ] || return 0
+    ready_owned || return 1
+    rm "$READY"
+}
+
+status()
+{
+    [ -x "$UPDATER" ] && [ ! -L "$UPDATER" ] && ready_owned
+}
+
+case "${1:-}" in
+    start|stop|status) "$1" ;;
+    restart) stop && start ;;
+    *) echo 'Usage: S23broray-light-updater {start|stop|restart|status}' >&2; exit 1 ;;
+esac

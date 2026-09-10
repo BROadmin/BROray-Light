@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
   "stage": "R0013_SELECTIVE_UPSTREAM_STABLE_PORT",
-  "status": "CORRECTED_REVISION_PENDING_NATIVE_UTILITIES_AND_CANONICAL_MANIFEST_TESTS",
-  "currentRevision": "p22-native-hardlink-rejection-and-real-manifest-contract",
-  "activeFailure": "checkpoints/R0013/process-failures/FAILURE-P21-BUSYBOX-HARDLINK.json",
+  "status": "INTEGRATING_TESTED_RAM_UPDATER_PLATFORM",
+  "currentRevision": "p23-updater-platform-package-integration",
+  "activeFailure": "checkpoints/R0013/process-failures/FAILURE-P16-PERSISTENT-LOCK-DOMAIN.json",
   "publicVersion": "2.0.0",
   "buildA": "PRELIMINARY_ENGINEERING_BYTE_PASS_NOT_FINAL_ACCEPTANCE",
   "buildB": "PRELIMINARY_ENGINEERING_BYTE_PASS_NOT_FINAL_ACCEPTANCE",
@@ -81,7 +81,8 @@
     "path": "RAM-BOOTSTRAP-VALIDATION-P15.json",
     "sha256": "050a4d9b7e8c82194d1e4dd03e6e014031ec1b24d44f06833cc3189d5ca1c33d"
   },
-  "latestCI": "https://github.com/BROadmin/BROray-Light/actions/runs/34517045435",
+  "latestCI": "https://github.com/BROadmin/BROray-Light/actions/runs/34517795350",
+  "nativeRamAndUpdaterCore": {"status":"PASS_NATIVE_BUSYBOX_AND_CANONICAL_SLOT_FORMAT", "tests":66, "path":"checkpoints/R0013/NATIVE-UPDATER-VALIDATION-P22.json"},
   "updaterRamCore": {"status":"PASS_BOUNDED_CORE", "tests":28, "path":"checkpoints/R0013/UPDATER-CORE-P20.json"},
   "ramPrimitive": {"status":"PASS_BOUNDED_PRIMITIVE", "tests":38, "path":"checkpoints/R0013/RAM-PRIMITIVE-P17.json"}
 }

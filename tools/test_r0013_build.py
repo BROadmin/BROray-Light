@@ -7,7 +7,9 @@ import json
 from pathlib import Path, PurePosixPath
 import tarfile
 
-from build_r0013_release import PUBLIC_VERSION, RELEASE_ID, TAG, XRAY, CACHE_TOKEN
+from build_r0013_release import PUBLIC_VERSION, RELEASE_ID, TAG, XRAY, CACHE_TOKEN, UPDATER_PLATFORM_NAME
+
+REPO = Path(__file__).resolve().parents[1]
 
 def sha(payload):
     return hashlib.sha256(payload).hexdigest()
@@ -92,17 +94,32 @@ def main():
     assert not any(name.startswith("opt/libexec/broray-light-bootstrap/") for name in data)
     assert len(bootstrap) == XRAY["binarySize"] and sha(bootstrap) == XRAY["binarySha256"]
     passed("ipk-version-slot-and-exact-clean-xray")
-    updater = files(entries["broray-light-updater-platform-5-light1.tar.gz"][0])
+    updater = files(entries[UPDATER_PLATFORM_NAME][0])
     sums(updater["SHA256SUMS"][0], updater)
+    for path, row in updater.items():
+        if path.startswith('opt/'):
+            assert data[path] == row, 'IPK/platform updater mismatch: ' + path
     if args.r1_updater:
         old = files(args.r1_updater.read_bytes())
-        assert updater == old, "r1 updater logical payload/modes changed"
-        passed("r1-updater-byte-and-mode-preservation")
+        changes = {
+            'opt/libexec/broray-light-updater/broray-light-updater.sh': 'system/updater/opt/libexec/broray-light-updater/broray-light-updater.sh',
+            'opt/libexec/broray-light-updater/runtime-ram.sh': 'shared/runtime-ram.sh',
+            'opt/etc/init.d/S23broray-light-updater': 'system/updater/opt/etc/init.d/S23broray-light-updater',
+        }
+        assert set(updater) == set(old) | set(changes), 'unexpected updater platform member'
+        for path, row in updater.items():
+            if path in changes:
+                expected = (REPO / 'packaging/r0013-overlay' / changes[path]).read_bytes()
+                assert row == (expected, 0o755), 'unreviewed updater port payload/mode: ' + path
+            elif path != 'SHA256SUMS':
+                assert row == old[path], 'r1 trust/wrapper payload changed: ' + path
+        assert input_manifest['updaterPlatformSha256'] == sha(entries[UPDATER_PLATFORM_NAME][0])
+        passed("explicit-ram-updater-port-with-r1-trust-and-wrapper-preservation")
     if args.compare:
         other = {p.name: (p.read_bytes(), 0) for p in args.compare.iterdir() if p.is_file()}
         assert entries == other, "independent engineering build bytes differ"
         passed("independent-process-build-byte-reproducibility")
-    print(json.dumps(dict(stage="R0013", revision="p13-executable-entrypoint-mode-contract", status="PASS",
+    print(json.dumps(dict(stage="R0013", revision="p23-updater-platform-package-integration", status="PASS",
                          candidateReady=False, scope="structural only; not lifecycle acceptance", tests=tests), indent=2))
 
 if __name__ == "__main__":

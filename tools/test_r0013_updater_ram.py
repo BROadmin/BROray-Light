@@ -11,6 +11,7 @@ import json
 import os
 from pathlib import Path
 import signal
+import shlex
 import subprocess
 import tarfile
 import tempfile
@@ -21,6 +22,7 @@ from build_r0013_release import primitives
 REPO = Path(__file__).resolve().parents[1]
 OVERLAY = REPO / 'packaging/r0013-overlay'
 UPDATER = OVERLAY / 'system/updater/opt/libexec/broray-light-updater/broray-light-updater.sh'
+INIT = OVERLAY / 'system/updater/opt/etc/init.d/S23broray-light-updater'
 OLD, NEW = '1.0.0-r1', '2.0.0-r1'
 
 
@@ -125,6 +127,16 @@ exit 0
 
     def run(self, command, expected=0):
         result = subprocess.run([*self.shell, str(UPDATER), command], env=self.env,
+                                capture_output=True, text=True, timeout=15)
+        assert result.returncode == expected, (command, result.returncode, result.stdout, result.stderr)
+        return result
+
+    def init(self, command, expected=0):
+        wrapper = self.executable / 'updaterctl'
+        invocation = ' '.join(shlex.quote(x) for x in [*self.shell, str(UPDATER)])
+        self.write(wrapper, ('#!/bin/sh\nexec '+invocation+' "$@"\n').encode(), 0o755)
+        self.env['BRORAY_LIGHT_UPDATER_BIN'] = str(wrapper)
+        result = subprocess.run([*self.shell, str(INIT), command], env=self.env,
                                 capture_output=True, text=True, timeout=15)
         assert result.returncode == expected, (command, result.returncode, result.stdout, result.stderr)
         return result
@@ -269,6 +281,26 @@ def cases():
         assert not (f.ram / 'request.lock').exists()
     yield 'interrupted_target_active_recovers_previous_slot_with_stale_locks', interrupted
 
+    def init_ready(f):
+        f.init('start')
+        f.init('status')
+        assert (f.ram / 'ready').read_text().strip() == 'broray-light-updater/5-light2-ram'
+        assert not (f.durable / 'ready').exists()
+        f.clean_work()
+        f.init('restart')
+        f.init('stop')
+        f.init('status', 1)
+        assert not (f.ram / 'ready').exists()
+    yield 'updater_service_ready_lifecycle_is_ram_only', init_ready
+
+    def init_foreign(f):
+        f.init('start')
+        f.write(f.ram / 'ready', b'foreign-owner\n')
+        f.init('start', 1)
+        f.init('stop', 1)
+        assert (f.ram / 'ready').read_bytes() == b'foreign-owner\n'
+    yield 'updater_service_foreign_ready_is_preserved', init_foreign
+
 
 def main():
     parser = argparse.ArgumentParser()
@@ -282,7 +314,7 @@ def main():
     if args.busybox_tools:
         import r0013_busybox_fixture
         utility_fixture = r0013_busybox_fixture.enable()
-    report = dict(stage='R0013', revision='p22-native-hardlink-rejection-and-real-manifest-contract', scope='REAL_UPDATER_SIGNATURES_TMPFS_CANONICAL_SLOT_FORMAT_FIXTURE_APP_AND_SERVICE',
+    report = dict(stage='R0013', revision='p23-updater-platform-package-integration', scope='REAL_UPDATER_SIGNATURES_TMPFS_CANONICAL_SLOT_FORMAT_FIXTURE_APP_AND_SERVICE',
                   utilities='BusyBox applets' if args.busybox_tools else 'host utilities',
                   sourceSha256=hashlib.sha256(UPDATER.read_bytes()).hexdigest(), shell=shell, tests=[])
     failed = False

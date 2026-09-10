@@ -23,6 +23,7 @@ PUBLIC_VERSION = "2.0.0"
 RELEASE_ID = "2.0.0-r1"
 TAG = "v2.0.0"
 CACHE_TOKEN = "2.0.0-r0013"
+UPDATER_PLATFORM_NAME = "broray-light-updater-platform-5-light2-ram.tar.gz"
 ASSET_URL = "https://github.com/BROadmin/BROray-Light/releases/download/" + TAG + "/"
 R1_BUILDER_SHA256 = "ce415971eaf98323d7f50a5a1f4d5609710a019cc93570dad4381fcf6665d5ab"
 R1_UPDATER_SHA256 = "4983f0fc268a9f19f3e64959fe5f7d8086f26ad907d528ca82ca623f10d9a92a"
@@ -112,6 +113,7 @@ def build(output, platform, archive, digest):
     assert not output.exists(), "new independent output directory required"
     base = primitives()
     bootstrap_helper = (inputs.REPO / "packaging/r0013-overlay/bootstrap-ram.sh").read_bytes()
+    ram_helper = (inputs.REPO / "packaging/r0013-overlay/shared/runtime-ram.sh").read_bytes()
     original_render = base.render
     def render_with_bootstrap(path, replacements):
         return original_render(path, {"BOOTSTRAP_RAM_HELPERS": bootstrap_helper.decode(), **replacements})
@@ -150,12 +152,21 @@ def build(output, platform, archive, digest):
             target.write_bytes(data)
             rows = [row for row in rows if row["path"] != name]
             rows.append(dict(path=name, sha256=sha(data), sizeBytes=len(data), mode="0o755", origin="R0013-overlay"))
+        # A single reviewed source owns the helper bytes. The accepted r1
+        # updater_members enumerator packages this exact additional path.
+        helper_name = "updater/opt/libexec/broray-light-updater/runtime-ram.sh"
+        helper_target = tree / helper_name
+        assert not helper_target.exists(), "shared helper target collision"
+        helper_target.write_bytes(ram_helper)
+        helper_target.chmod(0o755)
+        rows.append(dict(path=helper_name, sha256=sha(ram_helper), sizeBytes=len(ram_helper),
+                         mode="0o755", origin="R0013-shared-ram-helper"))
         assert sha((tree / "updater/release.pub").read_bytes()) == PUBLIC_KEY_SHA256
         slot, slot_manifest = base.slot_payload(tree, {})
         updater = base.updater_members(tree, minisign)
         outputs = {
             "broray-light-app-" + RELEASE_ID + ".tar.gz": base.build_app_archive(slot),
-            "broray-light-updater-platform-5-light1.tar.gz": base.build_updater_archive(updater),
+            UPDATER_PLATFORM_NAME: base.build_updater_archive(updater),
         }
         package_name = "broray-light_" + PUBLIC_VERSION + "_" + base.ARCHITECTURE + ".ipk"
         old_data = base.build_data_tar(tree, {}, slot, updater, xray)
@@ -189,7 +200,9 @@ def build(output, platform, archive, digest):
         "primitiveBuilderSha256": R1_BUILDER_SHA256, "canonicalSource": source,
         "transforms": ["versioned web query tokens", "web build metadata", "internal version seed"],
         "files": sorted(rows, key=lambda row: row["path"]), "xray": XRAY,
-        "updaterPlatformSha256": R1_UPDATER_SHA256, "signingPublicKeySha256": PUBLIC_KEY_SHA256})
+        "baselineUpdaterPlatformSha256": R1_UPDATER_SHA256,
+        "updaterPlatformSha256": sha(outputs[UPDATER_PLATFORM_NAME]),
+        "signingPublicKeySha256": PUBLIC_KEY_SHA256})
     outputs["ENGINEERING-MANIFEST.json"] = canonical_json({
         "schemaVersion": 1, "stage": "R0013", "status": "UNSIGNED_ENGINEERING_BUILD_NOT_ACCEPTED",
         "publicVersion": PUBLIC_VERSION, "packageVersion": PUBLIC_VERSION, "releaseId": RELEASE_ID,

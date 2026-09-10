@@ -1,0 +1,8 @@
+{
+  "stage": "R0013",
+  "revision": "p23-updater-platform-package-integration",
+  "status": "IN_PROGRESS",
+  "scope": "Include the tested RAM helper and updater in the deterministic platform/IPK; move S23 ready status to RAM; preserve key and minisign executable; not yet actual-r1 app startup migration",
+  "candidateReady": false,
+  "routerTouched": false
+}
