@@ -1,0 +1,10 @@
+{
+  "stage": "R0013",
+  "revision": "p42-live-fixture-terminal-evidence-and-scoped-exit-wait",
+  "status": "CHECKPOINT_BEFORE_CORRECTION",
+  "corrects": "LIVE_FIXTURE_CLEANUP_MASKED_PRIMARY_OUTCOME",
+  "productRuntimeBytesChanged": false,
+  "scope": "Persist every primary case result before cleanup. Bound process-tree cleanup to fixture-owned PID/start identities and wait for exit before one unmount attempt; record cleanup failures without hiding primary evidence.",
+  "candidateReady": false,
+  "routerTouched": false
+}

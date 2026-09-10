@@ -9,6 +9,7 @@ import shlex
 import signal
 import subprocess
 import tempfile
+import time
 
 from build_r0013_release import prepared_app, primitives
 from r0013_inputs import REPO
@@ -114,13 +115,35 @@ while :;do sleep 0.1;done
                     legacyUpdaterCompleted=True,sessionPreserved=True)
 
     def close(self):
+        processes={};owned=set()
         for path in Path('/proc').glob('[0-9]*/cmdline'):
             try:
+                stat=(path.parent/'stat').read_text().rsplit(') ',1)[1].split()
+                pid=int(path.parent.name);processes[pid]=(int(stat[1]),stat[19])
                 args=path.read_bytes().split(b'\0')
                 exe=os.readlink(path.parent/'exe') if (path.parent/'exe').exists() else ''
                 if any(a.startswith(str(self.root).encode()+b'/') or a.startswith(str(self.executable).encode()+b'/') for a in args) or exe.startswith(str(self.executable)+'/'):
-                    os.kill(int(path.parent.name),signal.SIGKILL)
+                    owned.add(pid)
             except OSError:pass
+        # Descendants may inherit a RAM log descriptor without a product path
+        # in argv (e.g. the daemon fixture's sleep). Bind their PID/start first.
+        while True:
+            expanded=owned|{pid for pid,(parent,start) in processes.items() if parent in owned}
+            if expanded==owned:break
+            owned=expanded
+        def live(pid):
+            try:
+                row=Path('/proc',str(pid),'stat').read_text().rsplit(') ',1)[1].split()
+                return row[0]!='Z' and row[19]==processes[pid][1]
+            except OSError:return False
+        assert os.getpid() not in owned,'Fixture cleanup included its own runner'
+        for pid in owned:
+            if live(pid):
+                try:os.kill(pid,signal.SIGKILL)
+                except ProcessLookupError:pass
+        deadline=time.monotonic()+3
+        while any(live(pid) for pid in owned) and time.monotonic()<deadline:time.sleep(.02)
+        assert not any(live(pid) for pid in owned),'Fixture-owned process did not exit'
         super().close()
 
 
@@ -135,6 +158,15 @@ def main():
     ash=Path('/opt/bin/ash');assert not ash.exists() and not ash.is_symlink(),'Fixture interpreter path is occupied'
     ash.parent.mkdir(parents=True,exist_ok=True);ash.symlink_to(args.shell)
     records=[];failed=False
+    def persist():
+        report=dict(stage='R0013',revision='p42-live-fixture-terminal-evidence-and-scoped-exit-wait',
+                    status='FAIL_FIRST_ERROR' if failed else 'IN_PROGRESS',shell=shell,tests=records,
+                    sourceSha256=hashlib.sha256(ENTRY.read_bytes()).hexdigest(),
+                    scope='Real r1/new S24 and entry; daemon workload/lighttpd/publication OS calls mocked. Boot/finalization not integrated.')
+        if args.result:
+            args.result.parent.mkdir(parents=True,exist_ok=True)
+            args.result.write_text(json.dumps(report,indent=2)+'\n')
+    persist()
     try:
         with tempfile.TemporaryDirectory(prefix='r0013-live-binary-',dir='/var/tmp') as tmp:
             source=Path(tmp)/'fixture.c';source.write_text(C_SOURCE)
@@ -147,14 +179,22 @@ def main():
                     detail=fixture.run_update(mode)
                     records.append(dict(name=mode,status='PASS',detail=detail))
                 except Exception as error:records.append(dict(name=mode,status='FAIL',error=str(error)));failed=True
-                finally:
-                    if fixture:fixture.close()
                 print(json.dumps(records[-1]),flush=True)
+                persist() # Primary evidence must survive a cleanup exception.
+                if fixture:
+                    try:fixture.close()
+                    except Exception as error:
+                        failed=True;records.append(dict(name=mode+'-cleanup',status='FAIL',error=str(error)))
+                        # Do not recursively walk a still-mounted fixture during
+                        # Python's implicit finalizer. CI retains it for logs.
+                        fixture.temp._finalizer.detach()
+                        fixture.exec_temp._finalizer.detach()
+                        persist();print(json.dumps(records[-1]),flush=True)
                 if failed:break
     finally:
         ash.unlink()
         if args.busybox_tools:utilities.cleanup()
-    report=dict(stage='R0013',revision='p41-r1-live-entry-service-and-rollback-coordinator',
+    report=dict(stage='R0013',revision='p42-live-fixture-terminal-evidence-and-scoped-exit-wait',
                 status='FAIL_FIRST_ERROR' if failed else 'PASS_LIVE_R1_SERVICE_TRANSITION',
                 shell=shell,tests=records,sourceSha256=hashlib.sha256(ENTRY.read_bytes()).hexdigest(),
                 scope='Real signed fixture r1 update engine, cached r1 S24, new runtime-prepare and new S24, cross-filesystem RAM handoff. Daemon workload, lighttpd and publication OS calls mocked. Boot/finalization not yet integrated.')
