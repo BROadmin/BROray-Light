@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0013",
+  "revision": "p3-process-port",
+  "status": "FAIL_FIRST_ERROR",
+  "gate": "SCOPED_XRAY_PROCESS_IDENTITY",
+  "test": "owned-long-config",
+  "expected": "Accept exact owned runtime invoked as xray run --config=/managed/config.json",
+  "actual": "identity rejected with exit 1",
+  "cause": "The pinned upstream matcher recognizes --config= but its NR<4 final guard incorrectly rejects this valid three-argument form.",
+  "source": {
+    "path": "packaging/r0013-overlay/app/lib/xray-process.sh",
+    "sha256": "5c7a1180511276d54977f0eb6fd52244688a45b22efc95c2501d11728f0e8573"
+  },
+  "testSourceSha256": "d793947a4144b83fae225854c3f21b43b2db69a9fb457383ed04415f719c7ba0",
+  "sameRevisionRetried": false,
+  "nextCorrectedRevision": "p4-process-equals-config-guard",
+  "correction": "Require at least argv0/run/config (NR>=3), retaining exactly-one config, complete argument and validator/foreign-config rejection.",
+  "candidateReady": false
+}

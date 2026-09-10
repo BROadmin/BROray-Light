@@ -1,0 +1,139 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0013",
+  "revision": "p4-process-equals-config-guard",
+  "status": "PASS",
+  "liveLinux": false,
+  "targetRouterTested": false,
+  "sourceSha256": "22e1b0f2257f28d7ba2e9eb308c9378f48c7c716a0a4c6826d396dadf6787196",
+  "tests": [
+    {
+      "test": "syntax:bin/broray-lightd",
+      "status": "PASS"
+    },
+    {
+      "test": "syntax:bin/broray-xray-control",
+      "status": "PASS"
+    },
+    {
+      "test": "syntax:lib/xray-control.sh",
+      "status": "PASS"
+    },
+    {
+      "test": "syntax:lib/xray-process.sh",
+      "status": "PASS"
+    },
+    {
+      "test": "syntax:lib/xray.sh",
+      "status": "PASS"
+    },
+    {
+      "test": "owned-short-config",
+      "status": "PASS"
+    },
+    {
+      "test": "owned-long-config",
+      "status": "PASS"
+    },
+    {
+      "test": "owned-config",
+      "status": "PASS"
+    },
+    {
+      "test": "validator-before-config",
+      "status": "PASS"
+    },
+    {
+      "test": "validator-after-config",
+      "status": "PASS"
+    },
+    {
+      "test": "validator-equals",
+      "status": "PASS"
+    },
+    {
+      "test": "foreign-config",
+      "status": "PASS"
+    },
+    {
+      "test": "config-prefix",
+      "status": "PASS"
+    },
+    {
+      "test": "missing-config",
+      "status": "PASS"
+    },
+    {
+      "test": "missing-value",
+      "status": "PASS"
+    },
+    {
+      "test": "duplicate-config",
+      "status": "PASS"
+    },
+    {
+      "test": "config-directory",
+      "status": "PASS"
+    },
+    {
+      "test": "version-command",
+      "status": "PASS"
+    },
+    {
+      "test": "foreign-executable",
+      "status": "PASS"
+    },
+    {
+      "test": "executable-prefix",
+      "status": "PASS"
+    },
+    {
+      "test": "zombie",
+      "status": "PASS"
+    },
+    {
+      "test": "reject-pid:0",
+      "status": "PASS"
+    },
+    {
+      "test": "reject-pid:1",
+      "status": "PASS"
+    },
+    {
+      "test": "reject-pid:abc",
+      "status": "PASS"
+    },
+    {
+      "test": "reject-pid:10/1",
+      "status": "PASS"
+    },
+    {
+      "test": "reject-pid:999",
+      "status": "PASS"
+    },
+    {
+      "test": "validator-and-foreign-before-runtime",
+      "status": "PASS"
+    },
+    {
+      "test": "signal-only-managed-runtime",
+      "status": "PASS"
+    },
+    {
+      "test": "reject-unlisted-signal",
+      "status": "PASS"
+    },
+    {
+      "test": "init-error-propagation:start",
+      "status": "PASS"
+    },
+    {
+      "test": "init-error-propagation:stop",
+      "status": "PASS"
+    },
+    {
+      "test": "init-error-propagation:restart",
+      "status": "PASS"
+    }
+  ]
+}

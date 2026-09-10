@@ -1,0 +1,45 @@
+#!/opt/bin/ash
+ROOT="${BRORAY_ROOT:-/opt/broray-light}"
+. "$ROOT/lib/xray-process.sh" || exit 1
+BRORAY_XRAY_BINARY="$ROOT/runtime/xray"
+BRORAY_XRAY_CONFIG="$ROOT/config/config.json"
+
+status() { broray_xray_runtime_pid >/dev/null 2>&1; }
+
+start() {
+    status && return 0
+    [ -x "$BRORAY_XRAY_BINARY" ] && [ -s "$BRORAY_XRAY_CONFIG" ] || return 1
+    "$ROOT/bin/broray-xray-start" >>"$ROOT/logs/xray.log" 2>&1 &
+    local i=0
+    while [ "$i" -lt 10 ]; do
+        status && return 0
+        i=$((i+1))
+        sleep 1
+    done
+    return 1
+}
+
+stop() {
+    status || return 0
+    broray_xray_runtime_signal TERM || return 1
+    local i=0
+    while [ "$i" -lt 10 ]; do
+        status || return 0
+        i=$((i+1))
+        sleep 1
+    done
+    broray_xray_runtime_signal 9 || return 1
+    i=0
+    while [ "$i" -lt 3 ]; do
+        status || return 0
+        i=$((i+1))
+        sleep 1
+    done
+    return 1
+}
+
+restart() { stop && start; }
+case "${1:-}" in
+    start|stop|restart|status) "$1" ;;
+    *) echo 'Usage: broray-xray-control {start|stop|restart|status}' >&2; exit 1 ;;
+esac

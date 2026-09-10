@@ -1,0 +1,468 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0013",
+  "revision": "p2-delta-classification",
+  "status": "PASS_AUDIT_NOT_IMPLEMENTATION",
+  "deltaSha256": "3eff396c3755fbe4a74644434c72c1aa428ea55fa4c95374648127057aadeda5",
+  "baseline": "Light 1.0.0-r1",
+  "upstream": "BROray 3.1.0-r09c02",
+  "updaterPlatformChange": "NONE: byte-identical upstream platform/engine to r23; do not inherit unfinished R0012 updater",
+  "records": [
+    {
+      "path": "SHA256SUMS",
+      "upstreamSha256": "cc362bc32f2db089f377e69c649f24ecc90aae3dcec76ac612160b8ffe5bba83",
+      "group": "regenerate-light-metadata",
+      "decision": "Generate independent Light identities, cache version and deterministic manifests after port validation.",
+      "implementation": "PENDING_LIGHT_VALIDATION"
+    },
+    {
+      "path": "app/bin/broray",
+      "upstreamSha256": "98df5dbf94f5fa72e09a746c76000a7470b2d799d31d386442143342d59dfeb8",
+      "group": "xray-version-selector",
+      "decision": "Adapt catalog/explicit consent/rollback semantics to the existing Light Home card and operation lock. Do not add a fourth Xray page or reuse full-BROray compatibility PASS.",
+      "implementation": "PENDING_LIGHT_VALIDATION"
+    },
+    {
+      "path": "app/bin/broray-connection-monitor",
+      "upstreamSha256": "1d661d1d357602ec1846e30e200b2516b57afec75560679f76a46587838373a5",
+      "group": "existing-light-runtime",
+      "decision": "Retain Light's single primary loop and one-shot jobs; test recovery and failover instead of adding donor daemons or quality snapshots.",
+      "implementation": "PENDING_LIGHT_VALIDATION"
+    },
+    {
+      "path": "app/bin/broray-home-snapshotd",
+      "upstreamSha256": "8bd587648309181b151c2f7b1c4f1f284a578d129a27f5ea033d4b8dbfa2b3ca",
+      "group": "existing-light-runtime",
+      "decision": "Retain Light's single primary loop and one-shot jobs; test recovery and failover instead of adding donor daemons or quality snapshots.",
+      "implementation": "PENDING_LIGHT_VALIDATION"
+    },
+    {
+      "path": "app/bin/broray-server-auto-switch",
+      "upstreamSha256": "af8f10df6d7b2396892888fbb578dd85ce6d254385c75bca3fa9849503e52dd0",
+      "group": "existing-light-runtime",
+      "decision": "Retain Light's single primary loop and one-shot jobs; test recovery and failover instead of adding donor daemons or quality snapshots.",
+      "implementation": "PENDING_LIGHT_VALIDATION"
+    },
+    {
+      "path": "app/lib/interface-sync.sh",
+      "upstreamSha256": "7ad8fe9d521f3d26483ad90b33fade88f65b109d9e5444358ba8467f0d110f51",
+      "group": "active-interface-name",
+      "decision": "Port transactional subscription display-name synchronization and UTF-8 description handling using Light's own ownership receipt only.",
+      "implementation": "PENDING_LIGHT_VALIDATION"
+    },
+    {
+      "path": "app/lib/lighttpd-guard.sh",
+      "upstreamSha256": "09b74595093fb87cfffd4efd41e86f3e1cfb6cb132f27c2aa38f707cd51bef3b",
+      "group": "light-web-access",
+      "decision": "Review full publication fixes against Light's distinct exact-receipt publisher; expose applicable controls on Home without importing the full Keenetic page.",
+      "implementation": "PENDING_LIGHT_VALIDATION"
+    },
+    {
+      "path": "app/lib/routes-bundle-registry.sh",
+      "upstreamSha256": "04e02278c5b7d187db62110242ca659b00c82868ade8945c49a00f54071f8f25",
+      "group": "excluded-product-modules",
+      "decision": "Excluded by Light contract: Routes, DoT management, quality batching/history/ranking. Do not copy.",
+      "implementation": "DO_NOT_PORT"
+    },
+    {
+      "path": "app/lib/routes-page-summary.sh",
+      "upstreamSha256": "7b26bffd82c746ce9d5c75138322befdf26399af37a4a323281b0b4d90b12f35",
+      "group": "excluded-product-modules",
+      "decision": "Excluded by Light contract: Routes, DoT management, quality batching/history/ranking. Do not copy.",
+      "implementation": "DO_NOT_PORT"
+    },
+    {
+      "path": "app/lib/routes-router-sync.sh",
+      "upstreamSha256": "c223009c9ac47e79db083dc211579d574b8afa9e35c24a4d8d74fef03a33dade",
+      "group": "excluded-product-modules",
+      "decision": "Excluded by Light contract: Routes, DoT management, quality batching/history/ranking. Do not copy.",
+      "implementation": "DO_NOT_PORT"
+    },
+    {
+      "path": "app/lib/routes-runtime-repair.sh",
+      "upstreamSha256": "f16e4b91af5a5d81085c16aef93fcdc2614da328dd34832fdc8986c44491a146",
+      "group": "excluded-product-modules",
+      "decision": "Excluded by Light contract: Routes, DoT management, quality batching/history/ranking. Do not copy.",
+      "implementation": "DO_NOT_PORT"
+    },
+    {
+      "path": "app/lib/server-service.sh",
+      "upstreamSha256": "ff7a665952658a885d2ee36eb4648e74ac13c1b00cb4a9070b3f9b4ce099a156",
+      "group": "active-interface-name",
+      "decision": "Port transactional subscription display-name synchronization and UTF-8 description handling using Light's own ownership receipt only.",
+      "implementation": "PENDING_LIGHT_VALIDATION"
+    },
+    {
+      "path": "app/lib/server-subscription-service.sh",
+      "upstreamSha256": "7a8f28787dccbf0c78e44fab5623e0c9784b771de601e7942fc0f7f2e994b0dd",
+      "group": "active-interface-name",
+      "decision": "Port transactional subscription display-name synchronization and UTF-8 description handling using Light's own ownership receipt only.",
+      "implementation": "PENDING_LIGHT_VALIDATION"
+    },
+    {
+      "path": "app/lib/web-publish.sh",
+      "upstreamSha256": "085ae47cea6340f09d0762037717c73ab6ced98b9b273031f9551645bf01f98c",
+      "group": "light-web-access",
+      "decision": "Review full publication fixes against Light's distinct exact-receipt publisher; expose applicable controls on Home without importing the full Keenetic page.",
+      "implementation": "PENDING_LIGHT_VALIDATION"
+    },
+    {
+      "path": "app/lib/xray-command.sh",
+      "upstreamSha256": "f73151f51ce6ad2a2339439abb9e305145cfa355f6ea8ea3b5d9a6c027749782",
+      "group": "xray-version-selector",
+      "decision": "Adapt catalog/explicit consent/rollback semantics to the existing Light Home card and operation lock. Do not add a fourth Xray page or reuse full-BROray compatibility PASS.",
+      "implementation": "PENDING_LIGHT_VALIDATION"
+    },
+    {
+      "path": "app/lib/xray-control.sh",
+      "upstreamSha256": "107a8ee88e322a7b4fe541dfa65ef9aedb1396f80378d17006740455f587463a",
+      "group": "process-identity",
+      "decision": "Port shared exact executable/config/argv/start-time matching; replace Light's pidof/killall sites. Validators and foreign runtime must not count or receive signals.",
+      "implementation": "PENDING_LIGHT_VALIDATION"
+    },
+    {
+      "path": "app/lib/xray-process.sh",
+      "upstreamSha256": "79e5618c19868aac3898a7fc374de9dd950ebf3341b635c6f1538f6088ffee05",
+      "group": "process-identity",
+      "decision": "Port shared exact executable/config/argv/start-time matching; replace Light's pidof/killall sites. Validators and foreign runtime must not count or receive signals.",
+      "implementation": "PENDING_LIGHT_VALIDATION"
+    },
+    {
+      "path": "app/lib/xray-releases.jq",
+      "upstreamSha256": "b52cddd58bdcaf51f412575d638b2eb17ced079fda7402306a198302866ba00e",
+      "group": "xray-version-selector",
+      "decision": "Adapt catalog/explicit consent/rollback semantics to the existing Light Home card and operation lock. Do not add a fourth Xray page or reuse full-BROray compatibility PASS.",
+      "implementation": "PENDING_LIGHT_VALIDATION"
+    },
+    {
+      "path": "app/lib/xray-releases.sh",
+      "upstreamSha256": "351fb94601338b826185509a50f544b983b29ad00d9c39f06a086804004d9803",
+      "group": "xray-version-selector",
+      "decision": "Adapt catalog/explicit consent/rollback semantics to the existing Light Home card and operation lock. Do not add a fourth Xray page or reuse full-BROray compatibility PASS.",
+      "implementation": "PENDING_LIGHT_VALIDATION"
+    },
+    {
+      "path": "app/lib/xray-update.sh",
+      "upstreamSha256": "571e3bc79da1d3437ea1c3d598eb13d536c54c8c8286d8ff2c9f2f7764e1e815",
+      "group": "xray-version-selector",
+      "decision": "Adapt catalog/explicit consent/rollback semantics to the existing Light Home card and operation lock. Do not add a fourth Xray page or reuse full-BROray compatibility PASS.",
+      "implementation": "PENDING_LIGHT_VALIDATION"
+    },
+    {
+      "path": "app/lib/xray-web-operation.sh",
+      "upstreamSha256": "79931f94466a78c588820c05ef258bd56befa495dbac5e1a82b239f70bc88aa9",
+      "group": "xray-version-selector",
+      "decision": "Adapt catalog/explicit consent/rollback semantics to the existing Light Home card and operation lock. Do not add a fourth Xray page or reuse full-BROray compatibility PASS.",
+      "implementation": "PENDING_LIGHT_VALIDATION"
+    },
+    {
+      "path": "app/lib/xray.sh",
+      "upstreamSha256": "238b58cab5b31dd31f4d14b27c3435ca201ea8765bb4a2dcef20f3bc96d7f233",
+      "group": "process-identity",
+      "decision": "Port shared exact executable/config/argv/start-time matching; replace Light's pidof/killall sites. Validators and foreign runtime must not count or receive signals.",
+      "implementation": "PENDING_LIGHT_VALIDATION"
+    },
+    {
+      "path": "app/share/release/manifest.json",
+      "upstreamSha256": "de7e303d8abbf28810c074d83ae88d0a272aa58a98ae99bf8745bde3db9c0ad3",
+      "group": "regenerate-light-metadata",
+      "decision": "Generate independent Light identities, cache version and deterministic manifests after port validation.",
+      "implementation": "PENDING_LIGHT_VALIDATION"
+    },
+    {
+      "path": "app/share/routes/manifests/wikipedia.json",
+      "upstreamSha256": "7e2d9259660887b832b053a4a8a00bba833d54bd0e0dc3b1864d2ceb3c6a20c5",
+      "group": "excluded-product-modules",
+      "decision": "Excluded by Light contract: Routes, DoT management, quality batching/history/ranking. Do not copy.",
+      "implementation": "DO_NOT_PORT"
+    },
+    {
+      "path": "app/share/xray-compatibility.json",
+      "upstreamSha256": "357addb7b761ced14a133f4101898d70226b996e5d81644c3cbc54926434d688",
+      "group": "xray-version-selector",
+      "decision": "Adapt catalog/explicit consent/rollback semantics to the existing Light Home card and operation lock. Do not add a fourth Xray page or reuse full-BROray compatibility PASS.",
+      "implementation": "PENDING_LIGHT_VALIDATION"
+    },
+    {
+      "path": "app/web-new/api/home/summary.cgi",
+      "upstreamSha256": "353e69fd9d953e818b3f32fcd1f007303b3bc247e574d668df1933eca91710d9",
+      "group": "light-webui-adaptation",
+      "decision": "Adapt only related controls and version-safe navigation to the existing three-page Light UI; preserve native auth/session behavior and no embedded manual.",
+      "implementation": "PENDING_LIGHT_VALIDATION"
+    },
+    {
+      "path": "app/web-new/api/keenetic/web-access-action-common.sh",
+      "upstreamSha256": "a1612403d09714d4b2bd413ecb972f7d8fea89b5d8f5ed9c610582882d500982",
+      "group": "light-web-access",
+      "decision": "Review full publication fixes against Light's distinct exact-receipt publisher; expose applicable controls on Home without importing the full Keenetic page.",
+      "implementation": "PENDING_LIGHT_VALIDATION"
+    },
+    {
+      "path": "app/web-new/api/keenetic/web-access-disable.cgi",
+      "upstreamSha256": "432757f80628b867a9224122dcf161037f0e1b3a60db6af119b588df5e24fdb2",
+      "group": "light-web-access",
+      "decision": "Review full publication fixes against Light's distinct exact-receipt publisher; expose applicable controls on Home without importing the full Keenetic page.",
+      "implementation": "PENDING_LIGHT_VALIDATION"
+    },
+    {
+      "path": "app/web-new/api/keenetic/web-access-enable.cgi",
+      "upstreamSha256": "23d81053aa903eb14db4ef74d1b343054a1d44bed57dd68ad031b48483b288fc",
+      "group": "light-web-access",
+      "decision": "Review full publication fixes against Light's distinct exact-receipt publisher; expose applicable controls on Home without importing the full Keenetic page.",
+      "implementation": "PENDING_LIGHT_VALIDATION"
+    },
+    {
+      "path": "app/web-new/api/keenetic/web-access-status.cgi",
+      "upstreamSha256": "648a3db57ee495a38949f84a836df43305af18f9994c58de83dd0b0d07ca5a5e",
+      "group": "light-web-access",
+      "decision": "Review full publication fixes against Light's distinct exact-receipt publisher; expose applicable controls on Home without importing the full Keenetic page.",
+      "implementation": "PENDING_LIGHT_VALIDATION"
+    },
+    {
+      "path": "app/web-new/api/login.cgi",
+      "upstreamSha256": "df144dd7c54329c9cdff2b0bf1da1935132a67f07135c3e661fe5f0425d62e12",
+      "group": "light-webui-adaptation",
+      "decision": "Adapt only related controls and version-safe navigation to the existing three-page Light UI; preserve native auth/session behavior and no embedded manual.",
+      "implementation": "PENDING_LIGHT_VALIDATION"
+    },
+    {
+      "path": "app/web-new/api/servers/quality-batch-complete.cgi",
+      "upstreamSha256": "d790b7746c8d608153d0514fe57a7ba85533e3e028730b8e3662c5b8beb8c9a5",
+      "group": "excluded-product-modules",
+      "decision": "Excluded by Light contract: Routes, DoT management, quality batching/history/ranking. Do not copy.",
+      "implementation": "DO_NOT_PORT"
+    },
+    {
+      "path": "app/web-new/api/xray/install.cgi",
+      "upstreamSha256": "59deb18012632fdbdc982be88f57b9a75bd06ed268ddc6c78aba8734f5a21c82",
+      "group": "xray-version-selector",
+      "decision": "Adapt catalog/explicit consent/rollback semantics to the existing Light Home card and operation lock. Do not add a fourth Xray page or reuse full-BROray compatibility PASS.",
+      "implementation": "PENDING_LIGHT_VALIDATION"
+    },
+    {
+      "path": "app/web-new/api/xray/operation-status.cgi",
+      "upstreamSha256": "07aa6019889a92d5f19631589709d8037abbe85bc5f0205e14ae861f606aa124",
+      "group": "xray-version-selector",
+      "decision": "Adapt catalog/explicit consent/rollback semantics to the existing Light Home card and operation lock. Do not add a fourth Xray page or reuse full-BROray compatibility PASS.",
+      "implementation": "PENDING_LIGHT_VALIDATION"
+    },
+    {
+      "path": "app/web-new/assets/css/allpage.css",
+      "upstreamSha256": "2ffc9ff94b109dae5587b71382ee4caf647be44c303f264da85e07322b3fd9d3",
+      "group": "light-webui-adaptation",
+      "decision": "Adapt only related controls and version-safe navigation to the existing three-page Light UI; preserve native auth/session behavior and no embedded manual.",
+      "implementation": "PENDING_LIGHT_VALIDATION"
+    },
+    {
+      "path": "app/web-new/assets/js/app-shell.js",
+      "upstreamSha256": "581bab866888136bbcc218771e78bec1a95d5add199c002157aac56a795d05b6",
+      "group": "light-webui-adaptation",
+      "decision": "Adapt only related controls and version-safe navigation to the existing three-page Light UI; preserve native auth/session behavior and no embedded manual.",
+      "implementation": "PENDING_LIGHT_VALIDATION"
+    },
+    {
+      "path": "app/web-new/assets/js/dns.js",
+      "upstreamSha256": "012f80a5f4957b96af8a3d7b208a81cc0b869f2015e219be3d385e76828d6ad0",
+      "group": "excluded-product-modules",
+      "decision": "Excluded by Light contract: Routes, DoT management, quality batching/history/ranking. Do not copy.",
+      "implementation": "DO_NOT_PORT"
+    },
+    {
+      "path": "app/web-new/assets/js/home.js",
+      "upstreamSha256": "78f9a5db0a3ba1626c88f550a8ce13e2d3c6b5f4d08952db1cc5d2a082f01e30",
+      "group": "light-webui-adaptation",
+      "decision": "Adapt only related controls and version-safe navigation to the existing three-page Light UI; preserve native auth/session behavior and no embedded manual.",
+      "implementation": "PENDING_LIGHT_VALIDATION"
+    },
+    {
+      "path": "app/web-new/assets/js/keenetic.js",
+      "upstreamSha256": "0ad55b2e35f35fb32d6a44ec288ce579f0a0e0cca46a5798a3da6c084ab69e7b",
+      "group": "light-web-access",
+      "decision": "Review full publication fixes against Light's distinct exact-receipt publisher; expose applicable controls on Home without importing the full Keenetic page.",
+      "implementation": "PENDING_LIGHT_VALIDATION"
+    },
+    {
+      "path": "app/web-new/assets/js/login.js",
+      "upstreamSha256": "69bd26a507016126cbfadf2139c201c392a96061d88e4eb6c184b79bb3b93370",
+      "group": "light-webui-adaptation",
+      "decision": "Adapt only related controls and version-safe navigation to the existing three-page Light UI; preserve native auth/session behavior and no embedded manual.",
+      "implementation": "PENDING_LIGHT_VALIDATION"
+    },
+    {
+      "path": "app/web-new/assets/js/modules-redirect.js",
+      "upstreamSha256": "2c8888a4d3cc97fb39962f85dc3c3c7a492fc75f82bb53ccd1eeb7832a24c23b",
+      "group": "light-webui-adaptation",
+      "decision": "Adapt only related controls and version-safe navigation to the existing three-page Light UI; preserve native auth/session behavior and no embedded manual.",
+      "implementation": "PENDING_LIGHT_VALIDATION"
+    },
+    {
+      "path": "app/web-new/assets/js/routes-catalog.js",
+      "upstreamSha256": "8e889073831920b636878aee002b3742132bfc86a819024a3258970bb808fd4c",
+      "group": "excluded-product-modules",
+      "decision": "Excluded by Light contract: Routes, DoT management, quality batching/history/ranking. Do not copy.",
+      "implementation": "DO_NOT_PORT"
+    },
+    {
+      "path": "app/web-new/assets/js/routes-operation.js",
+      "upstreamSha256": "865b731a192763f958c417af7b146e93b8ba2bed55b84ec94be152d00c9d940d",
+      "group": "excluded-product-modules",
+      "decision": "Excluded by Light contract: Routes, DoT management, quality batching/history/ranking. Do not copy.",
+      "implementation": "DO_NOT_PORT"
+    },
+    {
+      "path": "app/web-new/assets/js/routes-overview.js",
+      "upstreamSha256": "d19e69de8b8bf3f936b2a6b7a5ba68086b5b5508326a1514d6d5a97b99f14351",
+      "group": "excluded-product-modules",
+      "decision": "Excluded by Light contract: Routes, DoT management, quality batching/history/ranking. Do not copy.",
+      "implementation": "DO_NOT_PORT"
+    },
+    {
+      "path": "app/web-new/assets/js/servers-check-all.js",
+      "upstreamSha256": "8aec62b2d55b828db8ccc7f12163ac65e91e4be6507d38fbf6cb90c7003c729f",
+      "group": "excluded-product-modules",
+      "decision": "Excluded by Light contract: Routes, DoT management, quality batching/history/ranking. Do not copy.",
+      "implementation": "DO_NOT_PORT"
+    },
+    {
+      "path": "app/web-new/assets/js/xray.js",
+      "upstreamSha256": "5cd0bdb4034bb422dc3117fe61940c590e226d53a4f5b7187fe490b193f6ca89",
+      "group": "xray-version-selector",
+      "decision": "Adapt catalog/explicit consent/rollback semantics to the existing Light Home card and operation lock. Do not add a fourth Xray page or reuse full-BROray compatibility PASS.",
+      "implementation": "PENDING_LIGHT_VALIDATION"
+    },
+    {
+      "path": "app/web-new/broray.html",
+      "upstreamSha256": "e941e988693c70094976b066f139e964d3416c138b4f50ad22c3bbadd5f39573",
+      "group": "light-webui-adaptation",
+      "decision": "Adapt only related controls and version-safe navigation to the existing three-page Light UI; preserve native auth/session behavior and no embedded manual.",
+      "implementation": "PENDING_LIGHT_VALIDATION"
+    },
+    {
+      "path": "app/web-new/build.json",
+      "upstreamSha256": "47cff6d8a9959dbea4752f43a5000dda4c41378b3a63d9bb3b91bec36ea1f75c",
+      "group": "regenerate-light-metadata",
+      "decision": "Generate independent Light identities, cache version and deterministic manifests after port validation.",
+      "implementation": "PENDING_LIGHT_VALIDATION"
+    },
+    {
+      "path": "app/web-new/dns.html",
+      "upstreamSha256": "0b87bb0affb08e1dc91bc7ef1ff04f715110d1beb3a0fa286c57281ca858230f",
+      "group": "excluded-product-modules",
+      "decision": "Excluded by Light contract: Routes, DoT management, quality batching/history/ranking. Do not copy.",
+      "implementation": "DO_NOT_PORT"
+    },
+    {
+      "path": "app/web-new/home.html",
+      "upstreamSha256": "c926a85fa8ad5c3bca4cea66e5e8c21b77406248fa723460d38527f0ba7a1127",
+      "group": "light-webui-adaptation",
+      "decision": "Adapt only related controls and version-safe navigation to the existing three-page Light UI; preserve native auth/session behavior and no embedded manual.",
+      "implementation": "PENDING_LIGHT_VALIDATION"
+    },
+    {
+      "path": "app/web-new/index.html",
+      "upstreamSha256": "11192660fbe331db3d0cfaaa05ca520a4509a7d0b0fc4ec7407ad34fa7cb499b",
+      "group": "light-webui-adaptation",
+      "decision": "Adapt only related controls and version-safe navigation to the existing three-page Light UI; preserve native auth/session behavior and no embedded manual.",
+      "implementation": "PENDING_LIGHT_VALIDATION"
+    },
+    {
+      "path": "app/web-new/keenetic.html",
+      "upstreamSha256": "5ef654a30357718621c9c79c4739d7bf858894bd4dfdc4fdeb65c83caba6ec08",
+      "group": "light-web-access",
+      "decision": "Review full publication fixes against Light's distinct exact-receipt publisher; expose applicable controls on Home without importing the full Keenetic page.",
+      "implementation": "PENDING_LIGHT_VALIDATION"
+    },
+    {
+      "path": "app/web-new/modules.html",
+      "upstreamSha256": "c632c4128a5b620388f58b6d89e847d1da6e5006c322d3d24431b54aa2bc99b8",
+      "group": "light-webui-adaptation",
+      "decision": "Adapt only related controls and version-safe navigation to the existing three-page Light UI; preserve native auth/session behavior and no embedded manual.",
+      "implementation": "PENDING_LIGHT_VALIDATION"
+    },
+    {
+      "path": "app/web-new/routes-custom.html",
+      "upstreamSha256": "f20eacbaeef3f4de719653c25c37616c593881f71d74d7270f9f1af811410416",
+      "group": "excluded-product-modules",
+      "decision": "Excluded by Light contract: Routes, DoT management, quality batching/history/ranking. Do not copy.",
+      "implementation": "DO_NOT_PORT"
+    },
+    {
+      "path": "app/web-new/routes-import.html",
+      "upstreamSha256": "664392fa883c267160066ccc1fcdbf48a684d89eeb9ad070fbb6992c058d1d29",
+      "group": "excluded-product-modules",
+      "decision": "Excluded by Light contract: Routes, DoT management, quality batching/history/ranking. Do not copy.",
+      "implementation": "DO_NOT_PORT"
+    },
+    {
+      "path": "app/web-new/routes.html",
+      "upstreamSha256": "a95d14db1afab38c7d1d0dc539ecbb6cb6873a06c294485985ebbe54de1f316d",
+      "group": "excluded-product-modules",
+      "decision": "Excluded by Light contract: Routes, DoT management, quality batching/history/ranking. Do not copy.",
+      "implementation": "DO_NOT_PORT"
+    },
+    {
+      "path": "app/web-new/servers.html",
+      "upstreamSha256": "186949a87620940d5f8b6aa749c851d6711723f22086b1b7efd8276fdf50224d",
+      "group": "light-webui-adaptation",
+      "decision": "Adapt only related controls and version-safe navigation to the existing three-page Light UI; preserve native auth/session behavior and no embedded manual.",
+      "implementation": "PENDING_LIGHT_VALIDATION"
+    },
+    {
+      "path": "app/web-new/subscriptions.html",
+      "upstreamSha256": "1fcca1026bf22946664b25cc132670923d85db358dc03f222502244b5ab08ede",
+      "group": "light-webui-adaptation",
+      "decision": "Adapt only related controls and version-safe navigation to the existing three-page Light UI; preserve native auth/session behavior and no embedded manual.",
+      "implementation": "PENDING_LIGHT_VALIDATION"
+    },
+    {
+      "path": "app/web-new/xray.html",
+      "upstreamSha256": "e925ed643e4c54e1e8043b47591c35290dd8736b9e06c26067602e3d79e6e3d2",
+      "group": "xray-version-selector",
+      "decision": "Adapt catalog/explicit consent/rollback semantics to the existing Light Home card and operation lock. Do not add a fourth Xray page or reuse full-BROray compatibility PASS.",
+      "implementation": "PENDING_LIGHT_VALIDATION"
+    },
+    {
+      "path": "init/S23broray-monitor",
+      "upstreamSha256": "885b2d9d0f928831d88242e60d34b3a16f6674899248be8a9d6370dd9200f593",
+      "group": "existing-light-runtime",
+      "decision": "Retain Light's single primary loop and one-shot jobs; test recovery and failover instead of adding donor daemons or quality snapshots.",
+      "implementation": "PENDING_LIGHT_VALIDATION"
+    },
+    {
+      "path": "init/S24broray",
+      "upstreamSha256": "e64c952365b0d5c1f1bf54584f0a91751800ecc1b624f2b7d6eebc86eacddbb6",
+      "group": "process-identity",
+      "decision": "Port shared exact executable/config/argv/start-time matching; replace Light's pidof/killall sites. Validators and foreign runtime must not count or receive signals.",
+      "implementation": "PENDING_LIGHT_VALIDATION"
+    },
+    {
+      "path": "release.json",
+      "upstreamSha256": "1c2c9d9340a8730a0e093d4d6dd27d564f88b25ec95151af8858af54815794e0",
+      "group": "regenerate-light-metadata",
+      "decision": "Generate independent Light identities, cache version and deterministic manifests after port validation.",
+      "implementation": "PENDING_LIGHT_VALIDATION"
+    },
+    {
+      "path": "state-seed/config/version",
+      "upstreamSha256": "06e3fe4a7a1884d20d81cc7065ca8cfd4c394ec602c4d180ddc39bbd4f7da521",
+      "group": "regenerate-light-metadata",
+      "decision": "Generate independent Light identities, cache version and deterministic manifests after port validation.",
+      "implementation": "PENDING_LIGHT_VALIDATION"
+    },
+    {
+      "path": "state-seed/routes/bundles.json",
+      "upstreamSha256": "3af27d6162868b190f1174ae5f53216c8b1a41adef7e7e4c5207ef06e8157c27",
+      "group": "excluded-product-modules",
+      "decision": "Excluded by Light contract: Routes, DoT management, quality batching/history/ranking. Do not copy.",
+      "implementation": "DO_NOT_PORT"
+    },
+    {
+      "path": "state-seed/routes/manifests/wikipedia.json",
+      "upstreamSha256": "7e2d9259660887b832b053a4a8a00bba833d54bd0e0dc3b1864d2ceb3c6a20c5",
+      "group": "excluded-product-modules",
+      "decision": "Excluded by Light contract: Routes, DoT management, quality batching/history/ranking. Do not copy.",
+      "implementation": "DO_NOT_PORT"
+    }
+  ],
+  "candidateReady": false
+}

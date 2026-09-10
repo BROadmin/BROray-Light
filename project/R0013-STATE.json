@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0013_SELECTIVE_UPSTREAM_STABLE_PORT",
+  "status": "IN_PROGRESS",
+  "currentRevision": "p4-process-equals-config-guard",
+  "activeFailure": null,
+  "lastResolvedFailure": "checkpoints/R0013/process-failures/FAILURE-P3-CONFIG-EQUALS-ARGC.json",
+  "processPort": {"status": "PASS_LOCAL_FIXTURE_TESTS", "tests": 32, "liveLinux": "PENDING", "path": "checkpoints/R0013/XRAY-PROCESS-P4.json", "sha256": "55fc53f098e835776f58ad06096bbf5db84ae3bf20195c108efe6c902bb09c36"},
+  "workingBranch": "codex/r0009-updater-package",
+  "baseLightRelease": "1.0.0-r1",
+  "baseLightCommit": "9e5fce9bfa7c82bfc2f2654d80fd3987c5259963",
+  "upstreamStable": "3.1.0-r09",
+  "upstreamCandidate": "3.1.0-r09c02",
+  "releaseId": null,
+  "candidateReady": false,
+  "releaseReady": false,
+  "publicReleasePublished": false,
+  "startCheckpoint": {
+    "path": "checkpoints/R0013/START-P1.json",
+    "sha256": "1f1c7f44f9e159927b1e295b7950e93209a65f885a060511077bf4a991168da0"
+  },
+  "preexistingWorktree": {
+    "path": "checkpoints/R0013/PREEXISTING-WORKTREE-P1.json",
+    "sha256": "a8f80532e43b1c74c4d393d039f42c1c00aa1ebc0d15c5f5759e14c688a53656",
+    "fileCount": 505
+  },
+  "completedGates": ["PINNED_UPSTREAM_ARCHIVE_IDENTITIES", "ARCHIVE_MEMBER_SAFETY", "COMPLETE_UPSTREAM_DELTA_CLASSIFICATION"],
+  "upstreamDelta": {"path": "checkpoints/R0013/UPSTREAM-DELTA-P2.json", "sha256": "3eff396c3755fbe4a74644434c72c1aa428ea55fa4c95374648127057aadeda5"},
+  "portMap": {"path": "checkpoints/R0013/UPSTREAM-PORT-MAP-P2.json", "sha256": "009a0f5adae08f399c82510cf680690b4c2e50bc8c659eda9c48d91b5a838121"},
+  "nextExactAction": "LINUX_PROCESS_TEST_AND_TRANSACTIONAL_SUBSCRIPTION_NAME_PORT"
+}

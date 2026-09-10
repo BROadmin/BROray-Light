@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0013_SELECTIVE_UPSTREAM_STABLE_PORT",
+  "revision": "p1-user-corrected-scope",
+  "recordedAt": "2026-09-10T17:24:09.5978240+03:00",
+  "status": "STARTED_READ_ONLY_DONOR_AUDIT",
+  "userAuthorization": [
+    "Release an update for BROray-Light",
+    "Base the update on changes in the current BROray",
+    "Proceed with work"
+  ],
+  "supersedes": "R0012 p199 automatic r4-resume assumption; no release identity selected before scope audit",
+  "workingBranch": "codex/r0009-updater-package",
+  "workingHead": "b475a1881c141f969958bdc0148caf39beb2178e",
+  "baseLight": {
+    "version": "1.0.0-r1",
+    "commit": "9e5fce9bfa7c82bfc2f2654d80fd3987c5259963",
+    "canonicalR0008Commit": "684b27bdb53e545047419baa87c63dd86dffa469"
+  },
+  "upstream": {
+    "version": "3.1.0-r09",
+    "candidate": "3.1.0-r09c02",
+    "releaseTag": "v3.1.0-r09",
+    "tagCommit": "a37562e4f741b3e8f733a8a97d423965d6cc391d",
+    "gitRootCodeLastCommit": "aa8794892591c2d551f8d58680a938bb81120a2a",
+    "sourceAuthority": "EXACT_RELEASE_APPLICATION_ARCHIVE_NOT_GITHUB_ROOT_SOURCE",
+    "applicationSha256": "635e905d0fb31aff84cd92026dfed21ad204ea45c8d0a5562fecb248178b32e8"
+  },
+  "constraints": {
+    "preserveDirtyR0012": true,
+    "reuseFailedR0012Automatically": false,
+    "fullBROrayReadOnly": true,
+    "selectivePortOnly": true,
+    "protocols": [
+      "VLESS"
+    ],
+    "functionalPages": [
+      "home",
+      "servers",
+      "subscriptions"
+    ],
+    "excluded": [
+      "Routes",
+      "DNS-over-TLS management",
+      "ratings",
+      "quality history",
+      "scheduled quality refresh"
+    ],
+    "nativeAuthentication": "PRESERVE",
+    "ambiguousCoownership": "FAIL_CLOSED",
+    "temporaryRuntimeStorage": "RAM",
+    "independentBuildsRequired": true,
+    "allWebUiButtonsRequired": true
+  },
+  "candidateReady": false,
+  "releaseReady": false,
+  "publicReleasePublished": false,
+  "nextExactAction": "VERIFY_CURRENT_AND_BASE_DONOR_RELEASE_ARCHIVES_AND_MAP_COMPATIBLE_CHANGES_TO_VALIDATED_LIGHT_R1"
+}

@@ -1,0 +1,40 @@
+name: R0013 selective upstream port regression
+
+on:
+  push:
+    branches: [codex/r0009-updater-package]
+    paths:
+      - '.github/workflows/r0013-port-tests.yml'
+      - 'packaging/r0013-overlay/**'
+      - 'tools/test_r0013*.py'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: r0013-port-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  isolated-process:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+      - name: Install isolated test dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends busybox dash gcc jq
+      - name: BusyBox ash syntax
+        run: |
+          set -eu
+          find packaging/r0013-overlay/app -type f -print0 |
+            while IFS= read -r -d '' file; do
+              case "$file" in */bin/*|*.sh) busybox ash -n "$file";; esac
+            done
+      - name: Real Linux process ownership and signal isolation
+        run: python3 -B tools/test_r0013_process.py --shell /bin/dash --live-linux

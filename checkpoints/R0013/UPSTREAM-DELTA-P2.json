@@ -1,0 +1,538 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0013",
+  "archiveSafety": "PASS",
+  "from": {
+    "candidate": "3.0.0-r23c02",
+    "sha256": "69679f6d7339b856faf28f69cb1800254984e5400201fe97247011ab166c3f85",
+    "files": 287
+  },
+  "to": {
+    "candidate": "3.1.0-r09c02",
+    "sha256": "635e905d0fb31aff84cd92026dfed21ad204ea45c8d0a5562fecb248178b32e8",
+    "files": 299
+  },
+  "unchanged": 234,
+  "changes": [
+    {
+      "path": "SHA256SUMS",
+      "change": "modified",
+      "r0008Treatment": "REPLACE",
+      "beforeSha256": "e8e77ad4e8c0acd618b7df66151bb2bd80202ac1b0c2ac43b3d0eaa2a4253675",
+      "afterSha256": "cc362bc32f2db089f377e69c649f24ecc90aae3dcec76ac612160b8ffe5bba83",
+      "afterBytes": 30404
+    },
+    {
+      "path": "app/bin/broray",
+      "change": "modified",
+      "r0008Treatment": "ADAPT",
+      "beforeSha256": "83f23b340991e918f8942b42da6870e595ecdce0f0d3a1a298fe4f460ac21f7a",
+      "afterSha256": "98df5dbf94f5fa72e09a746c76000a7470b2d799d31d386442143342d59dfeb8",
+      "afterBytes": 7582
+    },
+    {
+      "path": "app/bin/broray-connection-monitor",
+      "change": "modified",
+      "r0008Treatment": "REPLACE",
+      "beforeSha256": "0a8a39fe0e819f8bb7599387ccce986352d6446d2efcb5ef6312a4f9c9d86be3",
+      "afterSha256": "1d661d1d357602ec1846e30e200b2516b57afec75560679f76a46587838373a5",
+      "afterBytes": 8131
+    },
+    {
+      "path": "app/bin/broray-home-snapshotd",
+      "change": "modified",
+      "r0008Treatment": "DROP",
+      "beforeSha256": "4b1f5e3612f759286cbb860622969a161ac29cb37169265a1bc1edd1756baede",
+      "afterSha256": "8bd587648309181b151c2f7b1c4f1f284a578d129a27f5ea033d4b8dbfa2b3ca",
+      "afterBytes": 4420
+    },
+    {
+      "path": "app/bin/broray-server-auto-switch",
+      "change": "modified",
+      "r0008Treatment": "REPLACE",
+      "beforeSha256": "608ed3eef2f24602c556f5c7fc29e52834d9b79ff22592186e40cf6f5e1d546c",
+      "afterSha256": "af8f10df6d7b2396892888fbb578dd85ce6d254385c75bca3fa9849503e52dd0",
+      "afterBytes": 37248
+    },
+    {
+      "path": "app/lib/interface-sync.sh",
+      "change": "modified",
+      "r0008Treatment": "ADAPT",
+      "beforeSha256": "8cc3376afcd49f65d7240cdfd46ee4a229e014696153189ff2eb18f21a9de838",
+      "afterSha256": "7ad8fe9d521f3d26483ad90b33fade88f65b109d9e5444358ba8467f0d110f51",
+      "afterBytes": 10061
+    },
+    {
+      "path": "app/lib/lighttpd-guard.sh",
+      "change": "modified",
+      "r0008Treatment": "ADAPT",
+      "beforeSha256": "737e55589f027582b6abff9ca91836adf675676331d57644bbc59bf66f932605",
+      "afterSha256": "09b74595093fb87cfffd4efd41e86f3e1cfb6cb132f27c2aa38f707cd51bef3b",
+      "afterBytes": 25887
+    },
+    {
+      "path": "app/lib/routes-bundle-registry.sh",
+      "change": "modified",
+      "r0008Treatment": "DROP",
+      "beforeSha256": "4c9c78381cc935fe665e9c7279376e0b241881dfceaffdb2aff778cdf706df43",
+      "afterSha256": "04e02278c5b7d187db62110242ca659b00c82868ade8945c49a00f54071f8f25",
+      "afterBytes": 10685
+    },
+    {
+      "path": "app/lib/routes-page-summary.sh",
+      "change": "modified",
+      "r0008Treatment": "DROP",
+      "beforeSha256": "da8841aef2309d459313e2864683ef77f5799d8dd7805714b73363ba82d22446",
+      "afterSha256": "7b26bffd82c746ce9d5c75138322befdf26399af37a4a323281b0b4d90b12f35",
+      "afterBytes": 32956
+    },
+    {
+      "path": "app/lib/routes-router-sync.sh",
+      "change": "modified",
+      "r0008Treatment": "DROP",
+      "beforeSha256": "5ad4e141d6ed6205b29d80638a54d940d71a17c1c8eaf65f00086c1213b839bd",
+      "afterSha256": "c223009c9ac47e79db083dc211579d574b8afa9e35c24a4d8d74fef03a33dade",
+      "afterBytes": 87800
+    },
+    {
+      "path": "app/lib/routes-runtime-repair.sh",
+      "change": "modified",
+      "r0008Treatment": "DROP",
+      "beforeSha256": "e19eb9d3416d7fe64dcf8925a9c44d6866e828e9cf6a696dbb87eee0ef8f3e34",
+      "afterSha256": "f16e4b91af5a5d81085c16aef93fcdc2614da328dd34832fdc8986c44491a146",
+      "afterBytes": 16838
+    },
+    {
+      "path": "app/lib/server-service.sh",
+      "change": "modified",
+      "r0008Treatment": "ADAPT",
+      "beforeSha256": "86590bcb1b09a0a3cb16c2b1b312f74ef103424cfbf321b2f8f5debe86ac53f1",
+      "afterSha256": "ff7a665952658a885d2ee36eb4648e74ac13c1b00cb4a9070b3f9b4ce099a156",
+      "afterBytes": 38452
+    },
+    {
+      "path": "app/lib/server-subscription-service.sh",
+      "change": "modified",
+      "r0008Treatment": "ADAPT",
+      "beforeSha256": "4893e266d5cc63eb521644ced641c5fc1a26c6be52e70d42be4958f8845c789b",
+      "afterSha256": "7a8f28787dccbf0c78e44fab5623e0c9784b771de601e7942fc0f7f2e994b0dd",
+      "afterBytes": 31669
+    },
+    {
+      "path": "app/lib/web-publish.sh",
+      "change": "modified",
+      "r0008Treatment": "DROP",
+      "beforeSha256": "d27c30f73146d9d9b311d05589218aab87d222fee70c21169a468eafdc929ea0",
+      "afterSha256": "085ae47cea6340f09d0762037717c73ab6ced98b9b273031f9551645bf01f98c",
+      "afterBytes": 42048
+    },
+    {
+      "path": "app/lib/xray-command.sh",
+      "change": "modified",
+      "r0008Treatment": "DROP",
+      "beforeSha256": "125ce250f06d84e93c540fbd6f96d407f46b3295b71a3970a7f9db2f281864af",
+      "afterSha256": "f73151f51ce6ad2a2339439abb9e305145cfa355f6ea8ea3b5d9a6c027749782",
+      "afterBytes": 3127
+    },
+    {
+      "path": "app/lib/xray-control.sh",
+      "change": "modified",
+      "r0008Treatment": "ADAPT",
+      "beforeSha256": "60f6b9ae6369acc1efad95e05f0796c3c5c2648c2520466e85ddf251f7583518",
+      "afterSha256": "107a8ee88e322a7b4fe541dfa65ef9aedb1396f80378d17006740455f587463a",
+      "afterBytes": 7056
+    },
+    {
+      "path": "app/lib/xray-process.sh",
+      "change": "added",
+      "r0008Treatment": "NEW_REQUIRES_REVIEW",
+      "beforeSha256": null,
+      "afterSha256": "79e5618c19868aac3898a7fc374de9dd950ebf3341b635c6f1538f6088ffee05",
+      "afterBytes": 2903
+    },
+    {
+      "path": "app/lib/xray-releases.jq",
+      "change": "added",
+      "r0008Treatment": "NEW_REQUIRES_REVIEW",
+      "beforeSha256": null,
+      "afterSha256": "b52cddd58bdcaf51f412575d638b2eb17ced079fda7402306a198302866ba00e",
+      "afterBytes": 3182
+    },
+    {
+      "path": "app/lib/xray-releases.sh",
+      "change": "added",
+      "r0008Treatment": "NEW_REQUIRES_REVIEW",
+      "beforeSha256": null,
+      "afterSha256": "351fb94601338b826185509a50f544b983b29ad00d9c39f06a086804004d9803",
+      "afterBytes": 13618
+    },
+    {
+      "path": "app/lib/xray-update.sh",
+      "change": "modified",
+      "r0008Treatment": "ADAPT",
+      "beforeSha256": "dce397c49a5ada8dfb31d9c736644f57e3efc28c9780b22a0c8384262550bd1e",
+      "afterSha256": "571e3bc79da1d3437ea1c3d598eb13d536c54c8c8286d8ff2c9f2f7764e1e815",
+      "afterBytes": 34884
+    },
+    {
+      "path": "app/lib/xray-web-operation.sh",
+      "change": "modified",
+      "r0008Treatment": "ADAPT",
+      "beforeSha256": "f013017c569818b9edfb7f780c36187908fb474cc7c031b0aed9e27a65813204",
+      "afterSha256": "79931f94466a78c588820c05ef258bd56befa495dbac5e1a82b239f70bc88aa9",
+      "afterBytes": 9896
+    },
+    {
+      "path": "app/lib/xray.sh",
+      "change": "modified",
+      "r0008Treatment": "ADAPT",
+      "beforeSha256": "63747e68b7a5292b02eac6fb410185f2da44ba675e82dae3c48f31f193b5ec33",
+      "afterSha256": "238b58cab5b31dd31f4d14b27c3435ca201ea8765bb4a2dcef20f3bc96d7f233",
+      "afterBytes": 18157
+    },
+    {
+      "path": "app/share/release/manifest.json",
+      "change": "modified",
+      "r0008Treatment": "REPLACE",
+      "beforeSha256": "bd6a3ddff152040f4323e1b9be7338f82ed4bbe396fc5caa7e5f3d5c865b19c1",
+      "afterSha256": "de7e303d8abbf28810c074d83ae88d0a272aa58a98ae99bf8745bde3db9c0ad3",
+      "afterBytes": 1501
+    },
+    {
+      "path": "app/share/routes/manifests/wikipedia.json",
+      "change": "added",
+      "r0008Treatment": "NEW_REQUIRES_REVIEW",
+      "beforeSha256": null,
+      "afterSha256": "7e2d9259660887b832b053a4a8a00bba833d54bd0e0dc3b1864d2ceb3c6a20c5",
+      "afterBytes": 555
+    },
+    {
+      "path": "app/share/xray-compatibility.json",
+      "change": "added",
+      "r0008Treatment": "NEW_REQUIRES_REVIEW",
+      "beforeSha256": null,
+      "afterSha256": "357addb7b761ced14a133f4101898d70226b996e5d81644c3cbc54926434d688",
+      "afterBytes": 3591
+    },
+    {
+      "path": "app/web-new/api/home/summary.cgi",
+      "change": "modified",
+      "r0008Treatment": "REPLACE",
+      "beforeSha256": "18ff70a48ce8cbf537a2de014881f0ffc218f67124f060cdfb6db1fc9622d72b",
+      "afterSha256": "353e69fd9d953e818b3f32fcd1f007303b3bc247e574d668df1933eca91710d9",
+      "afterBytes": 9275
+    },
+    {
+      "path": "app/web-new/api/keenetic/web-access-action-common.sh",
+      "change": "added",
+      "r0008Treatment": "NEW_REQUIRES_REVIEW",
+      "beforeSha256": null,
+      "afterSha256": "a1612403d09714d4b2bd413ecb972f7d8fea89b5d8f5ed9c610582882d500982",
+      "afterBytes": 3895
+    },
+    {
+      "path": "app/web-new/api/keenetic/web-access-disable.cgi",
+      "change": "added",
+      "r0008Treatment": "NEW_REQUIRES_REVIEW",
+      "beforeSha256": null,
+      "afterSha256": "432757f80628b867a9224122dcf161037f0e1b3a60db6af119b588df5e24fdb2",
+      "afterBytes": 114
+    },
+    {
+      "path": "app/web-new/api/keenetic/web-access-enable.cgi",
+      "change": "added",
+      "r0008Treatment": "NEW_REQUIRES_REVIEW",
+      "beforeSha256": null,
+      "afterSha256": "23d81053aa903eb14db4ef74d1b343054a1d44bed57dd68ad031b48483b288fc",
+      "afterBytes": 113
+    },
+    {
+      "path": "app/web-new/api/keenetic/web-access-status.cgi",
+      "change": "added",
+      "r0008Treatment": "NEW_REQUIRES_REVIEW",
+      "beforeSha256": null,
+      "afterSha256": "648a3db57ee495a38949f84a836df43305af18f9994c58de83dd0b0d07ca5a5e",
+      "afterBytes": 1375
+    },
+    {
+      "path": "app/web-new/api/login.cgi",
+      "change": "modified",
+      "r0008Treatment": "PORT",
+      "beforeSha256": "3292bc09dddec70d13615350c920dc0ad1620041e9cf20627cf7c3d199fb5667",
+      "afterSha256": "df144dd7c54329c9cdff2b0bf1da1935132a67f07135c3e661fe5f0425d62e12",
+      "afterBytes": 3159
+    },
+    {
+      "path": "app/web-new/api/servers/quality-batch-complete.cgi",
+      "change": "added",
+      "r0008Treatment": "NEW_REQUIRES_REVIEW",
+      "beforeSha256": null,
+      "afterSha256": "d790b7746c8d608153d0514fe57a7ba85533e3e028730b8e3662c5b8beb8c9a5",
+      "afterBytes": 1560
+    },
+    {
+      "path": "app/web-new/api/xray/install.cgi",
+      "change": "added",
+      "r0008Treatment": "NEW_REQUIRES_REVIEW",
+      "beforeSha256": null,
+      "afterSha256": "59deb18012632fdbdc982be88f57b9a75bd06ed268ddc6c78aba8734f5a21c82",
+      "afterBytes": 217
+    },
+    {
+      "path": "app/web-new/api/xray/operation-status.cgi",
+      "change": "modified",
+      "r0008Treatment": "ADAPT",
+      "beforeSha256": "c009a6c4bf026ab04a3655dc7da6b7abb47392e80ec2f2197ac29ecf365f5e10",
+      "afterSha256": "07aa6019889a92d5f19631589709d8037abbe85bc5f0205e14ae861f606aa124",
+      "afterBytes": 1708
+    },
+    {
+      "path": "app/web-new/assets/css/allpage.css",
+      "change": "modified",
+      "r0008Treatment": "REPLACE",
+      "beforeSha256": "b0a79e3f48dac5ef870c9c09ca0423eb5b390b72c2f5245cc6f7efd44d2d7e36",
+      "afterSha256": "2ffc9ff94b109dae5587b71382ee4caf647be44c303f264da85e07322b3fd9d3",
+      "afterBytes": 155373
+    },
+    {
+      "path": "app/web-new/assets/js/app-shell.js",
+      "change": "modified",
+      "r0008Treatment": "REPLACE",
+      "beforeSha256": "75ad2106c58f362336e93283b42b21b58b8ca7610682fc8281aa1ed4a544af4f",
+      "afterSha256": "581bab866888136bbcc218771e78bec1a95d5add199c002157aac56a795d05b6",
+      "afterBytes": 11619
+    },
+    {
+      "path": "app/web-new/assets/js/dns.js",
+      "change": "modified",
+      "r0008Treatment": "DROP",
+      "beforeSha256": "a886ebfef1a91a63dc9d00e5040bf749f57bf04649d676cc565a5786abbaff69",
+      "afterSha256": "012f80a5f4957b96af8a3d7b208a81cc0b869f2015e219be3d385e76828d6ad0",
+      "afterBytes": 31640
+    },
+    {
+      "path": "app/web-new/assets/js/home.js",
+      "change": "modified",
+      "r0008Treatment": "REPLACE",
+      "beforeSha256": "e520bc7e290fc45f93c9ee091f4635f39a5fa8686631395fdfb8f6e85ce2a8b0",
+      "afterSha256": "78f9a5db0a3ba1626c88f550a8ce13e2d3c6b5f4d08952db1cc5d2a082f01e30",
+      "afterBytes": 17289
+    },
+    {
+      "path": "app/web-new/assets/js/keenetic.js",
+      "change": "modified",
+      "r0008Treatment": "DROP",
+      "beforeSha256": "406ac0002c15e650e197cad1bc43ad056f10e5a019239fa7d4aacb602b2568e5",
+      "afterSha256": "0ad55b2e35f35fb32d6a44ec288ce579f0a0e0cca46a5798a3da6c084ab69e7b",
+      "afterBytes": 33947
+    },
+    {
+      "path": "app/web-new/assets/js/login.js",
+      "change": "modified",
+      "r0008Treatment": "ADAPT",
+      "beforeSha256": "f164011baa9fc0a4bfac92b21faf7813b6a326b223f23b79601284ed1060084c",
+      "afterSha256": "69bd26a507016126cbfadf2139c201c392a96061d88e4eb6c184b79bb3b93370",
+      "afterBytes": 2821
+    },
+    {
+      "path": "app/web-new/assets/js/modules-redirect.js",
+      "change": "modified",
+      "r0008Treatment": "DROP",
+      "beforeSha256": "7e49c90bdee330c6980e7793a16be19ddcb30477df78473ae6ac467b26f07c8a",
+      "afterSha256": "2c8888a4d3cc97fb39962f85dc3c3c7a492fc75f82bb53ccd1eeb7832a24c23b",
+      "afterBytes": 60
+    },
+    {
+      "path": "app/web-new/assets/js/routes-catalog.js",
+      "change": "modified",
+      "r0008Treatment": "DROP",
+      "beforeSha256": "8cdd515e3ce46ca6a29ec8f60f7faaf05faefc2dac2863518b21ae7a47d9ee77",
+      "afterSha256": "8e889073831920b636878aee002b3742132bfc86a819024a3258970bb808fd4c",
+      "afterBytes": 91909
+    },
+    {
+      "path": "app/web-new/assets/js/routes-operation.js",
+      "change": "modified",
+      "r0008Treatment": "DROP",
+      "beforeSha256": "497f65b082789892c04518310414d14f2ae6782a3b6cd00367a8bcc20f53bcd2",
+      "afterSha256": "865b731a192763f958c417af7b146e93b8ba2bed55b84ec94be152d00c9d940d",
+      "afterBytes": 13601
+    },
+    {
+      "path": "app/web-new/assets/js/routes-overview.js",
+      "change": "modified",
+      "r0008Treatment": "DROP",
+      "beforeSha256": "7e38cb29f5fcbeb6d008e176bb88e087ec9460bd66cb6d5b22caa62ac9753986",
+      "afterSha256": "d19e69de8b8bf3f936b2a6b7a5ba68086b5b5508326a1514d6d5a97b99f14351",
+      "afterBytes": 6385
+    },
+    {
+      "path": "app/web-new/assets/js/servers-check-all.js",
+      "change": "modified",
+      "r0008Treatment": "REPLACE",
+      "beforeSha256": "717a6d1edaccea9adc6a22cf7932d5125f79e54469f3ecdacb9c93cd269a498a",
+      "afterSha256": "8aec62b2d55b828db8ccc7f12163ac65e91e4be6507d38fbf6cb90c7003c729f",
+      "afterBytes": 13081
+    },
+    {
+      "path": "app/web-new/assets/js/xray.js",
+      "change": "modified",
+      "r0008Treatment": "DROP",
+      "beforeSha256": "56a5fbe88c176fe34282d8f7e27b0b4a0e8ec6b8a4679d162accf90b54ce319e",
+      "afterSha256": "5cd0bdb4034bb422dc3117fe61940c590e226d53a4f5b7187fe490b193f6ca89",
+      "afterBytes": 34784
+    },
+    {
+      "path": "app/web-new/broray.html",
+      "change": "modified",
+      "r0008Treatment": "DROP",
+      "beforeSha256": "24b8eeee008e1ba93818984cf181520edb0b2ce17255a91f7d0bbe4c29df194e",
+      "afterSha256": "e941e988693c70094976b066f139e964d3416c138b4f50ad22c3bbadd5f39573",
+      "afterBytes": 26354
+    },
+    {
+      "path": "app/web-new/build.json",
+      "change": "modified",
+      "r0008Treatment": "REPLACE",
+      "beforeSha256": "6b7e23e7df17b8082182dd17c90629b8494da6c20dd29fa781842ffb0b995af6",
+      "afterSha256": "47cff6d8a9959dbea4752f43a5000dda4c41378b3a63d9bb3b91bec36ea1f75c",
+      "afterBytes": 506
+    },
+    {
+      "path": "app/web-new/dns.html",
+      "change": "modified",
+      "r0008Treatment": "DROP",
+      "beforeSha256": "f075f8d1aa3c3afdbd78b3291b52e91846993626b1bdb0e02b87e82f89f54f1f",
+      "afterSha256": "0b87bb0affb08e1dc91bc7ef1ff04f715110d1beb3a0fa286c57281ca858230f",
+      "afterBytes": 19255
+    },
+    {
+      "path": "app/web-new/home.html",
+      "change": "modified",
+      "r0008Treatment": "REPLACE",
+      "beforeSha256": "559342bef3a39142f0171c29ec179e41a66770fee9bf959fbabc6c01d0475db8",
+      "afterSha256": "c926a85fa8ad5c3bca4cea66e5e8c21b77406248fa723460d38527f0ba7a1127",
+      "afterBytes": 17502
+    },
+    {
+      "path": "app/web-new/index.html",
+      "change": "modified",
+      "r0008Treatment": "ADAPT",
+      "beforeSha256": "33a1005c69e3ea52e65adb7340e55bdb68ccab687daeb89430b39c4fa08b32ed",
+      "afterSha256": "11192660fbe331db3d0cfaaa05ca520a4509a7d0b0fc4ec7407ad34fa7cb499b",
+      "afterBytes": 3581
+    },
+    {
+      "path": "app/web-new/keenetic.html",
+      "change": "modified",
+      "r0008Treatment": "DROP",
+      "beforeSha256": "4983cb37cc02aaf283e200d1a78c441e22c4e624c8dde1eb00ee3ccd9b698270",
+      "afterSha256": "5ef654a30357718621c9c79c4739d7bf858894bd4dfdc4fdeb65c83caba6ec08",
+      "afterBytes": 22533
+    },
+    {
+      "path": "app/web-new/modules.html",
+      "change": "modified",
+      "r0008Treatment": "DROP",
+      "beforeSha256": "5d64b121863337a829160643ef1340da35548f3b67055fcd17b7397a73de1c7e",
+      "afterSha256": "c632c4128a5b620388f58b6d89e847d1da6e5006c322d3d24431b54aa2bc99b8",
+      "afterBytes": 381
+    },
+    {
+      "path": "app/web-new/routes-custom.html",
+      "change": "modified",
+      "r0008Treatment": "DROP",
+      "beforeSha256": "e51a2338dfb077acfbefbce99c6db5d6972fd3b7106adb9585e5148866dd47f2",
+      "afterSha256": "f20eacbaeef3f4de719653c25c37616c593881f71d74d7270f9f1af811410416",
+      "afterBytes": 17197
+    },
+    {
+      "path": "app/web-new/routes-import.html",
+      "change": "modified",
+      "r0008Treatment": "DROP",
+      "beforeSha256": "a68c413e73787115a87a6b1329d9fcf75e8a487820486fdf2f8f61ba10f6fb8d",
+      "afterSha256": "664392fa883c267160066ccc1fcdbf48a684d89eeb9ad070fbb6992c058d1d29",
+      "afterBytes": 16285
+    },
+    {
+      "path": "app/web-new/routes.html",
+      "change": "modified",
+      "r0008Treatment": "DROP",
+      "beforeSha256": "1efa6fdbde3c9ffd6857799551ffeb866545f2cc2de26b26bf5d9800c944c462",
+      "afterSha256": "a95d14db1afab38c7d1d0dc539ecbb6cb6873a06c294485985ebbe54de1f316d",
+      "afterBytes": 17813
+    },
+    {
+      "path": "app/web-new/servers.html",
+      "change": "modified",
+      "r0008Treatment": "REPLACE",
+      "beforeSha256": "be94d6e9145f50a01034e5fe6c83ca8956cc2013428b2d15b019282c8ef37f6f",
+      "afterSha256": "186949a87620940d5f8b6aa749c851d6711723f22086b1b7efd8276fdf50224d",
+      "afterBytes": 22229
+    },
+    {
+      "path": "app/web-new/subscriptions.html",
+      "change": "modified",
+      "r0008Treatment": "REPLACE",
+      "beforeSha256": "510e4dda8b81ae91927e274b13f1329fb3c5ce36e0cfe2a0c40c2c08b9bdcf0a",
+      "afterSha256": "1fcca1026bf22946664b25cc132670923d85db358dc03f222502244b5ab08ede",
+      "afterBytes": 16109
+    },
+    {
+      "path": "app/web-new/xray.html",
+      "change": "modified",
+      "r0008Treatment": "DROP",
+      "beforeSha256": "44f7b08113f854964c2170de2ebe34210e0d185f4ba2615cdaaed6150d03cdbc",
+      "afterSha256": "e925ed643e4c54e1e8043b47591c35290dd8736b9e06c26067602e3d79e6e3d2",
+      "afterBytes": 18976
+    },
+    {
+      "path": "init/S23broray-monitor",
+      "change": "modified",
+      "r0008Treatment": "DROP",
+      "beforeSha256": "b8c0702de3ea6eace40bb857e7cddf2dcf8901456defa15572ebdddfcbd2715f",
+      "afterSha256": "885b2d9d0f928831d88242e60d34b3a16f6674899248be8a9d6370dd9200f593",
+      "afterBytes": 5468
+    },
+    {
+      "path": "init/S24broray",
+      "change": "modified",
+      "r0008Treatment": "REPLACE",
+      "beforeSha256": "392d6ba14d2cdae8da1eafaf8bd53b518b249f2cdf1183436760dfedec82163f",
+      "afterSha256": "e64c952365b0d5c1f1bf54584f0a91751800ecc1b624f2b7d6eebc86eacddbb6",
+      "afterBytes": 12415
+    },
+    {
+      "path": "release.json",
+      "change": "modified",
+      "r0008Treatment": "REPLACE",
+      "beforeSha256": "7119d679d4aa370d5db66ec86718f98563a3ab35bbbd7a3f0cb0f47e721df2f9",
+      "afterSha256": "1c2c9d9340a8730a0e093d4d6dd27d564f88b25ec95151af8858af54815794e0",
+      "afterBytes": 591
+    },
+    {
+      "path": "state-seed/config/version",
+      "change": "modified",
+      "r0008Treatment": "REPLACE",
+      "beforeSha256": "2985be8b28d3ade858e8d8fb4bc22f565b1bf6020dff982dce141f7721b9999c",
+      "afterSha256": "06e3fe4a7a1884d20d81cc7065ca8cfd4c394ec602c4d180ddc39bbd4f7da521",
+      "afterBytes": 6
+    },
+    {
+      "path": "state-seed/routes/bundles.json",
+      "change": "modified",
+      "r0008Treatment": "DROP",
+      "beforeSha256": "4b2f72d38775724c548ce71ac2784a829982d461b695794ddaba72e73e5cbe29",
+      "afterSha256": "3af27d6162868b190f1174ae5f53216c8b1a41adef7e7e4c5207ef06e8157c27",
+      "afterBytes": 199
+    },
+    {
+      "path": "state-seed/routes/manifests/wikipedia.json",
+      "change": "added",
+      "r0008Treatment": "NEW_REQUIRES_REVIEW",
+      "beforeSha256": null,
+      "afterSha256": "7e2d9259660887b832b053a4a8a00bba833d54bd0e0dc3b1864d2ceb3c6a20c5",
+      "afterBytes": 555
+    }
+  ]
+}

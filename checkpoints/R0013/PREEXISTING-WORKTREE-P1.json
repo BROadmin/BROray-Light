@@ -1,0 +1,2532 @@
+{
+  "at": "2026-09-10T17:24:09.5978240+03:00",
+  "branch": "codex/r0009-updater-package",
+  "head": "b475a1881c141f969958bdc0148caf39beb2178e",
+  "files": [
+    {
+      "path": ".github/workflows/r0012-build.yml",
+      "bytes": 16077,
+      "sha256": "bb6cb507afbe384152de986a6f85639dc5a4b90fdfb2bd7d9e1c4666cb5c6d9a"
+    },
+    {
+      "path": "AGENTS.md",
+      "bytes": 13151,
+      "sha256": "2e861760eca1243f2a4676b6cfcd3ae03140c347311dd691b673e1705a7cebee"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R010-P17-WINDOWS-WILDCARD-PATH.json",
+      "bytes": 1133,
+      "sha256": "93bcf3d3fcc78225852f6a05978131f9091300dfd0d919d1632c80dd4196341b"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R010-P17-WINDOWS-WILDCARD-PATH.json.sha256",
+      "bytes": 110,
+      "sha256": "7851315577f1bf6d7e643c1c0ace7fc5cc6e6cf0e51714a18f3ee5baaa4b2763"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R011-P18-MISSING-EXPLICIT-AUTH-OVERLAY.json",
+      "bytes": 1246,
+      "sha256": "cc65b1cebb4286a42996081548ac5a414da1b44acff09f94cb515cce366f8b49"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R011-P18-MISSING-EXPLICIT-AUTH-OVERLAY.json.sha256",
+      "bytes": 118,
+      "sha256": "8a08118996b46f44a811f921dfa4cf5fa4ea818aa3c3fc18e5d9ae54965dffaa"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R012-P19-BOOTSTRAP-PARENT-PREUNPACK.json",
+      "bytes": 1169,
+      "sha256": "7e9cb4b166df3fb89d1cdce23c047f790afe050a2a27f058ce9a8866787a8f8b"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R012-P19-BOOTSTRAP-PARENT-PREUNPACK.json.sha256",
+      "bytes": 115,
+      "sha256": "708f9089e048cd541864b5ac103c324d3f1103f7b0005df7c8de4c5d25bfcb0c"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R013-P19-ISOLATED-INSTALL-ORDER.json",
+      "bytes": 1134,
+      "sha256": "974b28cb96b9ca94ccb9c0f229be9e0f50a691ed29484e3341e2e804893bec85"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R013-P19-ISOLATED-INSTALL-ORDER.json.sha256",
+      "bytes": 111,
+      "sha256": "77e9109b08af20d31011a129066b58521b7216d2e66f5e731151a64088c46f62"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R014-P19-POSTINST-RERUN-CLEANUP.json",
+      "bytes": 1073,
+      "sha256": "621dba1f82762f4be1f30b05c4d8a725612bc4713156d4c08f1a324cba656609"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R014-P19-POSTINST-RERUN-CLEANUP.json.sha256",
+      "bytes": 111,
+      "sha256": "6df68b36a8f6f07ec80e1cacb0d827eeb28c7a750b92a9ca50023cb285bced55"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R015-P19-FOREIGN-XRAY-STAGING.json",
+      "bytes": 1093,
+      "sha256": "b452c1467d60c8afc007e33dbb7a2d3754cf9375a524dd10280361df21bee40d"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R015-P19-FOREIGN-XRAY-STAGING.json.sha256",
+      "bytes": 109,
+      "sha256": "5d1c22bf07977794b5934f6fe65a4f5140a9ac8036f2566ea33a1d93112bfa78"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R016-P19-VERSION-STAGE-DANGLING-SYMLINK.json",
+      "bytes": 1030,
+      "sha256": "512e0a07c867c85975c4d9be3254f6438d2318fbc47bbd38fba7fdb23df3cb10"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R016-P19-VERSION-STAGE-DANGLING-SYMLINK.json.sha256",
+      "bytes": 119,
+      "sha256": "d597821c3b292c72a1a6d8e6db5e1b62578097f657a4462fa6af2af392eec41e"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R017-P19-INSTALLER-TMPFS-PAYLOAD-RETAINED.json",
+      "bytes": 1029,
+      "sha256": "b61342895a4ea41557a9c22c4ac86ca18ffa187b0110bb7fe1955c0d5021bfdc"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R017-P19-INSTALLER-TMPFS-PAYLOAD-RETAINED.json.sha256",
+      "bytes": 121,
+      "sha256": "344290c1fd9464d3b4a316bef61e2e0ab70ebd413d9288b74a1d434cc4764143"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R018-P19-INSTALLER-TARGET-RACE.json",
+      "bytes": 1096,
+      "sha256": "2dd8594b3b46214d764c7d8b44eb24fd4947a5170c0b392f6f5b583d0ad62232"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R018-P19-INSTALLER-TARGET-RACE.json.sha256",
+      "bytes": 110,
+      "sha256": "80e5a6fae2aa49831efa0b65430ace7bae0e7ac6f37faed67a73701e3429e4e5"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R019-P19-SERVICE-STOP-VOLATILE-OWNERSHIP.json",
+      "bytes": 1106,
+      "sha256": "382fd200fdfc19c7e32319f9a8b727c6dec37b0d12e3516b2d66f6661d8fadf0"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R019-P19-SERVICE-STOP-VOLATILE-OWNERSHIP.json.sha256",
+      "bytes": 120,
+      "sha256": "8727d0001ea25c4c48db84464384afd3b8d62f1c680c65a3a3ad0120a902a940"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R020-P20-APP-SLOT-CANNOT-DELIVER-TMPFS-INIT.json",
+      "bytes": 1615,
+      "sha256": "4cea0d725bbaada8ebbc6e247f32c1cb4045985b6ac94affb7523ef7571ee580"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R020-P20-APP-SLOT-CANNOT-DELIVER-TMPFS-INIT.json.sha256",
+      "bytes": 123,
+      "sha256": "e98fbf271a74b49ba71488d960097497e7e99db7c2ba1bd9ebd3f40041140e49"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R021-P21-LOCAL-SHA256SUM-UNAVAILABLE.json",
+      "bytes": 1102,
+      "sha256": "a7eac5c8105a4e2ee815e3010390ac83788aeb06ba2be7db18b1fd30ee85476e"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R021-P21-LOCAL-SHA256SUM-UNAVAILABLE.json.sha256",
+      "bytes": 116,
+      "sha256": "9fc0da4a04b25d94ce4acd47ac319fd643f79409c0540867562e09f0c6348859"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R022-P22-SOURCED-LIBRARY-ANCESTRY.json",
+      "bytes": 964,
+      "sha256": "6b97356ffaab0b658f38fed2376cee59cc911e53398fe8588bcda03d1de41462"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R022-P22-SOURCED-LIBRARY-ANCESTRY.json.sha256",
+      "bytes": 113,
+      "sha256": "a2cf63d1db3526c09cf86700bf6f13b647d8eb19d57bc6d2e1d1a5834465642c"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R023-P22-CONFIG-STAGING-ANCESTRY.json",
+      "bytes": 979,
+      "sha256": "3f2ff1b8f1d633fd1e4ffce1388bcd25bf5f51e18fa88eb2c950dde5e932e034"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R023-P22-CONFIG-STAGING-ANCESTRY.json.sha256",
+      "bytes": 112,
+      "sha256": "62301efe403b9d1ce04931f41f07d6fa372863d25a9335da506540970c755f53"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R024-P22-CONFIG-RECEIPT-INTERRUPTION.json",
+      "bytes": 978,
+      "sha256": "65376e9d236008d72e73c830bad800cae1b79aa059c6dbb640c2185243ef316c"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R024-P22-CONFIG-RECEIPT-INTERRUPTION.json.sha256",
+      "bytes": 116,
+      "sha256": "049f8a85915d87e187af869e6e49cfd1ff9269536946c79bf6ef1b5a1545c373"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R025-P22-LEGACY-PROCESS-IDENTITY-RACE.json",
+      "bytes": 1027,
+      "sha256": "1085098b25ba463db751174fd74798ec80847e2decb9dcf3751d43add5429e22"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R025-P22-LEGACY-PROCESS-IDENTITY-RACE.json.sha256",
+      "bytes": 117,
+      "sha256": "6ebed2d48bf706a74df768705a235e42b8c98b3c7b4cc917b79c26e411c5d957"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R026-P22-VOLATILE-MARKER-INTERRUPTION.json",
+      "bytes": 982,
+      "sha256": "ff44035649f65f00e5646140bfa960c74980acd9c2dea2e34202dd58a9697bc4"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R026-P22-VOLATILE-MARKER-INTERRUPTION.json.sha256",
+      "bytes": 117,
+      "sha256": "4efdf3c0652ce57c5626c94469fb425ce6f6c680f2fbb75515bce8381876e037"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R027-P22-TREE-VALIDATE-DELETE-RACE.json",
+      "bytes": 1024,
+      "sha256": "2402a648545b6b91659f4e3871b9db479d980b2ffe470676c31ee53ff161246a"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R027-P22-TREE-VALIDATE-DELETE-RACE.json.sha256",
+      "bytes": 114,
+      "sha256": "9f780c13ba8052c43cf2bf61fed90c11575ea1d657fd9e86d3ec2e7a4b15916c"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R028-P22-MANAGED-SYMLINK-SOURCE-CHAIN-REJECTED.json",
+      "bytes": 1078,
+      "sha256": "7a1c84f016b7fc9b50d582011605fb2e05c897dbd0f1f6adbd5bf62c57338f5f"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R028-P22-MANAGED-SYMLINK-SOURCE-CHAIN-REJECTED.json.sha256",
+      "bytes": 126,
+      "sha256": "210ac2f37af443fb15b7f3099eab066870a6701667ed4a90310d04ea98ef5621"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R029-P22-OVERLAY-ONLY-LIFECYCLE-BUILDER-REJECTED.json",
+      "bytes": 995,
+      "sha256": "77ab683d5ad3f103104b22a118d4c71fbe190f409f007c5285941f836148dfa1"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R029-P22-OVERLAY-ONLY-LIFECYCLE-BUILDER-REJECTED.json.sha256",
+      "bytes": 128,
+      "sha256": "7f2e3e268d863c86eae92c2240eb4ed7b9ce613ef209911e07514e727dfba57f"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R030-P22-WEB-PUBLISH-PERSISTENT-TMP-FALLBACK.json",
+      "bytes": 1078,
+      "sha256": "abdec43afe2ebe2240a2b665cb2a52ec87f07cba93f462e48d41dc9368ffdf11"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R030-P22-WEB-PUBLISH-PERSISTENT-TMP-FALLBACK.json.sha256",
+      "bytes": 124,
+      "sha256": "329b29f5252d8cb609340289660689b9313f7c08e4001b63fe4889396829803e"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R031-P23-UPDATER-READY-PERSISTENT-STATUS.json",
+      "bytes": 968,
+      "sha256": "174444b364e0c9cf54830d375a3e160000e8625f8634c17848d2b10ab2a4139d"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R031-P23-UPDATER-READY-PERSISTENT-STATUS.json.sha256",
+      "bytes": 120,
+      "sha256": "e7bba9b5e6d92e0bb8eb3165de8ac31720a6f9a6fc2a2a1c4e6bdca5da9f8046"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R032-P23-UPDATER-WORK-ROOT-ENV-ESCAPE.json",
+      "bytes": 989,
+      "sha256": "b70f61fa1e9710034ef25378a8c1c7947538ac178349afcd58c0905493fe20a0"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R032-P23-UPDATER-WORK-ROOT-ENV-ESCAPE.json.sha256",
+      "bytes": 117,
+      "sha256": "5428ca13c2fac235c4a60b99339d23e66d9b3842e0e6ba8930aa6431d59f6cbc"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R033-P23-XRAY-CACHE-ENV-ESCAPE.json",
+      "bytes": 941,
+      "sha256": "0081aeaa6686f832393abcc562fb74820c8240f1027c4a69ef5b194770851184"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R033-P23-XRAY-CACHE-ENV-ESCAPE.json.sha256",
+      "bytes": 110,
+      "sha256": "96c0a0e629b8699c4aa78d92e257023bdef40b6632dfce17f3c89b4208da9d8f"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R034-P23-KEENETIC-RUNTIME-ENV-ESCAPE.json",
+      "bytes": 910,
+      "sha256": "47edadc52ff38de5950f77bf984615c4d719be88fe6bd158e9113c498c1b4bae"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R034-P23-KEENETIC-RUNTIME-ENV-ESCAPE.json.sha256",
+      "bytes": 116,
+      "sha256": "ffa71b87c4ae58bfc95b009e8ab6496e20d9da69199de7f027b2093b4147362d"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R035-P23-SUBSCRIPTION-RUNTIME-ENV-ESCAPE.json",
+      "bytes": 940,
+      "sha256": "5ddee58374d93d6f4615d9b7a9e9af09d122390189eed9527f06d81fccf45afb"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R035-P23-SUBSCRIPTION-RUNTIME-ENV-ESCAPE.json.sha256",
+      "bytes": 120,
+      "sha256": "35e49b5294c2145a1557b55359b176616c3734949b89ff33fc9c04f96a3c74f6"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R036-P23-SERVER-STATUS-ENV-ESCAPE.json",
+      "bytes": 927,
+      "sha256": "17515ed96b129b9cb2f6bb2ce3b14a828c6c36ac21abed18a2b1a5363a602955"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R036-P23-SERVER-STATUS-ENV-ESCAPE.json.sha256",
+      "bytes": 113,
+      "sha256": "6e52027beea9c01ed11baa3224af0e8848ed564106fffaf3ec29e31e00948f3d"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R037-P23-INTERFACE-EVIDENCE-ENV-ESCAPE.json",
+      "bytes": 951,
+      "sha256": "ec057eb1ddef070cbe15053e6e4e9fdcd721368ac2a5f3ccf6c978fb59f3d5d0"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R037-P23-INTERFACE-EVIDENCE-ENV-ESCAPE.json.sha256",
+      "bytes": 118,
+      "sha256": "ab65bb33bf753e054580d0388be1f042a8608ef2a19f28b3a2b1b45e43f16505"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R038-P23-NATIVE-AUTH-CHILD-PATH-ENV-ESCAPE.json",
+      "bytes": 968,
+      "sha256": "24d2bfe18b39ba26a8b4b2f44de403252066b40bf4ea984a2cdba7fe55801ea2"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R038-P23-NATIVE-AUTH-CHILD-PATH-ENV-ESCAPE.json.sha256",
+      "bytes": 122,
+      "sha256": "88f3670afb6266eb98bf808a42b5e51c3c0cf0a3dfc50d583fd804f85b12f615"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R039-P23-WEB-NETWORK-SCRATCH-SYMLINK-CONTRACT.json",
+      "bytes": 991,
+      "sha256": "19561efcfd82796ca8efb11617bc923309d6b5568074cd9d345b2e48c347308e"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R039-P23-WEB-NETWORK-SCRATCH-SYMLINK-CONTRACT.json.sha256",
+      "bytes": 125,
+      "sha256": "ae307f4741e4a68be6e54d096eaa94765359b8a504ddbb50b8ff0bbb57299e94"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R040-P23-WEB-START-GATE-SCRATCH-SYMLINK-CONTRACT.json",
+      "bytes": 990,
+      "sha256": "6ad499fc69ccd6bd8374e376e02c7cdc75f63b601b8c45483e516b608a4853ce"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R040-P23-WEB-START-GATE-SCRATCH-SYMLINK-CONTRACT.json.sha256",
+      "bytes": 128,
+      "sha256": "7d3af6cc78bcc1ba4385e72bebf964610ea97878c7895955f1da3c56beaadd42"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R041-P24-LEGACY-UPDATER-TMPFS-ROOT-INCOMPATIBLE.json",
+      "bytes": 1135,
+      "sha256": "8841d0bc535ceec430890829dd45d6760fe19417423846f36496f62b0d401210"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R041-P24-LEGACY-UPDATER-TMPFS-ROOT-INCOMPATIBLE.json.sha256",
+      "bytes": 127,
+      "sha256": "057095abec0b24a79218cd11f24da8e3e3adbe9e39f0d3979445978c7f7a12f6"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R042-P25-LIGHTTPD-OWNER-POSTPUBLICATION-REJECTED.json",
+      "bytes": 1161,
+      "sha256": "f1defcb15205edab29fdc85545d501f11a86a84feb57ba83ff16976ad8507c1e"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R042-P25-LIGHTTPD-OWNER-POSTPUBLICATION-REJECTED.json.sha256",
+      "bytes": 128,
+      "sha256": "bac546496625b889a1f50329a5ce092993e93539d2511d8fd14e640cd0aaa73c"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R043-P26-S24-PID-SUBSTRING-IDENTITY.json",
+      "bytes": 1006,
+      "sha256": "0d76e5bb5dd83f3cf32c8cc5a44ce997527841268181aba428e7463fc988d08b"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R043-P26-S24-PID-SUBSTRING-IDENTITY.json.sha256",
+      "bytes": 115,
+      "sha256": "2444dd2dc97625dd6b8db35cd8949c46efc3a97efa70476300918d43e0b9e081"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R044-P26-NATIVE-AUTH-QUARANTINE-RECHECK-GAP.json",
+      "bytes": 1100,
+      "sha256": "26085e230653e7b2e8da91949727ffcbaca8a7df1af8a686aadb0a266b627fca"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R044-P26-NATIVE-AUTH-QUARANTINE-RECHECK-GAP.json.sha256",
+      "bytes": 123,
+      "sha256": "8946f97f29d512ab1e7be577cf5fadeebaf5bc84443cb38ccb03c2f1e616a519"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R045-P27-DOT-RELEASE-ID-ESCAPE.json",
+      "bytes": 994,
+      "sha256": "e8d2b70e88e1287c3af533af2452f67c4f13aa024858c7613871d093874bfe35"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R045-P27-DOT-RELEASE-ID-ESCAPE.json.sha256",
+      "bytes": 110,
+      "sha256": "8c048f9263db0106cafa1732a5a8254edcdab6914506e774fddb01cf24991eb6"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R046-P27-ALTERNATE-LIGHTTPD-RUNTIME-DIRECTIVE.json",
+      "bytes": 1047,
+      "sha256": "760a1bd0002adff4391480d3d9a804b7b0420408dcaece5b0ce9fa6901a847f4"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R046-P27-ALTERNATE-LIGHTTPD-RUNTIME-DIRECTIVE.json.sha256",
+      "bytes": 125,
+      "sha256": "fd7ccde5e614439e40da3e7d2fee43e4ec7f3ae5631a5bc69e44574235a70b5e"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R047-P28-NATIVE-AUTH-CONFIG-ARGV-SUBSTRING.json",
+      "bytes": 1082,
+      "sha256": "3da2df35dece36048edc07f3b7aba926cd140dce05ed3291f1ee95a67be3d4d2"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R047-P28-NATIVE-AUTH-CONFIG-ARGV-SUBSTRING.json.sha256",
+      "bytes": 122,
+      "sha256": "9380cd9dafd57d89b369607aad147875308df2f645fa1cc78bc7f69abfab6195"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R048-P29-UPDATER-WORK-DIR-SUBSHELL-LOSS.json",
+      "bytes": 1234,
+      "sha256": "58c8d9de511ffdc1733cc6a16430ad77d0a303083ea5c57627bfc85b5312dca9"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R048-P29-UPDATER-WORK-DIR-SUBSHELL-LOSS.json.sha256",
+      "bytes": 119,
+      "sha256": "9ce016a77eb0512801094ef623ec2bacae5c590e61a0f48f45f602ea2b5a7209"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R049-P30-STALE-WEB-PUBLISH-BASELINE.json",
+      "bytes": 1147,
+      "sha256": "d8fc9426014c2d941018e504efcf6e60790225aed68e6d94f9231a37a2bd36b0"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R049-P30-STALE-WEB-PUBLISH-BASELINE.json.sha256",
+      "bytes": 115,
+      "sha256": "25dcb11d84252ffdb0ddd2b0a34e6164c77839936caf4784e955b30696a48e04"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R050-P30-STALE-LIGHTTPD-RUNTIME-RECEIPT-AFTER-PUBLISH.json",
+      "bytes": 1164,
+      "sha256": "c48e8592cc325e10ffd4b7476f19e0bdd98ffaa6f7a7cfd952fe83affc42d06b"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R050-P30-STALE-LIGHTTPD-RUNTIME-RECEIPT-AFTER-PUBLISH.json.sha256",
+      "bytes": 133,
+      "sha256": "df5433f563b8c108dbcd4c3ca94c11f545cd7e1099cfbd2180d59483f38cf6f0"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R051-P30-NATIVE-AUTH-SIDECAR-OMITTED-FROM-SERVICE-STOP.json",
+      "bytes": 1148,
+      "sha256": "61b049112dc5eb48a5e5d5ac15f728fc25af0fc51df4ec27cec9a4e536621555"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R051-P30-NATIVE-AUTH-SIDECAR-OMITTED-FROM-SERVICE-STOP.json.sha256",
+      "bytes": 134,
+      "sha256": "204660d2442254359e1f526bb65f88b3c1f5077b93cd206129d4dee3ea57765a"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R052-P30-PRERM-CLEANUP-BEFORE-PROVEN-QUIESCENCE.json",
+      "bytes": 1133,
+      "sha256": "1ebd96036f703c08e744002d53d6943c4396c177a5b5ca44c257b48efefaafda"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R052-P30-PRERM-CLEANUP-BEFORE-PROVEN-QUIESCENCE.json.sha256",
+      "bytes": 127,
+      "sha256": "7e57890d417599e2f8df3582f73f12ecef402a36c5617c1b05e797ae47351fde"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R053-P30-POWERSHELL-BRACE-GLOB-UNSUPPORTED.json",
+      "bytes": 927,
+      "sha256": "0fac02a982d9b965dd4696cb4d4bfbc0be57fa3a229e5e4fda4911c470e40c72"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R053-P30-POWERSHELL-BRACE-GLOB-UNSUPPORTED.json.sha256",
+      "bytes": 122,
+      "sha256": "6855725f84f8822048616ba4844e6499077fac01f6a52d5e52850d22d3332c73"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R054-P31-WEB-PUBLICATION-DELETE-LEAVES-CONTRACT-INCONSISTENT.json",
+      "bytes": 1216,
+      "sha256": "281c849c7b6370afdcf360057585fac787b3acf5a5746590503bfa2ca804a218"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R054-P31-WEB-PUBLICATION-DELETE-LEAVES-CONTRACT-INCONSISTENT.json.sha256",
+      "bytes": 140,
+      "sha256": "cb561382197682c839651578bc236e0ea6422eebe0778b80383114cd4fa7d652"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R055-P32-QUIESCE-STALE-LOCK-AMBIGUOUS-DELETION.json",
+      "bytes": 1195,
+      "sha256": "5b71b60a93db0432a50bd1db42423474e5442e6ff108eeeac600e6673dfe019b"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R055-P32-QUIESCE-STALE-LOCK-AMBIGUOUS-DELETION.json.sha256",
+      "bytes": 126,
+      "sha256": "909722dd869b3163de0caeddd86072f18f3c6398256699526e64721145ca99de"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R056-P33-SPLIT-GLOBAL-OPERATION-LOCK-DOMAINS.json",
+      "bytes": 1278,
+      "sha256": "4359af8bf0b71ebb533d25417993a5fb2a919c8def645439a5cb11c73157db1a"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R056-P33-SPLIT-GLOBAL-OPERATION-LOCK-DOMAINS.json.sha256",
+      "bytes": 124,
+      "sha256": "c23ec9141a7278028b515f149919ae99edf17cc24252926070899a81265d76ec"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R057-P34-WEB-PUBLISH-OMITS-GLOBAL-OPERATION-LOCK.json",
+      "bytes": 1313,
+      "sha256": "597d4a188f4a3d3bd3539346566be9df556e5a1f2b7967b8c849b4958a6eb745"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R057-P34-WEB-PUBLISH-OMITS-GLOBAL-OPERATION-LOCK.json.sha256",
+      "bytes": 128,
+      "sha256": "d3be03ab3065f8f92aa58e026f98fe9acf2bf03103104124e9f9a376a57b8780"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R058-P35-INHERITED-GLOBAL-LOCK-FIXTURE-USES-OBSOLETE-PERSISTENT-PATH.json",
+      "bytes": 1320,
+      "sha256": "253d0c1e604cce7df3f016c068d45be845f30fdddb7bbb8a2a1212df7cbf5c10"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R058-P35-INHERITED-GLOBAL-LOCK-FIXTURE-USES-OBSOLETE-PERSISTENT-PATH.json.sha256",
+      "bytes": 148,
+      "sha256": "0dde6e261988da01390252671b4f096ba96d0b9fca4af9f40a6d917aac394964"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R059-P36-UPDATER-REQUEST-LOCK-PERSISTENT.json",
+      "bytes": 1330,
+      "sha256": "087d6cb394ca68e71ed93fbfa6e68fe31029655f3ece736cfb62b277c96f3a22"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R059-P36-UPDATER-REQUEST-LOCK-PERSISTENT.json.sha256",
+      "bytes": 120,
+      "sha256": "edd7bc5063032322e38f1d2278d07c257b627a09315136f0730019f3e2d5da12"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R060-P37-MALFORMED-LIGHTTPD-BASELINE-SHA256.json",
+      "bytes": 1500,
+      "sha256": "edcce4b7e82abd0468369e2b15fa090119513b6fc519db283adca493e194b032"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R060-P37-MALFORMED-LIGHTTPD-BASELINE-SHA256.json.sha256",
+      "bytes": 123,
+      "sha256": "1d1a518c4f5f6c2d2b77645e87edb6a80941b477d7a6f062a5d9b125b7857409"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R061-P38-UNSCOPED-XRAY-PROCESS-CONTROL.json",
+      "bytes": 1431,
+      "sha256": "535042a2de60253d92a4cef984e007d694fd98064d6568e6e6600e6d2b12496d"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R061-P38-UNSCOPED-XRAY-PROCESS-CONTROL.json.sha256",
+      "bytes": 118,
+      "sha256": "b60242a4f7e7e7965fcd226004887c3ae6c56e79655df1fd96ccf6ae1e22194c"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R062-P39-WEB-RECOVERY-JOURNAL-SCHEMA-DIVERGENCE.json",
+      "bytes": 1357,
+      "sha256": "cb36ea5aae0160ba9da07b8389ced8433a77bc1f0a83828e01463088d9034f31"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R062-P39-WEB-RECOVERY-JOURNAL-SCHEMA-DIVERGENCE.json.sha256",
+      "bytes": 127,
+      "sha256": "cdce245b6c3fb2545053ebc056404534fcb95f41df242a5b4cdd236197624bc4"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R063-P40-QUIESCE-LOCK-STATIC-SUBSTRING-FALSE-POSITIVE.json",
+      "bytes": 1610,
+      "sha256": "30e2d2d18527813a4d0bed9eb9ca52a8d115295e3063ec7f4fa74bf3ffccd88f"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R063-P40-QUIESCE-LOCK-STATIC-SUBSTRING-FALSE-POSITIVE.json.sha256",
+      "bytes": 133,
+      "sha256": "55b34e11d297478043187bf59330c17d3481c63f868d325dca417d2f36a75365"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R064-P41-XRAY-CLASSIFIER-SHELL-SYNTAX.json",
+      "bytes": 1312,
+      "sha256": "eef2856872f1c7d5a0840f621177d16bb9493b76da005ebed78ae42da991b513"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R064-P41-XRAY-CLASSIFIER-SHELL-SYNTAX.json.sha256",
+      "bytes": 117,
+      "sha256": "f0532b338e1733be5d97e60d378d75a438c0c5f246909f4448dfcb676388ade9"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R065-P42-XRAY-FAILED-START-ROLLBACK-SUPPRESSED.json",
+      "bytes": 1271,
+      "sha256": "acb0748767311835b052a497c8429adfdfa9df9ef9d133a04c55676f62e60ab0"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R065-P42-XRAY-FAILED-START-ROLLBACK-SUPPRESSED.json.sha256",
+      "bytes": 126,
+      "sha256": "43459f9b85942e28a9f37cada4643d738998c7dd944dc062103a697d7c28e51f"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R066-P43-SHELL-VALIDATOR-NOT-ON-PATH.json",
+      "bytes": 1253,
+      "sha256": "8b303d9044951ecd094304221e46214f3009fb466a5ab95c53949e4952bf6670"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R066-P43-SHELL-VALIDATOR-NOT-ON-PATH.json.sha256",
+      "bytes": 116,
+      "sha256": "d6d87107f435c3542bf859c69d8391d3e00786c449613ce8dfcc5a1effc9e5ac"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R067-P44-WEB-PID-SCRATCH-NOT-CLEANED.json",
+      "bytes": 1324,
+      "sha256": "45d1f76fa35b5e299e52600836f818e33ab3cd945e85917dd59cf2a40bf39eef"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R067-P44-WEB-PID-SCRATCH-NOT-CLEANED.json.sha256",
+      "bytes": 116,
+      "sha256": "10d662de4f3169880e1691379f58423fc7a40859277bc79ffe3260b632ce91f0"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R068-P45-XRAY-REPLACEMENT-SUPERVISOR-RESTART-RACE.json",
+      "bytes": 1530,
+      "sha256": "10bbf30b59e5e3d9570c077505db6c9de5db31e28a67d17e79d4b3028b624c68"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R068-P45-XRAY-REPLACEMENT-SUPERVISOR-RESTART-RACE.json.sha256",
+      "bytes": 129,
+      "sha256": "6db9ccf78c77169266a271b84c14c82c5b61aafe794b70f35e4d92b02e948347"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R069-P46-DAEMON-LOG-LEAF-UNVALIDATED.json",
+      "bytes": 1345,
+      "sha256": "3423f4f69bdff2ce20487a064e2a1a444ee4ce17b28e022bec3d97378fa17f97"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R069-P46-DAEMON-LOG-LEAF-UNVALIDATED.json.sha256",
+      "bytes": 116,
+      "sha256": "73a09a2db56fad1c92f177c5d28019270ec50dffebf3b0d82ec33c916dd6a843"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R070-P47-INTERFACE-OWNER-TMPDIR-ESCAPE.json",
+      "bytes": 1498,
+      "sha256": "6575742b3297fc2103bbb7fed3fee9f5fd7104a387f7b7cb3729a69bded1e94c"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R070-P47-INTERFACE-OWNER-TMPDIR-ESCAPE.json.sha256",
+      "bytes": 118,
+      "sha256": "d75b865cd3798b4fa2a1c6ff4396684c1631135ce9ca2ba79bc4423be7d9fe67"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R071-P48-DAEMON-PID-LEAF-NONATOMIC.json",
+      "bytes": 1391,
+      "sha256": "ce559c3fc8b49c1d6770cef0259bbaf0e5692703eebe78d7c61e369c385086b1"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R071-P48-DAEMON-PID-LEAF-NONATOMIC.json.sha256",
+      "bytes": 114,
+      "sha256": "64b7fc250bf6229bd4c620d1a1e8cd33cf62752d1266e8e3964f199d1506fdaa"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R072-P49-INTERFACE-OWNER-OVERLAY-ADD-PATCH-NOOP.json",
+      "bytes": 1361,
+      "sha256": "b0dc5d23144f9e2c8a9762d23d2a3bdc05dbf7b6c8556345df2d8c4f40bc1878"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R072-P49-INTERFACE-OWNER-OVERLAY-ADD-PATCH-NOOP.json.sha256",
+      "bytes": 127,
+      "sha256": "945117880869a9c103450ec4211557ccc084215d13d6617aeb03b78877ceba54"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R073-P50-WORKSPACE-RELATIVE-PATCH-PATH-ESCAPE.json",
+      "bytes": 1770,
+      "sha256": "6f4294d90a685d40e18552ee96914534873c0806b18a77d87962fea946512fb9"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R073-P50-WORKSPACE-RELATIVE-PATCH-PATH-ESCAPE.json.sha256",
+      "bytes": 125,
+      "sha256": "840b67940d8a16bfed29cac257e6510cad11eb448bc434cacd59a3db75744732"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R074-P51-COMPOUND-EMPTY-DIRECTORY-CLEANUP-POLICY-REJECTED.json",
+      "bytes": 1446,
+      "sha256": "85ab463a613917e62d017b403342a307cccf7980979745ac3c8054089f937430"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R074-P51-COMPOUND-EMPTY-DIRECTORY-CLEANUP-POLICY-REJECTED.json.sha256",
+      "bytes": 137,
+      "sha256": "49f232569c0acfbbafde34c8d399beed73e43c58e7eb9ab7f071e9cb3f6e9136"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R075-P52-WEB-START-ERROR-LEAF-PREDICTABLE-UNVALIDATED.json",
+      "bytes": 1616,
+      "sha256": "a322039c22864f27cf973a50e4601e775c96279d04d51820258aa3dd4b235346"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R075-P52-WEB-START-ERROR-LEAF-PREDICTABLE-UNVALIDATED.json.sha256",
+      "bytes": 133,
+      "sha256": "0e613dccceb76b2977e213e3c942dda4a76cdf2e7bfe7cb0534e74e92036a6f2"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R076-P53-INSTALLER-TMPFS-ANCESTRY-DEVICE-UNPROVEN.json",
+      "bytes": 1635,
+      "sha256": "01eea43f309cf36f1b999f42f215bb5ec7e6b8742e0e4de6022f5ede774f4ebb"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R076-P53-INSTALLER-TMPFS-ANCESTRY-DEVICE-UNPROVEN.json.sha256",
+      "bytes": 129,
+      "sha256": "0f6a8fdad2a6733823ac91fc0c21198310fd7d3937e2593f7a344f86fedcb932"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R077-P54-POWERSHELL-REGEX-SUBEXPRESSION-EXPANSION.json",
+      "bytes": 1601,
+      "sha256": "f40d3752ebe40cd2f65fdc3c40c9de2da9e6b6f81d300136977ee572a826cdc5"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R077-P54-POWERSHELL-REGEX-SUBEXPRESSION-EXPANSION.json.sha256",
+      "bytes": 129,
+      "sha256": "7a772eb29868346b76b4a568c2bf5805622e2991d7299e2ff76026c3f4199c47"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R078-P55-INTERFACE-OWNER-CASE-ALTERNATION-SYNTAX.json",
+      "bytes": 1462,
+      "sha256": "938e1d0f16e2accbbb2d7082c16661f4e3a0cf0aaa7dd11fc96f84c3b5a80354"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R078-P55-INTERFACE-OWNER-CASE-ALTERNATION-SYNTAX.json.sha256",
+      "bytes": 128,
+      "sha256": "2516c467f04b2e68ba3d6b72d3a19257775ef7be64cdb0a09f158bc0183461ec"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R079-P56-POWERSHELL-MANGLED-PYTHON-FOCUSED-CHECK.json",
+      "bytes": 1605,
+      "sha256": "4b02d3388028e127ea8dc37d8095432c4f29f798ebd997b85fb1389a2e97931e"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R079-P56-POWERSHELL-MANGLED-PYTHON-FOCUSED-CHECK.json.sha256",
+      "bytes": 128,
+      "sha256": "9cf44a180295ef71c4dedd848ff1c0401d3a078b4116d7f39a83e22974a73b75"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R080-P57-XRAY-PREMUTATION-RESTORATION-UNPROVEN.json",
+      "bytes": 1685,
+      "sha256": "04f1e46dcbe6b99e071eb976cebe42b6723e378ca9ec36faa810010e768c2a6e"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R080-P57-XRAY-PREMUTATION-RESTORATION-UNPROVEN.json.sha256",
+      "bytes": 126,
+      "sha256": "33ec0ed56f4965f3a9e4b20662abbfb3ee20ec8fd03479d57a580bd61fb80a0c"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R081-P58-XRAY-ADJACENT-STAGE-UNOWNED-DELETE.json",
+      "bytes": 1531,
+      "sha256": "932a5c346e9a337d6c17715e7fbe7227caaf4795bf5a5cc5e099051e2ec53bff"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R081-P58-XRAY-ADJACENT-STAGE-UNOWNED-DELETE.json.sha256",
+      "bytes": 123,
+      "sha256": "68196386a7fb2f4a052d02065692311e89f47563655fa365b0a858e082ce0cf4"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R082-P59-R081-APPLY-PATCH-CONTEXT-MISMATCH.json",
+      "bytes": 1394,
+      "sha256": "e15c9629bb302479f86071bccba1240fae41a388be2f2220f3f28c5ebf9667c9"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R082-P59-R081-APPLY-PATCH-CONTEXT-MISMATCH.json.sha256",
+      "bytes": 122,
+      "sha256": "25cb4b05c2a8dffb5e5d4d0d19b0c00dfc7ccf753de468cc45e7f586d4b0bf4e"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R083-P59-UPDATER-TMPFS-ANCESTRY-DEVICE-UNPROVEN.json",
+      "bytes": 1673,
+      "sha256": "607850ea91f01c05785d21c70edfda8ee57d85d1969e824d6d698131a7d9feaf"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R083-P59-UPDATER-TMPFS-ANCESTRY-DEVICE-UNPROVEN.json.sha256",
+      "bytes": 127,
+      "sha256": "d84597f51986f7ce02c7a9750bd2ec7d3f07f3a35a039c49bec27e24b434572c"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R084-P61-R081-CHMOD-HUNK-CONTEXT-MISMATCH.json",
+      "bytes": 1564,
+      "sha256": "c3296d05cbdfd37be115c5625477b849971a093592552ee3ec97085b48ca84cc"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R084-P61-R081-CHMOD-HUNK-CONTEXT-MISMATCH.json.sha256",
+      "bytes": 121,
+      "sha256": "687f3b4f3172f533ac77ed1b51a8ffdd76818399227a5d18dc0a6cbdbf060510"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R085-P62-XRAY-POSTMUTATION-ROLLBACK-RESULT-IGNORED.json",
+      "bytes": 1808,
+      "sha256": "0807e7d95a60420059a772c40116e5197dac7458c65103ebcaad19ed97ba09b0"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R085-P62-XRAY-POSTMUTATION-ROLLBACK-RESULT-IGNORED.json.sha256",
+      "bytes": 130,
+      "sha256": "a4a7c8370e2bce9701c8fe049bcd5f29588564fe56d910c8003b3110f07c8a99"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R086-P63-UPDATER-FOCUSED-RG-POWERSHELL-MANGLED.json",
+      "bytes": 1517,
+      "sha256": "8c0927bbbb74dce0a4dc3639a581876893a4db7577900a29ca2bfb9359c3bae9"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R086-P63-UPDATER-FOCUSED-RG-POWERSHELL-MANGLED.json.sha256",
+      "bytes": 126,
+      "sha256": "7ccd89753bd9cc4eb9d4882833a1e84fefdaa251449812380d3c94bfb999c5c2"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R087-P64-UPDATER-REQUEST-LOCK-PARTIAL-ACQUIRE-UNTRACKED.json",
+      "bytes": 1541,
+      "sha256": "b851712310a5934b2a5b17f378fbb8e1bfeaf00dfe948b52f2f001be9688c2bd"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R087-P64-UPDATER-REQUEST-LOCK-PARTIAL-ACQUIRE-UNTRACKED.json.sha256",
+      "bytes": 135,
+      "sha256": "6a66ccc06118ed5de95829a29bf3d4a51e3543de536537001d512a6c0c386ede"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R088-P64-UPDATER-GLOBAL-LOCK-PARTIAL-ACQUIRE-UNTRACKED.json",
+      "bytes": 1647,
+      "sha256": "f425bcdc6d63fee9d37b2e7633c32abab13d43e7ae8e1d946d425f2594652cfc"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R088-P64-UPDATER-GLOBAL-LOCK-PARTIAL-ACQUIRE-UNTRACKED.json.sha256",
+      "bytes": 134,
+      "sha256": "9c606f2ffda9cfa70cfbff636a94186bbb298f67a5ea69710ffed1ce8d9dd6f6"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R089-P66-XRAY-ABORT-CLEANUP-ROLLBACK-SUPPRESSED.json",
+      "bytes": 1619,
+      "sha256": "5d6aafb1712e4994a8ee04bc013365b61d773311a8776ebbda4540905cd2ffb6"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R089-P66-XRAY-ABORT-CLEANUP-ROLLBACK-SUPPRESSED.json.sha256",
+      "bytes": 127,
+      "sha256": "2a14054385461f8cbdf3f0b50d149ca7bb221437ba19b3e84f1ec2763a166bc7"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R090-P67-R089-CHECKPOINT-VALIDATION-PARAMETER-TYPO.json",
+      "bytes": 1220,
+      "sha256": "c753da6607cba3cc2031185be2353ead136d7a188f0296ea9b6d9ea2035285d8"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R090-P67-R089-CHECKPOINT-VALIDATION-PARAMETER-TYPO.json.sha256",
+      "bytes": 130,
+      "sha256": "f15c5a9187676ed2ef879d1c9ea73b1a5674911cc577130db65f00feac3a6357"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R091-P68-R083-TEST-BLOCK-MISPLACED.json",
+      "bytes": 1409,
+      "sha256": "0c8a5ccff7a052af7e820f880e3e4a80c7c3088b70528f996082e1d4e9a48003"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R091-P68-R083-TEST-BLOCK-MISPLACED.json.sha256",
+      "bytes": 114,
+      "sha256": "d1201a357cda59fce6161fe564a27ab08b70a9a21568b78df5f2b2a96b4d09f1"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R092-P69-R083-OBSOLETE-LOCK-CLEANUP-ASSERTIONS.json",
+      "bytes": 1494,
+      "sha256": "94ec196f17a8e8bae4359638ffcee7a2bd0f18b9de245746854dce1b8c01c148"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R092-P69-R083-OBSOLETE-LOCK-CLEANUP-ASSERTIONS.json.sha256",
+      "bytes": 126,
+      "sha256": "d01033556947d02af319514b597545aa44e0c076d6f0801f1213c0f2fa8d2404"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R093-P70-XRAY-ABORT-AUDIT-RG-REGEX-MALFORMED.json",
+      "bytes": 1352,
+      "sha256": "2f40aca127d75787e078dfdd5c55c04fef5262d81e6bf7c022f6a6cc9781b6f1"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R093-P70-XRAY-ABORT-AUDIT-RG-REGEX-MALFORMED.json.sha256",
+      "bytes": 124,
+      "sha256": "31db83d3f5820365514c24e29193119ff4f48c8679e0ef56bddce9b15c51756c"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R094-P71-XRAY-CONTEXT-CLEANUP-FAILURE-SUPPRESSED.json",
+      "bytes": 1517,
+      "sha256": "71ed0fcf5b219a82569c76d4924073109ae5eb3f53a9e34b3758606ede061d6b"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R094-P71-XRAY-CONTEXT-CLEANUP-FAILURE-SUPPRESSED.json.sha256",
+      "bytes": 128,
+      "sha256": "124c22af3e0995b31853509f38b107071efbe45640a3cb1ee067989be0ebcf31"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R095-P72-FOCUSED-PYTHON-SIBLING-IMPORT-PATH.json",
+      "bytes": 1437,
+      "sha256": "7ccd7a7be2721a9ce79669e2892d0fe0ee1c62b48bcd84f23389aa30053f4645"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R095-P72-FOCUSED-PYTHON-SIBLING-IMPORT-PATH.json.sha256",
+      "bytes": 123,
+      "sha256": "72583a8b6ddbe8376c623002ae207b75f71d8e56faaee0231fe875160242a936"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R096-P73-XRAY-LOCK-PARTIAL-CREATE-CLEANUP-SUPPRESSED.json",
+      "bytes": 1454,
+      "sha256": "17070fe4b8752b06d42bea185d844bab31ea48df8ce6d924f44249a5726bf4b5"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R096-P73-XRAY-LOCK-PARTIAL-CREATE-CLEANUP-SUPPRESSED.json.sha256",
+      "bytes": 132,
+      "sha256": "e2e7e7aeaf1305791fb34efa80bcc3e12d0230420e5938aa98b52cbfa79f2c94"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R097-P74-UPDATER-ATOMIC-TEXT-STAGE-UNOWNED-PREDICTABLE.json",
+      "bytes": 1763,
+      "sha256": "e2e39d50bfcb4b10c409c2d43fdd8febfc8793ebba20eb60e90a07fafb2f653d"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R097-P74-UPDATER-ATOMIC-TEXT-STAGE-UNOWNED-PREDICTABLE.json.sha256",
+      "bytes": 134,
+      "sha256": "c7f6ea1bcb8f9acac6acddaf92e787cec7b0f51dc755546f3a4e0325ccf1b2b6"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R098-P75-UPDATER-CURRENT-SYMLINK-STAGE-UNOWNED-PREDICTABLE.json",
+      "bytes": 1702,
+      "sha256": "e8c5ab157aace7551e53de81d3b0d87ed79aed07344bcec13b114133b9f6fa06"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R098-P75-UPDATER-CURRENT-SYMLINK-STAGE-UNOWNED-PREDICTABLE.json.sha256",
+      "bytes": 138,
+      "sha256": "397aa6cf5748c7958312c4d0d10ccf6fbea25ce0448d264a0dfd2cd8a8f53ebc"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R099-P76-UPDATER-RELEASE-SLOT-STAGE-UNOWNED-PREDICTABLE.json",
+      "bytes": 1713,
+      "sha256": "874ee1c71478302c8617cf04ef8ee136abcbd3c3326bf9f7a51121ee2b6d4160"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R099-P76-UPDATER-RELEASE-SLOT-STAGE-UNOWNED-PREDICTABLE.json.sha256",
+      "bytes": 135,
+      "sha256": "2609b4058abda2124f406b84b66f2e3fce8af0d7757635cc114386aabeb42db6"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R100-P77-XRAY-STALE-LOCK-LEAF-REMOVAL-REVALIDATION-GAP.json",
+      "bytes": 1730,
+      "sha256": "ab0da9288972537be44f348ae46e604ea31606d01ba7c472c566bd1efbf901a9"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R100-P77-XRAY-STALE-LOCK-LEAF-REMOVAL-REVALIDATION-GAP.json.sha256",
+      "bytes": 134,
+      "sha256": "56eba82ba3bdee565b6f3ca7a3110f25d31630fe8ca6e6daa7ed487fea39b5f5"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R101-P78-UPDATER-TRANSACTION-PHASE-PUBLICATION-CRASH-WINDOW.json",
+      "bytes": 2106,
+      "sha256": "d1f8615d0b9217f1eaab3e9e6142ceb3ed16600e2ca0691043b9935dadd8b16c"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R101-P78-UPDATER-TRANSACTION-PHASE-PUBLICATION-CRASH-WINDOW.json.sha256",
+      "bytes": 139,
+      "sha256": "b02257394941e85436b0eae869f94486319e665824e9be19dc1aaa0f858ddd2c"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R102-P80-XRAY-OWNED-LOCK-IDENTITY-NOT-BOUND.json",
+      "bytes": 1919,
+      "sha256": "3b5761079fb28810c2d659ea3d39ded881e948f3ecad1609359554d9deeef636"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R102-P80-XRAY-OWNED-LOCK-IDENTITY-NOT-BOUND.json.sha256",
+      "bytes": 123,
+      "sha256": "b1449e92b1e665da22b1881e80eb3295c7c30c7b6b42ce9a151ddf41213b685c"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R103-P82-UPDATER-UNRESOLVED-TRANSACTION-ADMISSION-GAP.json",
+      "bytes": 1957,
+      "sha256": "b47f6a4ecf7b51360b62baa167da829fa0df4d405bed9faffb22298b9e9602cd"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R103-P82-UPDATER-UNRESOLVED-TRANSACTION-ADMISSION-GAP.json.sha256",
+      "bytes": 133,
+      "sha256": "801bfbedb05815c077bd9519ab96a1deb1cf35a65d4e3c94efe28b7c876ecff2"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R104-P84-UPDATER-PREPARED-JOURNAL-ABSENCE-TOCTOU.json",
+      "bytes": 1764,
+      "sha256": "8bb5ed91427ef0e71e84d5c6030926eba34bff6f073486ef6e6c0cebdc1f8bc1"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R104-P84-UPDATER-PREPARED-JOURNAL-ABSENCE-TOCTOU.json.sha256",
+      "bytes": 128,
+      "sha256": "ea068a3d3b9855af3aa12d2f4de97622ce0007ffb032c0a730bfc012b1f692f4"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R105-P86-UPDATER-PHASE-TRANSITION-FINAL-SNAPSHOT-TOCTOU.json",
+      "bytes": 1673,
+      "sha256": "7766bbf11f90723ed238cfd44fa817a2624bc1b8e0d8c6b390d26f84ce203c46"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R105-P86-UPDATER-PHASE-TRANSITION-FINAL-SNAPSHOT-TOCTOU.json.sha256",
+      "bytes": 135,
+      "sha256": "fc554b747ecc97776639592c89049e654e7e32538c320f7bcacd4636b30ffd7c"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R106-P88-UPDATER-PROVISIONAL-STAGE-IDENTITY-UNBOUND-CLEANUP.json",
+      "bytes": 1795,
+      "sha256": "97c4485680fffb08f5b51ea316245fae4783aa267754d63001b061e482838248"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R106-P88-UPDATER-PROVISIONAL-STAGE-IDENTITY-UNBOUND-CLEANUP.json.sha256",
+      "bytes": 139,
+      "sha256": "6fa3dd9b3dbacb5a85d15152d3f9af263244e800191fc986fe9dfbb4dfb176a0"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R107-P90-UPDATER-CURRENT-STAGE-CHILD-IDENTITY-UNBOUND.json",
+      "bytes": 1566,
+      "sha256": "d40c78a92cf20a2313ffc9eaea5496d50f9dcb18c39d32fb5050a9dbcaafb53a"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R107-P90-UPDATER-CURRENT-STAGE-CHILD-IDENTITY-UNBOUND.json.sha256",
+      "bytes": 133,
+      "sha256": "d23802539ec1ad33afd5e4a5b2fcf4c6c35d6037a2c9acb62652ee4b5cd2d114"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R108-P92-UPDATER-CURRENT-TARGET-FINAL-GUARD-TOCTOU.json",
+      "bytes": 1666,
+      "sha256": "676e62e85c14f74293b63c16925ced99aa9053590abd6153eb004eccf32b8233"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R108-P92-UPDATER-CURRENT-TARGET-FINAL-GUARD-TOCTOU.json.sha256",
+      "bytes": 130,
+      "sha256": "43d4016adf2c604f89212d4964e01087e37bf7c7b5f475165b1e5472b1255684"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R109-P94-UPDATER-RELEASE-SLOT-TARGET-PUBLICATION-TOCTOU.json",
+      "bytes": 1735,
+      "sha256": "9f07f86d85a38b2f9ec31689412324d4d04f3355fc43d129076a7cf7838d0d86"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R109-P94-UPDATER-RELEASE-SLOT-TARGET-PUBLICATION-TOCTOU.json.sha256",
+      "bytes": 135,
+      "sha256": "652596531cc78a22db11a376dfb413e6a8b5c9912326383e9b75351d1c511a90"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R110-P95-RELEASE-PUBLICATION-STATIC-GATE-WILDCARD-PATTERN.json",
+      "bytes": 1614,
+      "sha256": "cbf830cf6168d92ac804aa1238a97d1d03dae35e35e1a657aa7af26b567d9426"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R110-P95-RELEASE-PUBLICATION-STATIC-GATE-WILDCARD-PATTERN.json.sha256",
+      "bytes": 137,
+      "sha256": "0af01d96d21d2e287ef73a46d8d2185dee2cf5c50a4da6aca855d589825f3aba"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R111-P97-UPDATER-RELEASE-STAGE-RECURSIVE-CLEANUP-UNBOUND.json",
+      "bytes": 1795,
+      "sha256": "39fa2e67833cb147ec35269a65b90cbff2336af9aeb7adb3484eea8399089147"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R111-P97-UPDATER-RELEASE-STAGE-RECURSIVE-CLEANUP-UNBOUND.json.sha256",
+      "bytes": 136,
+      "sha256": "66639aa6c28f86144ac9f221d806edb2a38d42ece8ed6fca2bc99bac43133fe1"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R112-P98-UPDATER-WORK-TREE-IDENTITY-AND-RECURSIVE-CLEANUP-UNBOUND.json",
+      "bytes": 2109,
+      "sha256": "a4097aad7cbd4ca4c6f60f7eee689a9d2e9a691d98075542e499c1133134afa5"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R112-P98-UPDATER-WORK-TREE-IDENTITY-AND-RECURSIVE-CLEANUP-UNBOUND.json.sha256",
+      "bytes": 145,
+      "sha256": "8f48a7a6f1e676484c2cdc787a61f2a108ed8e770cf05d3cbe94d51ebeedaedc"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R113-P100-UPDATER-ARCHIVE-ANCESTOR-TYPE-CONFLICT.json",
+      "bytes": 1926,
+      "sha256": "54a1fe889011a3fb4a5d6119f7a70817f209eb11b50a956aaddbc245db242ed2"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R113-P100-UPDATER-ARCHIVE-ANCESTOR-TYPE-CONFLICT.json.sha256",
+      "bytes": 128,
+      "sha256": "ca904821be0fd8b9623e98cc9d27973a445a42e194003a0e2993ea59093c923c"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R114-P101-R113-CHECKPOINT-VALIDATION-POWERSHELL-FOREACH-SYNTAX.json",
+      "bytes": 1464,
+      "sha256": "30e42b13f90d2c7470a01663799bc1177d026ce845c591033800b7ccf8588ff4"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R114-P101-R113-CHECKPOINT-VALIDATION-POWERSHELL-FOREACH-SYNTAX.json.sha256",
+      "bytes": 142,
+      "sha256": "1e13e1d3950f5d82cb2c043016de425be6eb78dcd7b0d2a6c547dc6472e30567"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R115-P103-UPDATER-RELEASE-STAGE-DELETE-FINAL-IDENTITY-RECHECK-GAP.json",
+      "bytes": 1872,
+      "sha256": "cc19bdee2fc543744f4a67fc6c3d67c6f53ecc9f3a6739bd6f365ec490408edb"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R115-P103-UPDATER-RELEASE-STAGE-DELETE-FINAL-IDENTITY-RECHECK-GAP.json.sha256",
+      "bytes": 145,
+      "sha256": "57ba78e4746b4fbbc28878514ca658e4bee97f072af70e1a9ef16a4c30d337ff"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R116-P104-UPDATER-RELEASE-STAGE-ROOT-RMDIR-FINAL-IDENTITY-RECHECK-GAP.json",
+      "bytes": 1760,
+      "sha256": "1a4ea3e550a93cba86f8c23c856b6acaefec6bdb77e0a82f8d7d760058791098"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R116-P104-UPDATER-RELEASE-STAGE-ROOT-RMDIR-FINAL-IDENTITY-RECHECK-GAP.json.sha256",
+      "bytes": 149,
+      "sha256": "510df61f4476ed9376039c86bd5401ecafcdbd6e4544f1b04f69ff6090b4cf1a"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R117-P105-INTERFACE-COMMAND-EVIDENCE-VOLATILE-PUBLICATION-UNBOUND.json",
+      "bytes": 2180,
+      "sha256": "67188f768618ac72e7857c1de41729e3ce0fc163c3df53cc8a310555b17fe643"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R117-P105-INTERFACE-COMMAND-EVIDENCE-VOLATILE-PUBLICATION-UNBOUND.json.sha256",
+      "bytes": 145,
+      "sha256": "95dda1384c1b957dd68146254ace4eb2a7cdf2dd866e070913e32fbe07c3d321"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R118-P106-P105-STATIC-GATE-RMDIR-SCOPE-OVERBROAD.json",
+      "bytes": 2036,
+      "sha256": "2c14d4de831e765a7e17b67611f09b3d0cf7da8a0cc9d021d18e35896864cb14"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R118-P106-P105-STATIC-GATE-RMDIR-SCOPE-OVERBROAD.json.sha256",
+      "bytes": 128,
+      "sha256": "289e1c23fe4257f1cc15e5ba3b4a037fd0ee34abf160552f80550f1057aa3c12"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R119-P107-UPDATER-BUNDLE-CONTENT-UNBOUND-BEFORE-EXTRACT.json",
+      "bytes": 1988,
+      "sha256": "03000c836d77b3422591ea340f7bc6d4b4a57a2d8a37962ade539f6fdbe42839"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R119-P107-UPDATER-BUNDLE-CONTENT-UNBOUND-BEFORE-EXTRACT.json.sha256",
+      "bytes": 135,
+      "sha256": "c2f7dc87f3827d30a880f546e778daf2cd84314ca380ab773c9c112f851c868c"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R120-P108-UPDATER-REMAINING-CLEANUP-FINAL-IDENTITY-GAPS.json",
+      "bytes": 2209,
+      "sha256": "02442b9c10118d05c43f9b1679cddc3fc05dd4c29adf0fc537139c8c65fb50de"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R120-P108-UPDATER-REMAINING-CLEANUP-FINAL-IDENTITY-GAPS.json.sha256",
+      "bytes": 135,
+      "sha256": "aab48b134cd123665a5e7f8ad5c967ef95d5d63acb31d3510d1422aa1de1bb32"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R121-P109-UPDATER-WORK-OUTPUT-RESET-FINAL-IDENTITY-GAP.json",
+      "bytes": 1868,
+      "sha256": "d4bedb3923a17b6d7f13700ad68fa0c9966ab8aa6e746cf08cdfb09000fbbbbd"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R121-P109-UPDATER-WORK-OUTPUT-RESET-FINAL-IDENTITY-GAP.json.sha256",
+      "bytes": 134,
+      "sha256": "5526bfb88d25965be6d3362e1c754e2ab4dc9b0a4b30946adf59c3f53230024b"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R122-P110-UPDATER-LEGACY-ROOT-RECURSIVE-CLEANUP-UNBOUND.json",
+      "bytes": 1912,
+      "sha256": "3148defd71da8b989b2f179ec2c572b1fc82b3d06120b60428faf3513d2138eb"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R122-P110-UPDATER-LEGACY-ROOT-RECURSIVE-CLEANUP-UNBOUND.json.sha256",
+      "bytes": 135,
+      "sha256": "c23e076327b430080dd867739f32a82439a5db5ebff3afab15af7447c3468927"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R123-P111-UPDATER-LEGACY-LEAF-DELETE-PARENT-ROOT-IDENTITY-GAP.json",
+      "bytes": 2123,
+      "sha256": "ef7240e9d97395210e2a4fd19e8fa3778d5edd54d4def73dffbd8f304b2d5a74"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R123-P111-UPDATER-LEGACY-LEAF-DELETE-PARENT-ROOT-IDENTITY-GAP.json.sha256",
+      "bytes": 141,
+      "sha256": "4dce9425c21133fbb42ee80f7e9765f5a42c315dce8583435cd3eaa29189b8a8"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R124-P112-NARROW-GATE-CD-FORM-MISMATCH.json",
+      "bytes": 1701,
+      "sha256": "8dafb4f3f206face05abf1b793286d69842b9ba486b8bb4c382ef936e12dbe67"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R124-P112-NARROW-GATE-CD-FORM-MISMATCH.json.sha256",
+      "bytes": 118,
+      "sha256": "b0266227156bd7abf454bf668bcad4dd81b3c7ead8b73e4078d66b2f135b5f13"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R125-P113-NARROW-GATE-END-ANCHOR-MISMATCH.json",
+      "bytes": 1743,
+      "sha256": "6856cc603363a890106273fc3df2302cffb1bc4f431e38633bcbb8906e489295"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R125-P113-NARROW-GATE-END-ANCHOR-MISMATCH.json.sha256",
+      "bytes": 121,
+      "sha256": "a6b8df82d43866f2df410968625bb318fb26739340323aadd9957553b1f1d361"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R126-P115-RG-LOOKBEHIND-UNSUPPORTED.json",
+      "bytes": 1691,
+      "sha256": "ae570d1bfb292af06e182391ebdc774c8af352b0ee8a9e93a7486e5e7f883738"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R126-P115-RG-LOOKBEHIND-UNSUPPORTED.json.sha256",
+      "bytes": 115,
+      "sha256": "a3696d5cfd50555b0d3b8886729fd6c594e383ccb3583d60979670e0017706d5"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R127-P116-UPDATER-VOLATILE-ROOT-STAGE-IDENTITY-UNBOUND.json",
+      "bytes": 2323,
+      "sha256": "0f82492a5fa3f5d4c6ad340cbe7291bf077bc7f9b6c5a45d795ee7d2b9a25293"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R127-P116-UPDATER-VOLATILE-ROOT-STAGE-IDENTITY-UNBOUND.json.sha256",
+      "bytes": 134,
+      "sha256": "bdf2b39ca6bc8f706e4c84a57d0eee2244d693d2ef61562c466e90b23b32e151"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R128-P117-UPDATER-LINE-ENDING-CHURN.json",
+      "bytes": 1879,
+      "sha256": "d58ea5e7b633d309c4525493a3ed698d3ff89bd8d3ce126502339f3a48b6393b"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R128-P117-UPDATER-LINE-ENDING-CHURN.json.sha256",
+      "bytes": 115,
+      "sha256": "301cd175a49c609518cf789d681fa1a8b907c08a74b9461ca3002556f7948960"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R129-P118-UPDATER-ROOT-MARKER-MOVING-PHASE-GAP.json",
+      "bytes": 2065,
+      "sha256": "de7c58306d1b6b3956da1fcf2b041db441e07ed1c206ba340245574a3929591c"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R129-P118-UPDATER-ROOT-MARKER-MOVING-PHASE-GAP.json.sha256",
+      "bytes": 126,
+      "sha256": "e29c7b74cf4feed9019bd86dbbf0a4909969401fe20a6433290a96f30dc7e943"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R130-P120-UPDATER-WORK-MANIFEST-DESTRUCTIVE-REOPEN.json",
+      "bytes": 2304,
+      "sha256": "1a20f3a047e10a815050b4734f7b239358f6395dfab1bdf8672e352763b6e421"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R130-P120-UPDATER-WORK-MANIFEST-DESTRUCTIVE-REOPEN.json.sha256",
+      "bytes": 130,
+      "sha256": "115924828e81dd54966a9488aaf0cedf050421e83fdd047b848b3c0b51663116"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R131-P121-UPDATER-WORK-MANIFEST-PARTIAL-CREATE-AUTHORITY.json",
+      "bytes": 2262,
+      "sha256": "b6536a60e743215768116370954b037750381167c852934faa9aa51889cba316"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R131-P121-UPDATER-WORK-MANIFEST-PARTIAL-CREATE-AUTHORITY.json.sha256",
+      "bytes": 136,
+      "sha256": "c63e82384543626e1f7c3203601cbb12adb8be7749085fdf88465c726363f9d0"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R132-P122-R131-LINE-LOCATOR-POWERSHELL-EXPANSION.json",
+      "bytes": 1479,
+      "sha256": "8ad9d3d464ad320614aa1c4f223e0e62f86be55d71e321fbc3d48b6e1e531aa3"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R132-P122-R131-LINE-LOCATOR-POWERSHELL-EXPANSION.json.sha256",
+      "bytes": 128,
+      "sha256": "229b4989b24ade3051fc2dd53ec587fd3581ecaba5a66a737f720ce2b8e51413"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R133-P123-R131-IMPLEMENTER-POWERSHELL-QUOTING.json",
+      "bytes": 1550,
+      "sha256": "aa88a78da8c0649349276d9bc5697d2a7dbe89738beac3271fc72a9f8ff4665b"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R133-P123-R131-IMPLEMENTER-POWERSHELL-QUOTING.json.sha256",
+      "bytes": 125,
+      "sha256": "bd1f4b7f61433502ee1e0678e9a72a933d91fdd03caa46fc05a34210a3b0eed1"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R134-P124-UPDATER-WORK-MANIFEST-BOOKKEEPING-PHASE-MISMATCH.json",
+      "bytes": 1759,
+      "sha256": "aa68b41550b4bdea08e5ae6a4b3faa3e8a18a44f5142f4cb9cb40ab93b8f559a"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R134-P124-UPDATER-WORK-MANIFEST-BOOKKEEPING-PHASE-MISMATCH.json.sha256",
+      "bytes": 138,
+      "sha256": "b5c0fd7177ec1839a07ede10159e2bbd8ef6adb69995c04d3252e1b3ed96c422"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R135-P125-UPDATER-WORK-MANIFEST-PRECREATE-QUARANTINE-RESIDUE.json",
+      "bytes": 2133,
+      "sha256": "fb18da538de7181dfdda1200526e5ab9009e6280f5601b5fc3cb5cc39dba05e6"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R135-P125-UPDATER-WORK-MANIFEST-PRECREATE-QUARANTINE-RESIDUE.json.sha256",
+      "bytes": 140,
+      "sha256": "db2450a773246aad17ee86bf9b09168b8ea7ed2f2827bd01fdbb9cec2ee96a74"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R136-P126-UPDATER-WORK-MANIFEST-COMPLETE-VALIDATION-FAILURE-RESIDUE.json",
+      "bytes": 2055,
+      "sha256": "d49c7c98dd1ce3d5ecf629c655899d6f789847a4382e0006c4bcda4ff3d17a0f"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R136-P126-UPDATER-WORK-MANIFEST-COMPLETE-VALIDATION-FAILURE-RESIDUE.json.sha256",
+      "bytes": 147,
+      "sha256": "0d6ceca0f12a0a2862e97be3c8c3c891a2f3ee9cb939dd71542e08043b05d49b"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R137-P127-UPDATER-PARTIAL-MANIFEST-DELETE-FINAL-PATH-IDENTITY-GAP.json",
+      "bytes": 2588,
+      "sha256": "e94aafbeee6da4a87e063c9226bbbfef8b405761b53e15104531742c7c34dcb4"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R137-P127-UPDATER-PARTIAL-MANIFEST-DELETE-FINAL-PATH-IDENTITY-GAP.json.sha256",
+      "bytes": 145,
+      "sha256": "11fcfe1b7dc8be4f1b33a2310446c038b4d58811ea6aaa75bf82c7cf37f9b241"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R138-P128-UPDATER-PARTIAL-QUARANTINE-RMDIR-FINAL-PATH-IDENTITY-GAP.json",
+      "bytes": 1858,
+      "sha256": "377364d13cea8c63eb474ef1a64f01c054a1dfd9b4bd2645b38d72aa5d3b500b"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R138-P128-UPDATER-PARTIAL-QUARANTINE-RMDIR-FINAL-PATH-IDENTITY-GAP.json.sha256",
+      "bytes": 146,
+      "sha256": "2ca4398ab17b0a2c306c94ae3ba23f8f7cc01be2ad660c3cb222bdbc791159a8"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R139-P129-UPDATER-REPEATED-PRECREATE-QUARANTINE-RESIDUE.json",
+      "bytes": 2080,
+      "sha256": "1312139fb77f71057562ca07cf71a38564ff8597ca7441ee2a933ac0ae22865c"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R139-P129-UPDATER-REPEATED-PRECREATE-QUARANTINE-RESIDUE.json.sha256",
+      "bytes": 135,
+      "sha256": "1a4c9385a58b1508dc9309c8ac5e7ca7b4b07928e84160c70ebef7fdb1e08679"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R140-P129-UPDATER-EXIT-SIGNAL-MASK-ENTRY-WINDOW.json",
+      "bytes": 1769,
+      "sha256": "fc971ecec9b2c14c195cbffe8e753ee893b35bf73d446aa557ee34cdd6ed0438"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R140-P129-UPDATER-EXIT-SIGNAL-MASK-ENTRY-WINDOW.json.sha256",
+      "bytes": 127,
+      "sha256": "a5c27877b520e5ea699603f248bac61a0285c4f7bbca703a5e558abe087b70d7"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R141-P131-UPDATER-MANIFEST-NOCLOBBER-NONREGULAR-OBJECT.json",
+      "bytes": 2205,
+      "sha256": "59fc82fbce943a5be9ce5db99210e6dd0044f97f8f4794372f1a05c7088505f4"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R141-P131-UPDATER-MANIFEST-NOCLOBBER-NONREGULAR-OBJECT.json.sha256",
+      "bytes": 134,
+      "sha256": "06ac26f87cda8945e7ef131539ddfd0ff3b041a5a9fd719ef349d268ae55fefc"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R142-P132-UPDATER-MANIFEST-NONTRUNCATING-OPEN-SYMLINK-CREATE.json",
+      "bytes": 2051,
+      "sha256": "a79e7ab55562f2b27eef6e0f349297824f2b7519eb6d74ff3ffb341da5e2159d"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R142-P132-UPDATER-MANIFEST-NONTRUNCATING-OPEN-SYMLINK-CREATE.json.sha256",
+      "bytes": 140,
+      "sha256": "e03f40a87203d251289e235271cbf37eeeaac55550e1dadbd3b65cdb2816877f"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R143-P132-UPDATER-MANIFEST-CANONICAL-ANCESTOR-REPLACEMENT.json",
+      "bytes": 2159,
+      "sha256": "54401b7a2460300b0c10dd0fc8a4c9cb52263354c0c1555bd969087697772f1c"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R143-P132-UPDATER-MANIFEST-CANONICAL-ANCESTOR-REPLACEMENT.json.sha256",
+      "bytes": 137,
+      "sha256": "781c04cb94dfe54e8336939b419413d2cc7d0c50a48fb2b4aff96b02b1681ff9"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R144-P133-UPDATER-ATOMIC-SYMLINK-DIRECTORY-COLLISION.json",
+      "bytes": 1850,
+      "sha256": "6a751a661b8bd30761b259aebe2ec3dd9e311964bf50bc1a2a3ee9acbc424b06"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R144-P133-UPDATER-ATOMIC-SYMLINK-DIRECTORY-COLLISION.json.sha256",
+      "bytes": 132,
+      "sha256": "5615a68c9422f829831dc5fde75d8dde8e92e4137f1dbbf281e0744aba7cb3e7"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R145-P134-UPDATER-ATOMIC-SYMLINK-OWNERSHIP-PUBLICATION-GAP.json",
+      "bytes": 2182,
+      "sha256": "ff908c71dd05115d5af80b5c06344a7ab6e10130b851d19463da715279bd87c6"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R145-P134-UPDATER-ATOMIC-SYMLINK-OWNERSHIP-PUBLICATION-GAP.json.sha256",
+      "bytes": 138,
+      "sha256": "fab568ee341979cecd01735f0d9f28b15e5d359873fe70aff4c1bc79e9695351"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R146-P135-UPDATER-MANIFEST-COMPLETE-STATE-SIGNAL-RESOLUTION-GAP.json",
+      "bytes": 2205,
+      "sha256": "2fcbf76901353596d494a88b50293d93543cd948856c4979c825a74ac78d3775"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R146-P135-UPDATER-MANIFEST-COMPLETE-STATE-SIGNAL-RESOLUTION-GAP.json.sha256",
+      "bytes": 143,
+      "sha256": "7f37b5a9d374ff58b49add70a0fb5a57b1b02d99f40c2f8f000d2757db1a151d"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R147-P136-UPDATER-MOVE-OUTCOME-STATE-UNRESOLVABLE.json",
+      "bytes": 2482,
+      "sha256": "63cbbe4c6096d244e8bf8b75210f600edcce469fcad4106d6dc9ac1a88c1a5dd"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R147-P136-UPDATER-MOVE-OUTCOME-STATE-UNRESOLVABLE.json.sha256",
+      "bytes": 129,
+      "sha256": "e28167b26593cb889de34850ab2e2ee8b871ea8a93df9cb15949147972212cca"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R148-P137-BUSYBOX-MV-NOCLOBBER-NONATOMIC.json",
+      "bytes": 2342,
+      "sha256": "e1e48b26b6c14d3d72d0a7fc8679d3068c7550e69ac77490f4c8efcf0b51d04b"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R148-P137-BUSYBOX-MV-NOCLOBBER-NONATOMIC.json.sha256",
+      "bytes": 120,
+      "sha256": "5bc1ebedf1b5bf2e761ae71b67827053991fbe4d3328459e2f6f17f893b9b443"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R149-P139-TARGET-BUSYBOX-STAT-F-UNSUPPORTED.json",
+      "bytes": 2070,
+      "sha256": "64cccbaec124f4b7016466f248e4b1e998a8c57d945cf3c234c19b2546892651"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R149-P139-TARGET-BUSYBOX-STAT-F-UNSUPPORTED.json.sha256",
+      "bytes": 123,
+      "sha256": "f6ff8102b4fab151cdabc4bc32e257c8a771c24517798f0fcb38f6a1ad7b37ed"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R150-P141-POWERSHELL-METADATA-PIPE-PARSER.json",
+      "bytes": 2105,
+      "sha256": "ee8897fcb7a6afd09a9c5dca301c2564b9fbc0c0c2dc4764922be13b045eefd9"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R150-P141-POWERSHELL-METADATA-PIPE-PARSER.json.sha256",
+      "bytes": 121,
+      "sha256": "b513bfdfe84ca3f1b5bbae9f95432119a96c5c0b4e7299835babd34fa8598284"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R151-P143-HELPER-CI-ABSOLUTE-SHA256SUM-PATHS.json",
+      "bytes": 2209,
+      "sha256": "4f07dadcf1967870cffdaadaa13fe69a8b7add83fc3cbda4bb93e330f794f738"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R151-P143-HELPER-CI-ABSOLUTE-SHA256SUM-PATHS.json.sha256",
+      "bytes": 124,
+      "sha256": "9877a74605f35433bc7a496555d141ca064c0d2ddbaddf9fc75b9cc84405e1ca"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R152-P148-TARGET-HELPER-FD9-SHA-BINDING-GAP.json",
+      "bytes": 2196,
+      "sha256": "6ba3bc76ecd14b25077f053170128b389e735dae688d31361f4ad4b02f5e8bce"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R152-P148-TARGET-HELPER-FD9-SHA-BINDING-GAP.json.sha256",
+      "bytes": 123,
+      "sha256": "86191c8260be800691166e36305396047a012beaf643f01119afd4b99a4e6df5"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R153-P151-POWERSHELL-FOREACH-PIPE-PARSER.json",
+      "bytes": 1655,
+      "sha256": "b6167f0aca742bf86aa534d2802b51f6729998df79e47c2eb193d080ca2f8c8f"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R153-P151-POWERSHELL-FOREACH-PIPE-PARSER.json.sha256",
+      "bytes": 120,
+      "sha256": "30be4165aaca67d33444d7fcca0603f0514845c62d9ca8ba89b7078bdf26a532"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R154-P153-POWERSHELL-REMOTE-COMMAND-SUBEXPRESSION.json",
+      "bytes": 1412,
+      "sha256": "d6299d7e6c8f66b8511f169c3a6ae0ad8e3c319ea2d9e716de0a22592a4ed377"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R154-P153-POWERSHELL-REMOTE-COMMAND-SUBEXPRESSION.json.sha256",
+      "bytes": 129,
+      "sha256": "106ab302cb275045672944a2befce414b339b5ee0a2aaddd982d8d3dba250023"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R155-P155-TARGET-BUSYBOX-STAT-C-UNSUPPORTED.json",
+      "bytes": 1963,
+      "sha256": "b36f4fc6610ff00de3e1d1cb03d54f678241134b8094526a6c93e9d9cc6e083a"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R155-P155-TARGET-BUSYBOX-STAT-C-UNSUPPORTED.json.sha256",
+      "bytes": 123,
+      "sha256": "2ee18db229b1f6377dcbdce07494a0bc02623a7a02ee907f08d21de100726384"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R156-P160-RELEASE-BUILDER-HELPER-INPUT-CONTRACT-MISSING.json",
+      "bytes": 2143,
+      "sha256": "99ddb0625023535487dc4194b0e78b82ac26af17bb6e82061e616d8e044d580d"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R156-P160-RELEASE-BUILDER-HELPER-INPUT-CONTRACT-MISSING.json.sha256",
+      "bytes": 135,
+      "sha256": "cd7ff7d9be4209522fee86009ccc8cfd0cbc386fbcf455df1f4f0b2a50bdc05b"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R157-P163-HELPER-BUILD-A-B-SAME-RUNNER.json",
+      "bytes": 2593,
+      "sha256": "fb4bb694cd2ac901722d0469d25e951ee00e056b587786469f173ee26ba7e3bc"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R157-P163-HELPER-BUILD-A-B-SAME-RUNNER.json.sha256",
+      "bytes": 118,
+      "sha256": "cfffacf4a116a01e33ccdff84162aa60b89cc16c301eed0242a19cc5faa75d31"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R158-P166-RELEASE-BUILDER-LEGACY-STATE-CONTAMINATION.json",
+      "bytes": 3080,
+      "sha256": "8c98c2fc60892050cc0e7a484e37d7bf2c421bad5e7a54b3c0b8d9912027d00e"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R158-P166-RELEASE-BUILDER-LEGACY-STATE-CONTAMINATION.json.sha256",
+      "bytes": 132,
+      "sha256": "8e4db02831e2521eca9be6c90a12413eb67fd5916ff16b5759a77a508a3cfaa8"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R159-P168-POWERSHELL-RESOLVE-PATH-TOKENIZATION.json",
+      "bytes": 1726,
+      "sha256": "dba953533acb3898f83873a9e22f6e7a5e570f7d964d76999d2e28cb53a2812c"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R159-P168-POWERSHELL-RESOLVE-PATH-TOKENIZATION.json.sha256",
+      "bytes": 126,
+      "sha256": "44c2651c02ae3556280a2322eb6c933fe65da9fb2d6579a26164b746bd69dd2c"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R160-P170-HELPER-ARTIFACT-ACCEPTANCE-GATE-MISSING.json",
+      "bytes": 2859,
+      "sha256": "378d03157fd2cef9ac06705353d1cdd219ec03f94231f1b7921545db69bc0eab"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R160-P170-HELPER-ARTIFACT-ACCEPTANCE-GATE-MISSING.json.sha256",
+      "bytes": 129,
+      "sha256": "dd76507b70e7b43d692834f96716244747e07520af739a09a2158113fa701030"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R161-P171-UPDATER-SHA256SUMS-DUPLICATE-MANIFEST-GAP.json",
+      "bytes": 2141,
+      "sha256": "f09df682d9fa845034c4afd0dc83edbc878ca8a65f5783f27f7b1a8ff8ccee6b"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R161-P171-UPDATER-SHA256SUMS-DUPLICATE-MANIFEST-GAP.json.sha256",
+      "bytes": 131,
+      "sha256": "62c4d80c9bcb7b6b190a0b0bf51f345b695cd1e032c8d1281c3a1342e7fdbff8"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R162-P173-SUBAGENT-RG-UNCLOSED-GROUP.json",
+      "bytes": 2358,
+      "sha256": "6d06d78a1a7b64d7162f6597b0af3af7a4bfbf160bdf85f462628a2e582d6159"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R162-P173-SUBAGENT-RG-UNCLOSED-GROUP.json.sha256",
+      "bytes": 116,
+      "sha256": "02ed7843e2d79019cddacde54d689a6b0c9f8c707645d08f9089f5ed14c7e8b4"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R163-P174-POWERSHELL-FOREACH-PIPE-METADATA.json",
+      "bytes": 1627,
+      "sha256": "39fdc0d5e682402424ed02a635376cde148caf138e72db674836abe7ffd17337"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R163-P174-POWERSHELL-FOREACH-PIPE-METADATA.json.sha256",
+      "bytes": 122,
+      "sha256": "ca242e529b61dfdcfba9194c7c2958820937f5dc22f305e5515648da039baa44"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R164-P176-AUDIT-B-NONEXISTENT-BUILDER-OPERAND.json",
+      "bytes": 2054,
+      "sha256": "6c59e33418c3a25875995cc41eae935d41ef0c29ef59625ae8010dd8ab10c13c"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R164-P176-AUDIT-B-NONEXISTENT-BUILDER-OPERAND.json.sha256",
+      "bytes": 125,
+      "sha256": "59688e58886020c6783ec744bc189e244b49c2d8b384507767cb085a968b6138"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R165-P176-AUDIT-A-NONEXISTENT-BUILDER-OPERAND.json",
+      "bytes": 2009,
+      "sha256": "122df17ee88b32d8dc7fc2f7ea97ea2bc754ba33ab669922b3085c8c6190920c"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R165-P176-AUDIT-A-NONEXISTENT-BUILDER-OPERAND.json.sha256",
+      "bytes": 125,
+      "sha256": "0a5291753155852ae6fa32fab67b583e17fe15471f3be4b4cff4e44cfa4a44f7"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R166-P178-WEB-PUBLICATION-TMPFS-CONTRACT-MISSING.json",
+      "bytes": 2412,
+      "sha256": "b2b7cc385671118f578889300bd1ae6882f8d31d8ee3b0c416c1eaabdf6752d7"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R166-P178-WEB-PUBLICATION-TMPFS-CONTRACT-MISSING.json.sha256",
+      "bytes": 128,
+      "sha256": "4b79c13b723407cc8e98f39c3f9fcbfd0882e3d6290c9c992394bf67f29ee1e2"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R167-P181-WEB-PUBLICATION-EXIT-CLEANUP-GATE-FALSE-PASS.json",
+      "bytes": 2836,
+      "sha256": "6c12fc0c062927cc3f3b26d44909b8e419c07c8a77211a584f9af8cc3130cb1c"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R167-P181-WEB-PUBLICATION-EXIT-CLEANUP-GATE-FALSE-PASS.json.sha256",
+      "bytes": 134,
+      "sha256": "fd3e453cd73fdfc258be347266f3e3200409a48458abfb140624f478e1f9cd10"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R168-P184-WEB-EXIT-TRAP-LATER-OVERRIDE-FALSE-PASS.json",
+      "bytes": 1970,
+      "sha256": "35d9583268f03d0977eaea08c517b06187595bfc62376f474e9d33ed299181db"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R168-P184-WEB-EXIT-TRAP-LATER-OVERRIDE-FALSE-PASS.json.sha256",
+      "bytes": 129,
+      "sha256": "58a202c408958b9ffef2757ef5c42c56d6524830ba5b5d91d1e78335a01ea749"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R169-P184-WEB-EXIT-TRAP-REGISTRATION-ORDER-FALSE-PASS.json",
+      "bytes": 2139,
+      "sha256": "185f77f044046636ea6e198f077e9d864eb71189d4014b6e830a4467219348c4"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R169-P184-WEB-EXIT-TRAP-REGISTRATION-ORDER-FALSE-PASS.json.sha256",
+      "bytes": 133,
+      "sha256": "6ffe6f552e6a4d4d5c62c5d7d396bcf7485552d7bf433be738b4f6fcded31509"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R170-P187-WEB-TAIL-NORMALIZATION-ERASES-COMMAND-BOUNDARIES.json",
+      "bytes": 2485,
+      "sha256": "ed7318a3d370817ac202c77f2ea1fe5785607e91a3bfd8196479a6d168229925"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R170-P187-WEB-TAIL-NORMALIZATION-ERASES-COMMAND-BOUNDARIES.json.sha256",
+      "bytes": 138,
+      "sha256": "b03ca52f5bb6c71f653834012c2981b680e815b71a6375b8ae852fd900a91215"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R171-P191-UPDATER-REQUEST-PARTIAL-LOCK-REVALIDATION.json",
+      "bytes": 2331,
+      "sha256": "5d3617642ad46cc17272c43ef9960fa6d922d252b2255bb7444206f8a0505f31"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R171-P191-UPDATER-REQUEST-PARTIAL-LOCK-REVALIDATION.json.sha256",
+      "bytes": 131,
+      "sha256": "463f19017de388c9da8dde11302cf5286263010226287db90984f25d537b9b7b"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R172-P191-R171-BOOKKEEPING-PATCH-CONTEXT.json",
+      "bytes": 1433,
+      "sha256": "219440676a08d4b6f80643da5d3106237c642ec7658fb64976c3e59995984637"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R172-P191-R171-BOOKKEEPING-PATCH-CONTEXT.json.sha256",
+      "bytes": 120,
+      "sha256": "45b1b36db36caabda2a740dea8bfaed6cc5b65fd609147afe4406d10be4e4f67"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R173-P193-R1-RESTORE-FALLBACK-SCP-SFTP-UNAVAILABLE.json",
+      "bytes": 1797,
+      "sha256": "bafb61a28dfb7918c36531b5193ef05a5b641d690ac480f201645e794539472a"
+    },
+    {
+      "path": "checkpoints/R0012/process-failures/FAILURE-R173-P193-R1-RESTORE-FALLBACK-SCP-SFTP-UNAVAILABLE.json.sha256",
+      "bytes": 130,
+      "sha256": "99da8d54e8e4380bcfd869a10853cbd9c21e955276ffd1fceb0cca3b9c0432ae"
+    },
+    {
+      "path": "checkpoints/R0012/R4-RESUME-AUTHORIZATION-P199.json",
+      "bytes": 2477,
+      "sha256": "f47aef74d87117cd5e31c26706c786669db1bfa617c0f8034f644e199999610c"
+    },
+    {
+      "path": "checkpoints/R0012/R4-RESUME-AUTHORIZATION-P199.json.sha256",
+      "bytes": 100,
+      "sha256": "59ef10414cade991279c724a5afe1eff22140bbab30d7f29db6bbbfd6cce66a3"
+    },
+    {
+      "path": "checkpoints/R0012/UPDATER-ATOMIC-RENAME-DESIGN-P138.json",
+      "bytes": 4760,
+      "sha256": "a20d921e2b1ff398eeb793e9253e2f2df9a6c618c4290c5aad0ed1c84d52f2b3"
+    },
+    {
+      "path": "checkpoints/R0012/UPDATER-ATOMIC-RENAME-DESIGN-P138.json.sha256",
+      "bytes": 105,
+      "sha256": "668a0357e7d5af09df8bc6575c7aaef00a55843ae5a15af2a2c9af64d6fdcaf3"
+    },
+    {
+      "path": "checkpoints/R0012/UPDATER-BUILDER-STATE-RESTORATION-DESIGN-P167.json",
+      "bytes": 3157,
+      "sha256": "8cf022baf463be4d3d1611caca0d3bce637d7f7fa2a8a7b74db2c3f93cdcacec"
+    },
+    {
+      "path": "checkpoints/R0012/UPDATER-BUILDER-STATE-RESTORATION-DESIGN-P167.json.sha256",
+      "bytes": 117,
+      "sha256": "dac8d1aec9388f17bd84bb579ff4b81ab72151e4eb88a07b63ea930326da0f87"
+    },
+    {
+      "path": "checkpoints/R0012/UPDATER-BUILDER-STATE-RESTORATION-P169.json",
+      "bytes": 3342,
+      "sha256": "6e44927beb460c3306ff10e2346ea43e126e1cd946af283d6558ea7fd198b786"
+    },
+    {
+      "path": "checkpoints/R0012/UPDATER-BUILDER-STATE-RESTORATION-P169.json.sha256",
+      "bytes": 110,
+      "sha256": "bc7fc47155b6505d245dd1a95c31cc75ed8f3d6ed4de33070e7cf38995bfebc5"
+    },
+    {
+      "path": "checkpoints/R0012/UPDATER-HELPER-ARTIFACT-GATE-AUDIT-P177.json",
+      "bytes": 3135,
+      "sha256": "a85a10326f6e39bd43d83bb65862d301efc2a0b587ca40f51e27068439d09cc4"
+    },
+    {
+      "path": "checkpoints/R0012/UPDATER-HELPER-ARTIFACT-GATE-AUDIT-P177.json.sha256",
+      "bytes": 111,
+      "sha256": "fe44eca485026c297f607e5ac00ab84e7d064175e4f46799580309104b401ca5"
+    },
+    {
+      "path": "checkpoints/R0012/UPDATER-HELPER-ARTIFACT-GATE-DESIGN-P171.json",
+      "bytes": 3467,
+      "sha256": "db5b101e8b42eea4c3f335df44037f5e5e3f9d8e73c4a188775f4f8a89da9a17"
+    },
+    {
+      "path": "checkpoints/R0012/UPDATER-HELPER-ARTIFACT-GATE-DESIGN-P171.json.sha256",
+      "bytes": 112,
+      "sha256": "1d1a3f84ff0973f84d23ac37f298c6f014accc68601365f963941a2160d59227"
+    },
+    {
+      "path": "checkpoints/R0012/UPDATER-HELPER-ARTIFACT-GATE-DESIGN-P172.json",
+      "bytes": 4563,
+      "sha256": "027abf3e30d10652c6785608fc3fc9899a6f02ec43bb80768a167825f86388b5"
+    },
+    {
+      "path": "checkpoints/R0012/UPDATER-HELPER-ARTIFACT-GATE-DESIGN-P172.json.sha256",
+      "bytes": 112,
+      "sha256": "e1083490539b2809a6d642dc09dafc89d99b4e15910b50e0e6bda1cb51394c5b"
+    },
+    {
+      "path": "checkpoints/R0012/UPDATER-HELPER-ARTIFACT-GATE-P175.json",
+      "bytes": 3677,
+      "sha256": "3fefdfa36564269f042bcb2f6f64557463465f66514e809fadfa2876f24cba2a"
+    },
+    {
+      "path": "checkpoints/R0012/UPDATER-HELPER-ARTIFACT-GATE-P175.json.sha256",
+      "bytes": 105,
+      "sha256": "97c66986f781c10a2c620a091a8a468f6ebedf0a9d4c63392d9ecee7c711da0f"
+    },
+    {
+      "path": "checkpoints/R0012/UPDATER-HELPER-BUILD-INPUT-P162.json",
+      "bytes": 2730,
+      "sha256": "917a4060d9fa1d909b3170c5f383234877fe4a0339005e45be5f4abd3a238095"
+    },
+    {
+      "path": "checkpoints/R0012/UPDATER-HELPER-BUILD-INPUT-P162.json.sha256",
+      "bytes": 103,
+      "sha256": "900f3b0b06ebcab62c535f4f40970a2dc40ab278f09c91902332b87f630b803e"
+    },
+    {
+      "path": "checkpoints/R0012/UPDATER-HELPER-INTEGRATION-DESIGN-P161.json",
+      "bytes": 3722,
+      "sha256": "18898b2ed858ddb0aee8791b97d9919344284a623e4d0ec207ca5d6237090553"
+    },
+    {
+      "path": "checkpoints/R0012/UPDATER-HELPER-INTEGRATION-DESIGN-P161.json.sha256",
+      "bytes": 110,
+      "sha256": "7050d788306febae629a5a81a18bf01cfd6951f84e482f19650f354f8c1f8787"
+    },
+    {
+      "path": "checkpoints/R0012/UPDATER-INDEPENDENT-BUILD-DESIGN-P164.json",
+      "bytes": 3458,
+      "sha256": "96c3dbc43b577b310117eb3a5d22a7fd2db452b2a2362e1450560d5486910321"
+    },
+    {
+      "path": "checkpoints/R0012/UPDATER-INDEPENDENT-BUILD-DESIGN-P164.json.sha256",
+      "bytes": 109,
+      "sha256": "582bb0ed69badacd037c74f73ff4427e68964e4e9a0ba35e1a0491387c7c05fe"
+    },
+    {
+      "path": "checkpoints/R0012/UPDATER-INDEPENDENT-BUILD-IMPLEMENTATION-P165.json",
+      "bytes": 2996,
+      "sha256": "ae0f72b072a907dd63b9c0072d71a407425d868b20301b68be7c37e342ba788a"
+    },
+    {
+      "path": "checkpoints/R0012/UPDATER-INDEPENDENT-BUILD-IMPLEMENTATION-P165.json.sha256",
+      "bytes": 117,
+      "sha256": "01bcb91979c9d4499d64e54be531c6c7ca8d265f005fb98f65b3b2c97cd51f64"
+    },
+    {
+      "path": "checkpoints/R0012/UPDATER-LEGACY-CLEANUP-P114.json",
+      "bytes": 1490,
+      "sha256": "0fda1281cef532dba0ee0dfdc6dc9ec5980f74205c5c35e2cc0ad957a11918a7"
+    },
+    {
+      "path": "checkpoints/R0012/UPDATER-LEGACY-CLEANUP-P114.json.sha256",
+      "bytes": 99,
+      "sha256": "24747d017d111c46cad28d5f11982755260eb59f5934adda431c42928b18791c"
+    },
+    {
+      "path": "checkpoints/R0012/UPDATER-LN-LEAF-CAPABILITY-P134.json",
+      "bytes": 1750,
+      "sha256": "e8c4851f0669d0ba69346cd3bffbdc72c90a69235ff8749fc895a84a7fe25764"
+    },
+    {
+      "path": "checkpoints/R0012/UPDATER-LN-LEAF-CAPABILITY-P134.json.sha256",
+      "bytes": 103,
+      "sha256": "3d8afa918ce0742b86521bb1bc44ad649d9e9c7a6cd8fd49d280cb8e4a7cbc60"
+    },
+    {
+      "path": "checkpoints/R0012/UPDATER-RENAMEAT2-HELPER-AUDIT-P145.json",
+      "bytes": 2776,
+      "sha256": "23eb16ddc3a8b880d1c03d4178c4477f8f21553f5448de26e80e5c43ebe26589"
+    },
+    {
+      "path": "checkpoints/R0012/UPDATER-RENAMEAT2-HELPER-AUDIT-P145.json.sha256",
+      "bytes": 107,
+      "sha256": "19d4dacf4f40dd59d213877e11afe1fe14b9d3432bb3f9a232f805cbc06bbfd8"
+    },
+    {
+      "path": "checkpoints/R0012/UPDATER-RENAMEAT2-HELPER-CI-P146.json",
+      "bytes": 4911,
+      "sha256": "3a93b91cdcec4d0f3b0e9144a49b0e0f0f85c115995d1a951783801438204bbc"
+    },
+    {
+      "path": "checkpoints/R0012/UPDATER-RENAMEAT2-HELPER-CI-P146.json.sha256",
+      "bytes": 104,
+      "sha256": "d0a86d3a8112f2e8e23ff8cbd1bcac29769c7c5683b7383b415d6dd81d4d8ef2"
+    },
+    {
+      "path": "checkpoints/R0012/UPDATER-RENAMEAT2-HELPER-MANIFESTS-P144.json",
+      "bytes": 2831,
+      "sha256": "2cbc6952b910cf25ead26e454c6ca4d2092a5986225b7226189a502d11b246a6"
+    },
+    {
+      "path": "checkpoints/R0012/UPDATER-RENAMEAT2-HELPER-MANIFESTS-P144.json.sha256",
+      "bytes": 111,
+      "sha256": "3b88182b8b8ee1ceda612a7a9747b9e3aff048d46c3dfab1794b7c166f23db44"
+    },
+    {
+      "path": "checkpoints/R0012/UPDATER-RENAMEAT2-HELPER-SOURCE-P142.json",
+      "bytes": 4125,
+      "sha256": "3b39df2d584a1f052487c1af0508e13d05036279c04fdd1eec794a433e78762f"
+    },
+    {
+      "path": "checkpoints/R0012/UPDATER-RENAMEAT2-HELPER-SOURCE-P142.json.sha256",
+      "bytes": 108,
+      "sha256": "81c0b8b9b80ebdcfd5854945c3462d6a561cda77bfe58ebf9654d8937ef07ee4"
+    },
+    {
+      "path": "checkpoints/R0012/UPDATER-RENAMEAT2-LOCAL-ARTIFACT-P152.json",
+      "bytes": 1551,
+      "sha256": "ca998fa52e009531f23058e4eb1236aaad41dc5355507dc6825fe7452b192857"
+    },
+    {
+      "path": "checkpoints/R0012/UPDATER-RENAMEAT2-LOCAL-ARTIFACT-P152.json.sha256",
+      "bytes": 109,
+      "sha256": "b5072cef9a62c75c6a436ddf498330b0d6d9351a0c9222cfa2074aa51e932507"
+    },
+    {
+      "path": "checkpoints/R0012/UPDATER-RENAMEAT2-TARGET-CAPABILITY-P159.json",
+      "bytes": 3148,
+      "sha256": "8707ed530918ddb73f8d7cbb50d29b970280d3aadd0912f01a2ee6612170644e"
+    },
+    {
+      "path": "checkpoints/R0012/UPDATER-RENAMEAT2-TARGET-CAPABILITY-P159.json.sha256",
+      "bytes": 112,
+      "sha256": "376e3cb72857e99e91725faddc0e728cd7c1f911cd6fa638b0b159bd084a971c"
+    },
+    {
+      "path": "checkpoints/R0012/UPDATER-RENAMEAT2-TARGET-HARNESS-AUDIT-P150.json",
+      "bytes": 2074,
+      "sha256": "c1c1aec2c753e30fc37d888ae5f78f5a8179c79ae55c378181830100fcc55c90"
+    },
+    {
+      "path": "checkpoints/R0012/UPDATER-RENAMEAT2-TARGET-HARNESS-AUDIT-P150.json.sha256",
+      "bytes": 115,
+      "sha256": "8f9b615f261276e8f26ccbb87a628151396cc7ec9ebab9f57f8325f34974a802"
+    },
+    {
+      "path": "checkpoints/R0012/UPDATER-RENAMEAT2-TARGET-HARNESS-AUDIT-P158.json",
+      "bytes": 2217,
+      "sha256": "109de90f3c0c78b947f9aad01defb5d764d74181baf823b37b76e81abfe7a28e"
+    },
+    {
+      "path": "checkpoints/R0012/UPDATER-RENAMEAT2-TARGET-HARNESS-AUDIT-P158.json.sha256",
+      "bytes": 115,
+      "sha256": "67f71cf99bec39fae3717e5a158ef2534d9a80fc3203e388ae652ea95a64401e"
+    },
+    {
+      "path": "checkpoints/R0012/UPDATER-RENAMEAT2-TARGET-HARNESS-P147.json",
+      "bytes": 2806,
+      "sha256": "331bfab54669071c075b18138013defe52097abec7a3e5797b1136924765cd9c"
+    },
+    {
+      "path": "checkpoints/R0012/UPDATER-RENAMEAT2-TARGET-HARNESS-P147.json.sha256",
+      "bytes": 109,
+      "sha256": "d1925bfd8441d3f62c6930ccb6d7948ae306ac7fc79828fa73d304bcd0ed9dcf"
+    },
+    {
+      "path": "checkpoints/R0012/UPDATER-RENAMEAT2-TARGET-HARNESS-P149.json",
+      "bytes": 2180,
+      "sha256": "4f477c35cb2ddbc233343da52cc9ec92bb6ca7e42667585cd3efea11ecc2a1d9"
+    },
+    {
+      "path": "checkpoints/R0012/UPDATER-RENAMEAT2-TARGET-HARNESS-P149.json.sha256",
+      "bytes": 109,
+      "sha256": "09017c26c0bc447efa5b979b2f5de9bbe78a6753bf52d25972d0195c38194430"
+    },
+    {
+      "path": "checkpoints/R0012/UPDATER-RENAMEAT2-TARGET-HARNESS-P157.json",
+      "bytes": 1939,
+      "sha256": "2fb7512172addac5b32dac26d6f855130984c896b96ccff88069f8af169bdd31"
+    },
+    {
+      "path": "checkpoints/R0012/UPDATER-RENAMEAT2-TARGET-HARNESS-P157.json.sha256",
+      "bytes": 109,
+      "sha256": "df974588d1b7b3aa8a76225a36cc03ec4d6bdcb07ecb7a692ac81b8334db454b"
+    },
+    {
+      "path": "checkpoints/R0012/UPDATER-RENAMEAT2-TARGET-PREFLIGHT-P140.json",
+      "bytes": 2901,
+      "sha256": "22780793d56005223e07adb3ab84632d1f44aabbf1e54de3025dddd296c6e5ae"
+    },
+    {
+      "path": "checkpoints/R0012/UPDATER-RENAMEAT2-TARGET-PREFLIGHT-P140.json.sha256",
+      "bytes": 111,
+      "sha256": "948f1fbc1c23c70829ad1f612ad6796894f133bc49b82dc9e34a7b09092cfe96"
+    },
+    {
+      "path": "checkpoints/R0012/UPDATER-RENAMEAT2-TARGET-PREFLIGHT-P154.json",
+      "bytes": 1317,
+      "sha256": "5e0d08ee773afa80ad12f6eb518dd1da70221369c702fee19a7d10e7484ad5b1"
+    },
+    {
+      "path": "checkpoints/R0012/UPDATER-RENAMEAT2-TARGET-PREFLIGHT-P154.json.sha256",
+      "bytes": 111,
+      "sha256": "8f2681a928be928d648ce6aec066c103066f7ca46003d04f81121be491e60248"
+    },
+    {
+      "path": "checkpoints/R0012/UPDATER-ROOT-STAGE-P119.json",
+      "bytes": 1816,
+      "sha256": "20eb20d23caca0fb4c1dcfa76dd8a2b135902284f82fea72ef444f1bda12d35a"
+    },
+    {
+      "path": "checkpoints/R0012/UPDATER-ROOT-STAGE-P119.json.sha256",
+      "bytes": 95,
+      "sha256": "c0e2b2646ce468c08e8a4dab543d01ab058c6d06bac69770c689a74bef46e08b"
+    },
+    {
+      "path": "checkpoints/R0012/UPDATER-STAT-T-CAPABILITY-AND-RESIDUE-CLEANUP-P156.json",
+      "bytes": 2136,
+      "sha256": "602c7471129075c755c568264bc0c6f9070e647605895e9a488db7b6f27e3b6b"
+    },
+    {
+      "path": "checkpoints/R0012/UPDATER-STAT-T-CAPABILITY-AND-RESIDUE-CLEANUP-P156.json.sha256",
+      "bytes": 122,
+      "sha256": "cf8f56889146899aa9963040c5fa7db35402ca0e20c6e90e30125b88a919bfa5"
+    },
+    {
+      "path": "checkpoints/R0012/UPDATER-TMPFS-LOCKS-P41.json",
+      "bytes": 2408,
+      "sha256": "d789ec611e27cf297094c0c2dc41645397f98889df62220601d77373b261e71e"
+    },
+    {
+      "path": "checkpoints/R0012/UPDATER-TMPFS-LOCKS-P41.json.sha256",
+      "bytes": 95,
+      "sha256": "33b3f1c1dcbf5e7fe9e82325ae956090553621952e741848005bebba349097e2"
+    },
+    {
+      "path": "checkpoints/R0012/UPDATER-WORK-MANIFEST-P134.json",
+      "bytes": 1982,
+      "sha256": "4b08e371781243858e2469505e6432f50665ca5ace2ce497890eb869060dbe4d"
+    },
+    {
+      "path": "checkpoints/R0012/UPDATER-WORK-MANIFEST-P134.json.sha256",
+      "bytes": 98,
+      "sha256": "6f9ab834048bf5dfb2397be3b1dec1b351a3057e57671c63ef635bfcb8e4c3f7"
+    },
+    {
+      "path": "checkpoints/R0012/UPDATER-WORK-MANIFEST-P135.json",
+      "bytes": 1380,
+      "sha256": "30657d98092b0ab315db45e7665443130757fe078017e689de0268a812617b18"
+    },
+    {
+      "path": "checkpoints/R0012/UPDATER-WORK-MANIFEST-P135.json.sha256",
+      "bytes": 98,
+      "sha256": "aa4edeeda9770de2a6df9e7c90b6bed69e77363b7dc5a78402d4ab5cf1d58a0d"
+    },
+    {
+      "path": "checkpoints/R0012/UPDATER-WORK-MANIFEST-P136.json",
+      "bytes": 1374,
+      "sha256": "7a0680bf018d1ba3da72d1119d617a82050ae2e3909b80647f2046cf11a0deaf"
+    },
+    {
+      "path": "checkpoints/R0012/UPDATER-WORK-MANIFEST-P136.json.sha256",
+      "bytes": 98,
+      "sha256": "14adbd751b5af6de83ec3050a7e79f210b3ffdcbf4011811002769592ea6ca40"
+    },
+    {
+      "path": "checkpoints/R0012/UPDATER-WORK-TREE-P99.json",
+      "bytes": 2131,
+      "sha256": "6730f448c58b31aaa8e0f81fcaf146561de76823975d028dae8714078a8899be"
+    },
+    {
+      "path": "checkpoints/R0012/UPDATER-WORK-TREE-P99.json.sha256",
+      "bytes": 93,
+      "sha256": "5db398549611c1d96e2b3ecc3a787a50766b793188fc020af7f1bff1824a61ee"
+    },
+    {
+      "path": "checkpoints/R0012/USER-DIRECTED-R1-RESTORE-FINAL-P198.json",
+      "bytes": 3116,
+      "sha256": "acf260ba7a76ca8e005d07521baf483e60dc050b98e0e1677325cdd9ed64c17a"
+    },
+    {
+      "path": "checkpoints/R0012/USER-DIRECTED-R1-RESTORE-FINAL-P198.json.sha256",
+      "bytes": 107,
+      "sha256": "6f0411c02e0f6c71c521cff2b79c33bf4a238ba3233722a95cd60e327b098ee4"
+    },
+    {
+      "path": "checkpoints/R0012/USER-DIRECTED-R1-RESTORE-P192-PREFLIGHT.json",
+      "bytes": 3213,
+      "sha256": "c29fa9fd217aec28e8d7a8843d6787d96c4c172539baff4b796e4e4a00b06986"
+    },
+    {
+      "path": "checkpoints/R0012/USER-DIRECTED-R1-RESTORE-P192-PREFLIGHT.json.sha256",
+      "bytes": 111,
+      "sha256": "c6401e1f88e5312fcc5a893f3f3fc2f0338b08e75e8e4887bd69915f7d4f6ea3"
+    },
+    {
+      "path": "checkpoints/R0012/USER-DIRECTED-R1-RESTORE-ROUTER-P195.json",
+      "bytes": 2722,
+      "sha256": "fd771c6a256abc33f0a5480ae362f550a7e7df0a4c9a5dd3457463bfce444f03"
+    },
+    {
+      "path": "checkpoints/R0012/USER-DIRECTED-R1-RESTORE-ROUTER-P195.json.sha256",
+      "bytes": 108,
+      "sha256": "6003c37b868766b640dbbe679bcd08b2aec9e2d929e45774ad968cb3c07c53fb"
+    },
+    {
+      "path": "checkpoints/R0012/USER-DIRECTED-R1-RESTORE-SAFETY-P194.json",
+      "bytes": 1834,
+      "sha256": "63de8e397efd79b9367cea541b9e15addc8380bf123addc21991b0899c1e84e9"
+    },
+    {
+      "path": "checkpoints/R0012/USER-DIRECTED-R1-RESTORE-SAFETY-P194.json.sha256",
+      "bytes": 108,
+      "sha256": "c0de8a36e5086f41706072bd7514890e5a9dfb63385d230c8c88e166c9e10e52"
+    },
+    {
+      "path": "checkpoints/R0012/USER-DIRECTED-R1-STABLE-POINTER-P196-PREFLIGHT.json",
+      "bytes": 1419,
+      "sha256": "31e0658c3cbd5100530622c5a13937db3ffe34fdc4eb156f2b5d092e372b387e"
+    },
+    {
+      "path": "checkpoints/R0012/USER-DIRECTED-R1-STABLE-POINTER-P196-PREFLIGHT.json.sha256",
+      "bytes": 118,
+      "sha256": "34e48f6d4527279a4c3daf9fb37987e71fb969df568cf8b0f256d642400a9a10"
+    },
+    {
+      "path": "checkpoints/R0012/USER-DIRECTED-R1-STABLE-RESTORE-P197.json",
+      "bytes": 2125,
+      "sha256": "e1f9c8e85f7731fd391c4180b501dd33f97b19dacf5747e5d412f6d612349cd3"
+    },
+    {
+      "path": "checkpoints/R0012/USER-DIRECTED-R1-STABLE-RESTORE-P197.json.sha256",
+      "bytes": 108,
+      "sha256": "6595d80fa5637384b8f13e1035a79d331a8a38e03332824ad4a9cc85e4610657"
+    },
+    {
+      "path": "checkpoints/R0012/WEB-PUBLICATION-EXIT-CLEANUP-GATE-DESIGN-P182.json",
+      "bytes": 2780,
+      "sha256": "26b059e9d0f49da84363ff2b6f7458a961f13b807e7e247968029922125e2e93"
+    },
+    {
+      "path": "checkpoints/R0012/WEB-PUBLICATION-EXIT-CLEANUP-GATE-DESIGN-P182.json.sha256",
+      "bytes": 117,
+      "sha256": "d2fce1224ea52faa266e32d8a12f8fa54d58fc8c6070d77722b3b8b433c9e52a"
+    },
+    {
+      "path": "checkpoints/R0012/WEB-PUBLICATION-EXIT-CLEANUP-GATE-P183.json",
+      "bytes": 2275,
+      "sha256": "091fd4c60d391ee7458fa57300104279c6f4cdd0d0fbfce96e2721cfbc478b1e"
+    },
+    {
+      "path": "checkpoints/R0012/WEB-PUBLICATION-EXIT-CLEANUP-GATE-P183.json.sha256",
+      "bytes": 110,
+      "sha256": "e37aec174900cc8f3a3f692fed89d4fa8b8b9f784d4a2107f758302800046a3e"
+    },
+    {
+      "path": "checkpoints/R0012/WEB-PUBLICATION-RAW-TEXT-GATE-AUDIT-P190.json",
+      "bytes": 3457,
+      "sha256": "2c7807dc9739497f660f1d0f88c65a4ba47450ab06320083e0fbd300ca5ba241"
+    },
+    {
+      "path": "checkpoints/R0012/WEB-PUBLICATION-RAW-TEXT-GATE-AUDIT-P190.json.sha256",
+      "bytes": 112,
+      "sha256": "338744706b9a5731a384ccbb67573972994ce895e867ef8163072f4f7b7c045e"
+    },
+    {
+      "path": "checkpoints/R0012/WEB-PUBLICATION-RAW-TEXT-GATE-DESIGN-P188.json",
+      "bytes": 3214,
+      "sha256": "934ece7ffd82d71dfee9b9061333436f4ca5fed68cc3781b7fbd39d12e7118cf"
+    },
+    {
+      "path": "checkpoints/R0012/WEB-PUBLICATION-RAW-TEXT-GATE-DESIGN-P188.json.sha256",
+      "bytes": 113,
+      "sha256": "53ba5727c0beabde6f946d9d5f10c02f6dc1003b34562ff2545f47265963a183"
+    },
+    {
+      "path": "checkpoints/R0012/WEB-PUBLICATION-RAW-TEXT-GATE-P189.json",
+      "bytes": 2220,
+      "sha256": "9fb96ef3ec15fd686715ad6fa3432b73876cb1028e2fb2ca2ed127c2c7c27bb1"
+    },
+    {
+      "path": "checkpoints/R0012/WEB-PUBLICATION-RAW-TEXT-GATE-P189.json.sha256",
+      "bytes": 106,
+      "sha256": "3ddebb04e8e9af5c3fdb26812ec4788f2a7d3a90bbcaa99f7877ca950d87c0e1"
+    },
+    {
+      "path": "checkpoints/R0012/WEB-PUBLICATION-TMPFS-GATE-DESIGN-P179.json",
+      "bytes": 3759,
+      "sha256": "d2261c574990ea754266af8bee58644c8ef32858e6a58ce5878e75df190ffcdb"
+    },
+    {
+      "path": "checkpoints/R0012/WEB-PUBLICATION-TMPFS-GATE-DESIGN-P179.json.sha256",
+      "bytes": 110,
+      "sha256": "63303a20b5331f99c526bd19af63dcce289345bf4021b636938bc5cfa23020cd"
+    },
+    {
+      "path": "checkpoints/R0012/WEB-PUBLICATION-TMPFS-GATE-P180.json",
+      "bytes": 2407,
+      "sha256": "54f3a05da60f952ba0d16feaefe13140cb946c759ff5f4425ec42f08ae7fa254"
+    },
+    {
+      "path": "checkpoints/R0012/WEB-PUBLICATION-TMPFS-GATE-P180.json.sha256",
+      "bytes": 103,
+      "sha256": "fda035f8a6811bf1b4d7a2606c4c0e6236b2c864256a26bf9e304cf38113c6d8"
+    },
+    {
+      "path": "checkpoints/R0012/WEB-PUBLICATION-TOP-LEVEL-TAIL-GATE-DESIGN-P185.json",
+      "bytes": 3431,
+      "sha256": "fff88487d6417d8113ccc5e2e52d5477a4c7b48c2f58b596e8dce4bac6507ca6"
+    },
+    {
+      "path": "checkpoints/R0012/WEB-PUBLICATION-TOP-LEVEL-TAIL-GATE-DESIGN-P185.json.sha256",
+      "bytes": 119,
+      "sha256": "5063f1055d1e11a52bb7cfb5006df00513ff1a3906fa57f19111040f1c969bff"
+    },
+    {
+      "path": "checkpoints/R0012/WEB-PUBLICATION-TOP-LEVEL-TAIL-GATE-P186.json",
+      "bytes": 2074,
+      "sha256": "eac46c43e607cb2460a075b18f269b9f4a4794db08ec62156ce2fbc56ca88138"
+    },
+    {
+      "path": "checkpoints/R0012/WEB-PUBLICATION-TOP-LEVEL-TAIL-GATE-P186.json.sha256",
+      "bytes": 112,
+      "sha256": "3d3b3bee978ea63cb2b70fb585c3b2193d648d36fd1d714dbb102b65afbb81f7"
+    },
+    {
+      "path": "docs/CODEX-R0012.md",
+      "bytes": 8980,
+      "sha256": "655a4cd14e3a90a0eb09e0487f9545d37260a29ba883301e90d6ff6fb25378bd"
+    },
+    {
+      "path": "docs/USER-GUIDE-RU.md",
+      "bytes": 4613,
+      "sha256": "e82aaebfb4e7c8acd63ea7f0b18e86ec6ebafb33b22ce6dce2e40fc671de3a03"
+    },
+    {
+      "path": "packaging/app-overlay/bin/broray-connection-monitor",
+      "bytes": 1314,
+      "sha256": "9f9b8322f66084e866fa7676a32c45e83c07b71327ca2de33b455176c0555746"
+    },
+    {
+      "path": "packaging/app-overlay/bin/broray-home-snapshot",
+      "bytes": 1328,
+      "sha256": "5134750d49de5f1cab1d7ee59b00f10227dd9efd9dac56f08aeec63efaa9442f"
+    },
+    {
+      "path": "packaging/app-overlay/bin/broray-lightd",
+      "bytes": 5150,
+      "sha256": "4314eda4b012eecc4074fa1f002c40bc592eb59378f33a2bef3406f84d26738c"
+    },
+    {
+      "path": "packaging/app-overlay/bin/broray-log-maintenance",
+      "bytes": 3279,
+      "sha256": "4eef9ed900cd8ea5d1c64e2666d3cd386ee7a694be7c4e474a8bcf10d18f2686"
+    },
+    {
+      "path": "packaging/app-overlay/bin/broray-runtime-prepare",
+      "bytes": 82645,
+      "sha256": "1966db8735348261aff07fc0de89b96fd46b9478c6ab9d7b8b622d93130a8e90"
+    },
+    {
+      "path": "packaging/app-overlay/bin/broray-server-auto-switch",
+      "bytes": 2633,
+      "sha256": "4ddf7e91cf9feab24f1365888b94ae9690aa6ec43710364fb6f60ef1e0276af7"
+    },
+    {
+      "path": "packaging/app-overlay/bin/broray-server-probe",
+      "bytes": 8913,
+      "sha256": "0b5358a4bb466d526aa082172b75da4a632909b8a558866c31f6dcd96d2e2266"
+    },
+    {
+      "path": "packaging/app-overlay/bin/broray-servers",
+      "bytes": 551,
+      "sha256": "f9fe544c48803bea6dcc6453abc2af38f52b7514b6ec22915af083798467a342"
+    },
+    {
+      "path": "packaging/app-overlay/bin/broray-subscriptions",
+      "bytes": 8182,
+      "sha256": "6850e284f51fd6a8e1dacbf9d4a2d43d491f32191c774dd2b950377139115d46"
+    },
+    {
+      "path": "packaging/app-overlay/bin/broray-xray-control",
+      "bytes": 5407,
+      "sha256": "9f3557c55f187da46d0c9ddff31c36ad578f34c3d42e3ad561e4dda0fcb350dc"
+    },
+    {
+      "path": "packaging/app-overlay/lib/interface-core.sh",
+      "bytes": 16326,
+      "sha256": "f01b33cad5dab94bc58b91bd24edc0a356ab03b262ba0295a7a55d48d37b6dde"
+    },
+    {
+      "path": "packaging/app-overlay/lib/interface-manage.sh",
+      "bytes": 19880,
+      "sha256": "a084b82e01b8ea105e1f22ab99468babff20cd0801be640854efc5ba71af3013"
+    },
+    {
+      "path": "packaging/app-overlay/lib/interface-owner.sh",
+      "bytes": 64514,
+      "sha256": "f65f2cc21f6167fa8eb61ede1cffefec0887d936297cdf44dad42d20f7a10c4b"
+    },
+    {
+      "path": "packaging/app-overlay/lib/keenetic-page.sh",
+      "bytes": 35490,
+      "sha256": "6e329ffa3a2828ddbc6ba886f6f9437a2ef1d6544beeaaca27b5997822f9a6b6"
+    },
+    {
+      "path": "packaging/app-overlay/lib/operation-lock.sh",
+      "bytes": 10485,
+      "sha256": "c5e6c80fadd6c3dfeee6fbad0acb17037a2742aaeeb77ecb08aa3978731b9744"
+    },
+    {
+      "path": "packaging/app-overlay/lib/server-config-generator.sh",
+      "bytes": 3105,
+      "sha256": "60134a20f6ed6c96e03a79ffe75bcb4b1e0b62ca67a7a1e763170896c821b9e0"
+    },
+    {
+      "path": "packaging/app-overlay/lib/server-import.sh",
+      "bytes": 4659,
+      "sha256": "b0d2dce18756f7b379fc419cc779c5777201489d2276659985472549bf4d1abc"
+    },
+    {
+      "path": "packaging/app-overlay/lib/server-service.sh",
+      "bytes": 5829,
+      "sha256": "328d110fb738d780235325d5ab098e4fab670e020b730c38ac0ca1ab4a47de3d"
+    },
+    {
+      "path": "packaging/app-overlay/lib/server-subscription-service.sh",
+      "bytes": 33625,
+      "sha256": "4e34deef396f23ca9dcd2e83608c4e8d0ba7178f6d27691755e07670cd7ec14c"
+    },
+    {
+      "path": "packaging/app-overlay/lib/server-xray-manager.sh",
+      "bytes": 5074,
+      "sha256": "18763ad0640d0a1cba3658edbf52af0fe5b2d10c4ee5bd4505fcc0554e748c18"
+    },
+    {
+      "path": "packaging/app-overlay/lib/subscription-service.sh",
+      "bytes": 71908,
+      "sha256": "a796c660ffc52277abbf74c98058547acaa69902dd2a024cfc4dd100a66b6ca6"
+    },
+    {
+      "path": "packaging/app-overlay/lib/util.sh",
+      "bytes": 19097,
+      "sha256": "3cfd528fb86441b805b6b766a788c4bc1d262c2ae9dd84d868199b908d168526"
+    },
+    {
+      "path": "packaging/app-overlay/lib/web-auth-native.sh",
+      "bytes": 11536,
+      "sha256": "b99dc2f1330ee893fa310a7e579e559dda5d986a285f3d7dd1bedac8b884214a"
+    },
+    {
+      "path": "packaging/app-overlay/lib/web-auth.sh",
+      "bytes": 9274,
+      "sha256": "46ad8199dee0b6b86667efe209158ae058faf19f9805e75175bce989a19b5a54"
+    },
+    {
+      "path": "packaging/app-overlay/lib/xray-control.sh",
+      "bytes": 7570,
+      "sha256": "8f258c5ef4201c19d0600746895bb1e07132944535424de3db6f743359338cfc"
+    },
+    {
+      "path": "packaging/app-overlay/lib/xray-update.sh",
+      "bytes": 76168,
+      "sha256": "0f046367825a6ea841a6282eecca28bab226b24717713375e4ecdf6deaf5d3e0"
+    },
+    {
+      "path": "packaging/app-overlay/lib/xray-web-operation.sh",
+      "bytes": 1153,
+      "sha256": "7a230ea44f6aacf6e5ae257813cdb7a045c717efa2ee1752c141eb9e04f5e09d"
+    },
+    {
+      "path": "packaging/app-overlay/lib/xray.sh",
+      "bytes": 24428,
+      "sha256": "fb72b0becdbbb8f88969f6926e137c46db77181d4f7e7588f7f69e949ecb198b"
+    },
+    {
+      "path": "packaging/app-overlay/share/defaults/lighttpd.conf",
+      "bytes": 804,
+      "sha256": "b6966860dbe7f074aebe195f956d4fd572666c943b716803fd9422a40ec0420b"
+    },
+    {
+      "path": "packaging/app-overlay/share/lifecycle/S24broray-light",
+      "bytes": 21998,
+      "sha256": "0581d3b9ccac84d516c3fd728bbd76fcb46cfb03ce891aec81f00b6f67cff16e"
+    },
+    {
+      "path": "packaging/app-overlay/web-new/api/home/summary.cgi",
+      "bytes": 502,
+      "sha256": "b6e47db7264bbd22c121d5b42e271050a34d0b36ebf694ed89a7972ca1ecfb0b"
+    },
+    {
+      "path": "packaging/app-overlay/web-new/api/keenetic/action-common.sh",
+      "bytes": 3251,
+      "sha256": "0e51a8774f16cb8f211c052ab0c528cac4f92a3972b31fe8b9db00fa5023da80"
+    },
+    {
+      "path": "packaging/app-overlay/web-new/api/keenetic/status.cgi",
+      "bytes": 1741,
+      "sha256": "94bab10034af1f54039d989cf0598dc79074e1b0191b1ccd1eb732c9214ed1e2"
+    },
+    {
+      "path": "packaging/app-overlay/web-new/api/login.cgi",
+      "bytes": 3401,
+      "sha256": "aa76140d06aed8b9fccf57c3533606d68c05b7967caa289d6e85cdc26f0ef06b"
+    },
+    {
+      "path": "packaging/app-overlay/web-new/api/servers/activate.cgi",
+      "bytes": 727,
+      "sha256": "50dbe5c51dd2b81b2099c7e498f88db5d4e8696812c4d91d312c47c63daae355"
+    },
+    {
+      "path": "packaging/app-overlay/web-new/api/servers/auto-switch-save.cgi",
+      "bytes": 1480,
+      "sha256": "d71795e4f76f43db5aa41c4f8034d7ea5d18cbf281fdf766f90ce4b7bb0bcfcc"
+    },
+    {
+      "path": "packaging/app-overlay/web-new/api/servers/auto-switch-status.cgi",
+      "bytes": 630,
+      "sha256": "fba30f69d87e364ec27d1f2c2bae19ad6c1cc7d0a1d9cc7f72b7cf7b863c02f9"
+    },
+    {
+      "path": "packaging/app-overlay/web-new/api/servers/check.cgi",
+      "bytes": 1702,
+      "sha256": "0874cedee828d6b254aaf16c2409b6d13e440cc6630b6a5d4928592f78101f53"
+    },
+    {
+      "path": "packaging/app-overlay/web-new/api/servers/common.sh",
+      "bytes": 6538,
+      "sha256": "48503e7d9cd9ec15ad0816d38a99c98dd9bd523e77a89fbcb8a16fef29567792"
+    },
+    {
+      "path": "packaging/app-overlay/web-new/api/servers/delete.cgi",
+      "bytes": 569,
+      "sha256": "afe47d53fb3c15c7598680733093da14a0e4194aed4d4ad4c9ebac65f43cf736"
+    },
+    {
+      "path": "packaging/app-overlay/web-new/api/servers/import.cgi",
+      "bytes": 748,
+      "sha256": "aa1317fcbc6b6ff47d6ed10d43e03e5d7c0d59912884c038589f36ad95340cf8"
+    },
+    {
+      "path": "packaging/app-overlay/web-new/api/subscriptions/common.sh",
+      "bytes": 5428,
+      "sha256": "8251366dc50b9316a2af5f4f1b7f5aaa574750a4d220a9272f9d5a1e56e6db39"
+    },
+    {
+      "path": "packaging/app-overlay/web-new/api/subscriptions/create.cgi",
+      "bytes": 495,
+      "sha256": "ac9e00c61156a63f13b2ca3ddc3709490fbab4afdf60696504f2e9a313ad5b11"
+    },
+    {
+      "path": "packaging/app-overlay/web-new/api/subscriptions/details.cgi",
+      "bytes": 847,
+      "sha256": "7acf8304cf3b22a965fede727159da583310d43cfa104818d7301551b063f313"
+    },
+    {
+      "path": "packaging/app-overlay/web-new/api/xray/operation-status.cgi",
+      "bytes": 1795,
+      "sha256": "b4c95e51d2f140304070de30ced9d24d55c8bd1220f8890bd242b45aca9b7012"
+    },
+    {
+      "path": "packaging/app-overlay/web-new/api/xray/update-check.cgi",
+      "bytes": 1495,
+      "sha256": "275aa785a95e2a637ea7d8a3178e1e72089afff19b817f82f899543b7735e9cf"
+    },
+    {
+      "path": "packaging/app-overlay/web-new/api/xray/update.cgi",
+      "bytes": 1689,
+      "sha256": "f7297108c8325b316f50fa37c7944ca6c71f265d5805ce41672b4e9958f41ab2"
+    },
+    {
+      "path": "packaging/app-overlay/web-new/assets/js/home.js",
+      "bytes": 10424,
+      "sha256": "cd4cdd7f9ba17be4480a5c2894aa2e03abcfe738de3e24fb56e5a341950e9518"
+    },
+    {
+      "path": "packaging/app-overlay/web-new/assets/js/login.js",
+      "bytes": 2417,
+      "sha256": "6f21408fe248810bdd111da5a88943bb21d55decdc1b8370cf1cedb71bfb6b87"
+    },
+    {
+      "path": "packaging/app-overlay/web-new/assets/js/servers.js",
+      "bytes": 6633,
+      "sha256": "f4ebfc68e17cbf18fd5c9fbb3275dffc89274673fb4ec86995fb3c037f85163a"
+    },
+    {
+      "path": "packaging/app-overlay/web-new/assets/js/subscriptions.js",
+      "bytes": 7638,
+      "sha256": "d31e74e74caaf13b9e31e26ba923b166a3fe1e7e6800af4a26ad12c4259a4f5d"
+    },
+    {
+      "path": "packaging/app-overlay/web-new/home.html",
+      "bytes": 4029,
+      "sha256": "b540be5c3f0fcddb09cf991055aaf2322ee2b813fd5e54f626e2a0cb0da5138d"
+    },
+    {
+      "path": "packaging/app-overlay/web-new/index.html",
+      "bytes": 2597,
+      "sha256": "e19da567fb22ea9a3f7f6bccdfd279732324729edf9d94269b8646516c3e7149"
+    },
+    {
+      "path": "packaging/app-overlay/web-new/servers.html",
+      "bytes": 2777,
+      "sha256": "30e4eb76dd27c07bd111d3626ecf68e847573f58108da9fe64801c3b8d4759bb"
+    },
+    {
+      "path": "packaging/app-overlay/web-new/subscriptions.html",
+      "bytes": 1826,
+      "sha256": "775800960291db5427d10aa6be48240df75009b624c69fb30badcb4446822a2d"
+    },
+    {
+      "path": "packaging/installer/broray-light-install.sh.in",
+      "bytes": 9106,
+      "sha256": "1ada38c4803e4757685db41948b09b08499693d659b8b0766850b9afdfd5f038"
+    },
+    {
+      "path": "packaging/opkg/broray-light-web-network.sh",
+      "bytes": 7998,
+      "sha256": "889a178383b864b6142a0e45858ff39a3aa38acffa05a20a748aa2e4f67e7038"
+    },
+    {
+      "path": "packaging/opkg/broray-light-web-publish-policy.sh",
+      "bytes": 1509,
+      "sha256": "af4247ed2be0cbf2fd984e1c6d161973d1b9524902200a66591f544daefa669c"
+    },
+    {
+      "path": "packaging/opkg/broray-light-web-publish.sh",
+      "bytes": 46813,
+      "sha256": "ff718ddf4726034427421d5e84c589f06b8ecce8851c3f23e33ea0e8b87d22bb"
+    },
+    {
+      "path": "packaging/opkg/broray-light-web-start-gate.sh",
+      "bytes": 4051,
+      "sha256": "6519680a8579b9970ea90e038b944397330ac8b5129a069ee5ba76b5b5e0d9d2"
+    },
+    {
+      "path": "packaging/opkg/postinst",
+      "bytes": 7769,
+      "sha256": "73b619b2e9f42976d236d2cc48e188f487d0cdd97aaa8d39fc800c57e8ddb3b9"
+    },
+    {
+      "path": "packaging/opkg/preinst",
+      "bytes": 2780,
+      "sha256": "d9e80bac5775a143ecb5ae762a56d680030dcbd7e53fd098e629c570cd7412e2"
+    },
+    {
+      "path": "packaging/opkg/prerm",
+      "bytes": 3972,
+      "sha256": "f9db2968b898846d0ec5f27ae04c68a77732de12f6fdf1bb380f23dfc9a3ba04"
+    },
+    {
+      "path": "packaging/opkg/S24broray-light",
+      "bytes": 21998,
+      "sha256": "0581d3b9ccac84d516c3fd728bbd76fcb46cfb03ce891aec81f00b6f67cff16e"
+    },
+    {
+      "path": "project/R0012-STATE.json",
+      "bytes": 13565,
+      "sha256": "86a353f1bc0ad43371f54107bf4b18e95857e7dfe8da36c1869686d2332e2e68"
+    },
+    {
+      "path": "project/WORKLOG.jsonl",
+      "bytes": 1016576,
+      "sha256": "b15416853b11388dd5d5be07a76eae69a0614dafa020f1ef8b9349010cab3e2e"
+    },
+    {
+      "path": "tools/build_r0009_candidate.py",
+      "bytes": 21733,
+      "sha256": "2b2a1415015586257d19d624a1cfadd17359d057fb4ee4edf602a3fcd6d5066a"
+    },
+    {
+      "path": "tools/build_r0010_release.py",
+      "bytes": 7434,
+      "sha256": "f95cdef0069ecbb6da4429c400daf0fb28234b464d368c88d0e6fa0d1988fda4"
+    },
+    {
+      "path": "tools/build_r0011_release.py",
+      "bytes": 10065,
+      "sha256": "099325600ed6bdf683d8985f97f174a1318fe7378ee6b85b550ffab497112b8e"
+    },
+    {
+      "path": "tools/build_r0012_release.py",
+      "bytes": 13887,
+      "sha256": "590d8999d45d5cd76ca1e9a57db2c4b50ca59489c0a47799dd6bde65d914eb6c"
+    },
+    {
+      "path": "tools/probe_r0012_rename_helper.sh",
+      "bytes": 12853,
+      "sha256": "3b74dbb7f40f25895c457f685c46d1db3b1277d6591cdfe6953a974a5e322590"
+    },
+    {
+      "path": "tools/test_r0009.py",
+      "bytes": 62159,
+      "sha256": "1f876f8b111c2332f8cc673913ed69919cdf904ea6fce62ee581522506ab4790"
+    },
+    {
+      "path": "tools/test_r0012.py",
+      "bytes": 165308,
+      "sha256": "090182b07fadada18543d8a3f2dd35aac8beed2013f7003906b6eea701f62f56"
+    },
+    {
+      "path": "updater/opt/etc/init.d/S23broray-light-updater",
+      "bytes": 543,
+      "sha256": "2820f476f5749c67bb1e0caefc86b178918e58e36bc1736ffc31fef2e12c953c"
+    },
+    {
+      "path": "updater/opt/libexec/broray-light-updater/broray-light-updater.sh",
+      "bytes": 249129,
+      "sha256": "30487ee1aaaf085e79172af11e192d73dc1308235c890eee6511be7235fedda0"
+    }
+  ]
+}
