@@ -58,7 +58,8 @@ exec /opt/bin/ash "$BRORAY_LIGHT_ROOT_PREFIX/opt/etc/init.d/S24broray-light" sta
         self.env.update(BRORAY_ROOT=str(self.app),BRORAY_BASE=str(self.app),
                         BRORAY_LIGHT_WEB_PUBLISH_CTL=str(self.root/'opt/bin/broray-light-web-publishctl'),
                         BRORAY_LIGHT_WEB_START_GATE_LIBRARY=str(self.root/'opt/libexec/broray-light-web-publish/start-gate.sh'),
-                        BRL_FIXTURE_DAEMONIZE='1',PATH=str(self.tools)+':'+os.environ['PATH'])
+                        BRL_FIXTURE_DAEMONIZE='1',BRL_FIXTURE_PIDFILE=str(self.app/'run/lighttpd.pid'),
+                        PATH=str(self.tools)+':'+os.environ['PATH'])
         if mode=='health-rollback':self.env['FIXTURE_HEALTH_FAIL']=NEW
 
     def make_slot(self,release,installed=True):

@@ -109,7 +109,7 @@ def main():
     ash.parent.mkdir(parents=True,exist_ok=True);ash.symlink_to(args.shell)
     records=[];failed=False
     def persist(status):
-        report=dict(stage='R0013',revision='p45-dead-owner-and-boot-recovery',status=status,shell=shell,tests=records,
+        report=dict(stage='R0013',revision='p46-direct-service-fixture-pid-binding',status=status,shell=shell,tests=records,
                     entrySha256=hashlib.sha256(ENTRY.read_bytes()).hexdigest(),
                     recoverySha256=hashlib.sha256(ENTRY.with_name('lifecycle-r1-recovery.sh').read_bytes()).hexdigest(),
                     scope='Exact old engine, real S24/entry, actual SIGKILL and private tmpfs remount; fixture app loop/lighttpd/publication OS calls.')

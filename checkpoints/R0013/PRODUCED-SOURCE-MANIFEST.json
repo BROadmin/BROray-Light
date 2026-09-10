@@ -1,17 +1,17 @@
 {
   "schemaVersion": 1,
   "stage": "R0013",
-  "revision": "p43-live-fixture-tmpfs-reference-drain",
+  "revision": "p46-direct-service-fixture-pid-binding",
   "files": [
     {
       "path": ".github/workflows/r0013-port-tests.yml",
-      "sizeBytes": 11289,
-      "sha256": "f2ab26fb66d3b6d8bcb21c7f86f1cc071566fa090d79bbbdbdbe663388ff19c1"
+      "sizeBytes": 11948,
+      "sha256": "67f0d3017b3b3bdab20d8b023413b70cec7c2f6dae948e849032efc2f743b5a0"
     },
     {
       "path": "packaging/r0013-overlay/app/bin/broray-lightd",
-      "sizeBytes": 1039,
-      "sha256": "8e250c2d2b66d073f9b96e202bbc056672610969cd508c2c4246e09266b6ae53"
+      "sizeBytes": 1315,
+      "sha256": "3e98dc393ce10cd8c2ab55b54004815727bed45f02f36faaf914f87d0f2d2544"
     },
     {
       "path": "packaging/r0013-overlay/app/bin/broray-system",
@@ -111,37 +111,42 @@
     {
       "path": "packaging/r0013-overlay/runtime-paths.json",
       "sizeBytes": 17242,
-      "sha256": "7fbd4abab5cd569411e9baef76861ee762a1ea6e08d6609c2b1854ccf1782557"
+      "sha256": "2084e66e761c327080a871ad336007ee5ef0e67c710c24ac10769945039806a9"
     },
     {
       "path": "packaging/r0013-overlay/shared/lifecycle-r1-admission.sh",
-      "sizeBytes": 6875,
-      "sha256": "76d2a2f90c9becdde2f652497951c5eb5fa34a77f5cfa704cdb55d1faad71f19"
+      "sizeBytes": 7381,
+      "sha256": "ab9e064667584f83266236a3fd9d6aa3b739332e43117388a12a458b0546cd52"
     },
     {
       "path": "packaging/r0013-overlay/shared/lifecycle-r1-entry.sh",
-      "sizeBytes": 6508,
-      "sha256": "c45f8cdde6f843e413ba67f570ef2ae67102ad80a208e7dc71e6e8260d23a294"
+      "sizeBytes": 7169,
+      "sha256": "f607f7071187bcdc6506f94f06e5f5072cfd55f2bb43bdaa899bceeea964d919"
     },
     {
       "path": "packaging/r0013-overlay/shared/lifecycle-r1-journal.sh",
-      "sizeBytes": 7143,
-      "sha256": "ff6f5ad82f0356d9743a17fbba25486598aa052541619f032e593f142c3cfb21"
+      "sizeBytes": 8874,
+      "sha256": "c8344a0465f194863c27f4b0f2f1ee01f20b2f194b3fad9acbac1183d2608031"
     },
     {
       "path": "packaging/r0013-overlay/shared/lifecycle-r1-platform.sh",
-      "sizeBytes": 8571,
-      "sha256": "294ec69772632cbcef1e88ec1c889d8c157f3c3d424135e83f3b2ac0b80929c4"
+      "sizeBytes": 9016,
+      "sha256": "fa0923e8932e1172ae5c9debe23cfdcd7d836b950c319c0874bec166aa3fcb41"
     },
     {
       "path": "packaging/r0013-overlay/shared/lifecycle-r1-ram.sh",
-      "sizeBytes": 9288,
-      "sha256": "5d005be9f259708824808e7fdfeb3ceaa03241b16f01de394a8e56ae7a8e3268"
+      "sizeBytes": 9678,
+      "sha256": "c2e43adb52af6445116ac5f50153e712acaf3698de35d2b369cad9659d686d77"
+    },
+    {
+      "path": "packaging/r0013-overlay/shared/lifecycle-r1-recovery.sh",
+      "sizeBytes": 23971,
+      "sha256": "3a0c8d119bd4e11fb2f0152422bfeeab3c8ccd2b641eb2dcf5629a3dcb24aea4"
     },
     {
       "path": "packaging/r0013-overlay/shared/lifecycle-r1-runtime-trees.sh",
-      "sizeBytes": 16332,
-      "sha256": "c6ba4ef3942d619dce5f8f7780093be4bd189b28744122c6a36e4d00ec802adc"
+      "sizeBytes": 16338,
+      "sha256": "fd71ee7dd8a33a30734bdb63964e315f10a784e02702fbf0750b021eb8d2e4bc"
     },
     {
       "path": "packaging/r0013-overlay/shared/lifecycle-r1-web-config.sh",
@@ -160,13 +165,13 @@
     },
     {
       "path": "packaging/r0013-overlay/shared/runtime-prepare.sh",
-      "sizeBytes": 3275,
-      "sha256": "2dc8d8cea84860ad8ed11c0c5202954c0d981cc4923eebb1bfaf97ba35693301"
+      "sizeBytes": 4593,
+      "sha256": "8bc4b2f3065a86fa8701fd28219c0d74fed3975fd126c10373788aec21883d54"
     },
     {
       "path": "packaging/r0013-overlay/shared/runtime-ram.sh",
-      "sizeBytes": 6927,
-      "sha256": "34a959bcb1b6acedd070b2c86571f497adf0996c76cdf2a9e75724ddc03e95af"
+      "sizeBytes": 6978,
+      "sha256": "9a291fe58ffcff10175c377ffd08fe57255e26203879e30241a626d88787f8e0"
     },
     {
       "path": "packaging/r0013-overlay/shared/service-process.sh",
@@ -182,11 +187,6 @@
       "path": "packaging/r0013-overlay/system/packaging/installer/broray-light-install.sh.in",
       "sizeBytes": 3709,
       "sha256": "6523cf401fdd5b8771d90038c258d620822cb3d454aa2d474600c9453ae95abb"
-    },
-    {
-      "path": "packaging/r0013-overlay/system/packaging/opkg/S24broray-light",
-      "sizeBytes": 3065,
-      "sha256": "b8c73c344abbe25a287dc8d6fe69ca3b7f396da25b01a0362e084492c2b7ac7c"
     },
     {
       "path": "packaging/r0013-overlay/system/packaging/opkg/broray-light-web-network.sh",
@@ -214,14 +214,19 @@
       "sha256": "f49006ea3672ecf0459a86e7c3528e7e435825c0ea4a213c981dd6425f04bdf8"
     },
     {
+      "path": "packaging/r0013-overlay/system/packaging/opkg/S24broray-light",
+      "sizeBytes": 4426,
+      "sha256": "1abe1169c6dd3bd2908f41d0721fba9ed1222bed910f766ab5e80a5293c2246c"
+    },
+    {
       "path": "packaging/r0013-overlay/system/updater/opt/etc/init.d/S23broray-light-updater",
-      "sizeBytes": 1195,
-      "sha256": "7ff6f26ec50637c090bbf006f616bdcf6ad5ce7ddb126e3a3838ed91775d8542"
+      "sizeBytes": 1762,
+      "sha256": "b3a0ccc1fec1f6f38a3ea2ae289a23eed901033e13cb311646735cd574a9eb05"
     },
     {
       "path": "packaging/r0013-overlay/system/updater/opt/libexec/broray-light-updater/broray-light-updater.sh",
-      "sizeBytes": 21892,
-      "sha256": "8e3dd063556b255bd5fe78266278817262a1adeea9fc37e5c3699a8782acd2bc"
+      "sizeBytes": 22459,
+      "sha256": "717094a3dcebe2dfe59d5c990c138914c498d34443bce4820ed591cf26a149aa"
     },
     {
       "path": "tools/audit_r0013_storage.py",
@@ -235,8 +240,8 @@
     },
     {
       "path": "tools/build_r0013_release.py",
-      "sizeBytes": 14613,
-      "sha256": "7bb83b9e1fdbb985b826ebd63b30c523bdeba7022835e34f66a0251234a11188"
+      "sizeBytes": 14658,
+      "sha256": "43ce58144a7bca80ebf4eab761cf0f08b6f479f3ffed3d19220f1f09e37ca9f8"
     },
     {
       "path": "tools/r0013_busybox_fixture.py",
@@ -275,8 +280,8 @@
     },
     {
       "path": "tools/test_r0013_live_entry.py",
-      "sizeBytes": 12639,
-      "sha256": "3294cb8d5b881707e654d803db586322a17241ef7724daf56afbdc3a1cb8c030"
+      "sizeBytes": 13645,
+      "sha256": "bcb4f465a9cce1049818e07795a7773bd23b9c32ce3c4c6caebe937b2d4ea6b8"
     },
     {
       "path": "tools/test_r0013_platform.py",
@@ -307,6 +312,11 @@
       "path": "tools/test_r0013_ram.py",
       "sizeBytes": 11909,
       "sha256": "b209953587183f42064b99515941c1206d757183ed4ceb0f494f6e5be6858392"
+    },
+    {
+      "path": "tools/test_r0013_recovery.py",
+      "sizeBytes": 7898,
+      "sha256": "8c27855c131d1f8753ea26edc9159c44aec728ab6aa3b9d7ef4cdb7a7023a4de"
     },
     {
       "path": "tools/test_r0013_runtime_paths.py",

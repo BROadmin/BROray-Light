@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "stage": "R0013_SELECTIVE_UPSTREAM_STABLE_PORT",
-  "status": "LIVE_R1_UPDATE_PASS_ROLLBACK_VALIDATION_PENDING_FIXTURE_CORRECTION",
-  "currentRevision": "p43-live-fixture-tmpfs-reference-drain",
+  "status": "P45_FINALIZATION_PASS_DEAD_OWNER_FAILED_P46_FIXTURE_CORRECTED",
+  "currentRevision": "p46-direct-service-fixture-pid-binding",
   "publicVersion": "2.0.0",
   "packageVersion": "2.0.0",
   "releaseId": "2.0.0-r1",
@@ -10,8 +10,8 @@
   "releaseTag": "v2.0.0",
   "branch": "codex/r0009-updater-package",
   "baseLightCommit": "9e5fce9bfa7c82bfc2f2654d80fd3987c5259963",
-  "latestTestedSourceCommit": "8326bbaaca9296354d717377a0fb9d029ca4c1ff",
-  "latestCI": "https://github.com/BROadmin/BROray-Light/actions/runs/34535054966",
+  "latestTestedSourceCommit": "da35ad28eff2924fc0510beeb6fe6a902d15ef64",
+  "latestCI": "https://github.com/BROadmin/BROray-Light/actions/runs/34539155996",
   "candidateReady": false,
   "releaseReady": false,
   "publicReleasePublished": false,
@@ -25,11 +25,11 @@
     "path": "RUNTIME-TREES-AND-BUILDS-P40.json",
     "sha256": "9cabcb9715ea3eec14c495781c89e94f612ccd40f10c3086a6d508f4154c0afb"
   },
-  "activeFailure": "process-failures/FAILURE-P42-LIVE-FIXTURE-TMPFS-BUSY.json",
-  "nextExactAction": "P43_VALIDATE_LIVE_HEALTH_ROLLBACK_THEN_BOOT_RECOVERY_AND_FULL_CANDIDATE_GATES",
+  "activeFailure": "process-failures/FAILURE-P45-RECOVERY-FIXTURE-PID-BINDING.json",
+  "nextExactAction": "P46_FIRST_CORRECTED_LINUX_RECOVERY_VALIDATION",
   "remainingIntegrationGap": {
     "originFailure": "process-failures/FAILURE-P16-PERSISTENT-LOCK-DOMAIN.json",
-    "description": "Runtime trees/config/platform components passed. Live r1 update now passes a bounded real-engine/real-S24 fixture. Health rollback awaits fixture cleanup correction; boot/finalization, clean postinst and whole application acceptance remain."
+    "description": "P44 live r1 update and exact health rollback passed dash and BusyBox. P45 dead-owner recovery is implemented and undergoing first Linux validation. Early boot, operational state retirement, clean postinst and full candidate gates remain."
   },
-  "pendingSourceCommit": "9b07041f3919a6eb1b87db18a6b33840ac036d18"
+  "pendingSourceCommit": "16a710922acee060c51760b3f0a5ded450719a66"
 }

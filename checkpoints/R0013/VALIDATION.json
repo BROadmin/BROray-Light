@@ -82,8 +82,8 @@
     },
     {
       "gate": "isolated_update_from_r1",
-      "status": "PASS_BOUNDED_REAL_R1_ENGINE_AND_S24_DASH_FULL_CANDIDATE_PENDING",
-      "evidence": "process-failures/FAILURE-P42-LIVE-FIXTURE-TMPFS-BUSY.json"
+      "status": "PASS_BOUNDED_P44_REAL_R1_S24_FIXTURE_WORKLOAD_FULL_CANDIDATE_PENDING",
+      "evidence": "LIVE-R1-UPDATE-AND-ROLLBACK-P44.json"
     },
     {
       "gate": "isolated_equal_version",
@@ -97,13 +97,13 @@
     },
     {
       "gate": "forced_health_rollback",
-      "status": "NOT_RUN_FULL_CANDIDATE",
-      "evidence": null
+      "status": "PASS_BOUNDED_P44_REAL_R1_S24_FIXTURE_WORKLOAD_FULL_CANDIDATE_PENDING",
+      "evidence": "LIVE-R1-UPDATE-AND-ROLLBACK-P44.json"
     },
     {
       "gate": "persistence",
-      "status": "NOT_RUN_FULL_CANDIDATE",
-      "evidence": null
+      "status": "PASS_BOUNDED_P44_REAL_R1_S24_FIXTURE_WORKLOAD_FULL_CANDIDATE_PENDING",
+      "evidence": "LIVE-R1-UPDATE-AND-ROLLBACK-P44.json"
     },
     {
       "gate": "independent_build_a",
@@ -212,8 +212,8 @@
     },
     {
       "gate": "coordinated_service_start_and_boot_rollback",
-      "status": "LIVE_ENTRY_IMPLEMENTED_ROLLBACK_PENDING_BOOT_NOT_IMPLEMENTED",
-      "evidence": "SOURCE-INPUTS-P41.json"
+      "status": "LIVE_UPDATE_ROLLBACK_PASS_P45_DEAD_OWNER_FAILED_P46_FIXTURE_PENDING",
+      "evidence": "SOURCE-INPUTS-P45.json"
     },
     {
       "gate": "scoped_s24_and_private_ram_publication",
@@ -232,5 +232,5 @@
     }
   ],
   "releaseId": "2.0.0-r1",
-  "currentRevision": "p43-live-fixture-tmpfs-reference-drain"
+  "currentRevision": "p46-direct-service-fixture-pid-binding"
 }

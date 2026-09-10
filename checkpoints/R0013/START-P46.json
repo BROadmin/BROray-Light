@@ -1,0 +1,15 @@
+{
+  "stage": "R0013",
+  "revision": "p46-direct-service-fixture-pid-binding",
+  "status": "CHECKPOINT_BEFORE_CORRECTION",
+  "previousRevision": "16a710922acee060c51760b3f0a5ded450719a66",
+  "failure": {
+    "path": "process-failures/FAILURE-P45-RECOVERY-FIXTURE-PID-BINDING.json",
+    "sha256": "fbd78dec78ae10987d673524b7d9fe5f095744cf3700f1e6d7866533c8106eed"
+  },
+  "changes": [
+    "Only fixture environment PID binding and test revision label",
+    "Preserve product bytes and strict recovery status/persistence assertions"
+  ],
+  "candidateReady": false
+}
