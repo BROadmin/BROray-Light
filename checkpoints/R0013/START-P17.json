@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0013",
+  "revision": "p17-coordinated-ram-runtime-and-updater-migration",
+  "status": "IN_PROGRESS",
+  "baseCommit": "9e5fce9bfa7c82bfc2f2654d80fd3987c5259963",
+  "resolves": "process-failures/FAILURE-P16-PERSISTENT-LOCK-DOMAIN.json",
+  "implementationOrder": [
+    "Protected RAM namespace and shared lock primitive, independently tested",
+    "Explicit app and external updater integration, legacy transaction admission bridge",
+    "Manifest-bound lifecycle delivery and rollback from exact published r1",
+    "Full clean/update and runtime scratch audit"
+  ],
+  "safety": [
+    "No router mutation before isolated gates",
+    "No automatic adoption of unmarked RAM namespaces or foreign lock nodes",
+    "Read-only legacy lock checks until coordinated external lifecycle transition",
+    "Preserve existing R0012 work and all failure evidence"
+  ],
+  "candidateReady": false,
+  "releaseReady": false
+}

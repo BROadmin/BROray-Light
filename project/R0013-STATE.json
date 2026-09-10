@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "stage": "R0013_SELECTIVE_UPSTREAM_STABLE_PORT",
-  "status": "CHECKPOINTED_FAIL_CLOSED_RAM_MIGRATION_REQUIRED",
-  "currentRevision": "p16-remaining-operational-ram-gate",
+  "status": "IMPLEMENTING_COORDINATED_RAM_MIGRATION",
+  "currentRevision": "p17-coordinated-ram-runtime-and-updater-migration",
   "activeFailure": "checkpoints/R0013/process-failures/FAILURE-P16-PERSISTENT-LOCK-DOMAIN.json",
   "publicVersion": "2.0.0",
   "buildA": "PRELIMINARY_ENGINEERING_BYTE_PASS_NOT_FINAL_ACCEPTANCE",

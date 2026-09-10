@@ -54,3 +54,14 @@ jobs:
           node tools/test_r0013_versions.js
       - name: Protected RAM bootstrap and installer ownership
         run: sudo python3 -B tools/test_r0013_bootstrap.py --shell /bin/dash
+      - name: Shared RAM namespace and concurrent lock primitive (dash)
+        run: sudo python3 -B tools/test_r0013_ram.py --shell /bin/dash --result /tmp/r0013-ram-dash.json
+      - name: Shared RAM namespace and concurrent lock primitive (BusyBox ash)
+        run: sudo python3 -B tools/test_r0013_ram.py --shell /usr/bin/busybox --busybox --result /tmp/r0013-ram-ash.json
+      - name: Preserve primitive test evidence including first failure
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: r0013-ram-primitive-${{ github.sha }}
+          path: /tmp/r0013-ram-*.json
+          if-no-files-found: ignore
