@@ -93,9 +93,9 @@ brl_platform_replace()
             [ -f "$staged" ] && [ ! -L "$staged" ] || return 1
             case "$(stat -c '%u:%a' "$staged")" in 0:600|0:755) ;; *) return 1 ;; esac
             inode="$(stat -c '%d:%i' "$staged")"
-            jq -e --arg path "$path" --arg inode "$inode" '.platform.staged.path==$path and .platform.staged.inode==$inode' \
+            jq -e --arg path "$path" --arg inode "$inode" '.platform.staged[$path].inode==$inode' \
                 "$BRL_R1_JOURNAL" >/dev/null 2>&1 || return 1
-            rm "$staged" && brl_r1_ram_save 'del(.platform.staged)' || return 1
+            rm "$staged" && brl_r1_ram_save --arg path "$path" 'del(.platform.staged[$path])' || return 1
         fi
         [ ! -e "$target" ] && [ ! -L "$target" ] && return 0
         # Targets were checked globally before any mutation and rechecked here.
@@ -109,10 +109,10 @@ brl_platform_replace()
         case "$(stat -c '%u:%a' "$staged")" in 0:600|0:755) ;; *) return 1 ;; esac
         inode="$(stat -c '%d:%i' "$staged")"
         jq -e --arg path "$path" --arg inode "$inode" \
-            '.platform.staged.path==$path and .platform.staged.inode==$inode' \
+            '.platform.staged[$path].inode==$inode' \
             "$BRL_R1_JOURNAL" >/dev/null 2>&1 || return 1
         if [ "$existing_matches" = true ]; then
-            rm "$staged" && brl_r1_ram_save 'del(.platform.staged)'; return $?
+            rm "$staged" && brl_r1_ram_save --arg path "$path" 'del(.platform.staged[$path])'; return $?
         fi
     else
         [ "$existing_matches" != true ] || return 0
@@ -120,14 +120,14 @@ brl_platform_replace()
         inode="$(stat -c '%d:%i' "$staged")"
     fi
     brl_r1_ram_save --arg path "$path" --arg inode "$inode" --arg sha "$sha" \
-        '.platform.staged={path:$path,inode:$inode,sha256:$sha}' || return 1
+        '.platform.staged[$path]={inode:$inode,sha256:$sha}' || return 1
     # This inode is a recorded installed candidate adjacent to its final path,
     # not a download/extraction scratch file. Rewrite only that owned candidate.
     cat "$BRL_PLATFORM_PAYLOAD/$direction/$path" > "$staged" && chmod 755 "$staged" &&
         brl_platform_file "$staged" "$sha" 755 || return 1
     [ "$(stat -c '%d' "$staged")" = "$(stat -c '%d' "${target%/*}")" ] || return 1
     mv -fT "$staged" "$target" || return 1
-    brl_r1_ram_save 'del(.platform.staged)'
+    brl_r1_ram_save --arg path "$path" 'del(.platform.staged[$path])'
 }
 
 brl_platform_activate()

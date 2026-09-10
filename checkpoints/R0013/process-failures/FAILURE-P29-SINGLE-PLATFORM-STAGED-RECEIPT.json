@@ -1,0 +1,145 @@
+{
+  "stage": "R0013",
+  "revision": "p29-manifest-bound-platform-transaction",
+  "status": "FAIL_FIRST_ERROR",
+  "commit": "296cb4247b0af0b49429d974cf3bf5f4c4169960",
+  "ci": "https://github.com/BROadmin/BROray-Light/actions/runs/34524844734",
+  "failedTest": "staged-5-resume",
+  "cause": "The platform journal stores a single staged object. When an interrupted engine candidate exists and an earlier missing helper is installed first, saving that helper replaces the recorded engine inode. Engine resume then refuses its own candidate. The fixture additionally omitted the callback traceback when the result JSON was not created.",
+  "nextRevision": "p30-per-target-platform-stage-journal",
+  "correction": "Store staged inode/SHA per allowlisted target, preserve every pending record, and retain callback diagnostics in failure evidence.",
+  "evidence": {
+    "r0013-platform-dash.json": {
+      "report": {
+        "stage": "R0013",
+        "revision": "p29-manifest-bound-platform-transaction",
+        "scope": "REAL_R1_ENGINE_PLATFORM_BYTES_FIXTURE_APP_SERVICE",
+        "engineSha256": "773aaf37893ab100e7023d63c8061d8c4763a4d6186844bb3b671d758c145743",
+        "sourceSha256": "70937a2611a83c696b36e2e52611bbd091c22789c3a456a7a59abda428af7acc",
+        "shell": [
+          "/bin/dash"
+        ],
+        "utilities": "host utilities",
+        "tests": [
+          {
+            "name": "activate-restore",
+            "status": "PASS",
+            "callback": {
+              "returncode": 0,
+              "stderr": "",
+              "phase": "restored"
+            }
+          },
+          {
+            "name": "foreign-target",
+            "status": "PASS",
+            "callback": {
+              "returncode": 1,
+              "stderr": "BRORAY_LIGHT_MIGRATION_REFUSED:PLATFORM_TARGET_IDENTITY\n",
+              "phase": "refused-before-platform-write"
+            }
+          },
+          {
+            "name": "symlink-parent",
+            "status": "PASS",
+            "callback": {
+              "returncode": 1,
+              "stderr": "BRORAY_LIGHT_MIGRATION_REFUSED:PLATFORM_PAYLOAD\n",
+              "phase": "refused-before-platform-write"
+            }
+          },
+          {
+            "name": "tampered-payload",
+            "status": "PASS",
+            "callback": {
+              "returncode": 1,
+              "stderr": "BRORAY_LIGHT_MIGRATION_REFUSED:PLATFORM_PAYLOAD\n",
+              "phase": "refused-before-platform-write"
+            }
+          },
+          {
+            "name": "partial-4-resume",
+            "status": "PASS",
+            "callback": {
+              "returncode": 0,
+              "stderr": "",
+              "phase": "restored"
+            }
+          },
+          {
+            "name": "partial-4-rollback",
+            "status": "PASS",
+            "callback": {
+              "returncode": 0,
+              "stderr": "",
+              "phase": "restored"
+            }
+          },
+          {
+            "name": "partial-5-resume",
+            "status": "PASS",
+            "callback": {
+              "returncode": 0,
+              "stderr": "",
+              "phase": "restored"
+            }
+          },
+          {
+            "name": "partial-5-rollback",
+            "status": "PASS",
+            "callback": {
+              "returncode": 0,
+              "stderr": "",
+              "phase": "restored"
+            }
+          },
+          {
+            "name": "partial-6-resume",
+            "status": "PASS",
+            "callback": {
+              "returncode": 0,
+              "stderr": "",
+              "phase": "restored"
+            }
+          },
+          {
+            "name": "partial-6-rollback",
+            "status": "PASS",
+            "callback": {
+              "returncode": 0,
+              "stderr": "",
+              "phase": "restored"
+            }
+          },
+          {
+            "name": "staged-4-resume",
+            "status": "PASS",
+            "callback": {
+              "returncode": 0,
+              "stderr": "",
+              "phase": "restored"
+            }
+          },
+          {
+            "name": "staged-4-rollback",
+            "status": "PASS",
+            "callback": {
+              "returncode": 0,
+              "stderr": "",
+              "phase": "restored"
+            }
+          },
+          {
+            "name": "staged-5-resume",
+            "status": "FAIL",
+            "error": "[Errno 2] No such file or directory: '/dev/shm/r0013-updater-wsw7vxum/admission-result.json'"
+          }
+        ],
+        "status": "FAIL_FIRST_ERROR"
+      },
+      "sha256": "2dff6ce3e4fc4fccd66bfa4f1f4a907cd9115ec17b460d5d513165bfe6694e6a"
+    }
+  },
+  "candidateReady": false,
+  "routerTouched": false
+}

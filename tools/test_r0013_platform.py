@@ -83,7 +83,7 @@ brl_r1_ram_save --arg sha "$BRL_PLATFORM_SHA" '.platform={phase:"prepared",manif
             staged.chmod(0o600)
             data = json.loads(receipt.read_text())
             st = staged.stat()
-            data['platform']['staged'] = dict(path=row['path'], inode=f'{st.st_dev}:{st.st_ino}', sha256=row['newSha256'])
+            data['platform']['staged'] = {row['path']: dict(inode=f'{st.st_dev}:{st.st_ino}', sha256=row['newSha256'])}
             receipt.write_text(json.dumps(data))
         if mode.endswith('-rollback'):
             installed = None
@@ -114,6 +114,14 @@ brl_r1_ram_save --arg sha "$BRL_PLATFORM_SHA" '.platform={phase:"prepared",manif
 
 
 class PlatformFixture(R1Fixture):
+    def update(self, expected=1):
+        result = subprocess.run([*self.shell, str(self.engine), *self.update_options], env=self.env,
+                                capture_output=True, text=True, timeout=45)
+        report = self.root / 'admission-result.json'
+        assert result.returncode == expected and report.is_file(), (result.returncode, result.stdout, result.stderr)
+        assert hashlib.sha256(self.engine.read_bytes()).hexdigest() == ENGINE_SHA
+        return json.loads(report.read_text())
+
     def __init__(self, shell, mode):
         super().__init__(shell, 'valid')
         helper = self.root / 'opt/libexec/broray-light-updater/runtime-ram.sh'
@@ -162,7 +170,7 @@ def main():
     if args.busybox_tools:
         import r0013_busybox_fixture
         utility_fixture = r0013_busybox_fixture.enable()
-    report = dict(stage='R0013', revision='p29-manifest-bound-platform-transaction',
+    report = dict(stage='R0013', revision='p30-per-target-platform-stage-journal',
                   scope='REAL_R1_ENGINE_PLATFORM_BYTES_FIXTURE_APP_SERVICE', engineSha256=ENGINE_SHA,
                   sourceSha256=hashlib.sha256(PLATFORM.read_bytes()).hexdigest(), shell=shell,
                   utilities='BusyBox applets' if args.busybox_tools else 'host utilities', tests=[])
