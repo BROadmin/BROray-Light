@@ -96,6 +96,7 @@ brl_live_restore()
         done
     fi
     if jq -e '.ramTransition' "$BRL_R1_JOURNAL" >/dev/null; then brl_r1_ram_restore || return 1; fi
+    brl_recovery_snapshots_cleanup || return 1
     brl_r1_ram_save '.coordinator.phase="restored"'
 }
 

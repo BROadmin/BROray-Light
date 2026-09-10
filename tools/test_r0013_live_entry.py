@@ -109,6 +109,8 @@ while :;do sleep 0.1;done
                              changed=sorted(name for name in before.keys()&after.keys() if before[name]!=after[name]))
             assert after==before,'Durable configuration/data not restored byte-for-byte: '+json.dumps(differences)
             for name in NAMES:assert not (self.app/name).is_symlink(),name
+            assert detail['receipt']['snapshotCleanup']=='complete',detail
+            assert not list((self.root/'tmp').glob('broray-light-transition.*')),'Live rollback leaked transition snapshots'
         else:
             assert detail['receipt']['coordinator']['phase']=='activated',detail
             expected_config=config.replace(b'"/opt/broray-light/run/lighttpd.pid"',b'"/tmp/broray-light/run/lighttpd.pid"').replace(

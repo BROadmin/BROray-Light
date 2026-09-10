@@ -1,0 +1,14 @@
+{
+  "stage": "R0013",
+  "revision": "p50-live-rollback-cleanup-and-early-anchor-recovery",
+  "status": "FAIL_FIRST_ERROR",
+  "gate": "LOCAL_EMBEDDED_FAULT_WRAPPER_SYNTAX",
+  "sourceSha256": "4d87d71c945f5c03e70da531a846bec01ab38abf3817001ec7a01e2bf815b5fc",
+  "exitCode": 2,
+  "error": "/usr/bin/dash: 3: Syntax error: word unexpected (expecting \"in\")",
+  "cause": "Windows Python subprocess text=True translates LF to CRLF on stdin. Linux shell syntax check received CRLF rather than the LF bytes that the fixture writes on Linux.",
+  "nextCorrectedRevision": "p51-binary-stdin-syntax-and-lifecycle-completion",
+  "correction": "Run local embedded-shell syntax validation with explicit UTF-8 bytes stdin, no Windows text newline translation. Product change unchanged; first Linux validation still pending.",
+  "candidateReady": false,
+  "routerTouched": false
+}

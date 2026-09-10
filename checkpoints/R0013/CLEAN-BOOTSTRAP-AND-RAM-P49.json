@@ -1,0 +1,299 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0013",
+  "revision": "p49-work-shape-diagnostic-and-p47-clean-install-gate",
+  "status": "PASS_BOUNDED_CLEAN_BOOTSTRAP_AND_RAM",
+  "commit": "66616c8ccd4efc0fea72218b212a128a1ea91493",
+  "ci": "https://github.com/BROadmin/BROray-Light/actions/runs/34541259493",
+  "artifact": {
+    "id": 10177345642,
+    "zipSha256": "1e93cf388f27d9e2680f4e81afd9c4c7248a874532d11c2dd9d8b35c5f507ec7"
+  },
+  "tests": 33,
+  "evidence": {
+    "r0013-preflight-bootstrap.json": {
+      "report": {
+        "stage": "R0013",
+        "revision": "p49-p47-clean-install-ram",
+        "status": "PASS",
+        "candidateReady": false,
+        "mockedBoundaries": [
+          "mount type",
+          "opkg",
+          "Xray binary",
+          "service start"
+        ],
+        "tests": [
+          {
+            "test": "clean-bootstrap-owned-ram-cleaned",
+            "status": "PASS"
+          },
+          {
+            "test": "existing-xray-preserved",
+            "status": "PASS"
+          },
+          {
+            "test": "bootstrap-hash-refusal-cleaned",
+            "status": "PASS"
+          },
+          {
+            "test": "occupied-namespace-preserved",
+            "status": "PASS"
+          },
+          {
+            "test": "symlink-namespace-preserved",
+            "status": "PASS"
+          },
+          {
+            "test": "nonram-refused-before-write",
+            "status": "PASS"
+          },
+          {
+            "test": "changed-owner-fails-closed-preserves-evidence",
+            "status": "PASS"
+          },
+          {
+            "test": "full-product-ownership-refused",
+            "status": "PASS"
+          },
+          {
+            "test": "installed-package-overwrite-refused",
+            "status": "PASS"
+          },
+          {
+            "test": "tampered-app-slot-refused",
+            "status": "PASS"
+          },
+          {
+            "test": "installer-private-opkg-ram-cleanup",
+            "status": "PASS"
+          },
+          {
+            "test": "installer-bad-hash-no-opkg-cleanup",
+            "status": "PASS"
+          },
+          {
+            "test": "installer-opkg-failure-cleanup",
+            "status": "PASS"
+          }
+        ]
+      },
+      "sha256": "25e5c0e9b6b64637eedc2e76ab3207720aac37547d8cc511da5685e96ab8197f"
+    },
+    "r0013-preflight-ram-ash.json": {
+      "report": {
+        "stage": "R0013",
+        "revision": "p49-work-shape-diagnostic-and-callback-evidence",
+        "scope": "REAL_R1_ENGINE_LIVE_RAM_HANDOFF_FIXTURE_APP_SERVICE",
+        "engineSha256": "773aaf37893ab100e7023d63c8061d8c4763a4d6186844bb3b671d758c145743",
+        "handoffSha256": "c2e43adb52af6445116ac5f50153e712acaf3698de35d2b369cad9659d686d77",
+        "shell": [
+          "/usr/bin/busybox",
+          "ash"
+        ],
+        "utilities": "BusyBox applets",
+        "tests": [
+          {
+            "name": "commit",
+            "status": "PASS",
+            "callback": {
+              "returncode": 0,
+              "stderr": "",
+              "phase": "ready"
+            }
+          },
+          {
+            "name": "rollback",
+            "status": "PASS",
+            "callback": {
+              "returncode": 0,
+              "stderr": "",
+              "phase": "restored"
+            }
+          },
+          {
+            "name": "extra-old-file",
+            "status": "PASS",
+            "callback": {
+              "returncode": 1,
+              "stderr": "BRORAY_LIGHT_MIGRATION_REFUSED:LEGACY_WORK_SHAPE\n"
+            }
+          },
+          {
+            "name": "foreign-app-namespace",
+            "status": "PASS",
+            "callback": {
+              "returncode": 1,
+              "stderr": "BRORAY_LIGHT_MIGRATION_REFUSED:RAM_NAMESPACE\n"
+            }
+          },
+          {
+            "name": "refuse-backup-tamper",
+            "status": "PASS",
+            "callback": {
+              "returncode": 0,
+              "stderr": "",
+              "phase": "restored"
+            }
+          },
+          {
+            "name": "refuse-new-symlink",
+            "status": "PASS",
+            "callback": {
+              "returncode": 0,
+              "stderr": "",
+              "phase": "restored"
+            }
+          },
+          {
+            "name": "refuse-new-operation",
+            "status": "PASS",
+            "callback": {
+              "returncode": 0,
+              "stderr": "",
+              "phase": "restored"
+            }
+          },
+          {
+            "name": "refuse-private-owner",
+            "status": "PASS",
+            "callback": {
+              "returncode": 0,
+              "stderr": "",
+              "phase": "restored"
+            }
+          },
+          {
+            "name": "resume-old-moved",
+            "status": "PASS",
+            "callback": {
+              "returncode": 0,
+              "stderr": "",
+              "phase": "restored"
+            }
+          },
+          {
+            "name": "resume-restoring",
+            "status": "PASS",
+            "callback": {
+              "returncode": 0,
+              "stderr": "",
+              "phase": "restored"
+            }
+          }
+        ],
+        "status": "PASS_RAM_NAMESPACE_HANDOFF_AND_RESTORE"
+      },
+      "sha256": "f93b4bccee73287367f7af65e1a43d93d8a9a7392e3884e93579b0c4ff0fb644"
+    },
+    "r0013-preflight-ram-dash.json": {
+      "report": {
+        "stage": "R0013",
+        "revision": "p49-work-shape-diagnostic-and-callback-evidence",
+        "scope": "REAL_R1_ENGINE_LIVE_RAM_HANDOFF_FIXTURE_APP_SERVICE",
+        "engineSha256": "773aaf37893ab100e7023d63c8061d8c4763a4d6186844bb3b671d758c145743",
+        "handoffSha256": "c2e43adb52af6445116ac5f50153e712acaf3698de35d2b369cad9659d686d77",
+        "shell": [
+          "/bin/dash"
+        ],
+        "utilities": "host utilities",
+        "tests": [
+          {
+            "name": "commit",
+            "status": "PASS",
+            "callback": {
+              "returncode": 0,
+              "stderr": "",
+              "phase": "ready"
+            }
+          },
+          {
+            "name": "rollback",
+            "status": "PASS",
+            "callback": {
+              "returncode": 0,
+              "stderr": "",
+              "phase": "restored"
+            }
+          },
+          {
+            "name": "extra-old-file",
+            "status": "PASS",
+            "callback": {
+              "returncode": 1,
+              "stderr": "BRORAY_LIGHT_MIGRATION_REFUSED:LEGACY_WORK_SHAPE\n"
+            }
+          },
+          {
+            "name": "foreign-app-namespace",
+            "status": "PASS",
+            "callback": {
+              "returncode": 1,
+              "stderr": "BRORAY_LIGHT_MIGRATION_REFUSED:RAM_NAMESPACE\n"
+            }
+          },
+          {
+            "name": "refuse-backup-tamper",
+            "status": "PASS",
+            "callback": {
+              "returncode": 0,
+              "stderr": "",
+              "phase": "restored"
+            }
+          },
+          {
+            "name": "refuse-new-symlink",
+            "status": "PASS",
+            "callback": {
+              "returncode": 0,
+              "stderr": "",
+              "phase": "restored"
+            }
+          },
+          {
+            "name": "refuse-new-operation",
+            "status": "PASS",
+            "callback": {
+              "returncode": 0,
+              "stderr": "",
+              "phase": "restored"
+            }
+          },
+          {
+            "name": "refuse-private-owner",
+            "status": "PASS",
+            "callback": {
+              "returncode": 0,
+              "stderr": "",
+              "phase": "restored"
+            }
+          },
+          {
+            "name": "resume-old-moved",
+            "status": "PASS",
+            "callback": {
+              "returncode": 0,
+              "stderr": "",
+              "phase": "restored"
+            }
+          },
+          {
+            "name": "resume-restoring",
+            "status": "PASS",
+            "callback": {
+              "returncode": 0,
+              "stderr": "",
+              "phase": "restored"
+            }
+          }
+        ],
+        "status": "PASS_RAM_NAMESPACE_HANDOFF_AND_RESTORE"
+      },
+      "sha256": "2e7d3958e9e4efbb27db7a8461fb2de6e99d6b8bb8fcd7ed5cab1fafc96a14d8"
+    }
+  },
+  "scope": "13 clean bootstrap/installer tests on dash with real prepared slot; mount type, opkg, Xray binary and service start mocked. 20 exact r1 engine RAM tests across dash and BusyBox.",
+  "resolvedFailure": "process-failures/FAILURE-P48-EARLY-WORK-SHAPE-DIAGNOSTIC.json",
+  "candidateReady": false,
+  "routerTouched": false
+}

@@ -77,8 +77,8 @@
     },
     {
       "gate": "isolated_clean_install",
-      "status": "NOT_RUN",
-      "evidence": null
+      "status": "PASS_BOUNDED_P49_PREPARED_SLOT_MOCKED_OPKG_SERVICE_FULL_CANDIDATE_PENDING",
+      "evidence": "CLEAN-BOOTSTRAP-AND-RAM-P49.json"
     },
     {
       "gate": "isolated_update_from_r1",
@@ -107,18 +107,18 @@
     },
     {
       "gate": "independent_build_a",
-      "status": "PASS_PRELIMINARY_LOCAL_NOT_FINAL_ACCEPTANCE",
-      "evidence": "RUNTIME-TREES-AND-BUILDS-P40.json"
+      "status": "PASS_PRELIMINARY_P47_NOT_FINAL_P49_BYTES",
+      "evidence": "ENGINEERING-BUILDS-P47.json"
     },
     {
       "gate": "independent_build_b",
-      "status": "PASS_PRELIMINARY_LOCAL_NOT_FINAL_ACCEPTANCE",
-      "evidence": "RUNTIME-TREES-AND-BUILDS-P40.json"
+      "status": "PASS_PRELIMINARY_P47_NOT_FINAL_P49_BYTES",
+      "evidence": "ENGINEERING-BUILDS-P47.json"
     },
     {
       "gate": "a_b_byte_reproducibility",
-      "status": "PASS_PRELIMINARY_LOCAL_NOT_FINAL_ACCEPTANCE",
-      "evidence": "RUNTIME-TREES-AND-BUILDS-P40.json"
+      "status": "PASS_PRELIMINARY_P47_NOT_FINAL_P49_BYTES",
+      "evidence": "ENGINEERING-BUILDS-P47.json"
     },
     {
       "gate": "existing_trust_root_signing",
@@ -147,13 +147,13 @@
     },
     {
       "gate": "clean_bootstrap_and_installer_protected_ram",
-      "status": "PASS_BOUNDED_UNIT_TRANSACTIONS_NOT_TARGET",
-      "evidence": "RAM-BOOTSTRAP-VALIDATION-P15.json"
+      "status": "PASS_BOUNDED_P49_PREPARED_SLOT_MOCKED_OPKG_SERVICE_FULL_CANDIDATE_PENDING",
+      "evidence": "CLEAN-BOOTSTRAP-AND-RAM-P49.json"
     },
     {
       "gate": "engineering_package_structure_hashes_and_modes",
-      "status": "PASS",
-      "evidence": "RUNTIME-TREES-AND-BUILDS-P40.json"
+      "status": "PASS_PRELIMINARY_P47_NOT_FINAL_P49_BYTES",
+      "evidence": "ENGINEERING-BUILDS-P47.json"
     },
     {
       "gate": "preexisting_r0012_preservation",
@@ -212,8 +212,8 @@
     },
     {
       "gate": "coordinated_service_start_and_boot_rollback",
-      "status": "LIVE_UPDATE_ROLLBACK_PASS_P45_DEAD_OWNER_FAILED_P46_FIXTURE_PENDING",
-      "evidence": "SOURCE-INPUTS-P45.json"
+      "status": "PASS_BOUNDED_DEAD_OWNER_AND_RAM_LOSS_EARLY_S23_PENDING",
+      "evidence": "DEAD-OWNER-RECOVERY-P48.json"
     },
     {
       "gate": "scoped_s24_and_private_ram_publication",
@@ -232,5 +232,5 @@
     }
   ],
   "releaseId": "2.0.0-r1",
-  "currentRevision": "p46-direct-service-fixture-pid-binding"
+  "currentRevision": "p51-binary-stdin-syntax-and-lifecycle-completion"
 }

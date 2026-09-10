@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
   "stage": "R0013_SELECTIVE_UPSTREAM_STABLE_PORT",
-  "status": "P49_CORRECTED_RAM_DIAGNOSTIC_AND_P47_CLEAN_INSTALL_LINUX_PENDING",
-  "currentRevision": "p49-work-shape-diagnostic-and-p47-clean-install-gate",
-  "activeFailure": "checkpoints/R0013/process-failures/FAILURE-P48-EARLY-WORK-SHAPE-DIAGNOSTIC.json",
+  "status": "P51_LIVE_CLEANUP_AND_EARLY_S23_BOOT_VALIDATION_PENDING",
+  "currentRevision": "p51-binary-stdin-syntax-and-lifecycle-completion",
+  "activeFailure": null,
   "publicVersion": "2.0.0",
   "buildA": "PRELIMINARY_ENGINEERING_BYTE_PASS_NOT_FINAL_ACCEPTANCE",
   "buildB": "PRELIMINARY_ENGINEERING_BYTE_PASS_NOT_FINAL_ACCEPTANCE",
@@ -18,7 +18,7 @@
     "path": "checkpoints/R0013/SUBSCRIPTION-NAME-P6.json",
     "sha256": "2b1fe451272dc233e1f8ccd4cc3d6ea2f212ba81e009f93d3a4b9e9b9601577a"
   },
-  "lastResolvedFailure": "checkpoints/R0013/process-failures/FAILURE-P46-RESTORED-PUBLICATION-FIXTURE-CONTRACT.json",
+  "lastResolvedFailure": "checkpoints/R0013/process-failures/FAILURE-P50-WINDOWS-SYNTAX-PIPE-NEWLINES.json",
   "processPort": {
     "status": "PASS_ISOLATED_LINUX",
     "tests": 33,
@@ -62,7 +62,7 @@
     "path": "checkpoints/R0013/UPSTREAM-PORT-MAP-P2.json",
     "sha256": "009a0f5adae08f399c82510cf680690b4c2e50bc8c659eda9c48d91b5a838121"
   },
-  "nextExactAction": "P49_RESTORE_STABLE_REFUSAL_MARKER_AND_VALIDATE_P47_CLEAN_INSTALL",
+  "nextExactAction": "P51_FIRST_LINUX_LIVE_ROLLBACK_CLEANUP_AND_EARLY_S23_BOOT_GATE",
   "versionAndXray": {
     "status": "PASS_VERSION_AND_BOOTSTRAP_INPUT",
     "path": "checkpoints/R0013/UPGRADE-AND-XRAY-P10.json",
@@ -81,7 +81,20 @@
     "path": "RAM-BOOTSTRAP-VALIDATION-P15.json",
     "sha256": "050a4d9b7e8c82194d1e4dd03e6e014031ec1b24d44f06833cc3189d5ca1c33d"
   },
-  "latestCI": "https://github.com/BROadmin/BROray-Light/actions/runs/34540209870",
+  "latestCI": "https://github.com/BROadmin/BROray-Light/actions/runs/34541259493",
+  "latestFullComponentRegression": {
+    "status": "PASS",
+    "commit": "66616c8ccd4efc0fea72218b212a128a1ea91493",
+    "uniqueJsonReportTests": 337,
+    "path": "checkpoints/R0013/REGRESSION-P49.json",
+    "sha256": "b5d00600ec26f0c3b56cf5701c20e2ab42b55d2b70a9da798fb983c4e9f64e9f"
+  },
+  "cleanBootstrapAndRam": {
+    "status": "PASS_BOUNDED",
+    "tests": 33,
+    "path": "checkpoints/R0013/CLEAN-BOOTSTRAP-AND-RAM-P49.json",
+    "sha256": "fe50139c4c8432e7bae208e7d8520b1ded377fb0313c42229283c06646440926"
+  },
   "actualWebDaemons": {
     "status": "PASS_BOUNDED",
     "tests": 42,

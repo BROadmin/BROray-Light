@@ -206,6 +206,17 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y --no-install-recommends busybox dash gcc jq minisign
+      - name: Lifecycle completion and early S23 boot (dash)
+        run: sudo python3 -B tools/check_r0013_completion.py --shell /bin/dash --result /tmp/r0013-completion-dash.json
+      - name: Lifecycle completion and early S23 boot (BusyBox)
+        run: sudo python3 -B tools/check_r0013_completion.py --shell /usr/bin/busybox --busybox --busybox-tools --result /tmp/r0013-completion-ash.json
+      - name: Preserve first lifecycle completion result
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: r0013-completion-${{ github.sha }}
+          path: /tmp/r0013-completion-*.json
+          if-no-files-found: ignore
       - name: Fast clean-bootstrap RAM and installed-slot refusal preflight
         run: sudo python3 -B tools/test_r0013_bootstrap.py --shell /bin/dash --result /tmp/r0013-preflight-bootstrap.json
       - name: Fast exact-r1 RAM namespace preflight (dash)

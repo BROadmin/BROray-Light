@@ -1,0 +1,14 @@
+{
+  "stage": "R0013",
+  "revision": "p50-live-rollback-cleanup-and-early-anchor-recovery",
+  "status": "CHECKPOINT_BEFORE_CHANGE",
+  "baseCommit": "66616c8ccd4efc0fea72218b212a128a1ea91493",
+  "scope": [
+    "Call existing manifest-bound snapshot cleanup after successful live rollback; preserve low-level restore semantics",
+    "Assert no transition snapshot survives live health rollback",
+    "Add deterministic external mv-boundary SIGKILL test immediately after real S24 recovery-anchor replacement, then invoke exact old S23 on actual remounted private tmpfs"
+  ],
+  "testBoundaries": "No product fault flag. Fixture-only mv wrapper performs real rename then blocks; all runtime script bytes remain unchanged. OS publication and service workload fixtures retained.",
+  "candidateReady": false,
+  "routerTouched": false
+}

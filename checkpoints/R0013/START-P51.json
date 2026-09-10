@@ -1,0 +1,11 @@
+{
+  "stage": "R0013",
+  "revision": "p51-binary-stdin-syntax-and-lifecycle-completion",
+  "status": "CHECKPOINT_BEFORE_CORRECTED_VALIDATION",
+  "failure": {
+    "path": "process-failures/FAILURE-P50-WINDOWS-SYNTAX-PIPE-NEWLINES.json",
+    "sha256": "498419c6d3b5d4e920a5f657d24c92cbf3fef5a043b9941540e35aa4de7fb505"
+  },
+  "correction": "Pass embedded shell to local dash as UTF-8 bytes without Windows text-mode CRLF translation. P50 product cleanup unchanged. Add explicit local validator to prevent recurrence.",
+  "candidateReady": false
+}

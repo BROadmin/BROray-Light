@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "stage": "R0013_SELECTIVE_UPSTREAM_STABLE_PORT",
-  "status": "P45_FINALIZATION_PASS_DEAD_OWNER_FAILED_P46_FIXTURE_CORRECTED",
-  "currentRevision": "p46-direct-service-fixture-pid-binding",
+  "status": "P49_COMPONENT_PASS_P51_COMPLETION_STATIC_PASS_LINUX_PENDING",
+  "currentRevision": "p51-binary-stdin-syntax-and-lifecycle-completion",
   "publicVersion": "2.0.0",
   "packageVersion": "2.0.0",
   "releaseId": "2.0.0-r1",
@@ -10,8 +10,9 @@
   "releaseTag": "v2.0.0",
   "branch": "codex/r0009-updater-package",
   "baseLightCommit": "9e5fce9bfa7c82bfc2f2654d80fd3987c5259963",
-  "latestTestedSourceCommit": "da35ad28eff2924fc0510beeb6fe6a902d15ef64",
-  "latestCI": "https://github.com/BROadmin/BROray-Light/actions/runs/34539155996",
+  "latestTestedSourceCommit": "66616c8ccd4efc0fea72218b212a128a1ea91493",
+  "latestFullComponentRegression": "REGRESSION-P49.json",
+  "latestCI": "https://github.com/BROadmin/BROray-Light/actions/runs/34541259493",
   "candidateReady": false,
   "releaseReady": false,
   "publicReleasePublished": false,
@@ -22,14 +23,15 @@
   "buildA": "PRELIMINARY_ENGINEERING_BYTE_PASS_NOT_FINAL_ACCEPTANCE",
   "buildB": "PRELIMINARY_ENGINEERING_BYTE_PASS_NOT_FINAL_ACCEPTANCE",
   "buildEvidence": {
-    "path": "RUNTIME-TREES-AND-BUILDS-P40.json",
-    "sha256": "9cabcb9715ea3eec14c495781c89e94f612ccd40f10c3086a6d508f4154c0afb"
+    "path": "ENGINEERING-BUILDS-P47.json",
+    "sha256": "73ceaf5f6179c87abf0ca25c0fe2e829cb91fb8edc0a33b815e6110e69ced708"
   },
-  "activeFailure": "process-failures/FAILURE-P45-RECOVERY-FIXTURE-PID-BINDING.json",
-  "nextExactAction": "P46_FIRST_CORRECTED_LINUX_RECOVERY_VALIDATION",
+  "activeFailure": null,
+  "nextExactAction": "P51_FIRST_LINUX_LIVE_ROLLBACK_CLEANUP_AND_EARLY_S23_BOOT_GATE",
   "remainingIntegrationGap": {
     "originFailure": "process-failures/FAILURE-P16-PERSISTENT-LOCK-DOMAIN.json",
-    "description": "P44 live r1 update and exact health rollback passed dash and BusyBox. P45 dead-owner recovery is implemented and undergoing first Linux validation. Early boot, operational state retirement, clean postinst and full candidate gates remain."
+    "description": "10 dead-owner/reboot-loss/finalization tests passed on dash/BusyBox. Whole P48 failed on a missing stable diagnostic in old RAM negative test. P49 corrects this and integrates checkpointed P47 clean postinst. Early S23 boot, operational state retirement, live snapshot cleanup, full prepared-app/native-auth/WebUI, final independent builds/signing and target gates remain."
   },
-  "pendingSourceCommit": "16a710922acee060c51760b3f0a5ded450719a66"
+  "pendingSourceCommit": "UNCOMMITTED_P51",
+  "lastResolvedFailure": "process-failures/FAILURE-P50-WINDOWS-SYNTAX-PIPE-NEWLINES.json"
 }

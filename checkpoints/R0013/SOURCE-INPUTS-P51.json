@@ -1,0 +1,33 @@
+{
+  "stage": "R0013",
+  "revision": "p51-binary-stdin-syntax-and-lifecycle-completion",
+  "status": "STATIC_PASS_LINUX_PENDING",
+  "sources": [
+    {
+      "path": "tools/check_r0013_completion.py",
+      "sizeBytes": 7341,
+      "sha256": "1673b2fda05a46aaa0d9fb72210b42d0b1121a283bcfdaacb2ae07f8e5a66391"
+    },
+    {
+      "path": "tools/test_r0013_live_entry.py",
+      "sizeBytes": 13962,
+      "sha256": "79662325289651384d116b678c2de905d1a7b41c86ab3e6f260db5e6a444aa3d"
+    },
+    {
+      "path": "packaging/r0013-overlay/shared/lifecycle-r1-entry.sh",
+      "sizeBytes": 7216,
+      "sha256": "49081efafe4e25bcd8afee598671452628fb82acf9d4f55aa1e286720d854ea3"
+    },
+    {
+      "path": ".github/workflows/r0013-port-tests.yml",
+      "sizeBytes": 13459,
+      "sha256": "a3a3d6eef9d42dad3a81a0abface36dc0ecbe29f9d56e5dd1e46d9d6791e4b2c"
+    }
+  ],
+  "staticGates": [
+    "Python AST",
+    "lifecycle entry dash syntax",
+    "embedded mv wrapper LF bytes dash syntax"
+  ],
+  "candidateReady": false
+}
