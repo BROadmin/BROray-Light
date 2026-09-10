@@ -1,0 +1,157 @@
+{
+  "stage": "R0013",
+  "revision": "p52-exact-old-recover-empty-namespace-survivor",
+  "status": "PASS_BOUNDED_COMPLETION",
+  "commit": "6a309c4cfc106ea0217b2245e6d17964693f6f0f",
+  "ci": "https://github.com/BROadmin/BROray-Light/actions/runs/34543137488",
+  "artifact": {
+    "id": 10178079405,
+    "zipSha256": "98d56aee4f9318a53506bafebc46c09f00cef19ddedd56691a4fc70e28a26212"
+  },
+  "tests": 10,
+  "evidence": {
+    "r0013-completion-ash.json": {
+      "report": {
+        "stage": "R0013",
+        "revision": "p52-exact-old-recover-empty-namespace-survivor",
+        "status": "PASS_BOUNDED_COMPLETION",
+        "shell": [
+          "/usr/bin/busybox",
+          "ash"
+        ],
+        "tests": [
+          {
+            "name": "live-rollback-cleanup",
+            "status": "PASS",
+            "detail": {
+              "returncode": 1,
+              "current": "1.0.0-r1",
+              "coordinatorPhase": "restored",
+              "legacyUpdaterCompleted": true,
+              "sessionPreserved": true
+            }
+          },
+          {
+            "name": "early-anchor",
+            "status": "PASS",
+            "detail": {
+              "earlyAnchorRollback": true,
+              "realOldS23": false,
+              "durablePersistence": true,
+              "originalUnmovedSessionPreserved": true,
+              "snapshotsRemoved": true,
+              "privateTmpfsRemounted": false
+            }
+          },
+          {
+            "name": "early-anchor-old-s23-boot",
+            "status": "PASS",
+            "detail": {
+              "earlyAnchorRollback": true,
+              "realOldS23": true,
+              "durablePersistence": true,
+              "originalUnmovedSessionPreserved": true,
+              "snapshotsRemoved": true,
+              "privateTmpfsRemounted": true
+            }
+          },
+          {
+            "name": "empty-namespace-outsider",
+            "status": "PASS",
+            "detail": {
+              "refused": true,
+              "namespaceInodeModeAndChildrenPreserved": true,
+              "negative": "outsider"
+            }
+          },
+          {
+            "name": "old-s23-foreign-child",
+            "status": "PASS",
+            "detail": {
+              "refused": true,
+              "namespaceInodeModeAndChildrenPreserved": true,
+              "negative": "foreign-child"
+            }
+          }
+        ],
+        "candidateReady": false,
+        "entrySha256": "49081efafe4e25bcd8afee598671452628fb82acf9d4f55aa1e286720d854ea3",
+        "scope": "Real legacy updater/S23/S24 and rename, fixture OS publication/workload; actual SIGKILL/private tmpfs remount."
+      },
+      "sha256": "09ae7078a59a7597af6b0871b1c29991cd1249964f4c18244eabd88ffb0b53c1"
+    },
+    "r0013-completion-dash.json": {
+      "report": {
+        "stage": "R0013",
+        "revision": "p52-exact-old-recover-empty-namespace-survivor",
+        "status": "PASS_BOUNDED_COMPLETION",
+        "shell": [
+          "/bin/dash"
+        ],
+        "tests": [
+          {
+            "name": "live-rollback-cleanup",
+            "status": "PASS",
+            "detail": {
+              "returncode": 1,
+              "current": "1.0.0-r1",
+              "coordinatorPhase": "restored",
+              "legacyUpdaterCompleted": true,
+              "sessionPreserved": true
+            }
+          },
+          {
+            "name": "early-anchor",
+            "status": "PASS",
+            "detail": {
+              "earlyAnchorRollback": true,
+              "realOldS23": false,
+              "durablePersistence": true,
+              "originalUnmovedSessionPreserved": true,
+              "snapshotsRemoved": true,
+              "privateTmpfsRemounted": false
+            }
+          },
+          {
+            "name": "early-anchor-old-s23-boot",
+            "status": "PASS",
+            "detail": {
+              "earlyAnchorRollback": true,
+              "realOldS23": true,
+              "durablePersistence": true,
+              "originalUnmovedSessionPreserved": true,
+              "snapshotsRemoved": true,
+              "privateTmpfsRemounted": true
+            }
+          },
+          {
+            "name": "empty-namespace-outsider",
+            "status": "PASS",
+            "detail": {
+              "refused": true,
+              "namespaceInodeModeAndChildrenPreserved": true,
+              "negative": "outsider"
+            }
+          },
+          {
+            "name": "old-s23-foreign-child",
+            "status": "PASS",
+            "detail": {
+              "refused": true,
+              "namespaceInodeModeAndChildrenPreserved": true,
+              "negative": "foreign-child"
+            }
+          }
+        ],
+        "candidateReady": false,
+        "entrySha256": "49081efafe4e25bcd8afee598671452628fb82acf9d4f55aa1e286720d854ea3",
+        "scope": "Real legacy updater/S23/S24 and rename, fixture OS publication/workload; actual SIGKILL/private tmpfs remount."
+      },
+      "sha256": "baf3151ccbe7be2ef9e1ecab23a5a5053b707e56ee4c145e6b4f933c46dd37eb"
+    }
+  },
+  "resolvedFailure": "process-failures/FAILURE-P51-EARLY-S23-EMPTY-RAM-SURVIVOR.json",
+  "remaining": "Full P52 component regression still running; operational state retirement, full prepared-app/WebUI/auth/build/signing/target gates pending.",
+  "candidateReady": false,
+  "routerTouched": false
+}

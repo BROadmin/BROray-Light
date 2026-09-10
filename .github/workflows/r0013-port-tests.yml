@@ -206,6 +206,15 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y --no-install-recommends busybox dash gcc jq minisign
+      - name: Legacy operational status retirement preflight (dash)
+        run: sudo python3 -B tools/test_r0013_recovery.py --shell /bin/dash --case finalize --case legacy-status-foreign --case legacy-ready-symlink --result /tmp/r0013-retirement-dash.json
+      - name: Preserve first operational retirement result
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: r0013-retirement-${{ github.sha }}
+          path: /tmp/r0013-retirement-*.json
+          if-no-files-found: ignore
       - name: Lifecycle completion and early S23 boot (dash)
         run: sudo python3 -B tools/check_r0013_completion.py --shell /bin/dash --result /tmp/r0013-completion-dash.json
       - name: Lifecycle completion and early S23 boot (BusyBox)

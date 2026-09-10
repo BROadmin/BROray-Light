@@ -195,3 +195,86 @@ brl_lock_release()
     brl_admission_leave || return 3
     return "$rc"
 }
+
+# Bounded retirement of operational files written by the accepted old updater.
+# Durable receipts remain durable. No file with a foreign schema/owner is erased.
+brl_legacy_status_file()
+{
+    local path
+    path="$1"
+    [ -f "$path" ] && [ ! -L "$path" ] || return 1
+    case "$(stat -c '%u:%a:%h' "$path")" in 0:600:1|0:644:1) ;; *) return 1 ;; esac
+    case "${path##*/}" in
+        ready) printf '%s\n' 'broray-light-updater/5-light1' | cmp -s - "$path" ;;
+        state.json)
+            [ "$(wc -c < "$path")" -le 16384 ] && jq -e '
+                keys==["engine","errorCode","message","schemaVersion","stage","state","updatedAt"] and
+                .schemaVersion==1 and .engine=="broray-light-updater/5-light1" and
+                ([.state,.stage,.message,.updatedAt]|all(type=="string")) and
+                (.errorCode==null or (.errorCode|type=="string"))' "$path" >/dev/null ;;
+        *) return 1 ;;
+    esac
+}
+
+brl_legacy_status_retire_guarded()
+{
+    local root parent receipt path name rows id sha size staged pid start
+    root="${BRORAY_LIGHT_ROOT_PREFIX:-}/opt/var/lib/broray-light-updater"
+    receipt="$root/legacy-transition.json"
+    # The maintenance caller owns the actual shared operation fence, never an
+    # inherited environment assertion or a still-live old updater lock.
+    brl_lock_shape "$BRL_GLOBAL_LOCK" &&
+        [ "$(cat "$BRL_GLOBAL_LOCK/owner")" = "BROray-Light:lock/1 $$ $(brl_process_start "$$")" ] &&
+        brl_legacy_locks_clear || return 1
+    parent="$root"
+    while :; do
+        [ -d "$parent" ] && [ ! -L "$parent" ] || return 1
+        case "$(stat -c '%u:%a' "$parent")" in 0:700|0:755) ;; *) return 1 ;; esac
+        [ "$parent" != "${BRORAY_LIGHT_ROOT_PREFIX:-}/opt" ] || break
+        parent="${parent%/*}"
+    done
+    brl_ram_file_valid "$receipt" && [ "$(stat -c '%h' "$receipt")" = 1 ] &&
+        jq -e '.schemaVersion==1 and .product=="BROray-Light" and .sourceRelease=="1.0.0-r1" and
+            .targetRelease=="2.0.0-r1" and .legacyLocks=="cleared" and
+            (.recovery.phase=="finalizing" or .recovery.phase=="finalized") and
+            ((.retiredOperational // [])|type=="array" and length<128)' "$receipt" >/dev/null || return 1
+    pid="$(jq -r '.legacyPid' "$receipt")"; start="$(jq -r '.legacyStart' "$receipt")"
+    [ "$(brl_process_start "$pid" 2>/dev/null || true)" != "$start" ] || return 1
+    [ "$(readlink "${BRORAY_LIGHT_ROOT_PREFIX:-}/opt/broray-light/current")" != releases/1.0.0-r1 ] || return 1
+    rows='[]'
+    # Validate the complete pair before deleting even a known owned member.
+    for name in state.json ready; do
+        path="$root/$name"
+        [ -e "$path" ] || [ -L "$path" ] || continue
+        brl_legacy_status_file "$path" || return 1
+        id="$(stat -c '%d:%i' "$path")"; sha="$(sha256sum "$path" | awk '{print $1}')"; size="$(wc -c < "$path")"
+        rows="$(printf '%s\n' "$rows" | jq --arg name "$name" --arg id "$id" --arg sha "$sha" --argjson size "$size" \
+            '. + [{path:$name,id:$id,sha256:$sha,sizeBytes:$size}]')" || return 1
+    done
+    [ "$rows" != '[]' ] || return 0
+    staged="$receipt.$$.status-retirement"
+    [ ! -e "$staged" ] && [ ! -L "$staged" ] || return 1
+    # This is an adjacent durable receipt candidate, not operational scratch.
+    (umask 077; set -C; jq --argjson rows "$rows" \
+        '.retiredOperational=(((.retiredOperational // []) + $rows)|unique_by([.path,.id,.sha256]))' \
+        "$receipt" > "$staged") && brl_ram_file_valid "$staged" && mv -fT "$staged" "$receipt" || return 1
+    for name in state.json ready; do
+        path="$root/$name"
+        id="$(printf '%s\n' "$rows" | jq -r --arg name "$name" '.[]|select(.path==$name)|.id')"
+        [ -n "$id" ] || continue
+        sha="$(printf '%s\n' "$rows" | jq -r --arg name "$name" '.[]|select(.path==$name)|.sha256')"
+        brl_legacy_status_file "$path" && [ "$(stat -c '%d:%i' "$path")" = "$id" ] &&
+            [ "$(sha256sum "$path" | awk '{print $1}')" = "$sha" ] && rm "$path" || return 1
+    done
+}
+
+brl_legacy_status_maintenance()
+(
+    local root
+    root="${BRORAY_LIGHT_ROOT_PREFIX:-}/opt/var/lib/broray-light-updater"
+    if [ ! -e "$root/state.json" ] && [ ! -L "$root/state.json" ] &&
+        [ ! -e "$root/ready" ] && [ ! -L "$root/ready" ]; then return 0; fi
+    brl_lock_acquire global || return $?
+    trap 'brl_lock_release global >/dev/null 2>&1 || true' EXIT
+    brl_legacy_status_retire_guarded
+)

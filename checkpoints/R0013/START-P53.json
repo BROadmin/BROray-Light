@@ -1,0 +1,19 @@
+{
+  "stage": "R0013",
+  "revision": "p53-retire-legacy-operational-status",
+  "status": "CHECKPOINT_BEFORE_CHANGE",
+  "base": "P52 immutable CI running",
+  "scope": [
+    "Retire only exact schema/engine-bound old updater state.json and ready after successful transition",
+    "Validate all old operational files before deleting any, persist path/inode/size/SHA retirement receipts under own RAM global fence",
+    "Run same bounded maintenance at finalized S24 entry to handle a late cached-r1 S23 ready write without binding future app versions to the old slot",
+    "Preserve foreign status/symlink files and fail closed"
+  ],
+  "notChanged": [
+    "User configuration, subscriptions, servers, Xray runtime",
+    "Old r1 operational semantics after rollback",
+    "Native authentication and web policy"
+  ],
+  "candidateReady": false,
+  "routerTouched": false
+}

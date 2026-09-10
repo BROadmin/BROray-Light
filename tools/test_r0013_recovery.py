@@ -28,18 +28,45 @@ def exercise(f, mode):
             detail['pidFiles']={name:(f.app/'run'/name).read_text() if (f.app/'run'/name).exists() else None for name in ('broray-lightd.pid','lighttpd.pid')}
         assert result.returncode==expected,detail
         return detail
-    if mode=='finalize':
+    if mode in ('finalize','legacy-status-foreign','legacy-ready-symlink'):
+        ready=f.durable/'ready'
+        f.write(ready,b'broray-light-updater/5-light1\n',0o644)
         f.run_update('update')
+        status=f.durable/'state.json'
+        if mode=='legacy-status-foreign':
+            f.write(status,b'{"owner":"foreign"}\n')
+        elif mode=='legacy-ready-symlink':
+            ready.unlink()
+            target=f.root/'foreign-ready'
+            f.write(target,b'never-remove\n')
+            ready.symlink_to(target)
+        original_status=status.read_bytes()
+        original_ready=ready.read_bytes()
+        if mode!='finalize':
+            recover(1)
+            assert status.read_bytes()==original_status and ready.read_bytes()==original_ready
+            if mode=='legacy-ready-symlink':assert ready.is_symlink()
+            return dict(foreignOperationalFileRefused=True,allOldStatusBytesPreserved=True)
         session=(f.app/'run/web-new/sessions'/('a'*48)).read_bytes()
         detail=recover()
         assert detail['receipt']['coordinator']['phase']=='finalized',detail
         assert detail['receipt']['snapshotCleanup']=='complete',detail
         assert not list((f.root/'tmp').glob('broray-light-transition.*'))
         assert (f.app/'run/web-new/sessions'/('a'*48)).read_bytes()==session
+        assert not status.exists() and not ready.exists(),'Old operational status remained persistent'
+        retired={x['path']:x for x in detail['receipt']['retiredOperational']}
+        assert retired['state.json']['sha256']==hashlib.sha256(original_status).hexdigest()
+        assert retired['ready']['sha256']==hashlib.sha256(original_ready).hexdigest()
+        # Simulate a cached r1 S23 completing after the migration finalized.
+        # Normal finalized S24 entry must retire only these known late bytes.
+        f.write(ready,b'broray-light-updater/5-light1\n',0o644)
+        recover()
+        assert not ready.exists(),'Late cached-r1 ready was not retired'
         saved=journal.read_bytes()
         recover()
         assert journal.read_bytes()==saved,'Finalized entry rewrote the immutable completion receipt'
-        return dict(finalized=True,snapshotsRemoved=True,sessionPreserved=True,idempotent=True)
+        return dict(finalized=True,snapshotsRemoved=True,sessionPreserved=True,idempotent=True,
+                    persistentLegacyStatusRetired=True,lateOldReadyRetired=True)
 
     hook=f.executable/'service'
     f.write(hook,b'''#!/bin/sh
@@ -105,6 +132,8 @@ fi
 def main():
     p=argparse.ArgumentParser();p.add_argument('--shell',default='/bin/dash');p.add_argument('--busybox',action='store_true')
     p.add_argument('--busybox-tools',action='store_true');p.add_argument('--result',type=Path)
+    p.add_argument('--case',dest='modes',action='append',choices=('finalize','legacy-status-foreign',
+        'legacy-ready-symlink','dead-owner','ram-loss','foreign-lock','foreign-slot'))
     args=p.parse_args();assert os.geteuid()==0
     shell=[args.shell,'ash'] if args.busybox else [args.shell]
     if args.busybox_tools:
@@ -114,7 +143,7 @@ def main():
     ash.parent.mkdir(parents=True,exist_ok=True);ash.symlink_to(args.shell)
     records=[];failed=False
     def persist(status):
-        report=dict(stage='R0013',revision='p48-restored-publication-fixture-contract',status=status,shell=shell,tests=records,
+        report=dict(stage='R0013',revision='p53-retire-legacy-operational-status',status=status,shell=shell,tests=records,
                     entrySha256=hashlib.sha256(ENTRY.read_bytes()).hexdigest(),
                     recoverySha256=hashlib.sha256(ENTRY.with_name('lifecycle-r1-recovery.sh').read_bytes()).hexdigest(),
                     scope='Exact old engine, real S24/entry, actual SIGKILL and private tmpfs remount; fixture app loop/lighttpd/publication OS calls.')
@@ -124,7 +153,8 @@ def main():
         with tempfile.TemporaryDirectory(prefix='r0013-recovery-binary-',dir='/var/tmp') as tmp:
             source=Path(tmp)/'fixture.c';source.write_text(C_SOURCE);binary=Path(tmp)/'fixture'
             subprocess.run(['gcc','-O2','-o',str(binary),str(source)],check=True,capture_output=True)
-            for mode in ('finalize','dead-owner','ram-loss','foreign-lock','foreign-slot'):
+            for mode in args.modes or ('finalize','legacy-status-foreign','legacy-ready-symlink',
+                         'dead-owner','ram-loss','foreign-lock','foreign-slot'):
                 fixture=None
                 try:
                     fixture=LiveFixture(shell,binary.read_bytes(),'update')

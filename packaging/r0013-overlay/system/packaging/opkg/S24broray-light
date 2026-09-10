@@ -36,6 +36,7 @@ if [ "$legacy_finalized" != true ] && { [ -e "$legacy_receipt" ] || [ -L "$legac
     case "$legacy_rc" in 0) ;; 10) exit 0 ;; *) exit 1 ;; esac
 fi
 . "$ROOT/lib/runtime-environment.sh" || exit 1
+if [ "$legacy_finalized" = true ]; then brl_legacy_status_maintenance || exit 1; fi
 if [ "${1:-}" = recover ]; then exit 0; fi
 . "$ROOT/lib/service-process.sh" || exit 1
 . "$ROOT/lib/xray-process.sh" || exit 1

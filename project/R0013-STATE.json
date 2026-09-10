@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
   "stage": "R0013_SELECTIVE_UPSTREAM_STABLE_PORT",
-  "status": "P52_EARLY_S23_SURVIVOR_CORRECTION_LINUX_PENDING",
-  "currentRevision": "p52-exact-old-recover-empty-namespace-survivor",
-  "activeFailure": "checkpoints/R0013/process-failures/FAILURE-P51-EARLY-S23-EMPTY-RAM-SURVIVOR.json",
+  "status": "P52_EARLY_RECOVERY_PASS_P53_STATUS_RETIREMENT_PENDING",
+  "currentRevision": "p53-retire-legacy-operational-status",
+  "activeFailure": null,
   "publicVersion": "2.0.0",
   "buildA": "PRELIMINARY_ENGINEERING_BYTE_PASS_NOT_FINAL_ACCEPTANCE",
   "buildB": "PRELIMINARY_ENGINEERING_BYTE_PASS_NOT_FINAL_ACCEPTANCE",
@@ -18,7 +18,7 @@
     "path": "checkpoints/R0013/SUBSCRIPTION-NAME-P6.json",
     "sha256": "2b1fe451272dc233e1f8ccd4cc3d6ea2f212ba81e009f93d3a4b9e9b9601577a"
   },
-  "lastResolvedFailure": "checkpoints/R0013/process-failures/FAILURE-P50-WINDOWS-SYNTAX-PIPE-NEWLINES.json",
+  "lastResolvedFailure": "checkpoints/R0013/process-failures/FAILURE-P51-EARLY-S23-EMPTY-RAM-SURVIVOR.json",
   "processPort": {
     "status": "PASS_ISOLATED_LINUX",
     "tests": 33,
@@ -62,7 +62,7 @@
     "path": "checkpoints/R0013/UPSTREAM-PORT-MAP-P2.json",
     "sha256": "009a0f5adae08f399c82510cf680690b4c2e50bc8c659eda9c48d91b5a838121"
   },
-  "nextExactAction": "P52_FIRST_LINUX_EARLY_S23_RECOVERY_AND_FOREIGN_NAMESPACE_NEGATIVES",
+  "nextExactAction": "P53_LEGACY_STATUS_RETIREMENT_WITH_FOREIGN_FILE_REFUSAL_THEN_FULL_PREPARED_APP",
   "versionAndXray": {
     "status": "PASS_VERSION_AND_BOOTSTRAP_INPUT",
     "path": "checkpoints/R0013/UPGRADE-AND-XRAY-P10.json",
@@ -81,7 +81,7 @@
     "path": "RAM-BOOTSTRAP-VALIDATION-P15.json",
     "sha256": "050a4d9b7e8c82194d1e4dd03e6e014031ec1b24d44f06833cc3189d5ca1c33d"
   },
-  "latestCI": "https://github.com/BROadmin/BROray-Light/actions/runs/34542641057",
+  "latestCI": "https://github.com/BROadmin/BROray-Light/actions/runs/34543137488",
   "latestFullComponentRegression": {
     "status": "PASS",
     "commit": "66616c8ccd4efc0fea72218b212a128a1ea91493",
@@ -190,5 +190,11 @@
     "tests": 4,
     "path": "checkpoints/R0013/LIVE-R1-UPDATE-AND-ROLLBACK-P44.json",
     "sha256": "36bb5b328a533a300342ecf88ca605f96b6673e36ad717f3341e06e9f15f2fbb"
+  },
+  "earlyBootAndCleanup": {
+    "status": "PASS_BOUNDED",
+    "tests": 10,
+    "path": "checkpoints/R0013/EARLY-BOOT-AND-CLEANUP-P52.json",
+    "sha256": "5bf063e8632347be480435809f203bcfe3b8434510995f1ea8acae885459dab8"
   }
 }

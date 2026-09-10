@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
   "stage": "R0013",
-  "revision": "p52-exact-old-recover-empty-namespace-survivor",
+  "revision": "p53-retire-legacy-operational-status",
   "files": [
     {
       "path": ".github/workflows/r0013-port-tests.yml",
-      "sizeBytes": 13459,
-      "sha256": "a3a3d6eef9d42dad3a81a0abface36dc0ecbe29f9d56e5dd1e46d9d6791e4b2c"
+      "sizeBytes": 13984,
+      "sha256": "8d9ec8bacb9b7927dd692792d63ab5fc317760eb88c4f57187059b504be52ff3"
     },
     {
       "path": "packaging/r0013-overlay/app/bin/broray-lightd",
@@ -140,8 +140,8 @@
     },
     {
       "path": "packaging/r0013-overlay/shared/lifecycle-r1-recovery.sh",
-      "sizeBytes": 26595,
-      "sha256": "8a92ac7a5537ec7e8ae0acbe6690d99be9593c52e99c2e0c7c43de832e853cc7"
+      "sizeBytes": 26639,
+      "sha256": "5511abdb1d5071ab931d72396bdf0fc4d6e5ed0e1c540929f9fff8bdc6830c1e"
     },
     {
       "path": "packaging/r0013-overlay/shared/lifecycle-r1-runtime-trees.sh",
@@ -170,8 +170,8 @@
     },
     {
       "path": "packaging/r0013-overlay/shared/runtime-ram.sh",
-      "sizeBytes": 6978,
-      "sha256": "9a291fe58ffcff10175c377ffd08fe57255e26203879e30241a626d88787f8e0"
+      "sizeBytes": 11423,
+      "sha256": "3690adf7320f358c862d927fec5bb1d354bcf8fd4ca117a886a1d58129a7cda4"
     },
     {
       "path": "packaging/r0013-overlay/shared/service-process.sh",
@@ -215,8 +215,8 @@
     },
     {
       "path": "packaging/r0013-overlay/system/packaging/opkg/S24broray-light",
-      "sizeBytes": 4426,
-      "sha256": "1abe1169c6dd3bd2908f41d0721fba9ed1222bed910f766ab5e80a5293c2246c"
+      "sizeBytes": 4510,
+      "sha256": "3157da6a4609093a77a56dcc14a9b3a574695103d661a4427ba4227937256119"
     },
     {
       "path": "packaging/r0013-overlay/system/updater/opt/etc/init.d/S23broray-light-updater",
@@ -320,8 +320,8 @@
     },
     {
       "path": "tools/test_r0013_recovery.py",
-      "sizeBytes": 8416,
-      "sha256": "41be7358dc48feeef3cf1d7ef42e58b8236863733155d0d29007d1a72406c8d7"
+      "sizeBytes": 10308,
+      "sha256": "51690986bf74d1a52b5c2a3637f8745ac0292cb04e74263104032387938d3817"
     },
     {
       "path": "tools/test_r0013_runtime_paths.py",

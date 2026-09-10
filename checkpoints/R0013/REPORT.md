@@ -1,4 +1,4 @@
-# BROray-Light 2.0.0 — R0013, checkpoint P52
+# BROray-Light 2.0.0 — R0013, checkpoint P53
 
 `candidateReady=false`, `releaseReady=false`. Публичная версия `2.0.0`, внутренний releaseId `2.0.0-r1`. Релиз не опубликован; роутер, production server и приложение полного BROray не изменялись.
 
@@ -21,7 +21,9 @@ P49: все три задания regression PASS на commit `66616c8ccd4efc0fe
 
 P51: очистка снимков после live rollback и ранний SIGKILL после замены S24 без reboot — PASS на dash. Ранний reboot через старый S23 — FAIL: старый updater создаёт пустой немаркированный work directory; новый recovery отказывает. Ошибка сохранена в `process-failures/FAILURE-P51-EARLY-S23-EMPTY-RAM-SURVIVOR.json`, SHA-256 `21c7e0fdecce1a5019c525a9f2339bd77577932b862a44570a99aad386e69652`. Повторного запуска проваленной ревизии не было.
 
-P52 оставляет этот пустой каталог нетронутым только при подтверждённом живом предке — неизменённом r1 updater `recover`, после разрешённого возврата к r1. Каталог не усыновляется, не маркируется и не удаляется. Добавлены отказы для постороннего вызывающего процесса и постороннего файла. Syntax/AST PASS, первая Linux-проверка ещё ожидается.
+P52: 10 PASS на dash/BusyBox, включая ранний old-S23 reboot и отказы для постороннего вызывающего процесса и постороннего файла. Пустой legacy каталог остаётся нетронутым, не маркируется и не удаляется. Evidence: `EARLY-BOOT-AND-CLEANUP-P52.json`, SHA-256 `5bf063e8632347be480435809f203bcfe3b8434510995f1ea8acae885459dab8`.
+
+P53 добавляет удаление только опознанных старых operational state/ready после успешной миграции, под собственной RAM-блокировкой с записью inode/размера/SHA-256 в durable receipt. Повторный вход S24 удаляет опознанный поздний ready старого S23. Чужой JSON или symlink вызывает отказ без удаления пары. Syntax/AST PASS; первая Linux-проверка ожидается.
 
 ## Build A/B
 

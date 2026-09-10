@@ -397,7 +397,8 @@ brl_recovery_finalize()
         jq -e --arg name "$name" '.runtimeTrees[$name].phase=="active"' "$BRL_R1_JOURNAL" >/dev/null &&
             [ -L "$ROOT/$name" ] && [ "$(readlink "$ROOT/$name")" = "$BRL_RAM/$name" ] || return 1
     done
-    brl_ram_prepare && brl_recovery_retire_transaction && brl_recovery_snapshots_cleanup || return 1
+    brl_ram_prepare && brl_recovery_retire_transaction && brl_recovery_snapshots_cleanup &&
+        brl_legacy_status_retire_guarded || return 1
     brl_r1_ram_save '.coordinator.phase="finalized" | .recovery.phase="finalized"'
 }
 
