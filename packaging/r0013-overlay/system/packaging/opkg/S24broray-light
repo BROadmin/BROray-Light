@@ -1,0 +1,71 @@
+#!/opt/bin/ash
+umask 077
+
+ROOT="${BRORAY_LIGHT_ROOT_PREFIX:-}/opt/broray-light"
+[ "${BRORAY_ROOT:-$ROOT}" = "$ROOT" ] || exit 1
+. "$ROOT/lib/runtime-environment.sh" || exit 1
+. "$ROOT/lib/service-process.sh" || exit 1
+. "$ROOT/lib/xray-process.sh" || exit 1
+BRORAY_XRAY_BINARY="$ROOT/runtime/xray"
+BRORAY_XRAY_CONFIG="$ROOT/config/config.json"
+export BRORAY_XRAY_BINARY BRORAY_XRAY_CONFIG
+WEB_CTL="${BRORAY_LIGHT_ROOT_PREFIX:-}/opt/bin/broray-light-web-publishctl"
+GATE="${BRORAY_LIGHT_ROOT_PREFIX:-}/opt/libexec/broray-light-web-publish/start-gate.sh"
+brl_ram_file_valid "$GATE" 2>/dev/null || {
+    [ -f "$GATE" ] && [ ! -L "$GATE" ] && [ "$(stat -c '%u:%a' "$GATE")" = 0:755 ] || exit 1
+}
+. "$GATE" || exit 1
+
+wait_role()
+{
+    local role i
+    role="$1"; i=0
+    while [ "$i" -lt 5 ]; do
+        brl_service_running "$role" && return 0
+        sleep 1; i=$((i+1))
+    done
+    return 1
+}
+
+start_role()
+{
+    local role rc binary
+    role="$1"; rc=0
+    brl_service_before_start "$role" || rc=$?
+    case "$rc" in 0) return 0 ;; 1) ;; *) return 1 ;; esac
+    case "$role" in
+        web)
+            binary="$(command -v lighttpd)" || return 1
+            "$binary" -f "$ROOT/config/lighttpd.conf" || return 1 ;;
+        daemon) "$ROOT/bin/broray-lightd" >>"$BRL_RAM/logs/broray-lightd.log" 2>&1 & ;;
+        *) return 1 ;;
+    esac
+    wait_role "$role"
+}
+
+start()
+{
+    "$ROOT/bin/broray-runtime-prepare" || return 1
+    # An update normally has an already owned publication. Do not borrow the
+    # updater lock or issue router mutations merely to restart an owned WebUI.
+    "$WEB_CTL" status >/dev/null 2>&1 || broray_light_web_publication_start_gate "$WEB_CTL" || return 1
+    start_role web && start_role daemon
+}
+
+stop()
+{
+    brl_service_stop_role daemon && brl_service_stop_role web && brl_service_stop_role auth || return 1
+    "$ROOT/bin/broray-xray-control" stop >/dev/null 2>&1 || return 1
+    [ -z "$(broray_xray_runtime_pids)" ]
+}
+
+status()
+{
+    brl_service_running daemon && brl_service_running web && "$WEB_CTL" status >/dev/null
+}
+
+case "${1:-}" in
+    start|stop|status) "$1" ;;
+    restart) stop && start ;;
+    *) echo 'Usage: S24broray-light {start|stop|restart|status}' >&2; exit 1 ;;
+esac

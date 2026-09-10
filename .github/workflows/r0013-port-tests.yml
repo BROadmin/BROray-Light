@@ -156,3 +156,27 @@ jobs:
           name: r0013-web-config-${{ github.sha }}
           path: /tmp/r0013-web-config-*.json
           if-no-files-found: ignore
+  isolated-service:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+          fetch-depth: 0
+      - name: Install service fixture dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends busybox dash gcc jq
+      - name: Real S24 and protected RAM publication (dash)
+        run: sudo python3 -B tools/test_r0013_service.py --shell /bin/dash --result /tmp/r0013-service-dash.json
+      - name: Real S24 and protected RAM publication (BusyBox)
+        run: sudo python3 -B tools/test_r0013_service.py --shell /usr/bin/busybox --busybox --busybox-tools --result /tmp/r0013-service-ash.json
+      - name: Preserve service integration evidence including first failure
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: r0013-service-${{ github.sha }}
+          path: /tmp/r0013-service-*.json
+          if-no-files-found: ignore

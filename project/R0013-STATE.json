@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "stage": "R0013_SELECTIVE_UPSTREAM_STABLE_PORT",
   "status": "COMPONENT_RUNTIME_PLATFORM_PASS_LIFECYCLE_INTEGRATION_PENDING",
-  "currentRevision": "p35-web-config-and-ownership-receipt-transaction",
+  "currentRevision": "p36-scoped-service-and-ram-publication-integration",
   "activeFailure": null,
   "publicVersion": "2.0.0",
   "buildA": "PRELIMINARY_ENGINEERING_BYTE_PASS_NOT_FINAL_ACCEPTANCE",
@@ -62,7 +62,7 @@
     "path": "checkpoints/R0013/UPSTREAM-PORT-MAP-P2.json",
     "sha256": "009a0f5adae08f399c82510cf680690b4c2e50bc8c659eda9c48d91b5a838121"
   },
-  "nextExactAction": "VALIDATE_P35_WEB_CONFIG_RECEIPT_THEN_INTEGRATE_REAL_S24_STARTUP",
+  "nextExactAction": "P36_TEST_SCOPED_S24_AND_RAM_PUBLICATION_THEN_WIRE_LEGACY_ENTRY_AND_BOOT_RECOVERY",
   "versionAndXray": {
     "status": "PASS_VERSION_AND_BOOTSTRAP_INPUT",
     "path": "checkpoints/R0013/UPGRADE-AND-XRAY-P10.json",
@@ -81,7 +81,13 @@
     "path": "RAM-BOOTSTRAP-VALIDATION-P15.json",
     "sha256": "050a4d9b7e8c82194d1e4dd03e6e014031ec1b24d44f06833cc3189d5ca1c33d"
   },
-  "latestCI": "https://github.com/BROadmin/BROray-Light/actions/runs/34527153274",
+  "latestCI": "https://github.com/BROadmin/BROray-Light/actions/runs/34528840519",
+  "webConfigTransaction": {
+    "status": "PASS_BOUNDED",
+    "tests": 28,
+    "path": "checkpoints/R0013/WEB-CONFIG-VALIDATION-P35.json",
+    "sha256": "90db5f67cba8d88e286519344ab508ac82268ba774970c085f41687880bf215b"
+  },
   "platformActivationAndRollback": {
     "status": "PASS_BOUNDED",
     "tests": 32,

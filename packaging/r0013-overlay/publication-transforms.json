@@ -1,0 +1,58 @@
+{
+  "stage": "R0013",
+  "revision": "p36-scoped-service-and-ram-publication-integration",
+  "purpose": "Explicit r1 publisher transforms; preserves closed NDMC grammar and policy. Added runtime helper owns invocation scratch and operation fence.",
+  "files": [
+    {
+      "path": "packaging/opkg/broray-light-web-start-gate.sh",
+      "sourceCommit": "9e5fce9bfa7c82bfc2f2654d80fd3987c5259963",
+      "sourceSha256": "aa923584ef449c78b4844ef342d34af9e002f38b36735c2a28c96363d875fe9d",
+      "replacements": [
+        {
+          "old": "    ctl=\"$1\"\n",
+          "new": "    local ctl root attempts delay error_file attempt\n    . \"${BRORAY_LIGHT_ROOT_PREFIX:-}/opt/broray-light/lib/runtime-environment.sh\" || return 1\n    ctl=\"$1\"\n",
+          "count": 1
+        },
+        {
+          "old": "$root/tmp",
+          "new": "$BRL_RAM/tmp",
+          "count": 3
+        }
+      ]
+    },
+    {
+      "path": "packaging/opkg/broray-light-web-network.sh",
+      "sourceCommit": "9e5fce9bfa7c82bfc2f2654d80fd3987c5259963",
+      "sourceSha256": "2989f0d682f2d856933cdb40dd03cade0aab836ebcdad95348fa7841645514aa",
+      "replacements": [
+        {
+          "old": "scratch_root=\"${BRORAY_LIGHT_WEB_TMP_ROOT:-$BRORAY_LIGHT_WEB_ROOT/tmp}\"",
+          "new": "scratch_root=\"${BRORAY_LIGHT_WEB_TMP_ROOT:?private publication scratch required}\"",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "path": "packaging/opkg/broray-light-web-publish.sh",
+      "sourceCommit": "9e5fce9bfa7c82bfc2f2654d80fd3987c5259963",
+      "sourceSha256": "5fb82d54cba7515c7853f74cef8c473a6e3349e8eec4fd87e2cdaed922ea9664",
+      "replacements": [
+        {
+          "old": "#!/opt/bin/ash\n",
+          "new": "#!/opt/bin/ash\n. \"${BRORAY_LIGHT_ROOT_PREFIX:-}/opt/broray-light/lib/web-publication-environment.sh\" || exit 1\n",
+          "count": 1
+        },
+        {
+          "old": "$APP_ROOT/tmp",
+          "new": "$BRL_WEB_WORK",
+          "count": 13
+        },
+        {
+          "old": "BASELINE_CONFIG_SHA256='3ec7dcbead6bb22f5c97ceb01c7aa64a11f6d6b9f07b1d593b7ba8152737bf80'",
+          "new": "BASELINE_CONFIG_SHA256='b6966860dbe7f074aebe195f956d4fd572666c943b716803fd9422a40ec0420b'",
+          "count": 1
+        }
+      ]
+    }
+  ]
+}

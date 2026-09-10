@@ -1,0 +1,303 @@
+{
+  "stage": "R0013",
+  "revision": "p35-web-config-and-ownership-receipt-transaction",
+  "status": "PASS_BOUNDED",
+  "candidateReady": false,
+  "routerTouched": false,
+  "testsPassed": 28,
+  "ci": {
+    "url": "https://github.com/BROadmin/BROray-Light/actions/runs/34528840519",
+    "commit": "2d3d355b19ca5cbc58b12d0a4ba1fb39dac05102",
+    "conclusion": "success",
+    "artifactId": 10172773028,
+    "artifactSha256": "8374d486f606fb0c398fd93fea5ee92e87a30cfd2802d8c093fb26ae6ae9e39d"
+  },
+  "reports": {
+    "r0013-web-config-ash.json": {
+      "report": {
+        "stage": "R0013",
+        "revision": "p35-web-config-and-ownership-receipt-transaction",
+        "status": "PASS_CONFIG_AND_RECEIPT_TRANSACTION",
+        "scope": "Real r1 updater, exact config/receipt bytes and journaled pair replacement; service boundary mocked",
+        "sourceSha256": "ae8f091a44d63b92de1ab9f3bdc322d30d82ae70fd3412f580c0621af17e41a9",
+        "shell": [
+          "/usr/bin/busybox",
+          "ash"
+        ],
+        "utilities": "BusyBox applets",
+        "tests": [
+          {
+            "name": "activate-restore",
+            "status": "PASS",
+            "callback": {
+              "returncode": 0,
+              "stderr": "",
+              "phase": "exact-config-and-receipt-restored"
+            }
+          },
+          {
+            "name": "missing-owner",
+            "status": "PASS",
+            "callback": {
+              "returncode": 1,
+              "stderr": "BRORAY_LIGHT_MIGRATION_REFUSED:WEB_CONFIG_OWNERSHIP\n",
+              "phase": "refused-before-config-write"
+            }
+          },
+          {
+            "name": "owner-sha-mismatch",
+            "status": "PASS",
+            "callback": {
+              "returncode": 1,
+              "stderr": "BRORAY_LIGHT_MIGRATION_REFUSED:WEB_CONFIG_OWNERSHIP\n",
+              "phase": "refused-before-config-write"
+            }
+          },
+          {
+            "name": "duplicate-pid-directive",
+            "status": "PASS",
+            "callback": {
+              "returncode": 1,
+              "stderr": "BRORAY_LIGHT_MIGRATION_REFUSED:WEB_CONFIG_OWNERSHIP\n",
+              "phase": "refused-before-config-write"
+            }
+          },
+          {
+            "name": "config-symlink",
+            "status": "PASS",
+            "callback": {
+              "returncode": 1,
+              "stderr": "BRORAY_LIGHT_MIGRATION_REFUSED:WEB_CONFIG_OWNERSHIP\n",
+              "phase": "refused-before-config-write"
+            }
+          },
+          {
+            "name": "foreign-stage",
+            "status": "PASS",
+            "callback": {
+              "returncode": 0,
+              "stderr": "",
+              "phase": "exact-config-and-receipt-restored"
+            }
+          },
+          {
+            "name": "partial-Config-resume",
+            "status": "PASS",
+            "callback": {
+              "returncode": 0,
+              "stderr": "",
+              "phase": "exact-config-and-receipt-restored"
+            }
+          },
+          {
+            "name": "partial-Config-rollback",
+            "status": "PASS",
+            "callback": {
+              "returncode": 0,
+              "stderr": "",
+              "phase": "exact-config-and-receipt-restored"
+            }
+          },
+          {
+            "name": "partial-Owner-resume",
+            "status": "PASS",
+            "callback": {
+              "returncode": 0,
+              "stderr": "",
+              "phase": "exact-config-and-receipt-restored"
+            }
+          },
+          {
+            "name": "partial-Owner-rollback",
+            "status": "PASS",
+            "callback": {
+              "returncode": 0,
+              "stderr": "",
+              "phase": "exact-config-and-receipt-restored"
+            }
+          },
+          {
+            "name": "staged-Config-resume",
+            "status": "PASS",
+            "callback": {
+              "returncode": 0,
+              "stderr": "",
+              "phase": "exact-config-and-receipt-restored"
+            }
+          },
+          {
+            "name": "staged-Config-rollback",
+            "status": "PASS",
+            "callback": {
+              "returncode": 0,
+              "stderr": "",
+              "phase": "exact-config-and-receipt-restored"
+            }
+          },
+          {
+            "name": "staged-Owner-resume",
+            "status": "PASS",
+            "callback": {
+              "returncode": 0,
+              "stderr": "",
+              "phase": "exact-config-and-receipt-restored"
+            }
+          },
+          {
+            "name": "staged-Owner-rollback",
+            "status": "PASS",
+            "callback": {
+              "returncode": 0,
+              "stderr": "",
+              "phase": "exact-config-and-receipt-restored"
+            }
+          }
+        ]
+      },
+      "sha256": "7bb435b6a19b5e7a65772ae0f41688b5796b5f93b7904a6d9b0907a4cd2982ba"
+    },
+    "r0013-web-config-dash.json": {
+      "report": {
+        "stage": "R0013",
+        "revision": "p35-web-config-and-ownership-receipt-transaction",
+        "status": "PASS_CONFIG_AND_RECEIPT_TRANSACTION",
+        "scope": "Real r1 updater, exact config/receipt bytes and journaled pair replacement; service boundary mocked",
+        "sourceSha256": "ae8f091a44d63b92de1ab9f3bdc322d30d82ae70fd3412f580c0621af17e41a9",
+        "shell": [
+          "/bin/dash"
+        ],
+        "utilities": "host utilities",
+        "tests": [
+          {
+            "name": "activate-restore",
+            "status": "PASS",
+            "callback": {
+              "returncode": 0,
+              "stderr": "",
+              "phase": "exact-config-and-receipt-restored"
+            }
+          },
+          {
+            "name": "missing-owner",
+            "status": "PASS",
+            "callback": {
+              "returncode": 1,
+              "stderr": "BRORAY_LIGHT_MIGRATION_REFUSED:WEB_CONFIG_OWNERSHIP\n",
+              "phase": "refused-before-config-write"
+            }
+          },
+          {
+            "name": "owner-sha-mismatch",
+            "status": "PASS",
+            "callback": {
+              "returncode": 1,
+              "stderr": "BRORAY_LIGHT_MIGRATION_REFUSED:WEB_CONFIG_OWNERSHIP\n",
+              "phase": "refused-before-config-write"
+            }
+          },
+          {
+            "name": "duplicate-pid-directive",
+            "status": "PASS",
+            "callback": {
+              "returncode": 1,
+              "stderr": "BRORAY_LIGHT_MIGRATION_REFUSED:WEB_CONFIG_OWNERSHIP\n",
+              "phase": "refused-before-config-write"
+            }
+          },
+          {
+            "name": "config-symlink",
+            "status": "PASS",
+            "callback": {
+              "returncode": 1,
+              "stderr": "BRORAY_LIGHT_MIGRATION_REFUSED:WEB_CONFIG_OWNERSHIP\n",
+              "phase": "refused-before-config-write"
+            }
+          },
+          {
+            "name": "foreign-stage",
+            "status": "PASS",
+            "callback": {
+              "returncode": 0,
+              "stderr": "",
+              "phase": "exact-config-and-receipt-restored"
+            }
+          },
+          {
+            "name": "partial-Config-resume",
+            "status": "PASS",
+            "callback": {
+              "returncode": 0,
+              "stderr": "",
+              "phase": "exact-config-and-receipt-restored"
+            }
+          },
+          {
+            "name": "partial-Config-rollback",
+            "status": "PASS",
+            "callback": {
+              "returncode": 0,
+              "stderr": "",
+              "phase": "exact-config-and-receipt-restored"
+            }
+          },
+          {
+            "name": "partial-Owner-resume",
+            "status": "PASS",
+            "callback": {
+              "returncode": 0,
+              "stderr": "",
+              "phase": "exact-config-and-receipt-restored"
+            }
+          },
+          {
+            "name": "partial-Owner-rollback",
+            "status": "PASS",
+            "callback": {
+              "returncode": 0,
+              "stderr": "",
+              "phase": "exact-config-and-receipt-restored"
+            }
+          },
+          {
+            "name": "staged-Config-resume",
+            "status": "PASS",
+            "callback": {
+              "returncode": 0,
+              "stderr": "",
+              "phase": "exact-config-and-receipt-restored"
+            }
+          },
+          {
+            "name": "staged-Config-rollback",
+            "status": "PASS",
+            "callback": {
+              "returncode": 0,
+              "stderr": "",
+              "phase": "exact-config-and-receipt-restored"
+            }
+          },
+          {
+            "name": "staged-Owner-resume",
+            "status": "PASS",
+            "callback": {
+              "returncode": 0,
+              "stderr": "",
+              "phase": "exact-config-and-receipt-restored"
+            }
+          },
+          {
+            "name": "staged-Owner-rollback",
+            "status": "PASS",
+            "callback": {
+              "returncode": 0,
+              "stderr": "",
+              "phase": "exact-config-and-receipt-restored"
+            }
+          }
+        ]
+      },
+      "sha256": "a2fcc3b69696f26adb4c5f9d2ac8fcce58ce3d8550facb93f156e0127bc4bab4"
+    }
+  },
+  "limits": "Service boundary mocked; this is not complete r1 startup/boot or release acceptance."
+}

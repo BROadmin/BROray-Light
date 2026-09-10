@@ -36,7 +36,7 @@ def compile_runtime(app):
         result[name] = (payload, mode)
         evidence.append(dict(path=name, sourceSha256=item['sourceSha256'], sha256=hashlib.sha256(payload).hexdigest(), guard=item['guard']))
     # A single source owns application/updater namespace and lock semantics.
-    for name in ('runtime-ram.sh', 'runtime-environment.sh', 'operation-lock.sh'):
+    for name in ('runtime-ram.sh', 'runtime-environment.sh', 'operation-lock.sh', 'service-process.sh', 'web-publication-environment.sh'):
         result['lib/'+name] = ((ROOT / 'shared' / name).read_bytes(), 0o755)
     result['bin/broray-runtime-prepare'] = ((ROOT / 'shared/runtime-prepare.sh').read_bytes(), 0o755)
     # This invariant specifically protects the P33 false match of run/runtime.

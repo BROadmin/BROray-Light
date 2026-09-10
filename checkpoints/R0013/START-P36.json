@@ -1,0 +1,14 @@
+{
+  "stage": "R0013",
+  "revision": "p36-scoped-service-and-ram-publication-integration",
+  "status": "CHECKPOINT_BEFORE_IMPLEMENTATION",
+  "scope": "Integrate protected RAM paths into external S24 and publication scripts; exact process identities for Light daemon, lighttpd and native-auth sidecar. Preserve closed publication policy and native-auth contract. Follow with complete legacy entry/rollback driver.",
+  "invariants": [
+    "Never signal a foreign process or a substring-only match",
+    "Stop native-auth sidecar as part of service quiescence",
+    "No operational scratch under /opt",
+    "External platform payload and package bytes agree",
+    "No router or production mutation"
+  ],
+  "candidateReady": false
+}

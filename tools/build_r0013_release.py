@@ -131,7 +131,7 @@ def build(output, platform, archive, digest):
     source = base.verify_source(inputs.REPO)
     app = prepared_app()
     runtime_transformed = {row['path'] for row in json.loads(app['share/lifecycle/RUNTIME-PATH-MANIFEST.json'][0])['files']}
-    runtime_transformed.update(('lib/runtime-ram.sh', 'lib/runtime-environment.sh', 'lib/operation-lock.sh', 'bin/broray-runtime-prepare', 'share/lifecycle/RUNTIME-PATH-MANIFEST.json'))
+    runtime_transformed.update(('lib/runtime-ram.sh', 'lib/runtime-environment.sh', 'lib/operation-lock.sh', 'lib/service-process.sh', 'lib/web-publication-environment.sh', 'bin/broray-runtime-prepare', 'share/lifecycle/RUNTIME-PATH-MANIFEST.json'))
     base.source_app_files = lambda repo, modes: [("app/" + name, data, mode) for name, (data, mode) in sorted(app.items())]
     minisign, xray = verify_external(platform, archive, digest)
     rows = [dict(path="build-input/bootstrap-ram.sh", sha256=sha(bootstrap_helper),
