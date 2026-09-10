@@ -82,8 +82,8 @@
     },
     {
       "gate": "isolated_update_from_r1",
-      "status": "PENDING_FULL_LIFECYCLE_COMPONENTS_PASS",
-      "evidence": "process-failures/FAILURE-P16-PERSISTENT-LOCK-DOMAIN.json"
+      "status": "PASS_BOUNDED_REAL_R1_ENGINE_AND_S24_DASH_FULL_CANDIDATE_PENDING",
+      "evidence": "process-failures/FAILURE-P42-LIVE-FIXTURE-TMPFS-BUSY.json"
     },
     {
       "gate": "isolated_equal_version",
@@ -108,17 +108,17 @@
     {
       "gate": "independent_build_a",
       "status": "PASS_PRELIMINARY_LOCAL_NOT_FINAL_ACCEPTANCE",
-      "evidence": "SERVICE-AND-BUILDS-P37.json"
+      "evidence": "RUNTIME-TREES-AND-BUILDS-P40.json"
     },
     {
       "gate": "independent_build_b",
       "status": "PASS_PRELIMINARY_LOCAL_NOT_FINAL_ACCEPTANCE",
-      "evidence": "SERVICE-AND-BUILDS-P37.json"
+      "evidence": "RUNTIME-TREES-AND-BUILDS-P40.json"
     },
     {
       "gate": "a_b_byte_reproducibility",
       "status": "PASS_PRELIMINARY_LOCAL_NOT_FINAL_ACCEPTANCE",
-      "evidence": "SERVICE-AND-BUILDS-P37.json"
+      "evidence": "RUNTIME-TREES-AND-BUILDS-P40.json"
     },
     {
       "gate": "existing_trust_root_signing",
@@ -153,12 +153,12 @@
     {
       "gate": "engineering_package_structure_hashes_and_modes",
       "status": "PASS",
-      "evidence": "SERVICE-AND-BUILDS-P37.json"
+      "evidence": "RUNTIME-TREES-AND-BUILDS-P40.json"
     },
     {
       "gate": "preexisting_r0012_preservation",
       "status": "PASS_502_FILES_WITH_THREE_EXPLICIT_ROUTING_LOG_EXCEPTIONS",
-      "evidence": "R0012-PRESERVATION-P37.json"
+      "evidence": "R0012-PRESERVATION-P43.json"
     },
     {
       "gate": "shared_ram_namespace_and_locks",
@@ -212,15 +212,25 @@
     },
     {
       "gate": "coordinated_service_start_and_boot_rollback",
-      "status": "NOT_IMPLEMENTED",
-      "evidence": null
+      "status": "LIVE_ENTRY_IMPLEMENTED_ROLLBACK_PENDING_BOOT_NOT_IMPLEMENTED",
+      "evidence": "SOURCE-INPUTS-P41.json"
     },
     {
       "gate": "scoped_s24_and_private_ram_publication",
-      "status": "PASS_REAL_S24_PROCESSES_MOCK_DAEMON_AND_KEENETIC",
-      "evidence": "SERVICE-AND-BUILDS-P37.json"
+      "status": "PASS_BOUNDED_P39_CURRENT_ENTRY_EXTENSION_PENDING",
+      "evidence": "ACTUAL-DAEMON-VALIDATION-P39.json"
+    },
+    {
+      "gate": "legacy_runtime_tree_ram_handoff_and_byte_rollback",
+      "status": "PASS_BOUNDED_REAL_CROSS_FILESYSTEM_DASH_BUSYBOX",
+      "evidence": "RUNTIME-TREES-AND-BUILDS-P40.json"
+    },
+    {
+      "gate": "actual_lighttpd_nginx_pid_and_stop_contract",
+      "status": "PASS_BOUNDED_REAL_LINUX_DAEMONS",
+      "evidence": "ACTUAL-DAEMON-VALIDATION-P39.json"
     }
   ],
   "releaseId": "2.0.0-r1",
-  "currentRevision": "p37-preserve-publication-failure-through-cleanup"
+  "currentRevision": "p43-live-fixture-tmpfs-reference-drain"
 }
