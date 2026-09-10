@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "stage": "R0013_SELECTIVE_UPSTREAM_STABLE_PORT",
   "status": "UPDATER_RAM_PLATFORM_BOUNDED_PASS_MIGRATION_IN_PROGRESS",
-  "currentRevision": "p28-r1-ram-namespace-transaction",
+  "currentRevision": "p29-manifest-bound-platform-transaction",
   "activeFailure": null,
   "publicVersion": "2.0.0",
   "buildA": "PRELIMINARY_ENGINEERING_BYTE_PASS_NOT_FINAL_ACCEPTANCE",
@@ -62,7 +62,7 @@
     "path": "checkpoints/R0013/UPSTREAM-PORT-MAP-P2.json",
     "sha256": "009a0f5adae08f399c82510cf680690b4c2e50bc8c659eda9c48d91b5a838121"
   },
-  "nextExactAction": "P28_IMPLEMENT_AND_TEST_RAM_NAMESPACE_HANDOFF_AND_ROLLBACK_THEN_INTEGRATE_APP_AND_EXTERNAL_PLATFORM_MIGRATION",
+  "nextExactAction": "P29_TEST_MANIFEST_BOUND_EXTERNAL_PLATFORM_ACTIVATION_AND_ROLLBACK_THEN_INTEGRATE_APPLICATION_RUNTIME",
   "versionAndXray": {
     "status": "PASS_VERSION_AND_BOOTSTRAP_INPUT",
     "path": "checkpoints/R0013/UPGRADE-AND-XRAY-P10.json",
@@ -81,7 +81,8 @@
     "path": "RAM-BOOTSTRAP-VALIDATION-P15.json",
     "sha256": "050a4d9b7e8c82194d1e4dd03e6e014031ec1b24d44f06833cc3189d5ca1c33d"
   },
-  "latestCI": "https://github.com/BROadmin/BROray-Light/actions/runs/34521690740",
+  "latestCI": "https://github.com/BROadmin/BROray-Light/actions/runs/34523660105",
+  "ramNamespaceHandoff": {"status":"PASS_BOUNDED", "tests":20, "path":"checkpoints/R0013/R1-RAM-VALIDATION-P28.json", "sha256":"1653a3c24470b78b054458960a96c5b7867d2d19beba520c3ebcd11bd8f4d25b"},
   "exactR1WebuiAndJournal": {"status":"PASS_BOUNDED", "tests":42, "path":"checkpoints/R0013/R1-WEBUI-AND-JOURNAL-P27.json", "sha256":"70e8f9bba41a7e3ee82afd553c243d8ced134de5e2842b421ad8568061988f41"},
   "exactR1Admission": {"status":"PASS_READ_ONLY_ADMISSION", "tests":20, "path":"checkpoints/R0013/R1-ADMISSION-VALIDATION-P24.json", "sha256":"63e0f405c1821f5266dfb5534322129af32dd8002143577ef73563051caa737c"},
   "updaterPlatformAndBuilds": {"status":"PASS_BOUNDED_PLATFORM_AND_PRELIMINARY_BUILDS", "path":"checkpoints/R0013/UPDATER-PLATFORM-AND-BUILDS-P23.json", "sha256":"1c93335dbee1d6313935781f62d3fd681015ed2e323ca473abc5c162000148f5"},

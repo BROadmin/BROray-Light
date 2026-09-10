@@ -9,6 +9,7 @@ on:
       - 'tools/test_r0013*.py'
       - 'tools/test_r0013*.js'
       - 'tools/r0013_inputs.py'
+      - 'tools/r0013_platform.py'
       - 'tools/r0013_busybox_fixture.py'
       - 'tools/build_r0013_release.py'
   workflow_dispatch:
@@ -109,4 +110,15 @@ jobs:
         with:
           name: r0013-r1-ram-${{ github.sha }}
           path: /tmp/r0013-r1-ram-*.json
+          if-no-files-found: ignore
+      - name: Manifest-bound external platform activation and restore (dash)
+        run: sudo python3 -B tools/test_r0013_platform.py --shell /bin/dash --result /tmp/r0013-platform-dash.json
+      - name: Manifest-bound external platform activation and restore (BusyBox)
+        run: sudo python3 -B tools/test_r0013_platform.py --shell /usr/bin/busybox --busybox --busybox-tools --result /tmp/r0013-platform-ash.json
+      - name: Preserve external platform transaction evidence including first failure
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: r0013-platform-${{ github.sha }}
+          path: /tmp/r0013-platform-*.json
           if-no-files-found: ignore

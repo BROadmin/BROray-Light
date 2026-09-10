@@ -1,0 +1,223 @@
+{
+  "stage": "R0013",
+  "revision": "p28-r1-ram-namespace-transaction",
+  "status": "PASS_RAM_NAMESPACE_HANDOFF_AND_RESTORE",
+  "commit": "54e1a1677a2d7b547fa682e9ce02768a1a589411",
+  "ci": "https://github.com/BROadmin/BROray-Light/actions/runs/34523660105",
+  "testsPassed": 20,
+  "evidence": {
+    "r0013-r1-ram-ash.json": {
+      "report": {
+        "stage": "R0013",
+        "revision": "p28-r1-ram-namespace-transaction",
+        "scope": "REAL_R1_ENGINE_LIVE_RAM_HANDOFF_FIXTURE_APP_SERVICE",
+        "engineSha256": "773aaf37893ab100e7023d63c8061d8c4763a4d6186844bb3b671d758c145743",
+        "handoffSha256": "5d005be9f259708824808e7fdfeb3ceaa03241b16f01de394a8e56ae7a8e3268",
+        "shell": [
+          "/usr/bin/busybox",
+          "ash"
+        ],
+        "utilities": "BusyBox applets",
+        "tests": [
+          {
+            "name": "commit",
+            "status": "PASS",
+            "callback": {
+              "returncode": 0,
+              "stderr": "",
+              "phase": "ready"
+            }
+          },
+          {
+            "name": "rollback",
+            "status": "PASS",
+            "callback": {
+              "returncode": 0,
+              "stderr": "",
+              "phase": "restored"
+            }
+          },
+          {
+            "name": "extra-old-file",
+            "status": "PASS",
+            "callback": {
+              "returncode": 1,
+              "stderr": "BRORAY_LIGHT_MIGRATION_REFUSED:LEGACY_WORK_SHAPE\n"
+            }
+          },
+          {
+            "name": "foreign-app-namespace",
+            "status": "PASS",
+            "callback": {
+              "returncode": 1,
+              "stderr": "BRORAY_LIGHT_MIGRATION_REFUSED:RAM_NAMESPACE\n"
+            }
+          },
+          {
+            "name": "refuse-backup-tamper",
+            "status": "PASS",
+            "callback": {
+              "returncode": 0,
+              "stderr": "",
+              "phase": "restored"
+            }
+          },
+          {
+            "name": "refuse-new-symlink",
+            "status": "PASS",
+            "callback": {
+              "returncode": 0,
+              "stderr": "",
+              "phase": "restored"
+            }
+          },
+          {
+            "name": "refuse-new-operation",
+            "status": "PASS",
+            "callback": {
+              "returncode": 0,
+              "stderr": "",
+              "phase": "restored"
+            }
+          },
+          {
+            "name": "refuse-private-owner",
+            "status": "PASS",
+            "callback": {
+              "returncode": 0,
+              "stderr": "",
+              "phase": "restored"
+            }
+          },
+          {
+            "name": "resume-old-moved",
+            "status": "PASS",
+            "callback": {
+              "returncode": 0,
+              "stderr": "",
+              "phase": "restored"
+            }
+          },
+          {
+            "name": "resume-restoring",
+            "status": "PASS",
+            "callback": {
+              "returncode": 0,
+              "stderr": "",
+              "phase": "restored"
+            }
+          }
+        ],
+        "status": "PASS_RAM_NAMESPACE_HANDOFF_AND_RESTORE"
+      },
+      "sha256": "251479ddbce5d8bfbc038dc4661e0b16a48cc01aed6cccff3f0ba84929e4930a"
+    },
+    "r0013-r1-ram-dash.json": {
+      "report": {
+        "stage": "R0013",
+        "revision": "p28-r1-ram-namespace-transaction",
+        "scope": "REAL_R1_ENGINE_LIVE_RAM_HANDOFF_FIXTURE_APP_SERVICE",
+        "engineSha256": "773aaf37893ab100e7023d63c8061d8c4763a4d6186844bb3b671d758c145743",
+        "handoffSha256": "5d005be9f259708824808e7fdfeb3ceaa03241b16f01de394a8e56ae7a8e3268",
+        "shell": [
+          "/bin/dash"
+        ],
+        "utilities": "host utilities",
+        "tests": [
+          {
+            "name": "commit",
+            "status": "PASS",
+            "callback": {
+              "returncode": 0,
+              "stderr": "",
+              "phase": "ready"
+            }
+          },
+          {
+            "name": "rollback",
+            "status": "PASS",
+            "callback": {
+              "returncode": 0,
+              "stderr": "",
+              "phase": "restored"
+            }
+          },
+          {
+            "name": "extra-old-file",
+            "status": "PASS",
+            "callback": {
+              "returncode": 1,
+              "stderr": "BRORAY_LIGHT_MIGRATION_REFUSED:LEGACY_WORK_SHAPE\n"
+            }
+          },
+          {
+            "name": "foreign-app-namespace",
+            "status": "PASS",
+            "callback": {
+              "returncode": 1,
+              "stderr": "BRORAY_LIGHT_MIGRATION_REFUSED:RAM_NAMESPACE\n"
+            }
+          },
+          {
+            "name": "refuse-backup-tamper",
+            "status": "PASS",
+            "callback": {
+              "returncode": 0,
+              "stderr": "",
+              "phase": "restored"
+            }
+          },
+          {
+            "name": "refuse-new-symlink",
+            "status": "PASS",
+            "callback": {
+              "returncode": 0,
+              "stderr": "",
+              "phase": "restored"
+            }
+          },
+          {
+            "name": "refuse-new-operation",
+            "status": "PASS",
+            "callback": {
+              "returncode": 0,
+              "stderr": "",
+              "phase": "restored"
+            }
+          },
+          {
+            "name": "refuse-private-owner",
+            "status": "PASS",
+            "callback": {
+              "returncode": 0,
+              "stderr": "",
+              "phase": "restored"
+            }
+          },
+          {
+            "name": "resume-old-moved",
+            "status": "PASS",
+            "callback": {
+              "returncode": 0,
+              "stderr": "",
+              "phase": "restored"
+            }
+          },
+          {
+            "name": "resume-restoring",
+            "status": "PASS",
+            "callback": {
+              "returncode": 0,
+              "stderr": "",
+              "phase": "restored"
+            }
+          }
+        ],
+        "status": "PASS_RAM_NAMESPACE_HANDOFF_AND_RESTORE"
+      },
+      "sha256": "782e92b5035c0e4771152c883c05c821fd52dac42fc68f1d353db4d7e2969637"
+    }
+  },
+  "candidateReady": false,
+  "routerTouched": false
+}

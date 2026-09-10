@@ -18,6 +18,7 @@ import zipfile
 import tarfile
 
 import r0013_inputs as inputs
+import r0013_platform
 
 PUBLIC_VERSION = "2.0.0"
 RELEASE_ID = "2.0.0-r1"
@@ -67,6 +68,14 @@ def primitives():
 
 def prepared_app():
     app = inputs.app_inputs()
+    for name, content in r0013_platform.payload().items():
+        assert name not in app, 'platform payload collides with application input'
+        app[name] = content
+    for name in ('runtime-ram.sh', 'lifecycle-r1-admission.sh', 'lifecycle-r1-journal.sh',
+                 'lifecycle-r1-ram.sh', 'lifecycle-r1-platform.sh'):
+        target = 'share/lifecycle/helpers/'+name
+        assert target not in app
+        app[target] = ((inputs.REPO / 'packaging/r0013-overlay/shared' / name).read_bytes(), 0o644)
     for relative, (payload, mode) in list(app.items()):
         if relative.startswith("web-new/") and relative.endswith((".js", ".html", ".cgi", ".sh")):
             payload = payload.replace(b"?v=1.0.0-r1-r0010", ("?v=" + CACHE_TOKEN).encode())
@@ -126,7 +135,8 @@ def build(output, platform, archive, digest):
                  sizeBytes=len(bootstrap_helper), mode="0o644", origin="R0013-overlay")]
     for name, (data, mode) in sorted(app.items()):
         rows.append(dict(path="app/" + name, sha256=sha(data), sizeBytes=len(data), mode=oct(mode),
-                         origin="R0013-overlay" if (inputs.REPO / "packaging/r0013-overlay/app" / name).is_file()
+                         origin="R0013-manifest-bound-platform" if name.startswith('share/lifecycle/')
+                         else "R0013-overlay" if (inputs.REPO / "packaging/r0013-overlay/app" / name).is_file()
                          else "accepted-r1-git"))
     with tempfile.TemporaryDirectory(prefix="broray-light-r0013-build-") as temporary:
         tree = Path(temporary)

@@ -1,0 +1,21 @@
+{
+  "stage": "R0013",
+  "revision": "p29-manifest-bound-platform-transaction",
+  "status": "CHECKPOINT_BEFORE_IMPLEMENTATION",
+  "scope": "Deliver external updater/init platform files and their exact accepted-r1 rollback bytes in the signed application slot; activate and restore only targets bound by the installed slot manifest and a durable transaction receipt",
+  "invariants": [
+    "Do not change BROray or router during isolated work",
+    "No production signing key in local workspace",
+    "No shell evaluation of manifest-provided paths",
+    "Explicit target allowlist",
+    "Verify every original target before replacing any",
+    "Durable verified adjacent installed file targets are not download scratch",
+    "Refuse unknown files rather than overwrite"
+  ],
+  "candidateReady": false,
+  "notIncludedYet": [
+    "Application RAM path migration",
+    "Full service startup integration",
+    "Target acceptance"
+  ]
+}
