@@ -1,0 +1,13 @@
+{
+  "stage": "R0013",
+  "revision": "p38-real-web-daemon-identity-before-runtime-migration",
+  "status": "CHECKPOINT_BEFORE_VALIDATION",
+  "scope": "Validate P37 scoped stop against actual Linux lighttpd and nginx, including daemon-written PID permissions and nginx rewritten process title, before legacy runtime data migration. Private mounted tmpfs only.",
+  "upstreamEvidence": [
+    "https://raw.githubusercontent.com/nginx/nginx/master/src/os/unix/ngx_setproctitle.c",
+    "https://raw.githubusercontent.com/nginx/nginx/master/src/os/unix/ngx_process_cycle.c"
+  ],
+  "candidateReady": false,
+  "routerTouched": false,
+  "nextAfterPass": "Legacy runtime data handoff, exact r1 entry/rollback coordinator and boot recovery."
+}

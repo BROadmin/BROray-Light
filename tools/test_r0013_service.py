@@ -8,6 +8,7 @@ from pathlib import Path
 import shlex
 import shutil
 import signal
+import socket
 import subprocess
 import tempfile
 import time
@@ -153,7 +154,9 @@ class Fixture:
         for p in Path('/proc').glob('[0-9]*/cmdline'):
             try:
                 args=p.read_bytes().split(b'\0')
-                if any(a.startswith(str(self.root).encode()+b'/') for a in args):os.kill(int(p.parent.name),signal.SIGKILL)
+                executable=os.readlink(p.parent/'exe') if (p.parent/'exe').exists() else ''
+                if any(a.startswith(str(self.root).encode()+b'/') for a in args) or executable.startswith(str(self.root)+'/'):
+                    os.kill(int(p.parent.name),signal.SIGKILL)
             except (OSError,ProcessLookupError):pass
         for child in self.children:
             try:child.wait(timeout=3)
@@ -164,6 +167,34 @@ class Fixture:
 
 
 def cases():
+    for role in ('web','auth'):
+        def actual_daemon(f,role=role):
+            program=shutil.which('lighttpd' if role=='web' else 'nginx',path=os.environ['PATH'])
+            assert program,'Actual daemon dependency unavailable: '+role
+            if role=='web':
+                binary=f.web;config=f.app/'config/lighttpd.conf';pidfile=f.ram/'run/lighttpd.pid'
+                with socket.socket() as sock:
+                    sock.bind(('127.0.0.1',0));port=sock.getsockname()[1]
+                text=f'server.document-root = "{f.app}"\nserver.bind = "127.0.0.1"\nserver.port = {port}\nserver.pid-file = "{pidfile}"\nserver.errorlog = "{f.ram}/logs/real-lighttpd.log"\n'
+                argv=['-f',str(config)]
+            else:
+                binary=f.ram/'run/web-new/native-auth/broray-ndm-auth-nginx';config=binary.with_name('nginx.conf');pidfile=binary.with_name('nginx.pid')
+                text=f'worker_processes 1;\npid {pidfile};\nerror_log {f.ram}/logs/real-nginx.log notice;\nevents {{ worker_connections 16; }}\n'
+                argv=['-p','/','-c',str(config)]
+            f.write(binary,Path(program).read_bytes(),0o755);f.write(config,text.encode(),0o600)
+            launched=subprocess.run([str(binary),*argv],env=f.env,capture_output=True,text=True,timeout=10)
+            assert launched.returncode==0,launched.stderr
+            deadline=time.monotonic()+3
+            while not pidfile.exists() and time.monotonic()<deadline:time.sleep(.02)
+            assert pidfile.is_file(),'Actual daemon did not create PID file'
+            pid=pidfile.read_text().strip()
+            detail=dict(role=role,pidMode=oct(pidfile.stat().st_mode&0o777),cmdline=Path('/proc',pid,'cmdline').read_bytes().decode('utf-8','backslashreplace'))
+            try:
+                f.call('brl_service_identity '+role+' '+pid)
+                f.call('brl_service_stop_role '+role)
+            except AssertionError as error:raise AssertionError(json.dumps(detail)+' '+str(error))
+            assert not pidfile.exists(),'PID file was not retired after actual daemon stop'
+        yield 'actual-linux-daemon-'+role,actual_daemon
     for mode in ('status-before-publication','invalid-action','ambiguous-lan'):
         def negative(f,mode=mode):
             action='status' if mode=='status-before-publication' else 'invalid' if mode=='invalid-action' else 'ensure'
@@ -253,8 +284,8 @@ def main():
                 records.append(dict(name=name,status='FAIL',error=str(error)));failed=True;break
             finally:
                 if fixture:fixture.close()
-    report=dict(stage='R0013',revision='p37-preserve-publication-failure-through-cleanup',status='FAIL_FIRST_ERROR' if failed else 'PASS_SCOPED_SERVICE_AND_PUBLICATION',shell=shell,tests=records,
-                scope='Real S24, publication and Linux processes/private tmpfs; daemon loop, Xray and Keenetic commands mocked. Not full r1/boot acceptance.',sourceSha256={str(p.relative_to(REPO)):hashlib.sha256(p.read_bytes()).hexdigest() for p in (SERVICE,PROCESS)})
+    report=dict(stage='R0013',revision='p38-real-web-daemon-identity-before-runtime-migration',status='FAIL_FIRST_ERROR' if failed else 'PASS_SCOPED_SERVICE_AND_PUBLICATION',shell=shell,tests=records,
+                scope='Actual lighttpd/nginx and real S24/publication/private tmpfs; application daemon loop, Xray and Keenetic commands mocked. Not full r1/boot acceptance.',sourceSha256={str(p.relative_to(REPO)):hashlib.sha256(p.read_bytes()).hexdigest() for p in (SERVICE,PROCESS)})
     payload=(json.dumps(report,indent=2)+'\n').encode()
     if args.result:args.result.parent.mkdir(parents=True,exist_ok=True);args.result.write_bytes(payload)
     print(payload.decode())

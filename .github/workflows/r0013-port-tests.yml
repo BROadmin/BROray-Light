@@ -168,7 +168,7 @@ jobs:
       - name: Install service fixture dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y --no-install-recommends busybox dash gcc jq
+          sudo apt-get install -y --no-install-recommends busybox dash gcc jq lighttpd nginx-core
       - name: Real S24 and protected RAM publication (dash)
         run: sudo python3 -B tools/test_r0013_service.py --shell /bin/dash --result /tmp/r0013-service-dash.json
       - name: Real S24 and protected RAM publication (BusyBox)
