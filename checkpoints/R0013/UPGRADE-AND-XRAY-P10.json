@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0013",
+  "revision": "p10-approved-version-contract",
+  "status": "PASS_VERSION_AND_BOOTSTRAP_INPUT",
+  "publicVersion": "2.0.0",
+  "packageVersion": "2.0.0",
+  "releaseId": "2.0.0-r1",
+  "candidateId": "2.0.0-r1",
+  "releaseTag": "v2.0.0",
+  "resolvedFailure": "process-failures/FAILURE-P9-R1-REJECTS-SEMVER-ID.json",
+  "comparator": {
+    "source": "exact published r1 updater platform",
+    "platformSha256": "4983f0fc268a9f19f3e64959fe5f7d8086f26ad907d528ca82ca623f10d9a92a",
+    "scriptSha256": "773aaf37893ab100e7023d63c8061d8c4763a4d6186844bb3b671d758c145743",
+    "tests": [
+      {
+        "installed": "1.0.0-r1",
+        "available": "2.0.0-r1",
+        "decision": "newer",
+        "status": "PASS"
+      },
+      {
+        "installed": "2.0.0-r1",
+        "available": "2.0.0-r1",
+        "decision": "equal",
+        "status": "PASS"
+      },
+      {
+        "installed": "2.0.0-r1",
+        "available": "1.0.0-r1",
+        "decision": "older",
+        "status": "PASS"
+      }
+    ],
+    "scope": "read-only ordering; not a transaction acceptance"
+  },
+  "xray": {
+    "version": "26.9.9",
+    "architecture": "ELF64-AArch64",
+    "archiveBytes": 19837074,
+    "archiveSha256": "3e38d72dfc5eb65c91df0e5583e9b6676c32232041da47de6ae73946b526d66c",
+    "digestSha256": "992a09e917cd348dcb27e4d3ded119f2ce475cc6dd0698dd4cecd87b12f0b304",
+    "binaryBytes": 35061884,
+    "binarySha256": "c1defe42b6db958a97c5e049a02a00a4baaedaca7b51c1c229f0830e288acef5",
+    "verification": "archive size/SHA, official SHA2-256 digest, exact binary size/SHA and ELF architecture PASS; execution not yet tested",
+    "appUpdatePolicy": "preserve already installed runtime"
+  },
+  "candidateReady": false,
+  "nextExactAction": "P11_ASSEMBLE_DETERMINISTIC_ACCEPTED_BASELINE_PLUS_EXPLICIT_R0013_INPUTS"
+}

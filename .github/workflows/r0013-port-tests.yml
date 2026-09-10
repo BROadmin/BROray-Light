@@ -9,6 +9,7 @@ on:
       - 'tools/test_r0013*.py'
       - 'tools/test_r0013*.js'
       - 'tools/r0013_inputs.py'
+      - 'tools/build_r0013_release.py'
   workflow_dispatch:
 
 permissions:
@@ -47,3 +48,7 @@ jobs:
         run: python3 -B tools/test_r0013_xray_selection.py --shell /bin/dash --jq /usr/bin/jq
       - name: Home Xray selector control behavior
         run: node tools/test_r0013_home.js
+      - name: Public version and legacy updater identity separation
+        run: |
+          python3 -B tools/test_r0013_system_version.py --shell /bin/dash
+          node tools/test_r0013_versions.js

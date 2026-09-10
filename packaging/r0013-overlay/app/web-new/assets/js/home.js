@@ -204,12 +204,19 @@ async function xrayInstall() {
   }
 }
 
+function lightPublicVersion(version) {
+  // Exact approved alias, not a general suffix-stripping rule for future releases.
+  return version === '2.0.0-r1' ? '2.0.0' : version;
+}
+
 async function lightCheck() {
   try {
     showError(''); text('lightUpdate', 'Проверка…'); button('lightInstallButton', 'Проверка…', false);
     const data = await j('api/broray/update-check.cgi');
-    if (data.updateAvailable === true) { text('lightUpdate', 'Доступна версия ' + (data.availableReleaseId || 'BROray-Light') + '. Установлена ' + (data.installedReleaseId || 'не определена') + '.'); button('lightInstallButton', 'Обновить', true); }
-    else { text('lightUpdate', 'Установлена актуальная версия ' + (data.installedReleaseId || 'BROray-Light') + '.'); button('lightInstallButton', 'Обновлений нет', false); }
+    const available = lightPublicVersion(data.availableReleaseId);
+    const installed = lightPublicVersion(data.installedReleaseId);
+    if (data.updateAvailable === true) { text('lightUpdate', 'Доступна версия ' + (available || 'BROray-Light') + '. Установлена ' + (installed || 'не определена') + '.'); button('lightInstallButton', 'Обновить', true); }
+    else { text('lightUpdate', 'Установлена актуальная версия ' + (installed || 'BROray-Light') + '.'); button('lightInstallButton', 'Обновлений нет', false); }
   } catch (error) {
     text('lightUpdate', 'Проверка Stable-канала не выполнена: ' + error.message);
     button('lightInstallButton', 'Обновить', false);

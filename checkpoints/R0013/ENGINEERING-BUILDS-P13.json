@@ -1,0 +1,102 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0013",
+  "revision": "p13-executable-entrypoint-mode-contract",
+  "status": "PASS_ENGINEERING_STRUCTURE_AND_LOCAL_REPRODUCIBILITY",
+  "publicVersion": "2.0.0",
+  "releaseId": "2.0.0-r1",
+  "releaseTag": "v2.0.0",
+  "resolvedFailures": [
+    "process-failures/FAILURE-P11-OVERLAY-MODES.json",
+    "process-failures/FAILURE-P12-LIBRARY-MODE-ASSERTION.json"
+  ],
+  "buildA": "dist/R0013/p12-engineering-build-A",
+  "buildB": "dist/R0013/p13-engineering-build-B",
+  "buildIndependence": "Separate processes and fresh build/output temporary directories with the same pinned inputs; final clean-checkout Linux release reproducibility remains pending.",
+  "reproducibility": {
+    "stage": "R0013",
+    "revision": "p13-executable-entrypoint-mode-contract",
+    "status": "PASS",
+    "candidateReady": false,
+    "scope": "structural only; not lifecycle acceptance",
+    "tests": [
+      {
+        "test": "outer-sha256-manifest",
+        "status": "PASS"
+      },
+      {
+        "test": "slot-version-internal-identity-and-all-file-hashes",
+        "status": "PASS"
+      },
+      {
+        "test": "three-pages-entrypoint-modes-complete-mode-manifest-and-versioned-assets",
+        "status": "PASS"
+      },
+      {
+        "test": "legacy-compatible-unsigned-index-contract",
+        "status": "PASS"
+      },
+      {
+        "test": "ipk-version-slot-and-exact-clean-xray",
+        "status": "PASS"
+      },
+      {
+        "test": "r1-updater-byte-and-mode-preservation",
+        "status": "PASS"
+      },
+      {
+        "test": "independent-process-build-byte-reproducibility",
+        "status": "PASS"
+      }
+    ]
+  },
+  "artifacts": [
+    {
+      "path": "ENGINEERING-MANIFEST.json",
+      "sizeBytes": 2343,
+      "sha256": "93de53ea4e9413608880e0e013330d4a3d39400f02a6e7f6b90cac7493dafed8"
+    },
+    {
+      "path": "INPUT-MANIFEST.json",
+      "sizeBytes": 31537,
+      "sha256": "5acdcdabb55a2e5b926c4d9f1706e5a32b90e5c1a4edcfb3f9da1c8bd27f49ca"
+    },
+    {
+      "path": "SHA256SUMS",
+      "sizeBytes": 666,
+      "sha256": "6d6e0bf9edc3f471fb3893d729b39de25f7b04be7efadcf6d7cf02347eab54f3"
+    },
+    {
+      "path": "broray-light-app-2.0.0-r1.tar.gz",
+      "sizeBytes": 163974,
+      "sha256": "4dcb15246111d242099463a315009126ba3e69fa9781d0b3b476144d32c9d095"
+    },
+    {
+      "path": "broray-light-install-2.0.0.sh",
+      "sizeBytes": 1842,
+      "sha256": "684b220639f66cdedcd2f716ebcc7f2c9d5173976eb81cf80f607d4a9d39afe4"
+    },
+    {
+      "path": "broray-light-updater-platform-5-light1.tar.gz",
+      "sizeBytes": 131458,
+      "sha256": "81b7b70bd8180d0293be1e0de116c34801646234daf811b447ac82b0b676051c"
+    },
+    {
+      "path": "broray-light_2.0.0_aarch64-3.10.ipk",
+      "sizeBytes": 12916960,
+      "sha256": "1472a86f44ff14d2b9861e7185b3897d28cd284d37cc3b4e22f95a95b008871c"
+    },
+    {
+      "path": "release.json",
+      "sizeBytes": 597,
+      "sha256": "f7328899c85b3077886e561e5ea752454721bf39459e2cdd38c4d968811077bc"
+    }
+  ],
+  "webuiVersionTests": {
+    "status": "PASS_DOM_HTTP_BOUNDARIES_MOCKED",
+    "tests": 7
+  },
+  "candidateReady": false,
+  "releaseReady": false,
+  "nextExactAction": "P14_PROTECTED_RAM_STORAGE_AND_LEGACY_LIFECYCLE_TRANSITION_AUDIT"
+}

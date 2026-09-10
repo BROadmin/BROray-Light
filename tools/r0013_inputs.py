@@ -31,7 +31,11 @@ def baseline_tree(prefix: str) -> dict[str, tuple[bytes, int]]:
 
 def app_inputs() -> dict[str, tuple[bytes, int]]:
     entries = baseline_tree('src/app')
-    entries.update(baseline_tree('packaging/app-overlay'))
+    for relative, (payload, git_mode) in baseline_tree('packaging/app-overlay').items():
+        # r1's builder took payloads from its overlay, but modes from canonical src.
+        # Overlay files are often stored as 100644 even for an executable target.
+        mode = entries.get(relative, (b'', git_mode))[1]
+        entries[relative] = (payload, mode)
     overlay = REPO / 'packaging/r0013-overlay/app'
     for path in sorted(overlay.rglob('*')):
         assert not path.is_symlink(), 'overlay symlink refused'

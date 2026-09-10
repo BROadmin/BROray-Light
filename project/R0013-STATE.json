@@ -1,24 +1,45 @@
 {
   "schemaVersion": 1,
   "stage": "R0013_SELECTIVE_UPSTREAM_STABLE_PORT",
-  "status": "BLOCKED_RELEASE_ID_COMPATIBILITY_DECISION",
-  "currentRevision": "p9-release-2.0.0-upgrade-admission-failed",
-  "activeFailure": "checkpoints/R0013/process-failures/FAILURE-P9-R1-REJECTS-SEMVER-ID.json",
+  "status": "PASS_ENGINEERING_STRUCTURE_AND_LOCAL_REPRODUCIBILITY",
+  "currentRevision": "p13-executable-entrypoint-mode-contract",
+  "activeFailure": null,
   "publicVersion": "2.0.0",
   "buildA": "NOT_RUN",
   "buildB": "NOT_RUN",
-  "catalogAndControlsPort": {"status": "PASS_ISOLATED_REGRESSION", "path": "checkpoints/R0013/CATALOG-AND-CONTROLS-P8.json", "sha256": "a9d141483e6a662dbec7d73949789a863a3c81681d6028b290ec3009a2669b2b"},
-  "subscriptionNamePort": {"status": "PASS_ISOLATED_LINUX", "tests": 5, "path": "checkpoints/R0013/SUBSCRIPTION-NAME-P6.json", "sha256": "2b1fe451272dc233e1f8ccd4cc3d6ea2f212ba81e009f93d3a4b9e9b9601577a"},
-  "lastResolvedFailure": "checkpoints/R0013/process-failures/FAILURE-P3-CONFIG-EQUALS-ARGC.json",
-  "processPort": {"status": "PASS_ISOLATED_LINUX", "tests": 33, "liveLinux": "PASS", "path": "checkpoints/R0013/LINUX-PROCESS-P4.json", "sha256": "ecc2ca1a2aa1ecf853b3cb7777ad294d4c97a1e84efd84e295bc816c3e21c2e6", "commit": "ed7b85b326e4d85f9ed7f3fdeb714b255c0b6b92"},
+  "catalogAndControlsPort": {
+    "status": "PASS_ISOLATED_REGRESSION",
+    "path": "checkpoints/R0013/CATALOG-AND-CONTROLS-P8.json",
+    "sha256": "a9d141483e6a662dbec7d73949789a863a3c81681d6028b290ec3009a2669b2b"
+  },
+  "subscriptionNamePort": {
+    "status": "PASS_ISOLATED_LINUX",
+    "tests": 5,
+    "path": "checkpoints/R0013/SUBSCRIPTION-NAME-P6.json",
+    "sha256": "2b1fe451272dc233e1f8ccd4cc3d6ea2f212ba81e009f93d3a4b9e9b9601577a"
+  },
+  "lastResolvedFailure": [
+    "process-failures/FAILURE-P11-OVERLAY-MODES.json",
+    "process-failures/FAILURE-P12-LIBRARY-MODE-ASSERTION.json"
+  ],
+  "processPort": {
+    "status": "PASS_ISOLATED_LINUX",
+    "tests": 33,
+    "liveLinux": "PASS",
+    "path": "checkpoints/R0013/LINUX-PROCESS-P4.json",
+    "sha256": "ecc2ca1a2aa1ecf853b3cb7777ad294d4c97a1e84efd84e295bc816c3e21c2e6",
+    "commit": "ed7b85b326e4d85f9ed7f3fdeb714b255c0b6b92"
+  },
   "workingBranch": "codex/r0009-updater-package",
   "baseLightRelease": "1.0.0-r1",
   "baseLightCommit": "9e5fce9bfa7c82bfc2f2654d80fd3987c5259963",
   "upstreamStable": "3.1.0-r09",
   "upstreamCandidate": "3.1.0-r09c02",
-  "releaseId": "2.0.0",
+  "releaseId": "2.0.0-r1",
+  "candidateId": "2.0.0-r1",
+  "packageVersion": "2.0.0",
   "releaseTag": "v2.0.0",
-  "versionAuthority": "Explicit user instruction: BROray-Light version must become 2.0.0",
+  "versionAuthority": "User approved public/package version 2.0.0 and tag v2.0.0 with legacy-compatible internal releaseId 2.0.0-r1 (P10).",
   "candidateReady": false,
   "releaseReady": false,
   "publicReleasePublished": false,
@@ -31,8 +52,28 @@
     "sha256": "a8f80532e43b1c74c4d393d039f42c1c00aa1ebc0d15c5f5759e14c688a53656",
     "fileCount": 505
   },
-  "completedGates": ["PINNED_UPSTREAM_ARCHIVE_IDENTITIES", "ARCHIVE_MEMBER_SAFETY", "COMPLETE_UPSTREAM_DELTA_CLASSIFICATION"],
-  "upstreamDelta": {"path": "checkpoints/R0013/UPSTREAM-DELTA-P2.json", "sha256": "3eff396c3755fbe4a74644434c72c1aa428ea55fa4c95374648127057aadeda5"},
-  "portMap": {"path": "checkpoints/R0013/UPSTREAM-PORT-MAP-P2.json", "sha256": "009a0f5adae08f399c82510cf680690b4c2e50bc8c659eda9c48d91b5a838121"},
-  "nextExactAction": "CONFIRM_PUBLIC_VERSION_VS_LEGACY_RELEASE_ID_CONTRACT_THEN_VALIDATE_UPDATE_EQUAL_AND_DOWNGRADE_WITH_EXACT_R1_UPDATER"
+  "completedGates": [
+    "PINNED_UPSTREAM_ARCHIVE_IDENTITIES",
+    "ARCHIVE_MEMBER_SAFETY",
+    "COMPLETE_UPSTREAM_DELTA_CLASSIFICATION"
+  ],
+  "upstreamDelta": {
+    "path": "checkpoints/R0013/UPSTREAM-DELTA-P2.json",
+    "sha256": "3eff396c3755fbe4a74644434c72c1aa428ea55fa4c95374648127057aadeda5"
+  },
+  "portMap": {
+    "path": "checkpoints/R0013/UPSTREAM-PORT-MAP-P2.json",
+    "sha256": "009a0f5adae08f399c82510cf680690b4c2e50bc8c659eda9c48d91b5a838121"
+  },
+  "nextExactAction": "P14_PROTECTED_RAM_STORAGE_AND_LEGACY_LIFECYCLE_TRANSITION_AUDIT",
+  "versionAndXray": {
+    "status": "PASS_VERSION_AND_BOOTSTRAP_INPUT",
+    "path": "checkpoints/R0013/UPGRADE-AND-XRAY-P10.json",
+    "sha256": "5cbbdf3caa3dca867fe7fa12a96e28178bbe956211cee35bee10fa9cec416234"
+  },
+  "engineeringBuilds": {
+    "status": "PASS_PRELIMINARY_ONLY",
+    "path": "checkpoints/R0013/ENGINEERING-BUILDS-P13.json",
+    "sha256": "ef05b06f98464a50232291e9021144c1752c880f3c0cb6688d7b20d6191d5e5f"
+  }
 }

@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0013",
+  "revision": "p10-approved-version-contract",
+  "status": "AUTHORIZED_BEFORE_VALIDATION",
+  "authority": "User approved public/package version 2.0.0 and tag v2.0.0 with internal updater releaseId 2.0.0-r1.",
+  "publicVersion": "2.0.0",
+  "packageVersion": "2.0.0",
+  "releaseTag": "v2.0.0",
+  "releaseId": "2.0.0-r1",
+  "candidateId": "2.0.0-r1",
+  "previousFailure": "process-failures/FAILURE-P9-R1-REJECTS-SEMVER-ID.json",
+  "nextValidation": "Execute exact published r1 comparator for update, equal and downgrade decisions; verify new clean-install Xray binary.",
+  "candidateReady": false,
+  "releaseReady": false
+}

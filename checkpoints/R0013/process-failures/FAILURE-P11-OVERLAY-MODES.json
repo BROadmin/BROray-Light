@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0013",
+  "revision": "p11-versioned-engineering-build",
+  "status": "FAIL_FIRST_ERROR",
+  "gate": "three-pages-executable-modes-and-versioned-assets",
+  "error": "app/bin/broray has mode 0644, expected executable mode 0755",
+  "cause": "r0013_inputs.app_inputs() replaced the canonical executable mode with packaging/app-overlay Git metadata. Accepted r1 builder used canonical src/app modes for overlays.",
+  "artifact": {
+    "path": "dist/R0013/p11-engineering-build-A/broray-light-app-2.0.0-r1.tar.gz",
+    "sha256": "17aeddcec6f5ba466d5df12f6b24bfe0b4a6682835d9abc2efd1bd6b0d9fceee"
+  },
+  "sameRevisionRetry": false,
+  "nextCorrectedRevision": "p12-canonical-executable-overlay-modes",
+  "correction": "Preserve canonical mode for existing paths, assign explicit executable modes only to new shell/CGI/bin paths, test actual archive modes.",
+  "candidateReady": false,
+  "routerTouched": false
+}

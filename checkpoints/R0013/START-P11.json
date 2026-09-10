@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0013",
+  "revision": "p11-versioned-engineering-build",
+  "status": "STARTED_BEFORE_CHANGES",
+  "inputCommit": "9e5fce9bfa7c82bfc2f2654d80fd3987c5259963",
+  "inputPolicy": "Accepted r1 Git objects plus explicit R0013 overlay only; preserve dirty R0012",
+  "scope": "Public/internal version mapping, versioned web assets, verified clean Xray, deterministic unsigned engineering outputs and manifests",
+  "notYetAccepted": ["RAM scratch lifecycle", "full updater transactions", "all WebUI controls", "browser and target", "release signing"],
+  "candidateReady": false,
+  "releaseReady": false
+}

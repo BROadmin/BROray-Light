@@ -1,0 +1,16 @@
+#!/opt/bin/ash
+# The updater identity remains in config/version; the UI uses slot metadata.
+ROOT="${BRORAY_ROOT:-/opt/broray-light}"
+XRAY="$ROOT/runtime/xray"
+case "${1:-info}" in
+    info|status)
+        metadata="$(jq -ce 'select(.product=="BROray-Light" and
+            (.version|type)=="string" and (.releaseId|type)=="string") |
+            {version,releaseId,candidateId}' "$ROOT/current/release.json" 2>/dev/null)" || exit 1
+        xray_version="$("$XRAY" version 2>/dev/null | head -1 | awk '{print $2}')"
+        jq -n --argjson metadata "$metadata" --arg xrayVersion "$xray_version" '
+            $metadata + {ok:true,product:"BROray-Light",
+              xrayVersion:(if $xrayVersion=="" then null else $xrayVersion end),releaseChannel:"stable"}'
+        ;;
+    *) exit 1 ;;
+esac

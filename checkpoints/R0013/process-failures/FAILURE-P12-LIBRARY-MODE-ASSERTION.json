@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0013",
+  "revision": "p12-canonical-executable-overlay-modes",
+  "status": "FAIL_FIRST_ERROR_TEST_HARNESS",
+  "gate": "three-pages-executable-modes-and-versioned-assets",
+  "error": "test required 0755 for sourced library app/lib/keenetic-config-compare.sh",
+  "cause": "Library is 0644 in canonical source and accepted published r1. It is sourced, not executed. P12 correctly preserves its mode; test incorrectly treated all .sh files as entry points.",
+  "nextCorrectedRevision": "p13-executable-entrypoint-mode-contract",
+  "correction": "Require executable mode for bin commands and CGI entrypoints; verify the complete file mode manifest separately. Test corrected gate against unchanged P12 bytes, not a silent retry.",
+  "artifact": {
+    "path": "dist/R0013/p12-engineering-build-A/broray-light-app-2.0.0-r1.tar.gz",
+    "sha256": "4dcb15246111d242099463a315009126ba3e69fa9781d0b3b476144d32c9d095"
+  },
+  "candidateReady": false,
+  "routerTouched": false
+}
