@@ -108,17 +108,17 @@
     {
       "gate": "independent_build_a",
       "status": "PASS_PRELIMINARY_LOCAL_NOT_FINAL_ACCEPTANCE",
-      "evidence": "RUNTIME-PATHS-AND-BUILDS-P34.json"
+      "evidence": "SERVICE-AND-BUILDS-P37.json"
     },
     {
       "gate": "independent_build_b",
       "status": "PASS_PRELIMINARY_LOCAL_NOT_FINAL_ACCEPTANCE",
-      "evidence": "RUNTIME-PATHS-AND-BUILDS-P34.json"
+      "evidence": "SERVICE-AND-BUILDS-P37.json"
     },
     {
       "gate": "a_b_byte_reproducibility",
       "status": "PASS_PRELIMINARY_LOCAL_NOT_FINAL_ACCEPTANCE",
-      "evidence": "RUNTIME-PATHS-AND-BUILDS-P34.json"
+      "evidence": "SERVICE-AND-BUILDS-P37.json"
     },
     {
       "gate": "existing_trust_root_signing",
@@ -153,12 +153,12 @@
     {
       "gate": "engineering_package_structure_hashes_and_modes",
       "status": "PASS",
-      "evidence": "RUNTIME-PATHS-AND-BUILDS-P34.json"
+      "evidence": "SERVICE-AND-BUILDS-P37.json"
     },
     {
       "gate": "preexisting_r0012_preservation",
       "status": "PASS_502_FILES_WITH_THREE_EXPLICIT_ROUTING_LOG_EXCEPTIONS",
-      "evidence": "R0012-PRESERVATION-P34.json"
+      "evidence": "R0012-PRESERVATION-P37.json"
     },
     {
       "gate": "shared_ram_namespace_and_locks",
@@ -207,15 +207,20 @@
     },
     {
       "gate": "config_publication_receipt_migration",
-      "status": "NOT_IMPLEMENTED",
-      "evidence": null
+      "status": "PASS_REAL_CONFIG_BYTES_FIXTURE_SERVICE",
+      "evidence": "WEB-CONFIG-VALIDATION-P35.json"
     },
     {
       "gate": "coordinated_service_start_and_boot_rollback",
       "status": "NOT_IMPLEMENTED",
       "evidence": null
+    },
+    {
+      "gate": "scoped_s24_and_private_ram_publication",
+      "status": "PASS_REAL_S24_PROCESSES_MOCK_DAEMON_AND_KEENETIC",
+      "evidence": "SERVICE-AND-BUILDS-P37.json"
     }
   ],
   "releaseId": "2.0.0-r1",
-  "currentRevision": "p34-component-bounded-application-ram-path-contract"
+  "currentRevision": "p37-preserve-publication-failure-through-cleanup"
 }

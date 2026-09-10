@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
   "stage": "R0013_SELECTIVE_UPSTREAM_STABLE_PORT",
-  "status": "FIRST_ERROR_RECORDED_CORRECTION_PENDING",
+  "status": "SERVICE_COMPONENTS_PASS_FULL_LEGACY_LIFECYCLE_PENDING",
   "currentRevision": "p37-preserve-publication-failure-through-cleanup",
-  "activeFailure": "checkpoints/R0013/process-failures/FAILURE-P36-PUBLICATION-CLEANUP-EXIT-STATUS.json",
+  "activeFailure": null,
   "publicVersion": "2.0.0",
   "buildA": "PRELIMINARY_ENGINEERING_BYTE_PASS_NOT_FINAL_ACCEPTANCE",
   "buildB": "PRELIMINARY_ENGINEERING_BYTE_PASS_NOT_FINAL_ACCEPTANCE",
@@ -18,7 +18,7 @@
     "path": "checkpoints/R0013/SUBSCRIPTION-NAME-P6.json",
     "sha256": "2b1fe451272dc233e1f8ccd4cc3d6ea2f212ba81e009f93d3a4b9e9b9601577a"
   },
-  "lastResolvedFailure": "checkpoints/R0013/process-failures/FAILURE-P33-RUN-RUNTIME-SUBSTRING.json",
+  "lastResolvedFailure": "checkpoints/R0013/process-failures/FAILURE-P36-PUBLICATION-CLEANUP-EXIT-STATUS.json",
   "processPort": {
     "status": "PASS_ISOLATED_LINUX",
     "tests": 33,
@@ -62,7 +62,7 @@
     "path": "checkpoints/R0013/UPSTREAM-PORT-MAP-P2.json",
     "sha256": "009a0f5adae08f399c82510cf680690b4c2e50bc8c659eda9c48d91b5a838121"
   },
-  "nextExactAction": "P37_CORRECT_TRAP_STATUS_AND_REPEAT_SERVICE_TESTS_WITH_NEGATIVE_PUBLICATION_CASES",
+  "nextExactAction": "P38_LEGACY_RUNTIME_DATA_HANDOFF_AND_FULL_R1_ENTRY_BOOT_ROLLBACK",
   "versionAndXray": {
     "status": "PASS_VERSION_AND_BOOTSTRAP_INPUT",
     "path": "checkpoints/R0013/UPGRADE-AND-XRAY-P10.json",
@@ -70,8 +70,8 @@
   },
   "engineeringBuilds": {
     "status": "PASS_PRELIMINARY_ONLY",
-    "path": "checkpoints/R0013/RUNTIME-PATHS-AND-BUILDS-P34.json",
-    "sha256": "b0fdc171938d82ce546b2ae314dbd340f9121fc71a062f61aa5f4c5b94b9a5e3"
+    "path": "checkpoints/R0013/SERVICE-AND-BUILDS-P37.json",
+    "sha256": "95cdbac8d3580dccd88e37a2864f2cc5d2f9a489445e0041ebcbb9826ce47197"
   },
   "bootstrapBuild": {
     "path": "checkpoints/R0013/RAM-BOOTSTRAP-BUILD-P15.json",
@@ -81,7 +81,7 @@
     "path": "RAM-BOOTSTRAP-VALIDATION-P15.json",
     "sha256": "050a4d9b7e8c82194d1e4dd03e6e014031ec1b24d44f06833cc3189d5ca1c33d"
   },
-  "latestCI": "https://github.com/BROadmin/BROray-Light/actions/runs/34528840519",
+  "latestCI": "https://github.com/BROadmin/BROray-Light/actions/runs/34530275676",
   "webConfigTransaction": {
     "status": "PASS_BOUNDED",
     "tests": 28,
@@ -146,6 +146,12 @@
   },
   "remainingIntegrationGap": {
     "originFailure": "process-failures/FAILURE-P16-PERSISTENT-LOCK-DOMAIN.json",
-    "description": "RAM application paths and external platform handoff are implemented as separately tested components; normal/legacy S24 startup, config+receipt migration, legacy runtime data migration, clean package lifecycle and reboot rollback are not integrated."
+    "description": "S24 and publication, config+receipt and platform transactions are separately tested; the full legacy runtime-data handoff, r1 entry/rollback driver, clean postinst and reboot recovery still need integration."
+  },
+  "scopedServiceAndPublication": {
+    "status": "PASS_BOUNDED",
+    "tests": 30,
+    "path": "checkpoints/R0013/SERVICE-AND-BUILDS-P37.json",
+    "sha256": "95cdbac8d3580dccd88e37a2864f2cc5d2f9a489445e0041ebcbb9826ce47197"
   }
 }

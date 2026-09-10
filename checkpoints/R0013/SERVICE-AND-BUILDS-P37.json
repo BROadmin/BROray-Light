@@ -1,0 +1,314 @@
+{
+  "stage": "R0013",
+  "revision": "p37-preserve-publication-failure-through-cleanup",
+  "status": "PASS_BOUNDED_SERVICE_AND_PRELIMINARY_BUILDS",
+  "candidateReady": false,
+  "routerTouched": false,
+  "testsPassed": 30,
+  "ci": {
+    "url": "https://github.com/BROadmin/BROray-Light/actions/runs/34530275676",
+    "commit": "e13b4f6ad9ce615a0591103c7d818cfd81061569",
+    "job": "isolated-service",
+    "conclusion": "success",
+    "artifactId": 10173263909,
+    "artifactSha256": "7a0bcb62dd9d2267a938b018b1f96edc00385b9778306df1f381491e91d3c9ab"
+  },
+  "reports": {
+    "r0013-service-ash.json": {
+      "report": {
+        "stage": "R0013",
+        "revision": "p37-preserve-publication-failure-through-cleanup",
+        "status": "PASS_SCOPED_SERVICE_AND_PUBLICATION",
+        "shell": [
+          "/usr/bin/busybox",
+          "ash"
+        ],
+        "tests": [
+          {
+            "name": "publication-negative-status-before-publication",
+            "status": "PASS"
+          },
+          {
+            "name": "publication-negative-invalid-action",
+            "status": "PASS"
+          },
+          {
+            "name": "publication-negative-ambiguous-lan",
+            "status": "PASS"
+          },
+          {
+            "name": "real-s24-start-status-restart-stop-and-publication",
+            "status": "PASS"
+          },
+          {
+            "name": "exact-owned-web-stops",
+            "status": "PASS"
+          },
+          {
+            "name": "web-refuses-config-suffix",
+            "status": "PASS"
+          },
+          {
+            "name": "web-refuses-validator",
+            "status": "PASS"
+          },
+          {
+            "name": "web-refuses-extra-arg",
+            "status": "PASS"
+          },
+          {
+            "name": "web-refuses-foreign-exe",
+            "status": "PASS"
+          },
+          {
+            "name": "web-refuses-unrecorded",
+            "status": "PASS"
+          },
+          {
+            "name": "duplicate-web-fails-closed",
+            "status": "PASS"
+          },
+          {
+            "name": "native-auth-exact",
+            "status": "PASS"
+          },
+          {
+            "name": "native-auth-config-suffix",
+            "status": "PASS"
+          },
+          {
+            "name": "native-auth-foreign-exe",
+            "status": "PASS"
+          },
+          {
+            "name": "publication-respects-live-updater-request",
+            "status": "PASS"
+          }
+        ],
+        "scope": "Real S24, publication and Linux processes/private tmpfs; daemon loop, Xray and Keenetic commands mocked. Not full r1/boot acceptance.",
+        "sourceSha256": {
+          "packaging/r0013-overlay/system/packaging/opkg/S24broray-light": "4c0b6cd4c2eb1e5deaee92007288cc2f9dedaa43fb16ee6b99921acad950f55b",
+          "packaging/r0013-overlay/shared/service-process.sh": "285ccc22291f367f27b7a95e05fc58bd1db3bbec93bd1949c1ff30c03daba2c5"
+        }
+      },
+      "sha256": "3a36fb01890439ba23995bc62f63f39e34bb39111ba7e15e54bb8ccdc76132cb"
+    },
+    "r0013-service-dash.json": {
+      "report": {
+        "stage": "R0013",
+        "revision": "p37-preserve-publication-failure-through-cleanup",
+        "status": "PASS_SCOPED_SERVICE_AND_PUBLICATION",
+        "shell": [
+          "/bin/dash"
+        ],
+        "tests": [
+          {
+            "name": "publication-negative-status-before-publication",
+            "status": "PASS"
+          },
+          {
+            "name": "publication-negative-invalid-action",
+            "status": "PASS"
+          },
+          {
+            "name": "publication-negative-ambiguous-lan",
+            "status": "PASS"
+          },
+          {
+            "name": "real-s24-start-status-restart-stop-and-publication",
+            "status": "PASS"
+          },
+          {
+            "name": "exact-owned-web-stops",
+            "status": "PASS"
+          },
+          {
+            "name": "web-refuses-config-suffix",
+            "status": "PASS"
+          },
+          {
+            "name": "web-refuses-validator",
+            "status": "PASS"
+          },
+          {
+            "name": "web-refuses-extra-arg",
+            "status": "PASS"
+          },
+          {
+            "name": "web-refuses-foreign-exe",
+            "status": "PASS"
+          },
+          {
+            "name": "web-refuses-unrecorded",
+            "status": "PASS"
+          },
+          {
+            "name": "duplicate-web-fails-closed",
+            "status": "PASS"
+          },
+          {
+            "name": "native-auth-exact",
+            "status": "PASS"
+          },
+          {
+            "name": "native-auth-config-suffix",
+            "status": "PASS"
+          },
+          {
+            "name": "native-auth-foreign-exe",
+            "status": "PASS"
+          },
+          {
+            "name": "publication-respects-live-updater-request",
+            "status": "PASS"
+          }
+        ],
+        "scope": "Real S24, publication and Linux processes/private tmpfs; daemon loop, Xray and Keenetic commands mocked. Not full r1/boot acceptance.",
+        "sourceSha256": {
+          "packaging/r0013-overlay/system/packaging/opkg/S24broray-light": "4c0b6cd4c2eb1e5deaee92007288cc2f9dedaa43fb16ee6b99921acad950f55b",
+          "packaging/r0013-overlay/shared/service-process.sh": "285ccc22291f367f27b7a95e05fc58bd1db3bbec93bd1949c1ff30c03daba2c5"
+        }
+      },
+      "sha256": "5dafe075c84cfb9f677a1a4c297904cc46c190e72a1d4c7a7e4c73f5bdb8e49a"
+    }
+  },
+  "builds": {
+    "scope": "Independent local processes/fresh input trees; unsigned engineering only, not final independent clean-checkout acceptance.",
+    "A": {
+      "path": "dist/R0013/p37-engineering-build-A",
+      "status": "ENGINEERING_BUILD_CREATED",
+      "candidateReady": false,
+      "artifacts": [
+        {
+          "path": "ENGINEERING-MANIFEST.json",
+          "sizeBytes": 2347,
+          "sha256": "a8b3b50b6135a5deebc3a2b8aadc763a98cbaa47b78b90145852dab4ceec91d3"
+        },
+        {
+          "path": "INPUT-MANIFEST.json",
+          "sizeBytes": 39748,
+          "sha256": "15de13149e5531eae0ea89d3d6ffaff05272725d9e27c060dd44c27e0f9f8fe9"
+        },
+        {
+          "path": "SHA256SUMS",
+          "sizeBytes": 670,
+          "sha256": "6d0e28d90f563bb2c19f2ad2e54e564de70bfadf8c98a13328e1a1d46fd1d6db"
+        },
+        {
+          "path": "broray-light-app-2.0.0-r1.tar.gz",
+          "sizeBytes": 212656,
+          "sha256": "d68b5e590ca4833e8f0f92cbc880c7de51e616276b1f9e5e9bd46056c06a1673"
+        },
+        {
+          "path": "broray-light-install-2.0.0.sh",
+          "sizeBytes": 3860,
+          "sha256": "d405c9ec337487004e69605a6bf88da0eac3a685987b204f114ae981e041a3c1"
+        },
+        {
+          "path": "broray-light-updater-platform-5-light2-ram.tar.gz",
+          "sizeBytes": 134529,
+          "sha256": "763fc09fe87e7b4092d036aab6a4f2960dd3983a35586bafd0b2eac97ec57d60"
+        },
+        {
+          "path": "broray-light_2.0.0_aarch64-3.10.ipk",
+          "sizeBytes": 12968928,
+          "sha256": "4687d09b411a78b63d11ccc24b9565065d9e66be4baf557a6970c5a647f5ec9b"
+        },
+        {
+          "path": "release.json",
+          "sizeBytes": 597,
+          "sha256": "973ed76bc3d3ddabb5e3d3f6b0030de931cec004f7ad8fc34c43562e59a0350f"
+        }
+      ]
+    },
+    "B": {
+      "path": "dist/R0013/p37-engineering-build-B",
+      "status": "ENGINEERING_BUILD_CREATED",
+      "candidateReady": false,
+      "artifacts": [
+        {
+          "path": "ENGINEERING-MANIFEST.json",
+          "sizeBytes": 2347,
+          "sha256": "a8b3b50b6135a5deebc3a2b8aadc763a98cbaa47b78b90145852dab4ceec91d3"
+        },
+        {
+          "path": "INPUT-MANIFEST.json",
+          "sizeBytes": 39748,
+          "sha256": "15de13149e5531eae0ea89d3d6ffaff05272725d9e27c060dd44c27e0f9f8fe9"
+        },
+        {
+          "path": "SHA256SUMS",
+          "sizeBytes": 670,
+          "sha256": "6d0e28d90f563bb2c19f2ad2e54e564de70bfadf8c98a13328e1a1d46fd1d6db"
+        },
+        {
+          "path": "broray-light-app-2.0.0-r1.tar.gz",
+          "sizeBytes": 212656,
+          "sha256": "d68b5e590ca4833e8f0f92cbc880c7de51e616276b1f9e5e9bd46056c06a1673"
+        },
+        {
+          "path": "broray-light-install-2.0.0.sh",
+          "sizeBytes": 3860,
+          "sha256": "d405c9ec337487004e69605a6bf88da0eac3a685987b204f114ae981e041a3c1"
+        },
+        {
+          "path": "broray-light-updater-platform-5-light2-ram.tar.gz",
+          "sizeBytes": 134529,
+          "sha256": "763fc09fe87e7b4092d036aab6a4f2960dd3983a35586bafd0b2eac97ec57d60"
+        },
+        {
+          "path": "broray-light_2.0.0_aarch64-3.10.ipk",
+          "sizeBytes": 12968928,
+          "sha256": "4687d09b411a78b63d11ccc24b9565065d9e66be4baf557a6970c5a647f5ec9b"
+        },
+        {
+          "path": "release.json",
+          "sizeBytes": 597,
+          "sha256": "973ed76bc3d3ddabb5e3d3f6b0030de931cec004f7ad8fc34c43562e59a0350f"
+        }
+      ]
+    },
+    "validation": {
+      "stage": "R0013",
+      "revision": "p23-updater-platform-package-integration",
+      "status": "PASS",
+      "candidateReady": false,
+      "scope": "structural only; not lifecycle acceptance",
+      "tests": [
+        {
+          "test": "outer-sha256-manifest",
+          "status": "PASS"
+        },
+        {
+          "test": "slot-version-internal-identity-and-all-file-hashes",
+          "status": "PASS"
+        },
+        {
+          "test": "three-pages-entrypoint-modes-complete-mode-manifest-and-versioned-assets",
+          "status": "PASS"
+        },
+        {
+          "test": "legacy-compatible-unsigned-index-contract",
+          "status": "PASS"
+        },
+        {
+          "test": "ipk-version-slot-and-exact-clean-xray",
+          "status": "PASS"
+        },
+        {
+          "test": "explicit-ram-updater-port-with-r1-trust-and-wrapper-preservation",
+          "status": "PASS"
+        },
+        {
+          "test": "independent-process-build-byte-reproducibility",
+          "status": "PASS"
+        }
+      ]
+    }
+  },
+  "limits": [
+    "Daemon work loop, Xray and Keenetic commands mocked in S24 fixture",
+    "Full r1 entry, runtime data migration, clean package lifecycle and reboot recovery not integrated",
+    "No physical target touched; final browser/all controls/auth/signing acceptance pending"
+  ]
+}
