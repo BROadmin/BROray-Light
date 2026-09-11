@@ -1,0 +1,9 @@
+{
+  "stage": "R0013",
+  "revision": "p59-query-safe-current-navigation",
+  "status": "CHECKPOINT_BEFORE_CORRECTION",
+  "failure": "process-failures/FAILURE-P58-NAVIGATION-CACHE-QUERY.json",
+  "scope": "Compare navigation href path without query/fragment against current page; set aria-current=page only on the active link",
+  "candidateReady": false,
+  "routerTouched": false
+}

@@ -1,0 +1,10 @@
+{
+  "stage": "R0013",
+  "revision": "p58-browser-control-and-layout-audit",
+  "status": "CHECKPOINT_BEFORE_BROWSER_FIXTURE",
+  "scope": "Serve exact prepared WebUI on loopback with in-memory API fixtures; inspect and operate controls in a real browser, desktop/mobile where available",
+  "mockedBoundaries": ["All backend/API data in this visual fixture; native CGI and updater acceptance are separate"],
+  "noRouterOrExternalService": true,
+  "credentials": "Invented fixture credentials only",
+  "candidateReady": false
+}

@@ -1,0 +1,28 @@
+{
+  "stage": "R0013",
+  "revision": "p59-query-safe-current-navigation",
+  "status": "UNIT_AND_BOUNDED_BROWSER_PASS",
+  "files": [
+    {
+      "path": "packaging/r0013-overlay/app/web-new/assets/js/app-shell.js",
+      "sizeBytes": 443,
+      "sha256": "41db54d48c6d8779138643fe9ce226fc16a1c4f37d66928dbc1769ac440e4fa9"
+    },
+    {
+      "path": "tools/test_r0013_navigation.js",
+      "sizeBytes": 2202,
+      "sha256": "8d222a1176e86beedbc54d618c607b109668179cf69807e336185f267f6e96f0"
+    },
+    {
+      "path": "tools/r0013_ui_preview.py",
+      "sizeBytes": 10092,
+      "sha256": "679108a35eb002120557401e9d5e01b9f5ce0ce2e915b24a98dfe232fdecf334"
+    },
+    {
+      "path": ".github/workflows/r0013-port-tests.yml",
+      "sizeBytes": 17065,
+      "sha256": "d4808dfdb6e23e1c72cf50b30e4f09e84b2017bb96dd11f5f88b810edc6b4265"
+    }
+  ],
+  "candidateReady": false
+}

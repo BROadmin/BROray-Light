@@ -57,13 +57,13 @@
     },
     {
       "gate": "all_webui_buttons_and_apis",
-      "status": "NOT_RUN_FULL_CANDIDATE",
-      "evidence": null
+      "status": "PARTIAL_CONTROL_AND_AUTH_GUARDS_FULL_FUNCTIONAL_PENDING",
+      "evidence": "CONTROL-P57.json"
     },
     {
       "gate": "native_authentication_and_sessions",
-      "status": "NOT_RUN_FULL_CANDIDATE",
-      "evidence": null
+      "status": "PASS_NATIVE_HTTP_CGI_SESSIONS_PHYSICAL_SCGI_PENDING",
+      "evidence": "NATIVE-AUTH-P57.json"
     },
     {
       "gate": "protected_tmpfs_all_operational_scratch",
@@ -82,18 +82,18 @@
     },
     {
       "gate": "isolated_update_from_r1",
-      "status": "PASS_BOUNDED_P44_REAL_R1_S24_FIXTURE_WORKLOAD_FULL_CANDIDATE_PENDING",
-      "evidence": "LIVE-R1-UPDATE-AND-ROLLBACK-P44.json"
+      "status": "PASS_P54_FULL_PREPARED_SCRIPTS_OS_BOUNDARIES_MOCKED",
+      "evidence": "process-failures/FAILURE-P54-FULL-APP-SERVICE-STOP.json"
     },
     {
       "gate": "isolated_equal_version",
-      "status": "NOT_RUN",
-      "evidence": null
+      "status": "PASS_P54_NO_RESTART_PERSISTENCE_FULL_SCRIPTS",
+      "evidence": "process-failures/FAILURE-P54-FULL-APP-SERVICE-STOP.json"
     },
     {
       "gate": "isolated_downgrade_refusal",
-      "status": "NOT_RUN",
-      "evidence": null
+      "status": "PASS_P54_SIGNED_REFUSAL_FULL_SCRIPTS",
+      "evidence": "process-failures/FAILURE-P54-FULL-APP-SERVICE-STOP.json"
     },
     {
       "gate": "forced_health_rollback",
@@ -127,8 +127,8 @@
     },
     {
       "gate": "browser_desktop_mobile_layout",
-      "status": "NOT_RUN",
-      "evidence": null
+      "status": "PARTIAL_REAL_BROWSER_NAVIGATION_FULL_CONTROL_AUDIT_PENDING",
+      "evidence": "BROWSER-NAVIGATION-P59.json"
     },
     {
       "gate": "authorized_router_validation",
@@ -229,8 +229,13 @@
       "gate": "actual_lighttpd_nginx_pid_and_stop_contract",
       "status": "PASS_BOUNDED_REAL_LINUX_DAEMONS",
       "evidence": "ACTUAL-DAEMON-VALIDATION-P39.json"
+    },
+    {
+      "gate": "new_updater_complete_prepared_app_service_transition",
+      "status": "FAIL_FIRST_ERROR_P54_STOP_BEFORE_SWITCH",
+      "evidence": "process-failures/FAILURE-P54-FULL-APP-SERVICE-STOP.json"
     }
   ],
   "releaseId": "2.0.0-r1",
-  "currentRevision": "p54-full-prepared-application-lifecycle"
+  "currentRevision": "p59-query-safe-current-navigation"
 }

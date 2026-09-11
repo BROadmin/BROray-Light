@@ -1,4 +1,4 @@
-# BROray-Light 2.0.0 — R0013, checkpoint P57
+# BROray-Light 2.0.0 — R0013, checkpoint P59
 
 `candidateReady=false`, `releaseReady=false`. Публичная версия `2.0.0`, внутренний releaseId `2.0.0-r1`. Релиз не опубликован; роутер, production server и приложение полного BROray не изменялись.
 
@@ -35,7 +35,7 @@ P54 подготовил отдельный Linux-набор с полными �
 
 ## Ещё необходимо
 
-1. Завершить P54 полный app lifecycle и P55 native-auth/CGI.
+1. Исправить P54 full-app остановку службы перед повторным обновлением (P60). P55 native-auth/CGI прошёл 96 проверок в P57.
 2. Полный prepared-app: clean install, r1/new update, equal-version, downgrade refusal, rollback, persistence. Отдельно проверить stop/start реального S24 под общей блокировкой нового updater.
 3. Все кнопки/API, native authentication/session, desktop/mobile browser.
 4. Финальные независимые clean-checkout Build A/B, воспроизводимость, SHA-256 и подпись существующим encrypted Actions secret.
@@ -45,4 +45,10 @@ P55 добавляет проверку точных подготовленны�
 
 P56 воспроизвёл дефект принятого обработчика подписки: отмена удаления оставляла кнопку disabled без отправки запроса. FIRST-ERROR сохранён (`FAILURE-P56-SUBSCRIPTION-CANCEL-DISABLES-BUTTON.json`). P57 добавляет только finally для восстановления доступности кнопки. Пять тестов на настоящем prepared JS с DOM/HTTP/confirm fixtures PASS: отмена, delete/refresh success и HTTP error. `CONTROL-P57.json`: SHA-256 `18180c9ff3f419c5c758b97197c5f75ad669fd163d1f75ba4ad67fcea6c144b7`. P55 CI отменён до запуска и заменяется P57 с неизменённым тестом native-auth; это не retry проваленного revision.
 
-Точные статусы каждого acceptance gate: `VALIDATION.json`. Текущие источники: `PRODUCED-SOURCE-MANIFEST.json` (79 файлов), изменения P57 — `SOURCE-INPUTS-P57.json`. Компонентный PASS не равен PASS полного кандидата.
+P54 полный prepared app: r1 runtime-prepare, r1 → 2.0.0, equal-version без перезапуска и downgrade refusal — PASS. Следующее подписанное обновление через новый updater остановилось до переключения слота, transaction.phase=prepared, service stop вернул ошибку. `FAILURE-P54-FULL-APP-SERVICE-STOP.json`: SHA-256 `b9a068655f78c452dd799ded0da7ed61e24bb1ff610d49954d34c5d0ffed4bf6`. Остаток CI отменён; следующий исправленный revision P60. Это **не** полный lifecycle PASS.
+
+Native-auth/session/CGI: 48 PASS dash + 48 PASS BusyBox, настоящий подготовленный код и curl, loopback HTTP-имитатор KeeneticOS. Ни реальные пароли, ни роутер не использовались. `NATIVE-AUTH-P57.json`: SHA-256 `0c83866f08d50b7c43acd47af83eb2a9d968a72b9f92f4838035f1218c758af6`. Остаток P57 остановлен до повторения известного P54 failure; whole CI PASS не заявлен. Physical native SCGI ещё не проверен.
+
+P58 нашёл в настоящем браузере отсутствие подсветки текущего раздела: href содержал ?v, сравнение шло с голым pathname. Failure сохранён. P59 исправил только сравнение пути и aria-current. Семь unit-проверок и четыре browser-проверки PASS. Все три раздела выделяются правильно; мобильная страница подписок 390 px не имеет горизонтального overflow. `BROWSER-NAVIGATION-P59.json`: SHA-256 `8835c0e02b55523d31dbd7a6e88bb7c861ef39f22f11d9a077a4bb8c998bbc67`. Локальные preview-процессы остановлены, viewport восстановлен.
+
+Точные статусы каждого acceptance gate: `VALIDATION.json`. Текущие источники: `PRODUCED-SOURCE-MANIFEST.json` (82 файла), изменения P59 — `SOURCE-INPUTS-P59.json`. Компонентный PASS не равен PASS полного кандидата.

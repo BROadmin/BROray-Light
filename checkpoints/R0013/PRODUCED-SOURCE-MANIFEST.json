@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
   "stage": "R0013",
-  "revision": "p57-subscription-action-button-finally",
+  "revision": "p59-query-safe-current-navigation",
   "files": [
     {
       "path": ".github/workflows/r0013-port-tests.yml",
-      "sizeBytes": 16873,
-      "sha256": "105ac5510bd4b6930696b44c28d2f89fcfebdcb83df51f5beb29db8b47ba0cff"
+      "sizeBytes": 17065,
+      "sha256": "d4808dfdb6e23e1c72cf50b30e4f09e84b2017bb96dd11f5f88b810edc6b4265"
     },
     {
       "path": "packaging/r0013-overlay/app/bin/broray-lightd",
@@ -87,6 +87,11 @@
       "path": "packaging/r0013-overlay/app/web-new/assets/css/allpage.css",
       "sizeBytes": 14039,
       "sha256": "588dead0ef7be73949c33265d4539db0d369af7929374a2691a43164a61baf7d"
+    },
+    {
+      "path": "packaging/r0013-overlay/app/web-new/assets/js/app-shell.js",
+      "sizeBytes": 443,
+      "sha256": "41db54d48c6d8779138643fe9ce226fc16a1c4f37d66928dbc1769ac440e4fa9"
     },
     {
       "path": "packaging/r0013-overlay/app/web-new/assets/js/home.js",
@@ -284,6 +289,11 @@
       "sha256": "c38ca7071e02e4df4e4f89b11686b90556fa3c02d432e608dd9bd226fa9bffb8"
     },
     {
+      "path": "tools/r0013_ui_preview.py",
+      "sizeBytes": 10092,
+      "sha256": "679108a35eb002120557401e9d5e01b9f5ce0ce2e915b24a98dfe232fdecf334"
+    },
+    {
       "path": "tools/test_r0013_bootstrap.py",
       "sizeBytes": 10579,
       "sha256": "26826264ef9f23e11dc6200969fd9008a99f860bb0cd196edf239c0e123a828a"
@@ -302,6 +312,11 @@
       "path": "tools/test_r0013_live_entry.py",
       "sizeBytes": 13962,
       "sha256": "79662325289651384d116b678c2de905d1a7b41c86ab3e6f260db5e6a444aa3d"
+    },
+    {
+      "path": "tools/test_r0013_navigation.js",
+      "sizeBytes": 2202,
+      "sha256": "8d222a1176e86beedbc54d618c607b109668179cf69807e336185f267f6e96f0"
     },
     {
       "path": "tools/test_r0013_platform.py",

@@ -1,0 +1,37 @@
+{
+  "stage": "R0013",
+  "revision": "p59-query-safe-current-navigation",
+  "candidateReady": false,
+  "status": "PASS_BOUNDED_NAVIGATION",
+  "sourceSha256": "41db54d48c6d8779138643fe9ce226fc16a1c4f37d66928dbc1769ac440e4fa9",
+  "tests": [
+    {
+      "name": "/home.html href-suffix=?v=2.0.0",
+      "status": "PASS"
+    },
+    {
+      "name": "/servers.html href-suffix=?v=2.0.0",
+      "status": "PASS"
+    },
+    {
+      "name": "/subscriptions.html href-suffix=?v=2.0.0",
+      "status": "PASS"
+    },
+    {
+      "name": "/home.html href-suffix=#section",
+      "status": "PASS"
+    },
+    {
+      "name": "/servers.html href-suffix=",
+      "status": "PASS"
+    },
+    {
+      "name": "/ href-suffix=?v=2.0.0",
+      "status": "PASS"
+    },
+    {
+      "name": "/missing.html href-suffix=?v=2.0.0",
+      "status": "PASS"
+    }
+  ]
+}

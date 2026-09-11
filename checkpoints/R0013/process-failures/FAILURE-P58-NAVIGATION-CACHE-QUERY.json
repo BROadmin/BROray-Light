@@ -1,0 +1,39 @@
+{
+  "stage": "R0013",
+  "revision": "p58-browser-control-and-layout-audit",
+  "status": "FAIL_FIRST_ERROR",
+  "page": "http://127.0.0.1:62763/home.html?v=2.0.0",
+  "viewport": {
+    "width": 1440,
+    "height": 1000
+  },
+  "passedBeforeFailure": [
+    "fixture-login-with-invented-credentials",
+    "show-and-hide-password-control",
+    "home-loads-version-interface-and-cards"
+  ],
+  "failedGate": "current-navigation-page-highlight",
+  "observedNavigation": [
+    {
+      "label": "Главная",
+      "href": "home.html?v=2.0.0",
+      "active": false
+    },
+    {
+      "label": "Серверы",
+      "href": "servers.html?v=2.0.0",
+      "active": false
+    },
+    {
+      "label": "Подписки",
+      "href": "subscriptions.html?v=2.0.0",
+      "active": false
+    }
+  ],
+  "cause": "app-shell compares full href including ?v cache token with bare location pathname; no link matches.",
+  "nextCorrectedRevision": "p59-query-safe-current-navigation",
+  "sameRevisionRetry": false,
+  "candidateReady": false,
+  "routerTouched": false,
+  "scope": "Real browser and prepared WebUI; loopback memory-only API fixture."
+}

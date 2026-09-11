@@ -1,0 +1,19 @@
+{
+  "stage": "R0013",
+  "revision": "p59-query-safe-current-navigation",
+  "status": "PASS_BOUNDED_REAL_BROWSER",
+  "sourceSha256": "41db54d48c6d8779138643fe9ce226fc16a1c4f37d66928dbc1769ac440e4fa9",
+  "browser": "Codex In-app Browser",
+  "tests": [
+    {"name": "home-current-nav-with-version-query", "status": "PASS"},
+    {"name": "servers-current-nav-with-version-query", "status": "PASS"},
+    {"name": "subscriptions-current-nav-with-version-query", "status": "PASS"},
+    {"name": "subscriptions-390px-no-horizontal-overflow", "status": "PASS", "viewportWidth": 390, "documentWidth": 390}
+  ],
+  "visualsInspected": ["Home 1440x1000 before navigation fix", "Subscriptions 390x844 full-page after fix"],
+  "scope": "Prepared WebUI with loopback memory-only API data. Not full backend/button/browser acceptance.",
+  "temporaryViewportReset": true,
+  "localPreviewStopped": true,
+  "candidateReady": false,
+  "routerTouched": false
+}

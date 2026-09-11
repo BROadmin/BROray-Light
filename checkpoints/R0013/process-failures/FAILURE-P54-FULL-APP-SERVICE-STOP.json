@@ -1,0 +1,82 @@
+{
+  "stage": "R0013",
+  "revision": "p54-full-prepared-application-lifecycle",
+  "status": "FAIL_FIRST_ERROR",
+  "commit": "0b6922cf07fc89fb56e79e9a284b7d24dbf5f010",
+  "ci": "https://github.com/BROadmin/BROray-Light/actions/runs/34544142025",
+  "artifact": {
+    "id": 10179219662,
+    "sha256": "e53a3ee5b71326f20a3417efb66c273946c8a47019320f3805099ee1415da07d"
+  },
+  "evidence": {
+    "r0013-prepared-app-dash.json": {
+      "report": {
+        "stage": "R0013",
+        "revision": "p54-full-prepared-application-lifecycle",
+        "status": "FAIL_FIRST_ERROR",
+        "shell": [
+          "/bin/dash"
+        ],
+        "tests": [
+          {
+            "name": "accepted-r1-runtime-prepare",
+            "status": "PASS",
+            "detail": {
+              "completeAcceptedScripts": true
+            }
+          },
+          {
+            "name": "r1-to-full-prepared-app",
+            "status": "PASS",
+            "detail": {
+              "returncode": 0,
+              "current": "2.0.0-r1",
+              "coordinatorPhase": "activated",
+              "legacyUpdaterCompleted": true,
+              "sessionPreserved": true,
+              "targetSlotManifestSha256": "49ef2ab5a4349ba710d09f7f90d44a922db3a6c7651478008721ba52c6aa9290",
+              "completeAppFileCount": 146
+            }
+          },
+          {
+            "name": "equal-version-no-op",
+            "status": "PASS",
+            "detail": {
+              "daemonNotRestarted": true,
+              "persistentDataIdentical": true
+            }
+          },
+          {
+            "name": "signed-downgrade-refused",
+            "status": "PASS",
+            "detail": {
+              "refusedBeforeSwitch": true
+            }
+          },
+          {
+            "name": "new-updater-full-s24-transition",
+            "status": "FAIL",
+            "error": "{'command': 'update', 'returncode': 1, 'stdout': '', 'stderr': '', 'transaction': {'schemaVersion': 1, 'phase': 'prepared', 'previousRelease': '2.0.0-r1', 'targetRelease': '2.0.1-r1', 'updatedAt': '2026-09-11T00:27:27+0000'}, 'daemonLogTail': ''}"
+          }
+        ],
+        "candidateReady": false,
+        "applicationScripts": "Complete accepted r1 and current prepared_app; no daemon/CLI substitutions",
+        "mockedBoundaries": [
+          "lighttpd workload binary",
+          "Keenetic publication OS",
+          "Xray executable"
+        ],
+        "network": "Private unshared network namespace; signed file:// fixture inputs only",
+        "entrySha256": "49081efafe4e25bcd8afee598671452628fb82acf9d4f55aa1e286720d854ea3"
+      },
+      "sha256": "868f7edfa17d2173659f3830243f460e66df6b5db411155200abde173e96e0db"
+    }
+  },
+  "failure": "New updater full S24 transition returns 1 with transaction.phase=prepared, before slot switch",
+  "causeStatus": "Service-stop path identified; investigating real daemon foreground sleep versus 10-second graceful stop bound. No source fix applied yet.",
+  "nextCorrectedRevision": "p60-full-daemon-graceful-stop",
+  "remainingRunCancelled": true,
+  "sameRevisionRetry": false,
+  "candidateReady": false,
+  "routerTouched": false
+}

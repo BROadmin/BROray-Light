@@ -104,12 +104,16 @@ jobs:
         run: node tools/test_r0013_home.js
       - name: Subscription cancel, delete, refresh and error controls
         run: node tools/test_r0013_subscription_controls.js /tmp/r0013-subscription-controls.json
+      - name: Current navigation with cache query and fragment
+        run: node tools/test_r0013_navigation.js /tmp/r0013-navigation.json
       - name: Preserve subscription control first result
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: r0013-subscription-controls-${{ github.sha }}
-          path: /tmp/r0013-subscription-controls.json
+          path: |
+            /tmp/r0013-subscription-controls.json
+            /tmp/r0013-navigation.json
           if-no-files-found: ignore
       - name: Xray rollback identity and operation fence ordering (dash)
         run: sudo python3 -B tools/test_r0013_xray_rollback.py --shell /bin/dash --result /tmp/r0013-xray-rollback-dash.json
