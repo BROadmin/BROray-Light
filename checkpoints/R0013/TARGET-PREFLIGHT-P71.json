@@ -1,0 +1,19 @@
+{
+  "stage": "R0013",
+  "revision": "p71-authorized-target-replacement-preflight",
+  "status": "PASS_READ_ONLY_AUDIT_WITH_KNOWN_STAT_GAP",
+  "target": "192.168.1.1",
+  "package": "broray 3.0.0-r14",
+  "architecture": "aarch64-3.10",
+  "lightInstalled": false,
+  "tmpAvailableKiB": 248140,
+  "optAvailableKiB": 60084,
+  "productLogicalDuKiB": 44672,
+  "uninstallContract": "Metadata-only package. prerm/postrm require a fresh operation-bound authorization receipt created by the full product's uninstall worker. Direct opkg removal must not bypass this. Full payload finalization is in the copied WebUI worker.",
+  "entryPoint": "/opt/broray/bin/broray-system uninstall-start",
+  "bootstrapService": "/opt/etc/init.d/S99broray-bootstrap",
+  "statDiagnostic": "Explicit /opt/bin/stat and /opt/bin/ash stat both lack -c/-f, confirming P68 rather than native-shell PATH ambiguity.",
+  "routerMutationPerformed": false,
+  "candidateReady": false,
+  "nextExactAction": "REVIEW_INSTALLED_UNINSTALL_WORKER_AND_CREATE_VERIFIED_PRIVATE_BACKUP"
+}

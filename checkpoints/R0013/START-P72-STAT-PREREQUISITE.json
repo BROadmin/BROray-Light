@@ -1,0 +1,25 @@
+{
+  "stage": "R0013",
+  "revision": "p72-stat-package-prerequisite",
+  "status": "STARTED",
+  "priorFailure": "process-failures/FAILURE-P68-TARGET-STAT-CAPABILITY.json",
+  "correction": "Declare coreutils-stat as explicit clean-install prerequisite and opkg dependency; verify official Entware package bytes and target capability before removal. Do not weaken ownership checks.",
+  "officialFeed": "https://bin.entware.net/aarch64-k3.10/Packages.gz",
+  "feedSha256": "3e8ce5633dcfacaae96b625b0f568c606c85b88d28c2fef8fc99671a7c8320ee",
+  "packages": [
+    {
+      "name": "coreutils",
+      "version": "9.9-2",
+      "sizeBytes": 860,
+      "sha256": "80f5d41f3073aba2ea2b83bd863fdee90ff201bed6283f3a7222a864fd60c815"
+    },
+    {
+      "name": "coreutils-stat",
+      "version": "9.9-2",
+      "sizeBytes": 52481,
+      "sha256": "9bffc2feb1cdc41f7a6c1eb089aded6694c0bc27dd318505d78158751a664614",
+      "installedSize": 112640
+    }
+  ],
+  "candidateReady": false
+}

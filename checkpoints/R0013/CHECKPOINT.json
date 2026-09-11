@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "stage": "R0013_SELECTIVE_UPSTREAM_STABLE_PORT",
-  "status": "BLOCKED_FAIL_CLOSED_USER_TARGET_DECISION_REQUIRED",
-  "currentRevision": "p70-seal-fail-closed-target-checkpoint",
+  "status": "AUTHORIZED_TARGET_REPLACEMENT_IN_PROGRESS",
+  "currentRevision": "p72-stat-package-prerequisite",
   "publicVersion": "2.0.0",
   "packageVersion": "2.0.0",
   "releaseId": "2.0.0-r1",
@@ -19,14 +19,14 @@
   "productionServerTouched": false,
   "fullBROrayModified": false,
   "preexistingR0012CodeAndHistoryPreserved": true,
-  "buildA": "PASS_INDEPENDENT_LINUX_UNSIGNED_BYTES",
-  "buildB": "PASS_INDEPENDENT_LINUX_UNSIGNED_BYTES",
+  "buildA": "P72_PENDING_PREVIOUS_P63_PASS_RETAINED",
+  "buildB": "P72_PENDING_PREVIOUS_P63_PASS_RETAINED",
   "buildEvidence": {
     "path": "INDEPENDENT-BUILDS-AND-CLEAN-P63.json",
     "sha256": "35bc9388ff47a8c23d7229f70150e8927d1fde06dd30ea93e0de694b1a795c3c"
   },
-  "activeFailure": "process-failures/FAILURE-P69-TARGET-FULL-BRORAY-OWNERSHIP.json",
-  "nextExactAction": "USER_SELECT_CLEAN_TEST_TARGET_OR_EXPLICITLY_AUTHORIZE_SEPARATELY_PLANNED_FULL_BROray_REMOVAL_THEN_RESOLVE_STAT_PREREQUISITE",
+  "activeFailure": "process-failures/FAILURE-P73-BACKUP-TAR-PATH.json",
+  "nextExactAction": "VERIFY_P74_LOCAL_BACKUP_AND_P72_BUILD_BEFORE_REMOVAL",
   "remainingIntegrationGap": {
     "description": "Full backend functionality, target ownership/stat prerequisites, signing, physical acceptance and immutable release/docs bytes remain; see VALIDATION.json."
   },
@@ -56,6 +56,8 @@
     "sha256": "fa6ed2fe892d20dbdd65f5488327df474c75316cafa340fa4fe203d9c7cd4812"
   },
   "routerReadOnlyInspected": true,
-  "routerMutationPerformed": false,
-  "additionalFailure": "process-failures/FAILURE-P68-TARGET-STAT-CAPABILITY.json"
+  "routerMutationPerformed": true,
+  "additionalFailure": "process-failures/FAILURE-P68-TARGET-STAT-CAPABILITY.json",
+  "targetReplacementAuthorization": "START-P71-TARGET-REPLACEMENT.json",
+  "routerMutationScope": "Private RAM backup files only; no product/config/service changes"
 }

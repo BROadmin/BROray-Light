@@ -1,0 +1,15 @@
+{
+  "stage": "R0013",
+  "revision": "p73-private-restorable-target-backup",
+  "status": "FAIL_FIRST_ERROR",
+  "target": "192.168.1.1",
+  "failedCommand": "/opt/usr/bin/tar --exclude=opt/broray/run ... -czf ...",
+  "exitCode": 1,
+  "cause": "Explicit /opt/usr/bin/tar is a stripped BusyBox extractor, not the Entware GNU tar. Command discovery alone did not prove create/exclude capability.",
+  "mutation": "Only private RAM directory /tmp/brl-r13-backup-p73.ELnUPS with owner, roots.txt and persistent-before.sha256. No archive, product, config or service change.",
+  "stdoutSha256": "6cbcc2614dc8d4eb90546b248efbc14242d8567ecbf4baf25c4d0ef3a4ee4ece",
+  "retryPerformed": false,
+  "nextRevision": "p74-entware-tar-backup-correction",
+  "nextExactAction": "VERIFY_OPT_BIN_TAR_AND_GZIP_THEN_NEW_PRIVATE_BACKUP_REVISION",
+  "candidateReady": false
+}

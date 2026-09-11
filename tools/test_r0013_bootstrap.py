@@ -194,6 +194,20 @@ def main():
         assert f.installer(opkg_fail=True).returncode != 0
         assert (f.root / "opkg-called").is_file()
         assert list((f.root / "tmp").iterdir()) == []
+    def install_missing_stat_format(f):
+        f.write('tools/stat', b'#!/bin/sh\nexit 1\n', 0o755)
+        result = f.installer()
+        assert result.returncode != 0
+        assert b'install Entware coreutils-stat first' in result.stderr
+        assert not (f.root / 'opkg-called').exists()
+        assert list((f.root / 'tmp').iterdir()) == []
+    def install_missing_stat_fs(f):
+        f.write('tools/stat', b'#!/bin/sh\n[ "$1" != -f ] || exit 1\nexec /usr/bin/stat "$@"\n', 0o755)
+        result = f.installer()
+        assert result.returncode != 0
+        assert b'stat lacks required filesystem support' in result.stderr
+        assert not (f.root / 'opkg-called').exists()
+        assert list((f.root / 'tmp').iterdir()) == []
     for name, fn in [("clean-bootstrap-owned-ram-cleaned", clean), ("existing-xray-preserved", preserve),
                      ("bootstrap-hash-refusal-cleaned", wrong_hash), ("occupied-namespace-preserved", preoccupied),
                      ("symlink-namespace-preserved", symlink), ("nonram-refused-before-write", nonram),
@@ -203,7 +217,9 @@ def main():
                      ("tampered-app-slot-refused", manifest_tamper),
                      ("installer-private-opkg-ram-cleanup", installer),
                      ("installer-bad-hash-no-opkg-cleanup", install_bad_hash),
-                     ("installer-opkg-failure-cleanup", install_opkg_fail)]:
+                     ("installer-opkg-failure-cleanup", install_opkg_fail),
+                     ("installer-missing-stat-format-before-write", install_missing_stat_format),
+                     ("installer-missing-stat-fs-before-write", install_missing_stat_fs)]:
         test(name, fn)
     emit(dict(stage="R0013", revision="p49-p47-clean-install-ram", status="PASS", candidateReady=False,
               mockedBoundaries=["mount type", "opkg", "Xray binary", "service start"], tests=records))

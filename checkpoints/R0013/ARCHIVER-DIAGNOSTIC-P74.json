@@ -1,0 +1,10 @@
+{
+  "stage": "R0013",
+  "revision": "p74-entware-tar-backup-correction",
+  "status": "GNU_TAR_VERIFIED_GZIP_ROUNDTRIP_TO_VERIFY",
+  "tar": "/opt/bin/tar -> /opt/libexec/tar-gnu; GNU tar 1.35",
+  "gzip": "/opt/bin/gzip -> /opt/bin/busybox; help advertises -c and -t. Optional --version is unsupported (diagnostic exited 1), not evidence that gzip -t fails.",
+  "diagnosticSha256": "8943b59698cd65160d77957b38b6c9f35cbdca732cc44db701f82b86946eafb8",
+  "productMutationPerformed": false,
+  "nextExactAction": "READ_ONLY_GZIP_ROUNDTRIP_THEN_FRESH_P74_BACKUP"
+}

@@ -87,6 +87,9 @@ def main():
     assert package["debian-binary"][0] == b"2.0\n"
     control = files(package["control.tar.gz"][0])
     assert ("Version: " + PUBLIC_VERSION + "\n").encode() in control["control"][0]
+    dependencies = next(line for line in control["control"][0].decode().splitlines() if line.startswith("Depends: "))
+    assert "coreutils-stat" in dependencies.removeprefix("Depends: ").split(", ")
+    assert b"install Entware coreutils-stat first" in entries["broray-light-install-" + PUBLIC_VERSION + ".sh"][0]
     data = files(package["data.tar.gz"][0])
     prefix = "opt/broray-light/releases/" + RELEASE_ID + "/"
     assert {p[len(prefix):]: row for p, row in data.items() if p.startswith(prefix)} == slot

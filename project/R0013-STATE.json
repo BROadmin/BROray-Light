@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
   "stage": "R0013_SELECTIVE_UPSTREAM_STABLE_PORT",
-  "status": "BLOCKED_FAIL_CLOSED_USER_TARGET_DECISION_REQUIRED",
-  "currentRevision": "p70-seal-fail-closed-target-checkpoint",
-  "activeFailure": "checkpoints/R0013/process-failures/FAILURE-P69-TARGET-FULL-BRORAY-OWNERSHIP.json",
+  "status": "TARGET_REPLACEMENT_BACKUP_AND_PREREQUISITE_BUILD",
+  "currentRevision": "p72-stat-package-prerequisite",
+  "activeFailure": "checkpoints/R0013/process-failures/FAILURE-P73-BACKUP-TAR-PATH.json",
   "publicVersion": "2.0.0",
   "buildA": "PASS_INDEPENDENT_LINUX_UNSIGNED",
   "buildB": "PASS_INDEPENDENT_LINUX_UNSIGNED",
@@ -62,7 +62,7 @@
     "path": "checkpoints/R0013/UPSTREAM-PORT-MAP-P2.json",
     "sha256": "009a0f5adae08f399c82510cf680690b4c2e50bc8c659eda9c48d91b5a838121"
   },
-  "nextExactAction": "USER_SELECT_CLEAN_TEST_TARGET_OR_EXPLICITLY_AUTHORIZE_SEPARATELY_PLANNED_FULL_BROray_REMOVAL_THEN_RESOLVE_STAT_PREREQUISITE",
+  "nextExactAction": "VERIFY_P74_LOCAL_BACKUP_AND_P72_BUILD_BEFORE_REMOVAL",
   "versionAndXray": {
     "status": "PASS_VERSION_AND_BOOTSTRAP_INPUT",
     "path": "checkpoints/R0013/UPGRADE-AND-XRAY-P10.json",
@@ -230,9 +230,9 @@
     "path": "checkpoints/R0013/EVIDENCE-BYTES-P59A.json"
   },
   "sourceCorrection": {
-    "sizeBytes": 693,
-    "path": "checkpoints/R0013/SOURCE-INPUTS-P66.json",
-    "sha256": "00d9d7d2a709d12467975b517cb140afc680b4a9a17f1a47523c4a228aad0462"
+    "sha256": "88b23529550f53d846dfa532531c6053e505af7e8ee79ba8057c2847e67639be",
+    "path": "checkpoints/R0013/SOURCE-INPUTS-P72.json",
+    "sizeBytes": 2168
   },
   "preparedLifecycle": {
     "path": "checkpoints/R0013/PREPARED-LIFECYCLE-P64.json",
@@ -255,7 +255,7 @@
     "path": "checkpoints/R0013/BROWSER-CONTROLS-P66.json"
   },
   "routerReadOnlyInspected": true,
-  "routerMutationPerformed": false,
+  "routerMutationPerformed": true,
   "targetOwnerDiagnosis": {
     "path": "checkpoints/R0013/process-failures/FAILURE-P69-TARGET-FULL-BRORAY-OWNERSHIP.json",
     "sha256": "3bb2b67af3195df865365da8b77087119d88d3bb0b36a4e58767a67b4c23dcba"
@@ -277,5 +277,12 @@
   "preexistingR0012Preservation": {
     "path": "checkpoints/R0013/R0012-PRESERVATION-P70.json",
     "sha256": "74d7d3f33b8d4ca705897d792370fc359f7c0cc345aa19b9c2214d75d887b6f1"
-  }
+  },
+  "targetReplacementAuthorization": {
+    "path": "checkpoints/R0013/START-P71-TARGET-REPLACEMENT.json",
+    "sizeBytes": 1352,
+    "sha256": "5f22bc3835f0fd6c85bfebe40ccea09b5889b2d671b11f0cc6a9c36e235ef817"
+  },
+  "previousTargetBlocker": "checkpoints/R0013/process-failures/FAILURE-P69-TARGET-FULL-BRORAY-OWNERSHIP.json",
+  "routerMutationScope": "P73/P74 private RAM backup files only; no product/config/service mutations."
 }

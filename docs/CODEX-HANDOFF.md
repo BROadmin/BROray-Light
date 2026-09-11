@@ -1,6 +1,10 @@
 # Codex handoff
 
-## Current authorized state — R0013 / P70
+## Current authorized state — R0013 / P72 (target replacement)
+
+The user explicitly authorized full replacement on test router 192.168.1.1: "Сделай полную замену на тестовом роутере". START-P71 records the scope. Preserve a verified private off-router backup before removing the installed full product through its audited uninstall worker. P73 backup stopped before creating an archive because /opt/usr/bin/tar is a stripped extractor; failure is retained. P74 uses verified /opt/bin/tar (GNU tar). P72 declares coreutils-stat and adds pre-write installer diagnostics/tests. New independent builds and local backup verification must pass before product removal. No production server or full-BROray repository changes are authorized.
+
+## Historical P70 blocker and validated engineering baseline
 
 BROray-Light public/package version 2.0.0 (internal updater releaseId 2.0.0-r1) is **BLOCKED_FAIL_CLOSED_USER_TARGET_DECISION_REQUIRED**. Read `docs/CODEX-R0013.md`, `project/R0013-STATE.json`, and `checkpoints/R0013/CHECKPOINT.json`. Keep branch `codex/r0009-updater-package` and preserve all R0012 work.
 

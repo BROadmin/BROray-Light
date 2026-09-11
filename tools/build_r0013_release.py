@@ -168,7 +168,8 @@ def build(output, platform, archive, digest):
             assert target.is_file(), "new system input needs explicit target contract: " + name
             target.write_bytes(data)
             rows = [row for row in rows if row["path"] != name]
-            rows.append(dict(path=name, sha256=sha(data), sizeBytes=len(data), mode="0o755", origin="R0013-overlay"))
+            rows.append(dict(path=name, sha256=sha(data), sizeBytes=len(data),
+                             mode="0o644" if name == "packaging/opkg/control" else "0o755", origin="R0013-overlay"))
         # A single reviewed source owns the helper bytes. The accepted r1
         # updater_members enumerator packages this exact additional path.
         helper_name = "updater/opt/libexec/broray-light-updater/runtime-ram.sh"

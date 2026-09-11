@@ -1,0 +1,8 @@
+{
+  "stage": "R0013",
+  "revision": "p74-entware-tar-backup-correction",
+  "status": "STARTED",
+  "priorFailure": "checkpoints/R0013/process-failures/FAILURE-P73-BACKUP-TAR-PATH.json",
+  "scope": "Read-only resolve GNU tar/gzip under /opt/bin, audit capabilities, then use a fresh RAM namespace. Preserve P73 failure and exact residue identity.",
+  "candidateReady": false
+}

@@ -7,6 +7,8 @@ on:
     paths:
       - '.github/workflows/r0013-candidate-build.yml'
       - 'tools/validate_r0013_clean_package.py'
+      - 'packaging/r0013-overlay/system/packaging/opkg/control'
+      - 'packaging/r0013-overlay/system/packaging/installer/broray-light-install.sh.in'
 
 permissions:
   contents: read
@@ -89,7 +91,10 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y --no-install-recommends busybox dash jq curl util-linux iproute2 lighttpd qemu-user-static
+      - name: Missing stat capability fails before installer writes
+        run: sudo python3 -B tools/test_r0013_bootstrap.py --shell /bin/dash --result /var/tmp/r0013-stat-bootstrap.json
       - name: Full built installer and live package lifecycle (dash)
+        # Actual Entware stat prerequisite is explicit in the package metadata.
         run: sudo unshare --mount --net --propagation private python3 -B tools/validate_r0013_clean_package.py --build "$RUNNER_TEMP/r0013-A" --shell /bin/dash --result /var/tmp/r0013-clean-package-dash.json
       - name: Full built installer and live package lifecycle (BusyBox)
         run: sudo unshare --mount --net --propagation private python3 -B tools/validate_r0013_clean_package.py --build "$RUNNER_TEMP/r0013-B" --shell /usr/bin/busybox --busybox --result /var/tmp/r0013-clean-package-ash.json
@@ -99,5 +104,6 @@ jobs:
           name: r0013-build-clean-validation-${{ github.sha }}
           path: |
             /var/tmp/r0013-build-comparison.json
+            /var/tmp/r0013-stat-bootstrap.json
             /var/tmp/r0013-clean-package-*.json
           if-no-files-found: error

@@ -43,6 +43,8 @@ finish()
 for command_name in cp curl sha256sum awk wc opkg mv chmod rm mktemp stat rmdir id tr mkdir; do
     command -v "$command_name" >/dev/null 2>&1 || fail "missing command: $command_name"
 done
+[ "$(stat -c %u / 2>/dev/null)" = 0 ] || fail 'stat lacks required format support; install Entware coreutils-stat first'
+[ -n "$(stat -f -c %T / 2>/dev/null)" ] || fail 'stat lacks required filesystem support; install Entware coreutils-stat first'
 [ -d "$ROOT_PREFIX/tmp" ] && [ ! -L "$ROOT_PREFIX/tmp" ] || fail '/tmp must be a real directory'
 [ "$(stat -c %u "$ROOT_PREFIX/tmp")" = 0 ] || fail '/tmp must be root-owned'
 case "$(stat -f -c %T "$ROOT_PREFIX/tmp")" in tmpfs|ramfs) ;; *) fail '/tmp is not RAM-backed' ;; esac

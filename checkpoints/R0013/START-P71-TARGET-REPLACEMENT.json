@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0013",
+  "revision": "p71-authorized-target-replacement-preflight",
+  "at": "2026-09-11T06:52:30.709Z",
+  "sourceCommit": "7c62175f9652eb07be9be9bf233417eaf43f54d1",
+  "authorization": {
+    "userText": "Сделай полную замену на тестовом роутере",
+    "target": "192.168.1.1",
+    "scope": "Replace installed full BROray with BROray-Light on the named test router; preserve restorable backup and unrelated router state."
+  },
+  "sequence": [
+    "read-only verify current identity, uninstall contract, ownership and access path",
+    "backup full product and relevant router state to restricted local storage; verify SHA-256 without exposing secrets",
+    "resolve and validate stat prerequisite and package compatibility before removal",
+    "remove only proven full-product owned installation/state via audited lifecycle",
+    "install verified Light package and validate actual services, native auth, WebUI/backend and persistence"
+  ],
+  "limits": [
+    "no BROadmin/BROray repository changes",
+    "no production server changes",
+    "no foreign interface/routes/DNS deletion",
+    "no release publication before all gates",
+    "router operational scratch only protected RAM",
+    "stop on first material failure and record named correction"
+  ],
+  "candidateReady": false
+}

@@ -1,0 +1,12 @@
+{
+  "stage": "R0013",
+  "revision": "p73-private-restorable-target-backup",
+  "status": "STARTED",
+  "authorization": "START-P71-TARGET-REPLACEMENT.json",
+  "target": "192.168.1.1",
+  "scope": "Create private RAM tar snapshot of full product durable files, Entware config/package metadata, full-product external helpers/state, plus running configuration. Copy to ACL-restricted ignored local storage and verify SHA-256. Do not mutate services or configuration.",
+  "remoteRootPattern": "/tmp/brl-r13-backup-p73.XXXXXX",
+  "localDirectory": "dist/R0013/private-target/p73",
+  "secrets": "Backup may contain user secrets; never print contents or commit. Local ACL only current account; remote root 700/files 600.",
+  "candidateReady": false
+}
