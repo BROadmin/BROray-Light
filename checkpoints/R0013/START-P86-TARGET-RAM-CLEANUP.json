@@ -1,0 +1,101 @@
+{
+  "schemaVersion": 1,
+  "status": "CHECKPOINT_FIRST",
+  "target": "192.168.1.1",
+  "scope": "Only three exact invocation-created protected RAM directories; preserved local verified private backups are not removed.",
+  "directories": [
+    {
+      "path": "/tmp/brl-r13-backup-p73.ELnUPS",
+      "id": "0:700:13:45275739",
+      "count": 3
+    },
+    {
+      "path": "/tmp/brl-r13-backup-p74.mBfUv5",
+      "id": "0:700:13:45303757",
+      "count": 7
+    },
+    {
+      "path": "/tmp/brl-r13-install-p76.E7rJwm",
+      "id": "0:700:13:45373386",
+      "count": 8
+    }
+  ],
+  "files": [
+    {
+      "sha256": "3461f8074bf0a128fcfd367fe2f879eb8a49b2763177188c1ccffac4794a394f",
+      "path": "/tmp/brl-r13-backup-p73.ELnUPS/persistent-before.sha256"
+    },
+    {
+      "sha256": "60c92dbd592b437c455dfc32e0ba6620a071580857dd27fe3b2d882ab5059bd1",
+      "path": "/tmp/brl-r13-backup-p73.ELnUPS/roots.txt"
+    },
+    {
+      "sha256": "3a7f7592645077f5a9871393eba5078bc9050969ce33832c2eb8cca812ce9ac8",
+      "path": "/tmp/brl-r13-backup-p73.ELnUPS/owner"
+    },
+    {
+      "sha256": "6f319497e01675c7d15164ce0fbcc64e2c76e48ea084d476f805ea0432cd913a",
+      "path": "/tmp/brl-r13-backup-p74.mBfUv5/ssh-connection.txt"
+    },
+    {
+      "sha256": "f65237270300589a032da3062607bc9ab421e122471ed396fc98046186a8d144",
+      "path": "/tmp/brl-r13-backup-p74.mBfUv5/running-config.txt"
+    },
+    {
+      "sha256": "3461f8074bf0a128fcfd367fe2f879eb8a49b2763177188c1ccffac4794a394f",
+      "path": "/tmp/brl-r13-backup-p74.mBfUv5/persistent-after.sha256"
+    },
+    {
+      "sha256": "fe51b6ccc3806a6a12e351b646af1e64e1def11bc5b49a5f0ce9343b63902c18",
+      "path": "/tmp/brl-r13-backup-p74.mBfUv5/full-broray.tar.gz"
+    },
+    {
+      "sha256": "3461f8074bf0a128fcfd367fe2f879eb8a49b2763177188c1ccffac4794a394f",
+      "path": "/tmp/brl-r13-backup-p74.mBfUv5/persistent-before.sha256"
+    },
+    {
+      "sha256": "60c92dbd592b437c455dfc32e0ba6620a071580857dd27fe3b2d882ab5059bd1",
+      "path": "/tmp/brl-r13-backup-p74.mBfUv5/roots.txt"
+    },
+    {
+      "sha256": "d6acb8ddc5860aef16cff2432b4602de7b76a9098bb4e316f2331024ee29f97f",
+      "path": "/tmp/brl-r13-backup-p74.mBfUv5/owner"
+    },
+    {
+      "sha256": "a19728b1342d6095b5f4f9fbe51c290b6ebe7680cb0cf41744d704c03e7fa69b",
+      "path": "/tmp/brl-r13-install-p76.E7rJwm/p84-durable-after.sha256"
+    },
+    {
+      "sha256": "a19728b1342d6095b5f4f9fbe51c290b6ebe7680cb0cf41744d704c03e7fa69b",
+      "path": "/tmp/brl-r13-install-p76.E7rJwm/p84-durable-before.sha256"
+    },
+    {
+      "sha256": "a31449263dfc5b772854fcd3f4d8624c334e3038715c61ae9996fd4fcd6adb79",
+      "path": "/tmp/brl-r13-install-p76.E7rJwm/broray-light_2.0.0-p83_aarch64-3.10.ipk"
+    },
+    {
+      "sha256": "f8775988803ed70fd1eed455a6444e567ebad8109a252c430a7071f4aefda0c2",
+      "path": "/tmp/brl-r13-install-p76.E7rJwm/broray-light-install-2.0.0-p83.sh"
+    },
+    {
+      "sha256": "3461f8074bf0a128fcfd367fe2f879eb8a49b2763177188c1ccffac4794a394f",
+      "path": "/tmp/brl-r13-install-p76.E7rJwm/pre-uninstall-persistent.sha256"
+    },
+    {
+      "sha256": "5b142793c7318c3620c494160d8c4413f44467e5e4d1e5e6e614fb88e142f7a7",
+      "path": "/tmp/brl-r13-install-p76.E7rJwm/broray-light_2.0.0_aarch64-3.10.ipk"
+    },
+    {
+      "sha256": "ae98ec1b3150b17eeb979ceebbbaee987d10c1bf6641821073ceb7dd45e135d3",
+      "path": "/tmp/brl-r13-install-p76.E7rJwm/broray-light-install-2.0.0.sh"
+    },
+    {
+      "sha256": "4384f6fad6eef489ffcce4f2c555da8994c52e5b0007124ab4d6050aee1e4734",
+      "path": "/tmp/brl-r13-install-p76.E7rJwm/owner"
+    }
+  ],
+  "method": "Before removal validate every root-owned directory identity/count and every regular single-link file SHA; unlink only those files and rmdir empty directories. No recursive deletion, no application operational RAM cleanup.",
+  "backup": "TARGET-BACKUP-P74.json",
+  "supplement": "TARGET-SUPPLEMENT-BACKUP-P77.json",
+  "lightBackup": "TARGET-LIGHT-BACKUP-P84.json"
+}

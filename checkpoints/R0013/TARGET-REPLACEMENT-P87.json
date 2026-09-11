@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "status": "PASS_FULL_TO_LIGHT_REPLACEMENT_AND_INSTALL_SMOKE",
+  "target": "192.168.1.1",
+  "authorization": "Сделай полную замену на тестовом роутере",
+  "installedSourceCommit": "14813c3774207502039999e014062464043827d1",
+  "publicVersion": "2.0.0",
+  "releaseId": "2.0.0-r1",
+  "xrayVersion": "26.9.9",
+  "webui": "https://brolight.tvervip.keenetic.link/home.html?v=2.0.0",
+  "gates": {
+    "verifiedBackup": "PASS_P74_P77",
+    "officialFullUninstall": "PASS_P77",
+    "obsoleteBootstrapRetirement": "PASS_P78",
+    "nativeCleanInstall": "PASS_P79",
+    "manifestRuntimeServiceRam": "PASS_P80",
+    "independentCorrectedBuilds": "PASS_P83_8_OF_8",
+    "nativeCgiRegression": "PASS_P83_100_TESTS",
+    "correctedNativePackageAndDurablePersistence": "PASS_P84",
+    "physicalNativeLoginAnd401Guard": "PASS_P85",
+    "homeServersSubscriptionsNavigationAndLoadedStates": "PASS_P85_BROWSER",
+    "invocationScratchCleanup": "PASS_P86"
+  },
+  "resolvedFailure": "process-failures/FAILURE-P81-NATIVE-TARGET-LOGIN.json",
+  "preexistingR0012": {
+    "checkedFiles": 502,
+    "mismatches": []
+  },
+  "installedCatalog": "empty clean install; no active server, Xray intentionally stopped; full-product settings retained only in private backup, no blind full-schema import",
+  "candidateReady": false,
+  "releaseReady": false,
+  "publicReleasePublished": false,
+  "remaining": [
+    "Complete current revision component regression and collect results",
+    "Functional VLESS data path and every backend/WebUI button acceptance",
+    "Physical restart/persistence and signed updater acceptance",
+    "Existing encrypted signing trust root; final immutable publication/documentation byte gates"
+  ],
+  "nextExactStage": "R0013_P88_FUNCTIONAL_VLESS_AND_ALL_WEBUI_BACKEND_ACCEPTANCE_ON_REPLACED_TEST_TARGET"
+}

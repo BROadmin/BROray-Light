@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "status": "PASS_VERIFIED_PRIVATE_BACKUP",
+  "path": "dist/R0013/private-target/p74/light-p72-before-p84.tar.gz",
+  "sizeBytes": 13127835,
+  "sha256": "5f9cf04217face11d6207d9b5839fd40afec24e1c1935f82dc8de593f224ec2e",
+  "gzipIntegrity": true,
+  "archiveMembers": 233,
+  "userCatalogFiles": 0,
+  "oldAppManifestSha256": "91b949910948897d3c62a3fc1b47b108f8cd6cb76c6b4f41bb8f83a8763a95bc",
+  "xraySha256": "c1defe42b6db958a97c5e049a02a00a4baaedaca7b51c1c229f0830e288acef5",
+  "privateIgnoredLocalOnly": true
+}

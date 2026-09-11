@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "status": "PASS",
+  "target": "192.168.1.1",
+  "removedInvocationFiles": 18,
+  "removedEmptyDirectories": 3,
+  "retainedPrivateOffRouterBackups": true,
+  "appOperationalRamUntouched": true,
+  "fullProductRestorePossibleFromBackups": true,
+  "output": {
+    "path": "dist/R0013/private-target/p74/invocation-cleanup-p86.txt",
+    "sha256": "b79008e6303be82b19b11c9878e63155c3ebd132487fd2edcdc7ea3384c76fe0",
+    "sizeBytes": 280
+  },
+  "optAvailableKiB": 71904,
+  "tmpAvailableKiB": 246712
+}

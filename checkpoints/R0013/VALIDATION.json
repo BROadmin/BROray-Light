@@ -52,8 +52,8 @@
     },
     {
       "gate": "xray_clean_binary_verification",
-      "status": "PASS_ARCHIVE_DIGEST_ELF_AND_ACTUAL_ARM64_BINARY_QEMU",
-      "evidence": "INDEPENDENT-BUILDS-AND-CLEAN-P63.json"
+      "status": "PASS_PINNED_BINARY_ACTUAL_ARM64_TARGET",
+      "evidence": "TARGET-STATE-P80.json"
     },
     {
       "gate": "all_webui_buttons_and_apis",
@@ -62,13 +62,13 @@
     },
     {
       "gate": "native_authentication_and_sessions",
-      "status": "FAIL_PHYSICAL_CGI_PATH_P81_CORRECTION_P83_PENDING",
-      "evidence": "process-failures/FAILURE-P81-NATIVE-TARGET-LOGIN.json"
+      "status": "PASS_100_CGI_TESTS_AND_PHYSICAL_NATIVE_LOGIN",
+      "evidence": "TARGET-NATIVE-LOGIN-P85.json"
     },
     {
       "gate": "protected_tmpfs_all_operational_scratch",
-      "status": "PASS_ISOLATED_LIFECYCLE_TARGET_STAT_PREREQUISITE_BLOCKED",
-      "evidence": "INDEPENDENT-BUILDS-AND-CLEAN-P63.json"
+      "status": "PASS_INSTALL_RUNTIME_LINKS_AND_INVOCATION_CLEANUP_TARGET",
+      "evidence": "TARGET-CLEANUP-P86.json"
     },
     {
       "gate": "archive_updater_and_ownership_safety",
@@ -77,8 +77,8 @@
     },
     {
       "gate": "isolated_clean_install",
-      "status": "PASS_BUILT_PACKAGE_REAL_SERVICES_HTTP_QEMU_OS_ADAPTERS",
-      "evidence": "INDEPENDENT-BUILDS-AND-CLEAN-P63.json"
+      "status": "PASS_P83_BUILD_EXACT_CLEAN_PACKAGE_FIXTURE",
+      "evidence": "INDEPENDENT-BUILDS-P83.json"
     },
     {
       "gate": "isolated_update_from_r1",
@@ -117,8 +117,8 @@
     },
     {
       "gate": "a_b_byte_reproducibility",
-      "status": "PASS_INDEPENDENT_LINUX_UNSIGNED_BYTES",
-      "evidence": "INDEPENDENT-BUILDS-AND-CLEAN-P63.json"
+      "status": "PASS_P83_8_OF_8",
+      "evidence": "INDEPENDENT-BUILDS-P83.json"
     },
     {
       "gate": "existing_trust_root_signing",
@@ -152,13 +152,13 @@
     },
     {
       "gate": "engineering_package_structure_hashes_and_modes",
-      "status": "PASS_BUILT_PACKAGE_REAL_SERVICES_HTTP_QEMU_OS_ADAPTERS",
-      "evidence": "INDEPENDENT-BUILDS-AND-CLEAN-P63.json"
+      "status": "PASS_P83_BUILT_ARTIFACTS_AND_TARGET_MANIFEST",
+      "evidence": "INDEPENDENT-BUILDS-P83.json"
     },
     {
       "gate": "preexisting_r0012_preservation",
-      "status": "PASS_502_FILES_WITH_THREE_EXPLICIT_ROUTING_LOG_EXCEPTIONS",
-      "evidence": "R0012-PRESERVATION-P70.json"
+      "status": "PASS_502_FILES_UNCHANGED",
+      "evidence": "TARGET-REPLACEMENT-P87.json"
     },
     {
       "gate": "shared_ram_namespace_and_locks",
@@ -217,8 +217,8 @@
     },
     {
       "gate": "scoped_s24_and_private_ram_publication",
-      "status": "PASS_SCOPED_SERVICES_AND_CLEAN_PACKAGE_ISOLATED_TARGET_PENDING",
-      "evidence": "REGRESSION-P64.json"
+      "status": "PASS_ACTUAL_TARGET_S23_S24_PUBLICATION",
+      "evidence": "TARGET-CORRECTED-INSTALL-P84.json"
     },
     {
       "gate": "legacy_runtime_tree_ram_handoff_and_byte_rollback",
@@ -242,12 +242,14 @@
     }
   ],
   "releaseId": "2.0.0-r1",
-  "currentRevision": "p83-cgi-path-correction-pending",
-  "status": "BLOCKED_FAIL_CLOSED_TARGET",
-  "nextExactAction": "USER_SELECT_CLEAN_TEST_TARGET_OR_EXPLICITLY_AUTHORIZE_SEPARATELY_PLANNED_FULL_BROray_REMOVAL_THEN_RESOLVE_STAT_PREREQUISITE",
+  "currentRevision": "p87-target-replacement-checkpoint",
+  "status": "TARGET_REPLACEMENT_PASS_FULL_RELEASE_ACCEPTANCE_PENDING",
+  "nextExactAction": "R0013_P88_FUNCTIONAL_VLESS_AND_ALL_WEBUI_BACKEND_ACCEPTANCE_ON_REPLACED_TEST_TARGET",
   "targetInstallation": {
-    "status": "PASS_NATIVE_OPKG_INSTALL_BUT_LOGIN_ACCEPTANCE_FAIL",
-    "evidence": "TARGET-INSTALL-P79.json"
+    "status": "PASS_REPLACEMENT_NATIVE_LOGIN_AND_EMPTY_THREE_PAGE_SMOKE",
+    "evidence": "TARGET-REPLACEMENT-P87.json"
   },
-  "currentCandidateReady": false
+  "currentCandidateReady": false,
+  "acceptanceScope": "Replacement/install smoke passes; clean catalog has no VLESS server. Complete current component regression, actual data path/all controls, physical restart and signed update, then signing/publication/docs gates.",
+  "currentSourceCommit": "14813c3774207502039999e014062464043827d1"
 }

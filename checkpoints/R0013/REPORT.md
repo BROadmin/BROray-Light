@@ -1,64 +1,60 @@
-# BROray-Light 2.0.0 — R0013, checkpoint P70
+# R0013 — замена тестового роутера на BROray-Light 2.0.0
 
-## Текущее состояние P83 — реальная замена выполнена, вход требует исправления
+Полная замена на **192.168.1.1 выполнена**. Это PASS установки и базовой проверки, **не приёмка релизного кандидата**. `candidateReady=false`, `releaseReady=false`; 2.0.0 не опубликован.
 
-Полный BROray штатно удалён с тестового роутера 192.168.1.1 после проверенной резервной копии вне роутера. Отдельно удалены только 12 проверенных файлов старого S99 bootstrap и завершённого handoff. Установлены coreutils-stat и BROray-Light 2.0.0 через настоящий opkg. P72 Build A/B совпадают побайтно; все пять задач регрессии run 34572894126 завершились успешно. P79 установка и P80 службы, манифест, Xray 26.9.9, RAM-каталоги прошли проверку.
+## Фактическое состояние
 
-P81 выявил реальную ошибку: CGI отвечает HTTP 500 до проверки пароля, потому что runtime guard вызывается до инициализации PATH и не находит Entware stat. Ошибка и диагноз сохранены отдельно (FAILURE-P81-NATIVE-TARGET-LOGIN, TARGET-CGI-DIAGNOSIS-P82). P83 исправляет только порядок подготовки PATH и добавляет тесты пустого/подменённого PATH. Новая сборка и повторная целевая приёмка обязательны. На роутере пока находятся точные P72-байты; скрытый hotpatch и повторная отправка пароля не выполнялись. candidateReady=false, релиз 2.0.0 не опубликован.
+- Полный BROray удалён штатным worker после проверенной резервной копии на компьютере.
+- Старые S99 bootstrap и завершённый handoff удалены отдельно: только 12 файлов с проверенными SHA-256 и 4 пустых каталога.
+- Light 2.0.0 установлен настоящим opkg; внутренний releaseId `2.0.0-r1`.
+- Установленный source commit: `14813c3774207502039999e014062464043827d1`.
+- Xray 26.9.9: `c1defe42b6db958a97c5e049a02a00a4baaedaca7b51c1c229f0830e288acef5`.
+- S23/S24 работают; весь app manifest проверен. SHA-256 APP-SHA256SUMS: `57832490c248a75d0286f142c8553e4b5e7a377336b10f648ee2e2dffb206716`.
+- Native-вход через KeeneticOS работает. Без сессии API возвращает 401 локально и снаружи; GET login — 405. Защита входа не ослаблялась.
+- Главная, Серверы и Подписки открываются и завершают загрузку.
+- Это чистая установка: каталоги серверов/подписок пусты, сервер не выбран, Xray намеренно остановлен. Полная схема конфигурации BROray автоматически не переносилась.
+- Операционные каталоги используют защищённый tmpfs. 18 временных файлов этой операции и 3 пустых каталога удалены; приватные резервные копии на компьютере сохранены.
+- После очистки: свободно 71 904 KiB в /opt и 246 712 KiB в /tmp. Логический объём Light с Xray на P80 — 35 508 KiB плюс 264 KiB внешнего updater/publication.
+- 502 прежних файла R0012 проверены: несовпадений нет.
 
-Следующий этап: проверить P83 новым Build A/B и native CGI regression, затем выполнить контролируемую замену чистого Light-пакета и повторить native login. Резервные копии находятся в приватном игнорируемом dist/R0013/private-target/p74, их хеши — TARGET-BACKUP-P74 и TARGET-SUPPLEMENT-BACKUP-P77.
+Адрес: [WebUI](https://brolight.tvervip.keenetic.link/home.html?v=2.0.0).
 
-## Исторический отчёт P70 (описание блокера до нового разрешения пользователя)
+## Зафиксированная ошибка и исправление
 
-Статус: **BLOCKED_FAIL_CLOSED_USER_TARGET_DECISION_REQUIRED**. `candidateReady=false`, `releaseReady=false`. Это неподписанная инженерная сборка, не готовый кандидат и не опубликованный релиз.
+P81: HTTP 500 при входе — runtime guard выполнялся до настройки PATH и не находил Entware stat. Ошибка отдельно сохранена в [FAILURE-P81-NATIVE-TARGET-LOGIN.json](process-failures/FAILURE-P81-NATIVE-TARGET-LOGIN.json); повтор на той же ревизии не выполнялся.
 
-## Что действительно выполнено
+P83 устанавливает путь Entware до guard, не меняя native-auth, сессии или ownership-проверки. Пустой и подменённый PATH включены в регрессию: 100 CGI/session тестов PASS. P84 заменяет пакет штатно, сохраняя точные durable-хеши; P85 подтверждает настоящий вход. Не было unmanifested hotpatch, force-флагов opkg или обхода co-install-защиты.
 
-- Выборочный порт из зафиксированного BROray 3.1.0-r09 / packaged 3.1.0-r09c02 поверх принятого Light r1 `9e5fce9bfa7c82bfc2f2654d80fd3987c5259963`. Канонический R0008 `684b27bdb53e545047419baa87c63dd86dffa469` сохранён. Публичная/package версия **2.0.0**, технический updater releaseId **2.0.0-r1**.
-- [P64: все пять заданий регрессии PASS](https://github.com/BROadmin/BROray-Light/actions/runs/34549087783), source `ebae309b93aee000ed1c5b5743385ba39e33ed98`. **479** проверок из JSON, 20 архивов evidence проверены SHA-256. Повторные RAM preflight и retirement subset не удваивают число. Командные проверки без JSON дополнительно не посчитаны.
-- Полные подготовленные application scripts на dash и BusyBox: r1 → 2.0.0, equal-version no-op, downgrade refusal, следующее обновление через новый updater, forced health rollback, persistence — **12 PASS**. Это настоящие app/daemon/updater/S24 скрипты; OS/Xray/network границы этого набора подменены. Исправлен подтверждённый дефект остановки daemon: безопасное ожидание явного внешнего sleep и адресное завершение только собственного дочернего процесса. Отдельно **8 PASS** сигналов/остановки.
-- Native HTTP/CGI/session: **96 PASS** настоящего кода приложения и curl, с loopback-имитатором ответа KeeneticOS. Это не доказательство native SCGI на физическом устройстве.
-- [P63: независимые Build A и B PASS](https://github.com/BROadmin/BROray-Light/actions/runs/34549442753), source `f38cfb7d00d6435d51a90672cdf2b39726e1f027`. Разные свежие Linux jobs, checkout и загрузки входов; **8/8 файлов побайтно совпали**.
-- Точный собранный clean installer/IPK с preinst/data/postinst, настоящими S23/S24/lighttpd и HTTP — **8 PASS** на dash/BusyBox. ARM64 Xray **26.9.9** реально запускается через QEMU. Проверены manifest, login/session/logout, restart/stop, шесть постоянных файлов и очистка operational scratch. Извлечение/порядок opkg эмулирует тестовый адаптер; настоящий Entware dependency solver и публикация Keenetic не проверены.
-- [P66: Chromium WebUI — 22 PASS](https://github.com/BROadmin/BROray-Light/actions/runs/34550298557), source `40f1ac096ad65cb62fa218bf83d542de2d9d3bf8`. Все отображаемые кнопки покрыты сгруппированными сценариями, включая cancel/accept удаления и переустановки Xray. **HTTP API тестовые**, поэтому полная функциональная backend-приёмка остаётся открытой. 9 снимков Home/Servers/Subscriptions на 390/768/1440 px просмотрены: круглый логотип, зелёные заголовки, отступы, переносы, без видимых наложений или горизонтального overflow.
-- P70: обе сборки скачаны локально с проверкой ZIP и каждого файла; побайтное равенство перепроверено. Все **19 frontend-файлов** из browser test совпадают с файлами в собранном app-архиве.
-- 502 прежних файла R0012 повторно проверены без изменений; три исторически описанных routing/log исключения сохранены. 90 файлов текущего source manifest совпали по SHA-256.
+## Сборки и артефакты
 
-## Реальный блокер — целевое устройство
+[Build A/B](https://github.com/BROadmin/BROray-Light/actions/runs/34575296123): независимые Ubuntu runners, **8/8 файлов побайтно одинаковы**. Чистая установка — 4 + 4 теста PASS; bootstrap/stat — 15 PASS. [Полная регрессия](https://github.com/BROadmin/BROray-Light/actions/runs/34575296136) требует отдельной финальной фиксации всех результатов; на момент P87 native-auth и prepared-app PASS, live-entry ещё не завершён.
 
-Read-only SSH-проверка `192.168.1.1` выявила **полный BROray**:
-
-- пакет `broray - 3.0.0-r14`;
-- каталог `/opt/broray`, root-owned mode 700;
-- `S24broray -> /opt/broray/current/init/S24broray`;
-- каталог и служба BROray-Light отсутствуют;
-- `/tmp` — tmpfs, `/opt` — ubifs;
-- `/opt/bin/stat -> /opt/bin/busybox` не поддерживает необходимые `-f` и `-c`; `coreutils-stat` не установлен.
-
-Это не историческое состояние принятого Light r1. Установка поверх полного продукта запрещена инвариантом ownership. Полный BROray не удалялся и не изменялся. Пакеты, файлы, настройки и службы на роутере не менялись; выполнялись только read-only диагностики. Production server не затронут.
-
-FIRST-ERROR сохранён отдельно: P67 key-only SSH authentication; P68 stat capability; P69 full BROray ownership. После каждой ошибки использована отдельно записанная диагностическая ревизия, без скрытого повтора установки. P54/P60/P62 daemon failures сохранены и исправлены с PASS в P64. P65 ошибка управления браузерным confirm сохранена; P66 проверил confirm на независимом Linux browser harness. Исторические проваленные R0012 workflows не относятся к R0013 gates и не объявляются зелёными.
-
-## Артефакты и SHA-256
-
-Локальные каталоги: `dist/R0013/p63-independent-build-A/` и `dist/R0013/p63-independent-build-B/`. Ниже одинаковые SHA-256 для A и B. `release.json` **не подписан**.
-
-| Артефакт | Байты | SHA-256 |
+| Артефакт | Байт | SHA-256 |
 |---|---:|---|
-| ENGINEERING-MANIFEST.json | 2347 | `23f5ce63daf825d0412cb990853777238c9bc32f93cf9a440bf0d42decac8d00` |
-| INPUT-MANIFEST.json | 40798 | `9c4dc2cb507d5b0f9d0359bca7e4fa359b1126f203d02e3523d9fae8815fa1be` |
-| SHA256SUMS | 670 | `abdba3617272f8335e359143e3aa907b4d8f84b8667cc8bba365bce79e666378` |
-| broray-light-app-2.0.0-r1.tar.gz | 229432 | `57a02b3101b3ce120932fd15ea88241b29c81f279b3bbb0e43a5c9c8854f6496` |
-| broray-light-install-2.0.0.sh | 3860 | `06b9ce1ba7127f19cccee99b8b87e8670260bb92ce68152e394f3655612889f2` |
+| broray-light-app-2.0.0-r1.tar.gz | 229584 | `c6fc51632127b1afc58ab8bdf23020122861b99b1eaa510c035ad8a26ffec66b` |
+| broray-light-install-2.0.0.sh | 4108 | `f8775988803ed70fd1eed455a6444e567ebad8109a252c430a7071f4aefda0c2` |
 | broray-light-updater-platform-5-light2-ram.tar.gz | 136061 | `aa814efcb6d75f02c061b3928588439466e9ee02af127bd7eac376786410fc1b` |
-| broray-light_2.0.0_aarch64-3.10.ipk | 12991349 | `8e855ab876de2d000849241b36c80397da97a57f5755ba9ca83df75734d7c7a4` |
-| release.json | 597 | `b7da9bd2f6fc4ee69f1c26e780167ef92e586d98467fe187870793f6ad912ad3` |
+| broray-light_2.0.0_aarch64-3.10.ipk | 12991917 | `a31449263dfc5b772854fcd3f4d8624c334e3038715c61ae9996fd4fcd6adb79` |
+| ENGINEERING-MANIFEST.json | 2347 | `c48ef13db0d25c86ca9094a2974b4045c55a86c4d9c061d7f9cd24f44d2f23ac` |
+| INPUT-MANIFEST.json | 40796 | `46e528de85ccebe6a1fb1cfb33ff31b007c979bf4dc1c46aba5dfab90176de3e` |
+| release.json | 597 | `4dab50872ef07f307dcc2a37cc0bb9779e118a879fd351abc5e69df64f35ca2b` |
+| SHA256SUMS | 670 | `db5d22b42eac246274f224ea258f2b9856138db8d3b13708f442e30a9088a9ad` |
 
-Приложение: 146 файлов, 855021 логических байт без Xray; SHA-256 app sums `91b949910948897d3c62a3fc1b47b108f8cd6cb76c6b4f41bb8f83a8763a95bc`. Xray binary: 35061884 байта, SHA-256 `c1defe42b6db958a97c5e049a02a00a4baaedaca7b51c1c229f0830e288acef5`. Это логические размеры, не замер выделенных блоков на роутере. Не следует менять immutable engineering manifest после сборки: его pendingGates отражают статус на момент build; последующие результаты находятся в checkpoint.
+Точные receipts: [INDEPENDENT-BUILDS-P83.json](INDEPENDENT-BUILDS-P83.json), [TARGET-REPLACEMENT-P87.json](TARGET-REPLACEMENT-P87.json).
 
-## Каждый acceptance gate
+## Резервные копии
 
-Ни один частичный или ограниченный тест не заменяет финальную приёмку. Статус содержит проверенную границу; `MOCKED` / `FIXTURE` / `BOUNDED` — имитация или ограниченный набор; `PENDING` / `PARTIAL` — не закрыт полностью. Machine-readable источник: [VALIDATION.json](VALIDATION.json).
+Приватный игнорируемый каталог: `dist/R0013/private-target/p74`. Архивы содержат пользовательские секреты, в Git не добавлены.
+
+| Архив | SHA-256 |
+|---|---|
+| backup-bundle.tar — полный BROray и running-config | `bd340ffe2a6e781434f33dba528cfde0be7eb1341f9d4126beb88b7c4088cda4` |
+| supplement-preserved-bootstrap.tar | `276aa1ca87c51ff750bbfe4eccc5cbedaeb39e5119f4a466ff608fb6872eb401` |
+| light-p72-before-p84.tar.gz | `5f9cf04217face11d6207d9b5839fd40afec24e1c1935f82dc8de593f224ec2e` |
+
+## Acceptance gates
+
+Здесь сохранены границы ранее выполненных компонентных проверок; PASS изолированного теста не означает PASS всего нового кандидата.
 
 | Gate | Результат | Evidence |
 |---|---|---|
@@ -71,12 +67,12 @@ FIRST-ERROR сохранён отдельно: P67 key-only SSH authentication; 
 | home_xray_controls | PASS_DOM_HTTP_BOUNDARIES_MOCKED | RAM-BOOTSTRAP-VALIDATION-P15.json |
 | published_r1_to_2_0_0_admission | PASS_FULL_PREPARED_APP_DASH_BUSYBOX_OS_BOUNDARIES_MOCKED | PREPARED-LIFECYCLE-P64.json |
 | canonical_source_and_final_input_manifest | PASS_ENGINEERING_INPUTS_FINAL_PENDING | RAM-BOOTSTRAP-VALIDATION-P15.json |
-| xray_clean_binary_verification | PASS_ARCHIVE_DIGEST_ELF_AND_ACTUAL_ARM64_BINARY_QEMU | INDEPENDENT-BUILDS-AND-CLEAN-P63.json |
+| xray_clean_binary_verification | PASS_PINNED_BINARY_ACTUAL_ARM64_TARGET | TARGET-STATE-P80.json |
 | all_webui_buttons_and_apis | PARTIAL_ALL_FRONTEND_CONTROLS_PASS_FULL_BACKEND_FUNCTIONAL_PENDING | BROWSER-CONTROLS-P66.json |
-| native_authentication_and_sessions | PASS_NATIVE_HTTP_CGI_SESSIONS_PHYSICAL_SCGI_PENDING | REGRESSION-P64.json |
-| protected_tmpfs_all_operational_scratch | PASS_ISOLATED_LIFECYCLE_TARGET_STAT_PREREQUISITE_BLOCKED | INDEPENDENT-BUILDS-AND-CLEAN-P63.json |
+| native_authentication_and_sessions | PASS_100_CGI_TESTS_AND_PHYSICAL_NATIVE_LOGIN | TARGET-NATIVE-LOGIN-P85.json |
+| protected_tmpfs_all_operational_scratch | PASS_INSTALL_RUNTIME_LINKS_AND_INVOCATION_CLEANUP_TARGET | TARGET-CLEANUP-P86.json |
 | archive_updater_and_ownership_safety | PASS_ISOLATED_COMPONENTS_FINAL_SIGNED_TARGET_PENDING | REGRESSION-P64.json |
-| isolated_clean_install | PASS_BUILT_PACKAGE_REAL_SERVICES_HTTP_QEMU_OS_ADAPTERS | INDEPENDENT-BUILDS-AND-CLEAN-P63.json |
+| isolated_clean_install | PASS_P83_BUILD_EXACT_CLEAN_PACKAGE_FIXTURE | INDEPENDENT-BUILDS-P83.json |
 | isolated_update_from_r1 | PASS_FULL_PREPARED_APP_DASH_BUSYBOX_OS_BOUNDARIES_MOCKED | PREPARED-LIFECYCLE-P64.json |
 | isolated_equal_version | PASS_FULL_PREPARED_APP_DASH_BUSYBOX_OS_BOUNDARIES_MOCKED | PREPARED-LIFECYCLE-P64.json |
 | isolated_downgrade_refusal | PASS_FULL_PREPARED_APP_DASH_BUSYBOX_OS_BOUNDARIES_MOCKED | PREPARED-LIFECYCLE-P64.json |
@@ -84,15 +80,15 @@ FIRST-ERROR сохранён отдельно: P67 key-only SSH authentication; 
 | persistence | PASS_FULL_PREPARED_APP_DASH_BUSYBOX_OS_BOUNDARIES_MOCKED | PREPARED-LIFECYCLE-P64.json |
 | independent_build_a | PASS_INDEPENDENT_LINUX_UNSIGNED_BYTES | INDEPENDENT-BUILDS-AND-CLEAN-P63.json |
 | independent_build_b | PASS_INDEPENDENT_LINUX_UNSIGNED_BYTES | INDEPENDENT-BUILDS-AND-CLEAN-P63.json |
-| a_b_byte_reproducibility | PASS_INDEPENDENT_LINUX_UNSIGNED_BYTES | INDEPENDENT-BUILDS-AND-CLEAN-P63.json |
-| existing_trust_root_signing | NOT_RUN | — |
+| a_b_byte_reproducibility | PASS_P83_8_OF_8 | INDEPENDENT-BUILDS-P83.json |
+| existing_trust_root_signing | NOT_RUN | null |
 | browser_desktop_mobile_layout | PASS_CHROMIUM_FIXTURE_390_768_1440_NINE_IMAGES_REVIEWED | BROWSER-CONTROLS-P66.json |
 | authorized_router_validation | BLOCKED_FULL_BROray_OWNERSHIP_AND_STAT_CAPABILITY | process-failures/FAILURE-P69-TARGET-FULL-BRORAY-OWNERSHIP.json |
-| immutable_release_and_public_byte_validation | NOT_PUBLISHED | — |
+| immutable_release_and_public_byte_validation | NOT_PUBLISHED | null |
 | public_version_vs_internal_updater_identity | PASS_SHELL_JQ_AND_MOCK_DOM_HTTP | RAM-BOOTSTRAP-VALIDATION-P15.json |
 | clean_bootstrap_and_installer_protected_ram | PASS_BUILT_PACKAGE_REAL_SERVICES_HTTP_QEMU_OS_ADAPTERS | INDEPENDENT-BUILDS-AND-CLEAN-P63.json |
-| engineering_package_structure_hashes_and_modes | PASS_BUILT_PACKAGE_REAL_SERVICES_HTTP_QEMU_OS_ADAPTERS | INDEPENDENT-BUILDS-AND-CLEAN-P63.json |
-| preexisting_r0012_preservation | PASS_502_FILES_WITH_THREE_EXPLICIT_ROUTING_LOG_EXCEPTIONS | R0012-PRESERVATION-P70.json |
+| engineering_package_structure_hashes_and_modes | PASS_P83_BUILT_ARTIFACTS_AND_TARGET_MANIFEST | INDEPENDENT-BUILDS-P83.json |
+| preexisting_r0012_preservation | PASS_502_FILES_UNCHANGED | TARGET-REPLACEMENT-P87.json |
 | shared_ram_namespace_and_locks | PASS_REAL_TMPFS_NATIVE_BUSYBOX | NATIVE-UPDATER-VALIDATION-P22.json |
 | updater_core_transactions_and_ready_service | PASS_CANONICAL_SLOT_FORMAT_FIXTURE_APP_SERVICE_REAL_MINISIGN_BUSYBOX | UPDATER-PLATFORM-AND-BUILDS-P23.json |
 | ram_updater_platform_package_binding | PASS_ENGINEERING_NOT_MIGRATION_ACCEPTANCE | UPDATER-PLATFORM-AND-BUILDS-P23.json |
@@ -104,16 +100,16 @@ FIRST-ERROR сохранён отдельно: P67 key-only SSH authentication; 
 | compiled_application_ram_paths_and_environment_guard | PASS_BOUNDED | RUNTIME-PATHS-AND-BUILDS-P34.json |
 | config_publication_receipt_migration | PASS_REAL_CONFIG_BYTES_FIXTURE_SERVICE | WEB-CONFIG-VALIDATION-P35.json |
 | coordinated_service_start_and_boot_rollback | PASS_BOUNDED_P52_EARLY_S23_AND_P48_DEAD_OWNER_FULL_CANDIDATE_PENDING | EARLY-BOOT-AND-CLEANUP-P52.json |
-| scoped_s24_and_private_ram_publication | PASS_SCOPED_SERVICES_AND_CLEAN_PACKAGE_ISOLATED_TARGET_PENDING | REGRESSION-P64.json |
+| scoped_s24_and_private_ram_publication | PASS_ACTUAL_TARGET_S23_S24_PUBLICATION | TARGET-CORRECTED-INSTALL-P84.json |
 | legacy_runtime_tree_ram_handoff_and_byte_rollback | PASS_BOUNDED_REAL_CROSS_FILESYSTEM_DASH_BUSYBOX | RUNTIME-TREES-AND-BUILDS-P40.json |
 | actual_lighttpd_nginx_pid_and_stop_contract | PASS_BOUNDED_REAL_LINUX_DAEMONS | ACTUAL-DAEMON-VALIDATION-P39.json |
 | new_updater_complete_prepared_app_service_transition | PASS_FULL_PREPARED_APP_DASH_BUSYBOX_OS_BOUNDARIES_MOCKED | PREPARED-LIFECYCLE-P64.json |
-| target_stat_prerequisite | BLOCKED_TARGET_STAT_MISSING_REQUIRED_F_AND_C_OPTIONS | process-failures/FAILURE-P68-TARGET-STAT-CAPABILITY.json |
+| target_stat_prerequisite | PASS_ACTUAL_TARGET_COREUTILS_STAT | TARGET-STAT-P75.json |
 
-## Checkpoint и продолжение
+## Следующий этап
 
-Точка возобновления: [CHECKPOINT.json](CHECKPOINT.json); активный blocker: [FAILURE-P69-TARGET-FULL-BRORAY-OWNERSHIP.json](process-failures/FAILURE-P69-TARGET-FULL-BRORAY-OWNERSHIP.json). SHA-256 всех JSON/MD — [SHA256SUMS](SHA256SUMS) и sidecars.
+`R0013_P88_FUNCTIONAL_VLESS_AND_ALL_WEBUI_BACKEND_ACCEPTANCE_ON_REPLACED_TEST_TARGET`
 
-Точный следующий этап: `USER_SELECT_CLEAN_TEST_TARGET_OR_EXPLICITLY_AUTHORIZE_SEPARATELY_PLANNED_FULL_BROray_REMOVAL_THEN_RESOLVE_STAT_PREREQUISITE`.
+Проверить окончание регрессии P83 и сохранить результаты. Затем выполнить функциональную приёмку VLESS и всех кнопок/backend, physical restart/persistence и signed updater. После этого — подпись существующим encrypted Actions secret, финальные immutable release/documentation gates. До выполнения этих требований готовность кандидата и релиза остаётся false.
 
-Сначала требуется выбор подходящего тестового устройства либо отдельное явное решение пользователя о полном BROray на текущем адресе. Нельзя автоматически сносить его или устанавливать зависимости. После разрешения ownership — оформить совместимость stat/Entware в новой именованной ревизии, повторить затронутые gates и независимые сборки, завершить полную функциональную backend/WebUI-приёмку, подпись существующим encrypted Actions secret, целевую установку/обновление и проверку опубликованных байтов/документации. Подпись и публикация сейчас не выполнялись.
+Основной checkpoint: [CHECKPOINT.json](CHECKPOINT.json). История ошибок сохранена; исходный R0008, прежние релизы, production server и репозиторий полного BROray не изменялись.

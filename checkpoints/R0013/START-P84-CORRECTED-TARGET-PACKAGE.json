@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "status": "CHECKPOINT_FIRST",
+  "target": "192.168.1.1",
+  "failure": "process-failures/FAILURE-P81-NATIVE-TARGET-LOGIN.json",
+  "sourceCommit": "14813c3774207502039999e014062464043827d1",
+  "buildEvidence": "INDEPENDENT-BUILDS-P83.json",
+  "method": [
+    "Verify private backup of current empty P72 Light install",
+    "Stage exact P83 installer/IPK in existing invocation-owned RAM using fresh filenames",
+    "Explicitly stop and verify Light services before native opkg remove",
+    "Retain durable config/runtime/publication ownership; unlink only exact managed current symlink after opkg removed old payload",
+    "Run exact new installer, preserving durable runtime/config and publication identity",
+    "Verify installed manifest, protected API refusal and native browser login"
+  ],
+  "excluded": [
+    "No --force opkg flags",
+    "No weakening ownership/authentication",
+    "No repeat P81 revision",
+    "No unmanifested live source hotpatch"
+  ],
+  "candidateReady": false
+}

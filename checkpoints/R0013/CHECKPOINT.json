@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "stage": "R0013_SELECTIVE_UPSTREAM_STABLE_PORT",
-  "status": "TARGET_REPLACED_NATIVE_CGI_FAILURE_CORRECTION_PENDING",
-  "currentRevision": "p83-cgi-entware-path",
+  "status": "PASS_TEST_TARGET_REPLACEMENT_RELEASE_ACCEPTANCE_PENDING",
+  "currentRevision": "p87-target-replacement-checkpoint",
   "publicVersion": "2.0.0",
   "packageVersion": "2.0.0",
   "releaseId": "2.0.0-r1",
@@ -10,31 +10,30 @@
   "releaseTag": "v2.0.0",
   "branch": "codex/r0009-updater-package",
   "baseLightCommit": "9e5fce9bfa7c82bfc2f2654d80fd3987c5259963",
-  "latestTestedSourceCommit": "3a424aa0965a33de5e19a33d6e89488413b9c306",
+  "latestTestedSourceCommit": "14813c3774207502039999e014062464043827d1",
   "latestFullComponentRegression": "REGRESSION-P64.json",
-  "latestCI": "https://github.com/BROadmin/BROray-Light/actions/runs/34572894126",
+  "latestCI": "https://github.com/BROadmin/BROray-Light/actions/runs/34575296136",
   "candidateReady": false,
   "releaseReady": false,
   "publicReleasePublished": false,
   "productionServerTouched": false,
   "fullBROrayModified": false,
   "preexistingR0012CodeAndHistoryPreserved": true,
-  "buildA": "PASS_P72_P83_PENDING",
-  "buildB": "PASS_P72_P83_PENDING",
-  "buildEvidence": "INDEPENDENT-BUILDS-P72.json",
-  "activeFailure": "process-failures/FAILURE-P81-NATIVE-TARGET-LOGIN.json",
-  "nextExactAction": "RUN_P83_INDEPENDENT_BUILDS_AND_NATIVE_CGI_REGRESSION_BEFORE_TARGET_REPLACEMENT",
+  "buildA": "PASS_P83_8_OF_8_INDEPENDENT_BYTES",
+  "buildB": "PASS_P83_8_OF_8_INDEPENDENT_BYTES",
+  "buildEvidence": {
+    "path": "INDEPENDENT-BUILDS-P83.json",
+    "sha256": "e0b324e756fd30cafe083eaaa4b5e9aac8c3b24de5e3547268c29190ed88944f"
+  },
+  "activeFailure": null,
+  "nextExactAction": "R0013_P88_FUNCTIONAL_VLESS_AND_ALL_WEBUI_BACKEND_ACCEPTANCE_ON_REPLACED_TEST_TARGET",
   "remainingIntegrationGap": {
-    "description": "Full backend functionality, target ownership/stat prerequisites, signing, physical acceptance and immutable release/docs bytes remain; see VALIDATION.json."
+    "description": "Actual replacement/login/empty-page smoke PASS. Current full component regression evidence, VLESS data path/all backend controls, physical restart/signed updater, signing and immutable release/docs gates remain."
   },
   "pendingSourceCommit": null,
-  "lastResolvedFailure": "process-failures/FAILURE-P62-BUSYBOX-IDLE-PROCESS-SHAPE.json",
-  "pendingSourceManifest": {
-    "sizeBytes": 17740,
-    "sha256": "18f34d6fcbbe20fe676b4d9394f3d25abdb820e99216c4e9365a439e526d1119",
-    "path": "checkpoints/R0013/PRODUCED-SOURCE-MANIFEST.json"
-  },
-  "buildSourceCommit": "3a424aa0965a33de5e19a33d6e89488413b9c306",
+  "lastResolvedFailure": "process-failures/FAILURE-P81-NATIVE-TARGET-LOGIN.json",
+  "pendingSourceManifest": null,
+  "buildSourceCommit": "14813c3774207502039999e014062464043827d1",
   "regressionSourceCommit": "ebae309b93aee000ed1c5b5743385ba39e33ed98",
   "regression": {
     "sizeBytes": 162932,
@@ -48,20 +47,34 @@
   },
   "browserToPackageBinding": "BUILD-DOWNLOAD-AND-UI-BINDING-P70.json",
   "report": {
-    "sizeBytes": 17801,
-    "sha256": "8334a841871f7ca9e9d5c0e61cd4b9008d449d78485ed64a015625a8812cce8d",
-    "path": "checkpoints/R0013/REPORT.md"
+    "path": "checkpoints/R0013/REPORT.md",
+    "sizeBytes": 12162,
+    "sha256": "4bcac08a3095ca7e67cedee43348a69e4f50e88e23012c5081978b3e3fdcea02"
   },
   "validation": {
-    "sizeBytes": 8820,
-    "sha256": "d017892073e3bce6425b9ac186c786ee422368f9be65cd8cbdb2a56e4b310c33",
-    "path": "checkpoints/R0013/VALIDATION.json"
+    "path": "checkpoints/R0013/VALIDATION.json",
+    "sizeBytes": 8935,
+    "sha256": "08bad665c9b6618a6ba5fe2551470edc4e0565fea77420fa454d953d5e42d6c5"
   },
   "routerReadOnlyInspected": true,
   "routerMutationPerformed": true,
-  "additionalFailure": "process-failures/FAILURE-P68-TARGET-STAT-CAPABILITY.json",
+  "additionalFailure": null,
   "targetReplacementAuthorization": "START-P71-TARGET-REPLACEMENT.json",
-  "routerMutationScope": "Verified backed-up full-product official uninstall, exact bootstrap retirement, stat prerequisite and native Light 2.0.0 clean install.",
-  "targetInstall": "TARGET-INSTALL-P79.json",
-  "targetState": "TARGET-STATE-P80.json"
+  "routerMutationScope": "Explicit full replacement on 192.168.1.1; official full uninstall, exact obsolete bootstrap cleanup, native Light package install and corrected replacement. Backups retained off-router. No VLESS catalog/proxy imported yet.",
+  "targetInstall": "TARGET-CORRECTED-INSTALL-P84.json",
+  "targetState": "TARGET-NATIVE-LOGIN-P85.json",
+  "installedSourceCommit": "14813c3774207502039999e014062464043827d1",
+  "currentFullRegression": "PENDING_FINAL_RESULT_COLLECTION",
+  "sourceManifest": {
+    "path": "checkpoints/R0013/PRODUCED-SOURCE-MANIFEST.json",
+    "sizeBytes": 18086,
+    "sha256": "d9c0e245181a79b102127254a545466857b91a464c3035788af4502881be04c4"
+  },
+  "targetReplacement": {
+    "path": "TARGET-REPLACEMENT-P87.json",
+    "sha256": "84766bd1763a4ca23215c46cb23a9fc9fb94d04edad8e04e2bf731b07d2fc71e"
+  },
+  "targetCleanup": "TARGET-CLEANUP-P86.json",
+  "fullBROrayRepositoryModified": false,
+  "fullProductRemovedOnTestTarget": true
 }

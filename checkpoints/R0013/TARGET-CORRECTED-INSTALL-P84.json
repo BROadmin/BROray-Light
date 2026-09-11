@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "status": "PASS_NATIVE_PACKAGE_REPLACEMENT_AND_PERSISTENCE",
+  "sourceCommit": "14813c3774207502039999e014062464043827d1",
+  "target": "192.168.1.1",
+  "output": {
+    "path": "dist/R0013/private-target/p74/corrected-package-install-p84.txt",
+    "sha256": "df07f2c6b1d0f50c15dc6d1351d2f7f6f28dc9b44786e4d4603d09edb1974b6e",
+    "sizeBytes": 293
+  },
+  "explicitStopPass": true,
+  "oldPackageRemoved": true,
+  "newPackageInstalled": true,
+  "durableConfigCatalogAndXrayHashesEqual": true,
+  "S23": true,
+  "S24": true,
+  "candidateReady": false
+}

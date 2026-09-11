@@ -1,0 +1,189 @@
+{
+  "schemaVersion": 1,
+  "status": "PASS_INDEPENDENT_BYTES_CLEAN_AND_NATIVE_AUTH",
+  "sourceCommit": "14813c3774207502039999e014062464043827d1",
+  "runId": 34575296123,
+  "runUrl": "https://github.com/BROadmin/BROray-Light/actions/runs/34575296123",
+  "nativeAuthRunId": 34575296136,
+  "buildA": "fresh independent Ubuntu runner",
+  "buildB": "separate fresh independent Ubuntu runner",
+  "byteIdenticalFiles": 8,
+  "artifacts": [
+    {
+      "id": 10189403888,
+      "name": "r0013-build-clean-validation-14813c3774207502039999e014062464043827d1",
+      "size_in_bytes": 2983,
+      "url": "https://api.github.com/repos/BROadmin/BROray-Light/actions/artifacts/10189403888",
+      "archive_download_url": "https://api.github.com/repos/BROadmin/BROray-Light/actions/artifacts/10189403888/zip",
+      "expired": false,
+      "created_at": "2026-09-11T07:39:27Z",
+      "expires_at": "2026-12-10T07:38:03Z",
+      "updated_at": "2026-09-11T07:39:27Z",
+      "digest": "sha256:7bd9e7dc94bd41a60b684df126558af82592e2005796edf9e19b990f90135771",
+      "workflow_run": {
+        "id": 34575296123,
+        "repository_id": 1346219669,
+        "head_repository_id": 1346219669,
+        "head_branch": "codex/r0009-updater-package",
+        "head_sha": "14813c3774207502039999e014062464043827d1"
+      }
+    },
+    {
+      "id": 10189371364,
+      "name": "r0013-build-receipt-B-14813c3774207502039999e014062464043827d1",
+      "size_in_bytes": 1231,
+      "url": "https://api.github.com/repos/BROadmin/BROray-Light/actions/artifacts/10189371364",
+      "archive_download_url": "https://api.github.com/repos/BROadmin/BROray-Light/actions/artifacts/10189371364/zip",
+      "expired": false,
+      "created_at": "2026-09-11T07:38:21Z",
+      "expires_at": "2026-12-10T07:38:03Z",
+      "updated_at": "2026-09-11T07:38:21Z",
+      "digest": "sha256:e189787a72c0acba377d08c526f174b2b1b313ce50f57a852ca7cdf21642482b",
+      "workflow_run": {
+        "id": 34575296123,
+        "repository_id": 1346219669,
+        "head_repository_id": 1346219669,
+        "head_branch": "codex/r0009-updater-package",
+        "head_sha": "14813c3774207502039999e014062464043827d1"
+      }
+    },
+    {
+      "id": 10189370979,
+      "name": "r0013-build-B-14813c3774207502039999e014062464043827d1",
+      "size_in_bytes": 13375212,
+      "url": "https://api.github.com/repos/BROadmin/BROray-Light/actions/artifacts/10189370979",
+      "archive_download_url": "https://api.github.com/repos/BROadmin/BROray-Light/actions/artifacts/10189370979/zip",
+      "expired": false,
+      "created_at": "2026-09-11T07:38:21Z",
+      "expires_at": "2026-12-10T07:38:03Z",
+      "updated_at": "2026-09-11T07:38:21Z",
+      "digest": "sha256:26e60ace96df70966419aabc9fb26c362682a44eafab5bf1cff3bf0d6ca37049",
+      "workflow_run": {
+        "id": 34575296123,
+        "repository_id": 1346219669,
+        "head_repository_id": 1346219669,
+        "head_branch": "codex/r0009-updater-package",
+        "head_sha": "14813c3774207502039999e014062464043827d1"
+      }
+    },
+    {
+      "id": 10189370236,
+      "name": "r0013-build-receipt-A-14813c3774207502039999e014062464043827d1",
+      "size_in_bytes": 1231,
+      "url": "https://api.github.com/repos/BROadmin/BROray-Light/actions/artifacts/10189370236",
+      "archive_download_url": "https://api.github.com/repos/BROadmin/BROray-Light/actions/artifacts/10189370236/zip",
+      "expired": false,
+      "created_at": "2026-09-11T07:38:19Z",
+      "expires_at": "2026-12-10T07:38:03Z",
+      "updated_at": "2026-09-11T07:38:19Z",
+      "digest": "sha256:d0f0d3dd3d5e7940a20f0a19511ea8420b691dea61ec38054966bc91451a6eb5",
+      "workflow_run": {
+        "id": 34575296123,
+        "repository_id": 1346219669,
+        "head_repository_id": 1346219669,
+        "head_branch": "codex/r0009-updater-package",
+        "head_sha": "14813c3774207502039999e014062464043827d1"
+      }
+    },
+    {
+      "id": 10189369971,
+      "name": "r0013-build-A-14813c3774207502039999e014062464043827d1",
+      "size_in_bytes": 13375212,
+      "url": "https://api.github.com/repos/BROadmin/BROray-Light/actions/artifacts/10189369971",
+      "archive_download_url": "https://api.github.com/repos/BROadmin/BROray-Light/actions/artifacts/10189369971/zip",
+      "expired": false,
+      "created_at": "2026-09-11T07:38:18Z",
+      "expires_at": "2026-12-10T07:38:03Z",
+      "updated_at": "2026-09-11T07:38:18Z",
+      "digest": "sha256:cd483814aa24668898067824957f521c91c9e59e1a433e66ce94aafad9d4733b",
+      "workflow_run": {
+        "id": 34575296123,
+        "repository_id": 1346219669,
+        "head_repository_id": 1346219669,
+        "head_branch": "codex/r0009-updater-package",
+        "head_sha": "14813c3774207502039999e014062464043827d1"
+      }
+    }
+  ],
+  "files": [
+    {
+      "path": "broray-light-app-2.0.0-r1.tar.gz",
+      "sizeBytes": 229584,
+      "sha256": "c6fc51632127b1afc58ab8bdf23020122861b99b1eaa510c035ad8a26ffec66b"
+    },
+    {
+      "path": "broray-light-install-2.0.0.sh",
+      "sizeBytes": 4108,
+      "sha256": "f8775988803ed70fd1eed455a6444e567ebad8109a252c430a7071f4aefda0c2"
+    },
+    {
+      "path": "broray-light-updater-platform-5-light2-ram.tar.gz",
+      "sizeBytes": 136061,
+      "sha256": "aa814efcb6d75f02c061b3928588439466e9ee02af127bd7eac376786410fc1b"
+    },
+    {
+      "path": "broray-light_2.0.0_aarch64-3.10.ipk",
+      "sizeBytes": 12991917,
+      "sha256": "a31449263dfc5b772854fcd3f4d8624c334e3038715c61ae9996fd4fcd6adb79"
+    },
+    {
+      "path": "ENGINEERING-MANIFEST.json",
+      "sizeBytes": 2347,
+      "sha256": "c48ef13db0d25c86ca9094a2974b4045c55a86c4d9c061d7f9cd24f44d2f23ac"
+    },
+    {
+      "path": "INPUT-MANIFEST.json",
+      "sizeBytes": 40796,
+      "sha256": "46e528de85ccebe6a1fb1cfb33ff31b007c979bf4dc1c46aba5dfab90176de3e"
+    },
+    {
+      "path": "release.json",
+      "sizeBytes": 597,
+      "sha256": "4dab50872ef07f307dcc2a37cc0bb9779e118a879fd351abc5e69df64f35ca2b"
+    },
+    {
+      "path": "SHA256SUMS",
+      "sizeBytes": 670,
+      "sha256": "db5d22b42eac246274f224ea258f2b9856138db8d3b13708f442e30a9088a9ad"
+    }
+  ],
+  "tests": [
+    {
+      "path": "dist/R0013/p83-build-clean-validation/r0013-build-comparison.json",
+      "sha256": "ab327611ec0ce28b1a1c07b43c0f8d8f771af690228b828872acdbeba9e210e1",
+      "status": "PASS",
+      "tests": 6
+    },
+    {
+      "path": "dist/R0013/p83-build-clean-validation/r0013-clean-package-ash.json",
+      "sha256": "f3b981193e974b5b631d7c52bfe5d7f42a738a5471fda69b43b6c4ecef54ae5f",
+      "status": "PASS_EXACT_CLEAN_PACKAGE_LIVE_SERVICES_AND_HTTP_OS_BOUNDARIES_MOCKED",
+      "tests": 4
+    },
+    {
+      "path": "dist/R0013/p83-build-clean-validation/r0013-clean-package-dash.json",
+      "sha256": "e1952c183d78fd8c32eac7b029e4a14da3840235d13f824fc547814783aca6b3",
+      "status": "PASS_EXACT_CLEAN_PACKAGE_LIVE_SERVICES_AND_HTTP_OS_BOUNDARIES_MOCKED",
+      "tests": 4
+    },
+    {
+      "path": "dist/R0013/p83-build-clean-validation/r0013-stat-bootstrap.json",
+      "sha256": "ef1e8b9f6ed21d4cea1dbbf6b0d44020156a6126ce679df927bc7ee6b9a0d8be",
+      "status": "PASS",
+      "tests": 15
+    },
+    {
+      "path": "dist/R0013/p83-native-auth-validation/r0013-native-auth-ash.json",
+      "sha256": "e45c89b56098e905fdc5fcdf2ce5a10a4cffbc734646080f41bf60f819cd2f91",
+      "status": "PASS_NATIVE_HTTP_CGI_AND_SESSION_BOUNDARIES",
+      "tests": 50
+    },
+    {
+      "path": "dist/R0013/p83-native-auth-validation/r0013-native-auth-dash.json",
+      "sha256": "adf924f0ccbd15cedf48db736bc11d1c71a386aad4641cf3f0a3e783b0a3277e",
+      "status": "PASS_NATIVE_HTTP_CGI_AND_SESSION_BOUNDARIES",
+      "tests": 50
+    }
+  ],
+  "candidateReady": false
+}

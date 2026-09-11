@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
   "stage": "R0013_SELECTIVE_UPSTREAM_STABLE_PORT",
-  "status": "BOUNDED_CGI_PATH_CORRECTION_PENDING_VALIDATION",
-  "currentRevision": "p83-cgi-path-correction",
-  "activeFailure": "checkpoints/R0013/process-failures/FAILURE-P81-NATIVE-TARGET-LOGIN.json",
+  "status": "PASS_TEST_TARGET_REPLACEMENT_RELEASE_ACCEPTANCE_PENDING",
+  "currentRevision": "p87-target-replacement-checkpoint",
+  "activeFailure": null,
   "publicVersion": "2.0.0",
-  "buildA": "PASS_P72_INDEPENDENT_LINUX_UNSIGNED",
-  "buildB": "PASS_P72_INDEPENDENT_LINUX_UNSIGNED",
+  "buildA": "PASS_P83_INDEPENDENT_BYTES",
+  "buildB": "PASS_P83_INDEPENDENT_BYTES",
   "catalogAndControlsPort": {
     "status": "PASS_ISOLATED_REGRESSION",
     "path": "checkpoints/R0013/CATALOG-AND-CONTROLS-P8.json",
@@ -18,7 +18,7 @@
     "path": "checkpoints/R0013/SUBSCRIPTION-NAME-P6.json",
     "sha256": "2b1fe451272dc233e1f8ccd4cc3d6ea2f212ba81e009f93d3a4b9e9b9601577a"
   },
-  "lastResolvedFailure": "checkpoints/R0013/process-failures/FAILURE-P73-BACKUP-TAR-PATH.json",
+  "lastResolvedFailure": "checkpoints/R0013/process-failures/FAILURE-P81-NATIVE-TARGET-LOGIN.json",
   "processPort": {
     "status": "PASS_ISOLATED_LINUX",
     "tests": 33,
@@ -62,7 +62,7 @@
     "path": "checkpoints/R0013/UPSTREAM-PORT-MAP-P2.json",
     "sha256": "009a0f5adae08f399c82510cf680690b4c2e50bc8c659eda9c48d91b5a838121"
   },
-  "nextExactAction": "COMMIT_SCOPED_CORRECTION_AND_RUN_INDEPENDENT_BUILD_AND_NATIVE_AUTH_REGRESSION",
+  "nextExactAction": "R0013_P88_FUNCTIONAL_VLESS_AND_ALL_WEBUI_BACKEND_ACCEPTANCE_ON_REPLACED_TEST_TARGET",
   "versionAndXray": {
     "status": "PASS_VERSION_AND_BOOTSTRAP_INPUT",
     "path": "checkpoints/R0013/UPGRADE-AND-XRAY-P10.json",
@@ -81,7 +81,7 @@
     "path": "RAM-BOOTSTRAP-VALIDATION-P15.json",
     "sha256": "050a4d9b7e8c82194d1e4dd03e6e014031ec1b24d44f06833cc3189d5ca1c33d"
   },
-  "latestCI": "https://github.com/BROadmin/BROray-Light/actions/runs/34572894126",
+  "latestCI": "https://github.com/BROadmin/BROray-Light/actions/runs/34575296136",
   "latestFullComponentRegression": {
     "status": "PASS_ALL_FIVE_R0013_REGRESSION_JOBS",
     "commit": "ebae309b93aee000ed1c5b5743385ba39e33ed98",
@@ -165,7 +165,7 @@
     "sha256": "b0fdc171938d82ce546b2ae314dbd340f9121fc71a062f61aa5f4c5b94b9a5e3"
   },
   "remainingIntegrationGap": {
-    "description": "Independent unsigned A/B, full prepared lifecycle, exact built clean package, native HTTP/CGI/session and Chromium fixture controls pass. Full functional backend button acceptance, exact-target compatibility (stat capability and full BROray ownership), signing, physical validation and immutable public/docs bytes remain."
+    "description": "Actual full replacement/login/empty-page smoke PASS. Current full component regression evidence, VLESS data path/all backend controls, physical restart/signed updater, signing and immutable release/docs gates remain."
   },
   "scopedServiceAndPublication": {
     "status": "PASS_BOUNDED",
@@ -206,10 +206,8 @@
     "sha256": "0747151a22c5acef5d9a2f4a32cb104c55fee6dc61e07ec3d011a57410b29b70"
   },
   "nativeAuthentication": {
-    "status": "PASS_NATIVE_HTTP_CGI_SESSIONS_PHYSICAL_SCGI_PENDING",
-    "tests": 96,
-    "path": "checkpoints/R0013/NATIVE-AUTH-P57.json",
-    "sha256": "0c83866f08d50b7c43acd47af83eb2a9d968a72b9f92f4838035f1218c758af6"
+    "status": "PASS_P83_100_ISOLATED_NATIVE_TESTS_AND_P85_PHYSICAL_NATIVE_LOGIN",
+    "evidence": "checkpoints/R0013/TARGET-NATIVE-LOGIN-P85.json"
   },
   "subscriptionControls": {
     "status": "PASS_BOUNDED_DOM_HTTP_FIXTURES",
@@ -217,7 +215,7 @@
     "path": "checkpoints/R0013/CONTROL-P57.json",
     "sha256": "18180c9ff3f419c5c758b97197c5f75ad669fd163d1f75ba4ad67fcea6c144b7"
   },
-  "additionalFailure": "checkpoints/R0013/process-failures/FAILURE-P68-TARGET-STAT-CAPABILITY.json",
+  "additionalFailure": null,
   "navigation": {
     "status": "PASS_UNIT_AND_REAL_BROWSER",
     "tests": 11,
@@ -239,15 +237,10 @@
     "sha256": "d1dbd4c4aeab5636079174e1b5a03ad24953c978ea3953740223b585bc68b537",
     "sizeBytes": 42464
   },
-  "independentBuildsAndClean": {
-    "sha256": "6e49a13ef7a6c7c933b35d5d243037d89b71cf0cb5566ada11c1c1ecc6ffcdde",
-    "sizeBytes": 20924,
-    "path": "checkpoints/R0013/INDEPENDENT-BUILDS-P72.json"
-  },
+  "independentBuildsAndClean": "checkpoints/R0013/INDEPENDENT-BUILDS-P83.json",
   "targetPreflight": {
-    "sha256": "7dd10264ce6e78efe7bce9954df1cb3f1975186ba6dad7f112139f71ebd38c6e",
-    "path": "checkpoints/R0013/process-failures/FAILURE-P68-TARGET-STAT-CAPABILITY.json",
-    "sizeBytes": 1092
+    "status": "PASS_ACTUAL_TARGET_STAT_FULL_OWNERSHIP_RESOLVED",
+    "evidence": "checkpoints/R0013/TARGET-REPLACEMENT-P87.json"
   },
   "browserControls": {
     "sizeBytes": 11397,
@@ -261,14 +254,14 @@
     "sha256": "3bb2b67af3195df865365da8b77087119d88d3bb0b36a4e58767a67b4c23dcba"
   },
   "checkpoint": {
-    "sha256": "092dad55396b876a9ff0ccf296e4ea537a51a144f7621905e59a99ab24cb3b74",
-    "sizeBytes": 3090,
+    "sha256": "a60675c1bd35406fd9609882ce73bd32364e452718054702d2c864c60966b8bb",
+    "sizeBytes": 3726,
     "path": "checkpoints/R0013/CHECKPOINT.json"
   },
   "report": {
-    "sizeBytes": 17801,
-    "sha256": "8334a841871f7ca9e9d5c0e61cd4b9008d449d78485ed64a015625a8812cce8d",
-    "path": "checkpoints/R0013/REPORT.md"
+    "path": "checkpoints/R0013/REPORT.md",
+    "sizeBytes": 12162,
+    "sha256": "4bcac08a3095ca7e67cedee43348a69e4f50e88e23012c5081978b3e3fdcea02"
   },
   "localBuildByteVerification": {
     "path": "checkpoints/R0013/BUILD-DOWNLOAD-AND-UI-BINDING-P70.json",
@@ -284,7 +277,7 @@
     "sha256": "5f22bc3835f0fd6c85bfebe40ccea09b5889b2d671b11f0cc6a9c36e235ef817"
   },
   "previousTargetBlocker": "checkpoints/R0013/process-failures/FAILURE-P69-TARGET-FULL-BRORAY-OWNERSHIP.json",
-  "routerMutationScope": "Official full-product uninstall plus exact backed-up bootstrap retirement; coreutils-stat dependency and Light 2.0.0 installed by native opkg. No foreign routes/settings changed.",
+  "routerMutationScope": "Full product officially removed with verified private backups; exact bootstrap retired; Light corrected P83 package installed. Durable state preserved across P84 correction; invocation scratch removed.",
   "targetBackup": {
     "sizeBytes": 2103,
     "path": "checkpoints/R0013/TARGET-BACKUP-P74.json",
@@ -301,5 +294,9 @@
     "sizeBytes": 521
   },
   "targetInstall": "checkpoints/R0013/TARGET-INSTALL-P79.json",
-  "targetInstalledState": "checkpoints/R0013/TARGET-STATE-P80.json"
+  "targetInstalledState": "checkpoints/R0013/TARGET-STATE-P80.json",
+  "nativeTargetLogin": "checkpoints/R0013/TARGET-NATIVE-LOGIN-P85.json",
+  "targetReplacement": "checkpoints/R0013/TARGET-REPLACEMENT-P87.json",
+  "targetCleanup": "checkpoints/R0013/TARGET-CLEANUP-P86.json",
+  "currentFullRegression": "PENDING_FINAL_RESULT_COLLECTION"
 }
