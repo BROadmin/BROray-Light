@@ -1,4 +1,4 @@
-# BROray-Light 2.0.0 — R0013, checkpoint P54
+# BROray-Light 2.0.0 — R0013, checkpoint P55
 
 `candidateReady=false`, `releaseReady=false`. Публичная версия `2.0.0`, внутренний releaseId `2.0.0-r1`. Релиз не опубликован; роутер, production server и приложение полного BROray не изменялись.
 
@@ -25,7 +25,7 @@ P52: 10 PASS на dash/BusyBox, включая ранний old-S23 reboot и о
 
 Полная регрессия P52: все три задания PASS, 347 уникально учтённых тестов в JSON-отчётах из 15 проверенных архивов. `REGRESSION-P52.json`: SHA-256 `b74752608839776511cad4d485f27c9400707cb367977b28c2ccd24f79e09e24`.
 
-P53: три preflight проверки на dash PASS — удаление опознанных старых state/ready, очистка позднего ready старого S23, отказы для чужого JSON и symlink без удаления пары. Есть собственная RAM-блокировка и inode/размер/SHA-256 в durable receipt. `STATUS-RETIREMENT-P53.json`: SHA-256 `9b4f6f35842010f5d191a140adf86c895faf163c18839971d88c513d528e1dd9`. Полный прогон P53 ещё выполняется.
+P53: вся компонентная регрессия PASS, три задания, 351 уникально учтённая проверка из 16 SHA-256-проверенных архивов. Включены удаление опознанных старых state/ready, очистка позднего ready старого S23, отказы для чужого JSON и symlink без удаления пары, на dash и BusyBox. Есть собственная RAM-блокировка и inode/размер/SHA-256 в durable receipt. `REGRESSION-P53.json`: SHA-256 `0747151a22c5acef5d9a2f4a32cb104c55fee6dc61e07ec3d011a57410b29b70`.
 
 ## Build A/B
 
@@ -35,7 +35,7 @@ P54 подготовил отдельный Linux-набор с полными �
 
 ## Ещё необходимо
 
-1. Завершить P53 regression и P54 полный app lifecycle.
+1. Завершить P54 полный app lifecycle и P55 native-auth/CGI.
 2. Полный prepared-app: clean install, r1/new update, equal-version, downgrade refusal, rollback, persistence. Отдельно проверить stop/start реального S24 под общей блокировкой нового updater.
 3. Все кнопки/API, native authentication/session, desktop/mobile browser.
 4. Финальные независимые clean-checkout Build A/B, воспроизводимость, SHA-256 и подпись существующим encrypted Actions secret.

@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "stage": "R0013_SELECTIVE_UPSTREAM_STABLE_PORT",
-  "status": "P55_NATIVE_AUTH_STATIC_PASS_P53_P54_CI_PENDING",
+  "status": "P53_FULL_COMPONENT_PASS_P54_RUNNING_P55_QUEUED",
   "currentRevision": "p55-native-auth-cgi-session-validation",
   "activeFailure": null,
   "publicVersion": "2.0.0",
@@ -84,10 +84,10 @@
   "latestCI": "https://github.com/BROadmin/BROray-Light/actions/runs/34543606312",
   "latestFullComponentRegression": {
     "status": "PASS",
-    "commit": "6a309c4cfc106ea0217b2245e6d17964693f6f0f",
-    "uniqueJsonReportTests": 347,
-    "path": "checkpoints/R0013/REGRESSION-P52.json",
-    "sha256": "b74752608839776511cad4d485f27c9400707cb367977b28c2ccd24f79e09e24"
+    "commit": "8226874c3ea22091afab432fd26bddf63360282a",
+    "uniqueJsonReportTests": 351,
+    "path": "checkpoints/R0013/REGRESSION-P53.json",
+    "sha256": "0747151a22c5acef5d9a2f4a32cb104c55fee6dc61e07ec3d011a57410b29b70"
   },
   "cleanBootstrapAndRam": {
     "status": "PASS_BOUNDED",
@@ -165,7 +165,7 @@
   },
   "remainingIntegrationGap": {
     "originFailure": "process-failures/FAILURE-P16-PERSISTENT-LOCK-DOMAIN.json",
-    "description": "Live r1 update/health rollback is now bounded PASS. Boot/dead-owner recovery and finalization, clean postinst, full prepared-app and WebUI/native-auth acceptance remain."
+    "description": "Bounded live/recovery/RAM/package bootstrap component tests pass. Complete prepared app lifecycle, full clean install/service, all WebUI actions/native auth/browser and final builds/signing/target acceptance remain."
   },
   "scopedServiceAndPublication": {
     "status": "PASS_BOUNDED",
@@ -198,10 +198,12 @@
     "sha256": "5bf063e8632347be480435809f203bcfe3b8434510995f1ea8acae885459dab8"
   },
   "legacyStatusRetirement": {
-    "status": "PASS_BOUNDED_DASH",
-    "tests": 3,
-    "path": "checkpoints/R0013/STATUS-RETIREMENT-P53.json",
-    "sha256": "9b4f6f35842010f5d191a140adf86c895faf163c18839971d88c513d528e1dd9"
+    "status": "PASS_BOUNDED_DASH_AND_BUSYBOX",
+    "tests": 6,
+    "commit": "8226874c3ea22091afab432fd26bddf63360282a",
+    "uniqueJsonReportTests": 351,
+    "path": "checkpoints/R0013/REGRESSION-P53.json",
+    "sha256": "0747151a22c5acef5d9a2f4a32cb104c55fee6dc61e07ec3d011a57410b29b70"
   },
   "nativeAuthentication": {
     "status": "PREPARED_NOT_YET_EXECUTED",
