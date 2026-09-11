@@ -1,0 +1,31 @@
+name: R0013 P61 BusyBox idle resolution diagnostic
+
+on:
+  push:
+    branches: [codex/r0009-updater-package]
+    paths:
+      - '.github/workflows/r0013-daemon-diagnostic.yml'
+      - 'tools/diagnose_r0013_daemon.py'
+
+permissions:
+  contents: read
+
+jobs:
+  shell-resolution:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+      - name: Install shell diagnostic dependency
+        run: sudo apt-get update && sudo apt-get install -y --no-install-recommends busybox dash
+      - name: Capture command resolution without rerunning daemon
+        run: python3 -B tools/diagnose_r0013_daemon.py /tmp/r0013-idle-diagnostic.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: r0013-idle-diagnostic-${{ github.sha }}
+          path: /tmp/r0013-idle-diagnostic.json
+          if-no-files-found: error

@@ -1,12 +1,17 @@
 {
   "schemaVersion": 1,
   "stage": "R0013",
-  "revision": "p60-full-daemon-graceful-stop",
+  "revision": "p61-busybox-idle-start-diagnostic",
   "files": [
     {
       "path": ".gitattributes",
       "sizeBytes": 268,
       "sha256": "fc032e5a3af786a2f67b1a1be6dc1eafb166246dcc7177480365c25ca081921a"
+    },
+    {
+      "path": ".github/workflows/r0013-daemon-diagnostic.yml",
+      "sizeBytes": 967,
+      "sha256": "eec5b3231152640a974e47c095cccf7c21c7d26f434e941dfcc12ef9521172d3"
     },
     {
       "path": ".github/workflows/r0013-port-tests.yml",
@@ -277,6 +282,11 @@
       "path": "tools/check_r0013_prepared_app.py",
       "sizeBytes": 9174,
       "sha256": "70eb69e05db3694ca37b1e296b0c79a9755d27ae4e8509cdf622c3ef63562a94"
+    },
+    {
+      "path": "tools/diagnose_r0013_daemon.py",
+      "sizeBytes": 1282,
+      "sha256": "beb5126eb7f53a0b552760177731cb3670bd264428eca5f828ecca2ead2250cb"
     },
     {
       "path": "tools/r0013_busybox_fixture.py",

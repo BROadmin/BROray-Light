@@ -1,0 +1,89 @@
+{
+  "stage": "R0013",
+  "revision": "p60-full-daemon-graceful-stop",
+  "status": "FAIL_FIRST_ERROR",
+  "commit": "e4a9c70c8a2c591102f1d26578ebca38fd5a28fd",
+  "run": "https://github.com/BROadmin/BROray-Light/actions/runs/34548366216",
+  "artifactId": 10179862944,
+  "artifactSha256": "0953877e3f1b8de707876f8d201560b7bc0c6a0480a42820b38292bb0c0068c3",
+  "evidence": {
+    "r0013-daemon-stop-ash.json": {
+      "report": {
+        "stage": "R0013",
+        "revision": "p60-full-daemon-graceful-stop",
+        "status": "FAIL_FIRST_ERROR",
+        "tests": [
+          {
+            "name": "TERM",
+            "status": "FAIL",
+            "error": "Daemon exited before idle"
+          }
+        ],
+        "shell": [
+          "/usr/bin/busybox",
+          "ash"
+        ],
+        "daemonSha256": "7fe36c92c18ec2ffcbccee6deaa11d421d74af322d14f33599e6a6b7d8ccca02",
+        "mockedBoundaries": [
+          "Application CLI workload",
+          "Xray executable",
+          "Keenetic publication"
+        ],
+        "candidateReady": false
+      },
+      "sha256": "c2ce335e678d0e34525848b60e745d054e49e944f6b380c445711e2bae155926"
+    },
+    "r0013-daemon-stop-dash.json": {
+      "report": {
+        "stage": "R0013",
+        "revision": "p60-full-daemon-graceful-stop",
+        "status": "PASS_REAL_PREPARED_DAEMON_IDLE_STOP",
+        "tests": [
+          {
+            "name": "TERM",
+            "status": "PASS",
+            "stopSeconds": 0.003,
+            "ownedSleepReaped": true,
+            "foreignSleepUntouched": true
+          },
+          {
+            "name": "HUP",
+            "status": "PASS",
+            "stopSeconds": 0.003,
+            "ownedSleepReaped": true,
+            "foreignSleepUntouched": true
+          },
+          {
+            "name": "INT",
+            "status": "PASS",
+            "stopSeconds": 0.003,
+            "ownedSleepReaped": true,
+            "foreignSleepUntouched": true
+          },
+          {
+            "name": "S24-stop-role",
+            "status": "PASS",
+            "stopSeconds": 1.77,
+            "ownedSleepReaped": true,
+            "foreignSleepUntouched": true
+          }
+        ],
+        "shell": [
+          "/bin/dash"
+        ],
+        "daemonSha256": "7fe36c92c18ec2ffcbccee6deaa11d421d74af322d14f33599e6a6b7d8ccca02",
+        "mockedBoundaries": [
+          "Application CLI workload",
+          "Xray executable",
+          "Keenetic publication"
+        ],
+        "candidateReady": false
+      },
+      "sha256": "ae4d4367c0ffea7b258b1f3599f6348e127dcfc39b8d5c98e166687c20bce8af"
+    }
+  },
+  "cause": "BusyBox actual daemon exits before idle; dash all four stop gates pass. New idle command -v/readlink binding may reject a builtin sleep; exact stderr was discarded by fixture, diagnosis not yet proven.",
+  "nextCorrectedRevision": "p61-busybox-idle-start-diagnostic",
+  "sameRevisionRetry": false,
+  "candidateReady": false
+}

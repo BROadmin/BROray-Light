@@ -1,0 +1,17 @@
+{
+  "stage": "R0013",
+  "revision": "p61-busybox-idle-start-diagnostic",
+  "files": [
+    {
+      "path": ".github/workflows/r0013-daemon-diagnostic.yml",
+      "sizeBytes": 967,
+      "sha256": "eec5b3231152640a974e47c095cccf7c21c7d26f434e941dfcc12ef9521172d3"
+    },
+    {
+      "path": "tools/diagnose_r0013_daemon.py",
+      "sizeBytes": 1282,
+      "sha256": "beb5126eb7f53a0b552760177731cb3670bd264428eca5f828ecca2ead2250cb"
+    }
+  ],
+  "candidateReady": false
+}
