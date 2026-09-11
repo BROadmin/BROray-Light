@@ -82,28 +82,28 @@
     },
     {
       "gate": "isolated_update_from_r1",
-      "status": "PASS_P54_FULL_PREPARED_SCRIPTS_OS_BOUNDARIES_MOCKED",
-      "evidence": "process-failures/FAILURE-P54-FULL-APP-SERVICE-STOP.json"
+      "status": "PASS_FULL_PREPARED_APP_DASH_BUSYBOX_OS_BOUNDARIES_MOCKED",
+      "evidence": "PREPARED-LIFECYCLE-P64.json"
     },
     {
       "gate": "isolated_equal_version",
-      "status": "PASS_P54_NO_RESTART_PERSISTENCE_FULL_SCRIPTS",
-      "evidence": "process-failures/FAILURE-P54-FULL-APP-SERVICE-STOP.json"
+      "status": "PASS_FULL_PREPARED_APP_DASH_BUSYBOX_OS_BOUNDARIES_MOCKED",
+      "evidence": "PREPARED-LIFECYCLE-P64.json"
     },
     {
       "gate": "isolated_downgrade_refusal",
-      "status": "PASS_P54_SIGNED_REFUSAL_FULL_SCRIPTS",
-      "evidence": "process-failures/FAILURE-P54-FULL-APP-SERVICE-STOP.json"
+      "status": "PASS_FULL_PREPARED_APP_DASH_BUSYBOX_OS_BOUNDARIES_MOCKED",
+      "evidence": "PREPARED-LIFECYCLE-P64.json"
     },
     {
       "gate": "forced_health_rollback",
-      "status": "PASS_BOUNDED_P44_REAL_R1_S24_FIXTURE_WORKLOAD_FULL_CANDIDATE_PENDING",
-      "evidence": "LIVE-R1-UPDATE-AND-ROLLBACK-P44.json"
+      "status": "PASS_FULL_PREPARED_APP_DASH_BUSYBOX_OS_BOUNDARIES_MOCKED",
+      "evidence": "PREPARED-LIFECYCLE-P64.json"
     },
     {
       "gate": "persistence",
-      "status": "PASS_BOUNDED_P44_REAL_R1_S24_FIXTURE_WORKLOAD_FULL_CANDIDATE_PENDING",
-      "evidence": "LIVE-R1-UPDATE-AND-ROLLBACK-P44.json"
+      "status": "PASS_FULL_PREPARED_APP_DASH_BUSYBOX_OS_BOUNDARIES_MOCKED",
+      "evidence": "PREPARED-LIFECYCLE-P64.json"
     },
     {
       "gate": "independent_build_a",
@@ -232,10 +232,10 @@
     },
     {
       "gate": "new_updater_complete_prepared_app_service_transition",
-      "status": "FAIL_FIRST_ERROR_P54_STOP_BEFORE_SWITCH",
-      "evidence": "process-failures/FAILURE-P54-FULL-APP-SERVICE-STOP.json"
+      "status": "PASS_FULL_PREPARED_APP_DASH_BUSYBOX_OS_BOUNDARIES_MOCKED",
+      "evidence": "PREPARED-LIFECYCLE-P64.json"
     }
   ],
   "releaseId": "2.0.0-r1",
-  "currentRevision": "p59-query-safe-current-navigation"
+  "currentRevision": "p64-explicit-external-idle-child"
 }

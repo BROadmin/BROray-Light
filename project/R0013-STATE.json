@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
   "stage": "R0013_SELECTIVE_UPSTREAM_STABLE_PORT",
-  "status": "P64_EXPLICIT_SLEEP_CORRECTION_AWAITING_LINUX",
-  "currentRevision": "p64-explicit-external-idle-child",
-  "activeFailure": "checkpoints/R0013/process-failures/FAILURE-P62-BUSYBOX-IDLE-PROCESS-SHAPE.json",
+  "status": "P64_FULL_APP_LIFECYCLE_PASS_P63_BUILD_CLEAN_CI_PENDING",
+  "currentRevision": "p63-independent-engineering-build-and-full-clean-package",
+  "activeFailure": null,
   "publicVersion": "2.0.0",
   "buildA": "PRELIMINARY_ENGINEERING_BYTE_PASS_NOT_FINAL_ACCEPTANCE",
   "buildB": "PRELIMINARY_ENGINEERING_BYTE_PASS_NOT_FINAL_ACCEPTANCE",
@@ -18,7 +18,7 @@
     "path": "checkpoints/R0013/SUBSCRIPTION-NAME-P6.json",
     "sha256": "2b1fe451272dc233e1f8ccd4cc3d6ea2f212ba81e009f93d3a4b9e9b9601577a"
   },
-  "lastResolvedFailure": "checkpoints/R0013/process-failures/FAILURE-P59-PREVIEW-EVIDENCE-GIT-NEWLINES.json",
+  "lastResolvedFailure": "checkpoints/R0013/process-failures/FAILURE-P62-BUSYBOX-IDLE-PROCESS-SHAPE.json",
   "processPort": {
     "status": "PASS_ISOLATED_LINUX",
     "tests": 33,
@@ -62,7 +62,7 @@
     "path": "checkpoints/R0013/UPSTREAM-PORT-MAP-P2.json",
     "sha256": "009a0f5adae08f399c82510cf680690b4c2e50bc8c659eda9c48d91b5a838121"
   },
-  "nextExactAction": "P64_REAL_DAEMON_STOP_AND_COMPLETE_PREPARED_APP_CI",
+  "nextExactAction": "P63_INDEPENDENT_BUILDS_AND_FULL_CLEAN_PACKAGE_CI_THEN_ALL_UI_CONTROLS",
   "versionAndXray": {
     "status": "PASS_VERSION_AND_BOOTSTRAP_INPUT",
     "path": "checkpoints/R0013/UPGRADE-AND-XRAY-P10.json",
@@ -164,8 +164,7 @@
     "sha256": "b0fdc171938d82ce546b2ae314dbd340f9121fc71a062f61aa5f4c5b94b9a5e3"
   },
   "remainingIntegrationGap": {
-    "originFailure": "process-failures/FAILURE-P16-PERSISTENT-LOCK-DOMAIN.json",
-    "description": "Bounded live/recovery/RAM/package bootstrap component tests pass. Complete prepared app lifecycle, full clean install/service, all WebUI actions/native auth/browser and final builds/signing/target acceptance remain."
+    "description": "Full prepared update/equal/downgrade/rollback passed. Exact built clean package/live HTTP, all UI actions, final signing and target remain."
   },
   "scopedServiceAndPublication": {
     "status": "PASS_BOUNDED",
@@ -217,7 +216,7 @@
     "path": "checkpoints/R0013/CONTROL-P57.json",
     "sha256": "18180c9ff3f419c5c758b97197c5f75ad669fd163d1f75ba4ad67fcea6c144b7"
   },
-  "additionalFailure": "checkpoints/R0013/process-failures/FAILURE-P54-FULL-APP-SERVICE-STOP.json",
+  "additionalFailure": null,
   "navigation": {
     "status": "PASS_UNIT_AND_REAL_BROWSER",
     "tests": 11,
@@ -230,8 +229,13 @@
     "path": "checkpoints/R0013/EVIDENCE-BYTES-P59A.json"
   },
   "sourceCorrection": {
-    "sha256": "7152bf9bf9b730287f717cabffbb41b9dae80fdf81e9090bc042adb45e5a8f9d",
-    "sizeBytes": 896,
-    "path": "checkpoints/R0013/SOURCE-INPUTS-P64.json"
+    "path": "checkpoints/R0013/SOURCE-INPUTS-P63.json",
+    "sizeBytes": 546,
+    "sha256": "a5c3ad4786c18a9f90e24d3d47677e6d1a026df03546d29ae27adb6b1ab779af"
+  },
+  "preparedLifecycle": {
+    "path": "checkpoints/R0013/PREPARED-LIFECYCLE-P64.json",
+    "sha256": "d1dbd4c4aeab5636079174e1b5a03ad24953c978ea3953740223b585bc68b537",
+    "sizeBytes": 42464
   }
 }

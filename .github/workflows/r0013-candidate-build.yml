@@ -1,0 +1,103 @@
+name: R0013 independent engineering builds and clean package
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [codex/r0009-updater-package]
+    paths:
+      - '.github/workflows/r0013-candidate-build.yml'
+      - 'tools/validate_r0013_clean_package.py'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: r0013-engineering-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  independent-build:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    strategy:
+      fail-fast: true
+      matrix:
+        build: [A, B]
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+          fetch-depth: 0
+      - name: Fetch and build independently from pinned inputs
+        env:
+          BUILD_ID: ${{ matrix.build }}
+        run: |
+          set -eu
+          inputs="$RUNNER_TEMP/r0013-inputs-$BUILD_ID"
+          output="$RUNNER_TEMP/r0013-build-$BUILD_ID"
+          mkdir "$inputs"
+          curl -q --proto '=https' --proto-redir '=https' --tlsv1.2 -fsSL \
+            https://github.com/BROadmin/BROray-Light/releases/download/v1.0.0-r1/broray-light-updater-platform-5-light1.tar.gz \
+            -o "$inputs/updater.tar.gz"
+          curl -q --proto '=https' --proto-redir '=https' --tlsv1.2 -fsSL \
+            https://github.com/XTLS/Xray-core/releases/download/v26.9.9/Xray-linux-arm64-v8a.zip \
+            -o "$inputs/xray.zip"
+          curl -q --proto '=https' --proto-redir '=https' --tlsv1.2 -fsSL \
+            https://github.com/XTLS/Xray-core/releases/download/v26.9.9/Xray-linux-arm64-v8a.zip.dgst \
+            -o "$inputs/xray.dgst"
+          python3 -B tools/build_r0013_release.py --output "$output" \
+            --r1-updater "$inputs/updater.tar.gz" --xray-archive "$inputs/xray.zip" --xray-digest "$inputs/xray.dgst" \
+            > "$RUNNER_TEMP/build-$BUILD_ID.json"
+          python3 -B tools/test_r0013_build.py --build "$output" --r1-updater "$inputs/updater.tar.gz" \
+            > "$RUNNER_TEMP/structure-$BUILD_ID.json"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: r0013-build-${{ matrix.build }}-${{ github.sha }}
+          path: ${{ runner.temp }}/r0013-build-${{ matrix.build }}/*
+          if-no-files-found: error
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: r0013-build-receipt-${{ matrix.build }}-${{ github.sha }}
+          path: |
+            ${{ runner.temp }}/build-${{ matrix.build }}.json
+            ${{ runner.temp }}/structure-${{ matrix.build }}.json
+          if-no-files-found: ignore
+
+  compare-and-clean:
+    needs: independent-build
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+          fetch-depth: 0
+      - uses: actions/download-artifact@v4
+        with:
+          name: r0013-build-A-${{ github.sha }}
+          path: ${{ runner.temp }}/r0013-A
+      - uses: actions/download-artifact@v4
+        with:
+          name: r0013-build-B-${{ github.sha }}
+          path: ${{ runner.temp }}/r0013-B
+      - name: Verify byte-identical independent builds
+        run: python3 -B tools/test_r0013_build.py --build "$RUNNER_TEMP/r0013-A" --compare "$RUNNER_TEMP/r0013-B" > /var/tmp/r0013-build-comparison.json
+      - name: Install isolated lifecycle dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends busybox dash jq curl util-linux iproute2 lighttpd qemu-user-static
+      - name: Full built installer and live package lifecycle (dash)
+        run: sudo unshare --mount --net --propagation private python3 -B tools/validate_r0013_clean_package.py --build "$RUNNER_TEMP/r0013-A" --shell /bin/dash --result /var/tmp/r0013-clean-package-dash.json
+      - name: Full built installer and live package lifecycle (BusyBox)
+        run: sudo unshare --mount --net --propagation private python3 -B tools/validate_r0013_clean_package.py --build "$RUNNER_TEMP/r0013-B" --shell /usr/bin/busybox --busybox --result /var/tmp/r0013-clean-package-ash.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: r0013-build-clean-validation-${{ github.sha }}
+          path: |
+            /var/tmp/r0013-build-comparison.json
+            /var/tmp/r0013-clean-package-*.json
+          if-no-files-found: error

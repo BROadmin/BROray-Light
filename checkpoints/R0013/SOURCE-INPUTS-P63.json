@@ -1,0 +1,18 @@
+{
+  "stage": "R0013",
+  "revision": "p63-independent-engineering-build-and-full-clean-package",
+  "status": "HARNESS_SYNTAX_PASS_CI_PENDING",
+  "files": [
+    {
+      "path": ".github/workflows/r0013-candidate-build.yml",
+      "sizeBytes": 4429,
+      "sha256": "49450196a56e54f7d39d75909256bfb8076f63235793241ca54ef79fc36752c7"
+    },
+    {
+      "path": "tools/validate_r0013_clean_package.py",
+      "sizeBytes": 11937,
+      "sha256": "fb8e0de66e40c379cf064f8ec5186fbb02452484bdaf512747e9c905d570e58e"
+    }
+  ],
+  "candidateReady": false
+}

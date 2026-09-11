@@ -1,0 +1,1406 @@
+{
+  "stage": "R0013",
+  "revision": "p64-explicit-external-idle-child",
+  "status": "PASS_SCOPED_FULL_APP_LIFECYCLE_DAEMON_AND_NATIVE_AUTH",
+  "commit": "ebae309b93aee000ed1c5b5743385ba39e33ed98",
+  "run": "https://github.com/BROadmin/BROray-Light/actions/runs/34549087783",
+  "tests": 116,
+  "evidence": [
+    {
+      "artifactId": 10180167359,
+      "archiveSha256": "085118d64e51b336ca4aab267259a39febf67c4708b5657d80c29371b3daccef",
+      "members": {
+        "r0013-prepared-app-ash.json": {
+          "report": {
+            "stage": "R0013",
+            "revision": "p64-explicit-external-idle-child",
+            "status": "PASS_FULL_PREPARED_APP_LIFECYCLE_OS_BOUNDARIES_MOCKED",
+            "shell": [
+              "/usr/bin/busybox",
+              "ash"
+            ],
+            "tests": [
+              {
+                "name": "accepted-r1-runtime-prepare",
+                "status": "PASS",
+                "detail": {
+                  "completeAcceptedScripts": true
+                }
+              },
+              {
+                "name": "r1-to-full-prepared-app",
+                "status": "PASS",
+                "detail": {
+                  "returncode": 0,
+                  "current": "2.0.0-r1",
+                  "coordinatorPhase": "activated",
+                  "legacyUpdaterCompleted": true,
+                  "sessionPreserved": true,
+                  "targetSlotManifestSha256": "91b949910948897d3c62a3fc1b47b108f8cd6cb76c6b4f41bb8f83a8763a95bc",
+                  "completeAppFileCount": 146
+                }
+              },
+              {
+                "name": "equal-version-no-op",
+                "status": "PASS",
+                "detail": {
+                  "daemonNotRestarted": true,
+                  "persistentDataIdentical": true
+                }
+              },
+              {
+                "name": "signed-downgrade-refused",
+                "status": "PASS",
+                "detail": {
+                  "refusedBeforeSwitch": true
+                }
+              },
+              {
+                "name": "new-updater-full-s24-transition",
+                "status": "PASS",
+                "detail": {
+                  "syntheticTarget": "2.0.1-r1",
+                  "completePreparedScripts": true,
+                  "persistentDataIdentical": true
+                }
+              },
+              {
+                "name": "new-updater-health-rollback",
+                "status": "PASS",
+                "detail": {
+                  "sourceRestored": true,
+                  "persistentDataIdentical": true,
+                  "updaterScratchClean": true
+                }
+              }
+            ],
+            "candidateReady": false,
+            "applicationScripts": "Complete accepted r1 and current prepared_app; no daemon/CLI substitutions",
+            "mockedBoundaries": [
+              "lighttpd workload binary",
+              "Keenetic publication OS",
+              "Xray executable"
+            ],
+            "network": "Private unshared network namespace; signed file:// fixture inputs only",
+            "entrySha256": "49081efafe4e25bcd8afee598671452628fb82acf9d4f55aa1e286720d854ea3"
+          },
+          "sha256": "fdba30c526e3b8f591a3e9cda2aea6acc6a3dcf4305e96092e5248e45fcf2ffa"
+        },
+        "r0013-prepared-app-dash.json": {
+          "report": {
+            "stage": "R0013",
+            "revision": "p64-explicit-external-idle-child",
+            "status": "PASS_FULL_PREPARED_APP_LIFECYCLE_OS_BOUNDARIES_MOCKED",
+            "shell": [
+              "/bin/dash"
+            ],
+            "tests": [
+              {
+                "name": "accepted-r1-runtime-prepare",
+                "status": "PASS",
+                "detail": {
+                  "completeAcceptedScripts": true
+                }
+              },
+              {
+                "name": "r1-to-full-prepared-app",
+                "status": "PASS",
+                "detail": {
+                  "returncode": 0,
+                  "current": "2.0.0-r1",
+                  "coordinatorPhase": "activated",
+                  "legacyUpdaterCompleted": true,
+                  "sessionPreserved": true,
+                  "targetSlotManifestSha256": "91b949910948897d3c62a3fc1b47b108f8cd6cb76c6b4f41bb8f83a8763a95bc",
+                  "completeAppFileCount": 146
+                }
+              },
+              {
+                "name": "equal-version-no-op",
+                "status": "PASS",
+                "detail": {
+                  "daemonNotRestarted": true,
+                  "persistentDataIdentical": true
+                }
+              },
+              {
+                "name": "signed-downgrade-refused",
+                "status": "PASS",
+                "detail": {
+                  "refusedBeforeSwitch": true
+                }
+              },
+              {
+                "name": "new-updater-full-s24-transition",
+                "status": "PASS",
+                "detail": {
+                  "syntheticTarget": "2.0.1-r1",
+                  "completePreparedScripts": true,
+                  "persistentDataIdentical": true
+                }
+              },
+              {
+                "name": "new-updater-health-rollback",
+                "status": "PASS",
+                "detail": {
+                  "sourceRestored": true,
+                  "persistentDataIdentical": true,
+                  "updaterScratchClean": true
+                }
+              }
+            ],
+            "candidateReady": false,
+            "applicationScripts": "Complete accepted r1 and current prepared_app; no daemon/CLI substitutions",
+            "mockedBoundaries": [
+              "lighttpd workload binary",
+              "Keenetic publication OS",
+              "Xray executable"
+            ],
+            "network": "Private unshared network namespace; signed file:// fixture inputs only",
+            "entrySha256": "49081efafe4e25bcd8afee598671452628fb82acf9d4f55aa1e286720d854ea3"
+          },
+          "sha256": "9dc2101605d897cd358151432b17e06561a6d3f532cdfe13a283efd18a602d65"
+        }
+      }
+    },
+    {
+      "artifactId": 10180124016,
+      "archiveSha256": "2dca707e5a27734bbb9b6418db788511f628328538c0ff2587419fd3d27dc3fb",
+      "members": {
+        "r0013-daemon-stop-ash.json": {
+          "report": {
+            "stage": "R0013",
+            "revision": "p64-explicit-external-idle-child",
+            "status": "PASS_REAL_PREPARED_DAEMON_IDLE_STOP",
+            "tests": [
+              {
+                "name": "TERM",
+                "status": "PASS",
+                "stopSeconds": 0.007,
+                "ownedSleepReaped": true,
+                "foreignSleepUntouched": true
+              },
+              {
+                "name": "HUP",
+                "status": "PASS",
+                "stopSeconds": 0.007,
+                "ownedSleepReaped": true,
+                "foreignSleepUntouched": true
+              },
+              {
+                "name": "INT",
+                "status": "PASS",
+                "stopSeconds": 0.007,
+                "ownedSleepReaped": true,
+                "foreignSleepUntouched": true
+              },
+              {
+                "name": "S24-stop-role",
+                "status": "PASS",
+                "stopSeconds": 1.712,
+                "ownedSleepReaped": true,
+                "foreignSleepUntouched": true
+              }
+            ],
+            "shell": [
+              "/usr/bin/busybox",
+              "ash"
+            ],
+            "daemonSha256": "a3c61b8085b86024eaa409d8ab79a46108ac5d70d116c57832ec3587e88eaaf8",
+            "mockedBoundaries": [
+              "Application CLI workload",
+              "Xray executable",
+              "Keenetic publication"
+            ],
+            "candidateReady": false
+          },
+          "sha256": "9b033da5c830b9e31686e0c2af716c75a5656706bb32d454610d9bfa1ff7dbd3"
+        },
+        "r0013-daemon-stop-dash.json": {
+          "report": {
+            "stage": "R0013",
+            "revision": "p64-explicit-external-idle-child",
+            "status": "PASS_REAL_PREPARED_DAEMON_IDLE_STOP",
+            "tests": [
+              {
+                "name": "TERM",
+                "status": "PASS",
+                "stopSeconds": 0.007,
+                "ownedSleepReaped": true,
+                "foreignSleepUntouched": true
+              },
+              {
+                "name": "HUP",
+                "status": "PASS",
+                "stopSeconds": 0.007,
+                "ownedSleepReaped": true,
+                "foreignSleepUntouched": true
+              },
+              {
+                "name": "INT",
+                "status": "PASS",
+                "stopSeconds": 0.007,
+                "ownedSleepReaped": true,
+                "foreignSleepUntouched": true
+              },
+              {
+                "name": "S24-stop-role",
+                "status": "PASS",
+                "stopSeconds": 2.014,
+                "ownedSleepReaped": true,
+                "foreignSleepUntouched": true
+              }
+            ],
+            "shell": [
+              "/bin/dash"
+            ],
+            "daemonSha256": "a3c61b8085b86024eaa409d8ab79a46108ac5d70d116c57832ec3587e88eaaf8",
+            "mockedBoundaries": [
+              "Application CLI workload",
+              "Xray executable",
+              "Keenetic publication"
+            ],
+            "candidateReady": false
+          },
+          "sha256": "5a9c35ec8e2e5c622abe6032a3f13a89d194968a1197a52fd98c189f6d40f3e2"
+        }
+      }
+    },
+    {
+      "artifactId": 10180123147,
+      "archiveSha256": "3658583c5773eb780eec18c30e490b23f4567d67e9aab94781c2092036e59a49",
+      "members": {
+        "r0013-native-auth-ash.json": {
+          "report": {
+            "stage": "R0013",
+            "revision": "p55-native-auth-cgi-session-validation",
+            "shell": [
+              "/usr/bin/busybox",
+              "ash"
+            ],
+            "candidateReady": false,
+            "status": "PASS_NATIVE_HTTP_CGI_AND_SESSION_BOUNDARIES",
+            "tests": [
+              {
+                "name": "valid-native-challenge-response-and-private-session",
+                "status": "PASS",
+                "detail": {
+                  "nativeHandshakeVerified": true,
+                  "privateRamSession": true
+                }
+              },
+              {
+                "name": "session-refresh-and-expiry",
+                "status": "PASS",
+                "detail": null
+              },
+              {
+                "name": "native-refusal-wrong-password",
+                "status": "PASS",
+                "detail": {
+                  "httpStatus": 401,
+                  "noSession": true
+                }
+              },
+              {
+                "name": "native-refusal-deny-post",
+                "status": "PASS",
+                "detail": {
+                  "httpStatus": 401,
+                  "noSession": true
+                }
+              },
+              {
+                "name": "native-refusal-fake-200",
+                "status": "PASS",
+                "detail": {
+                  "httpStatus": 503,
+                  "noSession": true
+                }
+              },
+              {
+                "name": "native-refusal-unavailable",
+                "status": "PASS",
+                "detail": {
+                  "httpStatus": 503,
+                  "noSession": true
+                }
+              },
+              {
+                "name": "native-refusal-missing-challenge",
+                "status": "PASS",
+                "detail": {
+                  "httpStatus": 503,
+                  "noSession": true
+                }
+              },
+              {
+                "name": "native-refusal-duplicate-realm",
+                "status": "PASS",
+                "detail": {
+                  "httpStatus": 503,
+                  "noSession": true
+                }
+              },
+              {
+                "name": "native-refusal-duplicate-challenge",
+                "status": "PASS",
+                "detail": {
+                  "httpStatus": 503,
+                  "noSession": true
+                }
+              },
+              {
+                "name": "native-refusal-duplicate-second-realm",
+                "status": "PASS",
+                "detail": {
+                  "httpStatus": 503,
+                  "noSession": true
+                }
+              },
+              {
+                "name": "login-malformed-body-10",
+                "status": "PASS",
+                "detail": null
+              },
+              {
+                "name": "login-malformed-body-11",
+                "status": "PASS",
+                "detail": null
+              },
+              {
+                "name": "login-malformed-body-12",
+                "status": "PASS",
+                "detail": null
+              },
+              {
+                "name": "login-malformed-body-13",
+                "status": "PASS",
+                "detail": null
+              },
+              {
+                "name": "login-malformed-body-14",
+                "status": "PASS",
+                "detail": null
+              },
+              {
+                "name": "login-method-guard",
+                "status": "PASS",
+                "detail": null
+              },
+              {
+                "name": "unauthenticated-api-broray/info.cgi",
+                "status": "PASS",
+                "detail": {
+                  "methods": [
+                    "GET",
+                    "POST"
+                  ],
+                  "httpStatuses": [
+                    401,
+                    405
+                  ]
+                }
+              },
+              {
+                "name": "unauthenticated-api-broray/update-check.cgi",
+                "status": "PASS",
+                "detail": {
+                  "methods": [
+                    "GET",
+                    "POST"
+                  ],
+                  "httpStatuses": [
+                    401,
+                    405
+                  ]
+                }
+              },
+              {
+                "name": "unauthenticated-api-broray/update-start.cgi",
+                "status": "PASS",
+                "detail": {
+                  "methods": [
+                    "GET",
+                    "POST"
+                  ],
+                  "httpStatuses": [
+                    405,
+                    401
+                  ]
+                }
+              },
+              {
+                "name": "unauthenticated-api-broray/update-status.cgi",
+                "status": "PASS",
+                "detail": {
+                  "methods": [
+                    "GET",
+                    "POST"
+                  ],
+                  "httpStatuses": [
+                    401,
+                    405
+                  ]
+                }
+              },
+              {
+                "name": "unauthenticated-api-home/summary.cgi",
+                "status": "PASS",
+                "detail": {
+                  "methods": [
+                    "GET",
+                    "POST"
+                  ],
+                  "httpStatuses": [
+                    401,
+                    405
+                  ]
+                }
+              },
+              {
+                "name": "unauthenticated-api-keenetic/check-upstream.cgi",
+                "status": "PASS",
+                "detail": {
+                  "methods": [
+                    "GET",
+                    "POST"
+                  ],
+                  "httpStatuses": [
+                    405,
+                    401
+                  ]
+                }
+              },
+              {
+                "name": "unauthenticated-api-keenetic/create.cgi",
+                "status": "PASS",
+                "detail": {
+                  "methods": [
+                    "GET",
+                    "POST"
+                  ],
+                  "httpStatuses": [
+                    405,
+                    401
+                  ]
+                }
+              },
+              {
+                "name": "unauthenticated-api-keenetic/repair.cgi",
+                "status": "PASS",
+                "detail": {
+                  "methods": [
+                    "GET",
+                    "POST"
+                  ],
+                  "httpStatuses": [
+                    405,
+                    401
+                  ]
+                }
+              },
+              {
+                "name": "unauthenticated-api-keenetic/status.cgi",
+                "status": "PASS",
+                "detail": {
+                  "methods": [
+                    "GET",
+                    "POST"
+                  ],
+                  "httpStatuses": [
+                    401,
+                    405
+                  ]
+                }
+              },
+              {
+                "name": "unauthenticated-api-keenetic/sync-description.cgi",
+                "status": "PASS",
+                "detail": {
+                  "methods": [
+                    "GET",
+                    "POST"
+                  ],
+                  "httpStatuses": [
+                    405,
+                    401
+                  ]
+                }
+              },
+              {
+                "name": "unauthenticated-api-servers/activate.cgi",
+                "status": "PASS",
+                "detail": {
+                  "methods": [
+                    "GET",
+                    "POST"
+                  ],
+                  "httpStatuses": [
+                    405,
+                    401
+                  ]
+                }
+              },
+              {
+                "name": "unauthenticated-api-servers/auto-switch-save.cgi",
+                "status": "PASS",
+                "detail": {
+                  "methods": [
+                    "GET",
+                    "POST"
+                  ],
+                  "httpStatuses": [
+                    405,
+                    401
+                  ]
+                }
+              },
+              {
+                "name": "unauthenticated-api-servers/auto-switch-status.cgi",
+                "status": "PASS",
+                "detail": {
+                  "methods": [
+                    "GET",
+                    "POST"
+                  ],
+                  "httpStatuses": [
+                    401,
+                    405
+                  ]
+                }
+              },
+              {
+                "name": "unauthenticated-api-servers/check.cgi",
+                "status": "PASS",
+                "detail": {
+                  "methods": [
+                    "GET",
+                    "POST"
+                  ],
+                  "httpStatuses": [
+                    405,
+                    401
+                  ]
+                }
+              },
+              {
+                "name": "unauthenticated-api-servers/delete.cgi",
+                "status": "PASS",
+                "detail": {
+                  "methods": [
+                    "GET",
+                    "POST"
+                  ],
+                  "httpStatuses": [
+                    405,
+                    401
+                  ]
+                }
+              },
+              {
+                "name": "unauthenticated-api-servers/details.cgi",
+                "status": "PASS",
+                "detail": {
+                  "methods": [
+                    "GET",
+                    "POST"
+                  ],
+                  "httpStatuses": [
+                    401,
+                    405
+                  ]
+                }
+              },
+              {
+                "name": "unauthenticated-api-servers/import.cgi",
+                "status": "PASS",
+                "detail": {
+                  "methods": [
+                    "GET",
+                    "POST"
+                  ],
+                  "httpStatuses": [
+                    405,
+                    401
+                  ]
+                }
+              },
+              {
+                "name": "unauthenticated-api-servers/summary.cgi",
+                "status": "PASS",
+                "detail": {
+                  "methods": [
+                    "GET",
+                    "POST"
+                  ],
+                  "httpStatuses": [
+                    401,
+                    405
+                  ]
+                }
+              },
+              {
+                "name": "unauthenticated-api-session.cgi",
+                "status": "PASS",
+                "detail": {
+                  "methods": [
+                    "GET",
+                    "POST"
+                  ],
+                  "httpStatuses": [
+                    401,
+                    405
+                  ]
+                }
+              },
+              {
+                "name": "unauthenticated-api-subscriptions/create.cgi",
+                "status": "PASS",
+                "detail": {
+                  "methods": [
+                    "GET",
+                    "POST"
+                  ],
+                  "httpStatuses": [
+                    405,
+                    401
+                  ]
+                }
+              },
+              {
+                "name": "unauthenticated-api-subscriptions/delete.cgi",
+                "status": "PASS",
+                "detail": {
+                  "methods": [
+                    "GET",
+                    "POST"
+                  ],
+                  "httpStatuses": [
+                    405,
+                    401
+                  ]
+                }
+              },
+              {
+                "name": "unauthenticated-api-subscriptions/details.cgi",
+                "status": "PASS",
+                "detail": {
+                  "methods": [
+                    "GET",
+                    "POST"
+                  ],
+                  "httpStatuses": [
+                    401,
+                    401
+                  ]
+                }
+              },
+              {
+                "name": "unauthenticated-api-subscriptions/list.cgi",
+                "status": "PASS",
+                "detail": {
+                  "methods": [
+                    "GET",
+                    "POST"
+                  ],
+                  "httpStatuses": [
+                    401,
+                    405
+                  ]
+                }
+              },
+              {
+                "name": "unauthenticated-api-subscriptions/refresh.cgi",
+                "status": "PASS",
+                "detail": {
+                  "methods": [
+                    "GET",
+                    "POST"
+                  ],
+                  "httpStatuses": [
+                    405,
+                    401
+                  ]
+                }
+              },
+              {
+                "name": "unauthenticated-api-subscriptions/servers.cgi",
+                "status": "PASS",
+                "detail": {
+                  "methods": [
+                    "GET",
+                    "POST"
+                  ],
+                  "httpStatuses": [
+                    401,
+                    405
+                  ]
+                }
+              },
+              {
+                "name": "unauthenticated-api-subscriptions/summary.cgi",
+                "status": "PASS",
+                "detail": {
+                  "methods": [
+                    "GET",
+                    "POST"
+                  ],
+                  "httpStatuses": [
+                    401,
+                    405
+                  ]
+                }
+              },
+              {
+                "name": "unauthenticated-api-xray/install.cgi",
+                "status": "PASS",
+                "detail": {
+                  "methods": [
+                    "GET",
+                    "POST"
+                  ],
+                  "httpStatuses": [
+                    405,
+                    401
+                  ]
+                }
+              },
+              {
+                "name": "unauthenticated-api-xray/operation-status.cgi",
+                "status": "PASS",
+                "detail": {
+                  "methods": [
+                    "GET",
+                    "POST"
+                  ],
+                  "httpStatuses": [
+                    401,
+                    405
+                  ]
+                }
+              },
+              {
+                "name": "unauthenticated-api-xray/status.cgi",
+                "status": "PASS",
+                "detail": {
+                  "methods": [
+                    "GET",
+                    "POST"
+                  ],
+                  "httpStatuses": [
+                    401,
+                    405
+                  ]
+                }
+              },
+              {
+                "name": "unauthenticated-api-xray/update-check.cgi",
+                "status": "PASS",
+                "detail": {
+                  "methods": [
+                    "GET",
+                    "POST"
+                  ],
+                  "httpStatuses": [
+                    405,
+                    401
+                  ]
+                }
+              },
+              {
+                "name": "unauthenticated-api-xray/update.cgi",
+                "status": "PASS",
+                "detail": {
+                  "methods": [
+                    "GET",
+                    "POST"
+                  ],
+                  "httpStatuses": [
+                    405,
+                    401
+                  ]
+                }
+              },
+              {
+                "name": "logout-invalidates-session",
+                "status": "PASS",
+                "detail": null
+              }
+            ],
+            "scope": "Exact prepared CGI/native-auth/session scripts; real curl; mock loopback Keenetic HTTP; no physical SCGI/browser acceptance"
+          },
+          "sha256": "f9d2a106184ad10a2183adc4dccd33dc5d273903fc5132b9f91581be8b723f18"
+        },
+        "r0013-native-auth-dash.json": {
+          "report": {
+            "stage": "R0013",
+            "revision": "p55-native-auth-cgi-session-validation",
+            "shell": [
+              "/bin/dash"
+            ],
+            "candidateReady": false,
+            "status": "PASS_NATIVE_HTTP_CGI_AND_SESSION_BOUNDARIES",
+            "tests": [
+              {
+                "name": "valid-native-challenge-response-and-private-session",
+                "status": "PASS",
+                "detail": {
+                  "nativeHandshakeVerified": true,
+                  "privateRamSession": true
+                }
+              },
+              {
+                "name": "session-refresh-and-expiry",
+                "status": "PASS",
+                "detail": null
+              },
+              {
+                "name": "native-refusal-wrong-password",
+                "status": "PASS",
+                "detail": {
+                  "httpStatus": 401,
+                  "noSession": true
+                }
+              },
+              {
+                "name": "native-refusal-deny-post",
+                "status": "PASS",
+                "detail": {
+                  "httpStatus": 401,
+                  "noSession": true
+                }
+              },
+              {
+                "name": "native-refusal-fake-200",
+                "status": "PASS",
+                "detail": {
+                  "httpStatus": 503,
+                  "noSession": true
+                }
+              },
+              {
+                "name": "native-refusal-unavailable",
+                "status": "PASS",
+                "detail": {
+                  "httpStatus": 503,
+                  "noSession": true
+                }
+              },
+              {
+                "name": "native-refusal-missing-challenge",
+                "status": "PASS",
+                "detail": {
+                  "httpStatus": 503,
+                  "noSession": true
+                }
+              },
+              {
+                "name": "native-refusal-duplicate-realm",
+                "status": "PASS",
+                "detail": {
+                  "httpStatus": 503,
+                  "noSession": true
+                }
+              },
+              {
+                "name": "native-refusal-duplicate-challenge",
+                "status": "PASS",
+                "detail": {
+                  "httpStatus": 503,
+                  "noSession": true
+                }
+              },
+              {
+                "name": "native-refusal-duplicate-second-realm",
+                "status": "PASS",
+                "detail": {
+                  "httpStatus": 503,
+                  "noSession": true
+                }
+              },
+              {
+                "name": "login-malformed-body-10",
+                "status": "PASS",
+                "detail": null
+              },
+              {
+                "name": "login-malformed-body-11",
+                "status": "PASS",
+                "detail": null
+              },
+              {
+                "name": "login-malformed-body-12",
+                "status": "PASS",
+                "detail": null
+              },
+              {
+                "name": "login-malformed-body-13",
+                "status": "PASS",
+                "detail": null
+              },
+              {
+                "name": "login-malformed-body-14",
+                "status": "PASS",
+                "detail": null
+              },
+              {
+                "name": "login-method-guard",
+                "status": "PASS",
+                "detail": null
+              },
+              {
+                "name": "unauthenticated-api-broray/info.cgi",
+                "status": "PASS",
+                "detail": {
+                  "methods": [
+                    "GET",
+                    "POST"
+                  ],
+                  "httpStatuses": [
+                    401,
+                    405
+                  ]
+                }
+              },
+              {
+                "name": "unauthenticated-api-broray/update-check.cgi",
+                "status": "PASS",
+                "detail": {
+                  "methods": [
+                    "GET",
+                    "POST"
+                  ],
+                  "httpStatuses": [
+                    401,
+                    405
+                  ]
+                }
+              },
+              {
+                "name": "unauthenticated-api-broray/update-start.cgi",
+                "status": "PASS",
+                "detail": {
+                  "methods": [
+                    "GET",
+                    "POST"
+                  ],
+                  "httpStatuses": [
+                    405,
+                    401
+                  ]
+                }
+              },
+              {
+                "name": "unauthenticated-api-broray/update-status.cgi",
+                "status": "PASS",
+                "detail": {
+                  "methods": [
+                    "GET",
+                    "POST"
+                  ],
+                  "httpStatuses": [
+                    401,
+                    405
+                  ]
+                }
+              },
+              {
+                "name": "unauthenticated-api-home/summary.cgi",
+                "status": "PASS",
+                "detail": {
+                  "methods": [
+                    "GET",
+                    "POST"
+                  ],
+                  "httpStatuses": [
+                    401,
+                    405
+                  ]
+                }
+              },
+              {
+                "name": "unauthenticated-api-keenetic/check-upstream.cgi",
+                "status": "PASS",
+                "detail": {
+                  "methods": [
+                    "GET",
+                    "POST"
+                  ],
+                  "httpStatuses": [
+                    405,
+                    401
+                  ]
+                }
+              },
+              {
+                "name": "unauthenticated-api-keenetic/create.cgi",
+                "status": "PASS",
+                "detail": {
+                  "methods": [
+                    "GET",
+                    "POST"
+                  ],
+                  "httpStatuses": [
+                    405,
+                    401
+                  ]
+                }
+              },
+              {
+                "name": "unauthenticated-api-keenetic/repair.cgi",
+                "status": "PASS",
+                "detail": {
+                  "methods": [
+                    "GET",
+                    "POST"
+                  ],
+                  "httpStatuses": [
+                    405,
+                    401
+                  ]
+                }
+              },
+              {
+                "name": "unauthenticated-api-keenetic/status.cgi",
+                "status": "PASS",
+                "detail": {
+                  "methods": [
+                    "GET",
+                    "POST"
+                  ],
+                  "httpStatuses": [
+                    401,
+                    405
+                  ]
+                }
+              },
+              {
+                "name": "unauthenticated-api-keenetic/sync-description.cgi",
+                "status": "PASS",
+                "detail": {
+                  "methods": [
+                    "GET",
+                    "POST"
+                  ],
+                  "httpStatuses": [
+                    405,
+                    401
+                  ]
+                }
+              },
+              {
+                "name": "unauthenticated-api-servers/activate.cgi",
+                "status": "PASS",
+                "detail": {
+                  "methods": [
+                    "GET",
+                    "POST"
+                  ],
+                  "httpStatuses": [
+                    405,
+                    401
+                  ]
+                }
+              },
+              {
+                "name": "unauthenticated-api-servers/auto-switch-save.cgi",
+                "status": "PASS",
+                "detail": {
+                  "methods": [
+                    "GET",
+                    "POST"
+                  ],
+                  "httpStatuses": [
+                    405,
+                    401
+                  ]
+                }
+              },
+              {
+                "name": "unauthenticated-api-servers/auto-switch-status.cgi",
+                "status": "PASS",
+                "detail": {
+                  "methods": [
+                    "GET",
+                    "POST"
+                  ],
+                  "httpStatuses": [
+                    401,
+                    405
+                  ]
+                }
+              },
+              {
+                "name": "unauthenticated-api-servers/check.cgi",
+                "status": "PASS",
+                "detail": {
+                  "methods": [
+                    "GET",
+                    "POST"
+                  ],
+                  "httpStatuses": [
+                    405,
+                    401
+                  ]
+                }
+              },
+              {
+                "name": "unauthenticated-api-servers/delete.cgi",
+                "status": "PASS",
+                "detail": {
+                  "methods": [
+                    "GET",
+                    "POST"
+                  ],
+                  "httpStatuses": [
+                    405,
+                    401
+                  ]
+                }
+              },
+              {
+                "name": "unauthenticated-api-servers/details.cgi",
+                "status": "PASS",
+                "detail": {
+                  "methods": [
+                    "GET",
+                    "POST"
+                  ],
+                  "httpStatuses": [
+                    401,
+                    405
+                  ]
+                }
+              },
+              {
+                "name": "unauthenticated-api-servers/import.cgi",
+                "status": "PASS",
+                "detail": {
+                  "methods": [
+                    "GET",
+                    "POST"
+                  ],
+                  "httpStatuses": [
+                    405,
+                    401
+                  ]
+                }
+              },
+              {
+                "name": "unauthenticated-api-servers/summary.cgi",
+                "status": "PASS",
+                "detail": {
+                  "methods": [
+                    "GET",
+                    "POST"
+                  ],
+                  "httpStatuses": [
+                    401,
+                    405
+                  ]
+                }
+              },
+              {
+                "name": "unauthenticated-api-session.cgi",
+                "status": "PASS",
+                "detail": {
+                  "methods": [
+                    "GET",
+                    "POST"
+                  ],
+                  "httpStatuses": [
+                    401,
+                    405
+                  ]
+                }
+              },
+              {
+                "name": "unauthenticated-api-subscriptions/create.cgi",
+                "status": "PASS",
+                "detail": {
+                  "methods": [
+                    "GET",
+                    "POST"
+                  ],
+                  "httpStatuses": [
+                    405,
+                    401
+                  ]
+                }
+              },
+              {
+                "name": "unauthenticated-api-subscriptions/delete.cgi",
+                "status": "PASS",
+                "detail": {
+                  "methods": [
+                    "GET",
+                    "POST"
+                  ],
+                  "httpStatuses": [
+                    405,
+                    401
+                  ]
+                }
+              },
+              {
+                "name": "unauthenticated-api-subscriptions/details.cgi",
+                "status": "PASS",
+                "detail": {
+                  "methods": [
+                    "GET",
+                    "POST"
+                  ],
+                  "httpStatuses": [
+                    401,
+                    401
+                  ]
+                }
+              },
+              {
+                "name": "unauthenticated-api-subscriptions/list.cgi",
+                "status": "PASS",
+                "detail": {
+                  "methods": [
+                    "GET",
+                    "POST"
+                  ],
+                  "httpStatuses": [
+                    401,
+                    405
+                  ]
+                }
+              },
+              {
+                "name": "unauthenticated-api-subscriptions/refresh.cgi",
+                "status": "PASS",
+                "detail": {
+                  "methods": [
+                    "GET",
+                    "POST"
+                  ],
+                  "httpStatuses": [
+                    405,
+                    401
+                  ]
+                }
+              },
+              {
+                "name": "unauthenticated-api-subscriptions/servers.cgi",
+                "status": "PASS",
+                "detail": {
+                  "methods": [
+                    "GET",
+                    "POST"
+                  ],
+                  "httpStatuses": [
+                    401,
+                    405
+                  ]
+                }
+              },
+              {
+                "name": "unauthenticated-api-subscriptions/summary.cgi",
+                "status": "PASS",
+                "detail": {
+                  "methods": [
+                    "GET",
+                    "POST"
+                  ],
+                  "httpStatuses": [
+                    401,
+                    405
+                  ]
+                }
+              },
+              {
+                "name": "unauthenticated-api-xray/install.cgi",
+                "status": "PASS",
+                "detail": {
+                  "methods": [
+                    "GET",
+                    "POST"
+                  ],
+                  "httpStatuses": [
+                    405,
+                    401
+                  ]
+                }
+              },
+              {
+                "name": "unauthenticated-api-xray/operation-status.cgi",
+                "status": "PASS",
+                "detail": {
+                  "methods": [
+                    "GET",
+                    "POST"
+                  ],
+                  "httpStatuses": [
+                    401,
+                    405
+                  ]
+                }
+              },
+              {
+                "name": "unauthenticated-api-xray/status.cgi",
+                "status": "PASS",
+                "detail": {
+                  "methods": [
+                    "GET",
+                    "POST"
+                  ],
+                  "httpStatuses": [
+                    401,
+                    405
+                  ]
+                }
+              },
+              {
+                "name": "unauthenticated-api-xray/update-check.cgi",
+                "status": "PASS",
+                "detail": {
+                  "methods": [
+                    "GET",
+                    "POST"
+                  ],
+                  "httpStatuses": [
+                    405,
+                    401
+                  ]
+                }
+              },
+              {
+                "name": "unauthenticated-api-xray/update.cgi",
+                "status": "PASS",
+                "detail": {
+                  "methods": [
+                    "GET",
+                    "POST"
+                  ],
+                  "httpStatuses": [
+                    405,
+                    401
+                  ]
+                }
+              },
+              {
+                "name": "logout-invalidates-session",
+                "status": "PASS",
+                "detail": null
+              }
+            ],
+            "scope": "Exact prepared CGI/native-auth/session scripts; real curl; mock loopback Keenetic HTTP; no physical SCGI/browser acceptance"
+          },
+          "sha256": "adeb02d55e2cf30d05e84b9c708d6a9b036281d99be9eb0118f2f764b3557111"
+        }
+      }
+    }
+  ],
+  "resolvedFailures": [
+    "FAILURE-P54-FULL-APP-SERVICE-STOP.json",
+    "FAILURE-P60-BUSYBOX-DAEMON-START.json",
+    "FAILURE-P62-BUSYBOX-IDLE-PROCESS-SHAPE.json"
+  ],
+  "wholeRegressionStillRunning": true,
+  "candidateReady": false
+}
