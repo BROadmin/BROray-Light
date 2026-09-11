@@ -39,7 +39,7 @@ def main():
     records = []
     failed = False
     def persist():
-        report = dict(stage='R0013', revision='p60-full-daemon-graceful-stop',
+        report = dict(stage='R0013', revision='p62-busybox-standalone-idle-identity',
                       status='FAIL_FIRST_ERROR' if failed else 'IN_PROGRESS', tests=records,
                       shell=shell, daemonSha256=hashlib.sha256(app['bin/broray-lightd'][0]).hexdigest(),
                       mockedBoundaries=['Application CLI workload','Xray executable','Keenetic publication'],
@@ -63,9 +63,9 @@ def main():
                 fixture.write(path, app['bin/broray-lightd'][0], 0o755)
                 for name in ('broray-connection-monitor','broray-server-auto-switch','broray-subscriptions','broray-home-snapshot'):
                     fixture.write(fixture.app/'bin'/name, b'#!/bin/sh\nexit 0\n', 0o755)
-                daemon = subprocess.Popen([fixture.interpreter, str(path)], env=fixture.env,
-                                          stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL,
-                                          start_new_session=True)
+                with (fixture.ram/'logs/idle-test.log').open('wb') as output:
+                    daemon = subprocess.Popen([fixture.interpreter, str(path)], env=fixture.env,
+                                              stdout=output, stderr=output, start_new_session=True)
                 fixture.children.append(daemon)
                 foreign = subprocess.Popen(['sleep','123'], env=fixture.env,
                                            stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL,
@@ -73,7 +73,8 @@ def main():
                 fixture.children.append(foreign)
                 deadline = time.monotonic()+5
                 while time.monotonic() < deadline:
-                    assert daemon.poll() is None, 'Daemon exited before idle'
+                    assert daemon.poll() is None, dict(error='Daemon exited before idle',
+                        returncode=daemon.returncode,log=(fixture.ram/'logs/idle-test.log').read_text(errors='replace'))
                     for candidate in Path('/proc').glob('[0-9]*/cmdline'):
                         try:
                             argv = candidate.read_bytes().split(b'\0')

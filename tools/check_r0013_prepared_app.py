@@ -84,7 +84,7 @@ def main():
     fixture = None
     current_gate = 'fixture'
     def persist(status):
-        report = dict(stage='R0013', revision='p60-full-daemon-graceful-stop',
+        report = dict(stage='R0013', revision='p62-busybox-standalone-idle-identity',
                       status=status, shell=shell, tests=records, candidateReady=False,
                       applicationScripts='Complete accepted r1 and current prepared_app; no daemon/CLI substitutions',
                       mockedBoundaries=['lighttpd workload binary','Keenetic publication OS','Xray executable'],

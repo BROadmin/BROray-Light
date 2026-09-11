@@ -1,0 +1,62 @@
+{
+  "stage": "R0013",
+  "revision": "p61-busybox-idle-start-diagnostic",
+  "status": "CAUSE_CONFIRMED",
+  "evidence": {
+    "artifact": {
+      "id": 10179940855,
+      "name": "r0013-idle-diagnostic-137cce220b3065c868a2fe9d021865c2b6e693f8",
+      "size_in_bytes": 553,
+      "url": "https://api.github.com/repos/BROadmin/BROray-Light/actions/artifacts/10179940855",
+      "archive_download_url": "https://api.github.com/repos/BROadmin/BROray-Light/actions/artifacts/10179940855/zip",
+      "expired": false,
+      "created_at": "2026-09-11T00:56:45Z",
+      "expires_at": "2026-12-10T00:56:29Z",
+      "updated_at": "2026-09-11T00:56:45Z",
+      "digest": "sha256:a0732cc42e2c991a7e3cfac015e66c6a7f187733f2689e8fcd40cb642b1a7b76",
+      "workflow_run": {
+        "id": 34548602174,
+        "repository_id": 1346219669,
+        "head_repository_id": 1346219669,
+        "head_branch": "codex/r0009-updater-package",
+        "head_sha": "137cce220b3065c868a2fe9d021865c2b6e693f8"
+      }
+    },
+    "members": {
+      "r0013-idle-diagnostic.json": {
+        "report": {
+          "stage": "R0013",
+          "revision": "p61-busybox-idle-start-diagnostic",
+          "status": "DIAGNOSTIC_CAPTURED_NOT_ACCEPTANCE",
+          "tests": [
+            {
+              "shell": [
+                "/bin/dash"
+              ],
+              "returncode": 0,
+              "stdout": "command_v_sleep=/var/tmp/r0013-busybox-path-gkq2e67u/sleep\n/usr/bin/busybox\nreadlink_exit=0\nshell_exe=/usr/bin/dash\nexternal_path_sleep=/var/tmp/r0013-busybox-path-gkq2e67u/sleep\n",
+              "stderr": ""
+            },
+            {
+              "shell": [
+                "/usr/bin/busybox",
+                "ash"
+              ],
+              "returncode": 0,
+              "stdout": "command_v_sleep=sleep\nreadlink_exit=1\nshell_exe=/usr/bin/busybox\nexternal_path_sleep=/var/tmp/r0013-busybox-path-gkq2e67u/sleep\n",
+              "stderr": ""
+            }
+          ],
+          "daemonExecuted": false,
+          "candidateReady": false,
+          "sourceSha256": "809417f58768d31107bac3de4056e262e5088aa822d3052855818f5d1e601cab"
+        },
+        "sha256": "27b48867b6dde9eb1fc95713136cc58b016fd04a61bfae1eac5b86220ef69152"
+      }
+    }
+  },
+  "cause": "BusyBox ash standalone applet returns literal sleep from command -v; readlink -f sleep fails. Dash resolves an external PATH entry. P60 new binding returned 1 under set -e.",
+  "daemonExecuted": false,
+  "nextCorrectedRevision": "p62-busybox-standalone-idle-identity",
+  "candidateReady": false
+}

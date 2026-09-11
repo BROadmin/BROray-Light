@@ -1,0 +1,28 @@
+{
+  "stage": "R0013",
+  "revision": "p62-busybox-standalone-idle-identity",
+  "status": "LOCAL_SYNTAX_AND_ASSEMBLY_PASS_LINUX_EXECUTION_PENDING",
+  "files": [
+    {
+      "path": "packaging/r0013-overlay/app/bin/broray-lightd",
+      "sizeBytes": 2862,
+      "sha256": "4fe66dd9cb00bf2b7bdbf0574ef31898d807e50d12009033ae8bda3ba203136b"
+    },
+    {
+      "path": "packaging/r0013-overlay/runtime-paths.json",
+      "sizeBytes": 17242,
+      "sha256": "f32f8d2dcf525e4bb91114b1dafdcacfc72044607a0a68fa76bbc0e34db1b3d9"
+    },
+    {
+      "path": "tools/check_r0013_daemon_stop.py",
+      "sizeBytes": 6156,
+      "sha256": "832bb02816f64ee3a037384301d470f32f6c60be0476531b2c496cdd186f315c"
+    },
+    {
+      "path": "tools/check_r0013_prepared_app.py",
+      "sizeBytes": 9181,
+      "sha256": "9ef3e5b7e3772ce268b3e8ffd8925c85be3cc612b147b0f87daa7be93277b239"
+    }
+  ],
+  "candidateReady": false
+}

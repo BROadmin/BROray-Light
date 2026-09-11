@@ -27,7 +27,11 @@ idle_wait(){
     local child started current executable
     [ "$STOP_REQUESTED" = 0 ] || return 0
     executable="$(command -v sleep)" || return 1
-    executable="$(readlink -f "$executable")" || return 1
+    case "$executable" in
+        /*) executable="$(readlink -f "$executable")" || return 1 ;;
+        sleep) executable="$(readlink "/proc/$$/exe")" || return 1 ;; # BusyBox standalone applet
+        *) return 1 ;;
+    esac
     sleep "$INTERVAL" &
     child=$!
     started="$(idle_child_identity "$child")" || started=''

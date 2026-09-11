@@ -1,0 +1,12 @@
+{
+  "stage": "R0013",
+  "revision": "p62-busybox-standalone-idle-identity",
+  "status": "CHECKPOINT_FIRST",
+  "diagnostic": {
+    "sizeBytes": 2551,
+    "sha256": "f110817db7221e6019abf097506b1d19ff7adefa0c8af64764408ce499807b78",
+    "path": "checkpoints/R0013/DIAGNOSTIC-P61.json"
+  },
+  "fix": "For exact standalone sleep command, expected child executable is the running shell executable. Absolute external sleep retains canonical PATH executable binding. Never widen service signalling or use process-name matching.",
+  "candidateReady": false
+}
