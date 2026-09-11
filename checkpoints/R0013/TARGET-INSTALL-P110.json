@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 1,
+  "revision": "p110-final-package-v1",
+  "status": "PASS_EXACT_CANDIDATE_INSTALLED_EXISTING_DURABLE_FILES_PRESERVED",
+  "sourceCommit": "f4af30d98fd1f227e5116def825c09399437086f",
+  "candidateReady": false,
+  "steps": [
+    {
+      "name": "preflight",
+      "exitCode": 0,
+      "stdout": "/tmp/brl-r13-final-p110.nIWfWe\n",
+      "stderr": ""
+    },
+    {
+      "name": "fresh-private-backup",
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "name": "stop-owned-services",
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "name": "official-package-removal-retaining-durable-state",
+      "exitCode": 0,
+      "stdout": "Removing package broray-light from root...\n",
+      "stderr": ""
+    },
+    {
+      "name": "install-exact-final-package",
+      "exitCode": 0,
+      "stdout": "Installing broray-light (2.0.0) to root...\nConfiguring broray-light.\nBROray-Light 2.0.0 installed.\n",
+      "stderr": ""
+    },
+    {
+      "name": "verify-slot-runtime-and-services",
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "name": "verify-existing-durable-file-bytes",
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "protectedRamPath": "/tmp/brl-r13-final-p110.nIWfWe",
+  "inputs": [
+    {
+      "name": "new-installer.sh",
+      "sha256": "d7d1a709621f3154c0f5b5892a98bddd3f3f782b57d01eb15025e739abcd44f2",
+      "bytes": 4108
+    },
+    {
+      "name": "new-package.ipk",
+      "sha256": "e582b1f3b2314f118f1caca9aa98efb2e9e67f0ca4aaa9b42f6e1bcc22ae3a0a",
+      "bytes": 12992623
+    },
+    {
+      "name": "rollback-installer.sh",
+      "sha256": "d58e07633d79780e4102505f2db16c5e93328cd7956d6654c02a77940527ba82",
+      "bytes": 4108
+    },
+    {
+      "name": "rollback-package.ipk",
+      "sha256": "ac60ab26aaa649e4db521409987054c997d661bdecd8bd20a63b76b9d3b35f06",
+      "bytes": 12992551
+    }
+  ],
+  "privateBackup": {
+    "path": "dist/R0013/private-target/p110/private-before.tar.gz",
+    "sha256": "4ecc190acd4647ce0a0e01ae8263c45133120b7f91e2c8fe1bad2b777fcea77b",
+    "bytes": 12747538
+  },
+  "newDurableFile": "config/system/server-canonical-owners.json",
+  "nextExactAction": "NATIVE_BROWSER_NEGATIVE_REGISTRY_OVERLAP_RESTART_SIGNED_UPDATER_AND_EXACT_RAM_CLEANUP"
+}

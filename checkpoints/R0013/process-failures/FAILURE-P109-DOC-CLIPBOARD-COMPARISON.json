@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 1,
+  "revision": "p109-draft-doc-copy-v1",
+  "status": "FAIL_FIRST_ERROR_TEST_COMPARATOR",
+  "observation": "Browser clipboard contains ssh root@192.168.1.1 followed by CRLF, HTML textContent contains the identical command followed by LF",
+  "cause": "Windows clipboard line-ending normalization; initial byte comparison incorrectly treated CRLF/LF as different copied commands",
+  "nextRevision": "p111-doc-copy-platform-newline-normalization",
+  "correction": "Compare source textContent and clipboard with only CRLF normalized to LF, preserve all other bytes; wait for the button success state before reading clipboard",
+  "publicWebsiteChanged": false
+}

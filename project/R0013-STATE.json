@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "stage": "R0013_SELECTIVE_UPSTREAM_STABLE_PORT",
-  "status": "CORRECTION_REQUIRED_INHERITED_INSTALLER_TMPDIR",
-  "currentRevision": "p109-owned-runtime-tmpdir-v1",
+  "status": "EXACT_FINAL_PACKAGE_INSTALLED_DOC_PREVIEW_PASS",
+  "currentRevision": "p112-signed-index-probe",
   "activeFailure": null,
   "publicVersion": "2.0.0",
   "buildA": "PASS_P83_INDEPENDENT_BYTES",
@@ -62,7 +62,7 @@
     "path": "checkpoints/R0013/UPSTREAM-PORT-MAP-P2.json",
     "sha256": "009a0f5adae08f399c82510cf680690b4c2e50bc8c659eda9c48d91b5a838121"
   },
-  "nextExactAction": "PIN_TMPDIR_TO_VALIDATED_RAM_AND_TEST_EXACT_CLEAN_INSTALL_DAEMON_ENVIRONMENT",
+  "nextExactAction": "TARGET_RESTART_SIGNED_EQUAL_DOWNGRADE_PERSISTENCE",
   "versionAndXray": {
     "status": "PASS_VERSION_AND_BOOTSTRAP_INPUT",
     "path": "checkpoints/R0013/UPGRADE-AND-XRAY-P10.json",
@@ -341,24 +341,19 @@
   },
   "latestReleasePreparation": [
     {
-      "path": "checkpoints/R0013/INTERFACE-ENVIRONMENT-P106.json",
-      "sha256": "4fbbf6c23de94c8a4b489f42c1ac03d0bc0d60ccc7ee90c6b47877a59345d9d5",
-      "bytes": 10127
+      "path": "checkpoints/R0013/TARGET-INSTALL-P110.json",
+      "sha256": "22b11978221d841a8a749bba6fee22eadd3bdb3064fd3d679ab53433ca2f4e4b",
+      "bytes": 2321
     },
     {
-      "path": "checkpoints/R0013/INTERFACE-UNCACHED-P107.json",
-      "sha256": "fc0c8d48148391e48047a698011a00547777f62baeb17926586ea9fed82efd91",
-      "bytes": 3761
+      "path": "checkpoints/R0013/DOC-PREVIEW-P111.json",
+      "sha256": "03f3aa0f6d668cd1fc7ac41618c02d0f3a98fb0bcadf07afeed3df045c854a35",
+      "bytes": 991
     },
     {
-      "path": "checkpoints/R0013/DAEMON-TMPDIR-P108.json",
-      "sha256": "e9a06f47eca5898acd5b0e9e5b033b80a41accad12647c6bc637788af50aa84f",
-      "bytes": 400
-    },
-    {
-      "path": "checkpoints/R0013/START-P109-TMPDIR-CORRECTION.json",
-      "sha256": "4b5d638a7689706113c6da5a09016d27840640e508c6884843e9a892a74cad43",
-      "bytes": 1247
+      "path": "checkpoints/R0013/SIGNED-PROBE-P112.json",
+      "sha256": "e4a62f4913024153813710d720001c85c64dc2e0ac0bdbfa7fe2a20003c517a7",
+      "bytes": 696
     }
   ]
 }

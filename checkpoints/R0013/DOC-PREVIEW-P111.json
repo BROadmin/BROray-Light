@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "revision": "p111-doc-copy-platform-newline-normalization",
+  "status": "PASS_DRAFT_RENDER_AND_COPY",
+  "publicWebsiteChanged": false,
+  "tests": [
+    {"name":"all-five-copy-buttons-match-code-with-only-CRLF-normalization", "status":"PASS"},
+    {"name":"all-internal-section-links-resolve", "status":"PASS"},
+    {"name":"desktop-1440-no-horizontal-overflow", "status":"PASS"},
+    {"name":"mobile-390-no-horizontal-overflow", "status":"PASS"},
+    {"name":"desktop-and-mobile-screenshots-visually-inspected", "status":"PASS"}
+  ],
+  "screenshots": [
+    {"path":"publication/R0013/preview/guide-1440.png", "sha256":"8499bf43683e212029be097fab618b56649b2ca2e12f96724a2f1cac99b5bf12"},
+    {"path":"publication/R0013/preview/guide-390.png", "sha256":"48da8c0fa174270081805eb090b1940128d84a827a84d6eb11f97f51ff31d961"}
+  ],
+  "installerSha256":"d7d1a709621f3154c0f5b5892a98bddd3f3f782b57d01eb15025e739abcd44f2",
+  "finalPublishedStatusAndByteChecksPending": true
+}

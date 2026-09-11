@@ -28,6 +28,7 @@ html = html.replace(/<h2>([\s\S]*?)<\/h2>/g, (_, text) => {
 html = html.replaceAll('<pre><code', '<pre><button class="copy" type="button" aria-label="Копировать команды">Копировать</button><code');
 let page = fs.readFileSync(path.join(target, 'templates/broray-light/index.html'), 'utf8');
 page = page.replace(/<title>[^<]*<\/title>/, '<title>BROray-Light 2.0.0 — пошаговая инструкция и история версий</title>');
+page = page.replace('BROvibe Docs · BROray-Light 1.0.0-r1', 'BROvibe Docs · BROray-Light 2.0.0');
 page = page.replace(/<meta name="description" content="[^"]*">/, '<meta name="description" content="BROray-Light: установка Entware и SSH, VLESS, подписки, Xray, безопасное обновление и история версий.">');
 page = page.replace(/<aside class="sidebar"[\s\S]*?<\/aside>/, '<aside class="sidebar" aria-label="Разделы страницы"><p class="sidebar-title">Пошаговая инструкция</p>' + headings.join('\n') + '</aside>');
 page = page.replace(/<main class="content" id="content">[\s\S]*?<\/main>/,
