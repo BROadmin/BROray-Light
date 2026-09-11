@@ -1,0 +1,12 @@
+{
+  "stage": "R0013",
+  "runId": 34545805343,
+  "sourceCommit": "5317440c9845b9ac8800b74c8c3fb0079b615ff0",
+  "previousStatus": "pending",
+  "cancelHttpStatus": 202,
+  "reason": "Supersede unexecuted P55 with P57 native-auth plus checkpointed P56 UI correction",
+  "replacementRevision": "p57-subscription-action-button-finally",
+  "nativeAuthTestUnchanged": true,
+  "validationNotRun": true,
+  "candidateReady": false
+}

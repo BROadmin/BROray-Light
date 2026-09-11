@@ -1,0 +1,10 @@
+{
+  "stage": "R0013",
+  "revision": "p56-subscription-delete-cancel-control",
+  "status": "CHECKPOINT_BEFORE_CONTROL_VALIDATION",
+  "scope": "Execute the actual prepared subscriptions.js click handler with a declined delete confirmation and verify the button is re-enabled without a request",
+  "mockedBoundaries": ["DOM elements", "HTTP list response", "user confirmation"],
+  "suspectedFailure": "The dynamic subscription action handler disables the button before confirmation; cancellation returns without re-enabling it.",
+  "candidateReady": false,
+  "routerTouched": false
+}

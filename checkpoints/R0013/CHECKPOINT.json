@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "stage": "R0013_SELECTIVE_UPSTREAM_STABLE_PORT",
-  "status": "P53_FULL_COMPONENT_PASS_P54_RUNNING_P55_QUEUED",
-  "currentRevision": "p55-native-auth-cgi-session-validation",
+  "status": "P57_CONTROL_FIX_PASS_FIRST_COMBINED_CI_PENDING",
+  "currentRevision": "p57-subscription-action-button-finally",
   "publicVersion": "2.0.0",
   "packageVersion": "2.0.0",
   "releaseId": "2.0.0-r1",
@@ -27,12 +27,12 @@
     "sha256": "73ceaf5f6179c87abf0ca25c0fe2e829cb91fb8edc0a33b815e6110e69ced708"
   },
   "activeFailure": null,
-  "nextExactAction": "COMPLETE_P53_P54_THEN_FIRST_P55_NATIVE_AUTH_CGI_RUN",
+  "nextExactAction": "P54_FULL_APP_LIFECYCLE_THEN_P57_NATIVE_AUTH_AND_CONTROL_REGRESSION",
   "remainingIntegrationGap": {
     "originFailure": "process-failures/FAILURE-P16-PERSISTENT-LOCK-DOMAIN.json",
     "description": "351 unique JSON-report component tests pass at P53. Complete prepared app lifecycle, full clean install/service, WebUI/native auth/browser, final builds/signing and target acceptance remain."
   },
-  "pendingSourceCommit": "5317440c9845b9ac8800b74c8c3fb0079b615ff0",
-  "lastResolvedFailure": "process-failures/FAILURE-P51-EARLY-S23-EMPTY-RAM-SURVIVOR.json",
-  "pendingSourceManifest": "SOURCE-INPUTS-P55.json"
+  "pendingSourceCommit": null,
+  "lastResolvedFailure": "process-failures/FAILURE-P56-SUBSCRIPTION-CANCEL-DISABLES-BUTTON.json",
+  "pendingSourceManifest": "SOURCE-INPUTS-P57.json"
 }

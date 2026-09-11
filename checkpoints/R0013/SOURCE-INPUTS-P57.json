@@ -1,0 +1,23 @@
+{
+  "stage": "R0013",
+  "revision": "p57-subscription-action-button-finally",
+  "status": "FIVE_SUBSCRIPTION_CONTROL_TESTS_PASS_LINUX_PENDING",
+  "files": [
+    {
+      "path": "packaging/r0013-overlay/app/web-new/assets/js/subscriptions.js",
+      "sizeBytes": 7656,
+      "sha256": "f0a54e24ca3216b62d4c8656d61e84eeec64f5bc2ed46c34ae601df43256264d"
+    },
+    {
+      "path": "tools/test_r0013_subscription_controls.js",
+      "sizeBytes": 4697,
+      "sha256": "f1998d80cdc9095df02bc6087e22527abc6605c0c90c16c3a60e72561093bfaf"
+    },
+    {
+      "path": ".github/workflows/r0013-port-tests.yml",
+      "sizeBytes": 16873,
+      "sha256": "105ac5510bd4b6930696b44c28d2f89fcfebdcb83df51f5beb29db8b47ba0cff"
+    }
+  ],
+  "candidateReady": false
+}

@@ -1,4 +1,4 @@
-# BROray-Light 2.0.0 — R0013, checkpoint P55
+# BROray-Light 2.0.0 — R0013, checkpoint P57
 
 `candidateReady=false`, `releaseReady=false`. Публичная версия `2.0.0`, внутренний releaseId `2.0.0-r1`. Релиз не опубликован; роутер, production server и приложение полного BROray не изменялись.
 
@@ -43,4 +43,6 @@ P54 подготовил отдельный Linux-набор с полными �
 
 P55 добавляет проверку точных подготовленных CGI/native-auth/session в private mount/network namespaces на канонических путях. HTTP-ответ KeeneticOS имитируется с придуманными тестовыми данными; curl и код приложения настоящие. Положительный вход, негативные native-ответы, сессии/истечение/logout и защита всех CGI от неавторизованного доступа подготовлены; Linux PASS пока не заявляется.
 
-Точные статусы каждого acceptance gate: `VALIDATION.json`. Текущие источники: `PRODUCED-SOURCE-MANIFEST.json` (77 файлов), изменения P55 — `SOURCE-INPUTS-P55.json`. Компонентный PASS не равен PASS полного кандидата.
+P56 воспроизвёл дефект принятого обработчика подписки: отмена удаления оставляла кнопку disabled без отправки запроса. FIRST-ERROR сохранён (`FAILURE-P56-SUBSCRIPTION-CANCEL-DISABLES-BUTTON.json`). P57 добавляет только finally для восстановления доступности кнопки. Пять тестов на настоящем prepared JS с DOM/HTTP/confirm fixtures PASS: отмена, delete/refresh success и HTTP error. `CONTROL-P57.json`: SHA-256 `18180c9ff3f419c5c758b97197c5f75ad669fd163d1f75ba4ad67fcea6c144b7`. P55 CI отменён до запуска и заменяется P57 с неизменённым тестом native-auth; это не retry проваленного revision.
+
+Точные статусы каждого acceptance gate: `VALIDATION.json`. Текущие источники: `PRODUCED-SOURCE-MANIFEST.json` (79 файлов), изменения P57 — `SOURCE-INPUTS-P57.json`. Компонентный PASS не равен PASS полного кандидата.

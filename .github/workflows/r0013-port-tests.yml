@@ -102,6 +102,15 @@ jobs:
         run: python3 -B tools/test_r0013_xray_selection.py --shell /bin/dash --jq /usr/bin/jq
       - name: Home Xray selector control behavior
         run: node tools/test_r0013_home.js
+      - name: Subscription cancel, delete, refresh and error controls
+        run: node tools/test_r0013_subscription_controls.js /tmp/r0013-subscription-controls.json
+      - name: Preserve subscription control first result
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: r0013-subscription-controls-${{ github.sha }}
+          path: /tmp/r0013-subscription-controls.json
+          if-no-files-found: ignore
       - name: Xray rollback identity and operation fence ordering (dash)
         run: sudo python3 -B tools/test_r0013_xray_rollback.py --shell /bin/dash --result /tmp/r0013-xray-rollback-dash.json
       - name: Xray rollback identity and operation fence ordering (BusyBox)

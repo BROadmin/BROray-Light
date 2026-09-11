@@ -1,0 +1,44 @@
+{
+  "stage": "R0013",
+  "revision": "p57-subscription-action-button-finally",
+  "status": "PASS_BOUNDED_CONTROL",
+  "candidateReady": false,
+  "sourceSha256": "a32bfaaf2841c2b22ed5a8beaea8a237f4902c1a5220258600a3211003442905",
+  "mockedBoundaries": [
+    "DOM",
+    "HTTP",
+    "confirm"
+  ],
+  "tests": [
+    {
+      "name": "subscription-delete-cancel-restores-clickability",
+      "status": "PASS",
+      "noDeleteRequest": true,
+      "buttonEnabled": true
+    },
+    {
+      "name": "subscription-delete-success",
+      "status": "PASS",
+      "exactIdAndPost": true,
+      "buttonEnabled": true
+    },
+    {
+      "name": "subscription-delete-http-refusal",
+      "status": "PASS",
+      "exactIdAndPost": true,
+      "buttonEnabled": true
+    },
+    {
+      "name": "subscription-refresh-success",
+      "status": "PASS",
+      "exactIdAndPost": true,
+      "buttonEnabled": true
+    },
+    {
+      "name": "subscription-refresh-http-refusal",
+      "status": "PASS",
+      "exactIdAndPost": true,
+      "buttonEnabled": true
+    }
+  ]
+}

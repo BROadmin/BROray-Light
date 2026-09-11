@@ -1,0 +1,19 @@
+{
+  "stage": "R0013",
+  "revision": "p56-subscription-delete-cancel-control",
+  "status": "FAIL_FIRST_ERROR",
+  "candidateReady": false,
+  "sourceSha256": "4cc23d94c3a0381671a6223a416a79d7cc28b42734710a822c0eeb2b2297e1ec",
+  "mockedBoundaries": [
+    "DOM",
+    "HTTP",
+    "confirm"
+  ],
+  "tests": [
+    {
+      "name": "subscription-delete-cancel-restores-clickability",
+      "status": "FAIL",
+      "error": "Declined deletion left the button disabled\n\ntrue !== false\n"
+    }
+  ]
+}

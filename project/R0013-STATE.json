@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "stage": "R0013_SELECTIVE_UPSTREAM_STABLE_PORT",
-  "status": "P53_FULL_COMPONENT_PASS_P54_RUNNING_P55_QUEUED",
-  "currentRevision": "p55-native-auth-cgi-session-validation",
+  "status": "P57_CONTROL_FIX_PASS_FIRST_COMBINED_CI_PENDING",
+  "currentRevision": "p57-subscription-action-button-finally",
   "activeFailure": null,
   "publicVersion": "2.0.0",
   "buildA": "PRELIMINARY_ENGINEERING_BYTE_PASS_NOT_FINAL_ACCEPTANCE",
@@ -18,7 +18,7 @@
     "path": "checkpoints/R0013/SUBSCRIPTION-NAME-P6.json",
     "sha256": "2b1fe451272dc233e1f8ccd4cc3d6ea2f212ba81e009f93d3a4b9e9b9601577a"
   },
-  "lastResolvedFailure": "checkpoints/R0013/process-failures/FAILURE-P51-EARLY-S23-EMPTY-RAM-SURVIVOR.json",
+  "lastResolvedFailure": "checkpoints/R0013/process-failures/FAILURE-P56-SUBSCRIPTION-CANCEL-DISABLES-BUTTON.json",
   "processPort": {
     "status": "PASS_ISOLATED_LINUX",
     "tests": 33,
@@ -62,7 +62,7 @@
     "path": "checkpoints/R0013/UPSTREAM-PORT-MAP-P2.json",
     "sha256": "009a0f5adae08f399c82510cf680690b4c2e50bc8c659eda9c48d91b5a838121"
   },
-  "nextExactAction": "COMPLETE_P53_P54_THEN_FIRST_P55_NATIVE_AUTH_CGI_RUN",
+  "nextExactAction": "P54_FULL_APP_LIFECYCLE_THEN_P57_NATIVE_AUTH_AND_CONTROL_REGRESSION",
   "versionAndXray": {
     "status": "PASS_VERSION_AND_BOOTSTRAP_INPUT",
     "path": "checkpoints/R0013/UPGRADE-AND-XRAY-P10.json",
@@ -209,5 +209,11 @@
     "status": "PREPARED_NOT_YET_EXECUTED",
     "checkpoint": "checkpoints/R0013/START-P55.json",
     "sourceManifest": "checkpoints/R0013/SOURCE-INPUTS-P55.json"
+  },
+  "subscriptionControls": {
+    "status": "PASS_BOUNDED_DOM_HTTP_FIXTURES",
+    "tests": 5,
+    "path": "checkpoints/R0013/CONTROL-P57.json",
+    "sha256": "18180c9ff3f419c5c758b97197c5f75ad669fd163d1f75ba4ad67fcea6c144b7"
   }
 }

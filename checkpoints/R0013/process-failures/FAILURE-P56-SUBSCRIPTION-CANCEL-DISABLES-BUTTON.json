@@ -1,0 +1,20 @@
+{
+  "stage": "R0013",
+  "revision": "p56-subscription-delete-cancel-control",
+  "status": "FAIL_FIRST_ERROR",
+  "test": "subscription-delete-cancel-restores-clickability",
+  "source": "prepared_app:web-new/assets/js/subscriptions.js",
+  "sourceSha256": "4cc23d94c3a0381671a6223a416a79d7cc28b42734710a822c0eeb2b2297e1ec",
+  "testSourceSha256": "ef477c41b820d2dc51c1a345091c65d3211cce72052ee353194d0fbb912913dc",
+  "result": {
+    "path": "checkpoints/R0013/CONTROL-P56-FIRST-RESULT.json",
+    "sha256": "24ec986de86dbaa3499fd639d35b84b6e321afa963a3cbeffadd409e4f88e7c9"
+  },
+  "expected": "Declined delete sends no request and restores button enabled state",
+  "actual": "No delete request, but button.disabled remains true",
+  "cause": "Outer delegated click handler disables before subscriptionAction; confirmation cancellation returns normally, bypassing catch and leaving no finally cleanup.",
+  "nextCorrectedRevision": "p57-subscription-action-button-finally",
+  "sameRevisionRetry": false,
+  "candidateReady": false,
+  "routerTouched": false
+}

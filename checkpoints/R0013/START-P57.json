@@ -1,0 +1,11 @@
+{
+  "stage": "R0013",
+  "revision": "p57-subscription-action-button-finally",
+  "status": "CHECKPOINT_BEFORE_CORRECTION",
+  "failure": "process-failures/FAILURE-P56-SUBSCRIPTION-CANCEL-DISABLES-BUTTON.json",
+  "scope": "Add a finally branch to the accepted r1 delegated subscription action handler; restore clickability on cancellation, success and error without changing API/auth/data semantics",
+  "validation": ["cancel sends no request", "confirmed delete posts exact ID", "refresh posts exact ID", "HTTP failure re-enables button and exposes error"],
+  "ciPlan": "Supersede unexecuted pending P55 with P57 including the same native-auth test plus the validated UI correction; P54 lifecycle validation remains independent",
+  "candidateReady": false,
+  "routerTouched": false
+}
