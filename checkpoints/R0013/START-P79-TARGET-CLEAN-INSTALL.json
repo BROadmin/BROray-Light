@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "status": "CHECKPOINT_FIRST",
+  "target": "192.168.1.1",
+  "sourceCommit": "3a424aa0965a33de5e19a33d6e89488413b9c306",
+  "packageVersion": "2.0.0",
+  "releaseId": "2.0.0-r1",
+  "installerSha256": "ae98ec1b3150b17eeb979ceebbbaee987d10c1bf6641821073ceb7dd45e135d3",
+  "packageSha256": "5b142793c7318c3620c494160d8c4413f44467e5e4d1e5e6e614fb88e142f7a7",
+  "buildEvidence": "INDEPENDENT-BUILDS-P72.json",
+  "method": "Invoke exact independent-build clean installer with local verified IPK in protected RAM, native opkg and real services. No test hooks, skip flags, ownership bypass or remote public-release publication.",
+  "fullProductRemoval": "TARGET-UNINSTALL-P77.json",
+  "bootstrapRetirement": "TARGET-RETIRED-P78.json",
+  "failurePolicy": "No repeat of failed install revision. Save raw output and JSON checkpoint before diagnosis/corrected revision.",
+  "candidateReady": false
+}

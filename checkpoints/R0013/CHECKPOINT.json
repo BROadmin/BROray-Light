@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "stage": "R0013_SELECTIVE_UPSTREAM_STABLE_PORT",
-  "status": "AUTHORIZED_TARGET_REPLACEMENT_IN_PROGRESS",
-  "currentRevision": "p72-stat-package-prerequisite",
+  "status": "TARGET_REPLACED_NATIVE_CGI_FAILURE_CORRECTION_PENDING",
+  "currentRevision": "p83-cgi-entware-path",
   "publicVersion": "2.0.0",
   "packageVersion": "2.0.0",
   "releaseId": "2.0.0-r1",
@@ -10,30 +10,31 @@
   "releaseTag": "v2.0.0",
   "branch": "codex/r0009-updater-package",
   "baseLightCommit": "9e5fce9bfa7c82bfc2f2654d80fd3987c5259963",
-  "latestTestedSourceCommit": "40f1ac096ad65cb62fa218bf83d542de2d9d3bf8",
+  "latestTestedSourceCommit": "3a424aa0965a33de5e19a33d6e89488413b9c306",
   "latestFullComponentRegression": "REGRESSION-P64.json",
-  "latestCI": "https://github.com/BROadmin/BROray-Light/actions/runs/34549087783",
+  "latestCI": "https://github.com/BROadmin/BROray-Light/actions/runs/34572894126",
   "candidateReady": false,
   "releaseReady": false,
   "publicReleasePublished": false,
   "productionServerTouched": false,
   "fullBROrayModified": false,
   "preexistingR0012CodeAndHistoryPreserved": true,
-  "buildA": "P72_PENDING_PREVIOUS_P63_PASS_RETAINED",
-  "buildB": "P72_PENDING_PREVIOUS_P63_PASS_RETAINED",
-  "buildEvidence": {
-    "path": "INDEPENDENT-BUILDS-AND-CLEAN-P63.json",
-    "sha256": "35bc9388ff47a8c23d7229f70150e8927d1fde06dd30ea93e0de694b1a795c3c"
-  },
-  "activeFailure": "process-failures/FAILURE-P73-BACKUP-TAR-PATH.json",
-  "nextExactAction": "VERIFY_P74_LOCAL_BACKUP_AND_P72_BUILD_BEFORE_REMOVAL",
+  "buildA": "PASS_P72_P83_PENDING",
+  "buildB": "PASS_P72_P83_PENDING",
+  "buildEvidence": "INDEPENDENT-BUILDS-P72.json",
+  "activeFailure": "process-failures/FAILURE-P81-NATIVE-TARGET-LOGIN.json",
+  "nextExactAction": "RUN_P83_INDEPENDENT_BUILDS_AND_NATIVE_CGI_REGRESSION_BEFORE_TARGET_REPLACEMENT",
   "remainingIntegrationGap": {
     "description": "Full backend functionality, target ownership/stat prerequisites, signing, physical acceptance and immutable release/docs bytes remain; see VALIDATION.json."
   },
   "pendingSourceCommit": null,
   "lastResolvedFailure": "process-failures/FAILURE-P62-BUSYBOX-IDLE-PROCESS-SHAPE.json",
-  "pendingSourceManifest": null,
-  "buildSourceCommit": "f38cfb7d00d6435d51a90672cdf2b39726e1f027",
+  "pendingSourceManifest": {
+    "sizeBytes": 17740,
+    "sha256": "18f34d6fcbbe20fe676b4d9394f3d25abdb820e99216c4e9365a439e526d1119",
+    "path": "checkpoints/R0013/PRODUCED-SOURCE-MANIFEST.json"
+  },
+  "buildSourceCommit": "3a424aa0965a33de5e19a33d6e89488413b9c306",
   "regressionSourceCommit": "ebae309b93aee000ed1c5b5743385ba39e33ed98",
   "regression": {
     "sizeBytes": 162932,
@@ -47,17 +48,20 @@
   },
   "browserToPackageBinding": "BUILD-DOWNLOAD-AND-UI-BINDING-P70.json",
   "report": {
-    "sizeBytes": 15490,
-    "sha256": "17d279ccd3565006d39247852def04e7fc1150c868c5469f6c9fbd3cbd89d99d",
+    "sizeBytes": 17801,
+    "sha256": "8334a841871f7ca9e9d5c0e61cd4b9008d449d78485ed64a015625a8812cce8d",
     "path": "checkpoints/R0013/REPORT.md"
   },
   "validation": {
-    "path": "VALIDATION.json",
-    "sha256": "fa6ed2fe892d20dbdd65f5488327df474c75316cafa340fa4fe203d9c7cd4812"
+    "sizeBytes": 8820,
+    "sha256": "d017892073e3bce6425b9ac186c786ee422368f9be65cd8cbdb2a56e4b310c33",
+    "path": "checkpoints/R0013/VALIDATION.json"
   },
   "routerReadOnlyInspected": true,
   "routerMutationPerformed": true,
   "additionalFailure": "process-failures/FAILURE-P68-TARGET-STAT-CAPABILITY.json",
   "targetReplacementAuthorization": "START-P71-TARGET-REPLACEMENT.json",
-  "routerMutationScope": "Private RAM backup files only; no product/config/service changes"
+  "routerMutationScope": "Verified backed-up full-product official uninstall, exact bootstrap retirement, stat prerequisite and native Light 2.0.0 clean install.",
+  "targetInstall": "TARGET-INSTALL-P79.json",
+  "targetState": "TARGET-STATE-P80.json"
 }

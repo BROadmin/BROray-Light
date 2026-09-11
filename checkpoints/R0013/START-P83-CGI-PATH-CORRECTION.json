@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "status": "CHECKPOINT_FIRST",
+  "scope": [
+    "shared/runtime-environment.sh initializes /opt/bin:/opt/sbin for real-target guard before stat",
+    "native CGI fixture covers missing and shadowing inherited PATH",
+    "new independent builds and native auth tests"
+  ],
+  "excluded": [
+    "No native password/session/challenge change",
+    "No ownership/RAM check bypass",
+    "No in-place unmanifested router hotpatch",
+    "No full-BROray source port beyond this proven failure"
+  ],
+  "targetPlan": "After corrected A/B and CGI regression pass, replace clean empty Light install using bounded package lifecycle; preserve prior P72 build and all failures.",
+  "candidateReady": false
+}

@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "status": "PASS_OFFICIAL_FULL_PRODUCT_REMOVAL",
+  "operationId": "uninstall-20260911071800-29566",
+  "target": "192.168.1.1",
+  "registrationAbsent": true,
+  "appAbsent": true,
+  "fullServicesAndProcessesAbsentExceptS99": true,
+  "finalizationRecoveryReceiptAbsent": true,
+  "backup": "TARGET-BACKUP-P74.json",
+  "supplement": "TARGET-SUPPLEMENT-BACKUP-P77.json",
+  "rawEvidence": [
+    {
+      "path": "dist/R0013/private-target/p74/uninstall-start-p77.txt",
+      "sha256": "6496423ebb768fdd63b1c02492aecad0d0ef492dfceb1cb5efe6afbf54ab4fe5"
+    },
+    {
+      "path": "dist/R0013/private-target/p74/uninstall-state-p77.txt",
+      "sha256": "18e1b1c908b47f3b2de03cc3152f76286392429b22f46b101975afc03feed0c2"
+    },
+    {
+      "path": "dist/R0013/private-target/p74/post-uninstall-audit-p78.txt",
+      "sha256": "346f0fbef6f0a5bd7b59caa22ff3a2897cbeec3fda0fb6a71d655675dad613d4"
+    }
+  ],
+  "next": "Retire backed-up full-product S99 bootstrap and inert handoff by exact file hashes before Light install.",
+  "candidateReady": false
+}

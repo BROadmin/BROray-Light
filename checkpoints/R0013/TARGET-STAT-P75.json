@@ -1,0 +1,28 @@
+{
+  "stage": "R0013",
+  "revision": "p75-entware-stat-prerequisite-install",
+  "status": "PASS_TARGET_STAT_CAPABILITY_AND_BINARY_BINDING",
+  "target": "192.168.1.1",
+  "installedPackages": [
+    "coreutils 9.9-2",
+    "coreutils-stat 9.9-2"
+  ],
+  "expectedBinary": {
+    "binaryBytes": 105336,
+    "binarySha256": "ae4f57c75cb10ebf73fb9e4387a633aff4a35c6305629ee4a300e294a7b95f4e"
+  },
+  "actualBinarySha256": "ae4f57c75cb10ebf73fb9e4387a633aff4a35c6305629ee4a300e294a7b95f4e",
+  "statLink": "/opt/bin/stat -> /opt/libexec/stat-coreutils",
+  "features": [
+    "-c %u:%a",
+    "-f -c %T",
+    "same checks inside /opt/bin/ash"
+  ],
+  "ramScratchCleaned": true,
+  "fullProductPersistentBytesUnchanged": true,
+  "sshPath": "Direct br0 route to local client; not a BROray proxy route",
+  "packageManagerNote": "opkg log reported HTTP feed resolution despite local package arguments. Installed stat binary SHA-256 was separately checked against the TLS-downloaded, feed-digest-verified official IPK; coreutils package contains no executable payload or maintainer scripts.",
+  "installOutputSha256": "26fa6191de376328af56753e086dc483ea89d63c422d5675aec2d7057918ecb0",
+  "auditOutputSha256": "1b9f7c484b18778f3dca88b151c23c11e4873e17c1b10ee4d833a837fe123821",
+  "candidateReady": false
+}

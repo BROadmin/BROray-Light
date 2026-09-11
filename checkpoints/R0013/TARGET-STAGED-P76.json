@@ -1,0 +1,12 @@
+{
+  "stage": "R0013",
+  "revision": "p76-target-staging-before-full-replacement",
+  "status": "PASS_EXACT_BYTES_IN_PROTECTED_RAM",
+  "path": "/tmp/brl-r13-install-p76.E7rJwm",
+  "identity": "0:700:13:45373386",
+  "ipkSha256": "5b142793c7318c3620c494160d8c4413f44467e5e4d1e5e6e614fb88e142f7a7",
+  "installerSha256": "ae98ec1b3150b17eeb979ceebbbaee987d10c1bf6641821073ceb7dd45e135d3",
+  "auditSha256": "9a2e49dcaa6c5edb16615a498a52aec0fd2f7864be4a2fee1ad406ba0c3d9754",
+  "productMutationPerformed": false,
+  "candidateReady": false
+}

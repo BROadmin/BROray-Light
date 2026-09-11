@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
   "stage": "R0013_SELECTIVE_UPSTREAM_STABLE_PORT",
-  "status": "TARGET_REPLACEMENT_BACKUP_AND_PREREQUISITE_BUILD",
-  "currentRevision": "p72-stat-package-prerequisite",
-  "activeFailure": "checkpoints/R0013/process-failures/FAILURE-P73-BACKUP-TAR-PATH.json",
+  "status": "BOUNDED_CGI_PATH_CORRECTION_PENDING_VALIDATION",
+  "currentRevision": "p83-cgi-path-correction",
+  "activeFailure": "checkpoints/R0013/process-failures/FAILURE-P81-NATIVE-TARGET-LOGIN.json",
   "publicVersion": "2.0.0",
-  "buildA": "PASS_INDEPENDENT_LINUX_UNSIGNED",
-  "buildB": "PASS_INDEPENDENT_LINUX_UNSIGNED",
+  "buildA": "PASS_P72_INDEPENDENT_LINUX_UNSIGNED",
+  "buildB": "PASS_P72_INDEPENDENT_LINUX_UNSIGNED",
   "catalogAndControlsPort": {
     "status": "PASS_ISOLATED_REGRESSION",
     "path": "checkpoints/R0013/CATALOG-AND-CONTROLS-P8.json",
@@ -18,7 +18,7 @@
     "path": "checkpoints/R0013/SUBSCRIPTION-NAME-P6.json",
     "sha256": "2b1fe451272dc233e1f8ccd4cc3d6ea2f212ba81e009f93d3a4b9e9b9601577a"
   },
-  "lastResolvedFailure": "checkpoints/R0013/process-failures/FAILURE-P62-BUSYBOX-IDLE-PROCESS-SHAPE.json",
+  "lastResolvedFailure": "checkpoints/R0013/process-failures/FAILURE-P73-BACKUP-TAR-PATH.json",
   "processPort": {
     "status": "PASS_ISOLATED_LINUX",
     "tests": 33,
@@ -62,7 +62,7 @@
     "path": "checkpoints/R0013/UPSTREAM-PORT-MAP-P2.json",
     "sha256": "009a0f5adae08f399c82510cf680690b4c2e50bc8c659eda9c48d91b5a838121"
   },
-  "nextExactAction": "VERIFY_P74_LOCAL_BACKUP_AND_P72_BUILD_BEFORE_REMOVAL",
+  "nextExactAction": "COMMIT_SCOPED_CORRECTION_AND_RUN_INDEPENDENT_BUILD_AND_NATIVE_AUTH_REGRESSION",
   "versionAndXray": {
     "status": "PASS_VERSION_AND_BOOTSTRAP_INPUT",
     "path": "checkpoints/R0013/UPGRADE-AND-XRAY-P10.json",
@@ -81,7 +81,7 @@
     "path": "RAM-BOOTSTRAP-VALIDATION-P15.json",
     "sha256": "050a4d9b7e8c82194d1e4dd03e6e014031ec1b24d44f06833cc3189d5ca1c33d"
   },
-  "latestCI": "https://github.com/BROadmin/BROray-Light/actions/runs/34549087783",
+  "latestCI": "https://github.com/BROadmin/BROray-Light/actions/runs/34572894126",
   "latestFullComponentRegression": {
     "status": "PASS_ALL_FIVE_R0013_REGRESSION_JOBS",
     "commit": "ebae309b93aee000ed1c5b5743385ba39e33ed98",
@@ -240,9 +240,9 @@
     "sizeBytes": 42464
   },
   "independentBuildsAndClean": {
-    "sizeBytes": 16590,
-    "path": "checkpoints/R0013/INDEPENDENT-BUILDS-AND-CLEAN-P63.json",
-    "sha256": "35bc9388ff47a8c23d7229f70150e8927d1fde06dd30ea93e0de694b1a795c3c"
+    "sha256": "6e49a13ef7a6c7c933b35d5d243037d89b71cf0cb5566ada11c1c1ecc6ffcdde",
+    "sizeBytes": 20924,
+    "path": "checkpoints/R0013/INDEPENDENT-BUILDS-P72.json"
   },
   "targetPreflight": {
     "sha256": "7dd10264ce6e78efe7bce9954df1cb3f1975186ba6dad7f112139f71ebd38c6e",
@@ -261,13 +261,13 @@
     "sha256": "3bb2b67af3195df865365da8b77087119d88d3bb0b36a4e58767a67b4c23dcba"
   },
   "checkpoint": {
-    "sha256": "f3df10f5fb5cd460191d9a70201700e036174adc4973f10409569c4fd96f2c8b",
-    "path": "checkpoints/R0013/CHECKPOINT.json",
-    "sizeBytes": 2768
+    "sha256": "092dad55396b876a9ff0ccf296e4ea537a51a144f7621905e59a99ab24cb3b74",
+    "sizeBytes": 3090,
+    "path": "checkpoints/R0013/CHECKPOINT.json"
   },
   "report": {
-    "sizeBytes": 15490,
-    "sha256": "17d279ccd3565006d39247852def04e7fc1150c868c5469f6c9fbd3cbd89d99d",
+    "sizeBytes": 17801,
+    "sha256": "8334a841871f7ca9e9d5c0e61cd4b9008d449d78485ed64a015625a8812cce8d",
     "path": "checkpoints/R0013/REPORT.md"
   },
   "localBuildByteVerification": {
@@ -284,5 +284,22 @@
     "sha256": "5f22bc3835f0fd6c85bfebe40ccea09b5889b2d671b11f0cc6a9c36e235ef817"
   },
   "previousTargetBlocker": "checkpoints/R0013/process-failures/FAILURE-P69-TARGET-FULL-BRORAY-OWNERSHIP.json",
-  "routerMutationScope": "P73/P74 private RAM backup files only; no product/config/service mutations."
+  "routerMutationScope": "Official full-product uninstall plus exact backed-up bootstrap retirement; coreutils-stat dependency and Light 2.0.0 installed by native opkg. No foreign routes/settings changed.",
+  "targetBackup": {
+    "sizeBytes": 2103,
+    "path": "checkpoints/R0013/TARGET-BACKUP-P74.json",
+    "sha256": "5158eb0e4a85dac3259808893ca7d4f825523a66b8b6c92e4f223063c7b8a8ca"
+  },
+  "targetStat": {
+    "sha256": "69842b82f2186b32b03be7f166801f1a66cac45ccf61665d5ab0f473c10ce767",
+    "sizeBytes": 1282,
+    "path": "checkpoints/R0013/TARGET-STAT-P75.json"
+  },
+  "supplementBackup": {
+    "sha256": "f729b34b4bcaf17fe78fb5c4d9a0d2d062e69d52d752d1892fecf5031081ff61",
+    "path": "checkpoints/R0013/TARGET-SUPPLEMENT-BACKUP-P77.json",
+    "sizeBytes": 521
+  },
+  "targetInstall": "checkpoints/R0013/TARGET-INSTALL-P79.json",
+  "targetInstalledState": "checkpoints/R0013/TARGET-STATE-P80.json"
 }

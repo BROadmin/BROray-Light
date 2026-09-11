@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "status": "PASS_INSTALLED_TARGET_STATE",
+  "target": "192.168.1.1",
+  "packageVersion": "2.0.0",
+  "releaseId": "2.0.0-r1",
+  "opkgInstalled": true,
+  "S23": true,
+  "S24": true,
+  "allAppManifestFilesMatch": true,
+  "xrayVersion": "26.9.9",
+  "xraySha256": "c1defe42b6db958a97c5e049a02a00a4baaedaca7b51c1c229f0830e288acef5",
+  "operationalDirectories": [
+    "run",
+    "logs",
+    "tmp",
+    "update"
+  ],
+  "operationalBacking": "/tmp/broray-light on tmpfs, root:0700",
+  "installerAndBootstrapScratchClean": true,
+  "fullProductRegistrationAndServicesAbsent": true,
+  "webuiUrl": "https://brolight.tvervip.keenetic.link/",
+  "applicationLogicalKiB": 35508,
+  "updaterLogicalKiB": 228,
+  "publicationLogicalKiB": 36,
+  "optAvailableKiB": 70920,
+  "rawEvidence": {
+    "path": "dist/R0013/private-target/p74/installed-audit-p80.txt",
+    "sha256": "7d542421f28894d336dd7e1c7ddecbb76d623991e06a29f52325ee8aaf287d8c"
+  },
+  "candidateReady": false
+}

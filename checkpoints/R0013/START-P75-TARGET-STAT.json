@@ -1,0 +1,14 @@
+{
+  "stage": "R0013",
+  "revision": "p75-entware-stat-prerequisite-install",
+  "status": "STARTED",
+  "authorization": "START-P71-TARGET-REPLACEMENT.json",
+  "backup": {
+    "sizeBytes": 2103,
+    "path": "checkpoints/R0013/TARGET-BACKUP-P74.json",
+    "sha256": "5158eb0e4a85dac3259808893ca7d4f825523a66b8b6c92e4f223063c7b8a8ca"
+  },
+  "scope": "Install exact official coreutils and coreutils-stat 9.9-2 via opkg using private RAM downloads and tmp-dir; no broad package upgrade or force options. Validate format/filesystem features and persistence of unrelated full BROray state before removal.",
+  "packageInputs": "START-P72-STAT-PREREQUISITE.json",
+  "candidateReady": false
+}

@@ -1,0 +1,95 @@
+{
+  "schemaVersion": 1,
+  "status": "AUTHORIZED_BOUNDED_RETIREMENT",
+  "target": "192.168.1.1",
+  "authorization": "User requested full replacement on this test router.",
+  "files": [
+    {
+      "path": "/opt/etc/init.d/S99broray-bootstrap",
+      "sha256": "5be46ba9880a48b595806dfad1193cb75ef0674171f76dcbdd031859e6df0643",
+      "size": 671,
+      "mode": "0o755",
+      "uid": 0
+    },
+    {
+      "path": "/opt/libexec/broray-bootstrap/run.sh",
+      "sha256": "f66d1d1eba6a95e1c4b6317d5c14ac27ca0e44a7a3b2c72de3fa047262d2792a",
+      "size": 9790,
+      "mode": "0o755",
+      "uid": 0
+    },
+    {
+      "path": "/opt/var/lib/broray-bootstrap/attempted-manifest-sha256",
+      "sha256": "61ef6f440dae207c2609fe5218a3b8858ebd5a5e4caf59ef58b7cc3563da92be",
+      "size": 65,
+      "mode": "0o600",
+      "uid": 0
+    },
+    {
+      "path": "/opt/var/lib/broray-bootstrap/status",
+      "sha256": "3374540fce4605ab1ac7d3a6564226f4b5d1e6cf517fe42c313b53f1de221877",
+      "size": 212,
+      "mode": "0o600",
+      "uid": 0
+    },
+    {
+      "path": "/opt/var/lib/broray-platform-handoff/status.json",
+      "sha256": "5893b58c5c9585b0d208043168c8f6294ba39bc69e9d8ea4ca5cd7d763675816",
+      "size": 340,
+      "mode": "0o600",
+      "uid": 0
+    },
+    {
+      "path": "/opt/var/lib/broray-platform-handoff/request.json",
+      "sha256": "e3581f384ff0ad0a5d7271a0fe8353cd46facef238ab9fd140476bc0061a8118",
+      "size": 373,
+      "mode": "0o600",
+      "uid": 0
+    },
+    {
+      "path": "/opt/var/lib/broray-platform-handoff/daemon-was-running",
+      "sha256": "a17fcf0a2f50e2d495e4f90ce263410edc183add6c62699a2facbccf60410f74",
+      "size": 5,
+      "mode": "0o600",
+      "uid": 0
+    },
+    {
+      "path": "/opt/var/lib/broray-platform-handoff/worker.pid",
+      "sha256": "a5886eb7a8bd35b5281988dc7838152303e904409a5c07f2b184f5b28b684ca4",
+      "size": 12,
+      "mode": "0o600",
+      "uid": 0
+    },
+    {
+      "path": "/opt/var/lib/broray-platform-handoff/phase",
+      "sha256": "37a40f08d8548dba289b9b0bb35bcf63b359f6d37ee86044ebc6b6da080b9ec1",
+      "size": 9,
+      "mode": "0o600",
+      "uid": 0
+    },
+    {
+      "path": "/opt/share/broray-bootstrap/manifest.json",
+      "sha256": "99d4f99272ac1e7440dbab62507bbc741ec1323913b9cfce606caddfad74a0f0",
+      "size": 1038,
+      "mode": "0o644",
+      "uid": 0
+    },
+    {
+      "path": "/opt/share/broray-bootstrap/manifest.sig",
+      "sha256": "0129c01ec747a8e6433aa0a8ce8eb1f4803ba41173a218eebd2e6bef00d59205",
+      "size": 384,
+      "mode": "0o644",
+      "uid": 0
+    },
+    {
+      "path": "/opt/share/broray-bootstrap/broray-bootstrap-rsa3072-v1-public.pem",
+      "sha256": "fbf1178a4eb16d1f8269f7e67e54df6d501355ed7c26d59f70e6b7f8cf527d79",
+      "size": 624,
+      "mode": "0o644",
+      "uid": 0
+    }
+  ],
+  "method": "Validate root-owned real ancestors, directory member counts and every single-link regular file SHA against verified private backup. Refuse live handoff PID identity. Unlink only these exact files and rmdir only empty product directories. No recursive delete; no foreign config/routes touched.",
+  "backup": "TARGET-BACKUP-P74.json",
+  "supplement": "TARGET-SUPPLEMENT-BACKUP-P77.json"
+}

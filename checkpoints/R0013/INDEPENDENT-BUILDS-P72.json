@@ -1,0 +1,535 @@
+{
+  "stage": "R0013",
+  "revision": "p72-stat-package-prerequisite",
+  "sourceCommit": "3a424aa0965a33de5e19a33d6e89488413b9c306",
+  "runUrl": "https://github.com/BROadmin/BROray-Light/actions/runs/34572894442",
+  "status": "PASS_BYTE_IDENTICAL_AB_AND_UNCHANGED_APP_PLATFORM",
+  "artifacts": [
+    {
+      "path": "ENGINEERING-MANIFEST.json",
+      "sizeBytes": 2347,
+      "sha256": "10e038116ca922523b211215aa8fbe72b3eafe9fd73e42ccd55ba30ed26fee95"
+    },
+    {
+      "path": "INPUT-MANIFEST.json",
+      "sizeBytes": 40796,
+      "sha256": "30bd38b799a11e74b21983812a255956c893513e08ee28e834ebfaad9717f944"
+    },
+    {
+      "path": "SHA256SUMS",
+      "sizeBytes": 670,
+      "sha256": "fd7d3c2cbc0f043b985a16b73fbb047004279092fc7522545d9a6f9109c51a8a"
+    },
+    {
+      "path": "broray-light-app-2.0.0-r1.tar.gz",
+      "sizeBytes": 229432,
+      "sha256": "57a02b3101b3ce120932fd15ea88241b29c81f279b3bbb0e43a5c9c8854f6496"
+    },
+    {
+      "path": "broray-light-install-2.0.0.sh",
+      "sizeBytes": 4108,
+      "sha256": "ae98ec1b3150b17eeb979ceebbbaee987d10c1bf6641821073ceb7dd45e135d3"
+    },
+    {
+      "path": "broray-light-updater-platform-5-light2-ram.tar.gz",
+      "sizeBytes": 136061,
+      "sha256": "aa814efcb6d75f02c061b3928588439466e9ee02af127bd7eac376786410fc1b"
+    },
+    {
+      "path": "broray-light_2.0.0_aarch64-3.10.ipk",
+      "sizeBytes": 12991354,
+      "sha256": "5b142793c7318c3620c494160d8c4413f44467e5e4d1e5e6e614fb88e142f7a7"
+    },
+    {
+      "path": "release.json",
+      "sizeBytes": 597,
+      "sha256": "b7da9bd2f6fc4ee69f1c26e780167ef92e586d98467fe187870793f6ad912ad3"
+    }
+  ],
+  "evidence": [
+    {
+      "artifact": {
+        "id": 10188452181,
+        "name": "r0013-build-receipt-A-3a424aa0965a33de5e19a33d6e89488413b9c306",
+        "size_in_bytes": 1231,
+        "url": "https://api.github.com/repos/BROadmin/BROray-Light/actions/artifacts/10188452181",
+        "archive_download_url": "https://api.github.com/repos/BROadmin/BROray-Light/actions/artifacts/10188452181/zip",
+        "expired": false,
+        "created_at": "2026-09-11T07:07:16Z",
+        "expires_at": "2026-12-10T07:06:57Z",
+        "updated_at": "2026-09-11T07:07:16Z",
+        "digest": "sha256:f0ef28f1b15a962e6ab3760ae59cd7ec2530fb4a93a23266363aea56a4e61f4d",
+        "workflow_run": {
+          "id": 34572894442,
+          "repository_id": 1346219669,
+          "head_repository_id": 1346219669,
+          "head_branch": "codex/r0009-updater-package",
+          "head_sha": "3a424aa0965a33de5e19a33d6e89488413b9c306"
+        }
+      },
+      "data": {
+        "directory": "dist\\R0013\\p72-build-receipt-A",
+        "files": [
+          {
+            "path": "build-A.json",
+            "sizeBytes": 1422,
+            "sha256": "956eb8dbd3516a36ca11a5c7339190380700c6764afdfe05bae4f3554423b042",
+            "report": {
+              "status": "ENGINEERING_BUILD_CREATED",
+              "candidateReady": false,
+              "artifacts": [
+                {
+                  "path": "ENGINEERING-MANIFEST.json",
+                  "sizeBytes": 2347,
+                  "sha256": "10e038116ca922523b211215aa8fbe72b3eafe9fd73e42ccd55ba30ed26fee95"
+                },
+                {
+                  "path": "INPUT-MANIFEST.json",
+                  "sizeBytes": 40796,
+                  "sha256": "30bd38b799a11e74b21983812a255956c893513e08ee28e834ebfaad9717f944"
+                },
+                {
+                  "path": "SHA256SUMS",
+                  "sizeBytes": 670,
+                  "sha256": "fd7d3c2cbc0f043b985a16b73fbb047004279092fc7522545d9a6f9109c51a8a"
+                },
+                {
+                  "path": "broray-light-app-2.0.0-r1.tar.gz",
+                  "sizeBytes": 229432,
+                  "sha256": "57a02b3101b3ce120932fd15ea88241b29c81f279b3bbb0e43a5c9c8854f6496"
+                },
+                {
+                  "path": "broray-light-install-2.0.0.sh",
+                  "sizeBytes": 4108,
+                  "sha256": "ae98ec1b3150b17eeb979ceebbbaee987d10c1bf6641821073ceb7dd45e135d3"
+                },
+                {
+                  "path": "broray-light-updater-platform-5-light2-ram.tar.gz",
+                  "sizeBytes": 136061,
+                  "sha256": "aa814efcb6d75f02c061b3928588439466e9ee02af127bd7eac376786410fc1b"
+                },
+                {
+                  "path": "broray-light_2.0.0_aarch64-3.10.ipk",
+                  "sizeBytes": 12991354,
+                  "sha256": "5b142793c7318c3620c494160d8c4413f44467e5e4d1e5e6e614fb88e142f7a7"
+                },
+                {
+                  "path": "release.json",
+                  "sizeBytes": 597,
+                  "sha256": "b7da9bd2f6fc4ee69f1c26e780167ef92e586d98467fe187870793f6ad912ad3"
+                }
+              ]
+            }
+          },
+          {
+            "path": "structure-A.json",
+            "sizeBytes": 810,
+            "sha256": "07274a1cae5b4331c02b2aa6576b26f7fa58fd81128b8fad9348e33c79eb52cf",
+            "report": {
+              "stage": "R0013",
+              "revision": "p23-updater-platform-package-integration",
+              "status": "PASS",
+              "candidateReady": false,
+              "scope": "structural only; not lifecycle acceptance",
+              "tests": [
+                {
+                  "test": "outer-sha256-manifest",
+                  "status": "PASS"
+                },
+                {
+                  "test": "slot-version-internal-identity-and-all-file-hashes",
+                  "status": "PASS"
+                },
+                {
+                  "test": "three-pages-entrypoint-modes-complete-mode-manifest-and-versioned-assets",
+                  "status": "PASS"
+                },
+                {
+                  "test": "legacy-compatible-unsigned-index-contract",
+                  "status": "PASS"
+                },
+                {
+                  "test": "ipk-version-slot-and-exact-clean-xray",
+                  "status": "PASS"
+                },
+                {
+                  "test": "explicit-ram-updater-port-with-r1-trust-and-wrapper-preservation",
+                  "status": "PASS"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "artifact": {
+        "id": 10188484238,
+        "name": "r0013-build-clean-validation-3a424aa0965a33de5e19a33d6e89488413b9c306",
+        "size_in_bytes": 2985,
+        "url": "https://api.github.com/repos/BROadmin/BROray-Light/actions/artifacts/10188484238",
+        "archive_download_url": "https://api.github.com/repos/BROadmin/BROray-Light/actions/artifacts/10188484238/zip",
+        "expired": false,
+        "created_at": "2026-09-11T07:08:21Z",
+        "expires_at": "2026-12-10T07:06:57Z",
+        "updated_at": "2026-09-11T07:08:21Z",
+        "digest": "sha256:602233b91f1392081854ee5b3dd5ab062229f0394be20d786ad171e2dc7ff290",
+        "workflow_run": {
+          "id": 34572894442,
+          "repository_id": 1346219669,
+          "head_repository_id": 1346219669,
+          "head_branch": "codex/r0009-updater-package",
+          "head_sha": "3a424aa0965a33de5e19a33d6e89488413b9c306"
+        }
+      },
+      "data": {
+        "directory": "dist\\R0013\\p72-build-clean-validation",
+        "files": [
+          {
+            "path": "r0013-build-comparison.json",
+            "sizeBytes": 792,
+            "sha256": "ab327611ec0ce28b1a1c07b43c0f8d8f771af690228b828872acdbeba9e210e1",
+            "report": {
+              "stage": "R0013",
+              "revision": "p23-updater-platform-package-integration",
+              "status": "PASS",
+              "candidateReady": false,
+              "scope": "structural only; not lifecycle acceptance",
+              "tests": [
+                {
+                  "test": "outer-sha256-manifest",
+                  "status": "PASS"
+                },
+                {
+                  "test": "slot-version-internal-identity-and-all-file-hashes",
+                  "status": "PASS"
+                },
+                {
+                  "test": "three-pages-entrypoint-modes-complete-mode-manifest-and-versioned-assets",
+                  "status": "PASS"
+                },
+                {
+                  "test": "legacy-compatible-unsigned-index-contract",
+                  "status": "PASS"
+                },
+                {
+                  "test": "ipk-version-slot-and-exact-clean-xray",
+                  "status": "PASS"
+                },
+                {
+                  "test": "independent-process-build-byte-reproducibility",
+                  "status": "PASS"
+                }
+              ]
+            }
+          },
+          {
+            "path": "r0013-clean-package-ash.json",
+            "sizeBytes": 1607,
+            "sha256": "e170d65f348cb21d95f697624659e632515371c493a5016f2a0c098c8d6ffe9f",
+            "report": {
+              "stage": "R0013",
+              "revision": "p63-independent-engineering-build-and-full-clean-package",
+              "status": "PASS_EXACT_CLEAN_PACKAGE_LIVE_SERVICES_AND_HTTP_OS_BOUNDARIES_MOCKED",
+              "shell": [
+                "/usr/bin/busybox",
+                "ash"
+              ],
+              "tests": [
+                {
+                  "name": "exact-installer-preinst-data-postinst-and-live-services",
+                  "status": "PASS",
+                  "detail": {
+                    "skipServiceStart": false,
+                    "realLighttpd": true,
+                    "installerBootstrapScratchClean": true
+                  }
+                },
+                {
+                  "name": "exact-installed-slot-and-arm64-xray",
+                  "status": "PASS",
+                  "detail": {
+                    "binarySha256": "c1defe42b6db958a97c5e049a02a00a4baaedaca7b51c1c229f0830e288acef5",
+                    "emulatedVersion": "Xray 26.9.9 (Xray, Penetrates Everything.) 52a412d (go1.27.1 linux/arm64)"
+                  }
+                },
+                {
+                  "name": "real-http-native-login-session-home-and-logout",
+                  "status": "PASS",
+                  "detail": {
+                    "nativeChallengeVerified": true,
+                    "transport": "actual lighttpd HTTP CGI"
+                  }
+                },
+                {
+                  "name": "service-restart-and-durable-state-persistence",
+                  "status": "PASS",
+                  "detail": {
+                    "durableFilesUnchanged": 6,
+                    "serviceStopped": true
+                  }
+                }
+              ],
+              "candidateReady": false,
+              "boundary": "opkg extraction/order adapter; NDMC and native HTTP fixtures; real app/S23/S24/lighttpd and QEMU ARM64 Xray",
+              "artifacts": {
+                "broray-light_2.0.0_aarch64-3.10.ipk": "5b142793c7318c3620c494160d8c4413f44467e5e4d1e5e6e614fb88e142f7a7",
+                "broray-light-install-2.0.0.sh": "ae98ec1b3150b17eeb979ceebbbaee987d10c1bf6641821073ceb7dd45e135d3"
+              }
+            }
+          },
+          {
+            "path": "r0013-clean-package-dash.json",
+            "sizeBytes": 1589,
+            "sha256": "14c977f20fdd999733305d49f607faa73acccbfc78aaa51234e98ac60e0ac006",
+            "report": {
+              "stage": "R0013",
+              "revision": "p63-independent-engineering-build-and-full-clean-package",
+              "status": "PASS_EXACT_CLEAN_PACKAGE_LIVE_SERVICES_AND_HTTP_OS_BOUNDARIES_MOCKED",
+              "shell": [
+                "/bin/dash"
+              ],
+              "tests": [
+                {
+                  "name": "exact-installer-preinst-data-postinst-and-live-services",
+                  "status": "PASS",
+                  "detail": {
+                    "skipServiceStart": false,
+                    "realLighttpd": true,
+                    "installerBootstrapScratchClean": true
+                  }
+                },
+                {
+                  "name": "exact-installed-slot-and-arm64-xray",
+                  "status": "PASS",
+                  "detail": {
+                    "binarySha256": "c1defe42b6db958a97c5e049a02a00a4baaedaca7b51c1c229f0830e288acef5",
+                    "emulatedVersion": "Xray 26.9.9 (Xray, Penetrates Everything.) 52a412d (go1.27.1 linux/arm64)"
+                  }
+                },
+                {
+                  "name": "real-http-native-login-session-home-and-logout",
+                  "status": "PASS",
+                  "detail": {
+                    "nativeChallengeVerified": true,
+                    "transport": "actual lighttpd HTTP CGI"
+                  }
+                },
+                {
+                  "name": "service-restart-and-durable-state-persistence",
+                  "status": "PASS",
+                  "detail": {
+                    "durableFilesUnchanged": 6,
+                    "serviceStopped": true
+                  }
+                }
+              ],
+              "candidateReady": false,
+              "boundary": "opkg extraction/order adapter; NDMC and native HTTP fixtures; real app/S23/S24/lighttpd and QEMU ARM64 Xray",
+              "artifacts": {
+                "broray-light_2.0.0_aarch64-3.10.ipk": "5b142793c7318c3620c494160d8c4413f44467e5e4d1e5e6e614fb88e142f7a7",
+                "broray-light-install-2.0.0.sh": "ae98ec1b3150b17eeb979ceebbbaee987d10c1bf6641821073ceb7dd45e135d3"
+              }
+            }
+          },
+          {
+            "path": "r0013-stat-bootstrap.json",
+            "sizeBytes": 1519,
+            "sha256": "ef1e8b9f6ed21d4cea1dbbf6b0d44020156a6126ce679df927bc7ee6b9a0d8be",
+            "report": {
+              "stage": "R0013",
+              "revision": "p49-p47-clean-install-ram",
+              "status": "PASS",
+              "candidateReady": false,
+              "mockedBoundaries": [
+                "mount type",
+                "opkg",
+                "Xray binary",
+                "service start"
+              ],
+              "tests": [
+                {
+                  "test": "clean-bootstrap-owned-ram-cleaned",
+                  "status": "PASS"
+                },
+                {
+                  "test": "existing-xray-preserved",
+                  "status": "PASS"
+                },
+                {
+                  "test": "bootstrap-hash-refusal-cleaned",
+                  "status": "PASS"
+                },
+                {
+                  "test": "occupied-namespace-preserved",
+                  "status": "PASS"
+                },
+                {
+                  "test": "symlink-namespace-preserved",
+                  "status": "PASS"
+                },
+                {
+                  "test": "nonram-refused-before-write",
+                  "status": "PASS"
+                },
+                {
+                  "test": "changed-owner-fails-closed-preserves-evidence",
+                  "status": "PASS"
+                },
+                {
+                  "test": "full-product-ownership-refused",
+                  "status": "PASS"
+                },
+                {
+                  "test": "installed-package-overwrite-refused",
+                  "status": "PASS"
+                },
+                {
+                  "test": "tampered-app-slot-refused",
+                  "status": "PASS"
+                },
+                {
+                  "test": "installer-private-opkg-ram-cleanup",
+                  "status": "PASS"
+                },
+                {
+                  "test": "installer-bad-hash-no-opkg-cleanup",
+                  "status": "PASS"
+                },
+                {
+                  "test": "installer-opkg-failure-cleanup",
+                  "status": "PASS"
+                },
+                {
+                  "test": "installer-missing-stat-format-before-write",
+                  "status": "PASS"
+                },
+                {
+                  "test": "installer-missing-stat-fs-before-write",
+                  "status": "PASS"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "artifact": {
+        "id": 10188452100,
+        "name": "r0013-build-receipt-B-3a424aa0965a33de5e19a33d6e89488413b9c306",
+        "size_in_bytes": 1231,
+        "url": "https://api.github.com/repos/BROadmin/BROray-Light/actions/artifacts/10188452100",
+        "archive_download_url": "https://api.github.com/repos/BROadmin/BROray-Light/actions/artifacts/10188452100/zip",
+        "expired": false,
+        "created_at": "2026-09-11T07:07:16Z",
+        "expires_at": "2026-12-10T07:06:57Z",
+        "updated_at": "2026-09-11T07:07:16Z",
+        "digest": "sha256:166bd266302b299db31838903c737e3f698b9a65165c3dc1a37edf72bcdf17e7",
+        "workflow_run": {
+          "id": 34572894442,
+          "repository_id": 1346219669,
+          "head_repository_id": 1346219669,
+          "head_branch": "codex/r0009-updater-package",
+          "head_sha": "3a424aa0965a33de5e19a33d6e89488413b9c306"
+        }
+      },
+      "data": {
+        "directory": "dist\\R0013\\p72-build-receipt-B",
+        "files": [
+          {
+            "path": "build-B.json",
+            "sizeBytes": 1422,
+            "sha256": "956eb8dbd3516a36ca11a5c7339190380700c6764afdfe05bae4f3554423b042",
+            "report": {
+              "status": "ENGINEERING_BUILD_CREATED",
+              "candidateReady": false,
+              "artifacts": [
+                {
+                  "path": "ENGINEERING-MANIFEST.json",
+                  "sizeBytes": 2347,
+                  "sha256": "10e038116ca922523b211215aa8fbe72b3eafe9fd73e42ccd55ba30ed26fee95"
+                },
+                {
+                  "path": "INPUT-MANIFEST.json",
+                  "sizeBytes": 40796,
+                  "sha256": "30bd38b799a11e74b21983812a255956c893513e08ee28e834ebfaad9717f944"
+                },
+                {
+                  "path": "SHA256SUMS",
+                  "sizeBytes": 670,
+                  "sha256": "fd7d3c2cbc0f043b985a16b73fbb047004279092fc7522545d9a6f9109c51a8a"
+                },
+                {
+                  "path": "broray-light-app-2.0.0-r1.tar.gz",
+                  "sizeBytes": 229432,
+                  "sha256": "57a02b3101b3ce120932fd15ea88241b29c81f279b3bbb0e43a5c9c8854f6496"
+                },
+                {
+                  "path": "broray-light-install-2.0.0.sh",
+                  "sizeBytes": 4108,
+                  "sha256": "ae98ec1b3150b17eeb979ceebbbaee987d10c1bf6641821073ceb7dd45e135d3"
+                },
+                {
+                  "path": "broray-light-updater-platform-5-light2-ram.tar.gz",
+                  "sizeBytes": 136061,
+                  "sha256": "aa814efcb6d75f02c061b3928588439466e9ee02af127bd7eac376786410fc1b"
+                },
+                {
+                  "path": "broray-light_2.0.0_aarch64-3.10.ipk",
+                  "sizeBytes": 12991354,
+                  "sha256": "5b142793c7318c3620c494160d8c4413f44467e5e4d1e5e6e614fb88e142f7a7"
+                },
+                {
+                  "path": "release.json",
+                  "sizeBytes": 597,
+                  "sha256": "b7da9bd2f6fc4ee69f1c26e780167ef92e586d98467fe187870793f6ad912ad3"
+                }
+              ]
+            }
+          },
+          {
+            "path": "structure-B.json",
+            "sizeBytes": 810,
+            "sha256": "07274a1cae5b4331c02b2aa6576b26f7fa58fd81128b8fad9348e33c79eb52cf",
+            "report": {
+              "stage": "R0013",
+              "revision": "p23-updater-platform-package-integration",
+              "status": "PASS",
+              "candidateReady": false,
+              "scope": "structural only; not lifecycle acceptance",
+              "tests": [
+                {
+                  "test": "outer-sha256-manifest",
+                  "status": "PASS"
+                },
+                {
+                  "test": "slot-version-internal-identity-and-all-file-hashes",
+                  "status": "PASS"
+                },
+                {
+                  "test": "three-pages-entrypoint-modes-complete-mode-manifest-and-versioned-assets",
+                  "status": "PASS"
+                },
+                {
+                  "test": "legacy-compatible-unsigned-index-contract",
+                  "status": "PASS"
+                },
+                {
+                  "test": "ipk-version-slot-and-exact-clean-xray",
+                  "status": "PASS"
+                },
+                {
+                  "test": "explicit-ram-updater-port-with-r1-trust-and-wrapper-preservation",
+                  "status": "PASS"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "candidateReady": false,
+  "boundaries": "Independent fresh Ubuntu builds; 8 real-service/QEMU clean gates with opkg ordering adapter; 15 bootstrap tests; full physical package dependency resolution remains."
+}

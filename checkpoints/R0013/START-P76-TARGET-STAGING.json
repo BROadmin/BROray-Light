@@ -1,0 +1,11 @@
+{
+  "stage": "R0013",
+  "revision": "p76-target-staging-before-full-replacement",
+  "status": "STARTED",
+  "authorization": "START-P71-TARGET-REPLACEMENT.json",
+  "backup": "TARGET-BACKUP-P74.json",
+  "builds": "INDEPENDENT-BUILDS-P72.json",
+  "prerequisite": "TARGET-STAT-P75.json",
+  "scope": "Create protected target RAM staging and transfer exact P72 IPK/installer via host-key-bound SSH; SHA-256 verify before executing any uninstall or install.",
+  "candidateReady": false
+}

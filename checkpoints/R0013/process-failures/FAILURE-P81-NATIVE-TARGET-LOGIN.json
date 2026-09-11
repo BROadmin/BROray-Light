@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "status": "FAIL",
+  "revision": "p81-native-target-webui",
+  "target": "https://brolight.tvervip.keenetic.link/",
+  "sourceCommit": "3a424aa0965a33de5e19a33d6e89488413b9c306",
+  "attempts": 1,
+  "action": "Native browser login with user-provided Keenetic credentials; password not persisted.",
+  "observed": "Login remained on root page and displayed 'Ошибка запроса.' Browser error/warn log list empty.",
+  "cause": "Unresolved transport/API/native authentication failure; not yet classified as invalid credentials.",
+  "installedState": "P79 native opkg install and P80 services/hashes pass; full BROray removed with verified private backups.",
+  "nextCorrectedRevision": "p82-native-auth-diagnosis-before-any-login-retry",
+  "hiddenRetryPerformed": false,
+  "candidateReady": false
+}

@@ -8,6 +8,16 @@ brl_runtime_environment()
     case "$prefix" in *[!A-Za-z0-9/_.-]*) return 1 ;; esac
     case "$prefix" in ''|/*) ;; *) return 1 ;; esac
     case "$prefix" in */../*|*/..|*/./*|*/.|*//*|*/) return 1 ;; esac
+    # CGI may discard its parent's PATH. Resolve Entware utilities before the
+    # first ownership check; firmware /bin need not provide stat at all.
+    # A non-empty prefix is an explicit isolated-root harness, not the router.
+    if [ -z "$prefix" ]; then
+        case "${PATH:-}" in
+            /opt/bin:/opt/sbin:*) ;;
+            *) PATH="/opt/bin:/opt/sbin:${PATH:-/usr/bin:/bin}" ;;
+        esac
+        export PATH
+    fi
     root="$prefix/opt/broray-light"
     [ "${BRORAY_ROOT:-$root}" = "$root" ] && [ "${BRORAY_BASE:-$root}" = "$root" ] || return 1
     for path in "$prefix/opt/broray" "$prefix/opt/etc/init.d/S24broray" \

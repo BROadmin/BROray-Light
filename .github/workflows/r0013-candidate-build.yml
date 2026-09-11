@@ -9,6 +9,7 @@ on:
       - 'tools/validate_r0013_clean_package.py'
       - 'packaging/r0013-overlay/system/packaging/opkg/control'
       - 'packaging/r0013-overlay/system/packaging/installer/broray-light-install.sh.in'
+      - 'packaging/r0013-overlay/shared/runtime-environment.sh'
 
 permissions:
   contents: read

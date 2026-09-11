@@ -1,5 +1,9 @@
 # Codex handoff
 
+## Current state — R0013 / P83
+
+Full BROray on the explicitly authorized test router 192.168.1.1 was removed by its official full uninstall worker after verified private backups. Exact obsolete S99 bootstrap and completed handoff files were backed up and retired. P72 Light 2.0.0 installed via native opkg; S23/S24, slot manifest, Xray 26.9.9 and protected RAM passed P80. P72 independent A/B and all five component regression jobs passed. P81 physical browser login failed HTTP 500 before native auth: runtime guard preceded PATH initialization and could not find Entware stat. Failure is recorded; no login retry or router hotpatch. P83 adds early Entware PATH setup and empty/shadowed PATH CGI tests. Next: fresh A/B and native regression, controlled clean Light package replacement, then native login validation. Candidate/release readiness remains false; nothing published. Private backups: dist/R0013/private-target/p74 (never commit secrets). See project/R0013-STATE.json and checkpoints/R0013/CHECKPOINT.json.
+
 ## Current authorized state — R0013 / P72 (target replacement)
 
 The user explicitly authorized full replacement on test router 192.168.1.1: "Сделай полную замену на тестовом роутере". START-P71 records the scope. Preserve a verified private off-router backup before removing the installed full product through its audited uninstall worker. P73 backup stopped before creating an archive because /opt/usr/bin/tar is a stripped extractor; failure is retained. P74 uses verified /opt/bin/tar (GNU tar). P72 declares coreutils-stat and adds pre-write installer diagnostics/tests. New independent builds and local backup verification must pass before product removal. No production server or full-BROray repository changes are authorized.

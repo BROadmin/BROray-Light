@@ -4,6 +4,7 @@ import argparse
 import getpass
 import hashlib
 import json
+import re
 from pathlib import Path
 import shlex
 import sys
@@ -22,6 +23,8 @@ def main():
     group.add_argument("--command")
     group.add_argument("--script", type=Path)
     group.add_argument("--get")
+    group.add_argument("--put", type=Path)
+    p.add_argument("--remote")
     p.add_argument("--output", type=Path)
     p.add_argument("--timeout", type=int, default=120)
     args = p.parse_args()
@@ -38,7 +41,20 @@ def main():
     del password
     key = client.get_transport().get_remote_server_key()
     assert key.get_name() == "ssh-ed25519" and key.get_base64() == EXPECTED_KEY, "target identity mismatch"
-    if args.get:
+    if args.put:
+        assert args.remote and re.fullmatch(r'/tmp/brl-r13-install-p76\.[A-Za-z0-9]{6}/[A-Za-z0-9_.-]+', args.remote)
+        parent = str(Path(args.remote).parent).replace('\\', '/')
+        target = shlex.quote(args.remote)
+        command = (
+            f'umask 077; set -eu; test -d {shlex.quote(parent)}; '
+            f'test ! -L {shlex.quote(parent)}; '
+            f'test "$(/opt/bin/stat -c %u:%a {shlex.quote(parent)})" = 0:700; '
+            f'test ! -e {target}; test ! -L {target}; '
+            f'set -C; cat > {target}; /opt/bin/sha256sum {target}'
+        )
+        payload = args.put.read_bytes()
+        assert len(payload) <= 20 * 1024 * 1024
+    elif args.get:
         assert args.get.startswith(("/opt/", "/tmp/")) and "\n" not in args.get
         command = "cat -- " + shlex.quote(args.get)
         payload = None

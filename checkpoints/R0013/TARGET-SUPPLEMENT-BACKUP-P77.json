@@ -1,0 +1,14 @@
+{
+  "stage": "R0013",
+  "revision": "p77-audited-full-product-uninstall",
+  "status": "PASS_PRIVATE_SUPPLEMENT_BACKUP",
+  "localPath": "dist/R0013/private-target/p74/supplement-preserved-bootstrap.tar",
+  "sizeBytes": 40960,
+  "sha256": "276aa1ca87c51ff750bbfe4eccc5cbedaeb39e5119f4a466ff608fb6872eb401",
+  "roots": [
+    "/opt/broray-preserved",
+    "/opt/share/broray-bootstrap"
+  ],
+  "bootstrapRegisteredPackageOwner": "No matching installed opkg .list in the verified package-db backup",
+  "candidateReady": false
+}

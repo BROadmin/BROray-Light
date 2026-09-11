@@ -1,0 +1,67 @@
+{
+  "stage": "R0013",
+  "revision": "p74-entware-tar-backup-correction",
+  "status": "PASS_PRIVATE_OFF_ROUTER_BACKUP",
+  "archiveSha256": "bd340ffe2a6e781434f33dba528cfde0be7eb1341f9d4126beb88b7c4088cda4",
+  "archiveBytes": 15544320,
+  "files": [
+    {
+      "name": "full-broray.tar.gz",
+      "bytes": 15465867,
+      "sha256": "fe51b6ccc3806a6a12e351b646af1e64e1def11bc5b49a5f0ce9343b63902c18"
+    },
+    {
+      "name": "running-config.txt",
+      "bytes": 64415,
+      "sha256": "f65237270300589a032da3062607bc9ab421e122471ed396fc98046186a8d144"
+    },
+    {
+      "name": "roots.txt",
+      "bytes": 411,
+      "sha256": "60c92dbd592b437c455dfc32e0ba6620a071580857dd27fe3b2d882ab5059bd1"
+    },
+    {
+      "name": "persistent-before.sha256",
+      "bytes": 2124,
+      "sha256": "3461f8074bf0a128fcfd367fe2f879eb8a49b2763177188c1ccffac4794a394f"
+    },
+    {
+      "name": "persistent-after.sha256",
+      "bytes": 2124,
+      "sha256": "3461f8074bf0a128fcfd367fe2f879eb8a49b2763177188c1ccffac4794a394f"
+    },
+    {
+      "name": "ssh-connection.txt",
+      "bytes": 35,
+      "sha256": "6f319497e01675c7d15164ce0fbcc64e2c76e48ea084d476f805ea0432cd913a"
+    }
+  ],
+  "sshConnection": "192.168.1.123 53441 192.168.1.1 22",
+  "roots": [
+    "opt/broray",
+    "opt/etc",
+    "opt/lib/opkg",
+    "opt/libexec/broray-bootstrap",
+    "opt/libexec/broray-updater",
+    "opt/var/lib/broray",
+    "opt/var/lib/broray-bootstrap",
+    "opt/var/lib/broray-platform-handoff",
+    "opt/var/lib/broray-updater",
+    "opt/bin/broray",
+    "opt/bin/broray-routes",
+    "opt/bin/broray-routes-dot",
+    "opt/bin/broray-routes-user",
+    "opt/bin/broray-server",
+    "opt/bin/broray-servers",
+    "opt/bin/broray-subscriptions",
+    "opt/bin/broray-system",
+    "opt/bin/broray-updaterctl"
+  ],
+  "localPath": "dist/R0013/private-target/p74/backup-bundle.tar",
+  "localAcl": "Inheritance disabled, current Windows user FullControl only",
+  "remoteRoot": "/tmp/brl-r13-backup-p74.mBfUv5",
+  "persistentBytesStable": true,
+  "productMutationPerformed": false,
+  "servicesChanged": false,
+  "candidateReady": false
+}

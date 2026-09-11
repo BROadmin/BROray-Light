@@ -18,7 +18,7 @@ import time
 
 from build_r0013_release import prepared_app
 
-REVISION = 'p55-native-auth-cgi-session-validation'
+REVISION = 'p83-native-auth-cgi-inherited-path-validation'
 APP = Path('/opt/broray-light')
 RAM = Path('/tmp/broray-light')
 USER, PASSWORD = 'fixture-admin', 'invented-fixture-password'
@@ -89,14 +89,21 @@ class AuthFixture:
         Path('/opt/bin').mkdir()
         Path('/opt/bin/ash').symlink_to(shell[0])
         # r1 supplies a hexdump call; retain the actual BusyBox implementation.
-        names = ['hexdump']
+        names = ['hexdump', 'stat']
         if applets:
             from r0013_busybox_fixture import APPLETS
             names += list(APPLETS) + ['dd', 'md5sum']
         available = set(subprocess.check_output(['/usr/bin/busybox', '--list'], text=True).splitlines())
         assert set(names) <= available
-        for name in names:
+        for name in sorted(set(names)):
             Path('/opt/bin', name).symlink_to('/usr/bin/busybox')
+        # Reproduce a CGI environment whose inherited stat is not Entware's.
+        self.native_path = Path('/opt/native-only')
+        self.native_path.mkdir(mode=0o700)
+        self.shadow_marker = self.native_path / 'stat-was-executed'
+        shadow = self.native_path / 'stat'
+        shadow.write_text('#!/bin/sh\nprintf refused > /opt/native-only/stat-was-executed\nexit 93\n')
+        shadow.chmod(0o755)
         slot = APP / 'releases/2.0.0-r1/app'
         for name, (data, mode) in self.files.items():
             p = slot / name
@@ -120,12 +127,14 @@ class AuthFixture:
         self.server.mode = value
         self.server.gets = self.server.posts = self.server.accepted = 0
 
-    def cgi(self, relative, method='POST', body=None, cookie='', raw=None, length=None):
+    def cgi(self, relative, method='POST', body=None, cookie='', raw=None, length=None, inherited_path=None):
         payload = raw if raw is not None else json.dumps(body or {}).encode()
         env = dict(self.env, REQUEST_METHOD=method, CONTENT_TYPE='application/json',
                    CONTENT_LENGTH=str(len(payload) if length is None else length),
                    HTTP_COOKIE=cookie, HTTP_HOST='brolight.fixture.invalid',
                    QUERY_STRING='', SERVER_PROTOCOL='HTTP/1.1')
+        if inherited_path is not None:
+            env['PATH'] = inherited_path
         r = subprocess.run([*self.shell, str(APP / 'web-new/api' / relative)], env=env,
                            input=payload, capture_output=True, timeout=40)
         assert r.returncode == 0, dict(endpoint=relative, rc=r.returncode, stderr=r.stderr.decode())
@@ -192,6 +201,16 @@ def main():
     try:
         fixture = AuthFixture(shell, args.busybox)
         before = fixture.durable()
+        for inherited_path in ('', '/opt/native-only:/usr/bin:/bin'):
+            gate = 'cgi-empty-path' if not inherited_path else 'cgi-shadowed-stat-path'
+            status, _, value = fixture.cgi('login.cgi', 'GET', inherited_path=inherited_path)
+            assert status == 405 and value['error'] == 'METHOD_NOT_ALLOWED', (status, value)
+            status, _, value = fixture.cgi('session.cgi', 'GET', inherited_path=inherited_path)
+            assert status == 401, (status, value)
+            assert not fixture.shadow_marker.exists(), 'Inherited stat ran before the Entware guard'
+            assert fixture.server.gets == fixture.server.posts == 0
+            fixture.scratch_clean()
+            passed(dict(nativeChallengeNotCalled=True, guardChecksRetained=True))
         gate = 'valid-native-challenge-response-and-private-session'
         status, headers, value = fixture.login()
         assert status == 200 and value['ok'] and value['user'] == USER, (status, value)

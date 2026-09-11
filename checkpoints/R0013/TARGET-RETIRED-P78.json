@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "status": "PASS",
+  "removedFiles": 12,
+  "removedEmptyDirectories": 4,
+  "backupRecoverable": true,
+  "output": {
+    "path": "dist/R0013/private-target/p74/retire-bootstrap-p78.txt",
+    "sha256": "2800afb2f061368fb7435afcb2ce235f2fbe26b36dbcfbf2c0ba6153c780b1b8"
+  },
+  "foreignRouterSettingsModified": false
+}

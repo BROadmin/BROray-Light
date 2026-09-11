@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "status": "CHECKPOINT_FIRST",
+  "target": "https://brolight.tvervip.keenetic.link/",
+  "actions": [
+    "Verify unauthenticated login page",
+    "Log in using user-provided native Keenetic credentials without saving password",
+    "Read Home/Servers/Subscriptions state",
+    "Verify no unauthenticated protected API data"
+  ],
+  "forbidden": [
+    "Do not relax native authentication",
+    "Do not install updates or configure proxy as an incidental button check"
+  ],
+  "candidateReady": false
+}

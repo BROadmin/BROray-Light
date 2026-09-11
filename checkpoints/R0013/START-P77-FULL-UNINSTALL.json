@@ -1,0 +1,16 @@
+{
+  "stage": "R0013",
+  "revision": "p77-audited-full-product-uninstall",
+  "status": "STARTED",
+  "authorization": "START-P71-TARGET-REPLACEMENT.json",
+  "backup": "TARGET-BACKUP-P74.json",
+  "staging": {
+    "sizeBytes": 533,
+    "path": "checkpoints/R0013/TARGET-STAGED-P76.json",
+    "sha256": "d47befbcb9914a0a78c58f6e96ed37c5a9ebfabaa603aacb322bed7a52fb2582"
+  },
+  "scope": "First preserve additional /opt/broray-preserved and /opt/share/broray-bootstrap backup. Then invoke installed official broray-system uninstall-start full with exact confirmation. Respect worker ownership/preflight and failure rollback. Do not forge OPKG authorization receipts or bypass locks.",
+  "installedWorkerSha256": "7b7d92a97674a9e3a58a31fd93bd5ed51f0fe58779a7adbdf35e0294584f0232",
+  "bootstrapCleanup": "S99 full-BROray bootstrap is outside normal worker list; verify package owner and backup before separately retiring only its proven files after uninstall.",
+  "candidateReady": false
+}

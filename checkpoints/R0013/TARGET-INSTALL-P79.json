@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "status": "PASS_ACTUAL_NATIVE_OPKG_CLEAN_INSTALL",
+  "target": "192.168.1.1",
+  "packageVersion": "2.0.0",
+  "sourceCommit": "3a424aa0965a33de5e19a33d6e89488413b9c306",
+  "exitCode": 0,
+  "stderr": "",
+  "output": {
+    "path": "dist/R0013/private-target/p74/clean-install-p79.txt",
+    "sha256": "ef0427659dc26fddf9b66f61e651e141b071eb2b5f189ec6cb4a321d81bb0ca9",
+    "sizeBytes": 99
+  },
+  "serviceStartSkipped": false,
+  "testHooksUsed": false,
+  "packageReinstalled": false,
+  "candidateReady": false,
+  "next": "P80 read-only installed hashes, service status, native WebUI/session and persistence audit"
+}

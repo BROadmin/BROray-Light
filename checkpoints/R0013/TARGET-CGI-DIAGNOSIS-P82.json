@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "status": "CAUSE_IDENTIFIED",
+  "failure": "process-failures/FAILURE-P81-NATIVE-TARGET-LOGIN.json",
+  "evidence": [
+    {
+      "path": "dist/R0013/private-target/p74/native-auth-diagnosis-p82.txt",
+      "sha256": "ede54faecdaae1d9552f9cce97557cdfedbf64dd986c4a3b26359b54b9d812d4"
+    },
+    {
+      "path": "dist/R0013/private-target/p74/cgi-path-diagnosis-p82.txt",
+      "sha256": "6bf049220ad03504214560f0a91c720a793bc92725f8f0e4676d6e4765f71736"
+    }
+  ],
+  "observed": {
+    "publicAndLocalSession": "HTTP 500 before JSON",
+    "directEntwarePath": "GET login: HTTP CGI 405 JSON, exit 0",
+    "directNativeOrAbsentPath": "stat: not found, BRORAY_LIGHT_RUNTIME_REFUSED, exit 1",
+    "modes": "login/session executable; /opt/bin/ash present",
+    "upstreamNativeChallengeNotReached": true
+  },
+  "cause": "Runtime guard was injected before each entrypoint's PATH initialization; Entware CGI has no usable inherited Entware utility path. Equivalent native/absent-PATH invocation reproduces fail-closed guard refusal.",
+  "correction": "P83 initialize canonical Entware command search before first guard stat. Add hostile/missing-PATH native CGI regression. Rebuild fresh outputs; no retry of P81 login until correction is separately installed."
+}
