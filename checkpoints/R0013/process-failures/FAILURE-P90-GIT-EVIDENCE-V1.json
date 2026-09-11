@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "revision": "p90-git-evidence-v1",
+  "status": "STOPPED_PUBLICATION_EVIDENCE_GATE",
+  "failure": "Git text normalization changed committed bytes of current CHECKPOINT.json, REPORT.md and VALIDATION.json while their existing SHA-256 sidecars refer to preserved local CRLF bytes.",
+  "cause": "Global text=auto eol=lf policy applied to byte-attested evidence.",
+  "localEvidenceIntact": true,
+  "runtimeBytesAffected": false,
+  "registryP89EvidenceHashAffected": false,
+  "nextCorrectedRevision": "p90-git-evidence-v2",
+  "correction": "Treat checkpoint evidence as binary for Git normalization purposes; stage exact preserved local bytes without changing historical files or hashes. Verify every committed evidence sidecar again."
+}

@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "stage": "R0013_SELECTIVE_UPSTREAM_STABLE_PORT",
-  "status": "LOCAL_VALIDATOR_DEPENDENCY_MISSING",
-  "currentRevision": "p90-static-v1",
+  "status": "PRESERVING_EXACT_EVIDENCE_BYTES",
+  "currentRevision": "p90-git-evidence-v2",
   "activeFailure": null,
   "publicVersion": "2.0.0",
   "buildA": "PASS_P83_INDEPENDENT_BYTES",
@@ -62,7 +62,7 @@
     "path": "checkpoints/R0013/UPSTREAM-PORT-MAP-P2.json",
     "sha256": "009a0f5adae08f399c82510cf680690b4c2e50bc8c659eda9c48d91b5a838121"
   },
-  "nextExactAction": "INSTALL_TASK_LOCAL_YAML_PARSER_AND_RUN_STATIC_V2",
+  "nextExactAction": "VERIFY_COMMITTED_EVIDENCE_AND_COMPLETE_TARGET_GATES",
   "versionAndXray": {
     "status": "PASS_VERSION_AND_BOOTSTRAP_INPUT",
     "path": "checkpoints/R0013/UPGRADE-AND-XRAY-P10.json",
@@ -341,9 +341,9 @@
   },
   "latestReleasePreparation": [
     {
-      "path": "checkpoints/R0013/process-failures/FAILURE-P90-STATIC-V1.json",
-      "sha256": "3cde36cf8a9743efd3bed8a997076480297ea6d8070edaf7b865b0db27c386dd",
-      "bytes": 657
+      "path": "checkpoints/R0013/process-failures/FAILURE-P90-GIT-EVIDENCE-V1.json",
+      "sha256": "c33bad80c0f8f8f110f9f5b77215a9d833dff8f460933a798f221bd4b36b76a0",
+      "bytes": 758
     }
   ]
 }
