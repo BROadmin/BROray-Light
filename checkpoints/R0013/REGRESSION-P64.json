@@ -1,0 +1,4833 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0013",
+  "revision": "p64-explicit-external-idle-sleep",
+  "collectedAt": "2026-09-11T01:33:23.599Z",
+  "sourceCommit": "ebae309b93aee000ed1c5b5743385ba39e33ed98",
+  "runUrl": "https://github.com/BROadmin/BROray-Light/actions/runs/34549087783",
+  "status": "PASS_ALL_FIVE_R0013_REGRESSION_JOBS",
+  "uniqueJsonReportTests": 479,
+  "countRule": "Sum tests in all JSON reports excluding duplicate preflight-ram ash/dash and retirement dash subset; command-only checks are not added.",
+  "jobs": [
+    {
+      "name": "isolated-prepared-app",
+      "id": 103107982313,
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "name": "isolated-live-entry",
+      "id": 103107982529,
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "name": "isolated-native-auth",
+      "id": 103107982574,
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "name": "isolated-service",
+      "id": 103111186076,
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "name": "isolated-process",
+      "id": 103111186083,
+      "status": "completed",
+      "conclusion": "success"
+    }
+  ],
+  "evidence": [
+    {
+      "artifact": {
+        "id": 10180626412,
+        "name": "r0013-runtime-trees-ebae309b93aee000ed1c5b5743385ba39e33ed98",
+        "size_in_bytes": 1436,
+        "url": "https://api.github.com/repos/BROadmin/BROray-Light/actions/artifacts/10180626412",
+        "archive_download_url": "https://api.github.com/repos/BROadmin/BROray-Light/actions/artifacts/10180626412/zip",
+        "expired": false,
+        "created_at": "2026-09-11T01:24:58Z",
+        "expires_at": "2026-12-10T01:03:25Z",
+        "updated_at": "2026-09-11T01:24:58Z",
+        "digest": "sha256:c712da35d095513b5b01741cc18d3564c0f6ab1ea7aa7ad8b57f56c52e5c8508",
+        "workflow_run": {
+          "id": 34549087783,
+          "repository_id": 1346219669,
+          "head_repository_id": 1346219669,
+          "head_branch": "codex/r0009-updater-package",
+          "head_sha": "ebae309b93aee000ed1c5b5743385ba39e33ed98"
+        }
+      },
+      "results": {
+        "r0013-runtime-trees-ash.json": {
+          "report": {
+            "stage": "R0013",
+            "revision": "p40-legacy-runtime-tree-quiescence-and-ram-handoff",
+            "status": "PASS_RUNTIME_TREE_HANDOFF",
+            "tests": [
+              {
+                "name": "promote-restore",
+                "status": "PASS",
+                "callback": {
+                  "status": "PASS",
+                  "mode": "promote-restore",
+                  "crossFilesystem": true
+                }
+              },
+              {
+                "name": "foreign-symlink",
+                "status": "PASS",
+                "callback": {
+                  "status": "PASS",
+                  "mode": "foreign-symlink",
+                  "crossFilesystem": true
+                }
+              },
+              {
+                "name": "foreign-owner",
+                "status": "PASS",
+                "callback": {
+                  "status": "PASS",
+                  "mode": "foreign-owner",
+                  "crossFilesystem": true
+                }
+              },
+              {
+                "name": "foreign-live-pid",
+                "status": "PASS",
+                "callback": {
+                  "status": "PASS",
+                  "mode": "foreign-live-pid",
+                  "crossFilesystem": true
+                }
+              },
+              {
+                "name": "prepared-rollback",
+                "status": "PASS",
+                "callback": {
+                  "status": "PASS",
+                  "mode": "prepared-rollback",
+                  "crossFilesystem": true
+                }
+              },
+              {
+                "name": "partial-backup",
+                "status": "PASS",
+                "callback": {
+                  "status": "PASS",
+                  "mode": "partial-backup",
+                  "crossFilesystem": true
+                }
+              },
+              {
+                "name": "partial-destination",
+                "status": "PASS",
+                "callback": {
+                  "status": "PASS",
+                  "mode": "partial-destination",
+                  "crossFilesystem": true
+                }
+              },
+              {
+                "name": "partial-original-removal",
+                "status": "PASS",
+                "callback": {
+                  "status": "PASS",
+                  "mode": "partial-original-removal",
+                  "crossFilesystem": true
+                }
+              },
+              {
+                "name": "whole-original-removed",
+                "status": "PASS",
+                "callback": {
+                  "status": "PASS",
+                  "mode": "whole-original-removed",
+                  "crossFilesystem": true
+                }
+              },
+              {
+                "name": "partial-restore-candidate",
+                "status": "PASS",
+                "callback": {
+                  "status": "PASS",
+                  "mode": "partial-restore-candidate",
+                  "crossFilesystem": true
+                }
+              },
+              {
+                "name": "restore-rename-before-receipt",
+                "status": "PASS",
+                "callback": {
+                  "status": "PASS",
+                  "mode": "restore-rename-before-receipt",
+                  "crossFilesystem": true
+                }
+              }
+            ],
+            "sourceSha256": "fd71ee7dd8a33a30734bdb63964e315f10a784e02702fbf0750b021eb8d2e4bc",
+            "shell": [
+              "/usr/bin/busybox",
+              "ash"
+            ],
+            "scope": "Actual r1 updater + real cross-filesystem RAM copy/rollback and foreign PID refusal; application/service boundary mocked. Boot RAM loss not yet integrated."
+          },
+          "sha256": "ff47e0599c3dc960ffa476274481583a3174fe86847fcc8701b64af21e517749",
+          "counted": true
+        },
+        "r0013-runtime-trees-dash.json": {
+          "report": {
+            "stage": "R0013",
+            "revision": "p40-legacy-runtime-tree-quiescence-and-ram-handoff",
+            "status": "PASS_RUNTIME_TREE_HANDOFF",
+            "tests": [
+              {
+                "name": "promote-restore",
+                "status": "PASS",
+                "callback": {
+                  "status": "PASS",
+                  "mode": "promote-restore",
+                  "crossFilesystem": true
+                }
+              },
+              {
+                "name": "foreign-symlink",
+                "status": "PASS",
+                "callback": {
+                  "status": "PASS",
+                  "mode": "foreign-symlink",
+                  "crossFilesystem": true
+                }
+              },
+              {
+                "name": "foreign-owner",
+                "status": "PASS",
+                "callback": {
+                  "status": "PASS",
+                  "mode": "foreign-owner",
+                  "crossFilesystem": true
+                }
+              },
+              {
+                "name": "foreign-live-pid",
+                "status": "PASS",
+                "callback": {
+                  "status": "PASS",
+                  "mode": "foreign-live-pid",
+                  "crossFilesystem": true
+                }
+              },
+              {
+                "name": "prepared-rollback",
+                "status": "PASS",
+                "callback": {
+                  "status": "PASS",
+                  "mode": "prepared-rollback",
+                  "crossFilesystem": true
+                }
+              },
+              {
+                "name": "partial-backup",
+                "status": "PASS",
+                "callback": {
+                  "status": "PASS",
+                  "mode": "partial-backup",
+                  "crossFilesystem": true
+                }
+              },
+              {
+                "name": "partial-destination",
+                "status": "PASS",
+                "callback": {
+                  "status": "PASS",
+                  "mode": "partial-destination",
+                  "crossFilesystem": true
+                }
+              },
+              {
+                "name": "partial-original-removal",
+                "status": "PASS",
+                "callback": {
+                  "status": "PASS",
+                  "mode": "partial-original-removal",
+                  "crossFilesystem": true
+                }
+              },
+              {
+                "name": "whole-original-removed",
+                "status": "PASS",
+                "callback": {
+                  "status": "PASS",
+                  "mode": "whole-original-removed",
+                  "crossFilesystem": true
+                }
+              },
+              {
+                "name": "partial-restore-candidate",
+                "status": "PASS",
+                "callback": {
+                  "status": "PASS",
+                  "mode": "partial-restore-candidate",
+                  "crossFilesystem": true
+                }
+              },
+              {
+                "name": "restore-rename-before-receipt",
+                "status": "PASS",
+                "callback": {
+                  "status": "PASS",
+                  "mode": "restore-rename-before-receipt",
+                  "crossFilesystem": true
+                }
+              }
+            ],
+            "sourceSha256": "fd71ee7dd8a33a30734bdb63964e315f10a784e02702fbf0750b021eb8d2e4bc",
+            "shell": [
+              "/bin/dash"
+            ],
+            "scope": "Actual r1 updater + real cross-filesystem RAM copy/rollback and foreign PID refusal; application/service boundary mocked. Boot RAM loss not yet integrated."
+          },
+          "sha256": "db3f8e500b5b5be8b098b8bb7f492ab6526aad1059c8706f6bb8293c6bbbd7a5",
+          "counted": true
+        }
+      }
+    },
+    {
+      "artifact": {
+        "id": 10180561863,
+        "name": "r0013-web-config-ebae309b93aee000ed1c5b5743385ba39e33ed98",
+        "size_in_bytes": 1484,
+        "url": "https://api.github.com/repos/BROadmin/BROray-Light/actions/artifacts/10180561863",
+        "archive_download_url": "https://api.github.com/repos/BROadmin/BROray-Light/actions/artifacts/10180561863/zip",
+        "expired": false,
+        "created_at": "2026-09-11T01:22:19Z",
+        "expires_at": "2026-12-10T01:03:25Z",
+        "updated_at": "2026-09-11T01:22:19Z",
+        "digest": "sha256:664f4ebeed17365918a269e0248642cac2bce5ba02ee2e3be43d0588d27d9d61",
+        "workflow_run": {
+          "id": 34549087783,
+          "repository_id": 1346219669,
+          "head_repository_id": 1346219669,
+          "head_branch": "codex/r0009-updater-package",
+          "head_sha": "ebae309b93aee000ed1c5b5743385ba39e33ed98"
+        }
+      },
+      "results": {
+        "r0013-web-config-ash.json": {
+          "report": {
+            "stage": "R0013",
+            "revision": "p35-web-config-and-ownership-receipt-transaction",
+            "status": "PASS_CONFIG_AND_RECEIPT_TRANSACTION",
+            "scope": "Real r1 updater, exact config/receipt bytes and journaled pair replacement; service boundary mocked",
+            "sourceSha256": "ae8f091a44d63b92de1ab9f3bdc322d30d82ae70fd3412f580c0621af17e41a9",
+            "shell": [
+              "/usr/bin/busybox",
+              "ash"
+            ],
+            "utilities": "BusyBox applets",
+            "tests": [
+              {
+                "name": "activate-restore",
+                "status": "PASS",
+                "callback": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "phase": "exact-config-and-receipt-restored"
+                }
+              },
+              {
+                "name": "missing-owner",
+                "status": "PASS",
+                "callback": {
+                  "returncode": 1,
+                  "stderr": "BRORAY_LIGHT_MIGRATION_REFUSED:WEB_CONFIG_OWNERSHIP\n",
+                  "phase": "refused-before-config-write"
+                }
+              },
+              {
+                "name": "owner-sha-mismatch",
+                "status": "PASS",
+                "callback": {
+                  "returncode": 1,
+                  "stderr": "BRORAY_LIGHT_MIGRATION_REFUSED:WEB_CONFIG_OWNERSHIP\n",
+                  "phase": "refused-before-config-write"
+                }
+              },
+              {
+                "name": "duplicate-pid-directive",
+                "status": "PASS",
+                "callback": {
+                  "returncode": 1,
+                  "stderr": "BRORAY_LIGHT_MIGRATION_REFUSED:WEB_CONFIG_OWNERSHIP\n",
+                  "phase": "refused-before-config-write"
+                }
+              },
+              {
+                "name": "config-symlink",
+                "status": "PASS",
+                "callback": {
+                  "returncode": 1,
+                  "stderr": "BRORAY_LIGHT_MIGRATION_REFUSED:WEB_CONFIG_OWNERSHIP\n",
+                  "phase": "refused-before-config-write"
+                }
+              },
+              {
+                "name": "foreign-stage",
+                "status": "PASS",
+                "callback": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "phase": "exact-config-and-receipt-restored"
+                }
+              },
+              {
+                "name": "partial-Config-resume",
+                "status": "PASS",
+                "callback": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "phase": "exact-config-and-receipt-restored"
+                }
+              },
+              {
+                "name": "partial-Config-rollback",
+                "status": "PASS",
+                "callback": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "phase": "exact-config-and-receipt-restored"
+                }
+              },
+              {
+                "name": "partial-Owner-resume",
+                "status": "PASS",
+                "callback": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "phase": "exact-config-and-receipt-restored"
+                }
+              },
+              {
+                "name": "partial-Owner-rollback",
+                "status": "PASS",
+                "callback": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "phase": "exact-config-and-receipt-restored"
+                }
+              },
+              {
+                "name": "staged-Config-resume",
+                "status": "PASS",
+                "callback": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "phase": "exact-config-and-receipt-restored"
+                }
+              },
+              {
+                "name": "staged-Config-rollback",
+                "status": "PASS",
+                "callback": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "phase": "exact-config-and-receipt-restored"
+                }
+              },
+              {
+                "name": "staged-Owner-resume",
+                "status": "PASS",
+                "callback": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "phase": "exact-config-and-receipt-restored"
+                }
+              },
+              {
+                "name": "staged-Owner-rollback",
+                "status": "PASS",
+                "callback": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "phase": "exact-config-and-receipt-restored"
+                }
+              }
+            ]
+          },
+          "sha256": "7bb435b6a19b5e7a65772ae0f41688b5796b5f93b7904a6d9b0907a4cd2982ba",
+          "counted": true
+        },
+        "r0013-web-config-dash.json": {
+          "report": {
+            "stage": "R0013",
+            "revision": "p35-web-config-and-ownership-receipt-transaction",
+            "status": "PASS_CONFIG_AND_RECEIPT_TRANSACTION",
+            "scope": "Real r1 updater, exact config/receipt bytes and journaled pair replacement; service boundary mocked",
+            "sourceSha256": "ae8f091a44d63b92de1ab9f3bdc322d30d82ae70fd3412f580c0621af17e41a9",
+            "shell": [
+              "/bin/dash"
+            ],
+            "utilities": "host utilities",
+            "tests": [
+              {
+                "name": "activate-restore",
+                "status": "PASS",
+                "callback": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "phase": "exact-config-and-receipt-restored"
+                }
+              },
+              {
+                "name": "missing-owner",
+                "status": "PASS",
+                "callback": {
+                  "returncode": 1,
+                  "stderr": "BRORAY_LIGHT_MIGRATION_REFUSED:WEB_CONFIG_OWNERSHIP\n",
+                  "phase": "refused-before-config-write"
+                }
+              },
+              {
+                "name": "owner-sha-mismatch",
+                "status": "PASS",
+                "callback": {
+                  "returncode": 1,
+                  "stderr": "BRORAY_LIGHT_MIGRATION_REFUSED:WEB_CONFIG_OWNERSHIP\n",
+                  "phase": "refused-before-config-write"
+                }
+              },
+              {
+                "name": "duplicate-pid-directive",
+                "status": "PASS",
+                "callback": {
+                  "returncode": 1,
+                  "stderr": "BRORAY_LIGHT_MIGRATION_REFUSED:WEB_CONFIG_OWNERSHIP\n",
+                  "phase": "refused-before-config-write"
+                }
+              },
+              {
+                "name": "config-symlink",
+                "status": "PASS",
+                "callback": {
+                  "returncode": 1,
+                  "stderr": "BRORAY_LIGHT_MIGRATION_REFUSED:WEB_CONFIG_OWNERSHIP\n",
+                  "phase": "refused-before-config-write"
+                }
+              },
+              {
+                "name": "foreign-stage",
+                "status": "PASS",
+                "callback": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "phase": "exact-config-and-receipt-restored"
+                }
+              },
+              {
+                "name": "partial-Config-resume",
+                "status": "PASS",
+                "callback": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "phase": "exact-config-and-receipt-restored"
+                }
+              },
+              {
+                "name": "partial-Config-rollback",
+                "status": "PASS",
+                "callback": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "phase": "exact-config-and-receipt-restored"
+                }
+              },
+              {
+                "name": "partial-Owner-resume",
+                "status": "PASS",
+                "callback": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "phase": "exact-config-and-receipt-restored"
+                }
+              },
+              {
+                "name": "partial-Owner-rollback",
+                "status": "PASS",
+                "callback": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "phase": "exact-config-and-receipt-restored"
+                }
+              },
+              {
+                "name": "staged-Config-resume",
+                "status": "PASS",
+                "callback": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "phase": "exact-config-and-receipt-restored"
+                }
+              },
+              {
+                "name": "staged-Config-rollback",
+                "status": "PASS",
+                "callback": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "phase": "exact-config-and-receipt-restored"
+                }
+              },
+              {
+                "name": "staged-Owner-resume",
+                "status": "PASS",
+                "callback": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "phase": "exact-config-and-receipt-restored"
+                }
+              },
+              {
+                "name": "staged-Owner-rollback",
+                "status": "PASS",
+                "callback": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "phase": "exact-config-and-receipt-restored"
+                }
+              }
+            ]
+          },
+          "sha256": "a2fcc3b69696f26adb4c5f9d2ac8fcce58ce3d8550facb93f156e0127bc4bab4",
+          "counted": true
+        }
+      }
+    },
+    {
+      "artifact": {
+        "id": 10180534369,
+        "name": "r0013-platform-ebae309b93aee000ed1c5b5743385ba39e33ed98",
+        "size_in_bytes": 1487,
+        "url": "https://api.github.com/repos/BROadmin/BROray-Light/actions/artifacts/10180534369",
+        "archive_download_url": "https://api.github.com/repos/BROadmin/BROray-Light/actions/artifacts/10180534369/zip",
+        "expired": false,
+        "created_at": "2026-09-11T01:21:14Z",
+        "expires_at": "2026-12-10T01:03:25Z",
+        "updated_at": "2026-09-11T01:21:14Z",
+        "digest": "sha256:d25deeeec30c66c9897a22f5bed4b0aba592c6ae7f0c92e4c797d567021e2eba",
+        "workflow_run": {
+          "id": 34549087783,
+          "repository_id": 1346219669,
+          "head_repository_id": 1346219669,
+          "head_branch": "codex/r0009-updater-package",
+          "head_sha": "ebae309b93aee000ed1c5b5743385ba39e33ed98"
+        }
+      },
+      "results": {
+        "r0013-platform-ash.json": {
+          "report": {
+            "stage": "R0013",
+            "revision": "p30-per-target-platform-stage-journal",
+            "scope": "REAL_R1_ENGINE_PLATFORM_BYTES_FIXTURE_APP_SERVICE",
+            "engineSha256": "773aaf37893ab100e7023d63c8061d8c4763a4d6186844bb3b671d758c145743",
+            "sourceSha256": "fa0923e8932e1172ae5c9debe23cfdcd7d836b950c319c0874bec166aa3fcb41",
+            "shell": [
+              "/usr/bin/busybox",
+              "ash"
+            ],
+            "utilities": "BusyBox applets",
+            "tests": [
+              {
+                "name": "activate-restore",
+                "status": "PASS",
+                "callback": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "phase": "restored"
+                }
+              },
+              {
+                "name": "foreign-target",
+                "status": "PASS",
+                "callback": {
+                  "returncode": 1,
+                  "stderr": "BRORAY_LIGHT_MIGRATION_REFUSED:PLATFORM_TARGET_IDENTITY\n",
+                  "phase": "refused-before-platform-write"
+                }
+              },
+              {
+                "name": "symlink-parent",
+                "status": "PASS",
+                "callback": {
+                  "returncode": 1,
+                  "stderr": "BRORAY_LIGHT_MIGRATION_REFUSED:PLATFORM_PAYLOAD\n",
+                  "phase": "refused-before-platform-write"
+                }
+              },
+              {
+                "name": "tampered-payload",
+                "status": "PASS",
+                "callback": {
+                  "returncode": 1,
+                  "stderr": "BRORAY_LIGHT_MIGRATION_REFUSED:PLATFORM_PAYLOAD\n",
+                  "phase": "refused-before-platform-write"
+                }
+              },
+              {
+                "name": "partial-4-resume",
+                "status": "PASS",
+                "callback": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "phase": "restored"
+                }
+              },
+              {
+                "name": "partial-4-rollback",
+                "status": "PASS",
+                "callback": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "phase": "restored"
+                }
+              },
+              {
+                "name": "partial-5-resume",
+                "status": "PASS",
+                "callback": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "phase": "restored"
+                }
+              },
+              {
+                "name": "partial-5-rollback",
+                "status": "PASS",
+                "callback": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "phase": "restored"
+                }
+              },
+              {
+                "name": "partial-6-resume",
+                "status": "PASS",
+                "callback": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "phase": "restored"
+                }
+              },
+              {
+                "name": "partial-6-rollback",
+                "status": "PASS",
+                "callback": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "phase": "restored"
+                }
+              },
+              {
+                "name": "staged-4-resume",
+                "status": "PASS",
+                "callback": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "phase": "restored"
+                }
+              },
+              {
+                "name": "staged-4-rollback",
+                "status": "PASS",
+                "callback": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "phase": "restored"
+                }
+              },
+              {
+                "name": "staged-5-resume",
+                "status": "PASS",
+                "callback": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "phase": "restored"
+                }
+              },
+              {
+                "name": "staged-5-rollback",
+                "status": "PASS",
+                "callback": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "phase": "restored"
+                }
+              },
+              {
+                "name": "staged-6-resume",
+                "status": "PASS",
+                "callback": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "phase": "restored"
+                }
+              },
+              {
+                "name": "staged-6-rollback",
+                "status": "PASS",
+                "callback": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "phase": "restored"
+                }
+              }
+            ],
+            "status": "PASS_PLATFORM_ACTIVATION_AND_RESTORE"
+          },
+          "sha256": "e4244cdca76e453e61db27885bd26f9609a781c2835b51ed1c30e581f19db8f2",
+          "counted": true
+        },
+        "r0013-platform-dash.json": {
+          "report": {
+            "stage": "R0013",
+            "revision": "p30-per-target-platform-stage-journal",
+            "scope": "REAL_R1_ENGINE_PLATFORM_BYTES_FIXTURE_APP_SERVICE",
+            "engineSha256": "773aaf37893ab100e7023d63c8061d8c4763a4d6186844bb3b671d758c145743",
+            "sourceSha256": "fa0923e8932e1172ae5c9debe23cfdcd7d836b950c319c0874bec166aa3fcb41",
+            "shell": [
+              "/bin/dash"
+            ],
+            "utilities": "host utilities",
+            "tests": [
+              {
+                "name": "activate-restore",
+                "status": "PASS",
+                "callback": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "phase": "restored"
+                }
+              },
+              {
+                "name": "foreign-target",
+                "status": "PASS",
+                "callback": {
+                  "returncode": 1,
+                  "stderr": "BRORAY_LIGHT_MIGRATION_REFUSED:PLATFORM_TARGET_IDENTITY\n",
+                  "phase": "refused-before-platform-write"
+                }
+              },
+              {
+                "name": "symlink-parent",
+                "status": "PASS",
+                "callback": {
+                  "returncode": 1,
+                  "stderr": "BRORAY_LIGHT_MIGRATION_REFUSED:PLATFORM_PAYLOAD\n",
+                  "phase": "refused-before-platform-write"
+                }
+              },
+              {
+                "name": "tampered-payload",
+                "status": "PASS",
+                "callback": {
+                  "returncode": 1,
+                  "stderr": "BRORAY_LIGHT_MIGRATION_REFUSED:PLATFORM_PAYLOAD\n",
+                  "phase": "refused-before-platform-write"
+                }
+              },
+              {
+                "name": "partial-4-resume",
+                "status": "PASS",
+                "callback": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "phase": "restored"
+                }
+              },
+              {
+                "name": "partial-4-rollback",
+                "status": "PASS",
+                "callback": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "phase": "restored"
+                }
+              },
+              {
+                "name": "partial-5-resume",
+                "status": "PASS",
+                "callback": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "phase": "restored"
+                }
+              },
+              {
+                "name": "partial-5-rollback",
+                "status": "PASS",
+                "callback": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "phase": "restored"
+                }
+              },
+              {
+                "name": "partial-6-resume",
+                "status": "PASS",
+                "callback": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "phase": "restored"
+                }
+              },
+              {
+                "name": "partial-6-rollback",
+                "status": "PASS",
+                "callback": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "phase": "restored"
+                }
+              },
+              {
+                "name": "staged-4-resume",
+                "status": "PASS",
+                "callback": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "phase": "restored"
+                }
+              },
+              {
+                "name": "staged-4-rollback",
+                "status": "PASS",
+                "callback": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "phase": "restored"
+                }
+              },
+              {
+                "name": "staged-5-resume",
+                "status": "PASS",
+                "callback": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "phase": "restored"
+                }
+              },
+              {
+                "name": "staged-5-rollback",
+                "status": "PASS",
+                "callback": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "phase": "restored"
+                }
+              },
+              {
+                "name": "staged-6-resume",
+                "status": "PASS",
+                "callback": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "phase": "restored"
+                }
+              },
+              {
+                "name": "staged-6-rollback",
+                "status": "PASS",
+                "callback": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "phase": "restored"
+                }
+              }
+            ],
+            "status": "PASS_PLATFORM_ACTIVATION_AND_RESTORE"
+          },
+          "sha256": "0aee907e0ca54f115c27f220db5fdcfe559e41b4b4e8469b2bfad4dc721be695",
+          "counted": true
+        }
+      }
+    },
+    {
+      "artifact": {
+        "id": 10180506349,
+        "name": "r0013-r1-ram-ebae309b93aee000ed1c5b5743385ba39e33ed98",
+        "size_in_bytes": 1474,
+        "url": "https://api.github.com/repos/BROadmin/BROray-Light/actions/artifacts/10180506349",
+        "archive_download_url": "https://api.github.com/repos/BROadmin/BROray-Light/actions/artifacts/10180506349/zip",
+        "expired": false,
+        "created_at": "2026-09-11T01:20:08Z",
+        "expires_at": "2026-12-10T01:03:25Z",
+        "updated_at": "2026-09-11T01:20:08Z",
+        "digest": "sha256:72e4ba3a239dae40d7474ce4f0e1807f411045fe615f9af677d63585924dbe07",
+        "workflow_run": {
+          "id": 34549087783,
+          "repository_id": 1346219669,
+          "head_repository_id": 1346219669,
+          "head_branch": "codex/r0009-updater-package",
+          "head_sha": "ebae309b93aee000ed1c5b5743385ba39e33ed98"
+        }
+      },
+      "results": {
+        "r0013-r1-ram-ash.json": {
+          "report": {
+            "stage": "R0013",
+            "revision": "p49-work-shape-diagnostic-and-callback-evidence",
+            "scope": "REAL_R1_ENGINE_LIVE_RAM_HANDOFF_FIXTURE_APP_SERVICE",
+            "engineSha256": "773aaf37893ab100e7023d63c8061d8c4763a4d6186844bb3b671d758c145743",
+            "handoffSha256": "c2e43adb52af6445116ac5f50153e712acaf3698de35d2b369cad9659d686d77",
+            "shell": [
+              "/usr/bin/busybox",
+              "ash"
+            ],
+            "utilities": "BusyBox applets",
+            "tests": [
+              {
+                "name": "commit",
+                "status": "PASS",
+                "callback": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "phase": "ready"
+                }
+              },
+              {
+                "name": "rollback",
+                "status": "PASS",
+                "callback": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "phase": "restored"
+                }
+              },
+              {
+                "name": "extra-old-file",
+                "status": "PASS",
+                "callback": {
+                  "returncode": 1,
+                  "stderr": "BRORAY_LIGHT_MIGRATION_REFUSED:LEGACY_WORK_SHAPE\n"
+                }
+              },
+              {
+                "name": "foreign-app-namespace",
+                "status": "PASS",
+                "callback": {
+                  "returncode": 1,
+                  "stderr": "BRORAY_LIGHT_MIGRATION_REFUSED:RAM_NAMESPACE\n"
+                }
+              },
+              {
+                "name": "refuse-backup-tamper",
+                "status": "PASS",
+                "callback": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "phase": "restored"
+                }
+              },
+              {
+                "name": "refuse-new-symlink",
+                "status": "PASS",
+                "callback": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "phase": "restored"
+                }
+              },
+              {
+                "name": "refuse-new-operation",
+                "status": "PASS",
+                "callback": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "phase": "restored"
+                }
+              },
+              {
+                "name": "refuse-private-owner",
+                "status": "PASS",
+                "callback": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "phase": "restored"
+                }
+              },
+              {
+                "name": "resume-old-moved",
+                "status": "PASS",
+                "callback": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "phase": "restored"
+                }
+              },
+              {
+                "name": "resume-restoring",
+                "status": "PASS",
+                "callback": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "phase": "restored"
+                }
+              }
+            ],
+            "status": "PASS_RAM_NAMESPACE_HANDOFF_AND_RESTORE"
+          },
+          "sha256": "f93b4bccee73287367f7af65e1a43d93d8a9a7392e3884e93579b0c4ff0fb644",
+          "counted": true
+        },
+        "r0013-r1-ram-dash.json": {
+          "report": {
+            "stage": "R0013",
+            "revision": "p49-work-shape-diagnostic-and-callback-evidence",
+            "scope": "REAL_R1_ENGINE_LIVE_RAM_HANDOFF_FIXTURE_APP_SERVICE",
+            "engineSha256": "773aaf37893ab100e7023d63c8061d8c4763a4d6186844bb3b671d758c145743",
+            "handoffSha256": "c2e43adb52af6445116ac5f50153e712acaf3698de35d2b369cad9659d686d77",
+            "shell": [
+              "/bin/dash"
+            ],
+            "utilities": "host utilities",
+            "tests": [
+              {
+                "name": "commit",
+                "status": "PASS",
+                "callback": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "phase": "ready"
+                }
+              },
+              {
+                "name": "rollback",
+                "status": "PASS",
+                "callback": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "phase": "restored"
+                }
+              },
+              {
+                "name": "extra-old-file",
+                "status": "PASS",
+                "callback": {
+                  "returncode": 1,
+                  "stderr": "BRORAY_LIGHT_MIGRATION_REFUSED:LEGACY_WORK_SHAPE\n"
+                }
+              },
+              {
+                "name": "foreign-app-namespace",
+                "status": "PASS",
+                "callback": {
+                  "returncode": 1,
+                  "stderr": "BRORAY_LIGHT_MIGRATION_REFUSED:RAM_NAMESPACE\n"
+                }
+              },
+              {
+                "name": "refuse-backup-tamper",
+                "status": "PASS",
+                "callback": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "phase": "restored"
+                }
+              },
+              {
+                "name": "refuse-new-symlink",
+                "status": "PASS",
+                "callback": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "phase": "restored"
+                }
+              },
+              {
+                "name": "refuse-new-operation",
+                "status": "PASS",
+                "callback": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "phase": "restored"
+                }
+              },
+              {
+                "name": "refuse-private-owner",
+                "status": "PASS",
+                "callback": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "phase": "restored"
+                }
+              },
+              {
+                "name": "resume-old-moved",
+                "status": "PASS",
+                "callback": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "phase": "restored"
+                }
+              },
+              {
+                "name": "resume-restoring",
+                "status": "PASS",
+                "callback": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "phase": "restored"
+                }
+              }
+            ],
+            "status": "PASS_RAM_NAMESPACE_HANDOFF_AND_RESTORE"
+          },
+          "sha256": "2e7d3958e9e4efbb27db7a8461fb2de6e99d6b8bb8fcd7ed5cab1fafc96a14d8",
+          "counted": true
+        }
+      }
+    },
+    {
+      "artifact": {
+        "id": 10180502186,
+        "name": "r0013-service-ebae309b93aee000ed1c5b5743385ba39e33ed98",
+        "size_in_bytes": 1701,
+        "url": "https://api.github.com/repos/BROadmin/BROray-Light/actions/artifacts/10180502186",
+        "archive_download_url": "https://api.github.com/repos/BROadmin/BROray-Light/actions/artifacts/10180502186/zip",
+        "expired": false,
+        "created_at": "2026-09-11T01:19:58Z",
+        "expires_at": "2026-12-10T01:03:25Z",
+        "updated_at": "2026-09-11T01:19:58Z",
+        "digest": "sha256:534812f68612bcc5f37fd50d0d20343043c2119820576733876170bc63e212dd",
+        "workflow_run": {
+          "id": 34549087783,
+          "repository_id": 1346219669,
+          "head_repository_id": 1346219669,
+          "head_branch": "codex/r0009-updater-package",
+          "head_sha": "ebae309b93aee000ed1c5b5743385ba39e33ed98"
+        }
+      },
+      "results": {
+        "r0013-service-ash.json": {
+          "report": {
+            "stage": "R0013",
+            "revision": "p39-private-root-owned-daemon-pid-contract",
+            "status": "PASS_SCOPED_SERVICE_AND_PUBLICATION",
+            "shell": [
+              "/usr/bin/busybox",
+              "ash"
+            ],
+            "tests": [
+              {
+                "name": "actual-linux-daemon-web",
+                "status": "PASS"
+              },
+              {
+                "name": "actual-linux-daemon-auth",
+                "status": "PASS"
+              },
+              {
+                "name": "publication-negative-status-before-publication",
+                "status": "PASS"
+              },
+              {
+                "name": "publication-negative-invalid-action",
+                "status": "PASS"
+              },
+              {
+                "name": "publication-negative-ambiguous-lan",
+                "status": "PASS"
+              },
+              {
+                "name": "real-s24-start-status-restart-stop-and-publication",
+                "status": "PASS"
+              },
+              {
+                "name": "exact-owned-web-stops",
+                "status": "PASS"
+              },
+              {
+                "name": "pid-contract-refuses-writable",
+                "status": "PASS"
+              },
+              {
+                "name": "pid-contract-refuses-symlink",
+                "status": "PASS"
+              },
+              {
+                "name": "pid-contract-refuses-hardlink",
+                "status": "PASS"
+              },
+              {
+                "name": "pid-contract-refuses-public-parent",
+                "status": "PASS"
+              },
+              {
+                "name": "web-refuses-config-suffix",
+                "status": "PASS"
+              },
+              {
+                "name": "web-refuses-validator",
+                "status": "PASS"
+              },
+              {
+                "name": "web-refuses-extra-arg",
+                "status": "PASS"
+              },
+              {
+                "name": "web-refuses-foreign-exe",
+                "status": "PASS"
+              },
+              {
+                "name": "web-refuses-unrecorded",
+                "status": "PASS"
+              },
+              {
+                "name": "duplicate-web-fails-closed",
+                "status": "PASS"
+              },
+              {
+                "name": "native-auth-exact",
+                "status": "PASS"
+              },
+              {
+                "name": "native-auth-config-suffix",
+                "status": "PASS"
+              },
+              {
+                "name": "native-auth-foreign-exe",
+                "status": "PASS"
+              },
+              {
+                "name": "publication-respects-live-updater-request",
+                "status": "PASS"
+              }
+            ],
+            "scope": "Actual lighttpd/nginx and real S24/publication/private tmpfs; application daemon loop, Xray and Keenetic commands mocked. Not full r1/boot acceptance.",
+            "sourceSha256": {
+              "packaging/r0013-overlay/system/packaging/opkg/S24broray-light": "3157da6a4609093a77a56dcc14a9b3a574695103d661a4427ba4227937256119",
+              "packaging/r0013-overlay/shared/service-process.sh": "e2ea391465c544bedc5e91f3a8100049cd8a13da86c8723fadadb51e35a7e3da"
+            }
+          },
+          "sha256": "4eb416acfeec1da8b3bd97d13d6fdfb5d04e4b04b54447b9404d93e7fa27eeda",
+          "counted": true
+        },
+        "r0013-service-dash.json": {
+          "report": {
+            "stage": "R0013",
+            "revision": "p39-private-root-owned-daemon-pid-contract",
+            "status": "PASS_SCOPED_SERVICE_AND_PUBLICATION",
+            "shell": [
+              "/bin/dash"
+            ],
+            "tests": [
+              {
+                "name": "actual-linux-daemon-web",
+                "status": "PASS"
+              },
+              {
+                "name": "actual-linux-daemon-auth",
+                "status": "PASS"
+              },
+              {
+                "name": "publication-negative-status-before-publication",
+                "status": "PASS"
+              },
+              {
+                "name": "publication-negative-invalid-action",
+                "status": "PASS"
+              },
+              {
+                "name": "publication-negative-ambiguous-lan",
+                "status": "PASS"
+              },
+              {
+                "name": "real-s24-start-status-restart-stop-and-publication",
+                "status": "PASS"
+              },
+              {
+                "name": "exact-owned-web-stops",
+                "status": "PASS"
+              },
+              {
+                "name": "pid-contract-refuses-writable",
+                "status": "PASS"
+              },
+              {
+                "name": "pid-contract-refuses-symlink",
+                "status": "PASS"
+              },
+              {
+                "name": "pid-contract-refuses-hardlink",
+                "status": "PASS"
+              },
+              {
+                "name": "pid-contract-refuses-public-parent",
+                "status": "PASS"
+              },
+              {
+                "name": "web-refuses-config-suffix",
+                "status": "PASS"
+              },
+              {
+                "name": "web-refuses-validator",
+                "status": "PASS"
+              },
+              {
+                "name": "web-refuses-extra-arg",
+                "status": "PASS"
+              },
+              {
+                "name": "web-refuses-foreign-exe",
+                "status": "PASS"
+              },
+              {
+                "name": "web-refuses-unrecorded",
+                "status": "PASS"
+              },
+              {
+                "name": "duplicate-web-fails-closed",
+                "status": "PASS"
+              },
+              {
+                "name": "native-auth-exact",
+                "status": "PASS"
+              },
+              {
+                "name": "native-auth-config-suffix",
+                "status": "PASS"
+              },
+              {
+                "name": "native-auth-foreign-exe",
+                "status": "PASS"
+              },
+              {
+                "name": "publication-respects-live-updater-request",
+                "status": "PASS"
+              }
+            ],
+            "scope": "Actual lighttpd/nginx and real S24/publication/private tmpfs; application daemon loop, Xray and Keenetic commands mocked. Not full r1/boot acceptance.",
+            "sourceSha256": {
+              "packaging/r0013-overlay/system/packaging/opkg/S24broray-light": "3157da6a4609093a77a56dcc14a9b3a574695103d661a4427ba4227937256119",
+              "packaging/r0013-overlay/shared/service-process.sh": "e2ea391465c544bedc5e91f3a8100049cd8a13da86c8723fadadb51e35a7e3da"
+            }
+          },
+          "sha256": "3483d5ccac1d7fa7d32c633560910badcbed9d42f983906d422503286a08b8a0",
+          "counted": true
+        }
+      }
+    },
+    {
+      "artifact": {
+        "id": 10180497256,
+        "name": "r0013-r1-journal-ebae309b93aee000ed1c5b5743385ba39e33ed98",
+        "size_in_bytes": 1618,
+        "url": "https://api.github.com/repos/BROadmin/BROray-Light/actions/artifacts/10180497256",
+        "archive_download_url": "https://api.github.com/repos/BROadmin/BROray-Light/actions/artifacts/10180497256/zip",
+        "expired": false,
+        "created_at": "2026-09-11T01:19:47Z",
+        "expires_at": "2026-12-10T01:03:25Z",
+        "updated_at": "2026-09-11T01:19:47Z",
+        "digest": "sha256:06f5c30ed3edffd5286417022d456fa11b3a1e910a670f0fd939a03b8ce015ca",
+        "workflow_run": {
+          "id": 34549087783,
+          "repository_id": 1346219669,
+          "head_repository_id": 1346219669,
+          "head_branch": "codex/r0009-updater-package",
+          "head_sha": "ebae309b93aee000ed1c5b5743385ba39e33ed98"
+        }
+      },
+      "results": {
+        "r0013-r1-journal-ash.json": {
+          "report": {
+            "stage": "R0013",
+            "revision": "p27-exact-r1-webui-json-argv-compatibility",
+            "scope": "REAL_R1_ENGINE_SIMULATED_RAM_LOSS_FIXTURE_APP_SERVICE",
+            "engineSha256": "773aaf37893ab100e7023d63c8061d8c4763a4d6186844bb3b671d758c145743",
+            "journalSha256": "b48ec1fe950656611215d25970b17e817dcac58df8a6222e7aa0a4e97c080c64",
+            "admissionSha256": "ab9e064667584f83266236a3fd9d6aa3b739332e43117388a12a458b0546cd52",
+            "shell": [
+              "/usr/bin/busybox",
+              "ash"
+            ],
+            "utilities": "BusyBox applets",
+            "tests": [
+              {
+                "name": "record_once_idempotence_live_fence_then_normal_completion",
+                "status": "PASS"
+              },
+              {
+                "name": "foreign_durable_receipt_preserved",
+                "status": "PASS"
+              },
+              {
+                "name": "interrupted_r1_and_ram_loss_reconcile_exact_persistent_locks",
+                "status": "PASS"
+              },
+              {
+                "name": "partial_legacy_cleanup_is_recoverable_inside_recorded_inodes",
+                "status": "PASS"
+              },
+              {
+                "name": "refuse_inode_without_deleting_either_lock",
+                "status": "PASS"
+              },
+              {
+                "name": "refuse_extra-child_without_deleting_either_lock",
+                "status": "PASS"
+              },
+              {
+                "name": "refuse_receipt-mode_without_deleting_either_lock",
+                "status": "PASS"
+              },
+              {
+                "name": "refuse_symlink_without_deleting_either_lock",
+                "status": "PASS"
+              },
+              {
+                "name": "old_unmarked_ram_work_requires_explicit_transition",
+                "status": "PASS"
+              }
+            ],
+            "status": "PASS_LEGACY_RECEIPT_AND_RECONCILIATION"
+          },
+          "sha256": "3d43e963d491508a09af0367e3f754f01052bd5bdefb01147f89cd50b7bf5095",
+          "counted": true
+        },
+        "r0013-r1-journal-dash.json": {
+          "report": {
+            "stage": "R0013",
+            "revision": "p27-exact-r1-webui-json-argv-compatibility",
+            "scope": "REAL_R1_ENGINE_SIMULATED_RAM_LOSS_FIXTURE_APP_SERVICE",
+            "engineSha256": "773aaf37893ab100e7023d63c8061d8c4763a4d6186844bb3b671d758c145743",
+            "journalSha256": "b48ec1fe950656611215d25970b17e817dcac58df8a6222e7aa0a4e97c080c64",
+            "admissionSha256": "ab9e064667584f83266236a3fd9d6aa3b739332e43117388a12a458b0546cd52",
+            "shell": [
+              "/bin/dash"
+            ],
+            "utilities": "host utilities",
+            "tests": [
+              {
+                "name": "record_once_idempotence_live_fence_then_normal_completion",
+                "status": "PASS"
+              },
+              {
+                "name": "foreign_durable_receipt_preserved",
+                "status": "PASS"
+              },
+              {
+                "name": "interrupted_r1_and_ram_loss_reconcile_exact_persistent_locks",
+                "status": "PASS"
+              },
+              {
+                "name": "partial_legacy_cleanup_is_recoverable_inside_recorded_inodes",
+                "status": "PASS"
+              },
+              {
+                "name": "refuse_inode_without_deleting_either_lock",
+                "status": "PASS"
+              },
+              {
+                "name": "refuse_extra-child_without_deleting_either_lock",
+                "status": "PASS"
+              },
+              {
+                "name": "refuse_receipt-mode_without_deleting_either_lock",
+                "status": "PASS"
+              },
+              {
+                "name": "refuse_symlink_without_deleting_either_lock",
+                "status": "PASS"
+              },
+              {
+                "name": "old_unmarked_ram_work_requires_explicit_transition",
+                "status": "PASS"
+              }
+            ],
+            "status": "PASS_LEGACY_RECEIPT_AND_RECONCILIATION"
+          },
+          "sha256": "3be5d333abc6cc797a7d34cb995c4f2f3a515213c03c3fa4ad0541ff0c43e050",
+          "counted": true
+        }
+      }
+    },
+    {
+      "artifact": {
+        "id": 10180492607,
+        "name": "r0013-r1-admission-ebae309b93aee000ed1c5b5743385ba39e33ed98",
+        "size_in_bytes": 1444,
+        "url": "https://api.github.com/repos/BROadmin/BROray-Light/actions/artifacts/10180492607",
+        "archive_download_url": "https://api.github.com/repos/BROadmin/BROray-Light/actions/artifacts/10180492607/zip",
+        "expired": false,
+        "created_at": "2026-09-11T01:19:35Z",
+        "expires_at": "2026-12-10T01:03:25Z",
+        "updated_at": "2026-09-11T01:19:35Z",
+        "digest": "sha256:8e5dcfa9a8d11d8e6aa4ae625f96ffbb5caf5801bfcbd50b028620306e1473a1",
+        "workflow_run": {
+          "id": 34549087783,
+          "repository_id": 1346219669,
+          "head_repository_id": 1346219669,
+          "head_branch": "codex/r0009-updater-package",
+          "head_sha": "ebae309b93aee000ed1c5b5743385ba39e33ed98"
+        }
+      },
+      "results": {
+        "r0013-r1-admission-ash.json": {
+          "report": {
+            "stage": "R0013",
+            "revision": "p27-exact-r1-webui-json-argv-compatibility",
+            "scope": "READ_ONLY_ADMISSION_REAL_R1_ENGINE_TEST_SIGNATURES_FIXTURE_APP_SERVICE",
+            "engineSha256": "773aaf37893ab100e7023d63c8061d8c4763a4d6186844bb3b671d758c145743",
+            "admissionSha256": "ab9e064667584f83266236a3fd9d6aa3b739332e43117388a12a458b0546cd52",
+            "shell": [
+              "/usr/bin/busybox",
+              "ash"
+            ],
+            "utilities": "BusyBox applets",
+            "tests": [
+              {
+                "name": "exact_live_r1_signed_transaction_admitted_read_only",
+                "status": "PASS"
+              },
+              {
+                "name": "exact_live_r1_cli_without_json_is_still_supported",
+                "status": "PASS"
+              },
+              {
+                "name": "unrecognized_update_argument_is_refused",
+                "status": "PASS"
+              },
+              {
+                "name": "wrong-lock-owner",
+                "status": "PASS"
+              },
+              {
+                "name": "wrong-operation",
+                "status": "PASS"
+              },
+              {
+                "name": "wrong-phase",
+                "status": "PASS"
+              },
+              {
+                "name": "tampered-slot",
+                "status": "PASS"
+              },
+              {
+                "name": "changed-engine",
+                "status": "PASS"
+              },
+              {
+                "name": "foreign-coowner",
+                "status": "PASS"
+              },
+              {
+                "name": "absolute-current",
+                "status": "PASS"
+              },
+              {
+                "name": "world-writable-work",
+                "status": "PASS"
+              },
+              {
+                "name": "unrelated_caller_cannot_borrow_live_r1_locks",
+                "status": "PASS"
+              }
+            ],
+            "status": "PASS_READ_ONLY_ADMISSION"
+          },
+          "sha256": "0751a6f83c4e7301562ac7940e46df834fb44018eaa669d40c6204fe4acd0def",
+          "counted": true
+        },
+        "r0013-r1-admission-dash.json": {
+          "report": {
+            "stage": "R0013",
+            "revision": "p27-exact-r1-webui-json-argv-compatibility",
+            "scope": "READ_ONLY_ADMISSION_REAL_R1_ENGINE_TEST_SIGNATURES_FIXTURE_APP_SERVICE",
+            "engineSha256": "773aaf37893ab100e7023d63c8061d8c4763a4d6186844bb3b671d758c145743",
+            "admissionSha256": "ab9e064667584f83266236a3fd9d6aa3b739332e43117388a12a458b0546cd52",
+            "shell": [
+              "/bin/dash"
+            ],
+            "utilities": "host utilities",
+            "tests": [
+              {
+                "name": "exact_live_r1_signed_transaction_admitted_read_only",
+                "status": "PASS"
+              },
+              {
+                "name": "exact_live_r1_cli_without_json_is_still_supported",
+                "status": "PASS"
+              },
+              {
+                "name": "unrecognized_update_argument_is_refused",
+                "status": "PASS"
+              },
+              {
+                "name": "wrong-lock-owner",
+                "status": "PASS"
+              },
+              {
+                "name": "wrong-operation",
+                "status": "PASS"
+              },
+              {
+                "name": "wrong-phase",
+                "status": "PASS"
+              },
+              {
+                "name": "tampered-slot",
+                "status": "PASS"
+              },
+              {
+                "name": "changed-engine",
+                "status": "PASS"
+              },
+              {
+                "name": "foreign-coowner",
+                "status": "PASS"
+              },
+              {
+                "name": "absolute-current",
+                "status": "PASS"
+              },
+              {
+                "name": "world-writable-work",
+                "status": "PASS"
+              },
+              {
+                "name": "unrelated_caller_cannot_borrow_live_r1_locks",
+                "status": "PASS"
+              }
+            ],
+            "status": "PASS_READ_ONLY_ADMISSION"
+          },
+          "sha256": "e0bdb73675ac5b95ddf7b9a56cedd4b984c6a7bc9a54d19c9957990a6b8be635",
+          "counted": true
+        }
+      }
+    },
+    {
+      "artifact": {
+        "id": 10180489529,
+        "name": "r0013-updater-core-ebae309b93aee000ed1c5b5743385ba39e33ed98",
+        "size_in_bytes": 1574,
+        "url": "https://api.github.com/repos/BROadmin/BROray-Light/actions/artifacts/10180489529",
+        "archive_download_url": "https://api.github.com/repos/BROadmin/BROray-Light/actions/artifacts/10180489529/zip",
+        "expired": false,
+        "created_at": "2026-09-11T01:19:28Z",
+        "expires_at": "2026-12-10T01:03:25Z",
+        "updated_at": "2026-09-11T01:19:28Z",
+        "digest": "sha256:7d2e3e6d3a3b38e5800c54bd5748d0b2e94292831838018765ff3a905b4a354e",
+        "workflow_run": {
+          "id": 34549087783,
+          "repository_id": 1346219669,
+          "head_repository_id": 1346219669,
+          "head_branch": "codex/r0009-updater-package",
+          "head_sha": "ebae309b93aee000ed1c5b5743385ba39e33ed98"
+        }
+      },
+      "results": {
+        "r0013-updater-ash.json": {
+          "report": {
+            "stage": "R0013",
+            "revision": "p23-updater-platform-package-integration",
+            "scope": "REAL_UPDATER_SIGNATURES_TMPFS_CANONICAL_SLOT_FORMAT_FIXTURE_APP_AND_SERVICE",
+            "utilities": "BusyBox applets",
+            "sourceSha256": "717094a3dcebe2dfe59d5c990c138914c498d34443bce4820ed591cf26a149aa",
+            "shell": [
+              "/usr/bin/busybox",
+              "ash"
+            ],
+            "tests": [
+              {
+                "name": "signed_update_and_user_xray_previous_slot_persistence",
+                "status": "PASS"
+              },
+              {
+                "name": "equal_version_is_no_op_without_service_restart",
+                "status": "PASS"
+              },
+              {
+                "name": "signed_downgrade_refusal",
+                "status": "PASS"
+              },
+              {
+                "name": "forced_health_failure_rolls_back_and_recovers_receipt",
+                "status": "PASS"
+              },
+              {
+                "name": "altered_signed_index_refused_before_service_stop",
+                "status": "PASS"
+              },
+              {
+                "name": "signed_wrong_bundle_hash_refused",
+                "status": "PASS"
+              },
+              {
+                "name": "signed_duplicate_archive_refused",
+                "status": "PASS"
+              },
+              {
+                "name": "signed_traversal_archive_refused",
+                "status": "PASS"
+              },
+              {
+                "name": "signed_symlink_archive_refused",
+                "status": "PASS"
+              },
+              {
+                "name": "signed_hardlink_archive_refused",
+                "status": "PASS"
+              },
+              {
+                "name": "manifest_traversal_rejected_before_hash_reads",
+                "status": "PASS"
+              },
+              {
+                "name": "manifest_duplicate_refused",
+                "status": "PASS"
+              },
+              {
+                "name": "dangling_full_product_ownership_refused_before_ram_write",
+                "status": "PASS"
+              },
+              {
+                "name": "interrupted_target_active_recovers_previous_slot_with_stale_locks",
+                "status": "PASS"
+              },
+              {
+                "name": "updater_service_ready_lifecycle_is_ram_only",
+                "status": "PASS"
+              },
+              {
+                "name": "updater_service_foreign_ready_is_preserved",
+                "status": "PASS"
+              }
+            ],
+            "status": "PASS_BOUNDED_CORE"
+          },
+          "sha256": "1e30841b4712e3f8dc23a0680e3280e1f5c4586e6b2b9226dc5818abc3a10088",
+          "counted": true
+        },
+        "r0013-updater-dash.json": {
+          "report": {
+            "stage": "R0013",
+            "revision": "p23-updater-platform-package-integration",
+            "scope": "REAL_UPDATER_SIGNATURES_TMPFS_CANONICAL_SLOT_FORMAT_FIXTURE_APP_AND_SERVICE",
+            "utilities": "host utilities",
+            "sourceSha256": "717094a3dcebe2dfe59d5c990c138914c498d34443bce4820ed591cf26a149aa",
+            "shell": [
+              "/bin/dash"
+            ],
+            "tests": [
+              {
+                "name": "signed_update_and_user_xray_previous_slot_persistence",
+                "status": "PASS"
+              },
+              {
+                "name": "equal_version_is_no_op_without_service_restart",
+                "status": "PASS"
+              },
+              {
+                "name": "signed_downgrade_refusal",
+                "status": "PASS"
+              },
+              {
+                "name": "forced_health_failure_rolls_back_and_recovers_receipt",
+                "status": "PASS"
+              },
+              {
+                "name": "altered_signed_index_refused_before_service_stop",
+                "status": "PASS"
+              },
+              {
+                "name": "signed_wrong_bundle_hash_refused",
+                "status": "PASS"
+              },
+              {
+                "name": "signed_duplicate_archive_refused",
+                "status": "PASS"
+              },
+              {
+                "name": "signed_traversal_archive_refused",
+                "status": "PASS"
+              },
+              {
+                "name": "signed_symlink_archive_refused",
+                "status": "PASS"
+              },
+              {
+                "name": "signed_hardlink_archive_refused",
+                "status": "PASS"
+              },
+              {
+                "name": "manifest_traversal_rejected_before_hash_reads",
+                "status": "PASS"
+              },
+              {
+                "name": "manifest_duplicate_refused",
+                "status": "PASS"
+              },
+              {
+                "name": "dangling_full_product_ownership_refused_before_ram_write",
+                "status": "PASS"
+              },
+              {
+                "name": "interrupted_target_active_recovers_previous_slot_with_stale_locks",
+                "status": "PASS"
+              },
+              {
+                "name": "updater_service_ready_lifecycle_is_ram_only",
+                "status": "PASS"
+              },
+              {
+                "name": "updater_service_foreign_ready_is_preserved",
+                "status": "PASS"
+              }
+            ],
+            "status": "PASS_BOUNDED_CORE"
+          },
+          "sha256": "022110ae75abc440ce90192927275c25c904654797c5da0d48f6cb8fa98c68f0",
+          "counted": true
+        }
+      }
+    },
+    {
+      "artifact": {
+        "id": 10180483734,
+        "name": "r0013-ram-primitive-ebae309b93aee000ed1c5b5743385ba39e33ed98",
+        "size_in_bytes": 1591,
+        "url": "https://api.github.com/repos/BROadmin/BROray-Light/actions/artifacts/10180483734",
+        "archive_download_url": "https://api.github.com/repos/BROadmin/BROray-Light/actions/artifacts/10180483734/zip",
+        "expired": false,
+        "created_at": "2026-09-11T01:19:14Z",
+        "expires_at": "2026-12-10T01:03:25Z",
+        "updated_at": "2026-09-11T01:19:14Z",
+        "digest": "sha256:a98ee1ae1827ed2726ab862a28a00dbbe77c0b663fb5f7ea74c6f5e41a865872",
+        "workflow_run": {
+          "id": 34549087783,
+          "repository_id": 1346219669,
+          "head_repository_id": 1346219669,
+          "head_branch": "codex/r0009-updater-package",
+          "head_sha": "ebae309b93aee000ed1c5b5743385ba39e33ed98"
+        }
+      },
+      "results": {
+        "r0013-ram-ash.json": {
+          "report": {
+            "stage": "R0013",
+            "revision": "p21-native-busybox-utility-acceptance",
+            "status": "PASS_BOUNDED_PRIMITIVE",
+            "utilities": "BusyBox applets",
+            "scope": "REAL_TMPFS_AND_PROCESSES_NO_LIFECYCLE_OR_ROUTER",
+            "shell": [
+              "/usr/bin/busybox",
+              "ash"
+            ],
+            "sourceSha256": "3690adf7320f358c862d927fec5bb1d354bcf8fd4ca117a886a1d58129a7cda4",
+            "tests": [
+              {
+                "name": "clean_real_tmpfs_and_no_persistent_write",
+                "status": "PASS"
+              },
+              {
+                "name": "namespace_idempotence",
+                "status": "PASS"
+              },
+              {
+                "name": "refuse_symlink_namespace_without_mutation",
+                "status": "PASS"
+              },
+              {
+                "name": "refuse_unowned_namespace_without_mutation",
+                "status": "PASS"
+              },
+              {
+                "name": "refuse_wrong_mode_without_repair",
+                "status": "PASS"
+              },
+              {
+                "name": "refuse_non_tmpfs_before_namespace_creation",
+                "status": "PASS"
+              },
+              {
+                "name": "live_owner_blocks_second_owner_and_foreign_release",
+                "status": "PASS"
+              },
+              {
+                "name": "dead_owner_reclaimed_with_serialized_admission",
+                "status": "PASS"
+              },
+              {
+                "name": "reused_pid_starttime_does_not_block",
+                "status": "PASS"
+              },
+              {
+                "name": "legacy_global_fence_is_read_only",
+                "status": "PASS"
+              },
+              {
+                "name": "legacy_request_fence_is_read_only",
+                "status": "PASS"
+              },
+              {
+                "name": "updater_request_and_application_share_admission",
+                "status": "PASS"
+              },
+              {
+                "name": "application_global_owner_blocks_updater",
+                "status": "PASS"
+              },
+              {
+                "name": "refuse_symlink_lock_without_cleanup",
+                "status": "PASS"
+              },
+              {
+                "name": "refuse_malformed_lock_without_cleanup",
+                "status": "PASS"
+              },
+              {
+                "name": "refuse_unexpected-child_lock_without_cleanup",
+                "status": "PASS"
+              },
+              {
+                "name": "abandoned_admission_requires_explicit_recovery",
+                "status": "PASS"
+              },
+              {
+                "name": "admission_directory_collision_no_nested_claim",
+                "status": "PASS"
+              },
+              {
+                "name": "twelve_concurrent_contenders_exactly_one_owner",
+                "status": "PASS"
+              }
+            ]
+          },
+          "sha256": "9a40f1c6e30a57927b5690ee9d613a0ee10c27e1f48fbb85d7dc6c635e9a6e3c",
+          "counted": true
+        },
+        "r0013-ram-dash.json": {
+          "report": {
+            "stage": "R0013",
+            "revision": "p21-native-busybox-utility-acceptance",
+            "status": "PASS_BOUNDED_PRIMITIVE",
+            "utilities": "host utilities",
+            "scope": "REAL_TMPFS_AND_PROCESSES_NO_LIFECYCLE_OR_ROUTER",
+            "shell": [
+              "/bin/dash"
+            ],
+            "sourceSha256": "3690adf7320f358c862d927fec5bb1d354bcf8fd4ca117a886a1d58129a7cda4",
+            "tests": [
+              {
+                "name": "clean_real_tmpfs_and_no_persistent_write",
+                "status": "PASS"
+              },
+              {
+                "name": "namespace_idempotence",
+                "status": "PASS"
+              },
+              {
+                "name": "refuse_symlink_namespace_without_mutation",
+                "status": "PASS"
+              },
+              {
+                "name": "refuse_unowned_namespace_without_mutation",
+                "status": "PASS"
+              },
+              {
+                "name": "refuse_wrong_mode_without_repair",
+                "status": "PASS"
+              },
+              {
+                "name": "refuse_non_tmpfs_before_namespace_creation",
+                "status": "PASS"
+              },
+              {
+                "name": "live_owner_blocks_second_owner_and_foreign_release",
+                "status": "PASS"
+              },
+              {
+                "name": "dead_owner_reclaimed_with_serialized_admission",
+                "status": "PASS"
+              },
+              {
+                "name": "reused_pid_starttime_does_not_block",
+                "status": "PASS"
+              },
+              {
+                "name": "legacy_global_fence_is_read_only",
+                "status": "PASS"
+              },
+              {
+                "name": "legacy_request_fence_is_read_only",
+                "status": "PASS"
+              },
+              {
+                "name": "updater_request_and_application_share_admission",
+                "status": "PASS"
+              },
+              {
+                "name": "application_global_owner_blocks_updater",
+                "status": "PASS"
+              },
+              {
+                "name": "refuse_symlink_lock_without_cleanup",
+                "status": "PASS"
+              },
+              {
+                "name": "refuse_malformed_lock_without_cleanup",
+                "status": "PASS"
+              },
+              {
+                "name": "refuse_unexpected-child_lock_without_cleanup",
+                "status": "PASS"
+              },
+              {
+                "name": "abandoned_admission_requires_explicit_recovery",
+                "status": "PASS"
+              },
+              {
+                "name": "admission_directory_collision_no_nested_claim",
+                "status": "PASS"
+              },
+              {
+                "name": "twelve_concurrent_contenders_exactly_one_owner",
+                "status": "PASS"
+              }
+            ]
+          },
+          "sha256": "6de480ca72c0911f0166314e352ba87c4be238ffe8d08beaa192825ab5dd6b3e",
+          "counted": true
+        }
+      }
+    },
+    {
+      "artifact": {
+        "id": 10180481058,
+        "name": "r0013-runtime-paths-ebae309b93aee000ed1c5b5743385ba39e33ed98",
+        "size_in_bytes": 1402,
+        "url": "https://api.github.com/repos/BROadmin/BROray-Light/actions/artifacts/10180481058",
+        "archive_download_url": "https://api.github.com/repos/BROadmin/BROray-Light/actions/artifacts/10180481058/zip",
+        "expired": false,
+        "created_at": "2026-09-11T01:19:07Z",
+        "expires_at": "2026-12-10T01:03:25Z",
+        "updated_at": "2026-09-11T01:19:07Z",
+        "digest": "sha256:99a18b890fafdd4e6f904ebdbe22f274a669978c347c69da455712b9f5ec7571",
+        "workflow_run": {
+          "id": 34549087783,
+          "repository_id": 1346219669,
+          "head_repository_id": 1346219669,
+          "head_branch": "codex/r0009-updater-package",
+          "head_sha": "ebae309b93aee000ed1c5b5743385ba39e33ed98"
+        }
+      },
+      "results": {
+        "r0013-runtime-paths-ash.json": {
+          "report": {
+            "stage": "R0013",
+            "revision": "p34-component-bounded-application-ram-path-contract",
+            "status": "PASS_COMPILED_PATHS_GUARD_AND_LOCK_ADAPTER",
+            "scope": "Compiled shell syntax, path manifest, actual tmpfs environment guard/lock adapter; NOT full startup or old-data migration",
+            "specificationSha256": "19bdddb1e615f3a018cbde35365040153580b4238f4c0e55f10cfae98fd4e301",
+            "shell": [
+              "/usr/bin/busybox",
+              "ash"
+            ],
+            "utilities": "BusyBox applets",
+            "tests": [
+              {
+                "name": "exact_41_file_manifest_and_durable_xray_references",
+                "status": "PASS"
+              },
+              {
+                "name": "changed_native_auth_input_refused_before_transformation",
+                "status": "PASS"
+              },
+              {
+                "name": "every_compiled_shell_entrypoint_syntax",
+                "status": "PASS"
+              },
+              {
+                "name": "runtime_guard_fresh",
+                "status": "PASS"
+              },
+              {
+                "name": "runtime_guard_overrides",
+                "status": "PASS"
+              },
+              {
+                "name": "runtime_guard_foreign-namespace",
+                "status": "PASS"
+              },
+              {
+                "name": "runtime_guard_foreign-root",
+                "status": "PASS"
+              },
+              {
+                "name": "runtime_guard_helper-symlink",
+                "status": "PASS"
+              },
+              {
+                "name": "runtime_guard_coownership",
+                "status": "PASS"
+              },
+              {
+                "name": "runtime_guard_legacy-fence",
+                "status": "PASS"
+              },
+              {
+                "name": "runtime_guard_global-lock",
+                "status": "PASS"
+              }
+            ]
+          },
+          "sha256": "e61b56cb8b212980435cecdb6a77ab4ac177c6573a75b7c2131e4bded6637dd9",
+          "counted": true
+        },
+        "r0013-runtime-paths-dash.json": {
+          "report": {
+            "stage": "R0013",
+            "revision": "p34-component-bounded-application-ram-path-contract",
+            "status": "PASS_COMPILED_PATHS_GUARD_AND_LOCK_ADAPTER",
+            "scope": "Compiled shell syntax, path manifest, actual tmpfs environment guard/lock adapter; NOT full startup or old-data migration",
+            "specificationSha256": "19bdddb1e615f3a018cbde35365040153580b4238f4c0e55f10cfae98fd4e301",
+            "shell": [
+              "/bin/dash"
+            ],
+            "utilities": "host utilities",
+            "tests": [
+              {
+                "name": "exact_41_file_manifest_and_durable_xray_references",
+                "status": "PASS"
+              },
+              {
+                "name": "changed_native_auth_input_refused_before_transformation",
+                "status": "PASS"
+              },
+              {
+                "name": "every_compiled_shell_entrypoint_syntax",
+                "status": "PASS"
+              },
+              {
+                "name": "runtime_guard_fresh",
+                "status": "PASS"
+              },
+              {
+                "name": "runtime_guard_overrides",
+                "status": "PASS"
+              },
+              {
+                "name": "runtime_guard_foreign-namespace",
+                "status": "PASS"
+              },
+              {
+                "name": "runtime_guard_foreign-root",
+                "status": "PASS"
+              },
+              {
+                "name": "runtime_guard_helper-symlink",
+                "status": "PASS"
+              },
+              {
+                "name": "runtime_guard_coownership",
+                "status": "PASS"
+              },
+              {
+                "name": "runtime_guard_legacy-fence",
+                "status": "PASS"
+              },
+              {
+                "name": "runtime_guard_global-lock",
+                "status": "PASS"
+              }
+            ]
+          },
+          "sha256": "34671b928ca656abe887de109eba68968620a3fad2f48dbdc075234b4307ae16",
+          "counted": true
+        }
+      }
+    },
+    {
+      "artifact": {
+        "id": 10180479969,
+        "name": "r0013-xray-rollback-ebae309b93aee000ed1c5b5743385ba39e33ed98",
+        "size_in_bytes": 1455,
+        "url": "https://api.github.com/repos/BROadmin/BROray-Light/actions/artifacts/10180479969",
+        "archive_download_url": "https://api.github.com/repos/BROadmin/BROray-Light/actions/artifacts/10180479969/zip",
+        "expired": false,
+        "created_at": "2026-09-11T01:19:05Z",
+        "expires_at": "2026-12-10T01:03:25Z",
+        "updated_at": "2026-09-11T01:19:05Z",
+        "digest": "sha256:a2b00fb6d352a136ac132a6be9082c7d731b79ee5a8e244c21d55bd2e7ab6577",
+        "workflow_run": {
+          "id": 34549087783,
+          "repository_id": 1346219669,
+          "head_repository_id": 1346219669,
+          "head_branch": "codex/r0009-updater-package",
+          "head_sha": "ebae309b93aee000ed1c5b5743385ba39e33ed98"
+        }
+      },
+      "results": {
+        "r0013-xray-rollback-ash.json": {
+          "report": {
+            "stage": "R0013",
+            "revision": "p32-xray-validated-rollback-before-fence-release",
+            "status": "PASS_SCOPED_XRAY_ROLLBACK",
+            "shell": [
+              "/usr/bin/busybox",
+              "ash"
+            ],
+            "scope": "Actual replacement/restore bytes; process and global-lock calls mocked for ordering only",
+            "utilities": "BusyBox applets",
+            "sourceSha256": {
+              "xray-update.sh": "14eac0629f16de3cbedf5321dec9f7f0d7e9c2943bb8035d7bb49b79d2bd458a",
+              "xray-releases.sh": "2a30f488c9b4d2edf74f40148d39a23e8c93bae3f1182dad1172674cd786f793"
+            },
+            "tests": [
+              {
+                "name": "missing-backup",
+                "status": "PASS"
+              },
+              {
+                "name": "wrong-backup-path",
+                "status": "PASS"
+              },
+              {
+                "name": "backup-symlink",
+                "status": "PASS"
+              },
+              {
+                "name": "backup-sha-mismatch",
+                "status": "PASS"
+              },
+              {
+                "name": "stop-refused",
+                "status": "PASS"
+              },
+              {
+                "name": "foreign-current",
+                "status": "PASS"
+              },
+              {
+                "name": "foreign-new",
+                "status": "PASS"
+              },
+              {
+                "name": "runtime-parent-symlink",
+                "status": "PASS"
+              },
+              {
+                "name": "no-active-transaction",
+                "status": "PASS"
+              },
+              {
+                "name": "valid-stopped",
+                "status": "PASS"
+              },
+              {
+                "name": "valid-running",
+                "status": "PASS"
+              },
+              {
+                "name": "partial-owned-new",
+                "status": "PASS"
+              },
+              {
+                "name": "current-absent",
+                "status": "PASS"
+              },
+              {
+                "name": "restart-failed",
+                "status": "PASS"
+              },
+              {
+                "name": "dispatch-rollback-before-release",
+                "status": "PASS"
+              },
+              {
+                "name": "dispatch-recovery-failure-preserves-fence",
+                "status": "PASS"
+              }
+            ]
+          },
+          "sha256": "bf9002fb81dd0064d28c33e72026e816eaf474599e557d255f8bd2877e793172",
+          "counted": true
+        },
+        "r0013-xray-rollback-dash.json": {
+          "report": {
+            "stage": "R0013",
+            "revision": "p32-xray-validated-rollback-before-fence-release",
+            "status": "PASS_SCOPED_XRAY_ROLLBACK",
+            "shell": [
+              "/bin/dash"
+            ],
+            "scope": "Actual replacement/restore bytes; process and global-lock calls mocked for ordering only",
+            "utilities": "host utilities",
+            "sourceSha256": {
+              "xray-update.sh": "14eac0629f16de3cbedf5321dec9f7f0d7e9c2943bb8035d7bb49b79d2bd458a",
+              "xray-releases.sh": "2a30f488c9b4d2edf74f40148d39a23e8c93bae3f1182dad1172674cd786f793"
+            },
+            "tests": [
+              {
+                "name": "missing-backup",
+                "status": "PASS"
+              },
+              {
+                "name": "wrong-backup-path",
+                "status": "PASS"
+              },
+              {
+                "name": "backup-symlink",
+                "status": "PASS"
+              },
+              {
+                "name": "backup-sha-mismatch",
+                "status": "PASS"
+              },
+              {
+                "name": "stop-refused",
+                "status": "PASS"
+              },
+              {
+                "name": "foreign-current",
+                "status": "PASS"
+              },
+              {
+                "name": "foreign-new",
+                "status": "PASS"
+              },
+              {
+                "name": "runtime-parent-symlink",
+                "status": "PASS"
+              },
+              {
+                "name": "no-active-transaction",
+                "status": "PASS"
+              },
+              {
+                "name": "valid-stopped",
+                "status": "PASS"
+              },
+              {
+                "name": "valid-running",
+                "status": "PASS"
+              },
+              {
+                "name": "partial-owned-new",
+                "status": "PASS"
+              },
+              {
+                "name": "current-absent",
+                "status": "PASS"
+              },
+              {
+                "name": "restart-failed",
+                "status": "PASS"
+              },
+              {
+                "name": "dispatch-rollback-before-release",
+                "status": "PASS"
+              },
+              {
+                "name": "dispatch-recovery-failure-preserves-fence",
+                "status": "PASS"
+              }
+            ]
+          },
+          "sha256": "6b5a0c9389e088b42aa696bff2fbdb670b7cefada83d283eae6dfb9036148330",
+          "counted": true
+        }
+      }
+    },
+    {
+      "artifact": {
+        "id": 10180479461,
+        "name": "r0013-subscription-controls-ebae309b93aee000ed1c5b5743385ba39e33ed98",
+        "size_in_bytes": 963,
+        "url": "https://api.github.com/repos/BROadmin/BROray-Light/actions/artifacts/10180479461",
+        "archive_download_url": "https://api.github.com/repos/BROadmin/BROray-Light/actions/artifacts/10180479461/zip",
+        "expired": false,
+        "created_at": "2026-09-11T01:19:04Z",
+        "expires_at": "2026-12-10T01:03:25Z",
+        "updated_at": "2026-09-11T01:19:04Z",
+        "digest": "sha256:44efb614b1f568fcd8ee46a62d01e28a3f8b59ba42116f4b127cfedf3b8c5673",
+        "workflow_run": {
+          "id": 34549087783,
+          "repository_id": 1346219669,
+          "head_repository_id": 1346219669,
+          "head_branch": "codex/r0009-updater-package",
+          "head_sha": "ebae309b93aee000ed1c5b5743385ba39e33ed98"
+        }
+      },
+      "results": {
+        "r0013-subscription-controls.json": {
+          "report": {
+            "stage": "R0013",
+            "revision": "p57-subscription-action-button-finally",
+            "status": "PASS_BOUNDED_CONTROL",
+            "candidateReady": false,
+            "sourceSha256": "a32bfaaf2841c2b22ed5a8beaea8a237f4902c1a5220258600a3211003442905",
+            "mockedBoundaries": [
+              "DOM",
+              "HTTP",
+              "confirm"
+            ],
+            "tests": [
+              {
+                "name": "subscription-delete-cancel-restores-clickability",
+                "status": "PASS",
+                "noDeleteRequest": true,
+                "buttonEnabled": true
+              },
+              {
+                "name": "subscription-delete-success",
+                "status": "PASS",
+                "exactIdAndPost": true,
+                "buttonEnabled": true
+              },
+              {
+                "name": "subscription-delete-http-refusal",
+                "status": "PASS",
+                "exactIdAndPost": true,
+                "buttonEnabled": true
+              },
+              {
+                "name": "subscription-refresh-success",
+                "status": "PASS",
+                "exactIdAndPost": true,
+                "buttonEnabled": true
+              },
+              {
+                "name": "subscription-refresh-http-refusal",
+                "status": "PASS",
+                "exactIdAndPost": true,
+                "buttonEnabled": true
+              }
+            ]
+          },
+          "sha256": "18180c9ff3f419c5c758b97197c5f75ad669fd163d1f75ba4ad67fcea6c144b7",
+          "counted": true
+        },
+        "r0013-navigation.json": {
+          "report": {
+            "stage": "R0013",
+            "revision": "p59-query-safe-current-navigation",
+            "candidateReady": false,
+            "status": "PASS_BOUNDED_NAVIGATION",
+            "sourceSha256": "41db54d48c6d8779138643fe9ce226fc16a1c4f37d66928dbc1769ac440e4fa9",
+            "tests": [
+              {
+                "name": "/home.html href-suffix=?v=2.0.0",
+                "status": "PASS"
+              },
+              {
+                "name": "/servers.html href-suffix=?v=2.0.0",
+                "status": "PASS"
+              },
+              {
+                "name": "/subscriptions.html href-suffix=?v=2.0.0",
+                "status": "PASS"
+              },
+              {
+                "name": "/home.html href-suffix=#section",
+                "status": "PASS"
+              },
+              {
+                "name": "/servers.html href-suffix=",
+                "status": "PASS"
+              },
+              {
+                "name": "/ href-suffix=?v=2.0.0",
+                "status": "PASS"
+              },
+              {
+                "name": "/missing.html href-suffix=?v=2.0.0",
+                "status": "PASS"
+              }
+            ]
+          },
+          "sha256": "c2f70ecbbf574a7327079a82deb9f77ff5b8307d6e6b68f1813dd9fafc1f965e",
+          "counted": true
+        }
+      }
+    },
+    {
+      "artifact": {
+        "id": 10180471698,
+        "name": "r0013-recovery-ebae309b93aee000ed1c5b5743385ba39e33ed98",
+        "size_in_bytes": 1574,
+        "url": "https://api.github.com/repos/BROadmin/BROray-Light/actions/artifacts/10180471698",
+        "archive_download_url": "https://api.github.com/repos/BROadmin/BROray-Light/actions/artifacts/10180471698/zip",
+        "expired": false,
+        "created_at": "2026-09-11T01:18:45Z",
+        "expires_at": "2026-12-10T01:03:25Z",
+        "updated_at": "2026-09-11T01:18:45Z",
+        "digest": "sha256:13ab24a0adf57a45d198969eb707a9c7af3182d4960ecc157dcaaabe7f21a029",
+        "workflow_run": {
+          "id": 34549087783,
+          "repository_id": 1346219669,
+          "head_repository_id": 1346219669,
+          "head_branch": "codex/r0009-updater-package",
+          "head_sha": "ebae309b93aee000ed1c5b5743385ba39e33ed98"
+        }
+      },
+      "results": {
+        "r0013-recovery-ash.json": {
+          "report": {
+            "stage": "R0013",
+            "revision": "p53-retire-legacy-operational-status",
+            "status": "PASS_BOUNDED_RECOVERY",
+            "shell": [
+              "/usr/bin/busybox",
+              "ash"
+            ],
+            "tests": [
+              {
+                "name": "finalize",
+                "status": "PASS",
+                "detail": {
+                  "finalized": true,
+                  "snapshotsRemoved": true,
+                  "sessionPreserved": true,
+                  "idempotent": true,
+                  "persistentLegacyStatusRetired": true,
+                  "lateOldReadyRetired": true
+                }
+              },
+              {
+                "name": "legacy-status-foreign",
+                "status": "PASS",
+                "detail": {
+                  "foreignOperationalFileRefused": true,
+                  "allOldStatusBytesPreserved": true
+                }
+              },
+              {
+                "name": "legacy-ready-symlink",
+                "status": "PASS",
+                "detail": {
+                  "foreignOperationalFileRefused": true,
+                  "allOldStatusBytesPreserved": true
+                }
+              },
+              {
+                "name": "dead-owner",
+                "status": "PASS",
+                "detail": {
+                  "rollback": true,
+                  "sourceRelease": "1.0.0-r1",
+                  "durablePersistence": true,
+                  "ramLoss": false,
+                  "snapshotsRemoved": true
+                }
+              },
+              {
+                "name": "ram-loss",
+                "status": "PASS",
+                "detail": {
+                  "rollback": true,
+                  "sourceRelease": "1.0.0-r1",
+                  "durablePersistence": true,
+                  "ramLoss": true,
+                  "snapshotsRemoved": true
+                }
+              },
+              {
+                "name": "foreign-lock",
+                "status": "PASS",
+                "detail": {
+                  "foreignLockRefused": true,
+                  "foreignObjectPreserved": true
+                }
+              },
+              {
+                "name": "foreign-slot",
+                "status": "PASS",
+                "detail": {
+                  "tamperedSourceRefused": true
+                }
+              }
+            ],
+            "entrySha256": "49081efafe4e25bcd8afee598671452628fb82acf9d4f55aa1e286720d854ea3",
+            "recoverySha256": "5511abdb1d5071ab931d72396bdf0fc4d6e5ed0e1c540929f9fff8bdc6830c1e",
+            "scope": "Exact old engine, real S24/entry, actual SIGKILL and private tmpfs remount; fixture app loop/lighttpd/publication OS calls."
+          },
+          "sha256": "fc0843ae42409df1c15e0b01f330837e777010e8b8921764f926af5f60323c85",
+          "counted": true
+        },
+        "r0013-recovery-dash.json": {
+          "report": {
+            "stage": "R0013",
+            "revision": "p53-retire-legacy-operational-status",
+            "status": "PASS_BOUNDED_RECOVERY",
+            "shell": [
+              "/bin/dash"
+            ],
+            "tests": [
+              {
+                "name": "finalize",
+                "status": "PASS",
+                "detail": {
+                  "finalized": true,
+                  "snapshotsRemoved": true,
+                  "sessionPreserved": true,
+                  "idempotent": true,
+                  "persistentLegacyStatusRetired": true,
+                  "lateOldReadyRetired": true
+                }
+              },
+              {
+                "name": "legacy-status-foreign",
+                "status": "PASS",
+                "detail": {
+                  "foreignOperationalFileRefused": true,
+                  "allOldStatusBytesPreserved": true
+                }
+              },
+              {
+                "name": "legacy-ready-symlink",
+                "status": "PASS",
+                "detail": {
+                  "foreignOperationalFileRefused": true,
+                  "allOldStatusBytesPreserved": true
+                }
+              },
+              {
+                "name": "dead-owner",
+                "status": "PASS",
+                "detail": {
+                  "rollback": true,
+                  "sourceRelease": "1.0.0-r1",
+                  "durablePersistence": true,
+                  "ramLoss": false,
+                  "snapshotsRemoved": true
+                }
+              },
+              {
+                "name": "ram-loss",
+                "status": "PASS",
+                "detail": {
+                  "rollback": true,
+                  "sourceRelease": "1.0.0-r1",
+                  "durablePersistence": true,
+                  "ramLoss": true,
+                  "snapshotsRemoved": true
+                }
+              },
+              {
+                "name": "foreign-lock",
+                "status": "PASS",
+                "detail": {
+                  "foreignLockRefused": true,
+                  "foreignObjectPreserved": true
+                }
+              },
+              {
+                "name": "foreign-slot",
+                "status": "PASS",
+                "detail": {
+                  "tamperedSourceRefused": true
+                }
+              }
+            ],
+            "entrySha256": "49081efafe4e25bcd8afee598671452628fb82acf9d4f55aa1e286720d854ea3",
+            "recoverySha256": "5511abdb1d5071ab931d72396bdf0fc4d6e5ed0e1c540929f9fff8bdc6830c1e",
+            "scope": "Exact old engine, real S24/entry, actual SIGKILL and private tmpfs remount; fixture app loop/lighttpd/publication OS calls."
+          },
+          "sha256": "94ab237d1f16672cc943bcb1d7dca91cd0cf2f5784fa1551229925963ef318ea",
+          "counted": true
+        }
+      }
+    },
+    {
+      "artifact": {
+        "id": 10180300846,
+        "name": "r0013-live-entry-ebae309b93aee000ed1c5b5743385ba39e33ed98",
+        "size_in_bytes": 1325,
+        "url": "https://api.github.com/repos/BROadmin/BROray-Light/actions/artifacts/10180300846",
+        "archive_download_url": "https://api.github.com/repos/BROadmin/BROray-Light/actions/artifacts/10180300846/zip",
+        "expired": false,
+        "created_at": "2026-09-11T01:11:36Z",
+        "expires_at": "2026-12-10T01:03:25Z",
+        "updated_at": "2026-09-11T01:11:36Z",
+        "digest": "sha256:dc8210d2c85b895a70ed7ffd73f53d98a44c1cca5c46bc5dd0f0947443d0347f",
+        "workflow_run": {
+          "id": 34549087783,
+          "repository_id": 1346219669,
+          "head_repository_id": 1346219669,
+          "head_branch": "codex/r0009-updater-package",
+          "head_sha": "ebae309b93aee000ed1c5b5743385ba39e33ed98"
+        }
+      },
+      "results": {
+        "r0013-live-entry-ash.json": {
+          "report": {
+            "stage": "R0013",
+            "revision": "p44-accepted-r1-config-fixture-and-real-health-status",
+            "status": "PASS_LIVE_R1_SERVICE_TRANSITION",
+            "shell": [
+              "/usr/bin/busybox",
+              "ash"
+            ],
+            "tests": [
+              {
+                "name": "update",
+                "status": "PASS",
+                "detail": {
+                  "returncode": 0,
+                  "current": "2.0.0-r1",
+                  "coordinatorPhase": "activated",
+                  "legacyUpdaterCompleted": true,
+                  "sessionPreserved": true
+                }
+              },
+              {
+                "name": "health-rollback",
+                "status": "PASS",
+                "detail": {
+                  "returncode": 1,
+                  "current": "1.0.0-r1",
+                  "coordinatorPhase": "restored",
+                  "legacyUpdaterCompleted": true,
+                  "sessionPreserved": true
+                }
+              }
+            ],
+            "sourceSha256": "49081efafe4e25bcd8afee598671452628fb82acf9d4f55aa1e286720d854ea3",
+            "scope": "Real signed fixture r1 update engine, cached r1 S24, new runtime-prepare and new S24, cross-filesystem RAM handoff. Daemon workload, lighttpd and publication OS calls mocked. Boot/finalization not yet integrated."
+          },
+          "sha256": "d95d543c2857626ae890ee1b25aaf9dc8493beb3d309a60d86790baf7cb1e7ad",
+          "counted": true
+        },
+        "r0013-live-entry-dash.json": {
+          "report": {
+            "stage": "R0013",
+            "revision": "p44-accepted-r1-config-fixture-and-real-health-status",
+            "status": "PASS_LIVE_R1_SERVICE_TRANSITION",
+            "shell": [
+              "/bin/dash"
+            ],
+            "tests": [
+              {
+                "name": "update",
+                "status": "PASS",
+                "detail": {
+                  "returncode": 0,
+                  "current": "2.0.0-r1",
+                  "coordinatorPhase": "activated",
+                  "legacyUpdaterCompleted": true,
+                  "sessionPreserved": true
+                }
+              },
+              {
+                "name": "health-rollback",
+                "status": "PASS",
+                "detail": {
+                  "returncode": 1,
+                  "current": "1.0.0-r1",
+                  "coordinatorPhase": "restored",
+                  "legacyUpdaterCompleted": true,
+                  "sessionPreserved": true
+                }
+              }
+            ],
+            "sourceSha256": "49081efafe4e25bcd8afee598671452628fb82acf9d4f55aa1e286720d854ea3",
+            "scope": "Real signed fixture r1 update engine, cached r1 S24, new runtime-prepare and new S24, cross-filesystem RAM handoff. Daemon workload, lighttpd and publication OS calls mocked. Boot/finalization not yet integrated."
+          },
+          "sha256": "dd9c136065809dbed6b1e64700836a262c45d1917f6a76126d2fd50b6e5a88c4",
+          "counted": true
+        }
+      }
+    },
+    {
+      "artifact": {
+        "id": 10180249122,
+        "name": "r0013-preflight-ram-ebae309b93aee000ed1c5b5743385ba39e33ed98",
+        "size_in_bytes": 2029,
+        "url": "https://api.github.com/repos/BROadmin/BROray-Light/actions/artifacts/10180249122",
+        "archive_download_url": "https://api.github.com/repos/BROadmin/BROray-Light/actions/artifacts/10180249122/zip",
+        "expired": false,
+        "created_at": "2026-09-11T01:09:29Z",
+        "expires_at": "2026-12-10T01:03:25Z",
+        "updated_at": "2026-09-11T01:09:29Z",
+        "digest": "sha256:4137b37f12074379e883114fd98afc27f071a5b3cb060538b1f44f265b80267d",
+        "workflow_run": {
+          "id": 34549087783,
+          "repository_id": 1346219669,
+          "head_repository_id": 1346219669,
+          "head_branch": "codex/r0009-updater-package",
+          "head_sha": "ebae309b93aee000ed1c5b5743385ba39e33ed98"
+        }
+      },
+      "results": {
+        "r0013-preflight-bootstrap.json": {
+          "report": {
+            "stage": "R0013",
+            "revision": "p49-p47-clean-install-ram",
+            "status": "PASS",
+            "candidateReady": false,
+            "mockedBoundaries": [
+              "mount type",
+              "opkg",
+              "Xray binary",
+              "service start"
+            ],
+            "tests": [
+              {
+                "test": "clean-bootstrap-owned-ram-cleaned",
+                "status": "PASS"
+              },
+              {
+                "test": "existing-xray-preserved",
+                "status": "PASS"
+              },
+              {
+                "test": "bootstrap-hash-refusal-cleaned",
+                "status": "PASS"
+              },
+              {
+                "test": "occupied-namespace-preserved",
+                "status": "PASS"
+              },
+              {
+                "test": "symlink-namespace-preserved",
+                "status": "PASS"
+              },
+              {
+                "test": "nonram-refused-before-write",
+                "status": "PASS"
+              },
+              {
+                "test": "changed-owner-fails-closed-preserves-evidence",
+                "status": "PASS"
+              },
+              {
+                "test": "full-product-ownership-refused",
+                "status": "PASS"
+              },
+              {
+                "test": "installed-package-overwrite-refused",
+                "status": "PASS"
+              },
+              {
+                "test": "tampered-app-slot-refused",
+                "status": "PASS"
+              },
+              {
+                "test": "installer-private-opkg-ram-cleanup",
+                "status": "PASS"
+              },
+              {
+                "test": "installer-bad-hash-no-opkg-cleanup",
+                "status": "PASS"
+              },
+              {
+                "test": "installer-opkg-failure-cleanup",
+                "status": "PASS"
+              }
+            ]
+          },
+          "sha256": "25e5c0e9b6b64637eedc2e76ab3207720aac37547d8cc511da5685e96ab8197f",
+          "counted": true
+        },
+        "r0013-preflight-ram-ash.json": {
+          "report": {
+            "stage": "R0013",
+            "revision": "p49-work-shape-diagnostic-and-callback-evidence",
+            "scope": "REAL_R1_ENGINE_LIVE_RAM_HANDOFF_FIXTURE_APP_SERVICE",
+            "engineSha256": "773aaf37893ab100e7023d63c8061d8c4763a4d6186844bb3b671d758c145743",
+            "handoffSha256": "c2e43adb52af6445116ac5f50153e712acaf3698de35d2b369cad9659d686d77",
+            "shell": [
+              "/usr/bin/busybox",
+              "ash"
+            ],
+            "utilities": "BusyBox applets",
+            "tests": [
+              {
+                "name": "commit",
+                "status": "PASS",
+                "callback": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "phase": "ready"
+                }
+              },
+              {
+                "name": "rollback",
+                "status": "PASS",
+                "callback": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "phase": "restored"
+                }
+              },
+              {
+                "name": "extra-old-file",
+                "status": "PASS",
+                "callback": {
+                  "returncode": 1,
+                  "stderr": "BRORAY_LIGHT_MIGRATION_REFUSED:LEGACY_WORK_SHAPE\n"
+                }
+              },
+              {
+                "name": "foreign-app-namespace",
+                "status": "PASS",
+                "callback": {
+                  "returncode": 1,
+                  "stderr": "BRORAY_LIGHT_MIGRATION_REFUSED:RAM_NAMESPACE\n"
+                }
+              },
+              {
+                "name": "refuse-backup-tamper",
+                "status": "PASS",
+                "callback": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "phase": "restored"
+                }
+              },
+              {
+                "name": "refuse-new-symlink",
+                "status": "PASS",
+                "callback": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "phase": "restored"
+                }
+              },
+              {
+                "name": "refuse-new-operation",
+                "status": "PASS",
+                "callback": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "phase": "restored"
+                }
+              },
+              {
+                "name": "refuse-private-owner",
+                "status": "PASS",
+                "callback": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "phase": "restored"
+                }
+              },
+              {
+                "name": "resume-old-moved",
+                "status": "PASS",
+                "callback": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "phase": "restored"
+                }
+              },
+              {
+                "name": "resume-restoring",
+                "status": "PASS",
+                "callback": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "phase": "restored"
+                }
+              }
+            ],
+            "status": "PASS_RAM_NAMESPACE_HANDOFF_AND_RESTORE"
+          },
+          "sha256": "f93b4bccee73287367f7af65e1a43d93d8a9a7392e3884e93579b0c4ff0fb644",
+          "counted": false
+        },
+        "r0013-preflight-ram-dash.json": {
+          "report": {
+            "stage": "R0013",
+            "revision": "p49-work-shape-diagnostic-and-callback-evidence",
+            "scope": "REAL_R1_ENGINE_LIVE_RAM_HANDOFF_FIXTURE_APP_SERVICE",
+            "engineSha256": "773aaf37893ab100e7023d63c8061d8c4763a4d6186844bb3b671d758c145743",
+            "handoffSha256": "c2e43adb52af6445116ac5f50153e712acaf3698de35d2b369cad9659d686d77",
+            "shell": [
+              "/bin/dash"
+            ],
+            "utilities": "host utilities",
+            "tests": [
+              {
+                "name": "commit",
+                "status": "PASS",
+                "callback": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "phase": "ready"
+                }
+              },
+              {
+                "name": "rollback",
+                "status": "PASS",
+                "callback": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "phase": "restored"
+                }
+              },
+              {
+                "name": "extra-old-file",
+                "status": "PASS",
+                "callback": {
+                  "returncode": 1,
+                  "stderr": "BRORAY_LIGHT_MIGRATION_REFUSED:LEGACY_WORK_SHAPE\n"
+                }
+              },
+              {
+                "name": "foreign-app-namespace",
+                "status": "PASS",
+                "callback": {
+                  "returncode": 1,
+                  "stderr": "BRORAY_LIGHT_MIGRATION_REFUSED:RAM_NAMESPACE\n"
+                }
+              },
+              {
+                "name": "refuse-backup-tamper",
+                "status": "PASS",
+                "callback": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "phase": "restored"
+                }
+              },
+              {
+                "name": "refuse-new-symlink",
+                "status": "PASS",
+                "callback": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "phase": "restored"
+                }
+              },
+              {
+                "name": "refuse-new-operation",
+                "status": "PASS",
+                "callback": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "phase": "restored"
+                }
+              },
+              {
+                "name": "refuse-private-owner",
+                "status": "PASS",
+                "callback": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "phase": "restored"
+                }
+              },
+              {
+                "name": "resume-old-moved",
+                "status": "PASS",
+                "callback": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "phase": "restored"
+                }
+              },
+              {
+                "name": "resume-restoring",
+                "status": "PASS",
+                "callback": {
+                  "returncode": 0,
+                  "stderr": "",
+                  "phase": "restored"
+                }
+              }
+            ],
+            "status": "PASS_RAM_NAMESPACE_HANDOFF_AND_RESTORE"
+          },
+          "sha256": "2e7d3958e9e4efbb27db7a8461fb2de6e99d6b8bb8fcd7ed5cab1fafc96a14d8",
+          "counted": false
+        }
+      }
+    },
+    {
+      "artifact": {
+        "id": 10180240169,
+        "name": "r0013-completion-ebae309b93aee000ed1c5b5743385ba39e33ed98",
+        "size_in_bytes": 1538,
+        "url": "https://api.github.com/repos/BROadmin/BROray-Light/actions/artifacts/10180240169",
+        "archive_download_url": "https://api.github.com/repos/BROadmin/BROray-Light/actions/artifacts/10180240169/zip",
+        "expired": false,
+        "created_at": "2026-09-11T01:09:05Z",
+        "expires_at": "2026-12-10T01:03:25Z",
+        "updated_at": "2026-09-11T01:09:05Z",
+        "digest": "sha256:6344b368b288307dafe3c89116167506924ae05e48ac932f842555abef18f86d",
+        "workflow_run": {
+          "id": 34549087783,
+          "repository_id": 1346219669,
+          "head_repository_id": 1346219669,
+          "head_branch": "codex/r0009-updater-package",
+          "head_sha": "ebae309b93aee000ed1c5b5743385ba39e33ed98"
+        }
+      },
+      "results": {
+        "r0013-completion-ash.json": {
+          "report": {
+            "stage": "R0013",
+            "revision": "p52-exact-old-recover-empty-namespace-survivor",
+            "status": "PASS_BOUNDED_COMPLETION",
+            "shell": [
+              "/usr/bin/busybox",
+              "ash"
+            ],
+            "tests": [
+              {
+                "name": "live-rollback-cleanup",
+                "status": "PASS",
+                "detail": {
+                  "returncode": 1,
+                  "current": "1.0.0-r1",
+                  "coordinatorPhase": "restored",
+                  "legacyUpdaterCompleted": true,
+                  "sessionPreserved": true
+                }
+              },
+              {
+                "name": "early-anchor",
+                "status": "PASS",
+                "detail": {
+                  "earlyAnchorRollback": true,
+                  "realOldS23": false,
+                  "durablePersistence": true,
+                  "originalUnmovedSessionPreserved": true,
+                  "snapshotsRemoved": true,
+                  "privateTmpfsRemounted": false
+                }
+              },
+              {
+                "name": "early-anchor-old-s23-boot",
+                "status": "PASS",
+                "detail": {
+                  "earlyAnchorRollback": true,
+                  "realOldS23": true,
+                  "durablePersistence": true,
+                  "originalUnmovedSessionPreserved": true,
+                  "snapshotsRemoved": true,
+                  "privateTmpfsRemounted": true
+                }
+              },
+              {
+                "name": "empty-namespace-outsider",
+                "status": "PASS",
+                "detail": {
+                  "refused": true,
+                  "namespaceInodeModeAndChildrenPreserved": true,
+                  "negative": "outsider"
+                }
+              },
+              {
+                "name": "old-s23-foreign-child",
+                "status": "PASS",
+                "detail": {
+                  "refused": true,
+                  "namespaceInodeModeAndChildrenPreserved": true,
+                  "negative": "foreign-child"
+                }
+              }
+            ],
+            "candidateReady": false,
+            "entrySha256": "49081efafe4e25bcd8afee598671452628fb82acf9d4f55aa1e286720d854ea3",
+            "scope": "Real legacy updater/S23/S24 and rename, fixture OS publication/workload; actual SIGKILL/private tmpfs remount."
+          },
+          "sha256": "09ae7078a59a7597af6b0871b1c29991cd1249964f4c18244eabd88ffb0b53c1",
+          "counted": true
+        },
+        "r0013-completion-dash.json": {
+          "report": {
+            "stage": "R0013",
+            "revision": "p52-exact-old-recover-empty-namespace-survivor",
+            "status": "PASS_BOUNDED_COMPLETION",
+            "shell": [
+              "/bin/dash"
+            ],
+            "tests": [
+              {
+                "name": "live-rollback-cleanup",
+                "status": "PASS",
+                "detail": {
+                  "returncode": 1,
+                  "current": "1.0.0-r1",
+                  "coordinatorPhase": "restored",
+                  "legacyUpdaterCompleted": true,
+                  "sessionPreserved": true
+                }
+              },
+              {
+                "name": "early-anchor",
+                "status": "PASS",
+                "detail": {
+                  "earlyAnchorRollback": true,
+                  "realOldS23": false,
+                  "durablePersistence": true,
+                  "originalUnmovedSessionPreserved": true,
+                  "snapshotsRemoved": true,
+                  "privateTmpfsRemounted": false
+                }
+              },
+              {
+                "name": "early-anchor-old-s23-boot",
+                "status": "PASS",
+                "detail": {
+                  "earlyAnchorRollback": true,
+                  "realOldS23": true,
+                  "durablePersistence": true,
+                  "originalUnmovedSessionPreserved": true,
+                  "snapshotsRemoved": true,
+                  "privateTmpfsRemounted": true
+                }
+              },
+              {
+                "name": "empty-namespace-outsider",
+                "status": "PASS",
+                "detail": {
+                  "refused": true,
+                  "namespaceInodeModeAndChildrenPreserved": true,
+                  "negative": "outsider"
+                }
+              },
+              {
+                "name": "old-s23-foreign-child",
+                "status": "PASS",
+                "detail": {
+                  "refused": true,
+                  "namespaceInodeModeAndChildrenPreserved": true,
+                  "negative": "foreign-child"
+                }
+              }
+            ],
+            "candidateReady": false,
+            "entrySha256": "49081efafe4e25bcd8afee598671452628fb82acf9d4f55aa1e286720d854ea3",
+            "scope": "Real legacy updater/S23/S24 and rename, fixture OS publication/workload; actual SIGKILL/private tmpfs remount."
+          },
+          "sha256": "baf3151ccbe7be2ef9e1ecab23a5a5053b707e56ee4c145e6b4f933c46dd37eb",
+          "counted": true
+        }
+      }
+    },
+    {
+      "artifact": {
+        "id": 10180154592,
+        "name": "r0013-retirement-ebae309b93aee000ed1c5b5743385ba39e33ed98",
+        "size_in_bytes": 677,
+        "url": "https://api.github.com/repos/BROadmin/BROray-Light/actions/artifacts/10180154592",
+        "archive_download_url": "https://api.github.com/repos/BROadmin/BROray-Light/actions/artifacts/10180154592/zip",
+        "expired": false,
+        "created_at": "2026-09-11T01:05:28Z",
+        "expires_at": "2026-12-10T01:03:25Z",
+        "updated_at": "2026-09-11T01:05:28Z",
+        "digest": "sha256:6205e337e838ee49f6b24caa2ff88596fb08683f93be84f60fb9155f3473cfc9",
+        "workflow_run": {
+          "id": 34549087783,
+          "repository_id": 1346219669,
+          "head_repository_id": 1346219669,
+          "head_branch": "codex/r0009-updater-package",
+          "head_sha": "ebae309b93aee000ed1c5b5743385ba39e33ed98"
+        }
+      },
+      "results": {
+        "r0013-retirement-dash.json": {
+          "report": {
+            "stage": "R0013",
+            "revision": "p53-retire-legacy-operational-status",
+            "status": "PASS_BOUNDED_RECOVERY",
+            "shell": [
+              "/bin/dash"
+            ],
+            "tests": [
+              {
+                "name": "finalize",
+                "status": "PASS",
+                "detail": {
+                  "finalized": true,
+                  "snapshotsRemoved": true,
+                  "sessionPreserved": true,
+                  "idempotent": true,
+                  "persistentLegacyStatusRetired": true,
+                  "lateOldReadyRetired": true
+                }
+              },
+              {
+                "name": "legacy-status-foreign",
+                "status": "PASS",
+                "detail": {
+                  "foreignOperationalFileRefused": true,
+                  "allOldStatusBytesPreserved": true
+                }
+              },
+              {
+                "name": "legacy-ready-symlink",
+                "status": "PASS",
+                "detail": {
+                  "foreignOperationalFileRefused": true,
+                  "allOldStatusBytesPreserved": true
+                }
+              }
+            ],
+            "entrySha256": "49081efafe4e25bcd8afee598671452628fb82acf9d4f55aa1e286720d854ea3",
+            "recoverySha256": "5511abdb1d5071ab931d72396bdf0fc4d6e5ed0e1c540929f9fff8bdc6830c1e",
+            "scope": "Exact old engine, real S24/entry, actual SIGKILL and private tmpfs remount; fixture app loop/lighttpd/publication OS calls."
+          },
+          "sha256": "18a6b5289b47ce33b05a2e85b65e47ac64257bd12305f620b94c4142af58f461",
+          "counted": false
+        }
+      }
+    },
+    {
+      "artifact": {
+        "id": 10180167359,
+        "name": "r0013-prepared-app-ebae309b93aee000ed1c5b5743385ba39e33ed98",
+        "size_in_bytes": 1948,
+        "url": "https://api.github.com/repos/BROadmin/BROray-Light/actions/artifacts/10180167359",
+        "archive_download_url": "https://api.github.com/repos/BROadmin/BROray-Light/actions/artifacts/10180167359/zip",
+        "expired": false,
+        "created_at": "2026-09-11T01:05:59Z",
+        "expires_at": "2026-12-10T01:03:25Z",
+        "updated_at": "2026-09-11T01:05:59Z",
+        "digest": "sha256:085118d64e51b336ca4aab267259a39febf67c4708b5657d80c29371b3daccef",
+        "workflow_run": {
+          "id": 34549087783,
+          "repository_id": 1346219669,
+          "head_repository_id": 1346219669,
+          "head_branch": "codex/r0009-updater-package",
+          "head_sha": "ebae309b93aee000ed1c5b5743385ba39e33ed98"
+        }
+      },
+      "results": {
+        "r0013-prepared-app-ash.json": {
+          "report": {
+            "stage": "R0013",
+            "revision": "p64-explicit-external-idle-child",
+            "status": "PASS_FULL_PREPARED_APP_LIFECYCLE_OS_BOUNDARIES_MOCKED",
+            "shell": [
+              "/usr/bin/busybox",
+              "ash"
+            ],
+            "tests": [
+              {
+                "name": "accepted-r1-runtime-prepare",
+                "status": "PASS",
+                "detail": {
+                  "completeAcceptedScripts": true
+                }
+              },
+              {
+                "name": "r1-to-full-prepared-app",
+                "status": "PASS",
+                "detail": {
+                  "returncode": 0,
+                  "current": "2.0.0-r1",
+                  "coordinatorPhase": "activated",
+                  "legacyUpdaterCompleted": true,
+                  "sessionPreserved": true,
+                  "targetSlotManifestSha256": "91b949910948897d3c62a3fc1b47b108f8cd6cb76c6b4f41bb8f83a8763a95bc",
+                  "completeAppFileCount": 146
+                }
+              },
+              {
+                "name": "equal-version-no-op",
+                "status": "PASS",
+                "detail": {
+                  "daemonNotRestarted": true,
+                  "persistentDataIdentical": true
+                }
+              },
+              {
+                "name": "signed-downgrade-refused",
+                "status": "PASS",
+                "detail": {
+                  "refusedBeforeSwitch": true
+                }
+              },
+              {
+                "name": "new-updater-full-s24-transition",
+                "status": "PASS",
+                "detail": {
+                  "syntheticTarget": "2.0.1-r1",
+                  "completePreparedScripts": true,
+                  "persistentDataIdentical": true
+                }
+              },
+              {
+                "name": "new-updater-health-rollback",
+                "status": "PASS",
+                "detail": {
+                  "sourceRestored": true,
+                  "persistentDataIdentical": true,
+                  "updaterScratchClean": true
+                }
+              }
+            ],
+            "candidateReady": false,
+            "applicationScripts": "Complete accepted r1 and current prepared_app; no daemon/CLI substitutions",
+            "mockedBoundaries": [
+              "lighttpd workload binary",
+              "Keenetic publication OS",
+              "Xray executable"
+            ],
+            "network": "Private unshared network namespace; signed file:// fixture inputs only",
+            "entrySha256": "49081efafe4e25bcd8afee598671452628fb82acf9d4f55aa1e286720d854ea3"
+          },
+          "sha256": "fdba30c526e3b8f591a3e9cda2aea6acc6a3dcf4305e96092e5248e45fcf2ffa",
+          "counted": true
+        },
+        "r0013-prepared-app-dash.json": {
+          "report": {
+            "stage": "R0013",
+            "revision": "p64-explicit-external-idle-child",
+            "status": "PASS_FULL_PREPARED_APP_LIFECYCLE_OS_BOUNDARIES_MOCKED",
+            "shell": [
+              "/bin/dash"
+            ],
+            "tests": [
+              {
+                "name": "accepted-r1-runtime-prepare",
+                "status": "PASS",
+                "detail": {
+                  "completeAcceptedScripts": true
+                }
+              },
+              {
+                "name": "r1-to-full-prepared-app",
+                "status": "PASS",
+                "detail": {
+                  "returncode": 0,
+                  "current": "2.0.0-r1",
+                  "coordinatorPhase": "activated",
+                  "legacyUpdaterCompleted": true,
+                  "sessionPreserved": true,
+                  "targetSlotManifestSha256": "91b949910948897d3c62a3fc1b47b108f8cd6cb76c6b4f41bb8f83a8763a95bc",
+                  "completeAppFileCount": 146
+                }
+              },
+              {
+                "name": "equal-version-no-op",
+                "status": "PASS",
+                "detail": {
+                  "daemonNotRestarted": true,
+                  "persistentDataIdentical": true
+                }
+              },
+              {
+                "name": "signed-downgrade-refused",
+                "status": "PASS",
+                "detail": {
+                  "refusedBeforeSwitch": true
+                }
+              },
+              {
+                "name": "new-updater-full-s24-transition",
+                "status": "PASS",
+                "detail": {
+                  "syntheticTarget": "2.0.1-r1",
+                  "completePreparedScripts": true,
+                  "persistentDataIdentical": true
+                }
+              },
+              {
+                "name": "new-updater-health-rollback",
+                "status": "PASS",
+                "detail": {
+                  "sourceRestored": true,
+                  "persistentDataIdentical": true,
+                  "updaterScratchClean": true
+                }
+              }
+            ],
+            "candidateReady": false,
+            "applicationScripts": "Complete accepted r1 and current prepared_app; no daemon/CLI substitutions",
+            "mockedBoundaries": [
+              "lighttpd workload binary",
+              "Keenetic publication OS",
+              "Xray executable"
+            ],
+            "network": "Private unshared network namespace; signed file:// fixture inputs only",
+            "entrySha256": "49081efafe4e25bcd8afee598671452628fb82acf9d4f55aa1e286720d854ea3"
+          },
+          "sha256": "9dc2101605d897cd358151432b17e06561a6d3f532cdfe13a283efd18a602d65",
+          "counted": true
+        }
+      }
+    },
+    {
+      "artifact": {
+        "id": 10180124016,
+        "name": "r0013-daemon-stop-ebae309b93aee000ed1c5b5743385ba39e33ed98",
+        "size_in_bytes": 1114,
+        "url": "https://api.github.com/repos/BROadmin/BROray-Light/actions/artifacts/10180124016",
+        "archive_download_url": "https://api.github.com/repos/BROadmin/BROray-Light/actions/artifacts/10180124016/zip",
+        "expired": false,
+        "created_at": "2026-09-11T01:04:13Z",
+        "expires_at": "2026-12-10T01:03:25Z",
+        "updated_at": "2026-09-11T01:04:13Z",
+        "digest": "sha256:2dca707e5a27734bbb9b6418db788511f628328538c0ff2587419fd3d27dc3fb",
+        "workflow_run": {
+          "id": 34549087783,
+          "repository_id": 1346219669,
+          "head_repository_id": 1346219669,
+          "head_branch": "codex/r0009-updater-package",
+          "head_sha": "ebae309b93aee000ed1c5b5743385ba39e33ed98"
+        }
+      },
+      "results": {
+        "r0013-daemon-stop-ash.json": {
+          "report": {
+            "stage": "R0013",
+            "revision": "p64-explicit-external-idle-child",
+            "status": "PASS_REAL_PREPARED_DAEMON_IDLE_STOP",
+            "tests": [
+              {
+                "name": "TERM",
+                "status": "PASS",
+                "stopSeconds": 0.007,
+                "ownedSleepReaped": true,
+                "foreignSleepUntouched": true
+              },
+              {
+                "name": "HUP",
+                "status": "PASS",
+                "stopSeconds": 0.007,
+                "ownedSleepReaped": true,
+                "foreignSleepUntouched": true
+              },
+              {
+                "name": "INT",
+                "status": "PASS",
+                "stopSeconds": 0.007,
+                "ownedSleepReaped": true,
+                "foreignSleepUntouched": true
+              },
+              {
+                "name": "S24-stop-role",
+                "status": "PASS",
+                "stopSeconds": 1.712,
+                "ownedSleepReaped": true,
+                "foreignSleepUntouched": true
+              }
+            ],
+            "shell": [
+              "/usr/bin/busybox",
+              "ash"
+            ],
+            "daemonSha256": "a3c61b8085b86024eaa409d8ab79a46108ac5d70d116c57832ec3587e88eaaf8",
+            "mockedBoundaries": [
+              "Application CLI workload",
+              "Xray executable",
+              "Keenetic publication"
+            ],
+            "candidateReady": false
+          },
+          "sha256": "9b033da5c830b9e31686e0c2af716c75a5656706bb32d454610d9bfa1ff7dbd3",
+          "counted": true
+        },
+        "r0013-daemon-stop-dash.json": {
+          "report": {
+            "stage": "R0013",
+            "revision": "p64-explicit-external-idle-child",
+            "status": "PASS_REAL_PREPARED_DAEMON_IDLE_STOP",
+            "tests": [
+              {
+                "name": "TERM",
+                "status": "PASS",
+                "stopSeconds": 0.007,
+                "ownedSleepReaped": true,
+                "foreignSleepUntouched": true
+              },
+              {
+                "name": "HUP",
+                "status": "PASS",
+                "stopSeconds": 0.007,
+                "ownedSleepReaped": true,
+                "foreignSleepUntouched": true
+              },
+              {
+                "name": "INT",
+                "status": "PASS",
+                "stopSeconds": 0.007,
+                "ownedSleepReaped": true,
+                "foreignSleepUntouched": true
+              },
+              {
+                "name": "S24-stop-role",
+                "status": "PASS",
+                "stopSeconds": 2.014,
+                "ownedSleepReaped": true,
+                "foreignSleepUntouched": true
+              }
+            ],
+            "shell": [
+              "/bin/dash"
+            ],
+            "daemonSha256": "a3c61b8085b86024eaa409d8ab79a46108ac5d70d116c57832ec3587e88eaaf8",
+            "mockedBoundaries": [
+              "Application CLI workload",
+              "Xray executable",
+              "Keenetic publication"
+            ],
+            "candidateReady": false
+          },
+          "sha256": "5a9c35ec8e2e5c622abe6032a3f13a89d194968a1197a52fd98c189f6d40f3e2",
+          "counted": true
+        }
+      }
+    },
+    {
+      "artifact": {
+        "id": 10180123147,
+        "name": "r0013-native-auth-ebae309b93aee000ed1c5b5743385ba39e33ed98",
+        "size_in_bytes": 2047,
+        "url": "https://api.github.com/repos/BROadmin/BROray-Light/actions/artifacts/10180123147",
+        "archive_download_url": "https://api.github.com/repos/BROadmin/BROray-Light/actions/artifacts/10180123147/zip",
+        "expired": false,
+        "created_at": "2026-09-11T01:04:11Z",
+        "expires_at": "2026-12-10T01:03:25Z",
+        "updated_at": "2026-09-11T01:04:11Z",
+        "digest": "sha256:3658583c5773eb780eec18c30e490b23f4567d67e9aab94781c2092036e59a49",
+        "workflow_run": {
+          "id": 34549087783,
+          "repository_id": 1346219669,
+          "head_repository_id": 1346219669,
+          "head_branch": "codex/r0009-updater-package",
+          "head_sha": "ebae309b93aee000ed1c5b5743385ba39e33ed98"
+        }
+      },
+      "results": {
+        "r0013-native-auth-ash.json": {
+          "report": {
+            "stage": "R0013",
+            "revision": "p55-native-auth-cgi-session-validation",
+            "shell": [
+              "/usr/bin/busybox",
+              "ash"
+            ],
+            "candidateReady": false,
+            "status": "PASS_NATIVE_HTTP_CGI_AND_SESSION_BOUNDARIES",
+            "tests": [
+              {
+                "name": "valid-native-challenge-response-and-private-session",
+                "status": "PASS",
+                "detail": {
+                  "nativeHandshakeVerified": true,
+                  "privateRamSession": true
+                }
+              },
+              {
+                "name": "session-refresh-and-expiry",
+                "status": "PASS",
+                "detail": null
+              },
+              {
+                "name": "native-refusal-wrong-password",
+                "status": "PASS",
+                "detail": {
+                  "httpStatus": 401,
+                  "noSession": true
+                }
+              },
+              {
+                "name": "native-refusal-deny-post",
+                "status": "PASS",
+                "detail": {
+                  "httpStatus": 401,
+                  "noSession": true
+                }
+              },
+              {
+                "name": "native-refusal-fake-200",
+                "status": "PASS",
+                "detail": {
+                  "httpStatus": 503,
+                  "noSession": true
+                }
+              },
+              {
+                "name": "native-refusal-unavailable",
+                "status": "PASS",
+                "detail": {
+                  "httpStatus": 503,
+                  "noSession": true
+                }
+              },
+              {
+                "name": "native-refusal-missing-challenge",
+                "status": "PASS",
+                "detail": {
+                  "httpStatus": 503,
+                  "noSession": true
+                }
+              },
+              {
+                "name": "native-refusal-duplicate-realm",
+                "status": "PASS",
+                "detail": {
+                  "httpStatus": 503,
+                  "noSession": true
+                }
+              },
+              {
+                "name": "native-refusal-duplicate-challenge",
+                "status": "PASS",
+                "detail": {
+                  "httpStatus": 503,
+                  "noSession": true
+                }
+              },
+              {
+                "name": "native-refusal-duplicate-second-realm",
+                "status": "PASS",
+                "detail": {
+                  "httpStatus": 503,
+                  "noSession": true
+                }
+              },
+              {
+                "name": "login-malformed-body-10",
+                "status": "PASS",
+                "detail": null
+              },
+              {
+                "name": "login-malformed-body-11",
+                "status": "PASS",
+                "detail": null
+              },
+              {
+                "name": "login-malformed-body-12",
+                "status": "PASS",
+                "detail": null
+              },
+              {
+                "name": "login-malformed-body-13",
+                "status": "PASS",
+                "detail": null
+              },
+              {
+                "name": "login-malformed-body-14",
+                "status": "PASS",
+                "detail": null
+              },
+              {
+                "name": "login-method-guard",
+                "status": "PASS",
+                "detail": null
+              },
+              {
+                "name": "unauthenticated-api-broray/info.cgi",
+                "status": "PASS",
+                "detail": {
+                  "methods": [
+                    "GET",
+                    "POST"
+                  ],
+                  "httpStatuses": [
+                    401,
+                    405
+                  ]
+                }
+              },
+              {
+                "name": "unauthenticated-api-broray/update-check.cgi",
+                "status": "PASS",
+                "detail": {
+                  "methods": [
+                    "GET",
+                    "POST"
+                  ],
+                  "httpStatuses": [
+                    401,
+                    405
+                  ]
+                }
+              },
+              {
+                "name": "unauthenticated-api-broray/update-start.cgi",
+                "status": "PASS",
+                "detail": {
+                  "methods": [
+                    "GET",
+                    "POST"
+                  ],
+                  "httpStatuses": [
+                    405,
+                    401
+                  ]
+                }
+              },
+              {
+                "name": "unauthenticated-api-broray/update-status.cgi",
+                "status": "PASS",
+                "detail": {
+                  "methods": [
+                    "GET",
+                    "POST"
+                  ],
+                  "httpStatuses": [
+                    401,
+                    405
+                  ]
+                }
+              },
+              {
+                "name": "unauthenticated-api-home/summary.cgi",
+                "status": "PASS",
+                "detail": {
+                  "methods": [
+                    "GET",
+                    "POST"
+                  ],
+                  "httpStatuses": [
+                    401,
+                    405
+                  ]
+                }
+              },
+              {
+                "name": "unauthenticated-api-keenetic/check-upstream.cgi",
+                "status": "PASS",
+                "detail": {
+                  "methods": [
+                    "GET",
+                    "POST"
+                  ],
+                  "httpStatuses": [
+                    405,
+                    401
+                  ]
+                }
+              },
+              {
+                "name": "unauthenticated-api-keenetic/create.cgi",
+                "status": "PASS",
+                "detail": {
+                  "methods": [
+                    "GET",
+                    "POST"
+                  ],
+                  "httpStatuses": [
+                    405,
+                    401
+                  ]
+                }
+              },
+              {
+                "name": "unauthenticated-api-keenetic/repair.cgi",
+                "status": "PASS",
+                "detail": {
+                  "methods": [
+                    "GET",
+                    "POST"
+                  ],
+                  "httpStatuses": [
+                    405,
+                    401
+                  ]
+                }
+              },
+              {
+                "name": "unauthenticated-api-keenetic/status.cgi",
+                "status": "PASS",
+                "detail": {
+                  "methods": [
+                    "GET",
+                    "POST"
+                  ],
+                  "httpStatuses": [
+                    401,
+                    405
+                  ]
+                }
+              },
+              {
+                "name": "unauthenticated-api-keenetic/sync-description.cgi",
+                "status": "PASS",
+                "detail": {
+                  "methods": [
+                    "GET",
+                    "POST"
+                  ],
+                  "httpStatuses": [
+                    405,
+                    401
+                  ]
+                }
+              },
+              {
+                "name": "unauthenticated-api-servers/activate.cgi",
+                "status": "PASS",
+                "detail": {
+                  "methods": [
+                    "GET",
+                    "POST"
+                  ],
+                  "httpStatuses": [
+                    405,
+                    401
+                  ]
+                }
+              },
+              {
+                "name": "unauthenticated-api-servers/auto-switch-save.cgi",
+                "status": "PASS",
+                "detail": {
+                  "methods": [
+                    "GET",
+                    "POST"
+                  ],
+                  "httpStatuses": [
+                    405,
+                    401
+                  ]
+                }
+              },
+              {
+                "name": "unauthenticated-api-servers/auto-switch-status.cgi",
+                "status": "PASS",
+                "detail": {
+                  "methods": [
+                    "GET",
+                    "POST"
+                  ],
+                  "httpStatuses": [
+                    401,
+                    405
+                  ]
+                }
+              },
+              {
+                "name": "unauthenticated-api-servers/check.cgi",
+                "status": "PASS",
+                "detail": {
+                  "methods": [
+                    "GET",
+                    "POST"
+                  ],
+                  "httpStatuses": [
+                    405,
+                    401
+                  ]
+                }
+              },
+              {
+                "name": "unauthenticated-api-servers/delete.cgi",
+                "status": "PASS",
+                "detail": {
+                  "methods": [
+                    "GET",
+                    "POST"
+                  ],
+                  "httpStatuses": [
+                    405,
+                    401
+                  ]
+                }
+              },
+              {
+                "name": "unauthenticated-api-servers/details.cgi",
+                "status": "PASS",
+                "detail": {
+                  "methods": [
+                    "GET",
+                    "POST"
+                  ],
+                  "httpStatuses": [
+                    401,
+                    405
+                  ]
+                }
+              },
+              {
+                "name": "unauthenticated-api-servers/import.cgi",
+                "status": "PASS",
+                "detail": {
+                  "methods": [
+                    "GET",
+                    "POST"
+                  ],
+                  "httpStatuses": [
+                    405,
+                    401
+                  ]
+                }
+              },
+              {
+                "name": "unauthenticated-api-servers/summary.cgi",
+                "status": "PASS",
+                "detail": {
+                  "methods": [
+                    "GET",
+                    "POST"
+                  ],
+                  "httpStatuses": [
+                    401,
+                    405
+                  ]
+                }
+              },
+              {
+                "name": "unauthenticated-api-session.cgi",
+                "status": "PASS",
+                "detail": {
+                  "methods": [
+                    "GET",
+                    "POST"
+                  ],
+                  "httpStatuses": [
+                    401,
+                    405
+                  ]
+                }
+              },
+              {
+                "name": "unauthenticated-api-subscriptions/create.cgi",
+                "status": "PASS",
+                "detail": {
+                  "methods": [
+                    "GET",
+                    "POST"
+                  ],
+                  "httpStatuses": [
+                    405,
+                    401
+                  ]
+                }
+              },
+              {
+                "name": "unauthenticated-api-subscriptions/delete.cgi",
+                "status": "PASS",
+                "detail": {
+                  "methods": [
+                    "GET",
+                    "POST"
+                  ],
+                  "httpStatuses": [
+                    405,
+                    401
+                  ]
+                }
+              },
+              {
+                "name": "unauthenticated-api-subscriptions/details.cgi",
+                "status": "PASS",
+                "detail": {
+                  "methods": [
+                    "GET",
+                    "POST"
+                  ],
+                  "httpStatuses": [
+                    401,
+                    401
+                  ]
+                }
+              },
+              {
+                "name": "unauthenticated-api-subscriptions/list.cgi",
+                "status": "PASS",
+                "detail": {
+                  "methods": [
+                    "GET",
+                    "POST"
+                  ],
+                  "httpStatuses": [
+                    401,
+                    405
+                  ]
+                }
+              },
+              {
+                "name": "unauthenticated-api-subscriptions/refresh.cgi",
+                "status": "PASS",
+                "detail": {
+                  "methods": [
+                    "GET",
+                    "POST"
+                  ],
+                  "httpStatuses": [
+                    405,
+                    401
+                  ]
+                }
+              },
+              {
+                "name": "unauthenticated-api-subscriptions/servers.cgi",
+                "status": "PASS",
+                "detail": {
+                  "methods": [
+                    "GET",
+                    "POST"
+                  ],
+                  "httpStatuses": [
+                    401,
+                    405
+                  ]
+                }
+              },
+              {
+                "name": "unauthenticated-api-subscriptions/summary.cgi",
+                "status": "PASS",
+                "detail": {
+                  "methods": [
+                    "GET",
+                    "POST"
+                  ],
+                  "httpStatuses": [
+                    401,
+                    405
+                  ]
+                }
+              },
+              {
+                "name": "unauthenticated-api-xray/install.cgi",
+                "status": "PASS",
+                "detail": {
+                  "methods": [
+                    "GET",
+                    "POST"
+                  ],
+                  "httpStatuses": [
+                    405,
+                    401
+                  ]
+                }
+              },
+              {
+                "name": "unauthenticated-api-xray/operation-status.cgi",
+                "status": "PASS",
+                "detail": {
+                  "methods": [
+                    "GET",
+                    "POST"
+                  ],
+                  "httpStatuses": [
+                    401,
+                    405
+                  ]
+                }
+              },
+              {
+                "name": "unauthenticated-api-xray/status.cgi",
+                "status": "PASS",
+                "detail": {
+                  "methods": [
+                    "GET",
+                    "POST"
+                  ],
+                  "httpStatuses": [
+                    401,
+                    405
+                  ]
+                }
+              },
+              {
+                "name": "unauthenticated-api-xray/update-check.cgi",
+                "status": "PASS",
+                "detail": {
+                  "methods": [
+                    "GET",
+                    "POST"
+                  ],
+                  "httpStatuses": [
+                    405,
+                    401
+                  ]
+                }
+              },
+              {
+                "name": "unauthenticated-api-xray/update.cgi",
+                "status": "PASS",
+                "detail": {
+                  "methods": [
+                    "GET",
+                    "POST"
+                  ],
+                  "httpStatuses": [
+                    405,
+                    401
+                  ]
+                }
+              },
+              {
+                "name": "logout-invalidates-session",
+                "status": "PASS",
+                "detail": null
+              }
+            ],
+            "scope": "Exact prepared CGI/native-auth/session scripts; real curl; mock loopback Keenetic HTTP; no physical SCGI/browser acceptance"
+          },
+          "sha256": "f9d2a106184ad10a2183adc4dccd33dc5d273903fc5132b9f91581be8b723f18",
+          "counted": true
+        },
+        "r0013-native-auth-dash.json": {
+          "report": {
+            "stage": "R0013",
+            "revision": "p55-native-auth-cgi-session-validation",
+            "shell": [
+              "/bin/dash"
+            ],
+            "candidateReady": false,
+            "status": "PASS_NATIVE_HTTP_CGI_AND_SESSION_BOUNDARIES",
+            "tests": [
+              {
+                "name": "valid-native-challenge-response-and-private-session",
+                "status": "PASS",
+                "detail": {
+                  "nativeHandshakeVerified": true,
+                  "privateRamSession": true
+                }
+              },
+              {
+                "name": "session-refresh-and-expiry",
+                "status": "PASS",
+                "detail": null
+              },
+              {
+                "name": "native-refusal-wrong-password",
+                "status": "PASS",
+                "detail": {
+                  "httpStatus": 401,
+                  "noSession": true
+                }
+              },
+              {
+                "name": "native-refusal-deny-post",
+                "status": "PASS",
+                "detail": {
+                  "httpStatus": 401,
+                  "noSession": true
+                }
+              },
+              {
+                "name": "native-refusal-fake-200",
+                "status": "PASS",
+                "detail": {
+                  "httpStatus": 503,
+                  "noSession": true
+                }
+              },
+              {
+                "name": "native-refusal-unavailable",
+                "status": "PASS",
+                "detail": {
+                  "httpStatus": 503,
+                  "noSession": true
+                }
+              },
+              {
+                "name": "native-refusal-missing-challenge",
+                "status": "PASS",
+                "detail": {
+                  "httpStatus": 503,
+                  "noSession": true
+                }
+              },
+              {
+                "name": "native-refusal-duplicate-realm",
+                "status": "PASS",
+                "detail": {
+                  "httpStatus": 503,
+                  "noSession": true
+                }
+              },
+              {
+                "name": "native-refusal-duplicate-challenge",
+                "status": "PASS",
+                "detail": {
+                  "httpStatus": 503,
+                  "noSession": true
+                }
+              },
+              {
+                "name": "native-refusal-duplicate-second-realm",
+                "status": "PASS",
+                "detail": {
+                  "httpStatus": 503,
+                  "noSession": true
+                }
+              },
+              {
+                "name": "login-malformed-body-10",
+                "status": "PASS",
+                "detail": null
+              },
+              {
+                "name": "login-malformed-body-11",
+                "status": "PASS",
+                "detail": null
+              },
+              {
+                "name": "login-malformed-body-12",
+                "status": "PASS",
+                "detail": null
+              },
+              {
+                "name": "login-malformed-body-13",
+                "status": "PASS",
+                "detail": null
+              },
+              {
+                "name": "login-malformed-body-14",
+                "status": "PASS",
+                "detail": null
+              },
+              {
+                "name": "login-method-guard",
+                "status": "PASS",
+                "detail": null
+              },
+              {
+                "name": "unauthenticated-api-broray/info.cgi",
+                "status": "PASS",
+                "detail": {
+                  "methods": [
+                    "GET",
+                    "POST"
+                  ],
+                  "httpStatuses": [
+                    401,
+                    405
+                  ]
+                }
+              },
+              {
+                "name": "unauthenticated-api-broray/update-check.cgi",
+                "status": "PASS",
+                "detail": {
+                  "methods": [
+                    "GET",
+                    "POST"
+                  ],
+                  "httpStatuses": [
+                    401,
+                    405
+                  ]
+                }
+              },
+              {
+                "name": "unauthenticated-api-broray/update-start.cgi",
+                "status": "PASS",
+                "detail": {
+                  "methods": [
+                    "GET",
+                    "POST"
+                  ],
+                  "httpStatuses": [
+                    405,
+                    401
+                  ]
+                }
+              },
+              {
+                "name": "unauthenticated-api-broray/update-status.cgi",
+                "status": "PASS",
+                "detail": {
+                  "methods": [
+                    "GET",
+                    "POST"
+                  ],
+                  "httpStatuses": [
+                    401,
+                    405
+                  ]
+                }
+              },
+              {
+                "name": "unauthenticated-api-home/summary.cgi",
+                "status": "PASS",
+                "detail": {
+                  "methods": [
+                    "GET",
+                    "POST"
+                  ],
+                  "httpStatuses": [
+                    401,
+                    405
+                  ]
+                }
+              },
+              {
+                "name": "unauthenticated-api-keenetic/check-upstream.cgi",
+                "status": "PASS",
+                "detail": {
+                  "methods": [
+                    "GET",
+                    "POST"
+                  ],
+                  "httpStatuses": [
+                    405,
+                    401
+                  ]
+                }
+              },
+              {
+                "name": "unauthenticated-api-keenetic/create.cgi",
+                "status": "PASS",
+                "detail": {
+                  "methods": [
+                    "GET",
+                    "POST"
+                  ],
+                  "httpStatuses": [
+                    405,
+                    401
+                  ]
+                }
+              },
+              {
+                "name": "unauthenticated-api-keenetic/repair.cgi",
+                "status": "PASS",
+                "detail": {
+                  "methods": [
+                    "GET",
+                    "POST"
+                  ],
+                  "httpStatuses": [
+                    405,
+                    401
+                  ]
+                }
+              },
+              {
+                "name": "unauthenticated-api-keenetic/status.cgi",
+                "status": "PASS",
+                "detail": {
+                  "methods": [
+                    "GET",
+                    "POST"
+                  ],
+                  "httpStatuses": [
+                    401,
+                    405
+                  ]
+                }
+              },
+              {
+                "name": "unauthenticated-api-keenetic/sync-description.cgi",
+                "status": "PASS",
+                "detail": {
+                  "methods": [
+                    "GET",
+                    "POST"
+                  ],
+                  "httpStatuses": [
+                    405,
+                    401
+                  ]
+                }
+              },
+              {
+                "name": "unauthenticated-api-servers/activate.cgi",
+                "status": "PASS",
+                "detail": {
+                  "methods": [
+                    "GET",
+                    "POST"
+                  ],
+                  "httpStatuses": [
+                    405,
+                    401
+                  ]
+                }
+              },
+              {
+                "name": "unauthenticated-api-servers/auto-switch-save.cgi",
+                "status": "PASS",
+                "detail": {
+                  "methods": [
+                    "GET",
+                    "POST"
+                  ],
+                  "httpStatuses": [
+                    405,
+                    401
+                  ]
+                }
+              },
+              {
+                "name": "unauthenticated-api-servers/auto-switch-status.cgi",
+                "status": "PASS",
+                "detail": {
+                  "methods": [
+                    "GET",
+                    "POST"
+                  ],
+                  "httpStatuses": [
+                    401,
+                    405
+                  ]
+                }
+              },
+              {
+                "name": "unauthenticated-api-servers/check.cgi",
+                "status": "PASS",
+                "detail": {
+                  "methods": [
+                    "GET",
+                    "POST"
+                  ],
+                  "httpStatuses": [
+                    405,
+                    401
+                  ]
+                }
+              },
+              {
+                "name": "unauthenticated-api-servers/delete.cgi",
+                "status": "PASS",
+                "detail": {
+                  "methods": [
+                    "GET",
+                    "POST"
+                  ],
+                  "httpStatuses": [
+                    405,
+                    401
+                  ]
+                }
+              },
+              {
+                "name": "unauthenticated-api-servers/details.cgi",
+                "status": "PASS",
+                "detail": {
+                  "methods": [
+                    "GET",
+                    "POST"
+                  ],
+                  "httpStatuses": [
+                    401,
+                    405
+                  ]
+                }
+              },
+              {
+                "name": "unauthenticated-api-servers/import.cgi",
+                "status": "PASS",
+                "detail": {
+                  "methods": [
+                    "GET",
+                    "POST"
+                  ],
+                  "httpStatuses": [
+                    405,
+                    401
+                  ]
+                }
+              },
+              {
+                "name": "unauthenticated-api-servers/summary.cgi",
+                "status": "PASS",
+                "detail": {
+                  "methods": [
+                    "GET",
+                    "POST"
+                  ],
+                  "httpStatuses": [
+                    401,
+                    405
+                  ]
+                }
+              },
+              {
+                "name": "unauthenticated-api-session.cgi",
+                "status": "PASS",
+                "detail": {
+                  "methods": [
+                    "GET",
+                    "POST"
+                  ],
+                  "httpStatuses": [
+                    401,
+                    405
+                  ]
+                }
+              },
+              {
+                "name": "unauthenticated-api-subscriptions/create.cgi",
+                "status": "PASS",
+                "detail": {
+                  "methods": [
+                    "GET",
+                    "POST"
+                  ],
+                  "httpStatuses": [
+                    405,
+                    401
+                  ]
+                }
+              },
+              {
+                "name": "unauthenticated-api-subscriptions/delete.cgi",
+                "status": "PASS",
+                "detail": {
+                  "methods": [
+                    "GET",
+                    "POST"
+                  ],
+                  "httpStatuses": [
+                    405,
+                    401
+                  ]
+                }
+              },
+              {
+                "name": "unauthenticated-api-subscriptions/details.cgi",
+                "status": "PASS",
+                "detail": {
+                  "methods": [
+                    "GET",
+                    "POST"
+                  ],
+                  "httpStatuses": [
+                    401,
+                    401
+                  ]
+                }
+              },
+              {
+                "name": "unauthenticated-api-subscriptions/list.cgi",
+                "status": "PASS",
+                "detail": {
+                  "methods": [
+                    "GET",
+                    "POST"
+                  ],
+                  "httpStatuses": [
+                    401,
+                    405
+                  ]
+                }
+              },
+              {
+                "name": "unauthenticated-api-subscriptions/refresh.cgi",
+                "status": "PASS",
+                "detail": {
+                  "methods": [
+                    "GET",
+                    "POST"
+                  ],
+                  "httpStatuses": [
+                    405,
+                    401
+                  ]
+                }
+              },
+              {
+                "name": "unauthenticated-api-subscriptions/servers.cgi",
+                "status": "PASS",
+                "detail": {
+                  "methods": [
+                    "GET",
+                    "POST"
+                  ],
+                  "httpStatuses": [
+                    401,
+                    405
+                  ]
+                }
+              },
+              {
+                "name": "unauthenticated-api-subscriptions/summary.cgi",
+                "status": "PASS",
+                "detail": {
+                  "methods": [
+                    "GET",
+                    "POST"
+                  ],
+                  "httpStatuses": [
+                    401,
+                    405
+                  ]
+                }
+              },
+              {
+                "name": "unauthenticated-api-xray/install.cgi",
+                "status": "PASS",
+                "detail": {
+                  "methods": [
+                    "GET",
+                    "POST"
+                  ],
+                  "httpStatuses": [
+                    405,
+                    401
+                  ]
+                }
+              },
+              {
+                "name": "unauthenticated-api-xray/operation-status.cgi",
+                "status": "PASS",
+                "detail": {
+                  "methods": [
+                    "GET",
+                    "POST"
+                  ],
+                  "httpStatuses": [
+                    401,
+                    405
+                  ]
+                }
+              },
+              {
+                "name": "unauthenticated-api-xray/status.cgi",
+                "status": "PASS",
+                "detail": {
+                  "methods": [
+                    "GET",
+                    "POST"
+                  ],
+                  "httpStatuses": [
+                    401,
+                    405
+                  ]
+                }
+              },
+              {
+                "name": "unauthenticated-api-xray/update-check.cgi",
+                "status": "PASS",
+                "detail": {
+                  "methods": [
+                    "GET",
+                    "POST"
+                  ],
+                  "httpStatuses": [
+                    405,
+                    401
+                  ]
+                }
+              },
+              {
+                "name": "unauthenticated-api-xray/update.cgi",
+                "status": "PASS",
+                "detail": {
+                  "methods": [
+                    "GET",
+                    "POST"
+                  ],
+                  "httpStatuses": [
+                    405,
+                    401
+                  ]
+                }
+              },
+              {
+                "name": "logout-invalidates-session",
+                "status": "PASS",
+                "detail": null
+              }
+            ],
+            "scope": "Exact prepared CGI/native-auth/session scripts; real curl; mock loopback Keenetic HTTP; no physical SCGI/browser acceptance"
+          },
+          "sha256": "adeb02d55e2cf30d05e84b9c708d6a9b036281d99be9eb0118f2f764b3557111",
+          "counted": true
+        }
+      }
+    }
+  ],
+  "candidateReady": false,
+  "scope": "Isolated Linux component and prepared-application tests, with per-report fixture boundaries. Not physical target or final signed-package acceptance."
+}

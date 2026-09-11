@@ -1,0 +1,9 @@
+{
+  "stage": "R0013",
+  "revision": "p68-password-auth-read-only-target",
+  "status": "CHECKPOINT_FIRST",
+  "target": "root@192.168.1.1",
+  "authentication": "Previously user-supplied password; strict saved host key; no password persisted in repository or receipt",
+  "scope": "Read-only id, kernel, installed release and stat capabilities. No router mutation.",
+  "candidateReady": false
+}

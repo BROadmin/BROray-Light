@@ -1,0 +1,25 @@
+{
+  "stage": "R0013",
+  "revision": "p68-password-auth-read-only-target",
+  "status": "FAIL_FIRST_ERROR_TARGET_CAPABILITY",
+  "target": "root@192.168.1.1",
+  "authenticated": true,
+  "strictKnownHostMatched": true,
+  "observed": {
+    "uid": 0,
+    "machine": "aarch64",
+    "kernel": "4.9-ndm-5",
+    "ash": "/opt/usr/bin/ash",
+    "stat": "/opt/bin/stat",
+    "busybox": "1.37.0 (2026-02-13 14:22:43 UTC)",
+    "lightCurrentTarget": null,
+    "lightConfigVersion": "absent",
+    "statFilesystemFormat": "unsupported -f",
+    "statObjectFormat": "unsupported -c"
+  },
+  "cause": "Actual target BusyBox build omits stat -f/-c features used by R0013 ownership/RAM validators; Debian BusyBox gate is insufficient target equivalence. Current expected Light installation absent.",
+  "impact": "Do not transfer/install candidate or weaken ownership checks. Determine installed owners and dependency capability read-only before proposing correction.",
+  "nextCorrectedRevision": "p69-read-only-target-owner-and-dependency-diagnosis",
+  "routerMutationPerformed": false,
+  "candidateReady": false
+}

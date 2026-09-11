@@ -1,0 +1,24 @@
+{
+  "stage": "R0013",
+  "revision": "p69-read-only-target-owner-and-dependency-diagnosis",
+  "status": "BLOCKED_FAIL_CLOSED_USER_TARGET_DECISION_REQUIRED",
+  "target": "root@192.168.1.1",
+  "observed": {
+    "installedPackage": "broray - 3.0.0-r14",
+    "fullProductDirectory": "/opt/broray (root-owned mode 700)",
+    "fullService": "/opt/etc/init.d/S24broray -> /opt/broray/current/init/S24broray",
+    "lightDirectory": "absent",
+    "lightService": "absent",
+    "busyboxPackage": "1.37.0-6",
+    "stat": "/opt/bin/stat -> /opt/bin/busybox; -f/-c unsupported",
+    "coreutilsStat": "not installed",
+    "tmpFilesystem": "tmpfs",
+    "optFilesystem": "ubifs"
+  },
+  "cause": "The authorized address now has full BROray ownership, not the historical Light r1 state. Invariant forbids co-installation/adoption. This task does not authorize uninstalling current full BROray or changing its configuration.",
+  "additionalFailure": "FAILURE-P68-TARGET-STAT-CAPABILITY.json",
+  "nextExactAction": "USER_SELECT_CLEAN_TEST_TARGET_OR_EXPLICITLY_AUTHORIZE_SEPARATELY_PLANNED_FULL_BROray_REMOVAL_THEN_RESOLVE_STAT_PREREQUISITE",
+  "routerMutationPerformed": false,
+  "productionServerTouched": false,
+  "candidateReady": false
+}

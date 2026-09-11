@@ -1,0 +1,114 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0013",
+  "revision": "p70-seal-fail-closed-target-checkpoint",
+  "status": "PASS_LOCAL_DOWNLOAD_BYTES_AND_BROWSER_TO_BUILT_APP_BINDING",
+  "comparedArtifacts": 8,
+  "browserFiles": [
+    {
+      "path": "assets/css/allpage.css",
+      "sha256": "588dead0ef7be73949c33265d4539db0d369af7929374a2691a43164a61baf7d",
+      "status": "PASS"
+    },
+    {
+      "path": "assets/images/branding/broray-logo-128.png",
+      "sha256": "65397f039d9bb4ad8f16e3b64f0db32719505f7aa6efd27a249b44d4dc3596e2",
+      "status": "PASS"
+    },
+    {
+      "path": "assets/images/branding/broray-logo-64.png",
+      "sha256": "8337a9abeb2fb467ee182f46f65595b0a29e13d98a570fa6aeb9f6d47c9715c8",
+      "status": "PASS"
+    },
+    {
+      "path": "assets/images/branding/favicon-16.png",
+      "sha256": "95a7fd6e95431dc668251e6f8e0090f3e53e7d998652eb4e416d8a0fd9eacfe9",
+      "status": "PASS"
+    },
+    {
+      "path": "assets/images/branding/favicon-32.png",
+      "sha256": "bf5ad3dcb51af6bd1efceae06fde8406ae7512f66065f6573e02f4041f3b7e2d",
+      "status": "PASS"
+    },
+    {
+      "path": "assets/images/branding/favicon.ico",
+      "sha256": "87e1206bce1a40d55777d67c32e61c6a3ff33f739fd0731c6d0c91cc831a643b",
+      "status": "PASS"
+    },
+    {
+      "path": "assets/js/app-shell.js",
+      "sha256": "41db54d48c6d8779138643fe9ce226fc16a1c4f37d66928dbc1769ac440e4fa9",
+      "status": "PASS"
+    },
+    {
+      "path": "assets/js/common.js",
+      "sha256": "526ad0309b670caf869dbfbf0f266c43dbc9b000b02090da67a35b7c07167244",
+      "status": "PASS"
+    },
+    {
+      "path": "assets/js/home.js",
+      "sha256": "d0478e204643689914feec093b56234a9327812c751dbcd9faaf86d64639e9e8",
+      "status": "PASS"
+    },
+    {
+      "path": "assets/js/login.js",
+      "sha256": "9121ddf673afd2766f52b97c4e9c0aea0ed8cb9c45e4385a6d09748050dbe52f",
+      "status": "PASS"
+    },
+    {
+      "path": "assets/js/servers-auto-switch.js",
+      "sha256": "77491ae3b5a4d4adf8c8712510ec76b2a4173db40d27fca513934c06d8608978",
+      "status": "PASS"
+    },
+    {
+      "path": "assets/js/servers.js",
+      "sha256": "635aa2156e3da11d317cd26be2da9ac5ec14726af3a6181d6ef592a4ecb02cd4",
+      "status": "PASS"
+    },
+    {
+      "path": "assets/js/subscriptions.js",
+      "sha256": "a32bfaaf2841c2b22ed5a8beaea8a237f4902c1a5220258600a3211003442905",
+      "status": "PASS"
+    },
+    {
+      "path": "build.json",
+      "sha256": "3c0dbc70b5a30c06d8a11b06a20c792ab213159ad7508dccd1b9b357b93684cb",
+      "status": "PASS"
+    },
+    {
+      "path": "home.html",
+      "sha256": "96d57bb4b4e67944d9e1527f4f97ff04db9d33dc85fec4447d97059cce04f60d",
+      "status": "PASS"
+    },
+    {
+      "path": "index.html",
+      "sha256": "f7298bbce900f4f4fdc42ade2f2cd24409edfb4f7ef4db87b7d587996746fb43",
+      "status": "PASS"
+    },
+    {
+      "path": "manifest.json",
+      "sha256": "a904c2fcf60e1be6496d26974c4c90f005298f3ef6ea3b1c93e85642f7f19761",
+      "status": "PASS"
+    },
+    {
+      "path": "servers.html",
+      "sha256": "ef20ca786e5e0e1068315923e0e68b28d6230da64a5c7439c1959a38ba84b379",
+      "status": "PASS"
+    },
+    {
+      "path": "subscriptions.html",
+      "sha256": "85f06811c751377464752191493a098431ea4eab1365f06283133cacb55ac1e5",
+      "status": "PASS"
+    }
+  ],
+  "directories": [
+    "dist/R0013/p63-independent-build-A",
+    "dist/R0013/p63-independent-build-B"
+  ],
+  "archiveDigests": {
+    "A": "73a25e63d1596e7dcfeda1ebace224e0713b656a31f04320c937b8cfa279d4ba",
+    "B": "b63bb77d2777c6cf65180786d62a3a87c1917ca2afc1cc54c7bf134e5c2057c0"
+  },
+  "candidateReady": false,
+  "signed": false
+}

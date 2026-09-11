@@ -1,0 +1,326 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0013",
+  "revision": "p66-browser-dialog-capable-surface",
+  "sourceCommit": "40f1ac096ad65cb62fa218bf83d542de2d9d3bf8",
+  "runUrl": "https://github.com/BROadmin/BROray-Light/actions/runs/34550298557",
+  "status": "PASS_CHROMIUM_CONTROLS_AND_RESPONSIVE_FIXTURE",
+  "artifact": {
+    "id": 10180544506,
+    "zipSha256": "8706774232697933bcf7d90648ad174dc70038d33aa10619518fc7fa2ad73d19"
+  },
+  "files": [
+    {
+      "path": "fixture.json",
+      "sha256": "70aff6b54614b695a4ab57c5f0c7152f92f31f2dcb0cd343b24c97c6217ed389",
+      "sizeBytes": 12707
+    },
+    {
+      "path": "home-390.png",
+      "sha256": "a0421c6b36c3692ebebd95cfc539bf8169f5f6a7df81bff88e4a0342c923ce39",
+      "sizeBytes": 320932
+    },
+    {
+      "path": "home-1440.png",
+      "sha256": "fef451834dd90ddc00db0f335fec7fe87463c4c30b19601e2fe49fbe0a660994",
+      "sizeBytes": 386274
+    },
+    {
+      "path": "home-768.png",
+      "sha256": "246f4757ffa51bb900fac1d8395b8be8e989b66997012a62110cbd346b4c6ece",
+      "sizeBytes": 331852
+    },
+    {
+      "path": "result.json",
+      "sha256": "d12b38ce553b46617e803cc02753a3084f449d3cece458999a0a0274233517fe",
+      "sizeBytes": 7633
+    },
+    {
+      "path": "servers-1440.png",
+      "sha256": "675176779d474427b6cd39237e4984cd6fab4287a2ba165054206edc9fa6f230",
+      "sizeBytes": 505544
+    },
+    {
+      "path": "servers-390.png",
+      "sha256": "4ba7aeb61caae5f248da7cc9561db1e5d322a351a14fd9c27630940cc8edb92b",
+      "sizeBytes": 326151
+    },
+    {
+      "path": "servers-768.png",
+      "sha256": "b9bde7e186724ea4a90ed38d3e470d1ac87b8a278c9ee68837629dfe9bac2a13",
+      "sizeBytes": 411038
+    },
+    {
+      "path": "subscriptions-1440.png",
+      "sha256": "2121ef9c0fe046bd1e38fc4b12536c151c31283171f14c5a4d230f895251c335",
+      "sizeBytes": 366016
+    },
+    {
+      "path": "subscriptions-390.png",
+      "sha256": "1d65fa0af14ff372691a5264d25686c9825e933caad1bb0c1ef1ac4d4b44860d",
+      "sizeBytes": 202561
+    },
+    {
+      "path": "subscriptions-768.png",
+      "sha256": "e8ffbab0daaece764500efa9d07e591326f562a17797abdacbdb4ba0c308f022",
+      "sizeBytes": 278975
+    }
+  ],
+  "reports": {
+    "result.json": {
+      "stage": "R0013",
+      "revision": "p66-browser-dialog-capable-surface",
+      "status": "PASS_CHROMIUM_CONTROLS_AND_RESPONSIVE_FIXTURE",
+      "tests": [
+        {
+          "name": "login-password-show-hide-and-native-form-submit",
+          "status": "PASS",
+          "detail": null
+        },
+        {
+          "name": "subscription-create-required-fields-and-success",
+          "status": "PASS",
+          "detail": null
+        },
+        {
+          "name": "subscription-auto-refresh-checkbox-interval-save",
+          "status": "PASS",
+          "detail": null
+        },
+        {
+          "name": "subscription-refresh-and-delete-cancel-accept",
+          "status": "PASS",
+          "detail": {
+            "dialogs": [
+              {
+                "type": "confirm",
+                "message": "Удалить подписку «Browser fixture» и все полученные из неё серверы?",
+                "accepted": false
+              },
+              {
+                "type": "confirm",
+                "message": "Удалить подписку «Browser fixture» и все полученные из неё серверы?",
+                "accepted": true
+              }
+            ]
+          }
+        },
+        {
+          "name": "server-import-empty-invalid-and-success",
+          "status": "PASS",
+          "detail": null
+        },
+        {
+          "name": "server-up-down-boundaries-exclude-and-failover-save",
+          "status": "PASS",
+          "detail": null
+        },
+        {
+          "name": "server-check-activate-active-refusal-delete-cancel-accept",
+          "status": "PASS",
+          "detail": null
+        },
+        {
+          "name": "home-keenetic-create-repair-and-refresh",
+          "status": "PASS",
+          "detail": null
+        },
+        {
+          "name": "home-light-update-check-start-and-equal-state",
+          "status": "PASS",
+          "detail": null
+        },
+        {
+          "name": "xray-catalog-same-version-reinstall-cancel-and-accept",
+          "status": "PASS",
+          "detail": {
+            "dialogs": [
+              {
+                "type": "confirm",
+                "message": "Переустановить текущую версию Xray 26.9.9?",
+                "accepted": false
+              },
+              {
+                "type": "confirm",
+                "message": "Переустановить текущую версию Xray 26.9.9?",
+                "accepted": true
+              }
+            ]
+          }
+        },
+        {
+          "name": "xray-prerelease-toggle-select-and-two-consents",
+          "status": "PASS",
+          "detail": {
+            "dialogs": [
+              "Xray 26.9.10-beta.1 не проверен с этой сборкой BROray-Light. Установить с проверкой запуска и автоматическим откатом при ошибке?",
+              "Выбрана предварительная версия Xray. Она может работать нестабильно. Продолжить?"
+            ]
+          }
+        },
+        {
+          "name": "home-server-order-link",
+          "status": "PASS",
+          "detail": null
+        },
+        {
+          "name": "responsive-home-390",
+          "status": "PASS",
+          "detail": {
+            "viewport": 390,
+            "document": 390
+          }
+        },
+        {
+          "name": "responsive-servers-390",
+          "status": "PASS",
+          "detail": {
+            "viewport": 390,
+            "document": 390
+          }
+        },
+        {
+          "name": "responsive-subscriptions-390",
+          "status": "PASS",
+          "detail": {
+            "viewport": 390,
+            "document": 390
+          }
+        },
+        {
+          "name": "responsive-home-768",
+          "status": "PASS",
+          "detail": {
+            "viewport": 768,
+            "document": 768
+          }
+        },
+        {
+          "name": "responsive-servers-768",
+          "status": "PASS",
+          "detail": {
+            "viewport": 768,
+            "document": 768
+          }
+        },
+        {
+          "name": "responsive-subscriptions-768",
+          "status": "PASS",
+          "detail": {
+            "viewport": 768,
+            "document": 768
+          }
+        },
+        {
+          "name": "responsive-home-1440",
+          "status": "PASS",
+          "detail": {
+            "viewport": 1440,
+            "document": 1440
+          }
+        },
+        {
+          "name": "responsive-servers-1440",
+          "status": "PASS",
+          "detail": {
+            "viewport": 1440,
+            "document": 1440
+          }
+        },
+        {
+          "name": "responsive-subscriptions-1440",
+          "status": "PASS",
+          "detail": {
+            "viewport": 1440,
+            "document": 1440
+          }
+        },
+        {
+          "name": "javascript-runtime-errors",
+          "status": "PASS",
+          "detail": null
+        }
+      ],
+      "candidateReady": false,
+      "boundary": "Actual prepared frontend and Chromium; invented loopback HTTP API fixtures only",
+      "screenshots": [
+        {
+          "path": "home-390.png",
+          "sha256": "a0421c6b36c3692ebebd95cfc539bf8169f5f6a7df81bff88e4a0342c923ce39"
+        },
+        {
+          "path": "servers-390.png",
+          "sha256": "4ba7aeb61caae5f248da7cc9561db1e5d322a351a14fd9c27630940cc8edb92b"
+        },
+        {
+          "path": "subscriptions-390.png",
+          "sha256": "1d65fa0af14ff372691a5264d25686c9825e933caad1bb0c1ef1ac4d4b44860d"
+        },
+        {
+          "path": "home-768.png",
+          "sha256": "246f4757ffa51bb900fac1d8395b8be8e989b66997012a62110cbd346b4c6ece"
+        },
+        {
+          "path": "servers-768.png",
+          "sha256": "b9bde7e186724ea4a90ed38d3e470d1ac87b8a278c9ee68837629dfe9bac2a13"
+        },
+        {
+          "path": "subscriptions-768.png",
+          "sha256": "e8ffbab0daaece764500efa9d07e591326f562a17797abdacbdb4ba0c308f022"
+        },
+        {
+          "path": "home-1440.png",
+          "sha256": "fef451834dd90ddc00db0f335fec7fe87463c4c30b19601e2fe49fbe0a660994"
+        },
+        {
+          "path": "servers-1440.png",
+          "sha256": "675176779d474427b6cd39237e4984cd6fab4287a2ba165054206edc9fa6f230"
+        },
+        {
+          "path": "subscriptions-1440.png",
+          "sha256": "2121ef9c0fe046bd1e38fc4b12536c151c31283171f14c5a4d230f895251c335"
+        }
+      ],
+      "scriptErrors": [],
+      "sourceFiles": {
+        "assets/css/allpage.css": "588dead0ef7be73949c33265d4539db0d369af7929374a2691a43164a61baf7d",
+        "assets/images/branding/broray-logo-128.png": "65397f039d9bb4ad8f16e3b64f0db32719505f7aa6efd27a249b44d4dc3596e2",
+        "assets/images/branding/broray-logo-64.png": "8337a9abeb2fb467ee182f46f65595b0a29e13d98a570fa6aeb9f6d47c9715c8",
+        "assets/images/branding/favicon-16.png": "95a7fd6e95431dc668251e6f8e0090f3e53e7d998652eb4e416d8a0fd9eacfe9",
+        "assets/images/branding/favicon-32.png": "bf5ad3dcb51af6bd1efceae06fde8406ae7512f66065f6573e02f4041f3b7e2d",
+        "assets/images/branding/favicon.ico": "87e1206bce1a40d55777d67c32e61c6a3ff33f739fd0731c6d0c91cc831a643b",
+        "assets/js/app-shell.js": "41db54d48c6d8779138643fe9ce226fc16a1c4f37d66928dbc1769ac440e4fa9",
+        "assets/js/common.js": "526ad0309b670caf869dbfbf0f266c43dbc9b000b02090da67a35b7c07167244",
+        "assets/js/home.js": "d0478e204643689914feec093b56234a9327812c751dbcd9faaf86d64639e9e8",
+        "assets/js/login.js": "9121ddf673afd2766f52b97c4e9c0aea0ed8cb9c45e4385a6d09748050dbe52f",
+        "assets/js/servers-auto-switch.js": "77491ae3b5a4d4adf8c8712510ec76b2a4173db40d27fca513934c06d8608978",
+        "assets/js/servers.js": "635aa2156e3da11d317cd26be2da9ac5ec14726af3a6181d6ef592a4ecb02cd4",
+        "assets/js/subscriptions.js": "a32bfaaf2841c2b22ed5a8beaea8a237f4902c1a5220258600a3211003442905",
+        "build.json": "3c0dbc70b5a30c06d8a11b06a20c792ab213159ad7508dccd1b9b357b93684cb",
+        "home.html": "96d57bb4b4e67944d9e1527f4f97ff04db9d33dc85fec4447d97059cce04f60d",
+        "index.html": "f7298bbce900f4f4fdc42ade2f2cd24409edfb4f7ef4db87b7d587996746fb43",
+        "manifest.json": "a904c2fcf60e1be6496d26974c4c90f005298f3ef6ea3b1c93e85642f7f19761",
+        "servers.html": "ef20ca786e5e0e1068315923e0e68b28d6230da64a5c7439c1959a38ba84b379",
+        "subscriptions.html": "85f06811c751377464752191493a098431ea4eab1365f06283133cacb55ac1e5"
+      }
+    }
+  },
+  "visualReview": {
+    "status": "PASS",
+    "reviewedImages": 9,
+    "widths": [
+      390,
+      768,
+      1440
+    ],
+    "pages": [
+      "home",
+      "servers",
+      "subscriptions"
+    ],
+    "findings": "Circular brand mark, green card labels, separated controls, readable wrapping and no visible overlap/clipping in nine inspected fixture screenshots."
+  },
+  "candidateReady": false,
+  "fullBackendButtonAcceptance": false,
+  "boundary": "Actual prepared JavaScript/HTML/CSS in Linux Chromium; invented loopback API fixtures. Native browser confirmation accept/cancel tested; no real router mutations."
+}

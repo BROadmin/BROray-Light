@@ -1,6 +1,16 @@
 # Codex handoff
 
-## Current state
+## Current authorized state — R0013 / P70
+
+BROray-Light public/package version 2.0.0 (internal updater releaseId 2.0.0-r1) is **BLOCKED_FAIL_CLOSED_USER_TARGET_DECISION_REQUIRED**. Read `docs/CODEX-R0013.md`, `project/R0013-STATE.json`, and `checkpoints/R0013/CHECKPOINT.json`. Keep branch `codex/r0009-updater-package` and preserve all R0012 work.
+
+Independent unsigned Build A/B match 8/8 bytes; P64 has five successful jobs and 479 uniquely counted JSON tests. Prepared application lifecycle, isolated exact clean package, native HTTP/CGI/session and P66 Chromium fixture controls pass within the boundaries in `checkpoints/R0013/REPORT.md`. Full functional backend button acceptance, signing and physical target validation remain. `candidateReady=false`; 2.0.0 is not published.
+
+Read-only SSH at 192.168.1.1 found full BROray package 3.0.0-r14, `/opt/broray`, and its S24 service. Light directory/service are absent. BusyBox stat lacks required -f/-c options and coreutils-stat is absent. No router mutations occurred. Do not install alongside, adopt, remove or alter full BROray without a new explicit target decision. Failures P67/P68/P69 and hashes are preserved.
+
+Exact next action: `USER_SELECT_CLEAN_TEST_TARGET_OR_EXPLICITLY_AUTHORIZE_SEPARATELY_PLANNED_FULL_BROray_REMOVAL_THEN_RESOLVE_STAT_PREREQUISITE`.
+
+## Historical R0010 state (not current device evidence)
 
 R0010 `PUBLISH_AND_VALIDATE_BRORAY_LIGHT_STABLE_RELEASE` is complete with PASS on `codex/r0009-updater-package`. Stable `1.0.0-r1` is public at `https://github.com/BROadmin/BROray-Light/releases/tag/v1.0.0-r1`; GitHub release `381203509` is latest, public, non-draft and non-prerelease with all eight expected assets.
 

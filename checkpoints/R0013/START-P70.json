@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0013",
+  "revision": "p70-seal-fail-closed-target-checkpoint",
+  "status": "STARTED",
+  "sourceCommit": "40f1ac096ad65cb62fa218bf83d542de2d9d3bf8",
+  "scope": [
+    "collect finished P64 regression and P66 browser evidence",
+    "seal P69 target blocker, report, validation and handoff",
+    "verify evidence hashes and preserve unrelated R0012 work"
+  ],
+  "prohibited": [
+    "router writes",
+    "full BROray removal or mutation",
+    "signing or release publication"
+  ],
+  "candidateReady": false,
+  "nextExactAction": "USER_SELECT_CLEAN_TEST_TARGET_OR_EXPLICITLY_AUTHORIZE_SEPARATELY_PLANNED_FULL_BROray_REMOVAL_THEN_RESOLVE_STAT_PREREQUISITE"
+}

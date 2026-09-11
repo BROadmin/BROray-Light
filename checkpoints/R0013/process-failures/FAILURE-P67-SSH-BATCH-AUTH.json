@@ -1,0 +1,9 @@
+{
+  "stage": "R0013",
+  "revision": "p67-read-only-authorized-target-preflight",
+  "status": "FAIL_FIRST_ERROR_AUTH_MODE",
+  "target": "root@192.168.1.1",
+  "cause": "Strict known-host connection reached SSH; BatchMode key-only authentication denied. No password attempted. No remote commands executed.",
+  "nextCorrectedRevision": "p68-password-auth-read-only-target",
+  "candidateReady": false
+}

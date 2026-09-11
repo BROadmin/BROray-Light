@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "stage": "R0013_SELECTIVE_UPSTREAM_STABLE_PORT",
-  "status": "P59_NAVIGATION_PASS_P54_SERVICE_STOP_CORRECTION_REQUIRED",
-  "currentRevision": "p59-query-safe-current-navigation",
+  "status": "BLOCKED_FAIL_CLOSED_USER_TARGET_DECISION_REQUIRED",
+  "currentRevision": "p70-seal-fail-closed-target-checkpoint",
   "publicVersion": "2.0.0",
   "packageVersion": "2.0.0",
   "releaseId": "2.0.0-r1",
@@ -10,29 +10,52 @@
   "releaseTag": "v2.0.0",
   "branch": "codex/r0009-updater-package",
   "baseLightCommit": "9e5fce9bfa7c82bfc2f2654d80fd3987c5259963",
-  "latestTestedSourceCommit": "8226874c3ea22091afab432fd26bddf63360282a",
-  "latestFullComponentRegression": "REGRESSION-P53.json",
-  "latestCI": "https://github.com/BROadmin/BROray-Light/actions/runs/34544142025",
+  "latestTestedSourceCommit": "40f1ac096ad65cb62fa218bf83d542de2d9d3bf8",
+  "latestFullComponentRegression": "REGRESSION-P64.json",
+  "latestCI": "https://github.com/BROadmin/BROray-Light/actions/runs/34549087783",
   "candidateReady": false,
   "releaseReady": false,
   "publicReleasePublished": false,
-  "physicalRouterTouched": false,
   "productionServerTouched": false,
   "fullBROrayModified": false,
   "preexistingR0012CodeAndHistoryPreserved": true,
-  "buildA": "PRELIMINARY_ENGINEERING_BYTE_PASS_NOT_FINAL_ACCEPTANCE",
-  "buildB": "PRELIMINARY_ENGINEERING_BYTE_PASS_NOT_FINAL_ACCEPTANCE",
+  "buildA": "PASS_INDEPENDENT_LINUX_UNSIGNED_BYTES",
+  "buildB": "PASS_INDEPENDENT_LINUX_UNSIGNED_BYTES",
   "buildEvidence": {
-    "path": "ENGINEERING-BUILDS-P47.json",
-    "sha256": "73ceaf5f6179c87abf0ca25c0fe2e829cb91fb8edc0a33b815e6110e69ced708"
+    "path": "INDEPENDENT-BUILDS-AND-CLEAN-P63.json",
+    "sha256": "35bc9388ff47a8c23d7229f70150e8927d1fde06dd30ea93e0de694b1a795c3c"
   },
-  "activeFailure": "process-failures/FAILURE-P54-FULL-APP-SERVICE-STOP.json",
-  "nextExactAction": "P60_FULL_DAEMON_GRACEFUL_STOP_AND_COMPLETE_PREPARED_APP",
+  "activeFailure": "process-failures/FAILURE-P69-TARGET-FULL-BRORAY-OWNERSHIP.json",
+  "nextExactAction": "USER_SELECT_CLEAN_TEST_TARGET_OR_EXPLICITLY_AUTHORIZE_SEPARATELY_PLANNED_FULL_BROray_REMOVAL_THEN_RESOLVE_STAT_PREREQUISITE",
   "remainingIntegrationGap": {
-    "originFailure": "process-failures/FAILURE-P16-PERSISTENT-LOCK-DOMAIN.json",
-    "description": "351 unique JSON-report component tests pass at P53. Complete prepared app lifecycle, full clean install/service, WebUI/native auth/browser, final builds/signing and target acceptance remain."
+    "description": "Full backend functionality, target ownership/stat prerequisites, signing, physical acceptance and immutable release/docs bytes remain; see VALIDATION.json."
   },
   "pendingSourceCommit": null,
-  "lastResolvedFailure": "process-failures/FAILURE-P58-NAVIGATION-CACHE-QUERY.json",
-  "pendingSourceManifest": "SOURCE-INPUTS-P59.json"
+  "lastResolvedFailure": "process-failures/FAILURE-P62-BUSYBOX-IDLE-PROCESS-SHAPE.json",
+  "pendingSourceManifest": null,
+  "buildSourceCommit": "f38cfb7d00d6435d51a90672cdf2b39726e1f027",
+  "regressionSourceCommit": "ebae309b93aee000ed1c5b5743385ba39e33ed98",
+  "regression": {
+    "sizeBytes": 162932,
+    "sha256": "ba26df6449d69b4100f7ed5747babcbd75d8079eb02a2335940db629779a5797",
+    "path": "checkpoints/R0013/REGRESSION-P64.json"
+  },
+  "browser": {
+    "sizeBytes": 11397,
+    "sha256": "7c9b7b274899110b4b9d37e2fced9c15e159b7113fcf00f3544c87ddf92bd149",
+    "path": "checkpoints/R0013/BROWSER-CONTROLS-P66.json"
+  },
+  "browserToPackageBinding": "BUILD-DOWNLOAD-AND-UI-BINDING-P70.json",
+  "report": {
+    "sizeBytes": 15490,
+    "sha256": "17d279ccd3565006d39247852def04e7fc1150c868c5469f6c9fbd3cbd89d99d",
+    "path": "checkpoints/R0013/REPORT.md"
+  },
+  "validation": {
+    "path": "VALIDATION.json",
+    "sha256": "fa6ed2fe892d20dbdd65f5488327df474c75316cafa340fa4fe203d9c7cd4812"
+  },
+  "routerReadOnlyInspected": true,
+  "routerMutationPerformed": false,
+  "additionalFailure": "process-failures/FAILURE-P68-TARGET-STAT-CAPABILITY.json"
 }

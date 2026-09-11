@@ -1,0 +1,7 @@
+{
+  "stage": "R0013",
+  "revision": "p69-read-only-target-owner-and-dependency-diagnosis",
+  "status": "CHECKPOINT_FIRST",
+  "scope": "List only named product ownership/service paths and installed prerequisite package metadata; read mounts/PATH. No candidate transfer or installation and no stat -f/-c retry.",
+  "candidateReady": false
+}
