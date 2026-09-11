@@ -242,14 +242,34 @@
     }
   ],
   "releaseId": "2.0.0-r1",
-  "currentRevision": "p87-target-replacement-checkpoint",
+  "currentRevision": "p89-external-complete",
   "status": "TARGET_REPLACEMENT_PASS_FULL_RELEASE_ACCEPTANCE_PENDING",
-  "nextExactAction": "R0013_P88_FUNCTIONAL_VLESS_AND_ALL_WEBUI_BACKEND_ACCEPTANCE_ON_REPLACED_TEST_TARGET",
+  "nextExactAction": "RECORD_NEGATIVE_COMPATIBILITY_IN_CANDIDATE_BEFORE_RELEASE_AND_COMPLETE_REMAINING_WEBUI_LIFECYCLE_SIGNING_ACCEPTANCE",
   "targetInstallation": {
     "status": "PASS_REPLACEMENT_NATIVE_LOGIN_AND_EMPTY_THREE_PAGE_SMOKE",
     "evidence": "TARGET-REPLACEMENT-P87.json"
   },
   "currentCandidateReady": false,
-  "acceptanceScope": "Replacement/install smoke passes; clean catalog has no VLESS server. Complete current component regression, actual data path/all controls, physical restart and signed update, then signing/publication/docs gates.",
-  "currentSourceCommit": "14813c3774207502039999e014062464043827d1"
+  "acceptanceScope": "Replacement/install smoke passes; P88 now observes an active runtime. Seven Xray versions pass 91 localhost data paths and 189 config checks. This is not external-server, all-button, restart or signed-update acceptance. Remaining release gates unchanged. P89 now tests the actual external active XHTTP/REALITY server: six versions PASS, 26.2.6 FAIL; this does not close browser or installed-version lifecycle gates.",
+  "xrayCompatibilityDiagnostic": {
+    "status": "PASS_BOUNDED_7_VERSIONS",
+    "evidence": "XRAY-COMPATIBILITY-P88.json",
+    "dataPathChecks": 91,
+    "generatedConfigChecks": 182,
+    "currentConfigChecks": 7,
+    "installedRuntimePreserved": true
+  },
+  "currentSourceCommit": "14813c3774207502039999e014062464043827d1",
+  "xrayExternalDiagnostic": {
+    "path": "checkpoints/R0013/XRAY-EXTERNAL-P89.json",
+    "sha256": "0ac2885d5441e633de2b6da61f77f8591720ba3a2cfbc6ee3e0e7c2ef4f31c78",
+    "bytes": 7183,
+    "status": "COMPLETE_6_PASS_26_2_6_INCOMPATIBLE_IN_TESTED_SCENARIO",
+    "installedStatePreserved": true,
+    "incompatibleVersions": [
+      "26.2.6"
+    ],
+    "shippedRegistryUpdated": false,
+    "browserOrInstalledVersionLifecycleAcceptance": false
+  }
 }

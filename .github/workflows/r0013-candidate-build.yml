@@ -6,6 +6,8 @@ on:
     branches: [codex/r0009-updater-package]
     paths:
       - '.github/workflows/r0013-candidate-build.yml'
+      - 'packaging/r0013-overlay/**'
+      - 'tools/build_r0013_release.py'
       - 'tools/validate_r0013_clean_package.py'
       - 'packaging/r0013-overlay/system/packaging/opkg/control'
       - 'packaging/r0013-overlay/system/packaging/installer/broray-light-install.sh.in'
@@ -68,6 +70,43 @@ jobs:
             ${{ runner.temp }}/structure-${{ matrix.build }}.json
           if-no-files-found: ignore
 
+  sign-candidate-index:
+    needs: compare-and-clean
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+      - uses: actions/download-artifact@v4
+        with:
+          name: r0013-build-A-${{ github.sha }}
+          path: ${{ runner.temp }}/r0013-sign
+      - name: Install signature verifier
+        run: sudo apt-get update && sudo apt-get install -y --no-install-recommends minisign
+      - name: Sign exact reproducible index using existing trust root
+        env:
+          SIGNING_KEY: ${{ secrets.BRORAY_LIGHT_MINISIGN_PRIVATE_KEY }}
+        run: |
+          set -eu
+          [ -n "$SIGNING_KEY" ] || { echo 'Required signing secret unavailable' >&2; exit 1; }
+          umask 077
+          keydir="$(mktemp -d /dev/shm/r0013-sign.XXXXXX)"
+          trap 'rm -f "$keydir/release.key"; rmdir "$keydir"' EXIT
+          printf '%s' "$SIGNING_KEY" > "$keydir/release.key"
+          unset SIGNING_KEY
+          printf '%s  %s\n' b1587b8407f0c0443a361ed29b839319b66912b1b71414bcf31e848c29eab696 updater/release.pub | sha256sum -c -
+          minisign -S -s "$keydir/release.key" -m "$RUNNER_TEMP/r0013-sign/release.json" -t 'BROray-Light 2.0.0-r1 release index' -c 'BROray-Light governed release signature'
+          minisign -V -p updater/release.pub -m "$RUNNER_TEMP/r0013-sign/release.json"
+          sha256sum "$RUNNER_TEMP/r0013-sign/release.json" "$RUNNER_TEMP/r0013-sign/release.json.minisig"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: r0013-signed-index-${{ github.sha }}
+          path: |
+            ${{ runner.temp }}/r0013-sign/release.json
+            ${{ runner.temp }}/r0013-sign/release.json.minisig
+          if-no-files-found: error
   compare-and-clean:
     needs: independent-build
     runs-on: ubuntu-24.04

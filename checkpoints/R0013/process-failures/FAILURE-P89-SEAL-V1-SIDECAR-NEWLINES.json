@@ -1,0 +1,11 @@
+{
+  "schemaVersion": 1,
+  "revision": "p89-seal-v1",
+  "status": "FIRST_ERROR_LOCAL_EVIDENCE_FORMATTING",
+  "cause": "Final recorder unnecessarily rewrote all historical checksum sidecars using Windows default CRLF, changing their bytes despite unchanged checksum text. Git status exposed the accidental rewrites. The SHA256SUMS sidecar also needs exclusion from its own aggregate to avoid a circular integrity index.",
+  "routerAffected": false,
+  "compatibilityTestResultsAffected": false,
+  "productSourceAffected": false,
+  "nextRevision": "p89-seal-v2-exact-historical-sidecar-restoration-and-bounded-index-refresh",
+  "correction": "Restore only historical tracked sidecars whose checksum text exactly equals HEAD, proving newline-only changes; keep intentional current checkpoint/report/validation sidecars. Limit future refresh to those current records and write explicit LF. Regenerate aggregate excluding itself and its own sidecar, then hash the aggregate separately. Do not rerun router tests or overwrite observations."
+}

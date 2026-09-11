@@ -1,0 +1,895 @@
+{
+  "schemaVersion": 1,
+  "revision": "p89-seal-v2",
+  "at": "2026-09-11T09:45:00.025877+00:00",
+  "status": "PASS_HISTORICAL_SIDECARS_RESTORED",
+  "failure": "checkpoints/R0013/process-failures/FAILURE-P89-SEAL-V1-SIDECAR-NEWLINES.json",
+  "historicalSidecarsVerified": 220,
+  "newlineOnlySidecarsRestored": 220,
+  "restoredExactlyToCleanPreTurnGitBytes": true,
+  "routerTestsRepeated": false,
+  "routerChanged": false,
+  "compatibilityResultsChanged": false,
+  "files": [
+    {
+      "path": "checkpoints/R0013/ACTUAL-DAEMON-VALIDATION-P39.json.sha256",
+      "sha256": "e53b6ace78d40a1c2304a17e6e4485a05dc818a6861d5eeed0d53accac4104f8"
+    },
+    {
+      "path": "checkpoints/R0013/ARCHIVER-DIAGNOSTIC-P74.json.sha256",
+      "sha256": "be9c578b74ba1e5baab608f3bba9d019e8e6eeddef56b28b09d80e748d73189b"
+    },
+    {
+      "path": "checkpoints/R0013/BROWSER-CONTROLS-P66.json.sha256",
+      "sha256": "1df7a32785ca188021de00f88b789e32d32c23a4844115a9aa6ebc91d6759c11"
+    },
+    {
+      "path": "checkpoints/R0013/BROWSER-NAVIGATION-P59.json.sha256",
+      "sha256": "fe6c61eac3fc82d8f9a18ba61f93c09317fe563da92322a2035a7bea28c2e472"
+    },
+    {
+      "path": "checkpoints/R0013/BROWSER-P58-FIXTURE.json.sha256",
+      "sha256": "3f579b0162f3ba00823aaab5d4b876f763860212ba77fda7a9a136ebf1dd0476"
+    },
+    {
+      "path": "checkpoints/R0013/BROWSER-P59-FIXTURE.json.sha256",
+      "sha256": "60f829ec4225fb298882806f713021e18a454d89f7598ced3bb87a1c4b84d6d7"
+    },
+    {
+      "path": "checkpoints/R0013/BROWSER-P65-FIXTURE.json.sha256",
+      "sha256": "066e126d8083ed271ce54ae4a9d835eb2c858c5baa85684a4ae12fb56909ec03"
+    },
+    {
+      "path": "checkpoints/R0013/BUILD-DOWNLOAD-AND-UI-BINDING-P70.json.sha256",
+      "sha256": "8d291cc83d49230faf9b2bf6516ef83cc921af9bae2c585a764713ce03ecaac4"
+    },
+    {
+      "path": "checkpoints/R0013/CATALOG-AND-CONTROLS-P8.json.sha256",
+      "sha256": "c9546c5772e9bca93966120ec8760f81bd8a8d4cb7b2133b22309a88a6c0742f"
+    },
+    {
+      "path": "checkpoints/R0013/CLEAN-BOOTSTRAP-AND-RAM-P49.json.sha256",
+      "sha256": "b6cbba2bc0c968325b8a24c29d543696957707b6991025f20637104571b3b4a1"
+    },
+    {
+      "path": "checkpoints/R0013/CONTROL-P56-FIRST-RESULT.json.sha256",
+      "sha256": "f7bc7c99ba40bf977f8430027294f1ab7046c87f448be786376a09f6884ad82a"
+    },
+    {
+      "path": "checkpoints/R0013/CONTROL-P57.json.sha256",
+      "sha256": "d009c5668eee756d03cca3f160dbe0c7d36155f119ee201143ac9a416a21edb2"
+    },
+    {
+      "path": "checkpoints/R0013/DEAD-OWNER-RECOVERY-P48.json.sha256",
+      "sha256": "03464d715224c5da67f453ab60ff5f357bafc9a121bdbec5cd91843f23c9cc44"
+    },
+    {
+      "path": "checkpoints/R0013/DIAGNOSTIC-P61.json.sha256",
+      "sha256": "4a0a1667b23a93daab588639a49931007909d608506757fcac55dd9123025237"
+    },
+    {
+      "path": "checkpoints/R0013/EARLY-BOOT-AND-CLEANUP-P52.json.sha256",
+      "sha256": "599abb925e0efdc152cae71f3f63923779a01102fea6bd79d17e797d5ab843f9"
+    },
+    {
+      "path": "checkpoints/R0013/ENGINEERING-BUILD-ARTIFACTS-P40.json.sha256",
+      "sha256": "0de4e8ffbf90794b438e1f84952d9f17eb9ccc086fe2b70cc41559664b5051ba"
+    },
+    {
+      "path": "checkpoints/R0013/ENGINEERING-BUILDS-P13.json.sha256",
+      "sha256": "40c549386e2369fee94db665e70dbbfedaabc81c9cbf924865ed6610db48e455"
+    },
+    {
+      "path": "checkpoints/R0013/ENGINEERING-BUILDS-P29.json.sha256",
+      "sha256": "ad5bcafcf859c551437395f8edf8b8e658c0c2418aafeda23860793029ed7e1a"
+    },
+    {
+      "path": "checkpoints/R0013/ENGINEERING-BUILDS-P47.json.sha256",
+      "sha256": "1012735c20fd8d29c0b2f92066c30b863e8433a9bf43f72fd3c6c05cf544f49c"
+    },
+    {
+      "path": "checkpoints/R0013/EVIDENCE-BYTES-P59A.json.sha256",
+      "sha256": "55003efcab26fa52bb064fadb33f3e6e3e860a75763e47ae209b53facbbcd08c"
+    },
+    {
+      "path": "checkpoints/R0013/HOME-XRAY-CONTROLS-P8.json.sha256",
+      "sha256": "c09d0a344754a456ba6ee3c073b4a545588d5aa2523175aa6c64241d3e952c3b"
+    },
+    {
+      "path": "checkpoints/R0013/IMPLEMENTATION-NOTES-P45.json.sha256",
+      "sha256": "c5ccc95e0625ece88691a348b0ae0d0f4715ccf80b42273917e17b5a57e66f30"
+    },
+    {
+      "path": "checkpoints/R0013/IMPLEMENTATION-NOTES-P48.json.sha256",
+      "sha256": "0aa3cf06f69d8c462c197af49633deb5070f6c13e3e0bc578b305c29c7519c92"
+    },
+    {
+      "path": "checkpoints/R0013/INDEPENDENT-BUILDS-AND-CLEAN-P63.json.sha256",
+      "sha256": "a960230f2ab76fda20d6918aa1f4f4733b38420304ff4d4a0851ea0805dfbfde"
+    },
+    {
+      "path": "checkpoints/R0013/INDEPENDENT-BUILDS-P72.json.sha256",
+      "sha256": "a7c05d2d340197728442e281d3d1504523311d00faad9baa5163a03c77151690"
+    },
+    {
+      "path": "checkpoints/R0013/INDEPENDENT-BUILDS-P83.json.sha256",
+      "sha256": "da16cac709b4a17680dd5c2c60209806f4e90f2d26a26f76984a3c748c829320"
+    },
+    {
+      "path": "checkpoints/R0013/INDEX-AUDIT-P70.json.sha256",
+      "sha256": "04b562dcb5ade7b18119f8d773a661ee552980e97aaa54ec12316404aa49b9f0"
+    },
+    {
+      "path": "checkpoints/R0013/LINUX-PROCESS-P4.json.sha256",
+      "sha256": "b9a62cbe450c624618f30803fb6cb61f8306344f9f8fbc19170d9dd0cf254f42"
+    },
+    {
+      "path": "checkpoints/R0013/LIVE-R1-UPDATE-AND-ROLLBACK-P44.json.sha256",
+      "sha256": "afcb490851ca7a46028bdc201c07d0e12774a072a894c759b89778986a27eb81"
+    },
+    {
+      "path": "checkpoints/R0013/NATIVE-AUTH-P57.json.sha256",
+      "sha256": "96930b152bf2153c9dcff75866e8a2a9e1713992e6f711fec5090bcb2b4165b6"
+    },
+    {
+      "path": "checkpoints/R0013/NATIVE-UPDATER-VALIDATION-P22.json.sha256",
+      "sha256": "020acc0f89851350c826439bf997b4474826064f2050c99d85a4eca9f7afb1f3"
+    },
+    {
+      "path": "checkpoints/R0013/NAVIGATION-P59.json.sha256",
+      "sha256": "b3c03e0ff5f6cc76774a55933b9459f055c8dddf489dbadb354ffc3bb39f950b"
+    },
+    {
+      "path": "checkpoints/R0013/P55-UNEXECUTED-SUPERSEDED.json.sha256",
+      "sha256": "fb91757a7100e750b4c8850ec9ab670a0a86c301287c0aba43419b9e68b437ad"
+    },
+    {
+      "path": "checkpoints/R0013/PLATFORM-VALIDATION-P30.json.sha256",
+      "sha256": "83a0794f740d5058a7f48d94f35dc7947c7441c8a7b994047f0f6dfb142a2e76"
+    },
+    {
+      "path": "checkpoints/R0013/PREEXISTING-WORKTREE-P1.json.sha256",
+      "sha256": "b9642014cdc65352f86a727377099f4f1c84cd9f3321a208ed82904cd5de25a4"
+    },
+    {
+      "path": "checkpoints/R0013/PREPARED-LIFECYCLE-P64.json.sha256",
+      "sha256": "c0c4d7af9acdbf21e3261111372e9209860f5524783838a2e513b04375ed3d74"
+    },
+    {
+      "path": "checkpoints/R0013/PRODUCED-SOURCE-MANIFEST.json.sha256",
+      "sha256": "fa822910af3fb76fb94abb275acdd438d951adcd0f7d262c44eb3e03ab8d4f59"
+    },
+    {
+      "path": "checkpoints/R0013/R0012-PRESERVATION-P16.json.sha256",
+      "sha256": "518ee205b24f0724af001867dbd243ad6d0b59011ed23f8b803081a60334f2a9"
+    },
+    {
+      "path": "checkpoints/R0013/R0012-PRESERVATION-P23.json.sha256",
+      "sha256": "eeb8fd85e0784de149673b492d1aa3cff48ed81286d9cae2a9380561e4b0ad81"
+    },
+    {
+      "path": "checkpoints/R0013/R0012-PRESERVATION-P34.json.sha256",
+      "sha256": "79f589357606b86016a4eee71256c4aa6f813bf8fb4c5ea2cd4d3b606cc52a89"
+    },
+    {
+      "path": "checkpoints/R0013/R0012-PRESERVATION-P37.json.sha256",
+      "sha256": "2c6cb93b74dbed1676ca7724854a49bd93d66319744b2a4a7db675e969ef5df3"
+    },
+    {
+      "path": "checkpoints/R0013/R0012-PRESERVATION-P43.json.sha256",
+      "sha256": "1a34d02f5014027ed72ba8110d512ddf84bd7ea4348bb3c5de1f835d073aa645"
+    },
+    {
+      "path": "checkpoints/R0013/R0012-PRESERVATION-P70.json.sha256",
+      "sha256": "f1db1b279678a292b64073b9b348ac9bd27564b9f8f59988eae4bff51f1867e0"
+    },
+    {
+      "path": "checkpoints/R0013/R1-ADMISSION-P24-ASH.json.sha256",
+      "sha256": "65f4370d38c46f388acb1c339fa641feebe11f55c916d1d48ebc564ba87f8506"
+    },
+    {
+      "path": "checkpoints/R0013/R1-ADMISSION-P24-DASH.json.sha256",
+      "sha256": "e535c91c493b47dda49a83e2b977bbab43de640b94f8de345b83190872682cf7"
+    },
+    {
+      "path": "checkpoints/R0013/R1-ADMISSION-VALIDATION-P24.json.sha256",
+      "sha256": "581e4b07704402be1712ef0a6426df59ce4896047af43343d26a58c340ff8f96"
+    },
+    {
+      "path": "checkpoints/R0013/R1-JOURNAL-P25-ASH.json.sha256",
+      "sha256": "42fd3c2abed72bc9d6c29c56f9fe4a2aff47de94d4d7f05ea9dc61eb9095b7db"
+    },
+    {
+      "path": "checkpoints/R0013/R1-JOURNAL-P25-DASH.json.sha256",
+      "sha256": "b1560d1ffe9d4db94ccbdc1a1dd8c13f97079501545f1718e42cf92e61d85430"
+    },
+    {
+      "path": "checkpoints/R0013/R1-RAM-VALIDATION-P28.json.sha256",
+      "sha256": "1f5f5c320d92a9ac42578efc4e4cbcc4574490ba232cb039ba4139c6873f1e6b"
+    },
+    {
+      "path": "checkpoints/R0013/R1-WEBUI-AND-JOURNAL-P27.json.sha256",
+      "sha256": "48de8cee0d6e60b9e2d5735676bb54d2054b7c9cadf5ca9336bc184be8f561cd"
+    },
+    {
+      "path": "checkpoints/R0013/RAM-BOOTSTRAP-BUILD-P15.json.sha256",
+      "sha256": "a836482eee949bbc2039173b2aa7137fb58663533bfd220ddf625d4351a13ca9"
+    },
+    {
+      "path": "checkpoints/R0013/RAM-BOOTSTRAP-VALIDATION-P15.json.sha256",
+      "sha256": "4baf2dd7f627b53f85b9af49919713315fc1d4877bc752e2ebb9deafc2c08172"
+    },
+    {
+      "path": "checkpoints/R0013/RAM-NATIVE-P22-ASH.json.sha256",
+      "sha256": "81e8bffc52a1db46f9a0680cc88c3dcbb447b659c5090fe548929668f386d85d"
+    },
+    {
+      "path": "checkpoints/R0013/RAM-NATIVE-P22-DASH.json.sha256",
+      "sha256": "8e45ab4a2a2b0abfd1b38f0de1f1c10087050ed9af12dce3a688167e6db5aae6"
+    },
+    {
+      "path": "checkpoints/R0013/RAM-PRIMITIVE-P17-ASH.json.sha256",
+      "sha256": "062a02fd78ac27ba180c2061cc4d603ef75bc58f096f67e3518fe1c874c64739"
+    },
+    {
+      "path": "checkpoints/R0013/RAM-PRIMITIVE-P17-DASH.json.sha256",
+      "sha256": "1d78fae590b52acea7607b203eb4d952186c1d23151595af423d7d51ac3b4b86"
+    },
+    {
+      "path": "checkpoints/R0013/RAM-PRIMITIVE-P17.json.sha256",
+      "sha256": "be380d7dd5de62bff2d94bbcf00234bb5477610638977fc62e6310de7f429af8"
+    },
+    {
+      "path": "checkpoints/R0013/REGRESSION-P49.json.sha256",
+      "sha256": "1bd0ef97c15f698e3fe4357349de28a89d924ad46b478b3759ecd91e3d4e4bf6"
+    },
+    {
+      "path": "checkpoints/R0013/REGRESSION-P52.json.sha256",
+      "sha256": "7662409936dda1d067749572810f5b5195bc4d19313d6430b0f49dcd41e1990f"
+    },
+    {
+      "path": "checkpoints/R0013/REGRESSION-P53.json.sha256",
+      "sha256": "a7aab9799e5f2b29818fce6239631cb99d2817d7cbff92552f9e1ec5e747e216"
+    },
+    {
+      "path": "checkpoints/R0013/REGRESSION-P64.json.sha256",
+      "sha256": "fc26d4a700cdcbd32cd794835488e2af2277bb9d5a25dab2085bbdcdc26a7e2d"
+    },
+    {
+      "path": "checkpoints/R0013/RUNTIME-PATHS-AND-BUILDS-P34.json.sha256",
+      "sha256": "6f2411d58720cf0641cdeb59a525b581d87b80c104c6d49cf505866e11c845f3"
+    },
+    {
+      "path": "checkpoints/R0013/RUNTIME-TREES-AND-BUILDS-P40.json.sha256",
+      "sha256": "3e9f9109a0fcf85e03f12443f19cccab684ca35c44bfd1b831aebdbc0141d22a"
+    },
+    {
+      "path": "checkpoints/R0013/SERVICE-AND-BUILDS-P37.json.sha256",
+      "sha256": "ab9206c897b8196bf2fa43c0408354e364a777880845a39418a89cc12b16bff2"
+    },
+    {
+      "path": "checkpoints/R0013/SOURCE-INPUTS-P41.json.sha256",
+      "sha256": "9e87901b7d2d20e69d4f9cb78954d2df32158b3048f333d36f2e3fa4ac0fbead"
+    },
+    {
+      "path": "checkpoints/R0013/SOURCE-INPUTS-P45.json.sha256",
+      "sha256": "05dd9e2655cb2112160d7a526a14ec03e00c43088ad78b64f01c2708cb6ec431"
+    },
+    {
+      "path": "checkpoints/R0013/SOURCE-INPUTS-P49.json.sha256",
+      "sha256": "4b33c77fa640d7ece599c89349dd078013942489d7e389fb3bd774b6b75a24c4"
+    },
+    {
+      "path": "checkpoints/R0013/SOURCE-INPUTS-P51.json.sha256",
+      "sha256": "b14c1d0870f3bc37f8a432d1fdc9bb1493f407cd013922301872d14e04c311c3"
+    },
+    {
+      "path": "checkpoints/R0013/SOURCE-INPUTS-P52.json.sha256",
+      "sha256": "9f13877e2483efedb6aad5ea07646d851c3eecfa9af108b115f1df73aed52a29"
+    },
+    {
+      "path": "checkpoints/R0013/SOURCE-INPUTS-P53.json.sha256",
+      "sha256": "8cd83815f383a074319a466d962a193824aaacb9991f97c1e811cefe75daa518"
+    },
+    {
+      "path": "checkpoints/R0013/SOURCE-INPUTS-P54.json.sha256",
+      "sha256": "1a281eae4a39eae9b1d584c479579907bf5239f1196e180b9382e1a8cc5598c5"
+    },
+    {
+      "path": "checkpoints/R0013/SOURCE-INPUTS-P55.json.sha256",
+      "sha256": "bd56337fb3b0964ab42cdac5c1282bd11837ba4ec300ed3dd5b329e50dd47418"
+    },
+    {
+      "path": "checkpoints/R0013/SOURCE-INPUTS-P57.json.sha256",
+      "sha256": "e3ba3c50715dcfd23a1cbe72f92f14fcf2fd7b5d941f6a0fccf19f47f7315026"
+    },
+    {
+      "path": "checkpoints/R0013/SOURCE-INPUTS-P59.json.sha256",
+      "sha256": "9bf10cfd290d6a243d5b9ebae1bcf508cf6a49471ec6588000591d14f65a4d5c"
+    },
+    {
+      "path": "checkpoints/R0013/SOURCE-INPUTS-P60.json.sha256",
+      "sha256": "37a35b0255c3b46d79bd7455e8f261713fc1bbb884e6c24daf35a43ba51bd037"
+    },
+    {
+      "path": "checkpoints/R0013/SOURCE-INPUTS-P61.json.sha256",
+      "sha256": "a2090d576edb179ffb668572b1ec3632d39de7940d4ea111939108dcd1608e5e"
+    },
+    {
+      "path": "checkpoints/R0013/SOURCE-INPUTS-P62.json.sha256",
+      "sha256": "69fd23dbfc1ac4b533babd54d512895554cf5f703a9d2d803aaa60f8c109b64c"
+    },
+    {
+      "path": "checkpoints/R0013/SOURCE-INPUTS-P63.json.sha256",
+      "sha256": "b73b54f9056f6aa156eaf33a9a4ef2b3130fee6edf58e6aed628d84d13a84572"
+    },
+    {
+      "path": "checkpoints/R0013/SOURCE-INPUTS-P64.json.sha256",
+      "sha256": "e0ce29e90cd52abd6c0054381664b9ddeeda6725bf85bcb9666ada79208d0666"
+    },
+    {
+      "path": "checkpoints/R0013/SOURCE-INPUTS-P66.json.sha256",
+      "sha256": "fbcd562dcb1b5ee5f7000a9fc32faa11746147f5f53b5a3c8e85ad8bfb212758"
+    },
+    {
+      "path": "checkpoints/R0013/SOURCE-INPUTS-P72.json.sha256",
+      "sha256": "15b92a75abb6bc746a06e061c338530809ac932ba1ed4d3ccb619c9ea783bf57"
+    },
+    {
+      "path": "checkpoints/R0013/START-P1.json.sha256",
+      "sha256": "0fb15f6482f7126ae253e486b953619c0569e8e1ead506ce0e8df0e8c1895161"
+    },
+    {
+      "path": "checkpoints/R0013/START-P11.json.sha256",
+      "sha256": "a7303e2132acdd32d26a7c418260ba6f3497e63a6533565c8fa921c9fa208b7a"
+    },
+    {
+      "path": "checkpoints/R0013/START-P14.json.sha256",
+      "sha256": "5efc448355f713a510e2227aaefeb217189af60fb68c80514f6a3d57402e6005"
+    },
+    {
+      "path": "checkpoints/R0013/START-P16.json.sha256",
+      "sha256": "1089eb594466f7d9127638bb317de617f14c71e1c3c4452bce6bc64a21eec37f"
+    },
+    {
+      "path": "checkpoints/R0013/START-P17.json.sha256",
+      "sha256": "8f3ed18a035f47a6158ce6be194933e2bac4cf5a924d7eec44383b7dc5f0a2b3"
+    },
+    {
+      "path": "checkpoints/R0013/START-P18.json.sha256",
+      "sha256": "ca8a254a970743b14e190f40162ebc22bd1aa534beeeb98f804f18c34b5a4064"
+    },
+    {
+      "path": "checkpoints/R0013/START-P21.json.sha256",
+      "sha256": "abfbccd54c776f570dfe00d75acd55752fee3e4ba5f8a8f3e707a2de82f33fc2"
+    },
+    {
+      "path": "checkpoints/R0013/START-P23.json.sha256",
+      "sha256": "fa85766ef1d374c50ab24b80154f62c57ada11c21cf0c962896e6e8e525fade7"
+    },
+    {
+      "path": "checkpoints/R0013/START-P24.json.sha256",
+      "sha256": "8ddf233c76b1ce20c6e0bad8e2007832ea15b5982c14315433f1d553f484d30d"
+    },
+    {
+      "path": "checkpoints/R0013/START-P25.json.sha256",
+      "sha256": "bc62f774d9eb53bbe2d06388dc4f4fc0ec6e109810adcfa9e9c01ada29b335ec"
+    },
+    {
+      "path": "checkpoints/R0013/START-P28.json.sha256",
+      "sha256": "c90db6ffdafd57e1582fe70d9ea4af28a4118263813adf5d83f01c16107961d1"
+    },
+    {
+      "path": "checkpoints/R0013/START-P29.json.sha256",
+      "sha256": "78c5bb3944ef9a89d9387739ee5c06f5bb822d5aa8c62490f598010759fff262"
+    },
+    {
+      "path": "checkpoints/R0013/START-P31.json.sha256",
+      "sha256": "ce07238bb757c7461e1a12115cc8fbdfe0b918f607332942afc95abb91b51282"
+    },
+    {
+      "path": "checkpoints/R0013/START-P33.json.sha256",
+      "sha256": "eb3472b928a29d1ce3ce803a5632d91d714ebb39e1733e22cd59606775595a52"
+    },
+    {
+      "path": "checkpoints/R0013/START-P35.json.sha256",
+      "sha256": "a55d4d769e4a0075d6069747c37a508de3f1a9f67aad77523b90c02e0da79bf4"
+    },
+    {
+      "path": "checkpoints/R0013/START-P36.json.sha256",
+      "sha256": "fd4c500df8ae330b67945351a45c407b49d604492397ef4c1ad27af54480885c"
+    },
+    {
+      "path": "checkpoints/R0013/START-P37.json.sha256",
+      "sha256": "213a496475f5d012251abc7cb4804a58a1e5f91d40cb31c9a9c24b982438a800"
+    },
+    {
+      "path": "checkpoints/R0013/START-P38.json.sha256",
+      "sha256": "bae0a16192cd6f021b6f429447ad1755bc61e41e34c910b75751453b5066401c"
+    },
+    {
+      "path": "checkpoints/R0013/START-P39.json.sha256",
+      "sha256": "12d7123b70fc672b0760822a38ec906e196fe7dea690800238a6dcb32e2724ca"
+    },
+    {
+      "path": "checkpoints/R0013/START-P40.json.sha256",
+      "sha256": "9fb06837fc7768cfcb92dd39623f14a46e53fa80ad99887f8336c4857e0759aa"
+    },
+    {
+      "path": "checkpoints/R0013/START-P41.json.sha256",
+      "sha256": "1b2b5647ab195645b87c057b8b05637b2a4fa8ae2f423919c2165a97d62fb21b"
+    },
+    {
+      "path": "checkpoints/R0013/START-P42.json.sha256",
+      "sha256": "53753b2f5637073ae5a62512c982ba318441dd67c03df5d884340e019127db98"
+    },
+    {
+      "path": "checkpoints/R0013/START-P43.json.sha256",
+      "sha256": "ca6339779243d54504104d3583e81db0054493c81c78b24bd098f51d0d0ed958"
+    },
+    {
+      "path": "checkpoints/R0013/START-P44.json.sha256",
+      "sha256": "b857f00d6172da47f0c60a16699292138b70ff9cca843b9bf3cfe93ec4dfe621"
+    },
+    {
+      "path": "checkpoints/R0013/START-P45.json.sha256",
+      "sha256": "168f3f0d6680b6b5c47368fa7b454a21eef9d5a32c7a868048b0516be0b75cd0"
+    },
+    {
+      "path": "checkpoints/R0013/START-P46.json.sha256",
+      "sha256": "87b385d90c37311a40b2976f2d2528c1f1d31fcc8d0544101795254812c2c4f9"
+    },
+    {
+      "path": "checkpoints/R0013/START-P47.json.sha256",
+      "sha256": "fda60ad14b4a5f7c1a2c86d165399b897a32a17471e397390f56cda9e1c4da57"
+    },
+    {
+      "path": "checkpoints/R0013/START-P48.json.sha256",
+      "sha256": "2511ceb68fa3cd805410d8cd16488f3575311d8d137ab6aa0456f05de1424feb"
+    },
+    {
+      "path": "checkpoints/R0013/START-P49.json.sha256",
+      "sha256": "573cfad0af78eb728eb20c69bbd44673eac6164427338d4d710eb073f68d1a87"
+    },
+    {
+      "path": "checkpoints/R0013/START-P50.json.sha256",
+      "sha256": "00a9ccb64730e65923de6548ef5534310dd55888a61b6ee866062d2a886d9960"
+    },
+    {
+      "path": "checkpoints/R0013/START-P51.json.sha256",
+      "sha256": "822f75ee464d1f7e827fb79bf73fc7fe8140a5bbf3022037f7eef5f81bd39dc7"
+    },
+    {
+      "path": "checkpoints/R0013/START-P52.json.sha256",
+      "sha256": "7164d6f417e36eef057be8e4ec4bf08bb25c74e4ba73c79298537e4fde95d5b9"
+    },
+    {
+      "path": "checkpoints/R0013/START-P53.json.sha256",
+      "sha256": "7719902beed9d2cbb42b73c29f25c82286842f744a34baef2eddc9bb90335aef"
+    },
+    {
+      "path": "checkpoints/R0013/START-P54.json.sha256",
+      "sha256": "200da05dec8edc81fa0f819847735db590bd4db74e8961c9eb5febc9dcdf4dca"
+    },
+    {
+      "path": "checkpoints/R0013/START-P55.json.sha256",
+      "sha256": "182cc8f2d3bf0b1f9070f54a88aaded3239c26d812990c613e7f294a688cc181"
+    },
+    {
+      "path": "checkpoints/R0013/START-P56.json.sha256",
+      "sha256": "9cdd69806c530ed82987fb9d11590d7e6298bd0981eead0418dd68641b4c4e08"
+    },
+    {
+      "path": "checkpoints/R0013/START-P57.json.sha256",
+      "sha256": "afd22934f75e9dba4c94ef1113da5877a1598188270bad2fbd4ecbff52f796bb"
+    },
+    {
+      "path": "checkpoints/R0013/START-P58.json.sha256",
+      "sha256": "71b100fbf3c436c63c8cce72ad685b3cd5f19216918801d99899257cfc4ae87f"
+    },
+    {
+      "path": "checkpoints/R0013/START-P59.json.sha256",
+      "sha256": "66cf0d3cedadd1db8110828a37b3b6fda47609ae8adfd0fdb47bc39f34f9e423"
+    },
+    {
+      "path": "checkpoints/R0013/START-P59A.json.sha256",
+      "sha256": "11f079e6cb1bacf50db8d6fa18ae7d05e24d8798ebadd561119ffec300d8f22b"
+    },
+    {
+      "path": "checkpoints/R0013/START-P60.json.sha256",
+      "sha256": "12e54dda6774a557583b23e1f3cf975f69a0e39f4d724888110c0df8512e4457"
+    },
+    {
+      "path": "checkpoints/R0013/START-P61.json.sha256",
+      "sha256": "1fca4e10e852365aff9a513ee1da7e4bf93d11204ef56af520c206c17ad3ec8d"
+    },
+    {
+      "path": "checkpoints/R0013/START-P62.json.sha256",
+      "sha256": "318504d32fddb9de9ae26b2da69c9c5f64f3e03932b6b2571f82d57e8bc12b52"
+    },
+    {
+      "path": "checkpoints/R0013/START-P63.json.sha256",
+      "sha256": "79f8d2d47e003aa919a25113f52043c2bc45249710bdca66837cdbc1e7f25cdd"
+    },
+    {
+      "path": "checkpoints/R0013/START-P64.json.sha256",
+      "sha256": "c4e2df43417068efa39a25e9a67bcadd7a08eb0e833f49cb04b875229b58c29b"
+    },
+    {
+      "path": "checkpoints/R0013/START-P65.json.sha256",
+      "sha256": "d74b6709a6397a9eeaa71c282c23bd7c6effcfd7d6afc81dab711b36905a9dcd"
+    },
+    {
+      "path": "checkpoints/R0013/START-P66.json.sha256",
+      "sha256": "64d41a22f8bdc68d6d087f9032528e6e85e09e4326f3a48ffd667024f7e0ed83"
+    },
+    {
+      "path": "checkpoints/R0013/START-P67.json.sha256",
+      "sha256": "6dd6f5f856850a7b3cb2bec29e10ceef10780b2f60d6ff1a1749552fb072de78"
+    },
+    {
+      "path": "checkpoints/R0013/START-P68.json.sha256",
+      "sha256": "d60d4dc9e5086c32e872903a2a36cc269411fd797c43abe712522848ce4bf9e3"
+    },
+    {
+      "path": "checkpoints/R0013/START-P69.json.sha256",
+      "sha256": "1bc6623cf1aae7b6709fd87be5cb2ae70c1c35429f6f0ba1d765965579bc00a6"
+    },
+    {
+      "path": "checkpoints/R0013/START-P70.json.sha256",
+      "sha256": "1e94b73c9b3dac7086515d2547c232117fb6e4bb385344dca4d9c6f8cf1a70a5"
+    },
+    {
+      "path": "checkpoints/R0013/START-P71-TARGET-REPLACEMENT.json.sha256",
+      "sha256": "17ccc73a601a58f0b57fa1069ac9b07c2f3f729ce7c356f4a3084eb1d2e7dddf"
+    },
+    {
+      "path": "checkpoints/R0013/START-P72-STAT-PREREQUISITE.json.sha256",
+      "sha256": "8952b82f4634713bc378e01b7df56273fd97a775d1b76a7da15da4a55a4143fc"
+    },
+    {
+      "path": "checkpoints/R0013/START-P73-PRIVATE-BACKUP.json.sha256",
+      "sha256": "9a8d4a48a744608ddad763d715b3f5a9897b6ad97d88d35be0e83b57ab9b9f04"
+    },
+    {
+      "path": "checkpoints/R0013/START-P74-BACKUP-CORRECTION.json.sha256",
+      "sha256": "3dae7a2b5c10fd4534e938b75fd03696327f662714092b4107ae72e7b29e936b"
+    },
+    {
+      "path": "checkpoints/R0013/START-P75-TARGET-STAT.json.sha256",
+      "sha256": "ce12075a6b9bc8430a5265d7e84f9b012c36d997a7499b3c405f2ca7bd8e5667"
+    },
+    {
+      "path": "checkpoints/R0013/START-P76-TARGET-STAGING.json.sha256",
+      "sha256": "0362e4d8ba526232601c623b88cddcedb44049ee4c4ee5f9cc33982524acbe5e"
+    },
+    {
+      "path": "checkpoints/R0013/START-P77-FULL-UNINSTALL.json.sha256",
+      "sha256": "bd51282dbbb572bcc57ea28a6f7a40f1ff36ff37f23cdb957a74cb49b46d5644"
+    },
+    {
+      "path": "checkpoints/R0013/START-P78-RETIRE-BOOTSTRAP.json.sha256",
+      "sha256": "0959af4b0881b587d014953f15265b1f9f8ba6f2f24aaa07e00f943205965784"
+    },
+    {
+      "path": "checkpoints/R0013/START-P79-TARGET-CLEAN-INSTALL.json.sha256",
+      "sha256": "80644533c5897fda81ef65ff3345fbac5dd6e90cf9eee0c03dfa1f1ee0bfe546"
+    },
+    {
+      "path": "checkpoints/R0013/START-P81-NATIVE-TARGET-WEBUI.json.sha256",
+      "sha256": "0aac67e77b59eb59f97a89e1e8ba0469fca7cff8525f75a2c8dea9f22be75e32"
+    },
+    {
+      "path": "checkpoints/R0013/START-P83-CGI-PATH-CORRECTION.json.sha256",
+      "sha256": "4e1af6a0d151f53db40e6350bc5d715cee3369b3253599437fedc3396b9f652e"
+    },
+    {
+      "path": "checkpoints/R0013/START-P84-CORRECTED-TARGET-PACKAGE.json.sha256",
+      "sha256": "85260fc1421ee3a8de84d4a4b6f49f2269fb4c9df3cd81166ef6b0cd628e9322"
+    },
+    {
+      "path": "checkpoints/R0013/START-P86-TARGET-RAM-CLEANUP.json.sha256",
+      "sha256": "792531458aff32155465adb95d09b0915abe64b6ea7bda4b95838a862c7e8639"
+    },
+    {
+      "path": "checkpoints/R0013/STATUS-RETIREMENT-P53.json.sha256",
+      "sha256": "5dfb8c9b7e896ad00752ea84a42ee5c63053e6e540dd0a9bbee0ebe5f09b33ed"
+    },
+    {
+      "path": "checkpoints/R0013/SUBSCRIPTION-NAME-P6.json.sha256",
+      "sha256": "d7c628f11b1d7dc4402dc96ddc71c0be8bb73f3e9f2d4b6407aacf0d06d9929e"
+    },
+    {
+      "path": "checkpoints/R0013/TARGET-BACKUP-P74.json.sha256",
+      "sha256": "648fab57c7d87a26a41946826b792b548cb9ba787e5c6cf1fe293b4c3a851db6"
+    },
+    {
+      "path": "checkpoints/R0013/TARGET-CGI-DIAGNOSIS-P82.json.sha256",
+      "sha256": "8ebe213b44f92500dedccdd92253f8d5bdb9852020f45cc4b09044264e1b8f7b"
+    },
+    {
+      "path": "checkpoints/R0013/TARGET-CLEANUP-P86.json.sha256",
+      "sha256": "9760c4d601482f1c59920634af1dd8fb44bb6810471349888c0b834fd2ddd315"
+    },
+    {
+      "path": "checkpoints/R0013/TARGET-CORRECTED-INSTALL-P84.json.sha256",
+      "sha256": "37fa072295cc82a856a497e9e6b294b8c785b93a020ecede1a9d0762ae0ddb63"
+    },
+    {
+      "path": "checkpoints/R0013/TARGET-INSTALL-P79.json.sha256",
+      "sha256": "9d998ba692c80fc915ad6eebfc8e3cff5aacfc0246601cf6abad71cfbd786ece"
+    },
+    {
+      "path": "checkpoints/R0013/TARGET-LIGHT-BACKUP-P84.json.sha256",
+      "sha256": "684f856e5f0ff2dc22183360aed231d3ab0336523b4bdacf7e7d2011a5c0a611"
+    },
+    {
+      "path": "checkpoints/R0013/TARGET-NATIVE-LOGIN-P85.json.sha256",
+      "sha256": "12346a20a3e7ff25c50e5b1051a7cd9e15ff8e008e9cc69ad36aae3e8df0f1a7"
+    },
+    {
+      "path": "checkpoints/R0013/TARGET-PREFLIGHT-P71.json.sha256",
+      "sha256": "8adf6bec6a7d2546bccbecd852bc88a3876b5bf3c5078b3aa619241153b3ce10"
+    },
+    {
+      "path": "checkpoints/R0013/TARGET-REPLACEMENT-P87.json.sha256",
+      "sha256": "22004f199e3bcdf04f7794c0e63c6e6083d6d3d73f307f8efa053518df58a713"
+    },
+    {
+      "path": "checkpoints/R0013/TARGET-RETIRED-P78.json.sha256",
+      "sha256": "f486571f5fafabaf39f9c34f622b35bac616d1f16e34dc8dd491267712b84cd9"
+    },
+    {
+      "path": "checkpoints/R0013/TARGET-STAGED-P76.json.sha256",
+      "sha256": "de3445cfa0b4bcb777f52fbecf47c3813bb46c8ee972199112b320928a1793f9"
+    },
+    {
+      "path": "checkpoints/R0013/TARGET-STAT-P75.json.sha256",
+      "sha256": "b7bdc0e2f639b72d8b818ac5bb8b82a2d3f87067bec0738bfb25647f773cc83b"
+    },
+    {
+      "path": "checkpoints/R0013/TARGET-STATE-P80.json.sha256",
+      "sha256": "0c0c111173a1e38fb283818172a8a0f8c8db4eb8441dd247526e80fb99f44c76"
+    },
+    {
+      "path": "checkpoints/R0013/TARGET-SUPPLEMENT-BACKUP-P77.json.sha256",
+      "sha256": "bed595bfe0332ab703a46003e7e875294f1c1748ed2530e5d7596d2f4658c15b"
+    },
+    {
+      "path": "checkpoints/R0013/TARGET-UNINSTALL-P77.json.sha256",
+      "sha256": "4a360dcaa53e17eb28c11066a942afde7af930770b7bfee3567a2d53b0e98733"
+    },
+    {
+      "path": "checkpoints/R0013/UPDATER-CORE-P18-FAILED-DASH.json.sha256",
+      "sha256": "111328fefeba08105d47f94d4368d4e1f33861a7fe5e581b01973b187d806907"
+    },
+    {
+      "path": "checkpoints/R0013/UPDATER-CORE-P19-FAILED-DASH.json.sha256",
+      "sha256": "8de520783be1247f4ac860905ae78de2d4bb62e9e7805dc557ac3f628703f690"
+    },
+    {
+      "path": "checkpoints/R0013/UPDATER-CORE-P20-ASH.json.sha256",
+      "sha256": "b123263d39d466c75f2cbcb7d32770fb2b17314e745aea723368e87a58daa096"
+    },
+    {
+      "path": "checkpoints/R0013/UPDATER-CORE-P20-DASH.json.sha256",
+      "sha256": "0b70e81cf1fcc3729c1257966b978de078703de4bce4d2ec0403a92f82013b40"
+    },
+    {
+      "path": "checkpoints/R0013/UPDATER-CORE-P20.json.sha256",
+      "sha256": "6383bf7a379a46485a2dd7ccbc09f6f5d4a75afbffa09060ca21251932fee7e4"
+    },
+    {
+      "path": "checkpoints/R0013/UPDATER-CORE-P21-FAILED-ASH.json.sha256",
+      "sha256": "6f92340f99e2a3859b9019319cdd6be67fc592e14a0724159b7345e592c85a48"
+    },
+    {
+      "path": "checkpoints/R0013/UPDATER-CORE-P22-ASH.json.sha256",
+      "sha256": "c95bf62446c2ebca515c7f392e2de016305a21dd170705e817fbc8d1c9cde51b"
+    },
+    {
+      "path": "checkpoints/R0013/UPDATER-CORE-P22-DASH.json.sha256",
+      "sha256": "a2239e0744f56def0d4da2324ce188d361edc8ca268b98956b2db7caa284a902"
+    },
+    {
+      "path": "checkpoints/R0013/UPDATER-PLATFORM-AND-BUILDS-P23.json.sha256",
+      "sha256": "56d6fa95a8910e436a8a73fa15ea4f78f98bf32fc8af7ab346aa44799655d860"
+    },
+    {
+      "path": "checkpoints/R0013/UPDATER-PLATFORM-P23-ASH.json.sha256",
+      "sha256": "e4afa0e9aed1b655821d7e6da82ff83116aef0745100f10d23f476e9e0b2a3da"
+    },
+    {
+      "path": "checkpoints/R0013/UPDATER-PLATFORM-P23-DASH.json.sha256",
+      "sha256": "b6f0740ea3a3f38666bba57b91df8594c9b93da66ccc35032eec9d5377f4d5f1"
+    },
+    {
+      "path": "checkpoints/R0013/UPGRADE-AND-XRAY-P10.json.sha256",
+      "sha256": "e32cb18a12dc115cdaaa5305f2f4405c3f11e38197855075693949c00e8ac784"
+    },
+    {
+      "path": "checkpoints/R0013/UPSTREAM-DELTA-P2.json.sha256",
+      "sha256": "ddc19e8a48d904b7009611c99b27ec5f682d23ee7c18aa4bd999236833e2938c"
+    },
+    {
+      "path": "checkpoints/R0013/UPSTREAM-PORT-MAP-P2.json.sha256",
+      "sha256": "9459c799e29833f38013e3e02c2050160f420f0d1b66af65baed1798405dbc82"
+    },
+    {
+      "path": "checkpoints/R0013/VERSION-CONTRACT-P10.json.sha256",
+      "sha256": "0290add48c4a643b0da5cea68e5e7f1d22e88fcfa07b1439f95319861c510671"
+    },
+    {
+      "path": "checkpoints/R0013/WEB-CONFIG-VALIDATION-P35.json.sha256",
+      "sha256": "b603735a51612b735d638e00c3d6568002d1cf0a7f68a9a6f0ff920729f01625"
+    },
+    {
+      "path": "checkpoints/R0013/XRAY-PROCESS-P4.json.sha256",
+      "sha256": "a1bc32b8946b68544aaeb91f5390448cc19fba664a43e0ef0a10f97020e37ddb"
+    },
+    {
+      "path": "checkpoints/R0013/XRAY-ROLLBACK-VALIDATION-P32.json.sha256",
+      "sha256": "315a2ced88d9521de7639952e233dcdf689bfdf7334f2aa366952de1b75472ac"
+    },
+    {
+      "path": "checkpoints/R0013/process-failures/FAILURE-P11-OVERLAY-MODES.json.sha256",
+      "sha256": "2bdbc73634b5ef20d6254fe430e150c85f1fe9f91634aaa6b3ffc7bcf329c20c"
+    },
+    {
+      "path": "checkpoints/R0013/process-failures/FAILURE-P12-LIBRARY-MODE-ASSERTION.json.sha256",
+      "sha256": "6e103330ca07677ecc87a5dc3e92fd4584c77895876ec10cdd4e019544e321cd"
+    },
+    {
+      "path": "checkpoints/R0013/process-failures/FAILURE-P14-PERSISTENT-BOOTSTRAP.json.sha256",
+      "sha256": "9073b1b1c800674f42b5feb0de3daa4ac4d0c9caa6ec829f1f441bb42ae1bca4"
+    },
+    {
+      "path": "checkpoints/R0013/process-failures/FAILURE-P16-PERSISTENT-LOCK-DOMAIN.json.sha256",
+      "sha256": "f876a45e180a17fe1478970d7444e2a81febe1373407b276c46a03ccf1671dcf"
+    },
+    {
+      "path": "checkpoints/R0013/process-failures/FAILURE-P16-PRESERVATION-AUDIT-SCOPE.json.sha256",
+      "sha256": "35690a1f211435793ce096ebed8235e6cb9c56bcd02ed10e87bcaf42b87e4ef4"
+    },
+    {
+      "path": "checkpoints/R0013/process-failures/FAILURE-P17-EVIDENCE-REDIRECT.json.sha256",
+      "sha256": "755d0ed1395f6c4ea0aca25089146392101cc3f669a95ce24fe4e4dd052bede1"
+    },
+    {
+      "path": "checkpoints/R0013/process-failures/FAILURE-P18-EXIT-TRAP-STATUS.json.sha256",
+      "sha256": "1f4f1dbeb55b19263ba401005415ab31fb8120fc255527bb01d76bfe0f897642"
+    },
+    {
+      "path": "checkpoints/R0013/process-failures/FAILURE-P19-INTERRUPTION-FIXTURE.json.sha256",
+      "sha256": "23d599357a6528db1299369b51d6e3578e040477d2ebeb05abdf21c14e051507"
+    },
+    {
+      "path": "checkpoints/R0013/process-failures/FAILURE-P21-BUSYBOX-HARDLINK.json.sha256",
+      "sha256": "ea33f05fb71343e4012c622c4bb31c3e339d3e75556703ecec8c2a3a1ae1cc7d"
+    },
+    {
+      "path": "checkpoints/R0013/process-failures/FAILURE-P21-REAL-MANIFEST-CONTRACT.json.sha256",
+      "sha256": "fa714a5ca65deb14c0daabf750081cb47dbbe318c44873290003295d8a22bc00"
+    },
+    {
+      "path": "checkpoints/R0013/process-failures/FAILURE-P26-R1-WEBUI-ARGV.json.sha256",
+      "sha256": "b8d141c36397efdd8a45698bc442245c9f934d194849be6aa89e1601407ece8f"
+    },
+    {
+      "path": "checkpoints/R0013/process-failures/FAILURE-P29-SINGLE-PLATFORM-STAGED-RECEIPT.json.sha256",
+      "sha256": "4efcbba0934ebddcbacd9474bccc99dc0c04f3dc41d12efe560dd9cfbee873ac"
+    },
+    {
+      "path": "checkpoints/R0013/process-failures/FAILURE-P3-CONFIG-EQUALS-ARGC.json.sha256",
+      "sha256": "81a61feb47c2b2776736ef840b6e4c3bf104a8af679c01ad847eb62e492bb976"
+    },
+    {
+      "path": "checkpoints/R0013/process-failures/FAILURE-P31-XRAY-DESTRUCTIVE-ROLLBACK.json.sha256",
+      "sha256": "ba24099ec1f494eba8675e6f233ed741e6ee4a1672c2d18b2228d988dd37b6ef"
+    },
+    {
+      "path": "checkpoints/R0013/process-failures/FAILURE-P33-RUN-RUNTIME-SUBSTRING.json.sha256",
+      "sha256": "17bc6936c2ed61e81b5d9616466cf5f029da33a905e4e4e974638a11b167379c"
+    },
+    {
+      "path": "checkpoints/R0013/process-failures/FAILURE-P36-PUBLICATION-CLEANUP-EXIT-STATUS.json.sha256",
+      "sha256": "ef8a834b84ca3be6d8d4133d140f48ee43e83b4195e5726d0d45241dcee06601"
+    },
+    {
+      "path": "checkpoints/R0013/process-failures/FAILURE-P38-REAL-DAEMON-PID-MODE.json.sha256",
+      "sha256": "e9acdf99d49922ea716250b795204033f573f77a0f5df126d337c49e12238f8a"
+    },
+    {
+      "path": "checkpoints/R0013/process-failures/FAILURE-P41-LIVE-FIXTURE-UNMOUNT-EVIDENCE.json.sha256",
+      "sha256": "31a2094dff42e9c404aae56dbcc1355fe51b84fc03f41cb56106cd9bb84aa47f"
+    },
+    {
+      "path": "checkpoints/R0013/process-failures/FAILURE-P42-LIVE-FIXTURE-TMPFS-BUSY.json.sha256",
+      "sha256": "3e370d7ef3bee9012acc032351e8c493d4aa763a006c212117da8722117dfda7"
+    },
+    {
+      "path": "checkpoints/R0013/process-failures/FAILURE-P43-LIVE-ROLLBACK-FIXTURE-DEFAULTS.json.sha256",
+      "sha256": "6b67f95b571e312786a329a7c6d6b73c8c64312cbda38fece041af204bf1a470"
+    },
+    {
+      "path": "checkpoints/R0013/process-failures/FAILURE-P45-RECOVERY-FIXTURE-PID-BINDING.json.sha256",
+      "sha256": "302b555427084472245322cfb76b27b2b72524dee4e98db2fc056535aa6a803f"
+    },
+    {
+      "path": "checkpoints/R0013/process-failures/FAILURE-P46-RESTORED-PUBLICATION-FIXTURE-CONTRACT.json.sha256",
+      "sha256": "7027608058ce58a2bdda860dd0968bec50427549ad4e2a694b9cc2e1d99847df"
+    },
+    {
+      "path": "checkpoints/R0013/process-failures/FAILURE-P48-EARLY-WORK-SHAPE-DIAGNOSTIC.json.sha256",
+      "sha256": "87e1dbc3ece27ec79d795d80dead312a88e8083af16b4078ce69289a5dd1d489"
+    },
+    {
+      "path": "checkpoints/R0013/process-failures/FAILURE-P5-LOCAL-COREUTILS.json.sha256",
+      "sha256": "e401611690102caa1b3c46d6cc35cd605fa1761793c08f32a0be56fe83fd6508"
+    },
+    {
+      "path": "checkpoints/R0013/process-failures/FAILURE-P50-WINDOWS-SYNTAX-PIPE-NEWLINES.json.sha256",
+      "sha256": "2af5ad748d0d9d4f2a1964136adeb56387c19bcf6adafa9f4de329c77b6da8b4"
+    },
+    {
+      "path": "checkpoints/R0013/process-failures/FAILURE-P51-EARLY-S23-EMPTY-RAM-SURVIVOR.json.sha256",
+      "sha256": "ca778d564e0bd36713191ed215fdce32f0a75b5bf9053b491502ca727af98c2f"
+    },
+    {
+      "path": "checkpoints/R0013/process-failures/FAILURE-P54-FULL-APP-SERVICE-STOP.json.sha256",
+      "sha256": "a588ad58f0ff53019c5937305a43c7249654b5123876661127c0b390395e791a"
+    },
+    {
+      "path": "checkpoints/R0013/process-failures/FAILURE-P56-SUBSCRIPTION-CANCEL-DISABLES-BUTTON.json.sha256",
+      "sha256": "e10760319b6e331baec5df07dcd274a46993d8d4b9ddc7e0062a6fb8576dcc0c"
+    },
+    {
+      "path": "checkpoints/R0013/process-failures/FAILURE-P58-NAVIGATION-CACHE-QUERY.json.sha256",
+      "sha256": "f219f15711eed23c2cfd8ab9acd90b8c6aaf949d53dff28a79f0aabba70385ce"
+    },
+    {
+      "path": "checkpoints/R0013/process-failures/FAILURE-P59-PREVIEW-EVIDENCE-GIT-NEWLINES.json.sha256",
+      "sha256": "17efdeb15de56b9c49edf36508ea881e547946fdeb2830e1fb71ab5c8b05c323"
+    },
+    {
+      "path": "checkpoints/R0013/process-failures/FAILURE-P60-BUSYBOX-DAEMON-START.json.sha256",
+      "sha256": "a169de06537652c06862fc79f816f69b9c8e826b6d291c2c724dac35250cee0d"
+    },
+    {
+      "path": "checkpoints/R0013/process-failures/FAILURE-P62-BUSYBOX-IDLE-PROCESS-SHAPE.json.sha256",
+      "sha256": "73e51bd6ac8bb59a8f6f3bea68b87f88a4e1fbb8dcbec23c33a099954d1cc089"
+    },
+    {
+      "path": "checkpoints/R0013/process-failures/FAILURE-P65-BROWSER-DIALOG-CONTROL.json.sha256",
+      "sha256": "a2c2fa6cc248cf8e5d71752f56141db2510f05a446e52310dba3da7a60041d55"
+    },
+    {
+      "path": "checkpoints/R0013/process-failures/FAILURE-P67-SSH-BATCH-AUTH.json.sha256",
+      "sha256": "e44ead5d0ff9220bda45f29a033ac919ccbc5a8be4a5d7bb6d677adb4e802649"
+    },
+    {
+      "path": "checkpoints/R0013/process-failures/FAILURE-P68-TARGET-STAT-CAPABILITY.json.sha256",
+      "sha256": "6f2bee2e6b821b861305705b0a338e03a1048e99b6b8be993b97558c1ce2e2b6"
+    },
+    {
+      "path": "checkpoints/R0013/process-failures/FAILURE-P69-TARGET-FULL-BRORAY-OWNERSHIP.json.sha256",
+      "sha256": "df475c14b86aa7d27109584112fe17545b5418d7ad37527fccc923f0c126c176"
+    },
+    {
+      "path": "checkpoints/R0013/process-failures/FAILURE-P7-JQ-MODULE-LOADING.json.sha256",
+      "sha256": "6f49f4942e62c2a3d8332113cba8bcfe1ac0f07ee583a565baa61514ddefb570"
+    },
+    {
+      "path": "checkpoints/R0013/process-failures/FAILURE-P73-BACKUP-TAR-PATH.json.sha256",
+      "sha256": "37d6af48e08d931e48a91029d0d0ff7d495888def259723b29f7314f68c1ae98"
+    },
+    {
+      "path": "checkpoints/R0013/process-failures/FAILURE-P81-NATIVE-TARGET-LOGIN.json.sha256",
+      "sha256": "d8e98eb6cb5e7c501aff83bb9665b40a96b0d4eb826a62c1e340694908b9bf06"
+    },
+    {
+      "path": "checkpoints/R0013/process-failures/FAILURE-P9-R1-REJECTS-SEMVER-ID.json.sha256",
+      "sha256": "b55fa82c3078fbbd48157c0f7f142bf51f6ad22f6580e515593edf6b648074d5"
+    }
+  ]
+}

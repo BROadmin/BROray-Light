@@ -106,10 +106,19 @@ P83 устанавливает путь Entware до guard, не меняя nati
 | new_updater_complete_prepared_app_service_transition | PASS_FULL_PREPARED_APP_DASH_BUSYBOX_OS_BOUNDARIES_MOCKED | PREPARED-LIFECYCLE-P64.json |
 | target_stat_prerequisite | PASS_ACTUAL_TARGET_COREUTILS_STAT | TARGET-STAT-P75.json |
 
+## P88 — проверка совместимости Xray (11 сентября 2026)
+
+Все семь официальных ARM64-версий из текущего выбора WebUI (26.9.9, 26.9.8, 26.7.28, 26.7.11, 26.6.27, 26.3.27, 26.2.6) прошли 91 реальную localhost-передачу VLESS и 189 проверок конфигураций, включая 7 проверок текущего рабочего конфига. Установленный Xray 26.9.9, основной PID/время старта и durable-состояние сохранены. Временные файлы tmpfs удалены. Реестр совместимости поставляемого приложения не изменён. Подробности, границы проверки и SHA-256: [XRAY-COMPATIBILITY-P88.md](XRAY-COMPATIBILITY-P88.md), [JSON](XRAY-COMPATIBILITY-P88.json). P83 regression run 34575296136 завершён успешно во всех пяти jobs. Полная готовность кандидата/релиза по-прежнему false.
+
 ## Следующий этап
 
 `R0013_P88_FUNCTIONAL_VLESS_AND_ALL_WEBUI_BACKEND_ACCEPTANCE_ON_REPLACED_TEST_TARGET`
 
-Проверить окончание регрессии P83 и сохранить результаты. Затем выполнить функциональную приёмку VLESS и всех кнопок/backend, physical restart/persistence и signed updater. После этого — подпись существующим encrypted Actions secret, финальные immutable release/documentation gates. До выполнения этих требований готовность кандидата и релиза остаётся false.
+Завершить функциональную приёмку внешних VLESS-подключений и всех кнопок/backend, physical restart/persistence и signed updater. После этого — подпись существующим encrypted Actions secret, финальные immutable release/documentation gates. До выполнения этих требований готовность кандидата и релиза остаётся false. P88 не заменяет эти приёмки.
 
 Основной checkpoint: [CHECKPOINT.json](CHECKPOINT.json). История ошибок сохранена; исходный R0008, прежние релизы, production server и репозиторий полного BROray не изменялись.
+
+
+## P89 — внешняя совместимость Xray
+
+26.2.6: FAIL реального HTTPS через VLESS/XHTTP/REALITY (curl 35), конфиг/запуск PASS. Остальные шесть версий: по 3/3 PASS; 26.9.9 положительные контроли до/после PASS. Установленный runtime/PID/данные сохранены, RAM очищена. Это не установка каждой версии и не браузерная приёмка. Предыдущий отрицательный вывод BROray не отменён. Подробности: [XRAY-EXTERNAL-P89.md](XRAY-EXTERNAL-P89.md).

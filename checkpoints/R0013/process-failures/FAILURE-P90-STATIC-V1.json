@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "revision": "p90-static-v1",
+  "status": "STOPPED",
+  "failure": "Local YAML/Python/JSON preflight could not start because PyYAML is absent from the bundled Python runtime.",
+  "cause": "Assumed optional YAML dependency availability.",
+  "candidateTestRan": false,
+  "routerMutationPerformed": false,
+  "publicMutationPerformed": false,
+  "nextCorrectedRevision": "p90-static-v2",
+  "correction": "Install the YAML parser into an ignored, task-local dependency directory, import explicitly, run the static gate alone and stop the shell on failure. The earlier preparation record is a source preparation record, not a test PASS."
+}

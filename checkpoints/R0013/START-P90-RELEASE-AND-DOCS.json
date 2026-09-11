@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0013",
+  "revision": "p90-release-and-docs-v1",
+  "status": "AUTHORIZED_ACCEPTANCE_BEFORE_PUBLICATION",
+  "publicVersion": "2.0.0",
+  "releaseId": "2.0.0-r1",
+  "tag": "v2.0.0",
+  "branch": "codex/r0009-updater-package",
+  "headBeforeChanges": "39452841bc25c96da10d9df4557c1223b5c28cba",
+  "authority": "User explicitly requested preparation and publication, GitHub instructions and version history, and updates to the existing docs.brovibe.cloud homepage and BROray-Light page.",
+  "scope": ["Close final R0013 acceptance gates", "Block exact Xray 26.2.6 archive from P89 negative target evidence", "Independent final Build A/B and governed signing", "Publish immutable v2.0.0 only after acceptance", "Update BROray-Light GitHub README and companion Russian guide/history", "Update only necessary documentation-site files under BROadmin/BROray/site/docs.brovibe.cloud using the existing publisher"],
+  "constraints": ["No local branch switch", "Preserve all inherited R0012 changes and previous releases", "No full BROray application changes", "No direct production-server changes", "No embedded application guide", "Preserve test-router user state", "Router scratch only in protected RAM", "Never read or print private signing secret"],
+  "supersedes": "Historical R0012 prohibition on documentation homepage content changes only; no other scope expansion.",
+  "candidateReady": false,
+  "releaseReady": false,
+  "publicReleasePublished": false,
+  "remainingGates": ["Final compatibility policy regression", "Final independent Build A/B", "Actual WebUI backend control acceptance", "Physical persistence and signed-update acceptance", "Signing trust-root verification", "Immutable public bytes", "GitHub and live-site documentation verification"]
+}

@@ -1,0 +1,35 @@
+{
+  "revision": "p89-external-v3",
+  "at": "2026-09-11T09:36:45.379315+00:00",
+  "error": "v26.2.6: HTTPS request 1 failed with curl exit 35",
+  "version": {
+    "tag": "v26.2.6",
+    "startedAt": "2026-09-11T09:36:36.343608+00:00",
+    "requests": [
+      {
+        "url": "https://www.gstatic.com/generate_204",
+        "exitCode": 35,
+        "metrics": "000 1 0 0.154042",
+        "at": "2026-09-11T09:36:45.319624+00:00",
+        "stderrSha256": "07299773277b9fb8ef9be6bd3479fca0cc63468d9966bf4c7ca8158f671e1dbf",
+        "timeout": false,
+        "tlsVerificationFailed": true
+      }
+    ],
+    "archiveSha256": "b52d8263453fbd6f4747fd6a1ecf70cd43a664243615dc892ea4674c01b2b5ee",
+    "binarySha256": "0f4b7cbaab8964beebffa0c226185326a35af560ecfed9da0b2ad9bc2ff9ded3",
+    "configValidation": {
+      "exitCode": 0,
+      "configurationOK": true,
+      "outputSha256": "5f19a77b5054328d67edeb696052a793ad8629114b5572ed8a353e6151dac210"
+    },
+    "start": {
+      "exitCode": 0,
+      "stdout": "pid=14032\n40490303\n",
+      "stderr": ""
+    },
+    "status": "FAIL_STOPPED_NO_RETRY"
+  },
+  "retryPerformed": false,
+  "nextRevision": "p89-external-v4-diagnosis-and-control-only-after-review"
+}

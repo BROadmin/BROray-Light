@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "stage": "R0013_SELECTIVE_UPSTREAM_STABLE_PORT",
   "status": "PASS_TEST_TARGET_REPLACEMENT_RELEASE_ACCEPTANCE_PENDING",
-  "currentRevision": "p87-target-replacement-checkpoint",
+  "currentRevision": "p89-external-complete",
   "publicVersion": "2.0.0",
   "packageVersion": "2.0.0",
   "releaseId": "2.0.0-r1",
@@ -26,9 +26,9 @@
     "sha256": "e0b324e756fd30cafe083eaaa4b5e9aac8c3b24de5e3547268c29190ed88944f"
   },
   "activeFailure": null,
-  "nextExactAction": "R0013_P88_FUNCTIONAL_VLESS_AND_ALL_WEBUI_BACKEND_ACCEPTANCE_ON_REPLACED_TEST_TARGET",
+  "nextExactAction": "RECORD_NEGATIVE_COMPATIBILITY_IN_CANDIDATE_BEFORE_RELEASE_AND_COMPLETE_REMAINING_WEBUI_LIFECYCLE_SIGNING_ACCEPTANCE",
   "remainingIntegrationGap": {
-    "description": "Actual replacement/login/empty-page smoke PASS. Current full component regression evidence, VLESS data path/all backend controls, physical restart/signed updater, signing and immutable release/docs gates remain."
+    "description": "Replacement/login smoke and P88 bounded Xray compatibility PASS; P83 five CI jobs success. Complete actual WebUI/backend and external VLESS acceptance, physical restart/persistence/signed updater, signing and immutable release/docs gates."
   },
   "pendingSourceCommit": null,
   "lastResolvedFailure": "process-failures/FAILURE-P81-NATIVE-TARGET-LOGIN.json",
@@ -48,13 +48,13 @@
   "browserToPackageBinding": "BUILD-DOWNLOAD-AND-UI-BINDING-P70.json",
   "report": {
     "path": "checkpoints/R0013/REPORT.md",
-    "sizeBytes": 12162,
-    "sha256": "4bcac08a3095ca7e67cedee43348a69e4f50e88e23012c5081978b3e3fdcea02"
+    "sha256": "77f3b0ee07a2ecfad000125ad0f72faa4b4cfdfae4832475e3b7178adb791de8",
+    "bytes": 13887
   },
   "validation": {
     "path": "checkpoints/R0013/VALIDATION.json",
-    "sizeBytes": 8935,
-    "sha256": "08bad665c9b6618a6ba5fe2551470edc4e0565fea77420fa454d953d5e42d6c5"
+    "sha256": "4959daf491cc0d519d38ace34e6e254e6ef0be72e74ad762359a2a201257afd9",
+    "bytes": 10138
   },
   "routerReadOnlyInspected": true,
   "routerMutationPerformed": true,
@@ -64,7 +64,12 @@
   "targetInstall": "TARGET-CORRECTED-INSTALL-P84.json",
   "targetState": "TARGET-NATIVE-LOGIN-P85.json",
   "installedSourceCommit": "14813c3774207502039999e014062464043827d1",
-  "currentFullRegression": "PENDING_FINAL_RESULT_COLLECTION",
+  "currentFullRegression": "PASS_P83_ALL_FIVE_JOBS_RUN_34575296136",
+  "xrayCompatibility": {
+    "path": "XRAY-COMPATIBILITY-P88.json",
+    "sha256": "344fcf86fd4512df2579ce25b8479c5449b2b0939ccb41740808b9c394b9b5a9",
+    "status": "PASS_BOUNDED_7_VERSIONS_91_DATA_PATHS_189_CONFIG_CHECKS"
+  },
   "sourceManifest": {
     "path": "checkpoints/R0013/PRODUCED-SOURCE-MANIFEST.json",
     "sizeBytes": 18086,
@@ -76,5 +81,18 @@
   },
   "targetCleanup": "TARGET-CLEANUP-P86.json",
   "fullBROrayRepositoryModified": false,
-  "fullProductRemovedOnTestTarget": true
+  "fullProductRemovedOnTestTarget": true,
+  "xrayExternalDiagnostic": {
+    "path": "checkpoints/R0013/XRAY-EXTERNAL-P89.json",
+    "sha256": "0ac2885d5441e633de2b6da61f77f8591720ba3a2cfbc6ee3e0e7c2ef4f31c78",
+    "bytes": 7183,
+    "report": {
+      "path": "checkpoints/R0013/XRAY-EXTERNAL-P89.md",
+      "sha256": "75c94d72a7d19459fa0d05caedc5f03712155b52022c08fee4be504ea07dae76",
+      "bytes": 4779
+    },
+    "incompatibleVersions": [
+      "26.2.6"
+    ]
+  }
 }

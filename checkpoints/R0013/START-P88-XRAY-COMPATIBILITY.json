@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0013",
+  "revision": "p88-xray-compatibility-diagnostic-v1",
+  "date": "2026-09-11",
+  "request": "Проверь версии xray на совместимость",
+  "sourceCommit": "39452841bc25c96da10d9df4557c1223b5c28cba",
+  "installedAppManifestSha256": "57832490c248a75d0286f142c8553e4b5e7a377336b10f648ee2e2dffb206716",
+  "target": "identity-pinned authorized aarch64 test router, Linux 4.9-ndm-5",
+  "versions": ["v26.9.9", "v26.9.8", "v26.7.28", "v26.7.11", "v26.6.27", "v26.3.27", "v26.2.6"],
+  "scope": [
+    "Official ARM64 asset identity and SHA-256",
+    "Actual target binary version and configuration validation using the installed Light generator jq program",
+    "Isolated localhost SOCKS to VLESS data path for supported transports using synthetic fixtures",
+    "Snapshot installed binary, app manifest and active process before and after; never change service configuration"
+  ],
+  "limits": [
+    "Temporary target files only in a new root-owned 0700 directory on verified /tmp tmpfs",
+    "No installation, updater invocation, downgrade, service restart, routing or authentication change",
+    "No remote server access and no use of private subscription credentials",
+    "Stop and record first material failure before a corrected revision",
+    "Bounded config/data-path evidence is not complete release or arbitrary subscription compatibility",
+    "Do not edit the shipped compatibility registry or publish a release"
+  ],
+  "candidateReady": false,
+  "status": "CHECKPOINT_FIRST"
+}

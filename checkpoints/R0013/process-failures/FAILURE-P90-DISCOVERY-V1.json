@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0013",
+  "revision": "p90-discovery-v1",
+  "status": "STOPPED_READ_ONLY_DISCOVERY",
+  "failure": "GitHub connector rejects secrets endpoints; workflow-directory response did not contain the assumed structured content and JSON parsing failed.",
+  "cause": "Approved-public-endpoint connector scope and an unchecked response shape.",
+  "mutationPerformed": false,
+  "secretRead": false,
+  "nextCorrectedRevision": "p90-discovery-v2",
+  "correction": "Validate tool response shapes, use known file endpoints for workflow sources, and use existing Git credential manager in memory only for authorized repository publication API capability checks. Do not request secret values."
+}

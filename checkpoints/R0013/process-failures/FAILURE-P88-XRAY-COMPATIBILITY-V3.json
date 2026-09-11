@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 1,
+  "revision": "p88-xray-compatibility-v3",
+  "at": "2026-09-11T08:32:43.543934+00:00",
+  "status": "FIRST_ERROR",
+  "error": "FIRST_ERROR v26.9.9 tcp-reality-vision; inspect saved logs",
+  "cause": "Pending diagnosis from preserved first-run evidence; not automatically a product defect.",
+  "nextRevision": "p88-xray-compatibility-v4-only-after-diagnosis",
+  "retryPerformed": false
+}

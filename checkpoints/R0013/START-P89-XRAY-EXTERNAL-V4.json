@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "revision": "p89-external-v4",
+  "status": "CHECKPOINT_FIRST_REMAINING_VERSIONS_AND_POSITIVE_CONTROL",
+  "previousFailure": "process-failures/FAILURE-P89-EXTERNAL-V3.json",
+  "diagnosis": "26.9.9 passed all three external HTTPS requests on the same outbound; 26.2.6 validated and started but its first request failed with curl 35 (TLS connection error, not proof of certificate validation failure). This reproduces the prior BROray failure class. Exact deeper TLS/XHTTP root cause is not claimed.",
+  "correction": "Exclude known-failing 26.2.6 from continuation. Test the five untested versions, then an explicitly planned final 26.9.9 positive control. No retry of failing version, no changes to binaries or external outbound/server. Preserve the negative classification.",
+  "testOrder": ["v26.3.27", "v26.6.27", "v26.7.11", "v26.7.28", "v26.9.8", "v26.9.9"],
+  "priorFailuresRemainImmutable": true,
+  "installedStatePreservedAtV3Completion": true,
+  "candidateReady": false,
+  "nextExactAction": "TEST_REMAINING_VERSIONS_AND_FINAL_POSITIVE_CONTROL"
+}

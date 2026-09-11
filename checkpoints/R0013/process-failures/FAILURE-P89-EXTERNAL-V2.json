@@ -1,0 +1,25 @@
+{
+  "revision": "p89-external-v2",
+  "at": "2026-09-11T09:34:19.305102+00:00",
+  "error": "v26.9.9: start failed",
+  "version": {
+    "tag": "v26.9.9",
+    "startedAt": "2026-09-11T09:34:11.387156+00:00",
+    "requests": [],
+    "archiveSha256": "3e38d72dfc5eb65c91df0e5583e9b6676c32232041da47de6ae73946b526d66c",
+    "binarySha256": "c1defe42b6db958a97c5e049a02a00a4baaedaca7b51c1c229f0830e288acef5",
+    "configValidation": {
+      "exitCode": 0,
+      "configurationOK": true,
+      "outputSha256": "2a3001ff296f75c9b48c22c492070e582e50ec990f28ef57535773bc6b5c25ee"
+    },
+    "start": {
+      "exitCode": 1,
+      "stdout": "",
+      "stderr": "sh: can't kill pid 8181: No such process\n"
+    },
+    "status": "FAIL_STOPPED_NO_RETRY"
+  },
+  "retryPerformed": false,
+  "nextRevision": "p89-external-v3-diagnosis-and-control-only-after-review"
+}

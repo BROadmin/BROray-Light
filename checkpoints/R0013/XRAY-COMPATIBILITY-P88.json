@@ -1,0 +1,220 @@
+{
+  "schemaVersion": 1,
+  "revision": "p88-xray-compatibility-complete",
+  "at": "2026-09-11T08:52:40.789978+00:00",
+  "status": "PASS_BOUNDED_7_VERSIONS",
+  "product": "BROray-Light",
+  "publicVersion": "2.0.0",
+  "candidateId": "2.0.0-r1",
+  "architecture": "arm64",
+  "actualKernel": "4.9-ndm-5",
+  "installedSourceCommit": "14813c3774207502039999e014062464043827d1",
+  "appManifestSha256": "57832490c248a75d0286f142c8553e4b5e7a377336b10f648ee2e2dffb206716",
+  "generatorSha256": "dc1c932d9eccef83b25ca5c4eae74c9a1085fdff1bda531f0be16b08bee1041f",
+  "generatorJqSha256": "6c74bd9d6429fbfb2767618d7be3f62a5f5dc6dfb5ad52c4fb74a3c199d3ffc9",
+  "versions": [
+    {
+      "tag": "v26.9.9",
+      "prerelease": true,
+      "archiveSha256": "3e38d72dfc5eb65c91df0e5583e9b6676c32232041da47de6ae73946b526d66c",
+      "binarySha256": "c1defe42b6db958a97c5e049a02a00a4baaedaca7b51c1c229f0830e288acef5",
+      "versionOutput": "Xray 26.9.9 (Xray, Penetrates Everything.) 52a412d (go1.27.1 linux/arm64)",
+      "dataPathCasesPassed": 13,
+      "generatedConfigurationChecksPassed": 26,
+      "activeConfigurationCheck": "PASS",
+      "status": "PASS_BOUNDED",
+      "receipt": {
+        "path": "dist/R0013/p88-xray-compat-v5/v26.9.9.json",
+        "sha256": "29cb8043768a713ae8e7d1065746ee02370a6e920a7f35727c923bb159d2e098",
+        "bytes": 48207
+      }
+    },
+    {
+      "tag": "v26.9.8",
+      "prerelease": true,
+      "archiveSha256": "6721edb5b80e046536abc8235bd0977a2c69ade88ad42c01c0df368beba070dc",
+      "binarySha256": "63d750d907c4586dc8964c7c49430983090068282e546297d5b39068108712a0",
+      "versionOutput": "Xray 26.9.8 (Xray, Penetrates Everything.) 37ceb8b (go1.27.1 linux/arm64)",
+      "dataPathCasesPassed": 13,
+      "generatedConfigurationChecksPassed": 26,
+      "activeConfigurationCheck": "PASS",
+      "status": "PASS_BOUNDED",
+      "receipt": {
+        "path": "dist/R0013/p88-xray-compat-v5/v26.9.8.json",
+        "sha256": "d0c28f65fa7759e1051423f116a4be12af8c62aa2ebfb5a052061f8731b4a595",
+        "bytes": 48190
+      }
+    },
+    {
+      "tag": "v26.7.28",
+      "prerelease": true,
+      "archiveSha256": "f5698bb218ada3b4022db26fafc39601c5f53b46b19eb76c9616325985807501",
+      "binarySha256": "4b8af237444801bf17b3dc10a1c5c24581fbe3d433eba3d78c6c3a0da1df56fc",
+      "versionOutput": "Xray 26.7.28 (Xray, Penetrates Everything.) 5ca6f4b (go1.26.5 linux/arm64)",
+      "dataPathCasesPassed": 13,
+      "generatedConfigurationChecksPassed": 26,
+      "activeConfigurationCheck": "PASS",
+      "status": "PASS_BOUNDED",
+      "receipt": {
+        "path": "dist/R0013/p88-xray-compat-v5/v26.7.28.json",
+        "sha256": "22f7128aec86c439e4a4b376a8e2b55ddb83d7b51acffd36993ead22dd71888f",
+        "bytes": 48709
+      }
+    },
+    {
+      "tag": "v26.7.11",
+      "prerelease": true,
+      "archiveSha256": "89cfe01674d7c9f6847b7dd9389537be9acb3b9dc3c6cb9fdeba87a3e4e57fc1",
+      "binarySha256": "dd3ba298aa32af9442163ee791d54f562bd89aa860fed1d0c47306fb019c1e64",
+      "versionOutput": "Xray 26.7.11 (Xray, Penetrates Everything.) 50231ea (go1.26.5 linux/arm64)",
+      "dataPathCasesPassed": 13,
+      "generatedConfigurationChecksPassed": 26,
+      "activeConfigurationCheck": "PASS",
+      "status": "PASS_BOUNDED",
+      "receipt": {
+        "path": "dist/R0013/p88-xray-compat-v5/v26.7.11.json",
+        "sha256": "d2565dd2bf3f5323523bc885c575dbb81a2102e74d2e92f9700b3b5ca315df9a",
+        "bytes": 48106
+      }
+    },
+    {
+      "tag": "v26.6.27",
+      "prerelease": true,
+      "archiveSha256": "13a251379bea366c2cf10363ad71e75734193d401f26f518bf0c25e5c8f8c931",
+      "binarySha256": "53ad04b1ddcba6f4ff8834b3db2e9a596456441259cea3e4f03f86cd39e22884",
+      "versionOutput": "Xray 26.6.27 (Xray, Penetrates Everything.) 45cf289 (go1.26.4 linux/arm64)",
+      "dataPathCasesPassed": 13,
+      "generatedConfigurationChecksPassed": 26,
+      "activeConfigurationCheck": "PASS",
+      "status": "PASS_BOUNDED",
+      "receipt": {
+        "path": "dist/R0013/p88-xray-compat-v5/v26.6.27.json",
+        "sha256": "181f296b0ce53f9d4b0badbf7df5849a6177f7fd60ce5e5d43af2732ef355de5",
+        "bytes": 48140
+      }
+    },
+    {
+      "tag": "v26.3.27",
+      "prerelease": false,
+      "archiveSha256": "4d30283ae614e3057f730f67cd088a42be6fdf91f8639d82cb69e48cde80413c",
+      "binarySha256": "c2d20a7045250497083afea0d79db0672f6c89a25aaaf37c92de034d6b764b04",
+      "versionOutput": "Xray 26.3.27 (Xray, Penetrates Everything.) d2758a0 (go1.26.1 linux/arm64)",
+      "dataPathCasesPassed": 13,
+      "generatedConfigurationChecksPassed": 26,
+      "activeConfigurationCheck": "PASS",
+      "status": "PASS_BOUNDED",
+      "receipt": {
+        "path": "dist/R0013/p88-xray-compat-v5/v26.3.27.json",
+        "sha256": "8fc223a48b1b28cbe0d3b97bf749ef18a9cc1432be4f42eef4e1c0ad867c18bb",
+        "bytes": 48105
+      }
+    },
+    {
+      "tag": "v26.2.6",
+      "prerelease": false,
+      "archiveSha256": "b52d8263453fbd6f4747fd6a1ecf70cd43a664243615dc892ea4674c01b2b5ee",
+      "binarySha256": "0f4b7cbaab8964beebffa0c226185326a35af560ecfed9da0b2ad9bc2ff9ded3",
+      "versionOutput": "Xray 26.2.6 (Xray, Penetrates Everything.) 12ee51e (go1.25.7 linux/arm64)",
+      "dataPathCasesPassed": 13,
+      "generatedConfigurationChecksPassed": 26,
+      "activeConfigurationCheck": "PASS",
+      "status": "PASS_BOUNDED",
+      "receipt": {
+        "path": "dist/R0013/p88-xray-compat-v5/v26.2.6.json",
+        "sha256": "a30c675b7b9ae6d716caa613447217c986e19c8804a75e9024db724e89ef6f0d",
+        "bytes": 59479
+      }
+    }
+  ],
+  "actualDataPathPasses": 91,
+  "generatedConfigurationPasses": 182,
+  "activeConfigurationPasses": 7,
+  "installedVersion": "26.9.9",
+  "installedStateAndPidPreserved": true,
+  "routerScratchCleanup": "PASS_TMPFS_ONLY",
+  "latestOfficialStable": "26.3.27",
+  "officialMetadata": {
+    "path": "dist/R0013/p88-xray-compat-v5/official-releases.json",
+    "sha256": "494d9a6764ac51f54730565d8f3d1a3efc19ba30d09a1ef29f0a16ae10c47962",
+    "bytes": 3322253
+  },
+  "evidence": {
+    "path": "checkpoints/R0013/XRAY-COMPATIBILITY-EVIDENCE-P88.json",
+    "sha256": "8d45ed15d91b7259d8a9336052433404d2898da4dffb792c97746033c8789b94",
+    "bytes": 365046
+  },
+  "rawMatrix": {
+    "path": "dist/R0013/p88-xray-compat-v5/report.json",
+    "sha256": "7e81ce90432e5190c652efa0c9a7a3ac9889858250022a50f6cb475db23e2e98",
+    "bytes": 356744
+  },
+  "rawActiveConfiguration": {
+    "path": "dist/R0013/p88-current-config-v1/report.json",
+    "sha256": "19d2239191e13e8e9d1dfa6d4fc73e7148415a4f79eddf7710228d972467f013",
+    "bytes": 3155
+  },
+  "activeConfigurationIdentityResolution": {
+    "path": "checkpoints/R0013/XRAY-ACTIVE-CONFIG-IDENTITY-P88.json",
+    "sha256": "d5578f68c9a4d9904b4a50b6cbdb986cb9eee14c88d2e52ad9edf3dc107a06b8",
+    "bytes": 1716
+  },
+  "testTools": [
+    {
+      "path": "tools/diagnose_r0013_xray_compatibility.py",
+      "sha256": "68cbda11bab109f8d6446fb9bd6f4eca6e7fff485d936321deee12abaa7a1146",
+      "bytes": 17353
+    },
+    {
+      "path": "tools/diagnose_r0013_xray_current_config.py",
+      "sha256": "0e6609d5efb2a85efc776867ae7eecb3eb592b594e5632a46fd35b06cd14c511",
+      "bytes": 3650
+    }
+  ],
+  "firstErrorHistory": [
+    {
+      "path": "checkpoints/R0013/process-failures/FAILURE-P88-XRAY-COMPATIBILITY-V1.json",
+      "sha256": "60903c59c960a8cbf9ee6379987826a25c734c8e1872e2b544fbffd6ab750474",
+      "bytes": 400
+    },
+    {
+      "path": "checkpoints/R0013/process-failures/FAILURE-P88-XRAY-COMPATIBILITY-V2.json",
+      "sha256": "d6896fd4e43dfabf02f2586616713769e8afc27c5ad7b05157f9a9cbb2403e0a",
+      "bytes": 400
+    },
+    {
+      "path": "checkpoints/R0013/process-failures/FAILURE-P88-XRAY-COMPATIBILITY-V3.json",
+      "sha256": "83219b824fca50dd787f0a14cac91bcebb7811a2aab2979412c240eaffd27050",
+      "bytes": 410
+    },
+    {
+      "path": "checkpoints/R0013/process-failures/FAILURE-P88-XRAY-COMPATIBILITY-V4.json",
+      "sha256": "0f959d0eb3f54b888dbd9f7c8a15d4c70ec4136becb47774305bb84c77a3ddc6",
+      "bytes": 410
+    },
+    {
+      "path": "checkpoints/R0013/process-failures/FAILURE-P88-CURRENT-CONFIG-V1-PROCESS-SNAPSHOT.json",
+      "sha256": "f1f7b8396b1810c3a402cdbcf91b71ba89753a12c2da806617476f8840634351",
+      "bytes": 1049
+    }
+  ],
+  "findings": [
+    "Installed 26.9.9 is an official prerelease; official latest stable is 26.3.27.",
+    "All seven binaries run on actual ARM64 kernel and accept exact Light generator output and current active config.",
+    "TCP, WS, gRPC, HTTPUpgrade and XHTTP pass with none and TLS; TCP Vision TLS, TCP Vision REALITY and XHTTP REALITY also pass.",
+    "Xray emits deprecation warnings for WS, gRPC and legacy headers.Host. Current tests pass; future versions need separate review.",
+    "New Xray VLESS server-side private-destination protection requires a one-endpoint allowance in the synthetic loopback fixture only.",
+    "Four failed harness revisions were retained and diagnosed; final V5 full matrix passed without hidden same-revision retry.",
+    "Active config check passed 7/7; overbroad executable PID comparison was resolved by exact managed run/config identity. The role of the exited extra PID is unknown."
+  ],
+  "limits": [
+    "Same-version synthetic client/server pairs; not an exhaustive mixed-version server interoperability matrix.",
+    "Real payloads traverse localhost, not production servers, subscriptions, CDN or WAN.",
+    "Current active configuration is parsed/tested, not activated by each alternate version.",
+    "UDP, long-duration load, every optional XHTTP extra/encryption mode, other CPU architectures and other kernels are not covered.",
+    "No package/updater install, downgrade, native authentication change, router reboot or shipped compatibility registry update."
+  ],
+  "candidateReady": false,
+  "releaseReady": false,
+  "publicReleasePublished": false,
+  "nextExactAction": "REMAINING_WEBUI_BACKEND_EXTERNAL_VLESS_PERSISTENCE_AND_SIGNED_UPDATE_ACCEPTANCE"
+}

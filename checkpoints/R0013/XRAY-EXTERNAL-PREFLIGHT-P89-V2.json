@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "revision": "p89-external-preflight-v2",
+  "at": "2026-09-11T09:32:59.850552+00:00",
+  "routerWrites": false,
+  "identityAndState": "c1defe42b6db958a97c5e049a02a00a4baaedaca7b51c1c229f0830e288acef5  /opt/broray-light/runtime/xray\n57832490c248a75d0286f142c8553e4b5e7a377336b10f648ee2e2dffb206716  /opt/broray-light/current/APP-SHA256SUMS\n22e1b0f2257f28d7ba2e9eb308c9378f48c7c716a0a4c6826d396dadf6787196  /opt/broray-light/lib/xray-process.sh\n1248464f5ca79a2e36202240bbcab3ceee1b0f3982709777cd0988db8db06653  -\nreleases/2.0.0-r1\nmanagedPid=4340\n40388289\n",
+  "resourcePreflight": "Filesystem           1K-blocks      Used Available Use% Mounted on\ntmpfs                   250428      3756    246672   1% /tmp\nMemAvailable:     341848 kB\n/opt/bin/curl\ncurl 8.15.0 (aarch64-openwrt-linux-gnu) libcurl/8.15.0 OpenSSL/3.5.5 zlib/1.3.1 nghttp2/1.66.0\nXray 26.9.9 (Xray, Penetrates Everything.) 52a412d (go1.27.1 linux/arm64)\n",
+  "activeConfigSha256": "a7017f04c4b38c22e46eced8ee7870a3d4979a34b86c72df45e7eab9242b4ddb",
+  "configShape": {
+    "topKeys": [
+      "inbounds",
+      "log",
+      "outbounds",
+      "routing"
+    ],
+    "inbounds": [
+      {
+        "listen": "127.0.0.1",
+        "port": 2080,
+        "protocol": "socks"
+      }
+    ],
+    "outbounds": [
+      {
+        "protocol": "vless",
+        "network": "xhttp",
+        "security": "reality"
+      },
+      {
+        "protocol": "freedom",
+        "network": null,
+        "security": null
+      },
+      {
+        "protocol": "blackhole",
+        "network": null,
+        "security": null
+      }
+    ],
+    "routingPresent": true,
+    "dnsPresent": false
+  },
+  "outboundIdentitySha256": "0d776a29b728f4bac94e455eddb2ae75b323ace32ed75eb7f75b50afda1432f7",
+  "status": "PASS_READ_ONLY_EXTERNAL_SCENARIO_PREFLIGHT"
+}

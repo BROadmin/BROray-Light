@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 1,
+  "revision": "p88-xray-compatibility-v2",
+  "at": "2026-09-11T08:29:37.702895+00:00",
+  "status": "FIRST_ERROR",
+  "error": "FIRST_ERROR v26.9.9 tcp-none; inspect saved logs",
+  "cause": "Pending diagnosis from preserved first-run evidence; not automatically a product defect.",
+  "nextRevision": "p88-xray-compatibility-v3-only-after-diagnosis",
+  "retryPerformed": false
+}

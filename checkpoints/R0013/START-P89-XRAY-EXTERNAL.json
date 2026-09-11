@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "revision": "p89-external-preflight-v1",
+  "at": "2026-09-11T09:28:17Z",
+  "status": "CHECKPOINT_FIRST",
+  "authorization": "User: Проверь совместимость на тестовом роутере",
+  "target": "192.168.1.1, pinned SSH host key, ARM64",
+  "branch": "codex/r0009-updater-package",
+  "scope": "Real external HTTPS over the existing active VLESS/XHTTP/REALITY outbound, using official version-pinned ARM64 clients on the test router. Only diagnostic listener and logs differ from the active outbound configuration. No external server mutation, installed runtime replacement, restart, release or registry edit.",
+  "historicalNegativeEvidence": "Pinned BROray 3.1.0-r09c02 registry: v26.2.6 ARM64 incompatible; R0082/r06 external HTTPS 0/3 and Firefox/Chrome each 0/3. Same official archive hash as P88. P88 localhost PASS does not supersede this rejection.",
+  "plan": [
+    "Read-only target identity, exact main PID/start time, runtime and durable state hashes, active configuration shape and resource preflight",
+    "After successful preflight: protected tmpfs only, preserved external outbound bytes, localhost-only diagnostic SOCKS listener, no direct fallback",
+    "Control v26.9.9, then v26.2.6, then remaining five pinned versions, three independent HTTPS endpoints per version with TLS verification",
+    "Stop revision on first failed gate/request, record standalone failure JSON and SHA before diagnosis or any named next revision",
+    "Remove only exact owned scratch/processes; verify original managed process and durable hashes; report bounded results, not full installation acceptance"
+  ],
+  "candidateReady": false,
+  "nextExactAction": "P89_READ_ONLY_TARGET_PREFLIGHT"
+}

@@ -1,0 +1,8 @@
+{
+  "revision": "p89-external-preflight-v1",
+  "at": "2026-09-11T09:29:56.392262+00:00",
+  "error": "Require one outbound to prove no direct fallback",
+  "retryPerformed": false,
+  "nextRevision": "p89-external-preflight-v2-only-after-diagnosis",
+  "routerWrites": false
+}

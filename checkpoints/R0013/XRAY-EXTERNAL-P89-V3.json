@@ -1,0 +1,111 @@
+{
+  "schemaVersion": 1,
+  "revision": "p89-external-v3",
+  "startedAt": "2026-09-11T09:36:06.133346+00:00",
+  "scope": "Physical ARM64 router, unchanged current external VLESS/XHTTP/REALITY outbound; diagnostic localhost SOCKS and no direct fallback; no installed-runtime switch or browser claim.",
+  "outboundIdentitySha256": "0d776a29b728f4bac94e455eddb2ae75b323ace32ed75eb7f75b50afda1432f7",
+  "priorBROray2626RejectionSuperseded": false,
+  "versions": [
+    {
+      "tag": "v26.9.9",
+      "startedAt": "2026-09-11T09:36:25.387265+00:00",
+      "requests": [
+        {
+          "url": "https://www.gstatic.com/generate_204",
+          "exitCode": 0,
+          "metrics": "204 0 0 0.254046",
+          "at": "2026-09-11T09:36:34.967316+00:00",
+          "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "timeout": false,
+          "tlsVerificationFailed": false,
+          "bodySha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "status": "PASS_HTTPS_CERTIFICATE_AND_CONTENT"
+        },
+        {
+          "url": "https://www.cloudflare.com/cdn-cgi/trace",
+          "exitCode": 0,
+          "metrics": "200 0 216 0.274119",
+          "at": "2026-09-11T09:36:35.473594+00:00",
+          "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "timeout": false,
+          "tlsVerificationFailed": false,
+          "bodySha256": "c999a86ed9b88ad2b9e1c682a22e149d7421fb3c829cdaf7fc1d807ca1fc89c7",
+          "egressIpSha256": "28bc6d769418e320c0c67825456926879deeb8d3cd325e822e57ceba7a1686de",
+          "status": "PASS_HTTPS_CERTIFICATE_AND_CONTENT"
+        },
+        {
+          "url": "https://example.com/",
+          "exitCode": 0,
+          "metrics": "200 0 559 0.272554",
+          "at": "2026-09-11T09:36:35.972918+00:00",
+          "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "timeout": false,
+          "tlsVerificationFailed": false,
+          "bodySha256": "ff67a9d764d6a2367a187734e697f6a53217db9a21c101d410a113ca871a299d",
+          "status": "PASS_HTTPS_CERTIFICATE_AND_CONTENT"
+        }
+      ],
+      "archiveSha256": "3e38d72dfc5eb65c91df0e5583e9b6676c32232041da47de6ae73946b526d66c",
+      "binarySha256": "c1defe42b6db958a97c5e049a02a00a4baaedaca7b51c1c229f0830e288acef5",
+      "configValidation": {
+        "exitCode": 0,
+        "configurationOK": true,
+        "outputSha256": "b56c12fb0d72c47d946f0c724841a462452190694fee7c96797cc7f142a44ec5"
+      },
+      "start": {
+        "exitCode": 0,
+        "stdout": "pid=13357\n40489260\n",
+        "stderr": ""
+      },
+      "status": "PASS_3_OF_3_EXTERNAL_HTTPS"
+    },
+    {
+      "tag": "v26.2.6",
+      "startedAt": "2026-09-11T09:36:36.343608+00:00",
+      "requests": [
+        {
+          "url": "https://www.gstatic.com/generate_204",
+          "exitCode": 35,
+          "metrics": "000 1 0 0.154042",
+          "at": "2026-09-11T09:36:45.319624+00:00",
+          "stderrSha256": "07299773277b9fb8ef9be6bd3479fca0cc63468d9966bf4c7ca8158f671e1dbf",
+          "timeout": false,
+          "tlsVerificationFailed": true
+        }
+      ],
+      "archiveSha256": "b52d8263453fbd6f4747fd6a1ecf70cd43a664243615dc892ea4674c01b2b5ee",
+      "binarySha256": "0f4b7cbaab8964beebffa0c226185326a35af560ecfed9da0b2ad9bc2ff9ded3",
+      "configValidation": {
+        "exitCode": 0,
+        "configurationOK": true,
+        "outputSha256": "5f19a77b5054328d67edeb696052a793ad8629114b5572ed8a353e6151dac210"
+      },
+      "start": {
+        "exitCode": 0,
+        "stdout": "pid=14032\n40490303\n",
+        "stderr": ""
+      },
+      "status": "FAIL_STOPPED_NO_RETRY"
+    }
+  ],
+  "candidateReady": false,
+  "runnerSha256": "9dcf7c841dd7d0f5aa3f0ce93d33634461f47015997556f4c30fdfdf5ca7689b",
+  "before": "c1defe42b6db958a97c5e049a02a00a4baaedaca7b51c1c229f0830e288acef5  /opt/broray-light/runtime/xray\n57832490c248a75d0286f142c8553e4b5e7a377336b10f648ee2e2dffb206716  /opt/broray-light/current/APP-SHA256SUMS\n22e1b0f2257f28d7ba2e9eb308c9378f48c7c716a0a4c6826d396dadf6787196  /opt/broray-light/lib/xray-process.sh\n1248464f5ca79a2e36202240bbcab3ceee1b0f3982709777cd0988db8db06653  -\nreleases/2.0.0-r1\nmanagedPid=4340\n40388289\n",
+  "ramWorkDirectory": "/tmp/brl-r13-external-p89.uqKr12",
+  "diagnosticConfigSha256": "ec0c1f5f722b01d3fdb2fd7f1f49f95a06e11904de507a63a173fbc282dfb571",
+  "status": "FIRST_ERROR",
+  "error": "v26.2.6: HTTPS request 1 failed with curl exit 35",
+  "runtimeDiagnosticsIdentity": {
+    "exitCode": 0,
+    "stdout": "a4daf7a3910542332c5e281bb414665f677d8207ea3c6393b3b0e3467264e295  /tmp/brl-r13-external-p89.uqKr12/runtime.log\n464\n",
+    "stderr": ""
+  },
+  "cleanup": {
+    "status": "PASS",
+    "temporaryDirectoryRemoved": true,
+    "exactFileCount": 6
+  },
+  "after": "c1defe42b6db958a97c5e049a02a00a4baaedaca7b51c1c229f0830e288acef5  /opt/broray-light/runtime/xray\n57832490c248a75d0286f142c8553e4b5e7a377336b10f648ee2e2dffb206716  /opt/broray-light/current/APP-SHA256SUMS\n22e1b0f2257f28d7ba2e9eb308c9378f48c7c716a0a4c6826d396dadf6787196  /opt/broray-light/lib/xray-process.sh\n1248464f5ca79a2e36202240bbcab3ceee1b0f3982709777cd0988db8db06653  -\nreleases/2.0.0-r1\nmanagedPid=4340\n40388289\n",
+  "installedStatePreserved": true,
+  "completedAt": "2026-09-11T09:36:48.154854+00:00"
+}

@@ -6,13 +6,9 @@ This repository contains a separate lightweight product for Keenetic/KeeneticOS.
 
 The user explicitly superseded the R0012-only task on 2026-09-10. Current stage is `R0013_SELECTIVE_UPSTREAM_STABLE_PORT`; read `docs/CODEX-R0013.md` and `project/R0013-STATE.json` first. Use validated Light `1.0.0-r1` plus selective, traceable changes from the pinned BROray Stable release archive. Preserve the unfinished R0012 files; they are not accepted build inputs. The user approved public/package version `2.0.0` and tag `v2.0.0`, with internal updater releaseId/candidateId `2.0.0-r1` for compatibility with installed r1 updaters (P10 resolves P9). Keep the already active branch `codex/r0009-updater-package`.
 
-The following R0012 material is historical. Current decisions and blockers are in the R0013 state and checkpoint.
+The following R0012 contract is historical and applies only to its preserved work:
 
-## Historical R0012 contract
-
-Work only on stage `R0012` in the already active branch `codex/r0009-updater-package`:
-
-`RELOCATE_RUSSIAN_DOCUMENTATION_AND_REMOVE_EMBEDDED_WEBUI_GUIDE_STABLE_1.0.0_R3`
+`COMPLETE_R4_GLOBAL_TMPFS_LIFECYCLE_OWNERSHIP_REPRODUCIBILITY_AND_RELEASE_ACCEPTANCE`
 
 Read these files before changing code:
 
@@ -30,7 +26,19 @@ Read these files before changing code:
 12. `project/WORKLOG.jsonl`
 13. `checkpoints/R0012/START-P1.json`
 
-R0012 corrects the user-rejected R0011 placement: the complete Russian instruction belongs on the `BROadmin/BROray-Light` GitHub landing page and in a distinct section on `docs.brovibe.cloud`, not inside the application WebUI. It is authorized to issue immutable Stable `1.0.0-r3`, validate it on the already authorized physical test router, and change only the documentation-site files under `BROadmin/BROray/site/docs.brovibe.cloud/` needed by the existing automatic publisher. It must not overwrite earlier releases, change the docs homepage content, change the production server, modify full-BROray application code, or introduce excluded full-product features.
+R0012 corrects the user-rejected R0011 placement: the complete Russian instruction belongs on the `BROadmin/BROray-Light` GitHub landing page and in a distinct section on `docs.brovibe.cloud`, not inside the application WebUI. Revision `1.0.0-r3` was rejected before publication because Xray download input used persistent `/opt`; its draft was removed and immutable tag `v1.0.0-r3` remains historical evidence. R0012 is now authorized to issue immutable Stable `1.0.0-r4`, validate it on the already authorized physical test router, and make only the bounded tmpfs/clean-bootstrap storage correction plus the documentation relocation. It may change only the documentation-site files under `BROadmin/BROray/site/docs.brovibe.cloud/` needed by the existing automatic publisher. It must not move or publish the r3 tag, overwrite earlier releases, change the docs homepage content, change the production server, modify full-BROray application code, redesign the product, or introduce excluded full-product features.
+
+## R0012 r4 correction rules
+
+- Preserve Stable `1.0.0-r1`, Stable `1.0.0-r2`, and rejected tag `v1.0.0-r3` byte-for-byte.
+- Use release/package/candidate ID `1.0.0-r4`, tag `v1.0.0-r4`, and Web asset cache token `1.0.0-r4-r0012`.
+- Place every operational scratch object in RAM: installer input, clean-install bootstrap, Xray archives/digests/extraction, WebUI sessions, PID files, runtime logs, probe work, CGI response bodies, caches, and ephemeral status under protected namespaces in `/tmp`.
+- Use `/tmp/broray-light` for application runtime state, `/tmp/broray-light-install.XXXXXX` for the clean installer, and `/tmp/broray-light-bootstrap` for the package bootstrap. Validate exact owner, mode, marker, object type, and bounded path before use; clean invocation-owned inputs at completion.
+- Keep the verified adjacent runtime candidate on `/opt` only for same-filesystem atomic replacement and rollback, and clean transaction intermediates at completion.
+- Treat persistent configuration, servers, subscriptions, installed release slots, Xray runtime, updater receipts, and ownership/transaction records as durable state rather than temporary files; do not move them to tmpfs.
+- R0012 supersedes the historical R0009 lock placement: every current operational lock is tmpfs-only. The updater request admission lock is exactly `/tmp/broray-light-updater/request.lock`, and the shared global operation lock is exactly `/tmp/broray-light/run/locks/global-operation.lock`; no operational lock or fallback may be created below `/opt`.
+- Document the measured steady footprint as approximately 35 MiB in `/opt` (approximately 33.75 MiB Xray and 0.8 MiB Light without Xray), require at least 64 MiB free in `/tmp`, and describe approximately 80 MiB free in `/opt` before clean install only as recommended headroom for a later atomic Xray operation.
+- Do not add the complete user guide back to WebUI. Publish it only in the GitHub root/companion guide and the distinct docs portal section.
 
 ## R0011 documentation release rules
 

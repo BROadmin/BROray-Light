@@ -1,0 +1,360 @@
+{
+  "schemaVersion": 1,
+  "revision": "p89-external-v4",
+  "startedAt": "2026-09-11T09:37:56.757413+00:00",
+  "scope": "Physical ARM64 router, unchanged current external VLESS/XHTTP/REALITY outbound; diagnostic localhost SOCKS and no direct fallback; no installed-runtime switch or browser claim.",
+  "outboundIdentitySha256": "0d776a29b728f4bac94e455eddb2ae75b323ace32ed75eb7f75b50afda1432f7",
+  "priorBROray2626RejectionSuperseded": false,
+  "versions": [
+    {
+      "tag": "v26.3.27",
+      "startedAt": "2026-09-11T09:38:15.208074+00:00",
+      "requests": [
+        {
+          "url": "https://www.gstatic.com/generate_204",
+          "exitCode": 0,
+          "metrics": "204 0 0 0.240968",
+          "at": "2026-09-11T09:38:24.521711+00:00",
+          "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "timeout": false,
+          "tlsConnectionFailed": false,
+          "certificateVerificationFailed": false,
+          "bodySha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "status": "PASS_HTTPS_CERTIFICATE_AND_CONTENT"
+        },
+        {
+          "url": "https://www.cloudflare.com/cdn-cgi/trace",
+          "exitCode": 0,
+          "metrics": "200 0 216 0.261000",
+          "at": "2026-09-11T09:38:25.010429+00:00",
+          "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "timeout": false,
+          "tlsConnectionFailed": false,
+          "certificateVerificationFailed": false,
+          "bodySha256": "c7199fadab6a2fdbfe4ef3ad8e7aa9078594c0ab552caae56d0e7011a4533500",
+          "egressIpSha256": "28bc6d769418e320c0c67825456926879deeb8d3cd325e822e57ceba7a1686de",
+          "status": "PASS_HTTPS_CERTIFICATE_AND_CONTENT"
+        },
+        {
+          "url": "https://example.com/",
+          "exitCode": 0,
+          "metrics": "200 0 559 0.278938",
+          "at": "2026-09-11T09:38:25.508093+00:00",
+          "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "timeout": false,
+          "tlsConnectionFailed": false,
+          "certificateVerificationFailed": false,
+          "bodySha256": "ff67a9d764d6a2367a187734e697f6a53217db9a21c101d410a113ca871a299d",
+          "status": "PASS_HTTPS_CERTIFICATE_AND_CONTENT"
+        }
+      ],
+      "archiveSha256": "4d30283ae614e3057f730f67cd088a42be6fdf91f8639d82cb69e48cde80413c",
+      "binarySha256": "c2d20a7045250497083afea0d79db0672f6c89a25aaaf37c92de034d6b764b04",
+      "configValidation": {
+        "exitCode": 0,
+        "configurationOK": true,
+        "outputSha256": "ecbb95384ca8bbf05f99d6b44a8650d33e93721de754c7e43c4be3a510ab5e18"
+      },
+      "start": {
+        "exitCode": 0,
+        "stdout": "pid=18598\n40500216\n",
+        "stderr": ""
+      },
+      "status": "PASS_3_OF_3_EXTERNAL_HTTPS"
+    },
+    {
+      "tag": "v26.6.27",
+      "startedAt": "2026-09-11T09:38:25.885022+00:00",
+      "requests": [
+        {
+          "url": "https://www.gstatic.com/generate_204",
+          "exitCode": 0,
+          "metrics": "204 0 0 0.244680",
+          "at": "2026-09-11T09:38:38.720856+00:00",
+          "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "timeout": false,
+          "tlsConnectionFailed": false,
+          "certificateVerificationFailed": false,
+          "bodySha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "status": "PASS_HTTPS_CERTIFICATE_AND_CONTENT"
+        },
+        {
+          "url": "https://www.cloudflare.com/cdn-cgi/trace",
+          "exitCode": 0,
+          "metrics": "200 0 216 0.262666",
+          "at": "2026-09-11T09:38:39.207682+00:00",
+          "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "timeout": false,
+          "tlsConnectionFailed": false,
+          "certificateVerificationFailed": false,
+          "bodySha256": "18510eb728e26feca485dd58d4d5637c03496a5d912f1b24a1770796c4096128",
+          "egressIpSha256": "28bc6d769418e320c0c67825456926879deeb8d3cd325e822e57ceba7a1686de",
+          "status": "PASS_HTTPS_CERTIFICATE_AND_CONTENT"
+        },
+        {
+          "url": "https://example.com/",
+          "exitCode": 0,
+          "metrics": "200 0 559 0.267901",
+          "at": "2026-09-11T09:38:39.703288+00:00",
+          "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "timeout": false,
+          "tlsConnectionFailed": false,
+          "certificateVerificationFailed": false,
+          "bodySha256": "ff67a9d764d6a2367a187734e697f6a53217db9a21c101d410a113ca871a299d",
+          "status": "PASS_HTTPS_CERTIFICATE_AND_CONTENT"
+        }
+      ],
+      "archiveSha256": "13a251379bea366c2cf10363ad71e75734193d401f26f518bf0c25e5c8f8c931",
+      "binarySha256": "53ad04b1ddcba6f4ff8834b3db2e9a596456441259cea3e4f03f86cd39e22884",
+      "configValidation": {
+        "exitCode": 0,
+        "configurationOK": true,
+        "outputSha256": "3376235e679421e83fee9b9d5daa7c0a15d939f607a3e2a43287a70e9dccb98f"
+      },
+      "start": {
+        "exitCode": 0,
+        "stdout": "pid=18649\n40501637\n",
+        "stderr": ""
+      },
+      "status": "PASS_3_OF_3_EXTERNAL_HTTPS"
+    },
+    {
+      "tag": "v26.7.11",
+      "startedAt": "2026-09-11T09:38:40.084203+00:00",
+      "requests": [
+        {
+          "url": "https://www.gstatic.com/generate_204",
+          "exitCode": 0,
+          "metrics": "204 0 0 0.245576",
+          "at": "2026-09-11T09:38:50.135275+00:00",
+          "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "timeout": false,
+          "tlsConnectionFailed": false,
+          "certificateVerificationFailed": false,
+          "bodySha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "status": "PASS_HTTPS_CERTIFICATE_AND_CONTENT"
+        },
+        {
+          "url": "https://www.cloudflare.com/cdn-cgi/trace",
+          "exitCode": 0,
+          "metrics": "200 0 221 0.264329",
+          "at": "2026-09-11T09:38:50.631050+00:00",
+          "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "timeout": false,
+          "tlsConnectionFailed": false,
+          "certificateVerificationFailed": false,
+          "bodySha256": "c70efe4e32097f676a49fced3af56ccef5a6ff165ce8bfbfe7de17f72159b6a4",
+          "egressIpSha256": "28bc6d769418e320c0c67825456926879deeb8d3cd325e822e57ceba7a1686de",
+          "status": "PASS_HTTPS_CERTIFICATE_AND_CONTENT"
+        },
+        {
+          "url": "https://example.com/",
+          "exitCode": 0,
+          "metrics": "200 0 559 0.274840",
+          "at": "2026-09-11T09:38:51.146908+00:00",
+          "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "timeout": false,
+          "tlsConnectionFailed": false,
+          "certificateVerificationFailed": false,
+          "bodySha256": "ff67a9d764d6a2367a187734e697f6a53217db9a21c101d410a113ca871a299d",
+          "status": "PASS_HTTPS_CERTIFICATE_AND_CONTENT"
+        }
+      ],
+      "archiveSha256": "89cfe01674d7c9f6847b7dd9389537be9acb3b9dc3c6cb9fdeba87a3e4e57fc1",
+      "binarySha256": "dd3ba298aa32af9442163ee791d54f562bd89aa860fed1d0c47306fb019c1e64",
+      "configValidation": {
+        "exitCode": 0,
+        "configurationOK": true,
+        "outputSha256": "f5a6861e2d7e36cadba2254291cb9e38bc8813357a1cc0acaccfe0629b8b70eb"
+      },
+      "start": {
+        "exitCode": 0,
+        "stdout": "pid=18967\n40502778\n",
+        "stderr": ""
+      },
+      "status": "PASS_3_OF_3_EXTERNAL_HTTPS"
+    },
+    {
+      "tag": "v26.7.28",
+      "startedAt": "2026-09-11T09:38:51.542696+00:00",
+      "requests": [
+        {
+          "url": "https://www.gstatic.com/generate_204",
+          "exitCode": 0,
+          "metrics": "204 0 0 0.298841",
+          "at": "2026-09-11T09:39:00.850894+00:00",
+          "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "timeout": false,
+          "tlsConnectionFailed": false,
+          "certificateVerificationFailed": false,
+          "bodySha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "status": "PASS_HTTPS_CERTIFICATE_AND_CONTENT"
+        },
+        {
+          "url": "https://www.cloudflare.com/cdn-cgi/trace",
+          "exitCode": 0,
+          "metrics": "200 0 222 0.265065",
+          "at": "2026-09-11T09:39:01.362975+00:00",
+          "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "timeout": false,
+          "tlsConnectionFailed": false,
+          "certificateVerificationFailed": false,
+          "bodySha256": "135f44c4ab3476832d9788cd0fc3c39e00d72d5ad6e4718ee96cfce7d3e29a57",
+          "egressIpSha256": "28bc6d769418e320c0c67825456926879deeb8d3cd325e822e57ceba7a1686de",
+          "status": "PASS_HTTPS_CERTIFICATE_AND_CONTENT"
+        },
+        {
+          "url": "https://example.com/",
+          "exitCode": 0,
+          "metrics": "200 0 559 0.261626",
+          "at": "2026-09-11T09:39:01.864326+00:00",
+          "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "timeout": false,
+          "tlsConnectionFailed": false,
+          "certificateVerificationFailed": false,
+          "bodySha256": "ff67a9d764d6a2367a187734e697f6a53217db9a21c101d410a113ca871a299d",
+          "status": "PASS_HTTPS_CERTIFICATE_AND_CONTENT"
+        }
+      ],
+      "archiveSha256": "f5698bb218ada3b4022db26fafc39601c5f53b46b19eb76c9616325985807501",
+      "binarySha256": "4b8af237444801bf17b3dc10a1c5c24581fbe3d433eba3d78c6c3a0da1df56fc",
+      "configValidation": {
+        "exitCode": 0,
+        "configurationOK": true,
+        "outputSha256": "62c6608896ce97d3a3ecd770862e91f69727c62ac9435f1fa692aed3915db3b6"
+      },
+      "start": {
+        "exitCode": 0,
+        "stdout": "pid=20338\n40503845\n",
+        "stderr": ""
+      },
+      "status": "PASS_3_OF_3_EXTERNAL_HTTPS"
+    },
+    {
+      "tag": "v26.9.8",
+      "startedAt": "2026-09-11T09:39:02.245846+00:00",
+      "requests": [
+        {
+          "url": "https://www.gstatic.com/generate_204",
+          "exitCode": 0,
+          "metrics": "204 0 0 0.243908",
+          "at": "2026-09-11T09:39:11.306764+00:00",
+          "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "timeout": false,
+          "tlsConnectionFailed": false,
+          "certificateVerificationFailed": false,
+          "bodySha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "status": "PASS_HTTPS_CERTIFICATE_AND_CONTENT"
+        },
+        {
+          "url": "https://www.cloudflare.com/cdn-cgi/trace",
+          "exitCode": 0,
+          "metrics": "200 0 217 0.272689",
+          "at": "2026-09-11T09:39:11.803504+00:00",
+          "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "timeout": false,
+          "tlsConnectionFailed": false,
+          "certificateVerificationFailed": false,
+          "bodySha256": "6a23cd58b9624c2ae00122125fe25e4c2c48b3ed2e76c7cc5ce1cef05143363c",
+          "egressIpSha256": "28bc6d769418e320c0c67825456926879deeb8d3cd325e822e57ceba7a1686de",
+          "status": "PASS_HTTPS_CERTIFICATE_AND_CONTENT"
+        },
+        {
+          "url": "https://example.com/",
+          "exitCode": 0,
+          "metrics": "200 0 559 0.267479",
+          "at": "2026-09-11T09:39:12.297356+00:00",
+          "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "timeout": false,
+          "tlsConnectionFailed": false,
+          "certificateVerificationFailed": false,
+          "bodySha256": "ff67a9d764d6a2367a187734e697f6a53217db9a21c101d410a113ca871a299d",
+          "status": "PASS_HTTPS_CERTIFICATE_AND_CONTENT"
+        }
+      ],
+      "archiveSha256": "6721edb5b80e046536abc8235bd0977a2c69ade88ad42c01c0df368beba070dc",
+      "binarySha256": "63d750d907c4586dc8964c7c49430983090068282e546297d5b39068108712a0",
+      "configValidation": {
+        "exitCode": 0,
+        "configurationOK": true,
+        "outputSha256": "a630cd56360378dfbff710528dc262285e0b38675be618b6219af5162fd9bb35"
+      },
+      "start": {
+        "exitCode": 0,
+        "stdout": "pid=20396\n40504895\n",
+        "stderr": ""
+      },
+      "status": "PASS_3_OF_3_EXTERNAL_HTTPS"
+    },
+    {
+      "tag": "v26.9.9",
+      "startedAt": "2026-09-11T09:39:12.685938+00:00",
+      "requests": [
+        {
+          "url": "https://www.gstatic.com/generate_204",
+          "exitCode": 0,
+          "metrics": "204 0 0 0.243404",
+          "at": "2026-09-11T09:39:22.545301+00:00",
+          "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "timeout": false,
+          "tlsConnectionFailed": false,
+          "certificateVerificationFailed": false,
+          "bodySha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "status": "PASS_HTTPS_CERTIFICATE_AND_CONTENT"
+        },
+        {
+          "url": "https://www.cloudflare.com/cdn-cgi/trace",
+          "exitCode": 0,
+          "metrics": "200 0 221 0.263744",
+          "at": "2026-09-11T09:39:23.031513+00:00",
+          "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "timeout": false,
+          "tlsConnectionFailed": false,
+          "certificateVerificationFailed": false,
+          "bodySha256": "242a910aa43c9f0b7a67d62b32cea7d6a7d222811d8323ae1c5df209c254bdd0",
+          "egressIpSha256": "28bc6d769418e320c0c67825456926879deeb8d3cd325e822e57ceba7a1686de",
+          "status": "PASS_HTTPS_CERTIFICATE_AND_CONTENT"
+        },
+        {
+          "url": "https://example.com/",
+          "exitCode": 0,
+          "metrics": "200 0 559 0.264813",
+          "at": "2026-09-11T09:39:23.519012+00:00",
+          "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "timeout": false,
+          "tlsConnectionFailed": false,
+          "certificateVerificationFailed": false,
+          "bodySha256": "ff67a9d764d6a2367a187734e697f6a53217db9a21c101d410a113ca871a299d",
+          "status": "PASS_HTTPS_CERTIFICATE_AND_CONTENT"
+        }
+      ],
+      "archiveSha256": "3e38d72dfc5eb65c91df0e5583e9b6676c32232041da47de6ae73946b526d66c",
+      "binarySha256": "c1defe42b6db958a97c5e049a02a00a4baaedaca7b51c1c229f0830e288acef5",
+      "configValidation": {
+        "exitCode": 0,
+        "configurationOK": true,
+        "outputSha256": "612807a3b66b27e51da590ca81937c7f6911b8936369bb37e84ed1ef94e1811d"
+      },
+      "start": {
+        "exitCode": 0,
+        "stdout": "pid=20446\n40506019\n",
+        "stderr": ""
+      },
+      "status": "PASS_3_OF_3_EXTERNAL_HTTPS"
+    }
+  ],
+  "candidateReady": false,
+  "runnerSha256": "50cf756ebbc54ab4ddb3e4d2d69db716ab410f6cf37cbecf2e0a041ebf6c79fb",
+  "before": "c1defe42b6db958a97c5e049a02a00a4baaedaca7b51c1c229f0830e288acef5  /opt/broray-light/runtime/xray\n57832490c248a75d0286f142c8553e4b5e7a377336b10f648ee2e2dffb206716  /opt/broray-light/current/APP-SHA256SUMS\n22e1b0f2257f28d7ba2e9eb308c9378f48c7c716a0a4c6826d396dadf6787196  /opt/broray-light/lib/xray-process.sh\n1248464f5ca79a2e36202240bbcab3ceee1b0f3982709777cd0988db8db06653  -\nreleases/2.0.0-r1\nmanagedPid=4340\n40388289\n",
+  "ramWorkDirectory": "/tmp/brl-r13-external-p89.HVtyBS",
+  "diagnosticConfigSha256": "ec0c1f5f722b01d3fdb2fd7f1f49f95a06e11904de507a63a173fbc282dfb571",
+  "status": "PASS_REMAINING_5_VERSIONS_AND_FINAL_2699_CONTROL",
+  "cleanup": {
+    "status": "PASS",
+    "temporaryDirectoryRemoved": true,
+    "exactFileCount": 1
+  },
+  "after": "c1defe42b6db958a97c5e049a02a00a4baaedaca7b51c1c229f0830e288acef5  /opt/broray-light/runtime/xray\n57832490c248a75d0286f142c8553e4b5e7a377336b10f648ee2e2dffb206716  /opt/broray-light/current/APP-SHA256SUMS\n22e1b0f2257f28d7ba2e9eb308c9378f48c7c716a0a4c6826d396dadf6787196  /opt/broray-light/lib/xray-process.sh\n1248464f5ca79a2e36202240bbcab3ceee1b0f3982709777cd0988db8db06653  -\nreleases/2.0.0-r1\nmanagedPid=4340\n40388289\n",
+  "installedStatePreserved": true,
+  "completedAt": "2026-09-11T09:39:26.327755+00:00"
+}

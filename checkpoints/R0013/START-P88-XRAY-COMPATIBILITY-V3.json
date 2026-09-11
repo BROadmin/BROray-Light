@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "revision": "p88-xray-compatibility-v3",
+  "status": "CHECKPOINT_FIRST_CORRECTED_LOCALHOST_FIXTURE",
+  "previousFailure": "checkpoints/R0013/process-failures/FAILURE-P88-XRAY-COMPATIBILITY-V2.json",
+  "firstResult": {"path": "dist/R0013/p88-xray-compat-v2/report.json", "sha256": "831940170717b053bf395dcc0843cd6bf740f1e0389d0853dc8e50becaf4cc0f"},
+  "failedHarnessSha256": "32dcffa2d0c67a196f7d3f867a11b52cc22e7e9053e41ea7ea4f0bf9e04a6241",
+  "diagnosis": "Both configs and local VLESS acceptance passed, but local destination timed out. Official v26.9.9 freedom.go getDefaultFinalRule blocks private destinations for VLESS server inbounds and blackholes for 30-90 seconds. Synthetic destination 127.0.0.1:39488 requires an explicit test-server-only allow rule. Light is a SOCKS client, not this synthetic VLESS server.",
+  "source": "https://github.com/XTLS/Xray-core/blob/v26.9.9/proxy/freedom/freedom.go",
+  "correction": "Only the synthetic RAM test server permits TCP 127.0.0.1 port 39488 with freedom.finalRules. Do not alter Light client output, actual runtime, native auth, real server configuration or routing. Enable info-level fixture logs to preserve failures.",
+  "previousCleanup": "PASS; installed state and PID unchanged",
+  "candidateReady": false
+}

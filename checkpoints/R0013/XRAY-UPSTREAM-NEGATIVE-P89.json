@@ -1,0 +1,17 @@
+{
+  "sourceArchive": {
+    "path": "dist/R0013/donor-3.1.0-r09/broray-app-3.1.0-r09c02.tar.gz",
+    "sha256": "635e905d0fb31aff84cd92026dfed21ad204ea45c8d0a5562fecb248178b32e8",
+    "bytes": 1973526
+  },
+  "member": "app/share/xray-compatibility.json",
+  "record": {
+    "candidateId": "3.1.0-r09c02",
+    "architecture": "arm64",
+    "xrayTag": "v26.2.6",
+    "archiveSha256": "b52d8263453fbd6f4747fd6a1ecf70cd43a664243615dc892ea4674c01b2b5ee",
+    "testedAt": "2026-09-10T08:29:20Z",
+    "status": "incompatible",
+    "evidence": "R0082/r06/26.2.6: install, validation and runtime pass, but HTTPS through VLESS/XHTTP/REALITY fails 0/3; isolated Firefox and Chrome controls also fail 0/3 each. Classified incompatible for BROray by project owner on 2026-09-10. No claim that every Xray configuration fails."
+  }
+}

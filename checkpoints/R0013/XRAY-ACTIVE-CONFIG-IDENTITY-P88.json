@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "revision": "p88-current-config-v2-readonly-process-classification",
+  "status": "PASS_ORIGINAL_MANAGED_RUNTIME_AND_DURABLE_STATE_PRESERVED",
+  "readOnlyCommandExitCode": 0,
+  "commandReceipt": {"path": "dist/R0013/private-target/p74/p88-runtime-identity-v2.txt", "bytes": 466, "sha256": "952b88e760b7369512086e10158038445a20fa4e3633c8518fce1b3c47502edd"},
+  "originalManagedPid": 18775,
+  "originalStartTimeTicks": "39982859",
+  "command": ["/opt/broray-light/runtime/xray", "run", "-c", "/opt/broray-light/config/config.json"],
+  "exactManagedPidList": [18775],
+  "identityHelperSha256": "22e1b0f2257f28d7ba2e9eb308c9378f48c7c716a0a4c6826d396dadf6787196",
+  "identityHelperMatchesR0013Overlay": true,
+  "runtimeSha256": "c1defe42b6db958a97c5e049a02a00a4baaedaca7b51c1c229f0830e288acef5",
+  "appManifestSha256": "57832490c248a75d0286f142c8553e4b5e7a377336b10f648ee2e2dffb206716",
+  "durableConfigTreeSha256": "4f4d0da22099e4a63d196d1fd5ebb0210bc789bbfeb73bd95f668f85d66c3915",
+  "rawCurrentConfigResult": {"path": "dist/R0013/p88-current-config-v1/report.json", "sha256": "19d2239191e13e8e9d1dfa6d4fc73e7148415a4f79eddf7710228d972467f013"},
+  "explanation": "All seven run -test checks passed. Original managed PID/start time and all durable hashes match all snapshots and this fresh exact identity check. The raw broad PID-list comparison failed because an additional PID exited; that auxiliary process's historical argv/role is unknown. No claim is made that every unrelated process was preserved. Raw failed result remains immutable.",
+  "versionTestsRepeated": false,
+  "installedRuntimeRestartedByDiagnostic": false,
+  "routerWritesInThisRevision": false,
+  "candidateReady": false
+}

@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "revision": "p88-current-config-v1",
+  "status": "FIRST_ERROR_SNAPSHOT_CLASSIFICATION",
+  "report": "dist/R0013/p88-current-config-v1/report.json",
+  "reportSha256": "19d2239191e13e8e9d1dfa6d4fc73e7148415a4f79eddf7710228d972467f013",
+  "observed": "All seven active config checks PASS. Installed binary, app manifest and durable config hashes are identical. Original runtime PID 18775/starttime 39982859 is unchanged. Snapshot before additionally included PID 26555/starttime 40196844, absent afterwards. Comparator matched all executables, not only the managed run/config identity.",
+  "cause": "An additional process exited during the check; its original argv was not captured. This cannot be reported as a proven installed-runtime restart. Need exact managed-process classification and read-only confirmation, not repeated version tests.",
+  "nextRevision": "p88-current-config-v2-readonly-process-classification",
+  "retryPerformed": false,
+  "cleanup": "PASS; temporary directory removed",
+  "candidateReady": false
+}

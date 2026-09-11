@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "revision": "p88-xray-compatibility-v2",
+  "status": "CHECKPOINT_FIRST_CORRECTED_HARNESS",
+  "previousFailure": "checkpoints/R0013/process-failures/FAILURE-P88-XRAY-COMPATIBILITY-V1.json",
+  "firstResult": {"path": "dist/R0013/p88-xray-compat-v1/report.json", "sha256": "47fbf68348af06cb7ccb6e02a2789e925c56c904aa8574c002619e8db9eca2a5"},
+  "diagnosis": "Test harness used fractional sleep 0.1, unsupported by this target BusyBox. Both Xray client/server configuration validation passed before harness readiness wait failed. Not a Light or Xray compatibility failure.",
+  "correction": "Use at most 8 integer-second readiness polls; no repeated VLESS data request. Preserve same test matrix and all safety constraints.",
+  "previousCleanup": "PASS; all 14 invocation files removed; installed binary/config/manifest and PID start identity unchanged.",
+  "installedSourceChanged": false,
+  "candidateReady": false
+}

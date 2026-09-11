@@ -1,0 +1,164 @@
+{
+  "schemaVersion": 1,
+  "revision": "p89-external-complete",
+  "at": "2026-09-11T09:42:19.619395+00:00",
+  "status": "COMPLETE_6_PASS_26_2_6_INCOMPATIBLE_IN_TESTED_SCENARIO",
+  "target": "Authorized test Keenetic 192.168.1.1",
+  "architecture": "arm64",
+  "productVersion": "2.0.0",
+  "installedSourceCommit": "14813c3774207502039999e014062464043827d1",
+  "versions": [
+    {
+      "version": "26.2.6",
+      "architecture": "arm64",
+      "status": "INCOMPATIBLE_IN_TESTED_EXTERNAL_SCENARIO",
+      "archiveSha256": "b52d8263453fbd6f4747fd6a1ecf70cd43a664243615dc892ea4674c01b2b5ee",
+      "binarySha256": "0f4b7cbaab8964beebffa0c226185326a35af560ecfed9da0b2ad9bc2ff9ded3",
+      "configurationValidation": "PASS",
+      "processStart": "PASS",
+      "httpsPassed": 0,
+      "httpsAttempted": 1,
+      "httpsNotAttemptedAfterFirstError": 2,
+      "firstCurlExitCode": 35
+    },
+    {
+      "version": "26.3.27",
+      "architecture": "arm64",
+      "status": "PASS_IN_TESTED_EXTERNAL_SCENARIO",
+      "archiveSha256": "4d30283ae614e3057f730f67cd088a42be6fdf91f8639d82cb69e48cde80413c",
+      "binarySha256": "c2d20a7045250497083afea0d79db0672f6c89a25aaaf37c92de034d6b764b04",
+      "configurationValidation": "PASS",
+      "processStart": "PASS",
+      "httpsPassed": 3,
+      "httpsAttempted": 3,
+      "httpsNotAttemptedAfterFirstError": 0,
+      "firstCurlExitCode": 0
+    },
+    {
+      "version": "26.6.27",
+      "architecture": "arm64",
+      "status": "PASS_IN_TESTED_EXTERNAL_SCENARIO",
+      "archiveSha256": "13a251379bea366c2cf10363ad71e75734193d401f26f518bf0c25e5c8f8c931",
+      "binarySha256": "53ad04b1ddcba6f4ff8834b3db2e9a596456441259cea3e4f03f86cd39e22884",
+      "configurationValidation": "PASS",
+      "processStart": "PASS",
+      "httpsPassed": 3,
+      "httpsAttempted": 3,
+      "httpsNotAttemptedAfterFirstError": 0,
+      "firstCurlExitCode": 0
+    },
+    {
+      "version": "26.7.11",
+      "architecture": "arm64",
+      "status": "PASS_IN_TESTED_EXTERNAL_SCENARIO",
+      "archiveSha256": "89cfe01674d7c9f6847b7dd9389537be9acb3b9dc3c6cb9fdeba87a3e4e57fc1",
+      "binarySha256": "dd3ba298aa32af9442163ee791d54f562bd89aa860fed1d0c47306fb019c1e64",
+      "configurationValidation": "PASS",
+      "processStart": "PASS",
+      "httpsPassed": 3,
+      "httpsAttempted": 3,
+      "httpsNotAttemptedAfterFirstError": 0,
+      "firstCurlExitCode": 0
+    },
+    {
+      "version": "26.7.28",
+      "architecture": "arm64",
+      "status": "PASS_IN_TESTED_EXTERNAL_SCENARIO",
+      "archiveSha256": "f5698bb218ada3b4022db26fafc39601c5f53b46b19eb76c9616325985807501",
+      "binarySha256": "4b8af237444801bf17b3dc10a1c5c24581fbe3d433eba3d78c6c3a0da1df56fc",
+      "configurationValidation": "PASS",
+      "processStart": "PASS",
+      "httpsPassed": 3,
+      "httpsAttempted": 3,
+      "httpsNotAttemptedAfterFirstError": 0,
+      "firstCurlExitCode": 0
+    },
+    {
+      "version": "26.9.8",
+      "architecture": "arm64",
+      "status": "PASS_IN_TESTED_EXTERNAL_SCENARIO",
+      "archiveSha256": "6721edb5b80e046536abc8235bd0977a2c69ade88ad42c01c0df368beba070dc",
+      "binarySha256": "63d750d907c4586dc8964c7c49430983090068282e546297d5b39068108712a0",
+      "configurationValidation": "PASS",
+      "processStart": "PASS",
+      "httpsPassed": 3,
+      "httpsAttempted": 3,
+      "httpsNotAttemptedAfterFirstError": 0,
+      "firstCurlExitCode": 0
+    },
+    {
+      "version": "26.9.9",
+      "architecture": "arm64",
+      "status": "PASS_IN_TESTED_EXTERNAL_SCENARIO",
+      "archiveSha256": "3e38d72dfc5eb65c91df0e5583e9b6676c32232041da47de6ae73946b526d66c",
+      "binarySha256": "c1defe42b6db958a97c5e049a02a00a4baaedaca7b51c1c229f0830e288acef5",
+      "configurationValidation": "PASS",
+      "processStart": "PASS",
+      "httpsPassed": 3,
+      "httpsAttempted": 3,
+      "httpsNotAttemptedAfterFirstError": 0,
+      "firstCurlExitCode": 0
+    }
+  ],
+  "uniqueVersions": 7,
+  "externalHttpsPasses": 21,
+  "externalHttpsFailures": 1,
+  "countsExplanation": "Six versions x 3 successes plus an explicitly planned repeated 26.9.9 positive control x 3; 26.2.6 stopped at first failed request.",
+  "outboundIdentitySha256": "0d776a29b728f4bac94e455eddb2ae75b323ace32ed75eb7f75b50afda1432f7",
+  "diagnosticConfigSha256": "ec0c1f5f722b01d3fdb2fd7f1f49f95a06e11904de507a63a173fbc282dfb571",
+  "allPositiveControlsSameEgressIpHash": true,
+  "tlsVerificationDisabled": false,
+  "noDirectFallback": true,
+  "installedVersion": "26.9.9",
+  "originalManagedPid": 4340,
+  "originalManagedStartTicks": "40388289",
+  "installedRuntimeAndDurableStatePreserved": true,
+  "allOwnedRouterScratchRemoved": true,
+  "shippedCompatibilityRegistryChanged": false,
+  "acceptedSourceFilesUnchanged": 99,
+  "priorBROrayNegativeEvidence": {
+    "path": "checkpoints/R0013/XRAY-UPSTREAM-NEGATIVE-P89.json",
+    "sha256": "a006c55225807c3942989cea75e3e58e9cbec786dd930a573c5f1adf22553417",
+    "bytes": 815
+  },
+  "priorBROrayRejectionSuperseded": false,
+  "evidence": [
+    {
+      "path": "checkpoints/R0013/XRAY-EXTERNAL-PREFLIGHT-P89-V2.json",
+      "sha256": "574385703e192e496f589e5dd0aa5034d0c02db623644786aaecda15b755ecdc",
+      "bytes": 1822
+    },
+    {
+      "path": "checkpoints/R0013/XRAY-EXTERNAL-P89-V3.json",
+      "sha256": "f0574750060e0e43685019b5eb1b37178e4984b07ef7638bf7b38a11ecad0043",
+      "bytes": 5362
+    },
+    {
+      "path": "checkpoints/R0013/XRAY-EXTERNAL-P89-V4.json",
+      "sha256": "98983a5e385fc104dca7272499d772913b3deb42ca559269a94fd7e3e86bdb66",
+      "bytes": 16286
+    }
+  ],
+  "testTool": {
+    "path": "tools/diagnose_r0013_xray_external.py",
+    "sha256": "50cf756ebbc54ab4ddb3e4d2d69db716ab410f6cf37cbecf2e0a041ebf6c79fb",
+    "bytes": 15779
+  },
+  "findings": [
+    "26.2.6 accepts the config and starts, but external HTTPS over the existing VLESS/XHTTP/REALITY server fails with curl 35; the previous rejection is supported, not overturned.",
+    "26.3.27, 26.6.27, 26.7.11, 26.7.28, 26.9.8 and 26.9.9 pass three HTTPS endpoints with certificate verification and body checks.",
+    "26.9.9 passed before and after the negative test sequence on the same outbound and exit IP.",
+    "P88 synthetic localhost results remain valid only within their original scope and do not establish external compatibility.",
+    "Raw V3 field tlsVerificationFailed was overbroad for curl 35. Interpret this as a TLS connection failure; no specific certificate rejection or deeper root cause has been established."
+  ],
+  "limits": [
+    "Only the current external VLESS/XHTTP/REALITY profile on ARM64; not every server, transport or architecture.",
+    "Separate router-side diagnostic processes, not installing each version as managed runtime. No native restart/update/rollback or browser acceptance claim.",
+    "Same failure class as historic BROray; exact historical server configuration and deeper cause have not been established.",
+    "No UDP, throughput, long-duration load or full release acceptance."
+  ],
+  "candidateReady": false,
+  "releaseReady": false,
+  "publicReleasePublished": false,
+  "nextExactAction": "RECORD_NEGATIVE_COMPATIBILITY_IN_CANDIDATE_BEFORE_RELEASE_AND_COMPLETE_REMAINING_WEBUI_LIFECYCLE_SIGNING_ACCEPTANCE"
+}

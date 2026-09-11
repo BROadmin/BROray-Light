@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "revision": "p88-xray-compatibility-v5",
+  "status": "CHECKPOINT_FIRST_CONCURRENT_TLS_TARGET",
+  "previousFailure": "checkpoints/R0013/process-failures/FAILURE-P88-XRAY-COMPATIBILITY-V4.json",
+  "firstResult": {"path": "dist/R0013/p88-xray-compat-v4/report.json", "sha256": "11ffdcfbb72b378b3838827ca315c5f49bdfb0b0284e570dc47b523b297b0e5b"},
+  "diagnosis": "V4 shows REALITY client authentication succeeded (decrypted client version/time/shortId and hs.c.conn == conn true), then no ServerHello from fixture target. Xray starts concurrent REALITY target probes; openssl s_server is serial and can hold the target connection. H2 ALPN alone did not resolve this. No Light incompatibility established.",
+  "source": "https://github.com/XTLS/REALITY/blob/8cdf7bf9c7f0/tls.go",
+  "correction": "Replace only the RAM fixture's OpenSSL REALITY target with a separately started, concurrent Go TLS inbound of the same official Xray binary. It listens only on localhost:39487, exposes no proxy service beyond loopback, has blackhole outbound, and is stopped with the other owned test processes. Existing OpenSSL endpoint remains only the payload sink.",
+  "previousCleanup": "PASS; installed binary/config/manifest/PID preserved",
+  "candidateReady": false
+}

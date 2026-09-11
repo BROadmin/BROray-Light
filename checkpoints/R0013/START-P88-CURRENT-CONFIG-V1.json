@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "revision": "p88-current-config-v1",
+  "status": "CHECKPOINT_FIRST",
+  "dependency": "Run only after p88-xray-compatibility-v5 reports PASS_BOUNDED_LOCALHOST and installedStatePreserved=true.",
+  "scope": "For all seven previously SHA-256-verified ARM64 archives, validate the existing active /opt/broray-light/config/config.json using xray run -test. No start/install/update and no private server or subscription contents in reports.",
+  "safety": [
+    "Refuse durable log output fields before executing configuration validation",
+    "Fresh identity-verified SSH connection; password is not saved",
+    "Only one temporary test binary at a time in protected root-owned tmpfs",
+    "No production server access, updater call, registry edit or active runtime restart",
+    "Exact scratch cleanup and installed hashes/config/PID identity must match before and after",
+    "FIRST-ERROR with separate JSON and no hidden retry"
+  ],
+  "candidateReady": false
+}

@@ -1,6 +1,16 @@
 {
   "schemaVersion": 1,
   "product": "BROray-Light",
-  "records": [],
+  "records": [
+    {
+      "candidateId": "2.0.0-r1",
+      "architecture": "arm64",
+      "xrayTag": "v26.2.6",
+      "archiveSha256": "b52d8263453fbd6f4747fd6a1ecf70cd43a664243615dc892ea4674c01b2b5ee",
+      "testedAt": "2026-09-11T09:36:36.343608+00:00",
+      "evidence": "checkpoints/R0013/XRAY-EXTERNAL-P89.json; SHA-256 0ac2885d5441e633de2b6da61f77f8591720ba3a2cfbc6ee3e0e7c2ef4f31c78; authorized ARM64 target, current VLESS/XHTTP/REALITY profile: config/start PASS, first external HTTPS request failed (curl 35), stopped without retry. Local loopback PASS is not external compatibility.",
+      "status": "incompatible"
+    }
+  ],
   "note": "Full BROray compatibility records are not Light acceptance evidence. Add only exact Light candidate tests."
 }

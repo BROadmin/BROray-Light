@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "revision": "p89-external-v3",
+  "status": "CHECKPOINT_FIRST_CORRECTED_LAUNCHER",
+  "previousFailure": "process-failures/FAILURE-P89-EXTERNAL-V2.json",
+  "cause": "nohup is absent from target PATH and the target BusyBox applet list, confirmed by a read-only follow-up. Diagnostic 26.9.9 configuration passed but its launch wrapper failed before any HTTPS request. Actual installed runtime and durable state were preserved.",
+  "correction": "Use POSIX trap to ignore SIGHUP before launching the separately redirected process, without depending on nohup. Preserve runtime-output hashes before cleanup. Same pinned binaries and external VLESS outbound; no product source change.",
+  "followUpReadOnlyCommand": "command -v nohup || true; busybox --list | grep -E '^(nohup|setsid|timeout)$'; netstat -lnt | grep :39490 || true",
+  "followUpResult": {"exitCode": 0, "stdout": "", "stderr": ""},
+  "testsAttemptedInPreviousRevision": 0,
+  "sameRevisionRetryPerformed": false,
+  "candidateReady": false
+}

@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0013",
+  "revision": "p90-candidate-policy-v1",
+  "status": "SOURCE_PREPARED_AWAITING_CI_AND_TARGET_GATES",
+  "githubPublicationPermission": "CONFIRMED_EXISTING_CREDENTIAL_MANAGER_ADMIN_PUSH",
+  "signingSecretMetadataPresent": true,
+  "signingSecretValueRead": false,
+  "existingLatestRelease": "v1.0.0-r1",
+  "negativePolicy": "Exact P89 ARM64 archive v26.2.6 blocked for candidate 2.0.0-r1; incompatible remains non-overridable.",
+  "positivePolicy": "No blanket compatibility claim added from bounded external tests.",
+  "buildPlan": "Independent A/B runners, byte comparison and full installer lifecycle, then sign exact release.json with existing Actions trust root and private key in /dev/shm only. No publication in CI.",
+  "documentationPlan": "Preserve existing site style and publisher; add beginner steps, measured requirements, updates, recovery and accurate version history on GitHub and separate Light page; adjust homepage Light card.",
+  "candidateReady": false,
+  "releaseReady": false,
+  "publicReleasePublished": false
+}

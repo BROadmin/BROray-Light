@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "revision": "p88-xray-compatibility-v4",
+  "status": "CHECKPOINT_FIRST_REALITY_FIXTURE_DIAGNOSIS",
+  "previousFailure": "checkpoints/R0013/process-failures/FAILURE-P88-XRAY-COMPATIBILITY-V3.json",
+  "firstResult": {"path": "dist/R0013/p88-xray-compat-v3/report.json", "sha256": "df88b98fb3da95b87624f75adab7f4225a2d251424f8bdcd60d34df14cbd4f17"},
+  "failedHarnessSha256": "d7d8e7ae62550524a376d3905264edb71d136486b7a3a16ea1954bdcba1b818a",
+  "result": "v26.9.9 passed 11 actual VLESS data paths and 24 config checks. First REALITY handshake timed out. Exact cleanup and installed state/PID preservation PASS.",
+  "diagnosis": "REALITY fixture did not meet documented H2 target requirement: OpenSSL endpoint offered TLS 1.3 but no ALPN h2 and was shared with payload sink. The logs do not yet establish an Xray defect.",
+  "source": "https://github.com/XTLS/REALITY/blob/main/README.en.md",
+  "correction": "Separate TLS1.3+h2 REALITY handshake target on localhost:39487 from payload sink on localhost:39488. Capture synthetic REALITY handshake diagnostics, test REALITY first. No actual Light changes.",
+  "candidateReady": false
+}

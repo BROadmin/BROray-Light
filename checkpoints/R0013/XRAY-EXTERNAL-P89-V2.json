@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "revision": "p89-external-v2",
+  "startedAt": "2026-09-11T09:33:52.429337+00:00",
+  "scope": "Physical ARM64 router, unchanged current external VLESS/XHTTP/REALITY outbound; diagnostic localhost SOCKS and no direct fallback; no installed-runtime switch or browser claim.",
+  "outboundIdentitySha256": "0d776a29b728f4bac94e455eddb2ae75b323ace32ed75eb7f75b50afda1432f7",
+  "priorBROray2626RejectionSuperseded": false,
+  "versions": [
+    {
+      "tag": "v26.9.9",
+      "startedAt": "2026-09-11T09:34:11.387156+00:00",
+      "requests": [],
+      "archiveSha256": "3e38d72dfc5eb65c91df0e5583e9b6676c32232041da47de6ae73946b526d66c",
+      "binarySha256": "c1defe42b6db958a97c5e049a02a00a4baaedaca7b51c1c229f0830e288acef5",
+      "configValidation": {
+        "exitCode": 0,
+        "configurationOK": true,
+        "outputSha256": "2a3001ff296f75c9b48c22c492070e582e50ec990f28ef57535773bc6b5c25ee"
+      },
+      "start": {
+        "exitCode": 1,
+        "stdout": "",
+        "stderr": "sh: can't kill pid 8181: No such process\n"
+      },
+      "status": "FAIL_STOPPED_NO_RETRY"
+    }
+  ],
+  "candidateReady": false,
+  "runnerSha256": "25a27f6c782bb40b2ae3d5254316471d1cb8964764d8e51541a45d9e6417e635",
+  "before": "c1defe42b6db958a97c5e049a02a00a4baaedaca7b51c1c229f0830e288acef5  /opt/broray-light/runtime/xray\n57832490c248a75d0286f142c8553e4b5e7a377336b10f648ee2e2dffb206716  /opt/broray-light/current/APP-SHA256SUMS\n22e1b0f2257f28d7ba2e9eb308c9378f48c7c716a0a4c6826d396dadf6787196  /opt/broray-light/lib/xray-process.sh\n1248464f5ca79a2e36202240bbcab3ceee1b0f3982709777cd0988db8db06653  -\nreleases/2.0.0-r1\nmanagedPid=4340\n40388289\n",
+  "ramWorkDirectory": "/tmp/brl-r13-external-p89.Vseu51",
+  "diagnosticConfigSha256": "ec0c1f5f722b01d3fdb2fd7f1f49f95a06e11904de507a63a173fbc282dfb571",
+  "status": "FIRST_ERROR",
+  "error": "v26.9.9: start failed",
+  "cleanup": {
+    "status": "PASS",
+    "temporaryDirectoryRemoved": true,
+    "exactFileCount": 4
+  },
+  "after": "c1defe42b6db958a97c5e049a02a00a4baaedaca7b51c1c229f0830e288acef5  /opt/broray-light/runtime/xray\n57832490c248a75d0286f142c8553e4b5e7a377336b10f648ee2e2dffb206716  /opt/broray-light/current/APP-SHA256SUMS\n22e1b0f2257f28d7ba2e9eb308c9378f48c7c716a0a4c6826d396dadf6787196  /opt/broray-light/lib/xray-process.sh\n1248464f5ca79a2e36202240bbcab3ceee1b0f3982709777cd0988db8db06653  -\nreleases/2.0.0-r1\nmanagedPid=4340\n40388289\n",
+  "installedStatePreserved": true,
+  "completedAt": "2026-09-11T09:34:21.859992+00:00"
+}

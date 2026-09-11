@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "stage": "R0013_SELECTIVE_UPSTREAM_STABLE_PORT",
-  "status": "PASS_TEST_TARGET_REPLACEMENT_RELEASE_ACCEPTANCE_PENDING",
-  "currentRevision": "p87-target-replacement-checkpoint",
+  "status": "LOCAL_VALIDATOR_DEPENDENCY_MISSING",
+  "currentRevision": "p90-static-v1",
   "activeFailure": null,
   "publicVersion": "2.0.0",
   "buildA": "PASS_P83_INDEPENDENT_BYTES",
@@ -62,7 +62,7 @@
     "path": "checkpoints/R0013/UPSTREAM-PORT-MAP-P2.json",
     "sha256": "009a0f5adae08f399c82510cf680690b4c2e50bc8c659eda9c48d91b5a838121"
   },
-  "nextExactAction": "R0013_P88_FUNCTIONAL_VLESS_AND_ALL_WEBUI_BACKEND_ACCEPTANCE_ON_REPLACED_TEST_TARGET",
+  "nextExactAction": "INSTALL_TASK_LOCAL_YAML_PARSER_AND_RUN_STATIC_V2",
   "versionAndXray": {
     "status": "PASS_VERSION_AND_BOOTSTRAP_INPUT",
     "path": "checkpoints/R0013/UPGRADE-AND-XRAY-P10.json",
@@ -254,14 +254,14 @@
     "sha256": "3bb2b67af3195df865365da8b77087119d88d3bb0b36a4e58767a67b4c23dcba"
   },
   "checkpoint": {
-    "sha256": "a60675c1bd35406fd9609882ce73bd32364e452718054702d2c864c60966b8bb",
-    "sizeBytes": 3726,
-    "path": "checkpoints/R0013/CHECKPOINT.json"
+    "path": "checkpoints/R0013/CHECKPOINT.json",
+    "sha256": "c78ee30a2a33a2eb059b8d8edc1dbce89fa724dc0be775352cbc18acba5794b5",
+    "bytes": 4524
   },
   "report": {
     "path": "checkpoints/R0013/REPORT.md",
-    "sizeBytes": 12162,
-    "sha256": "4bcac08a3095ca7e67cedee43348a69e4f50e88e23012c5081978b3e3fdcea02"
+    "sha256": "77f3b0ee07a2ecfad000125ad0f72faa4b4cfdfae4832475e3b7178adb791de8",
+    "bytes": 13887
   },
   "localBuildByteVerification": {
     "path": "checkpoints/R0013/BUILD-DOWNLOAD-AND-UI-BINDING-P70.json",
@@ -298,5 +298,52 @@
   "nativeTargetLogin": "checkpoints/R0013/TARGET-NATIVE-LOGIN-P85.json",
   "targetReplacement": "checkpoints/R0013/TARGET-REPLACEMENT-P87.json",
   "targetCleanup": "checkpoints/R0013/TARGET-CLEANUP-P86.json",
-  "currentFullRegression": "PENDING_FINAL_RESULT_COLLECTION"
+  "currentFullRegression": "PASS_P83_ALL_FIVE_JOBS_RUN_34575296136",
+  "xrayCompatibilityDiagnostic": {
+    "status": "PASS_BOUNDED_7_VERSIONS_91_DATA_PATHS_189_CONFIG_CHECKS",
+    "path": "checkpoints/R0013/XRAY-COMPATIBILITY-P88.json",
+    "sha256": "344fcf86fd4512df2579ce25b8479c5449b2b0939ccb41740808b9c394b9b5a9",
+    "report": "checkpoints/R0013/XRAY-COMPATIBILITY-P88.md",
+    "managedRuntimePreservation": "checkpoints/R0013/XRAY-ACTIVE-CONFIG-IDENTITY-P88.json",
+    "shippedCompatibilityRegistryChanged": false,
+    "completedVersionReceipts": [
+      "dist/R0013/p88-xray-compat-v5/v26.9.9.json",
+      "dist/R0013/p88-xray-compat-v5/v26.9.8.json",
+      "dist/R0013/p88-xray-compat-v5/v26.7.28.json",
+      "dist/R0013/p88-xray-compat-v5/v26.7.11.json",
+      "dist/R0013/p88-xray-compat-v5/v26.6.27.json",
+      "dist/R0013/p88-xray-compat-v5/v26.3.27.json",
+      "dist/R0013/p88-xray-compat-v5/v26.2.6.json"
+    ],
+    "installedRuntimeMutationAuthorized": false
+  },
+  "xrayExternalDiagnostic": {
+    "revision": "p89-external-complete",
+    "status": "COMPLETE_6_PASS_26_2_6_INCOMPATIBLE_IN_TESTED_SCENARIO",
+    "nextExactAction": "RECORD_NEGATIVE_COMPATIBILITY_IN_CANDIDATE_BEFORE_RELEASE_AND_COMPLETE_REMAINING_WEBUI_LIFECYCLE_SIGNING_ACCEPTANCE",
+    "path": "checkpoints/R0013/XRAY-EXTERNAL-P89.json",
+    "sha256": "0ac2885d5441e633de2b6da61f77f8591720ba3a2cfbc6ee3e0e7c2ef4f31c78",
+    "bytes": 7183,
+    "report": {
+      "path": "checkpoints/R0013/XRAY-EXTERNAL-P89.md",
+      "sha256": "75c94d72a7d19459fa0d05caedc5f03712155b52022c08fee4be504ea07dae76",
+      "bytes": 4779
+    },
+    "incompatibleVersions": [
+      "26.2.6"
+    ],
+    "registryUpdatePending": true,
+    "finalEvidenceAudit": {
+      "path": "checkpoints/R0013/EVIDENCE-INTEGRITY-P89-V2.json",
+      "sha256": "c26c1e5c53c757eb3a05a756dc91e248c439dad801a7777218e84c969e11fd91",
+      "bytes": 37466
+    }
+  },
+  "latestReleasePreparation": [
+    {
+      "path": "checkpoints/R0013/process-failures/FAILURE-P90-STATIC-V1.json",
+      "sha256": "3cde36cf8a9743efd3bed8a997076480297ea6d8070edaf7b865b0db27c386dd",
+      "bytes": 657
+    }
+  ]
 }

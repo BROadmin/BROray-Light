@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "revision": "p89-external-v2",
+  "status": "CHECKPOINT_FIRST_AFTER_RECORDED_PREFLIGHT_FAILURE",
+  "previousFailure": "process-failures/FAILURE-P89-EXTERNAL-PREFLIGHT-V1.json",
+  "cause": "Preflight wrongly required a single outbound. The Light-generated config has one active VLESS/XHTTP/REALITY plus standard freedom/blackhole and routing. No compatibility test was attempted.",
+  "correction": "Require exactly one VLESS outbound, preserve that entire object byte-equivalently as canonical JSON, and run a diagnostic config containing only it, with localhost SOCKS 39490 and private RAM logs. No direct fallback or routing bypass is possible. Record exact managed PID as well as start ticks.",
+  "testOrder": ["v26.9.9", "v26.2.6", "v26.3.27", "v26.6.27", "v26.7.11", "v26.7.28", "v26.9.8"],
+  "httpsEndpoints": ["https://www.gstatic.com/generate_204", "https://www.cloudflare.com/cdn-cgi/trace", "https://example.com/"],
+  "firstError": "Stop current revision at first failed test; save failure and state before any next diagnostic revision. Never silently retry a version.",
+  "installationAndRegistryChanges": false,
+  "candidateReady": false
+}

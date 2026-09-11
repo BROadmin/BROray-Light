@@ -78,6 +78,16 @@ def main() -> None:
     result = jq(release(), 'compatibility(' + json.dumps(records) + ';' + json.dumps(context) + ')')
     check('negative-evidence-wins', result.returncode == 0 and json.loads(result.stdout)['status'] == 'incompatible')
 
+    shipped = json.loads((root / 'share/xray-compatibility.json').read_text(encoding='utf-8'))['records']
+    rejected = release('v26.2.6')
+    rejected['assets'][0]['digest'] = 'sha256:b52d8263453fbd6f4747fd6a1ecf70cd43a664243615dc892ea4674c01b2b5ee'
+    shipped_context = {'candidateId': '2.0.0-r1', 'architecture': 'arm64'}
+    result = jq(rejected, 'compatibility(' + json.dumps(shipped) + ';' + json.dumps(shipped_context) + ')')
+    check('shipped-p89-negative-26.2.6', result.returncode == 0 and json.loads(result.stdout)['status'] == 'incompatible')
+    rejected['assets'][0]['digest'] = 'sha256:' + 'c' * 64
+    result = jq(rejected, 'compatibility(' + json.dumps(shipped) + ';' + json.dumps(shipped_context) + ')')
+    check('shipped-negative-is-exact-archive-bound', result.returncode == 0 and json.loads(result.stdout)['status'] == 'untested')
+
     with tempfile.TemporaryDirectory(prefix='r0013-xray-selection-') as temporary:
         work = Path(temporary)
         request = work / 'request.json'

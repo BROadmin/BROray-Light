@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 1,
+  "revision": "p88-current-config-v2-readonly-process-classification",
+  "status": "CHECKPOINT_FIRST",
+  "previousFailure": "process-failures/FAILURE-P88-CURRENT-CONFIG-V1-PROCESS-SNAPSHOT.json",
+  "diagnosis": "Comparing all PIDs sharing the installed executable overclassifies auxiliary processes. The preserved evidence already shows durable hashes and original PID 18775/starttime 39982859 unchanged. No original argv evidence exists for exited extra PID 26555; do not invent its role.",
+  "correction": "Read-only confirmation using the installed exact run/config process-identity helper (which excludes run -test), current hashes and explicit original PID identity. Reuse seven already-passing config tests; no retry of those tests and no new test files on router.",
+  "candidateReady": false
+}
