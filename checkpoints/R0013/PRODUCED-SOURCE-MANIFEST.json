@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
   "stage": "R0013",
-  "revision": "p54-full-prepared-application-lifecycle",
+  "revision": "p55-native-auth-cgi-session-validation",
   "files": [
     {
       "path": ".github/workflows/r0013-port-tests.yml",
-      "sizeBytes": 15204,
-      "sha256": "0f4bb9dd6d1f8e7f00f05ecbc6eccf0fe1107b94d919a68cc832cebbcd5a6b00"
+      "sizeBytes": 16420,
+      "sha256": "444f7eca38c90d35727ae1f109ffb8aacd84119785ae02de5c7349c9bc6c7fbc"
     },
     {
       "path": "packaging/r0013-overlay/app/bin/broray-lightd",
@@ -247,6 +247,11 @@
       "path": "tools/check_r0013_completion.py",
       "sizeBytes": 8607,
       "sha256": "5fc7ad10987284bae20e4e47bfcc89556bf79acd6ef24ae1c4ed192b1cd14a6f"
+    },
+    {
+      "path": "tools/check_r0013_native_auth.py",
+      "sizeBytes": 13859,
+      "sha256": "8738a2312c6e7c4ee32b7f62862aca767d86d3a50faf51bd7321590bd4ba53e1"
     },
     {
       "path": "tools/check_r0013_prepared_app.py",

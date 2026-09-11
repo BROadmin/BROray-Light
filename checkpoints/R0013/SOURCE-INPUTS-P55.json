@@ -1,0 +1,18 @@
+{
+  "stage": "R0013",
+  "revision": "p55-native-auth-cgi-session-validation",
+  "status": "STATIC_PASS_FIRST_LINUX_PENDING",
+  "files": [
+    {
+      "path": "tools/check_r0013_native_auth.py",
+      "sizeBytes": 13859,
+      "sha256": "8738a2312c6e7c4ee32b7f62862aca767d86d3a50faf51bd7321590bd4ba53e1"
+    },
+    {
+      "path": ".github/workflows/r0013-port-tests.yml",
+      "sizeBytes": 16420,
+      "sha256": "444f7eca38c90d35727ae1f109ffb8aacd84119785ae02de5c7349c9bc6c7fbc"
+    }
+  ],
+  "candidateReady": false
+}

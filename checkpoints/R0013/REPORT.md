@@ -41,4 +41,6 @@ P54 подготовил отдельный Linux-набор с полными �
 4. Финальные независимые clean-checkout Build A/B, воспроизводимость, SHA-256 и подпись существующим encrypted Actions secret.
 5. Авторизованная целевая приёмка. Публикация и публичные байты — только после готовности кандидата.
 
-Точные статусы каждого acceptance gate: `VALIDATION.json`. Текущие источники: `PRODUCED-SOURCE-MANIFEST.json` (76 файлов), изменения P54 — `SOURCE-INPUTS-P54.json`. Компонентный PASS не равен PASS полного кандидата.
+P55 добавляет проверку точных подготовленных CGI/native-auth/session в private mount/network namespaces на канонических путях. HTTP-ответ KeeneticOS имитируется с придуманными тестовыми данными; curl и код приложения настоящие. Положительный вход, негативные native-ответы, сессии/истечение/logout и защита всех CGI от неавторизованного доступа подготовлены; Linux PASS пока не заявляется.
+
+Точные статусы каждого acceptance gate: `VALIDATION.json`. Текущие источники: `PRODUCED-SOURCE-MANIFEST.json` (77 файлов), изменения P55 — `SOURCE-INPUTS-P55.json`. Компонентный PASS не равен PASS полного кандидата.

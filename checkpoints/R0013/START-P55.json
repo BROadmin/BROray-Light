@@ -1,0 +1,15 @@
+{
+  "stage": "R0013",
+  "revision": "p55-native-auth-cgi-session-validation",
+  "status": "CHECKPOINT_BEFORE_TEST_IMPLEMENTATION",
+  "scope": [
+    "Execute exact prepared application CGI and native-auth/session libraries at canonical paths in private mount and network namespaces",
+    "Use a loopback-only test Keenetic challenge-response HTTP server with invented fixture credentials",
+    "Validate successful and rejected login, ambiguous or unavailable native backend, session expiry/logout and every protected CGI without authentication",
+    "Check RAM-only scratch and session permissions; retain real curl and shell utilities"
+  ],
+  "mockedBoundaries": ["KeeneticOS native authentication HTTP responses; physical native SCGI remains a target acceptance gate"],
+  "candidateReady": false,
+  "routerTouched": false,
+  "note": "P53/P54 lifecycle CI remains independent. Do not replace a pending source revision."
+}

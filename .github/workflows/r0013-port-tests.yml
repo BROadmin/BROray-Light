@@ -24,6 +24,30 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  isolated-native-auth:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+          fetch-depth: 0
+      - name: Install native HTTP and CGI fixture dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends busybox dash jq curl util-linux iproute2
+      - name: Native HTTP authentication, sessions and protected CGI (dash)
+        run: sudo unshare --mount --net --propagation private python3 -B tools/check_r0013_native_auth.py --shell /bin/dash --result /var/tmp/r0013-native-auth-dash.json
+      - name: Native HTTP authentication, sessions and protected CGI (BusyBox)
+        run: sudo unshare --mount --net --propagation private python3 -B tools/check_r0013_native_auth.py --shell /usr/bin/busybox --busybox --result /var/tmp/r0013-native-auth-ash.json
+      - name: Preserve first native HTTP/session result
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: r0013-native-auth-${{ github.sha }}
+          path: /var/tmp/r0013-native-auth-*.json
+          if-no-files-found: ignore
   isolated-prepared-app:
     needs: isolated-live-entry
     runs-on: ubuntu-24.04
