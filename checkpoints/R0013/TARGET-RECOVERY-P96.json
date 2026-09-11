@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "revision": "p96-subscription-recovery-v1",
+  "status": "PASS_ORIGINAL_CATALOG_RESTORED",
+  "testSubscriptionRemoved": true,
+  "originalServerIdsRestored": true,
+  "serverCount": 6,
+  "originalSubscriptionCount": 1,
+  "activePreserved": true,
+  "candidateReady": false,
+  "remaining": "Fix overlapping-subscription canonical ownership before another release acceptance run"
+}

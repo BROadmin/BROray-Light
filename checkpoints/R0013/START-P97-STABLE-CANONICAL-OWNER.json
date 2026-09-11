@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "revision": "p97-stable-canonical-owner-v1",
+  "status": "AUTHORIZED_BOUNDED_CORRECTION_FOR_P95_FAILURE",
+  "failureEvidence": "process-failures/FAILURE-P95-SUBSCRIPTION-OWNERSHIP.json",
+  "diagnosis": "Deduplication chooses the lexicographically lowest random subscription/server ID after active/manual priority. Adding a new overlapping source can therefore steal inactive canonical records and prune their saved order/exclusions.",
+  "correction": "Persist the elected canonical IDs by identity/import key in config/system/server-canonical-owners.json. Preserve an existing elected owner while it is present; active then manual priority remain higher. Seed the map during existing runtime-prepare deduplication before WebUI admission. Do not introduce quality history or network refresh.",
+  "safety": "Validate the map as a regular non-symlink JSON document; reject malformed or ambiguous map state before deletion. Update only the durable map atomically after successful deduplication. Keep duplicate backups and global admission unchanged.",
+  "scopeBoundary": "This stabilizes ownership during addition/refresh of overlapping sources. It does not promise automatic network recreation when the deliberately removed canonical source is deleted.",
+  "validation": ["Older elected source survives a lexically earlier newly added source", "Order and exclusions retained", "Deleting only rejected duplicate source leaves original records", "Active and manual priorities preserved", "Malformed/symlink map rejected without deletion", "Rebuild independent A/B after final source correction", "Repeat actual overlapping-subscription workflow"],
+  "previousCandidateSuperseded": "P90 artifacts remain immutable evidence but are not publishable after P95 acceptance failure.",
+  "candidateReady": false,
+  "releaseReady": false,
+  "publicReleasePublished": false
+}

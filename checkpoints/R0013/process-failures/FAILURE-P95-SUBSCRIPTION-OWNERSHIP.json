@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "revision": "p95-real-controls-v2",
+  "status": "FAIL_FIRST_ERROR",
+  "failure": "Adding overlapping subscription changed canonical ownership of five existing inactive servers to a newly created subscription; deletion would remove them despite original subscription remaining",
+  "originalServerIds": [
+    "subscription-sub-fd966ff9e3c203ff-46e6704ce2055f49",
+    "subscription-sub-fd966ff9e3c203ff-600217eb115c0e82",
+    "subscription-sub-fd966ff9e3c203ff-7a76d16b5feddd7a",
+    "subscription-sub-fd966ff9e3c203ff-b2b250d100101df0",
+    "subscription-sub-fd966ff9e3c203ff-bb120d71fa029520",
+    "subscription-sub-fd966ff9e3c203ff-eaf308cae35f7132"
+  ],
+  "currentServerIds": [
+    "subscription-sub-43cc4f9820e10f69-46e6704ce2055f49",
+    "subscription-sub-43cc4f9820e10f69-7a76d16b5feddd7a",
+    "subscription-sub-43cc4f9820e10f69-b2b250d100101df0",
+    "subscription-sub-43cc4f9820e10f69-bb120d71fa029520",
+    "subscription-sub-43cc4f9820e10f69-eaf308cae35f7132",
+    "subscription-sub-fd966ff9e3c203ff-600217eb115c0e82"
+  ],
+  "testSubscriptionId": "sub-43cc4f9820e10f69",
+  "activeConnectionPreserved": true,
+  "requiredRecovery": "Delete only test subscription, refresh original subscription, verify six original IDs and restore failover configuration; private P93 backup available",
+  "nextCorrectedRevision": "p96-subscription-ownership-recovery-and-regression",
+  "candidateReady": false
+}

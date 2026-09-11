@@ -1,0 +1,11 @@
+{
+  "schemaVersion": 1,
+  "revision": "p92-browser-import-v1",
+  "status": "STOPPED_BEFORE_BROWSER_CREATION",
+  "failure": "Bundled Playwright ESM entry point failed: index.js does not provide an export named default.",
+  "cause": "Bundled package CommonJS/ESM interop, unrelated to BROray-Light.",
+  "browserCreated": false,
+  "routerMutationPerformed": false,
+  "nextCorrectedRevision": "p92-browser-import-v2",
+  "correction": "Load the installed CommonJS entry through createRequire; use a new headless test browser, never attach to the user's browser profile."
+}

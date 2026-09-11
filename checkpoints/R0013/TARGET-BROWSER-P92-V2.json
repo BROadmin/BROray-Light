@@ -1,0 +1,119 @@
+{
+  "schemaVersion": 1,
+  "revision": "p92-browser-v2",
+  "status": "FAIL_FIRST_ERROR",
+  "tests": [
+    {
+      "gate": "native-browser-login-password-controls",
+      "status": "PASS"
+    },
+    {
+      "gate": "keenetic-interface-healthy-before-release",
+      "status": "FAIL",
+      "observed": "Proxy0 / Ошибка while Xray connection works"
+    }
+  ],
+  "keenetic": {
+    "exists": true,
+    "healthy": true,
+    "matchesExpected": true,
+    "interfaceName": "Proxy0",
+    "description": "BROray-Light - 🇳🇱 NL - KEENETIC",
+    "protocol": "socks5",
+    "upstream": "127.0.0.1:2080",
+    "link": true,
+    "connected": true,
+    "state": "up",
+    "updatedAt": "2026-09-11T13:34:26+0300",
+    "expectedReady": true,
+    "upstreamReachable": true,
+    "expected": {
+      "ready": true,
+      "interfaceName": "Proxy0",
+      "description": "BROray-Light - 🇳🇱 NL - KEENETIC",
+      "protocol": "socks5",
+      "upstream": "127.0.0.1:2080",
+      "socks": {
+        "listen": "127.0.0.1",
+        "port": 2080,
+        "active": true
+      },
+      "activeServer": {
+        "name": "🇳🇱 NL - KEENETIC"
+      }
+    },
+    "actual": {
+      "exists": true,
+      "interfaceName": "Proxy0",
+      "description": "BROray-Light - 🇳🇱 NL - KEENETIC",
+      "type": "Proxy",
+      "protocol": "socks5",
+      "upstream": "127.0.0.1:2080",
+      "link": true,
+      "connected": true,
+      "state": "up",
+      "mtu": 8500,
+      "via": "GigabitEthernet1",
+      "localAddress": "100.123.245.209",
+      "remoteAddress": "127.0.0.1",
+      "adminOnly": false,
+      "raw": {
+        "link": "up",
+        "connected": "yes",
+        "state": "up"
+      }
+    },
+    "checks": {
+      "exists": true,
+      "protocol": true,
+      "upstream": true,
+      "description": true,
+      "upstreamReachable": true,
+      "link": true,
+      "connected": true,
+      "state": true,
+      "ownership": true
+    },
+    "technical": {
+      "type": "Proxy",
+      "mtu": 8500,
+      "via": "GigabitEthernet1",
+      "localAddress": "100.123.245.209",
+      "remoteAddress": "127.0.0.1",
+      "adminOnly": false
+    },
+    "problems": [],
+    "ownershipConfirmed": true,
+    "ownershipReceiptPresent": true,
+    "interfaceType": "managed-socks-proxy",
+    "interfaceDisplayName": "BROray-Light - 🇳🇱 NL - KEENETIC",
+    "health": {
+      "schemaVersion": 1,
+      "module": "keenetic",
+      "availability": "available",
+      "severity": "ok",
+      "operational": true,
+      "consistent": true,
+      "actionRequired": false,
+      "freshness": {
+        "state": "fresh",
+        "checkedAt": "2026-09-11T13:34:26+0300"
+      },
+      "reasons": [],
+      "facts": {
+        "interfaceName": "Proxy0",
+        "exists": true,
+        "ownershipConfirmed": true,
+        "ownershipReceiptPresent": true,
+        "socksActive": true,
+        "link": true,
+        "connected": true,
+        "state": "up",
+        "matchesExpected": true
+      },
+      "lastOperation": null
+    }
+  },
+  "scriptErrors": [],
+  "candidateReady": false
+}

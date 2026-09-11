@@ -113,7 +113,7 @@
     },
     {
       "path": "bin/broray-subscriptions",
-      "sourceSha256": "bbdb99c879a37bc810f4c0fff61426c80a195e5c4bd60ebbf5c99af50896c3ba",
+      "sourceSha256": "0ee99586271d1281be2354b330ff58c3f91c7c7f848e88e584a25c5e70f4d88a",
       "replacements": [
         {
           "old": "$BRORAY_ROOT/tmp",

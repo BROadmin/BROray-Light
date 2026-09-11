@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0013",
+  "revision": "p91-native-readonly-v2",
+  "startedAt": "2026-09-11T10:30:01.005257+00:00",
+  "status": "PASS_NATIVE_LOGIN_AND_READ_ONLY_BACKEND",
+  "scope": "Actual public HTTPS native login and non-mutating backend requests; no browser click claim",
+  "tests": [
+    {
+      "name": "unauthenticated-session-refusal",
+      "status": "PASS",
+      "facts": {
+        "httpStatus": 401
+      }
+    },
+    {
+      "name": "native-login",
+      "status": "PASS",
+      "facts": {}
+    },
+    {
+      "name": "session.cgi",
+      "status": "PASS",
+      "facts": {
+        "httpStatus": 200,
+        "noStore": true
+      }
+    },
+    {
+      "name": "broray/info.cgi",
+      "status": "PASS",
+      "facts": {
+        "httpStatus": 200,
+        "noStore": true,
+        "version": "2.0.0",
+        "releaseId": "2.0.0-r1"
+      }
+    },
+    {
+      "name": "home/summary.cgi",
+      "status": "PASS",
+      "facts": {
+        "httpStatus": 200,
+        "noStore": true
+      }
+    },
+    {
+      "name": "servers/summary.cgi",
+      "status": "PASS",
+      "facts": {
+        "httpStatus": 200,
+        "noStore": true,
+        "serverCount": 6,
+        "activeServerPresent": true
+      }
+    },
+    {
+      "name": "subscriptions/list.cgi",
+      "status": "PASS",
+      "facts": {
+        "httpStatus": 200,
+        "noStore": true,
+        "subscriptionCount": 1
+      }
+    },
+    {
+      "name": "servers/auto-switch-status.cgi",
+      "status": "PASS",
+      "facts": {
+        "httpStatus": 200,
+        "noStore": true
+      }
+    }
+  ],
+  "candidateReady": false
+}

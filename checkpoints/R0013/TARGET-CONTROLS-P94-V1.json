@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "revision": "p94-real-controls-v1",
+  "status": "FAIL_FIRST_ERROR",
+  "failedGate": "server-order-save-after-add-delete",
+  "response": {
+    "success": false,
+    "data": null,
+    "error": {
+      "code": "OPERATION_BUSY",
+      "message": "Другая операция уже выполняется.",
+      "details": null
+    }
+  },
+  "tests": [
+    {
+      "gate": "native-browser-login-password-controls",
+      "status": "PASS"
+    },
+    {
+      "gate": "refresh-status-completed",
+      "status": "PASS"
+    },
+    {
+      "gate": "xray-catalog-load",
+      "status": "PASS"
+    },
+    {
+      "gate": "light-check-refuses-older-stable",
+      "status": "PASS"
+    },
+    {
+      "gate": "failover-threshold-save-and-restore",
+      "status": "PASS"
+    },
+    {
+      "gate": "manual-valid-vless-add",
+      "status": "PASS"
+    },
+    {
+      "gate": "manual-duplicate-refusal",
+      "status": "PASS"
+    },
+    {
+      "gate": "server-delete-cancel",
+      "status": "PASS"
+    },
+    {
+      "gate": "server-delete-confirm",
+      "status": "PASS"
+    }
+  ],
+  "candidateReady": false,
+  "routerConfigurationRestorationRequired": false
+}

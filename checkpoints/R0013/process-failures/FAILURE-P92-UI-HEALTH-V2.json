@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 1,
+  "revision": "p92-browser-v2",
+  "status": "STOPPED_AND_DIAGNOSED",
+  "failure": "Initial Home card showed Proxy0 error; reading it immediately after asynchronous refresh was not a completed-refresh assertion.",
+  "diagnosis": "Subsequent read-only observation, without another refresh or repair, confirmed backend health severity=ok, all ownership checks true and UI Активен with configure/repair disabled. The pending refresh completed correctly. Initial snapshot freshness remains a separate observation, not proof of broken ownership.",
+  "routerConfigurationChanged": false,
+  "nextCorrectedRevision": "p92-browser-v3",
+  "correction": "Wait for actual response and terminal DOM state before asserting asynchronous controls; preserve initial failure evidence and do not invoke repair on a healthy interface."
+}

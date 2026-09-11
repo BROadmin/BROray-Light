@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "revision": "p94-real-controls-v1",
+  "status": "STOPPED_ORDER_SAVE_AT_BUSY_REFUSAL",
+  "failure": "Real order-save request returned OPERATION_BUSY, with no successful mutation claimed.",
+  "cause": "Global operation lock refused concurrent admission; exact owner must be checked before classifying transient contention versus stale lock.",
+  "testFixtureServerRemoved": true,
+  "originalServerCount": 6,
+  "originalThresholdRestored": true,
+  "orderChangePersisted": false,
+  "nextCorrectedRevision": "p95-real-controls-v2-after-lock-diagnosis",
+  "correction": "Inspect lock owner/PID read-only, clear only unsaved browser form by reload, then perform a separately recorded attempt after normal lock release. Never delete a live lock or weaken admission."
+}

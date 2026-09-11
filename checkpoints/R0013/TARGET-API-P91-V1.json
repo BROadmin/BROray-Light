@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0013",
+  "revision": "p91-native-readonly-v1",
+  "startedAt": "2026-09-11T10:28:01.040550+00:00",
+  "status": "FAIL_FIRST_ERROR",
+  "scope": "Actual public HTTPS native login and non-mutating backend requests; no browser click claim",
+  "tests": [
+    {
+      "name": "unauthenticated-session-refusal",
+      "status": "PASS",
+      "facts": {
+        "httpStatus": 401
+      }
+    }
+  ],
+  "candidateReady": false,
+  "failedGate": "native-login",
+  "errorType": "AssertionError",
+  "error": "('native-login-failed', 200, None)",
+  "nextCorrectedRevision": "DIAGNOSE_BEFORE_RETRY"
+}

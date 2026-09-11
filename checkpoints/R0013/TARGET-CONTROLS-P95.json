@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "revision": "p95-real-controls-v2",
+  "status": "FAIL_FIRST_ERROR",
+  "failedGate": "overlapping-subscription-canonical-ownership",
+  "tests": [
+    {
+      "gate": "native-browser-login-password-controls",
+      "status": "PASS"
+    },
+    {
+      "gate": "refresh-status-completed",
+      "status": "PASS"
+    },
+    {
+      "gate": "xray-catalog-load",
+      "status": "PASS"
+    },
+    {
+      "gate": "light-check-refuses-older-stable",
+      "status": "PASS"
+    },
+    {
+      "gate": "failover-threshold-save-and-restore",
+      "status": "PASS"
+    },
+    {
+      "gate": "manual-valid-vless-add",
+      "status": "PASS"
+    },
+    {
+      "gate": "manual-duplicate-refusal",
+      "status": "PASS"
+    },
+    {
+      "gate": "server-delete-cancel",
+      "status": "PASS"
+    },
+    {
+      "gate": "server-delete-confirm",
+      "status": "PASS"
+    },
+    {
+      "gate": "server-order-down-save",
+      "status": "PASS"
+    },
+    {
+      "gate": "server-order-up-restore",
+      "status": "PASS"
+    },
+    {
+      "gate": "subscription-add-with-name",
+      "status": "PASS"
+    },
+    {
+      "gate": "subscription-auto-refresh-checkbox-interval-save",
+      "status": "PASS"
+    },
+    {
+      "gate": "subscription-refresh-and-cross-source-dedup",
+      "status": "PASS"
+    }
+  ],
+  "scriptErrors": [],
+  "candidateReady": false
+}

@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "revision": "p93-private-backup-v1",
+  "status": "PASS_PRIVATE_VERIFIED_BACKUP",
+  "candidateReady": false,
+  "files": [
+    {
+      "privateLocalPath": "dist/R0013/private-target/p93/light-private.tar.gz",
+      "sha256": "f4c6cf64bc184f523898d4915f7cd01d719ec6936a4697443cc1a5ccc8268990",
+      "bytes": 12747588
+    },
+    {
+      "privateLocalPath": "dist/R0013/private-target/p93/running-config.txt",
+      "sha256": "6426d553c22b1f37beca55bc1d2149049073acceb05ce054f5210d752e881753",
+      "bytes": 63846
+    }
+  ],
+  "protectedRamPath": "/tmp/brl-r13-backup-p93.68leGu",
+  "durableStateSha256": "7f354052de70a5d6ba244845a3f8c1682e76eb005c2dd0c7bdb6cc5f37796dfc",
+  "ramScratchRemoved": true,
+  "routerConfigurationChanged": false
+}

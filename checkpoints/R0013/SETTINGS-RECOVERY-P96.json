@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "revision": "p96-failover-recovery",
+  "status": "PASS_ORIGINAL_FAILOVER_SEMANTICS_RESTORED",
+  "fields": [
+    "enabled",
+    "failureThreshold",
+    "cooldownSeconds",
+    "orderedServerIds",
+    "excludedServerIds"
+  ],
+  "metadataTimestampsMayChange": true,
+  "candidateReady": false
+}

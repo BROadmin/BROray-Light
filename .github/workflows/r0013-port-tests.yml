@@ -110,6 +110,10 @@ jobs:
         run: python3 -B tools/test_r0013_subscriptions.py --shell /bin/dash
       - name: Xray catalog and explicit consent
         run: python3 -B tools/test_r0013_xray_selection.py --shell /bin/dash --jq /usr/bin/jq
+      - name: Preserve canonical ownership across overlapping subscriptions (dash)
+        run: python3 -B tools/test_r0013_canonical_owners.py --shell /bin/dash
+      - name: Preserve canonical ownership across overlapping subscriptions (BusyBox)
+        run: python3 -B tools/test_r0013_canonical_owners.py --shell /usr/bin/busybox --busybox
       - name: Home Xray selector control behavior
         run: node tools/test_r0013_home.js
       - name: Subscription cancel, delete, refresh and error controls

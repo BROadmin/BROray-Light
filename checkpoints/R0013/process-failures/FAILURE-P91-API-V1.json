@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "revision": "p91-native-readonly-v1",
+  "status": "STOPPED_AT_NATIVE_LOGIN_ASSERTION",
+  "failure": "Native login HTTP 200 did not satisfy harness success=true expectation. The assertion did not retain safe response envelope fields.",
+  "cause": "Harness assumed a success-envelope shape before consulting the actual inherited login CGI contract.",
+  "authenticationFailureProven": false,
+  "passwordStored": false,
+  "userConfigurationMutated": false,
+  "nextCorrectedRevision": "p91-native-readonly-v2",
+  "correction": "Read the exact assembled r1+R0013 login/session CGI contract, align success handling and endpoint names, then verify authenticated session rather than inferring failure from a missing field. No authentication bypass."
+}
