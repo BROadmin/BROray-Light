@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "revision": "p120-light-guide-copy-layout-publication",
+  "status": "PASS_DOC_CORRECTION_COMMIT_WAIT_EXISTING_PUBLISHER",
+  "productionServerDirectlyChanged": false,
+  "fullBROrayApplicationChanged": false,
+  "previousCommit": "97d244956cc78ea2cca26cdf5a99f6b5cca98365",
+  "commit": "9728483eea1087e9fbd14f23ebb03fa63aaadc94",
+  "files": [
+    {
+      "path": "site/docs.brovibe.cloud/broray-light/index.html",
+      "sha256": "a86932cfdb24db6c5176f3923134944f84f29d9cdbc90e87e0aab9a06e856f52",
+      "bytes": 34503
+    },
+    {
+      "path": "site/docs.brovibe.cloud/SHA256SUMS",
+      "sha256": "63c8e2e9fd03598e25dc9f931dad149b5e17a4bf14b0b919b791f690f78a40ae",
+      "bytes": 1010
+    }
+  ]
+}

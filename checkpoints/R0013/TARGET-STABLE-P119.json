@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "revision": "p119-native-public-stable-check",
+  "status": "PASS",
+  "nativeButton": "BROray-Light: Проверить обновление",
+  "httpStatus": 200,
+  "installedReleaseId": "2.0.0-r1",
+  "availableReleaseId": "2.0.0-r1",
+  "relation": "equal",
+  "updateAvailable": false,
+  "sameVersionPolicy": "NO_OP_SUCCESS",
+  "lightVersion": "2.0.0",
+  "xrayVersion": "26.9.9",
+  "interface": "Proxy0",
+  "interfaceState": "Активен",
+  "connection": "Соединение работает",
+  "installationPerformed": false
+}

@@ -6,7 +6,7 @@ def sha(b):return hashlib.sha256(b).hexdigest()
 def write(p,r):p.write_bytes((json.dumps(r,ensure_ascii=False,indent=2)+'\n').encode())
 def main():
  receipt=ROOT/'checkpoints/R0013/DOC-PUBLICATION-P117.json';assert not receipt.exists()
- release=json.loads((ROOT/'checkpoints/R0013/RELEASE-PUBLISH-P116.json').read_bytes())
+ release=json.loads((ROOT/'checkpoints/R0013/RELEASE-PUBLISH-P116-V2.json').read_bytes())
  assert release['status']=='PASS_PUBLISHED_IMMUTABLE_RELEASE_AND_PUBLIC_BYTES'
  g=GitHub();r={'schemaVersion':1,'revision':'p117-bounded-github-doc-publication','status':'IN_PROGRESS','productionServerDirectlyChanged':False,'fullBROrayApplicationChanged':False,'commits':[]};write(receipt,r)
  def head(repo):return g.request('/repos/BROadmin/'+repo+'/git/ref/heads/main')['object']['sha']

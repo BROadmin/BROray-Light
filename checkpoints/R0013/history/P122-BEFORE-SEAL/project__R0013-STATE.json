@@ -1,0 +1,354 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0013_SELECTIVE_UPSTREAM_STABLE_PORT",
+  "status": "PASS_RELEASE_PUBLIC_DOCS_AND_REAL_BROWSER",
+  "currentRevision": "p122-final-release-seal",
+  "activeFailure": null,
+  "publicVersion": "2.0.0",
+  "buildA": "PASS_P83_INDEPENDENT_BYTES",
+  "buildB": "PASS_P83_INDEPENDENT_BYTES",
+  "catalogAndControlsPort": {
+    "status": "PASS_ISOLATED_REGRESSION",
+    "path": "checkpoints/R0013/CATALOG-AND-CONTROLS-P8.json",
+    "sha256": "a9d141483e6a662dbec7d73949789a863a3c81681d6028b290ec3009a2669b2b"
+  },
+  "subscriptionNamePort": {
+    "status": "PASS_ISOLATED_LINUX",
+    "tests": 5,
+    "path": "checkpoints/R0013/SUBSCRIPTION-NAME-P6.json",
+    "sha256": "2b1fe451272dc233e1f8ccd4cc3d6ea2f212ba81e009f93d3a4b9e9b9601577a"
+  },
+  "lastResolvedFailure": "checkpoints/R0013/process-failures/FAILURE-P81-NATIVE-TARGET-LOGIN.json",
+  "processPort": {
+    "status": "PASS_ISOLATED_LINUX",
+    "tests": 33,
+    "liveLinux": "PASS",
+    "path": "checkpoints/R0013/LINUX-PROCESS-P4.json",
+    "sha256": "ecc2ca1a2aa1ecf853b3cb7777ad294d4c97a1e84efd84e295bc816c3e21c2e6",
+    "commit": "ed7b85b326e4d85f9ed7f3fdeb714b255c0b6b92"
+  },
+  "workingBranch": "codex/r0009-updater-package",
+  "baseLightRelease": "1.0.0-r1",
+  "baseLightCommit": "9e5fce9bfa7c82bfc2f2654d80fd3987c5259963",
+  "upstreamStable": "3.1.0-r09",
+  "upstreamCandidate": "3.1.0-r09c02",
+  "releaseId": "2.0.0-r1",
+  "candidateId": "2.0.0-r1",
+  "packageVersion": "2.0.0",
+  "releaseTag": "v2.0.0",
+  "versionAuthority": "User approved public/package version 2.0.0 and tag v2.0.0 with legacy-compatible internal releaseId 2.0.0-r1 (P10).",
+  "candidateReady": true,
+  "releaseReady": true,
+  "publicReleasePublished": false,
+  "startCheckpoint": {
+    "path": "checkpoints/R0013/START-P1.json",
+    "sha256": "1f1c7f44f9e159927b1e295b7950e93209a65f885a060511077bf4a991168da0"
+  },
+  "preexistingWorktree": {
+    "path": "checkpoints/R0013/PREEXISTING-WORKTREE-P1.json",
+    "sha256": "a8f80532e43b1c74c4d393d039f42c1c00aa1ebc0d15c5f5759e14c688a53656",
+    "fileCount": 505
+  },
+  "completedGates": [
+    "PINNED_UPSTREAM_ARCHIVE_IDENTITIES",
+    "ARCHIVE_MEMBER_SAFETY",
+    "COMPLETE_UPSTREAM_DELTA_CLASSIFICATION"
+  ],
+  "upstreamDelta": {
+    "path": "checkpoints/R0013/UPSTREAM-DELTA-P2.json",
+    "sha256": "3eff396c3755fbe4a74644434c72c1aa428ea55fa4c95374648127057aadeda5"
+  },
+  "portMap": {
+    "path": "checkpoints/R0013/UPSTREAM-PORT-MAP-P2.json",
+    "sha256": "009a0f5adae08f399c82510cf680690b4c2e50bc8c659eda9c48d91b5a838121"
+  },
+  "nextExactAction": "RECONCILE_CURRENT_CHECKPOINT_REPORT_AND_MACHINE_STATE",
+  "versionAndXray": {
+    "status": "PASS_VERSION_AND_BOOTSTRAP_INPUT",
+    "path": "checkpoints/R0013/UPGRADE-AND-XRAY-P10.json",
+    "sha256": "5cbbdf3caa3dca867fe7fa12a96e28178bbe956211cee35bee10fa9cec416234"
+  },
+  "engineeringBuilds": {
+    "status": "PASS_PRELIMINARY_ONLY",
+    "path": "checkpoints/R0013/ENGINEERING-BUILDS-P47.json",
+    "sha256": "73ceaf5f6179c87abf0ca25c0fe2e829cb91fb8edc0a33b815e6110e69ced708"
+  },
+  "bootstrapBuild": {
+    "path": "checkpoints/R0013/RAM-BOOTSTRAP-BUILD-P15.json",
+    "sha256": "0725d9ea2db979f252bb7a4abfcdd57b1fdef010b8a069fdce24156133b8193c"
+  },
+  "bootstrapValidation": {
+    "path": "RAM-BOOTSTRAP-VALIDATION-P15.json",
+    "sha256": "050a4d9b7e8c82194d1e4dd03e6e014031ec1b24d44f06833cc3189d5ca1c33d"
+  },
+  "latestCI": "https://github.com/BROadmin/BROray-Light/actions/runs/34575296136",
+  "latestFullComponentRegression": {
+    "status": "PASS_ALL_FIVE_R0013_REGRESSION_JOBS",
+    "commit": "ebae309b93aee000ed1c5b5743385ba39e33ed98",
+    "uniqueJsonReportTests": 479,
+    "sizeBytes": 162932,
+    "sha256": "ba26df6449d69b4100f7ed5747babcbd75d8079eb02a2335940db629779a5797",
+    "path": "checkpoints/R0013/REGRESSION-P64.json"
+  },
+  "cleanBootstrapAndRam": {
+    "status": "PASS_BOUNDED",
+    "tests": 33,
+    "path": "checkpoints/R0013/CLEAN-BOOTSTRAP-AND-RAM-P49.json",
+    "sha256": "fe50139c4c8432e7bae208e7d8520b1ded377fb0313c42229283c06646440926"
+  },
+  "actualWebDaemons": {
+    "status": "PASS_BOUNDED",
+    "tests": 42,
+    "path": "checkpoints/R0013/ACTUAL-DAEMON-VALIDATION-P39.json",
+    "sha256": "fd121cbef05e758044d84252b7c7226129f53bb05ae3775db57be2b5ba769584"
+  },
+  "webConfigTransaction": {
+    "status": "PASS_BOUNDED",
+    "tests": 28,
+    "path": "checkpoints/R0013/WEB-CONFIG-VALIDATION-P35.json",
+    "sha256": "90db5f67cba8d88e286519344ab508ac82268ba774970c085f41687880bf215b"
+  },
+  "platformActivationAndRollback": {
+    "status": "PASS_BOUNDED",
+    "tests": 32,
+    "path": "checkpoints/R0013/PLATFORM-VALIDATION-P30.json",
+    "sha256": "6223d06c4f63a44c4bd66bf5da42b19b2358296a1dab8b58af9f5e4beb89c299"
+  },
+  "xrayRollback": {
+    "status": "PASS_BOUNDED",
+    "tests": 32,
+    "path": "checkpoints/R0013/XRAY-ROLLBACK-VALIDATION-P32.json",
+    "sha256": "35aab3f8277fb323c6c8c693fece3cd8635addf862e52d186ad351da5474bd09"
+  },
+  "ramNamespaceHandoff": {
+    "status": "PASS_BOUNDED",
+    "tests": 20,
+    "path": "checkpoints/R0013/R1-RAM-VALIDATION-P28.json",
+    "sha256": "1653a3c24470b78b054458960a96c5b7867d2d19beba520c3ebcd11bd8f4d25b"
+  },
+  "exactR1WebuiAndJournal": {
+    "status": "PASS_BOUNDED",
+    "tests": 42,
+    "path": "checkpoints/R0013/R1-WEBUI-AND-JOURNAL-P27.json",
+    "sha256": "70e8f9bba41a7e3ee82afd553c243d8ced134de5e2842b421ad8568061988f41"
+  },
+  "exactR1Admission": {
+    "status": "PASS_READ_ONLY_ADMISSION",
+    "tests": 20,
+    "path": "checkpoints/R0013/R1-ADMISSION-VALIDATION-P24.json",
+    "sha256": "63e0f405c1821f5266dfb5534322129af32dd8002143577ef73563051caa737c"
+  },
+  "updaterPlatformAndBuilds": {
+    "status": "PASS_BOUNDED_PLATFORM_AND_PRELIMINARY_BUILDS",
+    "path": "checkpoints/R0013/UPDATER-PLATFORM-AND-BUILDS-P23.json",
+    "sha256": "1c93335dbee1d6313935781f62d3fd681015ed2e323ca473abc5c162000148f5"
+  },
+  "nativeRamAndUpdaterCore": {
+    "status": "PASS_NATIVE_BUSYBOX_AND_CANONICAL_SLOT_FORMAT",
+    "tests": 66,
+    "path": "checkpoints/R0013/NATIVE-UPDATER-VALIDATION-P22.json"
+  },
+  "updaterRamCore": {
+    "status": "PASS_BOUNDED_CORE",
+    "tests": 28,
+    "path": "checkpoints/R0013/UPDATER-CORE-P20.json"
+  },
+  "ramPrimitive": {
+    "status": "PASS_BOUNDED_PRIMITIVE",
+    "tests": 38,
+    "path": "checkpoints/R0013/RAM-PRIMITIVE-P17.json"
+  },
+  "runtimePathContract": {
+    "status": "PASS_BOUNDED",
+    "tests": 22,
+    "path": "checkpoints/R0013/RUNTIME-PATHS-AND-BUILDS-P34.json",
+    "sha256": "b0fdc171938d82ce546b2ae314dbd340f9121fc71a062f61aa5f4c5b94b9a5e3"
+  },
+  "remainingIntegrationGap": {
+    "description": "Actual full replacement/login/empty-page smoke PASS. Current full component regression evidence, VLESS data path/all backend controls, physical restart/signed updater, signing and immutable release/docs gates remain."
+  },
+  "scopedServiceAndPublication": {
+    "status": "PASS_BOUNDED",
+    "tests": 30,
+    "path": "checkpoints/R0013/SERVICE-AND-BUILDS-P37.json",
+    "sha256": "95cdbac8d3580dccd88e37a2864f2cc5d2f9a489445e0041ebcbb9826ce47197"
+  },
+  "runtimeTreeHandoff": {
+    "status": "PASS_BOUNDED",
+    "tests": 22,
+    "path": "checkpoints/R0013/RUNTIME-TREES-AND-BUILDS-P40.json",
+    "sha256": "9cabcb9715ea3eec14c495781c89e94f612ccd40f10c3086a6d508f4154c0afb"
+  },
+  "deadOwnerRecovery": {
+    "status": "PASS_BOUNDED",
+    "tests": 10,
+    "path": "checkpoints/R0013/DEAD-OWNER-RECOVERY-P48.json",
+    "sha256": "dd1d13b2edd9b80658ef7d6a6ec34ce0c15bdac0d91f36cd4c66aba1cd9c8215"
+  },
+  "liveR1Transition": {
+    "status": "PASS_BOUNDED",
+    "tests": 4,
+    "path": "checkpoints/R0013/LIVE-R1-UPDATE-AND-ROLLBACK-P44.json",
+    "sha256": "36bb5b328a533a300342ecf88ca605f96b6673e36ad717f3341e06e9f15f2fbb"
+  },
+  "earlyBootAndCleanup": {
+    "status": "PASS_BOUNDED",
+    "tests": 10,
+    "path": "checkpoints/R0013/EARLY-BOOT-AND-CLEANUP-P52.json",
+    "sha256": "5bf063e8632347be480435809f203bcfe3b8434510995f1ea8acae885459dab8"
+  },
+  "legacyStatusRetirement": {
+    "status": "PASS_BOUNDED_DASH_AND_BUSYBOX",
+    "tests": 6,
+    "commit": "8226874c3ea22091afab432fd26bddf63360282a",
+    "uniqueJsonReportTests": 351,
+    "path": "checkpoints/R0013/REGRESSION-P53.json",
+    "sha256": "0747151a22c5acef5d9a2f4a32cb104c55fee6dc61e07ec3d011a57410b29b70"
+  },
+  "nativeAuthentication": {
+    "status": "PASS_P83_100_ISOLATED_NATIVE_TESTS_AND_P85_PHYSICAL_NATIVE_LOGIN",
+    "evidence": "checkpoints/R0013/TARGET-NATIVE-LOGIN-P85.json"
+  },
+  "subscriptionControls": {
+    "status": "PASS_BOUNDED_DOM_HTTP_FIXTURES",
+    "tests": 5,
+    "path": "checkpoints/R0013/CONTROL-P57.json",
+    "sha256": "18180c9ff3f419c5c758b97197c5f75ad669fd163d1f75ba4ad67fcea6c144b7"
+  },
+  "additionalFailure": null,
+  "navigation": {
+    "status": "PASS_UNIT_AND_REAL_BROWSER",
+    "tests": 11,
+    "unit": "checkpoints/R0013/NAVIGATION-P59.json",
+    "browser": "checkpoints/R0013/BROWSER-NAVIGATION-P59.json"
+  },
+  "evidenceBytePreservation": {
+    "sizeBytes": 647,
+    "sha256": "19bff7ddb6e3950ba8094fa60cdb42cc835afda1472a2465e9a24b0b5f3b7959",
+    "path": "checkpoints/R0013/EVIDENCE-BYTES-P59A.json"
+  },
+  "sourceCorrection": {
+    "sha256": "88b23529550f53d846dfa532531c6053e505af7e8ee79ba8057c2847e67639be",
+    "path": "checkpoints/R0013/SOURCE-INPUTS-P72.json",
+    "sizeBytes": 2168
+  },
+  "preparedLifecycle": {
+    "path": "checkpoints/R0013/PREPARED-LIFECYCLE-P64.json",
+    "sha256": "d1dbd4c4aeab5636079174e1b5a03ad24953c978ea3953740223b585bc68b537",
+    "sizeBytes": 42464
+  },
+  "independentBuildsAndClean": "checkpoints/R0013/INDEPENDENT-BUILDS-P83.json",
+  "targetPreflight": {
+    "status": "PASS_ACTUAL_TARGET_STAT_FULL_OWNERSHIP_RESOLVED",
+    "evidence": "checkpoints/R0013/TARGET-REPLACEMENT-P87.json"
+  },
+  "browserControls": {
+    "sizeBytes": 11397,
+    "sha256": "7c9b7b274899110b4b9d37e2fced9c15e159b7113fcf00f3544c87ddf92bd149",
+    "path": "checkpoints/R0013/BROWSER-CONTROLS-P66.json"
+  },
+  "routerReadOnlyInspected": true,
+  "routerMutationPerformed": true,
+  "targetOwnerDiagnosis": {
+    "path": "checkpoints/R0013/process-failures/FAILURE-P69-TARGET-FULL-BRORAY-OWNERSHIP.json",
+    "sha256": "3bb2b67af3195df865365da8b77087119d88d3bb0b36a4e58767a67b4c23dcba"
+  },
+  "checkpoint": {
+    "path": "checkpoints/R0013/CHECKPOINT.json",
+    "sha256": "c78ee30a2a33a2eb059b8d8edc1dbce89fa724dc0be775352cbc18acba5794b5",
+    "bytes": 4524
+  },
+  "report": {
+    "path": "checkpoints/R0013/REPORT.md",
+    "sha256": "77f3b0ee07a2ecfad000125ad0f72faa4b4cfdfae4832475e3b7178adb791de8",
+    "bytes": 13887
+  },
+  "localBuildByteVerification": {
+    "path": "checkpoints/R0013/BUILD-DOWNLOAD-AND-UI-BINDING-P70.json",
+    "sha256": "8d660aaeb5681ae2881644de9242d8330e1c0ccb18dd6676e5b8755b7fe3cb1f"
+  },
+  "preexistingR0012Preservation": {
+    "path": "checkpoints/R0013/R0012-PRESERVATION-P70.json",
+    "sha256": "74d7d3f33b8d4ca705897d792370fc359f7c0cc345aa19b9c2214d75d887b6f1"
+  },
+  "targetReplacementAuthorization": {
+    "path": "checkpoints/R0013/START-P71-TARGET-REPLACEMENT.json",
+    "sizeBytes": 1352,
+    "sha256": "5f22bc3835f0fd6c85bfebe40ccea09b5889b2d671b11f0cc6a9c36e235ef817"
+  },
+  "previousTargetBlocker": "checkpoints/R0013/process-failures/FAILURE-P69-TARGET-FULL-BRORAY-OWNERSHIP.json",
+  "routerMutationScope": "Full product officially removed with verified private backups; exact bootstrap retired; Light corrected P83 package installed. Durable state preserved across P84 correction; invocation scratch removed.",
+  "targetBackup": {
+    "sizeBytes": 2103,
+    "path": "checkpoints/R0013/TARGET-BACKUP-P74.json",
+    "sha256": "5158eb0e4a85dac3259808893ca7d4f825523a66b8b6c92e4f223063c7b8a8ca"
+  },
+  "targetStat": {
+    "sha256": "69842b82f2186b32b03be7f166801f1a66cac45ccf61665d5ab0f473c10ce767",
+    "sizeBytes": 1282,
+    "path": "checkpoints/R0013/TARGET-STAT-P75.json"
+  },
+  "supplementBackup": {
+    "sha256": "f729b34b4bcaf17fe78fb5c4d9a0d2d062e69d52d752d1892fecf5031081ff61",
+    "path": "checkpoints/R0013/TARGET-SUPPLEMENT-BACKUP-P77.json",
+    "sizeBytes": 521
+  },
+  "targetInstall": "checkpoints/R0013/TARGET-INSTALL-P79.json",
+  "targetInstalledState": "checkpoints/R0013/TARGET-STATE-P80.json",
+  "nativeTargetLogin": "checkpoints/R0013/TARGET-NATIVE-LOGIN-P85.json",
+  "targetReplacement": "checkpoints/R0013/TARGET-REPLACEMENT-P87.json",
+  "targetCleanup": "checkpoints/R0013/TARGET-CLEANUP-P86.json",
+  "currentFullRegression": "PASS_P83_ALL_FIVE_JOBS_RUN_34575296136",
+  "xrayCompatibilityDiagnostic": {
+    "status": "PASS_BOUNDED_7_VERSIONS_91_DATA_PATHS_189_CONFIG_CHECKS",
+    "path": "checkpoints/R0013/XRAY-COMPATIBILITY-P88.json",
+    "sha256": "344fcf86fd4512df2579ce25b8479c5449b2b0939ccb41740808b9c394b9b5a9",
+    "report": "checkpoints/R0013/XRAY-COMPATIBILITY-P88.md",
+    "managedRuntimePreservation": "checkpoints/R0013/XRAY-ACTIVE-CONFIG-IDENTITY-P88.json",
+    "shippedCompatibilityRegistryChanged": false,
+    "completedVersionReceipts": [
+      "dist/R0013/p88-xray-compat-v5/v26.9.9.json",
+      "dist/R0013/p88-xray-compat-v5/v26.9.8.json",
+      "dist/R0013/p88-xray-compat-v5/v26.7.28.json",
+      "dist/R0013/p88-xray-compat-v5/v26.7.11.json",
+      "dist/R0013/p88-xray-compat-v5/v26.6.27.json",
+      "dist/R0013/p88-xray-compat-v5/v26.3.27.json",
+      "dist/R0013/p88-xray-compat-v5/v26.2.6.json"
+    ],
+    "installedRuntimeMutationAuthorized": false
+  },
+  "xrayExternalDiagnostic": {
+    "revision": "p89-external-complete",
+    "status": "COMPLETE_6_PASS_26_2_6_INCOMPATIBLE_IN_TESTED_SCENARIO",
+    "nextExactAction": "RECORD_NEGATIVE_COMPATIBILITY_IN_CANDIDATE_BEFORE_RELEASE_AND_COMPLETE_REMAINING_WEBUI_LIFECYCLE_SIGNING_ACCEPTANCE",
+    "path": "checkpoints/R0013/XRAY-EXTERNAL-P89.json",
+    "sha256": "0ac2885d5441e633de2b6da61f77f8591720ba3a2cfbc6ee3e0e7c2ef4f31c78",
+    "bytes": 7183,
+    "report": {
+      "path": "checkpoints/R0013/XRAY-EXTERNAL-P89.md",
+      "sha256": "75c94d72a7d19459fa0d05caedc5f03712155b52022c08fee4be504ea07dae76",
+      "bytes": 4779
+    },
+    "incompatibleVersions": [
+      "26.2.6"
+    ],
+    "registryUpdatePending": true,
+    "finalEvidenceAudit": {
+      "path": "checkpoints/R0013/EVIDENCE-INTEGRITY-P89-V2.json",
+      "sha256": "c26c1e5c53c757eb3a05a756dc91e248c439dad801a7777218e84c969e11fd91",
+      "bytes": 37466
+    }
+  },
+  "latestReleasePreparation": [
+    {
+      "path": "checkpoints/R0013/LIVE-DOCUMENTATION-P121.json",
+      "sha256": "84bd468f9ab14fbb3408a98fba2cb1af2192801acbe3d3362d11a3804735c1ce",
+      "bytes": 3143
+    },
+    {
+      "path": "checkpoints/R0013/PUBLIC-DOC-BROWSER-P121.json",
+      "sha256": "9701d331371638a59ab03aa3e62caa3c5a954a8ed2d46576dfe2b104e1056151",
+      "bytes": 1733
+    }
+  ]
+}

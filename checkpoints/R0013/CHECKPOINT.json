@@ -1,98 +1,174 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "stage": "R0013_SELECTIVE_UPSTREAM_STABLE_PORT",
-  "status": "PASS_TEST_TARGET_REPLACEMENT_RELEASE_ACCEPTANCE_PENDING",
-  "currentRevision": "p89-external-complete",
+  "status": "PASS_RELEASE_PUBLISHED_AND_DOCUMENTATION_VERIFIED",
+  "currentRevision": "p122-published-release-and-documentation-final-seal",
   "publicVersion": "2.0.0",
   "packageVersion": "2.0.0",
   "releaseId": "2.0.0-r1",
   "candidateId": "2.0.0-r1",
   "releaseTag": "v2.0.0",
   "branch": "codex/r0009-updater-package",
-  "baseLightCommit": "9e5fce9bfa7c82bfc2f2654d80fd3987c5259963",
-  "latestTestedSourceCommit": "14813c3774207502039999e014062464043827d1",
-  "latestFullComponentRegression": "REGRESSION-P64.json",
-  "latestCI": "https://github.com/BROadmin/BROray-Light/actions/runs/34575296136",
-  "candidateReady": false,
-  "releaseReady": false,
-  "publicReleasePublished": false,
-  "productionServerTouched": false,
-  "fullBROrayModified": false,
-  "preexistingR0012CodeAndHistoryPreserved": true,
-  "buildA": "PASS_P83_8_OF_8_INDEPENDENT_BYTES",
-  "buildB": "PASS_P83_8_OF_8_INDEPENDENT_BYTES",
+  "buildSourceCommit": "f4af30d98fd1f227e5116def825c09399437086f",
+  "releaseCommit": "0d10636e3649726b18c5c90223279edab0bd223d",
+  "candidateReady": true,
+  "releaseReady": true,
+  "publicReleasePublished": true,
+  "releaseUrl": "https://github.com/BROadmin/BROray-Light/releases/tag/v2.0.0",
+  "buildA": "PASS_P109",
+  "buildB": "PASS_P109",
+  "buildComparison": "8_OF_8_BYTE_IDENTICAL",
   "buildEvidence": {
-    "path": "INDEPENDENT-BUILDS-P83.json",
-    "sha256": "e0b324e756fd30cafe083eaaa4b5e9aac8c3b24de5e3547268c29190ed88944f"
+    "path": "checkpoints/R0013/INDEPENDENT-BUILDS-P109.json",
+    "sha256": "e347617f99dc4c05a1e2de52033a07f0ff1c5b81a13cc7dcd6560cb3b7c36685",
+    "bytes": 2583
   },
-  "activeFailure": null,
-  "nextExactAction": "RECORD_NEGATIVE_COMPATIBILITY_IN_CANDIDATE_BEFORE_RELEASE_AND_COMPLETE_REMAINING_WEBUI_LIFECYCLE_SIGNING_ACCEPTANCE",
-  "remainingIntegrationGap": {
-    "description": "Replacement/login smoke and P88 bounded Xray compatibility PASS; P83 five CI jobs success. Complete actual WebUI/backend and external VLESS acceptance, physical restart/persistence/signed updater, signing and immutable release/docs gates."
-  },
-  "pendingSourceCommit": null,
-  "lastResolvedFailure": "process-failures/FAILURE-P81-NATIVE-TARGET-LOGIN.json",
-  "pendingSourceManifest": null,
-  "buildSourceCommit": "14813c3774207502039999e014062464043827d1",
-  "regressionSourceCommit": "ebae309b93aee000ed1c5b5743385ba39e33ed98",
   "regression": {
-    "sizeBytes": 162932,
-    "sha256": "ba26df6449d69b4100f7ed5747babcbd75d8079eb02a2335940db629779a5797",
-    "path": "checkpoints/R0013/REGRESSION-P64.json"
+    "path": "checkpoints/R0013/REGRESSION-P109.json",
+    "sha256": "966ffc3034cb1e15d3be8d64fb4e63b5fac333f5ea3ba47cbfb0bad1a4ac41af",
+    "bytes": 66529
   },
   "browser": {
-    "sizeBytes": 11397,
-    "sha256": "7c9b7b274899110b4b9d37e2fced9c15e159b7113fcf00f3544c87ddf92bd149",
-    "path": "checkpoints/R0013/BROWSER-CONTROLS-P66.json"
+    "path": "checkpoints/R0013/BROWSER-CONTROLS-P109.json",
+    "sha256": "8f4dba1c791db541ba51e654ed135ac2330bbb3e1fc3d66228bbc85194ada79f",
+    "bytes": 3272
   },
-  "browserToPackageBinding": "BUILD-DOWNLOAD-AND-UI-BINDING-P70.json",
-  "report": {
-    "path": "checkpoints/R0013/REPORT.md",
-    "sha256": "77f3b0ee07a2ecfad000125ad0f72faa4b4cfdfae4832475e3b7178adb791de8",
-    "bytes": 13887
-  },
+  "acceptanceGatesPassed": 26,
   "validation": {
     "path": "checkpoints/R0013/VALIDATION.json",
-    "sha256": "4959daf491cc0d519d38ace34e6e254e6ef0be72e74ad762359a2a201257afd9",
-    "bytes": 10138
+    "sha256": "79238e79c333fe12600f0722ea3fae1a64b9bb7886698bde68b56627dd1c86ff",
+    "bytes": 10318
   },
-  "routerReadOnlyInspected": true,
-  "routerMutationPerformed": true,
-  "additionalFailure": null,
-  "targetReplacementAuthorization": "START-P71-TARGET-REPLACEMENT.json",
-  "routerMutationScope": "Explicit full replacement on 192.168.1.1; official full uninstall, exact obsolete bootstrap cleanup, native Light package install and corrected replacement. Backups retained off-router. No VLESS catalog/proxy imported yet.",
-  "targetInstall": "TARGET-CORRECTED-INSTALL-P84.json",
-  "targetState": "TARGET-NATIVE-LOGIN-P85.json",
-  "installedSourceCommit": "14813c3774207502039999e014062464043827d1",
-  "currentFullRegression": "PASS_P83_ALL_FIVE_JOBS_RUN_34575296136",
-  "xrayCompatibility": {
-    "path": "XRAY-COMPATIBILITY-P88.json",
-    "sha256": "344fcf86fd4512df2579ce25b8479c5449b2b0939ccb41740808b9c394b9b5a9",
-    "status": "PASS_BOUNDED_7_VERSIONS_91_DATA_PATHS_189_CONFIG_CHECKS"
+  "report": {
+    "path": "checkpoints/R0013/REPORT.md",
+    "sha256": "1cc4293bb6674e36e34663e444f2a75307e71f815b343991e97790473580ebfc",
+    "bytes": 10302
   },
-  "sourceManifest": {
-    "path": "checkpoints/R0013/PRODUCED-SOURCE-MANIFEST.json",
-    "sizeBytes": 18086,
-    "sha256": "d9c0e245181a79b102127254a545466857b91a464c3035788af4502881be04c4"
-  },
-  "targetReplacement": {
-    "path": "TARGET-REPLACEMENT-P87.json",
-    "sha256": "84766bd1763a4ca23215c46cb23a9fc9fb94d04edad8e04e2bf731b07d2fc71e"
-  },
-  "targetCleanup": "TARGET-CLEANUP-P86.json",
-  "fullBROrayRepositoryModified": false,
-  "fullProductRemovedOnTestTarget": true,
-  "xrayExternalDiagnostic": {
-    "path": "checkpoints/R0013/XRAY-EXTERNAL-P89.json",
-    "sha256": "0ac2885d5441e633de2b6da61f77f8591720ba3a2cfbc6ee3e0e7c2ef4f31c78",
-    "bytes": 7183,
-    "report": {
-      "path": "checkpoints/R0013/XRAY-EXTERNAL-P89.md",
-      "sha256": "75c94d72a7d19459fa0d05caedc5f03712155b52022c08fee4be504ea07dae76",
-      "bytes": 4779
+  "artifacts": [
+    {
+      "name": "ACCEPTANCE.json",
+      "bytes": 7854,
+      "sha256": "3219232456af0a5a6983fe276c3a63dda68a298bb83914303aff8b3125a049a5",
+      "url": "https://github.com/BROadmin/BROray-Light/releases/download/v2.0.0/ACCEPTANCE.json"
     },
-    "incompatibleVersions": [
-      "26.2.6"
-    ]
-  }
+    {
+      "name": "INPUT-MANIFEST.json",
+      "bytes": 40797,
+      "sha256": "ef027f9fe09020555445e72761a72bfad398aeaf2aaa190d05808480811514ed",
+      "url": "https://github.com/BROadmin/BROray-Light/releases/download/v2.0.0/INPUT-MANIFEST.json"
+    },
+    {
+      "name": "RELEASE-MANIFEST.json",
+      "bytes": 2675,
+      "sha256": "b2c03a799f6acb49f50ebf4c4371d9d88e4126ebd7f2e33ce1969d96b9bc25f3",
+      "url": "https://github.com/BROadmin/BROray-Light/releases/download/v2.0.0/RELEASE-MANIFEST.json"
+    },
+    {
+      "name": "REPRODUCIBILITY.json",
+      "bytes": 2583,
+      "sha256": "e347617f99dc4c05a1e2de52033a07f0ff1c5b81a13cc7dcd6560cb3b7c36685",
+      "url": "https://github.com/BROadmin/BROray-Light/releases/download/v2.0.0/REPRODUCIBILITY.json"
+    },
+    {
+      "name": "SHA256SUMS",
+      "bytes": 922,
+      "sha256": "0a49b45733c82b4040a9ac1639aed9d3500314d68815ee2c232f2a563806a681",
+      "url": "https://github.com/BROadmin/BROray-Light/releases/download/v2.0.0/SHA256SUMS"
+    },
+    {
+      "name": "broray-light-app-2.0.0-r1.tar.gz",
+      "bytes": 230223,
+      "sha256": "fb7fc533cb7e41d4ea1ea25fb15b7eb0b8e878bb7e75dbbd7b849b18ddc54c9c",
+      "url": "https://github.com/BROadmin/BROray-Light/releases/download/v2.0.0/broray-light-app-2.0.0-r1.tar.gz"
+    },
+    {
+      "name": "broray-light-install-2.0.0.sh",
+      "bytes": 4108,
+      "sha256": "d7d1a709621f3154c0f5b5892a98bddd3f3f782b57d01eb15025e739abcd44f2",
+      "url": "https://github.com/BROadmin/BROray-Light/releases/download/v2.0.0/broray-light-install-2.0.0.sh"
+    },
+    {
+      "name": "broray-light-updater-platform-5-light2-ram.tar.gz",
+      "bytes": 136061,
+      "sha256": "aa814efcb6d75f02c061b3928588439466e9ee02af127bd7eac376786410fc1b",
+      "url": "https://github.com/BROadmin/BROray-Light/releases/download/v2.0.0/broray-light-updater-platform-5-light2-ram.tar.gz"
+    },
+    {
+      "name": "broray-light_2.0.0_aarch64-3.10.ipk",
+      "bytes": 12992623,
+      "sha256": "e582b1f3b2314f118f1caca9aa98efb2e9e67f0ca4aaa9b42f6e1bcc22ae3a0a",
+      "url": "https://github.com/BROadmin/BROray-Light/releases/download/v2.0.0/broray-light_2.0.0_aarch64-3.10.ipk"
+    },
+    {
+      "name": "release.json",
+      "bytes": 597,
+      "sha256": "64a909aec7f774b74c1819c887435fdd992af9c7f25d048cdc6fce72ac6bb31e",
+      "url": "https://github.com/BROadmin/BROray-Light/releases/download/v2.0.0/release.json"
+    },
+    {
+      "name": "release.json.minisig",
+      "bytes": 302,
+      "sha256": "89d4057cbfd6405fca931e828eb2145ad1c9553d4483aea9257611e85d1d6a67",
+      "url": "https://github.com/BROadmin/BROray-Light/releases/download/v2.0.0/release.json.minisig"
+    }
+  ],
+  "githubDocumentationCommit": "cf6217f2fdd5f0b55f80211c29f13db28abb42bd",
+  "websiteSourceCommit": "9728483eea1087e9fbd14f23ebb03fa63aaadc94",
+  "websiteLiveVerified": true,
+  "targetStableCheck": {
+    "path": "checkpoints/R0013/TARGET-STABLE-P119.json",
+    "sha256": "514114c19fbd862545e1d5f5dfb7651f57cda47e6f726a3ed526d630f6ea3d35",
+    "bytes": 561
+  },
+  "fullBROrayApplicationChanged": false,
+  "fullBROrayRepositoryDocumentationOnlyChanged": true,
+  "productionServerDirectlyChanged": false,
+  "preexistingR0012CodeAndHistoryPreserved": true,
+  "activeFailure": null,
+  "remainingGates": [],
+  "historicalSummarySnapshots": [
+    {
+      "originalPath": "checkpoints/R0013/CHECKPOINT.json",
+      "path": "checkpoints/R0013/history/P122-BEFORE-SEAL/checkpoints__R0013__CHECKPOINT.json",
+      "sha256": "c78ee30a2a33a2eb059b8d8edc1dbce89fa724dc0be775352cbc18acba5794b5",
+      "bytes": 4524
+    },
+    {
+      "originalPath": "checkpoints/R0013/VALIDATION.json",
+      "path": "checkpoints/R0013/history/P122-BEFORE-SEAL/checkpoints__R0013__VALIDATION.json",
+      "sha256": "4959daf491cc0d519d38ace34e6e254e6ef0be72e74ad762359a2a201257afd9",
+      "bytes": 10138
+    },
+    {
+      "originalPath": "checkpoints/R0013/REPORT.md",
+      "path": "checkpoints/R0013/history/P122-BEFORE-SEAL/checkpoints__R0013__REPORT.md",
+      "sha256": "77f3b0ee07a2ecfad000125ad0f72faa4b4cfdfae4832475e3b7178adb791de8",
+      "bytes": 13887
+    },
+    {
+      "originalPath": "checkpoints/R0013/SHA256SUMS",
+      "path": "checkpoints/R0013/history/P122-BEFORE-SEAL/checkpoints__R0013__SHA256SUMS",
+      "sha256": "5cdc9207ee2db09b83d12e0e47590c3c0913ad03c3b9d87d8df061ae014e00b9",
+      "bytes": 49501
+    },
+    {
+      "originalPath": "project/R0013-STATE.json",
+      "path": "checkpoints/R0013/history/P122-BEFORE-SEAL/project__R0013-STATE.json",
+      "sha256": "811f8718f28f4f79d2baede2d4ee01a711c94f836ba3118f34e16bc2a3ead397",
+      "bytes": 14673
+    },
+    {
+      "originalPath": "project/IMPLEMENTATION-STATE.json",
+      "path": "checkpoints/R0013/history/P122-BEFORE-SEAL/project__IMPLEMENTATION-STATE.json",
+      "sha256": "476b053cf84a5a04d9c9444aece101ae117b9a1de62aa825893a8922f0b9d7cb",
+      "bytes": 5811
+    },
+    {
+      "originalPath": "docs/CODEX-HANDOFF.md",
+      "path": "checkpoints/R0013/history/P122-BEFORE-SEAL/docs__CODEX-HANDOFF.md",
+      "sha256": "7a5a4d1cc8932c82651888998278dadd9752a041313cc70df1d763f63f0f448e",
+      "bytes": 13095
+    }
+  ],
+  "nextExactAction": "OPERATE_STABLE_2_0_0_COLLECT_USER_FEEDBACK_AUTHORIZE_NEXT_CHANGE"
 }

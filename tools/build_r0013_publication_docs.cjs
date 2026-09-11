@@ -9,7 +9,7 @@ const target = path.join(root, 'publication/R0013');
 const published = process.argv.includes('--published');
 let releaseDate = '';
 if (published) {
-  const receipt = JSON.parse(fs.readFileSync(path.join(root, 'checkpoints/R0013/RELEASE-PUBLISH-P116.json'), 'utf8'));
+  const receipt = JSON.parse(fs.readFileSync(path.join(root, 'checkpoints/R0013/RELEASE-PUBLISH-P116-V2.json'), 'utf8'));
   if (receipt.status !== 'PASS_PUBLISHED_IMMUTABLE_RELEASE_AND_PUBLIC_BYTES') throw new Error('Publication not verified');
   releaseDate = new Intl.DateTimeFormat('ru-RU', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'Europe/Moscow' }).format(new Date(receipt.publishedAt));
 }
@@ -38,8 +38,15 @@ html = html.replace(/<h2>([\s\S]*?)<\/h2>/g, (_, text) => {
   headings.push('<a href="#' + id + '">' + text + '</a>');
   return '<h2 id="' + id + '">' + text + '</h2>';
 });
-html = html.replaceAll('<pre><code', '<pre><button class="copy" type="button" aria-label="Копировать команды">Копировать</button><code');
+// Keep the control outside the horizontally scrollable code region.
+html = html.replace(/<pre><code([\s\S]*?)<\/code><\/pre>/g, '<div class="light-code-block"><button class="copy" type="button" aria-label="Копировать команды">Копировать</button><pre><code$1</code></pre></div>');
 let page = fs.readFileSync(path.join(target, 'templates/broray-light/index.html'), 'utf8');
+page = page.replace('</head>', `<style>
+.light-code-block { overflow: hidden; margin: 18px 0; border: 1px solid var(--line); border-radius: 14px; background: #080c0d; }
+.light-code-block > .copy { float: none; display: block; position: relative; min-height: 44px; margin: 12px 12px 0 auto; }
+.light-code-block > pre { margin: 0; border: 0; border-radius: 0; }
+</style>\n</head>`);
+page = page.replace("button.parentElement.querySelector('code')", "button.closest('.light-code-block').querySelector('code')");
 page = page.replace(/<title>[^<]*<\/title>/, '<title>BROray-Light 2.0.0 — пошаговая инструкция и история версий</title>');
 page = page.replace('BROvibe Docs · BROray-Light 1.0.0-r1', 'BROvibe Docs · BROray-Light 2.0.0');
 page = page.replace(/<meta name="description" content="[^"]*">/, '<meta name="description" content="BROray-Light: установка Entware и SSH, VLESS, подписки, Xray, безопасное обновление и история версий.">');
@@ -125,6 +132,7 @@ if (published) {
 }
 fs.mkdirSync(path.join(target, 'github'), {recursive: true});
 fs.writeFileSync(path.join(target, 'github/README.md'), readme);
+if (published) fs.writeFileSync(path.join(root, 'README.md'), readme);
 const names = ['site/index.html','site/broray-light/index.html','github/README.md'];
 const receipts = names.map(name => { const data=fs.readFileSync(path.join(target,name)); return {path:'publication/R0013/'+name,bytes:data.length,sha256:hash(data)}; });
 console.log(JSON.stringify({status:published ? 'PUBLISHED_RELEASE_DOCS_GENERATED' : 'DRAFT_PUBLICATION_DOCS_GENERATED',installerSha256:installerHash,artifacts:receipts,published},null,2));

@@ -1,0 +1,193 @@
+{
+  "schemaVersion": 1,
+  "revision": "p116-v2-canonical-public-urls-read-only",
+  "status": "PASS_PUBLISHED_IMMUTABLE_RELEASE_AND_PUBLIC_BYTES",
+  "previousFailure": "process-failures/FAILURE-P116-RELEASE-PUBLICATION.json",
+  "externalMutationPerformed": false,
+  "assets": [
+    {
+      "id": 557179501,
+      "name": "ACCEPTANCE.json",
+      "bytes": 7854,
+      "sha256": "3219232456af0a5a6983fe276c3a63dda68a298bb83914303aff8b3125a049a5",
+      "url": "https://github.com/BROadmin/BROray-Light/releases/download/v2.0.0/ACCEPTANCE.json",
+      "draftBytesVerified": true,
+      "publicBytesVerified": true,
+      "publicResponse": {
+        "status": 200,
+        "finalUrlHost": "release-assets.githubusercontent.com",
+        "contentType": "application/octet-stream"
+      }
+    },
+    {
+      "id": 557179546,
+      "name": "INPUT-MANIFEST.json",
+      "bytes": 40797,
+      "sha256": "ef027f9fe09020555445e72761a72bfad398aeaf2aaa190d05808480811514ed",
+      "url": "https://github.com/BROadmin/BROray-Light/releases/download/v2.0.0/INPUT-MANIFEST.json",
+      "draftBytesVerified": true,
+      "publicBytesVerified": true,
+      "publicResponse": {
+        "status": 200,
+        "finalUrlHost": "release-assets.githubusercontent.com",
+        "contentType": "application/octet-stream"
+      }
+    },
+    {
+      "id": 557179578,
+      "name": "RELEASE-MANIFEST.json",
+      "bytes": 2675,
+      "sha256": "b2c03a799f6acb49f50ebf4c4371d9d88e4126ebd7f2e33ce1969d96b9bc25f3",
+      "url": "https://github.com/BROadmin/BROray-Light/releases/download/v2.0.0/RELEASE-MANIFEST.json",
+      "draftBytesVerified": true,
+      "publicBytesVerified": true,
+      "publicResponse": {
+        "status": 200,
+        "finalUrlHost": "release-assets.githubusercontent.com",
+        "contentType": "application/octet-stream"
+      }
+    },
+    {
+      "id": 557179620,
+      "name": "REPRODUCIBILITY.json",
+      "bytes": 2583,
+      "sha256": "e347617f99dc4c05a1e2de52033a07f0ff1c5b81a13cc7dcd6560cb3b7c36685",
+      "url": "https://github.com/BROadmin/BROray-Light/releases/download/v2.0.0/REPRODUCIBILITY.json",
+      "draftBytesVerified": true,
+      "publicBytesVerified": true,
+      "publicResponse": {
+        "status": 200,
+        "finalUrlHost": "release-assets.githubusercontent.com",
+        "contentType": "application/octet-stream"
+      }
+    },
+    {
+      "id": 557179640,
+      "name": "SHA256SUMS",
+      "bytes": 922,
+      "sha256": "0a49b45733c82b4040a9ac1639aed9d3500314d68815ee2c232f2a563806a681",
+      "url": "https://github.com/BROadmin/BROray-Light/releases/download/v2.0.0/SHA256SUMS",
+      "draftBytesVerified": true,
+      "publicBytesVerified": true,
+      "publicResponse": {
+        "status": 200,
+        "finalUrlHost": "release-assets.githubusercontent.com",
+        "contentType": "application/octet-stream"
+      }
+    },
+    {
+      "id": 557179656,
+      "name": "broray-light-app-2.0.0-r1.tar.gz",
+      "bytes": 230223,
+      "sha256": "fb7fc533cb7e41d4ea1ea25fb15b7eb0b8e878bb7e75dbbd7b849b18ddc54c9c",
+      "url": "https://github.com/BROadmin/BROray-Light/releases/download/v2.0.0/broray-light-app-2.0.0-r1.tar.gz",
+      "draftBytesVerified": true,
+      "publicBytesVerified": true,
+      "publicResponse": {
+        "status": 200,
+        "finalUrlHost": "release-assets.githubusercontent.com",
+        "contentType": "application/octet-stream"
+      }
+    },
+    {
+      "id": 557179687,
+      "name": "broray-light-install-2.0.0.sh",
+      "bytes": 4108,
+      "sha256": "d7d1a709621f3154c0f5b5892a98bddd3f3f782b57d01eb15025e739abcd44f2",
+      "url": "https://github.com/BROadmin/BROray-Light/releases/download/v2.0.0/broray-light-install-2.0.0.sh",
+      "draftBytesVerified": true,
+      "publicBytesVerified": true,
+      "publicResponse": {
+        "status": 200,
+        "finalUrlHost": "release-assets.githubusercontent.com",
+        "contentType": "application/octet-stream"
+      }
+    },
+    {
+      "id": 557179725,
+      "name": "broray-light-updater-platform-5-light2-ram.tar.gz",
+      "bytes": 136061,
+      "sha256": "aa814efcb6d75f02c061b3928588439466e9ee02af127bd7eac376786410fc1b",
+      "url": "https://github.com/BROadmin/BROray-Light/releases/download/v2.0.0/broray-light-updater-platform-5-light2-ram.tar.gz",
+      "draftBytesVerified": true,
+      "publicBytesVerified": true,
+      "publicResponse": {
+        "status": 200,
+        "finalUrlHost": "release-assets.githubusercontent.com",
+        "contentType": "application/octet-stream"
+      }
+    },
+    {
+      "id": 557179759,
+      "name": "broray-light_2.0.0_aarch64-3.10.ipk",
+      "bytes": 12992623,
+      "sha256": "e582b1f3b2314f118f1caca9aa98efb2e9e67f0ca4aaa9b42f6e1bcc22ae3a0a",
+      "url": "https://github.com/BROadmin/BROray-Light/releases/download/v2.0.0/broray-light_2.0.0_aarch64-3.10.ipk",
+      "draftBytesVerified": true,
+      "publicBytesVerified": true,
+      "publicResponse": {
+        "status": 200,
+        "finalUrlHost": "release-assets.githubusercontent.com",
+        "contentType": "application/octet-stream"
+      }
+    },
+    {
+      "id": 557179871,
+      "name": "release.json",
+      "bytes": 597,
+      "sha256": "64a909aec7f774b74c1819c887435fdd992af9c7f25d048cdc6fce72ac6bb31e",
+      "url": "https://github.com/BROadmin/BROray-Light/releases/download/v2.0.0/release.json",
+      "draftBytesVerified": true,
+      "publicBytesVerified": true,
+      "publicResponse": {
+        "status": 200,
+        "finalUrlHost": "release-assets.githubusercontent.com",
+        "contentType": "application/octet-stream"
+      }
+    },
+    {
+      "id": 557179891,
+      "name": "release.json.minisig",
+      "bytes": 302,
+      "sha256": "89d4057cbfd6405fca931e828eb2145ad1c9553d4483aea9257611e85d1d6a67",
+      "url": "https://github.com/BROadmin/BROray-Light/releases/download/v2.0.0/release.json.minisig",
+      "draftBytesVerified": true,
+      "publicBytesVerified": true,
+      "publicResponse": {
+        "status": 200,
+        "finalUrlHost": "release-assets.githubusercontent.com",
+        "contentType": "application/octet-stream"
+      }
+    }
+  ],
+  "releaseId": 387007903,
+  "releaseUrl": "https://github.com/BROadmin/BROray-Light/releases/tag/v2.0.0",
+  "publishedAt": "2026-09-11T12:07:58Z",
+  "publicReleasePublished": true,
+  "releaseCommit": "0d10636e3649726b18c5c90223279edab0bd223d",
+  "sourceCommit": "f4af30d98fd1f227e5116def825c09399437086f",
+  "latestAliases": [
+    {
+      "url": "https://github.com/BROadmin/BROray-Light/releases/latest/download/release.json",
+      "sha256": "64a909aec7f774b74c1819c887435fdd992af9c7f25d048cdc6fce72ac6bb31e",
+      "bytes": 597,
+      "response": {
+        "status": 200,
+        "finalUrlHost": "release-assets.githubusercontent.com",
+        "contentType": "application/octet-stream"
+      }
+    },
+    {
+      "url": "https://github.com/BROadmin/BROray-Light/releases/latest/download/release.json.minisig",
+      "sha256": "89d4057cbfd6405fca931e828eb2145ad1c9553d4483aea9257611e85d1d6a67",
+      "bytes": 302,
+      "response": {
+        "status": 200,
+        "finalUrlHost": "release-assets.githubusercontent.com",
+        "contentType": "application/octet-stream"
+      }
+    }
+  ],
+  "latestVerified": true,
+  "previousAssetsPreserved": true
+}

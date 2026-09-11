@@ -1,0 +1,98 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0013_SELECTIVE_UPSTREAM_STABLE_PORT",
+  "status": "PASS_TEST_TARGET_REPLACEMENT_RELEASE_ACCEPTANCE_PENDING",
+  "currentRevision": "p89-external-complete",
+  "publicVersion": "2.0.0",
+  "packageVersion": "2.0.0",
+  "releaseId": "2.0.0-r1",
+  "candidateId": "2.0.0-r1",
+  "releaseTag": "v2.0.0",
+  "branch": "codex/r0009-updater-package",
+  "baseLightCommit": "9e5fce9bfa7c82bfc2f2654d80fd3987c5259963",
+  "latestTestedSourceCommit": "14813c3774207502039999e014062464043827d1",
+  "latestFullComponentRegression": "REGRESSION-P64.json",
+  "latestCI": "https://github.com/BROadmin/BROray-Light/actions/runs/34575296136",
+  "candidateReady": false,
+  "releaseReady": false,
+  "publicReleasePublished": false,
+  "productionServerTouched": false,
+  "fullBROrayModified": false,
+  "preexistingR0012CodeAndHistoryPreserved": true,
+  "buildA": "PASS_P83_8_OF_8_INDEPENDENT_BYTES",
+  "buildB": "PASS_P83_8_OF_8_INDEPENDENT_BYTES",
+  "buildEvidence": {
+    "path": "INDEPENDENT-BUILDS-P83.json",
+    "sha256": "e0b324e756fd30cafe083eaaa4b5e9aac8c3b24de5e3547268c29190ed88944f"
+  },
+  "activeFailure": null,
+  "nextExactAction": "RECORD_NEGATIVE_COMPATIBILITY_IN_CANDIDATE_BEFORE_RELEASE_AND_COMPLETE_REMAINING_WEBUI_LIFECYCLE_SIGNING_ACCEPTANCE",
+  "remainingIntegrationGap": {
+    "description": "Replacement/login smoke and P88 bounded Xray compatibility PASS; P83 five CI jobs success. Complete actual WebUI/backend and external VLESS acceptance, physical restart/persistence/signed updater, signing and immutable release/docs gates."
+  },
+  "pendingSourceCommit": null,
+  "lastResolvedFailure": "process-failures/FAILURE-P81-NATIVE-TARGET-LOGIN.json",
+  "pendingSourceManifest": null,
+  "buildSourceCommit": "14813c3774207502039999e014062464043827d1",
+  "regressionSourceCommit": "ebae309b93aee000ed1c5b5743385ba39e33ed98",
+  "regression": {
+    "sizeBytes": 162932,
+    "sha256": "ba26df6449d69b4100f7ed5747babcbd75d8079eb02a2335940db629779a5797",
+    "path": "checkpoints/R0013/REGRESSION-P64.json"
+  },
+  "browser": {
+    "sizeBytes": 11397,
+    "sha256": "7c9b7b274899110b4b9d37e2fced9c15e159b7113fcf00f3544c87ddf92bd149",
+    "path": "checkpoints/R0013/BROWSER-CONTROLS-P66.json"
+  },
+  "browserToPackageBinding": "BUILD-DOWNLOAD-AND-UI-BINDING-P70.json",
+  "report": {
+    "path": "checkpoints/R0013/REPORT.md",
+    "sha256": "77f3b0ee07a2ecfad000125ad0f72faa4b4cfdfae4832475e3b7178adb791de8",
+    "bytes": 13887
+  },
+  "validation": {
+    "path": "checkpoints/R0013/VALIDATION.json",
+    "sha256": "4959daf491cc0d519d38ace34e6e254e6ef0be72e74ad762359a2a201257afd9",
+    "bytes": 10138
+  },
+  "routerReadOnlyInspected": true,
+  "routerMutationPerformed": true,
+  "additionalFailure": null,
+  "targetReplacementAuthorization": "START-P71-TARGET-REPLACEMENT.json",
+  "routerMutationScope": "Explicit full replacement on 192.168.1.1; official full uninstall, exact obsolete bootstrap cleanup, native Light package install and corrected replacement. Backups retained off-router. No VLESS catalog/proxy imported yet.",
+  "targetInstall": "TARGET-CORRECTED-INSTALL-P84.json",
+  "targetState": "TARGET-NATIVE-LOGIN-P85.json",
+  "installedSourceCommit": "14813c3774207502039999e014062464043827d1",
+  "currentFullRegression": "PASS_P83_ALL_FIVE_JOBS_RUN_34575296136",
+  "xrayCompatibility": {
+    "path": "XRAY-COMPATIBILITY-P88.json",
+    "sha256": "344fcf86fd4512df2579ce25b8479c5449b2b0939ccb41740808b9c394b9b5a9",
+    "status": "PASS_BOUNDED_7_VERSIONS_91_DATA_PATHS_189_CONFIG_CHECKS"
+  },
+  "sourceManifest": {
+    "path": "checkpoints/R0013/PRODUCED-SOURCE-MANIFEST.json",
+    "sizeBytes": 18086,
+    "sha256": "d9c0e245181a79b102127254a545466857b91a464c3035788af4502881be04c4"
+  },
+  "targetReplacement": {
+    "path": "TARGET-REPLACEMENT-P87.json",
+    "sha256": "84766bd1763a4ca23215c46cb23a9fc9fb94d04edad8e04e2bf731b07d2fc71e"
+  },
+  "targetCleanup": "TARGET-CLEANUP-P86.json",
+  "fullBROrayRepositoryModified": false,
+  "fullProductRemovedOnTestTarget": true,
+  "xrayExternalDiagnostic": {
+    "path": "checkpoints/R0013/XRAY-EXTERNAL-P89.json",
+    "sha256": "0ac2885d5441e633de2b6da61f77f8591720ba3a2cfbc6ee3e0e7c2ef4f31c78",
+    "bytes": 7183,
+    "report": {
+      "path": "checkpoints/R0013/XRAY-EXTERNAL-P89.md",
+      "sha256": "75c94d72a7d19459fa0d05caedc5f03712155b52022c08fee4be504ea07dae76",
+      "bytes": 4779
+    },
+    "incompatibleVersions": [
+      "26.2.6"
+    ]
+  }
+}

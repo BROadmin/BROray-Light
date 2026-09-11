@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "revision": "p120-light-guide-copy-layout",
+  "status": "PASS",
+  "previousFailure": "process-failures/FAILURE-P119-PUBLIC-GUIDE-COPY.json",
+  "cause": "The shared float-right copy control lived inside the horizontally scrollable pre alongside inline code. Narrow-screen scrolling allowed code to intercept the real click.",
+  "correction": "Only the Light page now wraps each code block with a separate toolbar/button outside the scrollable pre; shared styles and full BROray page are unchanged.",
+  "tests": [
+    {"name":"five-real-clicks-and-exact-clipboard-390px","status":"PASS"},
+    {"name":"five-real-clicks-and-exact-clipboard-1440px","status":"PASS"},
+    {"name":"mobile-screenshot-reviewed-control-separated-from-code","status":"PASS"}
+  ],
+  "pageSha256": "a86932cfdb24db6c5176f3923134944f84f29d9cdbc90e87e0aab9a06e856f52",
+  "applicationReleaseChanged": false
+}

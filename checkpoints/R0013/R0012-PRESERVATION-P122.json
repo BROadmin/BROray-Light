@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "revision": "p122-published-release-and-documentation-final-seal",
+  "status": "PASS",
+  "checkedFiles": 502,
+  "excluded": [
+    "AGENTS.md",
+    "project/R0012-STATE.json",
+    "project/WORKLOG.jsonl"
+  ],
+  "exceptionEvidence": "R0012-PRESERVATION-P16.json",
+  "mismatches": []
+}

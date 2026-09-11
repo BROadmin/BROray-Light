@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "revision": "p118-existing-publisher-live-byte-observation",
+  "status": "PASS_LIVE_HOMEPAGE_AND_LIGHT_GUIDE_EXACT_BYTES",
+  "sourceCommit": "97d244956cc78ea2cca26cdf5a99f6b5cca98365",
+  "observations": [
+    {
+      "observedAt": "2026-09-11T12:12:16.195156+00:00",
+      "pages": [
+        {
+          "url": "https://docs.brovibe.cloud/",
+          "path": "index.html",
+          "status": "PASS",
+          "httpStatus": 200,
+          "contentType": "text/html",
+          "bytes": 3671,
+          "sha256": "157067aafdf26105c4ed00694381c9653a804ffe64a683163ae2db6f89df6db7",
+          "expectedSha256": "157067aafdf26105c4ed00694381c9653a804ffe64a683163ae2db6f89df6db7"
+        },
+        {
+          "url": "https://docs.brovibe.cloud/broray-light/",
+          "path": "broray-light/index.html",
+          "status": "PASS",
+          "httpStatus": 200,
+          "contentType": "text/html",
+          "bytes": 33971,
+          "sha256": "e1bfd8a4a12acc759eee3ab2483000a5bf5d30ae236b6ff79d6a98b3e747f741",
+          "expectedSha256": "e1bfd8a4a12acc759eee3ab2483000a5bf5d30ae236b6ff79d6a98b3e747f741"
+        }
+      ]
+    }
+  ],
+  "productionServerDirectlyChanged": false,
+  "websiteLiveVerified": true
+}

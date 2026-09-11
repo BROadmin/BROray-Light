@@ -1,0 +1,11 @@
+{
+  "schemaVersion": 1,
+  "revision": "p116-v2-canonical-public-urls-read-only",
+  "status": "CHECKPOINT_FIRST",
+  "previousFailure": "process-failures/FAILURE-P116-RELEASE-PUBLICATION.json",
+  "cause": "P116 retained GitHub draft browser_download_url values under untagged-1bf71ccdba97f2754194 after publication. Those are not the final v2.0.0 URLs. All 11 uploaded asset IDs/digests/draft bytes passed before publication.",
+  "correction": "GET the published release by its existing numeric ID, require v2.0.0 and the exact existing asset IDs/digests, then verify canonical public URLs and latest download aliases without authentication. No tag, release or asset write is allowed.",
+  "releaseId": 387007903,
+  "releaseCommit": "0d10636e3649726b18c5c90223279edab0bd223d",
+  "nextExactAction": "VERIFY_EXISTING_PUBLISHED_BYTES_WITH_CANONICAL_URLS"
+}

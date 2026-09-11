@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "revision": "p117-bounded-github-doc-publication",
+  "status": "PASS_GITHUB_DOC_COMMITS_WAIT_EXISTING_WEBSITE_PUBLISHER",
+  "productionServerDirectlyChanged": false,
+  "fullBROrayApplicationChanged": false,
+  "commits": [
+    {
+      "repository": "BROadmin/BROray-Light",
+      "before": "bcc101b7524447c2ffe206008ee50fcdd5a93bef",
+      "commit": "cf6217f2fdd5f0b55f80211c29f13db28abb42bd",
+      "files": [
+        {
+          "path": "README.md",
+          "bytes": 7525,
+          "sha256": "2bbf84225de2b2b4cd4c32a19a0f473701e6d5ca2b2560644c451bff18bc1ca4"
+        },
+        {
+          "path": "docs/beginner-installation.md",
+          "bytes": 22604,
+          "sha256": "b8a4c7db80fa82c3f9df59ffffcac8a3a2c471b5014fee4baba187c9a8853f30"
+        },
+        {
+          "path": "docs/RELEASE-2.0.0.md",
+          "bytes": 5038,
+          "sha256": "a2028fa3d6892551ffd8ab409d93687a576b2e40fd4959b4fdf425374bda2896"
+        },
+        {
+          "path": "CHANGELOG.md",
+          "bytes": 4177,
+          "sha256": "351494e9831b420e6765664021e38652b012686693f2f4229018ffb9256f9e5b"
+        }
+      ]
+    },
+    {
+      "repository": "BROadmin/BROray",
+      "before": "f87e78ed0a415ffd86ec1eab2c8c4be9053098a9",
+      "commit": "97d244956cc78ea2cca26cdf5a99f6b5cca98365",
+      "files": [
+        {
+          "path": "site/docs.brovibe.cloud/index.html",
+          "bytes": 3671,
+          "sha256": "157067aafdf26105c4ed00694381c9653a804ffe64a683163ae2db6f89df6db7"
+        },
+        {
+          "path": "site/docs.brovibe.cloud/broray-light/index.html",
+          "bytes": 33971,
+          "sha256": "e1bfd8a4a12acc759eee3ab2483000a5bf5d30ae236b6ff79d6a98b3e747f741"
+        },
+        {
+          "path": "site/docs.brovibe.cloud/SHA256SUMS",
+          "bytes": 1010,
+          "sha256": "05c847ae7292cf1ec27d0266180249e077b70acac2c28a74f1d4a0ebdef832e7"
+        }
+      ]
+    }
+  ],
+  "websiteLiveVerified": false
+}

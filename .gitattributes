@@ -8,3 +8,5 @@ checkpoints/R0013/BROWSER-P58-FIXTURE.json -text
 checkpoints/R0013/BROWSER-P59-FIXTURE.json -text
 # Evidence hashes refer to exact bytes, including historical CRLF receipts.
 checkpoints/R0013/** -text
+# Publication previews/templates are exact public byte inputs, including CRLF.
+publication/R0013/** -text

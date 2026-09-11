@@ -1,0 +1,275 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0013",
+  "publicVersion": "2.0.0",
+  "candidateReady": false,
+  "releaseReady": false,
+  "gates": [
+    {
+      "gate": "pinned_donor_archives",
+      "status": "PASS",
+      "evidence": "UPSTREAM-DELTA-P2.json"
+    },
+    {
+      "gate": "complete_upstream_change_map",
+      "status": "PASS_AUDIT_ONLY",
+      "evidence": "UPSTREAM-PORT-MAP-P2.json"
+    },
+    {
+      "gate": "scoped_xray_identity",
+      "status": "PASS_ISOLATED_LINUX",
+      "evidence": "RAM-BOOTSTRAP-VALIDATION-P15.json"
+    },
+    {
+      "gate": "busybox_ash_overlay_syntax",
+      "status": "PASS",
+      "evidence": "RUNTIME-PATHS-AND-BUILDS-P34.json"
+    },
+    {
+      "gate": "active_subscription_rename_and_rollback",
+      "status": "PASS_ISOLATED_ROUTER_BOUNDARY_MOCKED",
+      "evidence": "SUBSCRIPTION-NAME-P6.json"
+    },
+    {
+      "gate": "xray_catalog_and_explicit_consent",
+      "status": "PASS_POLICY_OFFICIAL_NETWORK_MOCKED",
+      "evidence": "RAM-BOOTSTRAP-VALIDATION-P15.json"
+    },
+    {
+      "gate": "home_xray_controls",
+      "status": "PASS_DOM_HTTP_BOUNDARIES_MOCKED",
+      "evidence": "RAM-BOOTSTRAP-VALIDATION-P15.json"
+    },
+    {
+      "gate": "published_r1_to_2_0_0_admission",
+      "status": "PASS_FULL_PREPARED_APP_DASH_BUSYBOX_OS_BOUNDARIES_MOCKED",
+      "evidence": "PREPARED-LIFECYCLE-P64.json"
+    },
+    {
+      "gate": "canonical_source_and_final_input_manifest",
+      "status": "PASS_ENGINEERING_INPUTS_FINAL_PENDING",
+      "evidence": "RAM-BOOTSTRAP-VALIDATION-P15.json"
+    },
+    {
+      "gate": "xray_clean_binary_verification",
+      "status": "PASS_PINNED_BINARY_ACTUAL_ARM64_TARGET",
+      "evidence": "TARGET-STATE-P80.json"
+    },
+    {
+      "gate": "all_webui_buttons_and_apis",
+      "status": "PARTIAL_ALL_FRONTEND_CONTROLS_PASS_FULL_BACKEND_FUNCTIONAL_PENDING",
+      "evidence": "BROWSER-CONTROLS-P66.json"
+    },
+    {
+      "gate": "native_authentication_and_sessions",
+      "status": "PASS_100_CGI_TESTS_AND_PHYSICAL_NATIVE_LOGIN",
+      "evidence": "TARGET-NATIVE-LOGIN-P85.json"
+    },
+    {
+      "gate": "protected_tmpfs_all_operational_scratch",
+      "status": "PASS_INSTALL_RUNTIME_LINKS_AND_INVOCATION_CLEANUP_TARGET",
+      "evidence": "TARGET-CLEANUP-P86.json"
+    },
+    {
+      "gate": "archive_updater_and_ownership_safety",
+      "status": "PASS_ISOLATED_COMPONENTS_FINAL_SIGNED_TARGET_PENDING",
+      "evidence": "REGRESSION-P64.json"
+    },
+    {
+      "gate": "isolated_clean_install",
+      "status": "PASS_P83_BUILD_EXACT_CLEAN_PACKAGE_FIXTURE",
+      "evidence": "INDEPENDENT-BUILDS-P83.json"
+    },
+    {
+      "gate": "isolated_update_from_r1",
+      "status": "PASS_FULL_PREPARED_APP_DASH_BUSYBOX_OS_BOUNDARIES_MOCKED",
+      "evidence": "PREPARED-LIFECYCLE-P64.json"
+    },
+    {
+      "gate": "isolated_equal_version",
+      "status": "PASS_FULL_PREPARED_APP_DASH_BUSYBOX_OS_BOUNDARIES_MOCKED",
+      "evidence": "PREPARED-LIFECYCLE-P64.json"
+    },
+    {
+      "gate": "isolated_downgrade_refusal",
+      "status": "PASS_FULL_PREPARED_APP_DASH_BUSYBOX_OS_BOUNDARIES_MOCKED",
+      "evidence": "PREPARED-LIFECYCLE-P64.json"
+    },
+    {
+      "gate": "forced_health_rollback",
+      "status": "PASS_FULL_PREPARED_APP_DASH_BUSYBOX_OS_BOUNDARIES_MOCKED",
+      "evidence": "PREPARED-LIFECYCLE-P64.json"
+    },
+    {
+      "gate": "persistence",
+      "status": "PASS_FULL_PREPARED_APP_DASH_BUSYBOX_OS_BOUNDARIES_MOCKED",
+      "evidence": "PREPARED-LIFECYCLE-P64.json"
+    },
+    {
+      "gate": "independent_build_a",
+      "status": "PASS_INDEPENDENT_LINUX_UNSIGNED_BYTES",
+      "evidence": "INDEPENDENT-BUILDS-AND-CLEAN-P63.json"
+    },
+    {
+      "gate": "independent_build_b",
+      "status": "PASS_INDEPENDENT_LINUX_UNSIGNED_BYTES",
+      "evidence": "INDEPENDENT-BUILDS-AND-CLEAN-P63.json"
+    },
+    {
+      "gate": "a_b_byte_reproducibility",
+      "status": "PASS_P83_8_OF_8",
+      "evidence": "INDEPENDENT-BUILDS-P83.json"
+    },
+    {
+      "gate": "existing_trust_root_signing",
+      "status": "NOT_RUN",
+      "evidence": null
+    },
+    {
+      "gate": "browser_desktop_mobile_layout",
+      "status": "PASS_CHROMIUM_FIXTURE_390_768_1440_NINE_IMAGES_REVIEWED",
+      "evidence": "BROWSER-CONTROLS-P66.json"
+    },
+    {
+      "gate": "authorized_router_validation",
+      "status": "BLOCKED_FULL_BROray_OWNERSHIP_AND_STAT_CAPABILITY",
+      "evidence": "process-failures/FAILURE-P69-TARGET-FULL-BRORAY-OWNERSHIP.json"
+    },
+    {
+      "gate": "immutable_release_and_public_byte_validation",
+      "status": "NOT_PUBLISHED",
+      "evidence": null
+    },
+    {
+      "gate": "public_version_vs_internal_updater_identity",
+      "status": "PASS_SHELL_JQ_AND_MOCK_DOM_HTTP",
+      "evidence": "RAM-BOOTSTRAP-VALIDATION-P15.json"
+    },
+    {
+      "gate": "clean_bootstrap_and_installer_protected_ram",
+      "status": "PASS_BUILT_PACKAGE_REAL_SERVICES_HTTP_QEMU_OS_ADAPTERS",
+      "evidence": "INDEPENDENT-BUILDS-AND-CLEAN-P63.json"
+    },
+    {
+      "gate": "engineering_package_structure_hashes_and_modes",
+      "status": "PASS_P83_BUILT_ARTIFACTS_AND_TARGET_MANIFEST",
+      "evidence": "INDEPENDENT-BUILDS-P83.json"
+    },
+    {
+      "gate": "preexisting_r0012_preservation",
+      "status": "PASS_502_FILES_UNCHANGED",
+      "evidence": "TARGET-REPLACEMENT-P87.json"
+    },
+    {
+      "gate": "shared_ram_namespace_and_locks",
+      "status": "PASS_REAL_TMPFS_NATIVE_BUSYBOX",
+      "evidence": "NATIVE-UPDATER-VALIDATION-P22.json"
+    },
+    {
+      "gate": "updater_core_transactions_and_ready_service",
+      "status": "PASS_CANONICAL_SLOT_FORMAT_FIXTURE_APP_SERVICE_REAL_MINISIGN_BUSYBOX",
+      "evidence": "UPDATER-PLATFORM-AND-BUILDS-P23.json"
+    },
+    {
+      "gate": "ram_updater_platform_package_binding",
+      "status": "PASS_ENGINEERING_NOT_MIGRATION_ACCEPTANCE",
+      "evidence": "UPDATER-PLATFORM-AND-BUILDS-P23.json"
+    },
+    {
+      "gate": "exact_live_r1_webui_cli_admission",
+      "status": "PASS_FIXTURE_SIGNED_TRANSACTIONS",
+      "evidence": "R1-WEBUI-AND-JOURNAL-P27.json"
+    },
+    {
+      "gate": "legacy_lock_journal_and_ram_loss_reconciliation",
+      "status": "PASS_BOUNDED",
+      "evidence": "R1-WEBUI-AND-JOURNAL-P27.json"
+    },
+    {
+      "gate": "legacy_ram_namespace_handoff_and_restore",
+      "status": "PASS_BOUNDED",
+      "evidence": "R1-RAM-VALIDATION-P28.json"
+    },
+    {
+      "gate": "external_platform_activation_and_restore",
+      "status": "PASS_REAL_BYTES_FIXTURE_SERVICE",
+      "evidence": "PLATFORM-VALIDATION-P30.json"
+    },
+    {
+      "gate": "xray_rollback_before_fence_release",
+      "status": "PASS_REAL_FILES_MOCKED_PROCESS_FENCE",
+      "evidence": "XRAY-ROLLBACK-VALIDATION-P32.json"
+    },
+    {
+      "gate": "compiled_application_ram_paths_and_environment_guard",
+      "status": "PASS_BOUNDED",
+      "evidence": "RUNTIME-PATHS-AND-BUILDS-P34.json"
+    },
+    {
+      "gate": "config_publication_receipt_migration",
+      "status": "PASS_REAL_CONFIG_BYTES_FIXTURE_SERVICE",
+      "evidence": "WEB-CONFIG-VALIDATION-P35.json"
+    },
+    {
+      "gate": "coordinated_service_start_and_boot_rollback",
+      "status": "PASS_BOUNDED_P52_EARLY_S23_AND_P48_DEAD_OWNER_FULL_CANDIDATE_PENDING",
+      "evidence": "EARLY-BOOT-AND-CLEANUP-P52.json"
+    },
+    {
+      "gate": "scoped_s24_and_private_ram_publication",
+      "status": "PASS_ACTUAL_TARGET_S23_S24_PUBLICATION",
+      "evidence": "TARGET-CORRECTED-INSTALL-P84.json"
+    },
+    {
+      "gate": "legacy_runtime_tree_ram_handoff_and_byte_rollback",
+      "status": "PASS_BOUNDED_REAL_CROSS_FILESYSTEM_DASH_BUSYBOX",
+      "evidence": "RUNTIME-TREES-AND-BUILDS-P40.json"
+    },
+    {
+      "gate": "actual_lighttpd_nginx_pid_and_stop_contract",
+      "status": "PASS_BOUNDED_REAL_LINUX_DAEMONS",
+      "evidence": "ACTUAL-DAEMON-VALIDATION-P39.json"
+    },
+    {
+      "gate": "new_updater_complete_prepared_app_service_transition",
+      "status": "PASS_FULL_PREPARED_APP_DASH_BUSYBOX_OS_BOUNDARIES_MOCKED",
+      "evidence": "PREPARED-LIFECYCLE-P64.json"
+    },
+    {
+      "gate": "target_stat_prerequisite",
+      "status": "PASS_ACTUAL_TARGET_COREUTILS_STAT",
+      "evidence": "TARGET-STAT-P75.json"
+    }
+  ],
+  "releaseId": "2.0.0-r1",
+  "currentRevision": "p89-external-complete",
+  "status": "TARGET_REPLACEMENT_PASS_FULL_RELEASE_ACCEPTANCE_PENDING",
+  "nextExactAction": "RECORD_NEGATIVE_COMPATIBILITY_IN_CANDIDATE_BEFORE_RELEASE_AND_COMPLETE_REMAINING_WEBUI_LIFECYCLE_SIGNING_ACCEPTANCE",
+  "targetInstallation": {
+    "status": "PASS_REPLACEMENT_NATIVE_LOGIN_AND_EMPTY_THREE_PAGE_SMOKE",
+    "evidence": "TARGET-REPLACEMENT-P87.json"
+  },
+  "currentCandidateReady": false,
+  "acceptanceScope": "Replacement/install smoke passes; P88 now observes an active runtime. Seven Xray versions pass 91 localhost data paths and 189 config checks. This is not external-server, all-button, restart or signed-update acceptance. Remaining release gates unchanged. P89 now tests the actual external active XHTTP/REALITY server: six versions PASS, 26.2.6 FAIL; this does not close browser or installed-version lifecycle gates.",
+  "xrayCompatibilityDiagnostic": {
+    "status": "PASS_BOUNDED_7_VERSIONS",
+    "evidence": "XRAY-COMPATIBILITY-P88.json",
+    "dataPathChecks": 91,
+    "generatedConfigChecks": 182,
+    "currentConfigChecks": 7,
+    "installedRuntimePreserved": true
+  },
+  "currentSourceCommit": "14813c3774207502039999e014062464043827d1",
+  "xrayExternalDiagnostic": {
+    "path": "checkpoints/R0013/XRAY-EXTERNAL-P89.json",
+    "sha256": "0ac2885d5441e633de2b6da61f77f8591720ba3a2cfbc6ee3e0e7c2ef4f31c78",
+    "bytes": 7183,
+    "status": "COMPLETE_6_PASS_26_2_6_INCOMPATIBLE_IN_TESTED_SCENARIO",
+    "installedStatePreserved": true,
+    "incompatibleVersions": [
+      "26.2.6"
+    ],
+    "shippedRegistryUpdated": false,
+    "browserOrInstalledVersionLifecycleAcceptance": false
+  }
+}

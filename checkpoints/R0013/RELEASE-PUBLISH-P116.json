@@ -1,0 +1,164 @@
+{
+  "schemaVersion": 1,
+  "revision": "p116-immutable-release-publication-v1",
+  "status": "FAIL_FIRST_ERROR",
+  "releaseCommit": "0d10636e3649726b18c5c90223279edab0bd223d",
+  "sourceCommit": "f4af30d98fd1f227e5116def825c09399437086f",
+  "publicReleasePublished": true,
+  "steps": [
+    {
+      "name": "immutable-tag-created",
+      "status": "PASS"
+    }
+  ],
+  "previousLatest": {
+    "id": 381203509,
+    "tag_name": "v1.0.0-r1",
+    "target_commitish": "9e5fce9bfa7c82bfc2f2654d80fd3987c5259963"
+  },
+  "previousAssets": [
+    {
+      "id": 541096445,
+      "name": "broray-light-app-1.0.0-r1.tar.gz",
+      "size": 157138,
+      "digest": "sha256:2b2d22e9a172b28229aa19ca904f1810722da21b5d34f27eafd79d5acac1e5b0"
+    },
+    {
+      "id": 541094236,
+      "name": "broray-light-install-1.0.0-r1.sh",
+      "size": 1851,
+      "digest": "sha256:da8c57ee3b68156462a2dea5cb2f3b6d1706ed754b1cd8904b745ee1fb86c51d"
+    },
+    {
+      "id": 541094247,
+      "name": "broray-light-updater-platform-5-light1.tar.gz",
+      "size": 131682,
+      "digest": "sha256:4983f0fc268a9f19f3e64959fe5f7d8086f26ad907d528ca82ca623f10d9a92a"
+    },
+    {
+      "id": 541091808,
+      "name": "broray-light_1.0.0-r1_aarch64-3.10.ipk",
+      "size": 12799724,
+      "digest": "sha256:707431aa20c01958edfe40ed04a70c24308a9dabc9ff26f758101c952827d432"
+    },
+    {
+      "id": 541094265,
+      "name": "RELEASE-MANIFEST.json",
+      "size": 2966,
+      "digest": "sha256:05523426a5edd246330e8987ab9a772f9ec61a4c19bb99f145170aa882ac6f42"
+    },
+    {
+      "id": 541094278,
+      "name": "release.json",
+      "size": 576,
+      "digest": "sha256:ccbd353f6042be992ae1aab293447ae7f6f57727d263a5b58253bde276cd0cf6"
+    },
+    {
+      "id": 541094313,
+      "name": "release.json.minisig",
+      "size": 269,
+      "digest": "sha256:da2ff05d973c19b3b4ea79bc48329cecdb9e0cdae99f3dcd05efd2b703e2d84d"
+    },
+    {
+      "id": 541094322,
+      "name": "SHA256SUMS",
+      "size": 669,
+      "digest": "sha256:00de57fe2472b642e88a3f90ccdad7e1ad4fb8092963a505b509a21628618a72"
+    }
+  ],
+  "releaseId": 387007903,
+  "releaseUrl": "https://github.com/BROadmin/BROray-Light/releases/tag/untagged-1bf71ccdba97f2754194",
+  "assets": [
+    {
+      "id": 557179501,
+      "name": "ACCEPTANCE.json",
+      "bytes": 7854,
+      "sha256": "3219232456af0a5a6983fe276c3a63dda68a298bb83914303aff8b3125a049a5",
+      "url": "https://github.com/BROadmin/BROray-Light/releases/download/untagged-1bf71ccdba97f2754194/ACCEPTANCE.json",
+      "draftBytesVerified": true
+    },
+    {
+      "id": 557179546,
+      "name": "INPUT-MANIFEST.json",
+      "bytes": 40797,
+      "sha256": "ef027f9fe09020555445e72761a72bfad398aeaf2aaa190d05808480811514ed",
+      "url": "https://github.com/BROadmin/BROray-Light/releases/download/untagged-1bf71ccdba97f2754194/INPUT-MANIFEST.json",
+      "draftBytesVerified": true
+    },
+    {
+      "id": 557179578,
+      "name": "RELEASE-MANIFEST.json",
+      "bytes": 2675,
+      "sha256": "b2c03a799f6acb49f50ebf4c4371d9d88e4126ebd7f2e33ce1969d96b9bc25f3",
+      "url": "https://github.com/BROadmin/BROray-Light/releases/download/untagged-1bf71ccdba97f2754194/RELEASE-MANIFEST.json",
+      "draftBytesVerified": true
+    },
+    {
+      "id": 557179620,
+      "name": "REPRODUCIBILITY.json",
+      "bytes": 2583,
+      "sha256": "e347617f99dc4c05a1e2de52033a07f0ff1c5b81a13cc7dcd6560cb3b7c36685",
+      "url": "https://github.com/BROadmin/BROray-Light/releases/download/untagged-1bf71ccdba97f2754194/REPRODUCIBILITY.json",
+      "draftBytesVerified": true
+    },
+    {
+      "id": 557179640,
+      "name": "SHA256SUMS",
+      "bytes": 922,
+      "sha256": "0a49b45733c82b4040a9ac1639aed9d3500314d68815ee2c232f2a563806a681",
+      "url": "https://github.com/BROadmin/BROray-Light/releases/download/untagged-1bf71ccdba97f2754194/SHA256SUMS",
+      "draftBytesVerified": true
+    },
+    {
+      "id": 557179656,
+      "name": "broray-light-app-2.0.0-r1.tar.gz",
+      "bytes": 230223,
+      "sha256": "fb7fc533cb7e41d4ea1ea25fb15b7eb0b8e878bb7e75dbbd7b849b18ddc54c9c",
+      "url": "https://github.com/BROadmin/BROray-Light/releases/download/untagged-1bf71ccdba97f2754194/broray-light-app-2.0.0-r1.tar.gz",
+      "draftBytesVerified": true
+    },
+    {
+      "id": 557179687,
+      "name": "broray-light-install-2.0.0.sh",
+      "bytes": 4108,
+      "sha256": "d7d1a709621f3154c0f5b5892a98bddd3f3f782b57d01eb15025e739abcd44f2",
+      "url": "https://github.com/BROadmin/BROray-Light/releases/download/untagged-1bf71ccdba97f2754194/broray-light-install-2.0.0.sh",
+      "draftBytesVerified": true
+    },
+    {
+      "id": 557179725,
+      "name": "broray-light-updater-platform-5-light2-ram.tar.gz",
+      "bytes": 136061,
+      "sha256": "aa814efcb6d75f02c061b3928588439466e9ee02af127bd7eac376786410fc1b",
+      "url": "https://github.com/BROadmin/BROray-Light/releases/download/untagged-1bf71ccdba97f2754194/broray-light-updater-platform-5-light2-ram.tar.gz",
+      "draftBytesVerified": true
+    },
+    {
+      "id": 557179759,
+      "name": "broray-light_2.0.0_aarch64-3.10.ipk",
+      "bytes": 12992623,
+      "sha256": "e582b1f3b2314f118f1caca9aa98efb2e9e67f0ca4aaa9b42f6e1bcc22ae3a0a",
+      "url": "https://github.com/BROadmin/BROray-Light/releases/download/untagged-1bf71ccdba97f2754194/broray-light_2.0.0_aarch64-3.10.ipk",
+      "draftBytesVerified": true
+    },
+    {
+      "id": 557179871,
+      "name": "release.json",
+      "bytes": 597,
+      "sha256": "64a909aec7f774b74c1819c887435fdd992af9c7f25d048cdc6fce72ac6bb31e",
+      "url": "https://github.com/BROadmin/BROray-Light/releases/download/untagged-1bf71ccdba97f2754194/release.json",
+      "draftBytesVerified": true
+    },
+    {
+      "id": 557179891,
+      "name": "release.json.minisig",
+      "bytes": 302,
+      "sha256": "89d4057cbfd6405fca931e828eb2145ad1c9553d4483aea9257611e85d1d6a67",
+      "url": "https://github.com/BROadmin/BROray-Light/releases/download/untagged-1bf71ccdba97f2754194/release.json.minisig",
+      "draftBytesVerified": true
+    }
+  ],
+  "publishedAt": "2026-09-11T12:07:58Z",
+  "errorType": "AssertionError",
+  "error": ""
+}

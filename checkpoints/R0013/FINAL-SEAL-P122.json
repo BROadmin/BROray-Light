@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "revision": "p122-published-release-and-documentation-final-seal",
+  "status": "PASS_SEALED_CURRENT_RELEASE_RECORDS",
+  "nextExactAction": "OPERATE_STABLE_2_0_0_COLLECT_USER_FEEDBACK_AUTHORIZE_NEXT_CHANGE",
+  "candidateReady": true,
+  "releaseReady": true,
+  "publicReleasePublished": true,
+  "checkpoint": {
+    "path": "checkpoints/R0013/CHECKPOINT.json",
+    "sha256": "4c763cb48801d3f5a2bc0454be1b39e27847b1f5e1ac487d9ed5a8a680efaf29",
+    "bytes": 7222
+  },
+  "validation": {
+    "path": "checkpoints/R0013/VALIDATION.json",
+    "sha256": "79238e79c333fe12600f0722ea3fae1a64b9bb7886698bde68b56627dd1c86ff",
+    "bytes": 10318
+  },
+  "report": {
+    "path": "checkpoints/R0013/REPORT.md",
+    "sha256": "1cc4293bb6674e36e34663e444f2a75307e71f815b343991e97790473580ebfc",
+    "bytes": 10302
+  },
+  "projectState": {
+    "path": "project/R0013-STATE.json",
+    "sha256": "e3e93d2e384a043db2b796896e33b85a20256d35d3d8a0b11b4da550b07bf0fe",
+    "bytes": 8857
+  },
+  "implementationState": {
+    "path": "project/IMPLEMENTATION-STATE.json",
+    "sha256": "65a4f9c38aaa86d7a2b7c5525adac59b9a43260aa85245e77715535639298cbc",
+    "bytes": 10955
+  },
+  "handoff": {
+    "path": "docs/CODEX-HANDOFF.md",
+    "sha256": "048218673011d7a4772a69837a4ec3c568348e2bdc9c2ad48367d4b7fc566b9f",
+    "bytes": 2680
+  },
+  "gatesPassed": 26
+}

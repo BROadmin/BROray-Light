@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "revision": "p121-corrected-public-documentation-browser",
+  "status": "PASS",
+  "url": "https://docs.brovibe.cloud/broray-light/",
+  "sourceCommit": "9728483eea1087e9fbd14f23ebb03fa63aaadc94",
+  "pageSha256": "a86932cfdb24db6c5176f3923134944f84f29d9cdbc90e87e0aab9a06e856f52",
+  "copyTests": [
+    {"viewport":390,"index":1,"status":"PASS"},
+    {"viewport":390,"index":2,"status":"PASS"},
+    {"viewport":390,"index":3,"status":"PASS"},
+    {"viewport":390,"index":4,"status":"PASS"},
+    {"viewport":390,"index":5,"status":"PASS"},
+    {"viewport":1440,"index":1,"status":"PASS"},
+    {"viewport":1440,"index":2,"status":"PASS"},
+    {"viewport":1440,"index":3,"status":"PASS"},
+    {"viewport":1440,"index":4,"status":"PASS"},
+    {"viewport":1440,"index":5,"status":"PASS"}
+  ],
+  "clipboardAssertion": "Real pointer clicks without force or DOM-dispatched click; exact code text, normalizing only Windows CRLF to LF",
+  "layoutTests": [
+    {"page":"homepage","width":390,"status":"PASS"},
+    {"page":"homepage","width":1440,"status":"PASS"},
+    {"page":"broray-light","width":390,"status":"PASS","horizontalPageOverflow":false,"brokenAnchors":0},
+    {"page":"broray-light","width":1440,"status":"PASS","horizontalPageOverflow":false,"brokenAnchors":0}
+  ],
+  "visuallyReviewedScreenshots": [
+    {"path":"publication/R0013/preview/p121-home-desktop.png","sha256":"6bc378eb47b056f200ed175ff58af0883aa3500fd366f00509a5926fb0e5958d"},
+    {"path":"publication/R0013/preview/p121-public-copy-mobile.png","sha256":"c190df5ef63bcea7cd84c0ab5833cbde49092d8dcc43194389127fa8aaba6a03"}
+  ],
+  "applicationReleaseChanged": false,
+  "previousFailure": "process-failures/FAILURE-P119-PUBLIC-GUIDE-COPY.json"
+}

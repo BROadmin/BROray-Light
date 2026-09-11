@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "revision": "p119-live-documentation-browser-v1",
+  "status": "FAIL_FIRST_ERROR",
+  "scope": "Documentation only; published application bytes unchanged",
+  "url": "https://docs.brovibe.cloud/broray-light/",
+  "viewportWidth": 390,
+  "failure": "The fourth copy button timed out during a real pointer click. Code content and the sticky header intercepted pointer events. The first three clipboard comparisons passed; remaining checks were not run.",
+  "cause": "Observed pointer obstruction in the narrow code block; exact CSS geometry requires read-only diagnosis before correction.",
+  "nextCorrectedRevision": "p120-light-guide-copy-layout",
+  "nextExactAction": "INSPECT_CODE_BLOCK_GEOMETRY_THEN_FIX_LIGHT_PAGE_ONLY_AND_REVALIDATE_REAL_CLICKS"
+}
