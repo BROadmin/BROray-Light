@@ -1,0 +1,19 @@
+{
+  "stage": "R0013",
+  "revision": "p59a-preserve-original-preview-evidence-bytes",
+  "status": "PASS_INDEX_BYTES_MATCH_ORIGINAL_RECEIPTS",
+  "tests": [
+    {
+      "path": "checkpoints/R0013/BROWSER-P58-FIXTURE.json",
+      "status": "PASS",
+      "indexSha256": "c44c2011b15279c9f5db20eb6ea54da73d21051097ab61aaf023b8da334b80d5"
+    },
+    {
+      "path": "checkpoints/R0013/BROWSER-P59-FIXTURE.json",
+      "status": "PASS",
+      "indexSha256": "9d0395ebbc89807ef381900f2f27d7faf980fd69c48f82d55b193520c99b05be"
+    }
+  ],
+  "futureReceipts": "Explicit UTF-8 LF; no modification to captured browser observations",
+  "candidateReady": false
+}

@@ -1,0 +1,22 @@
+{
+  "stage": "R0013",
+  "revision": "p59-query-safe-current-navigation",
+  "status": "FAIL_FIRST_ERROR_EVIDENCE_PACKAGING",
+  "commit": "b2be512dba5de21f30340571e6f3bc8bd5308d0d",
+  "cause": "Preview Python write_text emitted CRLF on Windows; Git text attributes normalized two evidence JSON blobs to LF after checksums were recorded. Runtime/UI payload not affected.",
+  "evidence": [
+    {
+      "path": "checkpoints/R0013/BROWSER-P58-FIXTURE.json",
+      "workingSha256": "c44c2011b15279c9f5db20eb6ea54da73d21051097ab61aaf023b8da334b80d5",
+      "gitSha256": "14922c5e71168148d5e7592b02c49125260d4b0a5b29974bdd3c06812e779cdc"
+    },
+    {
+      "path": "checkpoints/R0013/BROWSER-P59-FIXTURE.json",
+      "workingSha256": "9d0395ebbc89807ef381900f2f27d7faf980fd69c48f82d55b193520c99b05be",
+      "gitSha256": "3bf4d6e0ea9aaf473e2f179176c12032e76e31d54da5df646ea4f4477d0ff086"
+    }
+  ],
+  "nextCorrectedRevision": "p59a-preserve-original-preview-evidence-bytes",
+  "sameRevisionRetry": false,
+  "candidateReady": false
+}

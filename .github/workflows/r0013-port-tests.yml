@@ -49,7 +49,6 @@ jobs:
           path: /var/tmp/r0013-native-auth-*.json
           if-no-files-found: ignore
   isolated-prepared-app:
-    needs: isolated-live-entry
     runs-on: ubuntu-24.04
     timeout-minutes: 12
     steps:
@@ -62,6 +61,17 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y --no-install-recommends busybox dash gcc jq minisign curl util-linux
+      - name: Actual prepared daemon idle shutdown (dash)
+        run: sudo unshare --net python3 -B tools/check_r0013_daemon_stop.py --shell /bin/dash --result /tmp/r0013-daemon-stop-dash.json
+      - name: Actual prepared daemon idle shutdown (BusyBox)
+        run: sudo unshare --net python3 -B tools/check_r0013_daemon_stop.py --shell /usr/bin/busybox --busybox --busybox-tools --result /tmp/r0013-daemon-stop-ash.json
+      - name: Preserve first actual daemon stop result
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: r0013-daemon-stop-${{ github.sha }}
+          path: /tmp/r0013-daemon-stop-*.json
+          if-no-files-found: ignore
       - name: Complete prepared app lifecycle without network (dash)
         run: sudo unshare --net python3 -B tools/check_r0013_prepared_app.py --shell /bin/dash --result /tmp/r0013-prepared-app-dash.json
       - name: Complete prepared app lifecycle without network (BusyBox)

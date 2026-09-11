@@ -43,7 +43,7 @@
     },
     {
       "path": "bin/broray-lightd",
-      "sourceSha256": "3e98dc393ce10cd8c2ab55b54004815727bed45f02f36faaf914f87d0f2d2544",
+      "sourceSha256": "809417f58768d31107bac3de4056e262e5088aa822d3052855818f5d1e601cab",
       "replacements": [
         {
           "old": "$ROOT/run",

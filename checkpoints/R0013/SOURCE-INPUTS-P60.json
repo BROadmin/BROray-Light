@@ -1,0 +1,43 @@
+{
+  "stage": "R0013",
+  "revision": "p60-full-daemon-graceful-stop",
+  "status": "LOCAL_SYNTAX_AND_ASSEMBLY_PASS_LINUX_EXECUTION_PENDING",
+  "files": [
+    {
+      "path": ".gitattributes",
+      "sizeBytes": 268,
+      "sha256": "fc032e5a3af786a2f67b1a1be6dc1eafb166246dcc7177480365c25ca081921a"
+    },
+    {
+      "path": ".github/workflows/r0013-port-tests.yml",
+      "sizeBytes": 17722,
+      "sha256": "7e661917f43c570fc97829e1d55bbd29943ba5bb085f1542d922cd5e6129a0bb"
+    },
+    {
+      "path": "packaging/r0013-overlay/app/bin/broray-lightd",
+      "sizeBytes": 2695,
+      "sha256": "809417f58768d31107bac3de4056e262e5088aa822d3052855818f5d1e601cab"
+    },
+    {
+      "path": "packaging/r0013-overlay/runtime-paths.json",
+      "sizeBytes": 17242,
+      "sha256": "117fe45d42930fd28bd7d32d1cf3f701005047edd2172251d0b10197e97e9fa7"
+    },
+    {
+      "path": "tools/check_r0013_daemon_stop.py",
+      "sizeBytes": 5996,
+      "sha256": "ecf2b22e1a3f98927add578c8642246b1d1a090f025bb6df9bfb2cd0758f3bc5"
+    },
+    {
+      "path": "tools/check_r0013_prepared_app.py",
+      "sizeBytes": 9174,
+      "sha256": "70eb69e05db3694ca37b1e296b0c79a9755d27ae4e8509cdf622c3ef63562a94"
+    },
+    {
+      "path": "tools/r0013_ui_preview.py",
+      "sizeBytes": 10106,
+      "sha256": "c8da127df6283263f9071e1dd420378b390d2f38ce38e7c520df37bf3aee556d"
+    }
+  ],
+  "candidateReady": false
+}

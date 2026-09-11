@@ -47,6 +47,7 @@ class FullFixture(LiveFixture):
                            capture_output=True, text=True, timeout=240)
         detail = dict(command=command, returncode=r.returncode, stdout=r.stdout, stderr=r.stderr)
         if r.returncode != expected:
+            detail['updaterRamState'] = json.loads((self.ram/'state.json').read_bytes()) if (self.ram/'state.json').exists() else None
             detail['transaction'] = json.loads((self.durable/'transaction.json').read_bytes()) if (self.durable/'transaction.json').exists() else None
             detail['daemonLogTail'] = (self.app/'logs/broray-lightd.log').read_text(errors='replace')[-6000:] if (self.app/'logs/broray-lightd.log').exists() else None
         assert r.returncode == expected, detail
@@ -83,7 +84,7 @@ def main():
     fixture = None
     current_gate = 'fixture'
     def persist(status):
-        report = dict(stage='R0013', revision='p54-full-prepared-application-lifecycle',
+        report = dict(stage='R0013', revision='p60-full-daemon-graceful-stop',
                       status=status, shell=shell, tests=records, candidateReady=False,
                       applicationScripts='Complete accepted r1 and current prepared_app; no daemon/CLI substitutions',
                       mockedBoundaries=['lighttpd workload binary','Keenetic publication OS','Xray executable'],

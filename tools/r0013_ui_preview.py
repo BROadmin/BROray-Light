@@ -38,7 +38,7 @@ class Preview(ThreadingHTTPServer):
         self.result.write_text(json.dumps(dict(stage='R0013', revision='p58-browser-control-and-layout-audit',
             status='VISUAL_FIXTURE_NOT_BACKEND_ACCEPTANCE', candidateReady=False,
             files={p: hashlib.sha256(b).hexdigest() for p,b in sorted(self.files.items())},
-            requests=self.requests), ensure_ascii=False, indent=2)+'\n', encoding='utf-8')
+            requests=self.requests), ensure_ascii=False, indent=2)+'\n', encoding='utf-8', newline='\n')
 
 
 class Handler(BaseHTTPRequestHandler):

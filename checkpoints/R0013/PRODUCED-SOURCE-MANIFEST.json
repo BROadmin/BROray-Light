@@ -1,17 +1,22 @@
 {
   "schemaVersion": 1,
   "stage": "R0013",
-  "revision": "p59-query-safe-current-navigation",
+  "revision": "p60-full-daemon-graceful-stop",
   "files": [
     {
+      "path": ".gitattributes",
+      "sizeBytes": 268,
+      "sha256": "fc032e5a3af786a2f67b1a1be6dc1eafb166246dcc7177480365c25ca081921a"
+    },
+    {
       "path": ".github/workflows/r0013-port-tests.yml",
-      "sizeBytes": 17065,
-      "sha256": "d4808dfdb6e23e1c72cf50b30e4f09e84b2017bb96dd11f5f88b810edc6b4265"
+      "sizeBytes": 17722,
+      "sha256": "7e661917f43c570fc97829e1d55bbd29943ba5bb085f1542d922cd5e6129a0bb"
     },
     {
       "path": "packaging/r0013-overlay/app/bin/broray-lightd",
-      "sizeBytes": 1315,
-      "sha256": "3e98dc393ce10cd8c2ab55b54004815727bed45f02f36faaf914f87d0f2d2544"
+      "sizeBytes": 2695,
+      "sha256": "809417f58768d31107bac3de4056e262e5088aa822d3052855818f5d1e601cab"
     },
     {
       "path": "packaging/r0013-overlay/app/bin/broray-system",
@@ -121,7 +126,7 @@
     {
       "path": "packaging/r0013-overlay/runtime-paths.json",
       "sizeBytes": 17242,
-      "sha256": "2084e66e761c327080a871ad336007ee5ef0e67c710c24ac10769945039806a9"
+      "sha256": "117fe45d42930fd28bd7d32d1cf3f701005047edd2172251d0b10197e97e9fa7"
     },
     {
       "path": "packaging/r0013-overlay/shared/lifecycle-r1-admission.sh",
@@ -199,6 +204,11 @@
       "sha256": "6523cf401fdd5b8771d90038c258d620822cb3d454aa2d474600c9453ae95abb"
     },
     {
+      "path": "packaging/r0013-overlay/system/packaging/opkg/S24broray-light",
+      "sizeBytes": 4510,
+      "sha256": "3157da6a4609093a77a56dcc14a9b3a574695103d661a4427ba4227937256119"
+    },
+    {
       "path": "packaging/r0013-overlay/system/packaging/opkg/broray-light-web-network.sh",
       "sizeBytes": 6478,
       "sha256": "a2570d196757cacb4750f666ba93795b511fb5bbd92d49ff8481bd34713debc1"
@@ -222,11 +232,6 @@
       "path": "packaging/r0013-overlay/system/packaging/opkg/preinst",
       "sizeBytes": 1094,
       "sha256": "9fac9d5e4cf9a141a0f4cc9493e705996d5a385443d4725d08259408ef9a8951"
-    },
-    {
-      "path": "packaging/r0013-overlay/system/packaging/opkg/S24broray-light",
-      "sizeBytes": 4510,
-      "sha256": "3157da6a4609093a77a56dcc14a9b3a574695103d661a4427ba4227937256119"
     },
     {
       "path": "packaging/r0013-overlay/system/updater/opt/etc/init.d/S23broray-light-updater",
@@ -259,14 +264,19 @@
       "sha256": "5fc7ad10987284bae20e4e47bfcc89556bf79acd6ef24ae1c4ed192b1cd14a6f"
     },
     {
+      "path": "tools/check_r0013_daemon_stop.py",
+      "sizeBytes": 5996,
+      "sha256": "ecf2b22e1a3f98927add578c8642246b1d1a090f025bb6df9bfb2cd0758f3bc5"
+    },
+    {
       "path": "tools/check_r0013_native_auth.py",
       "sizeBytes": 13859,
       "sha256": "8738a2312c6e7c4ee32b7f62862aca767d86d3a50faf51bd7321590bd4ba53e1"
     },
     {
       "path": "tools/check_r0013_prepared_app.py",
-      "sizeBytes": 9049,
-      "sha256": "a7cb900ad2cb160640c9ffb11080f6006af63fa38532acc2943ce153186d89b6"
+      "sizeBytes": 9174,
+      "sha256": "70eb69e05db3694ca37b1e296b0c79a9755d27ae4e8509cdf622c3ef63562a94"
     },
     {
       "path": "tools/r0013_busybox_fixture.py",
@@ -290,8 +300,8 @@
     },
     {
       "path": "tools/r0013_ui_preview.py",
-      "sizeBytes": 10092,
-      "sha256": "679108a35eb002120557401e9d5e01b9f5ce0ce2e915b24a98dfe232fdecf334"
+      "sizeBytes": 10106,
+      "sha256": "c8da127df6283263f9071e1dd420378b390d2f38ce38e7c520df37bf3aee556d"
     },
     {
       "path": "tools/test_r0013_bootstrap.py",

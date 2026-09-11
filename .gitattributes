@@ -3,3 +3,6 @@
 *.json text eol=lf
 *.md text eol=lf
 *.S text eol=lf
+# Preserve original immutable Windows preview receipts and their recorded hashes.
+checkpoints/R0013/BROWSER-P58-FIXTURE.json -text
+checkpoints/R0013/BROWSER-P59-FIXTURE.json -text

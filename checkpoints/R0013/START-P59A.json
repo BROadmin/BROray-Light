@@ -1,0 +1,8 @@
+{
+  "stage": "R0013",
+  "revision": "p59a-preserve-original-preview-evidence-bytes",
+  "status": "CHECKPOINT_FIRST",
+  "scope": "Preserve original two preview receipts through exact -text attributes; canonical LF for future preview JSON",
+  "failure": "process-failures/FAILURE-P59-PREVIEW-EVIDENCE-GIT-NEWLINES.json",
+  "candidateReady": false
+}

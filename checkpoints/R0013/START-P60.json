@@ -1,0 +1,14 @@
+{
+  "stage": "R0013",
+  "revision": "p60-full-daemon-graceful-stop",
+  "status": "CHECKPOINT_FIRST",
+  "sourceCommit": "b2be512dba5de21f30340571e6f3bc8bd5308d0d",
+  "failure": "process-failures/FAILURE-P54-FULL-APP-SERVICE-STOP.json",
+  "diagnosis": "Foreground interval sleep can defer dash/ash TERM trap beyond S24 ten-second bound. Replace only idle sleep with interruptible owned-child wait; do not weaken S24 process identity or kill active application transactions.",
+  "validation": [
+    "Actual prepared daemon idle TERM/INT/HUP, exact child cleanup and unrelated process survival on dash/BusyBox",
+    "Complete prepared application update/no-op/downgrade/health rollback",
+    "Full existing regression"
+  ],
+  "candidateReady": false
+}

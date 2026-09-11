@@ -9,12 +9,43 @@ PIDFILE="$ROOT/run/broray-lightd.pid"
 mkdir -p "$ROOT/run" "$ROOT/tmp"
 printf '%s\n' "$$" > "$PIDFILE"
 cleanup(){ rm -f "$PIDFILE"; }
-trap 'cleanup; exit 0' HUP INT TERM
+STOP_REQUESTED=0
+# A trap interrupts wait, unlike a foreground external sleep in dash/ash.
+# Only the idle child is cancelled; active application transactions finish.
+trap 'STOP_REQUESTED=1' HUP INT TERM
 trap cleanup EXIT
-while :; do
+idle_child_identity(){
+    local line
+    [ -r "/proc/$1/stat" ] || return 1
+    IFS= read -r line < "/proc/$1/stat" || return 1
+    set -- ${line##*) }
+    [ "$1" != Z ] && [ "$2" = "$$" ] || return 1
+    shift 19
+    printf '%s\n' "$1"
+}
+idle_wait(){
+    local child started current executable
+    [ "$STOP_REQUESTED" = 0 ] || return 0
+    executable="$(command -v sleep)" || return 1
+    executable="$(readlink -f "$executable")" || return 1
+    sleep "$INTERVAL" &
+    child=$!
+    started="$(idle_child_identity "$child")" || started=''
+    [ "$STOP_REQUESTED" != 0 ] || wait "$child" || true
+    if [ "$STOP_REQUESTED" != 0 ] && [ -n "$started" ] && [ -n "$executable" ]; then
+        current="$(idle_child_identity "$child")" || current=''
+        if [ "$current" = "$started" ] &&
+            [ "$(readlink "/proc/$child/exe" 2>/dev/null)" = "$executable" ] &&
+            [ "$(idle_child_identity "$child")" = "$started" ]; then
+            kill -TERM "$child" 2>/dev/null || true
+        fi
+    fi
+    wait "$child" 2>/dev/null || true
+}
+while [ "$STOP_REQUESTED" = 0 ]; do
     if [ -e "${BRORAY_LIGHT_ROOT_PREFIX:-}/opt/var/lib/broray-light-updater/legacy-transition.json" ]; then
         "${BRORAY_LIGHT_ROOT_PREFIX:-}/opt/etc/init.d/S24broray-light" recover >/dev/null 2>&1 || {
-            sleep "$INTERVAL"
+            idle_wait
             continue
         }
     fi
@@ -22,9 +53,13 @@ while :; do
         XRAY_LOCATION_ASSET="$ROOT/bin" "$ROOT/runtime/xray" run -test -c "$ROOT/config/config.json" >/dev/null 2>&1 &&
             "$ROOT/bin/broray-xray-start" >>"$ROOT/logs/xray.log" 2>&1 &
     fi
+    [ "$STOP_REQUESTED" = 0 ] || break
     "$ROOT/bin/broray-connection-monitor" >/dev/null 2>&1 || true
+    [ "$STOP_REQUESTED" = 0 ] || break
     "$ROOT/bin/broray-server-auto-switch" >/dev/null 2>&1 || true
+    [ "$STOP_REQUESTED" = 0 ] || break
     "$ROOT/bin/broray-subscriptions" scheduler-once >/dev/null 2>&1 || true
+    [ "$STOP_REQUESTED" = 0 ] || break
     "$ROOT/bin/broray-home-snapshot" >/dev/null 2>&1 || true
-    sleep "$INTERVAL"
+    idle_wait
 done

@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "stage": "R0013_SELECTIVE_UPSTREAM_STABLE_PORT",
-  "status": "P59_NAVIGATION_PASS_P54_SERVICE_STOP_CORRECTION_REQUIRED",
-  "currentRevision": "p59-query-safe-current-navigation",
+  "status": "P60_DAEMON_STOP_CORRECTION_AWAITING_ISOLATED_LINUX",
+  "currentRevision": "p60-full-daemon-graceful-stop",
   "activeFailure": "checkpoints/R0013/process-failures/FAILURE-P54-FULL-APP-SERVICE-STOP.json",
   "publicVersion": "2.0.0",
   "buildA": "PRELIMINARY_ENGINEERING_BYTE_PASS_NOT_FINAL_ACCEPTANCE",
@@ -18,7 +18,7 @@
     "path": "checkpoints/R0013/SUBSCRIPTION-NAME-P6.json",
     "sha256": "2b1fe451272dc233e1f8ccd4cc3d6ea2f212ba81e009f93d3a4b9e9b9601577a"
   },
-  "lastResolvedFailure": "checkpoints/R0013/process-failures/FAILURE-P58-NAVIGATION-CACHE-QUERY.json",
+  "lastResolvedFailure": "checkpoints/R0013/process-failures/FAILURE-P59-PREVIEW-EVIDENCE-GIT-NEWLINES.json",
   "processPort": {
     "status": "PASS_ISOLATED_LINUX",
     "tests": 33,
@@ -62,7 +62,7 @@
     "path": "checkpoints/R0013/UPSTREAM-PORT-MAP-P2.json",
     "sha256": "009a0f5adae08f399c82510cf680690b4c2e50bc8c659eda9c48d91b5a838121"
   },
-  "nextExactAction": "P60_FULL_DAEMON_GRACEFUL_STOP_AND_COMPLETE_PREPARED_APP",
+  "nextExactAction": "P60_REAL_DAEMON_STOP_AND_COMPLETE_PREPARED_APP_CI",
   "versionAndXray": {
     "status": "PASS_VERSION_AND_BOOTSTRAP_INPUT",
     "path": "checkpoints/R0013/UPGRADE-AND-XRAY-P10.json",
@@ -223,5 +223,15 @@
     "tests": 11,
     "unit": "checkpoints/R0013/NAVIGATION-P59.json",
     "browser": "checkpoints/R0013/BROWSER-NAVIGATION-P59.json"
+  },
+  "evidenceBytePreservation": {
+    "sizeBytes": 647,
+    "sha256": "19bff7ddb6e3950ba8094fa60cdb42cc835afda1472a2465e9a24b0b5f3b7959",
+    "path": "checkpoints/R0013/EVIDENCE-BYTES-P59A.json"
+  },
+  "sourceCorrection": {
+    "sizeBytes": 1388,
+    "path": "checkpoints/R0013/SOURCE-INPUTS-P60.json",
+    "sha256": "f1f51c35b0c8b17f431e522f823471fe0e14be7a9f282bee802e2105cf24e6f3"
   }
 }
