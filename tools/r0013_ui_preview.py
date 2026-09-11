@@ -19,8 +19,9 @@ PASSWORD = 'fixture-only'
 
 
 class Preview(ThreadingHTTPServer):
-    def __init__(self, address, handler, result):
+    def __init__(self, address, handler, result, revision='p58-browser-control-and-layout-audit'):
         super().__init__(address, handler)
+        self.revision = revision
         self.files = {p.removeprefix('web-new/'): data for p, (data, mode) in prepared_app().items() if p.startswith('web-new/') and not p.startswith('web-new/api/')}
         self.result = result
         self.requests = []
@@ -35,7 +36,7 @@ class Preview(ThreadingHTTPServer):
 
     def persist(self):
         self.result.parent.mkdir(parents=True, exist_ok=True)
-        self.result.write_text(json.dumps(dict(stage='R0013', revision='p58-browser-control-and-layout-audit',
+        self.result.write_text(json.dumps(dict(stage='R0013', revision=self.revision,
             status='VISUAL_FIXTURE_NOT_BACKEND_ACCEPTANCE', candidateReady=False,
             files={p: hashlib.sha256(b).hexdigest() for p,b in sorted(self.files.items())},
             requests=self.requests), ensure_ascii=False, indent=2)+'\n', encoding='utf-8', newline='\n')

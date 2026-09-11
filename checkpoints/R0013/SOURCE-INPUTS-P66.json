@@ -1,0 +1,23 @@
+{
+  "stage": "R0013",
+  "revision": "p66-browser-dialog-capable-surface",
+  "status": "HARNESS_SYNTAX_PASS_CI_PENDING",
+  "files": [
+    {
+      "path": ".github/workflows/r0013-browser-controls.yml",
+      "sizeBytes": 1066,
+      "sha256": "dd9ebe49c82a81eb27d4aa991455c3d02ef2515b30bec567d9ddc515ea4079a2"
+    },
+    {
+      "path": "tools/r0013_ui_preview.py",
+      "sizeBytes": 10163,
+      "sha256": "7218a7dd1df29cf52d195a6d3b6065898f31c9a2ae2c99560e03284c4c6faa4b"
+    },
+    {
+      "path": "tools/validate_r0013_browser_controls.py",
+      "sizeBytes": 14824,
+      "sha256": "fa3f64918b63d23a7c3e8e5fdf6952de0cda046c3688205cb8b09e7011e1acaa"
+    }
+  ],
+  "candidateReady": false
+}

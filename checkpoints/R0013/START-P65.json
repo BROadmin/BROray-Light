@@ -1,0 +1,8 @@
+{
+  "stage": "R0013",
+  "revision": "p65-browser-all-control-audit",
+  "status": "CHECKPOINT_FIRST",
+  "scope": "Actual prepared WebUI in local browser, invented HTTP fixtures only. Verify control dispatch, cancellation, layout and feedback; not a backend/physical acceptance substitute.",
+  "sourceCommit": "f38cfb7d00d6435d51a90672cdf2b39726e1f027",
+  "candidateReady": false
+}

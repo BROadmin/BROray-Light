@@ -1,12 +1,17 @@
 {
   "schemaVersion": 1,
   "stage": "R0013",
-  "revision": "p63-independent-engineering-build-and-full-clean-package",
+  "revision": "p66-browser-dialog-capable-surface",
   "files": [
     {
       "path": ".gitattributes",
       "sizeBytes": 268,
       "sha256": "fc032e5a3af786a2f67b1a1be6dc1eafb166246dcc7177480365c25ca081921a"
+    },
+    {
+      "path": ".github/workflows/r0013-browser-controls.yml",
+      "sizeBytes": 1066,
+      "sha256": "dd9ebe49c82a81eb27d4aa991455c3d02ef2515b30bec567d9ddc515ea4079a2"
     },
     {
       "path": ".github/workflows/r0013-candidate-build.yml",
@@ -315,8 +320,8 @@
     },
     {
       "path": "tools/r0013_ui_preview.py",
-      "sizeBytes": 10106,
-      "sha256": "c8da127df6283263f9071e1dd420378b390d2f38ce38e7c520df37bf3aee556d"
+      "sizeBytes": 10163,
+      "sha256": "7218a7dd1df29cf52d195a6d3b6065898f31c9a2ae2c99560e03284c4c6faa4b"
     },
     {
       "path": "tools/test_r0013_bootstrap.py",
@@ -437,6 +442,11 @@
       "path": "tools/test_r0013_xray_selection.py",
       "sizeBytes": 7813,
       "sha256": "1a9ba8466e29db1ff6e1935b9bbd445060eebfe4cd4ce4d6855af7afda6322c2"
+    },
+    {
+      "path": "tools/validate_r0013_browser_controls.py",
+      "sizeBytes": 14824,
+      "sha256": "fa3f64918b63d23a7c3e8e5fdf6952de0cda046c3688205cb8b09e7011e1acaa"
     },
     {
       "path": "tools/validate_r0013_clean_package.py",

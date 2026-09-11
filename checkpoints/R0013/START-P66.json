@@ -1,0 +1,10 @@
+{
+  "stage": "R0013",
+  "revision": "p66-browser-dialog-capable-surface",
+  "status": "CHECKPOINT_FIRST",
+  "scope": "Author Linux CI end-to-end Chromium tests with explicit native dialog handlers. This is automated application regression in a disposable runner, not another Windows/computer-control channel. Use only loopback invented fixtures, no external app actions. Include every rendered button and screenshots at desktop/tablet/mobile widths.",
+  "boundaryFailure": "process-failures/FAILURE-P65-BROWSER-DIALOG-CONTROL.json",
+  "p65PreviewStopped": true,
+  "p65OwnHiddenTabClose": "Cua CDP timed out; no user tab touched",
+  "candidateReady": false
+}

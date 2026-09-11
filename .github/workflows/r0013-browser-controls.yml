@@ -1,0 +1,35 @@
+name: R0013 Chromium controls and responsive regression
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [codex/r0009-updater-package]
+    paths:
+      - '.github/workflows/r0013-browser-controls.yml'
+      - 'tools/validate_r0013_browser_controls.py'
+
+permissions:
+  contents: read
+
+jobs:
+  chromium:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+          fetch-depth: 0
+      - name: Install pinned isolated browser test dependency
+        run: |
+          python3 -m pip install playwright==1.55.0
+          python3 -m playwright install --with-deps chromium
+      - name: Every rendered control, native dialog and responsive layout
+        run: python3 -B tools/validate_r0013_browser_controls.py --output /var/tmp/r0013-browser
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: r0013-browser-${{ github.sha }}
+          path: /var/tmp/r0013-browser/*
+          if-no-files-found: error

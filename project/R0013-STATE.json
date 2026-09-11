@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
   "stage": "R0013_SELECTIVE_UPSTREAM_STABLE_PORT",
-  "status": "P64_FULL_APP_LIFECYCLE_PASS_P63_BUILD_CLEAN_CI_PENDING",
-  "currentRevision": "p63-independent-engineering-build-and-full-clean-package",
-  "activeFailure": null,
+  "status": "P63_BUILD_CLEAN_PASS_P66_LINUX_BROWSER_CI_PENDING",
+  "currentRevision": "p66-browser-dialog-capable-surface",
+  "activeFailure": "checkpoints/R0013/process-failures/FAILURE-P65-BROWSER-DIALOG-CONTROL.json",
   "publicVersion": "2.0.0",
-  "buildA": "PRELIMINARY_ENGINEERING_BYTE_PASS_NOT_FINAL_ACCEPTANCE",
-  "buildB": "PRELIMINARY_ENGINEERING_BYTE_PASS_NOT_FINAL_ACCEPTANCE",
+  "buildA": "PASS_INDEPENDENT_LINUX_UNSIGNED",
+  "buildB": "PASS_INDEPENDENT_LINUX_UNSIGNED",
   "catalogAndControlsPort": {
     "status": "PASS_ISOLATED_REGRESSION",
     "path": "checkpoints/R0013/CATALOG-AND-CONTROLS-P8.json",
@@ -62,7 +62,7 @@
     "path": "checkpoints/R0013/UPSTREAM-PORT-MAP-P2.json",
     "sha256": "009a0f5adae08f399c82510cf680690b4c2e50bc8c659eda9c48d91b5a838121"
   },
-  "nextExactAction": "P63_INDEPENDENT_BUILDS_AND_FULL_CLEAN_PACKAGE_CI_THEN_ALL_UI_CONTROLS",
+  "nextExactAction": "P66_LINUX_BROWSER_DIALOG_CONTROL_TESTS_THEN_SIGNED_FINAL_TARGET_ACCEPTANCE",
   "versionAndXray": {
     "status": "PASS_VERSION_AND_BOOTSTRAP_INPUT",
     "path": "checkpoints/R0013/UPGRADE-AND-XRAY-P10.json",
@@ -229,13 +229,18 @@
     "path": "checkpoints/R0013/EVIDENCE-BYTES-P59A.json"
   },
   "sourceCorrection": {
-    "path": "checkpoints/R0013/SOURCE-INPUTS-P63.json",
-    "sizeBytes": 546,
-    "sha256": "a5c3ad4786c18a9f90e24d3d47677e6d1a026df03546d29ae27adb6b1ab779af"
+    "sizeBytes": 693,
+    "path": "checkpoints/R0013/SOURCE-INPUTS-P66.json",
+    "sha256": "00d9d7d2a709d12467975b517cb140afc680b4a9a17f1a47523c4a228aad0462"
   },
   "preparedLifecycle": {
     "path": "checkpoints/R0013/PREPARED-LIFECYCLE-P64.json",
     "sha256": "d1dbd4c4aeab5636079174e1b5a03ad24953c978ea3953740223b585bc68b537",
     "sizeBytes": 42464
+  },
+  "independentBuildsAndClean": {
+    "sizeBytes": 16590,
+    "path": "checkpoints/R0013/INDEPENDENT-BUILDS-AND-CLEAN-P63.json",
+    "sha256": "35bc9388ff47a8c23d7229f70150e8927d1fde06dd30ea93e0de694b1a795c3c"
   }
 }

@@ -1,0 +1,18 @@
+{
+  "stage": "R0013",
+  "revision": "p65-browser-all-control-audit",
+  "status": "FAIL_FIRST_ERROR_BROWSER_AUTOMATION_BOUNDARY",
+  "scope": "Local 127.0.0.1 fixture only",
+  "passedObservations": [
+    "empty-name-validation",
+    "empty-url-validation",
+    "create-clears-form-and-adds-card",
+    "auto-update-toggle-and-120-minute-save",
+    "refresh-changes-updated-label"
+  ],
+  "failure": "Click Delete timed out Input.dispatchMouseEvent; getJsDialog returned undefined; subsequent DOM snapshot timed out Emulation.setFocusEmulationEnabled. Delete outcome not claimed.",
+  "cause": "Built-in browser modal control unavailable; application defect not established",
+  "nextCorrectedRevision": "p66-browser-dialog-capable-surface",
+  "sameRevisionRetry": false,
+  "candidateReady": false
+}
