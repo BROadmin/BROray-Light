@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 1,
+  "revision": "p108-inherited-installer-tmpdir-diagnosis",
+  "observation": {
+    "exitCode": 1,
+    "stdout": "TMPDIR=/tmp/broray-light-install.KlO0Mt/opkg\nPATH=/opt/bin:/opt/sbin:/opt/share/opkg/intercept:/opt/bin:/opt/sbin:/usr/bin:/bin\nINHERITED_INSTALLER_TMPDIR_ALREADY_REMOVED\n",
+    "stderr": "mktemp: : No such file or directory\n"
+  },
+  "candidateReady": false
+}

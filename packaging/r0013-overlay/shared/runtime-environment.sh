@@ -30,6 +30,11 @@ brl_runtime_environment()
     . "$helper" || return 1
     brl_ram_prepare || return 1
     brl_ram_child "$BRL_RAM/update" || return 1
+    # opkg children can inherit the installer's invocation-owned TMPDIR. It is
+    # removed after installation, while our daemon and its children keep running.
+    # Bind scratch to the already validated product RAM directory instead.
+    TMPDIR="$BRL_RAM/tmp"
+    export TMPDIR
     BRORAY_ROOT="$root"; BRORAY_BASE="$root"
     BRORAY_INTERFACE_LAST_EVIDENCE="$BRL_RAM/run/interface-last-command.json"
     BRORAY_INTERFACE_FAILURE_EVIDENCE="$BRL_RAM/run/interface-last-failure.json"

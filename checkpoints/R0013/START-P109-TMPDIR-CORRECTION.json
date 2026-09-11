@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "revision": "p109-owned-runtime-tmpdir-v1",
+  "status": "STARTED_FROM_REPRODUCED_FAILURE",
+  "candidateReady": false,
+  "failure": "process-failures/FAILURE-P104-INTERFACE-OBSERVATION.json",
+  "causeEvidence": "DAEMON-TMPDIR-P108.json",
+  "cause": "Daemon inherits installer opkg TMPDIR. Installer correctly removes its own RAM directory, but daemon keeps that stale environment. Interface mktemp fails, errors are suppressed by the status adapter, and the daemon writes a false unhealthy cache. Direct native/SSH reads with fresh environment succeed.",
+  "correction": "After validating the owned RAM namespace, runtime-environment.sh must replace inherited TMPDIR with BRL_RAM/tmp and export it to child commands. No interface ownership, native auth, installed config or ndmc write policy changes.",
+  "tests": ["Inherited missing TMPDIR replaced by owned RAM", "Inherited foreign persistent TMPDIR ignored", "Child mktemp uses existing owned RAM", "Clean installer daemon environment survives invocation scratch cleanup", "Independent builds and complete regression", "Final target installation and consistent native interface status"],
+  "supersedesCandidate": "P97 is not release-ready; do not publish its assets"
+}

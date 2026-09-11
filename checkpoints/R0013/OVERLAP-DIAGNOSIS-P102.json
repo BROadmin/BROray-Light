@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "revision": "p102-overlap-readonly-diagnosis-and-scoped-recovery",
+  "status": "CAUSE_IDENTIFIED_RECOVERY_AUTHORIZED",
+  "previousFailure": "process-failures/FAILURE-P101-OVERLAP-IDENTITY-ASSERTION.json",
+  "originalServerCount": 6,
+  "originalServerIdsMissing": [],
+  "originalActiveServerPreserved": true,
+  "failoverConfigurationExactlyPreserved": true,
+  "addedServerCount": 1,
+  "addedServerOrigin": "P101 disposable subscription only",
+  "cause": "External subscription changed: same-named Finland profile has a different Reality serverName (SNI), TLS object and therefore a different identityKey. No original server ID was stolen. Exact total-count equality was invalid for this mutable input.",
+  "recovery": "Delete only sub-2ebc76f5e53ca556, then assert the original six IDs, active server and failover configuration remain. Do not refresh or delete the original user subscription.",
+  "candidateReady": false
+}

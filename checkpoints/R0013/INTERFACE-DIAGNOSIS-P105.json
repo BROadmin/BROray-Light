@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "revision": "p105-readonly-interface-diagnosis",
+  "status": "DIAGNOSTIC_COMPLETE_NO_MUTATION",
+  "candidateReady": false,
+  "observations": [
+    {
+      "name": "native-show-proxy0",
+      "exitCode": 0,
+      "stdout": "\u001b[K\n               id: Proxy0\n            index: 0\n   interface-name: Proxy0\n             type: Proxy\n      description: BROray-Light - 🇳🇱 NL - KEENETIC\n\n           traits: Ip\n\n           traits: Ip6\n\n           traits: Supplicant\n\n           traits: Proxy\n\n             link: up\n        connected: yes\n            state: up\n              mtu: 8500\n  tx-queue-length: 500\n       admin-only: no\n          address: 172.20.12.1\n             mask: 255.255.255.255\n           uptime: 11746\n           global: no\n   security-level: public\n\n             ipv6: \n            addresses: \n                  address: fc03:52b:6:a56:10c:14ac:506a:d517\n            prefix-length: 128\n                    proto: DHCP\n           valid-lifetime: infinite\n\n            addresses: \n                  address: fe80::fca7:7f3b:35c7:be93\n            prefix-length: 64\n                    proto: KERNEL\n           valid-lifetime: infinite\n\n              via: GigabitEthernet1\nlocal-endpoint-address: 100.123.245.209\nremote-endpoint-address: 127.0.0.1\n\n          summary: \n                layer: \n                     conf: running\n                     link: running\n                     ipv4: running\n                     ipv6: running\n                     ctrl: running\n\n\u001b[K",
+      "stderr": ""
+    },
+    {
+      "name": "prepared-cli-interface-read",
+      "exitCode": 1,
+      "stdout": "",
+      "stderr": "BROray-Light: info | servers | subscriptions | xray | current\n"
+    },
+    {
+      "name": "prepared-read-environment",
+      "exitCode": 0,
+      "stdout": "run=/tmp/broray-light/run\ntmp=/tmp/broray-light/tmp\nBRORAY_INTERFACE_FAILURE_EVIDENCE=/tmp/broray-light/run/interface-last-failure.json\nBRORAY_INTERFACE_LAST_EVIDENCE=/tmp/broray-light/run/interface-last-command.json\n",
+      "stderr": ""
+    },
+    {
+      "name": "isolated-interface-output-once",
+      "exitCode": 0,
+      "stdout": "\u001b[K\n               id: Proxy0\n            index: 0\n   interface-name: Proxy0\n             type: Proxy\n      description: BROray-Light - 🇳🇱 NL - KEENETIC\n\n           traits: Ip\n\n           traits: Ip6\n\n           traits: Supplicant\n\n           traits: Proxy\n\n             link: up\n        connected: yes\n            state: up\n              mtu: 8500\n  tx-queue-length: 500\n       admin-only: no\n          address: 172.20.12.1\n             mask: 255.255.255.255\n           uptime: 11747\n           global: no\n   security-level: public\n\n             ipv6: \n            addresses: \n                  address: fc03:52b:6:a56:10c:14ac:506a:d517\n            prefix-length: 128\n                    proto: DHCP\n           valid-lifetime: infinite\n\n            addresses: \n                  address: fe80::fca7:7f3b:35c7:be93\n            prefix-length: 64\n                    proto: KERNEL\n           valid-lifetime: infinite\n\n              via: GigabitEthernet1\nlocal-endpoint-address: 100.123.245.209\nremote-endpoint-address: 127.0.0.1\n\n          summary: \n                layer: \n                     conf: running\n                     link: running\n                     ipv4: running\n                     ipv6: running\n                     ctrl: running\n\n\u001b[K",
+      "stderr": ""
+    },
+    {
+      "name": "owned-interface-health",
+      "exitCode": 0,
+      "stdout": "Интерфейс: Proxy0\nПолный BROray-Light ownership receipt: да\nRunning/startup exact receipt equality: да\nRuntime Proxy/link/connected/state: готов\nОписание: BROray-Light - 🇳🇱 NL - KEENETIC\nUpstream: 127.0.0.1:2080\n",
+      "stderr": ""
+    }
+  ]
+}

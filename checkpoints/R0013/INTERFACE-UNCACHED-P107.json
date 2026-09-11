@@ -1,0 +1,25 @@
+{
+  "revision": "p107-readonly-uncached-comparison",
+  "status": "DIAGNOSTIC_COMPLETE",
+  "observations": [
+    {
+      "name": "direct-actual-library",
+      "exitCode": 0,
+      "stdout": "{\n  \"exists\": true,\n  \"interfaceName\": \"Proxy0\",\n  \"description\": \"BROray-Light - 🇳🇱 NL - KEENETIC\",\n  \"type\": \"Proxy\",\n  \"protocol\": \"socks5\",\n  \"upstream\": \"127.0.0.1:2080\",\n  \"link\": true,\n  \"connected\": true,\n  \"state\": \"up\",\n  \"mtu\": 8500,\n  \"via\": \"GigabitEthernet1\",\n  \"localAddress\": \"100.123.245.209\",\n  \"remoteAddress\": \"127.0.0.1\",\n  \"adminOnly\": false,\n  \"raw\": {\n    \"link\": \"up\",\n    \"connected\": \"yes\",\n    \"state\": \"up\"\n  }\n}\n",
+      "stderr": ""
+    },
+    {
+      "name": "direct-full-health-library",
+      "exitCode": 0,
+      "stdout": "{\n  \"actual\": {\n    \"exists\": true,\n    \"interfaceName\": \"Proxy0\",\n    \"description\": \"BROray-Light - 🇳🇱 NL - KEENETIC\",\n    \"type\": \"Proxy\",\n    \"protocol\": \"socks5\",\n    \"upstream\": \"127.0.0.1:2080\",\n    \"link\": true,\n    \"connected\": true,\n    \"state\": \"up\",\n    \"mtu\": 8500,\n    \"via\": \"GigabitEthernet1\",\n    \"localAddress\": \"100.123.245.209\",\n    \"remoteAddress\": \"127.0.0.1\",\n    \"adminOnly\": false,\n    \"raw\": {\n      \"link\": \"up\",\n      \"connected\": \"yes\",\n      \"state\": \"up\"\n    }\n  },\n  \"health\": {\n    \"schemaVersion\": 1,\n    \"module\": \"keenetic\",\n    \"availability\": \"available\",\n    \"severity\": \"ok\",\n    \"operational\": true,\n    \"consistent\": true,\n    \"actionRequired\": false,\n    \"freshness\": {\n      \"state\": \"fresh\",\n      \"checkedAt\": \"2026-09-11T14:32:49+0300\"\n    },\n    \"reasons\": [],\n    \"facts\": {\n      \"interfaceName\": \"Proxy0\",\n      \"exists\": true,\n      \"ownershipConfirmed\": true,\n      \"ownershipReceiptPresent\": true,\n      \"socksActive\": true,\n      \"link\": true,\n      \"connected\": true,\n      \"state\": \"up\",\n      \"matchesExpected\": true\n    },\n    \"lastOperation\": null\n  }\n}\n",
+      "stderr": ""
+    },
+    {
+      "name": "uncached-home-snapshot",
+      "exitCode": 0,
+      "stdout": "{\n  \"generatedAt\": \"2026-09-11T14:33:02+0300\",\n  \"keenetic\": {\n    \"actual\": {\n      \"exists\": true,\n      \"interfaceName\": \"Proxy0\",\n      \"description\": \"BROray-Light - 🇳🇱 NL - KEENETIC\",\n      \"type\": \"Proxy\",\n      \"protocol\": \"socks5\",\n      \"upstream\": \"127.0.0.1:2080\",\n      \"link\": true,\n      \"connected\": true,\n      \"state\": \"up\",\n      \"mtu\": 8500,\n      \"via\": \"GigabitEthernet1\",\n      \"localAddress\": \"100.123.245.209\",\n      \"remoteAddress\": \"127.0.0.1\",\n      \"adminOnly\": false,\n      \"raw\": {\n        \"link\": \"up\",\n        \"connected\": \"yes\",\n        \"state\": \"up\"\n      }\n    },\n    \"health\": {\n      \"schemaVersion\": 1,\n      \"module\": \"keenetic\",\n      \"availability\": \"available\",\n      \"severity\": \"ok\",\n      \"operational\": true,\n      \"consistent\": true,\n      \"actionRequired\": false,\n      \"freshness\": {\n        \"state\": \"fresh\",\n        \"checkedAt\": \"2026-09-11T14:33:01+0300\"\n      },\n      \"reasons\": [],\n      \"facts\": {\n        \"interfaceName\": \"Proxy0\",\n        \"exists\": true,\n        \"ownershipConfirmed\": true,\n        \"ownershipReceiptPresent\": true,\n        \"socksActive\": true,\n        \"link\": true,\n        \"connected\": true,\n        \"state\": \"up\",\n        \"matchesExpected\": true\n      },\n      \"lastOperation\": null\n    }\n  }\n}\n",
+      "stderr": ""
+    }
+  ],
+  "candidateReady": false
+}

@@ -58,7 +58,7 @@ def main():
                 checked = subprocess.run([*shell, '-n'], input=data, capture_output=True, timeout=10)
                 assert checked.returncode == 0, (name, checked.stderr.decode())
         records.append(dict(name='every_compiled_shell_entrypoint_syntax', status='PASS'))
-        for case in ('fresh', 'overrides', 'foreign-namespace', 'foreign-root', 'helper-symlink', 'coownership', 'legacy-fence', 'global-lock'):
+        for case in ('fresh', 'overrides', 'removed-installer-tmpdir', 'foreign-namespace', 'foreign-root', 'helper-symlink', 'coownership', 'legacy-fence', 'global-lock'):
             with tempfile.TemporaryDirectory(prefix='r0013-runtime-paths-', dir='/dev/shm') as temporary:
                 root = Path(temporary)
                 (root / 'tmp').mkdir(mode=0o1777)
@@ -79,7 +79,10 @@ def main():
                     saved = library / 'saved-helper'
                     path.rename(saved)
                     path.symlink_to(saved)
+                elif case == 'removed-installer-tmpdir':
+                    env['TMPDIR'] = str(root / 'tmp/broray-light-install.removed/opkg')
                 elif case == 'overrides':
+                    env['TMPDIR'] = '/opt/foreign-scratch'
                     for name in ('BRORAY_XRAY_UPDATE_TMP_ROOT','BRORAY_XRAY_RELEASE_CACHE','BRORAY_XRAY_DOWNLOAD_ROOT',
                                  'BRORAY_XRAY_UPDATE_WORK','BRORAY_NATIVE_AUTH_DIR','BRORAY_NATIVE_AUTH_RUNTIME',
                                  'BRORAY_NATIVE_AUTH_CONFIG','BRORAY_NATIVE_AUTH_PIDFILE','BRORAY_NATIVE_AUTH_LOG',
@@ -90,6 +93,10 @@ def main():
                     (root / 'opt/var/lock/broray-light-updater/request.lock').mkdir(parents=True)
                 before = inventory(root)
                 command = '. "$1" || exit 1\n'
+                command += '''[ "$TMPDIR" = "$BRL_RAM/tmp" ] || exit 91
+probe=$(mktemp "$TMPDIR/runtime-probe.XXXXXX") || exit 92
+test -f "$probe" && rm "$probe" || exit 93
+'''
                 if case in ('legacy-fence', 'global-lock'):
                     command += '. "$2" || exit 1; broray_operation_lock_acquire fixture || exit $?; broray_operation_lock_release\n'
                 else:

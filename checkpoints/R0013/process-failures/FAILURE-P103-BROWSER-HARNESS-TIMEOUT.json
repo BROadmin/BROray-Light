@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "revision": "p103-final-selector-controls-v1",
+  "status": "FAIL_FIRST_ERROR",
+  "candidateReady": false,
+  "observation": "20-second Node REPL invocation timeout reset its kernel during a batch of selector/cancel/check actions; no progress messages survived",
+  "lastVerifiedFact": "Final native catalog HTTP response contains v26.2.6 status incompatible",
+  "cause": "Pending determination of exact wait from fresh DOM and native operation state; cannot claim batched actions completed",
+  "nextRevision": "p104-single-action-browser-diagnosis",
+  "nextExactAction": "Use fresh independent browser session and single-action calls with bounded Playwright timeout; read runtime state before further operations",
+  "forbidden": "No repeated Xray install and no unverified success claim"
+}

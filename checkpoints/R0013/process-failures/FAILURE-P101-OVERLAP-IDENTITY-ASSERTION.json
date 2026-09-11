@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "revision": "p101-final-native-ui-v1",
+  "status": "FAIL_FIRST_ERROR",
+  "candidateReady": false,
+  "gate": "overlapping subscription preserves exact original six-server set",
+  "observation": "Create returned success; summary count became 7 instead of 6 and exact sorted ID set assertion failed",
+  "testSubscriptionId": "sub-2ebc76f5e53ca556",
+  "mutationStopped": true,
+  "cause": "UNDETERMINED: inspect added and missing IDs and canonical map before any recovery; remote subscription input may have changed",
+  "nextRevision": "p102-overlap-readonly-diagnosis-and-scoped-recovery",
+  "nextExactAction": "Read set differences and canonical ownership; remove only P101 disposable subscription after identifying safety implications, preserving original user subscription and servers"
+}

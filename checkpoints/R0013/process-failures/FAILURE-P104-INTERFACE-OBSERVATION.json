@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "revision": "p104-single-action-browser-diagnosis",
+  "status": "FAIL_FIRST_ERROR",
+  "candidateReady": false,
+  "sourceCommit": "c2c5afd635e6e0e39c9f9f34170e801ce89302d0",
+  "gate": "Consistent native interface status after final package installation",
+  "observation": "Native home summary reports connection.connected=true and running Xray26.9.9, but Proxy0 description/type/state empty, ownershipConfirmed=false, upstreamReachable=true; WebUI displays Error",
+  "reasonCodes": ["PROXY0_CONFIGURATION_MISMATCH","PROXY0_DOWN","PROXY0_OWNERSHIP_UNCONFIRMED"],
+  "cause": "UNDETERMINED: inspect raw bounded RCI observation and parsing; do not configure or repair an unconfirmed owner",
+  "previousHarnessCause": "P103 batch used nonexistent #lightCheckButton locator. Actual Light check button is identified by onclick=lightCheck(). This does not explain native interface status.",
+  "nextRevision": "p105-readonly-interface-diagnosis",
+  "nextExactAction": "Read exact Proxy0 state and status parser; no ownership override, repair or release publication"
+}

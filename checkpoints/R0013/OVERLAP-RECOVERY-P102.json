@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "revision": "p102-overlap-readonly-diagnosis-and-scoped-recovery",
+  "status": "PASS_EXISTING_IDENTITY_AND_SETTINGS_PRESERVED",
+  "sourceCommit": "c2c5afd635e6e0e39c9f9f34170e801ce89302d0",
+  "nativeBrowser": true,
+  "tests": [
+    {"name":"native-login-final-2.0.0-active-interface", "status":"PASS"},
+    {"name":"overlapping-subscription-keeps-every-original-server-id", "status":"PASS"},
+    {"name":"different-SNI-is-not-falsely-deduplicated", "status":"PASS"},
+    {"name":"delete-only-disposable-subscription", "status":"PASS"},
+    {"name":"original-six-server-ids-remain-after-delete", "status":"PASS"},
+    {"name":"original-active-server-remains", "status":"PASS"},
+    {"name":"failover-config-exactly-preserved", "status":"PASS"}
+  ],
+  "remainingTestSubscriptions": 0,
+  "userSubscriptionDeleted": false,
+  "candidateReady": false
+}

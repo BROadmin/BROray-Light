@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "revision": "p101-final-native-ui-v1",
+  "status": "STARTED",
+  "candidateReady": false,
+  "installedSourceCommit": "c2c5afd635e6e0e39c9f9f34170e801ce89302d0",
+  "installedAppManifestSha256": "26885a8bfe38beec240c26cb9bd61f334070239ed8e201b35ef5bb6f349c81d8",
+  "targetAuthority": "Previously explicitly authorized test router only",
+  "backup": "checkpoints/R0013/TARGET-INSTALL-P100.json",
+  "actions": ["Native login", "Read final version and healthy active interface", "Create disposable overlapping subscription from existing private URL", "Verify all existing server IDs and failover configuration preserved", "Delete only disposable subscription", "Recheck original server IDs and active connection", "Negative Xray catalog selection and final controls"],
+  "firstError": "Stop current validation, preserve separate failure before corrected revision or bounded recovery",
+  "secrets": "Subscription URL and native session stay in memory, never published"
+}

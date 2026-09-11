@@ -171,6 +171,10 @@ def main():
         assert not list(Path('/tmp').glob('broray-light-install.*'))
         assert not Path('/tmp/broray-light-bootstrap').exists()
         assert not Path('/opt/var/lock').exists()
+        daemon_pid = int(Path('/tmp/broray-light/run/broray-lightd.pid').read_text().strip())
+        daemon_environment = Path(f'/proc/{daemon_pid}/environ').read_bytes().split(b'\0')
+        assert b'TMPDIR=/tmp/broray-light/tmp' in daemon_environment, 'daemon retained invocation-owned installer TMPDIR'
+        assert Path('/tmp/broray-light/tmp').is_dir()
         passed(dict(skipServiceStart=False,realLighttpd=True,installerBootstrapScratchClean=True))
 
         gate='exact-installed-slot-and-arm64-xray'
