@@ -1,0 +1,13 @@
+{
+ "schemaVersion":1,
+ "revision":"p115-post-background-native-ui",
+ "status":"PASS",
+ "sourceCommit":"f4af30d98fd1f227e5116def825c09399437086f",
+ "tests":[
+  {"name":"native-login-after-service-restart","status":"PASS"},
+  {"name":"Light-2.0.0-Xray-26.9.9","status":"PASS"},
+  {"name":"Proxy0-active-and-connected-after-background-cycle","status":"PASS"}
+ ],
+ "healthFacts":{"connected":true,"severity":"ok","ownershipConfirmed":true,"checkedAt":"2026-09-11T14:54:05+0300"},
+ "candidateReady":false
+}

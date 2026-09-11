@@ -1,0 +1,124 @@
+{
+  "schemaVersion": 1,
+  "revision": "browser-controls-p109",
+  "status": "PASS_EXACT_SOURCE_CI",
+  "sourceCommit": "f4af30d98fd1f227e5116def825c09399437086f",
+  "runId": 34594934644,
+  "url": "https://github.com/BROadmin/BROray-Light/actions/runs/34594934644",
+  "jobs": [
+    {
+      "id": 103248389666,
+      "name": "chromium",
+      "conclusion": "success"
+    }
+  ],
+  "artifacts": [
+    {
+      "name": "r0013-browser-f4af30d98fd1f227e5116def825c09399437086f",
+      "id": 10261656511,
+      "zipSha256": "2e8bc8bcef2b544cbf7b001aa83d65a11a34cf25bb5c84b09908269a2085462f",
+      "bytes": 3103651
+    }
+  ],
+  "reports": [
+    {
+      "artifactId": 10261656511,
+      "name": "result.json",
+      "sha256": "d12b38ce553b46617e803cc02753a3084f449d3cece458999a0a0274233517fe",
+      "status": "PASS_CHROMIUM_CONTROLS_AND_RESPONSIVE_FIXTURE",
+      "testCount": 22,
+      "tests": [
+        {
+          "name": "login-password-show-hide-and-native-form-submit",
+          "status": "PASS"
+        },
+        {
+          "name": "subscription-create-required-fields-and-success",
+          "status": "PASS"
+        },
+        {
+          "name": "subscription-auto-refresh-checkbox-interval-save",
+          "status": "PASS"
+        },
+        {
+          "name": "subscription-refresh-and-delete-cancel-accept",
+          "status": "PASS"
+        },
+        {
+          "name": "server-import-empty-invalid-and-success",
+          "status": "PASS"
+        },
+        {
+          "name": "server-up-down-boundaries-exclude-and-failover-save",
+          "status": "PASS"
+        },
+        {
+          "name": "server-check-activate-active-refusal-delete-cancel-accept",
+          "status": "PASS"
+        },
+        {
+          "name": "home-keenetic-create-repair-and-refresh",
+          "status": "PASS"
+        },
+        {
+          "name": "home-light-update-check-start-and-equal-state",
+          "status": "PASS"
+        },
+        {
+          "name": "xray-catalog-same-version-reinstall-cancel-and-accept",
+          "status": "PASS"
+        },
+        {
+          "name": "xray-prerelease-toggle-select-and-two-consents",
+          "status": "PASS"
+        },
+        {
+          "name": "home-server-order-link",
+          "status": "PASS"
+        },
+        {
+          "name": "responsive-home-390",
+          "status": "PASS"
+        },
+        {
+          "name": "responsive-servers-390",
+          "status": "PASS"
+        },
+        {
+          "name": "responsive-subscriptions-390",
+          "status": "PASS"
+        },
+        {
+          "name": "responsive-home-768",
+          "status": "PASS"
+        },
+        {
+          "name": "responsive-servers-768",
+          "status": "PASS"
+        },
+        {
+          "name": "responsive-subscriptions-768",
+          "status": "PASS"
+        },
+        {
+          "name": "responsive-home-1440",
+          "status": "PASS"
+        },
+        {
+          "name": "responsive-servers-1440",
+          "status": "PASS"
+        },
+        {
+          "name": "responsive-subscriptions-1440",
+          "status": "PASS"
+        },
+        {
+          "name": "javascript-runtime-errors",
+          "status": "PASS"
+        }
+      ]
+    }
+  ],
+  "testInvocations": 22,
+  "candidateReady": false
+}

@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "stage": "R0013_SELECTIVE_UPSTREAM_STABLE_PORT",
-  "status": "EXACT_FINAL_PACKAGE_INSTALLED_DOC_PREVIEW_PASS",
-  "currentRevision": "p112-signed-index-probe",
+  "status": "PASS_ALL_PREPUBLICATION_GATES",
+  "currentRevision": "p115-prepublication-acceptance",
   "activeFailure": null,
   "publicVersion": "2.0.0",
   "buildA": "PASS_P83_INDEPENDENT_BYTES",
@@ -37,8 +37,8 @@
   "packageVersion": "2.0.0",
   "releaseTag": "v2.0.0",
   "versionAuthority": "User approved public/package version 2.0.0 and tag v2.0.0 with legacy-compatible internal releaseId 2.0.0-r1 (P10).",
-  "candidateReady": false,
-  "releaseReady": false,
+  "candidateReady": true,
+  "releaseReady": true,
   "publicReleasePublished": false,
   "startCheckpoint": {
     "path": "checkpoints/R0013/START-P1.json",
@@ -62,7 +62,7 @@
     "path": "checkpoints/R0013/UPSTREAM-PORT-MAP-P2.json",
     "sha256": "009a0f5adae08f399c82510cf680690b4c2e50bc8c659eda9c48d91b5a838121"
   },
-  "nextExactAction": "TARGET_RESTART_SIGNED_EQUAL_DOWNGRADE_PERSISTENCE",
+  "nextExactAction": "PUBLISH_IMMUTABLE_V2_0_0_THEN_DOCUMENTATION_AND_PUBLIC_BYTES",
   "versionAndXray": {
     "status": "PASS_VERSION_AND_BOOTSTRAP_INPUT",
     "path": "checkpoints/R0013/UPGRADE-AND-XRAY-P10.json",
@@ -341,19 +341,34 @@
   },
   "latestReleasePreparation": [
     {
-      "path": "checkpoints/R0013/TARGET-INSTALL-P110.json",
-      "sha256": "22b11978221d841a8a749bba6fee22eadd3bdb3064fd3d679ab53433ca2f4e4b",
-      "bytes": 2321
+      "path": "checkpoints/R0013/REGRESSION-P109.json",
+      "sha256": "966ffc3034cb1e15d3be8d64fb4e63b5fac333f5ea3ba47cbfb0bad1a4ac41af",
+      "bytes": 66529
     },
     {
-      "path": "checkpoints/R0013/DOC-PREVIEW-P111.json",
-      "sha256": "03f3aa0f6d668cd1fc7ac41618c02d0f3a98fb0bcadf07afeed3df045c854a35",
-      "bytes": 991
+      "path": "checkpoints/R0013/PREPUBLICATION-ACCEPTANCE-P115.json",
+      "sha256": "3219232456af0a5a6983fe276c3a63dda68a298bb83914303aff8b3125a049a5",
+      "bytes": 7854
     },
     {
-      "path": "checkpoints/R0013/SIGNED-PROBE-P112.json",
-      "sha256": "e4a62f4913024153813710d720001c85c64dc2e0ac0bdbfa7fe2a20003c517a7",
-      "bytes": 696
+      "path": "checkpoints/R0013/PUBLICATION-PREFLIGHT-P115.json",
+      "sha256": "b7317843f3d073160df59469ac3cf9cfd8c60540007064adb9e4c446d5b11817",
+      "bytes": 1218
+    },
+    {
+      "path": "checkpoints/R0013/TARGET-WEBUI-P115.json",
+      "sha256": "e575291930d80e1e86ff51344f48484ee68affb3a8f14c5377aeae4c6848d904",
+      "bytes": 502
+    },
+    {
+      "path": "checkpoints/R0013/TARGET-CLEANUP-P114-V2.json",
+      "sha256": "a0cc8c79b4ed7d3c387ec4661dc3b13b46a4c882a46e725eb6cda1012cef977e",
+      "bytes": 495
+    },
+    {
+      "path": "checkpoints/R0013/TARGET-CLEANUP-P114.json",
+      "sha256": "ed16e0a1f7da2aa566acbd2f061d2d57f635dc4185b7c30a48580a5c7aacbe9d",
+      "bytes": 166
     }
   ]
 }

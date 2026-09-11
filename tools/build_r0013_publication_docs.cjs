@@ -6,15 +6,28 @@ const { marked } = require('marked');
 const root = path.resolve(__dirname, '..');
 const build = path.resolve(root, process.argv[2] || 'dist/R0013/p97-release-build/A');
 const target = path.join(root, 'publication/R0013');
+const published = process.argv.includes('--published');
+let releaseDate = '';
+if (published) {
+  const receipt = JSON.parse(fs.readFileSync(path.join(root, 'checkpoints/R0013/RELEASE-PUBLISH-P116.json'), 'utf8'));
+  if (receipt.status !== 'PASS_PUBLISHED_IMMUTABLE_RELEASE_AND_PUBLIC_BYTES') throw new Error('Publication not verified');
+  releaseDate = new Intl.DateTimeFormat('ru-RU', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'Europe/Moscow' }).format(new Date(receipt.publishedAt));
+}
 const manifest = JSON.parse(fs.readFileSync(path.join(build, 'ENGINEERING-MANIFEST.json'), 'utf8'));
 const hash = data => crypto.createHash('sha256').update(data).digest('hex');
 const installerHash = hash(fs.readFileSync(path.join(build, 'broray-light-install-2.0.0.sh')));
 let guide = fs.readFileSync(path.join(root, 'docs/beginner-installation.md'), 'utf8');
+if (published) guide = guide.replace(/^> Подготовлено для выпуска 2\.0\.0\..*$/m, '> [Релиз 2.0.0](https://github.com/BROadmin/BROray-Light/releases/tag/v2.0.0) · ' + releaseDate + ' · aarch64-3.10.');
 guide = guide.replace(/'([a-f0-9]{64})' \]/, "'" + installerHash + "' ]");
 guide = guide.replace(/146 файлов, \d+ байт/, manifest.slot.appFiles + ' файлов, ' + manifest.slot.appLogicalBytes + ' байт');
 // Mechanical checksum/size synchronization of this turn's new guide source.
 fs.writeFileSync(path.join(root, 'docs/beginner-installation.md'), guide);
-const history = fs.readFileSync(path.join(root, 'CHANGELOG.md'), 'utf8');
+let history = fs.readFileSync(path.join(root, 'CHANGELOG.md'), 'utf8');
+if (published) {
+  history = history.replace('## 2.0.0 — подготовка к выпуску', '## 2.0.0 — ' + releaseDate);
+  history = history.replace(/^Публичная версия и версия пакета — `2\.0\.0`.*$/m, 'Публичная версия и версия пакета — `2.0.0`, технический releaseId — `2.0.0-r1`. [Релиз v2.0.0](https://github.com/BROadmin/BROray-Light/releases/tag/v2.0.0).');
+  fs.writeFileSync(path.join(root, 'CHANGELOG.md'), history);
+}
 let html = marked.parse(guide.replace(/^# .+\n/, '') + '\n\n' + history.replace(/^# История версий BROray-Light/, '## История версий BROray-Light'));
 html = html.replaceAll('href="../CHANGELOG.md"', 'href="https://github.com/BROadmin/BROray-Light/blob/main/CHANGELOG.md"')
   .replaceAll('href="../checkpoints/', 'href="https://github.com/BROadmin/BROray-Light/blob/codex/r0009-updater-package/checkpoints/')
@@ -37,10 +50,14 @@ let home = fs.readFileSync(path.join(target, 'templates/index.html'), 'utf8');
 home = home.replace('Stable 1.0.0-r1', '2.0.0 · подготовка');
 home = home.replace('Лёгкая VLESS-only редакция: три страницы WebUI, подписки,\n                автопереключение серверов и безопасное управление Xray.',
   'Лёгкая VLESS-only редакция: выбор версии Xray, подписки и резервные серверы.\n                Пошаговая установка, обновление и история версий.');
+if (published) {
+  page = page.replace('Подготовка релиза', 'Стабильный релиз').replace('Приёмка продолжается', 'Проверено перед выпуском');
+  home = home.replace('2.0.0 · подготовка', 'Stable 2.0.0');
+}
 fs.mkdirSync(path.join(target, 'site/broray-light'), { recursive: true });
 fs.writeFileSync(path.join(target, 'site/broray-light/index.html'), page);
 fs.writeFileSync(path.join(target, 'site/index.html'), home);
-const readme = `# BROray-Light
+let readme = `# BROray-Light
 
 Лёгкий отдельный VLESS-клиент для совместимых Keenetic: серверы, подписки и безопасное управление Xray в трёх страницах WebUI. Без Routes, управления DNS-over-TLS, рейтингов и истории качества.
 
@@ -102,8 +119,12 @@ Xray обновляется отдельно в своей карточке на
 
 Приложение — [GPL-3.0](LICENSE); отдельный Xray-core — MPL-2.0. Сторонние компоненты сохраняют собственные лицензии.
 `;
+if (published) {
+  readme = readme.replace('Подготовка к выпуску. Публикация выполняется только после финальной приёмки; текущий Stable пока 1.0.0-r1.', 'Опубликован [Stable 2.0.0](https://github.com/BROadmin/BROray-Light/releases/tag/v2.0.0) — ' + releaseDate + '. Независимые Build A/B, подпись и приёмка тестового роутера пройдены.');
+  readme = readme.replace('**2.0.0 — подготовка:**', '**2.0.0 — ' + releaseDate + ':**');
+}
 fs.mkdirSync(path.join(target, 'github'), {recursive: true});
 fs.writeFileSync(path.join(target, 'github/README.md'), readme);
 const names = ['site/index.html','site/broray-light/index.html','github/README.md'];
 const receipts = names.map(name => { const data=fs.readFileSync(path.join(target,name)); return {path:'publication/R0013/'+name,bytes:data.length,sha256:hash(data)}; });
-console.log(JSON.stringify({status:'DRAFT_PUBLICATION_DOCS_GENERATED',installerSha256:installerHash,artifacts:receipts,published:false},null,2));
+console.log(JSON.stringify({status:published ? 'PUBLISHED_RELEASE_DOCS_GENERATED' : 'DRAFT_PUBLICATION_DOCS_GENERATED',installerSha256:installerHash,artifacts:receipts,published},null,2));

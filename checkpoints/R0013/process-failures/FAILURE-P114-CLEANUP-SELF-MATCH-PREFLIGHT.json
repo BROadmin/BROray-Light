@@ -1,0 +1,8 @@
+{
+  "revision":"p114-exact-invocation-input-cleanup",
+  "status":"STOPPED_BEFORE_SSH_LOGIN",
+  "cause":"Review caught that passing the cleanup script as an SSH command argument would cause its own /proc/cmdline to match the protected-directory use check",
+  "remoteMutationPerformed":false,
+  "nextRevision":"p114-v2-cleanup-script-on-stdin",
+  "correction":"Pass script to ash -s through stdin, not process arguments; preserve all exact path/type/hash checks"
+}

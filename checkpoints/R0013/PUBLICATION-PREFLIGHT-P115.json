@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "revision": "p115-readonly-publication-preflight",
+  "status": "PASS",
+  "repositories": [
+    {
+      "repository": "BROray-Light",
+      "defaultBranch": "main",
+      "pushAllowed": true
+    },
+    {
+      "repository": "BROray",
+      "defaultBranch": "main",
+      "pushAllowed": true
+    }
+  ],
+  "websiteSourceCommit": "f87e78ed0a415ffd86ec1eab2c8c4be9053098a9",
+  "websiteTemplates": [
+    {
+      "path": "index.html",
+      "gitBlob": "d587977fe3955a79b6a7ab48a2e4977f72567676",
+      "sha256": "22fa1104d627b7df88b920363255e09b3cdf2c53e1160626b1f2b62d913ea854",
+      "matchesReviewedTemplate": true
+    },
+    {
+      "path": "styles.css",
+      "gitBlob": "96ad8f8c10aa8dbd14d4a07098e5436e05fa78ce",
+      "sha256": "70079402b41a26df358bfe8a093680ef27c9b0886f734f1c1edb2cc81a167a1d",
+      "matchesReviewedTemplate": true
+    },
+    {
+      "path": "broray-light/index.html",
+      "gitBlob": "d8f683ed5310a7bcadddb4c9bff07e5150bf0d8b",
+      "sha256": "26ae1d844dc69ef94714cd07ed1e9c8a5333f936fe20a4b1add8561bd4c91011",
+      "matchesReviewedTemplate": true
+    }
+  ],
+  "tagAbsent": true,
+  "releaseAbsent": true,
+  "publicReleasePublished": false,
+  "candidateReady": false
+}

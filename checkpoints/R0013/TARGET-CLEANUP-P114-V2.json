@@ -1,0 +1,22 @@
+{
+  "revision": "p114-v2-cleanup-script-on-stdin",
+  "status": "PASS_EXACT_INPUTS_REMOVED_PRIVATE_BACKUPS_RETAINED",
+  "candidateReady": false,
+  "directories": [
+    {
+      "stage": "P100",
+      "path": "/tmp/brl-r13-final-p100.v15KyR",
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "stage": "P110",
+      "path": "/tmp/brl-r13-final-p110.nIWfWe",
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "localPrivateBackupsRetained": true
+}

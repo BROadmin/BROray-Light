@@ -1,0 +1,2579 @@
+{
+  "schemaVersion": 1,
+  "revision": "regression-p109",
+  "status": "PASS_EXACT_SOURCE_CI",
+  "sourceCommit": "f4af30d98fd1f227e5116def825c09399437086f",
+  "runId": 34594794089,
+  "url": "https://github.com/BROadmin/BROray-Light/actions/runs/34594794089",
+  "jobs": [
+    {
+      "id": 103247933477,
+      "name": "isolated-prepared-app",
+      "conclusion": "success"
+    },
+    {
+      "id": 103247933711,
+      "name": "isolated-native-auth",
+      "conclusion": "success"
+    },
+    {
+      "id": 103247933734,
+      "name": "isolated-canonical-owners",
+      "conclusion": "success"
+    },
+    {
+      "id": 103247933736,
+      "name": "isolated-live-entry",
+      "conclusion": "success"
+    },
+    {
+      "id": 103251962349,
+      "name": "isolated-service",
+      "conclusion": "success"
+    },
+    {
+      "id": 103251962427,
+      "name": "isolated-process",
+      "conclusion": "success"
+    }
+  ],
+  "artifacts": [
+    {
+      "name": "r0013-web-config-f4af30d98fd1f227e5116def825c09399437086f",
+      "id": 10262658153,
+      "zipSha256": "abd3c8f4ea2d9e7ed662082776944cb7874b05993e2314f176a7b308c35a7fc2",
+      "bytes": 1484
+    },
+    {
+      "name": "r0013-retirement-f4af30d98fd1f227e5116def825c09399437086f",
+      "id": 10262645600,
+      "zipSha256": "c4b7bcc2f0e56b18bfd0ef1649a281f6a2efba7fdeb87721aa9f933e42a9fe88",
+      "bytes": 677
+    },
+    {
+      "name": "r0013-updater-core-f4af30d98fd1f227e5116def825c09399437086f",
+      "id": 10262607881,
+      "zipSha256": "0563c7f500dfa96d9dfcc4ccd0adfcd1820c0e46891b44c66189d673b12b922d",
+      "bytes": 1574
+    },
+    {
+      "name": "r0013-r1-journal-f4af30d98fd1f227e5116def825c09399437086f",
+      "id": 10262572770,
+      "zipSha256": "3fae9bc49fb26793e5275d3b505b1b8b57686ed280c966b6e36780967398d692",
+      "bytes": 1618
+    },
+    {
+      "name": "r0013-r1-ram-f4af30d98fd1f227e5116def825c09399437086f",
+      "id": 10262547995,
+      "zipSha256": "5aecf7d6255e32d5ce45736b65a9cd974b3e3623e6bd49f236d586d71a5d46ec",
+      "bytes": 1474
+    },
+    {
+      "name": "r0013-preflight-ram-f4af30d98fd1f227e5116def825c09399437086f",
+      "id": 10262496393,
+      "zipSha256": "426d687edbc86d9e1a7f2b2ee6b1ab778fd4cfed8f6be1ecaffad87677d9ae07",
+      "bytes": 2048
+    },
+    {
+      "name": "r0013-platform-f4af30d98fd1f227e5116def825c09399437086f",
+      "id": 10262448095,
+      "zipSha256": "c290e4f56047342bd299ca7b41150b92c4f97ec88b935f469a7571f0469fc03d",
+      "bytes": 1487
+    },
+    {
+      "name": "r0013-runtime-paths-f4af30d98fd1f227e5116def825c09399437086f",
+      "id": 10262442741,
+      "zipSha256": "50f90f560ab0652f47c1c4dc1cebeff3b28a4de9a5f65fee907841209b776b0d",
+      "bytes": 1437
+    },
+    {
+      "name": "r0013-ram-primitive-f4af30d98fd1f227e5116def825c09399437086f",
+      "id": 10262292708,
+      "zipSha256": "7d98fef2883e3163820b890c7de627578f846c57ff61c2968337f36cd00887e6",
+      "bytes": 1591
+    },
+    {
+      "name": "r0013-daemon-stop-f4af30d98fd1f227e5116def825c09399437086f",
+      "id": 10262185625,
+      "zipSha256": "7ae536138cedd3d5215fcf1b7974d23e295ecdef1ce27d1a581019ee018c1639",
+      "bytes": 1114
+    },
+    {
+      "name": "r0013-completion-f4af30d98fd1f227e5116def825c09399437086f",
+      "id": 10262141473,
+      "zipSha256": "9bbd7d8fe07d37f775a565c7aa1d114b249da77adc56b58b851a4b0b0c0511d3",
+      "bytes": 2103
+    },
+    {
+      "name": "r0013-runtime-trees-f4af30d98fd1f227e5116def825c09399437086f",
+      "id": 10262098853,
+      "zipSha256": "5b44b699e90ae10155e4d0bd8aacdd6f2b3bf4498e1c06a4c3f18494f113c3ed",
+      "bytes": 1436
+    },
+    {
+      "name": "r0013-recovery-f4af30d98fd1f227e5116def825c09399437086f",
+      "id": 10262087883,
+      "zipSha256": "7fead6a64f7ace503f7819d60aa594267e8774bdf0248ec6822c1e047557166f",
+      "bytes": 1574
+    },
+    {
+      "name": "r0013-r1-admission-f4af30d98fd1f227e5116def825c09399437086f",
+      "id": 10261988008,
+      "zipSha256": "794b43c8e633d1c98be4de1d130cbde64cb7bb647aea472ec795da4c65d92317",
+      "bytes": 1444
+    },
+    {
+      "name": "r0013-xray-rollback-f4af30d98fd1f227e5116def825c09399437086f",
+      "id": 10261852835,
+      "zipSha256": "9b35ef51cfc4c6b826fbcc7f010be00da266a5904bee24581b91dfbf0aeb10d1",
+      "bytes": 1455
+    },
+    {
+      "name": "r0013-service-f4af30d98fd1f227e5116def825c09399437086f",
+      "id": 10261618068,
+      "zipSha256": "f77ca930fea3a612d685e2599f3ca1bb671fe1986253b35079e324bace45a239",
+      "bytes": 1701
+    },
+    {
+      "name": "r0013-native-auth-f4af30d98fd1f227e5116def825c09399437086f",
+      "id": 10261546421,
+      "zipSha256": "587355eda42327fb41170e42f170cb338c32e52661433032406a29458747ad5d",
+      "bytes": 2148
+    },
+    {
+      "name": "r0013-live-entry-f4af30d98fd1f227e5116def825c09399437086f",
+      "id": 10261467202,
+      "zipSha256": "077f89510ad88f4beb4bbaa282aab6b7740720a918869d9bde84148330f3dfde",
+      "bytes": 1325
+    },
+    {
+      "name": "r0013-subscription-controls-f4af30d98fd1f227e5116def825c09399437086f",
+      "id": 10261463043,
+      "zipSha256": "30aae9e8b469d713f1aaa74c1e73d750a61b10194a332b0105e47c6f723a230c",
+      "bytes": 963
+    },
+    {
+      "name": "r0013-prepared-app-f4af30d98fd1f227e5116def825c09399437086f",
+      "id": 10261456656,
+      "zipSha256": "5286fdc6aa81d1f3fa1a93ae75dba07afe52a6460cd426d7e197e2857c7d6666",
+      "bytes": 1942
+    }
+  ],
+  "reports": [
+    {
+      "artifactId": 10262658153,
+      "name": "r0013-web-config-ash.json",
+      "sha256": "7bb435b6a19b5e7a65772ae0f41688b5796b5f93b7904a6d9b0907a4cd2982ba",
+      "status": "PASS_CONFIG_AND_RECEIPT_TRANSACTION",
+      "testCount": 14,
+      "tests": [
+        {
+          "name": "activate-restore",
+          "status": "PASS"
+        },
+        {
+          "name": "missing-owner",
+          "status": "PASS"
+        },
+        {
+          "name": "owner-sha-mismatch",
+          "status": "PASS"
+        },
+        {
+          "name": "duplicate-pid-directive",
+          "status": "PASS"
+        },
+        {
+          "name": "config-symlink",
+          "status": "PASS"
+        },
+        {
+          "name": "foreign-stage",
+          "status": "PASS"
+        },
+        {
+          "name": "partial-Config-resume",
+          "status": "PASS"
+        },
+        {
+          "name": "partial-Config-rollback",
+          "status": "PASS"
+        },
+        {
+          "name": "partial-Owner-resume",
+          "status": "PASS"
+        },
+        {
+          "name": "partial-Owner-rollback",
+          "status": "PASS"
+        },
+        {
+          "name": "staged-Config-resume",
+          "status": "PASS"
+        },
+        {
+          "name": "staged-Config-rollback",
+          "status": "PASS"
+        },
+        {
+          "name": "staged-Owner-resume",
+          "status": "PASS"
+        },
+        {
+          "name": "staged-Owner-rollback",
+          "status": "PASS"
+        }
+      ]
+    },
+    {
+      "artifactId": 10262658153,
+      "name": "r0013-web-config-dash.json",
+      "sha256": "a2fcc3b69696f26adb4c5f9d2ac8fcce58ce3d8550facb93f156e0127bc4bab4",
+      "status": "PASS_CONFIG_AND_RECEIPT_TRANSACTION",
+      "testCount": 14,
+      "tests": [
+        {
+          "name": "activate-restore",
+          "status": "PASS"
+        },
+        {
+          "name": "missing-owner",
+          "status": "PASS"
+        },
+        {
+          "name": "owner-sha-mismatch",
+          "status": "PASS"
+        },
+        {
+          "name": "duplicate-pid-directive",
+          "status": "PASS"
+        },
+        {
+          "name": "config-symlink",
+          "status": "PASS"
+        },
+        {
+          "name": "foreign-stage",
+          "status": "PASS"
+        },
+        {
+          "name": "partial-Config-resume",
+          "status": "PASS"
+        },
+        {
+          "name": "partial-Config-rollback",
+          "status": "PASS"
+        },
+        {
+          "name": "partial-Owner-resume",
+          "status": "PASS"
+        },
+        {
+          "name": "partial-Owner-rollback",
+          "status": "PASS"
+        },
+        {
+          "name": "staged-Config-resume",
+          "status": "PASS"
+        },
+        {
+          "name": "staged-Config-rollback",
+          "status": "PASS"
+        },
+        {
+          "name": "staged-Owner-resume",
+          "status": "PASS"
+        },
+        {
+          "name": "staged-Owner-rollback",
+          "status": "PASS"
+        }
+      ]
+    },
+    {
+      "artifactId": 10262645600,
+      "name": "r0013-retirement-dash.json",
+      "sha256": "18a6b5289b47ce33b05a2e85b65e47ac64257bd12305f620b94c4142af58f461",
+      "status": "PASS_BOUNDED_RECOVERY",
+      "testCount": 3,
+      "tests": [
+        {
+          "name": "finalize",
+          "status": "PASS"
+        },
+        {
+          "name": "legacy-status-foreign",
+          "status": "PASS"
+        },
+        {
+          "name": "legacy-ready-symlink",
+          "status": "PASS"
+        }
+      ]
+    },
+    {
+      "artifactId": 10262607881,
+      "name": "r0013-updater-ash.json",
+      "sha256": "1e30841b4712e3f8dc23a0680e3280e1f5c4586e6b2b9226dc5818abc3a10088",
+      "status": "PASS_BOUNDED_CORE",
+      "testCount": 16,
+      "tests": [
+        {
+          "name": "signed_update_and_user_xray_previous_slot_persistence",
+          "status": "PASS"
+        },
+        {
+          "name": "equal_version_is_no_op_without_service_restart",
+          "status": "PASS"
+        },
+        {
+          "name": "signed_downgrade_refusal",
+          "status": "PASS"
+        },
+        {
+          "name": "forced_health_failure_rolls_back_and_recovers_receipt",
+          "status": "PASS"
+        },
+        {
+          "name": "altered_signed_index_refused_before_service_stop",
+          "status": "PASS"
+        },
+        {
+          "name": "signed_wrong_bundle_hash_refused",
+          "status": "PASS"
+        },
+        {
+          "name": "signed_duplicate_archive_refused",
+          "status": "PASS"
+        },
+        {
+          "name": "signed_traversal_archive_refused",
+          "status": "PASS"
+        },
+        {
+          "name": "signed_symlink_archive_refused",
+          "status": "PASS"
+        },
+        {
+          "name": "signed_hardlink_archive_refused",
+          "status": "PASS"
+        },
+        {
+          "name": "manifest_traversal_rejected_before_hash_reads",
+          "status": "PASS"
+        },
+        {
+          "name": "manifest_duplicate_refused",
+          "status": "PASS"
+        },
+        {
+          "name": "dangling_full_product_ownership_refused_before_ram_write",
+          "status": "PASS"
+        },
+        {
+          "name": "interrupted_target_active_recovers_previous_slot_with_stale_locks",
+          "status": "PASS"
+        },
+        {
+          "name": "updater_service_ready_lifecycle_is_ram_only",
+          "status": "PASS"
+        },
+        {
+          "name": "updater_service_foreign_ready_is_preserved",
+          "status": "PASS"
+        }
+      ]
+    },
+    {
+      "artifactId": 10262607881,
+      "name": "r0013-updater-dash.json",
+      "sha256": "022110ae75abc440ce90192927275c25c904654797c5da0d48f6cb8fa98c68f0",
+      "status": "PASS_BOUNDED_CORE",
+      "testCount": 16,
+      "tests": [
+        {
+          "name": "signed_update_and_user_xray_previous_slot_persistence",
+          "status": "PASS"
+        },
+        {
+          "name": "equal_version_is_no_op_without_service_restart",
+          "status": "PASS"
+        },
+        {
+          "name": "signed_downgrade_refusal",
+          "status": "PASS"
+        },
+        {
+          "name": "forced_health_failure_rolls_back_and_recovers_receipt",
+          "status": "PASS"
+        },
+        {
+          "name": "altered_signed_index_refused_before_service_stop",
+          "status": "PASS"
+        },
+        {
+          "name": "signed_wrong_bundle_hash_refused",
+          "status": "PASS"
+        },
+        {
+          "name": "signed_duplicate_archive_refused",
+          "status": "PASS"
+        },
+        {
+          "name": "signed_traversal_archive_refused",
+          "status": "PASS"
+        },
+        {
+          "name": "signed_symlink_archive_refused",
+          "status": "PASS"
+        },
+        {
+          "name": "signed_hardlink_archive_refused",
+          "status": "PASS"
+        },
+        {
+          "name": "manifest_traversal_rejected_before_hash_reads",
+          "status": "PASS"
+        },
+        {
+          "name": "manifest_duplicate_refused",
+          "status": "PASS"
+        },
+        {
+          "name": "dangling_full_product_ownership_refused_before_ram_write",
+          "status": "PASS"
+        },
+        {
+          "name": "interrupted_target_active_recovers_previous_slot_with_stale_locks",
+          "status": "PASS"
+        },
+        {
+          "name": "updater_service_ready_lifecycle_is_ram_only",
+          "status": "PASS"
+        },
+        {
+          "name": "updater_service_foreign_ready_is_preserved",
+          "status": "PASS"
+        }
+      ]
+    },
+    {
+      "artifactId": 10262572770,
+      "name": "r0013-r1-journal-ash.json",
+      "sha256": "3d43e963d491508a09af0367e3f754f01052bd5bdefb01147f89cd50b7bf5095",
+      "status": "PASS_LEGACY_RECEIPT_AND_RECONCILIATION",
+      "testCount": 9,
+      "tests": [
+        {
+          "name": "record_once_idempotence_live_fence_then_normal_completion",
+          "status": "PASS"
+        },
+        {
+          "name": "foreign_durable_receipt_preserved",
+          "status": "PASS"
+        },
+        {
+          "name": "interrupted_r1_and_ram_loss_reconcile_exact_persistent_locks",
+          "status": "PASS"
+        },
+        {
+          "name": "partial_legacy_cleanup_is_recoverable_inside_recorded_inodes",
+          "status": "PASS"
+        },
+        {
+          "name": "refuse_inode_without_deleting_either_lock",
+          "status": "PASS"
+        },
+        {
+          "name": "refuse_extra-child_without_deleting_either_lock",
+          "status": "PASS"
+        },
+        {
+          "name": "refuse_receipt-mode_without_deleting_either_lock",
+          "status": "PASS"
+        },
+        {
+          "name": "refuse_symlink_without_deleting_either_lock",
+          "status": "PASS"
+        },
+        {
+          "name": "old_unmarked_ram_work_requires_explicit_transition",
+          "status": "PASS"
+        }
+      ]
+    },
+    {
+      "artifactId": 10262572770,
+      "name": "r0013-r1-journal-dash.json",
+      "sha256": "3be5d333abc6cc797a7d34cb995c4f2f3a515213c03c3fa4ad0541ff0c43e050",
+      "status": "PASS_LEGACY_RECEIPT_AND_RECONCILIATION",
+      "testCount": 9,
+      "tests": [
+        {
+          "name": "record_once_idempotence_live_fence_then_normal_completion",
+          "status": "PASS"
+        },
+        {
+          "name": "foreign_durable_receipt_preserved",
+          "status": "PASS"
+        },
+        {
+          "name": "interrupted_r1_and_ram_loss_reconcile_exact_persistent_locks",
+          "status": "PASS"
+        },
+        {
+          "name": "partial_legacy_cleanup_is_recoverable_inside_recorded_inodes",
+          "status": "PASS"
+        },
+        {
+          "name": "refuse_inode_without_deleting_either_lock",
+          "status": "PASS"
+        },
+        {
+          "name": "refuse_extra-child_without_deleting_either_lock",
+          "status": "PASS"
+        },
+        {
+          "name": "refuse_receipt-mode_without_deleting_either_lock",
+          "status": "PASS"
+        },
+        {
+          "name": "refuse_symlink_without_deleting_either_lock",
+          "status": "PASS"
+        },
+        {
+          "name": "old_unmarked_ram_work_requires_explicit_transition",
+          "status": "PASS"
+        }
+      ]
+    },
+    {
+      "artifactId": 10262547995,
+      "name": "r0013-r1-ram-ash.json",
+      "sha256": "f93b4bccee73287367f7af65e1a43d93d8a9a7392e3884e93579b0c4ff0fb644",
+      "status": "PASS_RAM_NAMESPACE_HANDOFF_AND_RESTORE",
+      "testCount": 10,
+      "tests": [
+        {
+          "name": "commit",
+          "status": "PASS"
+        },
+        {
+          "name": "rollback",
+          "status": "PASS"
+        },
+        {
+          "name": "extra-old-file",
+          "status": "PASS"
+        },
+        {
+          "name": "foreign-app-namespace",
+          "status": "PASS"
+        },
+        {
+          "name": "refuse-backup-tamper",
+          "status": "PASS"
+        },
+        {
+          "name": "refuse-new-symlink",
+          "status": "PASS"
+        },
+        {
+          "name": "refuse-new-operation",
+          "status": "PASS"
+        },
+        {
+          "name": "refuse-private-owner",
+          "status": "PASS"
+        },
+        {
+          "name": "resume-old-moved",
+          "status": "PASS"
+        },
+        {
+          "name": "resume-restoring",
+          "status": "PASS"
+        }
+      ]
+    },
+    {
+      "artifactId": 10262547995,
+      "name": "r0013-r1-ram-dash.json",
+      "sha256": "2e7d3958e9e4efbb27db7a8461fb2de6e99d6b8bb8fcd7ed5cab1fafc96a14d8",
+      "status": "PASS_RAM_NAMESPACE_HANDOFF_AND_RESTORE",
+      "testCount": 10,
+      "tests": [
+        {
+          "name": "commit",
+          "status": "PASS"
+        },
+        {
+          "name": "rollback",
+          "status": "PASS"
+        },
+        {
+          "name": "extra-old-file",
+          "status": "PASS"
+        },
+        {
+          "name": "foreign-app-namespace",
+          "status": "PASS"
+        },
+        {
+          "name": "refuse-backup-tamper",
+          "status": "PASS"
+        },
+        {
+          "name": "refuse-new-symlink",
+          "status": "PASS"
+        },
+        {
+          "name": "refuse-new-operation",
+          "status": "PASS"
+        },
+        {
+          "name": "refuse-private-owner",
+          "status": "PASS"
+        },
+        {
+          "name": "resume-old-moved",
+          "status": "PASS"
+        },
+        {
+          "name": "resume-restoring",
+          "status": "PASS"
+        }
+      ]
+    },
+    {
+      "artifactId": 10262496393,
+      "name": "r0013-preflight-bootstrap.json",
+      "sha256": "ef1e8b9f6ed21d4cea1dbbf6b0d44020156a6126ce679df927bc7ee6b9a0d8be",
+      "status": "PASS",
+      "testCount": 15,
+      "tests": [
+        {
+          "name": "clean-bootstrap-owned-ram-cleaned",
+          "status": "PASS"
+        },
+        {
+          "name": "existing-xray-preserved",
+          "status": "PASS"
+        },
+        {
+          "name": "bootstrap-hash-refusal-cleaned",
+          "status": "PASS"
+        },
+        {
+          "name": "occupied-namespace-preserved",
+          "status": "PASS"
+        },
+        {
+          "name": "symlink-namespace-preserved",
+          "status": "PASS"
+        },
+        {
+          "name": "nonram-refused-before-write",
+          "status": "PASS"
+        },
+        {
+          "name": "changed-owner-fails-closed-preserves-evidence",
+          "status": "PASS"
+        },
+        {
+          "name": "full-product-ownership-refused",
+          "status": "PASS"
+        },
+        {
+          "name": "installed-package-overwrite-refused",
+          "status": "PASS"
+        },
+        {
+          "name": "tampered-app-slot-refused",
+          "status": "PASS"
+        },
+        {
+          "name": "installer-private-opkg-ram-cleanup",
+          "status": "PASS"
+        },
+        {
+          "name": "installer-bad-hash-no-opkg-cleanup",
+          "status": "PASS"
+        },
+        {
+          "name": "installer-opkg-failure-cleanup",
+          "status": "PASS"
+        },
+        {
+          "name": "installer-missing-stat-format-before-write",
+          "status": "PASS"
+        },
+        {
+          "name": "installer-missing-stat-fs-before-write",
+          "status": "PASS"
+        }
+      ]
+    },
+    {
+      "artifactId": 10262496393,
+      "name": "r0013-preflight-ram-ash.json",
+      "sha256": "f93b4bccee73287367f7af65e1a43d93d8a9a7392e3884e93579b0c4ff0fb644",
+      "status": "PASS_RAM_NAMESPACE_HANDOFF_AND_RESTORE",
+      "testCount": 10,
+      "tests": [
+        {
+          "name": "commit",
+          "status": "PASS"
+        },
+        {
+          "name": "rollback",
+          "status": "PASS"
+        },
+        {
+          "name": "extra-old-file",
+          "status": "PASS"
+        },
+        {
+          "name": "foreign-app-namespace",
+          "status": "PASS"
+        },
+        {
+          "name": "refuse-backup-tamper",
+          "status": "PASS"
+        },
+        {
+          "name": "refuse-new-symlink",
+          "status": "PASS"
+        },
+        {
+          "name": "refuse-new-operation",
+          "status": "PASS"
+        },
+        {
+          "name": "refuse-private-owner",
+          "status": "PASS"
+        },
+        {
+          "name": "resume-old-moved",
+          "status": "PASS"
+        },
+        {
+          "name": "resume-restoring",
+          "status": "PASS"
+        }
+      ]
+    },
+    {
+      "artifactId": 10262496393,
+      "name": "r0013-preflight-ram-dash.json",
+      "sha256": "2e7d3958e9e4efbb27db7a8461fb2de6e99d6b8bb8fcd7ed5cab1fafc96a14d8",
+      "status": "PASS_RAM_NAMESPACE_HANDOFF_AND_RESTORE",
+      "testCount": 10,
+      "tests": [
+        {
+          "name": "commit",
+          "status": "PASS"
+        },
+        {
+          "name": "rollback",
+          "status": "PASS"
+        },
+        {
+          "name": "extra-old-file",
+          "status": "PASS"
+        },
+        {
+          "name": "foreign-app-namespace",
+          "status": "PASS"
+        },
+        {
+          "name": "refuse-backup-tamper",
+          "status": "PASS"
+        },
+        {
+          "name": "refuse-new-symlink",
+          "status": "PASS"
+        },
+        {
+          "name": "refuse-new-operation",
+          "status": "PASS"
+        },
+        {
+          "name": "refuse-private-owner",
+          "status": "PASS"
+        },
+        {
+          "name": "resume-old-moved",
+          "status": "PASS"
+        },
+        {
+          "name": "resume-restoring",
+          "status": "PASS"
+        }
+      ]
+    },
+    {
+      "artifactId": 10262448095,
+      "name": "r0013-platform-ash.json",
+      "sha256": "e4244cdca76e453e61db27885bd26f9609a781c2835b51ed1c30e581f19db8f2",
+      "status": "PASS_PLATFORM_ACTIVATION_AND_RESTORE",
+      "testCount": 16,
+      "tests": [
+        {
+          "name": "activate-restore",
+          "status": "PASS"
+        },
+        {
+          "name": "foreign-target",
+          "status": "PASS"
+        },
+        {
+          "name": "symlink-parent",
+          "status": "PASS"
+        },
+        {
+          "name": "tampered-payload",
+          "status": "PASS"
+        },
+        {
+          "name": "partial-4-resume",
+          "status": "PASS"
+        },
+        {
+          "name": "partial-4-rollback",
+          "status": "PASS"
+        },
+        {
+          "name": "partial-5-resume",
+          "status": "PASS"
+        },
+        {
+          "name": "partial-5-rollback",
+          "status": "PASS"
+        },
+        {
+          "name": "partial-6-resume",
+          "status": "PASS"
+        },
+        {
+          "name": "partial-6-rollback",
+          "status": "PASS"
+        },
+        {
+          "name": "staged-4-resume",
+          "status": "PASS"
+        },
+        {
+          "name": "staged-4-rollback",
+          "status": "PASS"
+        },
+        {
+          "name": "staged-5-resume",
+          "status": "PASS"
+        },
+        {
+          "name": "staged-5-rollback",
+          "status": "PASS"
+        },
+        {
+          "name": "staged-6-resume",
+          "status": "PASS"
+        },
+        {
+          "name": "staged-6-rollback",
+          "status": "PASS"
+        }
+      ]
+    },
+    {
+      "artifactId": 10262448095,
+      "name": "r0013-platform-dash.json",
+      "sha256": "0aee907e0ca54f115c27f220db5fdcfe559e41b4b4e8469b2bfad4dc721be695",
+      "status": "PASS_PLATFORM_ACTIVATION_AND_RESTORE",
+      "testCount": 16,
+      "tests": [
+        {
+          "name": "activate-restore",
+          "status": "PASS"
+        },
+        {
+          "name": "foreign-target",
+          "status": "PASS"
+        },
+        {
+          "name": "symlink-parent",
+          "status": "PASS"
+        },
+        {
+          "name": "tampered-payload",
+          "status": "PASS"
+        },
+        {
+          "name": "partial-4-resume",
+          "status": "PASS"
+        },
+        {
+          "name": "partial-4-rollback",
+          "status": "PASS"
+        },
+        {
+          "name": "partial-5-resume",
+          "status": "PASS"
+        },
+        {
+          "name": "partial-5-rollback",
+          "status": "PASS"
+        },
+        {
+          "name": "partial-6-resume",
+          "status": "PASS"
+        },
+        {
+          "name": "partial-6-rollback",
+          "status": "PASS"
+        },
+        {
+          "name": "staged-4-resume",
+          "status": "PASS"
+        },
+        {
+          "name": "staged-4-rollback",
+          "status": "PASS"
+        },
+        {
+          "name": "staged-5-resume",
+          "status": "PASS"
+        },
+        {
+          "name": "staged-5-rollback",
+          "status": "PASS"
+        },
+        {
+          "name": "staged-6-resume",
+          "status": "PASS"
+        },
+        {
+          "name": "staged-6-rollback",
+          "status": "PASS"
+        }
+      ]
+    },
+    {
+      "artifactId": 10262442741,
+      "name": "r0013-runtime-paths-ash.json",
+      "sha256": "a03360ab873c271558dbe2a760cb67e6ee56f219821490e206a0972e7cc0363c",
+      "status": "PASS_COMPILED_PATHS_GUARD_AND_LOCK_ADAPTER",
+      "testCount": 12,
+      "tests": [
+        {
+          "name": "exact_41_file_manifest_and_durable_xray_references",
+          "status": "PASS"
+        },
+        {
+          "name": "changed_native_auth_input_refused_before_transformation",
+          "status": "PASS"
+        },
+        {
+          "name": "every_compiled_shell_entrypoint_syntax",
+          "status": "PASS"
+        },
+        {
+          "name": "runtime_guard_fresh",
+          "status": "PASS"
+        },
+        {
+          "name": "runtime_guard_overrides",
+          "status": "PASS"
+        },
+        {
+          "name": "runtime_guard_removed-installer-tmpdir",
+          "status": "PASS"
+        },
+        {
+          "name": "runtime_guard_foreign-namespace",
+          "status": "PASS"
+        },
+        {
+          "name": "runtime_guard_foreign-root",
+          "status": "PASS"
+        },
+        {
+          "name": "runtime_guard_helper-symlink",
+          "status": "PASS"
+        },
+        {
+          "name": "runtime_guard_coownership",
+          "status": "PASS"
+        },
+        {
+          "name": "runtime_guard_legacy-fence",
+          "status": "PASS"
+        },
+        {
+          "name": "runtime_guard_global-lock",
+          "status": "PASS"
+        }
+      ]
+    },
+    {
+      "artifactId": 10262442741,
+      "name": "r0013-runtime-paths-dash.json",
+      "sha256": "10e7df074022ac32927ce25c3641d94fe79d2fc049f0684ccb0ac17d7422e7c0",
+      "status": "PASS_COMPILED_PATHS_GUARD_AND_LOCK_ADAPTER",
+      "testCount": 12,
+      "tests": [
+        {
+          "name": "exact_41_file_manifest_and_durable_xray_references",
+          "status": "PASS"
+        },
+        {
+          "name": "changed_native_auth_input_refused_before_transformation",
+          "status": "PASS"
+        },
+        {
+          "name": "every_compiled_shell_entrypoint_syntax",
+          "status": "PASS"
+        },
+        {
+          "name": "runtime_guard_fresh",
+          "status": "PASS"
+        },
+        {
+          "name": "runtime_guard_overrides",
+          "status": "PASS"
+        },
+        {
+          "name": "runtime_guard_removed-installer-tmpdir",
+          "status": "PASS"
+        },
+        {
+          "name": "runtime_guard_foreign-namespace",
+          "status": "PASS"
+        },
+        {
+          "name": "runtime_guard_foreign-root",
+          "status": "PASS"
+        },
+        {
+          "name": "runtime_guard_helper-symlink",
+          "status": "PASS"
+        },
+        {
+          "name": "runtime_guard_coownership",
+          "status": "PASS"
+        },
+        {
+          "name": "runtime_guard_legacy-fence",
+          "status": "PASS"
+        },
+        {
+          "name": "runtime_guard_global-lock",
+          "status": "PASS"
+        }
+      ]
+    },
+    {
+      "artifactId": 10262292708,
+      "name": "r0013-ram-ash.json",
+      "sha256": "9a40f1c6e30a57927b5690ee9d613a0ee10c27e1f48fbb85d7dc6c635e9a6e3c",
+      "status": "PASS_BOUNDED_PRIMITIVE",
+      "testCount": 19,
+      "tests": [
+        {
+          "name": "clean_real_tmpfs_and_no_persistent_write",
+          "status": "PASS"
+        },
+        {
+          "name": "namespace_idempotence",
+          "status": "PASS"
+        },
+        {
+          "name": "refuse_symlink_namespace_without_mutation",
+          "status": "PASS"
+        },
+        {
+          "name": "refuse_unowned_namespace_without_mutation",
+          "status": "PASS"
+        },
+        {
+          "name": "refuse_wrong_mode_without_repair",
+          "status": "PASS"
+        },
+        {
+          "name": "refuse_non_tmpfs_before_namespace_creation",
+          "status": "PASS"
+        },
+        {
+          "name": "live_owner_blocks_second_owner_and_foreign_release",
+          "status": "PASS"
+        },
+        {
+          "name": "dead_owner_reclaimed_with_serialized_admission",
+          "status": "PASS"
+        },
+        {
+          "name": "reused_pid_starttime_does_not_block",
+          "status": "PASS"
+        },
+        {
+          "name": "legacy_global_fence_is_read_only",
+          "status": "PASS"
+        },
+        {
+          "name": "legacy_request_fence_is_read_only",
+          "status": "PASS"
+        },
+        {
+          "name": "updater_request_and_application_share_admission",
+          "status": "PASS"
+        },
+        {
+          "name": "application_global_owner_blocks_updater",
+          "status": "PASS"
+        },
+        {
+          "name": "refuse_symlink_lock_without_cleanup",
+          "status": "PASS"
+        },
+        {
+          "name": "refuse_malformed_lock_without_cleanup",
+          "status": "PASS"
+        },
+        {
+          "name": "refuse_unexpected-child_lock_without_cleanup",
+          "status": "PASS"
+        },
+        {
+          "name": "abandoned_admission_requires_explicit_recovery",
+          "status": "PASS"
+        },
+        {
+          "name": "admission_directory_collision_no_nested_claim",
+          "status": "PASS"
+        },
+        {
+          "name": "twelve_concurrent_contenders_exactly_one_owner",
+          "status": "PASS"
+        }
+      ]
+    },
+    {
+      "artifactId": 10262292708,
+      "name": "r0013-ram-dash.json",
+      "sha256": "6de480ca72c0911f0166314e352ba87c4be238ffe8d08beaa192825ab5dd6b3e",
+      "status": "PASS_BOUNDED_PRIMITIVE",
+      "testCount": 19,
+      "tests": [
+        {
+          "name": "clean_real_tmpfs_and_no_persistent_write",
+          "status": "PASS"
+        },
+        {
+          "name": "namespace_idempotence",
+          "status": "PASS"
+        },
+        {
+          "name": "refuse_symlink_namespace_without_mutation",
+          "status": "PASS"
+        },
+        {
+          "name": "refuse_unowned_namespace_without_mutation",
+          "status": "PASS"
+        },
+        {
+          "name": "refuse_wrong_mode_without_repair",
+          "status": "PASS"
+        },
+        {
+          "name": "refuse_non_tmpfs_before_namespace_creation",
+          "status": "PASS"
+        },
+        {
+          "name": "live_owner_blocks_second_owner_and_foreign_release",
+          "status": "PASS"
+        },
+        {
+          "name": "dead_owner_reclaimed_with_serialized_admission",
+          "status": "PASS"
+        },
+        {
+          "name": "reused_pid_starttime_does_not_block",
+          "status": "PASS"
+        },
+        {
+          "name": "legacy_global_fence_is_read_only",
+          "status": "PASS"
+        },
+        {
+          "name": "legacy_request_fence_is_read_only",
+          "status": "PASS"
+        },
+        {
+          "name": "updater_request_and_application_share_admission",
+          "status": "PASS"
+        },
+        {
+          "name": "application_global_owner_blocks_updater",
+          "status": "PASS"
+        },
+        {
+          "name": "refuse_symlink_lock_without_cleanup",
+          "status": "PASS"
+        },
+        {
+          "name": "refuse_malformed_lock_without_cleanup",
+          "status": "PASS"
+        },
+        {
+          "name": "refuse_unexpected-child_lock_without_cleanup",
+          "status": "PASS"
+        },
+        {
+          "name": "abandoned_admission_requires_explicit_recovery",
+          "status": "PASS"
+        },
+        {
+          "name": "admission_directory_collision_no_nested_claim",
+          "status": "PASS"
+        },
+        {
+          "name": "twelve_concurrent_contenders_exactly_one_owner",
+          "status": "PASS"
+        }
+      ]
+    },
+    {
+      "artifactId": 10262185625,
+      "name": "r0013-daemon-stop-ash.json",
+      "sha256": "fa51dc8bb6b4cecbf06a931903af41e218d1e8f6fc0ce2f6b05aff7f3333bcd3",
+      "status": "PASS_REAL_PREPARED_DAEMON_IDLE_STOP",
+      "testCount": 4,
+      "tests": [
+        {
+          "name": "TERM",
+          "status": "PASS"
+        },
+        {
+          "name": "HUP",
+          "status": "PASS"
+        },
+        {
+          "name": "INT",
+          "status": "PASS"
+        },
+        {
+          "name": "S24-stop-role",
+          "status": "PASS"
+        }
+      ]
+    },
+    {
+      "artifactId": 10262185625,
+      "name": "r0013-daemon-stop-dash.json",
+      "sha256": "4cfc0c10e1d7f51fbfdd987cc226d9da3da2e57659a25586fd3cd207a59ebbea",
+      "status": "PASS_REAL_PREPARED_DAEMON_IDLE_STOP",
+      "testCount": 4,
+      "tests": [
+        {
+          "name": "TERM",
+          "status": "PASS"
+        },
+        {
+          "name": "HUP",
+          "status": "PASS"
+        },
+        {
+          "name": "INT",
+          "status": "PASS"
+        },
+        {
+          "name": "S24-stop-role",
+          "status": "PASS"
+        }
+      ]
+    },
+    {
+      "artifactId": 10262141473,
+      "name": "r0013-completion-dash.json",
+      "sha256": "baf3151ccbe7be2ef9e1ecab23a5a5053b707e56ee4c145e6b4f933c46dd37eb",
+      "status": "PASS_BOUNDED_COMPLETION",
+      "testCount": 5,
+      "tests": [
+        {
+          "name": "live-rollback-cleanup",
+          "status": "PASS"
+        },
+        {
+          "name": "early-anchor",
+          "status": "PASS"
+        },
+        {
+          "name": "early-anchor-old-s23-boot",
+          "status": "PASS"
+        },
+        {
+          "name": "empty-namespace-outsider",
+          "status": "PASS"
+        },
+        {
+          "name": "old-s23-foreign-child",
+          "status": "PASS"
+        }
+      ]
+    },
+    {
+      "artifactId": 10262141473,
+      "name": "r0013-completion-ash.json",
+      "sha256": "09ae7078a59a7597af6b0871b1c29991cd1249964f4c18244eabd88ffb0b53c1",
+      "status": "PASS_BOUNDED_COMPLETION",
+      "testCount": 5,
+      "tests": [
+        {
+          "name": "live-rollback-cleanup",
+          "status": "PASS"
+        },
+        {
+          "name": "early-anchor",
+          "status": "PASS"
+        },
+        {
+          "name": "early-anchor-old-s23-boot",
+          "status": "PASS"
+        },
+        {
+          "name": "empty-namespace-outsider",
+          "status": "PASS"
+        },
+        {
+          "name": "old-s23-foreign-child",
+          "status": "PASS"
+        }
+      ]
+    },
+    {
+      "artifactId": 10262141473,
+      "name": "r0013-completion-p99-diagnostic.json",
+      "sha256": "45702e8535e8bc09498ca715ed652fcea3f94030531392ced18d530816189130",
+      "status": "PASS_BOUNDED_COMPLETION",
+      "testCount": 1,
+      "tests": [
+        {
+          "name": "old-s23-foreign-child",
+          "status": "PASS"
+        }
+      ]
+    },
+    {
+      "artifactId": 10262098853,
+      "name": "r0013-runtime-trees-ash.json",
+      "sha256": "ff47e0599c3dc960ffa476274481583a3174fe86847fcc8701b64af21e517749",
+      "status": "PASS_RUNTIME_TREE_HANDOFF",
+      "testCount": 11,
+      "tests": [
+        {
+          "name": "promote-restore",
+          "status": "PASS"
+        },
+        {
+          "name": "foreign-symlink",
+          "status": "PASS"
+        },
+        {
+          "name": "foreign-owner",
+          "status": "PASS"
+        },
+        {
+          "name": "foreign-live-pid",
+          "status": "PASS"
+        },
+        {
+          "name": "prepared-rollback",
+          "status": "PASS"
+        },
+        {
+          "name": "partial-backup",
+          "status": "PASS"
+        },
+        {
+          "name": "partial-destination",
+          "status": "PASS"
+        },
+        {
+          "name": "partial-original-removal",
+          "status": "PASS"
+        },
+        {
+          "name": "whole-original-removed",
+          "status": "PASS"
+        },
+        {
+          "name": "partial-restore-candidate",
+          "status": "PASS"
+        },
+        {
+          "name": "restore-rename-before-receipt",
+          "status": "PASS"
+        }
+      ]
+    },
+    {
+      "artifactId": 10262098853,
+      "name": "r0013-runtime-trees-dash.json",
+      "sha256": "db3f8e500b5b5be8b098b8bb7f492ab6526aad1059c8706f6bb8293c6bbbd7a5",
+      "status": "PASS_RUNTIME_TREE_HANDOFF",
+      "testCount": 11,
+      "tests": [
+        {
+          "name": "promote-restore",
+          "status": "PASS"
+        },
+        {
+          "name": "foreign-symlink",
+          "status": "PASS"
+        },
+        {
+          "name": "foreign-owner",
+          "status": "PASS"
+        },
+        {
+          "name": "foreign-live-pid",
+          "status": "PASS"
+        },
+        {
+          "name": "prepared-rollback",
+          "status": "PASS"
+        },
+        {
+          "name": "partial-backup",
+          "status": "PASS"
+        },
+        {
+          "name": "partial-destination",
+          "status": "PASS"
+        },
+        {
+          "name": "partial-original-removal",
+          "status": "PASS"
+        },
+        {
+          "name": "whole-original-removed",
+          "status": "PASS"
+        },
+        {
+          "name": "partial-restore-candidate",
+          "status": "PASS"
+        },
+        {
+          "name": "restore-rename-before-receipt",
+          "status": "PASS"
+        }
+      ]
+    },
+    {
+      "artifactId": 10262087883,
+      "name": "r0013-recovery-ash.json",
+      "sha256": "fc0843ae42409df1c15e0b01f330837e777010e8b8921764f926af5f60323c85",
+      "status": "PASS_BOUNDED_RECOVERY",
+      "testCount": 7,
+      "tests": [
+        {
+          "name": "finalize",
+          "status": "PASS"
+        },
+        {
+          "name": "legacy-status-foreign",
+          "status": "PASS"
+        },
+        {
+          "name": "legacy-ready-symlink",
+          "status": "PASS"
+        },
+        {
+          "name": "dead-owner",
+          "status": "PASS"
+        },
+        {
+          "name": "ram-loss",
+          "status": "PASS"
+        },
+        {
+          "name": "foreign-lock",
+          "status": "PASS"
+        },
+        {
+          "name": "foreign-slot",
+          "status": "PASS"
+        }
+      ]
+    },
+    {
+      "artifactId": 10262087883,
+      "name": "r0013-recovery-dash.json",
+      "sha256": "94ab237d1f16672cc943bcb1d7dca91cd0cf2f5784fa1551229925963ef318ea",
+      "status": "PASS_BOUNDED_RECOVERY",
+      "testCount": 7,
+      "tests": [
+        {
+          "name": "finalize",
+          "status": "PASS"
+        },
+        {
+          "name": "legacy-status-foreign",
+          "status": "PASS"
+        },
+        {
+          "name": "legacy-ready-symlink",
+          "status": "PASS"
+        },
+        {
+          "name": "dead-owner",
+          "status": "PASS"
+        },
+        {
+          "name": "ram-loss",
+          "status": "PASS"
+        },
+        {
+          "name": "foreign-lock",
+          "status": "PASS"
+        },
+        {
+          "name": "foreign-slot",
+          "status": "PASS"
+        }
+      ]
+    },
+    {
+      "artifactId": 10261988008,
+      "name": "r0013-r1-admission-ash.json",
+      "sha256": "0751a6f83c4e7301562ac7940e46df834fb44018eaa669d40c6204fe4acd0def",
+      "status": "PASS_READ_ONLY_ADMISSION",
+      "testCount": 12,
+      "tests": [
+        {
+          "name": "exact_live_r1_signed_transaction_admitted_read_only",
+          "status": "PASS"
+        },
+        {
+          "name": "exact_live_r1_cli_without_json_is_still_supported",
+          "status": "PASS"
+        },
+        {
+          "name": "unrecognized_update_argument_is_refused",
+          "status": "PASS"
+        },
+        {
+          "name": "wrong-lock-owner",
+          "status": "PASS"
+        },
+        {
+          "name": "wrong-operation",
+          "status": "PASS"
+        },
+        {
+          "name": "wrong-phase",
+          "status": "PASS"
+        },
+        {
+          "name": "tampered-slot",
+          "status": "PASS"
+        },
+        {
+          "name": "changed-engine",
+          "status": "PASS"
+        },
+        {
+          "name": "foreign-coowner",
+          "status": "PASS"
+        },
+        {
+          "name": "absolute-current",
+          "status": "PASS"
+        },
+        {
+          "name": "world-writable-work",
+          "status": "PASS"
+        },
+        {
+          "name": "unrelated_caller_cannot_borrow_live_r1_locks",
+          "status": "PASS"
+        }
+      ]
+    },
+    {
+      "artifactId": 10261988008,
+      "name": "r0013-r1-admission-dash.json",
+      "sha256": "e0bdb73675ac5b95ddf7b9a56cedd4b984c6a7bc9a54d19c9957990a6b8be635",
+      "status": "PASS_READ_ONLY_ADMISSION",
+      "testCount": 12,
+      "tests": [
+        {
+          "name": "exact_live_r1_signed_transaction_admitted_read_only",
+          "status": "PASS"
+        },
+        {
+          "name": "exact_live_r1_cli_without_json_is_still_supported",
+          "status": "PASS"
+        },
+        {
+          "name": "unrecognized_update_argument_is_refused",
+          "status": "PASS"
+        },
+        {
+          "name": "wrong-lock-owner",
+          "status": "PASS"
+        },
+        {
+          "name": "wrong-operation",
+          "status": "PASS"
+        },
+        {
+          "name": "wrong-phase",
+          "status": "PASS"
+        },
+        {
+          "name": "tampered-slot",
+          "status": "PASS"
+        },
+        {
+          "name": "changed-engine",
+          "status": "PASS"
+        },
+        {
+          "name": "foreign-coowner",
+          "status": "PASS"
+        },
+        {
+          "name": "absolute-current",
+          "status": "PASS"
+        },
+        {
+          "name": "world-writable-work",
+          "status": "PASS"
+        },
+        {
+          "name": "unrelated_caller_cannot_borrow_live_r1_locks",
+          "status": "PASS"
+        }
+      ]
+    },
+    {
+      "artifactId": 10261852835,
+      "name": "r0013-xray-rollback-dash.json",
+      "sha256": "6b5a0c9389e088b42aa696bff2fbdb670b7cefada83d283eae6dfb9036148330",
+      "status": "PASS_SCOPED_XRAY_ROLLBACK",
+      "testCount": 16,
+      "tests": [
+        {
+          "name": "missing-backup",
+          "status": "PASS"
+        },
+        {
+          "name": "wrong-backup-path",
+          "status": "PASS"
+        },
+        {
+          "name": "backup-symlink",
+          "status": "PASS"
+        },
+        {
+          "name": "backup-sha-mismatch",
+          "status": "PASS"
+        },
+        {
+          "name": "stop-refused",
+          "status": "PASS"
+        },
+        {
+          "name": "foreign-current",
+          "status": "PASS"
+        },
+        {
+          "name": "foreign-new",
+          "status": "PASS"
+        },
+        {
+          "name": "runtime-parent-symlink",
+          "status": "PASS"
+        },
+        {
+          "name": "no-active-transaction",
+          "status": "PASS"
+        },
+        {
+          "name": "valid-stopped",
+          "status": "PASS"
+        },
+        {
+          "name": "valid-running",
+          "status": "PASS"
+        },
+        {
+          "name": "partial-owned-new",
+          "status": "PASS"
+        },
+        {
+          "name": "current-absent",
+          "status": "PASS"
+        },
+        {
+          "name": "restart-failed",
+          "status": "PASS"
+        },
+        {
+          "name": "dispatch-rollback-before-release",
+          "status": "PASS"
+        },
+        {
+          "name": "dispatch-recovery-failure-preserves-fence",
+          "status": "PASS"
+        }
+      ]
+    },
+    {
+      "artifactId": 10261852835,
+      "name": "r0013-xray-rollback-ash.json",
+      "sha256": "bf9002fb81dd0064d28c33e72026e816eaf474599e557d255f8bd2877e793172",
+      "status": "PASS_SCOPED_XRAY_ROLLBACK",
+      "testCount": 16,
+      "tests": [
+        {
+          "name": "missing-backup",
+          "status": "PASS"
+        },
+        {
+          "name": "wrong-backup-path",
+          "status": "PASS"
+        },
+        {
+          "name": "backup-symlink",
+          "status": "PASS"
+        },
+        {
+          "name": "backup-sha-mismatch",
+          "status": "PASS"
+        },
+        {
+          "name": "stop-refused",
+          "status": "PASS"
+        },
+        {
+          "name": "foreign-current",
+          "status": "PASS"
+        },
+        {
+          "name": "foreign-new",
+          "status": "PASS"
+        },
+        {
+          "name": "runtime-parent-symlink",
+          "status": "PASS"
+        },
+        {
+          "name": "no-active-transaction",
+          "status": "PASS"
+        },
+        {
+          "name": "valid-stopped",
+          "status": "PASS"
+        },
+        {
+          "name": "valid-running",
+          "status": "PASS"
+        },
+        {
+          "name": "partial-owned-new",
+          "status": "PASS"
+        },
+        {
+          "name": "current-absent",
+          "status": "PASS"
+        },
+        {
+          "name": "restart-failed",
+          "status": "PASS"
+        },
+        {
+          "name": "dispatch-rollback-before-release",
+          "status": "PASS"
+        },
+        {
+          "name": "dispatch-recovery-failure-preserves-fence",
+          "status": "PASS"
+        }
+      ]
+    },
+    {
+      "artifactId": 10261618068,
+      "name": "r0013-service-ash.json",
+      "sha256": "4eb416acfeec1da8b3bd97d13d6fdfb5d04e4b04b54447b9404d93e7fa27eeda",
+      "status": "PASS_SCOPED_SERVICE_AND_PUBLICATION",
+      "testCount": 21,
+      "tests": [
+        {
+          "name": "actual-linux-daemon-web",
+          "status": "PASS"
+        },
+        {
+          "name": "actual-linux-daemon-auth",
+          "status": "PASS"
+        },
+        {
+          "name": "publication-negative-status-before-publication",
+          "status": "PASS"
+        },
+        {
+          "name": "publication-negative-invalid-action",
+          "status": "PASS"
+        },
+        {
+          "name": "publication-negative-ambiguous-lan",
+          "status": "PASS"
+        },
+        {
+          "name": "real-s24-start-status-restart-stop-and-publication",
+          "status": "PASS"
+        },
+        {
+          "name": "exact-owned-web-stops",
+          "status": "PASS"
+        },
+        {
+          "name": "pid-contract-refuses-writable",
+          "status": "PASS"
+        },
+        {
+          "name": "pid-contract-refuses-symlink",
+          "status": "PASS"
+        },
+        {
+          "name": "pid-contract-refuses-hardlink",
+          "status": "PASS"
+        },
+        {
+          "name": "pid-contract-refuses-public-parent",
+          "status": "PASS"
+        },
+        {
+          "name": "web-refuses-config-suffix",
+          "status": "PASS"
+        },
+        {
+          "name": "web-refuses-validator",
+          "status": "PASS"
+        },
+        {
+          "name": "web-refuses-extra-arg",
+          "status": "PASS"
+        },
+        {
+          "name": "web-refuses-foreign-exe",
+          "status": "PASS"
+        },
+        {
+          "name": "web-refuses-unrecorded",
+          "status": "PASS"
+        },
+        {
+          "name": "duplicate-web-fails-closed",
+          "status": "PASS"
+        },
+        {
+          "name": "native-auth-exact",
+          "status": "PASS"
+        },
+        {
+          "name": "native-auth-config-suffix",
+          "status": "PASS"
+        },
+        {
+          "name": "native-auth-foreign-exe",
+          "status": "PASS"
+        },
+        {
+          "name": "publication-respects-live-updater-request",
+          "status": "PASS"
+        }
+      ]
+    },
+    {
+      "artifactId": 10261618068,
+      "name": "r0013-service-dash.json",
+      "sha256": "3483d5ccac1d7fa7d32c633560910badcbed9d42f983906d422503286a08b8a0",
+      "status": "PASS_SCOPED_SERVICE_AND_PUBLICATION",
+      "testCount": 21,
+      "tests": [
+        {
+          "name": "actual-linux-daemon-web",
+          "status": "PASS"
+        },
+        {
+          "name": "actual-linux-daemon-auth",
+          "status": "PASS"
+        },
+        {
+          "name": "publication-negative-status-before-publication",
+          "status": "PASS"
+        },
+        {
+          "name": "publication-negative-invalid-action",
+          "status": "PASS"
+        },
+        {
+          "name": "publication-negative-ambiguous-lan",
+          "status": "PASS"
+        },
+        {
+          "name": "real-s24-start-status-restart-stop-and-publication",
+          "status": "PASS"
+        },
+        {
+          "name": "exact-owned-web-stops",
+          "status": "PASS"
+        },
+        {
+          "name": "pid-contract-refuses-writable",
+          "status": "PASS"
+        },
+        {
+          "name": "pid-contract-refuses-symlink",
+          "status": "PASS"
+        },
+        {
+          "name": "pid-contract-refuses-hardlink",
+          "status": "PASS"
+        },
+        {
+          "name": "pid-contract-refuses-public-parent",
+          "status": "PASS"
+        },
+        {
+          "name": "web-refuses-config-suffix",
+          "status": "PASS"
+        },
+        {
+          "name": "web-refuses-validator",
+          "status": "PASS"
+        },
+        {
+          "name": "web-refuses-extra-arg",
+          "status": "PASS"
+        },
+        {
+          "name": "web-refuses-foreign-exe",
+          "status": "PASS"
+        },
+        {
+          "name": "web-refuses-unrecorded",
+          "status": "PASS"
+        },
+        {
+          "name": "duplicate-web-fails-closed",
+          "status": "PASS"
+        },
+        {
+          "name": "native-auth-exact",
+          "status": "PASS"
+        },
+        {
+          "name": "native-auth-config-suffix",
+          "status": "PASS"
+        },
+        {
+          "name": "native-auth-foreign-exe",
+          "status": "PASS"
+        },
+        {
+          "name": "publication-respects-live-updater-request",
+          "status": "PASS"
+        }
+      ]
+    },
+    {
+      "artifactId": 10261546421,
+      "name": "r0013-native-auth-ash.json",
+      "sha256": "e45c89b56098e905fdc5fcdf2ce5a10a4cffbc734646080f41bf60f819cd2f91",
+      "status": "PASS_NATIVE_HTTP_CGI_AND_SESSION_BOUNDARIES",
+      "testCount": 50,
+      "tests": [
+        {
+          "name": "cgi-empty-path",
+          "status": "PASS"
+        },
+        {
+          "name": "cgi-shadowed-stat-path",
+          "status": "PASS"
+        },
+        {
+          "name": "valid-native-challenge-response-and-private-session",
+          "status": "PASS"
+        },
+        {
+          "name": "session-refresh-and-expiry",
+          "status": "PASS"
+        },
+        {
+          "name": "native-refusal-wrong-password",
+          "status": "PASS"
+        },
+        {
+          "name": "native-refusal-deny-post",
+          "status": "PASS"
+        },
+        {
+          "name": "native-refusal-fake-200",
+          "status": "PASS"
+        },
+        {
+          "name": "native-refusal-unavailable",
+          "status": "PASS"
+        },
+        {
+          "name": "native-refusal-missing-challenge",
+          "status": "PASS"
+        },
+        {
+          "name": "native-refusal-duplicate-realm",
+          "status": "PASS"
+        },
+        {
+          "name": "native-refusal-duplicate-challenge",
+          "status": "PASS"
+        },
+        {
+          "name": "native-refusal-duplicate-second-realm",
+          "status": "PASS"
+        },
+        {
+          "name": "login-malformed-body-12",
+          "status": "PASS"
+        },
+        {
+          "name": "login-malformed-body-13",
+          "status": "PASS"
+        },
+        {
+          "name": "login-malformed-body-14",
+          "status": "PASS"
+        },
+        {
+          "name": "login-malformed-body-15",
+          "status": "PASS"
+        },
+        {
+          "name": "login-malformed-body-16",
+          "status": "PASS"
+        },
+        {
+          "name": "login-method-guard",
+          "status": "PASS"
+        },
+        {
+          "name": "unauthenticated-api-broray/info.cgi",
+          "status": "PASS"
+        },
+        {
+          "name": "unauthenticated-api-broray/update-check.cgi",
+          "status": "PASS"
+        },
+        {
+          "name": "unauthenticated-api-broray/update-start.cgi",
+          "status": "PASS"
+        },
+        {
+          "name": "unauthenticated-api-broray/update-status.cgi",
+          "status": "PASS"
+        },
+        {
+          "name": "unauthenticated-api-home/summary.cgi",
+          "status": "PASS"
+        },
+        {
+          "name": "unauthenticated-api-keenetic/check-upstream.cgi",
+          "status": "PASS"
+        },
+        {
+          "name": "unauthenticated-api-keenetic/create.cgi",
+          "status": "PASS"
+        },
+        {
+          "name": "unauthenticated-api-keenetic/repair.cgi",
+          "status": "PASS"
+        },
+        {
+          "name": "unauthenticated-api-keenetic/status.cgi",
+          "status": "PASS"
+        },
+        {
+          "name": "unauthenticated-api-keenetic/sync-description.cgi",
+          "status": "PASS"
+        },
+        {
+          "name": "unauthenticated-api-servers/activate.cgi",
+          "status": "PASS"
+        },
+        {
+          "name": "unauthenticated-api-servers/auto-switch-save.cgi",
+          "status": "PASS"
+        },
+        {
+          "name": "unauthenticated-api-servers/auto-switch-status.cgi",
+          "status": "PASS"
+        },
+        {
+          "name": "unauthenticated-api-servers/check.cgi",
+          "status": "PASS"
+        },
+        {
+          "name": "unauthenticated-api-servers/delete.cgi",
+          "status": "PASS"
+        },
+        {
+          "name": "unauthenticated-api-servers/details.cgi",
+          "status": "PASS"
+        },
+        {
+          "name": "unauthenticated-api-servers/import.cgi",
+          "status": "PASS"
+        },
+        {
+          "name": "unauthenticated-api-servers/summary.cgi",
+          "status": "PASS"
+        },
+        {
+          "name": "unauthenticated-api-session.cgi",
+          "status": "PASS"
+        },
+        {
+          "name": "unauthenticated-api-subscriptions/create.cgi",
+          "status": "PASS"
+        },
+        {
+          "name": "unauthenticated-api-subscriptions/delete.cgi",
+          "status": "PASS"
+        },
+        {
+          "name": "unauthenticated-api-subscriptions/details.cgi",
+          "status": "PASS"
+        },
+        {
+          "name": "unauthenticated-api-subscriptions/list.cgi",
+          "status": "PASS"
+        },
+        {
+          "name": "unauthenticated-api-subscriptions/refresh.cgi",
+          "status": "PASS"
+        },
+        {
+          "name": "unauthenticated-api-subscriptions/servers.cgi",
+          "status": "PASS"
+        },
+        {
+          "name": "unauthenticated-api-subscriptions/summary.cgi",
+          "status": "PASS"
+        },
+        {
+          "name": "unauthenticated-api-xray/install.cgi",
+          "status": "PASS"
+        },
+        {
+          "name": "unauthenticated-api-xray/operation-status.cgi",
+          "status": "PASS"
+        },
+        {
+          "name": "unauthenticated-api-xray/status.cgi",
+          "status": "PASS"
+        },
+        {
+          "name": "unauthenticated-api-xray/update-check.cgi",
+          "status": "PASS"
+        },
+        {
+          "name": "unauthenticated-api-xray/update.cgi",
+          "status": "PASS"
+        },
+        {
+          "name": "logout-invalidates-session",
+          "status": "PASS"
+        }
+      ]
+    },
+    {
+      "artifactId": 10261546421,
+      "name": "r0013-native-auth-dash.json",
+      "sha256": "adf924f0ccbd15cedf48db736bc11d1c71a386aad4641cf3f0a3e783b0a3277e",
+      "status": "PASS_NATIVE_HTTP_CGI_AND_SESSION_BOUNDARIES",
+      "testCount": 50,
+      "tests": [
+        {
+          "name": "cgi-empty-path",
+          "status": "PASS"
+        },
+        {
+          "name": "cgi-shadowed-stat-path",
+          "status": "PASS"
+        },
+        {
+          "name": "valid-native-challenge-response-and-private-session",
+          "status": "PASS"
+        },
+        {
+          "name": "session-refresh-and-expiry",
+          "status": "PASS"
+        },
+        {
+          "name": "native-refusal-wrong-password",
+          "status": "PASS"
+        },
+        {
+          "name": "native-refusal-deny-post",
+          "status": "PASS"
+        },
+        {
+          "name": "native-refusal-fake-200",
+          "status": "PASS"
+        },
+        {
+          "name": "native-refusal-unavailable",
+          "status": "PASS"
+        },
+        {
+          "name": "native-refusal-missing-challenge",
+          "status": "PASS"
+        },
+        {
+          "name": "native-refusal-duplicate-realm",
+          "status": "PASS"
+        },
+        {
+          "name": "native-refusal-duplicate-challenge",
+          "status": "PASS"
+        },
+        {
+          "name": "native-refusal-duplicate-second-realm",
+          "status": "PASS"
+        },
+        {
+          "name": "login-malformed-body-12",
+          "status": "PASS"
+        },
+        {
+          "name": "login-malformed-body-13",
+          "status": "PASS"
+        },
+        {
+          "name": "login-malformed-body-14",
+          "status": "PASS"
+        },
+        {
+          "name": "login-malformed-body-15",
+          "status": "PASS"
+        },
+        {
+          "name": "login-malformed-body-16",
+          "status": "PASS"
+        },
+        {
+          "name": "login-method-guard",
+          "status": "PASS"
+        },
+        {
+          "name": "unauthenticated-api-broray/info.cgi",
+          "status": "PASS"
+        },
+        {
+          "name": "unauthenticated-api-broray/update-check.cgi",
+          "status": "PASS"
+        },
+        {
+          "name": "unauthenticated-api-broray/update-start.cgi",
+          "status": "PASS"
+        },
+        {
+          "name": "unauthenticated-api-broray/update-status.cgi",
+          "status": "PASS"
+        },
+        {
+          "name": "unauthenticated-api-home/summary.cgi",
+          "status": "PASS"
+        },
+        {
+          "name": "unauthenticated-api-keenetic/check-upstream.cgi",
+          "status": "PASS"
+        },
+        {
+          "name": "unauthenticated-api-keenetic/create.cgi",
+          "status": "PASS"
+        },
+        {
+          "name": "unauthenticated-api-keenetic/repair.cgi",
+          "status": "PASS"
+        },
+        {
+          "name": "unauthenticated-api-keenetic/status.cgi",
+          "status": "PASS"
+        },
+        {
+          "name": "unauthenticated-api-keenetic/sync-description.cgi",
+          "status": "PASS"
+        },
+        {
+          "name": "unauthenticated-api-servers/activate.cgi",
+          "status": "PASS"
+        },
+        {
+          "name": "unauthenticated-api-servers/auto-switch-save.cgi",
+          "status": "PASS"
+        },
+        {
+          "name": "unauthenticated-api-servers/auto-switch-status.cgi",
+          "status": "PASS"
+        },
+        {
+          "name": "unauthenticated-api-servers/check.cgi",
+          "status": "PASS"
+        },
+        {
+          "name": "unauthenticated-api-servers/delete.cgi",
+          "status": "PASS"
+        },
+        {
+          "name": "unauthenticated-api-servers/details.cgi",
+          "status": "PASS"
+        },
+        {
+          "name": "unauthenticated-api-servers/import.cgi",
+          "status": "PASS"
+        },
+        {
+          "name": "unauthenticated-api-servers/summary.cgi",
+          "status": "PASS"
+        },
+        {
+          "name": "unauthenticated-api-session.cgi",
+          "status": "PASS"
+        },
+        {
+          "name": "unauthenticated-api-subscriptions/create.cgi",
+          "status": "PASS"
+        },
+        {
+          "name": "unauthenticated-api-subscriptions/delete.cgi",
+          "status": "PASS"
+        },
+        {
+          "name": "unauthenticated-api-subscriptions/details.cgi",
+          "status": "PASS"
+        },
+        {
+          "name": "unauthenticated-api-subscriptions/list.cgi",
+          "status": "PASS"
+        },
+        {
+          "name": "unauthenticated-api-subscriptions/refresh.cgi",
+          "status": "PASS"
+        },
+        {
+          "name": "unauthenticated-api-subscriptions/servers.cgi",
+          "status": "PASS"
+        },
+        {
+          "name": "unauthenticated-api-subscriptions/summary.cgi",
+          "status": "PASS"
+        },
+        {
+          "name": "unauthenticated-api-xray/install.cgi",
+          "status": "PASS"
+        },
+        {
+          "name": "unauthenticated-api-xray/operation-status.cgi",
+          "status": "PASS"
+        },
+        {
+          "name": "unauthenticated-api-xray/status.cgi",
+          "status": "PASS"
+        },
+        {
+          "name": "unauthenticated-api-xray/update-check.cgi",
+          "status": "PASS"
+        },
+        {
+          "name": "unauthenticated-api-xray/update.cgi",
+          "status": "PASS"
+        },
+        {
+          "name": "logout-invalidates-session",
+          "status": "PASS"
+        }
+      ]
+    },
+    {
+      "artifactId": 10261467202,
+      "name": "r0013-live-entry-ash.json",
+      "sha256": "d95d543c2857626ae890ee1b25aaf9dc8493beb3d309a60d86790baf7cb1e7ad",
+      "status": "PASS_LIVE_R1_SERVICE_TRANSITION",
+      "testCount": 2,
+      "tests": [
+        {
+          "name": "update",
+          "status": "PASS"
+        },
+        {
+          "name": "health-rollback",
+          "status": "PASS"
+        }
+      ]
+    },
+    {
+      "artifactId": 10261467202,
+      "name": "r0013-live-entry-dash.json",
+      "sha256": "dd9c136065809dbed6b1e64700836a262c45d1917f6a76126d2fd50b6e5a88c4",
+      "status": "PASS_LIVE_R1_SERVICE_TRANSITION",
+      "testCount": 2,
+      "tests": [
+        {
+          "name": "update",
+          "status": "PASS"
+        },
+        {
+          "name": "health-rollback",
+          "status": "PASS"
+        }
+      ]
+    },
+    {
+      "artifactId": 10261463043,
+      "name": "r0013-subscription-controls.json",
+      "sha256": "18180c9ff3f419c5c758b97197c5f75ad669fd163d1f75ba4ad67fcea6c144b7",
+      "status": "PASS_BOUNDED_CONTROL",
+      "testCount": 5,
+      "tests": [
+        {
+          "name": "subscription-delete-cancel-restores-clickability",
+          "status": "PASS"
+        },
+        {
+          "name": "subscription-delete-success",
+          "status": "PASS"
+        },
+        {
+          "name": "subscription-delete-http-refusal",
+          "status": "PASS"
+        },
+        {
+          "name": "subscription-refresh-success",
+          "status": "PASS"
+        },
+        {
+          "name": "subscription-refresh-http-refusal",
+          "status": "PASS"
+        }
+      ]
+    },
+    {
+      "artifactId": 10261463043,
+      "name": "r0013-navigation.json",
+      "sha256": "c2f70ecbbf574a7327079a82deb9f77ff5b8307d6e6b68f1813dd9fafc1f965e",
+      "status": "PASS_BOUNDED_NAVIGATION",
+      "testCount": 7,
+      "tests": [
+        {
+          "name": "/home.html href-suffix=?v=2.0.0",
+          "status": "PASS"
+        },
+        {
+          "name": "/servers.html href-suffix=?v=2.0.0",
+          "status": "PASS"
+        },
+        {
+          "name": "/subscriptions.html href-suffix=?v=2.0.0",
+          "status": "PASS"
+        },
+        {
+          "name": "/home.html href-suffix=#section",
+          "status": "PASS"
+        },
+        {
+          "name": "/servers.html href-suffix=",
+          "status": "PASS"
+        },
+        {
+          "name": "/ href-suffix=?v=2.0.0",
+          "status": "PASS"
+        },
+        {
+          "name": "/missing.html href-suffix=?v=2.0.0",
+          "status": "PASS"
+        }
+      ]
+    },
+    {
+      "artifactId": 10261456656,
+      "name": "r0013-prepared-app-ash.json",
+      "sha256": "7bb15342b012618e7c06f05db21b193f03613e5fdfa3ef372cbde783511e71f6",
+      "status": "PASS_FULL_PREPARED_APP_LIFECYCLE_OS_BOUNDARIES_MOCKED",
+      "testCount": 6,
+      "tests": [
+        {
+          "name": "accepted-r1-runtime-prepare",
+          "status": "PASS"
+        },
+        {
+          "name": "r1-to-full-prepared-app",
+          "status": "PASS"
+        },
+        {
+          "name": "equal-version-no-op",
+          "status": "PASS"
+        },
+        {
+          "name": "signed-downgrade-refused",
+          "status": "PASS"
+        },
+        {
+          "name": "new-updater-full-s24-transition",
+          "status": "PASS"
+        },
+        {
+          "name": "new-updater-health-rollback",
+          "status": "PASS"
+        }
+      ]
+    },
+    {
+      "artifactId": 10261456656,
+      "name": "r0013-prepared-app-dash.json",
+      "sha256": "a12cc67a814fe6dbce9cb699b62ca0e227b67d7bd5be1593809de30a6f26f01e",
+      "status": "PASS_FULL_PREPARED_APP_LIFECYCLE_OS_BOUNDARIES_MOCKED",
+      "testCount": 6,
+      "tests": [
+        {
+          "name": "accepted-r1-runtime-prepare",
+          "status": "PASS"
+        },
+        {
+          "name": "r1-to-full-prepared-app",
+          "status": "PASS"
+        },
+        {
+          "name": "equal-version-no-op",
+          "status": "PASS"
+        },
+        {
+          "name": "signed-downgrade-refused",
+          "status": "PASS"
+        },
+        {
+          "name": "new-updater-full-s24-transition",
+          "status": "PASS"
+        },
+        {
+          "name": "new-updater-health-rollback",
+          "status": "PASS"
+        }
+      ]
+    }
+  ],
+  "testInvocations": 511,
+  "candidateReady": false
+}

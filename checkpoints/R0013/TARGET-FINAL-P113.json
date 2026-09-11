@@ -1,0 +1,80 @@
+{
+  "schemaVersion": 1,
+  "revision": "p113-final-target-lifecycle-v1",
+  "status": "PASS_SIGNED_CHECK_EQUAL_DOWNGRADE_RESTART_PERSISTENCE_HEALTH",
+  "candidateReady": false,
+  "sourceCommit": "f4af30d98fd1f227e5116def825c09399437086f",
+  "tests": [
+    {
+      "name": "final-slot-and-daemon-tmpdir",
+      "status": "PASS",
+      "exitCode": 0,
+      "stdout": "/tmp/brl-final-audit-p113.4QQVX6\n",
+      "stderr": ""
+    },
+    {
+      "name": "snapshot-durable-before",
+      "status": "PASS",
+      "exitCode": 0,
+      "stdout": "17285ccc57c1eeb410961914eba282e20e265e1068bdc54e9872f6bad696221e  /tmp/brl-final-audit-p113.4QQVX6/durable.sha256\n",
+      "stderr": ""
+    },
+    {
+      "name": "existing-key-signed-index-check",
+      "status": "PASS",
+      "exitCode": 0,
+      "stdout": "{\n  \"ok\": true,\n  \"installedReleaseId\": \"2.0.0-r1\",\n  \"availableReleaseId\": \"2.0.0-r1\",\n  \"relation\": \"equal\",\n  \"updateAvailable\": false,\n  \"downgradeRefused\": false,\n  \"sameVersionPolicy\": \"NO_OP_SUCCESS\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "name": "same-version-signed-updater-noop",
+      "status": "PASS",
+      "exitCode": 0,
+      "stdout": "{\n  \"ok\": true,\n  \"installedReleaseId\": \"2.0.0-r1\",\n  \"availableReleaseId\": \"2.0.0-r1\",\n  \"relation\": \"equal\",\n  \"updateAvailable\": false,\n  \"downgradeRefused\": false,\n  \"sameVersionPolicy\": \"NO_OP_SUCCESS\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "name": "immutable-r1-downgrade-refusal",
+      "status": "PASS",
+      "exitCode": 20,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "name": "restart-both-owned-services",
+      "status": "PASS",
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "name": "post-restart-exact-durable-persistence",
+      "status": "PASS",
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "name": "native-interface-owner-and-runtime-health",
+      "status": "PASS",
+      "exitCode": 0,
+      "stdout": "Интерфейс: Proxy0\nПолный BROray-Light ownership receipt: да\nRunning/startup exact receipt equality: да\nRuntime Proxy/link/connected/state: готов\nОписание: BROray-Light - 🇳🇱 NL - KEENETIC\nUpstream: 127.0.0.1:2080\n",
+      "stderr": ""
+    },
+    {
+      "name": "post-restart-snapshot-health",
+      "status": "PASS",
+      "exitCode": 0,
+      "stdout": "true\n",
+      "stderr": ""
+    },
+    {
+      "name": "audit-scratch-cleanup",
+      "status": "PASS",
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "protectedRamPath": "/tmp/brl-final-audit-p113.4QQVX6"
+}

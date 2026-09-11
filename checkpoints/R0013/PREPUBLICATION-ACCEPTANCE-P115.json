@@ -1,0 +1,208 @@
+{
+  "schemaVersion": 1,
+  "revision": "p115-prepublication-acceptance",
+  "status": "PASS_ALL_PREPUBLICATION_GATES",
+  "sourceCommit": "f4af30d98fd1f227e5116def825c09399437086f",
+  "acceptedAt": "2026-09-11T12:01:24.393156+00:00",
+  "candidateReady": true,
+  "releaseReady": true,
+  "publicReleasePublished": false,
+  "gates": [
+    {
+      "name": "pinned-r1-and-canonical-and-donor-inputs",
+      "status": "PASS",
+      "evidence": "UPSTREAM-DELTA-P2.json",
+      "scope": "Exact accepted r1, R0008 and selective donor archive"
+    },
+    {
+      "name": "selective-upstream-map-and-excluded-features",
+      "status": "PASS",
+      "evidence": "UPSTREAM-PORT-MAP-P2.json",
+      "scope": "VLESS only; exactly three functional pages; no full product rebuild"
+    },
+    {
+      "name": "busybox-syntax-and-component-regression",
+      "status": "PASS",
+      "evidence": "REGRESSION-P109.json",
+      "scope": "Six successful exact-source Linux jobs"
+    },
+    {
+      "name": "native-authentication-session-and-ownership",
+      "status": "PASS",
+      "evidence": "REGRESSION-P109.json",
+      "scope": "dash/BusyBox native HTTP tests plus authorized native router login"
+    },
+    {
+      "name": "all-webui-buttons-and-responsive-layout",
+      "status": "PASS",
+      "evidence": "BROWSER-CONTROLS-P109.json",
+      "scope": "22 Chromium flows; synthetic destructive/edge paths, actual target controls in P98/P102/P113/P115"
+    },
+    {
+      "name": "archive-validation-locks-and-safe-updater",
+      "status": "PASS",
+      "evidence": "REGRESSION-P109.json",
+      "scope": "Real isolated shells/filesystems; modeled OS boundaries"
+    },
+    {
+      "name": "clean-installer-xray-bootstrap-and-daemon-tmpdir",
+      "status": "PASS",
+      "evidence": "INDEPENDENT-BUILDS-P109.json",
+      "scope": "Exact IPK/installer, real services and ARM64 binary via QEMU; opkg/NDMC adapters"
+    },
+    {
+      "name": "r1-upgrade-equal-downgrade-rollback-persistence",
+      "status": "PASS",
+      "evidence": "REGRESSION-P109.json",
+      "scope": "Isolated exact-r1 live transition and forced health rollback; not a new physical r1 upgrade"
+    },
+    {
+      "name": "independent-build-A-B-and-SHA256",
+      "status": "PASS",
+      "evidence": "INDEPENDENT-BUILDS-P109.json",
+      "scope": "8/8 byte-identical artifacts"
+    },
+    {
+      "name": "existing-minisign-trust-root",
+      "status": "PASS",
+      "evidence": "SIGNED-PROBE-P112.json",
+      "scope": "Existing encrypted Actions secret; exact signature also verified by native router updater"
+    },
+    {
+      "name": "authorized-final-package-and-durable-preservation",
+      "status": "PASS",
+      "evidence": "TARGET-INSTALL-P110.json",
+      "scope": "Physical ARM64 test router; no other router/production host"
+    },
+    {
+      "name": "physical-signed-equal-and-downgrade-refusal",
+      "status": "PASS",
+      "evidence": "TARGET-FINAL-P113.json",
+      "scope": "Real signed HTTPS index at immutable feature evidence URL; no trust bypass"
+    },
+    {
+      "name": "physical-service-restart-and-persistence",
+      "status": "PASS",
+      "evidence": "TARGET-FINAL-P113.json",
+      "scope": "S23/S24 restart, exact existing durable file hashes and healthy interface"
+    },
+    {
+      "name": "physical-xray-controls-and-data-path",
+      "status": "PASS",
+      "evidence": "TARGET-CONTROLS-P98.json",
+      "scope": "Same-version26.9.9 reinstall and active/alternate data checks; control code byte-identical to final package"
+    },
+    {
+      "name": "xray-negative-26.2.6-policy",
+      "status": "PASS",
+      "evidence": "XRAY-EXTERNAL-P89.json",
+      "scope": "Current ARM64 VLESS/XHTTP/REALITY profile only; exact archive refused, six versions passed bounded checks"
+    },
+    {
+      "name": "subscription-overlap-and-delete-preservation",
+      "status": "PASS",
+      "evidence": "OVERLAP-RECOVERY-P102.json",
+      "scope": "All original six IDs and failover settings preserved; changed upstream SNI treated separately"
+    },
+    {
+      "name": "native-ui-health-after-daemon-background-cycle",
+      "status": "PASS",
+      "evidence": "TARGET-WEBUI-P115.json",
+      "scope": "Observed fresh healthy ownership and connection after lifecycle correction"
+    },
+    {
+      "name": "temporary-input-cleanup",
+      "status": "PASS",
+      "evidence": "TARGET-CLEANUP-P114-V2.json",
+      "scope": "Only verified invocation RAM files removed; private backups remain local"
+    },
+    {
+      "name": "russian-guide-history-desktop-mobile-copy",
+      "status": "PASS",
+      "evidence": "DOC-PREVIEW-P111.json",
+      "scope": "Reviewed drafts; final public status/bytes checked after publication"
+    },
+    {
+      "name": "bounded-publication-authority-and-immutable-tag-absence",
+      "status": "PASS",
+      "evidence": "PUBLICATION-PREFLIGHT-P115.json",
+      "scope": "GitHub permissions, unchanged website sources, tag/release absent"
+    }
+  ],
+  "evidence": [
+    {
+      "path": "checkpoints/R0013/UPSTREAM-DELTA-P2.json",
+      "sha256": "3eff396c3755fbe4a74644434c72c1aa428ea55fa4c95374648127057aadeda5"
+    },
+    {
+      "path": "checkpoints/R0013/UPSTREAM-PORT-MAP-P2.json",
+      "sha256": "009a0f5adae08f399c82510cf680690b4c2e50bc8c659eda9c48d91b5a838121"
+    },
+    {
+      "path": "checkpoints/R0013/REGRESSION-P109.json",
+      "sha256": "966ffc3034cb1e15d3be8d64fb4e63b5fac333f5ea3ba47cbfb0bad1a4ac41af"
+    },
+    {
+      "path": "checkpoints/R0013/BROWSER-CONTROLS-P109.json",
+      "sha256": "8f4dba1c791db541ba51e654ed135ac2330bbb3e1fc3d66228bbc85194ada79f"
+    },
+    {
+      "path": "checkpoints/R0013/INDEPENDENT-BUILDS-P109.json",
+      "sha256": "e347617f99dc4c05a1e2de52033a07f0ff1c5b81a13cc7dcd6560cb3b7c36685"
+    },
+    {
+      "path": "checkpoints/R0013/TARGET-INSTALL-P110.json",
+      "sha256": "22b11978221d841a8a749bba6fee22eadd3bdb3064fd3d679ab53433ca2f4e4b"
+    },
+    {
+      "path": "checkpoints/R0013/TARGET-FINAL-P113.json",
+      "sha256": "bc7dac8440f8ca10c3d9d6657fd8b4a5c784f737705714712d8a16746fd5e731"
+    },
+    {
+      "path": "checkpoints/R0013/TARGET-CLEANUP-P114-V2.json",
+      "sha256": "a0cc8c79b4ed7d3c387ec4661dc3b13b46a4c882a46e725eb6cda1012cef977e"
+    },
+    {
+      "path": "checkpoints/R0013/TARGET-WEBUI-P115.json",
+      "sha256": "e575291930d80e1e86ff51344f48484ee68affb3a8f14c5377aeae4c6848d904"
+    },
+    {
+      "path": "checkpoints/R0013/OVERLAP-RECOVERY-P102.json",
+      "sha256": "561f311aa712c1b84586a11a9f22a728d7f2a446e431509647ba98358e91e25e"
+    },
+    {
+      "path": "checkpoints/R0013/TARGET-CONTROLS-P98.json",
+      "sha256": "767dc865e4135ef9cf72564dcb2bc53863a40143152ac885541be08cfa808258"
+    },
+    {
+      "path": "checkpoints/R0013/XRAY-EXTERNAL-P89.json",
+      "sha256": "0ac2885d5441e633de2b6da61f77f8591720ba3a2cfbc6ee3e0e7c2ef4f31c78"
+    },
+    {
+      "path": "checkpoints/R0013/DOC-PREVIEW-P111.json",
+      "sha256": "03f3aa0f6d668cd1fc7ac41618c02d0f3a98fb0bcadf07afeed3df045c854a35"
+    },
+    {
+      "path": "checkpoints/R0013/PUBLICATION-PREFLIGHT-P115.json",
+      "sha256": "b7317843f3d073160df59469ac3cf9cfd8c60540007064adb9e4c446d5b11817"
+    },
+    {
+      "path": "checkpoints/R0013/SIGNED-PROBE-P112.json",
+      "sha256": "e4a62f4913024153813710d720001c85c64dc2e0ac0bdbfa7fe2a20003c517a7"
+    }
+  ],
+  "p98TargetControlBinding": {
+    "changedApplicationFilesSinceP83": [
+      "app/bin/broray-subscriptions",
+      "app/lib/runtime-environment.sh",
+      "app/share/lifecycle/RUNTIME-PATH-MANIFEST.json",
+      "app/share/xray-compatibility.json"
+    ],
+    "controlScriptsByteIdentical": true
+  },
+  "remainingPublicationChecks": [
+    "Immutable GitHub assets/download SHA256 and latest alias",
+    "Main README, guide and history bytes",
+    "Existing website publisher, homepage and Light page live byte verification"
+  ]
+}
