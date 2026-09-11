@@ -23,7 +23,9 @@ P51: очистка снимков после live rollback и ранний SIGK
 
 P52: 10 PASS на dash/BusyBox, включая ранний old-S23 reboot и отказы для постороннего вызывающего процесса и постороннего файла. Пустой legacy каталог остаётся нетронутым, не маркируется и не удаляется. Evidence: `EARLY-BOOT-AND-CLEANUP-P52.json`, SHA-256 `5bf063e8632347be480435809f203bcfe3b8434510995f1ea8acae885459dab8`.
 
-P53 добавляет удаление только опознанных старых operational state/ready после успешной миграции, под собственной RAM-блокировкой с записью inode/размера/SHA-256 в durable receipt. Повторный вход S24 удаляет опознанный поздний ready старого S23. Чужой JSON или symlink вызывает отказ без удаления пары. Syntax/AST PASS; первая Linux-проверка ожидается.
+Полная регрессия P52: все три задания PASS, 347 уникально учтённых тестов в JSON-отчётах из 15 проверенных архивов. `REGRESSION-P52.json`: SHA-256 `b74752608839776511cad4d485f27c9400707cb367977b28c2ccd24f79e09e24`.
+
+P53: три preflight проверки на dash PASS — удаление опознанных старых state/ready, очистка позднего ready старого S23, отказы для чужого JSON и symlink без удаления пары. Есть собственная RAM-блокировка и inode/размер/SHA-256 в durable receipt. `STATUS-RETIREMENT-P53.json`: SHA-256 `9b4f6f35842010f5d191a140adf86c895faf163c18839971d88c513d528e1dd9`. Полный прогон P53 ещё выполняется.
 
 ## Build A/B
 
@@ -33,10 +35,10 @@ P54 подготовил отдельный Linux-набор с полными �
 
 ## Ещё необходимо
 
-1. Завершить P49; проверить ранний old-S23 boot, очистку старых operational state/ready и снимков live rollback.
+1. Завершить P53 regression и P54 полный app lifecycle.
 2. Полный prepared-app: clean install, r1/new update, equal-version, downgrade refusal, rollback, persistence. Отдельно проверить stop/start реального S24 под общей блокировкой нового updater.
 3. Все кнопки/API, native authentication/session, desktop/mobile browser.
 4. Финальные независимые clean-checkout Build A/B, воспроизводимость, SHA-256 и подпись существующим encrypted Actions secret.
 5. Авторизованная целевая приёмка. Публикация и публичные байты — только после готовности кандидата.
 
-Точные статусы каждого acceptance gate: `VALIDATION.json`. Текущие источники: `PRODUCED-SOURCE-MANIFEST.json` (75 файлов), изменения P51 — `SOURCE-INPUTS-P51.json`. Компонентный PASS не равен PASS полного кандидата.
+Точные статусы каждого acceptance gate: `VALIDATION.json`. Текущие источники: `PRODUCED-SOURCE-MANIFEST.json` (76 файлов), изменения P54 — `SOURCE-INPUTS-P54.json`. Компонентный PASS не равен PASS полного кандидата.

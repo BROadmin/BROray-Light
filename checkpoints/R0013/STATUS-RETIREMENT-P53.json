@@ -1,0 +1,61 @@
+{
+  "stage": "R0013",
+  "revision": "p53-retire-legacy-operational-status",
+  "status": "PASS_BOUNDED_STATUS_RETIREMENT_DASH",
+  "commit": "8226874c3ea22091afab432fd26bddf63360282a",
+  "ci": "https://github.com/BROadmin/BROray-Light/actions/runs/34543606312",
+  "artifact": {
+    "id": 10178398542,
+    "zipSha256": "240b9dc4711eb1f5a4d8204fa616a1d0a376f5c80fd3db8559961d1be569d1b4"
+  },
+  "tests": 3,
+  "evidence": {
+    "r0013-retirement-dash.json": {
+      "report": {
+        "stage": "R0013",
+        "revision": "p53-retire-legacy-operational-status",
+        "status": "PASS_BOUNDED_RECOVERY",
+        "shell": [
+          "/bin/dash"
+        ],
+        "tests": [
+          {
+            "name": "finalize",
+            "status": "PASS",
+            "detail": {
+              "finalized": true,
+              "snapshotsRemoved": true,
+              "sessionPreserved": true,
+              "idempotent": true,
+              "persistentLegacyStatusRetired": true,
+              "lateOldReadyRetired": true
+            }
+          },
+          {
+            "name": "legacy-status-foreign",
+            "status": "PASS",
+            "detail": {
+              "foreignOperationalFileRefused": true,
+              "allOldStatusBytesPreserved": true
+            }
+          },
+          {
+            "name": "legacy-ready-symlink",
+            "status": "PASS",
+            "detail": {
+              "foreignOperationalFileRefused": true,
+              "allOldStatusBytesPreserved": true
+            }
+          }
+        ],
+        "entrySha256": "49081efafe4e25bcd8afee598671452628fb82acf9d4f55aa1e286720d854ea3",
+        "recoverySha256": "5511abdb1d5071ab931d72396bdf0fc4d6e5ed0e1c540929f9fff8bdc6830c1e",
+        "scope": "Exact old engine, real S24/entry, actual SIGKILL and private tmpfs remount; fixture app loop/lighttpd/publication OS calls."
+      },
+      "sha256": "18a6b5289b47ce33b05a2e85b65e47ac64257bd12305f620b94c4142af58f461"
+    }
+  },
+  "remaining": "BusyBox and full component regression still pending; P54 complete application job queued.",
+  "candidateReady": false,
+  "routerTouched": false
+}

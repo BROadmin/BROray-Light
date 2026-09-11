@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "stage": "R0013_SELECTIVE_UPSTREAM_STABLE_PORT",
-  "status": "P53_RETIREMENT_CI_QUEUED_P54_FULL_APP_TEST_PREPARED",
+  "status": "P52_REGRESSION_PASS_P53_RETIREMENT_DASH_PASS_P54_QUEUED",
   "currentRevision": "p54-full-prepared-application-lifecycle",
   "publicVersion": "2.0.0",
   "packageVersion": "2.0.0",
@@ -10,9 +10,9 @@
   "releaseTag": "v2.0.0",
   "branch": "codex/r0009-updater-package",
   "baseLightCommit": "9e5fce9bfa7c82bfc2f2654d80fd3987c5259963",
-  "latestTestedSourceCommit": "66616c8ccd4efc0fea72218b212a128a1ea91493",
-  "latestFullComponentRegression": "REGRESSION-P49.json",
-  "latestCI": "https://github.com/BROadmin/BROray-Light/actions/runs/34541259493",
+  "latestTestedSourceCommit": "6a309c4cfc106ea0217b2245e6d17964693f6f0f",
+  "latestFullComponentRegression": "REGRESSION-P52.json",
+  "latestCI": "https://github.com/BROadmin/BROray-Light/actions/runs/34544142025",
   "candidateReady": false,
   "releaseReady": false,
   "publicReleasePublished": false,
@@ -32,7 +32,7 @@
     "originFailure": "process-failures/FAILURE-P16-PERSISTENT-LOCK-DOMAIN.json",
     "description": "10 dead-owner/reboot-loss/finalization tests passed on dash/BusyBox. Whole P48 failed on a missing stable diagnostic in old RAM negative test. P49 corrects this and integrates checkpointed P47 clean postinst. Early S23 boot, operational state retirement, live snapshot cleanup, full prepared-app/native-auth/WebUI, final independent builds/signing and target gates remain."
   },
-  "pendingSourceCommit": null,
+  "pendingSourceCommit": "0b6922cf07fc89fb56e79e9a284b7d24dbf5f010",
   "lastResolvedFailure": "process-failures/FAILURE-P50-WINDOWS-SYNTAX-PIPE-NEWLINES.json",
   "pendingSourceManifest": "SOURCE-INPUTS-P54.json"
 }

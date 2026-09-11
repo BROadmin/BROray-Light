@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "stage": "R0013_SELECTIVE_UPSTREAM_STABLE_PORT",
-  "status": "P53_RETIREMENT_CI_QUEUED_P54_FULL_APP_TEST_PREPARED",
+  "status": "P52_REGRESSION_PASS_P53_RETIREMENT_DASH_PASS_P54_QUEUED",
   "currentRevision": "p54-full-prepared-application-lifecycle",
   "activeFailure": null,
   "publicVersion": "2.0.0",
@@ -84,10 +84,10 @@
   "latestCI": "https://github.com/BROadmin/BROray-Light/actions/runs/34543606312",
   "latestFullComponentRegression": {
     "status": "PASS",
-    "commit": "66616c8ccd4efc0fea72218b212a128a1ea91493",
-    "uniqueJsonReportTests": 337,
-    "path": "checkpoints/R0013/REGRESSION-P49.json",
-    "sha256": "b5d00600ec26f0c3b56cf5701c20e2ab42b55d2b70a9da798fb983c4e9f64e9f"
+    "commit": "6a309c4cfc106ea0217b2245e6d17964693f6f0f",
+    "uniqueJsonReportTests": 347,
+    "path": "checkpoints/R0013/REGRESSION-P52.json",
+    "sha256": "b74752608839776511cad4d485f27c9400707cb367977b28c2ccd24f79e09e24"
   },
   "cleanBootstrapAndRam": {
     "status": "PASS_BOUNDED",
@@ -196,5 +196,11 @@
     "tests": 10,
     "path": "checkpoints/R0013/EARLY-BOOT-AND-CLEANUP-P52.json",
     "sha256": "5bf063e8632347be480435809f203bcfe3b8434510995f1ea8acae885459dab8"
+  },
+  "legacyStatusRetirement": {
+    "status": "PASS_BOUNDED_DASH",
+    "tests": 3,
+    "path": "checkpoints/R0013/STATUS-RETIREMENT-P53.json",
+    "sha256": "9b4f6f35842010f5d191a140adf86c895faf163c18839971d88c513d528e1dd9"
   }
 }
