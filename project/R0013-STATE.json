@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "stage": "R0013_SELECTIVE_UPSTREAM_STABLE_PORT",
-  "status": "RELEASE_BLOCKED_BY_CONFIRMED_DEDUP_OWNERSHIP_DEFECT",
-  "currentRevision": "p97-stable-canonical-owner-v1",
+  "status": "FINAL_REGRESSION_DIAGNOSTIC_REQUIRED",
+  "currentRevision": "p99-fixture-cleanup-diagnosis-v2",
   "activeFailure": null,
   "publicVersion": "2.0.0",
   "buildA": "PASS_P83_INDEPENDENT_BYTES",
@@ -62,7 +62,7 @@
     "path": "checkpoints/R0013/UPSTREAM-PORT-MAP-P2.json",
     "sha256": "009a0f5adae08f399c82510cf680690b4c2e50bc8c659eda9c48d91b5a838121"
   },
-  "nextExactAction": "IMPLEMENT_AND_VALIDATE_STABLE_CANONICAL_OWNERSHIP_THEN_REBUILD",
+  "nextExactAction": "RUN_DIAGNOSTIC_REVISION_WITHOUT_CHANGING_CANDIDATE_BYTES",
   "versionAndXray": {
     "status": "PASS_VERSION_AND_BOOTSTRAP_INPUT",
     "path": "checkpoints/R0013/UPGRADE-AND-XRAY-P10.json",
@@ -341,29 +341,24 @@
   },
   "latestReleasePreparation": [
     {
-      "path": "checkpoints/R0013/process-failures/FAILURE-P95-SUBSCRIPTION-OWNERSHIP.json",
-      "sha256": "da3527f83b8261f72e64a51672af88306ad26ae84c85789cffcae58f402223b1",
-      "bytes": 1427
+      "path": "checkpoints/R0013/process-failures/FAILURE-P97-CI-FIXTURE-PROCESS-CLEANUP.json",
+      "sha256": "e030dca68a3ee55c187119adef0d8d09a47edb06d19cd1c58eae98b18cca9724",
+      "bytes": 904
     },
     {
-      "path": "checkpoints/R0013/TARGET-CONTROLS-P95.json",
-      "sha256": "b9afe08843a26ef3cb127fe96c6c74796b5023db7a146d301492f1fded115fa3",
-      "bytes": 1376
+      "path": "checkpoints/R0013/INDEPENDENT-BUILDS-P97.json",
+      "sha256": "c5ebe52530a6bd8249a06c146eaa7310028fcbe2dc69c87c85218ff94ee7fe16",
+      "bytes": 2582
     },
     {
-      "path": "checkpoints/R0013/TARGET-RECOVERY-P96.json",
-      "sha256": "d82c593d3afbf25d8e93c883ef9a19ef42a62d14f0fdfd201fb9704bd26a023b",
-      "bytes": 402
+      "path": "checkpoints/R0013/TARGET-CONTROLS-P98.json",
+      "sha256": "767dc865e4135ef9cf72564dcb2bc53863a40143152ac885541be08cfa808258",
+      "bytes": 1029
     },
     {
-      "path": "checkpoints/R0013/SETTINGS-RECOVERY-P96.json",
-      "sha256": "21ea46ca3055fc08e533c2055409b8fa8c9985a53b0e37e2613bbbaa3b88815d",
-      "bytes": 316
-    },
-    {
-      "path": "checkpoints/R0013/START-P97-STABLE-CANONICAL-OWNER.json",
-      "sha256": "26e5f8e88847e074ee8a08802eee7c2b6985a0be074bc74ce719b0232003e0ed",
-      "bytes": 1887
+      "path": "checkpoints/R0013/START-P99-FIXTURE-DIAGNOSTIC.json",
+      "sha256": "b15ffaebf11f5804e64ec90c74a18368ccc32b3eec9e71bf930190c0e367351a",
+      "bytes": 992
     }
   ]
 }

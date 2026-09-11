@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "revision": "p98-native-controls-v1",
+  "status": "PASS_BOUNDED_ACTIVATION_PROBE_REINSTALL_AND_ACTIVE_DELETE_GUARD",
+  "tests": [
+    {
+      "gate": "active-server-check-button-external-data-path",
+      "status": "PASS"
+    },
+    {
+      "gate": "alternate-server-check-button",
+      "status": "PASS"
+    },
+    {
+      "gate": "activate-verified-alternate-server",
+      "status": "PASS"
+    },
+    {
+      "gate": "restore-original-active-server",
+      "status": "PASS"
+    },
+    {
+      "gate": "active-server-delete-refused-and-active-button-disabled",
+      "status": "PASS",
+      "code": "ACTIVE_SERVER_CONFLICT"
+    },
+    {
+      "gate": "same-version-Xray-reinstall-native-dialogs-and-backend",
+      "status": "PASS",
+      "version": "26.9.9",
+      "confirmations": 3
+    }
+  ],
+  "candidateReady": false,
+  "activeOperation": null,
+  "scope": "Actual installed P83 runtime; final candidate replacement, subscriptions correction and release signing lifecycle remain separate gates"
+}

@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "revision": "p97-regression-v1",
+  "status": "STOPPED_FULL_REGRESSION",
+  "sourceCommit": "c2c5afd635e6e0e39c9f9f34170e801ce89302d0",
+  "runId": 34591627211,
+  "jobId": 103237995040,
+  "failedStep": "Lifecycle completion and early S23 boot (dash)",
+  "failedCase": "old-s23-foreign-child",
+  "failure": "Fixture-owned process did not exit",
+  "previousCases": ["live-rollback-cleanup PASS", "early-anchor PASS", "early-anchor-old-s23-boot PASS", "empty-namespace-outsider PASS"],
+  "independentBuildAndSigningRun": 34591627442,
+  "independentBuildAndSigningStatus": "PASS_DOES_NOT_OVERRIDE_REGRESSION_FAILURE",
+  "routerCandidateInstalled": false,
+  "nextCorrectedRevision": "p99-fixture-cleanup-diagnosis-v2",
+  "nextAction": "Inspect PID/start descendant ownership cleanup and preserve diagnostic facts; do not rerun unchanged failing source or claim candidate acceptance."
+}

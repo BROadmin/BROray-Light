@@ -104,6 +104,7 @@ def main():
     p.add_argument('--busybox', action='store_true')
     p.add_argument('--busybox-tools', action='store_true')
     p.add_argument('--result', type=Path, required=True)
+    p.add_argument('--case', action='append', choices=['live-rollback-cleanup','early-anchor','early-anchor-old-s23-boot','empty-namespace-outsider','old-s23-foreign-child'])
     args = p.parse_args()
     assert os.geteuid() == 0
     shell = [args.shell, 'ash'] if args.busybox else [args.shell]
@@ -134,6 +135,7 @@ def main():
             subprocess.run(['gcc', '-O2', '-o', str(binary), str(source)], check=True, capture_output=True)
             for mode in ('live-rollback-cleanup', 'early-anchor', 'early-anchor-old-s23-boot',
                          'empty-namespace-outsider', 'old-s23-foreign-child'):
+                if args.case and mode not in args.case:continue
                 fixture = None
                 try:
                     fixture = LiveFixture(shell, binary.read_bytes(),

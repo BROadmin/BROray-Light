@@ -1,4 +1,5 @@
 """Download exact CI artifacts with in-memory GitHub auth and no credential forwarding."""
+import argparse
 import hashlib
 import io
 import json
@@ -54,6 +55,17 @@ class GitHub:
 
 
 def main():
+    global RUN, SOURCE, OUT
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--run', type=int, default=RUN)
+    parser.add_argument('--source', default=SOURCE)
+    parser.add_argument('--output', default='dist/R0013/p90-release-build')
+    parser.add_argument('--receipt', default='checkpoints/R0013/INDEPENDENT-BUILDS-P90.json')
+    parser.add_argument('--revision', default='p90-independent-builds-signed')
+    args = parser.parse_args()
+    RUN, SOURCE, OUT = args.run, args.source, (ROOT / args.output).resolve()
+    assert RUN > 0 and len(SOURCE) == 40 and all(c in '0123456789abcdef' for c in SOURCE)
+    assert OUT.is_relative_to(ROOT / 'dist/R0013')
     assert not OUT.exists(), 'Refuse overwrite or implicit retry'
     client = GitHub()
     run = client.request('/repos/BROadmin/BROray-Light/actions/runs/' + str(RUN))
@@ -82,10 +94,11 @@ def main():
     assert all(p.read_bytes() == (b / p.name).read_bytes() for p in a.iterdir())
     assert (a / 'release.json').read_bytes() == (OUT / 'signed/release.json').read_bytes()
     artifacts = [{'name': p.name, 'bytes': p.stat().st_size, 'sha256': hashlib.sha256(p.read_bytes()).hexdigest()} for p in sorted(a.iterdir())]
-    receipt = {'schemaVersion': 1, 'stage': 'R0013', 'revision': 'p90-independent-builds-signed', 'status': 'PASS_EXACT_AB_AND_SIGNED_INDEX_BINDING',
+    receipt = {'schemaVersion': 1, 'stage': 'R0013', 'revision': args.revision, 'status': 'PASS_EXACT_AB_AND_SIGNED_INDEX_BINDING',
                'sourceCommit': SOURCE, 'runId': RUN, 'buildA': 'PASS', 'buildB': 'PASS', 'comparison': '8_OF_8_BYTE_IDENTICAL',
                'signingVerification': 'PASS_EXISTING_PUBLIC_KEY_IN_CI', 'downloadReceipts': receipts, 'artifacts': artifacts, 'candidateReady': False}
-    path = ROOT / 'checkpoints/R0013/INDEPENDENT-BUILDS-P90.json'
+    path = (ROOT / args.receipt).resolve()
+    assert path.is_relative_to(ROOT / 'checkpoints/R0013')
     assert not path.exists()
     path.write_bytes((json.dumps(receipt, indent=2) + '\n').encode())
     print(json.dumps(receipt, indent=2))

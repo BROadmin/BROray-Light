@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 1,
+  "stage": "R0013",
+  "revision": "p97-independent-builds-signed",
+  "status": "PASS_EXACT_AB_AND_SIGNED_INDEX_BINDING",
+  "sourceCommit": "c2c5afd635e6e0e39c9f9f34170e801ce89302d0",
+  "runId": 34591627442,
+  "buildA": "PASS",
+  "buildB": "PASS",
+  "comparison": "8_OF_8_BYTE_IDENTICAL",
+  "signingVerification": "PASS_EXISTING_PUBLIC_KEY_IN_CI",
+  "downloadReceipts": [
+    {
+      "artifactId": 10195858685,
+      "name": "r0013-build-A-c2c5afd635e6e0e39c9f9f34170e801ce89302d0",
+      "zipSha256": "42449243321f00bc6375f346f457d15348fc46246f5e5543bf27e7cfb0917005"
+    },
+    {
+      "artifactId": 10195858508,
+      "name": "r0013-build-B-c2c5afd635e6e0e39c9f9f34170e801ce89302d0",
+      "zipSha256": "248c3fc3d9b6c3dc43633950d2dbd14a92e0677e772ad7e1bb0d900faf66186f"
+    },
+    {
+      "artifactId": 10195903326,
+      "name": "r0013-signed-index-c2c5afd635e6e0e39c9f9f34170e801ce89302d0",
+      "zipSha256": "52c56b3e71aaf41d0c0601fcd62e6d443f9a825af70013bbf7d3a5b67449b4b4"
+    },
+    {
+      "artifactId": 10195892246,
+      "name": "r0013-build-clean-validation-c2c5afd635e6e0e39c9f9f34170e801ce89302d0",
+      "zipSha256": "4600a6aee1589cd7b41e349cb6dcd822750cb8856e0705d8f29fd439a3bd3c27"
+    }
+  ],
+  "artifacts": [
+    {
+      "name": "broray-light-app-2.0.0-r1.tar.gz",
+      "bytes": 230143,
+      "sha256": "38bff141fed73900670d24d0dc7ae90d2da9bf0a5a08579e7db7019c37d0c2df"
+    },
+    {
+      "name": "broray-light-install-2.0.0.sh",
+      "bytes": 4108,
+      "sha256": "d58e07633d79780e4102505f2db16c5e93328cd7956d6654c02a77940527ba82"
+    },
+    {
+      "name": "broray-light-updater-platform-5-light2-ram.tar.gz",
+      "bytes": 136061,
+      "sha256": "aa814efcb6d75f02c061b3928588439466e9ee02af127bd7eac376786410fc1b"
+    },
+    {
+      "name": "broray-light_2.0.0_aarch64-3.10.ipk",
+      "bytes": 12992551,
+      "sha256": "ac60ab26aaa649e4db521409987054c997d661bdecd8bd20a63b76b9d3b35f06"
+    },
+    {
+      "name": "ENGINEERING-MANIFEST.json",
+      "bytes": 2347,
+      "sha256": "8160b9dcbc4c744d14dde4e3d5e907ce715966e51f6bd0957c0bc635158a56d7"
+    },
+    {
+      "name": "INPUT-MANIFEST.json",
+      "bytes": 40797,
+      "sha256": "836f24f31931ced390c8025cdddad9039b7b4b9684659f233eec04eafd36ce29"
+    },
+    {
+      "name": "release.json",
+      "bytes": 597,
+      "sha256": "ca15553f9dcd553be07f181a5e0d91a23f28b5a164195bb3ad131b320fbf28ca"
+    },
+    {
+      "name": "SHA256SUMS",
+      "bytes": 670,
+      "sha256": "935ffd7f3d61cf0e1f9fec3094a6afcd0437a9b8c38e33e0a4cbf4e3191e8858"
+    }
+  ],
+  "candidateReady": false
+}

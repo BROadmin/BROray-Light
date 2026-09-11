@@ -160,7 +160,18 @@ while :;do sleep 0.1;done
                 except ProcessLookupError:pass
         deadline=time.monotonic()+3
         while any(live(pid) for pid in owned) and time.monotonic()<deadline:time.sleep(.02)
-        assert not any(live(pid) for pid in owned),'Fixture-owned process did not exit'
+        survivors=[]
+        for pid in owned:
+            if not live(pid):continue
+            proc=Path('/proc',str(pid))
+            try:
+                row=(proc/'stat').read_text().rsplit(') ',1)[1].split()
+                survivors.append(dict(pid=pid,parent=row[1],state=row[0],start=row[19],
+                                      expectedStart=processes[pid][1],
+                                      waitChannel=(proc/'wchan').read_text().strip(),
+                                      command=(proc/'cmdline').read_bytes().replace(b'\0',b' ').decode('utf-8','replace')))
+            except OSError:pass
+        assert not survivors,'Fixture-owned process did not exit: '+json.dumps(survivors)
         def ram_references():
             refs=[]
             prefix=str(self.root/'tmp')

@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "revision": "p99-fixture-cleanup-diagnosis-v2",
+  "status": "DIAGNOSTIC_CORRECTION_ONLY",
+  "previousFailure": "process-failures/FAILURE-P97-CI-FIXTURE-PROCESS-CLEANUP.json",
+  "knownCauseBoundary": "Failure occurred in fixture-only PID/start-owned SIGKILL cleanup, before the negative old-S23 recovery assertion. Exact survivor state was not retained by the old assertion; kernel or race cause is not yet proven.",
+  "correction": "Add survivor PID/start/state/wchan/fixture-command facts to the failure, expose an exact case selector and run the failed boundary first. Run canonical ownership regression independently rather than hiding its result behind an unrelated long lifecycle job.",
+  "unchanged": ["Production runtime bytes", "SIGKILL cleanup ownership requirements", "Three-second fixture cleanup deadline", "Release acceptance gates"],
+  "sameRevisionRerun": false,
+  "candidateReady": false,
+  "releaseReady": false,
+  "publicReleasePublished": false
+}

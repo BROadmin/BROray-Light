@@ -24,6 +24,21 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  isolated-canonical-owners:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+          fetch-depth: 0
+      - name: Install isolated dedup dependencies
+        run: sudo apt-get update && sudo apt-get install -y --no-install-recommends busybox dash jq
+      - name: Canonical owner regression (dash)
+        run: python3 -B tools/test_r0013_canonical_owners.py --shell /bin/dash
+      - name: Canonical owner regression (BusyBox)
+        run: python3 -B tools/test_r0013_canonical_owners.py --shell /usr/bin/busybox --busybox
   isolated-native-auth:
     runs-on: ubuntu-24.04
     timeout-minutes: 10
@@ -293,6 +308,10 @@ jobs:
           path: /tmp/r0013-retirement-*.json
           if-no-files-found: ignore
       - name: Lifecycle completion and early S23 boot (dash)
+        # P99 first exercises the previously failed fixture boundary with
+        # PID/start/state/wchan diagnostics; no production cleanup is weakened.
+        run: sudo python3 -B tools/check_r0013_completion.py --shell /bin/dash --case old-s23-foreign-child --result /tmp/r0013-completion-p99-diagnostic.json
+      - name: Full lifecycle completion and early S23 boot (dash)
         run: sudo python3 -B tools/check_r0013_completion.py --shell /bin/dash --result /tmp/r0013-completion-dash.json
       - name: Lifecycle completion and early S23 boot (BusyBox)
         run: sudo python3 -B tools/check_r0013_completion.py --shell /usr/bin/busybox --busybox --busybox-tools --result /tmp/r0013-completion-ash.json
