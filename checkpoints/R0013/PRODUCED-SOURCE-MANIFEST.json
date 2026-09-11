@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "stage": "R0013",
-  "revision": "p62-busybox-standalone-idle-identity",
+  "revision": "p64-explicit-external-idle-child",
   "files": [
     {
       "path": ".gitattributes",
@@ -20,8 +20,8 @@
     },
     {
       "path": "packaging/r0013-overlay/app/bin/broray-lightd",
-      "sizeBytes": 2862,
-      "sha256": "4fe66dd9cb00bf2b7bdbf0574ef31898d807e50d12009033ae8bda3ba203136b"
+      "sizeBytes": 3149,
+      "sha256": "c7c82e18d9105d8b065910ee5fa740078c79615ad8f28c5bca78d4beab2dd899"
     },
     {
       "path": "packaging/r0013-overlay/app/bin/broray-system",
@@ -131,7 +131,7 @@
     {
       "path": "packaging/r0013-overlay/runtime-paths.json",
       "sizeBytes": 17242,
-      "sha256": "f32f8d2dcf525e4bb91114b1dafdcacfc72044607a0a68fa76bbc0e34db1b3d9"
+      "sha256": "19bdddb1e615f3a018cbde35365040153580b4238f4c0e55f10cfae98fd4e301"
     },
     {
       "path": "packaging/r0013-overlay/shared/lifecycle-r1-admission.sh",
@@ -270,8 +270,8 @@
     },
     {
       "path": "tools/check_r0013_daemon_stop.py",
-      "sizeBytes": 6156,
-      "sha256": "832bb02816f64ee3a037384301d470f32f6c60be0476531b2c496cdd186f315c"
+      "sizeBytes": 6511,
+      "sha256": "f39c7d8dafe1256ee6b8faa758182027225322fb899f7c02ffa37516d6f251aa"
     },
     {
       "path": "tools/check_r0013_native_auth.py",
@@ -280,8 +280,8 @@
     },
     {
       "path": "tools/check_r0013_prepared_app.py",
-      "sizeBytes": 9181,
-      "sha256": "9ef3e5b7e3772ce268b3e8ffd8925c85be3cc612b147b0f87daa7be93277b239"
+      "sizeBytes": 9177,
+      "sha256": "82ef3670d3600eb5784ca631b01c47e308a0edfb2d25ffed39de6d154c6070c1"
     },
     {
       "path": "tools/diagnose_r0013_daemon.py",

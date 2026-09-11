@@ -39,7 +39,7 @@ def main():
     records = []
     failed = False
     def persist():
-        report = dict(stage='R0013', revision='p62-busybox-standalone-idle-identity',
+        report = dict(stage='R0013', revision='p64-explicit-external-idle-child',
                       status='FAIL_FIRST_ERROR' if failed else 'IN_PROGRESS', tests=records,
                       shell=shell, daemonSha256=hashlib.sha256(app['bin/broray-lightd'][0]).hexdigest(),
                       mockedBoundaries=['Application CLI workload','Xray executable','Keenetic publication'],
@@ -72,6 +72,7 @@ def main():
                                            start_new_session=True)
                 fixture.children.append(foreign)
                 deadline = time.monotonic()+5
+                observed = []
                 while time.monotonic() < deadline:
                     assert daemon.poll() is None, dict(error='Daemon exited before idle',
                         returncode=daemon.returncode,log=(fixture.ram/'logs/idle-test.log').read_text(errors='replace'))
@@ -80,6 +81,8 @@ def main():
                             argv = candidate.read_bytes().split(b'\0')
                             pid = int(candidate.parent.name)
                             identity = process_identity(pid)
+                            if identity and identity[0] == str(daemon.pid):
+                                observed.append(dict(pid=pid,argv=[a.decode(errors='replace') for a in argv],identity=identity))
                             if identity and identity[0] == str(daemon.pid) and len(argv) == 3 and argv[1] == b'30':
                                 idle_pid, idle_identity = pid, identity
                                 break
@@ -88,7 +91,8 @@ def main():
                     if idle_pid:
                         break
                     time.sleep(.02)
-                assert idle_pid, 'No actual 30-second idle child observed'
+                assert idle_pid, dict(error='No actual 30-second idle child observed',children=observed[-10:],
+                    log=(fixture.ram/'logs/idle-test.log').read_text(errors='replace'))
                 # Let the daemon finish capturing the child identity, then
                 # interrupt its real builtin wait (not a fake short sleeper).
                 time.sleep(.1)

@@ -1,0 +1,89 @@
+{
+  "stage": "R0013",
+  "revision": "p62-busybox-standalone-idle-identity",
+  "status": "FAIL_FIRST_ERROR",
+  "commit": "798accf226048cff49fa6214087bec5437c9ec41",
+  "run": "https://github.com/BROadmin/BROray-Light/actions/runs/34548783851",
+  "artifactId": 10180015775,
+  "artifactSha256": "6631129a90c114cb61e336e0e8d0e2943ca3804a374c40063200b62eb51931bb",
+  "evidence": {
+    "r0013-daemon-stop-ash.json": {
+      "report": {
+        "stage": "R0013",
+        "revision": "p62-busybox-standalone-idle-identity",
+        "status": "FAIL_FIRST_ERROR",
+        "tests": [
+          {
+            "name": "TERM",
+            "status": "FAIL",
+            "error": "No actual 30-second idle child observed"
+          }
+        ],
+        "shell": [
+          "/usr/bin/busybox",
+          "ash"
+        ],
+        "daemonSha256": "6ce48f91214f47eb9139497ed6727f467ed6258ef96e42f4adffdebf0d33eb63",
+        "mockedBoundaries": [
+          "Application CLI workload",
+          "Xray executable",
+          "Keenetic publication"
+        ],
+        "candidateReady": false
+      },
+      "sha256": "c6bdb7833e7967d658608feef9e24df8ed9e698c75c69b6265aef9dc9051dc8d"
+    },
+    "r0013-daemon-stop-dash.json": {
+      "report": {
+        "stage": "R0013",
+        "revision": "p62-busybox-standalone-idle-identity",
+        "status": "PASS_REAL_PREPARED_DAEMON_IDLE_STOP",
+        "tests": [
+          {
+            "name": "TERM",
+            "status": "PASS",
+            "stopSeconds": 0.007,
+            "ownedSleepReaped": true,
+            "foreignSleepUntouched": true
+          },
+          {
+            "name": "HUP",
+            "status": "PASS",
+            "stopSeconds": 0.007,
+            "ownedSleepReaped": true,
+            "foreignSleepUntouched": true
+          },
+          {
+            "name": "INT",
+            "status": "PASS",
+            "stopSeconds": 0.007,
+            "ownedSleepReaped": true,
+            "foreignSleepUntouched": true
+          },
+          {
+            "name": "S24-stop-role",
+            "status": "PASS",
+            "stopSeconds": 2.158,
+            "ownedSleepReaped": true,
+            "foreignSleepUntouched": true
+          }
+        ],
+        "shell": [
+          "/bin/dash"
+        ],
+        "daemonSha256": "6ce48f91214f47eb9139497ed6727f467ed6258ef96e42f4adffdebf0d33eb63",
+        "mockedBoundaries": [
+          "Application CLI workload",
+          "Xray executable",
+          "Keenetic publication"
+        ],
+        "candidateReady": false
+      },
+      "sha256": "5be578ba4719ede5bb291d12be5eadc7ec53450cd193561d8f4ea5ca9216fa51"
+    }
+  },
+  "cause": "BusyBox daemon now remains running, but standalone idle child is not observable with external sleep argv. The implementation relied on shell standalone process shape. Exact S24 classification must not risk treating a shell-retained child as a duplicate daemon.",
+  "nextCorrectedRevision": "p64-explicit-external-idle-child",
+  "candidateReady": false,
+  "sameRevisionRetry": false
+}

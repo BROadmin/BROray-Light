@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
   "stage": "R0013_SELECTIVE_UPSTREAM_STABLE_PORT",
-  "status": "P62_STANDALONE_SLEEP_CORRECTION_AWAITING_LINUX",
-  "currentRevision": "p62-busybox-standalone-idle-identity",
-  "activeFailure": "checkpoints/R0013/process-failures/FAILURE-P60-BUSYBOX-DAEMON-START.json",
+  "status": "P64_EXPLICIT_SLEEP_CORRECTION_AWAITING_LINUX",
+  "currentRevision": "p64-explicit-external-idle-child",
+  "activeFailure": "checkpoints/R0013/process-failures/FAILURE-P62-BUSYBOX-IDLE-PROCESS-SHAPE.json",
   "publicVersion": "2.0.0",
   "buildA": "PRELIMINARY_ENGINEERING_BYTE_PASS_NOT_FINAL_ACCEPTANCE",
   "buildB": "PRELIMINARY_ENGINEERING_BYTE_PASS_NOT_FINAL_ACCEPTANCE",
@@ -62,7 +62,7 @@
     "path": "checkpoints/R0013/UPSTREAM-PORT-MAP-P2.json",
     "sha256": "009a0f5adae08f399c82510cf680690b4c2e50bc8c659eda9c48d91b5a838121"
   },
-  "nextExactAction": "P62_REAL_DAEMON_STOP_AND_COMPLETE_PREPARED_APP_CI",
+  "nextExactAction": "P64_REAL_DAEMON_STOP_AND_COMPLETE_PREPARED_APP_CI",
   "versionAndXray": {
     "status": "PASS_VERSION_AND_BOOTSTRAP_INPUT",
     "path": "checkpoints/R0013/UPGRADE-AND-XRAY-P10.json",
@@ -230,8 +230,8 @@
     "path": "checkpoints/R0013/EVIDENCE-BYTES-P59A.json"
   },
   "sourceCorrection": {
-    "sizeBytes": 900,
-    "path": "checkpoints/R0013/SOURCE-INPUTS-P62.json",
-    "sha256": "952d975b56f1cc02baf58b818b013eef28722044cbf91965f2d9dc57a13eb7ef"
+    "sha256": "7152bf9bf9b730287f717cabffbb41b9dae80fdf81e9090bc042adb45e5a8f9d",
+    "sizeBytes": 896,
+    "path": "checkpoints/R0013/SOURCE-INPUTS-P64.json"
   }
 }

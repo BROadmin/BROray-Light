@@ -1,0 +1,12 @@
+{
+  "stage": "R0013",
+  "revision": "p63-independent-engineering-build-and-full-clean-package",
+  "status": "CHECKPOINT_FIRST",
+  "scope": "Two fresh independent Linux build jobs from the exact same Git commit; byte comparison; immutable package/installer clean lifecycle in canonical private mounts with actual S23/S24/lighttpd/application scripts and ARM64 Xray via QEMU.",
+  "boundaries": [
+    "opkg extraction/order adapter (not real Entware dependency resolution)",
+    "Mock Keenetic NDMC publication and native HTTP challenge server",
+    "No physical router; no signing or publication yet"
+  ],
+  "candidateReady": false
+}

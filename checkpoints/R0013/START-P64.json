@@ -1,0 +1,12 @@
+{
+  "stage": "R0013",
+  "revision": "p64-explicit-external-idle-child",
+  "status": "CHECKPOINT_FIRST",
+  "parentFailure": {
+    "path": "checkpoints/R0013/process-failures/FAILURE-P62-BUSYBOX-IDLE-PROCESS-SHAPE.json",
+    "sizeBytes": 3006,
+    "sha256": "bce59d523bdfa965f4fcb17af29fa2a1a8dbc22cc5333d11c7dd16fc5d833638"
+  },
+  "scope": "Resolve an absolute executable sleep entry from PATH and invoke that exact pathname (no standalone builtin dispatch). Retain strong child PID/start/exe checks and existing strict external argv test. Improve failure observations without relaxing assertions. P63 build/clean work remains unexecuted.",
+  "candidateReady": false
+}
