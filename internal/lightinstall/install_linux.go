@@ -318,18 +318,29 @@ func (l layout) serviceCmd(ctx context.Context, arg string) error {
 	return nil
 }
 
-func (l layout) waitReady(ctx context.Context, version string) error {
+func (l layout) probeReady(ctx context.Context, version string, serviceOnly bool) ([]byte, error) {
+	ctx, cancel := context.WithTimeout(ctx, 12*time.Second)
+	defer cancel()
+	args := []string{"ready", "--root", l.root, "--run", l.run, "--version", version}
+	if serviceOnly {
+		args = append(args, "--service-only")
+	}
+	return exec.CommandContext(ctx, l.binary(), args...).CombinedOutput()
+}
+
+func (l layout) waitReady(ctx context.Context, version string, serviceOnly bool) error {
 	ctx, cancel := context.WithTimeout(ctx, 2*time.Minute)
 	defer cancel()
 	ticker := time.NewTicker(time.Second)
 	defer ticker.Stop()
 	for {
-		probe, stop := context.WithTimeout(ctx, 12*time.Second)
-		cmd := exec.CommandContext(probe, l.binary(), "ready", "--root", l.root, "--run", l.run, "--version", version)
-		out, err := cmd.CombinedOutput()
-		stop()
+		out, err := l.probeReady(ctx, version, serviceOnly)
 		if err == nil {
 			return nil
+		}
+		if serviceOnly && bytes.HasPrefix(out, []byte("flag provided but not defined: -service-only\n")) {
+			serviceOnly = false
+			continue
 		}
 		select {
 		case <-ctx.Done():
@@ -436,7 +447,7 @@ func (l layout) restore(ctx context.Context, r receipt, restart bool) error {
 		if err := l.serviceCmd(ctx, "start-installed"); err != nil {
 			return err
 		}
-		return l.waitReady(ctx, r.PreviousVersion)
+		return l.waitReady(ctx, r.PreviousVersion, true)
 	}
 	return nil
 }
@@ -506,6 +517,15 @@ func (l layout) replace(ctx context.Context, version string, candidate io.Reader
 	if old != "" && version != old && !newer(version, old) {
 		return errors.New("refusing to downgrade BROray-Light")
 	}
+	previousRunning := service && l.serviceCmd(ctx, "status") == nil
+	if previousRunning {
+		if out, err := l.probeReady(ctx, old, false); err != nil {
+			return fmt.Errorf("refusing to replace BROray-Light %s: running service is not ready: %w: %s", old, err, strings.TrimSpace(string(out)))
+		}
+	}
+	if err := ctx.Err(); err != nil {
+		return err
+	}
 	dir := l.rollbackDir()
 	if err := os.Mkdir(dir, 0o700); err != nil {
 		return err
@@ -513,7 +533,7 @@ func (l layout) replace(ctx context.Context, version string, candidate io.Reader
 	if err := syncDir(l.root); err != nil {
 		return err
 	}
-	r := receipt{PreviousVersion: old, PreviousRunning: service && l.serviceCmd(ctx, "status") == nil}
+	r := receipt{PreviousVersion: old, PreviousRunning: previousRunning}
 	if service {
 		if err := copyFile(l.binary(), filepath.Join(dir, "binary"), 0o755); err != nil {
 			return err
@@ -559,7 +579,7 @@ func (l layout) activate(ctx context.Context, version string, candidate io.Reade
 	if err := l.serviceCmd(ctx, "start-installed"); err != nil {
 		return err
 	}
-	if err := l.waitReady(ctx, version); err != nil {
+	if err := l.waitReady(ctx, version, false); err != nil {
 		return err
 	}
 	return atomicFile(l.installed(), 0o600, strings.NewReader(version+"\n"))

@@ -230,6 +230,11 @@ func (a *App) tryFailover(ctx context.Context) {
 func (a *App) ready(ctx context.Context) error {
 	a.mu.Lock()
 	defer a.mu.Unlock()
+	return a.readyLocked(ctx)
+}
+
+// readyLocked checks update admission with a.mu held.
+func (a *App) readyLocked(ctx context.Context) error {
 	if err := NoFullProduct(a.root); err != nil {
 		return err
 	}
@@ -296,18 +301,18 @@ func (a *App) tick(ctx context.Context) {
 		a.health = errors.Join(err, a.stop()).Error()
 		return
 	}
+	a.health = ""
+	var cleanupErr error
 	if a.state.InterfaceCleanupPending {
-		if err := a.cleanupInterface(ctx); err != nil {
-			a.health = err.Error()
-			return
+		cleanupErr = a.cleanupInterface(ctx)
+		if cleanupErr != nil {
+			a.health = cleanupErr.Error()
 		}
 	}
 	if a.state.Active == "" {
 		if err := a.stop(); err != nil {
-			a.health = err.Error()
-			return
+			a.health = errors.Join(cleanupErr, err).Error()
 		}
-		a.health = ""
 		return
 	}
 	wasRunning := a.runtime.Running()
@@ -318,17 +323,17 @@ func (a *App) tick(ctx context.Context) {
 			if err := a.router.Ready(ctx, a.socks); err != nil {
 				err = a.router.Ensure(ctx, a.socks)
 				if err != nil {
-					a.health = err.Error()
+					a.health = errors.Join(cleanupErr, err).Error()
 					return
 				}
 			}
 		}
 	}
 	if err == nil {
-		a.health, a.failures = "", 0
+		a.failures = 0
 		return
 	}
-	a.health = err.Error()
+	a.health = errors.Join(cleanupErr, err).Error()
 	if !a.readyOnce || !a.state.Failover.Enabled || lightinstall.Pending(a.root) {
 		return
 	}

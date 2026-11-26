@@ -8,8 +8,10 @@ import (
 	"io"
 	"net/http"
 	"net/http/httptest"
+	"net/url"
 	"os"
 	"path/filepath"
+	"strings"
 	"sync/atomic"
 	"testing"
 	"time"
@@ -215,7 +217,7 @@ func TestFullConflictAndWebUIAccess(t *testing.T) {
 			t.Fatalf("asset %s status %d", path, w.Code)
 		}
 	}
-	for _, path := range []string{"/routes", "/dot", "/api/ready"} {
+	for _, path := range []string{"/routes", "/dot", "/api/ready", "/identity"} {
 		w := httptest.NewRecorder()
 		handler.ServeHTTP(w, httptest.NewRequest("GET", path, nil))
 		if w.Code != 404 {
@@ -262,6 +264,46 @@ func TestFullConflictAndWebUIAccess(t *testing.T) {
 	}
 	if got := post("/api/action", action, payload["csrf"], cookie); got.Code == 200 {
 		t.Fatal("mutation accepted alongside full BROray")
+	}
+}
+
+func TestPendingInterfaceCleanupDoesNotPreventProxyRestore(t *testing.T) {
+	a, rt, router := newTestApp(t)
+	id := seed(t, a, parse(t, profile), "")
+	router.cleanupErr = errors.New("owned interface still referenced")
+	next := a.state.Clone()
+	next.InterfaceCleanupPending = true
+	if _, err := a.save(next); err != nil {
+		t.Fatal(err)
+	}
+
+	a.tick(context.Background())
+	if !rt.Running() || a.runningID != id || a.health != router.cleanupErr.Error() {
+		t.Fatalf("running=%v selected=%q health=%q", rt.Running(), a.runningID, a.health)
+	}
+	req := httptest.NewRequest("POST", "/api/action", strings.NewReader(`{"kind":"update-apply"}`))
+	req.Header.Set("Content-Type", "application/json")
+	_, err := a.action(httptest.NewRecorder(), req)
+	if err == nil || !strings.Contains(err.Error(), "Keenetic cleanup is pending") {
+		t.Fatalf("update admission error = %v", err)
+	}
+
+	query := url.Values{"version": {Version}, "root": {a.root}}
+	handler := a.ControlHandler()
+	for _, tc := range []struct {
+		path string
+		code int
+	}{
+		{"/ready?" + query.Encode(), 503},
+		{"/identity?" + query.Encode(), 200},
+		{"/identity?root=" + url.QueryEscape(a.root), 409},
+		{"/identity?version=" + url.QueryEscape(Version), 409},
+	} {
+		w := httptest.NewRecorder()
+		handler.ServeHTTP(w, httptest.NewRequest("GET", tc.path, nil))
+		if w.Code != tc.code {
+			t.Errorf("%s status = %d, want %d", tc.path, w.Code, tc.code)
+		}
 	}
 }
 

@@ -57,10 +57,14 @@ func daemonCommand(args []string) error {
 	runtimeDir := flags.String("run", defaultRun, "Light private runtime directory")
 	if args[0] == "ready" {
 		expected := flags.String("version", "", "required running version")
+		serviceOnly := flags.Bool("service-only", false, "confirm restored service identity independently of proxy readiness")
 		if err := flags.Parse(args[1:]); err != nil {
 			return err
 		}
-		return ready(filepath.Clean(*root), filepath.Clean(*runtimeDir), *expected)
+		if *serviceOnly && *expected == "" {
+			return errors.New("service identity requires an expected version")
+		}
+		return ready(filepath.Clean(*root), filepath.Clean(*runtimeDir), *expected, *serviceOnly)
 	}
 	listen := flags.String("listen", "", "WebUI address (default router LAN on port 8080)")
 	socks := flags.String("socks", "127.0.0.1:1089", "local Xray SOCKS address")
@@ -186,14 +190,18 @@ func serve(root, run, listen, socks, probe string) error {
 	return err
 }
 
-func ready(root, run, expected string) error {
+func ready(root, run, expected string, serviceOnly bool) error {
 	path := filepath.Join(run, "control.sock")
 	transport := &http.Transport{DialContext: func(ctx context.Context, _, _ string) (net.Conn, error) {
 		return (&net.Dialer{}).DialContext(ctx, "unix", path)
 	}}
 	defer transport.CloseIdleConnections()
 	client := &http.Client{Transport: transport, Timeout: 16 * time.Second}
-	response, err := client.Get("http://light/ready?version=" + url.QueryEscape(expected) + "&root=" + url.QueryEscape(root))
+	endpoint := "/ready"
+	if serviceOnly {
+		endpoint = "/identity"
+	}
+	response, err := client.Get("http://light" + endpoint + "?version=" + url.QueryEscape(expected) + "&root=" + url.QueryEscape(root))
 	if err != nil {
 		return err
 	}

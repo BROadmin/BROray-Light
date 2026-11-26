@@ -3,6 +3,7 @@ package lightapp
 import (
 	"encoding/json"
 	"errors"
+	"fmt"
 	"io"
 	"io/fs"
 	"net"
@@ -158,6 +159,9 @@ func (a *App) action(w http.ResponseWriter, r *http.Request) (any, error) {
 	case "core-check", "core-install":
 		return a.core(ctx, input.Kind == "core-install")
 	case "update-apply":
+		if err := a.readyLocked(ctx); err != nil {
+			return nil, fmt.Errorf("current service is not ready for update: %w", err)
+		}
 		return nil, lightinstall.Launch(ctx, a.root, a.run)
 	default:
 		return nil, errors.New("unknown operation")
@@ -281,20 +285,26 @@ func (a *App) Handler(assets fs.FS) http.Handler {
 
 func (a *App) ControlHandler() http.Handler {
 	mux := http.NewServeMux()
-	mux.HandleFunc("GET /ready", func(w http.ResponseWriter, r *http.Request) {
-		if root := r.URL.Query().Get("root"); root != "" && root != a.root {
+	control := func(w http.ResponseWriter, r *http.Request) {
+		identityOnly := r.URL.Path == "/identity"
+		root, version := r.URL.Query().Get("root"), r.URL.Query().Get("version")
+		if (identityOnly || root != "") && root != a.root {
 			writeJSON(w, 409, map[string]string{"error": "unexpected installation root"})
 			return
 		}
-		if version := r.URL.Query().Get("version"); version != "" && version != Version {
+		if (identityOnly || version != "") && version != Version {
 			writeJSON(w, 409, map[string]string{"error": "unexpected running version"})
 			return
 		}
-		if err := a.ready(r.Context()); err != nil {
-			writeJSON(w, 503, map[string]string{"error": err.Error()})
-			return
+		if !identityOnly {
+			if err := a.ready(r.Context()); err != nil {
+				writeJSON(w, 503, map[string]string{"error": err.Error()})
+				return
+			}
 		}
 		writeJSON(w, 200, map[string]string{"version": Version})
-	})
+	}
+	mux.HandleFunc("GET /ready", control)
+	mux.HandleFunc("GET /identity", control)
 	return mux
 }

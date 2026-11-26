@@ -78,7 +78,9 @@ async function main() {
   }
   const flags=["--root",root,"--run",run];
   const daemon=child(light,["serve",...flags,"--listen","127.0.0.1:"+webPort,"--socks","127.0.0.1:"+socksPort,"--probe-url",probe]);
-  const ready=()=>new Promise((resolve) => execFile(light,["ready",...flags,"--version","3.5.10"],{timeout:18000}, (err) => resolve(!err)));
+  const ready=(serviceOnly=false)=>new Promise((resolve) => execFile(light,[
+    "ready",...flags,"--version","3.5.10",...(serviceOnly ? ["--service-only"] : [])
+  ],{timeout:18000}, (err) => resolve(!err)));
   try {
     await eventually(async () => (await fetch("http://127.0.0.1:"+webPort).catch(() => null))?.status===200,"WebUI startup");
     await eventually(async () => {
@@ -86,6 +88,7 @@ async function main() {
       return !files.some((file) => /^xray-.*\.json$/.test(file)) && !(await canConnect(socksPort));
     },"initial failed Xray attempt must stop");
     assert.equal(await ready(),false,"update became ready before selected VLESS upstream");
+    assert.equal(await ready(true),true,"local service identity is unavailable while the proxy is down");
     assert.equal(JSON.parse(await readFile(state,"utf8")).active,id);
     child(core,["run","-config",config]);
     await eventually(() => canConnect(vlessPort),"official upstream Xray startup");

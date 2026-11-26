@@ -41,6 +41,10 @@ func TestMain(m *testing.M) {
 }
 
 func fixtureReady(args []string) error {
+	serviceOnly := len(args) > 0 && args[len(args)-1] == "--service-only"
+	if serviceOnly && os.Getenv("BRORAY_LIGHT_INSTALL_LEGACY_READY") == "1" {
+		return fmt.Errorf("flag provided but not defined: -service-only")
+	}
 	flags := make(map[string]string)
 	for i := 0; i+1 < len(args); i += 2 {
 		flags[args[i]] = args[i+1]
@@ -48,9 +52,6 @@ func fixtureReady(args []string) error {
 	version := flags["--version"]
 	if version == "" {
 		return fmt.Errorf("readiness probe omitted expected version")
-	}
-	if version == os.Getenv("BRORAY_LIGHT_INSTALL_HEALTH_FAIL") {
-		return fmt.Errorf("active connection remains unavailable")
 	}
 	pid, err := os.ReadFile(filepath.Join(flags["--run"], "daemon.pid"))
 	if err != nil {
@@ -60,8 +61,23 @@ func fixtureReady(args []string) error {
 	if err != nil || exe != filepath.Join(flags["--root"], "bin", BinaryName) {
 		return fmt.Errorf("service process is not running")
 	}
-	if !Pending(flags["--root"]) {
-		return fmt.Errorf("transaction committed before readiness")
+	l := layout{root: flags["--root"]}
+	if serviceOnly {
+		installed, err := l.currentVersion()
+		if err != nil || installed != version || !Pending(l.root) {
+			return fmt.Errorf("service-only readiness must check a restored installation awaiting confirmation")
+		}
+		return nil
+	}
+	if version == os.Getenv("BRORAY_LIGHT_INSTALL_HEALTH_FAIL") ||
+		(Pending(l.root) && os.Getenv("BRORAY_LIGHT_INSTALL_HEALTH_FAIL_PENDING") == "1") {
+		return fmt.Errorf("active connection remains unavailable")
+	}
+	if !Pending(l.root) {
+		installed, err := l.currentVersion()
+		if err != nil || installed != version {
+			return fmt.Errorf("readiness probe targets an unexpected installed version")
+		}
 	}
 	return nil
 }
@@ -103,6 +119,15 @@ func TestInstallConflictGuards(t *testing.T) {
 }
 
 func TestRollbackOnUnreadyCandidate(t *testing.T) {
+	testRollbackOnUnreadyCandidate(t, false)
+}
+
+func TestRollbackConfirmsRestoredServiceDuringConnectivityOutage(t *testing.T) {
+	testRollbackOnUnreadyCandidate(t, true)
+}
+
+func testRollbackOnUnreadyCandidate(t *testing.T, outage bool) {
+	t.Helper()
 	l := testLayout(t)
 	t.Setenv("BRORAY_LIGHT_INSTALL_FIXTURE", "1")
 	t.Setenv("BRORAY_LIGHT_INSTALL_HEALTH_FAIL", "3.5.11")
@@ -123,6 +148,11 @@ func TestRollbackOnUnreadyCandidate(t *testing.T) {
 	if Pending(l.root) {
 		t.Fatal("ready install is still pending")
 	}
+	if outage {
+		t.Setenv("BRORAY_LIGHT_INSTALL_HEALTH_FAIL_PENDING", "1")
+	} else {
+		t.Setenv("BRORAY_LIGHT_INSTALL_LEGACY_READY", "1")
+	}
 	candidate := append(append([]byte(nil), binary...), 'T')
 	updateCtx, stopUpdate := context.WithTimeout(context.Background(), 3500*time.Millisecond)
 	defer stopUpdate()
@@ -140,6 +170,49 @@ func TestRollbackOnUnreadyCandidate(t *testing.T) {
 	}
 	if err := l.serviceCmd(ctx, "status"); err != nil {
 		t.Fatalf("prior daemon was not restarted: %v", err)
+	}
+}
+
+func TestReplaceRefusesUnreadyRunningInstallation(t *testing.T) {
+	l := testLayout(t)
+	t.Setenv("BRORAY_LIGHT_INSTALL_FIXTURE", "1")
+	exe, err := os.Executable()
+	if err != nil {
+		t.Fatal(err)
+	}
+	binary, err := os.ReadFile(exe)
+	if err != nil {
+		t.Fatal(err)
+	}
+	ctx, cancel := context.WithTimeout(context.Background(), 12*time.Second)
+	defer cancel()
+	if err := l.replace(ctx, Version, bytes.NewReader(binary)); err != nil {
+		t.Fatal(err)
+	}
+	t.Cleanup(func() { _ = l.serviceCmd(context.Background(), "stop") })
+	pidfile := filepath.Join(l.run, "daemon.pid")
+	previousPID, err := os.ReadFile(pidfile)
+	if err != nil {
+		t.Fatal(err)
+	}
+	t.Setenv("BRORAY_LIGHT_INSTALL_HEALTH_FAIL", Version)
+	updateErr := l.replace(ctx, "3.5.11", bytes.NewReader(binary))
+	if updateErr == nil || !strings.Contains(updateErr.Error(), "active connection remains unavailable") {
+		t.Errorf("expected refusal due to existing service readiness, got %v", updateErr)
+	}
+	if installed, err := l.currentVersion(); err != nil || installed != Version {
+		t.Errorf("installed version changed: %q, %v", installed, err)
+	}
+	if pid, err := os.ReadFile(pidfile); err != nil || !bytes.Equal(pid, previousPID) {
+		t.Errorf("prior daemon PID changed: %q, %v", pid, err)
+	}
+	if err := l.serviceCmd(ctx, "status"); err != nil {
+		t.Errorf("prior daemon is not running: %v", err)
+	}
+	for _, path := range []string{l.receiptPath(), l.rollbackDir()} {
+		if present, err := exists(path); err != nil || present {
+			t.Errorf("upgrade created transaction state at %s: %t, %v", path, present, err)
+		}
 	}
 }
 
