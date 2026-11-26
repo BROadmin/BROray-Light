@@ -53,15 +53,19 @@ async function main() {
     schema:1, active:id, manageInterface:false, failover:{enabled:true,threshold:3,cooldownSeconds:15},
     servers:[{manual:true,profile:{id,uuid,name:"Controlled VLESS",protocol:"vless",network:"raw",security:"none",address:"127.0.0.1",port:vlessPort}}]
   }),{mode:0o600});
-  await writeFile(config,JSON.stringify({
-    log:{loglevel:"warning"},
-    inbounds:[{listen:"127.0.0.1",port:vlessPort,protocol:"vless",settings:{decryption:"none",clients:[{id:uuid}]}}],
-    outbounds:[{protocol:"freedom"}]
-  }),{mode:0o600});
   let requests=0;
   const endpoint = http.createServer((req,res) => { requests++; res.writeHead(204); res.end(); });
   await new Promise((resolve) => endpoint.listen(0,"127.0.0.1",resolve));
   const probe = "http://127.0.0.1:"+endpoint.address().port+"/ready";
+  // The official VLESS fixture blocks private egress by default. Permit
+  // only the exact local HTTP endpoint for this isolated smoke test.
+  await writeFile(config,JSON.stringify({
+    log:{loglevel:"warning"},
+    inbounds:[{listen:"127.0.0.1",port:vlessPort,protocol:"vless",settings:{decryption:"none",clients:[{id:uuid}]}}],
+    outbounds:[{protocol:"freedom",settings:{finalRules:[
+      {action:"allow",network:"tcp",ip:["127.0.0.1/32"],port:String(endpoint.address().port)}
+    ]}}]
+  }),{mode:0o600});
   const children=[];
   let out="";
   function child(file,args) {
