@@ -202,9 +202,9 @@ func TestAUTH010GetTimeout(t *testing.T) {
 }
 func TestAUTH011PostTimeout(t *testing.T) {
 	f := newFake()
-	f.postDelay = 100 * time.Millisecond
+	f.postDelay = (2 * time.Second)
 	v := setup(t, f)
-	v.requestTimeout = 20 * time.Millisecond
+	v.requestTimeout = (500 * time.Millisecond)
 	if e := v.Verify(context.Background(), f.login, f.password); !errors.Is(e, ErrUnavailable) {
 		t.Fatal(e)
 	}
