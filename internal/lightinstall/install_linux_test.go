@@ -5,6 +5,7 @@ import (
 	"context"
 	"fmt"
 	"os"
+	"os/exec"
 	"os/signal"
 	"path/filepath"
 	"strings"
@@ -115,6 +116,55 @@ func TestInstallConflictGuards(t *testing.T) {
 				t.Fatalf("modified conflicting path: %q, %v", b, err)
 			}
 		})
+	}
+}
+
+func TestInitChecksPrivateRuntimeWithTerseStat(t *testing.T) {
+	statPath, err := exec.LookPath("stat")
+	if err != nil {
+		t.Fatal(err)
+	}
+	shimDir := t.TempDir()
+	shim := "#!/bin/sh\n[ \"$#\" -eq 2 ] && [ \"$1\" = -t ] && [ \"$2\" = . ] || exit 1\nexec " + shellQuote(statPath) + " \"$@\"\n"
+	if err := os.WriteFile(filepath.Join(shimDir, "stat"), []byte(shim), 0o700); err != nil {
+		t.Fatal(err)
+	}
+	t.Setenv("PATH", shimDir+":"+os.Getenv("PATH"))
+	l := testLayout(t)
+	l.run = filepath.Join(filepath.Dir(l.run), "runtime with spaces")
+	if err := os.WriteFile(l.service(), l.serviceBody(), 0o755); err != nil {
+		t.Fatal(err)
+	}
+	if err := l.serviceCmd(context.Background(), "stop"); err != nil {
+		t.Fatalf("init rejected a private runtime with terse-only stat: %v", err)
+	}
+	parent := filepath.Dir(l.run)
+	if err := os.Chmod(parent, 0o750); err != nil {
+		t.Fatal(err)
+	}
+	if err := l.serviceCmd(context.Background(), "stop"); err == nil {
+		t.Fatal("init accepted a runtime parent with group access")
+	}
+	if err := os.Chmod(parent, 0o700); err != nil {
+		t.Fatal(err)
+	}
+	if err := os.Chmod(l.run, 0o750); err != nil {
+		t.Fatal(err)
+	}
+	if err := l.serviceCmd(context.Background(), "stop"); err == nil {
+		t.Fatal("init accepted a runtime with group access")
+	}
+	if err := os.Rename(l.run, l.run+".real"); err != nil {
+		t.Fatal(err)
+	}
+	if err := os.Chmod(l.run+".real", 0o700); err != nil {
+		t.Fatal(err)
+	}
+	if err := os.Symlink(l.run+".real", l.run); err != nil {
+		t.Fatal(err)
+	}
+	if err := l.serviceCmd(context.Background(), "stop"); err == nil {
+		t.Fatal("init accepted a runtime symlink to a private directory")
 	}
 }
 

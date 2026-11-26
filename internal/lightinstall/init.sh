@@ -8,13 +8,25 @@ INIT=@INIT@
 BIN="$ROOT/bin/broray-light"
 PIDFILE="$RUN/daemon.pid"
 
+private_dir() (
+    owner="$2"
+    [ ! -L "$1" ] && cd -P "$1" || exit 1
+    # BusyBox can omit stat -c. Terse stat on . keeps the filename one field.
+    fields="$(stat -t .)" || exit 1
+    set -f
+    set -- $fields
+    [ "$#" -ge 6 ] && [ "$4:$5" = "41c0:$owner" ]
+)
+
 ensure_run() {
-    [ ! -L "$RUN" ] && [ ! -L "${RUN%/*}" ] || return 1
+    parent="${RUN%/*}"
+    [ ! -L "$RUN" ] && [ ! -L "$parent" ] || return 1
     umask 077
+    owner="$(id -u)" || return 1
+    mkdir -p "$parent" || return 1
+    private_dir "$parent" "$owner" || return 1
     mkdir -p "$RUN" || return 1
-    owner="$(id -u):700"
-    [ "$(stat -c '%u:%a' "$RUN")" = "$owner" ] &&
-        [ "$(stat -c '%u:%a' "${RUN%/*}")" = "$owner" ]
+    private_dir "$RUN" "$owner"
 }
 
 read_pid() {
