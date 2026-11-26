@@ -50,7 +50,10 @@ start() {
     [ ! -L "$PIDFILE" ] && [ ! -L "$PIDFILE.new" ] && [ ! -L "$RUN/daemon.log" ] || return 1
     [ -f "$BIN" ] && [ ! -L "$BIN" ] && [ -x "$BIN" ] || return 1
     : > "$RUN/daemon.log"
-    nohup "$BIN" serve --root "$ROOT" --run "$RUN" </dev/null >>"$RUN/daemon.log" 2>&1 &
+    (
+        trap '' HUP
+        exec "$BIN" serve --root "$ROOT" --run "$RUN"
+    ) </dev/null >>"$RUN/daemon.log" 2>&1 &
     pid=$!
     printf '%s\n' "$pid" > "$PIDFILE.new"
     mv -f "$PIDFILE.new" "$PIDFILE"

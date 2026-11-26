@@ -168,6 +168,56 @@ func TestInitChecksPrivateRuntimeWithTerseStat(t *testing.T) {
 	}
 }
 
+func TestInitStartsDaemonWithoutNohup(t *testing.T) {
+	t.Setenv("BRORAY_LIGHT_INSTALL_FIXTURE", "1")
+	shimDir := t.TempDir()
+	if err := os.WriteFile(filepath.Join(shimDir, "nohup"), []byte("#!/bin/sh\nexit 127\n"), 0o700); err != nil {
+		t.Fatal(err)
+	}
+	t.Setenv("PATH", shimDir+":"+os.Getenv("PATH"))
+	l := testLayout(t)
+	exe, err := os.Executable()
+	if err != nil {
+		t.Fatal(err)
+	}
+	if err := copyFile(exe, l.binary(), 0o755); err != nil {
+		t.Fatal(err)
+	}
+	if err := os.WriteFile(l.service(), l.serviceBody(), 0o755); err != nil {
+		t.Fatal(err)
+	}
+	ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
+	defer cancel()
+	if err := l.serviceCmd(ctx, "start"); err != nil {
+		t.Fatal(err)
+	}
+	t.Cleanup(func() { _ = l.serviceCmd(context.Background(), "stop") })
+	pid, err := os.ReadFile(filepath.Join(l.run, "daemon.pid"))
+	if err != nil {
+		t.Fatal(err)
+	}
+	proc := filepath.Join("/proc", strings.TrimSpace(string(pid)))
+	ticker := time.NewTicker(25 * time.Millisecond)
+	defer ticker.Stop()
+	for {
+		actual, err := os.Readlink(filepath.Join(proc, "exe"))
+		if err == nil && actual == l.binary() {
+			break
+		}
+		select {
+		case <-ctx.Done():
+			t.Fatalf("recorded PID %s did not become %s: got %q, %v", pid, l.binary(), actual, err)
+		case <-ticker.C:
+		}
+	}
+	log := filepath.Join(l.run, "daemon.log")
+	for fd, want := range map[string]string{"0": "/dev/null", "1": log, "2": log} {
+		if got, err := os.Readlink(filepath.Join(proc, "fd", fd)); err != nil || got != want {
+			t.Errorf("daemon fd %s points to %q, want %q: %v", fd, got, want, err)
+		}
+	}
+}
+
 func TestRollbackOnUnreadyCandidate(t *testing.T) {
 	testRollbackOnUnreadyCandidate(t, false)
 }
