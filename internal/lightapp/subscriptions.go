@@ -22,22 +22,28 @@ import (
 
 const importLimit = 2 << 20
 
+func trimSubscriptionBody(data []byte) []byte {
+	return bytes.TrimSpace(bytes.TrimPrefix(bytes.TrimSpace(data), []byte{0xef, 0xbb, 0xbf}))
+}
+
 func parseProfiles(data []byte, allowEmpty bool) ([]servers.Server, error) {
-	data = bytes.TrimSpace(bytes.TrimPrefix(data, []byte{0xef, 0xbb, 0xbf}))
-	if allowEmpty && bytes.Equal(data, []byte("[]")) {
-		return nil, nil
-	}
+	data = trimSubscriptionBody(data)
 	if len(data) == 0 || len(data) > importLimit || !utf8.Valid(data) {
 		return nil, errors.New("empty, too large or invalid UTF-8 server list")
 	}
 	if !bytes.Contains(data, []byte("://")) {
 		base := strings.Join(strings.Fields(string(data)), "")
 		for _, decoder := range []*base64.Encoding{base64.StdEncoding, base64.RawStdEncoding, base64.URLEncoding, base64.RawURLEncoding} {
-			if decoded, err := decoder.DecodeString(base); err == nil && bytes.Contains(decoded, []byte("://")) && utf8.Valid(decoded) {
+			decoded, err := decoder.DecodeString(base)
+			decoded = trimSubscriptionBody(decoded)
+			if err == nil && utf8.Valid(decoded) && (bytes.Contains(decoded, []byte("://")) || allowEmpty && bytes.Equal(decoded, []byte("[]"))) {
 				data = decoded
 				break
 			}
 		}
+	}
+	if allowEmpty && bytes.Equal(data, []byte("[]")) {
+		return nil, nil
 	}
 	var profiles []servers.Server
 	for i, line := range strings.Split(string(data), "\n") {
@@ -145,7 +151,7 @@ func (a *App) refresh(ctx context.Context, id string) error {
 	if len(next.Servers) > 4096 {
 		return errors.New("catalogue exceeds 4096 servers")
 	}
-	return a.reconcile(ctx, next)
+	return a.reconcileSubscription(ctx, next)
 }
 
 func (a *App) refreshDue(ctx context.Context) {
@@ -180,7 +186,7 @@ func (a *App) setSubscription(ctx context.Context, id, name, raw string, minutes
 		delete(a.refreshAttempts, id)
 		next.Subscriptions = slices.Delete(next.Subscriptions, i, i+1)
 		next.Refresh(id, nil)
-		return a.reconcile(ctx, next)
+		return a.reconcileSubscription(ctx, next)
 	}
 	if len(name) > 120 || minutes < 0 || minutes > 10080 || (minutes != 0 && minutes < 5) {
 		return errors.New("invalid subscription name or refresh interval (5–10080 minutes, or 0 for manual refresh)")

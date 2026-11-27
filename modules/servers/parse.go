@@ -26,13 +26,18 @@ var validSecurity = map[string]bool{"none": true, "tls": true, "reality": true}
 // tuic/socks/http are recognized and refused, like 3.x.
 func ParseLink(link string) (Server, error) {
 	link = strings.TrimSpace(link)
-	if link == "" || len(link) > 8192 || !utf8.ValidString(link) {
+	if link == "" || len(link) > 64<<10 || !utf8.ValidString(link) {
 		return Server{}, ErrInvalid
 	}
 	lower := strings.ToLower(link)
-	switch {
-	case strings.HasPrefix(lower, "vless://"):
+	if strings.HasPrefix(lower, "vless://") {
+		// Encoded streamOptions and XHTTP extensions can exceed 8 KiB.
 		return parseVLESS(link)
+	}
+	if len(link) > 8192 {
+		return Server{}, ErrInvalid
+	}
+	switch {
 	case strings.HasPrefix(lower, "vmess://"):
 		return parseVMess(link)
 	case strings.HasPrefix(lower, "trojan://"):
@@ -158,41 +163,6 @@ func parseStream(s *Server, v url.Values, defaultNetwork string) error {
 		s.Transport.Extra = json.RawMessage(extra)
 	}
 	return nil
-}
-
-func parseVLESS(link string) (Server, error) {
-	u, err := url.Parse(link)
-	if err != nil || u.User == nil {
-		return Server{}, ErrInvalid
-	}
-	s := Server{SchemaVersion: 2, Protocol: "vless", URI: link}
-	s.Address, s.Port, err = hostPort(u)
-	if err != nil {
-		return Server{}, err
-	}
-	s.UUID = u.User.Username()
-	if s.UUID == "" {
-		return Server{}, fmt.Errorf("%w: uuid", ErrInvalid)
-	}
-	v := u.Query()
-	if err := parseStream(&s, v, "raw"); err != nil {
-		return Server{}, err
-	}
-	s.Encryption = q(v, "encryption")
-	if s.Encryption == "" {
-		s.Encryption = "none"
-	}
-	s.Flow = q(v, "flow")
-	switch s.Flow {
-	case "", "xtls-rprx-vision", "xtls-rprx-vision-udp443":
-	default:
-		return Server{}, fmt.Errorf("%w: flow %s", ErrUnsupported, s.Flow)
-	}
-	if s.Flow != "" && (s.Network != "raw" || (s.Security != "tls" && s.Security != "reality")) && s.Encryption == "none" {
-		return Server{}, fmt.Errorf("%w: vision needs raw + tls/reality", ErrInvalid)
-	}
-	s.Name = fragmentName(u, s.Address+":"+strconv.Itoa(s.Port))
-	return s, nil
 }
 
 func parseTrojan(link string) (Server, error) {

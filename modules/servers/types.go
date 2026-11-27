@@ -28,7 +28,11 @@ type Server struct {
 	Flow          string `json:"flow,omitempty"`
 	Network       string `json:"network"`  // raw | ws | grpc | httpupgrade | xhttp | kcp | hysteria
 	Security      string `json:"security"` // none | tls | reality
-	TLS           struct {
+	// VLESSStream holds the validated Xray stream settings when they use
+	// options beyond the common fields below. Historical profiles omit it.
+	VLESSStream    json.RawMessage `json:"vlessStream,omitempty"`
+	ImportWarnings []string        `json:"importWarnings,omitempty"`
+	TLS            struct {
 		ServerName    string   `json:"serverName"`
 		Fingerprint   string   `json:"fingerprint"`
 		AllowInsecure bool     `json:"allowInsecure"`

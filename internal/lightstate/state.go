@@ -146,13 +146,40 @@ func profileKey(profile servers.Server, rotation bool) string {
 func (s *State) ImportManual(profiles []servers.Server) int   { return s.merge("", profiles) }
 func (s *State) Refresh(id string, profiles []servers.Server) { s.merge(id, profiles) }
 
+func canReplace(entry Entry, source string) bool {
+	if source == "" {
+		return entry.Manual && len(entry.Sources) == 0
+	}
+	return !entry.Manual && slices.Equal(entry.Sources, []string{source})
+}
+
+// legacyVLESSMatches only considers profiles owned by the operation. The
+// saved URI can describe options the old parser dropped, whereas the saved
+// config remains the last-known settings until the link is seen again.
+func (s *State) legacyVLESSMatches(source string) map[string][]int {
+	keys := make(map[string][]int)
+	for i, entry := range s.Servers {
+		profile := entry.Profile
+		if profile.Protocol != "vless" || len(profile.VLESSStream) != 0 || profile.URI == "" || !canReplace(entry, source) {
+			continue
+		}
+		if decoded, err := servers.ParseLink(profile.URI); err == nil && decoded.Protocol == "vless" {
+			key := ProfileKey(decoded)
+			if key != ProfileKey(profile) {
+				keys[key] = append(keys[key], i)
+			}
+		}
+	}
+	return keys
+}
+
 func (s *State) merge(source string, profiles []servers.Server) int {
 	exact := make(map[string]int, len(s.Servers))
 	oldRotation := make(map[string][]int)
 	newRotation := make(map[string]int)
 	for i, entry := range s.Servers {
 		exact[ProfileKey(entry.Profile)] = i
-		if source != "" && slices.Equal(entry.Sources, []string{source}) && !entry.Manual {
+		if source != "" && canReplace(entry, source) {
 			key := profileKey(entry.Profile, true)
 			oldRotation[key] = append(oldRotation[key], i)
 		}
@@ -168,6 +195,34 @@ func (s *State) merge(source string, profiles []servers.Server) int {
 		newRotation[profileKey(profile, true)]++
 		unique = append(unique, profile)
 	}
+	var legacy map[string][]int
+	upgraded := make(map[int]bool)
+	for _, profile := range unique {
+		key := ProfileKey(profile)
+		if _, exists := exact[key]; exists || profile.Protocol != "vless" {
+			continue
+		}
+		if legacy == nil {
+			legacy = s.legacyVLESSMatches(source)
+		}
+		if prior := legacy[key]; len(prior) == 1 {
+			index := prior[0]
+			before := ProfileKey(s.Servers[index].Profile)
+			if stored, exists := exact[before]; exists && stored == index {
+				delete(exact, before)
+			}
+			exact[key] = index
+			upgraded[index] = true
+		}
+	}
+	// Reserve exact matches before assigning a merely similar profile. Feed
+	// order must not cause two different outbound configs to share an ID.
+	reserved := make(map[int]bool)
+	for _, profile := range unique {
+		if index, exists := exact[ProfileKey(profile)]; exists {
+			reserved[index] = true
+		}
+	}
 	matches := make(map[int]bool)
 	added := 0
 	for _, profile := range unique {
@@ -176,7 +231,7 @@ func (s *State) merge(source string, profiles []servers.Server) int {
 		if !exists && source != "" {
 			rotation := profileKey(profile, true)
 			prior := oldRotation[rotation]
-			if newRotation[rotation] == 1 && len(prior) == 1 {
+			if newRotation[rotation] == 1 && len(prior) == 1 && !reserved[prior[0]] && !matches[prior[0]] {
 				index, exists = prior[0], true
 			}
 		}
@@ -187,7 +242,7 @@ func (s *State) merge(source string, profiles []servers.Server) int {
 			added++
 		}
 		entry := &s.Servers[index]
-		if exists && source != "" && !entry.Manual && slices.Equal(entry.Sources, []string{source}) {
+		if exists && (source != "" || upgraded[index]) && canReplace(*entry, source) {
 			profile.ID = entry.Profile.ID
 			if entry.Renamed {
 				profile.Name = entry.Profile.Name

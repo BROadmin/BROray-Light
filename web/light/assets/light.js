@@ -211,9 +211,16 @@ function servers() {
     failoverStatus("Выключено — автоматические проверки не выполняются"),
     node("p", {class: "muted section-copy"}, "После указанного числа ошибок BROray-Light проверит серверы сверху вниз. Пауза защищает от слишком частых переключений."),
     failoverForm());
+  const hasActive = Boolean(state.active && state.servers.some((server) => server.id === state.active));
+  const canDeleteInactive = hasActive && state.servers.length > 1;
+  const catalogue = actions(
+    button("Удалить все, кроме активного", () => {
+      if (!canDeleteInactive || !confirm("Удалить из списка все серверы, кроме активного? Серверы из подписок могут вернуться после обновления.")) return;
+      return action({kind: "delete-inactive"}, (result) => "Удалено серверов: " + result.removed);
+    }, {class: "danger-button", disabled: !canDeleteInactive}));
   const cards = state.servers.map(serverCard);
   if (!cards.length) cards.push(emptyState("Серверов пока нет", "Добавьте ссылку сервера или импортируйте подписку."));
-  return [importer, failover, node("div", {id: "servers", class: "grid list-grid"}, ...cards)];
+  return [importer, failover, catalogue, node("div", {id: "servers", class: "grid list-grid"}, ...cards)];
 }
 
 function serverCard(server, index) {

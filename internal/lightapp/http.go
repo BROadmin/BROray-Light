@@ -132,6 +132,19 @@ func (a *App) action(w http.ResponseWriter, r *http.Request) (any, error) {
 		return nil, a.runtime.Check(ctx, a.state.Servers[i].Profile)
 	case "rename", "move", "exclude", "delete":
 		return nil, a.changeServer(ctx, input.ID, input.Kind, strings.TrimSpace(input.Name), input.Position, input.Enabled)
+	case "delete-inactive":
+		index := a.state.Find(a.state.Active)
+		if a.state.Active == "" || index < 0 {
+			return nil, errors.New("Сначала выберите активный сервер")
+		}
+		removed := len(a.state.Servers) - 1
+		if removed == 0 {
+			return map[string]int{"removed": 0}, nil
+		}
+		next := a.state.Clone()
+		next.Servers = []lightstate.Entry{next.Servers[index]}
+		_, err := a.save(next)
+		return map[string]int{"removed": removed}, err
 	case "import":
 		profiles, err := parseProfiles([]byte(input.Text), false)
 		if err != nil {

@@ -192,6 +192,40 @@ func (a *App) restorePrevious(profile servers.Server) error {
 // Reconcile removes stale intent when a successful catalog transaction
 // withdraws it. If another source still supplies the profile, it survives.
 func (a *App) reconcile(ctx context.Context, next lightstate.State) error {
+	return a.reconcileWithHandoff(ctx, next, nil)
+}
+
+func (a *App) reconcileSubscription(ctx context.Context, next lightstate.State) error {
+	oldPosition := a.state.Find(next.Active)
+	if oldPosition < 0 || next.Find(next.Active) >= 0 {
+		return a.reconcile(ctx, next)
+	}
+
+	// Walk the original order starting just after the withdrawn profile.
+	// Use the current entries and add newly imported rows after the survivors.
+	remaining := make(map[string]lightstate.Entry, len(next.Servers))
+	for _, entry := range next.Servers {
+		remaining[entry.Profile.ID] = entry
+	}
+	candidates := make([]lightstate.Entry, 0, len(next.Servers))
+	for _, oldList := range [][]lightstate.Entry{a.state.Servers[oldPosition+1:], a.state.Servers[:oldPosition]} {
+		for _, old := range oldList {
+			id := old.Profile.ID
+			if entry, ok := remaining[id]; ok {
+				candidates = append(candidates, entry)
+				delete(remaining, id)
+			}
+		}
+	}
+	for _, entry := range next.Servers {
+		if _, ok := remaining[entry.Profile.ID]; ok {
+			candidates = append(candidates, entry)
+		}
+	}
+	return a.reconcileWithHandoff(ctx, next, candidates)
+}
+
+func (a *App) reconcileWithHandoff(ctx context.Context, next lightstate.State, candidates []lightstate.Entry) error {
 	retired := false
 	if next.Active != "" {
 		i := next.Find(next.Active)
@@ -209,15 +243,21 @@ func (a *App) reconcile(ctx context.Context, next lightstate.State) error {
 	if err := a.stop(); err != nil {
 		return errors.Join(saveErr, err)
 	}
-	if a.state.Failover.Enabled {
+	if candidates != nil {
+		a.tryCandidates(ctx, candidates)
+	} else if a.state.Failover.Enabled {
 		a.tryFailover(ctx)
 	}
 	return saveErr
 }
 
 func (a *App) tryFailover(ctx context.Context) {
+	a.tryCandidates(ctx, a.state.Servers)
+}
+
+func (a *App) tryCandidates(ctx context.Context, candidates []lightstate.Entry) {
 	a.nextSwitch = time.Now().Add(time.Duration(a.state.Failover.CooldownSeconds) * time.Second)
-	for _, entry := range a.state.Servers {
+	for _, entry := range candidates {
 		if ctx.Err() != nil {
 			return
 		}

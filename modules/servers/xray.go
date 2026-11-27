@@ -66,6 +66,11 @@ func compact(m map[string]any) map[string]any {
 }
 
 func streamSettings(s Server) map[string]any {
+	if s.Protocol == "vless" && len(s.VLESSStream) != 0 {
+		if stream := vlessStreamSettings(s); stream != nil {
+			return stream
+		}
+	}
 	st := map[string]any{"network": s.Network, "security": s.Security}
 	t := s.Transport
 	var extra map[string]any

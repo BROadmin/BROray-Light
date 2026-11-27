@@ -179,6 +179,65 @@ func TestDuplicateManualAndSubscriptionsSurviveSourceRemoval(t *testing.T) {
 	}
 }
 
+func TestSubscriptionWithdrawalHandsOffInCatalogueOrder(t *testing.T) {
+	for _, tc := range []struct {
+		name     string
+		order    []string
+		excluded string
+		failing  string
+		newNode  bool
+		want     string
+		starts   int
+	}{
+		{name: "next relative to active", order: []string{"before", "active", "after"}, want: "after", starts: 2},
+		{name: "another earlier row withdrawn", order: []string{"removed", "before", "active", "after", "last"}, want: "after", starts: 2},
+		{name: "wrap to survivor before new node", order: []string{"before", "active"}, newNode: true, want: "before", starts: 2},
+		{name: "skip excluded and wrap", order: []string{"before", "active", "after"}, excluded: "after", want: "before", starts: 2},
+		{name: "continue after failed probe", order: []string{"before", "active", "after"}, failing: "after", want: "before", starts: 3},
+		{name: "all candidates fail", order: []string{"active", "after"}, failing: "after", starts: 2},
+		{name: "no eligible candidate", order: []string{"active", "after"}, excluded: "after", starts: 1},
+	} {
+		t.Run(tc.name, func(t *testing.T) {
+			ctx := context.Background()
+			a, rt, _ := newTestApp(t)
+			rt.failureID = tc.failing
+			next := a.state.Clone()
+			for _, id := range tc.order {
+				p := parse(t, strings.Replace(profile, "node.example", id+".example", 1))[0]
+				p.ID = id
+				withdrawn := id == "active" || id == "removed"
+				entry := lightstate.Entry{Profile: p, Manual: !withdrawn, Excluded: id == tc.excluded}
+				if withdrawn {
+					entry.Sources = []string{"sub-fixture"}
+				}
+				next.Servers = append(next.Servers, entry)
+			}
+			next.Active = "active"
+			if _, err := a.save(next); err != nil {
+				t.Fatal(err)
+			}
+			if err := a.restore(ctx); err != nil {
+				t.Fatal(err)
+			}
+			next = a.state.Clone()
+			var profiles []servers.Server
+			if tc.newNode {
+				profiles = parse(t, strings.Replace(profile, "node.example", "new.example", 1))
+			}
+			next.Refresh("sub-fixture", profiles)
+			if err := a.reconcileSubscription(ctx, next); err != nil {
+				t.Fatal(err)
+			}
+			saved, err := a.store.Load()
+			if err != nil || saved.Find("active") >= 0 || saved.Find("removed") >= 0 || saved.Active != tc.want ||
+				a.state.Active != tc.want || rt.id != tc.want || rt.starts != tc.starts {
+				t.Fatalf("withdrawal left active=%q, runtime=%q, starts=%d, load error=%v",
+					saved.Active, rt.id, rt.starts, err)
+			}
+		})
+	}
+}
+
 func TestReadinessAndCleanupRetry(t *testing.T) {
 	a, rt, r := newTestApp(t)
 	id := seed(t, a, parse(t, profile), "")
