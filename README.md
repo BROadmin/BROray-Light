@@ -2,7 +2,11 @@
 
 BROray-Light — лёгкий менеджер Xray для роутеров Keenetic и Netcraze. Go-бинарник содержит WebUI с тремя страницами и использует учётные записи роутера. Xray устанавливается отдельно с Главной.
 
-## Скачать Stable 3.5.10
+## Установка по шагам
+
+Откройте терминал Entware в браузере или по SSH и вставьте готовую команду. Она сама подберёт архив для вашего роутера и проверит его перед установкой. [Инструкция для первой установки](docs/INSTALL-GO.md) · [Открыть команду установки](docs/INSTALL-GO.md#install)
+
+## Скачать Stable 3.5.10 вручную
 
 | Архитектура пакетов Entware | Архив Linux | Размер архива |
 | --- | --- | ---: |
@@ -11,7 +15,7 @@ BROray-Light — лёгкий менеджер Xray для роутеров Keen
 | `mipsel-3.4` | [MIPSEL softfloat](https://github.com/BROadmin/BROray-Light/releases/download/v3.5.10/broray-light-3.5.10-linux-mipsel.tar.gz) | 3 235 499 Б |
 | `mips-3.4` | [MIPS softfloat](https://github.com/BROadmin/BROray-Light/releases/download/v3.5.10/broray-light-3.5.10-linux-mips.tar.gz) | 3 249 536 Б |
 
-Сверьте архитектуру командой `opkg print-architecture`. Для архива и извлечённого бинарника опубликованы отдельные контрольные суммы. [Релиз GitHub](https://github.com/BROadmin/BROray-Light/releases/tag/v3.5.10) · [SHA256SUMS](https://github.com/BROadmin/BROray-Light/releases/download/v3.5.10/SHA256SUMS) · [SHA256SUMS.binaries](https://github.com/BROadmin/BROray-Light/releases/download/v3.5.10/SHA256SUMS.binaries)
+При ручной загрузке сверьте архитектуру командой `opkg print-architecture`. Для архива и извлечённого бинарника опубликованы отдельные контрольные суммы. [Релиз GitHub](https://github.com/BROadmin/BROray-Light/releases/tag/v3.5.10) · [SHA256SUMS](https://github.com/BROadmin/BROray-Light/releases/download/v3.5.10/SHA256SUMS) · [SHA256SUMS.binaries](https://github.com/BROadmin/BROray-Light/releases/download/v3.5.10/SHA256SUMS.binaries)
 
 - [Установка и ручной переход с Light 1.x/2.0](docs/INSTALL-GO.md)
 - [Руководство по WebUI, серверам и подпискам](docs/USER-GUIDE-GO.md)
