@@ -77,7 +77,8 @@ stop() {
     if running; then
         kill -TERM "$pid" || return 1
         ticks=0
-        while running && [ "$ticks" -lt 20 ]; do
+        # Allow an in-flight KeenDNS transaction to reconcile its receipt.
+        while running && [ "$ticks" -lt 60 ]; do
             sleep 1
             ticks=$((ticks + 1))
         done

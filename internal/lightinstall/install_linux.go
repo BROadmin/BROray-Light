@@ -108,14 +108,16 @@ func Run(args []string) error {
 	if err := l.prepare(); err != nil {
 		return err
 	}
-	lock, err := lockFile(l.run)
+	ctx, cancel := signal.NotifyContext(context.Background(), os.Interrupt, syscall.SIGTERM)
+	defer cancel()
+	lockCtx, cancelLock := context.WithTimeout(ctx, 2*time.Minute)
+	lock, err := waitOperationLock(lockCtx, l.run)
+	cancelLock()
 	if err != nil {
 		return err
 	}
 	defer lock.Close()
 
-	ctx, cancel := signal.NotifyContext(context.Background(), os.Interrupt, syscall.SIGTERM)
-	defer cancel()
 	if err := l.recover(ctx, !l.restoreOnly); err != nil {
 		return fmt.Errorf("recover previous installation: %w", err)
 	}
@@ -221,6 +223,32 @@ func (l layout) prepare() error {
 		return err
 	}
 	return trustedDir(l.run, 0o700)
+}
+
+// TryOperationLock takes the installer lock without blocking, for router writes
+// that must not cross an installation or update.
+func TryOperationLock(run string) (io.Closer, error) {
+	f, err := lockFile(run)
+	if err != nil {
+		return nil, err
+	}
+	return f, nil
+}
+
+func waitOperationLock(ctx context.Context, run string) (*os.File, error) {
+	retry := time.NewTicker(time.Second)
+	defer retry.Stop()
+	for ctx.Err() == nil {
+		f, err := lockFile(run)
+		if !errors.Is(err, unix.EWOULDBLOCK) {
+			return f, err
+		}
+		select {
+		case <-ctx.Done():
+		case <-retry.C:
+		}
+	}
+	return nil, fmt.Errorf("waiting for the installer lock: %w", ctx.Err())
 }
 
 func lockFile(dir string) (*os.File, error) {

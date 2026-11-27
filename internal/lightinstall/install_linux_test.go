@@ -3,6 +3,7 @@ package lightinstall
 import (
 	"bytes"
 	"context"
+	"errors"
 	"fmt"
 	"os"
 	"os/exec"
@@ -92,6 +93,33 @@ func testLayout(t *testing.T) layout {
 		t.Fatal(err)
 	}
 	return l
+}
+
+func TestOperationLockWaitsForRouterConfiguration(t *testing.T) {
+	l := testLayout(t)
+	publisher, err := TryOperationLock(l.run)
+	if err != nil {
+		t.Fatal(err)
+	}
+	defer publisher.Close()
+	ctx, cancel := context.WithTimeout(context.Background(), 20*time.Millisecond)
+	defer cancel()
+	if lock, err := waitOperationLock(ctx, l.run); !errors.Is(err, context.DeadlineExceeded) {
+		if lock != nil {
+			lock.Close()
+		}
+		t.Fatalf("waiting for an occupied lock returned %v", err)
+	}
+
+	ctx, cancel = context.WithTimeout(context.Background(), 3*time.Second)
+	defer cancel()
+	timer := time.AfterFunc(20*time.Millisecond, func() { _ = publisher.Close() })
+	defer timer.Stop()
+	lock, err := waitOperationLock(ctx, l.run)
+	if err != nil {
+		t.Fatal(err)
+	}
+	defer lock.Close()
 }
 
 func TestInstallConflictGuards(t *testing.T) {

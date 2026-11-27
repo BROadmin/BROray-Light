@@ -171,13 +171,15 @@ func serve(root, run, listen, socks, probe string) error {
 		return err
 	}
 
-	var publicHTTP = &http.Server{Handler: app.Handler(light.Assets, public.Addr().String()), ReadHeaderTimeout: 5 * time.Second, ReadTimeout: 20 * time.Second, IdleTimeout: 20 * time.Second, MaxHeaderBytes: 16 << 10}
+	var publicHTTP = &http.Server{Handler: app.Handler(light.Assets), ReadHeaderTimeout: 5 * time.Second, ReadTimeout: 20 * time.Second, IdleTimeout: 20 * time.Second, MaxHeaderBytes: 16 << 10}
 	var controlHTTP = &http.Server{Handler: app.ControlHandler(), ReadHeaderTimeout: 3 * time.Second, IdleTimeout: 5 * time.Second, MaxHeaderBytes: 4 << 10}
 	failures := make(chan error, 2)
 	go func() { failures <- publicHTTP.Serve(public) }()
 	go func() { failures <- controlHTTP.Serve(control) }()
 	watchDone := make(chan struct{})
 	go func() { defer close(watchDone); app.Watch(ctx) }()
+	webDone := make(chan struct{})
+	go func() { defer close(webDone); app.RunRemoteAccess(ctx, public.Addr().String()) }()
 	log.Printf("BROray-Light %s listening on %s", lightapp.Version, public.Addr())
 	select {
 	case err = <-failures:
@@ -187,6 +189,7 @@ func serve(root, run, listen, socks, probe string) error {
 	_ = controlHTTP.Close()
 	_ = publicHTTP.Close()
 	<-watchDone
+	<-webDone
 	return err
 }
 

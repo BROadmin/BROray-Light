@@ -91,68 +91,6 @@ const field = (label, attrs) => node("label", {}, label, node("input", attrs));
 const submit = (label) => node("button", {class: "primary"}, label);
 const panel = (title, ...content) => node("section", {class: "panel"}, node("h2", {}, title), ...content);
 
-function webAccessURL(value) {
-  if (typeof value !== "string") return null;
-  try {
-    const url = new URL(value);
-    if (url.protocol === "https:" && /^brolight\.[a-z0-9-]+(?:\.[a-z0-9-]+)+$/.test(url.hostname) &&
-        !url.username && !url.password && !url.port && url.pathname === "/" && !url.search && !url.hash) return url.href;
-  } catch {
-    return null;
-  }
-  return null;
-}
-
-function webAccessPanel() {
-  const status = node("p", {role: "status"}, "Проверяется настройка роутера…");
-  const controls = node("div", {class: "row"});
-  const states = {
-    disabled: "Публикация выключена",
-    enabled: "Публикация настроена",
-    unavailable: "KeenDNS / CrazeDNS недоступен",
-    conflict: "Обнаружен конфликт с настройкой роутера",
-    recovery: "Требуется завершить предыдущую операцию"
-  };
-  function render(access) {
-    const url = access.state === "enabled" && webAccessURL(access.url);
-    status.replaceChildren(Object.hasOwn(states, access.state) ? states[access.state] : "Состояние публикации неизвестно");
-    if (url) status.append(" · ", node("a", {href: url, class: "web-access-link"}, url));
-    const buttons = [];
-    if (access.canEnable === true) {
-      buttons.push(button(access.state === "recovery" ? "Продолжить включение" : "Включить доступ", async () => {
-        if (!confirm("Опубликовать WebUI через KeenDNS / CrazeDNS? Для входа потребуется учётная запись Keenetic.")) return;
-        await change(true);
-      }));
-    }
-    if (access.canDisable === true) {
-      buttons.push(button(access.state === "recovery" ? "Повторить отключение" : "Отключить доступ", async () => {
-        if (!confirm("Отключить внешний адрес WebUI? При подключении через него текущий доступ прервётся.")) return;
-        await change(false);
-      }));
-    }
-    controls.replaceChildren(...buttons, button("Обновить статус", refresh));
-  }
-  async function refresh() {
-    try {
-      render(await request("/api/web-access"));
-    } catch (err) {
-      render({});
-      throw err;
-    }
-  }
-  async function change(enabled) {
-    try {
-      render(await request("/api/web-access", {enabled}));
-    } catch (err) {
-      await refresh().catch(() => {});
-      throw err;
-    }
-  }
-  refresh().catch(() => {});
-  return panel("Удалённый доступ", status,
-    node("p", {class: "muted"}, "Для публикации нужен домен KeenDNS или CrazeDNS на этом роутере."), controls);
-}
-
 function home() {
   const selected = state.servers.find((s) => s.id === state.active);
   const connected = state.running && selected && !state.health;
@@ -195,7 +133,7 @@ function home() {
         if (!confirm("Проверить и установить закреплённую версию Xray?")) return;
         return action({kind:"core-install"});
       })));
-  return [node("h1", {}, "Главная"), node("div", {class:"grid"}, connection, iface, webAccessPanel(), failover, update, core)];
+  return [node("h1", {}, "Главная"), node("div", {class:"grid"}, connection, iface, failover, update, core)];
 }
 
 function servers() {

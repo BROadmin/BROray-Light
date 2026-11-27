@@ -53,9 +53,6 @@ func (r *fakeRuntime) Probe(context.Context) error {
 type fakeRouter struct {
 	cleanupErr, readyErr error
 	down                 bool
-	webUpdates           int
-	webListen            string
-	webEnabled           bool
 }
 
 func (*fakeRouter) Authenticate(_ context.Context, user, pass string) error {
@@ -68,16 +65,11 @@ func (*fakeRouter) Ensure(context.Context, string) error  { return nil }
 func (r *fakeRouter) Ready(context.Context, string) error { return r.readyErr }
 func (r *fakeRouter) Cleanup(context.Context) error       { return r.cleanupErr }
 func (r *fakeRouter) WAN(context.Context) (bool, bool)    { return true, !r.down }
-func (r *fakeRouter) RemoteAccess(context.Context, string) (lightkeenetic.WebAccess, error) {
-	if r.webEnabled {
-		return lightkeenetic.WebAccess{State: "enabled", URL: "https://brolight.router.example/"}, nil
-	}
-	return lightkeenetic.WebAccess{State: "disabled"}, nil
+func (*fakeRouter) RemoteAccess(context.Context, string) (lightkeenetic.WebAccess, error) {
+	return lightkeenetic.WebAccess{State: "unavailable"}, nil
 }
-func (r *fakeRouter) SetRemoteAccess(ctx context.Context, listen string, enabled bool) (lightkeenetic.WebAccess, error) {
-	r.webUpdates++
-	r.webListen, r.webEnabled = listen, enabled
-	return r.RemoteAccess(ctx, listen)
+func (*fakeRouter) SetRemoteAccess(context.Context, string, bool) (lightkeenetic.WebAccess, error) {
+	return lightkeenetic.WebAccess{}, errors.New("unexpected publication request")
 }
 
 const profile = "vless://11111111-1111-4111-8111-111111111111@node.example:443?security=reality&sni=old.example&pbk=R4NdomBase64UrlEncodedPublicKeyA1b2c3d4e5f6&sid=abcd#Original"
@@ -224,7 +216,7 @@ func TestReadinessAndCleanupRetry(t *testing.T) {
 
 func TestFullConflictAndWebUIAccess(t *testing.T) {
 	a, _, _ := newTestApp(t)
-	handler := a.Handler(light.Assets, "192.168.1.1:8080")
+	handler := a.Handler(light.Assets)
 	for _, path := range []string{"/", "/servers", "/subscriptions", "/assets/light.js", "/assets/light.css"} {
 		w := httptest.NewRecorder()
 		handler.ServeHTTP(w, httptest.NewRequest("GET", path, nil))
@@ -282,10 +274,10 @@ func TestFullConflictAndWebUIAccess(t *testing.T) {
 	}
 }
 
-func TestRemoteWebAccessRequiresSessionAndCSRF(t *testing.T) {
-	app, _, router := newTestApp(t)
+func TestRemoteHTTPSLoginAndNoManualPublicationAPI(t *testing.T) {
+	app, _, _ := newTestApp(t)
 	const listener = "192.168.1.1:8080"
-	handler := app.Handler(light.Assets, listener)
+	handler := app.Handler(light.Assets)
 	send := func(method, path, data, csrf string, cookie *http.Cookie) *httptest.ResponseRecorder {
 		req := httptest.NewRequest(method, path, strings.NewReader(data))
 		req.Header.Set("Content-Type", "application/json")
@@ -297,28 +289,19 @@ func TestRemoteWebAccessRequiresSessionAndCSRF(t *testing.T) {
 		handler.ServeHTTP(w, req)
 		return w
 	}
-	assert := func(w *httptest.ResponseRecorder, code int, state string) {
+	assert := func(w *httptest.ResponseRecorder, code int) {
 		t.Helper()
 		if w.Code != code {
 			t.Fatalf("HTTP %d, want %d: %s", w.Code, code, w.Body)
 		}
-		if state != "" {
-			var out lightkeenetic.WebAccess
-			if err := json.Unmarshal(w.Body.Bytes(), &out); err != nil || out.State != state {
-				t.Fatalf("state %q, want %q: %s (%v)", out.State, state, w.Body, err)
-			}
-			if state == "enabled" && out.URL != "https://brolight.router.example/" || state == "disabled" && out.URL != "" {
-				t.Fatalf("unexpected publication URL: %q", out.URL)
-			}
-		}
 	}
 	const path = "/api/web-access"
-	assert(send("GET", path, "", "", nil), 401, "")
-	assert(send("POST", path, `{"enabled":true}`, "", nil), 401, "")
+	assert(send("GET", path, "", "", nil), 404)
+	assert(send("POST", path, `{"enabled":true}`, "", nil), 404)
 
 	credentials := `{"user":"fixture","password":"fixture"}`
 	lanLogin := send("POST", "http://"+listener+"/api/login", credentials, "", nil)
-	assert(lanLogin, 200, "")
+	assert(lanLogin, 200)
 	if cookies := lanLogin.Result().Cookies(); len(cookies) != 1 || cookies[0].Secure {
 		t.Fatalf("expected login cookie usable over LAN HTTP: %v", cookies)
 	}
@@ -326,13 +309,13 @@ func TestRemoteWebAccessRequiresSessionAndCSRF(t *testing.T) {
 	// Origin and TLS metadata. The HTTPS client can still require Secure.
 	forwarded := send("POST", "http://"+listener+"/api/login",
 		`{"user":"fixture","password":"fixture","secureSession":true}`, "", nil)
-	assert(forwarded, 200, "")
+	assert(forwarded, 200)
 	if cookies := forwarded.Result().Cookies(); len(cookies) != 1 || !cookies[0].Secure {
 		t.Fatalf("HTTPS client lost Secure after proxy rewrote headers: %v", cookies)
 	}
 	remote := "http://brolight.router.example"
 	remoteLogin := send("POST", remote+"/api/login", credentials, "", nil)
-	assert(remoteLogin, 200, "")
+	assert(remoteLogin, 200)
 	cookies := remoteLogin.Result().Cookies()
 	if len(cookies) != 1 || !cookies[0].Secure || !cookies[0].HttpOnly || cookies[0].Domain != "" || cookies[0].SameSite != http.SameSiteStrictMode {
 		t.Fatalf("unexpected cookie behind TLS proxy: %v", cookies)
@@ -342,23 +325,12 @@ func TestRemoteWebAccessRequiresSessionAndCSRF(t *testing.T) {
 		t.Fatalf("login did not provide CSRF token: %v", err)
 	}
 	csrf, cookie := authenticated["csrf"], cookies[0]
-	assert(send("GET", path, "", "", cookie), 200, "disabled")
-	assert(send("POST", path, `{"enabled":true}`, "", cookie), 403, "")
-	assert(send("POST", path, `{}`, csrf, cookie), 400, "")
-	if router.webUpdates != 0 {
-		t.Fatal("reading status or an invalid mutation changed the publication")
-	}
-	assert(send("POST", path, `{"enabled":true}`, csrf, cookie), 200, "enabled")
-	if router.webUpdates != 1 || router.webListen != listener {
-		t.Fatalf("expected one update for bound listener %s", listener)
-	}
-	assert(send("GET", path, "", "", cookie), 200, "enabled")
-	assert(send("POST", path, `{"enabled":false}`, csrf, cookie), 200, "disabled")
-	if router.webUpdates != 2 {
-		t.Fatal("authenticated disable did not update the publication")
-	}
-	assert(send("POST", remote+"/api/logout", "", csrf, cookie), 200, "")
-	assert(send("GET", path, "", "", cookie), 401, "")
+	assert(send("GET", path, "", "", cookie), 404)
+	assert(send("POST", path, `{"enabled":true}`, csrf, cookie), 404)
+	assert(send("GET", "/api/state", "", "", cookie), 200)
+	assert(send("POST", remote+"/api/logout", "", "", cookie), 403)
+	assert(send("POST", remote+"/api/logout", "", csrf, cookie), 200)
+	assert(send("GET", "/api/state", "", "", cookie), 401)
 }
 
 func TestPendingInterfaceCleanupDoesNotPreventProxyRestore(t *testing.T) {

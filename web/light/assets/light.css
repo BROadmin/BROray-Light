@@ -33,7 +33,6 @@ button:hover:not(:disabled), a:hover { filter: brightness(1.12); }
 small, .muted { color: var(--muted); }
 strong.good { color: var(--accent); }
 .row { display: flex; align-items: center; flex-wrap: wrap; gap: .5rem; }
-.web-access-link { color: var(--accent); overflow-wrap: anywhere; }
 .server { display: grid; gap: .65rem; }
 .server h2, .server p, .subscription h2 { overflow-wrap: anywhere; }
 .server p { margin: 0; }
