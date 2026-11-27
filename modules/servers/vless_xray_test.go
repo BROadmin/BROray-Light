@@ -84,5 +84,7 @@ func TestVLESSShareLinkXrayConfig(t *testing.T) {
 		"streamOptions": {`{"wsSettings":{"headers":{"X-Test":"fixture"},"heartbeatPeriod":0}}`},
 	}))
 	check("xhttp-padding", vlessMatrixLink("xhttp", "tls", url.Values{"x_padding_bytes": {"100-1000"}}))
-	check("raw-ipv6", strings.Replace(vlessMatrixLink("raw", "none", nil), "origin.example.test", "[2001:db8::1]", 1))
+	// The pinned Xray requires encryption for a public IP literal.
+	check("raw-ipv6-tls", strings.Replace(vlessMatrixLink("raw", "tls", nil), "origin.example.test", "[2001:db8::1]", 1))
+	check("raw-ipv6-private", strings.Replace(vlessMatrixLink("raw", "none", nil), "origin.example.test", "[fd00::1]", 1))
 }
