@@ -147,6 +147,21 @@ main { padding: 30px 28px 64px; }
 
 .dashboard-grid { row-gap: 22px; }
 .dashboard-grid .card:first-child { grid-column: span 2; }
+.dashboard-grid .project-card { grid-column: 1 / -1; }
+
+.row.project-links {
+  gap: 4px 20px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.project-links a {
+  display: inline-block;
+  padding-block: 6px;
+  color: var(--brand-hi);
+  text-underline-offset: 3px;
+}
 
 .card {
   min-width: 0;

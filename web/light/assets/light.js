@@ -197,7 +197,18 @@ function home() {
         return "Обновление запущено. После перезапуска войдите снова.";
       })));
 
-  return [node("div", {class: "grid dashboard-grid"}, connection, failover, iface, core, update)];
+  const projectLinks = [
+    ["Сайт и документация", "https://docs.brovibe.cloud/broray-light/"],
+    ["GitHub", "https://github.com/BROadmin/BROray-Light"],
+    ["Новости в Telegram", "https://t.me/myBROvibe"],
+    ["Обсуждение в Telegram", "https://t.me/BROvibe_vpn"],
+    ["Поддержать проект", "https://pay.cloudtips.ru/p/09b23d0a"],
+  ];
+  const project = card("Проект и поддержка", "card project-card",
+    node("ul", {class: "row project-links"}, ...projectLinks.map(([label, href]) =>
+      node("li", {}, node("a", {href, target: "_blank", rel: "noopener noreferrer"}, label)))));
+
+  return [node("div", {class: "grid dashboard-grid"}, connection, failover, iface, core, update, project)];
 }
 
 function servers() {

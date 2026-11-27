@@ -51,8 +51,8 @@ async function run() {
       assert.equal(html, shell);
       assert.match(html, /id="password-toggle"/);
       assert.match(html, /id="headerConnection"/);
-      assert.match(html, /\/assets\/light\.js\?v=stable-ui-2/);
-      assert.match(html, /\/assets\/light\.css\?v=stable-ui-2/);
+      assert.match(html, /\/assets\/light\.js\?v=stable-ui-3/);
+      assert.match(html, /\/assets\/light\.css\?v=stable-ui-3/);
       assert.doesNotMatch(html, /\son[a-z]+=/i);
       assert.match(response.headers.get("content-security-policy"), /frame-ancestors 'none'/);
     }
@@ -60,7 +60,7 @@ async function run() {
       ["light.js", /javascript/], ["light.css", /^text\/css/],
       ["branding/broray-logo-64.png", /^image\/png/], ["branding/favicon.ico", /^image\//],
     ]) {
-      const response = await fetch(base + "/assets/" + asset + "?v=stable-ui-2");
+      const response = await fetch(base + "/assets/" + asset + "?v=stable-ui-3");
       assert.equal(response.status, 200);
       assert.match(response.headers.get("content-type"), mime);
       assert.deepEqual(Buffer.from(await response.arrayBuffer()), await readFile(path.join(web, "assets", asset)));
