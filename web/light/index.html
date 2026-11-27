@@ -1,31 +1,79 @@
 <!doctype html>
 <html lang="ru">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>BROray-Light</title>
-<link rel="stylesheet" href="/assets/light.css">
-<script defer src="/assets/light.js"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <title>BROray-Light — Вход</title>
+  <link rel="icon" href="/assets/branding/favicon.ico">
+  <link rel="stylesheet" href="/assets/light.css?v=stable-ui-1">
+  <script defer src="/assets/light.js?v=stable-ui-1"></script>
 </head>
-<body>
-<header>
-  <a class="brand" href="/">BROray<span>–Light</span></a>
-  <nav id="navigation" aria-label="Страницы" hidden>
-    <a href="/">Главная</a><a href="/servers">Серверы</a><a href="/subscriptions">Подписки</a>
+<body class="login-body">
+  <header id="app-header" class="app-header" hidden>
+    <div class="brand">
+      <img src="/assets/branding/broray-logo-64.png" width="46" height="46" alt="">
+      <div>
+        <div id="header-eyebrow" class="eyebrow">VLESS для Keenetic</div>
+        <h1 id="header-title">BROray-Light</h1>
+      </div>
+    </div>
+    <div class="header-actions">
+      <div class="header-state"><span class="status-dot" aria-hidden="true"></span><span id="headerConnection">Проверка…</span></div>
+      <button id="logout" class="secondary" type="button" hidden>Выйти</button>
+    </div>
+  </header>
+  <nav id="navigation" aria-label="Основная навигация" hidden>
+    <a href="/">Главная</a>
+    <a href="/servers">Серверы</a>
+    <a href="/subscriptions">Подписки</a>
   </nav>
-  <button id="logout" type="button" hidden>Выйти</button>
-</header>
-<main>
-  <p id="feedback" role="status" aria-live="polite"></p>
-  <section id="login" class="panel" hidden>
-    <h1>Вход</h1>
-    <form id="login-form">
-      <label>Пользователь Keenetic <input name="user" autocomplete="username" required></label>
-      <label>Пароль <input name="password" type="password" autocomplete="current-password" required></label>
-      <button class="primary">Войти</button>
-    </form>
-  </section>
-  <div id="page"></div>
-</main>
+  <main>
+    <section id="login" class="login-card" hidden aria-labelledby="login-title">
+      <div class="login-brand">
+        <img class="login-logo" src="/assets/branding/broray-logo-64.png" width="56" height="56" alt="">
+        <div>
+          <div class="login-product">BROray-Light</div>
+          <div class="login-tagline">VLESS для Keenetic</div>
+        </div>
+      </div>
+
+      <div class="login-copy">
+        <h1 id="login-title" class="login-title">Вход</h1>
+        <p class="login-description">Используйте логин и пароль от интерфейса Keenetic.</p>
+      </div>
+
+      <form id="login-form" class="login-form" method="post" action="/api/login">
+        <label class="login-field" for="username">
+          <span>Логин</span>
+          <input id="username" name="user" autocomplete="username" required>
+        </label>
+
+        <label class="login-field" for="password">
+          <span>Пароль</span>
+          <span class="password-field">
+            <input id="password" name="password" type="password" autocomplete="current-password" required>
+            <button id="password-toggle" class="password-toggle" type="button" aria-label="Показать пароль" title="Показать пароль">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M2.5 12s3.5-6 9.5-6 9.5 6 9.5 6-3.5 6-9.5 6-9.5-6-9.5-6Z"></path>
+                <circle cx="12" cy="12" r="2.7"></circle>
+              </svg>
+              <span class="visually-hidden">Показать пароль</span>
+            </button>
+          </span>
+        </label>
+
+        <button id="login-submit" class="login-submit" type="submit">
+          <span class="button-label">Войти</span>
+        </button>
+      </form>
+
+      <p class="login-security">BROray-Light не сохраняет пароль. Данные проверяются KeeneticOS.</p>
+    </section>
+    <p id="feedback" class="notice" role="status"></p>
+    <div id="page" hidden></div>
+  </main>
+  <div id="toast-root" class="toast-root" aria-live="polite"></div>
 </body>
 </html>

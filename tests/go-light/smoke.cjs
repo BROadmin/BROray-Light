@@ -1,5 +1,5 @@
 const {spawn, execFileSync} = require("node:child_process");
-const {mkdtemp, mkdir, rm, stat} = require("node:fs/promises");
+const {mkdtemp, mkdir, readFile, rm, stat} = require("node:fs/promises");
 const {tmpdir} = require("node:os");
 const path = require("node:path");
 const net = require("node:net");
@@ -42,18 +42,28 @@ async function run() {
     assert.throws(() => execFileSync(binary, ["ready", ...flags, "--version", "3.5.9"], {stdio:"pipe"}));
     const sock = await stat(path.join(runtime, "control.sock"));
     assert.equal(sock.mode & 0o777, 0o600);
+    const web = path.resolve(__dirname, "../../web/light");
+    const shell = await readFile(path.join(web, "index.html"), "utf8");
     for (const route of ["/", "/servers", "/subscriptions"]) {
       const response = await fetch(base + route);
       assert.equal(response.status, 200);
       const html = await response.text();
-      assert.match(html, /BROray.Light/);
-      assert.match(html, /\/assets\/light\.js/);
+      assert.equal(html, shell);
+      assert.match(html, /id="password-toggle"/);
+      assert.match(html, /id="headerConnection"/);
+      assert.match(html, /\/assets\/light\.js\?v=stable-ui-1/);
+      assert.match(html, /\/assets\/light\.css\?v=stable-ui-1/);
+      assert.doesNotMatch(html, /\son[a-z]+=/i);
       assert.match(response.headers.get("content-security-policy"), /frame-ancestors 'none'/);
     }
-    for (const asset of ["light.js", "light.css"]) {
-      const response = await fetch(base + "/assets/" + asset);
+    for (const [asset, mime] of [
+      ["light.js", /javascript/], ["light.css", /^text\/css/],
+      ["branding/broray-logo-64.png", /^image\/png/], ["branding/favicon.ico", /^image\//],
+    ]) {
+      const response = await fetch(base + "/assets/" + asset + "?v=stable-ui-1");
       assert.equal(response.status, 200);
-      assert.ok((await response.text()).length > 300);
+      assert.match(response.headers.get("content-type"), mime);
+      assert.deepEqual(Buffer.from(await response.arrayBuffer()), await readFile(path.join(web, "assets", asset)));
     }
     for (const route of ["/routes","/dot","/api/ready","/api/web-access"]) assert.equal((await fetch(base+route)).status,404);
     assert.equal((await fetch(base+"/api/state")).status,401);
