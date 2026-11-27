@@ -244,8 +244,9 @@ func (a *App) Handler(assets fs.FS, listen string) http.Handler {
 	mux := http.NewServeMux()
 	mux.HandleFunc("POST /api/login", func(w http.ResponseWriter, r *http.Request) {
 		var creds struct {
-			User     string `json:"user"`
-			Password string `json:"password"`
+			User          string `json:"user"`
+			Password      string `json:"password"`
+			SecureSession bool   `json:"secureSession"`
 		}
 		if err := readJSON(w, r, &creds); err != nil || creds.User == "" || len(creds.User) > 128 || creds.Password == "" || len(creds.Password) > 256 {
 			writeJSON(w, 400, map[string]string{"error": "invalid login fields"})
@@ -265,7 +266,9 @@ func (a *App) Handler(assets fs.FS, listen string) http.Handler {
 			writeJSON(w, 503, map[string]string{"error": "session unavailable"})
 			return
 		}
-		http.SetCookie(w, &http.Cookie{Name: session.CookieName, Value: token, Path: "/", HttpOnly: true, Secure: secureSessionCookie(r), SameSite: http.SameSiteStrictMode})
+		// KeenDNS terminates TLS and can strip Origin and rewrite Host. A browser
+		// on HTTPS explicitly requests Secure in the body that reaches this handler.
+		http.SetCookie(w, &http.Cookie{Name: session.CookieName, Value: token, Path: "/", HttpOnly: true, Secure: creds.SecureSession || secureSessionCookie(r), SameSite: http.SameSiteStrictMode})
 		writeJSON(w, 200, map[string]string{"csrf": view.CSRF})
 	})
 	requireSession := func(mutate bool, handler func(http.ResponseWriter, *http.Request, *http.Cookie, session.View)) http.HandlerFunc {

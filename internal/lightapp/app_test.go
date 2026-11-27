@@ -322,6 +322,14 @@ func TestRemoteWebAccessRequiresSessionAndCSRF(t *testing.T) {
 	if cookies := lanLogin.Result().Cookies(); len(cookies) != 1 || cookies[0].Secure {
 		t.Fatalf("expected login cookie usable over LAN HTTP: %v", cookies)
 	}
+	// The observed KeenDNS proxy rewrites Host to the LAN endpoint and removes
+	// Origin and TLS metadata. The HTTPS client can still require Secure.
+	forwarded := send("POST", "http://"+listener+"/api/login",
+		`{"user":"fixture","password":"fixture","secureSession":true}`, "", nil)
+	assert(forwarded, 200, "")
+	if cookies := forwarded.Result().Cookies(); len(cookies) != 1 || !cookies[0].Secure {
+		t.Fatalf("HTTPS client lost Secure after proxy rewrote headers: %v", cookies)
+	}
 	remote := "http://brolight.router.example"
 	remoteLogin := send("POST", remote+"/api/login", credentials, "", nil)
 	assert(remoteLogin, 200, "")

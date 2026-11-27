@@ -257,7 +257,7 @@ $("#login-form").addEventListener("submit",(e) => {
   const data = new FormData(e.currentTarget);
   perform(async () => {
     try {
-      await request("/api/login",{user:data.get("user"),password:data.get("password")});
+      await request("/api/login",{user:data.get("user"),password:data.get("password"),secureSession:location.protocol === "https:"});
       await load();
     } finally {
       $("#login-form input[type=password]").value = "";
