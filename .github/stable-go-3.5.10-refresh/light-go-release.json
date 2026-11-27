@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "product": "BROray-Light",
+  "channel": "stable",
+  "version": "3.5.10",
+  "issuedAt": "2026-11-27T15:37:57Z",
+  "expiresAt": "2027-11-27T15:37:57Z",
+  "archives": {
+    "arm64": {
+      "url": "https://github.com/BROadmin/BROray-Light/releases/download/v3.5.10/broray-light-3.5.10-linux-arm64.tar.gz",
+      "sizeBytes": 3287244,
+      "sha256": "ecbe29a5779fad84b96114cdd24e184c4236bfdc0980ca159f48c6e69c8f508d"
+    },
+    "armv7": {
+      "url": "https://github.com/BROadmin/BROray-Light/releases/download/v3.5.10/broray-light-3.5.10-linux-armv7.tar.gz",
+      "sizeBytes": 3435192,
+      "sha256": "ab1c39eeee02938ea97008eab88383975677c6e2b997621cddbec04f04f7fe3f"
+    },
+    "mipsel": {
+      "url": "https://github.com/BROadmin/BROray-Light/releases/download/v3.5.10/broray-light-3.5.10-linux-mipsel.tar.gz",
+      "sizeBytes": 3235973,
+      "sha256": "e39d6a04ce8887293d44c401fc11f5a48f3076c9aea089b77a04eec13f975846"
+    },
+    "mips": {
+      "url": "https://github.com/BROadmin/BROray-Light/releases/download/v3.5.10/broray-light-3.5.10-linux-mips.tar.gz",
+      "sizeBytes": 3249967,
+      "sha256": "f4b1572cd383b826aa6d1216c270affd06d13dd1ee44c93de4a3e2756e136ff6"
+    }
+  }
+}
