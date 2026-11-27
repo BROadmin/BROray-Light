@@ -56,7 +56,9 @@ async function run() {
       assert.ok((await response.text()).length > 300);
     }
     for (const route of ["/routes","/dot","/api/ready"]) assert.equal((await fetch(base+route)).status,404);
-    assert.equal((await fetch(base+"/api/state")).status,401);
+    for (const route of ["/api/state", "/api/web-access"]) {
+      assert.equal((await fetch(base+route)).status,401);
+    }
     const creds = await fetch(base+"/api/login", {
       method:"POST", headers:{"Content-Type":"application/json"},
       body:JSON.stringify({user:"fixture",password:"fixture"})

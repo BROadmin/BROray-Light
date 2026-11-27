@@ -12,6 +12,7 @@ import (
 	"time"
 
 	"github.com/BROadmin/broray-light/internal/lightinstall"
+	"github.com/BROadmin/broray-light/internal/lightkeenetic"
 	"github.com/BROadmin/broray-light/internal/lightstate"
 	"github.com/BROadmin/broray-light/modules/servers"
 )
@@ -32,6 +33,8 @@ type Router interface {
 	Ready(context.Context, string) error
 	Cleanup(context.Context) error
 	WAN(context.Context) (known, online bool)
+	RemoteAccess(context.Context, string) (lightkeenetic.WebAccess, error)
+	SetRemoteAccess(context.Context, string, bool) (lightkeenetic.WebAccess, error)
 }
 
 type App struct {

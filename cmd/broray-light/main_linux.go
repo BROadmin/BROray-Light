@@ -171,7 +171,7 @@ func serve(root, run, listen, socks, probe string) error {
 		return err
 	}
 
-	var publicHTTP = &http.Server{Handler: app.Handler(light.Assets), ReadHeaderTimeout: 5 * time.Second, ReadTimeout: 20 * time.Second, IdleTimeout: 20 * time.Second, MaxHeaderBytes: 16 << 10}
+	var publicHTTP = &http.Server{Handler: app.Handler(light.Assets, public.Addr().String()), ReadHeaderTimeout: 5 * time.Second, ReadTimeout: 20 * time.Second, IdleTimeout: 20 * time.Second, MaxHeaderBytes: 16 << 10}
 	var controlHTTP = &http.Server{Handler: app.ControlHandler(), ReadHeaderTimeout: 3 * time.Second, IdleTimeout: 5 * time.Second, MaxHeaderBytes: 4 << 10}
 	failures := make(chan error, 2)
 	go func() { failures <- publicHTTP.Serve(public) }()

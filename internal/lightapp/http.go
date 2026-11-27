@@ -13,6 +13,7 @@ import (
 	"time"
 
 	"github.com/BROadmin/broray-light/internal/lightinstall"
+	"github.com/BROadmin/broray-light/internal/lightkeenetic"
 	"github.com/BROadmin/broray-light/internal/lightstate"
 	"github.com/BROadmin/broray-light/internal/session"
 	"github.com/BROadmin/broray-light/modules/servers"
@@ -205,7 +206,39 @@ func (l *loginLimit) allow(peer string) bool {
 	return true
 }
 
-func (a *App) Handler(assets fs.FS) http.Handler {
+type webAccessResponse struct {
+	lightkeenetic.WebAccess
+	Error string `json:"error,omitempty"`
+}
+
+func (a *App) setRemoteAccess(r *http.Request, listen string, enabled bool) (lightkeenetic.WebAccess, error) {
+	a.mu.Lock()
+	defer a.mu.Unlock()
+	blocked := lightkeenetic.WebAccess{State: "unavailable"}
+	if err := r.Context().Err(); err != nil {
+		return blocked, err
+	}
+	if err := NoFullProduct(a.root); err != nil {
+		return blocked, err
+	}
+	if lightinstall.Pending(a.root) {
+		return blocked, errors.New("установка ожидает подтверждения")
+	}
+	return a.router.SetRemoteAccess(r.Context(), listen, enabled)
+}
+
+func secureSessionCookie(r *http.Request) bool {
+	host := r.Host
+	if name, _, err := net.SplitHostPort(host); err == nil {
+		host = name
+	}
+	// These hints only add Secure. They grant no trust or privileges to a request.
+	return r.TLS != nil || strings.HasPrefix(strings.ToLower(host), "brolight.") ||
+		strings.HasPrefix(r.Header.Get("Origin"), "https://") ||
+		strings.EqualFold(r.Header.Get("X-Forwarded-Proto"), "https")
+}
+
+func (a *App) Handler(assets fs.FS, listen string) http.Handler {
 	sessions := session.NewStore()
 	limits := loginLimit{attempts: make(map[string]attempt)}
 	mux := http.NewServeMux()
@@ -232,7 +265,7 @@ func (a *App) Handler(assets fs.FS) http.Handler {
 			writeJSON(w, 503, map[string]string{"error": "session unavailable"})
 			return
 		}
-		http.SetCookie(w, &http.Cookie{Name: session.CookieName, Value: token, Path: "/", HttpOnly: true, Secure: r.TLS != nil, SameSite: http.SameSiteStrictMode})
+		http.SetCookie(w, &http.Cookie{Name: session.CookieName, Value: token, Path: "/", HttpOnly: true, Secure: secureSessionCookie(r), SameSite: http.SameSiteStrictMode})
 		writeJSON(w, 200, map[string]string{"csrf": view.CSRF})
 	})
 	requireSession := func(mutate bool, handler func(http.ResponseWriter, *http.Request, *http.Cookie, session.View)) http.HandlerFunc {
@@ -255,6 +288,29 @@ func (a *App) Handler(assets fs.FS) http.Handler {
 	mux.HandleFunc("GET /api/state", requireSession(false, func(w http.ResponseWriter, r *http.Request, _ *http.Cookie, v session.View) {
 		writeJSON(w, 200, map[string]any{"csrf": v.CSRF, "state": a.view()})
 	}))
+	mux.HandleFunc("GET /api/web-access", requireSession(false, func(w http.ResponseWriter, r *http.Request, _ *http.Cookie, _ session.View) {
+		status, err := a.router.RemoteAccess(r.Context(), listen)
+		if err != nil {
+			writeJSON(w, http.StatusOK, webAccessResponse{status, "Не удалось подтвердить настройку удалённого доступа"})
+			return
+		}
+		writeJSON(w, http.StatusOK, status)
+	}))
+	mux.HandleFunc("POST /api/web-access", requireSession(true, func(w http.ResponseWriter, r *http.Request, _ *http.Cookie, _ session.View) {
+		var input struct {
+			Enabled *bool `json:"enabled"`
+		}
+		if err := readJSON(w, r, &input); err != nil || input.Enabled == nil {
+			writeJSON(w, http.StatusBadRequest, map[string]string{"error": "Укажите, требуется ли включить удалённый доступ"})
+			return
+		}
+		status, err := a.setRemoteAccess(r, listen, *input.Enabled)
+		if err != nil {
+			writeJSON(w, http.StatusConflict, webAccessResponse{status, err.Error()})
+			return
+		}
+		writeJSON(w, http.StatusOK, status)
+	}))
 	mux.HandleFunc("POST /api/action", requireSession(true, func(w http.ResponseWriter, r *http.Request, _ *http.Cookie, _ session.View) {
 		result, err := a.action(w, r)
 		if err != nil {
@@ -265,7 +321,7 @@ func (a *App) Handler(assets fs.FS) http.Handler {
 	}))
 	mux.HandleFunc("POST /api/logout", requireSession(true, func(w http.ResponseWriter, r *http.Request, c *http.Cookie, _ session.View) {
 		sessions.Delete(c.Value)
-		http.SetCookie(w, &http.Cookie{Name: session.CookieName, Path: "/", HttpOnly: true, Secure: r.TLS != nil, SameSite: http.SameSiteStrictMode, MaxAge: -1})
+		http.SetCookie(w, &http.Cookie{Name: session.CookieName, Path: "/", HttpOnly: true, Secure: secureSessionCookie(r), SameSite: http.SameSiteStrictMode, MaxAge: -1})
 		writeJSON(w, 200, map[string]bool{"ok": true})
 	}))
 	mux.Handle("GET /assets/", http.FileServerFS(assets))

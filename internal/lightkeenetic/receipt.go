@@ -68,7 +68,19 @@ func (r *receipt) valid() bool {
 }
 
 func (c *Client) load() (*receipt, error) {
-	path := filepath.Join(c.stateDir, receiptFile)
+	raw, err := c.readReceipt(receiptFile)
+	if raw == nil || err != nil {
+		return nil, err
+	}
+	var r receipt
+	if json.Unmarshal(raw, &r) != nil || !r.valid() {
+		return nil, ErrOwnership
+	}
+	return &r, nil
+}
+
+func (c *Client) readReceipt(name string) ([]byte, error) {
+	path := filepath.Join(c.stateDir, name)
 	info, err := os.Lstat(path)
 	if errors.Is(err, os.ErrNotExist) {
 		return nil, nil
@@ -92,17 +104,20 @@ func (c *Client) load() (*receipt, error) {
 	if err != nil {
 		return nil, err
 	}
-	var r receipt
-	if len(raw) > 4096 || json.Unmarshal(raw, &r) != nil || !r.valid() {
+	if len(raw) > 4096 {
 		return nil, ErrOwnership
 	}
-	return &r, nil
+	return raw, nil
 }
 
 func (c *Client) store(r *receipt) error {
 	if !r.valid() {
 		return ErrOwnership
 	}
+	return c.writeReceipt(receiptFile, r)
+}
+
+func (c *Client) writeReceipt(name string, r any) error {
 	if err := os.MkdirAll(c.stateDir, 0o700); err != nil {
 		return err
 	}
@@ -110,7 +125,7 @@ func (c *Client) store(r *receipt) error {
 	if err != nil || !info.IsDir() {
 		return ErrOwnership
 	}
-	f, err := os.CreateTemp(c.stateDir, ".keenetic-interface-")
+	f, err := os.CreateTemp(c.stateDir, ".keenetic-receipt-")
 	if err != nil {
 		return err
 	}
@@ -122,14 +137,18 @@ func (c *Client) store(r *receipt) error {
 	if err := errors.Join(writeErr, f.Close()); err != nil {
 		return err
 	}
-	if err := os.Rename(f.Name(), filepath.Join(c.stateDir, receiptFile)); err != nil {
+	if err := os.Rename(f.Name(), filepath.Join(c.stateDir, name)); err != nil {
 		return err
 	}
 	return syncDirectory(c.stateDir)
 }
 
 func (c *Client) remove() error {
-	if err := os.Remove(filepath.Join(c.stateDir, receiptFile)); err != nil && !errors.Is(err, os.ErrNotExist) {
+	return c.removeReceipt(receiptFile)
+}
+
+func (c *Client) removeReceipt(name string) error {
+	if err := os.Remove(filepath.Join(c.stateDir, name)); err != nil && !errors.Is(err, os.ErrNotExist) {
 		return err
 	}
 	return syncDirectory(c.stateDir)
