@@ -1,0 +1,41 @@
+name: Sign BROray-Light Go 3.5.10 Stable manifest
+on:
+  push:
+    branches: [codex/sign-light-go-3.5.10]
+permissions:
+  contents: read
+jobs:
+  sign:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - name: Install minisign
+        run: sudo apt-get update && sudo apt-get install -y --no-install-recommends minisign
+      - name: Verify and sign the frozen Go manifest with the existing Light key
+        env:
+          SIGNING_KEY: ${{ secrets.BRORAY_LIGHT_MINISIGN_PRIVATE_KEY }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          manifest=.github/stable-go-3.5.10/light-go-release.json
+          public_key=.github/stable-go-3.5.10/light-go-release.pub
+          test -n "$SIGNING_KEY" || { echo 'The Light signing secret is unavailable' >&2; exit 1; }
+          printf '%s  %s\n' 2218978db0fc7fd5794c9e9a97e58e7a5fde45bd57eb0adb35a6beeead977721 "$manifest" b1587b8407f0c0443a361ed29b839319b66912b1b71414bcf31e848c29eab696 "$public_key" | sha256sum -c -
+          umask 077
+          keydir="$(mktemp -d /dev/shm/light-go-sign.XXXXXX)"
+          trap 'rm -f "$keydir/release.key"; rmdir "$keydir"' EXIT
+          printf '%s' "$SIGNING_KEY" > "$keydir/release.key"
+          unset SIGNING_KEY
+          minisign -S -s "$keydir/release.key" -m "$manifest" -t 'BROray-Light Go 3.5.10 Stable' -c 'BROray-Light Stable release signature'
+          minisign -V -p "$public_key" -m "$manifest"
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: light-go-3.5.10-signed-manifest
+          path: |
+            .github/stable-go-3.5.10/light-go-release.json
+            .github/stable-go-3.5.10/light-go-release.json.minisig
+          if-no-files-found: error
+          retention-days: 7
