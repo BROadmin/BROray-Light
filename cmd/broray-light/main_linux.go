@@ -40,6 +40,9 @@ func run(args []string) error {
 	}
 	switch args[0] {
 	case "version", "--version":
+		if len(args) == 2 && args[0] == "version" && args[1] == "--build-json" {
+			return lightinstall.WriteStatisticsBuild(os.Stdout)
+		}
 		fmt.Println("BROray-Light " + lightapp.Version)
 		return nil
 	case "install", "update", "recover":
@@ -180,6 +183,8 @@ func serve(root, run, listen, socks, probe string) error {
 	go func() { defer close(watchDone); app.Watch(ctx) }()
 	webDone := make(chan struct{})
 	go func() { defer close(webDone); app.RunRemoteAccess(ctx, public.Addr().String()) }()
+	statsDone := make(chan struct{})
+	go func() { defer close(statsDone); lightinstall.RunInstallStatistics(ctx, root) }()
 	log.Printf("BROray-Light %s listening on %s", lightapp.Version, public.Addr())
 	select {
 	case err = <-failures:
@@ -190,6 +195,7 @@ func serve(root, run, listen, socks, probe string) error {
 	_ = publicHTTP.Close()
 	<-watchDone
 	<-webDone
+	<-statsDone
 	return err
 }
 

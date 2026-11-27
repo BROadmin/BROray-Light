@@ -11,6 +11,7 @@ import (
 	"flag"
 	"fmt"
 	"io"
+	"log"
 	"os"
 	"os/exec"
 	"os/signal"
@@ -35,10 +36,11 @@ const (
 var initScript string
 
 type layout struct {
-	root        string
-	run         string
-	init        string
-	restoreOnly bool
+	root         string
+	run          string
+	init         string
+	restoreOnly  bool
+	noStatistics bool
 }
 
 func (l layout) binary() string      { return filepath.Join(l.root, "bin", BinaryName) }
@@ -57,9 +59,11 @@ func flags(command string, args []string) (layout, string, string, error) {
 		fs.BoolVar(&restoreOnly, "restore-only", false, "restore files for the init script without starting the daemon")
 	}
 	var binary, hash *string
+	var noStatistics bool
 	if command == "install" {
 		binary = fs.String("binary", "", "binary to install (default is the invoked executable)")
 		hash = fs.String("sha256", "", "expected SHA-256 of the local binary")
+		fs.BoolVar(&noStatistics, "no-install-statistics", false, "omit the anonymous first-install event")
 	}
 	if err := fs.Parse(args); err != nil {
 		return layout{}, "", "", err
@@ -67,7 +71,7 @@ func flags(command string, args []string) (layout, string, string, error) {
 	if fs.NArg() != 0 {
 		return layout{}, "", "", errors.New("unexpected installer arguments")
 	}
-	l := layout{root: *root, run: *run, init: *init, restoreOnly: restoreOnly}
+	l := layout{root: *root, run: *run, init: *init, restoreOnly: restoreOnly, noStatistics: noStatistics}
 	for _, dir := range []string{l.root, l.run, l.init} {
 		if strings.ContainsAny(dir, "\r\n\x00") || !filepath.IsAbs(dir) ||
 			dir != filepath.Clean(dir) || dir == "/" {
@@ -379,9 +383,10 @@ func (l layout) waitReady(ctx context.Context, version string, serviceOnly bool)
 }
 
 type receipt struct {
-	PreviousVersion string `json:"previousVersion"`
-	PreviousRunning bool   `json:"previousRunning"`
-	Committed       bool   `json:"committed"`
+	PreviousVersion string            `json:"previousVersion"`
+	PreviousRunning bool              `json:"previousRunning"`
+	Committed       bool              `json:"committed"`
+	Statistics      *installStatistic `json:"statistics,omitempty"`
 }
 
 func (l layout) record(r receipt) error {
@@ -409,7 +414,7 @@ func (l layout) currentVersion() (string, error) {
 
 // finish removes private, completed transaction records. A cleanup failure
 // leaves the receipt intact so recover can safely retry on the next request.
-func (l layout) finish() error {
+func (l layout) finish(r receipt) error {
 	dir := l.rollbackDir()
 	present, err := exists(dir)
 	if err != nil {
@@ -441,6 +446,17 @@ func (l layout) finish() error {
 		if err := removeFile(dir); err != nil {
 			return err
 		}
+	}
+	if r.Committed && r.Statistics != nil && r.Statistics.Event.valid() {
+		// Move the confirmed receipt to the outbox within the same directory.
+		if err := os.Rename(l.receiptPath(), statisticsPath(l.root, r.Statistics.Event.EventID)); err != nil {
+			if l.restoreOnly {
+				log.Printf("installation statistics outbox unavailable: %v", err)
+				return nil
+			}
+			return err
+		}
+		return syncDir(l.root)
 	}
 	return removeFile(l.receiptPath())
 }
@@ -488,7 +504,7 @@ func (l layout) recover(ctx context.Context, restart bool) error {
 		if err != nil || !present {
 			return err
 		}
-		return l.finish()
+		return l.finish(receipt{})
 	}
 	if err != nil {
 		return err
@@ -503,6 +519,7 @@ func (l layout) recover(ctx context.Context, restart bool) error {
 		}
 	}
 	if !r.Committed {
+		r.Statistics = nil
 		if err := l.restore(ctx, r, restart); err != nil {
 			return err
 		}
@@ -512,7 +529,7 @@ func (l layout) recover(ctx context.Context, restart bool) error {
 			return err
 		}
 	}
-	return l.finish()
+	return l.finish(r)
 }
 
 // Pending reports whether a trial installation has yet to confirm readiness.
@@ -554,6 +571,11 @@ func (l layout) replace(ctx context.Context, version string, candidate io.Reader
 	if err := ctx.Err(); err != nil {
 		return err
 	}
+	recordStatistics := canRecordInstallStatistic(l.root)
+	var before statisticBuild
+	if recordStatistics && old != "" {
+		before = readStatisticBuild(ctx, l.binary(), old)
+	}
 	dir := l.rollbackDir()
 	if err := os.Mkdir(dir, 0o700); err != nil {
 		return err
@@ -584,12 +606,16 @@ func (l layout) replace(ctx context.Context, version string, candidate io.Reader
 		return fmt.Errorf("installation rolled back: %w", err)
 	}
 	r.Committed = true
+	if recordStatistics && (old == "" || before.Version != "") {
+		after := readStatisticBuild(ctx, l.binary(), version)
+		r.Statistics = newInstallStatistic(ctx, l.root, after, before)
+	}
 	if err := l.record(r); err != nil {
 		rollbackCtx, cancel := context.WithTimeout(context.Background(), 3*time.Minute)
 		defer cancel()
 		return errors.Join(fmt.Errorf("persist installation confirmation: %w", err), l.recover(rollbackCtx, true))
 	}
-	return l.finish()
+	return l.finish(r)
 }
 
 func (l layout) activate(ctx context.Context, version string, candidate io.Reader, hadService bool) error {
@@ -635,6 +661,11 @@ func (l layout) installLocal(ctx context.Context, source, expected string) error
 	}
 	if _, err := stage.Seek(0, io.SeekStart); err != nil {
 		return err
+	}
+	if l.noStatistics {
+		if err := atomicFile(statisticsDisabledPath(l.root), 0o600, strings.NewReader("disabled\n")); err != nil {
+			return fmt.Errorf("persist installation statistics preference: %w", err)
+		}
 	}
 	return l.replace(ctx, Version, stage)
 }
