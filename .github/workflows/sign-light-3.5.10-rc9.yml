@@ -1,0 +1,41 @@
+name: Sign BROray-Light 3.5.10 RC9 checksums
+on:
+  push:
+    branches: [codex/sign-light-go-3.5.10-rc9]
+permissions:
+  contents: read
+jobs:
+  sign:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - name: Install minisign
+        run: sudo apt-get update && sudo apt-get install -y --no-install-recommends minisign
+      - name: Verify and sign the frozen RC9 checksums with the existing Light key
+        env:
+          SIGNING_KEY: ${{ secrets.BRORAY_LIGHT_MINISIGN_PRIVATE_KEY }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          manifest=.github/rc9-release/SHA256SUMS
+          public_key=.github/rc9-release/light-release.pub
+          test -n "$SIGNING_KEY" || { echo 'The Light signing secret is unavailable' >&2; exit 1; }
+          printf '%s  %s\n' 28bb3a466146c505e3d2e208f9a3a58dabb7432e0501cdd55ddfc91dae09db11 "$manifest" b1587b8407f0c0443a361ed29b839319b66912b1b71414bcf31e848c29eab696 "$public_key" | sha256sum -c -
+          umask 077
+          keydir="$(mktemp -d /dev/shm/light-go-sign.XXXXXX)"
+          trap 'rm -f "$keydir/release.key"; rmdir "$keydir"' EXIT
+          printf '%s' "$SIGNING_KEY" > "$keydir/release.key"
+          unset SIGNING_KEY
+          minisign -S -s "$keydir/release.key" -m "$manifest" -t 'BROray-Light 3.5.10 RC9 checksums' -c 'BROray-Light RC9 checksums signature'
+          minisign -V -p "$public_key" -m "$manifest"
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: light-3.5.10-rc9-signed-checksums
+          path: |
+            .github/rc9-release/SHA256SUMS
+            .github/rc9-release/SHA256SUMS.minisig
+          if-no-files-found: error
+          retention-days: 7
