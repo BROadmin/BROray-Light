@@ -5,7 +5,7 @@
 - **Устанавливаете впервые** — начните с [подготовки роутера](#1-подготовьте-роутер).
 - **Терминал Entware открыт, curl уже работает** — переходите к [команде установки](#install).
 - **Установлен Light 1.x или 2.0** — сначала сохраните данные и выполните [переход со старой версии](#переход-с-shell-light-1x20).
-- **Установлен Light на Go** — используйте [обновление через WebUI](#обновления-и-восстановление).
+- **Установлен Light на Go** — см. [обновление и переустановку](#обновления-и-восстановление).
 
 ## 1. Подготовьте роутер
 
@@ -67,20 +67,20 @@ opkg update && opkg install ca-bundle ca-certificates curl
   case "$arch" in
     aarch64-3.10)
       target=arm64
-      archive_sha=856a466500e70ab14e473d36588c53b3f6f7c3678b750954367604f82e547e8a
-      binary_sha=188e14c7b7e019d8a224844f59e4ed7e250cf16331d40ad8f8f3dc616c398223 ;;
+      archive_sha=ecbe29a5779fad84b96114cdd24e184c4236bfdc0980ca159f48c6e69c8f508d
+      binary_sha=60c23462d7cd2bb6b2a8087f2722517c2189ec8b1ad01f080046f9841c57f5c8 ;;
     armv7-3.2)
       target=armv7
-      archive_sha=8de7e19d5cfc1bdd90d7500785171424bcd97e5f0ae39268b9fda236c04a7828
-      binary_sha=44f254003872820a60b8da37f7a94834fa2aaa271648078f5211f2bde6588d6c ;;
+      archive_sha=ab1c39eeee02938ea97008eab88383975677c6e2b997621cddbec04f04f7fe3f
+      binary_sha=942147ec1e18c09548bea71ab1a302987e05acde0bd578e75937597b674fbccd ;;
     mipsel-3.4)
       target=mipsel
-      archive_sha=ea63eb3a81bd80383aa7fb7a50788868d0bc86a4771cfc49240bdd6ab0705bd5
-      binary_sha=0fe5af0cddcf2de15f5bff49c13e0eb20cd9e94686d3ee5a02d1821de1180a47 ;;
+      archive_sha=e39d6a04ce8887293d44c401fc11f5a48f3076c9aea089b77a04eec13f975846
+      binary_sha=e3311365f78c4ade55e872192bfa9ffe3656dd8e064c98576ae20d512f145b6d ;;
     mips-3.4)
       target=mips
-      archive_sha=d05fafe85c71539683876abbb0461ab44fb90539def2eaab3e789ebe5da38348
-      binary_sha=a0371f4d0fb04cbcf40ffad7aa6c7a15de9cf94f62b62b78052fa92e41a70037 ;;
+      archive_sha=f4b1572cd383b826aa6d1216c270affd06d13dd1ee44c93de4a3e2756e136ff6
+      binary_sha=86fd3fa300da1a850011f83c90c1ece8ffd240c20ba02889570098c3e6ac217b ;;
     *) fail 'Не удалось выбрать архив. Выполните opkg print-architecture и сверьтесь с таблицей совместимости.' ;;
   esac
 
@@ -127,6 +127,8 @@ opkg update && opkg install ca-bundle ca-certificates curl
 ## Обновления и восстановление
 
 На уже установленной Go-версии откройте **Главная → BROray-Light → Проверить обновление**. Если есть новый выпуск, нажмите **Обновить**. Light проверяет подпись манифеста, размер и SHA-256 архива.
+
+Если у вас уже установлена Go-версия 3.5.10, выполните [проверяемую команду установки](#install) поверх неё. Она заменит сборку с сохранением настроек, серверов и подписок. Кнопка «Обновить» в WebUI предназначена для перехода на более высокий номер версии. После переустановки проверьте блок «Проект и поддержка» на Главной.
 
 Для проверки службы из Entware используется `/opt/broray-light/bin/broray-light ready --version 3.5.10`. Для повтора незавершённой установки или отката есть команда `/opt/broray-light/bin/broray-light recover`. Журнал службы находится в `/tmp/broray-light/run/daemon.log`.
 

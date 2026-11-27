@@ -1,6 +1,6 @@
 # Проверки BROray-Light 3.5.10
 
-Исходник выпуска `33a92181846a0fc1a931b74dd01def12f8aeb701`, донор BROray `v3.5.10` — `92dc010ebad5fd21dff9e625925e9847b3714640`. [Тег и файлы выпуска](https://github.com/BROadmin/BROray-Light/releases/tag/v3.5.10) · [Состав переноса](UPSTREAM-GO.md)
+Приложение собрано и проверено на коммите `5a4f32ded35b4ecbd57a59dda7e64d4646fc654d`. Тег Stable указывает на следующий коммит с обновлённой документацией. Исходный код приложения между этими коммитами совпадает. Донор BROray `v3.5.10` закреплён на `92dc010ebad5fd21dff9e625925e9847b3714640`. [Тег и файлы выпуска](https://github.com/BROadmin/BROray-Light/releases/tag/v3.5.10) · [Состав переноса](UPSTREAM-GO.md)
 
 ## Сборки
 
@@ -8,14 +8,21 @@
 
 | Архитектура | Бинарник, байт | Архив, байт |
 | --- | ---: | ---: |
-| ARM64 | 7 930 004 | 3 286 864 |
-| ARMv7 | 8 126 612 | 3 434 990 |
-| MIPSEL softfloat | 9 371 827 | 3 235 499 |
-| MIPS softfloat | 9 371 827 | 3 249 536 |
+| ARM64 | 7 930 004 | 3 287 244 |
+| ARMv7 | 8 126 612 | 3 435 192 |
+| MIPSEL softfloat | 9 371 827 | 3 235 973 |
+| MIPS softfloat | 9 371 827 | 3 249 967 |
 
 [SHA256SUMS](https://github.com/BROadmin/BROray-Light/releases/download/v3.5.10/SHA256SUMS) · [SHA256SUMS.binaries](https://github.com/BROadmin/BROray-Light/releases/download/v3.5.10/SHA256SUMS.binaries)
 
-## Приёмка
+## Проверки текущей сборки
+
+- В изолированном Linux прошли `go test ./...`, `go test -race`, `go vet` и проверки готового бинарника. Выполнена проверка живого VLESS-трафика через Xray, восстановления соединения и остановки Xray после завершения демона.
+- При 1280×900 и 390×844 проверены блок «Проект и поддержка», пять ссылок, клавиатурный фокус и навигация по трём страницам. [Кандидат с теми же бинарниками](https://github.com/BROadmin/BROray-Light/releases/tag/v3.5.10-rc9)
+
+## Приёмка первой сборки
+
+На коммите `33a92181846a0fc1a931b74dd01def12f8aeb701` проведена исходная приёмка 3.5.10. В неё входил тест на физическом роутере ARM64.
 
 - В изолированном Linux прошли `go test ./...`, повторный полный `go test -race`, `go vet ./...`, проверка синтаксиса WebUI и скрипта службы. Первый прогон с -race исчерпал дедлайн теста отката на финальной проверке статуса службы. Отдельный повтор этого теста и полный повтор завершились успешно.
 - Браузер проверил все три страницы при 1920×1080 и 375×667. Сквозной тест через Go API подтвердил отмену и выполнение массового удаления с сохранением активной записи и подписки.
@@ -26,4 +33,4 @@
 
 ### Подпись выпуска
 
-Подпись манифеста Go-канала проверена встроенным публичным ключом Stable Light с идентификатором F8ABF7C93FAB7C1F для всех четырёх архитектур. Подписанный индекс shell 2.0.0 сохранён побайтно. [Запуск подписи GitHub Actions](https://github.com/BROadmin/BROray-Light/actions/runs/46011614517)
+Канал обновлений Go использует манифест `light-go-release.json` и его отдельную подпись. Встроенный публичный ключ Stable Light имеет идентификатор `F8ABF7C93FAB7C1F`. Выпуск со старым shell-обновителем продолжает получать подписанный индекс 2.0.0. [Манифест Stable](https://github.com/BROadmin/BROray-Light/releases/latest/download/light-go-release.json) · [Подпись манифеста](https://github.com/BROadmin/BROray-Light/releases/latest/download/light-go-release.json.minisig) · [Подпись контрольных сумм кандидата](https://github.com/BROadmin/BROray-Light/actions/runs/46023701339)
